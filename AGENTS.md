@@ -210,3 +210,6 @@ mirrors Prolog's `find/2` (union-find lookup).
   also considers member accesses.
 - No member access reasoning (`methodMemberAccess`).
 - RTTI for virtual bases not yet handled (`rTTIInheritsFrom` with `WhereP != -1`).
+
+See [TODO.md](TODO.md) for the full bidirectional coverage map: which OOAnalyzer rules
+are not yet implemented and which Clingo constructs are ASP-specific.

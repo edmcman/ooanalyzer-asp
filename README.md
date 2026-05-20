@@ -46,3 +46,6 @@ heuristics, inheritance detection, RTTI integration, and VBTable support -- in
 
 See [AGENTS.md](AGENTS.md) for the full architecture, input fact vocabulary,
 correspondence table, and known limitations.
+
+See [TODO.md](TODO.md) for a bidirectional coverage map: which OOAnalyzer rules are
+not yet implemented and which Clingo constructs are ASP-specific.
