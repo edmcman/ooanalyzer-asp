@@ -25,7 +25,7 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 |---|---|---|---|
 | `factMethod` | `setup.pl`, `rules.pl` | Derives `factMethod(M)` from vftable entries/writers, constructors/destructors, symbols, call targets, and class calls. Implemented. | **High** |
 | `factNOTMethod` | `setup.pl`, `guess.pl` | Explicit negation: `possibleMethod(M)` not confirmed as `factMethod`. Implemented in `src/rules.lp`. | **High** |
-| `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods. **Implemented:** A-G, J, L, O, P (in `src/rules.lp`). **DISABLED:** Q causes UNSAT on real binaries; Prolog reference also has it commented out. **Deferred:** K, M, N require `thisPtrUsage/4` (not yet imported). | **High** |
+| `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods. **Implemented:** A-G, J, K, L, M, N, O, P (in `src/rules.lp`). **DISABLED:** Q causes UNSAT on real binaries; Prolog reference also has it commented out. | **High** |
 
 ### 1.3 Class size reasoning
 | Predicate(s) | Source | Description | Priority |

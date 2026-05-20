@@ -78,6 +78,8 @@
 #defined validMethodCallAtOffset/4.
 #defined thisPtrParam/2.
 #defined genericThisPtrABIParam/1.
+#defined thisPtrUsage/4.
+#defined thisPtrUsage/3.
 
 % ----------------------------------------------------------------
 % Full-arity OOAnalyzer initial facts (from .facts files)

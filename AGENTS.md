@@ -254,7 +254,12 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `reasonMethod_L` | `factMethod(M) :- methodCallAtOffset(_, Caller, M, 0), factMethod(Caller), thisParamFuncParameter(M, _)` |
 | `reasonMethod_O` | `factMethod(M) :- factMethod(Proven), callingConvention(Proven, "__thiscall"), thisParamFuncParameter(Proven, ThisPtr), callParameter(Insn, Proven, 0, ThisPtr), callTarget(Insn, Proven, Target), dethunk(Target, M), callingConvention(M, "__cdecl")` |
 | `reasonMethod_P` | `factMethod(M) :- callParameter(Insn1, Func, 0, ThisPtr), callTarget(Insn1, Func, Target1), dethunk(Target1, Proven), factMethod(Proven), callParameter(Insn2, Func, 0, ThisPtr), callTarget(Insn2, Func, Target2), dethunk(Target2, M), callingConvention(M, "__cdecl")` |
+| `reasonMethod_K` | `factMethod(M) :- thisPtrUsage(_, Func, ThisPtr, Method1), factMethod(Method1), thisPtrUsage(_, Func, ThisPtr, M), Method1 != M` |
+| `reasonMethod_M` | `factMethod(M) :- thisPtrAllocation(_, Func, ThisPtr, type_Heap, _), thisPtrUsage(_, Func, ThisPtr, M), thisParamFuncParameter(M, _)` (and `type_Global`) |
+| `reasonMethod_N` | `factMethod(Func) :- thisPtrUsage(_, Func, ThisPtr, Method), factMethod(Method), thisParamFuncParameter(Func, ThisPtr)` |
 | `reasonMethod_Q` | **Disabled.** Causes UNSAT on real binaries; the exact conflict is a mergeCandidate domain gap. Prolog also has this rule commented out. |
+| `thisPtrUsage/4` | `thisPtrUsage(Insn, Function, ThisPtr, Method)` derived in `src/initial.lp` from `callTarget`, `dethunk`, `thisPtrParam`, `callParameter` |
+| `thisPtrUsage/3` | `thisPtrUsage(Function, ThisPtr, Method)` projection in `src/rules.lp` |
 | `factClassCallsMethod` | `factClassCallsMethod(C, M)` (no longer requires `factMethod(M)` — matches Prolog `reasonClassCallsMethod_C`) |
 | `reasonMergeClasses_C` | `reasonMergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
 | `reasonMergeClasses_E` | `reasonMergeClasses` from shared base at same offset |

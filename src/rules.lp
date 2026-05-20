@@ -95,6 +95,35 @@ factMethod(M) :-
     dethunk(Target2, M),
     callingConvention(M, "__cdecl").
 
+% thisPtrUsage/3: discard instruction for rules that don't need it.
+thisPtrUsage(Function, ThisPtr, Method) :- thisPtrUsage(_, Function, ThisPtr, Method).
+
+% reasonMethod_K: if a function passes a this-pointer to a known method,
+% any other method called on the same this-pointer is also a method.
+factMethod(M) :-
+    thisPtrUsage(_, Func, ThisPtr, Method1),
+    factMethod(Method1),
+    thisPtrUsage(_, Func, ThisPtr, M),
+    Method1 != M.
+
+% reasonMethod_M: heap or global allocation flows to a this-pointer used to call a method.
+factMethod(M) :-
+    thisPtrAllocation(_, Func, ThisPtr, type_Heap, _),
+    thisPtrUsage(_, Func, ThisPtr, M),
+    thisParamFuncParameter(M, _).
+
+factMethod(M) :-
+    thisPtrAllocation(_, Func, ThisPtr, type_Global, _),
+    thisPtrUsage(_, Func, ThisPtr, M),
+    thisParamFuncParameter(M, _).
+
+% reasonMethod_N: a function passes its own this-pointer to a known method,
+% so the function itself is a method.
+factMethod(Func) :-
+    thisPtrUsage(_, Func, ThisPtr, Method),
+    factMethod(Method),
+    thisParamFuncParameter(Func, ThisPtr).
+
 % reasonMethod_Q: a thunk that chains to a proven method is itself a method.
 % DISABLED: causes UNSAT on ooex4/5/6/9 -- see diagnosis below.
 % factMethod(M) :- thunk(M, Called), factMethod(Called).

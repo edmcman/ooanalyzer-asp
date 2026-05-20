@@ -177,6 +177,17 @@ thisParamCallParameter(Insn, CallerFunc, Callee, ThisPtr) :-
     callParameter(Insn, CallerFunc, Param, ThisPtr).
 
 % ----------------------------------------------------------------
+% thisPtrUsage: at call site Insn within Function, ThisPtr is passed
+% as the this-pointer to Method.
+% Counterpart: initial.pl:193-205
+% ----------------------------------------------------------------
+thisPtrUsage(Insn, Function, ThisPtr, Method) :-
+    callTarget(Insn, Function, Thunk),
+    dethunk(Thunk, Method),
+    thisPtrParam(Method, Param),
+    callParameter(Insn, Function, Param, ThisPtr).
+
+% ----------------------------------------------------------------
 % methodCallAtOffset / validMethodCallAtOffset / callAtOffset
 % Counterpart: methodCallAtOffset (initial.pl:175-191)
 % ----------------------------------------------------------------
