@@ -273,6 +273,76 @@ reasonNOTMergeClasses(M1, M2) :-                                         % Count
     TDA1 != TDA2,
     factVFTableWrite(M1, _, V1), factVFTableWrite(M2, _, V2), M1 < M2.
 
+% reasonNOTMergeClasses_E: two methods writing different vftables at offset 0
+reasonNOTMergeClasses(M1, M2) :-                                         % Counterpart: reasonNOTMergeClasses_E (rules.pl:3123)
+    factVFTableWrite(M1, 0, V1), factVFTableWrite(M2, 0, V2),
+    V1 != V2,
+    not factVFTableWrite(M1, 0, V2), not factVFTableWrite(M2, 0, V1),
+    M1 < M2.
+
+% reasonNOTMergeClasses_J: derived/base class relationship (transitive)
+classRelationship(Derived, Base) :- factDerivedClass(Derived, Base, _).
+classRelationship(Derived, Base) :- factDerivedClass(Derived, Middle, _), classRelationship(Middle, Base).
+
+reasonNOTMergeClasses(M1, M2) :- classRelationship(M1, M2), M1 < M2.
+reasonNOTMergeClasses(M1, M2) :- classRelationship(M2, M1), M1 < M2.
+
+% reasonNOTMergeClasses_K: methods with different symbolClass names
+reasonNOTMergeClasses(M1, M2) :-                                         % Counterpart: reasonNOTMergeClasses_K (rules.pl:3222)
+    symbolClass(M1, C1), symbolClass(M2, C2),
+    C1 != C2, M1 < M2.
+
+% reasonNOTMergeClasses_L: two classes each with a real destructor
+reasonNOTMergeClasses(R1, R2) :-                                         % Counterpart: reasonNOTMergeClasses_L (rules.pl:3240)
+    factRealDestructor(D1), factRealDestructor(D2),
+    D1 != D2, find(D1, R1), find(D2, R2), R1 < R2.
+
+% reasonNOTMergeClasses_P: constructor/destructor called at offset > 0
+reasonNOTMergeClasses(R1, R2) :-                                         % Counterpart: reasonNOTMergeClasses_P (rules.pl:3318)
+    validMethodCallAtOffset(_, Caller, Method, Offset),
+    Offset > 0,
+    find(Method, R1), find(Caller, R2),
+    R1 != R2, R1 < R2,
+    factMethod(Caller), factMethod(Method),
+    Method != Caller,
+    factConstructor(Method).
+
+reasonNOTMergeClasses(R1, R2) :-
+    validMethodCallAtOffset(_, Caller, Method, Offset),
+    Offset > 0,
+    find(Method, R1), find(Caller, R2),
+    R1 != R2, R1 < R2,
+    factMethod(Caller), factMethod(Method),
+    Method != Caller,
+    factDeletingDestructor(Method), not factRealDestructor(Caller).
+
+reasonNOTMergeClasses(R1, R2) :-
+    validMethodCallAtOffset(_, Caller, Method, Offset),
+    Offset > 0,
+    find(Method, R1), find(Caller, R2),
+    R1 != R2, R1 < R2,
+    factMethod(Caller), factMethod(Method),
+    Method != Caller,
+    factRealDestructor(Method).
+
+% reasonNOTMergeClasses_R: derived vftable installed by called method
+reasonNOTMergeClasses(R1, R2) :-                                         % Counterpart: reasonNOTMergeClasses_R (rules.pl:3366)
+    factClassCallsMethod(Cd, CalledMethod),
+    not purecall(CalledMethod),
+    factDerivedClass(Derived, Base, Offset),
+    find(Derived, Cd),
+    find(CalledMethod, Cc),
+    factVFTableWrite(CalledMethod, Offset, V),
+    factVFTableBelongsToClass(V, Offset, Cd),
+    find(Base, R1), find(Cc, R2),
+    R1 < R2.
+
+% reasonNOTMergeClasses_Q: symbol consistency
+reasonNOTMergeClasses(M1, M2) :-                                         % Counterpart: reasonNOTMergeClasses_Q (rules.pl:3352)
+    symbolClass(M1, ClassName), factMethod(M2),
+    not symbolClass(M2, ClassName),
+    M1 < M2.
+
 
 % ============================================================
 % CLASS COMPUTATION: equivalence classes via transitive closure
