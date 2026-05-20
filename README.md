@@ -17,6 +17,15 @@ clingo ooanalyzer.lp examples/example.lp 0        # enumerate all models
 clingo ooanalyzer.lp examples/invalid_example.lp  # UNSATISFIABLE (contradictory facts)
 ```
 
+Or use the Makefile:
+
+```sh
+make examples/ooa/oo.lp   # convert one .facts file
+make convert              # convert all examples/ooa/*.facts
+make run                  # convert and run clingo on all of them
+make clean                # remove generated .lp files
+```
+
 ## Files
 
 | File | Purpose |
@@ -37,6 +46,7 @@ clingo ooanalyzer.lp examples/invalid_example.lp  # UNSATISFIABLE (contradictory
 | [`examples/virtual_base_example.lp`](examples/virtual_base_example.lp) | Virtual inheritance via VBTable |
 | [`examples/inherited_entry_example.lp`](examples/inherited_entry_example.lp) | Derived inherits an un-overridden virtual method |
 | [`examples/invalid_example.lp`](examples/invalid_example.lp) | UNSAT demo: contradictory facts |
+| [`examples/ooa/`](examples/ooa/) | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests`) |
 | [`AGENTS.md`](AGENTS.md) | Detailed architecture and correspondence to OOAnalyzer |
 
 ## Background

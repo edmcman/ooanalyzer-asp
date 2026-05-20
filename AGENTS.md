@@ -26,6 +26,7 @@ This prototype captures the core ideas in ~700 lines of Clingo.
 | `examples/multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
 | `examples/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
 | `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
+| `examples/ooa/` | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug`) |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 
 ## Running
@@ -39,6 +40,15 @@ clingo ooanalyzer.lp examples/rtti_example.lp         # same but RTTI-driven, fe
 clingo ooanalyzer.lp examples/multi_inherit_example.lp  # C : A(0), B(8)
 clingo ooanalyzer.lp examples/inherited_entry_example.lp  # derived inherits un-overridden entry
 clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
+```
+
+Or use the Makefile:
+
+```sh
+make examples/ooa/oo.lp   # convert one .facts file
+make convert              # convert all examples/ooa/*.facts
+make run                  # convert and run clingo on all of them
+make clean                # remove generated .lp files
 ```
 
 ### From OOAnalyzer .facts files
