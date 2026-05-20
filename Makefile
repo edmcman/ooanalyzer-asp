@@ -3,7 +3,7 @@
 
 PYTHON     := python3
 CLINGO     := clingo
-CLINGO_FLAGS := ooanalyzer.lp
+CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=30
 
 OOA_DIR    := examples/ooa
 FACTS      := $(wildcard $(OOA_DIR)/*.facts)

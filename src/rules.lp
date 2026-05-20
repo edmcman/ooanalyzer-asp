@@ -278,14 +278,17 @@ reasonNOTMergeClasses(M1, M2) :-                                         % Count
 % CLASS COMPUTATION: equivalence classes via transitive closure
 % ============================================================
 
-sameClass(M, M)   :- factMethod(M).                                      % Counterpart: sameClass (Prolog transitive closure, rules.pl)
-sameClass(M1, M2) :- mergeClasses(M1, M2).                               % Counterpart: sameClass
-sameClass(M2, M1) :- sameClass(M1, M2).                                  % Counterpart: sameClass
-sameClass(M1, M3) :- sameClass(M1, M2), sameClass(M2, M3).              % Counterpart: sameClass
+% Compact transitive closure: use merged/2 as the undirected edge predicate
+% to eliminate the explicit symmetry rule and reduce grounding.
+merged(M1, M2) :- mergeClasses(M1, M2).
+merged(M2, M1) :- mergeClasses(M1, M2).
 
-hasLesser(M) :- sameClass(M, M2), M2 < M.                              % Counterpart: classRep helper (*** XXX NO COUNTERPART *** Clingo-specific min selection)
-classRep(M)  :- factMethod(M), not hasLesser(M).                         % Counterpart: classRep (Prolog union-find, rules.pl)
-find(M, R)   :- sameClass(M, R), classRep(R).  % mirrors Prolog's find/2  % Counterpart: find/2 (Prolog union-find, rules.pl)
+sameClass(M, M)   :- factMethod(M).
+sameClass(M1, M3) :- sameClass(M1, M2), merged(M2, M3).
+
+hasLesser(M) :- sameClass(M, M2), M2 < M.
+classRep(M)  :- factMethod(M), not hasLesser(M).
+find(M, R)   :- sameClass(M, R), classRep(R).
 
 % ============================================================
 % CLASS PROPERTIES
