@@ -11,32 +11,32 @@ This prototype captures the core ideas in ~300 lines of Clingo.
 | File | Purpose |
 |---|---|
 | `ooanalyzer.lp` | Entry point: `#include`s the modules below |
-| `facts.lp` | Input vocabulary and `#defined` directives |
-| `guess.lp` | Guesses and merge-candidate domain restriction |
-| `rules.lp` | Forward-reasoning rules (thunks, derived facts, ctor/dtor, inheritance, class computation) |
-| `insanity.lp` | Sanity checks (integrity constraints) |
-| `optimize.lp` | Lexicographic optimization directives |
-| `output.lp` | `#show` directives |
-| `example.lp` | Valid 3-class example (expected: 3 separate classes) |
-| `invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
-| `inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |
-| `rtti_example.lp` | Same as inherit but with RTTI facts driving the derivation |
-| `multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
-| `inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
-| `virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
+| `src/facts.lp` | Input vocabulary and `#defined` directives |
+| `src/guess.lp` | Guesses and merge-candidate domain restriction |
+| `src/rules.lp` | Forward-reasoning rules (thunks, derived facts, ctor/dtor, inheritance, class computation) |
+| `src/insanity.lp` | Sanity checks (integrity constraints) |
+| `src/optimize.lp` | Lexicographic optimization directives |
+| `src/output.lp` | `#show` directives |
+| `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
+| `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
+| `examples/inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |
+| `examples/rtti_example.lp` | Same as inherit but with RTTI facts driving the derivation |
+| `examples/multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
+| `examples/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
+| `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 
 ## Running
 
 ```sh
-clingo ooanalyzer.lp example.lp              # find optimal model
-clingo ooanalyzer.lp example.lp 0            # enumerate all models
-clingo ooanalyzer.lp invalid_example.lp      # should print UNSATISFIABLE
-clingo ooanalyzer.lp inherit_example.lp      # factDerivedClass(2300, 2100, 0)
-clingo ooanalyzer.lp rtti_example.lp         # same but RTTI-driven, fewer models
-clingo ooanalyzer.lp multi_inherit_example.lp  # C : A(0), B(8)
-clingo ooanalyzer.lp inherited_entry_example.lp  # derived inherits un-overridden entry
-clingo ooanalyzer.lp virtual_base_example.lp     # Derived : virtual Base via VBTable
+clingo ooanalyzer.lp examples/example.lp              # find optimal model
+clingo ooanalyzer.lp examples/example.lp 0            # enumerate all models
+clingo ooanalyzer.lp examples/invalid_example.lp      # should print UNSATISFIABLE
+clingo ooanalyzer.lp examples/inherit_example.lp      # factDerivedClass(2300, 2100, 0)
+clingo ooanalyzer.lp examples/rtti_example.lp         # same but RTTI-driven, fewer models
+clingo ooanalyzer.lp examples/multi_inherit_example.lp  # C : A(0), B(8)
+clingo ooanalyzer.lp examples/inherited_entry_example.lp  # derived inherits un-overridden entry
+clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
 ```
 
 Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.

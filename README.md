@@ -12,9 +12,9 @@ thin entry point that includes them in order.
 ## Quick Start
 
 ```sh
-clingo ooanalyzer.lp example.lp          # find optimal model
-clingo ooanalyzer.lp example.lp 0        # enumerate all models
-clingo ooanalyzer.lp invalid_example.lp  # UNSATISFIABLE (contradictory facts)
+clingo ooanalyzer.lp examples/example.lp          # find optimal model
+clingo ooanalyzer.lp examples/example.lp 0        # enumerate all models
+clingo ooanalyzer.lp examples/invalid_example.lp  # UNSATISFIABLE (contradictory facts)
 ```
 
 ## Files
@@ -22,19 +22,19 @@ clingo ooanalyzer.lp invalid_example.lp  # UNSATISFIABLE (contradictory facts)
 | File | Purpose |
 |---|---|
 | [`ooanalyzer.lp`](ooanalyzer.lp) | Entry point: `#include`s the modules below |
-| [`facts.lp`](facts.lp) | Input vocabulary and `#defined` directives |
-| [`guess.lp`](guess.lp) | Guesses (`{ factVFTable }`, `{ mergeClasses }`, etc.) and merge-candidate domain restriction |
-| [`rules.lp`](rules.lp) | Forward-reasoning rules: thunk resolution, derived facts, ctor/dtor identification, inheritance, merges, class computation |
-| [`insanity.lp`](insanity.lp) | Sanity checks (integrity constraints) |
-| [`optimize.lp`](optimize.lp) | Lexicographic optimization directives |
-| [`output.lp`](output.lp) | `#show` directives |
-| [`example.lp`](example.lp) | Valid 3-class example |
-| [`inherit_example.lp`](inherit_example.lp) | Single inheritance: Base + Derived |
-| [`multi_inherit_example.lp`](multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |
-| [`rtti_example.lp`](rtti_example.lp) | RTTI facts drive the derivation |
-| [`virtual_base_example.lp`](virtual_base_example.lp) | Virtual inheritance via VBTable |
-| [`inherited_entry_example.lp`](inherited_entry_example.lp) | Derived inherits an un-overridden virtual method |
-| [`invalid_example.lp`](invalid_example.lp) | UNSAT demo: contradictory facts |
+| [`src/facts.lp`](src/facts.lp) | Input vocabulary and `#defined` directives |
+| [`src/guess.lp`](src/guess.lp) | Guesses (`{ factVFTable }`, `{ mergeClasses }`, etc.) and merge-candidate domain restriction |
+| [`src/rules.lp`](src/rules.lp) | Forward-reasoning rules: thunk resolution, derived facts, ctor/dtor identification, inheritance, merges, class computation |
+| [`src/insanity.lp`](src/insanity.lp) | Sanity checks (integrity constraints) |
+| [`src/optimize.lp`](src/optimize.lp) | Lexicographic optimization directives |
+| [`src/output.lp`](src/output.lp) | `#show` directives |
+| [`examples/example.lp`](examples/example.lp) | Valid 3-class example |
+| [`examples/inherit_example.lp`](examples/inherit_example.lp) | Single inheritance: Base + Derived |
+| [`examples/multi_inherit_example.lp`](examples/multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |
+| [`examples/rtti_example.lp`](examples/rtti_example.lp) | RTTI facts drive the derivation |
+| [`examples/virtual_base_example.lp`](examples/virtual_base_example.lp) | Virtual inheritance via VBTable |
+| [`examples/inherited_entry_example.lp`](examples/inherited_entry_example.lp) | Derived inherits an un-overridden virtual method |
+| [`examples/invalid_example.lp`](examples/invalid_example.lp) | UNSAT demo: contradictory facts |
 | [`AGENTS.md`](AGENTS.md) | Detailed architecture and correspondence to OOAnalyzer |
 
 ## Background

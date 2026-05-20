@@ -2,9 +2,9 @@
 % Recovers C++ class structure from binary analysis facts.
 % See AGENTS.md for architecture details.
 
-#include "facts.lp".
-#include "guess.lp".
-#include "rules.lp".
-#include "insanity.lp".
-#include "optimize.lp".
-#include "output.lp".
+#include "src/facts.lp".
+#include "src/guess.lp".
+#include "src/rules.lp".
+#include "src/insanity.lp".
+#include "src/optimize.lp".
+#include "src/output.lp".
