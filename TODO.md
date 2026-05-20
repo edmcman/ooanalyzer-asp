@@ -14,8 +14,8 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 ### 1.1 Destructor & constructor negation
 | Predicate(s) | Source | Description | Priority |
 |---|---|---|---|
-| `factNOTRealDestructor` / `reasonNOTRealDestructor_A..J` | `rules.pl` | Conclude an address is NOT a real destructor | Medium |
-| `factNOTDeletingDestructor` / `reasonNOTDeletingDestructor_A..I` | `rules.pl` | Conclude an address is NOT a deleting destructor | Medium |
+| `reasonNOTRealDestructor_A..J` | `rules.pl` | Full 10-variant negation heuristics. Basic versions (`factNOTRealDestructor`) implemented: constructors and deleting destructors cannot be real destructors; non-`possibleDestructor` methods excluded. | Medium |
+| `reasonNOTDeletingDestructor_A..I` | `rules.pl` | Full 9-variant negation heuristics. Basic versions (`factNOTDeletingDestructor`) implemented: constructors and real destructors cannot be deleting destructors. | Medium |
 | `reasonNOTConstructor_A/H/I/J` | `rules.pl` | Additional negation heuristics for constructors | Medium |
 | `guessConstructor4` / `factConstructor4` | `guess.pl` | Additional constructor guessing variants | Low |
 | `reasonDestructorParams` | `rules.pl` | Parameter-based destructor identification | Low |
@@ -23,8 +23,8 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 ### 1.2 Method classification layer
 | Predicate(s) | Source | Description | Priority |
 |---|---|---|---|
-| `factMethod` / `factNOTMethod` | `setup.pl`, `rules.pl` | Explicitly conclude / negate that an address is an OO method. Clingo currently treats vftable writers, entries, and symbol annotations as methods implicitly. | **High** |
-| `reasonMethod` / `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods (calling convention, clusters, etc.) | **High** |
+| `factMethod` | `setup.pl`, `rules.pl` | Derives `factMethod(M)` from vftable entries/writers, constructors/destructors, symbols, and call targets (guarded by `possibleMethod`). Implemented; `factNOTMethod` is not. | **High** |
+| `reasonMethod` / `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods (calling convention, clusters, etc.). `possibleMethod` covers the basic candidates. | **High** |
 
 ### 1.3 Class size reasoning
 | Predicate(s) | Source | Description | Priority |
@@ -156,6 +156,8 @@ These are encoding artifacts required by ASP grounding / solving and do not corr
 | `inheritedVftableEntry/3` | `src/rules.lp` | Detects base-class slots reused in a derived vftable so the merge rule can skip them. Prolog handles this implicitly via `reasonVFTableSizeGTE_B` / `reasonVFTableSizeLTE_B` and union-find. |
 | Choice rules `{ }` + integrity constraints `:-` | `src/guess.lp`, `src/insanity.lp` | The "guess/constraint/optimize" skeleton is the ASP equivalent of OOAnalyzer's forward reasoning + chronological backtracking. |
 | `#maximize` lexicographic optimization | `src/optimize.lp` | OOAnalyzer uses a binary-search guessing loop (`tryBinarySearch`). Clingo delegates search to the solver with `@2/@1/@0` priority levels. |
+| No transitive `sameClass` constraint for `insanityContradictoryMerges` | `src/insanity.lp` | Prolog's `insanityContradictoryMerges` only checks direct `reasonMergeClasses` + `reasonNOTMergeClasses` conflicts. A transitive `sameClass` constraint (`:- objectInObject(M1, M2, _), sameClass(M1, M2).`) is strictly stronger and caused UNSAT on real `.facts` files. |
+| `factRealDestructor` as ASP choice rule | `src/rules.lp` | Prolog's `guessRealDestructor` only considers methods called by a confirmed deleting destructor. The Clingo prototype encodes this directly as `{ factRealDestructor(M) } :- callTarget(D, M), factDeletingDestructor(D), ...` rather than guessing all `noCallsAfter` methods. |
 
 ---
 

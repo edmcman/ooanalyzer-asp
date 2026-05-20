@@ -28,6 +28,8 @@ clingo ooanalyzer.lp examples/invalid_example.lp  # UNSATISFIABLE (contradictory
 | [`src/insanity.lp`](src/insanity.lp) | Sanity checks (integrity constraints) |
 | [`src/optimize.lp`](src/optimize.lp) | Lexicographic optimization directives |
 | [`src/output.lp`](src/output.lp) | `#show` directives |
+| [`src/initial.lp`](src/initial.lp) | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
+| [`facts2clingo.py`](facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | [`examples/example.lp`](examples/example.lp) | Valid 3-class example |
 | [`examples/inherit_example.lp`](examples/inherit_example.lp) | Single inheritance: Base + Derived |
 | [`examples/multi_inherit_example.lp`](examples/multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |
@@ -42,7 +44,7 @@ clingo ooanalyzer.lp examples/invalid_example.lp  # UNSATISFIABLE (contradictory
 The original OOAnalyzer is a ~10,000 line SWI-Prolog system in the Pharos
 toolchain. This prototype captures the core ideas -- vftable analysis, constructor
 heuristics, inheritance detection, RTTI integration, and VBTable support -- in
-~350 lines of Clingo with declarative guessing and optimization.
+~700 lines of Clingo with declarative guessing and optimization.
 
 See [AGENTS.md](AGENTS.md) for the full architecture, input fact vocabulary,
 correspondence table, and known limitations.

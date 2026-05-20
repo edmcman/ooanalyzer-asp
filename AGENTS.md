@@ -4,7 +4,7 @@ Prototype of OOAnalyzer in Clingo (Answer Set Programming). Recovers C++ class
 structure (classes = sets of methods) from binary analysis facts.
 
 Reference implementation: `pharos/share/prolog/oorules/` (SWI-Prolog, ~10k lines).
-This prototype captures the core ideas in ~300 lines of Clingo.
+This prototype captures the core ideas in ~700 lines of Clingo.
 
 ## Files
 
@@ -17,7 +17,7 @@ This prototype captures the core ideas in ~300 lines of Clingo.
 | `src/insanity.lp` | Sanity checks (integrity constraints) |
 | `src/optimize.lp` | Lexicographic optimization directives |
 | `src/output.lp` | `#show` directives |
-| `src/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer facts |
+| `src/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
 | `facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
 | `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
@@ -44,9 +44,13 @@ clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Ba
 ### From OOAnalyzer .facts files
 
 ```sh
-python facts2clingo.py pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug/ooex0.facts > /tmp/ooex0.lp
-clingo ooanalyzer.lp /tmp/ooex0.lp
+python facts2clingo.py pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
+clingo ooanalyzer.lp /tmp/oo.lp
 ```
+
+`oo.facts` is the complete export with vftable writes, RTTI, symbols, and
+`initialMemory`. `ooex0.facts` is an early-stage export that lacks these and
+is not suitable for the prototype.
 
 Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.
 
@@ -77,6 +81,9 @@ The prototype accepts **two vocabularies**:
 | `rTTIInheritsFrom(DerivedTDA, BaseTDA, Off)` | DerivedTDA has a non-virtual base BaseTDA at byte Off |
 | `possibleVBTableWrite(M, Off, V)` | Method M writes VBTable V at object offset Off |
 | `possibleVBTableEntry(V, Off, Value)` | Entry Value at offset Off in VBTable V |
+| `possibleMethod(M)` | At least some evidence that M is a function |
+| `possibleConstructor(M)` | Candidate constructor evidence for M |
+| `possibleDestructor(M)` | Candidate destructor evidence for M |
 
 **(B) Full-arity OOAnalyzer .facts predicates** (from binary analysis):
 
@@ -101,6 +108,9 @@ The prototype accepts **two vocabularies**:
 | `noCallsBefore` | 1 | Same as simplified |
 | `noCallsAfter` | 1 | Same as simplified |
 | `uninitializedReads` | 1 | Same as simplified |
+| `possibleMethod` | 1 | Derived in `initial.lp` from `callingConvention`, `thunk`, `noCallsBefore`, `noCallsAfter`, `returnsSelf`, `purecall`, `callTarget` |
+| `possibleConstructor` | 1 | Derived in `initial.lp` from `returnsSelf+noCallsBefore` or `symbolProperty(constructor)` |
+| `possibleDestructor` | 1 | Derived in `initial.lp` from `noCallsAfter` or symbol properties |
 
 See `src/initial.lp` for the exact derivation rules.
 
@@ -118,7 +128,8 @@ See `src/initial.lp` for the exact derivation rules.
 `factVFTableEntry(V, Off, M)` gives the actual method at each confirmed vftable slot.
 
 **Rules** derive `factMethod`, `factConstructor`, `factNOTConstructor`,
-`factRealDestructor`, `factDeletingDestructor`, `factVFTableWrite`,
+`factRealDestructor`, `factDeletingDestructor`, `factNOTRealDestructor`,
+`factNOTDeletingDestructor`, `factVFTableWrite`,
 `factVFTableOverwrite`, `factVFTableEntry`, `factVFTableBelongsToClass`,
 `objectInObject`, `factDerivedClass`, `factEmbeddedObject`, `factClassHasNoBase`,
 `factClassCallsMethod`, `reasonMergeClasses`, `reasonNOTMergeClasses`,
@@ -130,6 +141,16 @@ and the equivalence-class predicates (`sameClass`, `classRep`, `find`).
 - `factRealDestructor(M)` or `factDeletingDestructor(M)` -> not a constructor
 - `factVFTableEntry(_, _, M)` -> virtual methods cannot be constructors
 - `uninitializedReads(M)` or `callsDelete(M)` -> not a constructor
+
+**factRealDestructor** -- the Prolog `guessRealDestructor` only fires when a confirmed
+`factDeletingDestructor` calls the method. The Clingo prototype matches this by using
+an ASP choice rule `{ factRealDestructor(M) }` guarded by `callTarget(D, M),
+factDeletingDestructor(D)`. Hard-deriving `factRealDestructor` from `noCallsAfter` alone
+produces too many candidates and causes UNSAT on real binaries.
+
+**factNOTRealDestructor / factNOTDeletingDestructor** -- basic versions mirroring
+`reasonNOTRealDestructor_B/C/D`: constructors and deleting destructors are excluded
+from being real destructors, and methods that are not `possibleDestructor` are excluded.
 
 **objectInObject** -- when a constructor calls another at `this+Off`, their classes
 are distinct. The solver guesses `factDerivedClass` vs. `factEmbeddedObject`. The
@@ -190,7 +211,8 @@ mirrors Prolog's `find/2` (union-find lookup).
 - A vftable cannot be owned by two different classes at the same object offset
 - Two constructors writing *different* vftables at the same offset -> different classes
 - No circular inheritance
-- `objectInObject` pairs must be in distinct classes
+- `objectInObject` pairs must not be directly merged (enforced via
+  `reasonNOTMergeClasses`, matching Prolog's direct-conflict check only)
 - Derived classes cannot be `factClassHasNoBase`
 - Derived vftable size must be >= base vftable size (`factVFTableSizeGTE`)
 - A constructor writing a VBTable cannot also embed the same base (virtual
@@ -209,8 +231,13 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `factVFTableWrite` / `factVFTableEntry` | `factVFTableWrite`, `factVFTableEntry` (thunk-resolved) |
 | `factVFTableOverwrite` | `factVFTableOverwrite` (from `possibleVFTableOverwrite`) |
 | `reasonVFTableBelongsToClass` | `factVFTableBelongsToClass(V, Off, C)` |
-| `factConstructor` / `factRealDestructor` | `factConstructor(M)` / `factRealDestructor(M)` |
+| `factConstructor` | `factConstructor(M)` (guessed; hard from symbols) |
+| `guessRealDestructor` | `{ factRealDestructor(M) }` ASP choice rule (guessed when called by deleting destructor) |
+| `guessDeletingDestructor` | `factDeletingDestructor(M)` (guessed from `callsDelete`; hard from symbols) |
 | `factNOTConstructor` / `reasonNOTConstructor_B/C/D` | `factNOTConstructor(M)` |
+| `reasonNOTRealDestructor_B/C/D` | `factNOTRealDestructor(M)` (basic versions) |
+| `reasonNOTDeletingDestructor` | `factNOTDeletingDestructor(M)` (basic versions) |
+| `possibleMethod` / `possibleConstructor` / `possibleDestructor` | `possibleMethod(M)`, `possibleConstructor(M)`, `possibleDestructor(M)` (from `initial.pl`) |
 | `factClassHasNoBase` / `guessClassHasNoBase` | `factClassHasNoBase(C)` (guessed; hard from RTTI) |
 | `factClassCallsMethod` | `factClassCallsMethod(C, M)` |
 | `reasonMergeClasses_C` | `reasonMergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
