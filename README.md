@@ -5,7 +5,7 @@ structure from binary analysis facts: methods are grouped into classes,
 constructors/destructors are identified, and inheritance relationships are
 inferred.
 
-**The core logic is in [`ooanalyzer.lp`](ooanalyzer.lp)** — ~350 lines of guesses,
+The core logic is in [ooanalyzer.lp](ooanalyzer.lp) — ~350 lines of guesses,
 derived facts, sanity checks, and lexicographic optimization. Everything else is
 input examples or reference documentation.
 
