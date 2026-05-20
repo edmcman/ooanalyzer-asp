@@ -70,6 +70,13 @@
 #defined rTTIInheritsFrom/3.
 #defined possibleVBTableWrite/3.
 #defined possibleVBTableEntry/3.
+#defined possibleMethod/1.
+#defined possibleConstructor/1.
+#defined possibleDestructor/1.
+#defined methodCallAtOffset/4.
+#defined validMethodCallAtOffset/4.
+#defined thisPtrParam/2.
+#defined genericThisPtrABIParam/1.
 
 % ----------------------------------------------------------------
 % Full-arity OOAnalyzer initial facts (from .facts files)

@@ -30,8 +30,12 @@
 % insanityObjectCycle: circular inheritance is impossible
 :- factDerivedClass(A, B, _), factDerivedClass(B, A, _).                  % Counterpart: insanityObjectCycle (insanity.pl:162)
 
-% objectInObject pairs must be in distinct classes
-:- objectInObject(M1, M2, _), sameClass(M1, M2).                        % Counterpart: reasonNOTMergeClasses_G (insanity.pl:3177) / insanityContradictoryMerges
+% Prolog's insanityContradictoryMerges only checks direct merge conflicts
+% (reasonMergeClasses + reasonNOTMergeClasses), not transitive sameClass.
+% The direct conflict is already enforced by:
+%   :- reasonNOTMergeClasses(M1, M2), mergeClasses(M1, M2).
+% in rules.lp.  Do NOT add a transitive sameClass constraint here --
+% it is stronger than Prolog and causes UNSAT on real .facts files.
 
 % A derived vftable must be at least as large as the base vftable it overwrites.
 :- factVFTableOverwrite(_, _, Vbase, Vderived),                          % Counterpart: insanityBaseVFTableLarger (insanity.pl:196)

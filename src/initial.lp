@@ -24,9 +24,17 @@ possibleVBTableWrite(M, Off, V) :- possibleVBTableWrite(_, M, _, Off, _, V).
 % ----------------------------------------------------------------
 vftableWriteAtAddress(Address) :- possibleVFTableWrite(_, _, _, _, _, Address).
 
+% Base case 1: from confirmed VFTable writes.
 possibleVFTableEntry(VFTable, 0, Entry) :-
-    initialMemory(VFTable, Entry),
-    not vftableWriteAtAddress(VFTable).
+    possibleVFTableWrite(_, _, _, _, _, VFTable),
+    initialMemory(VFTable, Entry).
+
+% Base case 2: from RTTI Complete Object Locator.
+possibleVFTableEntry(VFTable, 0, Entry) :-
+    rTTICompleteObjectLocator(Pointer, _, _, _, _, _),
+    ptrSize(PtrSize),
+    VFTable = Pointer + PtrSize,
+    initialMemory(VFTable, Entry).
 
 possibleVFTableEntry(VFTable, NewOffset, Entry) :-
     possibleVFTableEntry(VFTable, Offset, _),
@@ -45,8 +53,8 @@ possibleVFTableEntry(VFTable, NewOffset, Entry) :-
 vbtableWriteAtAddress(Address) :- possibleVBTableWrite(_, _, _, _, _, Address).
 
 possibleVBTableEntry(VBTable, 0, Value) :-
-    initialMemory(VBTable, Value),
-    not vbtableWriteAtAddress(VBTable).
+    possibleVBTableWrite(_, _, _, _, _, VBTable),
+    initialMemory(VBTable, Value).
 
 possibleVBTableEntry(VBTable, NewOffset, Value) :-
     possibleVBTableEntry(VBTable, Offset, _),
@@ -113,13 +121,81 @@ rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) :-
     DerivedTDA != BaseTDA.
 
 % ----------------------------------------------------------------
-% callAtOffset: derived from callTarget + thisPtrOffset + thunk.
-% Counterpart: methodCallAtOffset (initial.pl:175-191)
-%
-% NOTE: This is a simplified version. Full OOAnalyzer also uses
-% thisPtrDefinition/4 and funcParameter/callParameter matching.
+% possibleMethod: at least some evidence that Address is a function.
+% Counterpart: initial.pl:78-85
 % ----------------------------------------------------------------
-callAtOffset(Caller, Callee, Off) :-
-    callTarget(_, Caller, Thunk),
+possibleMethod(Address) :- callingConvention(Address, _).
+possibleMethod(Address) :- thunk(Address, _).
+possibleMethod(Address) :- noCallsAfter(Address).
+possibleMethod(Address) :- noCallsBefore(Address).
+possibleMethod(Address) :- returnsSelf(Address).
+possibleMethod(Address) :- purecall(Address).
+possibleMethod(Address) :- callTarget(_, Address, _).
+
+% ----------------------------------------------------------------
+% possibleConstructor / possibleDestructor
+% Counterpart: initial.pl:20-29
+% ----------------------------------------------------------------
+possibleConstructor(M) :- returnsSelf(M), noCallsBefore(M).
+possibleConstructor(M) :- symbolProperty(M, constructor).
+
+possibleDestructor(M) :- noCallsAfter(M).
+possibleDestructor(M) :- symbolProperty(M, realDestructor).
+possibleDestructor(M) :- symbolProperty(M, deletingDestructor).
+
+% ----------------------------------------------------------------
+% thisPtrParam: which parameter carries the this-pointer.
+% Counterpart: util.pl:140-160
+% ----------------------------------------------------------------
+thisPtrParam(Function, ecx) :- callingConvention(Function, "__thiscall").
+thisPtrParam(Function, rcx) :- callingConvention(Function, "__x64call").
+thisPtrParam(Function, 0)   :- callingConvention(Function, "__sysv32call").
+thisPtrParam(Function, rdi) :- callingConvention(Function, "__sysv64call").
+thisPtrParam(Function, Param) :-
+    callingConvention(Function, "genericthisptr"),
+    genericThisPtrABIParam(Param).
+
+genericThisPtrABIParam(ecx) :- fileInfo(_, _, "MSVC_32", _).
+genericThisPtrABIParam(ecx) :- fileInfo(_, _, "mSVC_32", _).
+genericThisPtrABIParam(rcx) :- fileInfo(_, _, "MSVC_64", _).
+genericThisPtrABIParam(rcx) :- fileInfo(_, _, "mSVC_64", _).
+genericThisPtrABIParam(rdi) :- fileInfo(_, _, "SYSV_64", _).
+genericThisPtrABIParam(rdi) :- fileInfo(_, _, "sYSV_64", _).
+genericThisPtrABIParam(0)   :- fileInfo(_, _, "SYSV_32", _).
+genericThisPtrABIParam(0)   :- fileInfo(_, _, "sYSV_32", _).
+
+% ----------------------------------------------------------------
+% thisParamFuncParameter / thisParamCallParameter
+% Counterpart: util.pl:181-192
+% ----------------------------------------------------------------
+thisParamFuncParameter(Function, ThisPtr) :-
+    thisPtrParam(Function, Param),
+    funcParameter(Function, Param, ThisPtr).
+
+thisParamCallParameter(Insn, CallerFunc, Callee, ThisPtr) :-
+    thisPtrParam(Callee, Param),
+    callParameter(Insn, CallerFunc, Param, ThisPtr).
+
+% ----------------------------------------------------------------
+% methodCallAtOffset / validMethodCallAtOffset / callAtOffset
+% Counterpart: methodCallAtOffset (initial.pl:175-191)
+% ----------------------------------------------------------------
+methodCallAtOffset(Insn, Caller, Callee, Offset) :-
+    thisParamFuncParameter(Caller, CallerThisPtr),
+    callTarget(Insn, Caller, Thunk),
     dethunk(Thunk, Callee),
-    thisPtrOffset(_, Off, _).
+    thisParamCallParameter(Insn, Caller, Callee, CalleeThisPtr),
+    thisPtrOffset(CallerThisPtr, Offset, CalleeThisPtr).
+
+methodCallAtOffset(Insn, Caller, Callee, 0) :-
+    thisParamFuncParameter(Caller, ThisPtr),
+    callTarget(Insn, Caller, Thunk),
+    dethunk(Thunk, Callee),
+    thisParamCallParameter(Insn, Caller, Callee, ThisPtr).
+
+validMethodCallAtOffset(Insn, Caller, Callee, Offset) :-
+    methodCallAtOffset(Insn, Caller, Callee, Offset),
+    possibleMethod(Callee),
+    Offset < 0x100000.
+
+callAtOffset(Caller, Callee, Off) :- validMethodCallAtOffset(_, Caller, Callee, Off).

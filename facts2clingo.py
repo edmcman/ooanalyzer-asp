@@ -27,9 +27,6 @@ def fix_quoted_string(match: re.Match) -> str:
     """Convert single-quoted Prolog strings to double-quoted Clingo strings."""
     q = match.group(0)
     inner = q[1:-1]
-    # Lowercase first letter if uppercase (Clingo would treat it as a variable)
-    if inner and inner[0].isupper():
-        inner = inner[0].lower() + inner[1:]
     return f'"{inner}"'
 
 

@@ -49,12 +49,12 @@ factVBTableEntry(V, Off, Value) :-                                    % Counterp
 
 factMethod(M) :- factVFTableEntry(_, _, M), not purecall(M).           % Counterpart: reasonMethod_* (A-P, rules.pl:28)
 factMethod(M) :- factVFTableWrite(M, _, _).                           % Counterpart: reasonMethod_*
-factMethod(M) :- factConstructor(M).                                  % Counterpart: reasonMethod_*
-factMethod(M) :- factRealDestructor(M).                               % Counterpart: reasonMethod_*
-factMethod(M) :- factDeletingDestructor(M).                           % Counterpart: reasonMethod_*
+factMethod(M) :- factConstructor(M), possibleMethod(M).              % Counterpart: reasonMethod_*
+factMethod(M) :- factRealDestructor(M), possibleMethod(M).             % Counterpart: reasonMethod_*
+factMethod(M) :- factDeletingDestructor(M), possibleMethod(M).         % Counterpart: reasonMethod_*
 factMethod(M) :- symbolClass(M, _).                                    % Counterpart: reasonMethod_*
-factMethod(M) :- symbolProperty(M, _).                                % Counterpart: reasonMethod_*
-factMethod(Callee) :- callTarget(Caller, Callee), factMethod(Caller).  % Counterpart: reasonMethod_*
+factMethod(M) :- symbolProperty(M, _).                                 % Counterpart: reasonMethod_*
+factMethod(Callee) :- callTarget(Caller, Callee), factMethod(Caller), possibleMethod(Callee).  % Counterpart: reasonMethod_*
 
 % ============================================================
 % CONSTRUCTOR / DESTRUCTOR CLASSIFICATION
@@ -69,14 +69,24 @@ factNOTConstructor(M) :- uninitializedReads(M).                       % Counterp
 factNOTConstructor(M) :- callsDelete(M).                              % Counterpart: reasonNOTConstructor_G (rules.pl:...)
 
 factConstructor(M) :- symbolProperty(M, constructor).                  % Counterpart: guessConstructor1 (guess.pl:574)
-factConstructor(M) :- returnsSelf(M), noCallsBefore(M), not factNOTConstructor(M).  % Counterpart: guessConstructor2 (guess.pl:592)
-factConstructor(M) :- factVFTableWrite(M, 0, _), not factNOTConstructor(M).         % Counterpart: guessConstructor3 (guess.pl:612)
+factConstructor(M) :- returnsSelf(M), noCallsBefore(M), not factNOTConstructor(M), possibleConstructor(M).  % Counterpart: guessConstructor2 (guess.pl:592)
+factConstructor(M) :- factVFTableWrite(M, 0, _), not factNOTConstructor(M), possibleConstructor(M).         % Counterpart: guessConstructor3 (guess.pl:612)
 
 factRealDestructor(M) :- symbolProperty(M, realDestructor).          % Counterpart: guessRealDestructor (guess.pl:1395)
-factRealDestructor(M) :- noCallsAfter(M), not factConstructor(M), not callsDelete(M).  % Counterpart: guessRealDestructor
+{ factRealDestructor(M) } :- noCallsAfter(M), not factConstructor(M), not callsDelete(M), possibleDestructor(M), possibleMethod(M),
+                               callTarget(D, M), factDeletingDestructor(D).
 
 factDeletingDestructor(M) :- symbolProperty(M, deletingDestructor).    % Counterpart: guessDeletingDestructor (guess.pl:1504)
-factDeletingDestructor(M) :- callsDelete(M), not factConstructor(M).   % Counterpart: guessDeletingDestructor
+factDeletingDestructor(M) :- callsDelete(M), not factConstructor(M), possibleMethod(M).   % Counterpart: guessDeletingDestructor
+
+% factNOTRealDestructor / factNOTDeletingDestructor
+% Counterpart: reasonNOTRealDestructor_B/C/D (rules.pl:430-440)
+factNOTRealDestructor(M) :- factConstructor(M).
+factNOTRealDestructor(M) :- factDeletingDestructor(M).
+factNOTRealDestructor(M) :- factMethod(M), not possibleDestructor(M).
+
+factNOTDeletingDestructor(M) :- factConstructor(M).
+factNOTDeletingDestructor(M) :- factRealDestructor(M).
 
 % ============================================================
 % INHERITANCE / EMBEDDING DETECTION
