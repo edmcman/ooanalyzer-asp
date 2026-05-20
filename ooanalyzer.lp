@@ -1,284 +1,300 @@
 % OOAnalyzer prototype in Clingo
-% Recovers C++ class structure (classes as sets of methods) from binary analysis facts.
+% Recovers C++ class structure (classes = sets of methods) from binary analysis facts.
 %
 % Input facts (provided in a separate file):
-%   poss_vftable_write(M, Off, V)        -- M writes vftable V at object offset Off
-%   poss_vftable_entry(V, Off, E)        -- entry E at offset Off in vftable V (may be thunk)
-%   poss_vftable_overwrite(M, Off, V1, V2) -- M overwrites V1 with V2 at Off (ctor sequence)
-%   returns_self(M)          -- M returns the this pointer (ECX → EAX)
-%   no_calls_before(M)       -- no OO calls precede M (constructor hint)
-%   no_calls_after(M)        -- no OO calls follow M (destructor hint)
-%   calls_delete(M)          -- M calls delete/free on the this pointer
-%   uninitialized_reads(M)   -- M reads members before initializing them (NOT-ctor signal)
-%   call_target(Caller, Callee) -- Callee is directly called by Caller
-%   call_at_offset(Caller, Callee, Off) -- Callee is called by Caller passing this+Off
-%   thunk(Thunk, Target)     -- Thunk is a JMP-only stub; Target is the real function
-%   purecall(M)              -- M is a pure-virtual stub (not a real method)
-%   symbol_class(M, Class)   -- debug symbol: M belongs to Class
-%   symbol_property(M, Prop) -- Prop ∈ {constructor, realDestructor, deletingDestructor}
-%   rtti_complete_object_locator(V, TDA) -- COL at V-8 links vftable V to type descriptor TDA
-%   rtti_type_descriptor(TDA, Name)      -- TDA has mangled type name Name
-%   rtti_inherits_from(DerivedTDA, BaseTDA, Offset) -- non-virtual base at byte Offset
+%   possibleVFTableWrite(M, Off, V)          -- M writes vftable V at object offset Off
+%   possibleVFTableEntry(V, Off, E)          -- entry E at offset Off in vftable V (may be thunk)
+%   possibleVFTableOverwrite(M, Off, V1, V2) -- M overwrites V1 with V2 at Off (ctor sequence)
+%   returnsSelf(M)          -- M returns the this pointer (ECX → EAX)
+%   noCallsBefore(M)        -- no OO calls precede M (constructor hint)
+%   noCallsAfter(M)         -- no OO calls follow M (destructor hint)
+%   callsDelete(M)          -- M calls delete/free on the this pointer
+%   uninitializedReads(M)   -- M reads members before initializing them (NOT-ctor signal)
+%   callTarget(Caller, Callee) -- Callee is directly called by Caller
+%   callAtOffset(Caller, Callee, Off) -- Callee is called by Caller passing this+Off
+%   thunk(Thunk, Target)    -- Thunk is a JMP-only stub; Target is the real function
+%   purecall(M)             -- M is a pure-virtual stub (not a real method)
+%   symbolClass(M, Class)   -- debug symbol: M belongs to Class
+%   symbolProperty(M, Prop) -- Prop ∈ {constructor, realDestructor, deletingDestructor}
+%   rTTICompleteObjectLocator(V, TDA) -- COL at V-8 links vftable V to type descriptor TDA
+%   rTTITypeDescriptor(TDA, Name)     -- TDA has mangled type name Name
+%   rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) -- non-virtual base at byte Offset
 
-#defined call_target/2.
-#defined calls_delete/1.
-#defined returns_self/1.
-#defined no_calls_before/1.
-#defined no_calls_after/1.
-#defined uninitialized_reads/1.
-#defined symbol_class/2.
-#defined symbol_property/2.
-#defined poss_vftable_entry/3.
-#defined poss_vftable_write/3.
-#defined poss_vftable_overwrite/4.
+#defined callTarget/2.
+#defined callsDelete/1.
+#defined returnsSelf/1.
+#defined noCallsBefore/1.
+#defined noCallsAfter/1.
+#defined uninitializedReads/1.
+#defined symbolClass/2.
+#defined symbolProperty/2.
+#defined possibleVFTableEntry/3.
+#defined possibleVFTableWrite/3.
+#defined possibleVFTableOverwrite/4.
 #defined thunk/2.
 #defined purecall/1.
-#defined call_at_offset/3.
-#defined rtti_complete_object_locator/2.
-#defined rtti_type_descriptor/2.
-#defined rtti_inherits_from/3.
+#defined callAtOffset/3.
+#defined rTTICompleteObjectLocator/2.
+#defined rTTITypeDescriptor/2.
+#defined rTTIInheritsFrom/3.
 
 % ============================================================
 % GUESSES
 % ============================================================
 
-{ vftable(V) } :- poss_vftable_write(_, _, V).
+{ factVFTable(V) } :- possibleVFTableWrite(_, _, V).
 % RTTI definitively confirms vftables — no guess needed for these.
-vftable(V) :- rtti_complete_object_locator(V, _).
+factVFTable(V) :- rTTICompleteObjectLocator(V, _).
 
-{ merge(M1, M2) } :- method(M1), method(M2), M1 < M2.
+{ mergeClasses(M1, M2) } :- factMethod(M1), factMethod(M2), M1 < M2.
 
 % Guess whether a constructor-calls-constructor relationship is inheritance or embedding.
-{ derived_class(Outer, Inner, Off) } :- ctor_calls_ctor(Outer, Inner, Off).
+{ factDerivedClass(Outer, Inner, Off) } :- objectInObject(Outer, Inner, Off).
 
 % Guess: does a class have no base class?
-{ class_has_no_base(C) } :- class_rep(C).
+{ factClassHasNoBase(C) } :- classRep(C).
 
 % ============================================================
 % THUNK RESOLUTION
 % ============================================================
 
 % Follow thunk chains to find the actual implementing method.
-% Two base cases: a non-thunk vftable entry, and a non-thunk thunk target.
-dethunk(E, E) :- poss_vftable_entry(_, _, E), not thunk(E, _).
+dethunk(E, E) :- possibleVFTableEntry(_, _, E), not thunk(E, _).
 dethunk(T, T) :- thunk(_, T), not thunk(T, _).
 dethunk(T, M) :- thunk(T, X), dethunk(X, M).
 
-% Effective vftable entry: actual method at each confirmed slot after thunk resolution.
-effective_entry(V, Off, M) :- poss_vftable_entry(V, Off, E), vftable(V), dethunk(E, M).
+% factVFTableEntry: actual method at each confirmed slot after thunk resolution.
+factVFTableEntry(V, Off, M) :- possibleVFTableEntry(V, Off, E), factVFTable(V), dethunk(E, M).
+
+% factVFTableSizeGTE: lower bound on vftable size in bytes (max offset + pointer size).
+factVFTableSizeGTE(V, Size) :-
+    factVFTable(V),
+    Size = #max { Off + 4 : factVFTableEntry(V, Off, _) }.
 
 % ============================================================
 % DERIVED FACTS: confirmed vftable writes and overwrites
 % ============================================================
 
-vftable_write(M, Off, V) :- poss_vftable_write(M, Off, V), vftable(V).
+factVFTableWrite(M, Off, V) :- possibleVFTableWrite(M, Off, V), factVFTable(V).
 
 % Both vftables must be confirmed for an overwrite to count.
-vftable_overwrite(M, Off, V1, V2) :-
-    poss_vftable_overwrite(M, Off, V1, V2), vftable(V1), vftable(V2).
+factVFTableOverwrite(M, Off, V1, V2) :-
+    possibleVFTableOverwrite(M, Off, V1, V2), factVFTable(V1), factVFTable(V2).
+
+% inheritedVftableEntry: a slot in a derived vftable that reuses the same method
+% pointer as the base vftable at the same offset.  Such entries belong to the base
+% class and must not be merged into the derived class via vftable-entry rules.
+inheritedVftableEntry(Vderived, Off, M) :-
+    factVFTableOverwrite(_, _, Vbase, Vderived),
+    factVFTableEntry(Vbase, Off, M),
+    factVFTableEntry(Vderived, Off, M).
 
 % ============================================================
 % METHOD IDENTIFICATION
 % ============================================================
 
-method(M) :- effective_entry(_, _, M), not purecall(M).
-method(M) :- vftable_write(M, _, _).
-method(M) :- constructor(M).
-method(M) :- real_destructor(M).
-method(M) :- deleting_destructor(M).
-method(M) :- symbol_class(M, _).
-method(M) :- symbol_property(M, _).
-method(Callee) :- call_target(Caller, Callee), method(Caller).
+factMethod(M) :- factVFTableEntry(_, _, M), not purecall(M).
+factMethod(M) :- factVFTableWrite(M, _, _).
+factMethod(M) :- factConstructor(M).
+factMethod(M) :- factRealDestructor(M).
+factMethod(M) :- factDeletingDestructor(M).
+factMethod(M) :- symbolClass(M, _).
+factMethod(M) :- symbolProperty(M, _).
+factMethod(Callee) :- callTarget(Caller, Callee), factMethod(Caller).
 
 % ============================================================
 % CONSTRUCTOR / DESTRUCTOR CLASSIFICATION
 % ============================================================
 
-% not_constructor: strong evidence M is NOT a constructor.
-% Mirrors reasonNOTConstructor_B (real dtor), _C (deleting dtor), _D (virtual = in vftable).
-not_constructor(M) :- real_destructor(M).
-not_constructor(M) :- deleting_destructor(M).
-not_constructor(M) :- effective_entry(_, _, M).  % virtual methods cannot be constructors
-not_constructor(M) :- uninitialized_reads(M).
-not_constructor(M) :- calls_delete(M).            % direct guard: delete-calling is not ctor
+% factNOTConstructor: strong evidence M is NOT a constructor.
+% Mirrors reasonNOTConstructor_B (real dtor), _C (deleting dtor), _D (in vftable).
+factNOTConstructor(M) :- factRealDestructor(M).
+factNOTConstructor(M) :- factDeletingDestructor(M).
+factNOTConstructor(M) :- factVFTableEntry(_, _, M).  % virtual methods cannot be constructors
+factNOTConstructor(M) :- uninitializedReads(M).
+factNOTConstructor(M) :- callsDelete(M).
 
-constructor(M) :- symbol_property(M, constructor).
-constructor(M) :- returns_self(M), no_calls_before(M), not not_constructor(M).
-constructor(M) :- vftable_write(M, 0, _), not not_constructor(M).
+factConstructor(M) :- symbolProperty(M, constructor).
+factConstructor(M) :- returnsSelf(M), noCallsBefore(M), not factNOTConstructor(M).
+factConstructor(M) :- factVFTableWrite(M, 0, _), not factNOTConstructor(M).
 
-real_destructor(M) :- symbol_property(M, realDestructor).
-real_destructor(M) :- no_calls_after(M), not constructor(M), not calls_delete(M).
+factRealDestructor(M) :- symbolProperty(M, realDestructor).
+factRealDestructor(M) :- noCallsAfter(M), not factConstructor(M), not callsDelete(M).
 
-deleting_destructor(M) :- symbol_property(M, deletingDestructor).
-deleting_destructor(M) :- calls_delete(M), not constructor(M).
+factDeletingDestructor(M) :- symbolProperty(M, deletingDestructor).
+factDeletingDestructor(M) :- callsDelete(M), not factConstructor(M).
 
 % ============================================================
 % INHERITANCE / EMBEDDING DETECTION
 % ============================================================
 
-% When a constructor calls another constructor at this+Off, the callee's class is
-% embedded in the caller's class at offset Off (reasonDerivedClass_B pattern).
-ctor_calls_ctor(Outer, Inner, Off) :-
-    constructor(Outer), constructor(Inner), Outer != Inner,
-    call_at_offset(Outer, Inner, Off), Off >= 0.
+% objectInObject: constructor Outer calls constructor Inner at this+Off.
+% Mirrors factObjectInObject / reasonDerivedClass_B pattern.
+objectInObject(Outer, Inner, Off) :-
+    factConstructor(Outer), factConstructor(Inner), Outer != Inner,
+    callAtOffset(Outer, Inner, Off), Off >= 0.
 
-% Hard derivation from vftable overwrite: when a constructor overwrites V1 with V2,
-% the method that installs V1 without overwriting is the base constructor,
-% and the overwriting method is the derived constructor.
-derived_class(Outer, Inner, 0) :-
-    vftable_overwrite(Outer, 0, V1, _),
-    vftable_write(Inner, 0, V1), not vftable_overwrite(Inner, 0, _, V1),
+% Hard derivation from vftable overwrite: the method that installs V1 without
+% overwriting is the base constructor; the overwriting method is derived.
+factDerivedClass(Outer, Inner, Off) :-
+    factVFTableOverwrite(Outer, Off, V1, _),
+    factVFTableWrite(Inner, 0, V1), not factVFTableOverwrite(Inner, 0, _, V1),
     Outer != Inner.
 
-% When ctor_calls_ctor holds but derived_class does not, it's an embedded member.
-embedded_object(Outer, Inner, Off) :-
-    ctor_calls_ctor(Outer, Inner, Off), not derived_class(Outer, Inner, Off).
+% When objectInObject holds but factDerivedClass does not, it's an embedded member.
+factEmbeddedObject(Outer, Inner, Off) :-
+    objectInObject(Outer, Inner, Off), not factDerivedClass(Outer, Inner, Off).
 
-% Hard derivation from RTTI: inheritance is authoritative when RTTI is present.
-% rtti_inherits_from(DerivedTDA, BaseTDA, Offset) with matching vftable writers.
-derived_class(Outer, Inner, Off) :-
-    rtti_complete_object_locator(V1, TDA1), rtti_complete_object_locator(V2, TDA2),
-    rtti_inherits_from(TDA1, TDA2, Off),
-    vftable_write(Outer, 0, V1), not vftable_overwrite(Outer, 0, _, V1),
-    vftable_write(Inner, 0, V2), not vftable_overwrite(Inner, 0, _, V2).
+% Hard derivation from RTTI (reasonDerivedClass_D): RTTI inheritance is authoritative.
+factDerivedClass(Outer, Inner, Off) :-
+    rTTICompleteObjectLocator(V1, TDA1), rTTICompleteObjectLocator(V2, TDA2),
+    rTTIInheritsFrom(TDA1, TDA2, Off),
+    factVFTableWrite(Outer, 0, V1), not factVFTableOverwrite(Outer, 0, _, V1),
+    factVFTableWrite(Inner, 0, V2), not factVFTableOverwrite(Inner, 0, _, V2).
 
 % ============================================================
 % CLASS → VFTABLE MAPPING
 % ============================================================
 
-% vftable_class(V, Off, C): vftable V is associated with class C at object offset Off.
-% Useful for inheritance reasoning and output. Mirrors reasonVFTableBelongsToClass.
-vftable_class(V, Off, C) :- vftable_write(M, Off, V), class_of(M, C).
+% factVFTableBelongsToClass(V, Off, C): vftable V belongs to class C at object offset Off.
+% Mirrors reasonVFTableBelongsToClass.
+factVFTableBelongsToClass(V, Off, C) :- factVFTableWrite(M, Off, V), find(M, C).
 
 % ============================================================
-% FORCED MERGES (strong evidence — must happen)
+% reasonMergeClasses — forced merges (must happen)
 % ============================================================
 
 % Multiple methods writing the SAME vftable at the same offset → same class
-forced_merge(M1, M2) :-
-    vftable_write(M1, Off, V), vftable_write(M2, Off, V), M1 < M2.
+reasonMergeClasses(M1, M2) :-
+    factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2.
 
-% Methods in a vftable belong to the class whose constructor writes it at offset 0
-forced_merge(M1, M2) :- vftable_write(M1, 0, V), effective_entry(V, _, M2), M1 < M2.
-forced_merge(M1, M2) :- vftable_write(M2, 0, V), effective_entry(V, _, M1), M1 < M2.
+% Methods in a vftable belong to the class whose constructor writes it.
+% Skip inherited entries — those belong to the base class.
+reasonMergeClasses(M1, M2) :-
+    factVFTableWrite(M1, _, V), factVFTableEntry(V, Off, M2),
+    not inheritedVftableEntry(V, Off, M2), M1 < M2.
+reasonMergeClasses(M1, M2) :-
+    factVFTableWrite(M2, _, V), factVFTableEntry(V, Off, M1),
+    not inheritedVftableEntry(V, Off, M1), M1 < M2.
 
-% Debug symbols resolve class membership directly
-forced_merge(M1, M2) :- symbol_class(M1, C), symbol_class(M2, C), M1 < M2.
+% Debug symbols resolve class membership directly (reasonMergeClasses_G)
+reasonMergeClasses(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.
 
-% reasonMergeClasses_E: two methods are both the inner (base) of the same derived class
-% at the same offset → they must be in the same class.
-forced_merge(B1, B2) :-
-    derived_class(_, B1, Off), derived_class(_, B2, Off), B1 < B2.
+% reasonMergeClasses_E: two methods both the inner (base) of the same derived at same offset
+reasonMergeClasses(B1, B2) :-
+    factDerivedClass(_, B1, Off), factDerivedClass(_, B2, Off), B1 < B2.
 
-% Deleting destructor calls real destructor → same class.
-forced_merge(M1, M2) :-
-    deleting_destructor(M1), real_destructor(M2), call_target(M1, M2), M1 < M2.
-forced_merge(M1, M2) :-
-    deleting_destructor(M2), real_destructor(M1), call_target(M2, M1), M1 < M2.
+% Deleting destructor calls real destructor → same class
+reasonMergeClasses(M1, M2) :-
+    factDeletingDestructor(M1), factRealDestructor(M2), callTarget(M1, M2), M1 < M2.
+reasonMergeClasses(M1, M2) :-
+    factDeletingDestructor(M2), factRealDestructor(M1), callTarget(M2, M1), M1 < M2.
 
-:- forced_merge(M1, M2), not merge(M1, M2).
+:- reasonMergeClasses(M1, M2), not mergeClasses(M1, M2).
 
 % ============================================================
-% FORCED NOT-MERGES (different classes — merge must not happen)
+% reasonNOTMergeClasses — forced not-merges (mergeClasses must not happen)
 % ============================================================
 
-% Outer and inner constructor represent distinct classes by construction.
-forced_not_merge(M1, M2) :- ctor_calls_ctor(M1, M2, _), M1 < M2.
-forced_not_merge(M1, M2) :- ctor_calls_ctor(M2, M1, _), M1 < M2.
+% Outer and inner of objectInObject are distinct classes
+reasonNOTMergeClasses(M1, M2) :- objectInObject(M1, M2, _), M1 < M2.
+reasonNOTMergeClasses(M1, M2) :- objectInObject(M2, M1, _), M1 < M2.
 
-% Base vs. derived: the constructor that installs V without overwriting is the base;
-% the constructor that overwrites V is derived. They must be in different classes.
-forced_not_merge(M1, M2) :-
-    vftable_write(M1, 0, V), not vftable_overwrite(M1, 0, _, V),
-    vftable_overwrite(M2, 0, V, _), M1 < M2.
-forced_not_merge(M1, M2) :-
-    vftable_write(M2, 0, V), not vftable_overwrite(M2, 0, _, V),
-    vftable_overwrite(M1, 0, V, _), M1 < M2.
+% Base vs. derived from vftable overwrite
+reasonNOTMergeClasses(M1, M2) :-
+    factVFTableWrite(M1, 0, V), not factVFTableOverwrite(M1, 0, _, V),
+    factVFTableOverwrite(M2, 0, V, _), M1 < M2.
+reasonNOTMergeClasses(M1, M2) :-
+    factVFTableWrite(M2, 0, V), not factVFTableOverwrite(M2, 0, _, V),
+    factVFTableOverwrite(M1, 0, V, _), M1 < M2.
 
-% reasonNOTMergeClasses_F: two classes that are both bases of the same derived at
-% different offsets cannot be the same class (multiple inheritance).
-forced_not_merge(B1, B2) :-
-    derived_class(D, B1, Off1), derived_class(D, B2, Off2),
+% reasonNOTMergeClasses_F: two bases of the same derived at different offsets
+reasonNOTMergeClasses(B1, B2) :-
+    factDerivedClass(D, B1, Off1), factDerivedClass(D, B2, Off2),
     Off1 != Off2, B1 < B2.
 
-% RTTI: two vftables with different type descriptors belong to different classes.
-forced_not_merge(M1, M2) :-
-    rtti_complete_object_locator(V1, TDA1), rtti_complete_object_locator(V2, TDA2),
+% RTTI: two vftables with different type descriptors belong to different classes
+reasonNOTMergeClasses(M1, M2) :-
+    rTTICompleteObjectLocator(V1, TDA1), rTTICompleteObjectLocator(V2, TDA2),
     TDA1 != TDA2,
-    vftable_write(M1, _, V1), vftable_write(M2, _, V2), M1 < M2.
+    factVFTableWrite(M1, _, V1), factVFTableWrite(M2, _, V2), M1 < M2.
 
-:- forced_not_merge(M1, M2), merge(M1, M2).
+:- reasonNOTMergeClasses(M1, M2), mergeClasses(M1, M2).
 
 % ============================================================
 % CLASS COMPUTATION: equivalence classes via transitive closure
 % ============================================================
 
-same_class(M, M)  :- method(M).
-same_class(M1, M2) :- merge(M1, M2).
-same_class(M2, M1) :- same_class(M1, M2).
-same_class(M1, M3) :- same_class(M1, M2), same_class(M2, M3).
+sameClass(M, M)   :- factMethod(M).
+sameClass(M1, M2) :- mergeClasses(M1, M2).
+sameClass(M2, M1) :- sameClass(M1, M2).
+sameClass(M1, M3) :- sameClass(M1, M2), sameClass(M2, M3).
 
-has_lesser(M)  :- same_class(M, M2), M2 < M.
-class_rep(M)   :- method(M), not has_lesser(M).
-class_of(M, R) :- same_class(M, R), class_rep(R).
+hasLesser(M) :- sameClass(M, M2), M2 < M.
+classRep(M)  :- factMethod(M), not hasLesser(M).
+find(M, R)   :- sameClass(M, R), classRep(R).  % mirrors Prolog's find/2 (union-find lookup)
 
 % ============================================================
 % CLASS PROPERTIES
 % ============================================================
 
 % Hard derivation: RTTI with no inheritance entries means this class has no base.
-class_has_no_base(C) :-
-    rtti_complete_object_locator(V, TDA), vftable_write(M, 0, V), class_of(M, C),
-    not rtti_inherits_from(TDA, _, _).
+factClassHasNoBase(C) :-
+    rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V), find(M, C),
+    not rTTIInheritsFrom(TDA, _, _).
 
-% Constraint: a class known to be derived cannot also have no base.
-:- class_has_no_base(C), derived_class(M, _, _), class_of(M, C).
+% Constraint: a derived class cannot also have no base.
+:- factClassHasNoBase(C), factDerivedClass(M, _, _), find(M, C).
 
-% class_calls_method: methods called by a class passing the same this-pointer.
+% factClassCallsMethod: methods called by a class passing the same this-pointer.
 % Mirrors factClassCallsMethod (validMethodCallAtOffset at offset 0).
-class_calls_method(C, M) :-
-    class_of(Caller, C), call_at_offset(Caller, M, 0), method(M).
+factClassCallsMethod(C, M) :-
+    find(Caller, C), callAtOffset(Caller, M, 0), factMethod(M).
 
 % reasonMergeClasses_C: two no-base classes where one calls a method of the other
-% must be merged (the method belongs to the calling class).
-forced_merge(R1, R2) :-
-    class_has_no_base(R1), class_has_no_base(R2), R1 != R2, R1 < R2,
-    class_calls_method(R1, M), class_of(M, R2).
+reasonMergeClasses(R1, R2) :-
+    factClassHasNoBase(R1), factClassHasNoBase(R2), R1 != R2, R1 < R2,
+    factClassCallsMethod(R1, M), find(M, R2).
 
 % ============================================================
 % SANITY CHECKS
 % ============================================================
 
 % insanityVirtualConstructor: constructors cannot appear in vftables
-:- constructor(M), effective_entry(_, _, M).
+:- factConstructor(M), factVFTableEntry(_, _, M).
 
 % insanityDoubleDuty: method cannot be both constructor and destructor
-:- constructor(M), real_destructor(M).
-:- constructor(M), deleting_destructor(M).
+:- factConstructor(M), factRealDestructor(M).
+:- factConstructor(M), factDeletingDestructor(M).
 
 % insanityContradictoryNOTConstructor
-:- constructor(M), not_constructor(M).
+:- factConstructor(M), factNOTConstructor(M).
 
 % insanityMultipleRealDestructors: at most one real destructor per class
-:- real_destructor(D1), real_destructor(D2), D1 < D2,
-   class_of(D1, C), class_of(D2, C).
+:- factRealDestructor(D1), factRealDestructor(D2), D1 < D2,
+   find(D1, C), find(D2, C).
 
 % insanityVFTables: a vftable cannot be shared by two classes at the same offset
-:- vftable_write(M1, Off, V), vftable_write(M2, Off, V), M1 < M2,
-   class_of(M1, C1), class_of(M2, C2), C1 != C2.
+:- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2,
+   find(M1, C1), find(M2, C2), C1 != C2.
 
 % Two constructors writing DIFFERENT vftables at the same offset → different classes
-:- vftable_write(M1, Off, V1), vftable_write(M2, Off, V2),
-   M1 != M2, V1 != V2, class_of(M1, C), class_of(M2, C).
+:- factVFTableWrite(M1, Off, V1), factVFTableWrite(M2, Off, V2),
+   M1 != M2, V1 != V2, find(M1, C), find(M2, C).
 
-% Effective entries must resolve to real methods
-:- effective_entry(_, _, M), not method(M).
+% VFTable entries must resolve to real methods
+:- factVFTableEntry(_, _, M), not factMethod(M).
 
-% insanityObjectCycle: circular inheritance/embedding is impossible
-:- derived_class(A, B, _), derived_class(B, A, _).
+% insanityObjectCycle: circular inheritance is impossible
+:- factDerivedClass(A, B, _), factDerivedClass(B, A, _).
 
-% Derived/embedded pairs must be in distinct classes
-:- ctor_calls_ctor(M1, M2, _), same_class(M1, M2).
+% objectInObject pairs must be in distinct classes
+:- objectInObject(M1, M2, _), sameClass(M1, M2).
+
+% A derived vftable must be at least as large as the base vftable it overwrites.
+:- factVFTableOverwrite(_, _, Vbase, Vderived),
+   factVFTableSizeGTE(Vbase, Sbase), factVFTableSizeGTE(Vderived, Sderived),
+   Sderived < Sbase.
 
 % ============================================================
 % OPTIMIZATION
@@ -286,27 +302,27 @@ forced_merge(R1, R2) :-
 
 % Priority 2: confirm as many vftables as possible
 % Priority 1: maximize class merges (minimize class count)
-% Priority 0: prefer derived_class at offset 0; prefer more class_has_no_base assignments
-#maximize { 1@2, V : vftable(V) }.
-#maximize { 1@1, M1, M2 : merge(M1, M2) }.
-#maximize { 1@0, Outer, Inner : derived_class(Outer, Inner, 0) }.
-#maximize { 1@0, C : class_has_no_base(C) }.
+% Priority 0: prefer factDerivedClass at offset 0; prefer more factClassHasNoBase
+#maximize { 1@2, V : factVFTable(V) }.
+#maximize { 1@1, M1, M2 : mergeClasses(M1, M2) }.
+#maximize { 1@0, Outer, Inner : factDerivedClass(Outer, Inner, 0) }.
+#maximize { 1@0, C : factClassHasNoBase(C) }.
 
 % ============================================================
 % OUTPUT
 % ============================================================
 
-#show class_of/2.
-#show class_rep/1.
-#show class_has_no_base/1.
-#show constructor/1.
-#show not_constructor/1.
-#show real_destructor/1.
-#show deleting_destructor/1.
-#show vftable/1.
-#show vftable_write/3.
-#show vftable_overwrite/4.
-#show vftable_class/3.
-#show effective_entry/3.
-#show derived_class/3.
-#show embedded_object/3.
+#show find/2.
+#show classRep/1.
+#show factClassHasNoBase/1.
+#show factConstructor/1.
+#show factNOTConstructor/1.
+#show factRealDestructor/1.
+#show factDeletingDestructor/1.
+#show factVFTable/1.
+#show factVFTableWrite/3.
+#show factVFTableOverwrite/4.
+#show factVFTableBelongsToClass/3.
+#show factVFTableEntry/3.
+#show factDerivedClass/3.
+#show factEmbeddedObject/3.

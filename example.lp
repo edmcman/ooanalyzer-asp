@@ -20,36 +20,36 @@
 % All three classes are separated by the "different vftables at same offset" constraint.
 %
 % Expected output (optimal model):
-%   class_rep(1100)  members: {1100, 1200, 1300}   constructor(1100) real_destructor(1300)
-%   class_rep(1600)  members: {1600, 1700, 1800}   constructor(1600) real_destructor(1800)
-%   class_rep(1900)  members: {1900, 1950, 1960}   constructor(1900) real_destructor(1960)
+%   classRep(1100)  members: {1100, 1200, 1300}   factConstructor(1100) factRealDestructor(1300)
+%   classRep(1600)  members: {1600, 1700, 1800}   factConstructor(1600) factRealDestructor(1800)
+%   classRep(1900)  members: {1900, 1950, 1960}   factConstructor(1900) factRealDestructor(1960)
 
 % ----------------------------------------------------------------
 % Class A
 % ----------------------------------------------------------------
-poss_vftable_write(1100, 0, 2000).
-poss_vftable_entry(2000, 0, 1200).
-poss_vftable_entry(2000, 4, 1300).
-returns_self(1100).
-no_calls_before(1100).
-no_calls_after(1300).
+possibleVFTableWrite(1100, 0, 2000).
+possibleVFTableEntry(2000, 0, 1200).
+possibleVFTableEntry(2000, 4, 1300).
+returnsSelf(1100).
+noCallsBefore(1100).
+noCallsAfter(1300).
 
 % ----------------------------------------------------------------
 % Class B
 % ----------------------------------------------------------------
-poss_vftable_write(1600, 0, 2100).
-poss_vftable_entry(2100, 0, 1700).
-poss_vftable_entry(2100, 4, 1800).
-returns_self(1600).
-no_calls_before(1600).
-no_calls_after(1800).
+possibleVFTableWrite(1600, 0, 2100).
+possibleVFTableEntry(2100, 0, 1700).
+possibleVFTableEntry(2100, 4, 1800).
+returnsSelf(1600).
+noCallsBefore(1600).
+noCallsAfter(1800).
 
 % ----------------------------------------------------------------
 % Class C
 % ----------------------------------------------------------------
-poss_vftable_write(1900, 0, 2200).
-poss_vftable_entry(2200, 0, 1950).
-poss_vftable_entry(2200, 4, 1960).
-returns_self(1900).
-no_calls_before(1900).
-no_calls_after(1960).
+possibleVFTableWrite(1900, 0, 2200).
+possibleVFTableEntry(2200, 0, 1950).
+possibleVFTableEntry(2200, 4, 1960).
+returnsSelf(1900).
+noCallsBefore(1900).
+noCallsAfter(1960).
