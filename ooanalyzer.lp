@@ -19,6 +19,8 @@
 %   rTTICompleteObjectLocator(V, TDA) -- COL at V-8 links vftable V to type descriptor TDA
 %   rTTITypeDescriptor(TDA, Name)     -- TDA has mangled type name Name
 %   rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) -- non-virtual base at byte Offset
+%   possibleVBTableWrite(M, Off, V)          -- M writes VBTable V at object offset Off
+%   possibleVBTableEntry(V, Off, Value)      -- entry Value at offset Off in VBTable V
 
 #defined callTarget/2.
 #defined callsDelete/1.
@@ -37,6 +39,8 @@
 #defined rTTICompleteObjectLocator/2.
 #defined rTTITypeDescriptor/2.
 #defined rTTIInheritsFrom/3.
+#defined possibleVBTableWrite/3.
+#defined possibleVBTableEntry/3.
 
 % ============================================================
 % GUESSES
@@ -46,13 +50,54 @@
 % RTTI definitively confirms vftables — no guess needed for these.
 factVFTable(V) :- rTTICompleteObjectLocator(V, _).
 
-{ mergeClasses(M1, M2) } :- factMethod(M1), factMethod(M2), M1 < M2.
-
 % Guess whether a constructor-calls-constructor relationship is inheritance or embedding.
 { factDerivedClass(Outer, Inner, Off) } :- objectInObject(Outer, Inner, Off).
 
 % Guess: does a class have no base class?
 { factClassHasNoBase(C) } :- classRep(C).
+
+% Guess: is candidate V actually a VBTable?
+{ factVBTable(V) } :- possibleVBTableWrite(_, _, V).
+
+% ============================================================
+% MERGE CANDIDATES — domain restriction for scaling
+% ============================================================
+% Only generate mergeClasses choices for structurally related pairs.
+% This avoids O(n²) grounding for binaries with thousands of methods.
+
+% Same vftable writers or writer+entry
+mergeCandidate(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2.
+mergeCandidate(M1, M2) :- factVFTableWrite(M1, _, V), factVFTableEntry(V, _, M2), M1 < M2.
+mergeCandidate(M1, M2) :- factVFTableWrite(M2, _, V), factVFTableEntry(V, _, M1), M1 < M2.
+
+% Same debug symbol class
+mergeCandidate(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.
+
+% objectInObject relationships
+mergeCandidate(M1, M2) :- objectInObject(M1, M2, _), M1 < M2.
+mergeCandidate(M1, M2) :- objectInObject(M2, M1, _), M1 < M2.
+
+% Two inners of the same outer (reasonMergeClasses_E)
+mergeCandidate(M1, M2) :- objectInObject(Outer, M1, _), objectInObject(Outer, M2, _), M1 < M2.
+
+% Call relationships
+mergeCandidate(M1, M2) :- callTarget(M1, M2), M1 < M2.
+mergeCandidate(M1, M2) :- callTarget(M2, M1), M1 < M2.
+mergeCandidate(M1, M2) :- callAtOffset(M1, M2, 0), M1 < M2.
+mergeCandidate(M1, M2) :- callAtOffset(M2, M1, 0), M1 < M2.
+
+% Vftable overwrite relationships
+mergeCandidate(M1, M2) :- factVFTableOverwrite(M1, _, _, V), factVFTableWrite(M2, _, V), M1 < M2.
+mergeCandidate(M1, M2) :- factVFTableOverwrite(M2, _, _, V), factVFTableWrite(M1, _, V), M1 < M2.
+
+% VBTable relationships
+mergeCandidate(M1, M2) :- factVBTableWrite(M1, Off, V), factVBTableWrite(M2, Off, V), M1 < M2.
+
+% Deleting destructor / real destructor chain
+mergeCandidate(M1, M2) :- factDeletingDestructor(M1), factRealDestructor(M2), callTarget(M1, M2), M1 < M2.
+mergeCandidate(M1, M2) :- factDeletingDestructor(M2), factRealDestructor(M1), callTarget(M2, M1), M1 < M2.
+
+{ mergeClasses(M1, M2) } :- mergeCandidate(M1, M2).
 
 % ============================================================
 % THUNK RESOLUTION
@@ -88,6 +133,15 @@ inheritedVftableEntry(Vderived, Off, M) :-
     factVFTableOverwrite(_, _, Vbase, Vderived),
     factVFTableEntry(Vbase, Off, M),
     factVFTableEntry(Vderived, Off, M).
+
+% ============================================================
+% VBTABLE DERIVED FACTS
+% ============================================================
+
+factVBTableWrite(M, Off, V) :- possibleVBTableWrite(M, Off, V), factVBTable(V).
+
+factVBTableEntry(V, Off, Value) :-
+    possibleVBTableEntry(V, Off, Value), factVBTable(V).
 
 % ============================================================
 % METHOD IDENTIFICATION
@@ -152,6 +206,17 @@ factDerivedClass(Outer, Inner, Off) :-
     factVFTableWrite(Outer, 0, V1), not factVFTableOverwrite(Outer, 0, _, V1),
     factVFTableWrite(Inner, 0, V2), not factVFTableOverwrite(Inner, 0, _, V2).
 
+% Virtual base detection from VBTables (reasonDerivedClass_F).
+% If objectInObject holds and a VBTable entry gives the matching offset,
+% the relationship is virtual inheritance, not embedding.
+factDerivedClass(Outer, Inner, Off) :-
+    objectInObject(Outer, Inner, Off),
+    factVBTableWrite(Outer, VBPtrOff, V),
+    factVBTableEntry(V, TableOff, OffsetFromVBPtr),
+    TableOff > 0,
+    Off = VBPtrOff + OffsetFromVBPtr,
+    Outer != Inner.
+
 % ============================================================
 % CLASS → VFTABLE MAPPING
 % ============================================================
@@ -189,6 +254,10 @@ reasonMergeClasses(M1, M2) :-
     factDeletingDestructor(M1), factRealDestructor(M2), callTarget(M1, M2), M1 < M2.
 reasonMergeClasses(M1, M2) :-
     factDeletingDestructor(M2), factRealDestructor(M1), callTarget(M2, M1), M1 < M2.
+
+% VBTable merges: same VBTable writers → same class
+reasonMergeClasses(M1, M2) :-
+    factVBTableWrite(M1, Off, V), factVBTableWrite(M2, Off, V), M1 < M2.
 
 :- reasonMergeClasses(M1, M2), not mergeClasses(M1, M2).
 
@@ -303,7 +372,7 @@ reasonMergeClasses(R1, R2) :-
 % Priority 2: confirm as many vftables as possible
 % Priority 1: maximize class merges (minimize class count)
 % Priority 0: prefer factDerivedClass at offset 0; prefer more factClassHasNoBase
-#maximize { 1@2, V : factVFTable(V) }.
+#maximize { 1@2, V : factVFTable(V); 1@2, V : factVBTable(V) }.
 #maximize { 1@1, M1, M2 : mergeClasses(M1, M2) }.
 #maximize { 1@0, Outer, Inner : factDerivedClass(Outer, Inner, 0) }.
 #maximize { 1@0, C : factClassHasNoBase(C) }.
@@ -326,3 +395,6 @@ reasonMergeClasses(R1, R2) :-
 #show factVFTableEntry/3.
 #show factDerivedClass/3.
 #show factEmbeddedObject/3.
+#show factVBTable/1.
+#show factVBTableWrite/3.
+#show factVBTableEntry/3.

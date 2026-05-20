@@ -17,6 +17,7 @@ This prototype captures the core ideas in ~300 lines of Clingo.
 | `rtti_example.lp` | Same as inherit but with RTTI facts driving the derivation |
 | `multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
 | `inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
+| `virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 
 ## Running
@@ -29,6 +30,7 @@ clingo ooanalyzer.lp inherit_example.lp      # factDerivedClass(2300, 2100, 0)
 clingo ooanalyzer.lp rtti_example.lp         # same but RTTI-driven, fewer models
 clingo ooanalyzer.lp multi_inherit_example.lp  # C : A(0), B(8)
 clingo ooanalyzer.lp inherited_entry_example.lp  # derived inherits un-overridden entry
+clingo ooanalyzer.lp virtual_base_example.lp     # Derived : virtual Base via VBTable
 ```
 
 Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.
@@ -54,14 +56,17 @@ Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.
 | `rTTICompleteObjectLocator(V, TDA)` | COL at V−8: vftable V belongs to type TDA |
 | `rTTITypeDescriptor(TDA, Name)` | Type descriptor TDA has mangled name Name |
 | `rTTIInheritsFrom(DerivedTDA, BaseTDA, Off)` | DerivedTDA has a non-virtual base BaseTDA at byte Off |
+| `possibleVBTableWrite(M, Off, V)` | Method M writes VBTable V at object offset Off |
+| `possibleVBTableEntry(V, Off, Value)` | Entry Value at offset Off in VBTable V |
 
 ## Architecture
 
-**Guesses** — the four things the solver decides:
+**Guesses** — the five things the solver decides:
 - `{ factVFTable(V) }` — is candidate V actually a vftable? (RTTI confirms without guessing)
+- `{ factVBTable(V) }` — is candidate V actually a VBTable?
 - `{ mergeClasses(M1, M2) }` — should methods M1 and M2 be in the same class?
 - `{ factDerivedClass(Outer, Inner, Off) }` — is this ctor-calls-ctor relationship
-  inheritance or composition? RTTI and vftable overwrites provide hard evidence.
+  inheritance or composition? RTTI, vftable overwrites, and VBTables provide hard evidence.
 - `{ factClassHasNoBase(C) }` — does class C have no base class? RTTI overrides.
 
 **Thunk resolution** — `dethunk/2` follows JMP-only stub chains to the real method;
@@ -73,6 +78,7 @@ Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.
 `objectInObject`, `factDerivedClass`, `factEmbeddedObject`, `factClassHasNoBase`,
 `factClassCallsMethod`, `reasonMergeClasses`, `reasonNOTMergeClasses`,
 `factVFTableSizeGTE`, `inheritedVftableEntry`,
+`factVBTable`, `factVBTableWrite`, `factVBTableEntry`,
 and the equivalence-class predicates (`sameClass`, `classRep`, `find`).
 
 **factNOTConstructor** — mirrors `reasonNOTConstructor_B/C/D` from rules.pl:
@@ -96,6 +102,14 @@ vftable it overwrites.
 class where the same method pointer appears at the same offset in the base
 vftable. Such entries belong to the base class; the vftable-entry merge rule
 skips them to avoid incorrectly merging inherited methods into the derived class.
+
+**factVBTable / factVBTableWrite / factVBTableEntry** — virtual base tables. A VBTable
+contains offsets from the VBTable pointer to virtual base subobjects. When a
+constructor writes a VBTable and also calls another constructor, and a VBTable entry
+(at offset > 0, i.e., not the self-offset) matches the call offset, the relationship
+is virtual inheritance (`factDerivedClass`). This is `reasonDerivedClass_F` in the
+original OOAnalyzer. The first VBTable entry (offset 0) is typically the self-offset
+(offset from vbptr to complete object start).
 
 **factClassHasNoBase** — guessed, with hard derivation from RTTI. Enables
 `reasonMergeClasses_C`: two no-base classes where one calls a method of the other
@@ -134,9 +148,11 @@ mirrors Prolog's `find/2` (union-find lookup).
 - `objectInObject` pairs must be in distinct classes
 - Derived classes cannot be `factClassHasNoBase`
 - Derived vftable size must be ≥ base vftable size (`factVFTableSizeGTE`)
+- A constructor writing a VBTable cannot also embed the same base (virtual
+  inheritance supersedes embedding)
 
 **Optimization** — three-level lexicographic:
-1. `#maximize { 1@2, V : factVFTable(V) }` — confirm as many vftables as possible
+1. `#maximize { 1@2, V : factVFTable(V); 1@2, V : factVBTable(V) }` — confirm as many vftables and VBTables as possible
 2. `#maximize { 1@1, M1,M2 : mergeClasses(M1,M2) }` — maximize merges (minimize classes)
 3. `#maximize { 1@0, ... }` — prefer `factDerivedClass` at offset 0; prefer more `factClassHasNoBase`
 
@@ -165,11 +181,12 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `insanity*.pl` | `:- constraint.` rules |
 | `factClassSizeGTE` / `classSize` | `factVFTableSizeGTE` (lightweight version) |
 | `inheritedVftableEntry` | `inheritedVftableEntry(V, Off, M)` — detects re-used base slots |
+| `factVBTable` / `factVBTableEntry` | `factVBTable`, `factVBTableWrite`, `factVBTableEntry` |
+| `reasonDerivedClass_F` | `factDerivedClass` from `objectInObject + factVBTableEntry` |
 | Guess priority ordering | `@2` / `@1` / `@0` lexicographic optimization levels |
 
 ## Known limitations / future work
 
-- No virtual base tables (OOAnalyzer's `factVBTable`, `factVBTableEntry`).
 - Transitive closure of `sameClass` is O(n²) in grounding — fine for small
   inputs; replace with a propagator or reification for scale.
 - `factVFTableSizeGTE` uses max entry offset (coarse); OOAnalyzer's `classSize{GTE,LTE}`
