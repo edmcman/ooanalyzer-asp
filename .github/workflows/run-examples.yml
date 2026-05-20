@@ -1,0 +1,42 @@
+name: Run Examples
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y clingo python3
+
+      - name: Run hand-written examples
+        run: |
+          mkdir -p outputs
+          for f in examples/*.lp; do
+            name=$(basename "$f" .lp)
+            echo "=== Running $f ===" > "outputs/${name}.txt"
+            clingo ooanalyzer.lp "$f" --quiet=1,2 >> "outputs/${name}.txt" 2>&1 || true
+          done
+
+      - name: Convert and run OOAnalyzer examples
+        run: |
+          mkdir -p outputs/ooa
+          make clean
+          make convert
+          for f in examples/ooa/*.lp; do
+            name=$(basename "$f" .lp)
+            echo "=== Running $f ===" > "outputs/ooa/${name}.txt"
+            clingo ooanalyzer.lp --quiet=1,2 --time-limit=30 "$f" >> "outputs/ooa/${name}.txt" 2>&1 || true
+          done
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: clingo-example-outputs
+          path: outputs/
