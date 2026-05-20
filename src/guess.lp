@@ -53,4 +53,12 @@ mergeCandidate(M1, M2) :- factVBTableWrite(M1, Off, V), factVBTableWrite(M2, Off
 mergeCandidate(M1, M2) :- factDeletingDestructor(M1), factRealDestructor(M2), callTarget(M1, M2), M1 < M2. % Counterpart: guessMergeClasses (destructor chain, guess.pl:1084)
 mergeCandidate(M1, M2) :- factDeletingDestructor(M2), factRealDestructor(M1), callTarget(M2, M1), M1 < M2. % Counterpart: guessMergeClasses
 
+% guessLateMergeClassesF2: singleton methods in a confirmed vftable should be mergeable
+% with the class that owns the vftable.
+mergeCandidate(M1, M2) :-
+    factVFTableEntry(V, _, M2),
+    factVFTableBelongsToClass(V, _, C),
+    find(M1, C),
+    M1 < M2.
+
 { mergeClasses(M1, M2) } :- mergeCandidate(M1, M2).                                              % Counterpart: guessMergeClasses (guess.pl:1084) / guessLateMergeClasses (guess.pl:860)

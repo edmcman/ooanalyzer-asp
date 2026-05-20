@@ -4,6 +4,8 @@
 
 #show find/2.
 #show classRep/1.
+#show factMethod/1.
+#show factNOTMethod/1.
 #show factClassHasNoBase/1.
 #show factConstructor/1.
 #show factNOTConstructor/1.

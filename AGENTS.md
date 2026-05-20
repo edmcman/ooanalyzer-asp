@@ -249,7 +249,13 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `reasonNOTDeletingDestructor` | `factNOTDeletingDestructor(M)` (basic versions) |
 | `possibleMethod` / `possibleConstructor` / `possibleDestructor` | `possibleMethod(M)`, `possibleConstructor(M)`, `possibleDestructor(M)` (from `initial.pl`) |
 | `factClassHasNoBase` / `guessClassHasNoBase` | `factClassHasNoBase(C)` (guessed; hard from RTTI) |
-| `factClassCallsMethod` | `factClassCallsMethod(C, M)` |
+| `factMethod` / `factNOTMethod` | `factMethod(M)` (hard derivations: vftable, ctor/dtor, symbols, calls, thunks); `factNOTMethod(M)` (`possibleMethod` not confirmed) |
+| `reasonMethod_J` | `factMethod(M) :- factClassCallsMethod(_, M)` |
+| `reasonMethod_L` | `factMethod(M) :- methodCallAtOffset(_, Caller, M, 0), factMethod(Caller), thisParamFuncParameter(M, _)` |
+| `reasonMethod_O` | `factMethod(M) :- factMethod(Proven), callingConvention(Proven, "__thiscall"), thisParamFuncParameter(Proven, ThisPtr), callParameter(Insn, Proven, 0, ThisPtr), callTarget(Insn, Proven, Target), dethunk(Target, M), callingConvention(M, "__cdecl")` |
+| `reasonMethod_P` | `factMethod(M) :- callParameter(Insn1, Func, 0, ThisPtr), callTarget(Insn1, Func, Target1), dethunk(Target1, Proven), factMethod(Proven), callParameter(Insn2, Func, 0, ThisPtr), callTarget(Insn2, Func, Target2), dethunk(Target2, M), callingConvention(M, "__cdecl")` |
+| `reasonMethod_Q` | Implemented but **disabled/known gap**: causes UNSAT on `ooex4/5/6/9` |
+| `factClassCallsMethod` | `factClassCallsMethod(C, M)` (no longer requires `factMethod(M)` — matches Prolog `reasonClassCallsMethod_C`) |
 | `reasonMergeClasses_C` | `reasonMergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
 | `reasonMergeClasses_E` | `reasonMergeClasses` from shared base at same offset |
 | `reasonMergeClasses` (dtor pair) | `reasonMergeClasses` from `factDeletingDestructor -> callTarget -> factRealDestructor` |
@@ -257,7 +263,7 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `rTTIEnabled` / `rTTIInheritsFrom` | `rTTICompleteObjectLocator`, `rTTIInheritsFrom` |
 | `factDerivedClass` / `factEmbeddedObject` | `factDerivedClass/3` / `factEmbeddedObject/3` |
 | `reasonDerivedClass_B/D` | hard `factDerivedClass` from vftable overwrite / RTTI |
-| `eventualThunk` / `dethunk` | `dethunk/2` + `factVFTableEntry/3` |
+| `eventualThunk` / `dethunk` | `dethunk/2` + `factVFTableEntry/3` (+ catch-all identity for non-thunks) |
 | `factObjectInObject` | `objectInObject/3` |
 | `find/union` (union-find) | `sameClass` transitive closure + `classRep` + `find/2` |
 | `insanity*.pl` | `:- constraint.` rules |
@@ -265,6 +271,7 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `inheritedVftableEntry` | `inheritedVftableEntry(V, Off, M)` -- detects re-used base slots |
 | `factVBTable` / `factVBTableEntry` | `factVBTable`, `factVBTableWrite`, `factVBTableEntry` |
 | `reasonDerivedClass_F` | `factDerivedClass` from `objectInObject + factVBTableEntry` |
+| `guessLateMergeClassesF2` | `mergeCandidate(M1, M2) :- factVFTableEntry(V, _, M2), factVFTableBelongsToClass(V, _, C), find(M1, C), M1 < M2` |
 | Guess priority ordering | `@2` / `@1` / `@0` lexicographic optimization levels |
 
 ## Known limitations / future work
@@ -286,6 +293,10 @@ mirrors Prolog's `find/2` (union-find lookup).
   also considers member accesses.
 - No member access reasoning (`methodMemberAccess`).
 - RTTI for virtual bases not yet handled (`rTTIInheritsFrom` with `WhereP != -1`).
+- `reasonMethod_Q` (thunk to proven method -> method) is implemented but causes UNSAT
+  on several real `.facts` files (`ooex4`, `ooex5`, `ooex6`, `ooex9`). The exact conflict
+  is not yet identified — likely an interaction with `sameClass`/`find` and a
+  `reasonNOTMergeClasses` or sanity check. Marked as a known gap in `TODO.md`.
 
 See [TODO.md](TODO.md) for the full bidirectional coverage map: which OOAnalyzer rules
 are not yet implemented and which Clingo constructs are ASP-specific.

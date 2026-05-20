@@ -6,6 +6,9 @@
 dethunk(E, E) :- possibleVFTableEntry(_, _, E), not thunk(E, _).  % Counterpart: dethunk (initial.pl:313) / eventualThunk (initial.pl:304)
 dethunk(T, T) :- thunk(_, T), not thunk(T, _).                    % Counterpart: dethunk
 
+% Catch-all identity: Prolog's dethunk returns the input unchanged when it is not a thunk.
+dethunk(M, M) :- possibleMethod(M), not thunk(M, _).
+
 dethunk(T, M) :- thunk(T, X), dethunk(X, M).                     % Counterpart: dethunk
 
 % factVFTableEntry: actual method at each confirmed slot after thunk resolution.
@@ -55,6 +58,37 @@ factMethod(M) :- factDeletingDestructor(M), possibleMethod(M).         % Counter
 factMethod(M) :- symbolClass(M, _).                                    % Counterpart: reasonMethod_*
 factMethod(M) :- symbolProperty(M, _).                                 % Counterpart: reasonMethod_*
 factMethod(Callee) :- callTarget(Caller, Callee), factMethod(Caller), possibleMethod(Callee).  % Counterpart: reasonMethod_*
+
+% reasonMethod_L: precise this-call propagation at offset 0.
+factMethod(M) :- methodCallAtOffset(_, Caller, M, 0), factMethod(Caller), thisParamFuncParameter(M, _).
+
+% reasonMethod_O: a __thiscall method passes its this-pointer as arg 0 to a __cdecl target.
+factMethod(M) :-
+    factMethod(Proven),
+    callingConvention(Proven, "__thiscall"),
+    thisParamFuncParameter(Proven, ThisPtr),
+    callParameter(Insn, Proven, 0, ThisPtr),
+    callTarget(Insn, Proven, Target),
+    dethunk(Target, M),
+    callingConvention(M, "__cdecl").
+
+% reasonMethod_P: the same this-pointer is passed to two callees; one is already a proven method.
+factMethod(M) :-
+    callParameter(Insn1, Func, 0, ThisPtr),
+    callTarget(Insn1, Func, Target1),
+    dethunk(Target1, Proven),
+    factMethod(Proven),
+    callParameter(Insn2, Func, 0, ThisPtr),
+    callTarget(Insn2, Func, Target2),
+    dethunk(Target2, M),
+    callingConvention(M, "__cdecl").
+
+% reasonMethod_Q: a thunk that chains to a proven method is itself a method.
+factMethod(M) :- thunk(M, Called), factMethod(Called).
+
+% factNOTMethod: explicit negation for possible methods that are not confirmed.
+% Counterpart: factNOTMethod (setup.pl:45 / guess.pl)
+factNOTMethod(M) :- possibleMethod(M), not factMethod(M).
 
 % ============================================================
 % CONSTRUCTOR / DESTRUCTOR CLASSIFICATION
@@ -226,9 +260,13 @@ factClassHasNoBase(C) :-                                                 % Count
 :- factClassHasNoBase(C), factDerivedClass(M, _, _), find(M, C).       % Counterpart: insanityNoBaseConsistency (insanity.pl:8)
 
 % factClassCallsMethod: methods called by a class passing the same this-pointer.
-% Mirrors factClassCallsMethod (validMethodCallAtOffset at offset 0).
+% Mirrors reasonClassCallsMethod_C (rules.pl:2463).  Intentionally does NOT require
+% factMethod(M) so that reasonMethod_J can derive factMethod from it.
 factClassCallsMethod(C, M) :-                                             % Counterpart: factClassCallsMethod (setup.pl:83)
-    find(Caller, C), callAtOffset(Caller, M, 0), factMethod(M).
+    find(Caller, C), callAtOffset(Caller, M, 0).
+
+% reasonMethod_J: a method called by another class via this+0 is a method.
+factMethod(M) :- factClassCallsMethod(_, M).
 
 % reasonMergeClasses_C: two no-base classes where one calls a method of the other
 reasonMergeClasses(R1, R2) :-                                             % Counterpart: reasonMergeClasses_C (rules.pl:2822)
