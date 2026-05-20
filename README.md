@@ -26,6 +26,10 @@ make run                  # convert and run clingo on all of them
 make clean                # remove generated .lp files
 ```
 
+`make run` uses `--quiet=1,2 --time-limit=30` by default to suppress model I/O
+and cap solve time; most examples complete in <3s. `oo.lp` and `ooex5.lp` may
+hit the 30s cap on slower hardware.
+
 ## Files
 
 | File | Purpose |

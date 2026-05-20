@@ -208,6 +208,10 @@ this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 **Class computation** -- transitive closure of `mergeClasses` gives `sameClass`; the
 minimum-address method in each equivalence class is the `classRep`. `find(M, R)`
 mirrors Prolog's `find/2` (union-find lookup).
+To reduce grounding, `merged/2` serves as an undirected edge predicate for
+the closure: `sameClass(M1, M3) :- sameClass(M1, M2), merged(M2, M3).`
+This eliminates the explicit symmetry rule and cuts `sameClass` atoms from
+~295k to ~16k on `oo.lp`.
 
 **Sanity checks** (integrity constraints -- any violation kills the model):
 - Constructor cannot appear in a vftable (not virtual)
@@ -270,7 +274,7 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `reasonDerivedClass_B/D` | hard `factDerivedClass` from vftable overwrite / RTTI |
 | `eventualThunk` / `dethunk` | `dethunk/2` + `factVFTableEntry/3` (+ catch-all identity for non-thunks) |
 | `factObjectInObject` | `objectInObject/3` |
-| `find/union` (union-find) | `sameClass` transitive closure + `classRep` + `find/2` |
+| `find/union` (union-find) | `sameClass` transitive closure + `classRep` + `find/2`. Compact encoding with `merged/2` edge predicate reduces grounding ~7x on real binaries. |
 | `insanity*.pl` | `:- constraint.` rules |
 | `factClassSizeGTE` / `classSize` | `factVFTableSizeGTE` (lightweight version) |
 | `inheritedVftableEntry` | DISABLED in this prototype. See `inheritedVftableEntry` description above and TODO.md. |
@@ -281,8 +285,10 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 
 ## Known limitations / future work
 
-- Transitive closure of `sameClass` is O(n^2) in grounding -- fine for small
-  inputs; replace with a propagator or reification for scale.
+- Transitive closure of `sameClass` is O(n²) in grounding. The `merged/2`
+  compact-encoding refactor (see Architecture above) mitigates this on real
+  binaries, cutting `sameClass` atoms ~18x (e.g. `oo.lp`: ~295k → ~16k). For
+  further scale, replace with a propagator or reification.
   *Python propagator*: a script using Clingo's `clingo.propagator.Propagator` API
   that hooks into the solving process. It maintains a union-find (disjoint-set)
   structure in Python, watching `mergeClasses` literals as they become true in
@@ -290,8 +296,8 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
   unions the two sets; on backtracking, it undoes the union (persistent
   union-find). Constraints like "at most one real destructor per class" are
   checked by querying the union-find instead of materializing `sameClass` pairs.
-  This eliminates the O(k^2) per-component materialization, reducing complexity
-  to O(k alpha(k)) -- effectively linear. `find/2` would be exposed as external atoms
+  This eliminates the O(k²) per-component materialization, reducing complexity
+  to O(k α(k)) — effectively linear. `find/2` would be exposed as external atoms
   or custom theory atoms that the solver evaluates on demand rather than
   grounding as facts.
 - `factVFTableSizeGTE` uses max entry offset (coarse); OOAnalyzer's `classSize{GTE,LTE}`
