@@ -6,11 +6,13 @@
 %     1100  constructor:     installs vt_a at offset 0, returns self
 %     1200  virtual method:  vt_a[0]
 %     1300  real destructor: noCallsAfter
+%     1310  deleting destructor: calls 1300, calls delete
 %
 %   Class B (vftable: 3100)
 %     2100  constructor:     installs vt_b at offset 0, returns self
 %     2200  virtual method:  vt_b[0]
 %     2300  real destructor: noCallsAfter
+%     2310  deleting destructor: calls 2300, calls delete
 %
 %   Class C : A (offset 0), B (offset 8)
 %     Two vftables: vt_c_0 (4000) at object offset 0, vt_c_8 (4100) at offset 8.
@@ -20,8 +22,8 @@
 %     5300  override of B::2200, vt_c_8[0]
 %
 % Expected output:
-%   classRep(1100)  {1100, 1200, 1300}   factConstructor(1100) factRealDestructor(1300)
-%   classRep(2100)  {2100, 2200, 2300}   factConstructor(2100) factRealDestructor(2300)
+%   classRep(1100)  {1100, 1200, 1300, 1310}   factConstructor(1100) factDeletingDestructor(1310)
+%   classRep(2100)  {2100, 2200, 2300, 2310}   factConstructor(2100) factDeletingDestructor(2310)
 %   classRep(5100)  {5100, 5200, 5300}   factConstructor(5100)
 %   factDerivedClass(5100, 1100, 0)
 %   factDerivedClass(5100, 2100, 8)
@@ -35,6 +37,9 @@ possibleVFTableEntry(3000, 4, 1300).
 returnsSelf(1100).
 noCallsBefore(1100).
 noCallsAfter(1300).
+callsDelete(1310).
+callTarget(1310, 1300).
+noCallsAfter(1310).
 
 % ----------------------------------------------------------------
 % Class B
@@ -45,6 +50,9 @@ possibleVFTableEntry(3100, 4, 2300).
 returnsSelf(2100).
 noCallsBefore(2100).
 noCallsAfter(2300).
+callsDelete(2310).
+callTarget(2310, 2300).
+noCallsAfter(2310).
 
 % ----------------------------------------------------------------
 % Class C : A, B

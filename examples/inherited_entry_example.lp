@@ -16,7 +16,7 @@
 %
 % Expected output:
 %   classRep(1100)  {1100, 1200, 1300}   factConstructor(1100)
-%   classRep(2100)  {2100, 2200, 1500}   factConstructor(2100)
+%   classRep(1500)  {1500, 2100, 2200}   factConstructor(2100)
 %   1300 stays in Base's class (not merged into Derived)
 %   factDerivedClass(2100, 1100, 0)
 

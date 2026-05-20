@@ -6,6 +6,7 @@
 %     2100  constructor:      installs vt_base at offset 0, returns self
 %     3100  virtual method:   vt_base[0]
 %     2200  real destructor:  vt_base[4], no calls after
+%     2210  deleting destructor: calls 2200, calls delete
 %
 %   Class Derived : Base (vftable: 4000)
 %     2300  constructor:      calls Base::ctor at this+0, overwrites vt_base with
@@ -14,7 +15,7 @@
 %     3300  new virtual:      vt_derived[4]
 %
 % Expected output (optimal model):
-%   classRep(2100)  methods: {2100, 2200, 3100}   factConstructor(2100)  factRealDestructor(2200)
+%   classRep(2100)  methods: {2100, 2200, 2210, 3100}   factConstructor(2100) factDeletingDestructor(2210)
 %   classRep(2300)  methods: {2300, 3200, 3300}   factConstructor(2300)
 %   factDerivedClass(2300, 2100, 0)
 
@@ -27,6 +28,9 @@ possibleVFTableEntry(3000, 4, 2200).
 returnsSelf(2100).
 noCallsBefore(2100).
 noCallsAfter(2200).
+callsDelete(2210).
+callTarget(2210, 2200).
+noCallsAfter(2210).
 
 % ----------------------------------------------------------------
 % Class Derived

@@ -8,7 +8,10 @@
 %   - factDerivedClass(2300, 2100, 0) comes from rTTIInheritsFrom (hard derivation)
 %   - factClassHasNoBase(2100's class) from RTTI (Base has no base)
 %
-% Expected output: same 2-class result as inherit_example.lp
+% Expected output:
+%   classRep(2100)  methods: {2100, 2200, 2210, 3100}   factConstructor(2100) factDeletingDestructor(2210)
+%   classRep(2300)  methods: {2300, 3200, 3300}   factConstructor(2300)
+%   factDerivedClass(2300, 2100, 0)
 
 % ----------------------------------------------------------------
 % Structural facts (same as inherit_example.lp)
@@ -19,6 +22,9 @@ possibleVFTableEntry(3000, 4, 2200).
 returnsSelf(2100).
 noCallsBefore(2100).
 noCallsAfter(2200).
+callsDelete(2210).
+callTarget(2210, 2200).
+noCallsAfter(2210).
 
 possibleVFTableWrite(2300, 0, 4000).
 possibleVFTableOverwrite(2300, 0, 3000, 4000).
