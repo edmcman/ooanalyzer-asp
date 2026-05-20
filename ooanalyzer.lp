@@ -227,7 +227,7 @@ factDerivedClass(Outer, Inner, Off) :-                                  % Counte
 factVFTableBelongsToClass(V, Off, C) :- factVFTableWrite(M, Off, V), find(M, C).  % Counterpart: reasonVFTableBelongsToClass (rules.pl:1007)
 
 % ============================================================
-% reasonMergeClasses — forced merges (must happen)
+% reasonMergeClasses — must merge
 % ============================================================
 
 % Multiple methods writing the SAME vftable at the same offset → same class
@@ -263,7 +263,7 @@ reasonMergeClasses(M1, M2) :-                                           % Counte
 :- reasonMergeClasses(M1, M2), not mergeClasses(M1, M2).               % Counterpart: insanityContradictoryMerges (insanity.pl:271) / guessMergeClasses enforcement
 
 % ============================================================
-% reasonNOTMergeClasses — forced not-merges (mergeClasses must not happen)
+% reasonNOTMergeClasses — must not merge
 % ============================================================
 
 % Outer and inner of objectInObject are distinct classes

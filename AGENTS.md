@@ -118,7 +118,7 @@ must be merged. Blocked when `factDerivedClass(M, _, _)` holds for a method in t
 **factClassCallsMethod(C, M)** — method M is called by class C passing the same
 this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 
-**Forced merges** (`reasonMergeClasses` → `:- reasonMergeClasses, not mergeClasses`):
+**reasonMergeClasses** (`:- reasonMergeClasses, not mergeClasses`):
 - Two methods writing the *same* vftable at the same offset
 - Methods in a vftable + the method that writes it (at any offset)
 - Debug symbols: same `symbolClass` annotation
@@ -127,7 +127,7 @@ this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 - reasonMergeClasses_C: two no-base classes sharing a method call
 - Inherited entries (`inheritedVftableEntry`) are excluded — they belong to the base class
 
-**Forced not-merges** (`reasonNOTMergeClasses` → `:- reasonNOTMergeClasses, mergeClasses`):
+**reasonNOTMergeClasses** (`:- reasonNOTMergeClasses, mergeClasses`):
 - Outer and inner constructors of an `objectInObject` pair
 - Base constructor (installs without overwriting) vs. derived (overwrites)
 - reasonNOTMergeClasses_F: two bases of the same derived at *different* offsets
