@@ -35,17 +35,17 @@ $(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts facts2clingo.py
 # ----------------------------------------------------------------
 # Run clingo on generated .lp files
 # ----------------------------------------------------------------
-run: $(LP_FILES)
-	@for lp in $(LP_FILES); do \
-		echo ""; \
-		echo "========================================"; \
-		echo "Running: $(CLINGO) $(CLINGO_FLAGS) $$lp"; \
-		echo "========================================"; \
-		$(CLINGO) $(CLINGO_FLAGS) $$lp 2>&1 | tail -6; \
-	done
+OUT_FILES := $(LP_FILES:%.lp=%.out)
+
+run: $(OUT_FILES)
+
+$(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
+	@echo "=== Running: $(CLINGO) $(CLINGO_FLAGS) $< ==="
+	$(CLINGO) $(CLINGO_FLAGS) $< > $@ 2>&1
+	@tail -6 $@
 
 # ----------------------------------------------------------------
 # Clean generated files
 # ----------------------------------------------------------------
 clean:
-	rm -f $(LP_FILES)
+	rm -f $(LP_FILES) $(OUT_FILES)
