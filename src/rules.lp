@@ -62,7 +62,7 @@ factVBTableEntry(V, Off, Value) :-                                    % Counterp
 % METHOD IDENTIFICATION
 % ============================================================
 
-factMethod(M) :- factVFTableEntry(_, _, M), not purecall(M).           % Counterpart: reasonMethod_* (A-P, rules.pl:28)
+factMethod(M) :- factVFTableEntry(_, _, M).                            % Counterpart: reasonMethod_G (rules.pl:73)
 factMethod(M) :- factVFTableWrite(M, _, _).                           % Counterpart: reasonMethod_*
 factMethod(M) :- factConstructor(M), possibleMethod(M).              % Counterpart: reasonMethod_*
 factMethod(M) :- factRealDestructor(M), possibleMethod(M).             % Counterpart: reasonMethod_*
@@ -314,4 +314,4 @@ factMethod(M) :- factClassCallsMethod(_, M).
 % reasonMergeClasses_C: two no-base classes where one calls a method of the other
 reasonMergeClasses(R1, R2) :-                                             % Counterpart: reasonMergeClasses_C (rules.pl:2822)
     factClassHasNoBase(R1), factClassHasNoBase(R2), R1 != R2, R1 < R2,
-    factClassCallsMethod(R1, M), find(M, R2).
+    factClassCallsMethod(R1, M), find(M, R2), not purecall(M).

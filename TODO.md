@@ -20,13 +20,6 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 | `guessConstructor4` / `factConstructor4` | `guess.pl` | Additional constructor guessing variants | Low |
 | `reasonDestructorParams` | `rules.pl` | Parameter-based destructor identification | Low |
 
-### 1.2 Method classification layer
-| Predicate(s) | Source | Description | Priority |
-|---|---|---|---|
-| `factMethod` | `setup.pl`, `rules.pl` | Derives `factMethod(M)` from vftable entries/writers, constructors/destructors, symbols, call targets, and class calls. Implemented. | **High** |
-| `factNOTMethod` | `setup.pl`, `guess.pl` | Explicit negation: `possibleMethod(M)` not confirmed as `factMethod`. Implemented in `src/rules.lp`. | **High** |
-| `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods. **Implemented:** A-G, J, K, L, M, N, O, P (in `src/rules.lp`). **DISABLED:** Q causes UNSAT on real binaries; Prolog reference also has it commented out. | **High** |
-
 ### 1.3 Class size reasoning
 | Predicate(s) | Source | Description | Priority |
 |---|---|---|---|

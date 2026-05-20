@@ -83,7 +83,7 @@ The prototype accepts **two vocabularies**:
 | `callTarget(Caller, Callee)` | Callee is directly called by Caller |
 | `callAtOffset(Caller, Callee, Off)` | Callee is called by Caller passing this+Off |
 | `thunk(Thunk, Target)` | Thunk is a JMP-only stub; Target is the real function |
-| `purecall(M)` | M is a pure-virtual stub (excluded from `factMethod`) |
+| `purecall(M)` | M is a pure-virtual stub (included in `factMethod`; blocked from merge rules) |
 | `symbolClass(M, Class)` | Debug symbol: M belongs to Class |
 | `symbolProperty(M, Prop)` | Prop \in {constructor, realDestructor, deletingDestructor} |
 | `rTTICompleteObjectLocator(V, TDA)` | COL at V-8: vftable V belongs to type TDA |
@@ -253,7 +253,7 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `reasonNOTDeletingDestructor` | `factNOTDeletingDestructor(M)` (basic versions) |
 | `possibleMethod` / `possibleConstructor` / `possibleDestructor` | `possibleMethod(M)`, `possibleConstructor(M)`, `possibleDestructor(M)` (from `initial.pl`) |
 | `factClassHasNoBase` / `guessClassHasNoBase` | `factClassHasNoBase(C)` (guessed; hard from RTTI) |
-| `factMethod` / `factNOTMethod` | `factMethod(M)` (hard derivations: vftable, ctor/dtor, symbols, calls, thunks); `factNOTMethod(M)` (`possibleMethod` not confirmed) |
+| `factMethod` / `factNOTMethod` | `factMethod(M)` (hard derivations: vftable, ctor/dtor, symbols, calls, thunks); `factNOTMethod(M)` (`possibleMethod` not confirmed). Purecall stubs are methods per Prolog `reasonMethod_G`, but blocked from merge rules. |
 | `reasonMethod_J` | `factMethod(M) :- factClassCallsMethod(_, M)` |
 | `reasonMethod_L` | `factMethod(M) :- methodCallAtOffset(_, Caller, M, 0), factMethod(Caller), thisParamFuncParameter(M, _)` |
 | `reasonMethod_O` | `factMethod(M) :- factMethod(Proven), callingConvention(Proven, "__thiscall"), thisParamFuncParameter(Proven, ThisPtr), callParameter(Insn, Proven, 0, ThisPtr), callTarget(Insn, Proven, Target), dethunk(Target, M), callingConvention(M, "__cdecl")` |
