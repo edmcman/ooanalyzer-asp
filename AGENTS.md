@@ -143,7 +143,7 @@ See `src/initial.lp` for the exact derivation rules.
 `factVFTableOverwrite`, `factVFTableEntry`, `factVFTableBelongsToClass`,
 `objectInObject`, `factDerivedClass`, `factEmbeddedObject`, `factClassHasNoBase`,
 `factClassCallsMethod`, `reasonMergeClasses`, `reasonNOTMergeClasses`,
-`factVFTableSizeGTE`, `inheritedVftableEntry`,
+`factVFTableSizeGTE`,
 `factVBTable`, `factVBTableWrite`, `factVBTableEntry`,
 and the equivalence-class predicates (`sameClass`, `classRep`, `find`).
 
@@ -174,10 +174,7 @@ class C. Mirrors `reasonVFTableBelongsToClass`. Derived from
 Used by a sanity check: a derived vftable must be at least as large as the base
 vftable it overwrites.
 
-**inheritedVftableEntry(Vderived, Off, M)** -- detects vftable slots in the derived
-class where the same method pointer appears at the same offset in the base
-vftable. Such entries belong to the base class; the vftable-entry merge rule
-skips them to avoid incorrectly merging inherited methods into the derived class.
+**inheritedVftableEntry(Vderived, Off, M)** -- DISABLED. This Clingo-specific predicate was intended to detect vftable slots in a derived class that reuse the same method from the base, so the vftable-entry merge rule could skip them. In practice it caused interaction problems on real binaries. Since `guessMergeClassesB` is a soft guess (via `mergeCandidate`) in both Prolog and this prototype, the predicate is not needed. See TODO.md.
 
 **factVBTable / factVBTableWrite / factVBTableEntry** -- virtual base tables. A VBTable
 contains offsets from the VBTable pointer to virtual base subobjects. When a
@@ -201,7 +198,6 @@ this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 - reasonMergeClasses_E: two bases of the same derived at the same offset
 - Deleting destructor calls real destructor -> same class
 - reasonMergeClasses_C: two no-base classes sharing a method call
-- Inherited entries (`inheritedVftableEntry`) are excluded -- they belong to the base class
 
 **reasonNOTMergeClasses** (`:- reasonNOTMergeClasses, mergeClasses`):
 - Outer and inner constructors of an `objectInObject` pair
@@ -227,6 +223,10 @@ mirrors Prolog's `find/2` (union-find lookup).
 - Derived vftable size must be >= base vftable size (`factVFTableSizeGTE`)
 - A constructor writing a VBTable cannot also embed the same base (virtual
   inheritance supersedes embedding)
+- `reasonMergeClasses` must hold -> `mergeClasses` must be guessed (enforced in `insanity.lp`)
+- `reasonNOTMergeClasses` and `mergeClasses` must not both hold (enforced in `insanity.lp`)
+
+All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` with a single dispatch pair at the bottom of `insanity.lp`: a hard constraint in normal mode, or soft `violate(Tag, Witness)` atoms when running with `--const diagnose=1`.
 
 **Optimization** -- three-level lexicographic:
 1. `#maximize { 1@2, V : factVFTable(V); 1@2, V : factVBTable(V) }` -- confirm as many vftables and VBTables as possible
@@ -254,13 +254,13 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `reasonMethod_L` | `factMethod(M) :- methodCallAtOffset(_, Caller, M, 0), factMethod(Caller), thisParamFuncParameter(M, _)` |
 | `reasonMethod_O` | `factMethod(M) :- factMethod(Proven), callingConvention(Proven, "__thiscall"), thisParamFuncParameter(Proven, ThisPtr), callParameter(Insn, Proven, 0, ThisPtr), callTarget(Insn, Proven, Target), dethunk(Target, M), callingConvention(M, "__cdecl")` |
 | `reasonMethod_P` | `factMethod(M) :- callParameter(Insn1, Func, 0, ThisPtr), callTarget(Insn1, Func, Target1), dethunk(Target1, Proven), factMethod(Proven), callParameter(Insn2, Func, 0, ThisPtr), callTarget(Insn2, Func, Target2), dethunk(Target2, M), callingConvention(M, "__cdecl")` |
-| `reasonMethod_Q` | Implemented but **disabled/known gap**: causes UNSAT on `ooex4/5/6/9` |
+| `reasonMethod_Q` | **Disabled.** Causes UNSAT on real binaries; the exact conflict is a mergeCandidate domain gap. Prolog also has this rule commented out. |
 | `factClassCallsMethod` | `factClassCallsMethod(C, M)` (no longer requires `factMethod(M)` — matches Prolog `reasonClassCallsMethod_C`) |
 | `reasonMergeClasses_C` | `reasonMergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
 | `reasonMergeClasses_E` | `reasonMergeClasses` from shared base at same offset |
 | `reasonMergeClasses` (dtor pair) | `reasonMergeClasses` from `factDeletingDestructor -> callTarget -> factRealDestructor` |
 | `guessNOTMergeClasses` / `reasonNOTMergeClasses_F` | `reasonNOTMergeClasses` from different-offset bases |
-| `rTTIEnabled` / `rTTIInheritsFrom` | `rTTICompleteObjectLocator`, `rTTIInheritsFrom` |
+| `rTTIEnabled` / `rTTIInheritsFrom` | `rTTICompleteObjectLocator`, `rTTIInheritsFrom`. Derivation filters `rTTIBaseClassDescriptor` to WhereP=0xffffffff and WhereV=0 (non-virtual bases only). The CHDA field is deliberately ignored to handle binaries where shared BCDs point to their own CHD rather than the derived class's CHD. |
 | `factDerivedClass` / `factEmbeddedObject` | `factDerivedClass/3` / `factEmbeddedObject/3` |
 | `reasonDerivedClass_B/D` | hard `factDerivedClass` from vftable overwrite / RTTI |
 | `eventualThunk` / `dethunk` | `dethunk/2` + `factVFTableEntry/3` (+ catch-all identity for non-thunks) |
@@ -268,7 +268,7 @@ mirrors Prolog's `find/2` (union-find lookup).
 | `find/union` (union-find) | `sameClass` transitive closure + `classRep` + `find/2` |
 | `insanity*.pl` | `:- constraint.` rules |
 | `factClassSizeGTE` / `classSize` | `factVFTableSizeGTE` (lightweight version) |
-| `inheritedVftableEntry` | `inheritedVftableEntry(V, Off, M)` -- detects re-used base slots |
+| `inheritedVftableEntry` | DISABLED in this prototype. See `inheritedVftableEntry` description above and TODO.md. |
 | `factVBTable` / `factVBTableEntry` | `factVBTable`, `factVBTableWrite`, `factVBTableEntry` |
 | `reasonDerivedClass_F` | `factDerivedClass` from `objectInObject + factVBTableEntry` |
 | `guessLateMergeClassesF2` | `mergeCandidate(M1, M2) :- factVFTableEntry(V, _, M2), factVFTableBelongsToClass(V, _, C), find(M1, C), M1 < M2` |
@@ -292,11 +292,9 @@ mirrors Prolog's `find/2` (union-find lookup).
 - `factVFTableSizeGTE` uses max entry offset (coarse); OOAnalyzer's `classSize{GTE,LTE}`
   also considers member accesses.
 - No member access reasoning (`methodMemberAccess`).
-- RTTI for virtual bases not yet handled (`rTTIInheritsFrom` with `WhereP != -1`).
-- `reasonMethod_Q` (thunk to proven method -> method) is implemented but causes UNSAT
-  on several real `.facts` files (`ooex4`, `ooex5`, `ooex6`, `ooex9`). The exact conflict
-  is not yet identified — likely an interaction with `sameClass`/`find` and a
-  `reasonNOTMergeClasses` or sanity check. Marked as a known gap in `TODO.md`.
+- Virtual base inheritance offset resolution from RTTI is not yet handled. Virtual bases are currently filtered *out* of `rTTIInheritsFrom` (WhereP=0xffffffff, WhereV=0 guard), which is correct behavior. Computing the actual offset from a virtual base's BCD entry (WhereP != -1) is future work.
+- `reasonMethod_Q` (thunk to proven method -> method) is disabled. Confirmed to cause UNSAT on real binaries; Prolog reference also has this rule commented out.
+- Diagnostic mode: run with `--const diagnose=1` to get soft `violate(Tag, Witness)` atoms instead of hard UNSAT, useful for identifying which constraint fires.
 
 See [TODO.md](TODO.md) for the full bidirectional coverage map: which OOAnalyzer rules
 are not yet implemented and which Clingo constructs are ASP-specific.

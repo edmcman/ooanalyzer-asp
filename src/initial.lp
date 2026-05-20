@@ -117,7 +117,7 @@ rTTITypeDescriptor(TDA, Name) :- rTTITypeDescriptor(TDA, _, Name, _).
 rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) :-
     rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
     rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
-    rTTIBaseClassDescriptor(BCDA, BaseTDA, _, Offset, _, _, _, CHDA),
+    rTTIBaseClassDescriptor(BCDA, BaseTDA, _, Offset, 0xffffffff, 0, _, _),  % WhereP=0xffffffff,WhereV=0: non-virtual only; ignore CHDA in BCD (shared BCDs point to their own hierarchy)
     DerivedTDA != BaseTDA.
 
 % ----------------------------------------------------------------

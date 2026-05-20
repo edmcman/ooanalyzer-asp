@@ -29,13 +29,25 @@ factVFTableWrite(M, Off, V) :- possibleVFTableWrite(M, Off, V), factVFTable(V). 
 factVFTableOverwrite(M, Off, V1, V2) :-                              % Counterpart: factVFTableOverwrite (setup.pl:58)
     possibleVFTableOverwrite(M, Off, V1, V2), factVFTable(V1), factVFTable(V2).
 
-% inheritedVftableEntry: a slot in a derived vftable that reuses the same method
-% pointer as the base vftable at the same offset.  Such entries belong to the base
-% class and must not be merged into the derived class via vftable-entry rules.
-inheritedVftableEntry(Vderived, Off, M) :-                           % *** XXX NO COUNTERPART *** (Clingo-specific; closest: reasonVFTableSizeGTE_B / reasonVFTableSizeLTE_B)
-    factVFTableOverwrite(_, _, Vbase, Vderived),
-    factVFTableEntry(Vbase, Off, M),
-    factVFTableEntry(Vderived, Off, M).
+% inheritedVftableEntry: DISABLED -- caused interaction problems on real binaries.
+% The idea: a slot in a derived vftable reusing the same method from the base should
+% not trigger a class merge between the derived class writer and that method.
+% Prolog handles this implicitly (no spurious merges because guessMergeClassesB is a
+% guess, not a hard rule).  See TODO.md for the potential OOAnalyzer improvement.
+%
+% % Case 1: explicit vftable overwrite (derived constructor writes both vftables).
+% inheritedVftableEntry(Vderived, Off, M) :-
+%     factVFTableOverwrite(_, _, Vbase, Vderived),
+%     factVFTableEntry(Vbase, Off, M),
+%     factVFTableEntry(Vderived, Off, M).
+%
+% % Case 2: inheritance without explicit overwrite via factDerivedClass.
+% inheritedVftableEntry(Vderived, Off, M) :-
+%     factDerivedClass(Outer, Inner, 0),
+%     factVFTableWrite(Outer, 0, Vderived), factVFTableWrite(Inner, 0, Vbase),
+%     Vbase != Vderived,
+%     factVFTableEntry(Vbase, Off, M),
+%     factVFTableEntry(Vderived, Off, M).
 
 % ============================================================
 % VBTABLE DERIVED FACTS
@@ -84,7 +96,8 @@ factMethod(M) :-
     callingConvention(M, "__cdecl").
 
 % reasonMethod_Q: a thunk that chains to a proven method is itself a method.
-factMethod(M) :- thunk(M, Called), factMethod(Called).
+% DISABLED: causes UNSAT on ooex4/5/6/9 -- see diagnosis below.
+% factMethod(M) :- thunk(M, Called), factMethod(Called).
 
 % factNOTMethod: explicit negation for possible methods that are not confirmed.
 % Counterpart: factNOTMethod (setup.pl:45 / guess.pl)
@@ -178,13 +191,13 @@ reasonMergeClasses(M1, M2) :-                                           % Counte
     factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2.
 
 % Methods in a vftable belong to the class whose constructor writes it.
-% Skip inherited entries -- those belong to the base class.
-reasonMergeClasses(M1, M2) :-                                           % Counterpart: guessMergeClassesB (guess.pl:1050)
-    factVFTableWrite(M1, _, V), factVFTableEntry(V, Off, M2),
-    not inheritedVftableEntry(V, Off, M2), M1 < M2.
-reasonMergeClasses(M1, M2) :-                                           % Counterpart: guessMergeClassesB
-    factVFTableWrite(M2, _, V), factVFTableEntry(V, Off, M1),
-    not inheritedVftableEntry(V, Off, M1), M1 < M2.
+% Counterpart: guessMergeClassesB (guess.pl:1050) -- this is a GUESS in Prolog, not a hard constraint.
+% The mergeCandidate entries in guess.lp capture the same pairs as soft (optional) merges.
+% Making this a hard reasonMergeClasses causes UNSAT on real binaries with sibling classes
+% sharing inherited methods. Keep disabled; the optimizer's maximize-merges objective
+% achieves the merge when it is valid.
+% reasonMergeClasses(M1, M2) :- factVFTableWrite(M1, _, V), factVFTableEntry(V, Off, M2), not inheritedVftableEntry(V, Off, M2), M1 < M2.
+% reasonMergeClasses(M1, M2) :- factVFTableWrite(M2, _, V), factVFTableEntry(V, Off, M1), not inheritedVftableEntry(V, Off, M1), M1 < M2.
 
 % Debug symbols resolve class membership directly (reasonMergeClasses_G)
 reasonMergeClasses(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.  % Counterpart: reasonMergeClasses_G (rules.pl:2881)
@@ -203,7 +216,6 @@ reasonMergeClasses(M1, M2) :-                                           % Counte
 reasonMergeClasses(M1, M2) :-                                           % Counterpart: guessMergeClassesB-like (VBTable analogue, no exact Prolog rule)
     factVBTableWrite(M1, Off, V), factVBTableWrite(M2, Off, V), M1 < M2.
 
-:- reasonMergeClasses(M1, M2), not mergeClasses(M1, M2).               % Counterpart: insanityContradictoryMerges (insanity.pl:271) / guessMergeClasses enforcement
 
 % ============================================================
 % reasonNOTMergeClasses -- must not merge
@@ -232,7 +244,6 @@ reasonNOTMergeClasses(M1, M2) :-                                         % Count
     TDA1 != TDA2,
     factVFTableWrite(M1, _, V1), factVFTableWrite(M2, _, V2), M1 < M2.
 
-:- reasonNOTMergeClasses(M1, M2), mergeClasses(M1, M2).                  % Counterpart: insanityContradictoryMerges (insanity.pl:271)
 
 % ============================================================
 % CLASS COMPUTATION: equivalence classes via transitive closure

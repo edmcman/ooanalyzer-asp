@@ -23,8 +23,8 @@ factVFTable(V) :- rTTICompleteObjectLocator(V, _).       % Counterpart: factVFTa
 
 % Same vftable writers or writer+entry
 mergeCandidate(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2.  % Counterpart: guessMergeClassesD (guess.pl:1215)
-mergeCandidate(M1, M2) :- factVFTableWrite(M1, _, V), factVFTableEntry(V, _, M2), M1 < M2.    % Counterpart: guessMergeClassesB (guess.pl:1050)
-mergeCandidate(M1, M2) :- factVFTableWrite(M2, _, V), factVFTableEntry(V, _, M1), M1 < M2.    % Counterpart: guessMergeClassesB
+mergeCandidate(M1, M2) :- factVFTableWrite(M1, _, V), factVFTableEntry(V, _, M2), M1 < M2.  % Counterpart: guessMergeClassesB (guess.pl:1050)
+mergeCandidate(M1, M2) :- factVFTableWrite(M2, _, V), factVFTableEntry(V, _, M1), M1 < M2.  % Counterpart: guessMergeClassesB
 
 % Same debug symbol class
 mergeCandidate(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.                      % Counterpart: reasonMergeClasses_G (rules.pl:2881)

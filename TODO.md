@@ -25,7 +25,7 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 |---|---|---|---|
 | `factMethod` | `setup.pl`, `rules.pl` | Derives `factMethod(M)` from vftable entries/writers, constructors/destructors, symbols, call targets, and class calls. Implemented. | **High** |
 | `factNOTMethod` | `setup.pl`, `guess.pl` | Explicit negation: `possibleMethod(M)` not confirmed as `factMethod`. Implemented in `src/rules.lp`. | **High** |
-| `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods. **Implemented:** A-G, J, L, O, P (in `src/rules.lp`). **Known gap:** Q is implemented but causes UNSAT on `ooex4/5/6/9` — needs investigation before enabling. **Deferred:** K, M, N require `thisPtrUsage/4` (not yet imported). | **High** |
+| `reasonMethod_A..P` | `rules.pl` | ~16 heuristics for identifying methods. **Implemented:** A-G, J, L, O, P (in `src/rules.lp`). **DISABLED:** Q causes UNSAT on real binaries; Prolog reference also has it commented out. **Deferred:** K, M, N require `thisPtrUsage/4` (not yet imported). | **High** |
 
 ### 1.3 Class size reasoning
 | Predicate(s) | Source | Description | Priority |
@@ -154,11 +154,12 @@ These are encoding artifacts required by ASP grounding / solving and do not corr
 | `mergeCandidate/2` | `src/guess.lp` | Domain restriction to prevent O(n²) grounding of the `mergeClasses` guess. Prolog uses incremental tabling and lazy evaluation, so it does not need an explicit candidate set. |
 | `hasLesser/1` | `src/rules.lp` | Helper for computing `classRep` as the minimum-address method via negation. Prolog computes `classRep` through the union-find in `class.pl`. |
 | `sameClass/2` | `src/rules.lp` | Explicit transitive closure materialized as ASP facts. Prolog maintains equivalence via union-find (`find/2`, `union/2`) rather than grounding all pairs. |
-| `inheritedVftableEntry/3` | `src/rules.lp` | Detects base-class slots reused in a derived vftable so the merge rule can skip them. Prolog handles this implicitly via `reasonVFTableSizeGTE_B` / `reasonVFTableSizeLTE_B` and union-find. |
+| `inheritedVftableEntry/3` | `src/rules.lp` | **DISABLED.** Idea: detect base-class slots reused in a derived vftable so the merge rule can skip them. Prolog avoids the problem implicitly because `guessMergeClassesB` is a *soft guess*, not a hard `reasonMergeClasses` rule — so the solver is free to not merge inherited entries. In the Clingo prototype, `guessMergeClassesB` is also a soft guess (via `mergeCandidate`), so the predicate should not be needed here either. **Potential OOAnalyzer improvement:** consider adding an explicit `inheritedVftableEntry` concept to the Prolog side to suppress spurious `reasonMergeClasses_B`-like merges in cases where the sibling-class problem (two classes inheriting from the same base sharing entries) causes incorrect same-class conclusions. |
 | Choice rules `{ }` + integrity constraints `:-` | `src/guess.lp`, `src/insanity.lp` | The "guess/constraint/optimize" skeleton is the ASP equivalent of OOAnalyzer's forward reasoning + chronological backtracking. |
 | `#maximize` lexicographic optimization | `src/optimize.lp` | OOAnalyzer uses a binary-search guessing loop (`tryBinarySearch`). Clingo delegates search to the solver with `@2/@1/@0` priority levels. |
 | No transitive `sameClass` constraint for `insanityContradictoryMerges` | `src/insanity.lp` | Prolog's `insanityContradictoryMerges` only checks direct `reasonMergeClasses` + `reasonNOTMergeClasses` conflicts. A transitive `sameClass` constraint (`:- objectInObject(M1, M2, _), sameClass(M1, M2).`) is strictly stronger and caused UNSAT on real `.facts` files. |
 | `factRealDestructor` as ASP choice rule | `src/rules.lp` | Prolog's `guessRealDestructor` only considers methods called by a confirmed deleting destructor. The Clingo prototype encodes this directly as `{ factRealDestructor(M) } :- callTarget(D, M), factDeletingDestructor(D), ...` rather than guessing all `noCallsAfter` methods. |
+| `insanity/2` + `diagnosing` | `src/insanity.lp` | All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` facts; a single dispatch pair converts them to either hard constraints (`:- not diagnosing, insanity(_, _).`) or soft `violate(Tag, Witness)` atoms (`violate(Tag, Witness) :- diagnosing, insanity(Tag, Witness).`) depending on `--const diagnose=1`. Run with `--const diagnose=1` to see which constraints fire instead of getting hard UNSAT. This pattern has no OOAnalyzer counterpart. |
 
 ---
 
