@@ -189,6 +189,17 @@ mirrors Prolog's `find/2` (union-find lookup).
 
 - Transitive closure of `sameClass` is O(n²) in grounding — fine for small
   inputs; replace with a propagator or reification for scale.
+  *Python propagator*: a script using Clingo's `clingo.propagator.Propagator` API
+  that hooks into the solving process. It maintains a union-find (disjoint-set)
+  structure in Python, watching `mergeClasses` literals as they become true in
+  the solver trail. When `mergeClasses(1100, 1200)` is assigned, the propagator
+  unions the two sets; on backtracking, it undoes the union (persistent
+  union-find). Constraints like "at most one real destructor per class" are
+  checked by querying the union-find instead of materializing `sameClass` pairs.
+  This eliminates the O(k²) per-component materialization, reducing complexity
+  to O(k α(k)) — effectively linear. `find/2` would be exposed as external atoms
+  or custom theory atoms that the solver evaluates on demand rather than
+  grounding as facts.
 - `factVFTableSizeGTE` uses max entry offset (coarse); OOAnalyzer's `classSize{GTE,LTE}`
   also considers member accesses.
 - No member access reasoning (`methodMemberAccess`).
