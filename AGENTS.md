@@ -17,6 +17,8 @@ This prototype captures the core ideas in ~300 lines of Clingo.
 | `src/insanity.lp` | Sanity checks (integrity constraints) |
 | `src/optimize.lp` | Lexicographic optimization directives |
 | `src/output.lp` | `#show` directives |
+| `src/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer facts |
+| `facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
 | `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
 | `examples/inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |
@@ -39,9 +41,20 @@ clingo ooanalyzer.lp examples/inherited_entry_example.lp  # derived inherits un-
 clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
 ```
 
+### From OOAnalyzer .facts files
+
+```sh
+python facts2clingo.py pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug/ooex0.facts > /tmp/ooex0.lp
+clingo ooanalyzer.lp /tmp/ooex0.lp
+```
+
 Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.
 
 ## Input fact vocabulary
+
+The prototype accepts **two vocabularies**:
+
+**(A) Simplified predicates** (hand-written examples like `examples/*.lp`):
 
 | Predicate | Meaning |
 |---|---|
@@ -64,6 +77,32 @@ Clingo exit codes: 10 = SAT, 20 = UNSAT, 30 = OPTIMUM FOUND.
 | `rTTIInheritsFrom(DerivedTDA, BaseTDA, Off)` | DerivedTDA has a non-virtual base BaseTDA at byte Off |
 | `possibleVBTableWrite(M, Off, V)` | Method M writes VBTable V at object offset Off |
 | `possibleVBTableEntry(V, Off, Value)` | Entry Value at offset Off in VBTable V |
+
+**(B) Full-arity OOAnalyzer .facts predicates** (from binary analysis):
+
+| Predicate | Arity | Notes |
+|---|---|---|
+| `possibleVFTableWrite` | 6 | Drops Insn, ThisPtr, ExpandedThisPtr in `initial.lp` |
+| `possibleVBTableWrite` | 6 | Same projection |
+| `callTarget` | 3 | Drops instruction address |
+| `insnCallsDelete` | 3 | Extracts function in `initial.lp` |
+| `symbolClass` | 4 | Drops mangled name and method name |
+| `rTTICompleteObjectLocator` | 6 | Computes V = Pointer + PtrSize |
+| `rTTITypeDescriptor` | 4 | Drops VFTable check and demangled name |
+| `rTTIClassHierarchyDescriptor` | 3 | List expanded by `facts2clingo.py` |
+| `rTTIBaseClassDescriptor` | 8 | Drives `rTTIInheritsFrom` in `initial.lp` |
+| `initialMemory` | 2 | Drives `possibleVFTableEntry` / `possibleVBTableEntry` |
+| `thisPtrOffset` | 3 | Drives `callAtOffset` in `initial.lp` |
+| `fileInfo` | 4 | Provides pointer size |
+| `thunk` | 2 | Same as simplified |
+| `symbolProperty` | 2 | Same as simplified |
+| `purecall` | 1 | Same as simplified |
+| `returnsSelf` | 1 | Same as simplified |
+| `noCallsBefore` | 1 | Same as simplified |
+| `noCallsAfter` | 1 | Same as simplified |
+| `uninitializedReads` | 1 | Same as simplified |
+
+See `src/initial.lp` for the exact derivation rules.
 
 ## Architecture
 

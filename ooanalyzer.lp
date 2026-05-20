@@ -3,6 +3,7 @@
 % See AGENTS.md for architecture details.
 
 #include "src/facts.lp".
+#include "src/initial.lp".
 #include "src/guess.lp".
 #include "src/rules.lp".
 #include "src/insanity.lp".
