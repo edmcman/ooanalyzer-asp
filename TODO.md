@@ -20,6 +20,11 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 | `guessConstructor4` / `factConstructor4` | `guess.pl` | Additional constructor guessing variants | Low |
 | `reasonDestructorParams` | `rules.pl` | Parameter-based destructor identification | Low |
 
+### 1.2 Method identification
+| Predicate(s) | Source | Description | Priority |
+|---|---|---|---|
+| `reasonMethod_Q` | `rules.pl` | Thunk to proven method -> method. Disabled in prototype because it causes UNSAT on real binaries; Prolog reference also has this rule commented out. | Medium |
+
 ### 1.3 Class size reasoning
 | Predicate(s) | Source | Description | Priority |
 |---|---|---|---|
@@ -116,6 +121,9 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 | `insanityInheritanceTwice` | `insanity.pl` | Same class inherited twice at different offsets | Medium |
 | `insanityVFTableSizeInvalid` | `insanity.pl` | `LTE < GTE` for vftable | Low |
 | `insanityContradictoryNOTConstructor` | `insanity.pl` | `reasonNOTConstructor` vs `factConstructor` | Medium |
+| `insanityDestructorDoubleDuty` | `insanity.pl` | Method cannot be both real and deleting destructor | Medium |
+| `insanityContradictoryNOTRealDestructor` | `insanity.pl` | `factNOTRealDestructor` vs `factRealDestructor` | Low |
+| `insanityContradictoryNOTDeletingDestructor` | `insanity.pl` | `factNOTDeletingDestructor` vs `factDeletingDestructor` | Low |
 
 ### 1.16 Final reporting layer
 | Predicate(s) | Source | Description | Priority |
@@ -155,6 +163,25 @@ These are encoding artifacts required by ASP grounding / solving and do not corr
 | `insanity/2` + `diagnosing` | `src/insanity.lp` | All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` facts; a single dispatch pair converts them to either hard constraints (`:- not diagnosing, insanity(_, _).`) or soft `violate(Tag, Witness)` atoms (`violate(Tag, Witness) :- diagnosing, insanity(Tag, Witness).`) depending on `--const diagnose=1`. Run with `--const diagnose=1` to see which constraints fire instead of getting hard UNSAT. This pattern has no OOAnalyzer counterpart. |
 
 ---
+
+---
+
+## 3. Known bugs / deviations in current Clingo prototype
+
+These are rules that ARE implemented but have correctness or completeness issues discovered during review.
+
+| Bug | Source | Description | Severity |
+|---|---|---|---|
+| `reasonMergeClasses_E` missing same-derived check | `src/rules.lp` | Line 235 uses `factDerivedClass(_, B1, Off), factDerivedClass(_, B2, Off)` with anonymous variables, so two **unrelated** derived classes at the same offset spuriously force their bases to merge. Should bind to the same `Derived`. | High |
+| `reasonNOTMergeClasses_L/P/R` indexed by reps | `src/rules.lp` | Lines 296-338 derive `reasonNOTMergeClasses(R1, R2)` where `R1,R2` are class reps, but `insanity(not_merge)` checks `reasonNOTMergeClasses(M1, M2), mergeClasses(M1, M2)` for methods. If reps aren't in `mergeCandidate`, the constraint never fires for actual violating pairs. | High |
+| `possibleVFTableOverwrite` missing `V1 != V2` | `src/initial.lp` | Lines 72-75 derive overwrite even when two instructions write the **same** vftable at the same offset. Downstream `reasonDerivedClass_B` then treats it as a base-to-derived overwrite. | High |
+| `mergeCandidate` gap for `reasonMergeClasses_C` | `src/guess.lp` | Lines 42-43 cover direct `callAtOffset(Caller, Callee, 0)` pairs, but `reasonMergeClasses_C` (rules.lp:385-388) operates on class reps. If the caller is not its own rep, `(R1, R2)` is not in `mergeCandidate`, causing unavoidable UNSAT when two no-base classes call each other at offset 0. | High |
+| `factClassHasNoBase` hard constraint bypasses diagnostic mode | `src/rules.lp` | Line 373 is an inline `:-` constraint, not an `insanity/2` fact, so it remains hard even when `--const diagnose=1` is passed. Should be moved to `insanity.lp`. | Medium |
+| `insanity(vft_diff)` incorrect and redundant | `src/insanity.lp` | Lines 38-39 check `factVFTableWrite` without requiring `factConstructor`, apply to any offset, and lack guards that Prolog `reasonNOTMergeClasses_E` uses. Also redundant since `rules.lp:277-281` already covers it via `insanity(not_merge)`. | Medium |
+| `insanity(cycle)` only catches 2-cycles | `src/insanity.lp` | Line 45 only detects `A→B→A`. Longer cycles (e.g. `A→B→C→A`) escape detection. | Medium |
+| `possibleMethod` misses callees | `src/initial.lp` | Line 133 only includes `Address` as a caller (`callTarget(_, Address, _)`). Methods that are only ever called and lack other indicators are excluded from `possibleMethod`, blocking them from becoming `factMethod`. | Medium |
+| Missing offset-0 preference in optimization | `src/optimize.lp` | `factDerivedClass(Outer, Inner, _)` weights all offsets equally, but offset-0 inheritance is the dominant case and should be preferred. | Medium |
+| `insanity(nomethod)` is redundant | `src/insanity.lp` | Line 42 can never fire because `rules.lp:65` already hard-derives `factMethod` from `factVFTableEntry`. | Low |
 
 ## Maintenance notes
 
