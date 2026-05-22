@@ -1,3 +1,3 @@
 # Generated Clingo .lp files from .facts conversion
-examples/ooa/*.lp
-examples/ooa/*.out
+examples/ooa/**/*.lp
+examples/ooa/**/*.out

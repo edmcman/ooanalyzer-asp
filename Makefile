@@ -1,13 +1,14 @@
 # OOAnalyzer Clingo Prototype — Makefile
 # Converts OOAnalyzer .facts files to Clingo .lp and runs the solver.
 
-PYTHON     := python3
-CLINGO     := clingo
+PYTHON       := python3
+CLINGO       := clingo
 CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=30
 
-OOA_DIR    := examples/ooa
-FACTS      := $(wildcard $(OOA_DIR)/*.facts)
-LP_FILES   := $(FACTS:%.facts=%.lp)
+OOA_DIR      := examples/ooa
+# Recursively find all .facts files in the test subdirectories
+FACTS        := $(shell find $(OOA_DIR) -name '*.facts')
+LP_FILES     := $(FACTS:%.facts=%.lp)
 
 # ----------------------------------------------------------------
 # Default: convert all .facts and run clingo
@@ -18,10 +19,10 @@ all: run
 
 help:
 	@echo "Targets:"
-	@echo "  make convert    — convert all $(OOA_DIR)/*.facts to .lp"
+	@echo "  make convert    — convert all $(OOA_DIR)/*/*/*.facts to .lp"
 	@echo "  make run        — convert and run clingo on all .lp files"
 	@echo "  make clean      — remove generated .lp files"
-	@echo "  make $(OOA_DIR)/oo.lp  — convert a single .facts file"
+	@echo "  make $(OOA_DIR)/ooex_vs2008/Debug/oo.lp  — convert a single .facts file"
 
 # ----------------------------------------------------------------
 # Conversion: .facts → .lp
@@ -30,6 +31,7 @@ convert: $(LP_FILES)
 
 $(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts facts2clingo.py
 	@echo "=== Converting $< → $@ ==="
+	@mkdir -p $(dir $@)
 	$(PYTHON) facts2clingo.py $< > $@
 
 # ----------------------------------------------------------------
@@ -48,4 +50,5 @@ $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 # Clean generated files
 # ----------------------------------------------------------------
 clean:
-	rm -f $(LP_FILES) $(OUT_FILES)
+	find $(OOA_DIR) -name '*.lp' -delete
+	find $(OOA_DIR) -name '*.out' -delete

@@ -1,7 +1,6 @@
-% Minimal example demonstrating the self-defeating loop with direct mergeClasses derivation.
-% Two methods share the same symbolClass. The hard merge rule derives mergeClasses,
-% which changes find/2, which invalidates the original derivation.
-% Result: UNSAT (no stable model).
+% Minimal example: two methods share the same symbolClass.
+% The hard merge rule derives mergeClasses via raw method IDs (not find/2),
+% so the self-defeating loop is avoided. Result: SAT with merged class.
 
 possibleMethod(1000).
 possibleMethod(1100).

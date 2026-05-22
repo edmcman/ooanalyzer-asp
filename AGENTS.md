@@ -27,7 +27,7 @@ This prototype captures the core ideas in ~700 lines of Clingo.
 | `examples/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
 | `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
 | `examples/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
-| `examples/ooa/` | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug`)
+| `examples/ooa/` | Real OOAnalyzer test files (`.facts`, `.symbols`, `.json`, `.results`) organized by build: `ooex_vs2008/Debug`, `ooex_vs2010/Lite`, etc.
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 
 ## Running
@@ -46,16 +46,16 @@ clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Ba
 Or use the Makefile:
 
 ```sh
-make examples/ooa/oo.lp   # convert one .facts file
-make convert              # convert all examples/ooa/*.facts
-make run                  # convert and run clingo on all of them
-make clean                # remove generated .lp files
+make examples/ooa/ooex_vs2008/Debug/oo.lp   # convert one .facts file
+make convert                                 # convert all examples/ooa/*/*/*.facts
+make run                                     # convert and run clingo on all of them
+make clean                                   # remove generated .lp/.out files
 ```
 
 ### From OOAnalyzer .facts files
 
 ```sh
-python facts2clingo.py pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
+python facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
 clingo ooanalyzer.lp /tmp/oo.lp
 ```
 

@@ -4,6 +4,7 @@
 
 #show find/2.
 #show classRep/1.
+#show mergeClasses/2.
 #show factMethod/1.
 #show factNOTMethod/1.
 #show factClassHasNoBase/1.
