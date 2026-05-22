@@ -44,11 +44,8 @@ insanity(nomethod, M) :- factVFTableEntry(_, _, M), not factMethod(M).          
 % insanityObjectCycle: circular inheritance is impossible
 insanity(cycle, (A,B)) :- factDerivedClass(A, B, _), factDerivedClass(B, A, _).        % Counterpart: insanityObjectCycle (insanity.pl:162)
 
-% insanityContradictoryMerges: reasonMergeClasses and reasonNOTMergeClasses must not conflict.
-% Prolog only checks direct conflicts, not transitive sameClass -- same here.
-% Do NOT add a transitive sameClass variant -- it is stronger than Prolog and causes UNSAT.
-insanity(merge_req, (M1,M2)) :- reasonMergeClasses(M1, M2), not mergeClasses(M1, M2).    % Counterpart: insanityContradictoryMerges (insanity.pl:271)
-insanity(not_merge, (M1,M2)) :- reasonNOTMergeClasses(M1, M2), mergeClasses(M1, M2).     % Counterpart: insanityContradictoryMerges (insanity.pl:271)
+% Counterpart: insanityContradictoryMerges (insanity.pl:271)
+insanity(not_merge, (M1,M2)) :- reasonNOTMergeClasses(M1, M2), mergeClasses(M1, M2).
 
 % A derived vftable must be at least as large as the base vftable it overwrites.
 insanity(vftsz, (Vb,Vd)) :- factVFTableOverwrite(_, _, Vb, Vd),                        % Counterpart: insanityBaseVFTableLarger (insanity.pl:196)

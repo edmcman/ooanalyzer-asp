@@ -26,7 +26,8 @@ This prototype captures the core ideas in ~700 lines of Clingo.
 | `examples/multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
 | `examples/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
 | `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
-| `examples/ooa/` | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug`) |
+| `examples/selfdefeating.lp` | UNSAT demo: hard merge using `find` causes self-defeating loop |
+| `examples/ooa/` | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug`)
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 
 ## Running
@@ -191,13 +192,17 @@ must be merged. Blocked when `factDerivedClass(M, _, _)` holds for a method in t
 **factClassCallsMethod(C, M)** -- method M is called by class C passing the same
 this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 
-**reasonMergeClasses** (`:- reasonMergeClasses, not mergeClasses`):
-- Two methods writing the *same* vftable at the same offset
-- Methods in a vftable + the method that writes it (at any offset)
-- Debug symbols: same `symbolClass` annotation
-- reasonMergeClasses_E: two bases of the same derived at the same offset
-- Deleting destructor calls real destructor -> same class
-- reasonMergeClasses_C: two no-base classes sharing a method call
+**Hard merges** (direct `mergeClasses` derivation, no choice):
+- `symbolClass`: same debug-symbol class annotation (reasonMergeClasses_G)
+- `factDerivedClass`: two bases of the same derived at same offset (reasonMergeClasses_E)
+- `factClassHasNoBase` + `factClassCallsMethod`: two no-base classes sharing a method call (reasonMergeClasses_C)
+
+**Soft merges** (via `mergeCandidate` + choice rule `{ mergeClasses }`):
+- Same vftable writers (guessMergeClassesD)
+- Vftable writer + entries (guessMergeClassesB)
+- Call relationships (guessMergeClassesC1-C4)
+- Deleting destructor -> real destructor chain (guessMergeClasses)
+- Late merge: singleton methods in confirmed vftables (guessLateMergeClassesF2)
 
 **reasonNOTMergeClasses** (`:- reasonNOTMergeClasses, mergeClasses`):
 - Outer and inner constructors of an `objectInObject` pair
@@ -212,6 +217,10 @@ To reduce grounding, `merged/2` serves as an undirected edge predicate for
 the closure: `sameClass(M1, M3) :- sameClass(M1, M2), merged(M2, M3).`
 This eliminates the explicit symmetry rule and cuts `sameClass` atoms from
 ~295k to ~16k on `oo.lp`.
+
+**sortPair** -- canonical ordering helper for class-rep pairs, equivalent to Prolog's
+`sort_tuple/2`. `sortPair(A, B, C1, C2)` produces `C1 < C2` from two reps without
+duplicating rule bodies. Used throughout `reasonNOTMergeClasses` and `mergeCandidate`.
 
 **Sanity checks** (integrity constraints -- any violation kills the model):
 - Constructor cannot appear in a vftable (not virtual)
@@ -265,9 +274,10 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `thisPtrUsage/4` | `thisPtrUsage(Insn, Function, ThisPtr, Method)` derived in `src/initial.lp` from `callTarget`, `dethunk`, `thisPtrParam`, `callParameter` |
 | `thisPtrUsage/3` | `thisPtrUsage(Function, ThisPtr, Method)` projection in `src/rules.lp` |
 | `factClassCallsMethod` | `factClassCallsMethod(C, M)` (no longer requires `factMethod(M)` — matches Prolog `reasonClassCallsMethod_C`) |
-| `reasonMergeClasses_C` | `reasonMergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
-| `reasonMergeClasses_E` | `reasonMergeClasses` from shared base at same offset |
-| `reasonMergeClasses` (dtor pair) | `reasonMergeClasses` from `factDeletingDestructor -> callTarget -> factRealDestructor` |
+| `reasonMergeClasses_C` | Direct `mergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
+| `reasonMergeClasses_E` | Direct `mergeClasses` from shared base at same offset |
+| `reasonMergeClasses_G` | Direct `mergeClasses` from same `symbolClass` annotation |
+| `sort_tuple/2` (Prolog) | `sortPair/4` (Clingo helper: canonical ordering of class-rep pairs) |
 | `guessNOTMergeClasses` / `reasonNOTMergeClasses_F` | `reasonNOTMergeClasses` from different-offset bases |
 | `rTTIEnabled` / `rTTIInheritsFrom` | `rTTICompleteObjectLocator`, `rTTIInheritsFrom`. Derivation filters `rTTIBaseClassDescriptor` to WhereP=0xffffffff and WhereV=0 (non-virtual bases only). The CHDA field is deliberately ignored to handle binaries where shared BCDs point to their own CHD rather than the derived class's CHD. |
 | `factDerivedClass` / `factEmbeddedObject` | `factDerivedClass/3` / `factEmbeddedObject/3` |
