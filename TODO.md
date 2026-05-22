@@ -173,10 +173,7 @@ These are rules that ARE implemented but have correctness or completeness issues
 
 | Bug | Source | Description | Severity |
 |---|---|---|---|
-| `reasonMergeClasses_E` missing same-derived check | `src/rules.lp` | Line 235 uses `factDerivedClass(_, B1, Off), factDerivedClass(_, B2, Off)` with anonymous variables, so two **unrelated** derived classes at the same offset spuriously force their bases to merge. Should bind to the same `Derived`. | High |
 | `possibleVFTableOverwrite` missing `V1 != V2` | `src/initial.lp` | Lines 72-75 derive overwrite even when two instructions write the **same** vftable at the same offset. Downstream `reasonDerivedClass_B` then treats it as a base-to-derived overwrite. | High |
-| Hard `mergeClasses` using `find` causes self-defeating loop | `src/rules.lp` | Direct `mergeClasses(C1, C2) :- ... find(...)` rules derive a merge from reps, but the merge changes `find/2` and invalidates the original ordering guard (`C1 < C2`). Result: no stable model. See `examples/selfdefeating.lp`. Must revert to raw-method pairs or choice-rule architecture. | High |
-| `mergeCandidate` gap for hard merges | `src/guess.lp` | When `mergeClasses` is a choice rule, hard `reasonMergeClasses` pairs must also appear in `mergeCandidate` or the model is UNSAT. Currently `mergeCandidate` only covers soft guesses. | High |
 | `factClassHasNoBase` hard constraint bypasses diagnostic mode | `src/rules.lp` | Line 373 is an inline `:-` constraint, not an `insanity/2` fact, so it remains hard even when `--const diagnose=1` is passed. Should be moved to `insanity.lp`. | Medium |
 | `insanity(vft_diff)` incorrect and redundant | `src/insanity.lp` | Lines 38-39 check `factVFTableWrite` without requiring `factConstructor`, apply to any offset, and lack guards that Prolog `reasonNOTMergeClasses_E` uses. Also redundant since `rules.lp:277-281` already covers it via `insanity(not_merge)`. | Medium |
 | `insanity(cycle)` only catches 2-cycles | `src/insanity.lp` | Line 45 only detects `A→B→A`. Longer cycles (e.g. `A→B→C→A`) escape detection. | Medium |

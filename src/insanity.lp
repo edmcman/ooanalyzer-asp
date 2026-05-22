@@ -28,15 +28,15 @@ insanity(nc, M) :- factConstructor(M), factNOTConstructor(M).                   
 
 % insanityMultipleRealDestructors: at most one real destructor per class
 insanity(mrd, (D1,D2)) :- factRealDestructor(D1), factRealDestructor(D2), D1 < D2,    % Counterpart: insanityTwoRealDestructorsOnClass (insanity.pl:253)
-                           find(D1, C), find(D2, C).
+                           sameClass(D1, D2).
 
 % insanityVFTables: a vftable cannot be shared by two classes at the same offset
 insanity(vft2c, (M1,M2)) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2,  % Counterpart: insanityVFTableOnTwoClasses (insanity.pl:18)
-                             find(M1, C1), find(M2, C2), C1 != C2.
+                             not sameClass(M1, M2).
 
 % Two constructors writing DIFFERENT vftables at the same offset -> different classes
 insanity(vft_diff, (M1,M2)) :- factVFTableWrite(M1, Off, V1), factVFTableWrite(M2, Off, V2),      % Counterpart: reasonNOTMergeClasses_E (rules.pl:3123)
-                                M1 != M2, V1 != V2, find(M1, C), find(M2, C).
+                                M1 != M2, V1 != V2, sameClass(M1, M2).
 
 % VFTable entries must resolve to real methods
 insanity(nomethod, M) :- factVFTableEntry(_, _, M), not factMethod(M).                  % Counterpart: reasonMethod_* (A-P) enforcement

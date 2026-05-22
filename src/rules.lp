@@ -207,17 +207,17 @@ factDerivedClass(Outer, Inner, Off) :-                                  % Counte
 % CLASS -> VFTABLE MAPPING
 % ============================================================
 
-% factVFTableBelongsToClass(V, Off, C): vftable V belongs to class C at object offset Off.
+% factVFTableBelongsToClass(V, Off, M): vftable V is written by method M at object offset Off.
 % Mirrors reasonVFTableBelongsToClass.
-factVFTableBelongsToClass(V, Off, C) :- factVFTableWrite(M, Off, V), find(M, C).  % Counterpart: reasonVFTableBelongsToClass (rules.pl:1007)
+factVFTableBelongsToClass(V, Off, M) :- factVFTableWrite(M, Off, V).  % Counterpart: reasonVFTableBelongsToClass (rules.pl:1007)
 
 % ============================================================
 % Hard merges -- must merge
 % ============================================================
 
-mergeClasses(C1, C2) :- symbolClass(M1, C), symbolClass(M2, C), find(M1, C1), find(M2, C2), C1 < C2.  % Counterpart: reasonMergeClasses_G (rules.pl:2881)
+mergeClasses(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.  % Counterpart: reasonMergeClasses_G (rules.pl:2881)
 
-mergeClasses(C1, C2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Derived, B2, Off), find(B1, C1), find(B2, C2), C1 < C2.  % Counterpart: reasonMergeClasses_E (rules.pl:2847)
+mergeClasses(B1, B2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Derived, B2, Off), B1 < B2.  % Counterpart: reasonMergeClasses_E (rules.pl:2847)
 
 
 
@@ -226,79 +226,78 @@ mergeClasses(C1, C2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Der
 % ============================================================
 
 % Outer and inner of objectInObject are distinct classes
-reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), find(M1, CA), find(M2, CB), sortPair(CA, CB, C1, C2).  % Counterpart: reasonNOTMergeClasses_G (rules.pl:3177)
+reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), sortPair(M1, M2, C1, C2).  % Counterpart: reasonNOTMergeClasses_G (rules.pl:3177)
 
 % Base vs. derived from vftable overwrite
 reasonNOTMergeClasses_C_asymmetric(Inst, Over) :-                        % Counterpart: reasonNOTMergeClasses_C_asymmetric (rules.pl:3090)
     factVFTableWrite(Inst, 0, V), not factVFTableOverwrite(Inst, 0, _, V),
     factVFTableOverwrite(Over, 0, V, _).
-reasonNOTMergeClasses(C1, C2) :- reasonNOTMergeClasses_C_asymmetric(A, B), find(A, CA), find(B, CB), sortPair(CA, CB, C1, C2).
+reasonNOTMergeClasses(C1, C2) :- reasonNOTMergeClasses_C_asymmetric(A, B), sortPair(A, B, C1, C2).
 
 % reasonNOTMergeClasses_F: two bases of the same derived at different offsets
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_F (rules.pl:3158)
     factDerivedClass(D, B1, Off1), factDerivedClass(D, B2, Off2),
-    Off1 != Off2, find(B1, C1), find(B2, C2), C1 < C2.
+    Off1 != Off2, sortPair(B1, B2, C1, C2).
 
 % RTTI: two vftables with different type descriptors belong to different classes
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_I (rules.pl:3196)
     rTTICompleteObjectLocator(V1, TDA1), rTTICompleteObjectLocator(V2, TDA2),
     TDA1 != TDA2,
     factVFTableWrite(M1, _, V1), factVFTableWrite(M2, _, V2),
-    find(M1, C1), find(M2, C2), C1 < C2.
+    sortPair(M1, M2, C1, C2).
 
 % reasonNOTMergeClasses_E: two methods writing different vftables at offset 0
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_E (rules.pl:3123)
     factVFTableWrite(M1, 0, V1), factVFTableWrite(M2, 0, V2),
     V1 != V2,
     not factVFTableWrite(M1, 0, V2), not factVFTableWrite(M2, 0, V1),
-    find(M1, C1), find(M2, C2), C1 < C2.
+    sortPair(M1, M2, C1, C2).
 
 % reasonNOTMergeClasses_J: derived/base class relationship (transitive)
 classRelationship(Derived, Base) :- factDerivedClass(Derived, Base, _).
 classRelationship(Derived, Base) :- factDerivedClass(Derived, Middle, _), classRelationship(Middle, Base).
 
-reasonNOTMergeClasses(C1, C2) :- classRelationship(M1, M2), find(M1, CA), find(M2, CB), sortPair(CA, CB, C1, C2).
+reasonNOTMergeClasses(C1, C2) :- classRelationship(M1, M2), sortPair(M1, M2, C1, C2).
 
 % reasonNOTMergeClasses_K: methods with different symbolClass names
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_K (rules.pl:3222)
     symbolClass(M1, N1), symbolClass(M2, N2),
-    N1 != N2, find(M1, C1), find(M2, C2), C1 < C2.
+    N1 != N2, sortPair(M1, M2, C1, C2).
 
 % reasonNOTMergeClasses_L: two classes each with a real destructor
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_L (rules.pl:3240)
     factRealDestructor(D1), factRealDestructor(D2),
-    find(D1, C1), find(D2, C2), C1 < C2.
+    sortPair(D1, D2, C1, C2).
 
 % reasonNOTMergeClasses_P: constructor/destructor called at offset > 0
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_P (rules.pl:3318)
     validMethodCallAtOffset(_, Caller, Method, Offset),
     Offset > 0, factMethod(Caller), factMethod(Method), factConstructor(Method),
-    find(Caller, CA), find(Method, CB), sortPair(CA, CB, C1, C2).
+    sortPair(Caller, Method, C1, C2).
 reasonNOTMergeClasses(C1, C2) :-
     validMethodCallAtOffset(_, Caller, Method, Offset),
     Offset > 0, factMethod(Caller), factMethod(Method),
     factDeletingDestructor(Method), not factRealDestructor(Caller),
-    find(Caller, CA), find(Method, CB), sortPair(CA, CB, C1, C2).
+    sortPair(Caller, Method, C1, C2).
 reasonNOTMergeClasses(C1, C2) :-
     validMethodCallAtOffset(_, Caller, Method, Offset),
     Offset > 0, factMethod(Caller), factMethod(Method), factRealDestructor(Method),
-    find(Caller, CA), find(Method, CB), sortPair(CA, CB, C1, C2).
+    sortPair(Caller, Method, C1, C2).
 
 % reasonNOTMergeClasses_R: derived vftable installed by called method
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_R (rules.pl:3366)
-    factClassCallsMethod(Cd, CalledMethod),
+    factClassCallsMethod(Derived, CalledMethod),
     not purecall(CalledMethod),
     factDerivedClass(Derived, Base, Offset),
-    find(Derived, Cd),
     factVFTableWrite(CalledMethod, Offset, V),
-    factVFTableBelongsToClass(V, Offset, Cd),
-    find(Base, CA), find(CalledMethod, CB), sortPair(CA, CB, C1, C2).
+    factVFTableBelongsToClass(V, Offset, Derived),
+    sortPair(Base, CalledMethod, C1, C2).
 
 % reasonNOTMergeClasses_Q: symbol consistency
 reasonNOTMergeClasses(C1, C2) :-                                         % Counterpart: reasonNOTMergeClasses_Q (rules.pl:3352)
     symbolClass(M1, ClassName), factMethod(M2),
     not symbolClass(M2, ClassName),
-    find(M1, CA), find(M2, CB), sortPair(CA, CB, C1, C2).
+    sortPair(M1, M2, C1, C2).
 
 
 % ============================================================
@@ -317,33 +316,40 @@ hasLesser(M) :- sameClass(M, M2), M2 < M.
 classRep(M)  :- factMethod(M), not hasLesser(M).
 find(M, R)   :- sameClass(M, R), classRep(R).
 
-% sortPair: produce the canonical ordered pair of two class reps.
+% sortPair: produce the canonical ordered pair of two IDs.
 % Counterpart to Prolog's sort_tuple/2 -- avoids duplicating two-rule ordering patterns.
-sortPair(A, B, A, B) :- classRep(A), classRep(B), A < B.
-sortPair(A, B, B, A) :- classRep(A), classRep(B), B < A.
+sortPair(A, B, A, B) :- factMethod(A), factMethod(B), A < B.
+sortPair(A, B, B, A) :- factMethod(A), factMethod(B), B < A.
 
 % ============================================================
 % CLASS PROPERTIES
 % ============================================================
 
-% Hard derivation: RTTI with no inheritance entries means this class has no base.
-factClassHasNoBase(C) :-                                                 % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781) / insanityNoBaseConsistency (insanity.pl:8)
-    rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V), find(M, C),
+% Hard derivation: RTTI with no inheritance entries means this method's class has no base.
+factClassHasNoBase(M) :-                                                 % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781) / insanityNoBaseConsistency (insanity.pl:8)
+    rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V),
     not rTTIInheritsFrom(TDA, _, _).
 
 % Constraint: a derived class cannot also have no base.
-:- factClassHasNoBase(C), factDerivedClass(M, _, _), find(M, C).       % Counterpart: insanityNoBaseConsistency (insanity.pl:8)
+:- factClassHasNoBase(M1), factDerivedClass(M2, _, _), sameClass(M1, M2).       % Counterpart: insanityNoBaseConsistency (insanity.pl:8)
 
-% factClassCallsMethod: methods called by a class passing the same this-pointer.
+% factClassCallsMethod: Caller directly calls M passing the same this-pointer.
 % Mirrors reasonClassCallsMethod_C (rules.pl:2463).  Intentionally does NOT require
 % factMethod(M) so that reasonMethod_J can derive factMethod from it.
-factClassCallsMethod(C, M) :-                                             % Counterpart: factClassCallsMethod (setup.pl:83)
-    find(Caller, C), callAtOffset(Caller, M, 0).
+factClassCallsMethod(Caller, M) :-                                        % Counterpart: factClassCallsMethod (setup.pl:83)
+    callAtOffset(Caller, M, 0).
 
 % reasonMethod_J: a method called by another class via this+0 is a method.
 factMethod(M) :- factClassCallsMethod(_, M).
 
 % reasonMergeClasses_C: two no-base classes where one calls a method of the other
-mergeClasses(C1, C2) :-                                                   % Counterpart: reasonMergeClasses_C (rules.pl:2822)
-    factClassHasNoBase(C1), factClassHasNoBase(C2), C1 != C2, C1 < C2,
-    factClassCallsMethod(C1, M), find(M, C2), not purecall(M).
+mergeClasses(Caller, M) :-                                                   % Counterpart: reasonMergeClasses_C (rules.pl:2822)
+    sameClass(Caller, CR), factClassHasNoBase(CR),
+    callAtOffset(Caller, M, 0),
+    sameClass(M, MR), factClassHasNoBase(MR),
+    not purecall(M), Caller < M.
+mergeClasses(M, Caller) :-
+    sameClass(Caller, CR), factClassHasNoBase(CR),
+    callAtOffset(Caller, M, 0),
+    sameClass(M, MR), factClassHasNoBase(MR),
+    not purecall(M), M < Caller.

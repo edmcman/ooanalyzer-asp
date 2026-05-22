@@ -26,7 +26,7 @@ This prototype captures the core ideas in ~700 lines of Clingo.
 | `examples/multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
 | `examples/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
 | `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
-| `examples/selfdefeating.lp` | UNSAT demo: hard merge using `find` causes self-defeating loop |
+| `examples/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
 | `examples/ooa/` | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests/ooex_vs2008/Debug`)
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 
@@ -167,9 +167,9 @@ from being real destructors, and methods that are not `possibleDestructor` are e
 are distinct. The solver guesses `factDerivedClass` vs. `factEmbeddedObject`. The
 vftable overwrite pattern and RTTI provide hard evidence for `factDerivedClass`.
 
-**factVFTableBelongsToClass(V, Off, C)** -- maps vftable V (at object offset Off) to
-class C. Mirrors `reasonVFTableBelongsToClass`. Derived from
-`factVFTableWrite(M, Off, V), find(M, C)`.
+**factVFTableBelongsToClass(V, Off, M)** -- vftable V is written by method M at object
+offset Off. Mirrors `reasonVFTableBelongsToClass`. Derived from
+`factVFTableWrite(M, Off, V)`.
 
 **factVFTableSizeGTE** -- lower bound on vftable size (max entry offset + 4).
 Used by a sanity check: a derived vftable must be at least as large as the base
@@ -185,19 +185,21 @@ is virtual inheritance (`factDerivedClass`). This is `reasonDerivedClass_F` in t
 original OOAnalyzer. The first VBTable entry (offset 0) is typically the self-offset
 (offset from vbptr to complete object start).
 
-**factClassHasNoBase** -- guessed, with hard derivation from RTTI. Enables
+**factClassHasNoBase(M)** -- guessed for any method, with hard derivation from RTTI
+(when a method writes a vftable with no inheritance entries). Enables
 `reasonMergeClasses_C`: two no-base classes where one calls a method of the other
-must be merged. Blocked when `factDerivedClass(M, _, _)` holds for a method in that class.
+must be merged. Blocked when `factDerivedClass(M2, _, _)` and `sameClass(M1, M2)` holds.
 
-**factClassCallsMethod(C, M)** -- method M is called by class C passing the same
+**factClassCallsMethod(Caller, M)** -- Caller directly calls M passing the same
 this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 
 **Hard merges** (direct `mergeClasses` derivation, no choice):
-- `symbolClass`: same debug-symbol class annotation (reasonMergeClasses_G)
-- `factDerivedClass`: two bases of the same derived at same offset (reasonMergeClasses_E)
-- `factClassHasNoBase` + `factClassCallsMethod`: two no-base classes sharing a method call (reasonMergeClasses_C)
+- `symbolClass`: same debug-symbol class annotation (reasonMergeClasses_G). Head uses raw method IDs (`M1 < M2`) to avoid the self-defeating `find` loop.
+- `factDerivedClass`: two bases of the same derived at same offset (reasonMergeClasses_E). Head uses raw base-method IDs (`B1 < B2`).
+- `factClassHasNoBase` + `callAtOffset`: two no-base classes sharing a method call (reasonMergeClasses_C). Body uses `sameClass` (monotonically growing) instead of `find` (which changes when reps merge); head uses raw method IDs.
 
 **Soft merges** (via `mergeCandidate` + choice rule `{ mergeClasses }`):
+All `mergeCandidate` rules use raw method IDs and `sortPair` for canonical ordering:
 - Same vftable writers (guessMergeClassesD)
 - Vftable writer + entries (guessMergeClassesB)
 - Call relationships (guessMergeClassesC1-C4)
@@ -212,15 +214,16 @@ this-pointer (`callAtOffset(Caller, M, 0)`). Mirrors `factClassCallsMethod`.
 
 **Class computation** -- transitive closure of `mergeClasses` gives `sameClass`; the
 minimum-address method in each equivalence class is the `classRep`. `find(M, R)`
-mirrors Prolog's `find/2` (union-find lookup).
+is defined for debugging / `#show` but is **not used in any rule body** — all
+rules operate on raw method IDs or `sameClass` directly.
 To reduce grounding, `merged/2` serves as an undirected edge predicate for
 the closure: `sameClass(M1, M3) :- sameClass(M1, M2), merged(M2, M3).`
 This eliminates the explicit symmetry rule and cuts `sameClass` atoms from
 ~295k to ~16k on `oo.lp`.
 
-**sortPair** -- canonical ordering helper for class-rep pairs, equivalent to Prolog's
-`sort_tuple/2`. `sortPair(A, B, C1, C2)` produces `C1 < C2` from two reps without
-duplicating rule bodies. Used throughout `reasonNOTMergeClasses` and `mergeCandidate`.
+**sortPair** -- canonical ordering helper for any pair of IDs, equivalent to Prolog's
+`sort_tuple/2`. `sortPair(A, B, C1, C2)` produces `C1 < C2` without duplicating
+rule bodies. Used throughout `reasonNOTMergeClasses` and `mergeCandidate`.
 
 **Sanity checks** (integrity constraints -- any violation kills the model):
 - Constructor cannot appear in a vftable (not virtual)
@@ -274,9 +277,9 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `thisPtrUsage/4` | `thisPtrUsage(Insn, Function, ThisPtr, Method)` derived in `src/initial.lp` from `callTarget`, `dethunk`, `thisPtrParam`, `callParameter` |
 | `thisPtrUsage/3` | `thisPtrUsage(Function, ThisPtr, Method)` projection in `src/rules.lp` |
 | `factClassCallsMethod` | `factClassCallsMethod(C, M)` (no longer requires `factMethod(M)` — matches Prolog `reasonClassCallsMethod_C`) |
-| `reasonMergeClasses_C` | Direct `mergeClasses` from `factClassHasNoBase + factClassCallsMethod` |
-| `reasonMergeClasses_E` | Direct `mergeClasses` from shared base at same offset |
-| `reasonMergeClasses_G` | Direct `mergeClasses` from same `symbolClass` annotation |
+| `reasonMergeClasses_C` | `mergeClasses(Caller, M) :- sameClass(Caller, CR), factClassHasNoBase(CR), callAtOffset(Caller, M, 0), sameClass(M, MR), factClassHasNoBase(MR), not purecall(M), Caller < M.` (and symmetric `M < Caller` rule). Uses `sameClass` instead of `find` to avoid the self-defeating loop. |
+| `reasonMergeClasses_E` | `mergeClasses(B1, B2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Derived, B2, Off), B1 < B2.` Head uses raw method IDs to avoid the self-defeating `find` loop. |
+| `reasonMergeClasses_G` | `mergeClasses(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.` Head uses raw method IDs to avoid the self-defeating `find` loop. |
 | `sort_tuple/2` (Prolog) | `sortPair/4` (Clingo helper: canonical ordering of class-rep pairs) |
 | `guessNOTMergeClasses` / `reasonNOTMergeClasses_F` | `reasonNOTMergeClasses` from different-offset bases |
 | `rTTIEnabled` / `rTTIInheritsFrom` | `rTTICompleteObjectLocator`, `rTTIInheritsFrom`. Derivation filters `rTTIBaseClassDescriptor` to WhereP=0xffffffff and WhereV=0 (non-virtual bases only). The CHDA field is deliberately ignored to handle binaries where shared BCDs point to their own CHD rather than the derived class's CHD. |
