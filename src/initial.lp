@@ -72,7 +72,7 @@ possibleVBTableEntry(VBTable, NewOffset, Value) :-
 possibleVFTableOverwrite(M, Off, V1, V2) :-
     possibleVFTableWrite(I1, M, _, Off, _, V1),
     possibleVFTableWrite(I2, M, _, Off, _, V2),
-    I1 < I2.
+    I1 < I2, V1 != V2.
 
 % ----------------------------------------------------------------
 % callTarget: drop instruction address.
@@ -131,6 +131,7 @@ possibleMethod(Address) :- noCallsBefore(Address).
 possibleMethod(Address) :- returnsSelf(Address).
 possibleMethod(Address) :- purecall(Address).
 possibleMethod(Address) :- callTarget(_, Address, _).
+possibleMethod(Address) :- callTarget(_, _, Address).
 
 % ----------------------------------------------------------------
 % possibleConstructor / possibleDestructor
