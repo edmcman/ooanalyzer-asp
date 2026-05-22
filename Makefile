@@ -43,7 +43,7 @@ run: $(OUT_FILES)
 
 $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@echo "=== Running: $(CLINGO) $(CLINGO_FLAGS) $< ==="
-	$(CLINGO) $(CLINGO_FLAGS) $< > $@ 2>&1
+	$(CLINGO) $(CLINGO_FLAGS) $< > $@ 2>&1 || true
 	@tail -6 $@
 
 # ----------------------------------------------------------------
