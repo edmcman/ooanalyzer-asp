@@ -2,6 +2,7 @@
 # Converts OOAnalyzer .facts files to Clingo .lp and runs the solver.
 
 PYTHON       := python3
+TIME         := time
 CLINGO       := clingo
 CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
@@ -47,7 +48,7 @@ run: $(OUT_FILES)
 
 $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@echo "=== Running: $(CLINGO) $(CLINGO_FLAGS) $< ==="
-	$(CLINGO) $(CLINGO_FLAGS) $< > $@ 2>&1 || true
+	$(TIME) $(CLINGO) $(CLINGO_FLAGS) $< > $@ 2>&1 || true
 	@tail -6 $@
 
 # ----------------------------------------------------------------
@@ -59,7 +60,7 @@ lazyrun: $(LAZY_OUT_FILES)
 
 $(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@echo "=== Running: $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< ==="
-	$(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2>&1 || true
+	$(TIME) $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2>&1 || true
 	@tail -6 $@
 
 # ----------------------------------------------------------------
