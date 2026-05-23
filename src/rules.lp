@@ -3,11 +3,11 @@
 % ============================================================
 
 % Follow thunk chains to find the actual implementing method.
-dethunk(E, E) :- possibleVFTableEntry(_, _, E), not methodIsThunk(E).  % Counterpart: dethunk (initial.pl:313) / eventualThunk (initial.pl:304)
-dethunk(T, T) :- thunk(_, T), not methodIsThunk(T).               % Counterpart: dethunk
+dethunk(E, E) :- possibleVFTableEntry(_, _, E), not thunk(E, _).  % Counterpart: dethunk (initial.pl:313) / eventualThunk (initial.pl:304)
+dethunk(T, T) :- thunk(_, T), not thunk(T, _).                    % Counterpart: dethunk
 
 % Catch-all identity: Prolog's dethunk returns the input unchanged when it is not a thunk.
-dethunk(M, M) :- possibleMethod(M), not methodIsThunk(M).
+dethunk(M, M) :- possibleMethod(M), not thunk(M, _).
 
 dethunk(T, M) :- thunk(T, X), dethunk(X, M).                     % Counterpart: dethunk
 
@@ -194,7 +194,7 @@ destructorOverwrite(M, Off) :- factVFTableOverwrite(M, Off, _, _), factRealDestr
 % because in that case V1 is Outer's OWN class vftable, not a base vftable.
 factDerivedClass(Outer, Inner, Off) :-                                  % Counterpart: reasonDerivedClass_B (rules.pl:1834)
     factVFTableOverwrite(Outer, Off, V1, _),
-    factVFTableWrite(Inner, 0, V1), not vftableReplacedAt(Inner, 0, V1),
+    factVFTableWrite(Inner, 0, V1), not factVFTableOverwrite(Inner, 0, _, V1),
     Outer != Inner,
     not destructorOverwrite(Outer, Off).
 
@@ -210,8 +210,8 @@ factEmbeddedObject(Outer, Inner, Off) :-                               % Counter
 factDerivedClass(Outer, Inner, Off) :-                                  % Counterpart: reasonDerivedClass_D (rules.pl:1968)
     rTTICompleteObjectLocator(V1, TDA1), rTTICompleteObjectLocator(V2, TDA2),
     rTTIDirectInheritsFrom(TDA1, TDA2, Off),
-    factVFTableWrite(Outer, 0, V1), not vftableReplacedAt(Outer, 0, V1),
-    factVFTableWrite(Inner, 0, V2), not vftableReplacedAt(Inner, 0, V2).
+    factVFTableWrite(Outer, 0, V1), not factVFTableOverwrite(Outer, 0, _, V1),
+    factVFTableWrite(Inner, 0, V2), not factVFTableOverwrite(Inner, 0, _, V2).
 
 % Virtual base detection from VBTables (reasonDerivedClass_F).
 % If objectInObject holds and a VBTable entry gives the matching offset,
@@ -260,8 +260,8 @@ differentVFTAtOtherOffset(M1, M2) :- factVFTableWrite(M1, Off, V1), factVFTableW
 % to the same class. This is the proactive complement of insanity(vft2c): instead of
 % making the constraint fire, we derive the merge directly.
 mergeClasses(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2,
-                          not vftableOverwrittenAt(M1, Off, V),
-                          not vftableOverwrittenAt(M2, Off, V),
+                          not factVFTableOverwrite(M1, Off, V, _),
+                          not factVFTableOverwrite(M2, Off, V, _),
                           not destructorOverwrite(M1, Off),
                           not destructorOverwrite(M2, Off),
                           not differentVFTAtOtherOffset(M1, M2).
@@ -274,8 +274,8 @@ reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), sortPair(M1, M2, C1,
 
 % Base vs. derived from vftable overwrite
 reasonNOTMergeClasses_C_asymmetric(Inst, Over) :-                        % Counterpart: reasonNOTMergeClasses_C_asymmetric (rules.pl:3090)
-    factVFTableWrite(Inst, 0, V), not vftableReplacedAt(Inst, 0, V),
-    vftableOverwrittenAt(Over, 0, V).
+    factVFTableWrite(Inst, 0, V), not factVFTableOverwrite(Inst, 0, _, V),
+    factVFTableOverwrite(Over, 0, V, _).
 reasonNOTMergeClasses(C1, C2) :- reasonNOTMergeClasses_C_asymmetric(A, B), sortPair(A, B, C1, C2).
 
 % reasonNOTMergeClasses_F: two bases of the same derived at different offsets
@@ -369,12 +369,6 @@ sortPair(A, B, B, A) :- factMethod(A), factMethod(B), B < A.
 % CLASS PROPERTIES
 % ============================================================
 
-% Positive helpers to avoid wildcard anonymous variables in negative literals (grounding bottleneck).
-vftableReplacedAt(M, Off, V) :- factVFTableOverwrite(M, Off, _, V).    % V is the NEW vftable
-vftableOverwrittenAt(M, Off, V) :- factVFTableOverwrite(M, Off, V, _). % V is the OLD vftable
-tdaHasBase(TDA) :- rTTIInheritsFrom(TDA, _, _).                        % TDA has at least one base
-methodIsThunk(M) :- thunk(M, _).                                        % M is a thunk
-
 % Hard derivation: RTTI with no inheritance entries means this method's class has no base.
 % Guard: V must not be involved in any vftable overwrite by M (matches Prolog guessClassHasNoBaseSpecial
 % which excludes both factVFTableOverwrite(M,0,V,_) and factVFTableOverwrite(M,0,_,V)).
@@ -382,9 +376,9 @@ methodIsThunk(M) :- thunk(M, _).                                        % M is a
 % would incorrectly derive factClassHasNoBase from the base write.
 factClassHasNoBase(M) :-                                                 % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781) / insanityNoBaseConsistency (insanity.pl:8)
     rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V),
-    not tdaHasBase(TDA),
-    not vftableOverwrittenAt(M, 0, V),       % V is not the first (overwritten) vftable by M
-    not vftableReplacedAt(M, 0, V).          % V is not the replacement vftable by M
+    not rTTIInheritsFrom(TDA, _, _),
+    not factVFTableOverwrite(M, 0, V, _),    % V is not the first (overwritten) vftable by M
+    not factVFTableOverwrite(M, 0, _, V).    % V is not the replacement vftable by M
 
 % Constraint: a derived class cannot also have no base.
 % The direct constraint (gated on normal mode) gives the grounder a simplification hint
