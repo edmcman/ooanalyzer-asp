@@ -1,4 +1,5 @@
 # OOAnalyzer Clingo Prototype
+<!-- Generated: 2026-05-23 | Commit: b532f2a | Branch: master -->
 
 Prototype of OOAnalyzer in Clingo (Answer Set Programming). Recovers C++ class
 structure (classes = sets of methods) from binary analysis facts.
