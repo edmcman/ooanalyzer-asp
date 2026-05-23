@@ -177,6 +177,7 @@ objectInObject(Outer, Inner, Off) :-                                    % Counte
 % Hard derivation from vftable overwrite: the method that installs V1 without
 % overwriting is the base constructor; the overwriting method is derived.
 factDerivedClass(Outer, Inner, Off) :-                                  % Counterpart: reasonDerivedClass_B (rules.pl:1834)
+    not rTTIPresent,
     factVFTableOverwrite(Outer, Off, V1, _),
     factVFTableWrite(Inner, 0, V1), not factVFTableOverwrite(Inner, 0, _, V1),
     Outer != Inner.
@@ -328,6 +329,9 @@ sortPair(A, B, B, A) :- factMethod(A), factMethod(B), B < A.
 % Hard derivation: RTTI with no inheritance entries means this method's class has no base.
 factClassHasNoBase(M) :-                                                 % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781) / insanityNoBaseConsistency (insanity.pl:8)
     rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V),
+    factConstructor(M),
+    not factVFTableOverwrite(M, 0, V, _),
+    not factDerivedClass(M, _, _),
     not rTTIInheritsFrom(TDA, _, _).
 
 % factClassCallsMethod: Caller directly calls M passing the same this-pointer.

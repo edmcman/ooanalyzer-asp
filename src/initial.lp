@@ -107,18 +107,40 @@ rTTICompleteObjectLocator(V, TDA) :-
 % ----------------------------------------------------------------
 rTTITypeDescriptor(TDA, Name) :- rTTITypeDescriptor(TDA, _, Name, _).
 
+rTTIPresent :- rTTITypeDescriptor(_, _, _, _).
+rTTIPresent :- rTTICompleteObjectLocator(_, _, _, _, _, _).
+rTTIPresent :- rTTIBaseClassDescriptor(_, _, _, _, _, _, _, _).
+rTTIPresent :- rTTIClassHierarchyDescriptor(_, _, _).
+
 % ----------------------------------------------------------------
-% rTTIInheritsFrom: non-virtual inheritance from RTTI descriptors.
-% Counterpart: rTTIInheritsFrom/6 (rtti.pl:131-134) with P=0xffffffff, V=0.
+% rTTIInheritsFrom: direct non-virtual inheritance from RTTI descriptors.
+% Counterpart: rTTIInheritsDirectlyFrom/6 (rtti.pl:83-108) and
+% rTTIInheritsFrom/6 (rtti.pl:131-134), restricted to P=0xffffffff, V=0.
 %
 % NOTE: This requires rTTIClassHierarchyDescriptor/3 with its
 % BaseClasses list expanded into individual facts by the preprocessor.
 % ----------------------------------------------------------------
+rTTIAncestorOf(DerivedTDA, AncestorTDA) :-
+    rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
+    rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
+    rTTIBaseClassDescriptor(BCDA, AncestorTDA, _, _, _, _, _, _),
+    AncestorTDA != DerivedTDA.
+
+rTTIInheritsIndirectlyFrom(DerivedTDA, AncestorTDA) :-
+    rTTIAncestorOf(DerivedTDA, BaseTDA),
+    rTTIAncestorOf(BaseTDA, AncestorTDA).
+
 rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) :-
     rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
     rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
-    rTTIBaseClassDescriptor(BCDA, BaseTDA, _, Offset, 0xffffffff, 0, _, _),  % WhereP=0xffffffff,WhereV=0: non-virtual only; ignore CHDA in BCD (shared BCDs point to their own hierarchy)
-    DerivedTDA != BaseTDA.
+    rTTIBaseClassDescriptor(BCDA, BaseTDA, _, Offset, 0xffffffff, 0, AttrValue, _),  % WhereP=0xffffffff,WhereV=0: non-virtual only; ignore CHDA in BCD (shared BCDs point to their own hierarchy)
+    DerivedTDA != BaseTDA,
+    not rTTIInheritsIndirectlyFrom(DerivedTDA, BaseTDA),
+    not rTTIVirtualBaseAttr(AttrValue).
+
+rTTIVirtualBaseAttr(AttrValue) :-
+    rTTIBaseClassDescriptor(_, _, _, _, _, _, AttrValue, _),
+    AttrValue \ 32 >= 16.
 
 % ----------------------------------------------------------------
 % possibleMethod: at least some evidence that Address is a function.
