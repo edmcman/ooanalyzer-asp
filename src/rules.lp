@@ -246,31 +246,13 @@ mergeClasses(B1, B2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Der
 % reasonNOTMergeClasses -- must not merge
 % ============================================================
 
-% Helper: M1 and M2 write the same vftable at the same object offset -- they are likely the same class.
-% Used to suppress false NOTMerge signals for delegating constructor patterns.
-sameVFTableAtSameOffset(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 != M2.
-
-% Helper: M1 and M2 write DIFFERENT vftables at some shared object offset.
-% Used to identify "inherited vftable" patterns in multiple inheritance.
-% Defined here (instead of insanity.lp) so it can also be used in the hard merge rule below.
-differentVFTAtOtherOffset(M1, M2) :- factVFTableWrite(M1, Off, V1), factVFTableWrite(M2, Off, V2), V1 != V2.
-
-% Hard merge: two methods that write the same confirmed vftable at the same offset (without
-% overwrites, destructor transitions, or different-vftable-at-other-offset evidence) belong
-% to the same class. This is the proactive complement of insanity(vft2c): instead of
-% making the constraint fire, we derive the merge directly.
-mergeClasses(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2,
-                          not factVFTableOverwrite(M1, Off, V, _),
-                          not factVFTableOverwrite(M2, Off, V, _),
-                          not destructorOverwrite(M1, Off),
-                          not destructorOverwrite(M2, Off),
-                          not differentVFTAtOtherOffset(M1, M2).
+% Helper: M participates in any factVFTableOverwrite (as the overwriting method).
+% Used to guard insanity(vft2c): matches Prolog's not(possibleVFTableOverwrite(_, _, Method, _, _, _)).
+methodHasVFTableOverwrite(M) :- factVFTableOverwrite(M, _, _, _).
 
 % Outer and inner of objectInObject are distinct classes.
-% Guard: if both write the same vftable, they are likely the same class (delegating
-% constructor pattern). Matches Prolog's factNOTSameClass guard in factObjectInObject.
-reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), sortPair(M1, M2, C1, C2),
-                                   not sameVFTableAtSameOffset(M1, M2).  % Counterpart: reasonNOTMergeClasses_G (rules.pl:3177)
+% Prolog reasonNOTMergeClasses_G (rules.pl:3177) is unconditional -- no vftable guard.
+reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), sortPair(M1, M2, C1, C2).  % Counterpart: reasonNOTMergeClasses_G (rules.pl:3177)
 
 % Base vs. derived from vftable overwrite
 reasonNOTMergeClasses_C_asymmetric(Inst, Over) :-                        % Counterpart: reasonNOTMergeClasses_C_asymmetric (rules.pl:3090)
@@ -369,14 +351,14 @@ sortPair(A, B, B, A) :- factMethod(A), factMethod(B), B < A.
 % CLASS PROPERTIES
 % ============================================================
 
-% Hard derivation: RTTI with no inheritance entries means this method's class has no base.
-% Guard: V must not be involved in any vftable overwrite by M (matches Prolog guessClassHasNoBaseSpecial
-% which excludes both factVFTableOverwrite(M,0,V,_) and factVFTableOverwrite(M,0,_,V)).
-% Without these guards a destructor that installs derived-vftable first then base-vftable second
-% would incorrectly derive factClassHasNoBase from the base write.
-factClassHasNoBase(M) :-                                                 % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781) / insanityNoBaseConsistency (insanity.pl:8)
+% Hard derivation: RTTI says this type descriptor has no bases (NumBases=0 in its BCD self-entry).
+% Closer to Prolog's reasonClassHasNoBase via rTTINoBase (rtti.pl:65-68, rules.pl:2136-2142).
+% Overwrite guards prevent a destructor from falsely claiming no-base on the base-vftable write:
+% a destructor installs the derived vftable first, then the base vftable; without these guards the
+% base-vftable write would match and tag the method as no-base.
+factClassHasNoBase(M) :-                                                 % Counterpart: reasonClassHasNoBase via rTTINoBase (rules.pl:2136)
     rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V),
-    not rTTIInheritsFrom(TDA, _, _),
+    rTTINoBase(TDA),
     not factVFTableOverwrite(M, 0, V, _),    % V is not the first (overwritten) vftable by M
     not factVFTableOverwrite(M, 0, _, V).    % V is not the replacement vftable by M
 
