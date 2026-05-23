@@ -120,6 +120,22 @@ rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) :-
     rTTIBaseClassDescriptor(BCDA, BaseTDA, _, Offset, 0xffffffff, 0, _, _),  % WhereP=0xffffffff,WhereV=0: non-virtual only; ignore CHDA in BCD (shared BCDs point to their own hierarchy)
     DerivedTDA != BaseTDA.
 
+% rTTITransitiveBase: BaseTDA is a TRANSITIVE (non-direct) ancestor of DerivedTDA
+% if some intermediate class exists between them in the inheritance chain.
+% Used to filter rTTIInheritsFrom down to one-hop direct parents only.
+rTTITransitiveBase(DerivedTDA, BaseTDA) :-
+    rTTIInheritsFrom(DerivedTDA, IntermediateTDA, _),
+    rTTIInheritsFrom(IntermediateTDA, BaseTDA, _),
+    IntermediateTDA != DerivedTDA, IntermediateTDA != BaseTDA.
+
+% rTTIDirectInheritsFrom: one-hop direct base class only (excludes transitive ancestors).
+% RTTI BCDs list ALL ancestors (not just direct parents), so rTTIInheritsFrom alone
+% includes grandparents. Using this predicate in reasonDerivedClass_D prevents
+% reasonMergeClasses_E from incorrectly merging an intermediate class with its grandparent.
+rTTIDirectInheritsFrom(DerivedTDA, BaseTDA, Off) :-
+    rTTIInheritsFrom(DerivedTDA, BaseTDA, Off),
+    not rTTITransitiveBase(DerivedTDA, BaseTDA).
+
 % ----------------------------------------------------------------
 % possibleMethod: at least some evidence that Address is a function.
 % Counterpart: initial.pl:78-85

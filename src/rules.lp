@@ -174,21 +174,42 @@ objectInObject(Outer, Inner, Off) :-                                    % Counte
     factConstructor(Outer), factConstructor(Inner), Outer != Inner,
     callAtOffset(Outer, Inner, Off), Off >= 0.
 
+% destructorOverwrite: the vftable overwrite is in the destructor direction:
+% V1 (the first-written, then replaced vftable) is the DERIVED class's vftable,
+% and V2 (the replacement) is the BASE class's vftable.
+% In a constructor, order is base-first (V1=base, V2=derived).
+% In a destructor, order is reversed (V1=derived, V2=base).
+% RTTI confirms destructor direction when V1's TDA directly inherits from V2's TDA.
+destructorOverwrite(M, Off) :-
+    factVFTableOverwrite(M, Off, V1, V2),
+    rTTICompleteObjectLocator(V1, T1), rTTICompleteObjectLocator(V2, T2),
+    rTTIDirectInheritsFrom(T1, T2, Off).
+% Destructor confirmed by role: a known deleting/real destructor's overwrite is always destructor-direction.
+destructorOverwrite(M, Off) :- factVFTableOverwrite(M, Off, _, _), factDeletingDestructor(M).
+destructorOverwrite(M, Off) :- factVFTableOverwrite(M, Off, _, _), factRealDestructor(M).
+
 % Hard derivation from vftable overwrite: the method that installs V1 without
 % overwriting is the base constructor; the overwriting method is derived.
+% Guard: skip when the overwrite is in destructor direction (V1=derived, V2=base),
+% because in that case V1 is Outer's OWN class vftable, not a base vftable.
 factDerivedClass(Outer, Inner, Off) :-                                  % Counterpart: reasonDerivedClass_B (rules.pl:1834)
     factVFTableOverwrite(Outer, Off, V1, _),
     factVFTableWrite(Inner, 0, V1), not factVFTableOverwrite(Inner, 0, _, V1),
-    Outer != Inner.
+    Outer != Inner,
+    not destructorOverwrite(Outer, Off).
 
 % When objectInObject holds but factDerivedClass does not, it's an embedded member.
 factEmbeddedObject(Outer, Inner, Off) :-                               % Counterpart: factEmbeddedObject (setup.pl:73) / tryEmbeddedObject (guess.pl:337)
     objectInObject(Outer, Inner, Off), not factDerivedClass(Outer, Inner, Off).
 
 % Hard derivation from RTTI (reasonDerivedClass_D): RTTI inheritance is authoritative.
+% Uses rTTIDirectInheritsFrom (one-hop only) rather than rTTIInheritsFrom (all ancestors),
+% because RTTI BCDs list every ancestor transitively. Without this, reasonMergeClasses_E
+% would hard-merge an intermediate class with its grandparent (both appear as Inner at
+% offset 0 for some deeper Outer), which is incorrect.
 factDerivedClass(Outer, Inner, Off) :-                                  % Counterpart: reasonDerivedClass_D (rules.pl:1968)
     rTTICompleteObjectLocator(V1, TDA1), rTTICompleteObjectLocator(V2, TDA2),
-    rTTIInheritsFrom(TDA1, TDA2, Off),
+    rTTIDirectInheritsFrom(TDA1, TDA2, Off),
     factVFTableWrite(Outer, 0, V1), not factVFTableOverwrite(Outer, 0, _, V1),
     factVFTableWrite(Inner, 0, V2), not factVFTableOverwrite(Inner, 0, _, V2).
 
@@ -225,8 +246,31 @@ mergeClasses(B1, B2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Der
 % reasonNOTMergeClasses -- must not merge
 % ============================================================
 
-% Outer and inner of objectInObject are distinct classes
-reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), sortPair(M1, M2, C1, C2).  % Counterpart: reasonNOTMergeClasses_G (rules.pl:3177)
+% Helper: M1 and M2 write the same vftable at the same object offset -- they are likely the same class.
+% Used to suppress false NOTMerge signals for delegating constructor patterns.
+sameVFTableAtSameOffset(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 != M2.
+
+% Helper: M1 and M2 write DIFFERENT vftables at some shared object offset.
+% Used to identify "inherited vftable" patterns in multiple inheritance.
+% Defined here (instead of insanity.lp) so it can also be used in the hard merge rule below.
+differentVFTAtOtherOffset(M1, M2) :- factVFTableWrite(M1, Off, V1), factVFTableWrite(M2, Off, V2), V1 != V2.
+
+% Hard merge: two methods that write the same confirmed vftable at the same offset (without
+% overwrites, destructor transitions, or different-vftable-at-other-offset evidence) belong
+% to the same class. This is the proactive complement of insanity(vft2c): instead of
+% making the constraint fire, we derive the merge directly.
+mergeClasses(M1, M2) :- factVFTableWrite(M1, Off, V), factVFTableWrite(M2, Off, V), M1 < M2,
+                          not factVFTableOverwrite(M1, Off, V, _),
+                          not factVFTableOverwrite(M2, Off, V, _),
+                          not destructorOverwrite(M1, Off),
+                          not destructorOverwrite(M2, Off),
+                          not differentVFTAtOtherOffset(M1, M2).
+
+% Outer and inner of objectInObject are distinct classes.
+% Guard: if both write the same vftable, they are likely the same class (delegating
+% constructor pattern). Matches Prolog's factNOTSameClass guard in factObjectInObject.
+reasonNOTMergeClasses(C1, C2) :- objectInObject(M1, M2, _), sortPair(M1, M2, C1, C2),
+                                   not sameVFTableAtSameOffset(M1, M2).  % Counterpart: reasonNOTMergeClasses_G (rules.pl:3177)
 
 % Base vs. derived from vftable overwrite
 reasonNOTMergeClasses_C_asymmetric(Inst, Over) :-                        % Counterpart: reasonNOTMergeClasses_C_asymmetric (rules.pl:3090)
@@ -326,12 +370,21 @@ sortPair(A, B, B, A) :- factMethod(A), factMethod(B), B < A.
 % ============================================================
 
 % Hard derivation: RTTI with no inheritance entries means this method's class has no base.
+% Guard: V must not be involved in any vftable overwrite by M (matches Prolog guessClassHasNoBaseSpecial
+% which excludes both factVFTableOverwrite(M,0,V,_) and factVFTableOverwrite(M,0,_,V)).
+% Without these guards a destructor that installs derived-vftable first then base-vftable second
+% would incorrectly derive factClassHasNoBase from the base write.
 factClassHasNoBase(M) :-                                                 % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781) / insanityNoBaseConsistency (insanity.pl:8)
     rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V),
-    not rTTIInheritsFrom(TDA, _, _).
+    not rTTIInheritsFrom(TDA, _, _),
+    not factVFTableOverwrite(M, 0, V, _),    % V is not the first (overwritten) vftable by M
+    not factVFTableOverwrite(M, 0, _, V).    % V is not the replacement vftable by M
 
 % Constraint: a derived class cannot also have no base.
-:- factClassHasNoBase(M1), factDerivedClass(M2, _, _), sameClass(M1, M2).       % Counterpart: insanityNoBaseConsistency (insanity.pl:8)
+% The direct constraint (gated on normal mode) gives the grounder a simplification hint
+% that keeps grounding fast.  The insanity rule provides the soft violate atom in diagnose mode.
+:- not diagnosing, factClassHasNoBase(M1), factDerivedClass(M2, _, _), sameClass(M1, M2).   % Counterpart: insanityNoBaseConsistency (insanity.pl:8)
+insanity(nobase_derived, (M1, M2)) :- factClassHasNoBase(M1), factDerivedClass(M2, _, _), sameClass(M1, M2).
 
 % factClassCallsMethod: Caller directly calls M passing the same this-pointer.
 % Mirrors reasonClassCallsMethod_C (rules.pl:2463).  Intentionally does NOT require
