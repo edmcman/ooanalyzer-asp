@@ -1,3 +1,6 @@
 [submodule "pharos"]
 	path = pharos
 	url = https://github.com/cmu-sei/pharos
+[submodule "DualGrounder"]
+	path = DualGrounder
+	url = https://github.com/edmcman/DualGrounder-UNO.git
