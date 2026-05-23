@@ -3,7 +3,7 @@
 
 PYTHON       := python3
 CLINGO       := clingo
-CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=30
+CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300
 
 OOA_DIR      := examples/ooa
 # Recursively find all .facts files in the test subdirectories

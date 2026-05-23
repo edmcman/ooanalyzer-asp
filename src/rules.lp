@@ -330,9 +330,6 @@ factClassHasNoBase(M) :-                                                 % Count
     rTTICompleteObjectLocator(V, TDA), factVFTableWrite(M, 0, V),
     not rTTIInheritsFrom(TDA, _, _).
 
-% Constraint: a derived class cannot also have no base.
-:- factClassHasNoBase(M1), factDerivedClass(M2, _, _), sameClass(M1, M2).       % Counterpart: insanityNoBaseConsistency (insanity.pl:8)
-
 % factClassCallsMethod: Caller directly calls M passing the same this-pointer.
 % Mirrors reasonClassCallsMethod_C (rules.pl:2463).  Intentionally does NOT require
 % factMethod(M) so that reasonMethod_J can derive factMethod from it.

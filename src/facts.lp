@@ -80,6 +80,11 @@
 #defined genericThisPtrABIParam/1.
 #defined thisPtrUsage/4.
 #defined thisPtrUsage/3.
+#defined factClassSizeLTE/2.
+#defined factClassSizeGTE/2.
+#defined factVFTableSizeLTE/2.
+#defined factNOTEmbeddedObject/3.
+#defined certainMemberOnClass/3.
 
 % ----------------------------------------------------------------
 % Full-arity OOAnalyzer initial facts (from .facts files)
