@@ -181,6 +181,15 @@ These are rules that ARE implemented but have correctness or completeness issues
 | Missing offset-0 preference in optimization | `src/optimize.lp` | `factDerivedClass(Outer, Inner, _)` weights all offsets equally, but offset-0 inheritance is the dominant case and should be preferred. | Medium |
 | `insanity(nomethod)` is redundant | `src/insanity.lp` | Line 42 can never fire because `rules.lp:65` already hard-derives `factMethod` from `factVFTableEntry`. | Low |
 
+## 4. Future work
+
+| Task | Description | Priority |
+|---|---|---|
+| Positive-guess heuristics | Add heuristics that prefer guesses to be positive (`true`) when evidence supports them. | Medium |
+| Weak positive-guess reward | Add weak optimization rewards for positive guesses so the solver prefers asserting plausible facts without making them hard requirements. | Medium |
+| Port `ooanalyzer-symbolizer` | Port `ooanalyzer-symbolizer` into this repository. | Medium |
+| Investigate performance problems | Investigate solver performance issues, especially grounding bottlenecks. | High |
+
 ## Maintenance notes
 
 - When adding a new Clingo rule, check if it maps to an OOAnalyzer predicate and update **Section 1** accordingly.

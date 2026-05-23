@@ -9,8 +9,13 @@ factVFTable(V) :- rTTICompleteObjectLocator(V, _).       % Counterpart: factVFTa
 % Guess whether a constructor-calls-constructor relationship is inheritance or embedding.
 { factDerivedClass(Outer, Inner, Off) } :- objectInObject(Outer, Inner, Off).  % Counterpart: guessDerivedClass (guess.pl:317)
 
-% Guess: does a method's class have no base class?
-{ factClassHasNoBase(M) } :- factMethod(M).  % Counterpart: guessClassHasNoBase / guessClassHasNoBaseB / guessClassHasNoBaseSpecial (guess.pl:746, 732, 781)
+% Guess: does a class have no base class?
+knownBaseClassMember(M) :- sameClass(M, D), factDerivedClass(D, _, _).
+
+{ factClassHasNoBase(M) } :- factConstructor(M), factVFTableWrite(M, 0, V),
+    not factVFTableWrite(M, _, V2) : factVFTable(V2), V2 != V,
+    not knownBaseClassMember(M).  % Counterpart: guessClassHasNoBaseB (guess.pl:732)
+{ factClassHasNoBase(M) } :- factMethod(M), not knownBaseClassMember(M).  % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781)
 
 % Guess: is candidate V actually a VBTable?
 { factVBTable(V) } :- possibleVBTableWrite(_, _, V).  % Counterpart: guessVBTable (guess.pl:215)
