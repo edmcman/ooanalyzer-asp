@@ -4,6 +4,8 @@
 PYTHON       := python3
 CLINGO       := clingo
 CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300
+DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
+DG_FLAGS     := -v --max-time 300
 
 OOA_DIR      := examples/ooa
 # Recursively find all .facts files in the test subdirectories
@@ -13,7 +15,7 @@ LP_FILES     := $(FACTS:%.facts=%.lp)
 # ----------------------------------------------------------------
 # Default: convert all .facts and run clingo
 # ----------------------------------------------------------------
-.PHONY: all convert run symbolize clean help
+.PHONY: all convert run lazyrun symbolize clean help
 
 all: run
 
@@ -21,6 +23,7 @@ help:
 	@echo "Targets:"
 	@echo "  make convert    — convert all $(OOA_DIR)/*/*/*.facts to .lp"
 	@echo "  make run        — convert and run clingo on all .lp files"
+	@echo "  make lazyrun    — convert and run dualgrounder on all .lp files"
 	@echo "  make symbolize  — symbolize all .out files to .sym files"
 	@echo "  make clean      — remove generated .lp/.out/.sym files"
 	@echo "  make $(OOA_DIR)/ooex_vs2008/Debug/oo.lp  — convert a single .facts file"
@@ -48,6 +51,18 @@ $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@tail -6 $@
 
 # ----------------------------------------------------------------
+# Run dualgrounder on generated .lp files
+# ----------------------------------------------------------------
+LAZY_OUT_FILES := $(LP_FILES:%.lp=%.lazy.out)
+
+lazyrun: $(LAZY_OUT_FILES)
+
+$(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
+	@echo "=== Running: $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< ==="
+	$(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2>&1 || true
+	@tail -6 $@
+
+# ----------------------------------------------------------------
 # Symbolize: .out + .symbols → .sym (human-readable)
 # Filter to key predicates; override with FILTER= for custom grep.
 # ----------------------------------------------------------------
@@ -55,15 +70,20 @@ SYMBOLIZE    := $(PYTHON) symbolize.py
 SYM_FILTER   ?= classRep\|factConstructor\|factDerivedClass\|factEmbeddedObject\|factClassHasNoBase
 
 SYMBOLS_FILES := $(shell find $(OOA_DIR) -name '*.symbols')
-# Only symbolize when a matching .out already exists
+# Only symbolize when a matching output file exists
 SYM_FILES     := $(foreach sym,$(patsubst %.symbols,%.sym,$(SYMBOLS_FILES)),\
                    $(if $(wildcard $(sym:.sym=.out)),$(sym)))
+LAZY_SYM_FILES := $(foreach sym,$(patsubst %.symbols,%.lazy.sym,$(SYMBOLS_FILES)),\
+                    $(if $(wildcard $(sym:.lazy.sym=.lazy.out)),$(sym)))
 
-symbolize: $(SYM_FILES)
+symbolize: $(SYM_FILES) $(LAZY_SYM_FILES)
 
-# Match e.g. ooex_vs2008/Debug/ooex1.sym from ooex1.symbols + ooex1.out
 $(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out
 	@echo "=== Symbolizing $* ==="
+	$(SYMBOLIZE) $< $(word 2,$^) -o $@
+
+$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out
+	@echo "=== Symbolizing $* (lazy) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
 
 # ----------------------------------------------------------------
@@ -73,3 +93,5 @@ clean:
 	find $(OOA_DIR) -name '*.lp' -delete
 	find $(OOA_DIR) -name '*.out' -delete
 	find $(OOA_DIR) -name '*.sym' -delete
+	find $(OOA_DIR) -name '*.lazy.sym' -delete
+	find $(OOA_DIR) -name '*.lazy.out' -delete
