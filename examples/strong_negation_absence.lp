@@ -1,7 +1,7 @@
 % strong_negation_absence.lp
 % Purpose: absence-vs-contrary check for methods.
 % Expected:
-%   - SAT/OPTIMUM
+%   - SATISFIABLE (no guess-triggering facts; no optimization objective)
 %   - derives -factMethod(9000) internally
 %   - does not emit factMethod(9000)
 

@@ -150,10 +150,6 @@ factConstructor(M) :- returnsSelf(M), noCallsBefore(M), not -factConstructor(M),
 factConstructor(M) :- factVFTableWrite(M, 0, _), not -factConstructor(M), possibleConstructor(M).         % Counterpart: guessConstructor3 (guess.pl:612)
 
 factRealDestructor(M) :- symbolProperty(M, realDestructor).          % Counterpart: guessRealDestructor (guess.pl:1395)
-{ factRealDestructor(M) } :- noCallsAfter(M), not factConstructor(M), not callsDelete(M), possibleDestructor(M), possibleMethod(M),
-                               callTarget(D, M), factDeletingDestructor(D).
-#heuristic factRealDestructor(M) : noCallsAfter(M), not factConstructor(M), not callsDelete(M), possibleDestructor(M), possibleMethod(M),
-                                  callTarget(D, M), factDeletingDestructor(D). [1@0, true]
 
 factDeletingDestructor(M) :- symbolProperty(M, deletingDestructor).    % Counterpart: guessDeletingDestructor (guess.pl:1504)
 factDeletingDestructor(M) :- callsDelete(M), not factConstructor(M), possibleMethod(M).   % Counterpart: guessDeletingDestructor

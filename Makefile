@@ -78,7 +78,7 @@ verify-core:
 	echo "=== Verifying examples/invalid_example.lp ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/invalid_example.lp; \
 	echo "=== Verifying examples/strong_negation_happy.lp ==="; \
-	run_case 'SATISFIABLE' '' '' '(^|[[:space:]])factConstructor\(100\)([[:space:]]|$$)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_happy.lp; \
+	run_case 'OPTIMUM FOUND' '' '' '(^|[[:space:]])factConstructor\(100\)([[:space:]]|$$)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_happy.lp; \
 	echo "=== Verifying examples/strong_negation_absence.lp ==="; \
 	run_case 'SATISFIABLE' '' '' '(^|[[:space:]])factMethod\(9000\)([[:space:]]|$$)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_absence.lp; \
 	echo "=== Verifying examples/strong_negation_choices.lp ==="; \

@@ -1,7 +1,7 @@
 % strong_negation_happy.lp
 % Purpose: minimal signed-negation happy path for constructor contrary evidence.
 % Expected:
-%   - SATISFIABLE (exit 10; this minimal fixture has no optimization objective)
+%   - OPTIMUM FOUND (exit 30; guess rewards create an optimization objective)
 %   - derives -factConstructor(100) internally
 %   - does not emit factConstructor(100)
 
