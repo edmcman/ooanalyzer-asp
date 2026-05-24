@@ -40,4 +40,5 @@ Seven focused modules; `ooanalyzer.lp` includes them in this fixed order:
 ```sh
 clingo --const diagnose=1 ooanalyzer.lp <input>.lp
 # emits violate(Tag, Witness) instead of hard UNSAT; shows which constraint fires
+# direct signed p/-p clashes can still be UNSAT before violate/2 is emitted
 ```

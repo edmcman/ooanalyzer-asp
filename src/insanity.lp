@@ -95,7 +95,7 @@ insanity(insanityDeletingDestructorAndNotDeletingDestructor, M) :- factDeletingD
 insanity(insanityTwoRealDestructorsOnClass, (D1,D2)) :- factRealDestructor(D1), factRealDestructor(D2), D1 < D2, find(D1, Class), find(D2, Class).
 
 % insanityContradictoryMerges (insanity.pl:271)
-insanity(insanityContradictoryMerges, (M1,M2)) :- mergeClasses(M1, M2), reasonNOTMergeClasses(M1, M2).
+insanity(insanityContradictoryMerges, (M1,M2)) :- mergeClasses(M1, M2), -mergeClasses(M1, M2).
 
 % insanityContradictoryNOTConstructor (insanity.pl:284)
 insanity(insanityContradictoryNOTConstructor, M) :- factConstructor(M), -factConstructor(M).

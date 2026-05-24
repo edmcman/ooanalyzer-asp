@@ -14,8 +14,8 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 ### 1.1 Destructor & constructor negation
 | Predicate(s) | Source | Description | Priority |
 |---|---|---|---|
-| `reasonNOTRealDestructor_A..J` | `rules.pl` | Full 10-variant negation heuristics. Basic versions (`factNOTRealDestructor`) implemented: constructors and deleting destructors cannot be real destructors; non-`possibleDestructor` methods excluded. | Medium |
-| `reasonNOTDeletingDestructor_A..I` | `rules.pl` | Full 9-variant negation heuristics. Basic versions (`factNOTDeletingDestructor`) implemented: constructors and real destructors cannot be deleting destructors. | Medium |
+| `reasonNOTRealDestructor_A..J` | `rules.pl` | Full 10-variant negation heuristics. Basic versions implemented as `-factRealDestructor`: constructors and deleting destructors cannot be real destructors; non-`possibleDestructor` methods excluded. | Medium |
+| `reasonNOTDeletingDestructor_A..I` | `rules.pl` | Full 9-variant negation heuristics. Basic versions implemented as `-factDeletingDestructor`: constructors and real destructors cannot be deleting destructors. | Medium |
 | `reasonNOTConstructor_A/H/I/J` | `rules.pl` | Additional negation heuristics for constructors | Medium |
 | `guessConstructor4` / `factConstructor4` | `guess.pl` | Additional constructor guessing variants | Low |
 | `reasonDestructorParams` | `rules.pl` | Parameter-based destructor identification | Low |
@@ -69,8 +69,8 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 | `reasonMergeClasses_B/H/J/K` | `rules.pl` | Extra merge heuristics | Medium |
 | `reasonMergeVFTables` | `rules.pl` | Early merge of a vftable into a class | Low |
 | `factLateMergeClasses_F1/F2/G1/G2` | `guess.pl` | Late-stage merge guesses (singletons, related methods) | Low |
-| `factNOTMergeClasses` / `reasonNOTMergeClassesSet` | `rules.pl`, `guess.pl` | Hard "must not merge" facts | Medium |
-| `reasonNOTMergeClasses_A/J/K/L/M/O/P/Q/R/new` | `rules.pl` | Many additional NOT-merge heuristics | Medium |
+| `factNOTMergeClasses` / `reasonNOTMergeClassesSet` | `rules.pl`, `guess.pl` | Hard "must not merge" facts, represented as signed `-mergeClasses` when implemented | Medium |
+| `reasonNOTMergeClasses_A/J/K/L/M/O/P/Q/R/new` | `rules.pl` | Many additional NOT-merge heuristics; implemented variants should derive signed `-mergeClasses` | Medium |
 | `reasonNOTMergeClasses_Qhelper` | `rules.pl` | Helper for NOT-merge at offset 0 | Low |
 
 ### 1.9 Embedding / derived negation
@@ -122,8 +122,8 @@ When a rule is ported, remove it from Section 1. When a new Clingo-specific help
 | `insanityVFTableSizeInvalid` | `insanity.pl` | `LTE < GTE` for vftable | Low |
 | `insanityContradictoryNOTConstructor` | `insanity.pl` | `reasonNOTConstructor` vs `factConstructor` | Medium |
 | `insanityDestructorDoubleDuty` | `insanity.pl` | Method cannot be both real and deleting destructor | Medium |
-| `insanityContradictoryNOTRealDestructor` | `insanity.pl` | `factNOTRealDestructor` vs `factRealDestructor` | Low |
-| `insanityContradictoryNOTDeletingDestructor` | `insanity.pl` | `factNOTDeletingDestructor` vs `factDeletingDestructor` | Low |
+| `insanityContradictoryNOTRealDestructor` | `insanity.pl` | `-factRealDestructor` vs `factRealDestructor` | Low |
+| `insanityContradictoryNOTDeletingDestructor` | `insanity.pl` | `-factDeletingDestructor` vs `factDeletingDestructor` | Low |
 
 ### 1.16 Final reporting layer
 | Predicate(s) | Source | Description | Priority |
@@ -158,10 +158,10 @@ These are encoding artifacts required by ASP grounding / solving and do not corr
 | `inheritedVftableEntry/3` | `src/rules.lp` | **DISABLED.** Idea: detect base-class slots reused in a derived vftable so the merge rule can skip them. Prolog avoids the problem implicitly because `guessMergeClassesB` is a *soft guess*, not a hard `reasonMergeClasses` rule — so the solver is free to not merge inherited entries. In the Clingo prototype, `guessMergeClassesB` is also a soft guess (via `mergeCandidate`), so the predicate should not be needed here either. **Potential OOAnalyzer improvement:** consider adding an explicit `inheritedVftableEntry` concept to the Prolog side to suppress spurious `reasonMergeClasses_B`-like merges in cases where the sibling-class problem (two classes inheriting from the same base sharing entries) causes incorrect same-class conclusions. |
 | Choice rules `{ }` + integrity constraints `:-` | `src/guess.lp`, `src/insanity.lp` | The "guess/constraint/optimize" skeleton is the ASP equivalent of OOAnalyzer's forward reasoning + chronological backtracking. |
 | `#maximize` lexicographic optimization | `src/optimize.lp` | OOAnalyzer uses a binary-search guessing loop (`tryBinarySearch`). Clingo delegates search to the solver with `@2/@1/@0` priority levels. |
-| No transitive `sameClass` constraint for `insanityContradictoryMerges` | `src/insanity.lp` | Prolog's `insanityContradictoryMerges` only checks direct `reasonMergeClasses` + `reasonNOTMergeClasses` conflicts. A transitive `sameClass` constraint (`:- objectInObject(M1, M2, _), sameClass(M1, M2).`) is strictly stronger and caused UNSAT on real `.facts` files. |
+| No transitive `sameClass` constraint for `insanityContradictoryMerges` | `src/insanity.lp` | Prolog's `insanityContradictoryMerges` only checks direct merge plus must-not-merge conflicts. A transitive `sameClass` constraint (`:- objectInObject(M1, M2, _), sameClass(M1, M2).`) is strictly stronger and caused UNSAT on real `.facts` files. |
 | `factRealDestructor` as ASP choice rule | `src/rules.lp` | Prolog's `guessRealDestructor` only considers methods called by a confirmed deleting destructor. The Clingo prototype encodes this directly as `{ factRealDestructor(M) } :- callTarget(D, M), factDeletingDestructor(D), ...` rather than guessing all `noCallsAfter` methods. |
-| `sortPair/4` | `src/rules.lp` | Canonical ordering helper for class-rep pairs. Prolog uses `sort_tuple/2` (built-in). In Clingo, `sortPair(A, B, A, B) :- classRep(A), classRep(B), A < B.` and symmetric `B < A` clause replace duplicated two-rule ordering patterns throughout `reasonNOTMergeClasses` and `mergeCandidate`. |
-| `insanity/2` + `diagnosing` | `src/insanity.lp` | All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` facts; a single dispatch pair converts them to either hard constraints (`:- not diagnosing, insanity(_, _).`) or soft `violate(Tag, Witness)` atoms (`violate(Tag, Witness) :- diagnosing, insanity(Tag, Witness).`) depending on `--const diagnose=1`. Run with `--const diagnose=1` to see which constraints fire instead of getting hard UNSAT. This pattern has no OOAnalyzer counterpart. |
+| `sortPair/4` | `src/rules.lp` | Canonical ordering helper for class-rep pairs. Prolog uses `sort_tuple/2` (built-in). In Clingo, `sortPair(A, B, A, B) :- classRep(A), classRep(B), A < B.` and symmetric `B < A` clause replace duplicated two-rule ordering patterns throughout signed `-mergeClasses` rules and `mergeCandidate`. |
+| `insanity/2` + `diagnosing` | `src/insanity.lp` | Most sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` facts; a single dispatch pair converts them to either hard constraints (`:- not diagnosing, insanity(_, _).`) or soft `violate(Tag, Witness)` atoms (`violate(Tag, Witness) :- diagnosing, insanity(Tag, Witness).`) depending on `--const diagnose=1`. Direct signed `p` / `-p` clashes remain Clingo-incoherent and can still produce UNSAT before diagnostic atoms are emitted. This pattern has no OOAnalyzer counterpart. |
 
 ---
 

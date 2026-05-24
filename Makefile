@@ -70,7 +70,7 @@ verify-core:
 		grep -qF -- "$$expected" "$$out"; \
 		[ -z "$$positive1" ] || grep -qF -- "$$positive1" "$$out"; \
 		[ -z "$$positive2" ] || grep -qF -- "$$positive2" "$$out"; \
-		if [ -n "$$forbidden" ] && grep -qF -- "$$forbidden" "$$out"; then cat "$$out"; rm -f "$$out"; exit 1; fi; \
+		if [ -n "$$forbidden" ] && grep -Eq -- "$$forbidden" "$$out"; then cat "$$out"; rm -f "$$out"; exit 1; fi; \
 		rm -f "$$out"; \
 	}; \
 	echo "=== Verifying examples/example.lp ==="; \
@@ -80,11 +80,11 @@ verify-core:
 	echo "=== Verifying examples/strong_negation_happy.lp ==="; \
 	run_case 'SATISFIABLE' '-factConstructor(100)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_happy.lp; \
 	echo "=== Verifying examples/strong_negation_absence.lp ==="; \
-	run_case 'SATISFIABLE' 'factNOTMethod(9000)' '' '-factMethod(9000)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_absence.lp; \
+	run_case 'SATISFIABLE' '-factMethod(9000)' '' '(^|[[:space:]])factMethod\(9000\)([[:space:]]|$$)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_absence.lp; \
 	echo "=== Verifying examples/strong_negation_contradiction.lp ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_contradiction.lp; \
 	echo "=== Verifying diagnostic contradiction fixture ==="; \
-	run_case 'OPTIMUM FOUND' 'violate(insanityTwoRealDestructorsOnClass,' 'violate(insanityContradictoryMerges,' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
+	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
 
 # ----------------------------------------------------------------
 # Run dualgrounder on generated .lp files

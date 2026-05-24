@@ -139,17 +139,17 @@ See `src/initial.lp` for the exact derivation rules.
 **Thunk resolution** -- `dethunk/2` follows JMP-only stub chains to the real method;
 `factVFTableEntry(V, Off, M)` gives the actual method at each confirmed vftable slot.
 
-**Rules** derive `factMethod`, `factConstructor`, `factNOTConstructor`,
-`factRealDestructor`, `factDeletingDestructor`, `factNOTRealDestructor`,
-`factNOTDeletingDestructor`, `factVFTableWrite`,
+**Rules** derive `factMethod`, `factConstructor`, `-factConstructor`,
+`factRealDestructor`, `-factRealDestructor`, `factDeletingDestructor`,
+`-factDeletingDestructor`, `factVFTableWrite`,
 `factVFTableOverwrite`, `factVFTableEntry`, `factVFTableBelongsToClass`,
 `objectInObject`, `factDerivedClass`, `factEmbeddedObject`, `factClassHasNoBase`,
-`factClassCallsMethod`, `reasonMergeClasses`, `reasonNOTMergeClasses`,
+`factClassCallsMethod`, `reasonMergeClasses`, signed `-mergeClasses`,
 `factVFTableSizeGTE`,
 `factVBTable`, `factVBTableWrite`, `factVBTableEntry`,
 and the equivalence-class predicates (`sameClass`, `classRep`, `find`).
 
-**factNOTConstructor** -- mirrors `reasonNOTConstructor_B/C/D` from rules.pl:
+**-factConstructor** -- mirrors `reasonNOTConstructor_B/C/D` from rules.pl:
 - `factRealDestructor(M)` or `factDeletingDestructor(M)` -> not a constructor
 - `factVFTableEntry(_, _, M)` -> virtual methods cannot be constructors
 - `uninitializedReads(M)` or `callsDelete(M)` -> not a constructor
@@ -160,7 +160,7 @@ an ASP choice rule `{ factRealDestructor(M) }` guarded by `callTarget(D, M),
 factDeletingDestructor(D)`. Hard-deriving `factRealDestructor` from `noCallsAfter` alone
 produces too many candidates and causes UNSAT on real binaries.
 
-**factNOTRealDestructor / factNOTDeletingDestructor** -- basic versions mirroring
+**-factRealDestructor / -factDeletingDestructor** -- basic versions mirroring
 `reasonNOTRealDestructor_B/C/D`: constructors and deleting destructors are excluded
 from being real destructors, and methods that are not `possibleDestructor` are excluded.
 
@@ -207,7 +207,7 @@ All `mergeCandidate` rules use raw method IDs and `sortPair` for canonical order
 - Deleting destructor -> real destructor chain (guessMergeClasses)
 - Late merge: singleton methods in confirmed vftables (guessLateMergeClassesF2)
 
-**reasonNOTMergeClasses** (`:- reasonNOTMergeClasses, mergeClasses`):
+**-mergeClasses** (signed must-not-merge evidence):
 - Outer and inner constructors of an `objectInObject` pair
 - Base constructor (installs without overwriting) vs. derived (overwrites)
 - reasonNOTMergeClasses_F: two bases of the same derived at *different* offsets
@@ -224,26 +224,26 @@ This eliminates the explicit symmetry rule and cuts `sameClass` atoms from
 
 **sortPair** -- canonical ordering helper for any pair of IDs, equivalent to Prolog's
 `sort_tuple/2`. `sortPair(A, B, C1, C2)` produces `C1 < C2` without duplicating
-rule bodies. Used throughout `reasonNOTMergeClasses` and `mergeCandidate`.
+rule bodies. Used throughout signed `-mergeClasses` rules and `mergeCandidate`.
 
 **Sanity checks** (integrity constraints -- any violation kills the model):
 - Constructor cannot appear in a vftable (not virtual)
 - Method cannot be both constructor and destructor
-- Constructor cannot be `factNOTConstructor`
+- Constructor cannot have signed `-factConstructor` evidence
 - At most one real destructor per class
 - A vftable cannot be owned by two different classes at the same object offset
 - Two constructors writing *different* vftables at the same offset -> different classes
 - No circular inheritance
 - `objectInObject` pairs must not be directly merged (enforced via
-  `reasonNOTMergeClasses`, matching Prolog's direct-conflict check only)
+  signed `-mergeClasses`, matching Prolog's direct-conflict check only)
 - Derived classes cannot be `factClassHasNoBase`
 - Derived vftable size must be >= base vftable size (`factVFTableSizeGTE`)
 - A constructor writing a VBTable cannot also embed the same base (virtual
   inheritance supersedes embedding)
 - `reasonMergeClasses` must hold -> `mergeClasses` must be guessed (enforced in `insanity.lp`)
-- `reasonNOTMergeClasses` and `mergeClasses` must not both hold (enforced in `insanity.lp`)
+- signed `-mergeClasses` and `mergeClasses` must not both hold (enforced by Clingo coherence)
 
-All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` with a single dispatch pair at the bottom of `insanity.lp`: a hard constraint in normal mode, or soft `violate(Tag, Witness)` atoms when running with `--const diagnose=1`.
+Most sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` with a single dispatch pair at the bottom of `insanity.lp`: a hard constraint in normal mode, or soft `violate(Tag, Witness)` atoms when running with `--const diagnose=1`. Direct signed `p` / `-p` clashes are Clingo-incoherent before `violate/2` can report them.
 
 **Optimization** -- three-level lexicographic:
 1. `#maximize { 1@2, V : factVFTable(V); 1@2, V : factVBTable(V) }` -- confirm as many vftables and VBTables as possible
@@ -261,12 +261,12 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `factConstructor` | `factConstructor(M)` (guessed; hard from symbols) |
 | `guessRealDestructor` | `{ factRealDestructor(M) }` ASP choice rule (guessed when called by deleting destructor) |
 | `guessDeletingDestructor` | `factDeletingDestructor(M)` (guessed from `callsDelete`; hard from symbols) |
-| `factNOTConstructor` / `reasonNOTConstructor_B/C/D` | `factNOTConstructor(M)` |
-| `reasonNOTRealDestructor_B/C/D` | `factNOTRealDestructor(M)` (basic versions) |
-| `reasonNOTDeletingDestructor` | `factNOTDeletingDestructor(M)` (basic versions) |
+| `factNOTConstructor` / `reasonNOTConstructor_B/C/D` | `-factConstructor(M)` |
+| `reasonNOTRealDestructor_B/C/D` | `-factRealDestructor(M)` (basic versions) |
+| `reasonNOTDeletingDestructor` | `-factDeletingDestructor(M)` (basic versions) |
 | `possibleMethod` / `possibleConstructor` / `possibleDestructor` | `possibleMethod(M)`, `possibleConstructor(M)`, `possibleDestructor(M)` (from `initial.pl`) |
 | `factClassHasNoBase` / `guessClassHasNoBase` | `factClassHasNoBase(C)` (guessed; hard from RTTI) |
-| `factMethod` / `factNOTMethod` | `factMethod(M)` (hard derivations: vftable, ctor/dtor, symbols, calls, thunks); `factNOTMethod(M)` (`possibleMethod` not confirmed). Purecall stubs are methods per Prolog `reasonMethod_G`, but blocked from merge rules. |
+| `factMethod` / `factNOTMethod` | `factMethod(M)` (hard derivations: vftable, ctor/dtor, symbols, calls, thunks); `-factMethod(M)` materializes method-exclusion evidence over `possibleMethod/1`, anticipating future method guessing. Purecall stubs are methods per Prolog `reasonMethod_G`, but blocked from merge rules. |
 | `reasonMethod_J` | `factMethod(M) :- factClassCallsMethod(_, M)` |
 | `reasonMethod_L` | `factMethod(M) :- methodCallAtOffset(_, Caller, M, 0), factMethod(Caller), thisParamFuncParameter(M, _)` |
 | `reasonMethod_O` | `factMethod(M) :- factMethod(Proven), callingConvention(Proven, "__thiscall"), thisParamFuncParameter(Proven, ThisPtr), callParameter(Insn, Proven, 0, ThisPtr), callTarget(Insn, Proven, Target), dethunk(Target, M), callingConvention(M, "__cdecl")` |
@@ -282,7 +282,7 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 | `reasonMergeClasses_E` | `mergeClasses(B1, B2) :- factDerivedClass(Derived, B1, Off), factDerivedClass(Derived, B2, Off), B1 < B2.` Head uses raw method IDs to avoid the self-defeating `find` loop. |
 | `reasonMergeClasses_G` | `mergeClasses(M1, M2) :- symbolClass(M1, C), symbolClass(M2, C), M1 < M2.` Head uses raw method IDs to avoid the self-defeating `find` loop. |
 | `sort_tuple/2` (Prolog) | `sortPair/4` (Clingo helper: canonical ordering of class-rep pairs) |
-| `guessNOTMergeClasses` / `reasonNOTMergeClasses_F` | `reasonNOTMergeClasses` from different-offset bases |
+| `guessNOTMergeClasses` / `reasonNOTMergeClasses_F` | signed `-mergeClasses` from different-offset bases |
 | `rTTIEnabled` / `rTTIInheritsFrom` | `rTTICompleteObjectLocator`, `rTTIInheritsFrom`. Derivation filters `rTTIBaseClassDescriptor` to WhereP=0xffffffff and WhereV=0 (non-virtual bases only). The CHDA field is deliberately ignored to handle binaries where shared BCDs point to their own CHD rather than the derived class's CHD. |
 | `factDerivedClass` / `factEmbeddedObject` | `factDerivedClass/3` / `factEmbeddedObject/3` |
 | `reasonDerivedClass_B/D` | hard `factDerivedClass` from vftable overwrite / RTTI |
@@ -319,7 +319,7 @@ All sanity conditions are expressed as `insanity(Tag, Witness) :- condition.` wi
 - No member access reasoning (`methodMemberAccess`).
 - Virtual base inheritance offset resolution from RTTI is not yet handled. Virtual bases are currently filtered *out* of `rTTIInheritsFrom` (WhereP=0xffffffff, WhereV=0 guard), which is correct behavior. Computing the actual offset from a virtual base's BCD entry (WhereP != -1) is future work.
 - `reasonMethod_Q` (thunk to proven method -> method) is disabled. Confirmed to cause UNSAT on real binaries; Prolog reference also has this rule commented out.
-- Diagnostic mode: run with `--const diagnose=1` to get soft `violate(Tag, Witness)` atoms instead of hard UNSAT, useful for identifying which constraint fires.
+- Diagnostic mode: run with `--const diagnose=1` to get soft `violate(Tag, Witness)` atoms for `insanity/2` constraints. Direct signed `p` / `-p` clashes still produce UNSAT before diagnostic atoms can be emitted.
 
 See [TODO.md](TODO.md) for the full bidirectional coverage map: which OOAnalyzer rules
 are not yet implemented and which Clingo constructs are ASP-specific.
