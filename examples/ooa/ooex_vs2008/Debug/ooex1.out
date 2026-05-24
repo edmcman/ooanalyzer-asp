@@ -1,13 +1,12 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 9 (Time: 0.016s)
-classRep(4265328) classRep(4265408) factMethod(4265328) factMethod(4265488) factMethod(4264351) factMethod(4264066) factMethod(4264406) factMethod(4264276) factMethod(4265808) factMethod(4265920) factMethod(4265408) factMethod(4297412) find(4265328,4265328) find(4265408,4265408) factConstructor(4265328) factConstructor(4265488) factDeletingDestructor(4264086) factDeletingDestructor(4264944) factDeletingDestructor(4278400) factDeletingDestructor(4278464) factMethod(4264291) factMethod(4263946) factMethod(4264231) factMethod(4264081) factMethod(4264086) factMethod(4264944) factMethod(4278400) factMethod(4278464) classRep(4263946) find(4263946,4263946) -mergeClasses(4265328,4265488) factDerivedClass(4265488,4265328,4) mergeClasses(4264086,4278464) mergeClasses(4264086,4278400) mergeClasses(4264086,4264944) mergeClasses(4264276,4265920) mergeClasses(4264276,4265808) mergeClasses(4264276,4264944) mergeClasses(4264276,4265488) mergeClasses(4264081,4264944) mergeClasses(4264231,4264944) mergeClasses(4264406,4265920) mergeClasses(4264406,4265808) mergeClasses(4264406,4264944) mergeClasses(4264406,4265488) mergeClasses(4264066,4264944) mergeClasses(4264066,4265488) mergeClasses(4263946,4264944) mergeClasses(4264291,4264944) mergeClasses(4264351,4264944) mergeClasses(4264351,4265488) mergeClasses(4265488,4297412) find(4264944,4263946) find(4264086,4263946) find(4264276,4263946) find(4264081,4263946) find(4264231,4263946) find(4264406,4263946) find(4264066,4263946) find(4264291,4263946) find(4264351,4263946) find(4265488,4263946) find(4265808,4263946) find(4265920,4263946) find(4278400,4263946) find(4278464,4263946) find(4297412,4263946)
-OPTIMUM FOUND
+src/optimize.lp:16:1-2: error: syntax error, unexpected }
 
-Models       : 9
-  Optimum    : yes
-Optimization : -20 -100
+*** ERROR: (clingo): parsing failed
+UNKNOWN
+
+Models       : 0+
 Calls        : 1
-Time         : 0.016s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.016s
+Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.007s
+warning: examples/ooa/ooex_vs2008/Debug/ooex1.lp exited 65

@@ -1,13 +1,12 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 6 (Time: 0.019s)
-classRep(4264016) factMethod(4265616) factMethod(4265712) factMethod(4265808) factMethod(4297428) factMethod(4266592) factMethod(4265328) factMethod(4265504) factMethod(4266544) factMethod(4264301) factMethod(4264466) factMethod(4264016) factMethod(4264086) factMethod(4297312) factMethod(4264176) factMethod(4297432) factMethod(4264436) factMethod(4264196) factVFTable(4286272) factVFTable(4286292) factVFTable(4286312) find(4264016,4264016) factDerivedClass(4265328,4265504,0) factVFTableBelongsToClass(4286272,0,4265328) factVFTableBelongsToClass(4286292,0,4265504) factVFTableBelongsToClass(4286312,0,4266544) factVFTableEntry(4286272,0,4265616) factVFTableEntry(4286272,4,4265712) factVFTableEntry(4286272,8,4265808) factVFTableEntry(4286292,0,4265616) factVFTableEntry(4286292,4,4265712) factVFTableEntry(4286292,8,4297428) factVFTableEntry(4286312,0,4266592) factVFTableWrite(4265328,0,4286272) factVFTableWrite(4265504,0,4286292) factVFTableWrite(4266544,0,4286312) -mergeClasses(4265328,4265504) -mergeClasses(4266592,4297312) -mergeClasses(4265328,4266544) -mergeClasses(4265504,4266544) -mergeClasses(4297312,4297428) -mergeClasses(4297312,4297432) -mergeClasses(4265616,4297312) -mergeClasses(4265712,4297312) -mergeClasses(4265808,4297312) -mergeClasses(4265328,4297312) -mergeClasses(4265504,4297312) -mergeClasses(4266544,4297312) -mergeClasses(4264301,4297312) -mergeClasses(4264466,4297312) -mergeClasses(4264016,4297312) -mergeClasses(4264086,4297312) -mergeClasses(4264176,4297312) -mergeClasses(4264436,4297312) -mergeClasses(4264196,4297312) factConstructor(4265328) factConstructor(4265504) factConstructor(4266544) factConstructor(4266736) factDeletingDestructor(4264086) factDeletingDestructor(4265024) factDeletingDestructor(4266592) factDeletingDestructor(4278960) factMethod(4266736) factMethod(4264376) factMethod(4264316) factMethod(4265024) factMethod(4278960) factClassHasNoBase(4265504) factClassHasNoBase(4266544) classRep(4266736) classRep(4297312) find(4266736,4266736) find(4297312,4297312) -mergeClasses(4266736,4297312) -mergeClasses(4264376,4297312) -mergeClasses(4264316,4297312) -mergeClasses(4265024,4297312) -mergeClasses(4278960,4297312) mergeClasses(4264196,4265328) mergeClasses(4264436,4265328) mergeClasses(4264176,4265328) mergeClasses(4264086,4278960) mergeClasses(4264086,4265024) mergeClasses(4264086,4266592) mergeClasses(4264016,4266592) mergeClasses(4264466,4266592) mergeClasses(4264301,4265024) mergeClasses(4264301,4265328) mergeClasses(4264316,4265024) mergeClasses(4264376,4265024) mergeClasses(4265328,4297432) mergeClasses(4265504,4297428) mergeClasses(4265504,4265712) mergeClasses(4265504,4265616) mergeClasses(4265328,4265808) classRep(4265504) classRep(4266544) find(4265504,4265504) find(4265616,4265504) find(4265712,4265504) find(4297428,4265504) find(4266544,4266544) find(4266592,4264016) find(4264086,4264016) find(4264466,4264016) find(4265024,4264016) find(4278960,4264016) find(4264301,4264016) find(4264316,4264016) find(4264376,4264016) find(4265328,4264016) find(4297432,4264016) find(4265808,4264016) find(4264196,4264016) find(4264436,4264016) find(4264176,4264016) -mergeClasses(4265328,4265616) -mergeClasses(4265328,4265712) -mergeClasses(4266544,4266592)
-OPTIMUM FOUND
+src/optimize.lp:16:1-2: error: syntax error, unexpected }
 
-Models       : 6
-  Optimum    : yes
-Optimization : -3 -17 -100
+*** ERROR: (clingo): parsing failed
+UNKNOWN
+
+Models       : 0+
 Calls        : 1
-Time         : 0.019s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.019s
+Time         : 0.011s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.011s
+warning: examples/ooa/ooex_vs2008/Debug/ooex4.lp exited 65

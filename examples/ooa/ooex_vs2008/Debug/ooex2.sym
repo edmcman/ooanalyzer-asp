@@ -1,13 +1,12 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 7 (Time: 0.014s)
-classRep(int Derived::func4(void)) factMethod(Base::Base(void)) factMethod(j___RTC_CheckEsp) factMethod(Derived::Derived(void)) factMethod(int Derived::func4(void)) factMethod(int Base::func3(void)) factMethod(Base::Base(void)) factMethod(__imp__rand) factMethod(int Base::func3(void)) find(int Derived::func4(void),int Derived::func4(void)) factConstructor(Base::Base(void)) factDeletingDestructor(__cdecl operator delete(*)) factDeletingDestructor(_main) factDeletingDestructor(__unwindfunclet$_main$0) factMethod(* __cdecl operator new(unsigned int)) factMethod(Derived::Derived(void)) factMethod(int Derived::func4(void)) factMethod(__cdecl operator delete(*)) factMethod(_main) factMethod(__unwindfunclet$_main$0) classRep(int Derived::func4(void)) find(int Derived::func4(void),int Derived::func4(void)) mergeClasses(Derived::Derived(void),int Base::func3(void)) mergeClasses(Derived::Derived(void),Base::Base(void)) mergeClasses(int Base::func3(void),Derived::Derived(void)) mergeClasses(Base::Base(void),Derived::Derived(void)) mergeClasses(__cdecl operator delete(*),__unwindfunclet$_main$0) mergeClasses(__cdecl operator delete(*),_main) mergeClasses(j___RTC_CheckEsp,Derived::Derived(void)) mergeClasses(j___RTC_CheckEsp,_main) mergeClasses(int Derived::func4(void),_main) mergeClasses(Derived::Derived(void),_main) mergeClasses(* __cdecl operator new(unsigned int),_main) mergeClasses(Derived::Derived(void),__imp__rand) find(_main,int Derived::func4(void)) find(__cdecl operator delete(*),int Derived::func4(void)) find(j___RTC_CheckEsp,int Derived::func4(void)) find(Derived::Derived(void),int Derived::func4(void)) find(* __cdecl operator new(unsigned int),int Derived::func4(void)) find(Derived::Derived(void),int Derived::func4(void)) find(__unwindfunclet$_main$0,int Derived::func4(void)) find(int Base::func3(void),int Derived::func4(void)) find(Base::Base(void),int Derived::func4(void)) find(__imp__rand,int Derived::func4(void)) find(int Base::func3(void),int Derived::func4(void)) find(Base::Base(void),int Derived::func4(void))
-OPTIMUM FOUND
+src/optimize.lp:16:1-2: error: syntax error, unexpected }
 
-Models       : 7
-  Optimum    : yes
-Optimization : -12
+*** ERROR: (clingo): parsing failed
+UNKNOWN
+
+Models       : 0+
 Calls        : 1
-Time         : 0.014s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.014s
+Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.007s
+warning: examples/ooa/ooex_vs2008/Debug/ooex2.lp exited 65

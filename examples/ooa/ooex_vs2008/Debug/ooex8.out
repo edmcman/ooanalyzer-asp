@@ -1,13 +1,12 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 6 (Time: 0.013s)
-classRep(4264161) factMethod(4265392) factMethod(4265664) factMethod(4264176) factMethod(4264276) factMethod(4264161) factMethod(4264166) find(4264161,4264161) factConstructor(4265392) factConstructor(4265568) factConstructor(4265664) factConstructor(4265792) factDeletingDestructor(4264076) factDeletingDestructor(4278304) factMethod(4265568) factMethod(4265792) factMethod(4264076) factMethod(4278304) classRep(4265568) classRep(4264076) find(4265568,4265568) find(4264076,4264076) -mergeClasses(4265568,4265792) -mergeClasses(4265392,4265568) -mergeClasses(4265392,4265792) -mergeClasses(4265568,4265664) -mergeClasses(4265392,4265664) factDerivedClass(4265792,4265568,8) factDerivedClass(4265392,4265568,20) factDerivedClass(4265392,4265792,8) factDerivedClass(4265664,4265568,8) factDerivedClass(4265392,4265664,0) factVBTableEntry(4286280,0,0) factVBTable(4286280) factVBTableEntry(4286268,0,0) factVBTable(4286268) factVBTableEntry(4286292,0,0) factVBTable(4286292) factVBTableEntry(4286304,0,0) factVBTable(4286304) factVBTableEntry(4286280,4,20) factVBTableEntry(4286268,4,12) factVBTableEntry(4286292,4,8) factVBTableEntry(4286304,4,8) factVBTableEntry(4286280,8,0) factVBTableEntry(4286268,8,0) factVBTableEntry(4286292,8,0) factVBTableEntry(4286304,8,0) factVBTableWrite(4265392,0,4286280) factVBTableWrite(4265392,8,4286268) factVBTableWrite(4265664,0,4286292) factVBTableWrite(4265792,0,4286304) mergeClasses(4264166,4265392) mergeClasses(4264161,4265392) mergeClasses(4264276,4265792) mergeClasses(4264276,4265664) mergeClasses(4264276,4265392) mergeClasses(4264176,4265792) mergeClasses(4264176,4265664) mergeClasses(4264176,4265392) mergeClasses(4264076,4278304) find(4278304,4264076) find(4265392,4264161) find(4265664,4264161) find(4264166,4264161) find(4264276,4264161) find(4264176,4264161) find(4265792,4264161) -mergeClasses(4265664,4265792)
-OPTIMUM FOUND
+src/optimize.lp:16:1-2: error: syntax error, unexpected }
 
-Models       : 6
-  Optimum    : yes
-Optimization : -4 -9 -500
+*** ERROR: (clingo): parsing failed
+UNKNOWN
+
+Models       : 0+
 Calls        : 1
-Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.013s
+Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.007s
+warning: examples/ooa/ooex_vs2008/Debug/ooex8.lp exited 65

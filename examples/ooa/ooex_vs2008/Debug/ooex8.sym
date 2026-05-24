@@ -1,13 +1,12 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 6 (Time: 0.013s)
-classRep(B::B(void)) factMethod(D::D(void)) factMethod(B::B(void)) factMethod(A::A(void)) factMethod(j___RTC_CheckEsp) factMethod(B::B(void)) factMethod(C::C(void)) find(B::B(void),B::B(void)) factConstructor(D::D(void)) factConstructor(A::A(void)) factConstructor(B::B(void)) factConstructor(C::C(void)) factDeletingDestructor(__cdecl operator delete(*)) factDeletingDestructor(__unwindfunclet$_main$0) factMethod(A::A(void)) factMethod(C::C(void)) factMethod(__cdecl operator delete(*)) factMethod(__unwindfunclet$_main$0) classRep(A::A(void)) classRep(__cdecl operator delete(*)) find(A::A(void),A::A(void)) find(__cdecl operator delete(*),__cdecl operator delete(*)) -mergeClasses(A::A(void),C::C(void)) -mergeClasses(D::D(void),A::A(void)) -mergeClasses(D::D(void),C::C(void)) -mergeClasses(A::A(void),B::B(void)) -mergeClasses(D::D(void),B::B(void)) factDerivedClass(C::C(void),A::A(void),8) factDerivedClass(D::D(void),A::A(void),20) factDerivedClass(D::D(void),C::C(void),8) factDerivedClass(B::B(void),A::A(void),8) factDerivedClass(D::D(void),B::B(void),0) factVBTableEntry(const D::`vbtable'{for `B'},0,0) factVBTable(const D::`vbtable'{for `B'}) factVBTableEntry(const D::`vbtable'{for `C'},0,0) factVBTable(const D::`vbtable'{for `C'}) factVBTableEntry(const B::`vbtable',0,0) factVBTable(const B::`vbtable') factVBTableEntry(const C::`vbtable',0,0) factVBTable(const C::`vbtable') factVBTableEntry(const D::`vbtable'{for `B'},4,20) factVBTableEntry(const D::`vbtable'{for `C'},4,12) factVBTableEntry(const B::`vbtable',4,8) factVBTableEntry(const C::`vbtable',4,8) factVBTableEntry(const D::`vbtable'{for `B'},8,0) factVBTableEntry(const D::`vbtable'{for `C'},8,0) factVBTableEntry(const B::`vbtable',8,0) factVBTableEntry(const C::`vbtable',8,0) factVBTableWrite(D::D(void),0,const D::`vbtable'{for `B'}) factVBTableWrite(D::D(void),8,const D::`vbtable'{for `C'}) factVBTableWrite(B::B(void),0,const B::`vbtable') factVBTableWrite(C::C(void),0,const C::`vbtable') mergeClasses(C::C(void),D::D(void)) mergeClasses(B::B(void),D::D(void)) mergeClasses(j___RTC_CheckEsp,C::C(void)) mergeClasses(j___RTC_CheckEsp,B::B(void)) mergeClasses(j___RTC_CheckEsp,D::D(void)) mergeClasses(A::A(void),C::C(void)) mergeClasses(A::A(void),B::B(void)) mergeClasses(A::A(void),D::D(void)) mergeClasses(__cdecl operator delete(*),__unwindfunclet$_main$0) find(__unwindfunclet$_main$0,__cdecl operator delete(*)) find(D::D(void),B::B(void)) find(B::B(void),B::B(void)) find(C::C(void),B::B(void)) find(j___RTC_CheckEsp,B::B(void)) find(A::A(void),B::B(void)) find(C::C(void),B::B(void)) -mergeClasses(B::B(void),C::C(void))
-OPTIMUM FOUND
+src/optimize.lp:16:1-2: error: syntax error, unexpected }
 
-Models       : 6
-  Optimum    : yes
-Optimization : -4 -9 -500
+*** ERROR: (clingo): parsing failed
+UNKNOWN
+
+Models       : 0+
 Calls        : 1
-Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.013s
+Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.007s
+warning: examples/ooa/ooex_vs2008/Debug/ooex8.lp exited 65

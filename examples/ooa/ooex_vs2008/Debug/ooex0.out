@@ -1,13 +1,12 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 6 (Time: 0.013s)
-classRep(4265488) classRep(4264036) classRep(4265792) factMethod(4265488) factMethod(4264036) factMethod(4264281) factMethod(4264086) factMethod(4265872) factMethod(4265696) factMethod(4265792) factMethod(4265584) factMethod(4297420) factMethod(4297416) find(4265488,4265488) find(4264036,4264036) find(4265792,4265792) factConstructor(4265488) factDeletingDestructor(4264086) factDeletingDestructor(4265872) factDeletingDestructor(4278384) factMethod(4278384) mergeClasses(4265584,4265872) mergeClasses(4264086,4278384) mergeClasses(4264086,4265872) mergeClasses(4264281,4265584) mergeClasses(4264281,4265696) mergeClasses(4264281,4265872) mergeClasses(4264036,4265872) mergeClasses(4265696,4297416) mergeClasses(4265584,4297420) find(4265872,4264036) find(4265584,4264036) find(4264086,4264036) find(4264281,4264036) find(4297420,4264036) find(4265696,4264036) find(4278384,4264036) find(4297416,4264036)
-OPTIMUM FOUND
+src/optimize.lp:16:1-2: error: syntax error, unexpected }
 
-Models       : 6
-  Optimum    : yes
-Optimization : -9
+*** ERROR: (clingo): parsing failed
+UNKNOWN
+
+Models       : 0+
 Calls        : 1
-Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.013s
+Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.007s
+warning: examples/ooa/ooex_vs2008/Debug/ooex0.lp exited 65
