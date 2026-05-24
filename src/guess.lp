@@ -3,11 +3,13 @@
 % ============================================================
 
 { factVFTable(V) } :- possibleVFTableWrite(_, _, V).  % Counterpart: guessVFTable (guess.pl:180)
+#heuristic factVFTable(V) : possibleVFTableWrite(_, _, V). [1@2, true]
 % RTTI definitively confirms vftables -- no guess needed for these.
 factVFTable(V) :- rTTICompleteObjectLocator(V, _).       % Counterpart: factVFTable (hard fact, setup.pl:55)
 
 % Guess whether a constructor-calls-constructor relationship is inheritance or embedding.
 { factDerivedClass(Outer, Inner, Off) } :- objectInObject(Outer, Inner, Off).  % Counterpart: guessDerivedClass (guess.pl:317)
+#heuristic factDerivedClass(Outer, Inner, Off) : objectInObject(Outer, Inner, Off). [100@0, true]
 
 % Guess: does a class have no base class?
 knownBaseClassMember(M) :- sameClass(M, D), factDerivedClass(D, _, _).
@@ -15,10 +17,15 @@ knownBaseClassMember(M) :- sameClass(M, D), factDerivedClass(D, _, _).
 { factClassHasNoBase(M) } :- factConstructor(M), factVFTableWrite(M, 0, V),
     not factVFTableWrite(M, _, V2) : factVFTable(V2), V2 != V,
     not knownBaseClassMember(M).  % Counterpart: guessClassHasNoBaseB (guess.pl:732)
+#heuristic factClassHasNoBase(M) : factConstructor(M), factVFTableWrite(M, 0, V),
+    not factVFTableWrite(M, _, V2) : factVFTable(V2), V2 != V,
+    not knownBaseClassMember(M). [1@0, true]
 { factClassHasNoBase(M) } :- factMethod(M), not knownBaseClassMember(M).  % Counterpart: guessClassHasNoBaseSpecial (guess.pl:781)
+#heuristic factClassHasNoBase(M) : factMethod(M), not knownBaseClassMember(M). [1@0, true]
 
 % Guess: is candidate V actually a VBTable?
 { factVBTable(V) } :- possibleVBTableWrite(_, _, V).  % Counterpart: guessVBTable (guess.pl:215)
+#heuristic factVBTable(V) : possibleVBTableWrite(_, _, V). [1@2, true]
 
 % ============================================================
 % MERGE CANDIDATES -- domain restriction for scaling
@@ -43,9 +50,11 @@ mergeCandidate(C1, C2) :- factDeletingDestructor(DD), factRealDestructor(RD), ca
 
 % guessLateMergeClassesF2: singleton methods in a confirmed vftable should be mergeable
 % with the class that owns the vftable.
-mergeCandidate(C1, C2) :-
-    factVFTableEntry(V, _, M), not purecall(M),
-    factVFTableBelongsToClass(V, _, C),
-    sortPair(M, C, C1, C2).
+% ejs: how can we possibly represent this?
+%mergeCandidate(C1, C2) :-
+%    factVFTableEntry(V, _, M), not purecall(M),
+%    factVFTableBelongsToClass(V, _, C),
+%    sortPair(M, C, C1, C2).
 
 { mergeClasses(M1, M2) } :- mergeCandidate(M1, M2).                                              % Counterpart: guessMergeClasses (guess.pl:1084) / guessLateMergeClasses (guess.pl:860)
+#heuristic mergeClasses(M1, M2) : mergeCandidate(M1, M2). [1@1, true]

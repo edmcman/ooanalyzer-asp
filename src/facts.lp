@@ -73,7 +73,7 @@
 #defined possibleMethod/1.
 #defined possibleConstructor/1.
 #defined possibleDestructor/1.
-#defined factNOTMethod/1.
+#defined factNOTMethod/1.  % Legacy unconfirmed-status output, not -factMethod/1.
 #defined methodCallAtOffset/4.
 #defined validMethodCallAtOffset/4.
 #defined thisPtrParam/2.
@@ -83,7 +83,6 @@
 #defined factClassSizeLTE/2.
 #defined factClassSizeGTE/2.
 #defined factVFTableSizeLTE/2.
-#defined factNOTEmbeddedObject/3.
 #defined certainMemberOnClass/3.
 
 % ----------------------------------------------------------------

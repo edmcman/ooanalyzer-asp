@@ -21,16 +21,21 @@ jobs:
           for f in examples/*.lp; do
             name=$(basename "$f" .lp)
             echo "=== Running $f ===" > "outputs/${name}.txt"
-            clingo ooanalyzer.lp "$f" --quiet=1,2 >> "outputs/${name}.txt" 2>&1 || true
+            rc=0
+            clingo ooanalyzer.lp "$f" --quiet=1,2 >> "outputs/${name}.txt" 2>&1 || rc=$?
+            case "$rc" in
+              0|10|20|30) ;;
+              *) cat "outputs/${name}.txt"; exit "$rc" ;;
+            esac
           done
 
-      - name: Convert and run OOAnalyzer examples
+      - name: Verify markers
         run: |
           mkdir -p outputs/ooa
-          make clean
-          make run 2>&1 | tee outputs/ooa/make-run.txt || true
+          make verify 2>&1 | tee outputs/ooa/make-verify.txt
 
       - name: Upload artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: clingo-example-outputs

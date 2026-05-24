@@ -23,12 +23,17 @@ Or use the Makefile:
 make examples/ooa/oo.lp   # convert one .facts file
 make convert              # convert all examples/ooa/*.facts
 make run                  # convert and run clingo on all of them
+make verify               # run marker checks for core and strong-negation fixtures
 make clean                # remove generated .lp files
 ```
 
 `make run` uses `--quiet=1,2 --time-limit=30` by default to suppress model I/O
 and cap solve time; most examples complete in <3s. `oo.lp` and `ooex5.lp` may
 hit the 30s cap on slower hardware.
+
+`make verify` is the regression gate: it checks the hand-written fixtures'
+expected markers and accepts Clingo exits 10/20/30. `make run` remains the
+artifact path for the larger real-fixture corpus under `examples/ooa/`.
 
 ## Files
 

@@ -128,7 +128,8 @@ factMethod(Func) :-
 % DISABLED: causes UNSAT on ooex4/5/6/9 -- see diagnosis below.
 % factMethod(M) :- thunk(M, Called), factMethod(Called).
 
-% factNOTMethod: explicit negation for possible methods that are not confirmed.
+% factNOTMethod is legacy unconfirmed-status output, not strong negation.
+% It is the closed-world complement of factMethod over possibleMethod.
 % Counterpart: factNOTMethod (setup.pl:45 / guess.pl)
 factNOTMethod(M) :- possibleMethod(M), not factMethod(M).
 
@@ -136,33 +137,39 @@ factNOTMethod(M) :- possibleMethod(M), not factMethod(M).
 % CONSTRUCTOR / DESTRUCTOR CLASSIFICATION
 % ============================================================
 
-% factNOTConstructor: strong evidence M is NOT a constructor.
+% -factConstructor: strong explicit evidence M is NOT a constructor.
 % Mirrors reasonNOTConstructor_B (real dtor), _C (deleting dtor), _D (in vftable).
-factNOTConstructor(M) :- factRealDestructor(M).                      % Counterpart: reasonNOTConstructor_B (rules.pl:282)
-factNOTConstructor(M) :- factDeletingDestructor(M).                   % Counterpart: reasonNOTConstructor_C (rules.pl:289)
-factNOTConstructor(M) :- factVFTableEntry(_, _, M).  % virtual methods cannot be constructors  % Counterpart: reasonNOTConstructor_D (rules.pl:297)
-factNOTConstructor(M) :- uninitializedReads(M).                       % Counterpart: reasonNOTConstructor_F (rules.pl:...)
-factNOTConstructor(M) :- callsDelete(M).                              % Counterpart: reasonNOTConstructor_G (rules.pl:...)
+-factConstructor(M) :- factRealDestructor(M).                      % Counterpart: reasonNOTConstructor_B (rules.pl:282)
+-factConstructor(M) :- factDeletingDestructor(M).                   % Counterpart: reasonNOTConstructor_C (rules.pl:289)
+-factConstructor(M) :- factVFTableEntry(_, _, M).  % virtual methods cannot be constructors  % Counterpart: reasonNOTConstructor_D (rules.pl:297)
+-factConstructor(M) :- uninitializedReads(M).                       % Counterpart: reasonNOTConstructor_F (rules.pl:...)
+-factConstructor(M) :- callsDelete(M).                              % Counterpart: reasonNOTConstructor_G (rules.pl:...)
 
 factConstructor(M) :- symbolProperty(M, constructor).                  % Counterpart: guessConstructor1 (guess.pl:574)
-factConstructor(M) :- returnsSelf(M), noCallsBefore(M), not factNOTConstructor(M), possibleConstructor(M).  % Counterpart: guessConstructor2 (guess.pl:592)
-factConstructor(M) :- factVFTableWrite(M, 0, _), not factNOTConstructor(M), possibleConstructor(M).         % Counterpart: guessConstructor3 (guess.pl:612)
+factConstructor(M) :- returnsSelf(M), noCallsBefore(M), not -factConstructor(M), possibleConstructor(M).  % Counterpart: guessConstructor2 (guess.pl:592)
+factConstructor(M) :- factVFTableWrite(M, 0, _), not -factConstructor(M), possibleConstructor(M).         % Counterpart: guessConstructor3 (guess.pl:612)
 
 factRealDestructor(M) :- symbolProperty(M, realDestructor).          % Counterpart: guessRealDestructor (guess.pl:1395)
 { factRealDestructor(M) } :- noCallsAfter(M), not factConstructor(M), not callsDelete(M), possibleDestructor(M), possibleMethod(M),
                                callTarget(D, M), factDeletingDestructor(D).
+#heuristic factRealDestructor(M) : noCallsAfter(M), not factConstructor(M), not callsDelete(M), possibleDestructor(M), possibleMethod(M),
+                                  callTarget(D, M), factDeletingDestructor(D). [1@0, true]
 
 factDeletingDestructor(M) :- symbolProperty(M, deletingDestructor).    % Counterpart: guessDeletingDestructor (guess.pl:1504)
 factDeletingDestructor(M) :- callsDelete(M), not factConstructor(M), possibleMethod(M).   % Counterpart: guessDeletingDestructor
 
-% factNOTRealDestructor / factNOTDeletingDestructor
-% Counterpart: reasonNOTRealDestructor_B/C/D (rules.pl:430-440)
-factNOTRealDestructor(M) :- factConstructor(M).
-factNOTRealDestructor(M) :- factDeletingDestructor(M).
+% -factRealDestructor / -factDeletingDestructor
+% Strong negation is used only for explicit contrary evidence.
+% Counterpart: reasonNOTRealDestructor_B/C (rules.pl:430-440)
+-factRealDestructor(M) :- factConstructor(M).
+-factRealDestructor(M) :- factDeletingDestructor(M).
+
+% Keep absence/unconfirmed status as default negation (Task 3 contract).
 factNOTRealDestructor(M) :- factMethod(M), not possibleDestructor(M).
 
-factNOTDeletingDestructor(M) :- factConstructor(M).
-factNOTDeletingDestructor(M) :- factRealDestructor(M).
+% Counterpart: reasonNOTDeletingDestructor
+-factDeletingDestructor(M) :- factConstructor(M).
+-factDeletingDestructor(M) :- factRealDestructor(M).
 
 % ============================================================
 % INHERITANCE / EMBEDDING DETECTION

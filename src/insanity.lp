@@ -77,13 +77,19 @@ insanity(insanityBaseVFTableLarger, (DerivedV,BaseV,DerivedSize,BaseSize)) :-
     DerivedSize < BaseSize.
 
 % insanityConstructorAndNotConstructor (insanity.pl:214)
-insanity(insanityConstructorAndNotConstructor, M) :- factConstructor(M), factNOTConstructor(M).
+insanity(insanityConstructorAndNotConstructor, M) :- factConstructor(M), -factConstructor(M).
 
 % insanityConstructorAndRealDestructor (insanity.pl:226)
 insanity(insanityConstructorAndRealDestructor, M) :- factConstructor(M), factRealDestructor(M).
 
 % insanityConstructorAndDeletingDestructor (insanity.pl:240)
 insanity(insanityConstructorAndDeletingDestructor, M) :- factConstructor(M), factDeletingDestructor(M).
+
+% Signed destructor consistency checks.
+% Direct p / -p clashes remain Clingo-incoherent before violate/2 can report them.
+% The diagnostic path still reports any explicit insanity/2 witness that is reachable.
+insanity(insanityRealDestructorAndNotRealDestructor, M) :- factRealDestructor(M), -factRealDestructor(M).
+insanity(insanityDeletingDestructorAndNotDeletingDestructor, M) :- factDeletingDestructor(M), -factDeletingDestructor(M).
 
 % insanityTwoRealDestructorsOnClass (insanity.pl:253)
 insanity(insanityTwoRealDestructorsOnClass, (D1,D2)) :- factRealDestructor(D1), factRealDestructor(D2), D1 < D2, find(D1, Class), find(D2, Class).
@@ -92,13 +98,10 @@ insanity(insanityTwoRealDestructorsOnClass, (D1,D2)) :- factRealDestructor(D1), 
 insanity(insanityContradictoryMerges, (M1,M2)) :- mergeClasses(M1, M2), reasonNOTMergeClasses(M1, M2).
 
 % insanityContradictoryNOTConstructor (insanity.pl:284)
-insanity(insanityContradictoryNOTConstructor, M) :- factConstructor(M), factNOTConstructor(M).
+insanity(insanityContradictoryNOTConstructor, M) :- factConstructor(M), -factConstructor(M).
 
 % insanityContradictoryNOTConstructor (insanity.pl:295)
-insanity(insanityContradictoryNOTConstructor, M) :- insanityReasonConstructor(M), factNOTConstructor(M).
-
-% insanityEmbeddedAndNot (insanity.pl:307)
-insanity(insanityEmbeddedAndNot, (A,B,C)) :- factEmbeddedObject(A, B, C), factNOTEmbeddedObject(A, B, C).
+insanity(insanityContradictoryNOTConstructor, M) :- insanityReasonConstructor(M), -factConstructor(M).
 
 % ----------------------------------------------------------------
 % Dispatch: hard constraint (normal) or soft violate (diagnostic).

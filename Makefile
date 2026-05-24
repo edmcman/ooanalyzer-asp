@@ -16,7 +16,7 @@ LP_FILES     := $(FACTS:%.facts=%.lp)
 # ----------------------------------------------------------------
 # Default: convert all .facts and run clingo
 # ----------------------------------------------------------------
-.PHONY: all convert run lazyrun symbolize clean help
+.PHONY: all convert run verify verify-core verify-real lazyrun symbolize clean help
 
 all: run
 
@@ -24,6 +24,7 @@ help:
 	@echo "Targets:"
 	@echo "  make convert    — convert all $(OOA_DIR)/*/*/*.facts to .lp"
 	@echo "  make run        — convert and run clingo on all .lp files"
+	@echo "  make verify     — run marker checks for core and strong-negation fixtures"
 	@echo "  make lazyrun    — convert and run dualgrounder on all .lp files"
 	@echo "  make symbolize  — symbolize all .out files to .sym files"
 	@echo "  make clean      — remove generated .lp/.out/.sym files"
@@ -44,12 +45,46 @@ $(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts facts2clingo.py
 # ----------------------------------------------------------------
 OUT_FILES := $(LP_FILES:%.lp=%.out)
 
+define CLINGO_RUN
+	rc=0; $(TIME) $(CLINGO) $(CLINGO_FLAGS) $(1) >"$(2)" 2>&1 || rc=$$?; \
+	case "$$rc" in 0|10|20|30) ;; *) echo "warning: $(1) exited $$rc" >>"$(2)" ;; esac
+endef
+
 run: $(OUT_FILES)
 
 $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@echo "=== Running: $(CLINGO) $(CLINGO_FLAGS) $< ==="
-	$(TIME) $(CLINGO) $(CLINGO_FLAGS) $< > $@ 2>&1 || true
+	$(call CLINGO_RUN,$<,$@)
 	@tail -6 $@
+
+verify: verify-core
+
+verify-core:
+	@set -eu; \
+	run_case() { \
+		expected="$${1}"; positive1="$${2}"; positive2="$${3}"; forbidden="$${4}"; shift 4; \
+		out="$$(mktemp)"; \
+		rc=0; \
+		$(TIME) "$${@}" >"$$out" 2>&1 || rc=$$?; \
+		case "$$rc" in 0|10|20|30) ;; *) cat "$$out"; rm -f "$$out"; exit "$$rc" ;; esac; \
+		grep -qF -- "$$expected" "$$out"; \
+		[ -z "$$positive1" ] || grep -qF -- "$$positive1" "$$out"; \
+		[ -z "$$positive2" ] || grep -qF -- "$$positive2" "$$out"; \
+		if [ -n "$$forbidden" ] && grep -qF -- "$$forbidden" "$$out"; then cat "$$out"; rm -f "$$out"; exit 1; fi; \
+		rm -f "$$out"; \
+	}; \
+	echo "=== Verifying examples/example.lp ==="; \
+	run_case 'OPTIMUM FOUND' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/example.lp; \
+	echo "=== Verifying examples/invalid_example.lp ==="; \
+	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/invalid_example.lp; \
+	echo "=== Verifying examples/strong_negation_happy.lp ==="; \
+	run_case 'SATISFIABLE' '-factConstructor(100)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_happy.lp; \
+	echo "=== Verifying examples/strong_negation_absence.lp ==="; \
+	run_case 'SATISFIABLE' 'factNOTMethod(9000)' '' '-factMethod(9000)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_absence.lp; \
+	echo "=== Verifying examples/strong_negation_contradiction.lp ==="; \
+	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_contradiction.lp; \
+	echo "=== Verifying diagnostic contradiction fixture ==="; \
+	run_case 'OPTIMUM FOUND' 'violate(insanityTwoRealDestructorsOnClass,' 'violate(insanityContradictoryMerges,' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
 
 # ----------------------------------------------------------------
 # Run dualgrounder on generated .lp files
