@@ -1,12 +1,13 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/optimize.lp:16:1-2: error: syntax error, unexpected }
+Solving...
+Answer: 14 (Time: 0.013s)
+classRep(4265456) classRep(4264026) classRep(4265760) factMethod(4265456) factMethod(4264026) factMethod(4264266) factMethod(4264076) factMethod(4265840) factMethod(4265664) factMethod(4265760) factMethod(4265552) factMethod(4297412) factMethod(4297408) find(4265456,4265456) find(4264026,4264026) find(4265760,4265760) factConstructor(4265456) factDeletingDestructor(4264076) factDeletingDestructor(4265840) factDeletingDestructor(4278240) factMethod(4278240) factRealDestructor(4264266) factClassHasNoBase(4265456) factClassHasNoBase(4264026) factClassHasNoBase(4264266) factClassHasNoBase(4264076) factClassHasNoBase(4265840) factClassHasNoBase(4278240) factClassHasNoBase(4265664) factClassHasNoBase(4265760) factClassHasNoBase(4265552) factClassHasNoBase(4297412) factClassHasNoBase(4297408) mergeClasses(4265552,4265840) mergeClasses(4264076,4278240) mergeClasses(4264076,4265840) mergeClasses(4264266,4265552) mergeClasses(4264266,4265664) mergeClasses(4264266,4265840) mergeClasses(4264026,4265840) mergeClasses(4265664,4297408) mergeClasses(4265552,4297412) find(4265840,4264026) find(4265552,4264026) find(4264076,4264026) find(4264266,4264026) find(4297412,4264026) find(4265664,4264026) find(4278240,4264026) find(4297408,4264026)
+OPTIMUM FOUND
 
-*** ERROR: (clingo): parsing failed
-UNKNOWN
-
-Models       : 0+
+Models       : 14
+  Optimum    : yes
+Optimization : -90 -12
 Calls        : 1
-Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.007s
-warning: examples/ooa/ooex_vs2010/Debug/ooex0.lp exited 65
+Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.013s

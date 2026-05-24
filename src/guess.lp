@@ -68,11 +68,11 @@ strongMergeCandidate(C1, C2) :- factDeletingDestructor(DD), factRealDestructor(R
 % with the class that owns the vftable.
 % ejs: how can we possibly represent this?
 % The disabled rule keeps a typed empty domain so reward wiring stays warning-free.
-lateMergeCandidate(C1, C2) :- strongMergeCandidate(C1, C2), C1 != C1.
-%lateMergeCandidate(C1, C2) :-
-%    factVFTableEntry(V, _, M), not purecall(M),
-%    factVFTableBelongsToClass(V, _, C),
-%    sortPair(M, C, C1, C2).
+%lateMergeCandidate(C1, C2) :- strongMergeCandidate(C1, C2), C1 != C1.
+lateMergeCandidate(C1, C2) :-
+    factVFTableEntry(V, _, M), not purecall(M),
+    factVFTableBelongsToClass(V, _, C),
+    sortPair(M, C, C1, C2).
 
 mergeCandidate(C1, C2) :- strongMergeCandidate(C1, C2).
 mergeCandidate(C1, C2) :- lateMergeCandidate(C1, C2).

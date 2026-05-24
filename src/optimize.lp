@@ -7,20 +7,21 @@
 #maximize {
     1@2, vft, V : guessVFTableReward(V);
     1@2, vbt, V : guessVBTableReward(V)
-}.        % Counterpart: guessVFTable / guessVBTable priorities
+}.
 
-% Priority 1: maximize class merges (minimize class count).
+% Priority 1: maximize inheritance, embedding, good merges
 % Late-merge guesses are weaker evidence and receive a smaller reward.
 #maximize {
-    10@1, strongMerge, M1, M2 : strongMergeReward(M1, M2);
-    1@1, lateMerge, M1, M2 : lateMergeReward(M1, M2)
-}.        % Counterpart: guessMergeClasses / guessLateMergeClasses priorities
+    100@1, derived, Outer, Inner, Off : guessDerivedClassReward(Outer, Inner, Off);
+    10@1, embedded, Outer, Inner, Off : factEmbeddedObject(Outer, Inner, Off);
+    10@1, strongMerge, M1, M2 : strongMergeReward(M1, M2)
+}.
 
-% Priority 0: prefer Derived > Embedded > other low-confidence guesses.
+% Priority 0: Other guesses
+
 #maximize {
-    100@0, derived, Outer, Inner, Off : guessDerivedClassReward(Outer, Inner, Off);
-    10@0, embedded, Outer, Inner, Off : factEmbeddedObject(Outer, Inner, Off);
     1@0, noBaseCtor, M : guessClassHasNoBaseCtorReward(M);
     1@0, noBaseMethod, M : guessClassHasNoBaseMethodReward(M);
     1@0, realDtor, M : guessRealDestructorReward(M)
+    % 1@0, lateMerge, M1, M2 : lateMergeReward(M1, M2)
 }.

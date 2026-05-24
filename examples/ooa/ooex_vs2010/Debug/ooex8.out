@@ -1,12 +1,13 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/optimize.lp:16:1-2: error: syntax error, unexpected }
+Solving...
+Answer: 8 (Time: 0.013s)
+classRep(4264151) factMethod(4265360) factMethod(4265632) factMethod(4264166) factMethod(4264261) factMethod(4264151) factMethod(4264156) find(4264151,4264151) factConstructor(4265360) factConstructor(4265536) factConstructor(4265632) factConstructor(4265760) factDeletingDestructor(4264066) factDeletingDestructor(4278176) factMethod(4265536) factMethod(4265760) factMethod(4264066) factMethod(4278176) classRep(4265536) classRep(4264066) find(4265536,4265536) find(4264066,4264066) -mergeClasses(4265360,4265536) -mergeClasses(4265360,4265760) -mergeClasses(4265536,4265632) -mergeClasses(4265536,4265760) -mergeClasses(4265360,4265632) factDerivedClass(4265360,4265536,20) factDerivedClass(4265360,4265760,8) factDerivedClass(4265632,4265536,8) factDerivedClass(4265760,4265536,8) factDerivedClass(4265360,4265632,0) factVBTableEntry(4286280,0,0) factVBTable(4286280) factVBTableEntry(4286268,0,0) factVBTable(4286268) factVBTableEntry(4286292,0,0) factVBTable(4286292) factVBTableEntry(4286304,0,0) factVBTable(4286304) factVBTableEntry(4286280,4,20) factVBTableEntry(4286268,4,12) factVBTableEntry(4286292,4,8) factVBTableEntry(4286304,4,8) factVBTableEntry(4286280,8,0) factVBTableEntry(4286268,8,0) factVBTableEntry(4286292,8,0) factVBTableEntry(4286304,8,0) factVBTableWrite(4265360,0,4286280) factVBTableWrite(4265360,8,4286268) factVBTableWrite(4265632,0,4286292) factVBTableWrite(4265760,0,4286304) factClassHasNoBase(4265536) factClassHasNoBase(4264066) factClassHasNoBase(4278176) mergeClasses(4264156,4265360) mergeClasses(4264151,4265360) mergeClasses(4264261,4265760) mergeClasses(4264261,4265632) mergeClasses(4264261,4265360) mergeClasses(4264166,4265760) mergeClasses(4264166,4265632) mergeClasses(4264166,4265360) mergeClasses(4264066,4278176) find(4278176,4264066) find(4265360,4264151) find(4265632,4264151) find(4264156,4264151) find(4264261,4264151) find(4264166,4264151) find(4265760,4264151) -mergeClasses(4265632,4265760)
+OPTIMUM FOUND
 
-*** ERROR: (clingo): parsing failed
-UNKNOWN
-
-Models       : 0+
+Models       : 8
+  Optimum    : yes
+Optimization : -4 -590 -3
 Calls        : 1
-Time         : 0.008s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.008s
-warning: examples/ooa/ooex_vs2010/Debug/ooex8.lp exited 65
+Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.013s

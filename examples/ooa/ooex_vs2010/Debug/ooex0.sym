@@ -1,12 +1,13 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/optimize.lp:16:1-2: error: syntax error, unexpected }
+Solving...
+Answer: 14 (Time: 0.013s)
+classRep(ClassA::ClassA(void)) classRep(ClassA::~ClassA(void)) classRep(int ClassA::func2(void)) factMethod(ClassA::ClassA(void)) factMethod(ClassA::~ClassA(void)) factMethod(j___RTC_CheckEsp) factMethod(__cdecl operator delete(*)) factMethod(* ClassA::`scalar deleting destructor'(unsigned int)) factMethod(int ClassA::func1(void)) factMethod(int ClassA::func2(void)) factMethod(ClassA::~ClassA(void)) factMethod(__imp__printf) factMethod(__imp__rand) find(ClassA::ClassA(void),ClassA::ClassA(void)) find(ClassA::~ClassA(void),ClassA::~ClassA(void)) find(int ClassA::func2(void),int ClassA::func2(void)) factConstructor(ClassA::ClassA(void)) factDeletingDestructor(__cdecl operator delete(*)) factDeletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)) factDeletingDestructor(__unwindfunclet$_main$0) factMethod(__unwindfunclet$_main$0) factRealDestructor(j___RTC_CheckEsp) factClassHasNoBase(ClassA::ClassA(void)) factClassHasNoBase(ClassA::~ClassA(void)) factClassHasNoBase(j___RTC_CheckEsp) factClassHasNoBase(__cdecl operator delete(*)) factClassHasNoBase(* ClassA::`scalar deleting destructor'(unsigned int)) factClassHasNoBase(__unwindfunclet$_main$0) factClassHasNoBase(int ClassA::func1(void)) factClassHasNoBase(int ClassA::func2(void)) factClassHasNoBase(ClassA::~ClassA(void)) factClassHasNoBase(__imp__printf) factClassHasNoBase(__imp__rand) mergeClasses(ClassA::~ClassA(void),* ClassA::`scalar deleting destructor'(unsigned int)) mergeClasses(__cdecl operator delete(*),__unwindfunclet$_main$0) mergeClasses(__cdecl operator delete(*),* ClassA::`scalar deleting destructor'(unsigned int)) mergeClasses(j___RTC_CheckEsp,ClassA::~ClassA(void)) mergeClasses(j___RTC_CheckEsp,int ClassA::func1(void)) mergeClasses(j___RTC_CheckEsp,* ClassA::`scalar deleting destructor'(unsigned int)) mergeClasses(ClassA::~ClassA(void),* ClassA::`scalar deleting destructor'(unsigned int)) mergeClasses(int ClassA::func1(void),__imp__rand) mergeClasses(ClassA::~ClassA(void),__imp__printf) find(* ClassA::`scalar deleting destructor'(unsigned int),ClassA::~ClassA(void)) find(ClassA::~ClassA(void),ClassA::~ClassA(void)) find(__cdecl operator delete(*),ClassA::~ClassA(void)) find(j___RTC_CheckEsp,ClassA::~ClassA(void)) find(__imp__printf,ClassA::~ClassA(void)) find(int ClassA::func1(void),ClassA::~ClassA(void)) find(__unwindfunclet$_main$0,ClassA::~ClassA(void)) find(__imp__rand,ClassA::~ClassA(void))
+OPTIMUM FOUND
 
-*** ERROR: (clingo): parsing failed
-UNKNOWN
-
-Models       : 0+
+Models       : 14
+  Optimum    : yes
+Optimization : -90 -12
 Calls        : 1
-Time         : 0.007s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.007s
-warning: examples/ooa/ooex_vs2010/Debug/ooex0.lp exited 65
+Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.013s
