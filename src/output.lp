@@ -11,7 +11,8 @@
 
 % Intentional signed output:
 % -factMethod/1, -factConstructor/1, -factRealDestructor/1,
-% -factDeletingDestructor/1, and -mergeClasses/2 are explicit contrary evidence.
+% -factDeletingDestructor/1, -factVFTable/1, -factVBTable/1,
+% and -mergeClasses/2 are explicit contrary evidence.
 % No signed embedded-object predicate is shown because Task 8 removed that family.
 #show factConstructor/1.
 #show -factConstructor/1.
@@ -21,6 +22,7 @@
 #show -factDeletingDestructor/1.
 #show -mergeClasses/2.
 #show factVFTable/1.
+#show -factVFTable/1.
 #show factVFTableWrite/3.
 #show factVFTableOverwrite/4.
 #show factVFTableBelongsToClass/3.
@@ -28,5 +30,6 @@
 #show factDerivedClass/3.
 #show factEmbeddedObject/3.
 #show factVBTable/1.
+#show -factVBTable/1.
 #show factVBTableWrite/3.
 #show factVBTableEntry/3.

@@ -2,7 +2,7 @@
 % GUESSES
 % ============================================================
 
-{ factVFTable(V) } :- possibleVFTableWrite(_, _, V).  % Counterpart: guessVFTable (guess.pl:180)
+1 { factVFTable(V); -factVFTable(V) } 1 :- possibleVFTableWrite(_, _, V).  % Counterpart: guessVFTable (guess.pl:180)
 #heuristic factVFTable(V) : possibleVFTableWrite(_, _, V). [1@2, true]
 % RTTI definitively confirms vftables -- no guess needed for these.
 factVFTable(V) :- rTTICompleteObjectLocator(V, _).       % Counterpart: factVFTable (hard fact, setup.pl:55)
@@ -24,7 +24,7 @@ knownBaseClassMember(M) :- sameClass(M, D), factDerivedClass(D, _, _).
 #heuristic factClassHasNoBase(M) : factMethod(M), not knownBaseClassMember(M). [1@0, true]
 
 % Guess: is candidate V actually a VBTable?
-{ factVBTable(V) } :- possibleVBTableWrite(_, _, V).  % Counterpart: guessVBTable (guess.pl:215)
+1 { factVBTable(V); -factVBTable(V) } 1 :- possibleVBTableWrite(_, _, V).  % Counterpart: guessVBTable (guess.pl:215)
 #heuristic factVBTable(V) : possibleVBTableWrite(_, _, V). [1@2, true]
 
 % ============================================================
@@ -56,5 +56,5 @@ mergeCandidate(C1, C2) :- factDeletingDestructor(DD), factRealDestructor(RD), ca
 %    factVFTableBelongsToClass(V, _, C),
 %    sortPair(M, C, C1, C2).
 
-{ mergeClasses(M1, M2) } :- mergeCandidate(M1, M2).                                              % Counterpart: guessMergeClasses (guess.pl:1084) / guessLateMergeClasses (guess.pl:860)
+1 { mergeClasses(M1, M2); -mergeClasses(M1, M2) } 1 :- mergeCandidate(M1, M2).                   % Counterpart: guessMergeClasses (guess.pl:1084) / guessLateMergeClasses (guess.pl:860)
 #heuristic mergeClasses(M1, M2) : mergeCandidate(M1, M2). [1@1, true]
