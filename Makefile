@@ -4,7 +4,7 @@
 PYTHON       := python3
 TIME         := time
 CLINGO       := clingo
-CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300
+CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300 --opt-strategy bb,inc
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 
