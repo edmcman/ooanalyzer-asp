@@ -1,5 +1,5 @@
 % ============================================================
-% CLASS MERGING
+% RULES
 % ============================================================
 
 % Merge domain: methods and vftables can be members of recovered classes.
@@ -54,6 +54,10 @@ mergeCandidate(A, B) :- strongMergeCandidate(A, B).
 % guessMergeClasses: choose merge or not-merge for each candidate pair.
 1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :- mergeCandidate(A, B). % guess.pl:1084
 #heuristic mergeClasses(A, B) : mergeCandidate(A, B). [1@1, true]
+
+% ============================================================
+% REWARDS
+% ============================================================
 
 % Optimization reward for confirmed strong merges (priority @2).
 strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).

@@ -1,5 +1,5 @@
 % ============================================================
-% CONSTRUCTOR / DESTRUCTOR HELPERS
+% RULES
 % ============================================================
 
 % certainConstructorOrDestructor: method writes a confirmed vftable or vbtable
@@ -14,10 +14,6 @@ certainConstructorOrDestructor(Method) :-
     vbTableWrite(Insn, Method, Offset, VBTable),
     possibleVBTableWrite(Insn, Method, ThisPtr, Offset, VBTable),
     thisParamFuncParameter(Method, ThisPtr).
-
-% ============================================================
-% CONSTRUCTOR / DESTRUCTOR IDENTIFICATION
-% ============================================================
 
 % reasonConstructor/1: symbol property evidence proves a constructor.
 % Counterpart: reasonConstructor/1 (rules.pl:209)
@@ -41,15 +37,18 @@ deletingDestructor(Method) :-
 deletingDestructor(Method) :-
     symbolProperty(Method, deletingDestructor).                           % rules.pl:595
 
+% ============================================================
+% CONSTRAINTS
+% ============================================================
+
 % A method that writes a vftable/vbtable into its own this-pointer must be
 % exactly one of: constructor, real destructor, or deleting destructor.
 1 { constructor(Method) ; realDestructor(Method) ; deletingDestructor(Method) } 1 :-
     certainConstructorOrDestructor(Method).
 
-% ----------------------------------------------------------------
-% CONSTRUCTOR GUESSES
-% Counterpart: guessConstructor1/2 (guess.pl:574, 592)
-% ----------------------------------------------------------------
+% ============================================================
+% GUESS
+% ============================================================
 
 % Perfect case: not possibly virtual, writes a vftable, no uninitialized reads.
 guessConstructor1Domain(Method) :-
@@ -76,6 +75,10 @@ guessConstructorDomain(Method) :- guessConstructor2Domain(Method).
 #heuristic constructor(Method) : guessConstructor1Domain(Method). [2@0, true]
 #heuristic constructor(Method) : guessConstructor2Domain(Method). [1@0, true]
 
+% ============================================================
+% REWARDS
+% ============================================================
+
 % Optimization rewards: perfect case gets more than likely case.
 guessConstructor1Reward(Method) :- constructor(Method), guessConstructor1Domain(Method).
 guessConstructor2OnlyReward(Method) :- constructor(Method), guessConstructor2Domain(Method), not guessConstructor1Domain(Method).
@@ -84,7 +87,7 @@ guessConstructor2OnlyReward(Method) :- constructor(Method), guessConstructor2Dom
 #maximize { 1@0, ctor2, M : guessConstructor2OnlyReward(M) }.
 
 % ============================================================
-% SANITY
+% CONSTRAINTS
 % ============================================================
 
 constructorDestructorKind(Method, constructor) :-

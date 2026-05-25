@@ -1,5 +1,5 @@
 % ============================================================
-% METHOD IDENTIFICATION
+% RULES
 % ============================================================
 
 % reasonMethod_B: constructors are methods.
@@ -28,6 +28,11 @@ method(Method) :-
     thisParamFuncParameter(Method, ThisPtr).                               % rules.pl:80
 
 % I am not totally sure that we want method guessing to be so broad.
+
+% ============================================================
+% GUESS
+% ============================================================
+
 % guessMethodA: choose method or -method for each possibleMethod candidate.
 % Counterpart: guessMethodA (guess.pl:382)
 guessMethodDomain(M) :- possibleMethod(M).

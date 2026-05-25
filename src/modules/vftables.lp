@@ -1,5 +1,5 @@
 % ============================================================
-% VFTABLE IDENTIFICATION
+% RULES
 % ============================================================
 
 % reasonVFTable (843): RTTI evidence confirms a vftable.
@@ -68,13 +68,17 @@ possibleVFTable(VFTable) :-
 1 { vfTable(VFTable) ; -vfTable(VFTable) } 1 :- possibleVFTable(VFTable).
 #heuristic vfTable(VFTable) : possibleVFTable(VFTable). [1@2, true]
 
+% ============================================================
+% REWARDS
+% ============================================================
+
 % Optimization reward for confirmed vftables (priority @2).
 guessVFTableReward(VFTable) :- vfTable(VFTable), possibleVFTable(VFTable).
 
 #maximize { 1@2, vfTable, V : guessVFTableReward(V) }.
 
 % ============================================================
-% SANITY
+% CONSTRAINTS
 % ============================================================
 
 % insanityConstructorInVFTable: constructors may not appear as vftable entries.
