@@ -68,6 +68,11 @@ possibleVFTable(VFTable) :-
 1 { vfTable(VFTable) ; -vfTable(VFTable) } 1 :- possibleVFTable(VFTable).
 #heuristic vfTable(VFTable) : possibleVFTable(VFTable). [1@2, true]
 
+% Optimization reward for confirmed vftables (priority @2).
+guessVFTableReward(VFTable) :- vfTable(VFTable), possibleVFTable(VFTable).
+
+#maximize { 1@2, vfTable, V : guessVFTableReward(V) }.
+
 % ============================================================
 % SANITY
 % ============================================================

@@ -76,8 +76,12 @@ guessConstructorDomain(Method) :- guessConstructor2Domain(Method).
 #heuristic constructor(Method) : guessConstructor1Domain(Method). [2@0, true]
 #heuristic constructor(Method) : guessConstructor2Domain(Method). [1@0, true]
 
-% Optimization reward.
-guessConstructorReward(Method) :- constructor(Method), guessConstructorDomain(Method).
+% Optimization rewards: perfect case gets more than likely case.
+guessConstructor1Reward(Method) :- constructor(Method), guessConstructor1Domain(Method).
+guessConstructor2OnlyReward(Method) :- constructor(Method), guessConstructor2Domain(Method), not guessConstructor1Domain(Method).
+
+#maximize { 5@0, ctor1, M : guessConstructor1Reward(M) }.
+#maximize { 1@0, ctor2, M : guessConstructor2OnlyReward(M) }.
 
 % ============================================================
 % SANITY
@@ -94,6 +98,14 @@ insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
     method(Method),
     Count = #count { Kind : constructorDestructorKind(Method, Kind) },
     Count > 1.
+
+% insanityTwoRealDestructorsOnClass: a class may not have more than one real destructor.
+% Counterpart: insanityTwoRealDestructorsOnClass (insanity.pl:253)
+insanity(insanityTwoRealDestructorsOnClass, (D1, D2)) :-
+    realDestructor(D1),
+    realDestructor(D2),
+    D1 < D2,
+    sameClass(D1, D2).
 
 #show constructor/1.
 #show realDestructor/1.
