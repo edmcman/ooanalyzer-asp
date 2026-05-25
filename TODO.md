@@ -41,8 +41,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Deductive (rules.pl:186–242)
 - [ ] `reasonConstructor` (186) — existing `constructor`
 - [ ] `reasonConstructor` (192) — `returnsSelf + noCallsBefore + vftableWrite`
-- [ ] `reasonConstructor` (204) — `symbolProperty(constructor)`
-- [ ] `reasonConstructor` (209) — `vbTableWrite` → constructor
+- [ ] `reasonConstructor` (204) — `vbTableWrite` → constructor
+- [x] `reasonConstructor` (209) — `symbolProperty(constructor)`
 - [ ] `reasonConstructor` (214) — inheritance special case
 
 ### NOT Constructor (rules.pl:260–373)
@@ -62,8 +62,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `guessUnlikelyConstructor`
 
 ### Constraints (insanity.pl)
-- [ ] `insanityConstructorAndRealDestructor` — ctor ∩ realDtor = ∅
-- [ ] `insanityConstructorAndDeletingDestructor` — ctor ∩ delDtor = ∅
+- [x] `insanityConstructorAndRealDestructor` — covered by `insanityMultipleConstructorDestructorKinds`
+- [x] `insanityConstructorAndDeletingDestructor` — covered by `insanityMultipleConstructorDestructorKinds`
 - [ ] `insanityContradictoryNOTConstructor` — ctor ∩ ¬ctor = ∅
 
 ---
@@ -73,7 +73,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Deductive (rules.pl:382–404)
 - [ ] `reasonRealDestructor` (382) — existing `realDestructor`
 - [ ] `reasonRealDestructor` (388) — elimination (only remaining candidate)
-- [ ] `reasonRealDestructor` (394) — `symbolProperty(realDestructor)`
+- [x] `reasonRealDestructor` (394) — `symbolProperty(realDestructor)`
 
 ### NOT Real Destructor (rules.pl:422–560)
 - [ ] `reasonNOTRealDestructor_A` (438) — existing `factNOTRealDestructor`
@@ -99,9 +99,9 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Deductive (rules.pl:569–595)
 - [ ] `reasonDeletingDestructor` (569) — existing `deletingDestructor`
-- [ ] `reasonDeletingDestructor` (575) — `callsDelete` logic
-- [ ] `reasonDeletingDestructor` (585) — calls real destructor + delete
-- [ ] `reasonDeletingDestructor` (595) — `symbolProperty(deletingDestructor)`
+- [ ] `reasonDeletingDestructor` (575) — elimination (only remaining candidate)
+- [x] `reasonDeletingDestructor` (585) — delete(this) logic
+- [x] `reasonDeletingDestructor` (595) — `symbolProperty(deletingDestructor)`
 
 ### NOT Deleting Destructor (rules.pl:612–712)
 - [ ] `reasonNOTDeletingDestructor_A` (627) — existing `factNOTDeletingDestructor`

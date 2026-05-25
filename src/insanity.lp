@@ -21,6 +21,23 @@ insanity(insanityConstructorInVFTable, (VFTable,Offset,Constructor)) :-
     dethunk(Entry, Constructor),
     constructor(Constructor).
 
+constructorDestructorKind(Method, constructor) :-
+    constructor(Method).
+constructorDestructorKind(Method, realDestructor) :-
+    realDestructor(Method).
+constructorDestructorKind(Method, deletingDestructor) :-
+    deletingDestructor(Method).
+
+% User-approved ASP sanity check: a method has at most one constructor/destructor kind.
+% Covers:
+%   insanityConstructorAndRealDestructor/1 (insanity.pl:227)
+%   insanityConstructorAndDeletingDestructor/1 (insanity.pl:241)
+% Also covers real/deleting overlap, which is not a separate named Prolog insanity rule.
+insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
+    method(Method),
+    Count = #count { Kind : constructorDestructorKind(Method, Kind) },
+    Count > 1.
+
 % ----------------------------------------------------------------
 % Dispatch: hard constraint (normal) or soft violate (diagnostic).
 % ----------------------------------------------------------------

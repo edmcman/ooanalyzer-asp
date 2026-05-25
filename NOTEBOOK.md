@@ -14,8 +14,8 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 ## Files created/modified
 - `AGENTS.md` — porting guidelines
 - `src/initial.lp` — rTTITDA2VFTable/2, rTTIEnabled/rTTIValid flags, possibleVFTableWrite/5, possibleVFTableOverwrite/6, possibleConstructor/1, possibleDestructor/1
-- `src/rules.lp` — reasonVFTable (843), dethunk/2, reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247), reasonMergeClasses_G/J
-- `src/insanity.lp` — insanityConstructorInVFTable
+- `src/rules.lp` — reasonVFTable (843), dethunk/2, reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247), reasonMergeClasses_G/J, constructor/destructor symbol and delete(this) rules
+- `src/insanity.lp` — insanityConstructorInVFTable, insanityMultipleConstructorDestructorKinds
 - `src/facts.lp` — #defined vfTableSizeGTE/2 (referenced by 1247, no rule yet)
 - `src/guess.lp` — possibleVFTable/1, guessVFTable choice rule + heuristic, guessMergeClasses_B/D
 - `TODO.md` — rule coverage tracker
@@ -35,6 +35,10 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `vfTableEntry` (rules.pl:1247) — from virtual function call evidence
 - `reasonMergeClasses_G` (rules.pl:2881) — symbols with same class name
 - `reasonMergeClasses_J` (rules.pl:2925) — RTTI says two VFTables belong to same class
+- `reasonConstructor` (rules.pl:209) — symbolProperty(constructor)
+- `reasonRealDestructor` (rules.pl:394) — symbolProperty(realDestructor)
+- `reasonDeletingDestructor` (rules.pl:585) — delete(this) logic
+- `reasonDeletingDestructor` (rules.pl:595) — symbolProperty(deletingDestructor)
 
 ### initial.lp
 - `rTTITDA2VFTable/2` (rtti.pl:19)
@@ -52,40 +56,44 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ### insanity.lp
 - `insanityConstructorInVFTable` (insanity.pl:49) — constructors cannot appear in confirmed vftable entries
+- `insanityMultipleConstructorDestructorKinds` — user-approved ASP check: at most one of constructor/realDestructor/deletingDestructor
 
 ## Where we are now
-Last completed: **basic merge guesses — vftable writer/entry and same-vftable writers**
+Last completed: **basic constructor/destructor identification and combined kind sanity**
 
 ```prolog
-guessMergeClassesB(Class1, Class2) :-
-    factVFTableWrite(_Insn, Method1, _ObjectOffset, VFTable),
-    factVFTableEntry(VFTable, _VFTableOffset, Method2),
-    not(purecall(Method2)),
-    checkMergeClasses(Class1, Class2).
+reasonConstructor(Method) :-
+    symbolProperty(Method, constructor).
 
-guessMergeClassesD(Class1, Class2) :-
-    factVFTableWrite(_Insn1, Method1, ObjectOffset, VFTable),
-    factVFTableWrite(_Insn2, Method2, ObjectOffset, VFTable),
-    iso_dif(Method1, Method2),
-    checkMergeClasses(Class1, Class2).
+reasonRealDestructor(Method) :-
+    symbolProperty(Method, realDestructor).
+
+reasonDeletingDestructor(Method) :-
+    factMethod(Method),
+    insnCallsDelete(_Insn, Method, ThisPtr),
+    thisParamFuncParameter(Method, ThisPtr).
+
+reasonDeletingDestructor(Method) :-
+    symbolProperty(Method, deletingDestructor).
 ```
 
 Current ASP:
 
 ```prolog
-mergeCandidate(A, B) :-
-    vfTableWrite(_Insn, Writer, _ObjectOffset, VFTable),
-    vfTableEntry(VFTable, _VFTableOffset, Entry),
-    not purecall(Entry),
-    sortPair(Writer, Entry, A, B).                                      % guess.pl:1050
+constructor(Method) :- symbolProperty(Method, constructor).              % rules.pl:209
+realDestructor(Method) :- symbolProperty(Method, realDestructor).         % rules.pl:394
 
-mergeCandidate(A, B) :-
-    vfTableWrite(_Insn1, Method1, ObjectOffset, VFTable),
-    vfTableWrite(_Insn2, Method2, ObjectOffset, VFTable),
-    Method1 != Method2,
-    sortPair(Method1, Method2, A, B).                                   % guess.pl:1215
+deletingDestructor(Method) :-
+    method(Method),
+    insnCallsDelete(_Insn, Method, ThisPtr),
+    thisParamFuncParameter(Method, ThisPtr).                              % rules.pl:585
 
-1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :- mergeCandidate(A, B). % guess.pl:1084
+deletingDestructor(Method) :- symbolProperty(Method, deletingDestructor). % rules.pl:595
+
+insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
+    method(Method),
+    Count = #count { Kind : constructorDestructorKind(Method, Kind) },
+    Count > 1.
 ```
 
 ## Remaining VFTable rules
@@ -93,5 +101,4 @@ mergeCandidate(A, B) :-
 - `insanityVFTableOnTwoClasses`
 
 ## Planned categories (not yet started)
-- Constructor
-- Real/Deleting Destructor
+- Constructor/destructor elimination rules and/or classification guesses

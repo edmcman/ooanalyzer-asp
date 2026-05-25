@@ -16,6 +16,32 @@ certainConstructorOrDestructor(Method) :-
     thisParamFuncParameter(Method, ThisPtr).
 
 % ============================================================
+% CONSTRUCTOR / DESTRUCTOR IDENTIFICATION
+% ============================================================
+
+% reasonConstructor/1: symbol property evidence proves a constructor.
+% Counterpart: reasonConstructor/1 (rules.pl:209)
+constructor(Method) :-
+    symbolProperty(Method, constructor).                                  % rules.pl:209
+
+% reasonRealDestructor/1: symbol property evidence proves a real destructor.
+% Counterpart: reasonRealDestructor/1 (rules.pl:394)
+realDestructor(Method) :-
+    symbolProperty(Method, realDestructor).                               % rules.pl:394
+
+% reasonDeletingDestructor/1: delete(this) evidence proves a deleting destructor.
+% Counterpart: reasonDeletingDestructor/1 (rules.pl:585)
+deletingDestructor(Method) :-
+    method(Method),
+    insnCallsDelete(_Insn, Method, ThisPtr),
+    thisParamFuncParameter(Method, ThisPtr).                              % rules.pl:585
+
+% reasonDeletingDestructor/1: symbol property evidence proves a deleting destructor.
+% Counterpart: reasonDeletingDestructor/1 (rules.pl:595)
+deletingDestructor(Method) :-
+    symbolProperty(Method, deletingDestructor).                           % rules.pl:595
+
+% ============================================================
 % VFTABLE IDENTIFICATION
 % ============================================================
 
