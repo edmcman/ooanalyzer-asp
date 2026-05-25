@@ -178,7 +178,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `insanityVFTableOnTwoClasses` — vftable belongs to at most one class
 - [ ] `insanityVFTableSizeInvalid` — LTE < GTE is UNSAT
 - [ ] `insanityBaseVFTableLarger` — base vftable ≤ derived vftable
-- [ ] `insanityConstructorInVFTable` — constructors not in vftable entries
+- [x] `insanityConstructorInVFTable` — constructors not in vftable entries
 
 ---
 

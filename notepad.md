@@ -15,6 +15,7 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `AGENTS.md` — porting guidelines
 - `src/initial.lp` — rTTITDA2VFTable/2, rTTIEnabled/rTTIValid flags, possibleVFTableWrite/5, possibleVFTableOverwrite/6, possibleConstructor/1, possibleDestructor/1
 - `src/rules.lp` — reasonVFTable (843), dethunk/2, reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247)
+- `src/insanity.lp` — insanityConstructorInVFTable
 - `src/facts.lp` — #defined vfTableSizeGTE/2 (referenced by 1247, no rule yet)
 - `src/guess.lp` — possibleVFTable/1, guessVFTable choice rule + heuristic
 - `TODO.md` — rule coverage tracker
@@ -45,29 +46,33 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `possibleVFTable/1` (guess.pl:175)
 - `guessVFTable` (guess.pl:180)
 
+### insanity.lp
+- `insanityConstructorInVFTable` (insanity.pl:49) — constructors cannot appear in confirmed vftable entries
+
 ## Where we are now
-Last completed: **`reasonVFTableEntry` (1247) — from virtual function call**
+Last completed: **`insanityConstructorInVFTable` — constructors not in vftable entries**
 
 ```prolog
-reasonVFTableEntry(VFTable, Offset, Entry) :-
-    factVirtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
-    possibleVFTableEntry(VFTable, Offset, Entry).
+insanityConstructorInVFTable(Out) :-
+    factVFTableEntry(VFTable, Offset, Entry),
+    dethunk(Entry, Constructor),
+    factConstructor(Constructor).
 ```
 
 Current ASP:
 
 ```prolog
-vfTableEntry(VFTable, Offset, Entry) :-
-    virtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
-    possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1247
+insanity(insanityConstructorInVFTable, (VFTable,Offset,Constructor)) :-
+    vfTableEntry(VFTable, Offset, Entry),
+    dethunk(Entry, Constructor),
+    constructor(Constructor).
 ```
 
 ## Remaining VFTable rules
 - `reasonVFTableBelongsToClass` (1007) — clause 1 (very complex, needs constructors/destructors)
 - `insanityVFTableOnTwoClasses`
-- `insanityConstructorInVFTable`
 
 ## Planned categories (not yet started)
+- Basic merges — **next**
 - Constructor
 - Real/Deleting Destructor
-- Basic merges
