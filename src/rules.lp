@@ -1,4 +1,21 @@
 % ============================================================
+% CONSTRUCTOR / DESTRUCTOR HELPERS
+% ============================================================
+
+% certainConstructorOrDestructor: method writes a confirmed vftable or vbtable
+% into its own this-pointer.
+% Counterpart: certainConstructorOrDestructor/1 (rules.pl:731)
+certainConstructorOrDestructor(Method) :-
+    factVFTableWrite(Insn, Method, Offset, VFTable),
+    possibleVFTableWrite(Insn, Method, ThisPtr, Offset, VFTable),
+    thisParamFuncParameter(Method, ThisPtr).
+
+certainConstructorOrDestructor(Method) :-
+    factVBTableWrite(Insn, Method, Offset, VBTable),
+    possibleVBTableWrite(Insn, Method, ThisPtr, Offset, VBTable),
+    thisParamFuncParameter(Method, ThisPtr).
+
+% ============================================================
 % VFTABLE IDENTIFICATION
 % ============================================================
 
@@ -7,6 +24,14 @@ factVFTable(VFTable) :-
     rTTIEnabled,
     rTTIValid,
     rTTITDA2VFTable(_TDA, VFTable).                                        % rules.pl:843
+
+% reasonVFTableOverwrite (976): destructor direction — arguments reversed from possibleVFTableOverwrite.
+factVFTableOverwrite(Method, VFTable2, VFTable1, Offset) :-
+    possibleVFTableOverwrite(_Insn1, _Insn2, Method, Offset, VFTable1, VFTable2),
+    factVFTable(VFTable1),
+    factVFTable(VFTable2),
+    certainConstructorOrDestructor(Method),
+    -factConstructor(Method).                                              % rules.pl:976
 
 % reasonVFTableOverwrite (962): constructor direction — VFTable1 overwritten by VFTable2.
 factVFTableOverwrite(Method, VFTable1, VFTable2, Offset) :-

@@ -141,7 +141,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Overwrite (rules.pl:962–992)
 - [x] `reasonVFTableOverwrite` (962) — constructor direction (base → derived)
-- [ ] `reasonVFTableOverwrite` (976) — destructor direction (derived → base)
+- [x] `reasonVFTableOverwrite` (976) — destructor direction (derived → base)
 
 ### Entry (rules.pl:1228–1322)
 - [ ] `reasonVFTableEntry` (1228) — existing `factVFTableEntry`
