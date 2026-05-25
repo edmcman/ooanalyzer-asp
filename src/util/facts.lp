@@ -31,7 +31,7 @@
 %       thisPtrAllocation(Insn, Function, ThisPtr, Type, Size)
 %       possibleVirtualFunctionCall(Insn, Function, ThisPtr, VTableOffset, VFuncOffset)
 %
-% src/initial.lp derives the simplified predicates (A) from the full ones (B).
+% src/util/initial.lp derives the simplified predicates (A) from the full ones (B).
 
 % ----------------------------------------------------------------
 % Simplified predicates (directly usable by the prototype)

@@ -13,8 +13,8 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ## Files created/modified
 - `AGENTS.md` — porting guidelines
-- `src/facts.lp` — input vocabulary and `#defined` directives for full-arity and simplified predicates
-- `src/initial.lp` — projections and derivations from full-arity OOAnalyzer `.facts`:
+- `src/util/facts.lp` — input vocabulary and `#defined` directives for full-arity and simplified predicates
+- `src/util/initial.lp` — projections and derivations from full-arity OOAnalyzer `.facts`:
   - `pointerSize/1` from `fileInfo`
   - `possibleVFTableWrite/3`, `possibleVBTableWrite/3` (drop Insn, ThisPtr, ExpandedThisPtr)
   - `possibleVFTableEntry/3` — recursive walk over `initialMemory` from confirmed writes and RTTI COLs
@@ -31,9 +31,11 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
   - `possiblyVirtual/1` (initial.pl:338) — method appears, possibly via thunk, in a possible vftable entry
   - `methodCallAtOffset/4`, `validMethodCallAtOffset/4`, `callAtOffset/3` (initial.pl:175-191)
   - `thisPtrUsage/4` (initial.pl:193-205)
-- `src/rules.lp` — `reasonVFTable` (843), `reasonMethod_B`–`H`, `reasonVFTableWrite` (939), `reasonVFTableOverwrite` (962, 976), `certainConstructorOrDestructor/1` (731), `vfTableEntry` (1233, 1239, 1247), `reasonMergeClasses_G/J`, constructor/destructor symbol and delete(this) rules, `sortPair`/`mergeEntity`/`merged`/`sameClass` infrastructure
-- `src/insanity.lp` — `insanityConstructorInVFTable`, `insanityMultipleConstructorDestructorKinds`
-- `src/guess.lp` — `possibleVFTable/1`, `guessVFTable` choice rule + heuristic, `guessMergeClasses_B/D`
+- `src/modules/methods.lp` — `reasonMethod_B`–`H`
+- `src/modules/ctorsdtors.lp` — constructor/destructor symbol rules, guessConstructor1/2, `certainConstructorOrDestructor/1`, sanity checks
+- `src/modules/vftables.lp` — `reasonVFTable`, `reasonVFTableWrite`, `reasonVFTableOverwrite`, `vfTableEntry`, `guessVFTable`, `insanityConstructorInVFTable`
+- `src/modules/merges.lp` — `reasonMergeClasses_G/J`, `sortPair`/`mergeEntity`/`merged`/`sameClass`, `guessMergeClasses_B/D`
+- `src/util/sanity.lp` — `#show` and diagnostic infrastructure
 - `TODO.md` — rule coverage tracker
 
 ## Rules ported
@@ -84,7 +86,7 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `insanityMultipleConstructorDestructorKinds` — user-approved ASP check: at most one of constructor/realDestructor/deletingDestructor
 
 ## Where we are now
-Last completed: **guessConstructor1 and guessConstructor2** (src/ctorsdtors.lp)
+Last completed: **guessConstructor1 and guessConstructor2** (src/modules/ctorsdtors.lp)
 
 ```prolog
 guessConstructor1Domain(Method) :-

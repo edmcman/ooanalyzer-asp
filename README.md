@@ -40,13 +40,14 @@ artifact path for the larger real-fixture corpus under `examples/ooa/`.
 | File | Purpose |
 |---|---|
 | [`ooanalyzer.lp`](ooanalyzer.lp) | Entry point: `#include`s the modules below |
-| [`src/facts.lp`](src/facts.lp) | Input vocabulary and `#defined` directives |
-| [`src/guess.lp`](src/guess.lp) | Guesses (`{ vfTable }`, `{ mergeClasses }`, etc.) and merge-candidate domain restriction |
-| [`src/rules.lp`](src/rules.lp) | Forward-reasoning rules: thunk resolution, derived facts, ctor/dtor identification, inheritance, merges, class computation |
-| [`src/insanity.lp`](src/insanity.lp) | Sanity checks (integrity constraints) |
-| [`src/optimize.lp`](src/optimize.lp) | Lexicographic optimization directives |
-| [`src/output.lp`](src/output.lp) | `#show` directives |
-| [`src/initial.lp`](src/initial.lp) | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
+| [`src/util/facts.lp`](src/util/facts.lp) | Input vocabulary and `#defined` directives |
+| [`src/util/initial.lp`](src/util/initial.lp) | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
+| [`src/util/sanity.lp`](src/util/sanity.lp) | Diagnostic infrastructure and `#show` directives |
+| [`src/modules/methods.lp`](src/modules/methods.lp) | Method identification rules |
+| [`src/modules/ctorsdtors.lp`](src/modules/ctorsdtors.lp) | Constructor/destructor identification and guessing |
+| [`src/modules/vftables.lp`](src/modules/vftables.lp) | VFTable identification, entries, and guessing |
+| [`src/modules/merges.lp`](src/modules/merges.lp) | Class merge rules and transitive closure |
+| [`src/old/`](src/old/) | v1 Clingo modules (reference only) |
 | [`facts2clingo.py`](facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | [`examples/example.lp`](examples/example.lp) | Valid 3-class example |
 | [`examples/inherit_example.lp`](examples/inherit_example.lp) | Single inheritance: Base + Derived |

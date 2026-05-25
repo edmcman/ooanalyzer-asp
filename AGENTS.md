@@ -7,7 +7,7 @@ Reference implementation: `pharos/share/prolog/oorules/` (SWI-Prolog, ~10k lines
 
 **v2 branch**: the solver modules (`src/guess.lp`, `src/rules.lp`,
 `src/insanity.lp`, `src/optimize.lp`, `src/output.lp`) have been removed and
-are being rewritten. Only `src/facts.lp` and `src/initial.lp` remain from the
+are being rewritten. Only `src/util/facts.lp` and `src/util/initial.lp` remain from the
 original module set.
 
 ## Files
@@ -15,8 +15,8 @@ original module set.
 | File | Purpose |
 |---|---|
 | `ooanalyzer.lp` | Entry point: `#include`s the modules below |
-| `src/facts.lp` | Input vocabulary and `#defined` directives |
-| `src/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
+| `src/util/facts.lp` | Input vocabulary and `#defined` directives |
+| `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
 | `facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
 | `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
@@ -124,7 +124,7 @@ The prototype accepts **two vocabularies**:
 | `possibleConstructor` | 1 | Derived in `initial.lp` from `returnsSelf+noCallsBefore` or `symbolProperty(constructor)` |
 | `possibleDestructor` | 1 | Derived in `initial.lp` from `noCallsAfter` or symbol properties |
 
-See `src/initial.lp` for the exact derivation rules.
+See `src/util/initial.lp` for the exact derivation rules.
 
 ## Known limitations / future work
 
