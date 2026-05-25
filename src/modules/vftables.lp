@@ -52,6 +52,14 @@ vfTableEntry(VFTable, Offset, Entry) :-
     virtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
     possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1247
 
+% reasonNOTVFTableEntry_D: RTTI COL addresses are not valid vftable entries.
+% Counterpart: reasonNOTVFTableEntry_D (rules.pl:1303)
+-vfTableEntry(VFTable, Offset, Entry) :-
+    vfTable(VFTable),
+    possibleVFTableEntry(VFTable, Offset, Entry),
+    ComputedAddress = VFTable + Offset,
+    rTTICompleteObjectLocator(ComputedAddress, _Address, _TDAddress, _CHDAddress, _O1, _O2).  % rules.pl:1303
+
 % ============================================================
 % GUESS
 % ============================================================
@@ -77,16 +85,6 @@ guessVFTableReward(VFTable) :- vfTable(VFTable), possibleVFTable(VFTable).
 
 #maximize { 1@2, vfTable, V : guessVFTableReward(V) }.
 
-% ============================================================
-% CONSTRAINTS
-% ============================================================
-
-% insanityConstructorInVFTable: constructors may not appear as vftable entries.
-% Counterpart: insanity.pl:49
-insanity(insanityConstructorInVFTable, (VFTable,Offset,Constructor)) :-
-    vfTableEntry(VFTable, Offset, Entry),
-    dethunk(Entry, Constructor),
-    constructor(Constructor).
 
 #show vfTable/1.
 #show -vfTable/1.

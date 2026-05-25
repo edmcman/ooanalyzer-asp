@@ -8,4 +8,5 @@
 #include "src/modules/ctorsdtors.lp".
 #include "src/modules/vftables.lp".
 #include "src/modules/merges.lp".
+#include "src/modules/classes.lp".
 #include "src/util/sanity.lp".

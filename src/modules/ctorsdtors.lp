@@ -20,6 +20,11 @@ certainConstructorOrDestructor(Method) :-
 constructor(Method) :-
     symbolProperty(Method, constructor).                                  % rules.pl:209
 
+% reasonConstructor: VBTable writes happen only in constructors.
+% Counterpart: reasonConstructor (rules.pl:204)
+constructor(Method) :-
+    vbTableWrite(_, Method, _, _).
+
 % reasonRealDestructor/1: symbol property evidence proves a real destructor.
 % Counterpart: reasonRealDestructor/1 (rules.pl:394)
 realDestructor(Method) :-
@@ -36,6 +41,12 @@ deletingDestructor(Method) :-
 % Counterpart: reasonDeletingDestructor/1 (rules.pl:595)
 deletingDestructor(Method) :-
     symbolProperty(Method, deletingDestructor).                           % rules.pl:595
+
+% reasonNOTConstructor_D: methods in confirmed vftable entries cannot be constructors.
+% Counterpart: reasonNOTConstructor_D (rules.pl:297)
+-constructor(Method) :-
+    vfTableEntry(_VFTable, _Offset, Entry),
+    dethunk(Entry, Method).
 
 % reasonNOTDeletingDestructor_G: deleting destructors must be virtual.
 % Counterpart: reasonNOTDeletingDestructor_G (rules.pl:687)

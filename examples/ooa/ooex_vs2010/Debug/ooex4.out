@@ -3,17 +3,20 @@ Reading from ooanalyzer.lp ...
 src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
   vbTableWrite(Insn,Method,Offset,VBTable)
 
+src/modules/ctorsdtors.lp:26:5-34: info: atom does not occur in any rule head:
+  vbTableWrite(#Anon0,Method,#Anon1,#Anon2)
+
 src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
   vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 6 (Time: 0.052s)
-method(4297336) method(4264126) method(4264426) method(4265296) method(4265472) method(4266512) vfTable(4286272) vfTable(4286292) vfTable(4286312) sameClass(4297336,4297336) sameClass(4264126,4264126) sameClass(4264426,4264426) sameClass(4265296,4265296) sameClass(4265472,4265472) sameClass(4266512,4266512) sameClass(4286272,4286272) sameClass(4286292,4286292) sameClass(4286312,4286312) vfTableEntry(4286312,0,4264126) vfTableEntry(4286292,0,4264426) vfTableEntry(4286272,0,4264426) vfTableWrite(4266524,4266512,0,4286312) vfTableWrite(4265510,4265472,0,4286292) vfTableWrite(4265342,4265296,0,4286272) constructor(4265296) constructor(4265472) constructor(4266512) mergeClasses(4264126,4266512) mergeClasses(4264426,4265472) mergeClasses(4264426,4265296) sameClass(4266512,4264126) sameClass(4265472,4264426) sameClass(4265296,4264426) sameClass(4264426,4265472) sameClass(4264426,4265296) sameClass(4264126,4266512) sameClass(4265296,4265472) sameClass(4265472,4265296)
+Answer: 5 (Time: 0.054s)
+method(4297336) method(4264126) method(4264426) method(4265296) method(4265472) method(4266512) vfTable(4286272) vfTable(4286292) vfTable(4286312) classCallsMethod(4266560,4297336) sameClass(4297336,4297336) sameClass(4264126,4264126) sameClass(4264426,4264426) sameClass(4265296,4265296) sameClass(4265472,4265472) sameClass(4266512,4266512) sameClass(4286272,4286272) sameClass(4286292,4286292) sameClass(4286312,4286312) vfTableEntry(4286312,0,4264126) vfTableEntry(4286292,0,4264426) vfTableEntry(4286272,0,4264426) vfTableWrite(4266524,4266512,0,4286312) vfTableWrite(4265510,4265472,0,4286292) vfTableWrite(4265342,4265296,0,4286272) method(4265584) method(4265680) sameClass(4265584,4265584) sameClass(4265680,4265680) classCallsMethod(4265296,4265584) classCallsMethod(4265296,4265680) constructor(4265296) constructor(4265472) constructor(4266512) mergeClasses(4264126,4266512) mergeClasses(4264426,4265472) mergeClasses(4264426,4265296) sameClass(4266512,4264126) sameClass(4265472,4264426) sameClass(4265296,4264426) sameClass(4264426,4265472) sameClass(4264426,4265296) sameClass(4264126,4266512) sameClass(4265296,4265472) sameClass(4265472,4265296)
 OPTIMUM FOUND
 
-Models       : 6
+Models       : 5
   Optimum    : yes
 Optimization : -33 -15
 Calls        : 1
-Time         : 0.052s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.052s
+Time         : 0.054s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.054s

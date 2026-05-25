@@ -3,17 +3,20 @@ Reading from ooanalyzer.lp ...
 src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
   vbTableWrite(Insn,Method,Offset,VBTable)
 
+src/modules/ctorsdtors.lp:26:5-34: info: atom does not occur in any rule head:
+  vbTableWrite(#Anon0,Method,#Anon1,#Anon2)
+
 src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
   vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 11 (Time: 0.043s)
-deletingDestructor(4200681) deletingDestructor(4198683) method(4198672) method(4198683) method(4198722) method(4200481) method(4200670) method(4200681) method(4200720) method(4200757) method(4200773) vfTable(4219200) vfTable(4219300) vfTable(4219332) sameClass(4198672,4198672) sameClass(4198683,4198683) sameClass(4198722,4198722) sameClass(4200481,4200481) sameClass(4200670,4200670) sameClass(4200681,4200681) sameClass(4200720,4200720) sameClass(4200757,4200757) sameClass(4200773,4200773) sameClass(4219200,4219200) sameClass(4219300,4219300) sameClass(4219332,4219332) vfTableEntry(4219332,0,4200773) vfTableEntry(4219300,0,4200681) vfTableEntry(4219200,0,4198683) vfTableWrite(4200760,4200757,0,4219332) vfTableWrite(4200491,4200481,0,4219300) vfTableWrite(4200670,4200670,0,4219300) vfTableWrite(4200689,4200681,0,4219300) vfTableWrite(4200735,4200720,0,4219300) vfTableWrite(4198672,4198672,0,4219200) vfTableWrite(4198691,4198683,0,4219200) vfTableWrite(4198738,4198722,0,4219200) deletingDestructor(4200773) constructor(4198722) constructor(4200481) constructor(4200720) deletingDestructor(4198672) deletingDestructor(4200670) deletingDestructor(4200757) mergeClasses(4200757,4200773) mergeClasses(4200481,4200681) mergeClasses(4200670,4200681) mergeClasses(4200681,4200720) mergeClasses(4198672,4198683) mergeClasses(4198683,4198722) mergeClasses(4200481,4200670) mergeClasses(4200481,4200720) mergeClasses(4200670,4200720) mergeClasses(4198672,4198722) sameClass(4200773,4200757) sameClass(4200757,4200773) sameClass(4200720,4200681) sameClass(4200720,4200481) sameClass(4200720,4200670) sameClass(4200681,4200720) sameClass(4200681,4200481) sameClass(4200681,4200670) sameClass(4200670,4200681) sameClass(4200670,4200720) sameClass(4200670,4200481) sameClass(4200481,4200681) sameClass(4200481,4200670) sameClass(4200481,4200720) sameClass(4198722,4198683) sameClass(4198722,4198672) sameClass(4198683,4198722) sameClass(4198683,4198672) sameClass(4198672,4198683) sameClass(4198672,4198722)
+Answer: 10 (Time: 0.045s)
+deletingDestructor(4200681) deletingDestructor(4198683) method(4198672) method(4198683) method(4198722) method(4200481) method(4200670) method(4200681) method(4200720) method(4200757) method(4200773) vfTable(4219200) vfTable(4219300) vfTable(4219332) classCallsMethod(4198683,4200670) classCallsMethod(4198722,4200720) sameClass(4198672,4198672) sameClass(4198683,4198683) sameClass(4198722,4198722) sameClass(4200481,4200481) sameClass(4200670,4200670) sameClass(4200681,4200681) sameClass(4200720,4200720) sameClass(4200757,4200757) sameClass(4200773,4200773) sameClass(4219200,4219200) sameClass(4219300,4219300) sameClass(4219332,4219332) vfTableEntry(4219332,0,4200773) vfTableEntry(4219300,0,4200681) vfTableEntry(4219200,0,4198683) vfTableWrite(4200760,4200757,0,4219332) vfTableWrite(4200491,4200481,0,4219300) vfTableWrite(4200670,4200670,0,4219300) vfTableWrite(4200689,4200681,0,4219300) vfTableWrite(4200735,4200720,0,4219300) vfTableWrite(4198672,4198672,0,4219200) vfTableWrite(4198691,4198683,0,4219200) vfTableWrite(4198738,4198722,0,4219200) method(4200617) method(4200587) method(4200523) deletingDestructor(4200773) sameClass(4200523,4200523) sameClass(4200587,4200587) sameClass(4200617,4200617) classCallsMethod(4200617,4200587) classCallsMethod(4200617,4200523) classCallsMethod(4200681,4200587) classCallsMethod(4200720,4200617) constructor(4198722) constructor(4200481) constructor(4200720) realDestructor(4198672) realDestructor(4200670) realDestructor(4200757) mergeClasses(4200757,4200773) mergeClasses(4200481,4200681) mergeClasses(4200670,4200681) mergeClasses(4200681,4200720) mergeClasses(4198672,4198683) mergeClasses(4198683,4198722) mergeClasses(4200481,4200670) mergeClasses(4200481,4200720) mergeClasses(4200670,4200720) mergeClasses(4198672,4198722) sameClass(4200773,4200757) sameClass(4200757,4200773) sameClass(4200720,4200681) sameClass(4200720,4200481) sameClass(4200720,4200670) sameClass(4200681,4200720) sameClass(4200681,4200481) sameClass(4200681,4200670) sameClass(4200670,4200681) sameClass(4200670,4200720) sameClass(4200670,4200481) sameClass(4200481,4200681) sameClass(4200481,4200670) sameClass(4200481,4200720) sameClass(4198722,4198683) sameClass(4198722,4198672) sameClass(4198683,4198722) sameClass(4198683,4198672) sameClass(4198672,4198683) sameClass(4198672,4198722)
 OPTIMUM FOUND
 
-Models       : 11
+Models       : 10
   Optimum    : yes
 Optimization : -103 -15
 Calls        : 1
-Time         : 0.043s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.043s
+Time         : 0.045s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.045s

@@ -25,7 +25,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonMethod_I` (85) — `vbTableWrite` → method
 - [ ] `reasonMethod_J` (99) — callee of `method` + `possibleMethod`
 - [ ] `reasonMethod_K` (103) — `thisPtrUsage` → method
-- [ ] `reasonMethod_L` (109) — `methodCallAtOffset` → method
+- [x] `reasonMethod_L` (109) — `methodCallAtOffset` → method
 - [ ] `reasonMethod_M` (118) — `thisPtrAllocation` → method
 - [ ] `reasonMethod_N` (133) — thiscall calling convention
 - [ ] `reasonMethod_O` (142) — thiscall via `thisPtrParam`
@@ -41,7 +41,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Deductive (rules.pl:186–242)
 - [x] `reasonConstructor` (186) — existing `constructor` (covered by choice rule + insanityMultipleConstructorDestructorKinds)
 - [x] `reasonConstructor` (192) — elimination: only remaining candidate (covered by choice rule + insanityMultipleConstructorDestructorKinds)
-- [ ] `reasonConstructor` (204) — `vbTableWrite` → constructor
+- [x] `reasonConstructor` (204) — `vbTableWrite` → constructor
 - [x] `reasonConstructor` (209) — `symbolProperty(constructor)`
 - [ ] `reasonConstructor` (214) — inheritance special case
 
@@ -49,7 +49,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTConstructor_A` (276) — existing `notConstructor`
 - [x] `reasonNOTConstructor_B` (281) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTConstructor_C` (288) — is deleting destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
-- [ ] `reasonNOTConstructor_D` (297) — appears in vftable
+- [x] `reasonNOTConstructor_D` (297) — appears in vftable (strong negation; replaces `insanityConstructorInVFTable`)
 - [ ] `reasonNOTConstructor_F` (316) — called by non-constructor
 - [ ] `reasonNOTConstructor_G` (327) — vftable entry requirement
 - [ ] `reasonNOTConstructor_H` (345) — derived class ordering
@@ -155,7 +155,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [~] `reasonNOTVFTableEntry_A` (1276) — existing `notVFTableEntry` (no-op in ASP, skipped)
 - [ ] `reasonNOTVFTableEntry_B` (1282) — table address invalid
 - [ ] `reasonNOTVFTableEntry_C` (1292) — offset exceeds table size
-- [ ] `reasonNOTVFTableEntry_D` (1303) — address is a constructor
+- [x] `reasonNOTVFTableEntry_D` (1303) — RTTI COL address is not a vftable entry
 - [ ] `reasonNOTVFTableEntry_E` (1313) — entry conflicts with other fact
 
 ### Belongs-to-Class (rules.pl:1007–1228)
@@ -182,7 +182,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `insanityVFTableOnTwoClasses` — vftable belongs to at most one class
 - [ ] `insanityVFTableSizeInvalid` — LTE < GTE is UNSAT
 - [ ] `insanityBaseVFTableLarger` — base vftable ≤ derived vftable
-- [x] `insanityConstructorInVFTable` — constructors not in vftable entries
+- [~] `insanityConstructorInVFTable` — superseded by `reasonNOTConstructor_D` strong negation
 
 ---
 
@@ -363,7 +363,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Class Calls Method (rules.pl:2449–2496)
 - [ ] `reasonClassCallsMethod` (2449) — direct call within class
 - [ ] `reasonClassCallsMethod_B` (2462) — call via class relationship
-- [ ] `reasonClassCallsMethod_C` (2481) — inherited call
+- [x] `reasonClassCallsMethod_C` (2481) — inherited call
 
 ### Class at Offset (rules.pl:2505–2538)
 - [ ] `reasonClassAtOffset` (2534) — outer class has inner at byte offset

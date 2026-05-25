@@ -27,6 +27,13 @@ method(Method) :-
     vfTable(VFTable),
     thisParamFuncParameter(Method, ThisPtr).                               % rules.pl:80
 
+% reasonMethod_L: caller is a method and calls callee at offset 0 → callee is a method.
+% Counterpart: reasonMethod_L (rules.pl:109)
+method(Method) :-
+    method(Caller),
+    methodCallAtOffset(_, Caller, Method, 0),  % Intentionally NOT validMethodCallAtOffset
+    thisParamFuncParameter(Method, _).
+
 % I am not totally sure that we want method guessing to be so broad.
 
 % ============================================================
