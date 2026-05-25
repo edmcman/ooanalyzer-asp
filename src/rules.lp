@@ -50,23 +50,24 @@ vfTableEntry(VFTable, 0, Entry) :-
     vfTable(VFTable),
     possibleVFTableEntry(VFTable, 0, Entry).                              % rules.pl:1233
 
-% reasonVFTableEntry (1247): propagation from known entry — all offsets <= max valid are valid.
+% reasonVFTableEntry (1239): propagation from known entry — all offsets <= max valid are valid.
 vfTableEntry(VFTable, Offset, Entry) :-
     vfTableEntry(VFTable, ExistingOffset, _),
     possibleVFTableEntry(VFTable, Offset, Entry),
-    Offset <= ExistingOffset.                                               % rules.pl:1247
+    Offset <= ExistingOffset.                                               % rules.pl:1239
 
+% reasonVFTableEntry (1239): VFTable size lower bound gives the max valid entry offset.
 vfTableEntry(VFTable, Offset, Entry) :-
     vfTableSizeGTE(VFTable, Size),
     pointerSize(PtrSize),
     ExistingOffset = Size - PtrSize,
     possibleVFTableEntry(VFTable, Offset, Entry),
-    Offset <= ExistingOffset.                                               % rules.pl:1247
+    Offset <= ExistingOffset.                                               % rules.pl:1239
 
-% reasonVFTableEntry (1255): entry confirmed by virtual function call evidence.
+% reasonVFTableEntry (1247): entry confirmed by virtual function call evidence.
 vfTableEntry(VFTable, Offset, Entry) :-
     virtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
-    possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1255
+    possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1247
 
 % ============================================================
 % THUNK RESOLUTION

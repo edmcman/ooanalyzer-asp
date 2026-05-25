@@ -14,9 +14,10 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 ## Files created/modified
 - `AGENTS.md` — porting guidelines
 - `src/initial.lp` — rTTITDA2VFTable/2, rTTIEnabled/rTTIValid flags, possibleVFTableWrite/5, possibleVFTableOverwrite/6, possibleConstructor/1, possibleDestructor/1
-- `src/rules.lp` — reasonVFTable (843), dethunk/2, reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1247)
+- `src/rules.lp` — reasonVFTable (843), dethunk/2, reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247)
 - `src/facts.lp` — #defined vfTableSizeGTE/2 (referenced by 1247, no rule yet)
 - `src/guess.lp` — possibleVFTable/1, guessVFTable choice rule + heuristic
+- `TODO.md` — rule coverage tracker
 
 ## Rules ported
 
@@ -29,7 +30,8 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `reasonVFTableOverwrite` (rules.pl:976) — destructor direction (uses `not constructor(Method)` as stand-in for `factNOTConstructor`)
 - `certainConstructorOrDestructor/1` (rules.pl:731) — vftable/vbtable write into this-pointer
 - `vfTableEntry` (rules.pl:1233) — offset 0 entry from confirmed VFTable
-- `vfTableEntry` (rules.pl:1247) — propagation from known entry / vfTableSizeGTE bound
+- `vfTableEntry` (rules.pl:1239) — propagation from known entry / vfTableSizeGTE bound
+- `vfTableEntry` (rules.pl:1247) — from virtual function call evidence
 
 ### initial.lp
 - `rTTITDA2VFTable/2` (rtti.pl:19)
@@ -44,7 +46,7 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `guessVFTable` (guess.pl:180)
 
 ## Where we are now
-Next: **`reasonVFTableEntry` (1255) — from virtual function call**
+Last completed: **`reasonVFTableEntry` (1247) — from virtual function call**
 
 ```prolog
 reasonVFTableEntry(VFTable, Offset, Entry) :-
@@ -52,10 +54,15 @@ reasonVFTableEntry(VFTable, Offset, Entry) :-
     possibleVFTableEntry(VFTable, Offset, Entry).
 ```
 
-Uses `virtualFunctionCall/5` (not yet ported). `possibleVirtualFunctionCall/5` exists in the input vocabulary.
+Current ASP:
+
+```prolog
+vfTableEntry(VFTable, Offset, Entry) :-
+    virtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
+    possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1247
+```
 
 ## Remaining VFTable rules
-- `reasonVFTableEntry` (1255) — from virtual function call — **next**
 - `reasonVFTableBelongsToClass` (1007) — clause 1 (very complex, needs constructors/destructors)
 - `insanityVFTableOnTwoClasses`
 - `insanityConstructorInVFTable`
