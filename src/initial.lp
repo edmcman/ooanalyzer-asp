@@ -71,10 +71,10 @@ possibleVBTableEntry(VBTable, NewOffset, Value) :-
 % vftables at the same object offset.
 % Counterpart: initial.pl:383-389
 % ----------------------------------------------------------------
-possibleVFTableOverwrite(M, Off, V1, V2) :-
-    possibleVFTableWrite(I1, M, TP, Off, _, V1),
-    possibleVFTableWrite(I2, M, TP, Off, _, V2),
-    I1 < I2, V1 != V2.
+possibleVFTableOverwrite(Insn1, Insn2, Func, ObjectOffset, VFTable1, VFTable2) :-
+    possibleVFTableWrite(Insn1, Func, ThisPtr, ObjectOffset, VFTable1),
+    possibleVFTableWrite(Insn2, Func, ThisPtr, ObjectOffset, VFTable2),
+    Insn1 < Insn2.                                                         % initial.pl:383
 
 % ----------------------------------------------------------------
 % callTarget: drop instruction address.

@@ -8,6 +8,18 @@ factVFTable(VFTable) :-
     rTTIValid,
     rTTITDA2VFTable(_TDA, VFTable).                                        % rules.pl:843
 
+% reasonVFTableOverwrite (962): constructor direction — VFTable1 overwritten by VFTable2.
+factVFTableOverwrite(Method, VFTable1, VFTable2, Offset) :-
+    possibleVFTableOverwrite(_Insn1, _Insn2, Method, Offset, VFTable1, VFTable2),
+    factVFTable(VFTable1),
+    factVFTable(VFTable2),
+    factConstructor(Method).                                               % rules.pl:962
+
+% reasonVFTableWrite (939): confirmed vftable write.
+factVFTableWrite(Insn, Method, Offset, VFTable) :-
+    factVFTable(VFTable),
+    possibleVFTableWrite(Insn, Method, _ThisPtr, Offset, VFTable).         % rules.pl:939
+
 % ============================================================
 % THUNK RESOLUTION
 % ============================================================
