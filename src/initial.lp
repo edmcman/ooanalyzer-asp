@@ -7,7 +7,7 @@
 % ----------------------------------------------------------------
 % Pointer size from fileInfo
 % ----------------------------------------------------------------
-ptrSize(ArchBytes) :- fileInfo(_, _, _, ArchBytes).
+pointerSize(ArchBytes) :- fileInfo(_, _, _, ArchBytes).
 
 % ----------------------------------------------------------------
 % possibleVFTableWrite / possibleVBTableWrite projections
@@ -16,31 +16,33 @@ ptrSize(ArchBytes) :- fileInfo(_, _, _, ArchBytes).
 % ----------------------------------------------------------------
 possibleVFTableWrite(Insn, Function, ThisPtr, Offset, VFTable) :-
     possibleVFTableWrite(Insn, Function, ThisPtr, Offset, _ExpandedThisPtr, VFTable). % initial.pl:13
-possibleVFTableWrite(M, Off, V) :- possibleVFTableWrite(_, M, _, Off, _, V).
-possibleVBTableWrite(M, Off, V) :- possibleVBTableWrite(_, M, _, Off, _, V).
+possibleVBTableWrite(Insn, Function, ThisPtr, Offset, VBTable) :-
+    possibleVBTableWrite(Insn, Function, ThisPtr, Offset, _ExpandedThisPtr, VBTable). % initial.pl:15
+possibleVFTableWrite(M, Off, V) :- possibleVFTableWrite(_, M, _, Off, V).
+possibleVBTableWrite(M, Off, V) :- possibleVBTableWrite(_, M, _, Off, V).
 
 % ----------------------------------------------------------------
 % possibleVFTableEntry: recursive walk over initialMemory starting
 % at each confirmed VFTable pointer.  Stops at VFTable overwrites.
 % Counterpart: initial.pl:38-57
 % ----------------------------------------------------------------
-vftableWriteAtAddress(Address) :- possibleVFTableWrite(_, _, _, _, _, Address).
+vftableWriteAtAddress(Address) :- possibleVFTableWrite(_, _, _, _, Address).
 
 % Base case 1: from confirmed VFTable writes.
 possibleVFTableEntry(VFTable, 0, Entry) :-
-    possibleVFTableWrite(_, _, _, _, _, VFTable),
+    possibleVFTableWrite(_, _, _, _, VFTable),
     initialMemory(VFTable, Entry).
 
 % Base case 2: from RTTI Complete Object Locator.
 possibleVFTableEntry(VFTable, 0, Entry) :-
     rTTICompleteObjectLocator(Pointer, _, _, _, _, _),
-    ptrSize(PtrSize),
+    pointerSize(PtrSize),
     VFTable = Pointer + PtrSize,
     initialMemory(VFTable, Entry).
 
 possibleVFTableEntry(VFTable, NewOffset, Entry) :-
     possibleVFTableEntry(VFTable, Offset, _),
-    ptrSize(PtrSize),
+    pointerSize(PtrSize),
     NewOffset = Offset + PtrSize,
     Address = VFTable + NewOffset,
     not vftableWriteAtAddress(Address),
@@ -52,15 +54,15 @@ possibleVFTableEntry(VFTable, NewOffset, Entry) :-
 % at each confirmed VBTable pointer.  Stops at VBTable overwrites.
 % Counterpart: initial.pl:59-71
 % ----------------------------------------------------------------
-vbtableWriteAtAddress(Address) :- possibleVBTableWrite(_, _, _, _, _, Address).
+vbtableWriteAtAddress(Address) :- possibleVBTableWrite(_, _, _, _, Address).
 
 possibleVBTableEntry(VBTable, 0, Value) :-
-    possibleVBTableWrite(_, _, _, _, _, VBTable),
+    possibleVBTableWrite(_, _, _, _, VBTable),
     initialMemory(VBTable, Value).
 
 possibleVBTableEntry(VBTable, NewOffset, Value) :-
     possibleVBTableEntry(VBTable, Offset, _),
-    ptrSize(PtrSize),
+    pointerSize(PtrSize),
     NewOffset = Offset + PtrSize,
     Address = VBTable + NewOffset,
     not vbtableWriteAtAddress(Address),
@@ -74,6 +76,7 @@ possibleVBTableEntry(VBTable, NewOffset, Value) :-
 possibleVFTableOverwrite(Insn1, Insn2, Func, ObjectOffset, VFTable1, VFTable2) :-
     possibleVFTableWrite(Insn1, Func, ThisPtr, ObjectOffset, VFTable1),
     possibleVFTableWrite(Insn2, Func, ThisPtr, ObjectOffset, VFTable2),
+    VFTable1 != VFTable2,
     Insn1 < Insn2.                                                         % initial.pl:383
 
 % ----------------------------------------------------------------
@@ -101,29 +104,75 @@ symbolClass(M, Class) :- symbolClass(M, _, Class, _).
 rTTITDA2VFTable(TDA, VFTable) :-
     rTTITypeDescriptor(TDA, _TIVTable, _Name, _DName),
     rTTICompleteObjectLocator(Pointer, _COLA, TDA, _CHDA, _Offset, _O2),
-    ptrSize(PtrSize),
+    pointerSize(PtrSize),
     VFTable = Pointer + PtrSize.
 
 % ----------------------------------------------------------------
-% rTTITypeDescriptor: drop VFTable check and demangled name.
-% Counterpart: N/A (Clingo-specific projection)
+% rTTIEnabled: user flag set by the driver when RTTI detection succeeded.
+% Counterpart: ooprolog.pl:227 (asserted by driver; modelled here as a constant)
 % ----------------------------------------------------------------
-rTTITypeDescriptor(TDA, Name) :- rTTITypeDescriptor(TDA, _, Name, _).
-
-% rTTIEnabled/rTTIValid: default true; override with --const rtti_enabled=0 / rtti_valid=0.
 #const rtti_enabled = 1.
-#const rtti_valid   = 1.
 rTTIEnabled :- rtti_enabled != 0.
-rTTIValid   :- rtti_valid   != 0.
 
 % ----------------------------------------------------------------
-% rTTIInheritsFrom: direct non-virtual inheritance from RTTI descriptors.
-% Counterpart: rTTIInheritsDirectlyFrom/6 (rtti.pl:83-108) and
-% rTTIInheritsFrom/6 (rtti.pl:131-134), restricted to P=0xffffffff, V=0.
-%
-% NOTE: This requires rTTIClassHierarchyDescriptor/3 with its
-% BaseClasses list expanded into individual facts by the preprocessor.
+% rTTIValid: RTTI data is internally consistent.
+% Counterpart: rtti.pl:269-281 and its helper predicates
 % ----------------------------------------------------------------
+
+% Every TDA address referenced from any RTTI structure.
+% Counterpart: rTTIAllTypeDescriptors/1 (rtti.pl:248-256)
+rTTIAllTypeDescriptors(TDA) :- rTTITypeDescriptor(TDA, _, _, _).
+rTTIAllTypeDescriptors(TDA) :- rTTICompleteObjectLocator(_, _, TDA, _, _, _).
+rTTIAllTypeDescriptors(TDA) :- rTTIBaseClassDescriptor(_, TDA, _, _, _, _, _, _).
+
+% Counterpart: rTTIHasTypeDescriptor/1 (rtti.pl:258-262)
+rTTIHasTypeDescriptor(TDA) :- rTTITypeDescriptor(TDA, _, _, _).
+
+% TDAs that must have a circular self-reference in the RTTI block.
+% Counterpart: rTTIShouldHaveSelfRef/1 (rtti.pl:237-240)
+rTTIShouldHaveSelfRef(TDA) :-
+    rTTITypeDescriptor(TDA, _, _, _),
+    rTTICompleteObjectLocator(_, _, TDA, _, _, _).
+
+% The circular self-reference: COL -> CHDA -> BCDA -> TDA and back.
+% bcd_has_CHD_pointer (0x40): if set, BCHDA must equal CHDA.
+% Counterpart: rTTISelfRef/6 (rtti.pl:38-63)
+rTTISelfRef(TDA, COLA, CHDA, BCDA, VFTable) :-
+    rTTITypeDescriptor(TDA, _, _, _),
+    rTTICompleteObjectLocator(Pointer, COLA, TDA, CHDA, _, _),
+    pointerSize(PtrSize),
+    VFTable = Pointer + PtrSize,
+    rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
+    rTTIBaseClassDescriptor(BCDA, TDA, _, 0, 0xffffffff, 0, BaseAttributes, _),
+    BaseAttributes & 64 = 0.     % bcd_has_CHD_pointer not set: BCHDA unconstrained
+
+rTTISelfRef(TDA, COLA, CHDA, BCDA, VFTable) :-
+    rTTITypeDescriptor(TDA, _, _, _),
+    rTTICompleteObjectLocator(Pointer, COLA, TDA, CHDA, _, _),
+    pointerSize(PtrSize),
+    VFTable = Pointer + PtrSize,
+    rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
+    rTTIBaseClassDescriptor(BCDA, TDA, _, 0, 0xffffffff, 0, BaseAttributes, CHDA),
+    BaseAttributes & 64 = 64.    % bcd_has_CHD_pointer set: BCHDA must equal CHDA
+
+rTTIHasSelfRef(TDA) :- rTTISelfRef(TDA, _, _, _, _).
+
+% Invalid when any base class descriptor attribute >= 0x80.
+% Counterpart: rTTIInvalidBaseAttributes/0 (rtti.pl:198-202)
+rTTIInvalidBaseAttributes :-
+    rTTIBaseClassDescriptor(_, _, _, _, _, _, Attributes, _),
+    Attributes >= 0x80.
+rTTIInvalidBaseAttributes :-
+    rTTIBaseClassDescriptor(_, _, _, _, _, _, Attributes, _),
+    Attributes < 0.
+
+% Invalid when hierarchy attributes are not in {0, 1, 3, 5, 7}.
+% Counterpart: rTTIInvalidHierarchyAttributes/0 (rtti.pl:214-235)
+rTTIInvalidHierarchyAttributes :-
+    rTTIClassHierarchyDescriptor(_, A, _),
+    A != 0, A != 1, A != 3, A != 5, A != 7.
+
+% Ancestor walk used by direct-inheritance validation.
 rTTIAncestorOf(DerivedTDA, AncestorTDA) :-
     rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
     rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
@@ -134,17 +183,35 @@ rTTIInheritsIndirectlyFrom(DerivedTDA, AncestorTDA) :-
     rTTIAncestorOf(DerivedTDA, BaseTDA),
     rTTIAncestorOf(BaseTDA, AncestorTDA).
 
-rTTIInheritsFrom(DerivedTDA, BaseTDA, Offset) :-
+% Direct non-virtual inheritance without the P/V filter, used only for validation.
+% bcd_virtual_base_of_contained_object = 0x10.
+% Counterpart: rTTIInheritsDirectlyFrom/6 (rtti.pl:83-108)
+rTTIDirectNonVirtual(DerivedTDA, AncestorTDA, M, P, V) :-
     rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
     rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
-    rTTIBaseClassDescriptor(BCDA, BaseTDA, _, Offset, 0xffffffff, 0, AttrValue, _),  % WhereP=0xffffffff,WhereV=0: non-virtual only; ignore CHDA in BCD (shared BCDs point to their own hierarchy)
-    DerivedTDA != BaseTDA,
-    not rTTIInheritsIndirectlyFrom(DerivedTDA, BaseTDA),
-    not rTTIVirtualBaseAttr(AttrValue).
+    rTTIBaseClassDescriptor(BCDA, AncestorTDA, _, M, P, V, AttrValue, _),
+    AttrValue & 16 = 0,
+    AncestorTDA != DerivedTDA,
+    not rTTIInheritsIndirectlyFrom(DerivedTDA, AncestorTDA).
 
-rTTIVirtualBaseAttr(AttrValue) :-
-    rTTIBaseClassDescriptor(_, _, _, _, _, _, AttrValue, _),
-    AttrValue \ 32 >= 16.
+% Counterpart: rTTIInvalidDirectInheritanceP/0 (rtti.pl:204-207)
+rTTIInvalidDirectInheritanceP :- rTTIDirectNonVirtual(_, _, _, P, _), P != 0xffffffff.
+
+% Counterpart: rTTIInvalidDirectInheritanceV/0 (rtti.pl:209-212)
+rTTIInvalidDirectInheritanceV :- rTTIDirectNonVirtual(_, _, _, _, V), V != 0.
+
+rTTIInvalidRTTI :- rTTIAllTypeDescriptors(TDA), not rTTIHasTypeDescriptor(TDA).
+rTTIInvalidRTTI :- rTTIShouldHaveSelfRef(TDA),  not rTTIHasSelfRef(TDA).
+rTTIInvalidRTTI :- rTTIInvalidBaseAttributes.
+rTTIInvalidRTTI :- rTTIInvalidHierarchyAttributes.
+rTTIInvalidRTTI :- rTTIInvalidDirectInheritanceP.
+rTTIInvalidRTTI :- rTTIInvalidDirectInheritanceV.
+
+rTTIValid :-
+    rTTIEnabled,
+    rTTIAllTypeDescriptors(_),
+    rTTIShouldHaveSelfRef(_),
+    not rTTIInvalidRTTI.
 
 % ----------------------------------------------------------------
 % possibleMethod: at least some evidence that Address is a function.

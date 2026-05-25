@@ -30,7 +30,6 @@ Seven focused modules; `ooanalyzer.lp` includes them in this fixed order:
 
 ## Known bugs (see TODO.md §3)
 
-- `possibleVFTableOverwrite` missing `V1 != V2` guard → spurious overwrite evidence.
 - `factClassHasNoBase` inline constraint bypasses diagnostic mode (line 373 of `rules.lp`).
 - `insanity(cycle)` only catches 2-cycles.
 - `insanity(nomethod)` is redundant (can never fire).
