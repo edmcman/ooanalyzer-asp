@@ -13,41 +13,65 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ## Files created/modified
 - `AGENTS.md` — porting guidelines
-- `src/initial.lp` — rTTITDA2VFTable/2, rTTIEnabled/rTTIValid flags, possibleVFTableWrite/5, possibleVFTableOverwrite/6, possibleConstructor/1, possibleDestructor/1, dethunk/2, possiblyVirtual/1
-- `src/rules.lp` — reasonVFTable (843), reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247), reasonMergeClasses_G/J, constructor/destructor symbol and delete(this) rules
-- `src/insanity.lp` — insanityConstructorInVFTable, insanityMultipleConstructorDestructorKinds
-- `src/facts.lp` — #defined vfTableSizeGTE/2 (referenced by 1247, no rule yet)
-- `src/guess.lp` — possibleVFTable/1, guessVFTable choice rule + heuristic, guessMergeClasses_B/D
+- `src/facts.lp` — input vocabulary and `#defined` directives for full-arity and simplified predicates
+- `src/initial.lp` — projections and derivations from full-arity OOAnalyzer `.facts`:
+  - `pointerSize/1` from `fileInfo`
+  - `possibleVFTableWrite/3`, `possibleVBTableWrite/3` (drop Insn, ThisPtr, ExpandedThisPtr)
+  - `possibleVFTableEntry/3` — recursive walk over `initialMemory` from confirmed writes and RTTI COLs
+  - `possibleVBTableEntry/3` — recursive walk over `initialMemory` from confirmed writes
+  - `possibleVFTableOverwrite/6` (initial.pl:383)
+  - `callTarget/2`, `callsDelete/1`, `symbolClass/2` — arity reductions
+  - `rTTITDA2VFTable/2` (rtti.pl:19)
+  - `rTTIEnabled` / `rTTIValid` and full RTTI validation chain (`rTTISelfRef`, `rTTIInvalidBaseAttributes`, `rTTIInvalidHierarchyAttributes`, `rTTIAncestorOf`, `rTTIInheritsIndirectlyFrom`, `rTTIDirectNonVirtual`, etc.)
+  - `possibleMethod/1` — from callingConvention, thunk, noCallsAfter, noCallsBefore, returnsSelf, purecall, callTarget
+  - `possibleConstructor/1` — from returnsSelf+noCallsBefore or symbolProperty(constructor)
+  - `possibleDestructor/1` — from noCallsAfter or symbol properties
+  - `thisPtrParam/2`, `thisParamFuncParameter/2`, `thisParamCallParameter/4`
+  - `dethunk/2` (initial.pl:313) — thunk chain resolution
+  - `possiblyVirtual/1` (initial.pl:338) — method appears, possibly via thunk, in a possible vftable entry
+  - `methodCallAtOffset/4`, `validMethodCallAtOffset/4`, `callAtOffset/3` (initial.pl:175-191)
+  - `thisPtrUsage/4` (initial.pl:193-205)
+- `src/rules.lp` — `reasonVFTable` (843), `reasonMethod_B`–`H`, `reasonVFTableWrite` (939), `reasonVFTableOverwrite` (962, 976), `certainConstructorOrDestructor/1` (731), `vfTableEntry` (1233, 1239, 1247), `reasonMergeClasses_G/J`, constructor/destructor symbol and delete(this) rules, `sortPair`/`mergeEntity`/`merged`/`sameClass` infrastructure
+- `src/insanity.lp` — `insanityConstructorInVFTable`, `insanityMultipleConstructorDestructorKinds`
+- `src/guess.lp` — `possibleVFTable/1`, `guessVFTable` choice rule + heuristic, `guessMergeClasses_B/D`
 - `TODO.md` — rule coverage tracker
 
 ## Rules ported
 
 ### rules.lp
-- `reasonVFTable` (rules.pl:843) — RTTI evidence
-- `reasonMethod_B/C/D/E/F/G/H` (rules.pl:52–80)
-- `reasonVFTableWrite` (rules.pl:939)
-- `reasonVFTableOverwrite` (rules.pl:962) — constructor direction
-- `reasonVFTableOverwrite` (rules.pl:976) — destructor direction (uses `not constructor(Method)` as stand-in for `factNOTConstructor`)
 - `certainConstructorOrDestructor/1` (rules.pl:731) — vftable/vbtable write into this-pointer
+- `constructor(Method) :- symbolProperty(Method, constructor).` (rules.pl:209)
+- `realDestructor(Method) :- symbolProperty(Method, realDestructor).` (rules.pl:394)
+- `deletingDestructor(Method) :- method(Method), insnCallsDelete(...), thisParamFuncParameter(...).` (rules.pl:585)
+- `deletingDestructor(Method) :- symbolProperty(Method, deletingDestructor).` (rules.pl:595)
+- `reasonVFTable` (rules.pl:843) — RTTI evidence
+- `reasonVFTableWrite` (rules.pl:939) — `possibleVFTableWrite` + confirmed `vfTable`
+- `reasonVFTableOverwrite` (rules.pl:962) — constructor direction (base -> derived)
+- `reasonVFTableOverwrite` (rules.pl:976) — destructor direction (derived -> base; uses `not constructor(Method)` as stand-in for `factNOTConstructor`)
 - `vfTableEntry` (rules.pl:1233) — offset 0 entry from confirmed VFTable
 - `vfTableEntry` (rules.pl:1239) — propagation from known entry / vfTableSizeGTE bound
 - `vfTableEntry` (rules.pl:1247) — from virtual function call evidence
+- `reasonMethod_B`–`H` (rules.pl:52–80) — constructors, destructors, symbolClass, symbolProperty, vfTableEntry, vfTableWrite -> method
 - `reasonMergeClasses_G` (rules.pl:2881) — symbols with same class name
 - `reasonMergeClasses_J` (rules.pl:2925) — RTTI says two VFTables belong to same class
-- `reasonConstructor` (rules.pl:209) — symbolProperty(constructor)
-- `reasonRealDestructor` (rules.pl:394) — symbolProperty(realDestructor)
-- `reasonDeletingDestructor` (rules.pl:585) — delete(this) logic
-- `reasonDeletingDestructor` (rules.pl:595) — symbolProperty(deletingDestructor)
+- `sortPair`, `mergeEntity`, `merged`, `sameClass` — transitive closure over hard merges
 
 ### initial.lp
-- `dethunk/2` (initial.pl:313) — thunk chain resolution
-- `possiblyVirtual/1` (initial.pl:338) — method appears, possibly via thunk, in a possible vftable entry
+- `pointerSize/1`
+- `possibleVFTableWrite/5` and `possibleVBTableWrite/5` projections, plus simplified `possibleVFTableWrite/3`, `possibleVBTableWrite/3`
+- `possibleVFTableEntry/3` — base cases from writes/RTTI COL + recursive walk
+- `possibleVBTableEntry/3` — base case from writes + recursive walk
+- `possibleVFTableOverwrite/6`
+- `callTarget/2`, `callsDelete/1`, `symbolClass/2`
 - `rTTITDA2VFTable/2` (rtti.pl:19)
-- `rTTIEnabled` / `rTTIValid` — #const flags
-- `possibleVFTableWrite/5` (initial.pl:13)
-- `possibleVFTableOverwrite/6` (initial.pl:383)
-- `possibleConstructor/1` (initial.pl) — from returnsSelf+noCallsBefore or symbolProperty
-- `possibleDestructor/1` (initial.pl) — from noCallsAfter or symbol properties
+- `rTTIEnabled` / `rTTIValid` and full validation chain (self-reference, base attributes, hierarchy attributes, direct inheritance P/V checks)
+- `possibleMethod/1`
+- `possibleConstructor/1`, `possibleDestructor/1`
+- `thisPtrParam/2`, `thisParamFuncParameter/2`, `thisParamCallParameter/4`
+- `dethunk/2` (initial.pl:313)
+- `possiblyVirtual/1` (initial.pl:338)
+- `methodCallAtOffset/4`, `validMethodCallAtOffset/4`, `callAtOffset/3`
+- `thisPtrUsage/4`
 
 ### guess.lp
 - `possibleVFTable/1` (guess.pl:175)
@@ -60,7 +84,7 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `insanityMultipleConstructorDestructorKinds` — user-approved ASP check: at most one of constructor/realDestructor/deletingDestructor
 
 ## Where we are now
-Last completed: **basic constructor/destructor identification and combined kind sanity**
+Last completed: **vftable identification, class merge infrastructure, and basic constructor/destructor rules**
 
 ```prolog
 reasonConstructor(Method) :-
@@ -96,13 +120,6 @@ insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
     Count = #count { Kind : constructorDestructorKind(Method, Kind) },
     Count > 1.
 ```
-
-## Remaining VFTable rules
-- `reasonVFTableBelongsToClass` (1007) — clause 1 (very complex, needs constructors/destructors)
-- `insanityVFTableOnTwoClasses`
-
-## Planned categories (not yet started)
-- Constructor/destructor elimination rules and/or classification guesses
 
 ## Suggested next steps
 - Propose `guessConstructor1` (guess.pl:574): possible constructor, not possibly virtual, writes a vftable, no uninitialized reads.
