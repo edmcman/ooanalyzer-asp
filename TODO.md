@@ -291,9 +291,9 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonMergeClasses_B` (2792) — method class merges with base class
 - [ ] `reasonMergeClasses_C` (2822) — existing class association
 - [ ] `reasonMergeClasses_E` (2847) — VFTable belongs to same class
-- [ ] `reasonMergeClasses_G` (2881) — shared method via virtual call
+- [x] `reasonMergeClasses_G` (2881) — symbols with same class name
 - [ ] `reasonMergeClasses_H` (2895) — derived constructor calls base
-- [ ] `reasonMergeClasses_J` (2925) — two VFTables belong to same class
+- [x] `reasonMergeClasses_J` (2925) — RTTI says two VFTables belong to same class
 - [ ] `reasonMergeClasses_K` (2939) — callAtOffset(0) implies same class
 
 ### NOT Merge (rules.pl:3041–3383)
@@ -314,9 +314,9 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_R` (3366) — two deleting destructors in candidate merge
 
 ### Guess (guess.pl)
-- [ ] `guessMergeClasses_B`
+- [x] `guessMergeClasses_B`
 - [ ] `guessMergeClasses_C1`–`guessMergeClasses_C4`
-- [ ] `guessMergeClasses_D`
+- [x] `guessMergeClasses_D`
 - [ ] `guessMergeClasses_G`
 - [ ] `guessLateMergeClasses_F1`, `_F2`, `_G1`, `_G2`
 - [ ] `guessNOTMergeClasses`

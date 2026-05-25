@@ -107,3 +107,36 @@ method(Method) :-
     possibleVFTableWrite(_Insn, Method, ThisPtr, _Offset, _Expanded, VFTable),
     vfTable(VFTable),
     thisParamFuncParameter(Method, ThisPtr).                               % rules.pl:80
+
+% ============================================================
+% CLASS MERGING
+% ============================================================
+
+% Merge domain: methods and vftables can be members of recovered classes.
+mergeEntity(M) :- method(M).
+mergeEntity(V) :- vfTable(V).
+
+% sortPair: canonical ordered pair for merge predicates.
+sortPair(A, B, A, B) :- mergeEntity(A), mergeEntity(B), A < B.
+sortPair(A, B, B, A) :- mergeEntity(A), mergeEntity(B), B < A.
+
+% reasonMergeClasses_G: symbols with the same class name identify the same class.
+mergeClasses(A, B) :-
+    symbolClass(Method1, ClassName),
+    symbolClass(Method2, ClassName),
+    Method1 != Method2,
+    sortPair(Method1, Method2, A, B).                                      % rules.pl:2881
+
+% reasonMergeClasses_J: RTTI can identify multiple vftables as belonging to the same class.
+mergeClasses(A, B) :-
+    rTTITDA2VFTable(TDA, VFTable1),
+    rTTITDA2VFTable(TDA, VFTable2),
+    VFTable1 != VFTable2,
+    sortPair(VFTable1, VFTable2, A, B).                                    % rules.pl:2925
+
+% Compact transitive closure over hard merges.
+merged(A, B) :- mergeClasses(A, B).
+merged(B, A) :- mergeClasses(A, B).
+
+sameClass(A, A) :- mergeEntity(A).
+sameClass(A, C) :- sameClass(A, B), merged(B, C).
