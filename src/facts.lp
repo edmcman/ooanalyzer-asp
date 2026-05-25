@@ -1,22 +1,7 @@
 % OOAnalyzer prototype in Clingo
 % Recovers C++ class structure (classes = sets of methods) from binary analysis facts.
 %
-% Two input vocabularies are supported:
-%
-%   (A) Simplified predicates (hand-written examples):
-%       possibleVFTableWrite(M, Off, V)
-%       possibleVFTableEntry(V, Off, E)
-%       possibleVFTableOverwrite(M, Off, V1, V2)
-%       callTarget(Caller, Callee)
-%       callAtOffset(Caller, Callee, Off)
-%       callsDelete(M)
-%       symbolClass(M, Class)
-%       rTTICompleteObjectLocator(V, TDA)
-%       rTTITypeDescriptor(TDA, Name)
-%       possibleVBTableWrite(M, Off, V)
-%       possibleVBTableEntry(V, Off, Value)
-%
-%   (B) Full-arity OOAnalyzer .facts predicates (from binary analysis):
+% Full-arity OOAnalyzer .facts predicates (from binary analysis):
 %       possibleVFTableWrite(Insn, M, ThisPtr, Off, ExpandedThisPtr, V)
 %       possibleVBTableWrite(Insn, M, ThisPtr, Off, ExpandedThisPtr, V)
 %       callTarget(Insn, Caller, Callee)
