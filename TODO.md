@@ -15,13 +15,13 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Deductive (rules.pl:26–177)
 - [ ] `reasonMethod_A` (48) — existing `factMethod`
-- [ ] `reasonMethod_B` (52) — `factConstructor` → method
-- [ ] `reasonMethod_C` (56) — `factRealDestructor` → method
-- [ ] `reasonMethod_D` (60) — `factDeletingDestructor` → method
-- [ ] `reasonMethod_E` (64) — `symbolClass` → method
-- [ ] `reasonMethod_F` (68) — `symbolProperty` → method
-- [ ] `reasonMethod_G` (73) — `factVFTableEntry` → method
-- [ ] `reasonMethod_H` (80) — `factVFTableWrite` → method
+- [x] `reasonMethod_B` (52) — `factConstructor` → method
+- [x] `reasonMethod_C` (56) — `factRealDestructor` → method
+- [x] `reasonMethod_D` (60) — `factDeletingDestructor` → method
+- [x] `reasonMethod_E` (64) — `symbolClass` → method
+- [x] `reasonMethod_F` (68) — `symbolProperty` → method
+- [x] `reasonMethod_G` (73) — `factVFTableEntry` → method
+- [x] `reasonMethod_H` (80) — `factVFTableWrite` → method
 - [ ] `reasonMethod_I` (85) — `factVBTableWrite` → method
 - [ ] `reasonMethod_J` (99) — callee of `factMethod` + `possibleMethod`
 - [ ] `reasonMethod_K` (103) — `thisPtrUsage` → method

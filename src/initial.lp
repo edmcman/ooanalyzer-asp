@@ -14,6 +14,8 @@ ptrSize(ArchBytes) :- fileInfo(_, _, _, ArchBytes).
 % Drop instruction, this-pointer, and expanded-this-pointer.
 % Counterpart: initial.pl:13-16
 % ----------------------------------------------------------------
+possibleVFTableWrite(Insn, Function, ThisPtr, Offset, VFTable) :-
+    possibleVFTableWrite(Insn, Function, ThisPtr, Offset, _ExpandedThisPtr, VFTable). % initial.pl:13
 possibleVFTableWrite(M, Off, V) :- possibleVFTableWrite(_, M, _, Off, _, V).
 possibleVBTableWrite(M, Off, V) :- possibleVBTableWrite(_, M, _, Off, _, V).
 
@@ -70,8 +72,8 @@ possibleVBTableEntry(VBTable, NewOffset, Value) :-
 % Counterpart: initial.pl:383-389
 % ----------------------------------------------------------------
 possibleVFTableOverwrite(M, Off, V1, V2) :-
-    possibleVFTableWrite(I1, M, _, Off, _, V1),
-    possibleVFTableWrite(I2, M, _, Off, _, V2),
+    possibleVFTableWrite(I1, M, TP, Off, _, V1),
+    possibleVFTableWrite(I2, M, TP, Off, _, V2),
     I1 < I2, V1 != V2.
 
 % ----------------------------------------------------------------
@@ -114,11 +116,6 @@ rTTITypeDescriptor(TDA, Name) :- rTTITypeDescriptor(TDA, _, Name, _).
 rTTIEnabled :- rtti_enabled != 0.
 rTTIValid   :- rtti_valid   != 0.
 
-rTTIPresent :- rTTITypeDescriptor(_, _, _, _).
-rTTIPresent :- rTTICompleteObjectLocator(_, _, _, _, _, _).
-rTTIPresent :- rTTIBaseClassDescriptor(_, _, _, _, _, _, _, _).
-rTTIPresent :- rTTIClassHierarchyDescriptor(_, _, _).
-
 % ----------------------------------------------------------------
 % rTTIInheritsFrom: direct non-virtual inheritance from RTTI descriptors.
 % Counterpart: rTTIInheritsDirectlyFrom/6 (rtti.pl:83-108) and
@@ -160,7 +157,6 @@ possibleMethod(Address) :- noCallsBefore(Address).
 possibleMethod(Address) :- returnsSelf(Address).
 possibleMethod(Address) :- purecall(Address).
 possibleMethod(Address) :- callTarget(_, Address, _).
-possibleMethod(Address) :- callTarget(_, _, Address).
 
 % ----------------------------------------------------------------
 % possibleConstructor / possibleDestructor
@@ -186,13 +182,9 @@ thisPtrParam(Function, Param) :-
     genericThisPtrABIParam(Param).
 
 genericThisPtrABIParam(ecx) :- fileInfo(_, _, "MSVC_32", _).
-genericThisPtrABIParam(ecx) :- fileInfo(_, _, "mSVC_32", _).
 genericThisPtrABIParam(rcx) :- fileInfo(_, _, "MSVC_64", _).
-genericThisPtrABIParam(rcx) :- fileInfo(_, _, "mSVC_64", _).
 genericThisPtrABIParam(rdi) :- fileInfo(_, _, "SYSV_64", _).
-genericThisPtrABIParam(rdi) :- fileInfo(_, _, "sYSV_64", _).
 genericThisPtrABIParam(0)   :- fileInfo(_, _, "SYSV_32", _).
-genericThisPtrABIParam(0)   :- fileInfo(_, _, "sYSV_32", _).
 
 % ----------------------------------------------------------------
 % thisParamFuncParameter / thisParamCallParameter
@@ -236,7 +228,7 @@ methodCallAtOffset(Insn, Caller, Callee, 0) :-
 
 validMethodCallAtOffset(Insn, Caller, Callee, Offset) :-
     methodCallAtOffset(Insn, Caller, Callee, Offset),
-    possibleMethod(Callee),
+    factMethod(Callee),
     Offset < 0x100000.
 
 callAtOffset(Caller, Callee, Off) :- validMethodCallAtOffset(_, Caller, Callee, Off).
