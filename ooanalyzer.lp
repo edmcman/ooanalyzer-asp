@@ -4,8 +4,9 @@
 
 #include "src/facts.lp".
 #include "src/initial.lp".
-#include "src/guess.lp".
-#include "src/rules.lp".
-#include "src/insanity.lp".
+#include "src/methods.lp".
+#include "src/ctorsdtors.lp".
+#include "src/vftables.lp".
+#include "src/merges.lp".
 #include "src/optimize.lp".
-#include "src/output.lp".
+#include "src/sanity.lp".
