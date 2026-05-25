@@ -31,41 +31,41 @@
 % ----------------------------------------------------------------
 % Class A
 % ----------------------------------------------------------------
-possibleVFTableWrite(1100, 0, 3000).
+possibleVFTableWrite(0, 1100, none, 0, 3000).
 possibleVFTableEntry(3000, 0, 1200).
 possibleVFTableEntry(3000, 4, 1300).
 returnsSelf(1100).
 noCallsBefore(1100).
 noCallsAfter(1300).
-callsDelete(1310).
-callTarget(1310, 1300).
+insnCallsDelete(0, 1310, none).
+callTarget(0, 1310, 1300).
 noCallsAfter(1310).
 
 % ----------------------------------------------------------------
 % Class B
 % ----------------------------------------------------------------
-possibleVFTableWrite(2100, 0, 3100).
+possibleVFTableWrite(0, 2100, none, 0, 3100).
 possibleVFTableEntry(3100, 0, 2200).
 possibleVFTableEntry(3100, 4, 2300).
 returnsSelf(2100).
 noCallsBefore(2100).
 noCallsAfter(2300).
-callsDelete(2310).
-callTarget(2310, 2300).
+insnCallsDelete(0, 2310, none).
+callTarget(0, 2310, 2300).
 noCallsAfter(2310).
 
 % ----------------------------------------------------------------
 % Class C : A, B
 % ----------------------------------------------------------------
-possibleVFTableWrite(5100, 0, 4000).
-possibleVFTableWrite(5100, 8, 4100).
-possibleVFTableOverwrite(5100, 0, 3000, 4000).   % overwrites A's vftable with C's primary
-possibleVFTableOverwrite(5100, 8, 3100, 4100).   % overwrites B's vftable with C's secondary
+possibleVFTableWrite(0, 5100, none, 0, 4000).
+possibleVFTableWrite(0, 5100, none, 8, 4100).
+possibleVFTableOverwrite(0, 0, 5100, 0, 3000, 4000).   % overwrites A's vftable with C's primary
+possibleVFTableOverwrite(0, 0, 5100, 8, 3100, 4100).   % overwrites B's vftable with C's secondary
 possibleVFTableEntry(4000, 0, 5200).             % C overrides A::virtual
 possibleVFTableEntry(4000, 4, 1300).             % inherited A destructor
 possibleVFTableEntry(4100, 0, 5300).             % C overrides B::virtual
 possibleVFTableEntry(4100, 4, 2300).             % inherited B destructor
 returnsSelf(5100).
 noCallsBefore(5100).
-callAtOffset(5100, 1100, 0).   % C ctor calls A ctor at this+0
-callAtOffset(5100, 2100, 8).   % C ctor calls B ctor at this+8
+methodCallAtOffset(0, 5100, 1100, 0).   % C ctor calls A ctor at this+0
+methodCallAtOffset(0, 5100, 2100, 8).   % C ctor calls B ctor at this+8

@@ -12,8 +12,8 @@ sortPair(A, B, B, A) :- mergeEntity(A), mergeEntity(B), B < A.
 
 % reasonMergeClasses_G: symbols with the same class name identify the same class.
 mergeClasses(A, B) :-
-    symbolClass(Method1, ClassName),
-    symbolClass(Method2, ClassName),
+    symbolClass(Method1, _, ClassName, _),
+    symbolClass(Method2, _, ClassName, _),
     Method1 != Method2,
     sortPair(Method1, Method2, A, B).                                      % rules.pl:2881
 

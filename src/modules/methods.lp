@@ -12,7 +12,7 @@ method(M) :- realDestructor(M).                                    % rules.pl:56
 method(M) :- deletingDestructor(M).                                % rules.pl:60
 
 % reasonMethod_E: symbol class association proves method.
-method(M) :- symbolClass(M, _).                                        % rules.pl:64
+method(M) :- symbolClass(M, _, _, _).                                        % rules.pl:64
 
 % reasonMethod_F: any symbol property proves method.
 method(M) :- symbolProperty(M, _).                                     % rules.pl:68
@@ -21,10 +21,17 @@ method(M) :- symbolProperty(M, _).                                     % rules.p
 method(M) :- vfTableEntry(_, _, M).                                % rules.pl:73
 
 % reasonMethod_H: method writes a confirmed vftable into its own this-pointer.
-% Uses 6-arity possibleVFTableWrite directly to retain ThisPtr for the join.
+% Counterpart: reasonMethod_H (rules.pl:80)
 method(Method) :-
-    possibleVFTableWrite(_Insn, Method, ThisPtr, _Offset, _Expanded, VFTable),
+    possibleVFTableWrite(_Insn, Method, ThisPtr, _Offset, VFTable),
     vfTable(VFTable),
     thisParamFuncParameter(Method, ThisPtr).                               % rules.pl:80
+
+% I am not totally sure that we want method guessing to be so broad.
+% guessMethodA: choose method or -method for each possibleMethod candidate.
+% Counterpart: guessMethodA (guess.pl:382)
+guessMethodDomain(M) :- possibleMethod(M).
+1 { method(M) ; -method(M) } 1 :- guessMethodDomain(M).
+#heuristic method(M) : guessMethodDomain(M). [1@0, true]
 
 #show method/1.

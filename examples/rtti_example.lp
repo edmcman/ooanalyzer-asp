@@ -16,29 +16,31 @@
 % ----------------------------------------------------------------
 % Structural facts (same as inherit_example.lp)
 % ----------------------------------------------------------------
-possibleVFTableWrite(2100, 0, 3000).
+possibleVFTableWrite(0, 2100, none, 0, 3000).
 possibleVFTableEntry(3000, 0, 3100).
 possibleVFTableEntry(3000, 4, 2200).
 returnsSelf(2100).
 noCallsBefore(2100).
 noCallsAfter(2200).
-callsDelete(2210).
-callTarget(2210, 2200).
+insnCallsDelete(0, 2210, none).
+callTarget(0, 2210, 2200).
 noCallsAfter(2210).
 
-possibleVFTableWrite(2300, 0, 4000).
-possibleVFTableOverwrite(2300, 0, 3000, 4000).
+possibleVFTableWrite(0, 2300, none, 0, 4000).
+possibleVFTableOverwrite(0, 0, 2300, 0, 3000, 4000).
 possibleVFTableEntry(4000, 0, 3200).
 possibleVFTableEntry(4000, 4, 3300).
 returnsSelf(2300).
 noCallsBefore(2300).
-callAtOffset(2300, 2100, 0).
+methodCallAtOffset(0, 2300, 2100, 0).
 
 % ----------------------------------------------------------------
 % RTTI facts
 % ----------------------------------------------------------------
-rTTITypeDescriptor(5000, "?AVBase@@").
-rTTITypeDescriptor(5100, "?AVDerived@@").
-rTTICompleteObjectLocator(3000, 5000).   % vt_base  → Base
-rTTICompleteObjectLocator(4000, 5100).   % vt_derived → Derived
-rTTIInheritsFrom(5100, 5000, 0).         % Derived inherits Base at offset 0
+fileInfo('dummy', 'dummy', 'MSVC_32', 4).
+
+rTTITypeDescriptor(0, 0, "?AVBase@@", "?AVBase@@").
+rTTITypeDescriptor(0, 0, "?AVDerived@@", "?AVDerived@@").
+rTTICompleteObjectLocator(2996, 0, 5000, 0, 0, 0).   % vt_base  → Base
+rTTICompleteObjectLocator(3996, 0, 5100, 0, 0, 0).   % vt_derived → Derived
+rTTIInheritsFrom(5100, 5000, 0, 0, 0xffffffff, 0).   % Derived inherits Base at offset 0

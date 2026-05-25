@@ -23,7 +23,7 @@
 % ----------------------------------------------------------------
 % Class Base
 % ----------------------------------------------------------------
-possibleVFTableWrite(1100, 0, 3000).
+possibleVFTableWrite(0, 1100, none, 0, 3000).
 possibleVFTableEntry(3000, 0, 1200).
 possibleVFTableEntry(3000, 4, 1300).
 returnsSelf(1100).
@@ -32,8 +32,8 @@ noCallsBefore(1100).
 % ----------------------------------------------------------------
 % Class Derived
 % ----------------------------------------------------------------
-possibleVFTableWrite(2100, 0, 4000).
-possibleVFTableOverwrite(2100, 0, 3000, 4000).
+possibleVFTableWrite(0, 2100, none, 0, 4000).
+possibleVFTableOverwrite(0, 0, 2100, 0, 3000, 4000).
 possibleVFTableEntry(4000, 0, 2200).
 possibleVFTableEntry(4000, 4, 1300).   % inherited from Base — same function pointer
 possibleVFTableEntry(4000, 8, 1500).

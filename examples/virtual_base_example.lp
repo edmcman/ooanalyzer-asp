@@ -28,7 +28,7 @@
 % ----------------------------------------------------------------
 % Class Base
 % ----------------------------------------------------------------
-possibleVFTableWrite(1100, 0, 3000).
+possibleVFTableWrite(0, 1100, none, 0, 3000).
 possibleVFTableEntry(3000, 0, 1200).
 returnsSelf(1100).
 noCallsBefore(1100).
@@ -36,13 +36,13 @@ noCallsBefore(1100).
 % ----------------------------------------------------------------
 % Class Derived : virtual Base
 % ----------------------------------------------------------------
-possibleVFTableWrite(2100, 0, 4000).
+possibleVFTableWrite(0, 2100, none, 0, 4000).
 possibleVFTableEntry(4000, 0, 2200).
 returnsSelf(2100).
 noCallsBefore(2100).
-callAtOffset(2100, 1100, 8).   % derived ctor calls base ctor at this+8
+methodCallAtOffset(0, 2100, 1100, 8).   % derived ctor calls base ctor at this+8
 
 % VBTable: installed by Derived at object offset 4
-possibleVBTableWrite(2100, 4, 5000).
+possibleVBTableWrite(0, 2100, none, 4, 5000).
 possibleVBTableEntry(5000, 0, -4).   % self-offset
 possibleVBTableEntry(5000, 4, 4).    % offset to Base: vbptr_off(4) + entry(4) = 8

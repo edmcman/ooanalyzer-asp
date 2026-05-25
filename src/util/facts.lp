@@ -34,27 +34,9 @@
 % src/util/initial.lp derives the simplified predicates (A) from the full ones (B).
 
 % ----------------------------------------------------------------
-% Simplified predicates (directly usable by the prototype)
+% Derived predicates (produced by src/util/initial.lp)
 % ----------------------------------------------------------------
-#defined callTarget/2.
-#defined callsDelete/1.
-#defined returnsSelf/1.
-#defined noCallsBefore/1.
-#defined noCallsAfter/1.
-#defined uninitializedReads/1.
-#defined symbolClass/2.
-#defined symbolProperty/2.
 #defined possibleVFTableEntry/3.
-#defined possibleVFTableWrite/3.
-#defined possibleVFTableOverwrite/4.
-#defined thunk/2.
-#defined purecall/1.
-#defined callAtOffset/3.
-#defined virtualFunctionCall/5.
-#defined rTTICompleteObjectLocator/2.
-#defined rTTITypeDescriptor/2.
-#defined rTTIInheritsFrom/3.
-#defined possibleVBTableWrite/3.
 #defined possibleVBTableEntry/3.
 #defined possibleMethod/1.
 #defined possibleConstructor/1.
@@ -64,12 +46,22 @@
 #defined thisPtrParam/2.
 #defined genericThisPtrABIParam/1.
 #defined thisPtrUsage/4.
-#defined thisPtrUsage/3.
-#defined classSizeLTE/2.
-#defined classSizeGTE/2.
-#defined vfTableSizeLTE/2.
-#defined vfTableSizeGTE/2.
-#defined certainMemberOnClass/3.
+
+% ----------------------------------------------------------------
+% Base facts (from .facts files, usable directly)
+% ----------------------------------------------------------------
+#defined returnsSelf/1.
+#defined noCallsBefore/1.
+#defined noCallsAfter/1.
+#defined uninitializedReads/1.
+#defined symbolProperty/2.
+#defined thunk/2.
+#defined purecall/1.
+
+% ----------------------------------------------------------------
+% Not yet implemented (forward-declared for future rules)
+% ----------------------------------------------------------------
+#defined virtualFunctionCall/5.
 
 % ----------------------------------------------------------------
 % Full-arity OOAnalyzer initial facts (from .facts files)

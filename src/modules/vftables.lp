@@ -60,7 +60,7 @@ vfTableEntry(VFTable, Offset, Entry) :-
 % Counterpart: possibleVFTable/1 (guess.pl:175)
 possibleVFTable(VFTable) :-
     possibleVFTableEntry(VFTable, _Offset, Entry),
-    possibleVFTableWrite(_Insn, Func, _ThisPtr, _Offset2, _Expanded, VFTable),
+    possibleVFTableWrite(_Insn, Func, _ThisPtr, _Offset2, VFTable),
     method(Func) ; method(Entry).
 
 % guessVFTable: choose vfTable or -vfTable for each candidate.

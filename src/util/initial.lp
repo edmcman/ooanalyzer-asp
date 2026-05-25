@@ -18,9 +18,6 @@ possibleVFTableWrite(Insn, Function, ThisPtr, Offset, VFTable) :-
     possibleVFTableWrite(Insn, Function, ThisPtr, Offset, _ExpandedThisPtr, VFTable). % initial.pl:13
 possibleVBTableWrite(Insn, Function, ThisPtr, Offset, VBTable) :-
     possibleVBTableWrite(Insn, Function, ThisPtr, Offset, _ExpandedThisPtr, VBTable). % initial.pl:15
-possibleVFTableWrite(M, Off, V) :- possibleVFTableWrite(_, M, _, Off, V).
-possibleVBTableWrite(M, Off, V) :- possibleVBTableWrite(_, M, _, Off, V).
-
 % ----------------------------------------------------------------
 % possibleVFTableEntry: recursive walk over initialMemory starting
 % at each confirmed VFTable pointer.  Stops at VFTable overwrites.
@@ -80,22 +77,16 @@ possibleVFTableOverwrite(Insn1, Insn2, Func, ObjectOffset, VFTable1, VFTable2) :
     Insn1 < Insn2.                                                         % initial.pl:383
 
 % ----------------------------------------------------------------
-% callTarget: drop instruction address.
-% Counterpart: N/A (Clingo-specific projection)
+% callTarget: base fact arity matches Prolog (initial.pl).
 % ----------------------------------------------------------------
-callTarget(Caller, Callee) :- callTarget(_, Caller, Callee).
 
 % ----------------------------------------------------------------
-% callsDelete: extract the function from insnCallsDelete.
-% Counterpart: N/A (Clingo-specific projection)
+% callsDelete: base fact arity matches Prolog (insnCallsDelete/3).
 % ----------------------------------------------------------------
-callsDelete(M) :- insnCallsDelete(_, M, _).
 
 % ----------------------------------------------------------------
-% symbolClass: drop mangled name and method name.
-% Counterpart: N/A (Clingo-specific projection)
+% symbolClass: base fact arity matches Prolog (symbolClass/4).
 % ----------------------------------------------------------------
-symbolClass(M, Class) :- symbolClass(M, _, Class, _).
 
 % ----------------------------------------------------------------
 % rTTITDA2VFTable: maps a type descriptor to its primary vftable address.
@@ -314,4 +305,4 @@ validMethodCallAtOffset(Insn, Caller, Callee, Offset) :-
     method(Callee),
     Offset < 0x100000.
 
-callAtOffset(Caller, Callee, Off) :- validMethodCallAtOffset(_, Caller, Callee, Off).
+% callAtOffset/3 is not present in the Prolog; use methodCallAtOffset/4 directly.
