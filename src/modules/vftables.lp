@@ -60,6 +60,27 @@ vfTableEntry(VFTable, Offset, Entry) :-
     ComputedAddress = VFTable + Offset,
     rTTICompleteObjectLocator(ComputedAddress, _Address, _TDAddress, _CHDAddress, _O1, _O2).  % rules.pl:1303
 
+% reasonNOTVFTableEntry_B: vftables cannot overlap.
+% Counterpart: reasonNOTVFTableEntry_B (rules.pl:1282)
+-vfTableEntry(VFTableAddress, Offset, Entry) :-
+    vfTable(VFTableAddress),
+    possibleVFTableEntry(VFTableAddress, Offset, Entry),
+    Offset != 0,
+    ComputedAddress = VFTableAddress + Offset,
+    vfTable(ComputedAddress).                                             % rules.pl:1282
+
+% reasonNOTVFTableEntry_C: once a previous possible entry is not confirmed,
+% later possible entries are outside the contiguous vftable.
+% Counterpart: reasonNOTVFTableEntry_C (rules.pl:1292)
+-vfTableEntry(VFTable, Offset, Entry) :-
+    vfTable(VFTable),
+    possibleVFTableEntry(VFTable, Offset, Entry),
+    Offset != 0,
+    pointerSize(PtrSize),
+    ComputedOffset = Offset - PtrSize,
+    possibleVFTableEntry(VFTable, ComputedOffset, OtherEntry),
+    not vfTableEntry(VFTable, ComputedOffset, OtherEntry).                 % rules.pl:1292
+
 % ============================================================
 % GUESS
 % ============================================================

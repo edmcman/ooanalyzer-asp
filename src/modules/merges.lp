@@ -24,6 +24,18 @@ mergeClasses(A, B) :-
     VFTable1 != VFTable2,
     sortPair(VFTable1, VFTable2, A, B).                                    % rules.pl:2925
 
+% reasonNOTMergeClasses_E: methods writing different vftables at offset 0
+% cannot be the same class, unless both cross-write the other's vftable.
+% Counterpart: reasonNOTMergeClasses_E (rules.pl:3123)
+-mergeClasses(A, B) :-
+    vfTableWrite(_Insn1, Method1, 0, VFTable1),
+    vfTableWrite(_Insn2, Method2, 0, VFTable2),
+    VFTable1 != VFTable2,
+    sortPair(Method1, Method2, A, B),
+    not sameClass(Method1, Method2),
+    not vfTableWrite(_, Method1, 0, VFTable2),
+    not vfTableWrite(_, Method2, 0, VFTable1).                              % rules.pl:3123
+
 % Compact transitive closure over hard merges.
 merged(A, B) :- mergeClasses(A, B).
 merged(B, A) :- mergeClasses(A, B).
@@ -65,4 +77,5 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 #maximize { 10@2, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
 #show mergeClasses/2.
+#show -mergeClasses/2.
 #show sameClass/2.

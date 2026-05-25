@@ -27,6 +27,11 @@ method(Method) :-
     vfTable(VFTable),
     thisParamFuncParameter(Method, ThisPtr).                               % rules.pl:80
 
+% reasonMethod_J: methods called by a class are methods.
+% Counterpart: reasonMethod_J (rules.pl:99)
+method(Method) :-
+    classCallsMethod(_Class, Method).                                      % rules.pl:99
+
 % reasonMethod_L: caller is a method and calls callee at offset 0 → callee is a method.
 % Counterpart: reasonMethod_L (rules.pl:109)
 method(Method) :-

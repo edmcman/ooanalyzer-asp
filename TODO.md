@@ -23,7 +23,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonMethod_G` (73) — `vfTableEntry` → method
 - [x] `reasonMethod_H` (80) — `vfTableWrite` → method
 - [ ] `reasonMethod_I` (85) — `vbTableWrite` → method
-- [ ] `reasonMethod_J` (99) — callee of `method` + `possibleMethod`
+- [x] `reasonMethod_J` (99) — `classCallsMethod` → method
 - [ ] `reasonMethod_K` (103) — `thisPtrUsage` → method
 - [x] `reasonMethod_L` (109) — `methodCallAtOffset` → method
 - [ ] `reasonMethod_M` (118) — `thisPtrAllocation` → method
@@ -153,8 +153,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonVFTableEntry` (1239) — propagation from known entry / VFTable size lower bound
 - [x] `reasonVFTableEntry` (1247) — from virtual function call
 - [~] `reasonNOTVFTableEntry_A` (1276) — existing `notVFTableEntry` (no-op in ASP, skipped)
-- [ ] `reasonNOTVFTableEntry_B` (1282) — table address invalid
-- [ ] `reasonNOTVFTableEntry_C` (1292) — offset exceeds table size
+- [x] `reasonNOTVFTableEntry_B` (1282) — table address invalid
+- [x] `reasonNOTVFTableEntry_C` (1292) — offset exceeds table size
 - [x] `reasonNOTVFTableEntry_D` (1303) — RTTI COL address is not a vftable entry
 - [ ] `reasonNOTVFTableEntry_E` (1313) — entry conflicts with other fact
 
@@ -304,7 +304,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_A` (3073) — different base classes
 - [ ] `reasonNOTMergeClasses_C` (3111) — one is derived of other
 - [ ] `reasonNOTMergeClasses_C_asymmetric` (3090) — asymmetric derivation
-- [ ] `reasonNOTMergeClasses_E` (3123) — write distinct VFTables at offset 0
+- [x] `reasonNOTMergeClasses_E` (3123) — write distinct VFTables at offset 0
 - [ ] `reasonNOTMergeClasses_F` (3158) — different VFTable sizes
 - [ ] `reasonNOTMergeClasses_G` (3177) — both are bases of same class at different offsets
 - [ ] `reasonNOTMergeClasses_I` (3196) — symbol class conflict
@@ -362,7 +362,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Class Calls Method (rules.pl:2449–2496)
 - [ ] `reasonClassCallsMethod` (2449) — direct call within class
-- [ ] `reasonClassCallsMethod_B` (2462) — call via class relationship
+- [x] `reasonClassCallsMethod_B` (2462) — call via class relationship
 - [x] `reasonClassCallsMethod_C` (2481) — inherited call
 
 ### Class at Offset (rules.pl:2505–2538)
