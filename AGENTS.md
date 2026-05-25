@@ -126,18 +126,10 @@ See `src/initial.lp` for the exact derivation rules.
 
 ## Known limitations / future work
 
-- Transitive closure of `sameClass` is O(n²) in grounding. A Python propagator
-  using Clingo's `clingo.propagator.Propagator` API with a persistent union-find
-  could reduce this to O(k α(k)).
-- `factVFTableSizeGTE` uses max entry offset (coarse); OOAnalyzer's `classSize{GTE,LTE}`
-  also considers member accesses.
 - No member access reasoning (`methodMemberAccess`).
 - Virtual base inheritance offset resolution from RTTI is not yet handled. Virtual
   bases are filtered *out* of `rTTIInheritsFrom` (WhereP=0xffffffff, WhereV=0),
   which is correct behavior. Computing the actual offset from a virtual base's BCD
   entry (WhereP != -1) is future work.
-- `reasonMethod_Q` (thunk to proven method -> method) is disabled. Confirmed to
-  cause UNSAT on real binaries; Prolog reference also has this rule commented out.
 
-See [TODO.md](TODO.md) for the full bidirectional coverage map: which OOAnalyzer rules
-are not yet implemented and which Clingo constructs are ASP-specific.
+See [TODO.md](TODO.md) for the full bidirectional coverage map.
