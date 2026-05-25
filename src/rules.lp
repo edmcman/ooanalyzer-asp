@@ -1,4 +1,14 @@
 % ============================================================
+% VFTABLE IDENTIFICATION
+% ============================================================
+
+% reasonVFTable (843): RTTI evidence confirms a vftable.
+factVFTable(VFTable) :-
+    rTTIEnabled,
+    rTTIValid,
+    rTTITDA2VFTable(_TDA, VFTable).                                        % rules.pl:843
+
+% ============================================================
 % THUNK RESOLUTION
 % ============================================================
 

@@ -141,3 +141,6 @@ See [TODO.md](TODO.md) for the full rule coverage tracker (217 rules across 12 e
 - **Never simplify a Prolog rule without asking first.** If a faithful translation
   is not straightforward (arity mismatch, missing predicate, etc.), surface the
   problem and the options — do not silently drop conditions.
+- **Never merge distinct Prolog predicates into one.** If two predicates (e.g.
+  `rTTIEnabled` and `rTTIValid`) appear separately in the Prolog, keep them
+  separate in the ASP translation — even if they seem redundant.

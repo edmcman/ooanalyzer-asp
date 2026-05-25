@@ -93,19 +93,26 @@ callsDelete(M) :- insnCallsDelete(_, M, _).
 symbolClass(M, Class) :- symbolClass(M, _, Class, _).
 
 % ----------------------------------------------------------------
-% rTTICompleteObjectLocator: vftable = pointer + ptrSize.
-% Counterpart: rTTITDA2VFTable (rtti.pl:18-23)
+% rTTITDA2VFTable: maps a type descriptor to its primary vftable address.
+% Counterpart: rTTITDA2VFTable/2 (rtti.pl:19)
 % ----------------------------------------------------------------
-rTTICompleteObjectLocator(V, TDA) :-
-    rTTICompleteObjectLocator(Pointer, _, TDA, _, _, _),
+rTTITDA2VFTable(TDA, VFTable) :-
+    rTTITypeDescriptor(TDA, _TIVTable, _Name, _DName),
+    rTTICompleteObjectLocator(Pointer, _COLA, TDA, _CHDA, _Offset, _O2),
     ptrSize(PtrSize),
-    V = Pointer + PtrSize.
+    VFTable = Pointer + PtrSize.
 
 % ----------------------------------------------------------------
 % rTTITypeDescriptor: drop VFTable check and demangled name.
 % Counterpart: N/A (Clingo-specific projection)
 % ----------------------------------------------------------------
 rTTITypeDescriptor(TDA, Name) :- rTTITypeDescriptor(TDA, _, Name, _).
+
+% rTTIEnabled/rTTIValid: default true; override with --const rtti_enabled=0 / rtti_valid=0.
+#const rtti_enabled = 1.
+#const rtti_valid   = 1.
+rTTIEnabled :- rtti_enabled != 0.
+rTTIValid   :- rtti_valid   != 0.
 
 rTTIPresent :- rTTITypeDescriptor(_, _, _, _).
 rTTIPresent :- rTTICompleteObjectLocator(_, _, _, _, _, _).
