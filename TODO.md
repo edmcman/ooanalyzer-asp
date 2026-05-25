@@ -144,7 +144,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonVFTableOverwrite` (976) — destructor direction (derived → base)
 
 ### Entry (rules.pl:1228–1322)
-- [ ] `reasonVFTableEntry` (1228) — existing `factVFTableEntry`
+- [~] `reasonVFTableEntry` (1228) — existing `factVFTableEntry` (no-op in ASP, skipped)
 - [ ] `reasonVFTableEntry` (1233) — offset 0 from class membership
 - [ ] `reasonVFTableEntry` (1239) — VFTable size lower bound
 - [ ] `reasonVFTableEntry` (1247) — propagation from known entry
