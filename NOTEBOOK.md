@@ -103,3 +103,7 @@ insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
 
 ## Planned categories (not yet started)
 - Constructor/destructor elimination rules and/or classification guesses
+
+## Suggested next steps
+- Propose `guessConstructor1` (guess.pl:574): possible constructor, not possibly virtual, writes a vftable, no uninitialized reads.
+- Propose `guessConstructor2` (guess.pl:592): possible constructor, not possibly virtual, writes a vftable, regardless of uninitialized reads.
