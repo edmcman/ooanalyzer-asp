@@ -97,6 +97,15 @@ constructorDestructorKind(Method, realDestructor) :-
 constructorDestructorKind(Method, deletingDestructor) :-
     deletingDestructor(Method).
 
+% Covers:
+%   insanityConstructorAndRealDestructor (insanity.pl:226)
+%   insanityConstructorAndDeletingDestructor (insanity.pl:240)
+%   reasonNOTConstructor_B (rules.pl:281) — realDestructor → notConstructor
+%   reasonNOTConstructor_C (rules.pl:288) — deletingDestructor → notConstructor
+%   reasonNOTRealDestructor_B (rules.pl:443) — constructor → notRealDestructor
+%   reasonNOTRealDestructor_C (rules.pl:448) — deletingDestructor → notRealDestructor
+%   reasonNOTDeletingDestructor_B (rules.pl:632) — constructor → notDeletingDestructor
+%   reasonNOTDeletingDestructor_C (rules.pl:637) — realDestructor → notDeletingDestructor
 insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
     method(Method),
     Count = #count { Kind : constructorDestructorKind(Method, Kind) },

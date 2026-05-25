@@ -47,8 +47,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### NOT Constructor (rules.pl:260–373)
 - [ ] `reasonNOTConstructor_A` (276) — existing `notConstructor`
-- [ ] `reasonNOTConstructor_B` (281) — is real destructor
-- [ ] `reasonNOTConstructor_C` (288) — is deleting destructor
+- [x] `reasonNOTConstructor_B` (281) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
+- [x] `reasonNOTConstructor_C` (288) — is deleting destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [ ] `reasonNOTConstructor_D` (297) — appears in vftable
 - [ ] `reasonNOTConstructor_F` (316) — called by non-constructor
 - [ ] `reasonNOTConstructor_G` (327) — vftable entry requirement
@@ -80,8 +80,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### NOT Real Destructor (rules.pl:422–560)
 - [ ] `reasonNOTRealDestructor_A` (438) — existing `factNOTRealDestructor`
-- [ ] `reasonNOTRealDestructor_B` (443) — is constructor
-- [ ] `reasonNOTRealDestructor_C` (448) — is deleting destructor
+- [x] `reasonNOTRealDestructor_B` (443) — is constructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
+- [x] `reasonNOTRealDestructor_C` (448) — is deleting destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [ ] `reasonNOTRealDestructor_D` (453) — call ordering violation
 - [ ] `reasonNOTRealDestructor_E` (462) — single destructor per class
 - [ ] `reasonNOTRealDestructor_F` (476) — self-destruction pattern
@@ -109,8 +109,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### NOT Deleting Destructor (rules.pl:612–712)
 - [ ] `reasonNOTDeletingDestructor_A` (627) — existing `factNOTDeletingDestructor`
-- [ ] `reasonNOTDeletingDestructor_B` (632) — is constructor
-- [ ] `reasonNOTDeletingDestructor_C` (637) — is real destructor
+- [x] `reasonNOTDeletingDestructor_B` (632) — is constructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
+- [x] `reasonNOTDeletingDestructor_C` (637) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [ ] `reasonNOTDeletingDestructor_D` (642) — call ordering violation
 - [ ] `reasonNOTDeletingDestructor_E` (648) — self-deletion pattern
 - [ ] `reasonNOTDeletingDestructor_F` (667) — delete not detected

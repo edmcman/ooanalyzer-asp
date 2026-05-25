@@ -84,7 +84,7 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ### insanity.lp
 - `insanityConstructorInVFTable` (insanity.pl:49) — constructors cannot appear in confirmed vftable entries
-- `insanityMultipleConstructorDestructorKinds` — at most one of constructor/realDestructor/deletingDestructor
+- `insanityMultipleConstructorDestructorKinds` — at most one of constructor/realDestructor/deletingDestructor; also covers `reasonNOTConstructor_B/C` (rules.pl:281,288), `reasonNOTRealDestructor_B/C` (rules.pl:443,448), and `reasonNOTDeletingDestructor_B/C` (rules.pl:632,637)
 - `insanityTwoRealDestructorsOnClass` (insanity.pl:253) — at most one real destructor per class
 
 ## Where we are now
@@ -99,6 +99,25 @@ All 10 hand-written examples pass:
 - UNSAT: `invalid_example.lp`, `strong_negation_contradiction.lp`
 
 ## Suggested next steps
-- Propose `guessConstructor3` (guess.pl:612): normal non-virtual case, not in a vftable, doesn't write a vftable, and has no uninitialized reads.
-- Propose `guessConstructor4` (guess.pl:631): normal virtual case, writes a vftable, has uninitialized reads, but is possibly virtual.
-- Port `reasonMethod_I`–`O` (rules.pl:85–159) for broader method identification from call chains and this-pointer usage.
+
+Ranked candidates for next implementation (by complexity, predicate availability, and downstream impact):
+
+### Tier 1: Core Destructor Elimination (low complexity, critical path)
+1. **`reasonRealDestructor` (388) + `reasonDeletingDestructor` (575)** — When a `certainConstructorOrDestructor` method is proven *not* a constructor, force it to be exactly one of `realDestructor` or `deletingDestructor` by elimination. Without these, the solver cannot disambiguate destructor kinds.  
+  *Note: All pairwise mutual-exclusion constraints (rules.pl:281, 288, 443, 448, 632, 637 — constructor∩realDestructor, constructor∩deletingDestructor, realDestructor∩deletingDestructor) are already covered by `insanityMultipleConstructorDestructorKinds` + the choice rule `{constructor; realDestructor; deletingDestructor} = 1`.*
+2. **`reasonNOTDeletingDestructor_G` (687)** — Deleting destructors must be virtual (`possiblyVirtual/1` already exists in `initial.lp`). One literal, high pruning power on non-virtual classes.
+
+### Tier 2: Constructor Pruning & Method Expansion
+3. **`reasonConstructor` (192)** — `certainConstructorOrDestructor` + `notRealDestructor` + `notDeletingDestructor` + vftable/vbtable write → `constructor`. Low complexity, directly reduces guess load. Depends on #1.
+4. **`reasonNOTConstructor_D` (297)** — `vfTableEntry` + `dethunk` → `notConstructor`. Constructors cannot be virtual. Complements the already-ported `insanityConstructorInVFTable`.
+5. **`reasonMethod_L` (109)** — `methodCallAtOffset(0)` → `method`. Expands method identification via call-graph propagation. No class-finding dependencies (unlike J/K/P/O).
+
+### Tier 3: VFTable Accuracy & Class Infrastructure
+6. **`reasonNOTVFTableEntry_D` (1303)** — RTTI COL at `Address = VFTable + Offset` invalidates the entry. Prevents recursive `possibleVFTableEntry` from mistaking RTTI pointers for vftable entries. One line, big accuracy win on MSVC binaries.
+7. **`reasonClassCallsMethod_C` (2481)** — `validMethodCallAtOffset(0)` → `classCallsMethod`. Single-line derivation, prerequisite for ~5 downstream merge and inheritance rules.
+8. **`reasonClassCallsMethod_B` (2462)** — `vfTableEntry` + `dethunk` → `classCallsMethod`. Covers the virtual-call case; combines with #7 to complete the class-method relation.
+
+### Tier 4: Structural Reasoning (medium complexity, high reward)
+9. **`reasonNOTMergeClasses_E` (3123)** — Two methods writing *different* confirmed vftables at offset 0 cannot be the same class. Strong negative merge signal, zero new predicates needed.
+10. **`reasonClassSizeGTE_B` (3505)** — `methodMemberAccess` at offset+size → `classSizeGTE`. Puts the currently-unused `methodMemberAccess/4` fact to work; unlocks `insanityClassSizeInvalid`.
+11. **`reasonDerivedClass_B` (1834)** — VFTable overwrite in constructor call sequence (base→derived). The primary non-RTTI inheritance detection mechanism. Medium complexity, but all predicates exist and it unlocks transitive inheritance and object-in-object reasoning.
