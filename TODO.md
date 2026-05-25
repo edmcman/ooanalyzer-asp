@@ -67,7 +67,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Constraints (insanity.pl)
 - [x] `insanityConstructorAndRealDestructor` — covered by `insanityMultipleConstructorDestructorKinds`
 - [x] `insanityConstructorAndDeletingDestructor` — covered by `insanityMultipleConstructorDestructorKinds`
-- [ ] `insanityContradictoryNOTConstructor` — ctor ∩ ¬ctor = ∅
+- [x] `insanityContradictoryNOTConstructor` — ctor ∩ ¬ctor = ∅ (enforced by ASP classical negation; `constructor(M)` and `-constructor(M)` cannot coexist)
 
 ---
 
