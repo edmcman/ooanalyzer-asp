@@ -41,6 +41,39 @@ deletingDestructor(Method) :-
 deletingDestructor(Method) :-
     symbolProperty(Method, deletingDestructor).                           % rules.pl:595
 
+% ----------------------------------------------------------------
+% CONSTRUCTOR GUESSES
+% Counterpart: guessConstructor1/2 (guess.pl:574, 592)
+% ----------------------------------------------------------------
+
+% Perfect case: not possibly virtual, writes a vftable, no uninitialized reads.
+guessConstructor1Domain(Method) :-
+    method(Method),
+    possibleConstructor(Method),
+    not possiblyVirtual(Method),
+    possibleVFTableWrite(_, Method, _, _, _),
+    not uninitializedReads(Method).
+
+% Likely case: not possibly virtual, writes a vftable, uninitialized reads allowed.
+guessConstructor2Domain(Method) :-
+    method(Method),
+    possibleConstructor(Method),
+    not possiblyVirtual(Method),
+    possibleVFTableWrite(_, Method, _, _, _).
+
+% Unified domain for choice generation.
+guessConstructorDomain(Method) :- guessConstructor1Domain(Method).
+guessConstructorDomain(Method) :- guessConstructor2Domain(Method).
+
+1 { constructor(Method) ; -constructor(Method) } 1 :- guessConstructorDomain(Method).
+
+% Stronger heuristic for the perfect case (no uninitialized reads).
+#heuristic constructor(Method) : guessConstructor1Domain(Method). [2@0, true]
+#heuristic constructor(Method) : guessConstructor2Domain(Method). [1@0, true]
+
+% Optimization reward.
+guessConstructorReward(Method) :- constructor(Method), guessConstructorDomain(Method).
+
 % ============================================================
 % SANITY
 % ============================================================

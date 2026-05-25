@@ -57,7 +57,10 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTConstructor_J` (367) — called after constructor
 
 ### Guess (guess.pl)
-- [ ] `guessConstructor1`–`guessConstructor4`
+- [x] `guessConstructor1` (guess.pl:574) — writes vftable, not possibly virtual, no uninitialized reads
+- [x] `guessConstructor2` (guess.pl:592) — writes vftable, not possibly virtual, uninitialized reads ok
+- [ ] `guessConstructor3` (guess.pl:612)
+- [ ] `guessConstructor4` (guess.pl:631)
 - [ ] `guessNOTConstructor`
 - [ ] `guessUnlikelyConstructor`
 

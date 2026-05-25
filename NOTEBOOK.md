@@ -84,43 +84,31 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `insanityMultipleConstructorDestructorKinds` — user-approved ASP check: at most one of constructor/realDestructor/deletingDestructor
 
 ## Where we are now
-Last completed: **vftable identification, class merge infrastructure, and basic constructor/destructor rules**
+Last completed: **guessConstructor1 and guessConstructor2** (src/ctorsdtors.lp)
 
 ```prolog
-reasonConstructor(Method) :-
-    symbolProperty(Method, constructor).
-
-reasonRealDestructor(Method) :-
-    symbolProperty(Method, realDestructor).
-
-reasonDeletingDestructor(Method) :-
-    factMethod(Method),
-    insnCallsDelete(_Insn, Method, ThisPtr),
-    thisParamFuncParameter(Method, ThisPtr).
-
-reasonDeletingDestructor(Method) :-
-    symbolProperty(Method, deletingDestructor).
-```
-
-Current ASP:
-
-```prolog
-constructor(Method) :- symbolProperty(Method, constructor).              % rules.pl:209
-realDestructor(Method) :- symbolProperty(Method, realDestructor).         % rules.pl:394
-
-deletingDestructor(Method) :-
+guessConstructor1Domain(Method) :-
     method(Method),
-    insnCallsDelete(_Insn, Method, ThisPtr),
-    thisParamFuncParameter(Method, ThisPtr).                              % rules.pl:585
+    possibleConstructor(Method),
+    not possiblyVirtual(Method),
+    possibleVFTableWrite(_, Method, _, _, _),
+    not uninitializedReads(Method).
 
-deletingDestructor(Method) :- symbolProperty(Method, deletingDestructor). % rules.pl:595
-
-insanity(insanityMultipleConstructorDestructorKinds, (Method,Count)) :-
+guessConstructor2Domain(Method) :-
     method(Method),
-    Count = #count { Kind : constructorDestructorKind(Method, Kind) },
-    Count > 1.
+    possibleConstructor(Method),
+    not possiblyVirtual(Method),
+    possibleVFTableWrite(_, Method, _, _, _).
+
+guessConstructorDomain(Method) :- guessConstructor1Domain(Method).
+guessConstructorDomain(Method) :- guessConstructor2Domain(Method).
+
+1 { constructor(Method) ; -constructor(Method) } 1 :- guessConstructorDomain(Method).
+
+#heuristic constructor(Method) : guessConstructor1Domain(Method). [2@0, true]
+#heuristic constructor(Method) : guessConstructor2Domain(Method). [1@0, true]
 ```
 
 ## Suggested next steps
-- Propose `guessConstructor1` (guess.pl:574): possible constructor, not possibly virtual, writes a vftable, no uninitialized reads.
-- Propose `guessConstructor2` (guess.pl:592): possible constructor, not possibly virtual, writes a vftable, regardless of uninitialized reads.
+- Propose `guessConstructor3` (guess.pl:612): normal non-virtual case, not in a vftable, doesn't write a vftable, and has no uninitialized reads.
+- Propose `guessConstructor4` (guess.pl:631): normal virtual case, writes a vftable, has uninitialized reads, but is possibly virtual.
