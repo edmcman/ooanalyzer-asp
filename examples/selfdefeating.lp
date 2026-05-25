@@ -4,5 +4,5 @@
 
 possibleMethod(1000).
 possibleMethod(1100).
-symbolClass(1000, '_', "Foo", '_').
-symbolClass(1100, '_', "Foo", '_').
+symbolClass(1000, none, "Foo", none).
+symbolClass(1100, none, "Foo", none).

@@ -7,5 +7,5 @@
 
 symbolProperty(1300, realDestructor).
 symbolProperty(1400, realDestructor).
-symbolClass(1300, '_', classA, '_').
-symbolClass(1400, '_', classA, '_').
+symbolClass(1300, none, classA, none).
+symbolClass(1400, none, classA, none).

@@ -37,10 +37,10 @@ methodCallAtOffset(0, 2300, 2100, 0).
 % ----------------------------------------------------------------
 % RTTI facts
 % ----------------------------------------------------------------
-fileInfo('dummy', 'dummy', 'MSVC_32', 4).
+fileInfo("dummy", "dummy", "MSVC_32", 4).
 
-rTTITypeDescriptor(0, 0, "?AVBase@@", "?AVBase@@").
-rTTITypeDescriptor(0, 0, "?AVDerived@@", "?AVDerived@@").
+rTTITypeDescriptor(5000, 0, "?AVBase@@", "?AVBase@@").
+rTTITypeDescriptor(5100, 0, "?AVDerived@@", "?AVDerived@@").
 rTTICompleteObjectLocator(2996, 0, 5000, 0, 0, 0).   % vt_base  → Base
 rTTICompleteObjectLocator(3996, 0, 5100, 0, 0, 0).   % vt_derived → Derived
 rTTIInheritsFrom(5100, 5000, 0, 0, 0xffffffff, 0).   % Derived inherits Base at offset 0
