@@ -1,13 +1,17 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 10 (Time: 0.015s)
-classRep(4265296) classRep(4265376) factMethod(4265296) factMethod(4265456) factMethod(4264341) factMethod(4264056) factMethod(4264396) factMethod(4264261) factMethod(4265776) factMethod(4265888) factMethod(4265376) factMethod(4297404) find(4265296,4265296) find(4265376,4265376) factConstructor(4265296) factConstructor(4265456) factDeletingDestructor(4264076) factDeletingDestructor(4264912) factDeletingDestructor(4278256) factDeletingDestructor(4278320) factMethod(4264281) factMethod(4263946) factMethod(4264221) factMethod(4264071) factMethod(4264076) factMethod(4264912) factMethod(4278256) factMethod(4278320) classRep(4263946) find(4263946,4263946) -mergeClasses(4265296,4265456) factRealDestructor(4264281) factDerivedClass(4265456,4265296,4) factClassHasNoBase(4265296) factClassHasNoBase(4265376) mergeClasses(4264076,4278320) mergeClasses(4264076,4278256) mergeClasses(4264076,4264912) mergeClasses(4264261,4265888) mergeClasses(4264261,4265776) mergeClasses(4264261,4264912) mergeClasses(4264261,4265456) mergeClasses(4264071,4264912) mergeClasses(4264221,4264912) mergeClasses(4264396,4265888) mergeClasses(4264396,4265776) mergeClasses(4264396,4264912) mergeClasses(4264396,4265456) mergeClasses(4264056,4264912) mergeClasses(4264056,4265456) mergeClasses(4263946,4264912) mergeClasses(4264281,4264912) mergeClasses(4264341,4264912) mergeClasses(4264341,4265456) mergeClasses(4265456,4297404) find(4264912,4263946) find(4264076,4263946) find(4264261,4263946) find(4264071,4263946) find(4264221,4263946) find(4264396,4263946) find(4264056,4263946) find(4264281,4263946) find(4264341,4263946) find(4265456,4263946) find(4265776,4263946) find(4265888,4263946) find(4278256,4263946) find(4278320,4263946) find(4297404,4263946)
-OPTIMUM FOUND
+src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
+  vbTableWrite(Insn,Method,Offset,VBTable)
 
-Models       : 10
-  Optimum    : yes
-Optimization : -300 -3
+src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
+  vfTableSizeGTE(VFTable,Size)
+
+Solving...
+Answer: 1 (Time: 0.047s)
+
+SATISFIABLE
+
+Models       : 1+
 Calls        : 1
-Time         : 0.015s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.015s
+Time         : 0.047s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.047s

@@ -1,13 +1,17 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 10 (Time: 0.015s)
-classRep(Composite::Composite(void)) classRep(int Composite::func3(void)) factMethod(Composite::Composite(void)) factMethod(Derived::Derived(void)) factMethod(* __cdecl operator new(unsigned int)) factMethod(Composite::Composite(void)) factMethod(int Composite::func3(void)) factMethod(j___RTC_CheckEsp) factMethod(int Derived::func4(void)) factMethod(int Derived::func5(class Composite, int)) factMethod(int Composite::func3(void)) factMethod(__imp__rand) find(Composite::Composite(void),Composite::Composite(void)) find(int Composite::func3(void),int Composite::func3(void)) factConstructor(Composite::Composite(void)) factConstructor(Derived::Derived(void)) factDeletingDestructor(__cdecl operator delete(*)) factDeletingDestructor(_main) factDeletingDestructor(__unwindfunclet$_main$0) factDeletingDestructor(__unwindfunclet$??0Derived@@QAE@XZ$0) factMethod(Derived::Derived(void)) factMethod(int Derived::func4(void)) factMethod(int Derived::func5(class Composite, int)) factMethod(__fastcall _RTC_CheckStackVars(x, x)) factMethod(__cdecl operator delete(*)) factMethod(_main) factMethod(__unwindfunclet$_main$0) factMethod(__unwindfunclet$??0Derived@@QAE@XZ$0) classRep(int Derived::func4(void)) find(int Derived::func4(void),int Derived::func4(void)) -mergeClasses(Composite::Composite(void),Derived::Derived(void)) factRealDestructor(Derived::Derived(void)) factDerivedClass(Derived::Derived(void),Composite::Composite(void),4) factClassHasNoBase(Composite::Composite(void)) factClassHasNoBase(int Composite::func3(void)) mergeClasses(__cdecl operator delete(*),__unwindfunclet$??0Derived@@QAE@XZ$0) mergeClasses(__cdecl operator delete(*),__unwindfunclet$_main$0) mergeClasses(__cdecl operator delete(*),_main) mergeClasses(j___RTC_CheckEsp,int Derived::func5(class Composite, int)) mergeClasses(j___RTC_CheckEsp,int Derived::func4(void)) mergeClasses(j___RTC_CheckEsp,_main) mergeClasses(j___RTC_CheckEsp,Derived::Derived(void)) mergeClasses(__fastcall _RTC_CheckStackVars(x, x),_main) mergeClasses(int Derived::func5(class Composite, int),_main) mergeClasses(int Composite::func3(void),int Derived::func5(class Composite, int)) mergeClasses(int Composite::func3(void),int Derived::func4(void)) mergeClasses(int Composite::func3(void),_main) mergeClasses(int Composite::func3(void),Derived::Derived(void)) mergeClasses(Composite::Composite(void),_main) mergeClasses(Composite::Composite(void),Derived::Derived(void)) mergeClasses(int Derived::func4(void),_main) mergeClasses(Derived::Derived(void),_main) mergeClasses(* __cdecl operator new(unsigned int),_main) mergeClasses(* __cdecl operator new(unsigned int),Derived::Derived(void)) mergeClasses(Derived::Derived(void),__imp__rand) find(_main,int Derived::func4(void)) find(__cdecl operator delete(*),int Derived::func4(void)) find(j___RTC_CheckEsp,int Derived::func4(void)) find(__fastcall _RTC_CheckStackVars(x, x),int Derived::func4(void)) find(int Derived::func5(class Composite, int),int Derived::func4(void)) find(int Composite::func3(void),int Derived::func4(void)) find(Composite::Composite(void),int Derived::func4(void)) find(Derived::Derived(void),int Derived::func4(void)) find(* __cdecl operator new(unsigned int),int Derived::func4(void)) find(Derived::Derived(void),int Derived::func4(void)) find(int Derived::func4(void),int Derived::func4(void)) find(int Derived::func5(class Composite, int),int Derived::func4(void)) find(__unwindfunclet$_main$0,int Derived::func4(void)) find(__unwindfunclet$??0Derived@@QAE@XZ$0,int Derived::func4(void)) find(__imp__rand,int Derived::func4(void))
-OPTIMUM FOUND
+src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
+  vbTableWrite(Insn,Method,Offset,VBTable)
 
-Models       : 10
-  Optimum    : yes
-Optimization : -300 -3
+src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
+  vfTableSizeGTE(VFTable,Size)
+
+Solving...
+Answer: 1 (Time: 0.047s)
+
+SATISFIABLE
+
+Models       : 1+
 Calls        : 1
-Time         : 0.015s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.015s
+Time         : 0.047s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.047s

@@ -1,13 +1,17 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 7 (Time: 0.014s)
-classRep(4263946) factMethod(4265280) factMethod(4265456) factMethod(4263946) factMethod(4264266) factMethod(4265200) factMethod(4264161) factMethod(4263956) factMethod(4297404) factMethod(4264096) find(4263946,4263946) factConstructor(4265280) factConstructor(4265456) factConstructor(4265552) factDeletingDestructor(4264076) factDeletingDestructor(4264912) factDeletingDestructor(4278016) factMethod(4265552) factMethod(4264346) factMethod(4264286) factMethod(4264076) factMethod(4264912) factMethod(4278016) factMethod(4265648) classRep(4265552) classRep(4265648) find(4265552,4265552) find(4265648,4265648) -mergeClasses(4265280,4265552) -mergeClasses(4265280,4265456) factRealDestructor(4264346) factDerivedClass(4265280,4265552,12) factDerivedClass(4265280,4265456,0) factClassHasNoBase(4265456) factClassHasNoBase(4265552) factClassHasNoBase(4265648) mergeClasses(4265200,4265280) mergeClasses(4264096,4265280) mergeClasses(4263956,4265280) mergeClasses(4264161,4265280) mergeClasses(4264076,4278016) mergeClasses(4264076,4264912) mergeClasses(4264266,4264912) mergeClasses(4264266,4265280) mergeClasses(4263946,4264912) mergeClasses(4263946,4265280) mergeClasses(4264286,4264912) mergeClasses(4264346,4264912) mergeClasses(4265280,4297404) classRep(4265456) find(4265456,4265456) find(4265280,4263946) find(4264912,4263946) find(4297404,4263946) find(4265200,4263946) find(4264096,4263946) find(4263956,4263946) find(4264161,4263946) find(4264076,4263946) find(4264266,4263946) find(4264286,4263946) find(4264346,4263946) find(4278016,4263946) -mergeClasses(4265456,4265552)
-OPTIMUM FOUND
+src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
+  vbTableWrite(Insn,Method,Offset,VBTable)
 
-Models       : 7
-  Optimum    : yes
-Optimization : -330 -4
+src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
+  vfTableSizeGTE(VFTable,Size)
+
+Solving...
+Answer: 1 (Time: 0.041s)
+
+SATISFIABLE
+
+Models       : 1+
 Calls        : 1
-Time         : 0.014s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.014s
+Time         : 0.041s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.041s

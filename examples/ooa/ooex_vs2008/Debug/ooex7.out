@@ -1,13 +1,17 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-Solving...
-Answer: 5 (Time: 0.013s)
-classRep(4297396) classRep(4297384) factConstructor(4297396) factMethod(4297396) factMethod(4297400) factMethod(4297384) factMethod(4297404) factRealDestructor(4297400) find(4297396,4297396) find(4297400,4297396) find(4297384,4297384) find(4297404,4297384) mergeClasses(4297396,4297400) mergeClasses(4297384,4297404) -mergeClasses(4297384,4297396) -mergeClasses(4297384,4297400) -mergeClasses(4297396,4297404) -mergeClasses(4297400,4297404) factConstructor(4265712) factMethod(4265712) factMethod(4265792) classRep(4265712) classRep(4265792) find(4265712,4265712) find(4265792,4265792) -mergeClasses(4265712,4297384) -mergeClasses(4265792,4297384) -mergeClasses(4265712,4297396) -mergeClasses(4265792,4297396) -mergeClasses(4265712,4297400) -mergeClasses(4265792,4297400) -mergeClasses(4265712,4297404) -mergeClasses(4265792,4297404) factClassHasNoBase(4297396) factClassHasNoBase(4265712) factClassHasNoBase(4297400) factClassHasNoBase(4297384) factClassHasNoBase(4297404) factClassHasNoBase(4265792)
-OPTIMUM FOUND
+src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
+  vbTableWrite(Insn,Method,Offset,VBTable)
 
-Models       : 5
-  Optimum    : yes
-Optimization : -6
+src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
+  vfTableSizeGTE(VFTable,Size)
+
+Solving...
+Answer: 1 (Time: 0.048s)
+constructor(4297396) method(4297384) method(4297396) method(4297400) method(4297404) realDestructor(4297400) mergeClasses(4297384,4297404) mergeClasses(4297396,4297400) sameClass(4297384,4297384) sameClass(4297396,4297396) sameClass(4297400,4297400) sameClass(4297404,4297404) sameClass(4297404,4297384) sameClass(4297400,4297396) sameClass(4297396,4297400) sameClass(4297384,4297404)
+SATISFIABLE
+
+Models       : 1+
 Calls        : 1
-Time         : 0.013s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.013s
+Time         : 0.048s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.048s
