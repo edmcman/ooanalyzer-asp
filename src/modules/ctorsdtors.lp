@@ -41,6 +41,11 @@ deletingDestructor(Method) :-
 deletingDestructor(Method) :-
     symbolProperty(Method, deletingDestructor).                           % rules.pl:595
 
+% A method that writes a vftable/vbtable into its own this-pointer must be
+% exactly one of: constructor, real destructor, or deleting destructor.
+1 { constructor(Method) ; realDestructor(Method) ; deletingDestructor(Method) } 1 :-
+    certainConstructorOrDestructor(Method).
+
 % ----------------------------------------------------------------
 % CONSTRUCTOR GUESSES
 % Counterpart: guessConstructor1/2 (guess.pl:574, 592)
