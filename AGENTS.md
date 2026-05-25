@@ -135,3 +135,9 @@ See `src/initial.lp` for the exact derivation rules.
   entry (WhereP != -1) is future work.
 
 See [TODO.md](TODO.md) for the full rule coverage tracker (217 rules across 12 entity groups).
+
+## Porting guidelines
+
+- **Never simplify a Prolog rule without asking first.** If a faithful translation
+  is not straightforward (arity mismatch, missing predicate, etc.), surface the
+  problem and the options — do not silently drop conditions.
