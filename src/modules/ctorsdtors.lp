@@ -37,12 +37,22 @@ deletingDestructor(Method) :-
 deletingDestructor(Method) :-
     symbolProperty(Method, deletingDestructor).                           % rules.pl:595
 
+% reasonNOTDeletingDestructor_G: deleting destructors must be virtual.
+% Counterpart: reasonNOTDeletingDestructor_G (rules.pl:687)
+-deletingDestructor(Method) :-
+    method(Method),
+    not possiblyVirtual(Method).
+
 % ============================================================
 % CONSTRAINTS
 % ============================================================
 
 % A method that writes a vftable/vbtable into its own this-pointer must be
 % exactly one of: constructor, real destructor, or deleting destructor.
+% Covers:
+%   reasonConstructor (rules.pl:192) — elimination: only remaining candidate
+%   reasonRealDestructor (rules.pl:388) — elimination: only remaining candidate
+%   reasonDeletingDestructor (rules.pl:575) — elimination: only remaining candidate
 1 { constructor(Method) ; realDestructor(Method) ; deletingDestructor(Method) } 1 :-
     certainConstructorOrDestructor(Method).
 

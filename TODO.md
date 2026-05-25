@@ -39,8 +39,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 2. Constructor (`constructor`)
 
 ### Deductive (rules.pl:186–242)
-- [ ] `reasonConstructor` (186) — existing `constructor`
-- [ ] `reasonConstructor` (192) — `returnsSelf + noCallsBefore + vftableWrite`
+- [x] `reasonConstructor` (186) — existing `constructor` (covered by choice rule + insanityMultipleConstructorDestructorKinds)
+- [x] `reasonConstructor` (192) — elimination: only remaining candidate (covered by choice rule + insanityMultipleConstructorDestructorKinds)
 - [ ] `reasonConstructor` (204) — `vbTableWrite` → constructor
 - [x] `reasonConstructor` (209) — `symbolProperty(constructor)`
 - [ ] `reasonConstructor` (214) — inheritance special case
@@ -74,8 +74,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 3. Real Destructor (`realDestructor`)
 
 ### Deductive (rules.pl:382–404)
-- [ ] `reasonRealDestructor` (382) — existing `realDestructor`
-- [ ] `reasonRealDestructor` (388) — elimination (only remaining candidate)
+- [x] `reasonRealDestructor` (382) — existing `realDestructor` (covered by choice rule + insanityMultipleConstructorDestructorKinds)
+- [x] `reasonRealDestructor` (388) — elimination (only remaining candidate) (covered by choice rule + insanityMultipleConstructorDestructorKinds)
 - [x] `reasonRealDestructor` (394) — `symbolProperty(realDestructor)`
 
 ### NOT Real Destructor (rules.pl:422–560)
@@ -101,8 +101,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 4. Deleting Destructor (`deletingDestructor`)
 
 ### Deductive (rules.pl:569–595)
-- [ ] `reasonDeletingDestructor` (569) — existing `deletingDestructor`
-- [ ] `reasonDeletingDestructor` (575) — elimination (only remaining candidate)
+- [x] `reasonDeletingDestructor` (569) — existing `deletingDestructor` (covered by choice rule + insanityMultipleConstructorDestructorKinds)
+- [x] `reasonDeletingDestructor` (575) — elimination (only remaining candidate) (covered by choice rule + insanityMultipleConstructorDestructorKinds)
 - [x] `reasonDeletingDestructor` (585) — delete(this) logic
 - [x] `reasonDeletingDestructor` (595) — `symbolProperty(deletingDestructor)`
 - [x] helper `possiblyVirtual/1` (initial.pl:338) — possible vftable entry evidence
@@ -114,7 +114,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTDeletingDestructor_D` (642) — call ordering violation
 - [ ] `reasonNOTDeletingDestructor_E` (648) — self-deletion pattern
 - [ ] `reasonNOTDeletingDestructor_F` (667) — delete not detected
-- [ ] `reasonNOTDeletingDestructor_G` (687) — virtual requirement missing
+- [x] `reasonNOTDeletingDestructor_G` (687) — virtual requirement missing
 - [ ] `reasonNOTDeletingDestructor_H` (695) — parameter count
 - [ ] `reasonNOTDeletingDestructor_I` (705) — negative offset
 
