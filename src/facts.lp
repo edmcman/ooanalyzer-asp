@@ -50,6 +50,7 @@
 #defined thunk/2.
 #defined purecall/1.
 #defined callAtOffset/3.
+#defined virtualFunctionCall/5.
 #defined rTTICompleteObjectLocator/2.
 #defined rTTITypeDescriptor/2.
 #defined rTTIInheritsFrom/3.
@@ -67,6 +68,7 @@
 #defined classSizeLTE/2.
 #defined classSizeGTE/2.
 #defined vfTableSizeLTE/2.
+#defined vfTableSizeGTE/2.
 #defined certainMemberOnClass/3.
 
 % ----------------------------------------------------------------

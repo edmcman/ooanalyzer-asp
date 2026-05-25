@@ -145,10 +145,11 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Entry (rules.pl:1228–1322)
 - [~] `reasonVFTableEntry` (1228) — existing `vfTableEntry` (no-op in ASP, skipped)
-- [ ] `reasonVFTableEntry` (1233) — offset 0 from class membership
+- [x] `reasonVFTableEntry` (1233) — offset 0 from class membership
 - [ ] `reasonVFTableEntry` (1239) — VFTable size lower bound
-- [ ] `reasonVFTableEntry` (1247) — propagation from known entry
-- [ ] `reasonNOTVFTableEntry_A` (1276) — address not in table
+- [x] `reasonVFTableEntry` (1247) — propagation from known entry
+- [x] `reasonVFTableEntry` (1255) — from virtual function call
+- [~] `reasonNOTVFTableEntry_A` (1276) — existing `notVFTableEntry` (no-op in ASP, skipped)
 - [ ] `reasonNOTVFTableEntry_B` (1282) — table address invalid
 - [ ] `reasonNOTVFTableEntry_C` (1292) — offset exceeds table size
 - [ ] `reasonNOTVFTableEntry_D` (1303) — address is a constructor

@@ -45,6 +45,29 @@ vfTableWrite(Insn, Method, Offset, VFTable) :-
     vfTable(VFTable),
     possibleVFTableWrite(Insn, Method, _ThisPtr, Offset, VFTable).         % rules.pl:939
 
+% reasonVFTableEntry (1233): first entry in a confirmed VFTable is always valid.
+vfTableEntry(VFTable, 0, Entry) :-
+    vfTable(VFTable),
+    possibleVFTableEntry(VFTable, 0, Entry).                              % rules.pl:1233
+
+% reasonVFTableEntry (1247): propagation from known entry — all offsets <= max valid are valid.
+vfTableEntry(VFTable, Offset, Entry) :-
+    vfTableEntry(VFTable, ExistingOffset, _),
+    possibleVFTableEntry(VFTable, Offset, Entry),
+    Offset <= ExistingOffset.                                               % rules.pl:1247
+
+vfTableEntry(VFTable, Offset, Entry) :-
+    vfTableSizeGTE(VFTable, Size),
+    pointerSize(PtrSize),
+    ExistingOffset = Size - PtrSize,
+    possibleVFTableEntry(VFTable, Offset, Entry),
+    Offset <= ExistingOffset.                                               % rules.pl:1247
+
+% reasonVFTableEntry (1255): entry confirmed by virtual function call evidence.
+vfTableEntry(VFTable, Offset, Entry) :-
+    virtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
+    possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1255
+
 % ============================================================
 % THUNK RESOLUTION
 % ============================================================
