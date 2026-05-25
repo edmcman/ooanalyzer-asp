@@ -18,12 +18,12 @@
 %
 % The vftable overwrite rule does NOT fire (virtual inheritance, no overwrite).
 % The VBTable confirms virtual inheritance:
-%   factDerivedClass(2100, 1100, 8) from VBTable entry + objectInObject match.
+%   derivedClass(2100, 1100, 8) from VBTable entry + objectInObject match.
 %
 % Expected output:
-%   classRep(1100)  {1100, 1200}   factConstructor(1100)
-%   classRep(2100)  {2100, 2200}   factConstructor(2100)
-%   factDerivedClass(2100, 1100, 8)
+%   classRep(1100)  {1100, 1200}   constructor(1100)
+%   classRep(2100)  {2100, 2200}   constructor(2100)
+%   derivedClass(2100, 1100, 8)
 
 % ----------------------------------------------------------------
 % Class Base

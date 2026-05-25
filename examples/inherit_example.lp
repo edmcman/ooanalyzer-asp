@@ -15,9 +15,9 @@
 %     3300  new virtual:      vt_derived[4]
 %
 % Expected output (optimal model):
-%   classRep(2100)  methods: {2100, 2200, 2210, 3100}   factConstructor(2100) factDeletingDestructor(2210)
-%   classRep(2300)  methods: {2300, 3200, 3300}   factConstructor(2300)
-%   factDerivedClass(2300, 2100, 0)
+%   classRep(2100)  methods: {2100, 2200, 2210, 3100}   constructor(2100) deletingDestructor(2210)
+%   classRep(2300)  methods: {2300, 3200, 3300}   constructor(2300)
+%   derivedClass(2300, 2100, 0)
 
 % ----------------------------------------------------------------
 % Class Base

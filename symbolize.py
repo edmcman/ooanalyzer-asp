@@ -8,7 +8,7 @@ Usage:
 
 SYMBOLS_FILE: tab-separated: addr  type  idasymbol  demangled_name
 INPUT_FILE:   clingo .out (or any text with decimal addresses); stdin if omitted
--f FILTER:    only print lines containing this substring (e.g. classRep, factDerivedClass)
+-f FILTER:    only print lines containing this substring (e.g. classRep, derivedClass)
 
 Based on pharos/tools/ooanalyzer/tests/ooanalyzer-symbolizer.py.in
 """

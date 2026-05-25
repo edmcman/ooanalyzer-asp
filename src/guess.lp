@@ -7,9 +7,9 @@
 possibleVFTable(VFTable) :-
     possibleVFTableEntry(VFTable, _Offset, Entry),
     possibleVFTableWrite(_Insn, Func, _ThisPtr, _Offset2, _Expanded, VFTable),
-    ( factMethod(Func) ; factMethod(Entry) ).
+    method(Func) ; method(Entry).
 
-% guessVFTable: choose factVFTable or -factVFTable for each candidate.
+% guessVFTable: choose vfTable or -vfTable for each candidate.
 % Counterpart: guessVFTable (guess.pl:180)
-1 { factVFTable(VFTable) ; -factVFTable(VFTable) } 1 :- possibleVFTable(VFTable).
-#heuristic factVFTable(VFTable) : possibleVFTable(VFTable). [1@2, true]
+1 { vfTable(VFTable) ; -vfTable(VFTable) } 1 :- possibleVFTable(VFTable).
+#heuristic vfTable(VFTable) : possibleVFTable(VFTable). [1@2, true]

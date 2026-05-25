@@ -23,9 +23,9 @@
 % All three classes are separated by the "different vftables at same offset" constraint.
 %
 % Expected output (optimal model):
-%   classRep(1100)  members: {1100, 1200, 1300, 1310}   factConstructor(1100) factDeletingDestructor(1310)
-%   classRep(1600)  members: {1600, 1700, 1800, 1810}   factConstructor(1600) factDeletingDestructor(1810)
-%   classRep(1900)  members: {1900, 1950, 1960, 1970}   factConstructor(1900) factDeletingDestructor(1970)
+%   classRep(1100)  members: {1100, 1200, 1300, 1310}   constructor(1100) deletingDestructor(1310)
+%   classRep(1600)  members: {1600, 1700, 1800, 1810}   constructor(1600) deletingDestructor(1810)
+%   classRep(1900)  members: {1900, 1950, 1960, 1970}   constructor(1900) deletingDestructor(1970)
 
 % ----------------------------------------------------------------
 % Class A

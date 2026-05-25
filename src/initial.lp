@@ -295,7 +295,7 @@ methodCallAtOffset(Insn, Caller, Callee, 0) :-
 
 validMethodCallAtOffset(Insn, Caller, Callee, Offset) :-
     methodCallAtOffset(Insn, Caller, Callee, Offset),
-    factMethod(Callee),
+    method(Callee),
     Offset < 0x100000.
 
 callAtOffset(Caller, Callee, Off) :- validMethodCallAtOffset(_, Caller, Callee, Off).

@@ -15,10 +15,10 @@
 %     1500  new virtual:  vt_derived[8]
 %
 % Expected output:
-%   classRep(1100)  {1100, 1200, 1300}   factConstructor(1100)
-%   classRep(1500)  {1500, 2100, 2200}   factConstructor(2100)
+%   classRep(1100)  {1100, 1200, 1300}   constructor(1100)
+%   classRep(1500)  {1500, 2100, 2200}   constructor(2100)
 %   1300 stays in Base's class (not merged into Derived)
-%   factDerivedClass(2100, 1100, 0)
+%   derivedClass(2100, 1100, 0)
 
 % ----------------------------------------------------------------
 % Class Base

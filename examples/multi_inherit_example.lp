@@ -22,11 +22,11 @@
 %     5300  override of B::2200, vt_c_8[0]
 %
 % Expected output:
-%   classRep(1100)  {1100, 1200, 1300, 1310}   factConstructor(1100) factDeletingDestructor(1310)
-%   classRep(2100)  {2100, 2200, 2300, 2310}   factConstructor(2100) factDeletingDestructor(2310)
-%   classRep(5100)  {5100, 5200, 5300}   factConstructor(5100)
-%   factDerivedClass(5100, 1100, 0)
-%   factDerivedClass(5100, 2100, 8)
+%   classRep(1100)  {1100, 1200, 1300, 1310}   constructor(1100) deletingDestructor(1310)
+%   classRep(2100)  {2100, 2200, 2300, 2310}   constructor(2100) deletingDestructor(2310)
+%   classRep(5100)  {5100, 5200, 5300}   constructor(5100)
+%   derivedClass(5100, 1100, 0)
+%   derivedClass(5100, 2100, 8)
 
 % ----------------------------------------------------------------
 % Class A

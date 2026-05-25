@@ -4,14 +4,14 @@
 % RTTI confirms vftables directly and provides authoritative inheritance structure.
 %
 % With RTTI:
-%   - factVFTable(3000) is confirmed by rTTICompleteObjectLocator, not just guessed
-%   - factDerivedClass(2300, 2100, 0) comes from rTTIInheritsFrom (hard derivation)
-%   - factClassHasNoBase(2100's class) from RTTI (Base has no base)
+%   - vfTable(3000) is confirmed by rTTICompleteObjectLocator, not just guessed
+%   - derivedClass(2300, 2100, 0) comes from rTTIInheritsFrom (hard derivation)
+%   - classHasNoBase(2100's class) from RTTI (Base has no base)
 %
 % Expected output:
-%   classRep(2100)  methods: {2100, 2200, 2210, 3100}   factConstructor(2100) factDeletingDestructor(2210)
-%   classRep(2300)  methods: {2300, 3200, 3300}   factConstructor(2300)
-%   factDerivedClass(2300, 2100, 0)
+%   classRep(2100)  methods: {2100, 2200, 2210, 3100}   constructor(2100) deletingDestructor(2210)
+%   classRep(2300)  methods: {2300, 3200, 3300}   constructor(2300)
+%   derivedClass(2300, 2100, 0)
 
 % ----------------------------------------------------------------
 % Structural facts (same as inherit_example.lp)

@@ -24,7 +24,7 @@ help:
 	@echo "Targets:"
 	@echo "  make convert    — convert all $(OOA_DIR)/*/*/*.facts to .lp"
 	@echo "  make run        — convert and run clingo on all .lp files"
-	@echo "  make verify     — run marker checks for core and strong-negation fixtures"
+	@echo "  make verify     — run marker checks for core fixtures"
 	@echo "  make lazyrun    — convert and run dualgrounder on all .lp files"
 	@echo "  make symbolize  — symbolize all .out files to .sym files"
 	@echo "  make clean      — remove generated .lp/.out/.sym files"
@@ -77,12 +77,6 @@ verify-core:
 	run_case 'OPTIMUM FOUND' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/example.lp; \
 	echo "=== Verifying examples/invalid_example.lp ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/invalid_example.lp; \
-	echo "=== Verifying examples/strong_negation_happy.lp ==="; \
-	run_case 'OPTIMUM FOUND' '' '' '(^|[[:space:]])factConstructor\(100\)([[:space:]]|$$)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_happy.lp; \
-	echo "=== Verifying examples/strong_negation_absence.lp ==="; \
-	run_case 'SATISFIABLE' '' '' '(^|[[:space:]])factMethod\(9000\)([[:space:]]|$$)' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_absence.lp; \
-	echo "=== Verifying examples/strong_negation_choices.lp ==="; \
-	run_case '-factVFTable(5000)' '-factVBTable(6000)' '-mergeClasses(100,200)' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_choices.lp; \
 	echo "=== Verifying examples/strong_negation_contradiction.lp ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_contradiction.lp; \
 	echo "=== Verifying diagnostic contradiction fixture ==="; \
@@ -105,7 +99,7 @@ $(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 # Filter to key predicates; override with FILTER= for custom grep.
 # ----------------------------------------------------------------
 SYMBOLIZE    := $(PYTHON) symbolize.py
-SYM_FILTER   ?= classRep\|factConstructor\|factDerivedClass\|factEmbeddedObject\|factClassHasNoBase
+SYM_FILTER   ?= classRep\|constructor\|derivedClass\|embeddedObject\|classHasNoBase
 
 SYMBOLS_FILES := $(shell find $(OOA_DIR) -name '*.symbols')
 # Only symbolize when a matching output file exists

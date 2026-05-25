@@ -6,12 +6,12 @@
 % into its own this-pointer.
 % Counterpart: certainConstructorOrDestructor/1 (rules.pl:731)
 certainConstructorOrDestructor(Method) :-
-    factVFTableWrite(Insn, Method, Offset, VFTable),
+    vfTableWrite(Insn, Method, Offset, VFTable),
     possibleVFTableWrite(Insn, Method, ThisPtr, Offset, VFTable),
     thisParamFuncParameter(Method, ThisPtr).
 
 certainConstructorOrDestructor(Method) :-
-    factVBTableWrite(Insn, Method, Offset, VBTable),
+    vbTableWrite(Insn, Method, Offset, VBTable),
     possibleVBTableWrite(Insn, Method, ThisPtr, Offset, VBTable),
     thisParamFuncParameter(Method, ThisPtr).
 
@@ -20,29 +20,29 @@ certainConstructorOrDestructor(Method) :-
 % ============================================================
 
 % reasonVFTable (843): RTTI evidence confirms a vftable.
-factVFTable(VFTable) :-
+vfTable(VFTable) :-
     rTTIEnabled,
     rTTIValid,
     rTTITDA2VFTable(_TDA, VFTable).                                        % rules.pl:843
 
 % reasonVFTableOverwrite (976): destructor direction — arguments reversed from possibleVFTableOverwrite.
-factVFTableOverwrite(Method, VFTable2, VFTable1, Offset) :-
+vfTableOverwrite(Method, VFTable2, VFTable1, Offset) :-
     possibleVFTableOverwrite(_Insn1, _Insn2, Method, Offset, VFTable1, VFTable2),
-    factVFTable(VFTable1),
-    factVFTable(VFTable2),
+    vfTable(VFTable1),
+    vfTable(VFTable2),
     certainConstructorOrDestructor(Method),
-    -factConstructor(Method).                                              % rules.pl:976
+    not constructor(Method).                                              % rules.pl:976
 
 % reasonVFTableOverwrite (962): constructor direction — VFTable1 overwritten by VFTable2.
-factVFTableOverwrite(Method, VFTable1, VFTable2, Offset) :-
+vfTableOverwrite(Method, VFTable1, VFTable2, Offset) :-
     possibleVFTableOverwrite(_Insn1, _Insn2, Method, Offset, VFTable1, VFTable2),
-    factVFTable(VFTable1),
-    factVFTable(VFTable2),
-    factConstructor(Method).                                               % rules.pl:962
+    vfTable(VFTable1),
+    vfTable(VFTable2),
+    constructor(Method).                                               % rules.pl:962
 
 % reasonVFTableWrite (939): confirmed vftable write.
-factVFTableWrite(Insn, Method, Offset, VFTable) :-
-    factVFTable(VFTable),
+vfTableWrite(Insn, Method, Offset, VFTable) :-
+    vfTable(VFTable),
     possibleVFTableWrite(Insn, Method, _ThisPtr, Offset, VFTable).         % rules.pl:939
 
 % ============================================================
@@ -60,26 +60,26 @@ dethunk(T, M) :- thunk(T, X), dethunk(X, M).
 % ============================================================
 
 % reasonMethod_B: constructors are methods.
-factMethod(M) :- factConstructor(M).                                       % rules.pl:52
+method(M) :- constructor(M).                                       % rules.pl:52
 
 % reasonMethod_C: real destructors are methods.
-factMethod(M) :- factRealDestructor(M).                                    % rules.pl:56
+method(M) :- realDestructor(M).                                    % rules.pl:56
 
 % reasonMethod_D: deleting destructors are methods.
-factMethod(M) :- factDeletingDestructor(M).                                % rules.pl:60
+method(M) :- deletingDestructor(M).                                % rules.pl:60
 
 % reasonMethod_E: symbol class association proves method.
-factMethod(M) :- symbolClass(M, _).                                        % rules.pl:64
+method(M) :- symbolClass(M, _).                                        % rules.pl:64
 
 % reasonMethod_F: any symbol property proves method.
-factMethod(M) :- symbolProperty(M, _).                                     % rules.pl:68
+method(M) :- symbolProperty(M, _).                                     % rules.pl:68
 
-% reasonMethod_G: entries in confirmed vftables are methods (factVFTableEntry already dethunks).
-factMethod(M) :- factVFTableEntry(_, _, M).                                % rules.pl:73
+% reasonMethod_G: entries in confirmed vftables are methods (vfTableEntry already dethunks).
+method(M) :- vfTableEntry(_, _, M).                                % rules.pl:73
 
 % reasonMethod_H: method writes a confirmed vftable into its own this-pointer.
 % Uses 6-arity possibleVFTableWrite directly to retain ThisPtr for the join.
-factMethod(Method) :-
+method(Method) :-
     possibleVFTableWrite(_Insn, Method, ThisPtr, _Offset, _Expanded, VFTable),
-    factVFTable(VFTable),
+    vfTable(VFTable),
     thisParamFuncParameter(Method, ThisPtr).                               % rules.pl:80

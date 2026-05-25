@@ -11,42 +11,42 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 1. Method (`factMethod`)
+## 1. Method (`method`)
 
 ### Deductive (rules.pl:26–177)
-- [ ] `reasonMethod_A` (48) — existing `factMethod`
-- [x] `reasonMethod_B` (52) — `factConstructor` → method
-- [x] `reasonMethod_C` (56) — `factRealDestructor` → method
-- [x] `reasonMethod_D` (60) — `factDeletingDestructor` → method
+- [ ] `reasonMethod_A` (48) — existing `method`
+- [x] `reasonMethod_B` (52) — `constructor` → method
+- [x] `reasonMethod_C` (56) — `realDestructor` → method
+- [x] `reasonMethod_D` (60) — `deletingDestructor` → method
 - [x] `reasonMethod_E` (64) — `symbolClass` → method
 - [x] `reasonMethod_F` (68) — `symbolProperty` → method
-- [x] `reasonMethod_G` (73) — `factVFTableEntry` → method
-- [x] `reasonMethod_H` (80) — `factVFTableWrite` → method
-- [ ] `reasonMethod_I` (85) — `factVBTableWrite` → method
-- [ ] `reasonMethod_J` (99) — callee of `factMethod` + `possibleMethod`
+- [x] `reasonMethod_G` (73) — `vfTableEntry` → method
+- [x] `reasonMethod_H` (80) — `vfTableWrite` → method
+- [ ] `reasonMethod_I` (85) — `vbTableWrite` → method
+- [ ] `reasonMethod_J` (99) — callee of `method` + `possibleMethod`
 - [ ] `reasonMethod_K` (103) — `thisPtrUsage` → method
 - [ ] `reasonMethod_L` (109) — `methodCallAtOffset` → method
 - [ ] `reasonMethod_M` (118) — `thisPtrAllocation` → method
 - [ ] `reasonMethod_N` (133) — thiscall calling convention
 - [ ] `reasonMethod_O` (142) — thiscall via `thisPtrParam`
-- [ ] `reasonMethod_P` (159) — `factClassCallsMethod` → method
+- [ ] `reasonMethod_P` (159) — `classCallsMethod` → method
 
 ### Guess (guess.pl)
 - [ ] `guessMethod_A`–`guessMethod_G` (6 priority variants)
 
 ---
 
-## 2. Constructor (`factConstructor`)
+## 2. Constructor (`constructor`)
 
 ### Deductive (rules.pl:186–242)
-- [ ] `reasonConstructor` (186) — existing `factConstructor`
+- [ ] `reasonConstructor` (186) — existing `constructor`
 - [ ] `reasonConstructor` (192) — `returnsSelf + noCallsBefore + vftableWrite`
 - [ ] `reasonConstructor` (204) — `symbolProperty(constructor)`
-- [ ] `reasonConstructor` (209) — `factVBTableWrite` → constructor
+- [ ] `reasonConstructor` (209) — `vbTableWrite` → constructor
 - [ ] `reasonConstructor` (214) — inheritance special case
 
 ### NOT Constructor (rules.pl:260–373)
-- [ ] `reasonNOTConstructor_A` (276) — existing `factNOTConstructor`
+- [ ] `reasonNOTConstructor_A` (276) — existing `notConstructor`
 - [ ] `reasonNOTConstructor_B` (281) — is real destructor
 - [ ] `reasonNOTConstructor_C` (288) — is deleting destructor
 - [ ] `reasonNOTConstructor_D` (297) — appears in vftable
@@ -68,10 +68,10 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 3. Real Destructor (`factRealDestructor`)
+## 3. Real Destructor (`realDestructor`)
 
 ### Deductive (rules.pl:382–404)
-- [ ] `reasonRealDestructor` (382) — existing `factRealDestructor`
+- [ ] `reasonRealDestructor` (382) — existing `realDestructor`
 - [ ] `reasonRealDestructor` (388) — elimination (only remaining candidate)
 - [ ] `reasonRealDestructor` (394) — `symbolProperty(realDestructor)`
 
@@ -95,10 +95,10 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 4. Deleting Destructor (`factDeletingDestructor`)
+## 4. Deleting Destructor (`deletingDestructor`)
 
 ### Deductive (rules.pl:569–595)
-- [ ] `reasonDeletingDestructor` (569) — existing `factDeletingDestructor`
+- [ ] `reasonDeletingDestructor` (569) — existing `deletingDestructor`
 - [ ] `reasonDeletingDestructor` (575) — `callsDelete` logic
 - [ ] `reasonDeletingDestructor` (585) — calls real destructor + delete
 - [ ] `reasonDeletingDestructor` (595) — `symbolProperty(deletingDestructor)`
@@ -120,10 +120,10 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 5. VFTable (`factVFTable`)
+## 5. VFTable (`vfTable`)
 
 ### Identification (rules.pl:838–923)
-- [ ] `reasonVFTable` (838) — existing `factVFTable`
+- [ ] `reasonVFTable` (838) — existing `vfTable`
 - [ ] `reasonVFTable` (843) — RTTI evidence
 - [ ] `reasonVFTable` (851) — virtual call evidence
 - [ ] `reasonNOTVFTable_A` (883) — address is a method
@@ -136,15 +136,15 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTVFTable_H` (919) — vftable entry chain conflict
 
 ### Write (rules.pl:931–944)
-- [ ] `reasonVFTableWrite` (931) — existing `factVFTableWrite`
-- [x] `reasonVFTableWrite` (939) — `possibleVFTableWrite` + confirmed `factVFTable`
+- [ ] `reasonVFTableWrite` (931) — existing `vfTableWrite`
+- [x] `reasonVFTableWrite` (939) — `possibleVFTableWrite` + confirmed `vfTable`
 
 ### Overwrite (rules.pl:962–992)
 - [x] `reasonVFTableOverwrite` (962) — constructor direction (base → derived)
 - [x] `reasonVFTableOverwrite` (976) — destructor direction (derived → base)
 
 ### Entry (rules.pl:1228–1322)
-- [~] `reasonVFTableEntry` (1228) — existing `factVFTableEntry` (no-op in ASP, skipped)
+- [~] `reasonVFTableEntry` (1228) — existing `vfTableEntry` (no-op in ASP, skipped)
 - [ ] `reasonVFTableEntry` (1233) — offset 0 from class membership
 - [ ] `reasonVFTableEntry` (1239) — VFTable size lower bound
 - [ ] `reasonVFTableEntry` (1247) — propagation from known entry
@@ -182,12 +182,12 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 6. VBTable (`factVBTable`)
+## 6. VBTable (`vbTable`)
 
 ### Deductive (rules.pl:1471–1535)
-- [ ] `reasonVBTable` (1471) — existing `factVBTable`
+- [ ] `reasonVBTable` (1471) — existing `vbTable`
 - [ ] `reasonVBTable` (1476) — `possibleVBTableWrite` evidence
-- [ ] `reasonVBTableWrite` (1487) — existing `factVBTableWrite`
+- [ ] `reasonVBTableWrite` (1487) — existing `vbTableWrite`
 - [ ] `reasonVBTableWrite` (1491) — `possibleVBTableWrite` + confirmed table
 - [ ] `reasonVBTableEntry` (1504) — existing fact
 - [ ] `reasonVBTableEntry` (1509) — from `initialMemory` at table offset
@@ -213,8 +213,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 8. Object-in-Object / Embedded Object
 
 ### ObjectInObject (rules.pl:1552–1729)
-- [ ] `reasonObjectInObject_A` (1564) — from `factDerivedClass`
-- [ ] `reasonObjectInObject_B` (1568) — from `factEmbeddedObject`
+- [ ] `reasonObjectInObject_A` (1564) — from `derivedClass`
+- [ ] `reasonObjectInObject_B` (1568) — from `embeddedObject`
 - [ ] `reasonObjectInObject_C` (1577) — from VFTable write at non-zero offset
 - [ ] `reasonObjectInObject_D` (1589) — from VBTable write pattern
 - [ ] `reasonObjectInObject_E` (1625) — from `callAtOffset` pattern
@@ -237,7 +237,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 9. Derived Class / Inheritance (`factDerivedClass`)
+## 9. Derived Class / Inheritance (`derivedClass`)
 
 ### Deductive (rules.pl:1811–1999)
 - [ ] `reasonDerivedClass_A` (1823) — RTTI `rTTIInheritsFrom`
@@ -326,7 +326,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
-## 11. Class Size (`factClassSizeGTE` / `factClassSizeLTE`)
+## 11. Class Size (`classSizeGTE` / `classSizeLTE`)
 
 ### Size Lower Bound (rules.pl:3487–3661)
 - [ ] `reasonClassSizeGTE_A` (3500) — existing fact

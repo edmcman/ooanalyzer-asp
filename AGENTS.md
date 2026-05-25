@@ -37,7 +37,7 @@ original module set.
 clingo ooanalyzer.lp examples/example.lp              # find optimal model
 clingo ooanalyzer.lp examples/example.lp 0            # enumerate all models
 clingo ooanalyzer.lp examples/invalid_example.lp      # should print UNSATISFIABLE
-clingo ooanalyzer.lp examples/inherit_example.lp      # factDerivedClass(2300, 2100, 0)
+clingo ooanalyzer.lp examples/inherit_example.lp      # derivedClass(2300, 2100, 0)
 clingo ooanalyzer.lp examples/rtti_example.lp         # same but RTTI-driven, fewer models
 clingo ooanalyzer.lp examples/multi_inherit_example.lp  # C : A(0), B(8)
 clingo ooanalyzer.lp examples/inherited_entry_example.lp  # derived inherits un-overridden entry
@@ -85,7 +85,7 @@ The prototype accepts **two vocabularies**:
 | `callTarget(Caller, Callee)` | Callee is directly called by Caller |
 | `callAtOffset(Caller, Callee, Off)` | Callee is called by Caller passing this+Off |
 | `thunk(Thunk, Target)` | Thunk is a JMP-only stub; Target is the real function |
-| `purecall(M)` | M is a pure-virtual stub (included in `factMethod`; blocked from merge rules) |
+| `purecall(M)` | M is a pure-virtual stub (included in `method`; blocked from merge rules) |
 | `symbolClass(M, Class)` | Debug symbol: M belongs to Class |
 | `symbolProperty(M, Prop)` | Prop \in {constructor, realDestructor, deletingDestructor} |
 | `rTTICompleteObjectLocator(V, TDA)` | COL at V-8: vftable V belongs to type TDA |

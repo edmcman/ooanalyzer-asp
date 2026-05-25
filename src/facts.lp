@@ -64,9 +64,9 @@
 #defined genericThisPtrABIParam/1.
 #defined thisPtrUsage/4.
 #defined thisPtrUsage/3.
-#defined factClassSizeLTE/2.
-#defined factClassSizeGTE/2.
-#defined factVFTableSizeLTE/2.
+#defined classSizeLTE/2.
+#defined classSizeGTE/2.
+#defined vfTableSizeLTE/2.
 #defined certainMemberOnClass/3.
 
 % ----------------------------------------------------------------

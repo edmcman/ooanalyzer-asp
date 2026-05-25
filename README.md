@@ -23,7 +23,7 @@ Or use the Makefile:
 make examples/ooa/oo.lp   # convert one .facts file
 make convert              # convert all examples/ooa/*.facts
 make run                  # convert and run clingo on all of them
-make verify               # run marker checks for core and strong-negation fixtures
+make verify               # run marker checks for core fixtures
 make clean                # remove generated .lp files
 ```
 
@@ -41,7 +41,7 @@ artifact path for the larger real-fixture corpus under `examples/ooa/`.
 |---|---|
 | [`ooanalyzer.lp`](ooanalyzer.lp) | Entry point: `#include`s the modules below |
 | [`src/facts.lp`](src/facts.lp) | Input vocabulary and `#defined` directives |
-| [`src/guess.lp`](src/guess.lp) | Guesses (`{ factVFTable }`, `{ mergeClasses }`, etc.) and merge-candidate domain restriction |
+| [`src/guess.lp`](src/guess.lp) | Guesses (`{ vfTable }`, `{ mergeClasses }`, etc.) and merge-candidate domain restriction |
 | [`src/rules.lp`](src/rules.lp) | Forward-reasoning rules: thunk resolution, derived facts, ctor/dtor identification, inheritance, merges, class computation |
 | [`src/insanity.lp`](src/insanity.lp) | Sanity checks (integrity constraints) |
 | [`src/optimize.lp`](src/optimize.lp) | Lexicographic optimization directives |
