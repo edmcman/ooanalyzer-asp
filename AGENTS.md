@@ -27,7 +27,9 @@ original module set.
 | `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
 | `examples/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
 | `examples/ooa/` | Real OOAnalyzer test files (`.facts`, `.symbols`, `.json`, `.results`) organized by build: `ooex_vs2008/Debug`, `ooex_vs2010/Lite`, etc. |
+| `src/old/` | v1 Clingo modules (rules.lp, guess.lp, insanity.lp, optimize.lp, output.lp) — reference only |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
+| `TODO.md` | Rule coverage tracker: all `reason*`/`guess*`/`insanity*` rules, sorted by entity, with port status |
 
 ## Running
 
@@ -132,4 +134,4 @@ See `src/initial.lp` for the exact derivation rules.
   which is correct behavior. Computing the actual offset from a virtual base's BCD
   entry (WhereP != -1) is future work.
 
-See [TODO.md](TODO.md) for the full bidirectional coverage map.
+See [TODO.md](TODO.md) for the full rule coverage tracker (217 rules across 12 entity groups).
