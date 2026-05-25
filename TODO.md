@@ -94,7 +94,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `guessFinalRealDestructor` (4 variants)
 
 ### Constraints (insanity.pl)
-- [ ] `insanityTwoRealDestructorsOnClass` — at most one real destructor per class
+- [x] `insanityTwoRealDestructorsOnClass` — at most one real destructor per class
 
 ---
 

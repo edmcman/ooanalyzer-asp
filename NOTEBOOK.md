@@ -13,14 +13,13 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ## Files created/modified
 - `AGENTS.md` — porting guidelines
-- `src/util/facts.lp` — input vocabulary and `#defined` directives for full-arity and simplified predicates
+- `src/util/facts.lp` — input vocabulary and `#defined` directives; reorganized into Derived / Base / Not-yet-implemented sections
 - `src/util/initial.lp` — projections and derivations from full-arity OOAnalyzer `.facts`:
   - `pointerSize/1` from `fileInfo`
-  - `possibleVFTableWrite/3`, `possibleVBTableWrite/3` (drop Insn, ThisPtr, ExpandedThisPtr)
+  - `possibleVFTableWrite/5`, `possibleVBTableWrite/5` (drop ExpandedThisPtr from /6)
   - `possibleVFTableEntry/3` — recursive walk over `initialMemory` from confirmed writes and RTTI COLs
   - `possibleVBTableEntry/3` — recursive walk over `initialMemory` from confirmed writes
   - `possibleVFTableOverwrite/6` (initial.pl:383)
-  - `callTarget/2`, `callsDelete/1`, `symbolClass/2` — arity reductions
   - `rTTITDA2VFTable/2` (rtti.pl:19)
   - `rTTIEnabled` / `rTTIValid` and full RTTI validation chain (`rTTISelfRef`, `rTTIInvalidBaseAttributes`, `rTTIInvalidHierarchyAttributes`, `rTTIAncestorOf`, `rTTIInheritsIndirectlyFrom`, `rTTIDirectNonVirtual`, etc.)
   - `possibleMethod/1` — from callingConvention, thunk, noCallsAfter, noCallsBefore, returnsSelf, purecall, callTarget
@@ -29,13 +28,14 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
   - `thisPtrParam/2`, `thisParamFuncParameter/2`, `thisParamCallParameter/4`
   - `dethunk/2` (initial.pl:313) — thunk chain resolution
   - `possiblyVirtual/1` (initial.pl:338) — method appears, possibly via thunk, in a possible vftable entry
-  - `methodCallAtOffset/4`, `validMethodCallAtOffset/4`, `callAtOffset/3` (initial.pl:175-191)
+  - `methodCallAtOffset/4`, `validMethodCallAtOffset/4` (initial.pl:175-191)
   - `thisPtrUsage/4` (initial.pl:193-205)
-- `src/modules/methods.lp` — `reasonMethod_B`–`H`
-- `src/modules/ctorsdtors.lp` — constructor/destructor symbol rules, guessConstructor1/2, `certainConstructorOrDestructor/1`, sanity checks
-- `src/modules/vftables.lp` — `reasonVFTable`, `reasonVFTableWrite`, `reasonVFTableOverwrite`, `vfTableEntry`, `guessVFTable`, `insanityConstructorInVFTable`
-- `src/modules/merges.lp` — `reasonMergeClasses_G/J`, `sortPair`/`mergeEntity`/`merged`/`sameClass`, `guessMergeClasses_B/D`
+- `src/modules/methods.lp` — `reasonMethod_B`–`H`, `guessMethod` (choose method or ¬method for each possibleMethod)
+- `src/modules/ctorsdtors.lp` — constructor/destructor symbol rules, guessConstructor1/2, `certainConstructorOrDestructor/1` choice rule, sanity checks, `#maximize` constructor reward
+- `src/modules/vftables.lp` — `reasonVFTable`, `reasonVFTableWrite`, `reasonVFTableOverwrite`, `vfTableEntry`, `guessVFTable`, `insanityConstructorInVFTable`, `#maximize` vfTable reward
+- `src/modules/merges.lp` — `reasonMergeClasses_G/J`, `sortPair`/`mergeEntity`/`merged`/`sameClass`, `guessMergeClasses_B/D`, `#maximize` merge reward
 - `src/util/sanity.lp` — `#show` and diagnostic infrastructure
+- `examples/*.lp` — all hand-written examples rewritten to use Prolog-matching arities (possibleVFTableWrite/5, callTarget/3, insnCallsDelete/3, symbolClass/4, methodCallAtOffset/4, etc.)
 - `TODO.md` — rule coverage tracker
 
 ## Rules ported
@@ -60,11 +60,10 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ### initial.lp
 - `pointerSize/1`
-- `possibleVFTableWrite/5` and `possibleVBTableWrite/5` projections, plus simplified `possibleVFTableWrite/3`, `possibleVBTableWrite/3`
+- `possibleVFTableWrite/5` and `possibleVBTableWrite/5` projections (drop ExpandedThisPtr from /6)
 - `possibleVFTableEntry/3` — base cases from writes/RTTI COL + recursive walk
 - `possibleVBTableEntry/3` — base case from writes + recursive walk
 - `possibleVFTableOverwrite/6`
-- `callTarget/2`, `callsDelete/1`, `symbolClass/2`
 - `rTTITDA2VFTable/2` (rtti.pl:19)
 - `rTTIEnabled` / `rTTIValid` and full validation chain (self-reference, base attributes, hierarchy attributes, direct inheritance P/V checks)
 - `possibleMethod/1`
@@ -72,45 +71,34 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `thisPtrParam/2`, `thisParamFuncParameter/2`, `thisParamCallParameter/4`
 - `dethunk/2` (initial.pl:313)
 - `possiblyVirtual/1` (initial.pl:338)
-- `methodCallAtOffset/4`, `validMethodCallAtOffset/4`, `callAtOffset/3`
+- `methodCallAtOffset/4`, `validMethodCallAtOffset/4`
 - `thisPtrUsage/4`
 
 ### guess.lp
 - `possibleVFTable/1` (guess.pl:175)
-- `guessVFTable` (guess.pl:180)
-- `guessMergeClasses_B` (guess.pl:1050) — vftable writer may merge with vftable entries
+- `guessVFTable` (guess.pl:180) with `#maximize` reward
+- `guessMergeClasses_B` (guess.pl:1050) — vftable writer may merge with vftable entries, with `#maximize` reward
 - `guessMergeClasses_D` (guess.pl:1215) — methods writing same vftable at same offset may merge
+- `guessMethod` (guess.pl:382) — choose method or ¬method for each possibleMethod
+- `guessConstructor1` / `guessConstructor2` (guess.pl:574, 592) with `#maximize` rewards
 
 ### insanity.lp
 - `insanityConstructorInVFTable` (insanity.pl:49) — constructors cannot appear in confirmed vftable entries
-- `insanityMultipleConstructorDestructorKinds` — user-approved ASP check: at most one of constructor/realDestructor/deletingDestructor
+- `insanityMultipleConstructorDestructorKinds` — at most one of constructor/realDestructor/deletingDestructor
+- `insanityTwoRealDestructorsOnClass` (insanity.pl:253) — at most one real destructor per class
 
 ## Where we are now
-Last completed: **guessConstructor1 and guessConstructor2** (src/modules/ctorsdtors.lp)
+Last completed batch:
+1. **Migrate examples and solver to Prolog-matching predicate arities** — removed Clingo-only simplified projections (`/3`, `/2`, `/1`), updated solver modules and all hand-written examples to use the arities the Prolog actually uses.
+2. **Add `#maximize` rewards** for vftables (`@2`), merges (`@2`), and constructors (`@0`).
+3. **Add `insanityTwoRealDestructorsOnClass`** — `invalid_example.lp` and `strong_negation_contradiction.lp` now correctly UNSAT.
+4. **Add `guessMethod`** — `possibleMethod` candidates now get method/¬method choices so examples produce non-empty models.
 
-```prolog
-guessConstructor1Domain(Method) :-
-    method(Method),
-    possibleConstructor(Method),
-    not possiblyVirtual(Method),
-    possibleVFTableWrite(_, Method, _, _, _),
-    not uninitializedReads(Method).
-
-guessConstructor2Domain(Method) :-
-    method(Method),
-    possibleConstructor(Method),
-    not possiblyVirtual(Method),
-    possibleVFTableWrite(_, Method, _, _, _).
-
-guessConstructorDomain(Method) :- guessConstructor1Domain(Method).
-guessConstructorDomain(Method) :- guessConstructor2Domain(Method).
-
-1 { constructor(Method) ; -constructor(Method) } 1 :- guessConstructorDomain(Method).
-
-#heuristic constructor(Method) : guessConstructor1Domain(Method). [2@0, true]
-#heuristic constructor(Method) : guessConstructor2Domain(Method). [1@0, true]
-```
+All 10 hand-written examples pass:
+- SAT: `example.lp`, `inherit_example.lp`, `inherited_entry_example.lp`, `multi_inherit_example.lp`, `rtti_example.lp`, `selfdefeating.lp`, `synthetic_merge.lp`, `virtual_base_example.lp`
+- UNSAT: `invalid_example.lp`, `strong_negation_contradiction.lp`
 
 ## Suggested next steps
 - Propose `guessConstructor3` (guess.pl:612): normal non-virtual case, not in a vftable, doesn't write a vftable, and has no uninitialized reads.
 - Propose `guessConstructor4` (guess.pl:631): normal virtual case, writes a vftable, has uninitialized reads, but is possibly virtual.
+- Port `reasonMethod_I`–`O` (rules.pl:85–159) for broader method identification from call chains and this-pointer usage.
