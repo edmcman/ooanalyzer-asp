@@ -76,10 +76,18 @@ def main():
 
     try:
         for line in inp:
-            line = symbolize(line, addr_map)
-            if args.filter and args.filter not in line:
-                continue
-            out.write(line)
+            tokens = line.split()
+            if tokens and all(re.match(r'^\w+\(', t) for t in tokens):
+                for fact in tokens:
+                    fact = symbolize(fact, addr_map)
+                    if args.filter and args.filter not in fact:
+                        continue
+                    out.write(fact + '\n')
+            else:
+                line = symbolize(line, addr_map)
+                if args.filter and args.filter not in line:
+                    continue
+                out.write(line)
     finally:
         if args.input_file:
             inp.close()
