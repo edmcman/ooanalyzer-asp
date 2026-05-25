@@ -102,6 +102,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonDeletingDestructor` (575) — elimination (only remaining candidate)
 - [x] `reasonDeletingDestructor` (585) — delete(this) logic
 - [x] `reasonDeletingDestructor` (595) — `symbolProperty(deletingDestructor)`
+- [x] helper `possiblyVirtual/1` (initial.pl:338) — possible vftable entry evidence
 
 ### NOT Deleting Destructor (rules.pl:612–712)
 - [ ] `reasonNOTDeletingDestructor_A` (627) — existing `factNOTDeletingDestructor`

@@ -96,16 +96,6 @@ vfTableEntry(VFTable, Offset, Entry) :-
     possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1247
 
 % ============================================================
-% THUNK RESOLUTION
-% ============================================================
-
-% Follow thunk chains to the real implementing method.
-dethunk(E, E) :- possibleVFTableEntry(_, _, E), not thunk(E, _).
-dethunk(T, T) :- thunk(_, T), not thunk(T, _).
-dethunk(M, M) :- possibleMethod(M), not thunk(M, _).
-dethunk(T, M) :- thunk(T, X), dethunk(X, M).
-
-% ============================================================
 % METHOD IDENTIFICATION
 % ============================================================
 

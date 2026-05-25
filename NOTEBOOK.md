@@ -13,8 +13,8 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ## Files created/modified
 - `AGENTS.md` — porting guidelines
-- `src/initial.lp` — rTTITDA2VFTable/2, rTTIEnabled/rTTIValid flags, possibleVFTableWrite/5, possibleVFTableOverwrite/6, possibleConstructor/1, possibleDestructor/1
-- `src/rules.lp` — reasonVFTable (843), dethunk/2, reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247), reasonMergeClasses_G/J, constructor/destructor symbol and delete(this) rules
+- `src/initial.lp` — rTTITDA2VFTable/2, rTTIEnabled/rTTIValid flags, possibleVFTableWrite/5, possibleVFTableOverwrite/6, possibleConstructor/1, possibleDestructor/1, dethunk/2, possiblyVirtual/1
+- `src/rules.lp` — reasonVFTable (843), reasonMethod_B–H, reasonVFTableWrite (939), reasonVFTableOverwrite (962, 976), certainConstructorOrDestructor/1, vfTableEntry (1233, 1239, 1247), reasonMergeClasses_G/J, constructor/destructor symbol and delete(this) rules
 - `src/insanity.lp` — insanityConstructorInVFTable, insanityMultipleConstructorDestructorKinds
 - `src/facts.lp` — #defined vfTableSizeGTE/2 (referenced by 1247, no rule yet)
 - `src/guess.lp` — possibleVFTable/1, guessVFTable choice rule + heuristic, guessMergeClasses_B/D
@@ -24,7 +24,6 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ### rules.lp
 - `reasonVFTable` (rules.pl:843) — RTTI evidence
-- `dethunk/2` — thunk chain resolution
 - `reasonMethod_B/C/D/E/F/G/H` (rules.pl:52–80)
 - `reasonVFTableWrite` (rules.pl:939)
 - `reasonVFTableOverwrite` (rules.pl:962) — constructor direction
@@ -41,6 +40,8 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `reasonDeletingDestructor` (rules.pl:595) — symbolProperty(deletingDestructor)
 
 ### initial.lp
+- `dethunk/2` (initial.pl:313) — thunk chain resolution
+- `possiblyVirtual/1` (initial.pl:338) — method appears, possibly via thunk, in a possible vftable entry
 - `rTTITDA2VFTable/2` (rtti.pl:19)
 - `rTTIEnabled` / `rTTIValid` — #const flags
 - `possibleVFTableWrite/5` (initial.pl:13)

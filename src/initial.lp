@@ -266,6 +266,22 @@ thisParamCallParameter(Insn, CallerFunc, Callee, ThisPtr) :-
     callParameter(Insn, CallerFunc, Param, ThisPtr).
 
 % ----------------------------------------------------------------
+% dethunk / possiblyVirtual
+% Counterparts: dethunk (initial.pl:313), possiblyVirtual/1 (initial.pl:338)
+% ----------------------------------------------------------------
+
+% Follow thunk chains to the real implementing method.
+dethunk(E, E) :- possibleVFTableEntry(_, _, E), not thunk(E, _).
+dethunk(T, T) :- thunk(_, T), not thunk(T, _).
+dethunk(M, M) :- possibleMethod(M), not thunk(M, _).
+dethunk(T, M) :- thunk(T, X), dethunk(X, M).
+
+% possiblyVirtual/1: method appears, possibly via thunk, in a possible vftable entry.
+possiblyVirtual(Method) :-
+    possibleVFTableEntry(_VFTable, _Offset, Entry),
+    dethunk(Entry, Method).
+
+% ----------------------------------------------------------------
 % thisPtrUsage: at call site Insn within Function, ThisPtr is passed
 % as the this-pointer to Method.
 % Counterpart: initial.pl:193-205
