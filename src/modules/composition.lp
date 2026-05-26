@@ -169,6 +169,11 @@ purecallNotMostDerivedReward(Derived, Base, Off) :-
 % derivedClass and embeddedObject are mutually exclusive.
 :- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,1960,2025 / insanity.pl:308
 
+% insanityNoBaseConsistency: a class with no base cannot also be a derived class.
+insanity(noBaseConsistency, Class) :-
+    classHasNoBase(Class),
+    derivedClass_closed(Class, _, _).                                    % insanity.pl:8
+
 % ============================================================
 % OUTPUT
 % ============================================================

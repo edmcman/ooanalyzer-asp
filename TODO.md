@@ -287,7 +287,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `guessCommitClassHasNoDerived`
 
 ### Constraints (insanity.pl)
-- [ ] `insanityNoBaseConsistency` — `hasNoBase` ∩ `derivedClass` = ∅
+- [x] `insanityNoBaseConsistency` — `hasNoBase` ∩ `derivedClass` = ∅
 
 ---
 
