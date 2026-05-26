@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
   vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 8 (Time: 0.061s)
+Answer: 8 (Time: 0.257s)
 method(4297336) method(4264136) method(4264441) method(4265328) method(4265504) method(4265984) method(4266720) vfTable(4286272) vfTable(4286296) vfTable(4286316) sameClass(4297336,4297336) sameClass(4264136,4264136) sameClass(4264441,4264441) sameClass(4265328,4265328) sameClass(4265504,4265504) sameClass(4265984,4265984) sameClass(4266720,4266720) sameClass(4286272,4286272) sameClass(4286296,4286296) sameClass(4286316,4286316) vfTableEntry(4286316,0,4264136) vfTableEntry(4286296,0,4264441) vfTableEntry(4286272,0,4264441) vfTableWrite(4266732,4266720,0,4286316) vfTableWrite(4265542,4265504,0,4286296) vfTableWrite(4265374,4265328,0,4286272) vfTableWrite(4266022,4265984,0,4286272) -mergeClasses(4286272,4286296) -mergeClasses(4286272,4286316) -mergeClasses(4286296,4286316) -mergeClasses(4265328,4266720) -mergeClasses(4265504,4266720) -mergeClasses(4265984,4266720) method(4265616) method(4265712) deletingDestructor(4266768) method(4266768) classCallsMethod(4266768,4297336) classCallsMethod(4265328,4265616) classCallsMethod(4265328,4265712) classCallsMethod(4265872,4265984) classCallsMethod(4286272,4265616) classCallsMethod(4286296,4265616) classCallsMethod(4286316,4266768) sameClass(4265616,4265616) sameClass(4265712,4265712) sameClass(4266768,4266768) sameClass(4265328,4265504) mergeClasses(4264136,4266720) mergeClasses(4264441,4265504) mergeClasses(4264441,4265328) mergeClasses(4264441,4265984) mergeClasses(4265328,4265984) sameClass(4266720,4264136) sameClass(4265984,4264441) sameClass(4265984,4265328) sameClass(4265504,4264441) sameClass(4265328,4265984) sameClass(4265328,4264441) sameClass(4264441,4265504) sameClass(4264441,4265328) sameClass(4264441,4265984) sameClass(4264136,4266720) sameClass(4265504,4265328) sameClass(4265504,4265984) sameClass(4265984,4265504) constructor(4265328) constructor(4265504) constructor(4265984) constructor(4266720)
 OPTIMUM FOUND
 
@@ -18,5 +18,5 @@ Models       : 8
   Optimum    : yes
 Optimization : -53 -20
 Calls        : 1
-Time         : 0.061s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.061s
+Time         : 0.257s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.100s
