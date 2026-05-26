@@ -1,15 +1,4 @@
 % ============================================================
-% DEFINED
-% ============================================================
-
-#defined objectInObject/3.
-#defined objectInObject_closed/3.
-#defined embeddedObject/3.
-
-% objectInObject/3 is closed over sameClass/2 at its defining rules, so
-% classRelationship/2 only needs to compute reachability over objectInObject.
-
-% ============================================================
 % RULES
 % ============================================================
 
@@ -101,12 +90,13 @@ objectInObject_closed(B, C, Off) :- objectInObject_closed(A, C, Off), sameClass(
 objectInObject_closed(A, C, Off) :- objectInObject_closed(A, B, Off), sameClass(B, C).
 
 % reasonClassRelationship_internal: direct object composition/inheritance.
-classRelationship(DerivedClass, BaseClass) :-
+% classRelationship_closed/2 is closed over sameClass/2 via its defining rules.
+classRelationship_closed(DerivedClass, BaseClass) :-
     objectInObject_closed(DerivedClass, BaseClass, _Offset).                    % rules.pl:2114
 
 % reasonClassRelationship_internal: transitive object composition/inheritance.
-classRelationship(DerivedClass, BaseClass) :-
-    classRelationship(DerivedClass, MiddleClass),
+classRelationship_closed(DerivedClass, BaseClass) :-
+    classRelationship_closed(DerivedClass, MiddleClass),
     objectInObject_closed(MiddleClass, BaseClass, _Offset).                     % rules.pl:2119
 
 % reasonClassHasNoBase (2136): RTTI says this class has no base class.

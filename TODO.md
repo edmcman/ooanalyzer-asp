@@ -310,7 +310,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_F` (3158) — different VFTable sizes
 - [ ] `reasonNOTMergeClasses_G` (3177) — both are bases of same class at different offsets
 - [x] `reasonNOTMergeClasses_I` (3196) — different RTTI TDAs/classes
-- [ ] `reasonNOTMergeClasses_J` (3212) — one has no base, other has a base
+- [x] `reasonNOTMergeClasses_J` (3212) — classes in a composition/inheritance relationship cannot merge
 - [x] `reasonNOTMergeClasses_K` (3222) — conflicting symbol class names
 - [ ] `reasonNOTMergeClasses_L` (3240) — overlapping object layouts
 - [ ] `reasonNOTMergeClasses_M` (3256) — size contradiction (GTE > LTE)

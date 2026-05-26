@@ -36,6 +36,12 @@ mergeClasses(A, B) :-
     not vfTableWrite(_, Method1, 0, VFTable2),
     not vfTableWrite(_, Method2, 0, VFTable1).                              % rules.pl:3123
 
+% reasonNOTMergeClasses_J: classes in a composition/inheritance relationship cannot merge.
+% Counterpart: reasonNOTMergeClasses_J (rules.pl:3212)
+-mergeClasses(A, B) :-
+    classRelationship_closed(X, Y),
+    sortPair(X, Y, A, B).                                                % rules.pl:3212
+
 % reasonNOTMergeClasses_I: RTTI says two TDAs map to different classes.
 % Counterpart: reasonNOTMergeClasses_I (rules.pl:3196)
 -mergeClasses(A, B) :-
