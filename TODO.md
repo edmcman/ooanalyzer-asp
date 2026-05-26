@@ -32,7 +32,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonMethod_P` (159) — `classCallsMethod` → method
 
 ### Guess (guess.pl)
-- [ ] `guessMethod_A`–`guessMethod_G` (6 priority variants)
+- [x] `guessMethod_A` (guess.pl:382)
+- [ ] `guessMethod_B`–`guessMethod_G` (remaining priority variants)
 
 ---
 
@@ -128,7 +129,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Identification (rules.pl:838–923)
 - [ ] `reasonVFTable` (838) — existing `vfTable`
-- [ ] `reasonVFTable` (843) — RTTI evidence
+- [x] `reasonVFTable` (843) — RTTI evidence
 - [ ] `reasonVFTable` (851) — virtual call evidence
 - [ ] `reasonNOTVFTable_A` (883) — address is a method
 - [ ] `reasonNOTVFTable_B` (887) — address is a VBTable
@@ -174,7 +175,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonMergeVFTables` (2722) — pending VFTable merges
 
 ### Guess (guess.pl)
-- [ ] `guessVFTable`
+- [x] `guessVFTable` (guess.pl:180)
 - [ ] `guessVFTableEntry1` (priority 1)
 - [ ] `guessVFTableEntry2` (priority 2)
 
