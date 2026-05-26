@@ -109,14 +109,28 @@ classRelationship(DerivedClass, BaseClass) :-
     classRelationship(DerivedClass, MiddleClass),
     objectInObject_closed(MiddleClass, BaseClass, _Offset).                     % rules.pl:2119
 
+% reasonClassHasNoBase (2136): RTTI says this class has no base class.
+classHasNoBase(Class) :-
+    rTTIEnabledAndValid,
+    rTTINoBase(TDA),
+    rTTITDA2Class(TDA, Class).                                             % rules.pl:2136
+
+% reasonClassHasNoDerived (2152): RTTI says no class derives from this one.
+classHasNoDerived(Class) :-
+    rTTIEnabledAndValid,
+    rTTITDA2Class(TDA, Class),
+    not rTTIAncestorOf(_, TDA).                                            % rules.pl:2152
+
 % ============================================================
 % GUESS
 % ============================================================
 
-% guessDerivedClass: every OIO is classified as embedded or derived (at least one).
-% When derivedClass has no support the choice is deterministic (reasonEmbeddedObject_A).
+% guessDerivedClass / reasonDerivedClass_C: every OIO is classified as embedded or derived
+% (at least one). When derivedClass has no support the choice is deterministic
+% (reasonEmbeddedObject_A). The derived branch encodes reasonDerivedClass_C:
+% objectInObject + NOT embeddedObject → derivedClass.
 1 { embeddedObject(Outer, Inner, Off) ; derivedClass(Outer, Inner, Off) } :-
-    objectInObject(Outer, Inner, Off).                    % guess.pl:317 / rules.pl:1740
+    objectInObject(Outer, Inner, Off).          % guess.pl:317 / rules.pl:1740 / rules.pl:1960
 
 % ============================================================
 % REWARDS
@@ -151,9 +165,9 @@ purecallNotMostDerivedReward(Derived, Base, Off) :-
 % CONSTRAINTS
 % ============================================================
 
-% reasonNOTEmbeddedObject / reasonNOTDerivedClass / insanityEmbeddedAndNot:
+% reasonNOTEmbeddedObject / reasonNOTDerivedClass / reasonDerivedClass_C / insanityEmbeddedAndNot:
 % derivedClass and embeddedObject are mutually exclusive.
-:- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,2025 / insanity.pl:308
+:- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,1960,2025 / insanity.pl:308
 
 % ============================================================
 % OUTPUT

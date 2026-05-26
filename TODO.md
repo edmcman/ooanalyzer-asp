@@ -248,7 +248,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Deductive (rules.pl:1811–1999)
 - [x] `reasonDerivedClass_A` (1823) — identity
 - [x] `reasonDerivedClass_B` (1834) — VFTable overwrite pattern (ctor sequence)
-- [ ] `reasonDerivedClass_C` (1960) — shared VFTable entry at offset
+- [x] `reasonDerivedClass_C` (1960) — objectInObject + NOT embeddedObject → derivedClass (ported as guess rule + mutual-exclusion constraint in composition.lp)
 - [x] `reasonDerivedClass_D` (1968) — RTTI non-virtual base
 - [x] `reasonDerivedClass_E` (1981) — RTTI virtual base via VBTable entry
 - [ ] `reasonDerivedClass_F` (1999) — VFTable belongs-to-class + overwrite
@@ -265,8 +265,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Has No Base (rules.pl:2131–2175)
 - [x] `reasonClassHasNoBase` (2131) — existing fact (identity rule; covered by input fact architecture)
-- [ ] `reasonClassHasNoBase` (2136) — no base evidence found
-- [ ] `reasonClassHasNoDerived` (2152) — no derived evidence found
+- [x] `reasonClassHasNoBase` (2136) — RTTI rTTINoBase → classHasNoBase
+- [x] `reasonClassHasNoDerived` (2152) — RTTI TDA with no rTTIAncestorOf entry → classHasNoDerived
 
 ### Has Unknown Base (rules.pl:2175–2339)
 - [ ] `reasonClassHasUnknownBase_A` (2188) — VFTable entry inherited but base unknown

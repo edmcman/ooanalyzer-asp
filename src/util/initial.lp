@@ -227,6 +227,12 @@ rTTIEnabledAndValid :-
     rTTIEnabled,
     rTTIValid.
 
+% TDA has no base classes: its own BCD entry lists NumBases = 0.
+% Counterpart: rTTINoBase/1 (rtti.pl:66-69)
+rTTINoBase(TDA) :-
+    rTTITypeDescriptor(TDA, _, _, _),
+    rTTIBaseClassDescriptor(_, TDA, 0, _, _, _, _, _).
+
 % Counterpart: rTTITDA2Class/2 (rtti.pl:26-31)
 rTTITDA2Class(TDA, Class) :-
     rTTITDA2VFTable(TDA, VFTable),
