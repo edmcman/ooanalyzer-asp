@@ -75,6 +75,21 @@ derivedClass_closed(DerivedClass, BaseClass2, ObjectOffset) :-
     derivedClass_closed(DerivedClass, BaseClass1, ObjectOffset),
     sameClass(BaseClass1, BaseClass2).
 
+% reasonDerivedClassRelationship (2063): base case — direct derivation.
+derivedClassRelationship(DerivedMethod, BaseMethod, Off) :-
+    derivedClass(DerivedMethod, BaseMethod, Off).
+
+% reasonDerivedClassRelationship (2069): transitive through intermediate class.
+derivedClassRelationship(DerivedMethod, BaseMethod, Off) :-
+    derivedClassRelationship(DerivedMethod, MiddleMethod1, Off1),
+    sameClass(MiddleMethod1, MiddleMethod2),
+    derivedClassRelationship(MiddleMethod2, BaseMethod, Off2),
+    Off = Off1 + Off2.
+
+% Arity-2 variant.
+derivedClassRelationship(DerivedMethod, BaseMethod) :-
+    derivedClassRelationship(DerivedMethod, BaseMethod, _).
+
 % objectInObject_B / objectInObject_C: OIO holds when either inheritance or
 % embedding is known for the same witness methods.
 objectInObject(Outer, Inner, Off) :- derivedClass(Outer, Inner, Off).   % rules.pl:1568
