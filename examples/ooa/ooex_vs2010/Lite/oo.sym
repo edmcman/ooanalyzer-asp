@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.624s)
+Answer: 1 (Time: 0.610s)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_cast::`vector deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::ctype<char>::`vector deleting destructor'(unsigned int))
@@ -162,6 +162,42 @@ sameClass(const type_info::`vftable',const type_info::`vftable')
 sameClass(const std::bad_exception::`vftable',const std::bad_exception::`vftable')
 sameClass(const Cls3::`vftable'{for `Cls1'},const Cls3::`vftable'{for `Cls2'})
 sameClass(const Cls3::`vftable'{for `Cls2'},const Cls3::`vftable'{for `Cls1'})
+derivedClass(const std::runtime_error::`vftable',const std::exception::`vftable',0)
+derivedClass(const std::system_error::`vftable',const std::runtime_error::`vftable',0)
+derivedClass(const std::ios_base::failure::`vftable',const std::system_error::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls2'},const Cls1::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls1'},const Cls1::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls2'},const Cls2::`vftable',12)
+derivedClass(const Cls3::`vftable'{for `Cls1'},const Cls2::`vftable',12)
+derivedClass(const std::bad_alloc::`vftable',const std::exception::`vftable',0)
+derivedClass(const std::basic_ios<char, CHAR_TRAITS>::`vftable',const std::ios_base::`vftable',0)
+derivedClass(const std::ctype<char>::`vftable',const std::locale::facet::`vftable',0)
+derivedClass(const std::basic_filebuf<char, CHAR_TRAITS>::`vftable',const std::basic_streambuf<char, CHAR_TRAITS>::`vftable',0)
+derivedClass(const std::codecvt<char, char, int>::`vftable',const std::locale::facet::`vftable',0)
+derivedClass(const std::logic_error::`vftable',const std::exception::`vftable',0)
+derivedClass(const std::length_error::`vftable',const std::logic_error::`vftable',0)
+derivedClass(const std::out_of_range::`vftable',const std::logic_error::`vftable',0)
+derivedClass(const std::locale::_Locimp::`vftable',const std::locale::facet::`vftable',0)
+derivedClass(const std::bad_cast::`vftable',const std::exception::`vftable',0)
+derivedClass(const std::bad_exception::`vftable',const std::exception::`vftable',0)
+objectInObject(const std::bad_exception::`vftable',const std::exception::`vftable',0)
+objectInObject(const std::bad_cast::`vftable',const std::exception::`vftable',0)
+objectInObject(const std::locale::_Locimp::`vftable',const std::locale::facet::`vftable',0)
+objectInObject(const std::out_of_range::`vftable',const std::logic_error::`vftable',0)
+objectInObject(const std::length_error::`vftable',const std::logic_error::`vftable',0)
+objectInObject(const std::logic_error::`vftable',const std::exception::`vftable',0)
+objectInObject(const std::codecvt<char, char, int>::`vftable',const std::locale::facet::`vftable',0)
+objectInObject(const std::basic_filebuf<char, CHAR_TRAITS>::`vftable',const std::basic_streambuf<char, CHAR_TRAITS>::`vftable',0)
+objectInObject(const std::ctype<char>::`vftable',const std::locale::facet::`vftable',0)
+objectInObject(const std::basic_ios<char, CHAR_TRAITS>::`vftable',const std::ios_base::`vftable',0)
+objectInObject(const std::bad_alloc::`vftable',const std::exception::`vftable',0)
+objectInObject(const Cls3::`vftable'{for `Cls1'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls2'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls1'},const Cls1::`vftable',0)
+objectInObject(const Cls3::`vftable'{for `Cls2'},const Cls1::`vftable',0)
+objectInObject(const std::ios_base::failure::`vftable',const std::system_error::`vftable',0)
+objectInObject(const std::system_error::`vftable',const std::runtime_error::`vftable',0)
+objectInObject(const std::runtime_error::`vftable',const std::exception::`vftable',0)
 vfTableEntry(const std::bad_exception::`vftable',0,virtual * std::bad_exception::`vector deleting destructor'(unsigned int))
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`scalar deleting destructor'(unsigned int))
 vfTableEntry(const std::bad_cast::`vftable',0,virtual * std::bad_cast::`vector deleting destructor'(unsigned int))
@@ -1682,7 +1718,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -606 -115 -624
+Optimization : -606 -18 -115 -624
 Calls        : 1
-Time         : 0.624s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.624s
+Time         : 0.610s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.609s

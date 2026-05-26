@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.109s)
+Answer: 1 (Time: 0.121s)
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void))
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void))
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void))
@@ -127,6 +127,14 @@ sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(v
 sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void),__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void))
 sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void),__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int))
 sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void),__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char))
+derivedClass(const Cls3::`vftable'{for `Cls2'},const Cls1::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls1'},const Cls1::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls2'},const Cls2::`vftable',12)
+derivedClass(const Cls3::`vftable'{for `Cls1'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls1'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls2'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls1'},const Cls1::`vftable',0)
+objectInObject(const Cls3::`vftable'{for `Cls2'},const Cls1::`vftable',0)
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`vector deleting destructor'(unsigned int))
 vfTableEntry(const Cls2::`vftable',0,virtual Cls2::func3(void))
 vfTableEntry(const Cls1::`vftable',0,virtual Cls1::func1(void))
@@ -729,7 +737,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -55 -20 -309
+Optimization : -55 -4 -20 -309
 Calls        : 1
-Time         : 0.109s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.109s
+Time         : 0.121s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.121s

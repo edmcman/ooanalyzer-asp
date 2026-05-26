@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.062s)
+Answer: 1 (Time: 0.067s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void))
 method(virtual int A::get_a(void))
 method(virtual int C::get_c(void))
@@ -59,6 +59,30 @@ sameClass(const D::`vftable'{for `C'},const D::`vftable'{for `B'})
 sameClass(const D::`vftable'{for `C'},const D::`vftable'{for `A'})
 sameClass(const D::`vftable'{for `A'},const D::`vftable'{for `C'})
 sameClass(const D::`vftable'{for `A'},const D::`vftable'{for `B'})
+derivedClass(const D::`vftable'{for `A'},const B::`vftable'{for `A'},0)
+derivedClass(const D::`vftable'{for `A'},const B::`vftable'{for `B'},0)
+derivedClass(const D::`vftable'{for `C'},const B::`vftable'{for `A'},0)
+derivedClass(const D::`vftable'{for `C'},const B::`vftable'{for `B'},0)
+derivedClass(const D::`vftable'{for `B'},const B::`vftable'{for `A'},0)
+derivedClass(const D::`vftable'{for `B'},const B::`vftable'{for `B'},0)
+derivedClass(const D::`vftable'{for `A'},const C::`vftable'{for `A'},12)
+derivedClass(const D::`vftable'{for `A'},const C::`vftable'{for `C'},12)
+derivedClass(const D::`vftable'{for `C'},const C::`vftable'{for `A'},12)
+derivedClass(const D::`vftable'{for `C'},const C::`vftable'{for `C'},12)
+derivedClass(const D::`vftable'{for `B'},const C::`vftable'{for `A'},12)
+derivedClass(const D::`vftable'{for `B'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `B'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `B'},const C::`vftable'{for `A'},12)
+objectInObject(const D::`vftable'{for `C'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `C'},const C::`vftable'{for `A'},12)
+objectInObject(const D::`vftable'{for `A'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `A'},const C::`vftable'{for `A'},12)
+objectInObject(const D::`vftable'{for `B'},const B::`vftable'{for `B'},0)
+objectInObject(const D::`vftable'{for `B'},const B::`vftable'{for `A'},0)
+objectInObject(const D::`vftable'{for `C'},const B::`vftable'{for `B'},0)
+objectInObject(const D::`vftable'{for `C'},const B::`vftable'{for `A'},0)
+objectInObject(const D::`vftable'{for `A'},const B::`vftable'{for `B'},0)
+objectInObject(const D::`vftable'{for `A'},const B::`vftable'{for `A'},0)
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`vector deleting destructor'(unsigned int))
 vfTableEntry(const C::`vftable'{for `C'},0,virtual int C::get_c(void))
 vfTableEntry(const C::`vftable'{for `A'},0,virtual int A::get_a(void))
@@ -581,7 +605,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -99 -25 -230
+Optimization : -99 -12 -25 -230
 Calls        : 1
-Time         : 0.062s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.062s
+Time         : 0.067s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.066s

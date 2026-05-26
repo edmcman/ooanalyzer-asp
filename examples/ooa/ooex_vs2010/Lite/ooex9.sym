@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.049s)
+Answer: 1 (Time: 0.051s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int))
 method(A::A(void))
@@ -75,6 +75,32 @@ sameClass(const C::`vftable'{for `C'},const C::`vftable'{for `A'})
 sameClass(const C::`vftable'{for `A'},const C::`vftable'{for `C'})
 sameClass(const B::`vftable'{for `B'},const B::`vftable'{for `A'})
 sameClass(const B::`vftable'{for `A'},const B::`vftable'{for `B'})
+derivedClass(const D::`vftable'{for `A'},const B::`vftable'{for `A'},0)
+derivedClass(const D::`vftable'{for `A'},const B::`vftable'{for `B'},0)
+derivedClass(const D::`vftable'{for `C'},const B::`vftable'{for `A'},0)
+derivedClass(const D::`vftable'{for `C'},const B::`vftable'{for `B'},0)
+derivedClass(const D::`vftable'{for `B'},const B::`vftable'{for `A'},0)
+derivedClass(const D::`vftable'{for `B'},const B::`vftable'{for `B'},0)
+derivedClass(const D::`vftable'{for `A'},const C::`vftable'{for `A'},12)
+derivedClass(const D::`vftable'{for `A'},const C::`vftable'{for `C'},12)
+derivedClass(const D::`vftable'{for `C'},const C::`vftable'{for `A'},12)
+derivedClass(const D::`vftable'{for `C'},const C::`vftable'{for `C'},12)
+derivedClass(const D::`vftable'{for `B'},const C::`vftable'{for `A'},12)
+derivedClass(const D::`vftable'{for `B'},const C::`vftable'{for `C'},12)
+derivedClass(const std::bad_alloc::`vftable',const std::exception::`vftable',0)
+objectInObject(const std::bad_alloc::`vftable',const std::exception::`vftable',0)
+objectInObject(const D::`vftable'{for `B'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `B'},const C::`vftable'{for `A'},12)
+objectInObject(const D::`vftable'{for `C'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `C'},const C::`vftable'{for `A'},12)
+objectInObject(const D::`vftable'{for `A'},const C::`vftable'{for `C'},12)
+objectInObject(const D::`vftable'{for `A'},const C::`vftable'{for `A'},12)
+objectInObject(const D::`vftable'{for `B'},const B::`vftable'{for `B'},0)
+objectInObject(const D::`vftable'{for `B'},const B::`vftable'{for `A'},0)
+objectInObject(const D::`vftable'{for `C'},const B::`vftable'{for `B'},0)
+objectInObject(const D::`vftable'{for `C'},const B::`vftable'{for `A'},0)
+objectInObject(const D::`vftable'{for `A'},const B::`vftable'{for `B'},0)
+objectInObject(const D::`vftable'{for `A'},const B::`vftable'{for `A'},0)
 vfTableEntry(const std::exception::`vftable',0,virtual * std::exception::`scalar deleting destructor'(unsigned int))
 vfTableEntry(const std::bad_alloc::`vftable',0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int))
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`scalar deleting destructor'(unsigned int))
@@ -502,7 +528,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -181 -35 -174
+Optimization : -181 -13 -35 -174
 Calls        : 1
-Time         : 0.049s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.049s
+Time         : 0.051s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.051s

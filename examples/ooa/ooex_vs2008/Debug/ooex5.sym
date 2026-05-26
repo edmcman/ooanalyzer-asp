@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.067s)
+Answer: 1 (Time: 0.076s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void))
 method(virtual * type_info::`vector deleting destructor'(unsigned int))
 method(virtual int Base2::func1(void))
@@ -39,6 +39,14 @@ sameClass(const Base2::`vftable',const Base2::`vftable')
 sameClass(const type_info::`vftable',const type_info::`vftable')
 sameClass(const Derived::`vftable'{for `Base'},const Derived::`vftable'{for `Base2'})
 sameClass(const Derived::`vftable'{for `Base2'},const Derived::`vftable'{for `Base'})
+derivedClass(const Derived::`vftable'{for `Base2'},const Base::`vftable',0)
+derivedClass(const Derived::`vftable'{for `Base'},const Base::`vftable',0)
+derivedClass(const Derived::`vftable'{for `Base2'},const Base2::`vftable',16)
+derivedClass(const Derived::`vftable'{for `Base'},const Base2::`vftable',16)
+objectInObject(const Derived::`vftable'{for `Base'},const Base2::`vftable',16)
+objectInObject(const Derived::`vftable'{for `Base2'},const Base2::`vftable',16)
+objectInObject(const Derived::`vftable'{for `Base'},const Base::`vftable',0)
+objectInObject(const Derived::`vftable'{for `Base2'},const Base::`vftable',0)
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`vector deleting destructor'(unsigned int))
 vfTableEntry(const Base2::`vftable',0,virtual int Base2::func1(void))
 vfTableEntry(const Base::`vftable',0,virtual int Base::func1(void))
@@ -543,7 +551,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -55 -20 -236
+Optimization : -55 -4 -20 -236
 Calls        : 1
-Time         : 0.067s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.067s
+Time         : 0.076s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.075s

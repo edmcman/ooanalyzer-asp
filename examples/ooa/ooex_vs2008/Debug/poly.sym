@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.128s)
+Answer: 1 (Time: 0.120s)
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void))
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void))
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void))
@@ -127,6 +127,12 @@ sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(v
 sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void),__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void))
 sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void),__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int))
 sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void),__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char))
+derivedClass(const Rectangle::`vftable',const Shape::`vftable',0)
+derivedClass(const Circle::`vftable',const Shape::`vftable',0)
+derivedClass(const Triangle::`vftable',const Shape::`vftable',0)
+objectInObject(const Triangle::`vftable',const Shape::`vftable',0)
+objectInObject(const Circle::`vftable',const Shape::`vftable',0)
+objectInObject(const Rectangle::`vftable',const Shape::`vftable',0)
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`vector deleting destructor'(unsigned int))
 vfTableEntry(const Shape::`vftable',0,j___purecall)
 vfTableEntry(const Triangle::`vftable',0,virtual Triangle::draw(void))
@@ -715,7 +721,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -45 -25 -304
+Optimization : -45 -6 -25 -304
 Calls        : 1
-Time         : 0.128s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.128s
+Time         : 0.120s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.119s

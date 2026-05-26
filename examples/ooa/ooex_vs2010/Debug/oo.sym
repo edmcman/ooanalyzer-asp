@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.100s)
+Answer: 1 (Time: 0.107s)
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void))
 method(__declspec(dllimport) bool std::ios_base::good(void)const)
 method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const)
@@ -101,6 +101,14 @@ sameClass(__declspec(dllimport) bool std::ios_base::good(void)const,__declspec(d
 sameClass(__declspec(dllimport) bool std::ios_base::good(void)const,__declspec(dllimport) __int64 std::ios_base::width(__int64))
 sameClass(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void),__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void))
 sameClass(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void),__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &)))
+derivedClass(const Cls3::`vftable'{for `Cls2'},const Cls1::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls1'},const Cls1::`vftable',0)
+derivedClass(const Cls3::`vftable'{for `Cls2'},const Cls2::`vftable',12)
+derivedClass(const Cls3::`vftable'{for `Cls1'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls1'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls2'},const Cls2::`vftable',12)
+objectInObject(const Cls3::`vftable'{for `Cls1'},const Cls1::`vftable',0)
+objectInObject(const Cls3::`vftable'{for `Cls2'},const Cls1::`vftable',0)
 vfTableEntry(const type_info::`vftable',0,virtual * type_info::`vector deleting destructor'(unsigned int))
 vfTableEntry(const Cls2::`vftable',0,virtual Cls2::func3(void))
 vfTableEntry(const Cls1::`vftable',0,virtual Cls1::func1(void))
@@ -687,7 +695,7 @@ OPTIMUM FOUND
 
 Models       : 1
   Optimum    : yes
-Optimization : -55 -20 -296
+Optimization : -55 -4 -20 -296
 Calls        : 1
-Time         : 0.100s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.100s
+Time         : 0.108s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.107s

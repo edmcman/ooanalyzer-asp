@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.049s)
+Answer: 1 (Time: 0.060s)
 method(Base::Base(void))
 method(Derived::Derived(void))
 method(int Base::func3(void))
@@ -435,5 +435,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -208
 Calls        : 1
-Time         : 0.049s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.049s
+Time         : 0.060s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.060s
