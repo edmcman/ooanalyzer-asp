@@ -32,11 +32,12 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
   - `thisPtrUsage/4` (initial.pl:193-205)
 - `src/modules/methods.lp` — `reasonMethod_B`–`H`, `reasonMethod_J`, `reasonMethod_L`, `guessMethod` (choose method or ¬method for each possibleMethod)
 - `src/modules/ctorsdtors.lp` — constructor/destructor symbol rules, guessConstructor1/2, `certainConstructorOrDestructor/1` choice rule, sanity checks, `#maximize` constructor reward
-- `src/modules/vftables.lp` — `reasonVFTable`, `reasonVFTableWrite`, `reasonVFTableOverwrite`, `vfTableEntry`, `reasonNOTVFTableEntry_B/C/D`, `guessVFTable`, `insanityConstructorInVFTable`, `#maximize` vfTable reward
+- `src/modules/vftables.lp` — `reasonVFTable`, `reasonVFTableWrite`, `reasonVFTableOverwrite`, `vfTableEntry`, `reasonNOTVFTableEntry_B/C/D/E`, `guessVFTable`, `insanityConstructorInVFTable`, `#maximize` vfTable reward
 - `src/modules/merges.lp` — `reasonMergeClasses_G/J`, `reasonNOTMergeClasses_E`, `sortPair`/`mergeEntity`/`merged`/`sameClass`, `guessMergeClasses_B/D`, `#maximize` merge reward
 - `src/modules/classes.lp` — `reasonClassCallsMethod_B/C`, `classCallsMethod/2` output
 - `src/util/sanity.lp` — `#show` and diagnostic infrastructure
 - `examples/*.lp` — all hand-written examples rewritten to use Prolog-matching arities (possibleVFTableWrite/5, callTarget/3, insnCallsDelete/3, symbolClass/4, methodCallAtOffset/4, etc.)
+- `examples/constructor_vftable_entry_example.lp` — regression for `reasonNOTVFTableEntry_E`
 - `TODO.md` — rule coverage tracker
 
 ## Rules ported
@@ -64,6 +65,7 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 - `reasonNOTVFTableEntry_B` (rules.pl:1282) — vftables cannot overlap
 - `reasonNOTVFTableEntry_C` (rules.pl:1292) — later entries are invalid after the previous possible entry is not confirmed
 - `reasonNOTVFTableEntry_D` (rules.pl:1303) — RTTI COL addresses are not vftable entries
+- `reasonNOTVFTableEntry_E` (rules.pl:1313) — entries dethunking to constructors are not vftable entries
 - `reasonClassCallsMethod_B` (rules.pl:2462) — vftable entry method is callable by that vftable's class
 - `reasonClassCallsMethod_C` (rules.pl:2481) — same-this valid call at offset 0 creates a class-call relation
 
@@ -99,30 +101,34 @@ Going rule by rule, presenting: name, Prolog code, proposed ASP translation, the
 
 ## Where we are now
 Last completed batch:
-1. **Tier 3 VFTable accuracy** — added `reasonNOTVFTableEntry_D`, then `B` and `C`; `C` intentionally uses `not vfTableEntry(...)` for the previous offset per approval.
+1. **Tier 3 VFTable accuracy** — added `reasonNOTVFTableEntry_D`, then `B`, `C`, and `E`; `C` intentionally uses `not vfTableEntry(...)` for the previous offset per approval.
 2. **Class-call infrastructure** — added `src/modules/classes.lp` with `reasonClassCallsMethod_C` and `reasonClassCallsMethod_B`, both using direct `sameClass/2` checks instead of adding Prolog-style `find/2`.
 3. **Method expansion from class calls** — added `reasonMethod_J`, so `classCallsMethod(_, Method)` proves `method(Method)`.
 4. **Negative merge signal** — added `reasonNOTMergeClasses_E`; negative cross-write checks use anonymous `_` arguments so Clingo grounds safely.
 5. **Bookkeeping** — updated `TODO.md` immediately after each approved rule; corrected the stale `reasonNOTVFTableEntry_D` description from "address is a constructor" to RTTI COL address exclusion.
 
-All 10 hand-written examples pass:
-- SAT: `example.lp`, `inherit_example.lp`, `inherited_entry_example.lp`, `multi_inherit_example.lp`, `rtti_example.lp`, `selfdefeating.lp`, `synthetic_merge.lp`, `virtual_base_example.lp`
+All 11 hand-written examples pass:
+- SAT: `constructor_vftable_entry_example.lp`, `example.lp`, `inherit_example.lp`, `inherited_entry_example.lp`, `multi_inherit_example.lp`, `rtti_example.lp`, `selfdefeating.lp`, `synthetic_merge.lp`, `virtual_base_example.lp`
 - UNSAT: `invalid_example.lp`, `strong_negation_contradiction.lp`
+
+Note: `make verify-core` currently reaches the final diagnostic-mode check and
+fails there because `--const diagnose=1` returns `SATISFIABLE` with
+`violate(insanityTwoRealDestructorsOnClass,(1300,1400))`, while the Makefile
+still expects `UNSATISFIABLE`. This appears unrelated to `reasonNOTVFTableEntry_E`.
 
 ## Suggested next steps
 
 Ranked candidates for next implementation (by complexity, predicate availability, and downstream impact):
 
 ### Current one-at-a-time queue
-1. **`reasonNOTVFTableEntry_E` (1313)** — `possibleVFTableEntry` + `dethunk` + confirmed `constructor` -> `-vfTableEntry`. This was presented next but not yet approved.
-2. **`reasonClassSizeGTE_B` (3505)** — every proven method/vftable class has size at least 0. Low-risk size baseline.
-3. **`reasonClassSizeGTE_E` (3624)** — `validMethodMemberAccess` at offset+size -> `classSizeGTE`. `methodMemberAccess/4` exists, but `validMethodMemberAccess/4` may need a faithful helper first.
-4. **`reasonClassSizeGTE_G` (3653)** — confirmed vftable write at object offset implies class size at least `ObjectOffset + pointerSize`.
-5. **`reasonClassSizeGTE_C` (3519)** — class relationship propagates base minimum size to derived/related class; depends on `reasonClassRelationship`.
-6. **`reasonClassSizeGTE_D` (3609)** — heap allocation size associated with a constructor; higher complexity because it depends on `thisPtrAssociatedWithConstructor` helpers.
-7. **`reasonClassSizeGTE_F` (3637)** — object-in-object containment propagates inner class size to outer class; depends on `objectInObject`.
-8. **`reasonDerivedClass_B` (1834)** — VFTable overwrite in constructor call sequence (base -> derived). Primary non-RTTI inheritance detection mechanism; medium complexity.
-9. **`reasonNOTMergeClasses_I` (3196)** — methods with conflicting symbol class names cannot merge.
-10. **`reasonNOTMergeClasses_Q` (3352)** — symbol says methods belong to different classes.
-11. **`reasonNOTMergeClasses_O` (3296)** — class-call method already belongs to a different symbol class.
-12. **`reasonNOTMergeClasses_K` (3222)** — different real destructors block a merge.
+1. **`reasonClassSizeGTE_B` (3505)** — every proven method/vftable class has size at least 0. Low-risk size baseline.
+2. **`reasonClassSizeGTE_E` (3624)** — `validMethodMemberAccess` at offset+size -> `classSizeGTE`. `methodMemberAccess/4` exists, but `validMethodMemberAccess/4` may need a faithful helper first.
+3. **`reasonClassSizeGTE_G` (3653)** — confirmed vftable write at object offset implies class size at least `ObjectOffset + pointerSize`.
+4. **`reasonClassSizeGTE_C` (3519)** — class relationship propagates base minimum size to derived/related class; depends on `reasonClassRelationship`.
+5. **`reasonClassSizeGTE_D` (3609)** — heap allocation size associated with a constructor; higher complexity because it depends on `thisPtrAssociatedWithConstructor` helpers.
+6. **`reasonClassSizeGTE_F` (3637)** — object-in-object containment propagates inner class size to outer class; depends on `objectInObject`.
+7. **`reasonDerivedClass_B` (1834)** — VFTable overwrite in constructor call sequence (base -> derived). Primary non-RTTI inheritance detection mechanism; medium complexity.
+8. **`reasonNOTMergeClasses_I` (3196)** — methods with conflicting symbol class names cannot merge.
+9. **`reasonNOTMergeClasses_Q` (3352)** — symbol says methods belong to different classes.
+10. **`reasonNOTMergeClasses_O` (3296)** — class-call method already belongs to a different symbol class.
+11. **`reasonNOTMergeClasses_K` (3222)** — different real destructors block a merge.

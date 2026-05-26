@@ -81,6 +81,13 @@ vfTableEntry(VFTable, Offset, Entry) :-
     possibleVFTableEntry(VFTable, ComputedOffset, OtherEntry),
     not vfTableEntry(VFTable, ComputedOffset, OtherEntry).                 % rules.pl:1292
 
+% reasonNOTVFTableEntry_E: constructors cannot be valid vftable entries.
+% Counterpart: reasonNOTVFTableEntry_E (rules.pl:1313)
+-vfTableEntry(VFTable, Offset, Entry) :-
+    possibleVFTableEntry(VFTable, Offset, Entry),
+    dethunk(Entry, Method),
+    constructor(Method).                                                  % rules.pl:1313
+
 % ============================================================
 % GUESS
 % ============================================================

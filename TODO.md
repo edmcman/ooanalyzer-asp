@@ -157,7 +157,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTVFTableEntry_B` (1282) — table address invalid
 - [x] `reasonNOTVFTableEntry_C` (1292) — offset exceeds table size
 - [x] `reasonNOTVFTableEntry_D` (1303) — RTTI COL address is not a vftable entry
-- [ ] `reasonNOTVFTableEntry_E` (1313) — entry conflicts with other fact
+- [x] `reasonNOTVFTableEntry_E` (1313) — entry dethunks to a constructor
 
 ### Belongs-to-Class (rules.pl:1007–1228)
 - [ ] `reasonVFTableBelongsToClass` (1007) — clause 1 (via VFTable write)

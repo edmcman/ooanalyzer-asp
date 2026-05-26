@@ -79,6 +79,8 @@ verify-core:
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/invalid_example.lp; \
 	echo "=== Verifying examples/strong_negation_contradiction.lp ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_contradiction.lp; \
+	echo "=== Verifying examples/constructor_vftable_entry_example.lp ==="; \
+	run_case 'SATISFIABLE' '-vfTableEntry(2000,0,1000)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/constructor_vftable_entry_example.lp; \
 	echo "=== Verifying diagnostic contradiction fixture ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
 
