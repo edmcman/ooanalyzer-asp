@@ -29,7 +29,6 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonMethod_M` (118) — `thisPtrAllocation` → method
 - [ ] `reasonMethod_N` (133) — thiscall calling convention
 - [ ] `reasonMethod_O` (142) — thiscall via `thisPtrParam`
-- [ ] `reasonMethod_P` (159) — `classCallsMethod` → method
 
 ### Guess (guess.pl)
 - [x] `guessMethod_A` (guess.pl:382)
@@ -155,7 +154,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonVFTableEntry` (1247) — from virtual function call
 - [~] `reasonNOTVFTableEntry_A` (1276) — existing `notVFTableEntry` (no-op in ASP, skipped)
 - [x] `reasonNOTVFTableEntry_B` (1282) — table address invalid
-- [x] `reasonNOTVFTableEntry_C` (1292) — offset exceeds table size
+- [x] `reasonNOTVFTableEntry_C` (1292) — previous slot is not a confirmed entry (breaks contiguity)
 - [x] `reasonNOTVFTableEntry_D` (1303) — RTTI COL address is not a vftable entry
 - [x] `reasonNOTVFTableEntry_E` (1313) — entry dethunks to a constructor
 
