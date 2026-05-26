@@ -218,27 +218,29 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 8. Object-in-Object / Embedded Object
 
 ### ObjectInObject (rules.pl:1552–1729)
-- [ ] `reasonObjectInObject_A` (1564) — from `derivedClass`
-- [ ] `reasonObjectInObject_B` (1568) — from `embeddedObject`
+- [x] `reasonObjectInObject_A` (1564) — from `derivedClass`
+- [x] `reasonObjectInObject_B` (1568) — from `embeddedObject`
 - [ ] `reasonObjectInObject_C` (1577) — from VFTable write at non-zero offset
 - [ ] `reasonObjectInObject_D` (1589) — from VBTable write pattern
 - [ ] `reasonObjectInObject_E` (1625) — from `callAtOffset` pattern
 - [ ] `reasonObjectInObject_F` (1672) — from class size constraints
 
 ### EmbeddedObject (rules.pl:1730–1791)
-- [ ] `reasonEmbeddedObject_A` (1740) — from objectInObject + ¬derived
+- [x] `reasonEmbeddedObject_A` (1740) — from objectInObject + ¬derived (deterministic when derivedClass has no support)
 - [ ] `reasonEmbeddedObject_B` (1745) — from member access at offset
 - [ ] `reasonEmbeddedObject_C` (1753) — from VFTable write at offset
 - [ ] `reasonEmbeddedObject_D` (1761) — from constructor call pattern
-- [ ] `reasonNOTEmbeddedObject` (1791) — when derivation is proven
+- [x] `reasonNOTEmbeddedObject` (1791) — when derivation is proven (covered by `:- embeddedObject, derivedClass`)
 
 ### Guess (guess.pl)
-- [ ] `tryEmbeddedObject` (3 variants)
+- [ ] `tryEmbeddedObject` (3 variants) — rewards not yet ported
 
 ### Constraints (insanity.pl)
 - [ ] `insanityEmbeddedObjectLarger` — inner object ≤ outer object size
 - [ ] `insanityObjectCycle` — no cycles in object containment
 - [ ] `insanityInheritanceTwice` — no duplicate inheritance at different offsets
+- [x] `insanityEmbeddedAndNot` — covered by `:- embeddedObject, derivedClass`
+
 
 ---
 
@@ -254,7 +256,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### NOT Derived Class (rules.pl:2025–2036)
 - [ ] `reasonNOTDerivedClass` (2025) — existing `factNOTDerivedClass`
-- [ ] `reasonNOTDerivedClass` (2036) — contradicts embedded object
+- [x] `reasonNOTDerivedClass` (2036) — contradicts embedded object (covered by `:- embeddedObject, derivedClass`)
 
 ### Class Relationships (rules.pl:2063–2130)
 - [ ] `reasonDerivedClassRelationship` (2063) — direct derivation
@@ -277,7 +279,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonClassHasUnknownBase_E` (2331) — class calls method of unrelated class
 
 ### Guess (guess.pl)
-- [ ] `guessDerivedClass` (3 variants)
+- [~] `guessDerivedClass` (3 variants) — guess rule ported; rewards not yet added
 - [ ] `guessClassHasNoBase_B`
 - [ ] `guessClassHasNoBaseSpecial`
 - [ ] `guessCommitClassHasNoBase`

@@ -1,12 +1,17 @@
 % ============================================================
-% RULES
+% DEFINED
 % ============================================================
 
 #defined objectInObject/3.
 #defined objectInObject_closed/3.
+#defined embeddedObject/3.
 
 % objectInObject/3 is closed over sameClass/2 at its defining rules, so
 % classRelationship/2 only needs to compute reachability over objectInObject.
+
+% ============================================================
+% RULES
+% ============================================================
 
 % reasonDerivedClass_B base evidence: the base constructor writes a confirmed
 % non-overwritten vftable at offset zero, and it differs from the derived table.
@@ -37,7 +42,6 @@ derivedClass(DerivedConstructor, BaseConstructor, ObjectOffset) :-
     not classRelationship(DerivedConstructor, BaseConstructor).           % rules.pl:1834
 
 % Close over class merges
-
 derivedClass_closed(DerivedClass, BaseClass, ObjectOffset) :-
     derivedClass(DerivedClass, BaseClass, ObjectOffset).
 
@@ -49,6 +53,16 @@ derivedClass_closed(DerivedClass, BaseClass2, ObjectOffset) :-
     derivedClass_closed(DerivedClass, BaseClass1, ObjectOffset),
     sameClass(BaseClass1, BaseClass2).
 
+% objectInObject_B / objectInObject_C: OIO holds when either inheritance or
+% embedding is known for the same witness methods.
+objectInObject(Outer, Inner, Off) :- derivedClass(Outer, Inner, Off).   % rules.pl:1568
+objectInObject(Outer, Inner, Off) :- embeddedObject(Outer, Inner, Off). % rules.pl:1577
+
+% Close over sameClass
+objectInObject_closed(A, B, Off) :- objectInObject(A, B, Off).
+objectInObject_closed(B, C, Off) :- objectInObject_closed(A, C, Off), sameClass(A, B).
+objectInObject_closed(A, C, Off) :- objectInObject_closed(A, B, Off), sameClass(B, C).
+
 % reasonClassRelationship_internal: direct object composition/inheritance.
 classRelationship(DerivedClass, BaseClass) :-
     objectInObject_closed(DerivedClass, BaseClass, _Offset).                    % rules.pl:2114
@@ -57,5 +71,26 @@ classRelationship(DerivedClass, BaseClass) :-
 classRelationship(DerivedClass, BaseClass) :-
     classRelationship(DerivedClass, MiddleClass),
     objectInObject_closed(MiddleClass, BaseClass, _Offset).                     % rules.pl:2119
+
+% ============================================================
+% GUESS
+% ============================================================
+
+% guessDerivedClass: every OIO is classified as embedded or derived (at least one).
+% When derivedClass has no support the choice is deterministic (reasonEmbeddedObject_A).
+1 { embeddedObject(Outer, Inner, Off) ; derivedClass(Outer, Inner, Off) } :-
+    objectInObject(Outer, Inner, Off).                    % guess.pl:317 / rules.pl:1740
+
+% ============================================================
+% CONSTRAINTS
+% ============================================================
+
+% reasonNOTEmbeddedObject / reasonNOTDerivedClass / insanityEmbeddedAndNot:
+% derivedClass and embeddedObject are mutually exclusive.
+:- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,2025 / insanity.pl:308
+
+% ============================================================
+% OUTPUT
+% ============================================================
 
 #show derivedClass/3.
