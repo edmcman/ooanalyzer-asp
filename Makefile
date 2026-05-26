@@ -83,6 +83,8 @@ verify-core:
 	run_case 'SATISFIABLE' '-vfTableEntry(2000,0,1000)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/constructor_vftable_entry_example.lp; \
 	echo "=== Verifying examples/symbol_conflict_example.lp ==="; \
 	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/symbol_conflict_example.lp; \
+	echo "=== Verifying examples/symbol_missing_conflict_example.lp ==="; \
+	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(CLINGO) $(CLINGO_FLAGS) examples/symbol_missing_conflict_example.lp; \
 	echo "=== Verifying diagnostic contradiction fixture ==="; \
 	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
 

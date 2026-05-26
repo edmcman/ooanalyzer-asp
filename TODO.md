@@ -315,7 +315,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_M` (3256) — size contradiction (GTE > LTE)
 - [ ] `reasonNOTMergeClasses_O` (3296) — called method member access exceeds caller class size
 - [ ] `reasonNOTMergeClasses_P` (3318) — different constructors at same offset
-- [ ] `reasonNOTMergeClasses_Q` (3352) — symbol class name missing/mismatch within class
+- [x] `reasonNOTMergeClasses_Q` (3352) — symbol class name missing/mismatch within class
 - [ ] `reasonNOTMergeClasses_R` (3366) — two deleting destructors in candidate merge
 
 ### Guess (guess.pl)

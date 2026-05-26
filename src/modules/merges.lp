@@ -45,6 +45,17 @@ mergeClasses(A, B) :-
     ClassName1 != ClassName2,
     sortPair(Method1, Method2, A, B).                                      % rules.pl:3222
 
+% reasonNOTMergeClasses_Q: methods without a symbol for a known class name
+% cannot merge with methods whose symbol identifies that class.
+% Counterpart: reasonNOTMergeClasses_Q (rules.pl:3352)
+-mergeClasses(A, B) :-
+    symbolClass(MethodWithSymbol, _MangledName1, ClassName, _MethodName1),
+    method(MethodWithSymbol),
+    ClassName != type_info,
+    method(OtherMethod),
+    not symbolClass(OtherMethod, _, ClassName, _),
+    sortPair(MethodWithSymbol, OtherMethod, A, B).                         % rules.pl:3352
+
 % Compact transitive closure over hard merges.
 merged(A, B) :- mergeClasses(A, B).
 merged(B, A) :- mergeClasses(A, B).
