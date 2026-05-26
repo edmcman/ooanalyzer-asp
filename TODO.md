@@ -251,7 +251,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonDerivedClass_C` (1960) — objectInObject + NOT embeddedObject → derivedClass (ported as guess rule + mutual-exclusion constraint in composition.lp)
 - [x] `reasonDerivedClass_D` (1968) — RTTI non-virtual base
 - [x] `reasonDerivedClass_E` (1981) — RTTI virtual base via VBTable entry
-- [ ] `reasonDerivedClass_F` (1999) — VFTable belongs-to-class + overwrite
+- [x] `reasonDerivedClass_F` (1999) — VBTable entry + write confirms virtual base offset (non-RTTI path)
 
 ### NOT Derived Class (rules.pl:2025–2036)
 - [ ] `reasonNOTDerivedClass` (2025) — existing `factNOTDerivedClass`

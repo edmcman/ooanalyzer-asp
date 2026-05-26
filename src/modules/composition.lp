@@ -36,8 +36,18 @@ derivedClass(DerivedClass, BaseClass, Offset) :-
     rTTITDA2Class(BaseTDA, BaseClass),
     not sameClass(DerivedClass, BaseClass),
     sameClass(Method, DerivedClass),
-    possibleVBTableEntry(VBTableAddr, V, Entry),
-    Offset = P + Entry.                                                  % rules.pl:1981
+     possibleVBTableEntry(VBTableAddr, V, Entry),
+     Offset = P + Entry.                                                  % rules.pl:1981
+
+% reasonDerivedClass_F: VBTable-based virtual inheritance (non-RTTI path).
+% Counterpart: reasonDerivedClass_F (rules.pl:1999)
+derivedClass(DerivedClass, BaseClass, Offset) :-
+    objectInObject(DerivedClass, BaseClass, Offset),
+    vbTableEntry(VBTableAddress, TableOffset, OffsetFromVBPtr),
+    TableOffset > 0,
+    vbTableWrite(_, Method, VBPtrOffset, VBTableAddress),
+    sameClass(Method, DerivedClass),
+    Offset = OffsetFromVBPtr + VBPtrOffset.                              % rules.pl:1999
 
 % reasonDerivedClass_B: derived constructor calls base constructor, with
 % matching confirmed vftable writes proving inheritance rather than embedding.
