@@ -14,7 +14,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 1. Method (`method`)
 
 ### Deductive (rules.pl:26–177)
-- [ ] `reasonMethod_A` (48) — existing `method`
+- [x] `reasonMethod_A` (48) — existing `method` (identity rule; covered by input fact / choice rule architecture)
 - [x] `reasonMethod_B` (52) — `constructor` → method
 - [x] `reasonMethod_C` (56) — `realDestructor` → method
 - [x] `reasonMethod_D` (60) — `deletingDestructor` → method
@@ -47,7 +47,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonConstructor` (214) — inheritance special case
 
 ### NOT Constructor (rules.pl:260–373)
-- [ ] `reasonNOTConstructor_A` (276) — existing `notConstructor`
+- [x] `reasonNOTConstructor_A` (276) — existing `notConstructor` (identity rule; covered by input fact / strong-negation architecture)
 - [x] `reasonNOTConstructor_B` (281) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTConstructor_C` (288) — is deleting destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTConstructor_D` (297) — appears in vftable (strong negation; replaces `insanityConstructorInVFTable`)
@@ -80,7 +80,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonRealDestructor` (394) — `symbolProperty(realDestructor)`
 
 ### NOT Real Destructor (rules.pl:422–560)
-- [ ] `reasonNOTRealDestructor_A` (438) — existing `factNOTRealDestructor`
+- [x] `reasonNOTRealDestructor_A` (438) — existing `factNOTRealDestructor` (identity rule; covered by input fact / strong-negation architecture)
 - [x] `reasonNOTRealDestructor_B` (443) — is constructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTRealDestructor_C` (448) — is deleting destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [ ] `reasonNOTRealDestructor_D` (453) — call ordering violation
@@ -109,7 +109,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] helper `possiblyVirtual/1` (initial.pl:338) — possible vftable entry evidence
 
 ### NOT Deleting Destructor (rules.pl:612–712)
-- [ ] `reasonNOTDeletingDestructor_A` (627) — existing `factNOTDeletingDestructor`
+- [x] `reasonNOTDeletingDestructor_A` (627) — existing `factNOTDeletingDestructor` (identity rule; covered by input fact / strong-negation architecture)
 - [x] `reasonNOTDeletingDestructor_B` (632) — is constructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTDeletingDestructor_C` (637) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [ ] `reasonNOTDeletingDestructor_D` (642) — call ordering violation
@@ -128,7 +128,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 5. VFTable (`vfTable`)
 
 ### Identification (rules.pl:838–923)
-- [ ] `reasonVFTable` (838) — existing `vfTable`
+- [x] `reasonVFTable` (838) — existing `vfTable` (identity rule; covered by input fact architecture)
 - [x] `reasonVFTable` (843) — RTTI evidence
 - [ ] `reasonVFTable` (851) — virtual call evidence
 - [ ] `reasonNOTVFTable_A` (883) — address is a method
@@ -141,7 +141,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTVFTable_H` (919) — vftable entry chain conflict
 
 ### Write (rules.pl:931–944)
-- [ ] `reasonVFTableWrite` (931) — existing `vfTableWrite`
+- [x] `reasonVFTableWrite` (931) — existing `vfTableWrite` (identity rule; covered by input fact architecture)
 - [x] `reasonVFTableWrite` (939) — `possibleVFTableWrite` + confirmed `vfTable`
 
 ### Overwrite (rules.pl:962–992)
@@ -164,10 +164,10 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonVFTableBelongsToClass` (1118) — clause 2 (via inheritance)
 
 ### Sizing (rules.pl:1333–1406)
-- [ ] `reasonVFTableSizeGTE` (1333) — existing fact
+- [x] `reasonVFTableSizeGTE` (1333) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonVFTableSizeGTE` (1337) — from known entries
 - [ ] `reasonVFTableSizeGTE` (1350) — from derived class table
-- [ ] `reasonVFTableSizeLTE` (1388) — existing fact
+- [x] `reasonVFTableSizeLTE` (1388) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonVFTableSizeLTE` (1392) — from table entry gap
 - [ ] `reasonVFTableSizeLTE` (1406) — from derived/base relationship
 
@@ -190,11 +190,11 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 6. VBTable (`vbTable`)
 
 ### Deductive (rules.pl:1471–1535)
-- [ ] `reasonVBTable` (1471) — existing `vbTable`
+- [x] `reasonVBTable` (1471) — existing `vbTable` (identity rule; covered by input fact architecture)
 - [ ] `reasonVBTable` (1476) — `possibleVBTableWrite` evidence
-- [ ] `reasonVBTableWrite` (1487) — existing `vbTableWrite`
+- [x] `reasonVBTableWrite` (1487) — existing `vbTableWrite` (identity rule; covered by input fact architecture)
 - [ ] `reasonVBTableWrite` (1491) — `possibleVBTableWrite` + confirmed table
-- [ ] `reasonVBTableEntry` (1504) — existing fact
+- [x] `reasonVBTableEntry` (1504) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonVBTableEntry` (1509) — from `initialMemory` at table offset
 - [ ] `reasonVBTableEntry` (1516) — propagation
 - [ ] `reasonVBTableEntry` (1523) — from size constraint
@@ -263,7 +263,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonClassRelationship_internal` (2119) — transitive chain
 
 ### Has No Base (rules.pl:2131–2175)
-- [ ] `reasonClassHasNoBase` (2131) — existing fact
+- [x] `reasonClassHasNoBase` (2131) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonClassHasNoBase` (2136) — no base evidence found
 - [ ] `reasonClassHasNoDerived` (2152) — no derived evidence found
 
@@ -334,7 +334,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 11. Class Size (`classSizeGTE` / `classSizeLTE`)
 
 ### Size Lower Bound (rules.pl:3487–3661)
-- [ ] `reasonClassSizeGTE_A` (3500) — existing fact
+- [x] `reasonClassSizeGTE_A` (3500) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonClassSizeGTE_B` (3505) — from member access offset
 - [ ] `reasonClassSizeGTE_C` (3519) — from embedded/derived object size
 - [ ] `reasonClassSizeGTE_D` (3609) — from VFTable entry count
@@ -343,7 +343,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonClassSizeGTE_G` (3653) — from `callAtOffset` arguments
 
 ### Size Upper Bound (rules.pl:3679–3722)
-- [ ] `reasonClassSizeLTE_A` (3689) — existing fact
+- [x] `reasonClassSizeLTE_A` (3689) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonClassSizeLTE_B` (3693) — no evidence of members beyond 0
 - [ ] `reasonClassSizeLTE_C` (3703) — from embedding context
 - [ ] `reasonClassSizeLTE_D` (3716) — from base class in derived layout
