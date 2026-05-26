@@ -36,6 +36,13 @@ mergeClasses(A, B) :-
     not vfTableWrite(_, Method1, 0, VFTable2),
     not vfTableWrite(_, Method2, 0, VFTable1).                              % rules.pl:3123
 
+% reasonNOTMergeClasses_F: same derived class has two bases at different offsets — they cannot merge.
+-mergeClasses(A, B) :-
+    derivedClass_closed(DerivedClass, Class1, Offset1),
+    derivedClass_closed(DerivedClass, Class2, Offset2),
+    Offset1 != Offset2,
+    sortPair(Class1, Class2, A, B).                                        % rules.pl:3158
+
 % reasonNOTMergeClasses_J: classes in a composition/inheritance relationship cannot merge.
 % Counterpart: reasonNOTMergeClasses_J (rules.pl:3212)
 -mergeClasses(A, B) :-

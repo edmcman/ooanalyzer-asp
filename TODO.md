@@ -307,8 +307,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_C` (3111) — one is derived of other
 - [ ] `reasonNOTMergeClasses_C_asymmetric` (3090) — asymmetric derivation
 - [x] `reasonNOTMergeClasses_E` (3123) — write distinct VFTables at offset 0
-- [ ] `reasonNOTMergeClasses_F` (3158) — different VFTable sizes
-- [ ] `reasonNOTMergeClasses_G` (3177) — both are bases of same class at different offsets
+- [x] `reasonNOTMergeClasses_F` (3158) — same derived class has two bases at different offsets
+- [x] `reasonNOTMergeClasses_G` (3177) — subsumed by reasonNOTMergeClasses_J (objectInObject ⊆ classRelationship_closed)
 - [x] `reasonNOTMergeClasses_I` (3196) — different RTTI TDAs/classes
 - [x] `reasonNOTMergeClasses_J` (3212) — classes in a composition/inheritance relationship cannot merge
 - [x] `reasonNOTMergeClasses_K` (3222) — conflicting symbol class names
