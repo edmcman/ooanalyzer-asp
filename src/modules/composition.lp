@@ -113,3 +113,4 @@ embedsKnownBasePenalty(Outer, Inner, Off) :-
 % ============================================================
 
 #show derivedClass/3.
+#show objectInObject/3.

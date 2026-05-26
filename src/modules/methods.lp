@@ -51,4 +51,12 @@ guessMethodDomain(M) :- possibleMethod(M).
 1 { method(M) ; -method(M) } 1 :- guessMethodDomain(M).
 #heuristic method(M) : guessMethodDomain(M). [1@0, true]
 
+% ============================================================
+% REWARDS
+% ============================================================
+
+% Weakest reward: prefer more methods over fewer (below all other priorities).
+guessMethodReward(M) :- method(M), guessMethodDomain(M).
+#maximize { 1@-1, method, M : guessMethodReward(M) }.
+
 #show method/1.

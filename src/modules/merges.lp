@@ -106,6 +106,4 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 
 #maximize { 10@2, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
-#show mergeClasses/2.
-#show -mergeClasses/2.
 #show sameClass/2.
