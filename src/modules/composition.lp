@@ -27,6 +27,29 @@ reasonDerivedClassBBaseEvidence(DerivedVFTable, BaseConstructor) :-
     vfTable(DerivedVFTable),
     symbolClass(BaseConstructor, _, _, _).                               % rules.pl:1877
 
+% reasonDerivedClass_D: RTTI says this is a non-virtual base class.
+% Counterpart: reasonDerivedClass_D (rules.pl:1968)
+derivedClass(DerivedClass, BaseClass, Offset) :-
+    rTTIEnabledAndValid,
+    rTTIInheritsFrom(DerivedTDA, BaseTDA, _Attributes, Offset, 0xffffffff, 0),
+    rTTITDA2Class(DerivedTDA, DerivedClass),
+    rTTITDA2Class(BaseTDA, BaseClass),
+    not sameClass(DerivedClass, BaseClass).                              % rules.pl:1968
+
+% reasonDerivedClass_E: RTTI says this is a virtual base class.
+% Counterpart: reasonDerivedClass_E (rules.pl:1981)
+derivedClass(DerivedClass, BaseClass, Offset) :-
+    rTTIEnabledAndValid,
+    rTTIInheritsFrom(DerivedTDA, BaseTDA, _Attributes, _M, P, V),
+    P != 0xffffffff,
+    possibleVBTableWrite(_Insn, Method, _ThisPtr, P, VBTableAddr),
+    rTTITDA2Class(DerivedTDA, DerivedClass),
+    rTTITDA2Class(BaseTDA, BaseClass),
+    not sameClass(DerivedClass, BaseClass),
+    sameClass(Method, DerivedClass),
+    possibleVBTableEntry(VBTableAddr, V, Entry),
+    Offset = P + Entry.                                                  % rules.pl:1981
+
 % reasonDerivedClass_B: derived constructor calls base constructor, with
 % matching confirmed vftable writes proving inheritance rather than embedding.
 derivedClass(DerivedConstructor, BaseConstructor, ObjectOffset) :-

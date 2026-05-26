@@ -35,12 +35,22 @@ noCallsBefore(2300).
 methodCallAtOffset(0, 2300, 2100, 0).
 
 % ----------------------------------------------------------------
-% RTTI facts
+% RTTI facts. The CHD lists are already expanded into one fact per BCD,
+% matching facts2clingo.py output.
 % ----------------------------------------------------------------
 fileInfo("dummy", "dummy", "MSVC_32", 4).
 
 rTTITypeDescriptor(5000, 0, "?AVBase@@", "?AVBase@@").
 rTTITypeDescriptor(5100, 0, "?AVDerived@@", "?AVDerived@@").
-rTTICompleteObjectLocator(2996, 0, 5000, 0, 0, 0).   % vt_base  → Base
-rTTICompleteObjectLocator(3996, 0, 5100, 0, 0, 0).   % vt_derived → Derived
-rTTIInheritsFrom(5100, 5000, 0, 0, 0xffffffff, 0).   % Derived inherits Base at offset 0
+rTTICompleteObjectLocator(2996, 6000, 5000, 7000, 0, 0).   % vt_base -> Base
+rTTICompleteObjectLocator(3996, 6100, 5100, 7100, 0, 0).   % vt_derived -> Derived
+
+% Base self-reference.
+rTTIClassHierarchyDescriptor(7000, 0, 8000).
+rTTIBaseClassDescriptor(8000, 5000, 0, 0, 0xffffffff, 0, 0x40, 7000).
+
+% Derived self-reference plus direct Base entry at offset 0.
+rTTIClassHierarchyDescriptor(7100, 0, 8100).
+rTTIClassHierarchyDescriptor(7100, 0, 8200).
+rTTIBaseClassDescriptor(8100, 5100, 1, 0, 0xffffffff, 0, 0x40, 7100).
+rTTIBaseClassDescriptor(8200, 5000, 0, 0, 0xffffffff, 0, 0x40, 7000).

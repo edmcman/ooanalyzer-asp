@@ -247,11 +247,11 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 9. Derived Class / Inheritance (`derivedClass`)
 
 ### Deductive (rules.pl:1811–1999)
-- [ ] `reasonDerivedClass_A` (1823) — RTTI `rTTIInheritsFrom`
+- [x] `reasonDerivedClass_A` (1823) — identity
 - [x] `reasonDerivedClass_B` (1834) — VFTable overwrite pattern (ctor sequence)
 - [ ] `reasonDerivedClass_C` (1960) — shared VFTable entry at offset
-- [ ] `reasonDerivedClass_D` (1968) — base VFTable in derived class
-- [ ] `reasonDerivedClass_E` (1981) — objectInObject + ctor/dtor evidence
+- [x] `reasonDerivedClass_D` (1968) — RTTI non-virtual base
+- [x] `reasonDerivedClass_E` (1981) — RTTI virtual base via VBTable entry
 - [ ] `reasonDerivedClass_F` (1999) — VFTable belongs-to-class + overwrite
 
 ### NOT Derived Class (rules.pl:2025–2036)
