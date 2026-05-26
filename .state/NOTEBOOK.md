@@ -25,6 +25,17 @@ Current in-progress work:
   its own `sameClass/2` closure because `objectInObject/3` will be closed once
   at its defining rules.
 - Updated `TODO.md` for `reasonClassRelationship_internal` direct/transitive.
+- Added `rTTIEnabledAndValid/0` in `src/util/initial.lp` for faithful ASP
+  negation of Prolog's `(rTTIEnabled, rTTIValid)` conjunction.
+- Added `reasonDerivedClass_B` in `src/modules/composition.lp`, with a helper
+  for the base-side vftable/symbol disjunction and `derivedClass/3`
+  sameClass-closure rules per `AGENTS.md`.
+- Fixed the `possibleVFTable/1` Prolog-disjunction port in
+  `src/modules/vftables.lp` by replacing `method(Func) ; method(Entry)` with
+  `1 { method(Func); method(Entry) }`. `examples/inherit_example.lp` now derives
+  `derivedClass(2300,2100,0)`, and the current v2 modules have no other
+  body-level semicolon disjunctions outside intentional cardinality/choice
+  constructs.
 
 Last completed batch:
 1. **Tier 3 VFTable accuracy** — added `reasonNOTVFTableEntry_D`, then `B`, `C`, and `E`; `C` intentionally uses `not vfTableEntry(...)` for the previous offset per approval.

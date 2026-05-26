@@ -246,7 +246,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Deductive (rules.pl:1811–1999)
 - [ ] `reasonDerivedClass_A` (1823) — RTTI `rTTIInheritsFrom`
-- [ ] `reasonDerivedClass_B` (1834) — VFTable overwrite pattern (ctor sequence)
+- [x] `reasonDerivedClass_B` (1834) — VFTable overwrite pattern (ctor sequence)
 - [ ] `reasonDerivedClass_C` (1960) — shared VFTable entry at offset
 - [ ] `reasonDerivedClass_D` (1968) — base VFTable in derived class
 - [ ] `reasonDerivedClass_E` (1981) — objectInObject + ctor/dtor evidence

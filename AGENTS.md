@@ -176,3 +176,7 @@ better despite requiring one extra fixpoint round.
 - **Never merge distinct Prolog predicates into one.** If two predicates (e.g.
   `rTTIEnabled` and `rTTIValid`) appear separately in the Prolog, keep them
   separate in the ASP translation — even if they seem redundant.
+- **Translate Prolog body disjunctions with cardinality tests when possible.**
+  For Prolog `(p(X); q(Y))` in a rule body, prefer `1 { p(X); q(Y) }` over adding
+  a helper predicate solely to express the disjunction. Split into multiple rules
+  only when the alternatives need different variable bindings or structure.

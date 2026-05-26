@@ -4,8 +4,7 @@
 
 % reasonVFTable (843): RTTI evidence confirms a vftable.
 vfTable(VFTable) :-
-    rTTIEnabled,
-    rTTIValid,
+    rTTIEnabledAndValid,
     rTTITDA2VFTable(_TDA, VFTable).                                        % rules.pl:843
 
 % reasonVFTableOverwrite (976): destructor direction — arguments reversed from possibleVFTableOverwrite.
@@ -97,7 +96,7 @@ vfTableEntry(VFTable, Offset, Entry) :-
 possibleVFTable(VFTable) :-
     possibleVFTableEntry(VFTable, _Offset, Entry),
     possibleVFTableWrite(_Insn, Func, _ThisPtr, _Offset2, VFTable),
-    method(Func) ; method(Entry).
+    1 { method(Func); method(Entry) }.
 
 % guessVFTable: choose vfTable or -vfTable for each candidate.
 % Counterpart: guessVFTable (guess.pl:180)

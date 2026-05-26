@@ -204,6 +204,12 @@ rTTIValid :-
     rTTIShouldHaveSelfRef(_),
     not rTTIInvalidRTTI.
 
+% Helper for rules that need the Prolog conjunction (rTTIEnabled, rTTIValid),
+% especially when negating that conjunction in ASP.
+rTTIEnabledAndValid :-
+    rTTIEnabled,
+    rTTIValid.
+
 % Counterpart: rTTITDA2Class/2 (rtti.pl:26-31)
 rTTITDA2Class(TDA, Class) :-
     rTTITDA2VFTable(TDA, VFTable),

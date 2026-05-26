@@ -39,8 +39,7 @@ mergeClasses(A, B) :-
 % reasonNOTMergeClasses_I: RTTI says two TDAs map to different classes.
 % Counterpart: reasonNOTMergeClasses_I (rules.pl:3196)
 -mergeClasses(A, B) :-
-    rTTIEnabled,
-    rTTIValid,
+    rTTIEnabledAndValid,
     rTTITDA2Class(TDA1, Class1),
     rTTITDA2Class(TDA2, Class2),
     TDA1 != TDA2,
