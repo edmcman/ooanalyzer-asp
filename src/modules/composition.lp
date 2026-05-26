@@ -61,8 +61,7 @@ derivedClass(DerivedConstructor, BaseConstructor, ObjectOffset) :-
     DerivedConstructor != BaseConstructor,
     vfTableWrite(_, DerivedConstructor, ObjectOffset, DerivedVFTable),
     not vfTableOverwrite(DerivedConstructor, DerivedVFTable, _, ObjectOffset),
-    reasonDerivedClassBBaseEvidence(DerivedVFTable, BaseConstructor),
-    not classRelationship(DerivedConstructor, BaseConstructor).           % rules.pl:1834
+    reasonDerivedClassBBaseEvidence(DerivedVFTable, BaseConstructor).           % rules.pl:1834
 
 % Close over class merges
 derivedClass_closed(DerivedClass, BaseClass, ObjectOffset) :-
