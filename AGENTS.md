@@ -137,6 +137,36 @@ See `src/util/initial.lp` for the exact derivation rules.
 
 See [TODO.md](TODO.md) for the full rule coverage tracker (217 rules across 12 entity groups).
 
+## Class-level relations and `sameClass`
+
+Prolog uses explicit class IDs; ASP uses `sameClass/2` to group methods into
+classes. For class-level conclusions like `derivedClass(A, B, Off)`:
+
+- **Defining rules** record concrete witness methods (the methods that provided
+  evidence), without joining `sameClass`.
+- **Close the relation once** with two propagation rules immediately after the
+  defining rules:
+
+```prolog
+derivedClass(MB, C, Off) :- derivedClass(MA, C, Off), sameClass(MA, MB).
+derivedClass(A, MC, Off) :- derivedClass(A, MB, Off), sameClass(MB, MC).
+```
+
+- **Querying rules** use `derivedClass` directly — no extra `sameClass` join needed.
+
+**Do not collapse the two propagation rules into one combined rule:**
+
+```prolog
+% BAD — O(N^4) grounding
+derivedClass(MA, MB, Off) :- derivedClass(A, B, Off), sameClass(A, MA), sameClass(B, MB).
+```
+
+The combined form joins both `sameClass` dimensions simultaneously. With
+semi-naive evaluation, the grounder re-instantiates it against the N² newly
+derived facts with N×N fan-out each, giving O(N⁴) total groundings. The
+two-rule form joins one dimension at a time — O(N³) total — and is strictly
+better despite requiring one extra fixpoint round.
+
 ## Porting guidelines
 
 - **Update `TODO.md` immediately after porting each rule** — mark it `[x]` as soon as it lands in a file.
