@@ -30,6 +30,7 @@ original module set.
 | `src/old/` | v1 Clingo modules (rules.lp, guess.lp, insanity.lp, optimize.lp, output.lp) — reference only |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 | `TODO.md` | Rule coverage tracker: all `reason*`/`guess*`/`insanity*` rules, sorted by entity, with port status |
+| `.state/NOTEBOOK.md` | Current porting session notes and next-rule queue |
 
 ## Running
 

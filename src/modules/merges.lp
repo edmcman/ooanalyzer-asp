@@ -36,6 +36,15 @@ mergeClasses(A, B) :-
     not vfTableWrite(_, Method1, 0, VFTable2),
     not vfTableWrite(_, Method2, 0, VFTable1).                              % rules.pl:3123
 
+% reasonNOTMergeClasses_K: methods with conflicting symbol class names
+% cannot belong to the same recovered class.
+% Counterpart: reasonNOTMergeClasses_K (rules.pl:3222)
+-mergeClasses(A, B) :-
+    symbolClass(Method1, _MangledName1, ClassName1, _MethodName1),
+    symbolClass(Method2, _MangledName2, ClassName2, _MethodName2),
+    ClassName1 != ClassName2,
+    sortPair(Method1, Method2, A, B).                                      % rules.pl:3222
+
 % Compact transitive closure over hard merges.
 merged(A, B) :- mergeClasses(A, B).
 merged(B, A) :- mergeClasses(A, B).

@@ -308,14 +308,14 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTMergeClasses_E` (3123) — write distinct VFTables at offset 0
 - [ ] `reasonNOTMergeClasses_F` (3158) — different VFTable sizes
 - [ ] `reasonNOTMergeClasses_G` (3177) — both are bases of same class at different offsets
-- [ ] `reasonNOTMergeClasses_I` (3196) — symbol class conflict
+- [ ] `reasonNOTMergeClasses_I` (3196) — different RTTI TDAs/classes
 - [ ] `reasonNOTMergeClasses_J` (3212) — one has no base, other has a base
-- [ ] `reasonNOTMergeClasses_K` (3222) — different real destructors
+- [x] `reasonNOTMergeClasses_K` (3222) — conflicting symbol class names
 - [ ] `reasonNOTMergeClasses_L` (3240) — overlapping object layouts
 - [ ] `reasonNOTMergeClasses_M` (3256) — size contradiction (GTE > LTE)
-- [ ] `reasonNOTMergeClasses_O` (3296) — different symbol class names
+- [ ] `reasonNOTMergeClasses_O` (3296) — called method member access exceeds caller class size
 - [ ] `reasonNOTMergeClasses_P` (3318) — different constructors at same offset
-- [ ] `reasonNOTMergeClasses_Q` (3352) — symbol says methods belong to different classes
+- [ ] `reasonNOTMergeClasses_Q` (3352) — symbol class name missing/mismatch within class
 - [ ] `reasonNOTMergeClasses_R` (3366) — two deleting destructors in candidate merge
 
 ### Guess (guess.pl)
