@@ -259,8 +259,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Class Relationships (rules.pl:2063–2130)
 - [ ] `reasonDerivedClassRelationship` (2063) — direct derivation
 - [ ] `reasonDerivedClassRelationship` (2069) — transitive through ancestor
-- [ ] `reasonClassRelationship_internal` (2114) — derived → base (direct)
-- [ ] `reasonClassRelationship_internal` (2119) — transitive chain
+- [x] `reasonClassRelationship_internal` (2114) — derived → base (direct)
+- [x] `reasonClassRelationship_internal` (2119) — transitive chain
 
 ### Has No Base (rules.pl:2131–2175)
 - [x] `reasonClassHasNoBase` (2131) — existing fact (identity rule; covered by input fact architecture)

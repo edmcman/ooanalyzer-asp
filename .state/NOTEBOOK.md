@@ -18,6 +18,14 @@ then commit the completed change.
 - Commit each completed, tested rule port as its own focused commit
 
 ## Where we are now
+Current in-progress work:
+- Added `src/modules/composition.lp` with the `classRelationship/2` helper:
+  direct `objectInObject/3` and transitive composition through `objectInObject/3`.
+  Per the class-fact guidance in `AGENTS.md`, `classRelationship/2` does not add
+  its own `sameClass/2` closure because `objectInObject/3` will be closed once
+  at its defining rules.
+- Updated `TODO.md` for `reasonClassRelationship_internal` direct/transitive.
+
 Last completed batch:
 1. **Tier 3 VFTable accuracy** — added `reasonNOTVFTableEntry_D`, then `B`, `C`, and `E`; `C` intentionally uses `not vfTableEntry(...)` for the previous offset per approval.
 2. **Class-call infrastructure** — added `src/modules/classes.lp` with `reasonClassCallsMethod_C` and `reasonClassCallsMethod_B`, both using direct `sameClass/2` checks instead of adding Prolog-style `find/2`.

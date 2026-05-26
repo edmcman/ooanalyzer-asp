@@ -9,4 +9,5 @@
 #include "src/modules/vftables.lp".
 #include "src/modules/merges.lp".
 #include "src/modules/classes.lp".
+#include "src/modules/composition.lp".
 #include "src/util/sanity.lp".
