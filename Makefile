@@ -86,7 +86,7 @@ verify-core:
 	echo "=== Verifying examples/symbol_missing_conflict_example.lp ==="; \
 	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(CLINGO) $(CLINGO_FLAGS) examples/symbol_missing_conflict_example.lp; \
 	echo "=== Verifying diagnostic contradiction fixture ==="; \
-	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
+	run_case 'SATISFIABLE' 'violate(insanityTwoRealDestructorsOnClass' '' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
 
 # ----------------------------------------------------------------
 # Run dualgrounder on generated .lp files
