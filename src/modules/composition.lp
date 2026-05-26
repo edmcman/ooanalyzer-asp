@@ -100,6 +100,16 @@ embedsKnownBasePenalty(Outer, Inner, Off) :-
 
 #minimize { 1@1, embedsKnownBase, Outer, Inner, Off : embedsKnownBasePenalty(Outer, Inner, Off) }.
 
+% NEW RULE (no Prolog equivalent): reward when a class whose vftable contains a
+% purecall entry is inherited from. Abstract classes should not be leaf classes.
+purecallNotMostDerivedReward(Derived, Base, Off) :-
+    derivedClass(Derived, Base, Off),
+    sameClass(Base, VFTable),
+    vfTableEntry(VFTable, _, Entry),
+    purecall(Entry).
+
+#maximize { 1@1, purecallNotMostDerived, Derived, Base, Off : purecallNotMostDerivedReward(Derived, Base, Off) }.
+
 % ============================================================
 % CONSTRAINTS
 % ============================================================
