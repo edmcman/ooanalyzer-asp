@@ -36,6 +36,17 @@ mergeClasses(A, B) :-
     not vfTableWrite(_, Method1, 0, VFTable2),
     not vfTableWrite(_, Method2, 0, VFTable1).                              % rules.pl:3123
 
+% reasonNOTMergeClasses_I: RTTI says two TDAs map to different classes.
+% Counterpart: reasonNOTMergeClasses_I (rules.pl:3196)
+-mergeClasses(A, B) :-
+    rTTIEnabled,
+    rTTIValid,
+    rTTITDA2Class(TDA1, Class1),
+    rTTITDA2Class(TDA2, Class2),
+    TDA1 != TDA2,
+    not sameClass(Class1, Class2),
+    sortPair(Class1, Class2, A, B).                                          % rules.pl:3196
+
 % reasonNOTMergeClasses_K: methods with conflicting symbol class names
 % cannot belong to the same recovered class.
 % Counterpart: reasonNOTMergeClasses_K (rules.pl:3222)

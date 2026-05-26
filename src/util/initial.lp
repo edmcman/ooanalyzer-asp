@@ -204,6 +204,11 @@ rTTIValid :-
     rTTIShouldHaveSelfRef(_),
     not rTTIInvalidRTTI.
 
+% Counterpart: rTTITDA2Class/2 (rtti.pl:26-31)
+rTTITDA2Class(TDA, Class) :-
+    rTTITDA2VFTable(TDA, VFTable),
+    sameClass(VFTable, Class).
+
 % ----------------------------------------------------------------
 % possibleMethod: at least some evidence that Address is a function.
 % Counterpart: initial.pl:78-85

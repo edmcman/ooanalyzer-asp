@@ -32,16 +32,15 @@ All 13 hand-written examples pass:
 Note: `make verify-core` currently reaches the final diagnostic-mode check and
 fails there because `--const diagnose=1` returns `SATISFIABLE` with
 `violate(insanityTwoRealDestructorsOnClass,(1300,1400))`, while the Makefile
-still expects `UNSATISFIABLE`. This appears unrelated to `reasonNOTVFTableEntry_E`.
+still expects `UNSATISFIABLE`.
 
 ## Suggested next steps
 
 Ranked candidates for next implementation (by complexity, predicate availability, and downstream impact):
 
 ### Current one-at-a-time queue
-1. **`reasonDerivedClass_B` (1834)** — constructor call at object offset plus matching confirmed vftable writes derives a base/derived relationship. Primary non-RTTI inheritance detection mechanism; requires a faithful replacement for Prolog's `find/2`, `hasPendingVFTableMerge/1`, and `reasonClassRelationship/2` checks.
-2. **`reasonNOTMergeClasses_I` (3196)** — RTTI TDAs map to different classes. Depends on porting `rTTITDA2Class/2` faithfully; current v2 only has `rTTITDA2VFTable/2`.
-3. **`reasonNOTMergeClasses_O` (3296)** — class with known maximum size calls a method whose member access would exceed that size. Delayed with class-size work because it depends on `classSizeLTE/2` and `validMethodMemberAccess/4`.
+1. **`reasonDerivedClass_B` (1834)** — constructor call at object offset plus matching confirmed vftable writes derives a base/derived relationship. Primary non-RTTI inheritance detection mechanism; requires a careful decision on `find/2`, `hasPendingVFTableMerge/1`, and `reasonClassRelationship/2` replacements.
+2. **`reasonNOTMergeClasses_O` (3296)** — class with known maximum size calls a method whose member access would exceed that size. Delayed with class-size work because it depends on `classSizeLTE/2` and `validMethodMemberAccess/4`.
 
 Delayed:
 - **Class size rules** — useful later, but they are a bounds-and-constraints subsystem rather than the next inheritance/merge focus.
