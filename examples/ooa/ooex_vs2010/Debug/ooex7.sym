@@ -1,16 +1,10 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
-vbTableWrite(Insn,Method,Offset,VBTable)
-
-src/modules/ctorsdtors.lp:26:5-34: info: atom does not occur in any rule head:
-vbTableWrite(#Anon0,Method,#Anon1,#Anon2)
-
 src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.304s)
+Answer: 1 (Time: 0.211s)
 constructor(__declspec(dllimport) std::_Container_base12::_Container_base12(void))
 constructor(__declspec(dllimport) std::exception::exception(char const * const &))
 constructor(__declspec(dllimport) std::exception::exception(class std::exception const &))
@@ -1007,5 +1001,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -72 -15 -429
 Calls        : 1
-Time         : 0.304s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.292s
+Time         : 0.211s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.211s

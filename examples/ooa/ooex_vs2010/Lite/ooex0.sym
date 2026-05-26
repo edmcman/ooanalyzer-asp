@@ -1,16 +1,10 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/modules/ctorsdtors.lp:14:5-48: info: atom does not occur in any rule head:
-vbTableWrite(Insn,Method,Offset,VBTable)
-
-src/modules/ctorsdtors.lp:26:5-34: info: atom does not occur in any rule head:
-vbTableWrite(#Anon0,Method,#Anon1,#Anon2)
-
 src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.077s)
+Answer: 1 (Time: 0.078s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int))
 method(virtual std::bad_alloc::~bad_alloc(void))
@@ -549,5 +543,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -114 -1 -15 -233
 Calls        : 1
-Time         : 0.077s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.077s
+Time         : 0.078s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.078s
