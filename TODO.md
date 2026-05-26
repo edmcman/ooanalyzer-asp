@@ -254,7 +254,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonDerivedClass_F` (1999) — VBTable entry + write confirms virtual base offset (non-RTTI path)
 
 ### NOT Derived Class (rules.pl:2025–2036)
-- [ ] `reasonNOTDerivedClass` (2025) — existing `factNOTDerivedClass`
+- [x] `reasonNOTDerivedClass` (2025) — existing `factNOTDerivedClass` (identity rule; covered by input fact / strong-negation architecture)
 - [x] `reasonNOTDerivedClass` (2036) — contradicts embedded object (covered by `:- embeddedObject, derivedClass`)
 
 ### Class Relationships (rules.pl:2063–2130)
@@ -296,7 +296,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Merge (rules.pl:2748–2939)
 - [ ] `reasonMergeClasses_B` (2792) — method class merges with base class
 - [ ] `reasonMergeClasses_C` (2822) — existing class association
-- [ ] `reasonMergeClasses_E` (2847) — VFTable belongs to same class
+- [x] `reasonMergeClasses_E` (2847) — two classes both direct bases of same derived at same offset must merge
 - [x] `reasonMergeClasses_G` (2881) — symbols with same class name
 - [ ] `reasonMergeClasses_H` (2895) — derived constructor calls base
 - [x] `reasonMergeClasses_J` (2925) — RTTI says two VFTables belong to same class

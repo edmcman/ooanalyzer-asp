@@ -24,6 +24,14 @@ mergeClasses(A, B) :-
     VFTable1 != VFTable2,
     sortPair(VFTable1, VFTable2, A, B).                                    % rules.pl:2925
 
+% reasonMergeClasses_E: two classes that are both direct bases of the same derived class
+% at the same offset must be the same class.
+mergeClasses(A, B) :-
+    derivedClass_closed(DerivedClass, Class1, ObjectOffset),
+    derivedClass_closed(DerivedClass, Class2, ObjectOffset),
+    not sameClass(Class1, Class2),
+    sortPair(Class1, Class2, A, B).                                        % rules.pl:2847
+
 % reasonNOTMergeClasses_E: methods writing different vftables at offset 0
 % cannot be the same class, unless both cross-write the other's vftable.
 % Counterpart: reasonNOTMergeClasses_E (rules.pl:3123)

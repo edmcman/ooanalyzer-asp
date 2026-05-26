@@ -18,26 +18,13 @@ then commit the completed change.
 - Commit each completed, tested rule port as its own focused commit
 
 ## Where we are now
-Current in-progress work:
-- Added `src/modules/composition.lp` with the `classRelationship/2` helper:
-  direct `objectInObject/3` and transitive composition through `objectInObject/3`.
-  Per the class-fact guidance in `AGENTS.md`, `classRelationship/2` does not add
-  its own `sameClass/2` closure because `objectInObject/3` will be closed once
-  at its defining rules.
-- Updated `TODO.md` for `reasonClassRelationship_internal` direct/transitive.
-- Added `rTTIEnabledAndValid/0` in `src/util/initial.lp` for faithful ASP
-  negation of Prolog's `(rTTIEnabled, rTTIValid)` conjunction.
-- Added `reasonDerivedClass_B` in `src/modules/composition.lp`, with a helper
-  for the base-side vftable/symbol disjunction and `derivedClass/3`
-  sameClass-closure rules per `AGENTS.md`.
-- Fixed the `possibleVFTable/1` Prolog-disjunction port in
-  `src/modules/vftables.lp` by replacing `method(Func) ; method(Entry)` with
-  `1 { method(Func); method(Entry) }`. `examples/inherit_example.lp` now derives
-  `derivedClass(2300,2100,0)`, and the current v2 modules have no other
-  body-level semicolon disjunctions outside intentional cardinality/choice
-  constructs.
 
-Last completed batch:
+No in-progress work. Last session landed `reasonNOTDerivedClass` (identity, TODO only) and
+`reasonMergeClasses_E` (2847) in `src/modules/merges.lp`. All 6 non-diagnostic regression
+checks pass. The diagnostic fixture (`--const diagnose=1` on `strong_negation_contradiction.lp`)
+remains pre-existing-broken: returns `SATISFIABLE` + `violate(...)` instead of `UNSATISFIABLE`.
+
+Previous completed batch:
 1. **Tier 3 VFTable accuracy** — added `reasonNOTVFTableEntry_D`, then `B`, `C`, and `E`; `C` intentionally uses `not vfTableEntry(...)` for the previous offset per approval.
 2. **Class-call infrastructure** — added `src/modules/classes.lp` with `reasonClassCallsMethod_C` and `reasonClassCallsMethod_B`, both using direct `sameClass/2` checks instead of adding Prolog-style `find/2`.
 3. **Method expansion from class calls** — added `reasonMethod_J`, so `classCallsMethod(_, Method)` proves `method(Method)`.
@@ -52,6 +39,11 @@ Note: `make verify-core` currently reaches the final diagnostic-mode check and
 fails there because `--const diagnose=1` returns `SATISFIABLE` with
 `violate(insanityTwoRealDestructorsOnClass,(1300,1400))`, while the Makefile
 still expects `UNSATISFIABLE`.
+
+## Last completed batch
+
+1. **`reasonNOTDerivedClass` (2025)** — identity rule; marked done in TODO.md (covered by input fact / strong-negation architecture, no code change needed).
+2. **`reasonMergeClasses_E` (2847)** — two classes both direct bases of the same derived class at the same offset must merge. Added to `src/modules/merges.lp` using `derivedClass_closed` and `not sameClass`. All 6 non-diagnostic regression checks pass.
 
 ## Suggested next steps
 
