@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.048s)
+Answer: 1 (Time: 0.046s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int))
 method(virtual std::bad_alloc::~bad_alloc(void))
@@ -422,5 +422,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -103 -15 -174
 Calls        : 1
-Time         : 0.048s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.048s
+Time         : 0.046s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.046s

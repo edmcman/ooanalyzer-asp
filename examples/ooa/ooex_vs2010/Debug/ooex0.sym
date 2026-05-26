@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.052s)
+Answer: 1 (Time: 0.053s)
 method(ClassA::~ClassA(void))
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int),ClassA::~ClassA(void))
 method(j___setdefaultprecision)
@@ -431,4 +431,4 @@ Models       : 1
 Optimization : -206
 Calls        : 1
 Time         : 0.053s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.052s
+CPU Time     : 0.053s

@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.113s)
+Answer: 1 (Time: 0.109s)
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void))
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void))
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void))
@@ -731,5 +731,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -55 -20 -309
 Calls        : 1
-Time         : 0.113s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.113s
+Time         : 0.109s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.109s

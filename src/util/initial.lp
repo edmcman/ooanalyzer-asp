@@ -174,22 +174,39 @@ rTTIInheritsIndirectlyFrom(DerivedTDA, AncestorTDA) :-
     rTTIAncestorOf(DerivedTDA, BaseTDA),
     rTTIAncestorOf(BaseTDA, AncestorTDA).
 
-% Direct non-virtual inheritance without the P/V filter, used only for validation.
+% Direct non-virtual inheritance.
 % bcd_virtual_base_of_contained_object = 0x10.
 % Counterpart: rTTIInheritsDirectlyFrom/6 (rtti.pl:83-108)
-rTTIDirectNonVirtual(DerivedTDA, AncestorTDA, M, P, V) :-
+rTTIInheritsDirectlyFrom(DerivedTDA, AncestorTDA, Attributes, M, P, V) :-
     rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
-    rTTIClassHierarchyDescriptor(CHDA, _, BCDA),
+    rTTIClassHierarchyDescriptor(CHDA, Attributes, BCDA),
     rTTIBaseClassDescriptor(BCDA, AncestorTDA, _, M, P, V, AttrValue, _),
     AttrValue & 16 = 0,
     AncestorTDA != DerivedTDA,
     not rTTIInheritsIndirectlyFrom(DerivedTDA, AncestorTDA).
 
+% Virtual inheritance.
+% Counterpart: rTTIInheritsVirtuallyFrom/6 (rtti.pl:110-128)
+rTTIInheritsVirtuallyFrom(DerivedTDA, AncestorTDA, Attributes, M, P, V) :-
+    rTTICompleteObjectLocator(_, _, DerivedTDA, CHDA, _, _),
+    rTTIClassHierarchyDescriptor(CHDA, Attributes, BCDA),
+    rTTIBaseClassDescriptor(BCDA, AncestorTDA, _, M, P, V, AttrValue, _),
+    AttrValue & 16 = 16,
+    AncestorTDA != DerivedTDA,
+    not rTTIInheritsIndirectlyFrom(DerivedTDA, AncestorTDA).
+
+% Counterpart: rTTIInheritsFrom/6 (rtti.pl:131-134)
+rTTIInheritsFrom(DerivedTDA, AncestorTDA, Attributes, M, P, V) :-
+    rTTIInheritsDirectlyFrom(DerivedTDA, AncestorTDA, Attributes, M, P, V).
+
+rTTIInheritsFrom(DerivedTDA, AncestorTDA, Attributes, M, P, V) :-
+    rTTIInheritsVirtuallyFrom(DerivedTDA, AncestorTDA, Attributes, M, P, V).
+
 % Counterpart: rTTIInvalidDirectInheritanceP/0 (rtti.pl:204-207)
-rTTIInvalidDirectInheritanceP :- rTTIDirectNonVirtual(_, _, _, P, _), P != 0xffffffff.
+rTTIInvalidDirectInheritanceP :- rTTIInheritsDirectlyFrom(_, _, _, _, P, _), P != 0xffffffff.
 
 % Counterpart: rTTIInvalidDirectInheritanceV/0 (rtti.pl:209-212)
-rTTIInvalidDirectInheritanceV :- rTTIDirectNonVirtual(_, _, _, _, V), V != 0.
+rTTIInvalidDirectInheritanceV :- rTTIInheritsDirectlyFrom(_, _, _, _, _, V), V != 0.
 
 rTTIInvalidRTTI :- rTTIAllTypeDescriptors(TDA), not rTTIHasTypeDescriptor(TDA).
 rTTIInvalidRTTI :- rTTIShouldHaveSelfRef(TDA),  not rTTIHasSelfRef(TDA).

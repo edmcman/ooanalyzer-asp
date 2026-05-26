@@ -10,7 +10,7 @@ src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
 vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.063s)
+Answer: 1 (Time: 0.059s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void))
 method(virtual * type_info::`vector deleting destructor'(unsigned int))
 method(virtual int Base::func1(void))
@@ -503,5 +503,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -33 -15 -228
 Calls        : 1
-Time         : 0.063s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.063s
+Time         : 0.059s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.059s
