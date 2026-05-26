@@ -77,7 +77,7 @@ def main():
     try:
         for line in inp:
             tokens = line.split()
-            if tokens and all(re.match(r'^\w+\(', t) for t in tokens):
+            if tokens and all(re.match(r'^-?\w+\(', t) for t in tokens):
                 for fact in tokens:
                     fact = symbolize(fact, addr_map)
                     if args.filter and args.filter not in fact:
