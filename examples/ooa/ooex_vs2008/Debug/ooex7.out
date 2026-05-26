@@ -10,11 +10,11 @@ src/modules/vftables.lp:44:5-34: info: atom does not occur in any rule head:
   vfTableSizeGTE(VFTable,Size)
 
 Solving...
-Answer: 1 (Time: 0.054s)
+Answer: 1 (Time: 0.052s)
 constructor(4297396) method(4297384) method(4297396) method(4297400) method(4297404) realDestructor(4297400) mergeClasses(4297384,4297404) mergeClasses(4297396,4297400) sameClass(4297384,4297384) sameClass(4297396,4297396) sameClass(4297400,4297400) sameClass(4297404,4297404) sameClass(4297404,4297384) sameClass(4297400,4297396) sameClass(4297396,4297400) sameClass(4297384,4297404)
 SATISFIABLE
 
 Models       : 1+
 Calls        : 1
-Time         : 0.054s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.054s
+Time         : 0.052s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.051s
