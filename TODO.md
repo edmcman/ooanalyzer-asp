@@ -258,8 +258,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTDerivedClass` (2036) — contradicts embedded object (covered by `:- embeddedObject, derivedClass`)
 
 ### Class Relationships (rules.pl:2063–2130)
-- [ ] `reasonDerivedClassRelationship` (2063) — direct derivation
-- [ ] `reasonDerivedClassRelationship` (2069) — transitive through ancestor
+- [x] `reasonDerivedClassRelationship` (2063) — direct derivation
+- [x] `reasonDerivedClassRelationship` (2069) — transitive through ancestor
 - [x] `reasonClassRelationship_internal` (2114) — derived → base (direct)
 - [x] `reasonClassRelationship_internal` (2119) — transitive chain
 
