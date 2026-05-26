@@ -33,14 +33,11 @@ still expects `UNSATISFIABLE`. This appears unrelated to `reasonNOTVFTableEntry_
 Ranked candidates for next implementation (by complexity, predicate availability, and downstream impact):
 
 ### Current one-at-a-time queue
-1. **`reasonClassSizeGTE_B` (3505)** — every proven method/vftable class has size at least 0. Low-risk size baseline.
-2. **`reasonClassSizeGTE_E` (3624)** — `validMethodMemberAccess` at offset+size -> `classSizeGTE`. `methodMemberAccess/4` exists, but `validMethodMemberAccess/4` may need a faithful helper first.
-3. **`reasonClassSizeGTE_G` (3653)** — confirmed vftable write at object offset implies class size at least `ObjectOffset + pointerSize`.
-4. **`reasonClassSizeGTE_C` (3519)** — class relationship propagates base minimum size to derived/related class; depends on `reasonClassRelationship`.
-5. **`reasonClassSizeGTE_D` (3609)** — heap allocation size associated with a constructor; higher complexity because it depends on `thisPtrAssociatedWithConstructor` helpers.
-6. **`reasonClassSizeGTE_F` (3637)** — object-in-object containment propagates inner class size to outer class; depends on `objectInObject`.
-7. **`reasonDerivedClass_B` (1834)** — VFTable overwrite in constructor call sequence (base -> derived). Primary non-RTTI inheritance detection mechanism; medium complexity.
-8. **`reasonNOTMergeClasses_I` (3196)** — methods with conflicting symbol class names cannot merge.
-9. **`reasonNOTMergeClasses_Q` (3352)** — symbol says methods belong to different classes.
-10. **`reasonNOTMergeClasses_O` (3296)** — class-call method already belongs to a different symbol class.
-11. **`reasonNOTMergeClasses_K` (3222)** — different real destructors block a merge.
+1. **`reasonDerivedClass_B` (1834)** — constructor call at object offset plus matching confirmed vftable writes derives a base/derived relationship. Primary non-RTTI inheritance detection mechanism; requires a faithful replacement for Prolog's `find/2`, `hasPendingVFTableMerge/1`, and `reasonClassRelationship/2` checks.
+2. **`reasonNOTMergeClasses_K` (3222)** — symbol class names disagree, so the containing classes cannot merge. Available now with direct `sameClass/2` style, but TODO's existing description is stale.
+3. **`reasonNOTMergeClasses_Q` (3352)** — if one method's symbol identifies class `C`, methods without a symbol for `C` cannot merge with it, except `type_info`. Available now with direct `sameClass/2` style.
+4. **`reasonNOTMergeClasses_I` (3196)** — RTTI TDAs map to different classes. Depends on porting `rTTITDA2Class/2` faithfully; current v2 only has `rTTITDA2VFTable/2`.
+5. **`reasonNOTMergeClasses_O` (3296)** — class with known maximum size calls a method whose member access would exceed that size. Delayed with class-size work because it depends on `classSizeLTE/2` and `validMethodMemberAccess/4`.
+
+Delayed:
+- **Class size rules** — useful later, but they are a bounds-and-constraints subsystem rather than the next inheritance/merge focus.
