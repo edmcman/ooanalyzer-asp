@@ -144,15 +144,23 @@ classes. For class-level conclusions like `derivedClass(A, B, Off)`:
 
 - **Defining rules** record concrete witness methods (the methods that provided
   evidence), without joining `sameClass`.
-- **Close the relation once** with two propagation rules immediately after the
-  defining rules:
+- **Close the relation** with a `_closed` variant using three rules immediately
+  after the defining rules. The base predicate only ever accumulates raw witness
+  facts; all closure writes to `_closed`:
 
 ```prolog
-derivedClass(MB, C, Off) :- derivedClass(MA, C, Off), sameClass(MA, MB).
-derivedClass(A, MC, Off) :- derivedClass(A, MB, Off), sameClass(MB, MC).
+% seed
+derivedClass_closed(A, B, Off) :- derivedClass(A, B, Off).
+% close first argument
+derivedClass_closed(B, C, Off) :- derivedClass_closed(A, C, Off), sameClass(A, B).
+% close second argument
+derivedClass_closed(A, C, Off) :- derivedClass_closed(A, B, Off), sameClass(B, C).
 ```
 
-- **Querying rules** use `derivedClass` directly — no extra `sameClass` join needed.
+- **Querying rules** use `pred_closed` — never the base predicate — so no extra
+  `sameClass` join is needed at the call site.
+- **Declare `#defined pred_closed/N`** alongside `#defined pred/N` at the top of
+  the module, so Clingo does not complain when the predicate is empty.
 
 **Do not collapse the two propagation rules into one combined rule:**
 

@@ -3,6 +3,7 @@
 % ============================================================
 
 #defined objectInObject/3.
+#defined objectInObject_closed/3.
 
 % objectInObject/3 is closed over sameClass/2 at its defining rules, so
 % classRelationship/2 only needs to compute reachability over objectInObject.
@@ -36,21 +37,25 @@ derivedClass(DerivedConstructor, BaseConstructor, ObjectOffset) :-
     not classRelationship(DerivedConstructor, BaseConstructor).           % rules.pl:1834
 
 % Close over class merges
-derivedClass(DerivedClass2, BaseClass, ObjectOffset) :-
-    derivedClass(DerivedClass1, BaseClass, ObjectOffset),
+
+derivedClass_closed(DerivedClass, BaseClass, ObjectOffset) :-
+    derivedClass(DerivedClass, BaseClass, ObjectOffset).
+
+derivedClass_closed(DerivedClass2, BaseClass, ObjectOffset) :-
+    derivedClass_closed(DerivedClass1, BaseClass, ObjectOffset),
     sameClass(DerivedClass1, DerivedClass2).
 
-derivedClass(DerivedClass, BaseClass2, ObjectOffset) :-
-    derivedClass(DerivedClass, BaseClass1, ObjectOffset),
+derivedClass_closed(DerivedClass, BaseClass2, ObjectOffset) :-
+    derivedClass_closed(DerivedClass, BaseClass1, ObjectOffset),
     sameClass(BaseClass1, BaseClass2).
 
 % reasonClassRelationship_internal: direct object composition/inheritance.
 classRelationship(DerivedClass, BaseClass) :-
-    objectInObject(DerivedClass, BaseClass, _Offset).                    % rules.pl:2114
+    objectInObject_closed(DerivedClass, BaseClass, _Offset).                    % rules.pl:2114
 
 % reasonClassRelationship_internal: transitive object composition/inheritance.
 classRelationship(DerivedClass, BaseClass) :-
     classRelationship(DerivedClass, MiddleClass),
-    objectInObject(MiddleClass, BaseClass, _Offset).                     % rules.pl:2119
+    objectInObject_closed(MiddleClass, BaseClass, _Offset).                     % rules.pl:2119
 
 #show derivedClass/3.
