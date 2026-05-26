@@ -279,7 +279,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonClassHasUnknownBase_E` (2331) — class calls method of unrelated class
 
 ### Guess (guess.pl)
-- [~] `guessDerivedClass` (3 variants) — guess rule ported; rewards not yet added
+- [x] `guessDerivedClass` (3 variants)
 - [ ] `guessClassHasNoBase_B`
 - [ ] `guessClassHasNoBaseSpecial`
 - [ ] `guessCommitClassHasNoBase`

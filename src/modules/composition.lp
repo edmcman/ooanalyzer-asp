@@ -82,6 +82,25 @@ classRelationship(DerivedClass, BaseClass) :-
     objectInObject(Outer, Inner, Off).                    % guess.pl:317 / rules.pl:1740
 
 % ============================================================
+% REWARDS
+% ============================================================
+
+% guessDerivedClass: prefer inheritance over embedding when both are possible.
+guessDerivedClassReward(Outer, Inner, Off) :-
+    derivedClass(Outer, Inner, Off),
+    objectInObject(Outer, Inner, Off).
+
+#maximize { 1@1, guessDerivedClass, Outer, Inner, Off : guessDerivedClassReward(Outer, Inner, Off) }.
+
+% NEW RULE (no Prolog equivalent): penalize embedding a class that is already known to be a
+% base (inherited from) — embedding a base class elsewhere is likely a misclassification.
+embedsKnownBasePenalty(Outer, Inner, Off) :-
+    embeddedObject(Outer, Inner, Off),
+    derivedClass(_, Inner, _).
+
+#minimize { 1@1, embedsKnownBase, Outer, Inner, Off : embedsKnownBasePenalty(Outer, Inner, Off) }.
+
+% ============================================================
 % CONSTRAINTS
 % ============================================================
 
