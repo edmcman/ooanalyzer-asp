@@ -164,7 +164,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Sizing (rules.pl:1333–1406)
 - [x] `reasonVFTableSizeGTE` (1333) — existing fact (identity rule; covered by input fact architecture)
-- [ ] `reasonVFTableSizeGTE` (1337) — from known entries
+- [x] `reasonVFTableSizeGTE` (1337) — from known entries via exact `vfTableSize` coverage constraint
 - [ ] `reasonVFTableSizeGTE` (1350) — from derived class table
 - [x] `reasonVFTableSizeLTE` (1388) — existing fact (identity rule; covered by input fact architecture)
 - [ ] `reasonVFTableSizeLTE` (1392) — from table entry gap
@@ -304,8 +304,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### NOT Merge (rules.pl:3041–3383)
 - [ ] `reasonNOTMergeClasses_A` (3073) — different base classes
-- [ ] `reasonNOTMergeClasses_C` (3111) — one is derived of other
-- [ ] `reasonNOTMergeClasses_C_asymmetric` (3090) — asymmetric derivation
+- [x] `reasonNOTMergeClasses_C` (3111) — one is derived of other
+- [x] `reasonNOTMergeClasses_C_asymmetric` (3090) — asymmetric derivation
 - [x] `reasonNOTMergeClasses_E` (3123) — write distinct VFTables at offset 0
 - [x] `reasonNOTMergeClasses_F` (3158) — same derived class has two bases at different offsets
 - [x] `reasonNOTMergeClasses_G` (3177) — subsumed by reasonNOTMergeClasses_J (objectInObject ⊆ classRelationship_closed)

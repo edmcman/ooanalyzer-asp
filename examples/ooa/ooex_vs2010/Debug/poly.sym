@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.101s)
+Answer: 1 (Time: 0.123s)
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void))
 method(__declspec(dllimport) bool std::ios_base::good(void)const)
 method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const)
@@ -677,5 +677,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -45 -6 -25 -291 -20
 Calls        : 1
-Time         : 0.101s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.101s
+Time         : 0.123s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.121s

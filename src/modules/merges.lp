@@ -51,6 +51,20 @@ mergeClasses(A, B) :-
     Offset1 != Offset2,
     sortPair(Class1, Class2, A, B).                                        % rules.pl:3158
 
+% reasonNOTMergeClasses_C: any method called by both derived and base belongs to base,
+% not derived — so derived class and that method's class cannot merge.
+% Counterpart: reasonNOTMergeClasses_C / _C_asymmetric (rules.pl:3090, 3111)
+reasonNOTMergeClassesCAsymmetric(DerivedClass, MethodClass) :-
+    derivedClass_closed(DerivedClass, BaseClass, _ObjectOffset),
+    classCallsMethod(DerivedClass, Method),
+    classCallsMethod(BaseClass, Method),
+    sameClass(Method, MethodClass),
+    not sameClass(DerivedClass, MethodClass).
+
+-mergeClasses(A, B) :-
+    reasonNOTMergeClassesCAsymmetric(DerivedClass, MethodClass),
+    sortPair(DerivedClass, MethodClass, A, B).                            % rules.pl:3111
+
 % reasonNOTMergeClasses_J: classes in a composition/inheritance relationship cannot merge.
 % Counterpart: reasonNOTMergeClasses_J (rules.pl:3212)
 -mergeClasses(A, B) :-

@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 5 (Time: 0.065s)
+Answer: 5 (Time: 0.079s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void))
 method(virtual * type_info::`vector deleting destructor'(unsigned int))
 method(virtual int Base::func1(void))
@@ -520,5 +520,5 @@ Models       : 5
   Optimum    : yes
 Optimization : -63 -2 -15 -228 -28
 Calls        : 1
-Time         : 0.065s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.065s
+Time         : 0.080s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.078s
