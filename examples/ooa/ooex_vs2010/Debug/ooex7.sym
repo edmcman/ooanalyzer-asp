@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.288s)
+Answer: 1 (Time: 0.340s)
 constructor(__declspec(dllimport) std::_Container_base12::_Container_base12(void))
 constructor(__declspec(dllimport) std::exception::exception(char const * const &))
 constructor(__declspec(dllimport) std::exception::exception(class std::exception const &))
@@ -1010,5 +1010,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -102 -15 -429 -12
 Calls        : 1
-Time         : 0.290s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.282s
+Time         : 0.341s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.340s

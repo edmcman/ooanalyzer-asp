@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 12 (Time: 1.698s)
+Answer: 12 (Time: 1.882s)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_cast::`vector deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int))
@@ -4274,5 +4274,5 @@ Models       : 12
   Optimum    : yes
 Optimization : -1834 -16 -120 -793 -380
 Calls        : 1
-Time         : 1.699s (Solving: 0.03s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 1.535s
+Time         : 1.882s (Solving: 0.03s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 1.859s

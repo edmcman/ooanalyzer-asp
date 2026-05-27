@@ -3,12 +3,12 @@
 
 PYTHON       := python3
 TIME         := time
-CLINGO       := clingo
-CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300 --opt-strategy bb,inc --heuristic=domain
+CLINGO       := clingo ooanalyzer.lp
+CLINGO_FLAGS := --quiet=1,2 --time-limit=30 --opt-strategy bb,inc --heuristic=domain
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
-XCLINGO      := xclingo -n -1 0
-XCLINGO_FLAGS := --opt-strategy=bb,inc --heuristic=domain
+XCLINGO      := xclingo
+XCLINGO_FLAGS := -n -1 0 -- $(CLINGO_FLAGS)
 
 OOA_DIR      := examples/ooa
 # Recursively find all .facts files in the test subdirectories
@@ -100,7 +100,7 @@ lazyrun: $(LAZY_OUT_FILES)
 
 $(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@echo "=== Running: $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< ==="
-	$(TIME) $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2>&1 || true
+	$(TIME) $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2> $@.err || true
 	@tail -6 $@
 
 # ----------------------------------------------------------------
@@ -112,7 +112,7 @@ explain-all: $(EXPLAIN_OUT_FILES)
 
 $(OOA_DIR)/%.explain.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/modules/*.lp)
 	@echo "=== Explaining: $(XCLINGO) ooanalyzer.lp $< ==="
-	$(TIME) $(XCLINGO) $(XCLINGO_FLAGS) ooanalyzer.lp $< > $@ 2>/dev/null || true
+	$(TIME) $(XCLINGO) ooanalyzer.lp $< $(XCLINGO_FLAGS) > $@ 2> $@.err || true
 	@tail -6 $@
 
 # ----------------------------------------------------------------

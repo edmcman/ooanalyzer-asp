@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.067s)
+Answer: 1 (Time: 0.089s)
 method(B::B(void))
 method(D::D(void))
 method(C::C(void))
@@ -421,5 +421,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -206
 Calls        : 1
-Time         : 0.067s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.061s
+Time         : 0.089s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.087s
