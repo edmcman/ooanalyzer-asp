@@ -20,6 +20,8 @@
 %   1300 stays in Base's class (not merged into Derived)
 %   derivedClass(2100, 1100, 0)
 
+fileInfo("dummy", "dummy", "MSVC_32", 4).
+
 % ----------------------------------------------------------------
 % Class Base
 % ----------------------------------------------------------------

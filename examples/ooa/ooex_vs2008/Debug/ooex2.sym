@@ -1,8 +1,5 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
-vfTableSizeGTE(VFTable,Size)
-
 Solving...
 Answer: 1 (Time: 0.052s)
 method(Base::Base(void))

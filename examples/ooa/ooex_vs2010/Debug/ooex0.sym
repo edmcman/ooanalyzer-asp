@@ -1,10 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-src/modules/vftables.lp:43:5-34: info: atom does not occur in any rule head:
-vfTableSizeGTE(VFTable,Size)
-
 Solving...
-Answer: 1 (Time: 0.050s)
+Answer: 1 (Time: 0.054s)
 method(ClassA::~ClassA(void))
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int),ClassA::~ClassA(void))
 method(j___setdefaultprecision)
@@ -424,5 +421,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -206
 Calls        : 1
-Time         : 0.050s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.050s
+Time         : 0.054s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.054s

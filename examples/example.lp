@@ -27,6 +27,8 @@
 %   classRep(1600)  members: {1600, 1700, 1800, 1810}   constructor(1600) deletingDestructor(1810)
 %   classRep(1900)  members: {1900, 1950, 1960, 1970}   constructor(1900) deletingDestructor(1970)
 
+fileInfo("dummy", "dummy", "MSVC_32", 4).
+
 % ----------------------------------------------------------------
 % Class A
 % ----------------------------------------------------------------

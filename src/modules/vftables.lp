@@ -38,13 +38,14 @@ vfTableEntry(VFTable, Offset, Entry) :-
     possibleVFTableEntry(VFTable, Offset, Entry),
     Offset <= ExistingOffset.                                               % rules.pl:1239
 
-% reasonVFTableEntry (1239): VFTable size lower bound gives the max valid entry offset.
+% reasonVFTableEntry (1239): the chosen vftable extent, replacing
+% factVFTableSizeGTE in ASP, admits all entries whose full pointer lies
+% inside the table.
 vfTableEntry(VFTable, Offset, Entry) :-
-    vfTableSizeGTE(VFTable, Size),
+    vfTableSize(VFTable, Size),
     pointerSize(PtrSize),
-    ExistingOffset = Size - PtrSize,
     possibleVFTableEntry(VFTable, Offset, Entry),
-    Offset <= ExistingOffset.                                               % rules.pl:1239
+    Offset + PtrSize <= Size.                                             % rules.pl:1239
 
 % reasonVFTableEntry (1247): entry confirmed by virtual function call evidence.
 vfTableEntry(VFTable, Offset, Entry) :-
