@@ -18,6 +18,7 @@ reasonDerivedClassBBaseEvidence(DerivedVFTable, BaseConstructor) :-
 
 % reasonDerivedClass_D: RTTI says this is a non-virtual base class.
 % Counterpart: reasonDerivedClass_D (rules.pl:1968)
+%!trace_rule {"% derives from % at offset % because RTTI says so", DerivedClass, BaseClass, Offset}
 derivedClass(DerivedClass, BaseClass, Offset) :-
     rTTIEnabledAndValid,
     rTTIInheritsFrom(DerivedTDA, BaseTDA, _Attributes, Offset, 0xffffffff, 0),
@@ -27,6 +28,7 @@ derivedClass(DerivedClass, BaseClass, Offset) :-
 
 % reasonDerivedClass_E: RTTI says this is a virtual base class.
 % Counterpart: reasonDerivedClass_E (rules.pl:1981)
+%!trace_rule {"% derives from % because RTTI says it is a virtual base", DerivedClass, BaseClass}
 derivedClass(DerivedClass, BaseClass, Offset) :-
     rTTIEnabledAndValid,
     rTTIInheritsFrom(DerivedTDA, BaseTDA, _Attributes, _M, P, V),
@@ -41,6 +43,7 @@ derivedClass(DerivedClass, BaseClass, Offset) :-
 
 % reasonDerivedClass_F: VBTable-based virtual inheritance (non-RTTI path).
 % Counterpart: reasonDerivedClass_F (rules.pl:1999)
+%!trace_rule {"% derives from % at offset % because VBTable evidence", DerivedClass, BaseClass, Offset}
 derivedClass(DerivedClass, BaseClass, Offset) :-
     objectInObject(DerivedClass, BaseClass, Offset),
     vbTableEntry(VBTableAddress, TableOffset, OffsetFromVBPtr),
@@ -51,6 +54,7 @@ derivedClass(DerivedClass, BaseClass, Offset) :-
 
 % reasonDerivedClass_B: derived constructor calls base constructor, with
 % matching confirmed vftable writes proving inheritance rather than embedding.
+%!trace_rule {"% derives from % at offset % because the derived constructor calls the base constructor with matching vftable writes", DerivedConstructor, BaseConstructor, ObjectOffset}
 derivedClass(DerivedConstructor, BaseConstructor, ObjectOffset) :-
     not rTTIEnabledAndValid,
     validMethodCallAtOffset(_, DerivedConstructor, BaseConstructor, ObjectOffset),
@@ -99,7 +103,9 @@ derivedClassRelationship(DerivedMethod, BaseMethod) :-
 
 % objectInObject_B / objectInObject_C: OIO holds when either inheritance or
 % embedding is known for the same witness methods.
+%!trace_rule {"% contains % at offset % because of inheritance", Outer, Inner, Off}
 objectInObject(Outer, Inner, Off) :- derivedClass(Outer, Inner, Off).   % rules.pl:1568
+%!trace_rule {"% contains % at offset % because of embedding", Outer, Inner, Off}
 objectInObject(Outer, Inner, Off) :- embeddedObject(Outer, Inner, Off). % rules.pl:1577
 
 % Close over sameClass
@@ -109,21 +115,25 @@ objectInObject_closed(A, C, Off) :- objectInObject_closed(A, B, Off), sameClass(
 
 % reasonClassRelationship_internal: direct object composition/inheritance.
 % classRelationship_closed/2 is closed over sameClass/2 via its defining rules.
+%!trace_rule {"% has a class relationship with % because of direct composition/inheritance", DerivedClass, BaseClass}
 classRelationship_closed(DerivedClass, BaseClass) :-
     objectInObject_closed(DerivedClass, BaseClass, _Offset).                    % rules.pl:2114
 
 % reasonClassRelationship_internal: transitive object composition/inheritance.
+%!trace_rule {"% has a class relationship with % because of transitive composition/inheritance through %", DerivedClass, BaseClass, MiddleClass}
 classRelationship_closed(DerivedClass, BaseClass) :-
     classRelationship_closed(DerivedClass, MiddleClass),
     objectInObject_closed(MiddleClass, BaseClass, _Offset).                     % rules.pl:2119
 
 % reasonClassHasNoBase (2136): RTTI says this class has no base class.
+%!trace_rule {"% has no base class because RTTI says so", Class}
 classHasNoBase(Class) :-
     rTTIEnabledAndValid,
     rTTINoBase(TDA),
     rTTITDA2Class(TDA, Class).                                             % rules.pl:2136
 
 % reasonClassHasNoDerived (2152): RTTI says no class derives from this one.
+%!trace_rule {"% has no derived class because RTTI says so", Class}
 classHasNoDerived(Class) :-
     rTTIEnabledAndValid,
     rTTITDA2Class(TDA, Class),
@@ -137,6 +147,7 @@ classHasNoDerived(Class) :-
 % (at least one). When derivedClass has no support the choice is deterministic
 % (reasonEmbeddedObject_A). The derived branch encodes reasonDerivedClass_C:
 % objectInObject + NOT embeddedObject → derivedClass.
+%!trace_rule {"% is either embedded in or derived from % at offset %", Outer, Inner, Off}
 1 { embeddedObject(Outer, Inner, Off) ; derivedClass(Outer, Inner, Off) } :-
     objectInObject(Outer, Inner, Off).          % guess.pl:317 / rules.pl:1740 / rules.pl:1960
 
@@ -175,9 +186,11 @@ purecallNotMostDerivedReward(Derived, Base, Off) :-
 
 % reasonNOTEmbeddedObject / reasonNOTDerivedClass / reasonDerivedClass_C / insanityEmbeddedAndNot:
 % derivedClass and embeddedObject are mutually exclusive.
+% derivedClass and embeddedObject are mutually exclusive.
 :- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,1960,2025 / insanity.pl:308
 
 % insanityNoBaseConsistency: a class with no base cannot also be a derived class.
+%!trace_rule {"% has no base class but is also a derived class", Class}
 insanity(noBaseConsistency, Class) :-
     classHasNoBase(Class),
     derivedClass_closed(Class, _, _).                                    % insanity.pl:8

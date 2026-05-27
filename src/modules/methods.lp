@@ -3,25 +3,32 @@
 % ============================================================
 
 % reasonMethod_B: constructors are methods.
+%!trace_rule {"% is a method because it is a known constructor", M}
 method(M) :- constructor(M).                                       % rules.pl:52
 
 % reasonMethod_C: real destructors are methods.
+%!trace_rule {"% is a method because it is a known real destructor", M}
 method(M) :- realDestructor(M).                                    % rules.pl:56
 
 % reasonMethod_D: deleting destructors are methods.
+%!trace_rule {"% is a method because it is a known deleting destructor", M}
 method(M) :- deletingDestructor(M).                                % rules.pl:60
 
 % reasonMethod_E: symbol class association proves method.
+%!trace_rule {"% is a method because a symbol associates it with a class", M}
 method(M) :- symbolClass(M, _, _, _).                                        % rules.pl:64
 
 % reasonMethod_F: any symbol property proves method.
+%!trace_rule {"% is a method because it has a symbol property", M}
 method(M) :- symbolProperty(M, _).                                     % rules.pl:68
 
 % reasonMethod_G: entries in confirmed vftables are methods (vfTableEntry already dethunks).
+%!trace_rule {"% is a method because it is a confirmed vftable entry", M}
 method(M) :- vfTableEntry(_, _, M).                                % rules.pl:73
 
 % reasonMethod_H: method writes a confirmed vftable into its own this-pointer.
 % Counterpart: reasonMethod_H (rules.pl:80)
+%!trace_rule {"% is a method because it writes a confirmed vftable into its own this-pointer", Method}
 method(Method) :-
     possibleVFTableWrite(_Insn, Method, ThisPtr, _Offset, VFTable),
     vfTable(VFTable),
@@ -29,11 +36,13 @@ method(Method) :-
 
 % reasonMethod_J: methods called by a class are methods.
 % Counterpart: reasonMethod_J (rules.pl:99)
+%!trace_rule {"% is a method because a known class calls it", Method}
 method(Method) :-
     classCallsMethod(_Class, Method).                                      % rules.pl:99
 
 % reasonMethod_L: caller is a method and calls callee at offset 0 → callee is a method.
 % Counterpart: reasonMethod_L (rules.pl:109)
+%!trace_rule {"% is a method because % calls it at this-offset 0", Method, Caller}
 method(Method) :-
     method(Caller),
     methodCallAtOffset(_, Caller, Method, 0),  % Intentionally NOT validMethodCallAtOffset
@@ -47,6 +56,7 @@ method(Method) :-
 
 % guessMethodA: choose method or -method for each possibleMethod candidate.
 % Counterpart: guessMethodA (guess.pl:382)
+%!trace_rule {"% could be a method", M}
 guessMethodDomain(M) :- possibleMethod(M).
 1 { method(M) ; -method(M) } 1 :- guessMethodDomain(M).
 #heuristic method(M) : guessMethodDomain(M). [1@0, true]

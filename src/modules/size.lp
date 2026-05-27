@@ -4,6 +4,7 @@
 
 % reasonVFTableSizeGTE (1337): confirmed entries require the chosen extent
 % to include the full pointer at that offset.
+%!trace_rule {"vftable % must extend past offset % because of a confirmed entry", VFTable, Offset}
 vfTableGTE(VFTable, Offset) :-
     vfTableEntry(VFTable, Offset, _Entry).
 
@@ -21,6 +22,7 @@ candidateVFTableSize(VFTable, Size) :-
     Size = Offset + PtrSize.
 
 % Choose one exact extent for each confirmed vftable.
+%!trace_rule {"choose size for vftable %", VFTable}
 1 { vfTableSize(VFTable, Size) : candidateVFTableSize(VFTable, Size) } 1 :-
     vfTable(VFTable).
 
@@ -28,6 +30,7 @@ candidateVFTableSize(VFTable, Size) :-
 % CONSTRAINTS
 % ============================================================
 
+% Constraint: chosen vftable extent must accommodate all confirmed entries.
 :- vfTableSize(VFTable, Size),
    vfTableGTE(VFTable, Offset),
    pointerSize(PtrSize),
