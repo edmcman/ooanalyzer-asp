@@ -7,6 +7,7 @@ CLINGO       := clingo
 CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300 --opt-strategy bb,inc --heuristic=domain
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
+XCLINGO      := xclingo -n -1 0
 
 OOA_DIR      := examples/ooa
 # Recursively find all .facts files in the test subdirectories
@@ -16,7 +17,7 @@ LP_FILES     := $(FACTS:%.facts=%.lp)
 # ----------------------------------------------------------------
 # Default: convert all .facts and run clingo
 # ----------------------------------------------------------------
-.PHONY: all convert run verify verify-core verify-real lazyrun symbolize clean help
+.PHONY: all convert run verify verify-core verify-real lazyrun explain-all symbolize clean help
 
 all: run
 
@@ -26,6 +27,7 @@ help:
 	@echo "  make run        — convert and run clingo on all .lp files"
 	@echo "  make verify     — run marker checks for core fixtures"
 	@echo "  make lazyrun    — convert and run dualgrounder on all .lp files"
+	@echo "  make explain-all — convert and explain optimal models via xclingo"
 	@echo "  make symbolize  — symbolize all .out files to .sym files"
 	@echo "  make clean      — remove generated .lp/.out/.sym files"
 	@echo "  make $(OOA_DIR)/ooex_vs2008/Debug/oo.lp  — convert a single .facts file"
@@ -101,6 +103,18 @@ $(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@tail -6 $@
 
 # ----------------------------------------------------------------
+# Explain: run xclingo on optimal model only
+# ----------------------------------------------------------------
+EXPLAIN_OUT_FILES := $(LP_FILES:%.lp=%.explain.out)
+
+explain-all: $(EXPLAIN_OUT_FILES)
+
+$(OOA_DIR)/%.explain.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/modules/*.lp)
+	@echo "=== Explaining: $(XCLINGO) ooanalyzer.lp $< ==="
+	$(TIME) $(XCLINGO) $(XCLINGO_FLAGS) ooanalyzer.lp $< > $@ 2>/dev/null || true
+	@tail -6 $@
+
+# ----------------------------------------------------------------
 # Symbolize: .out + .symbols → .sym (human-readable)
 # Filter to key predicates; override with FILTER= for custom grep.
 # ----------------------------------------------------------------
@@ -130,6 +144,7 @@ $(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out
 clean:
 	find $(OOA_DIR) -name '*.lp' -delete
 	find $(OOA_DIR) -name '*.out' -delete
+	find $(OOA_DIR) -name '*.explain.out' -delete
 	find $(OOA_DIR) -name '*.sym' -delete
 	find $(OOA_DIR) -name '*.lazy.sym' -delete
 	find $(OOA_DIR) -name '*.lazy.out' -delete

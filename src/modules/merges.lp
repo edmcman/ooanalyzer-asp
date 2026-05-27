@@ -155,11 +155,11 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 
 #maximize { 10@2, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
-%!show_trace sameClass(A, B).
-%!show_trace mergeClasses(A, B).
-%!show_trace -mergeClasses(A, B).
+% These are too noisy
+%!NOshow_trace sameClass(A, B).
+%!NOshow_trace mergeClasses(A, B).
+%!NOshow_trace -mergeClasses(A, B).
 %!trace {"% and % are the same class", A, B} sameClass(A, B).
 %!trace {"% and % should be merged", A, B} mergeClasses(A, B).
-%!trace {"% and % must NOT be merged", A, B} -mergeClasses(A, B).
 
 #show sameClass/2.
