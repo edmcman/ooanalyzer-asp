@@ -8,6 +8,7 @@ CLINGO_FLAGS := ooanalyzer.lp --quiet=1,2 --time-limit=300 --opt-strategy bb,inc
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 XCLINGO      := xclingo -n -1 0
+XCLINGO_FLAGS := --opt-strategy=bb,inc --heuristic=domain
 
 OOA_DIR      := examples/ooa
 # Recursively find all .facts files in the test subdirectories
