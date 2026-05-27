@@ -59,4 +59,7 @@ guessMethodDomain(M) :- possibleMethod(M).
 guessMethodReward(M) :- method(M), guessMethodDomain(M).
 #maximize { 1@-1, method, M : guessMethodReward(M) }.
 
+%!show_trace method(M).
+%!trace {"% is a method", M} method(M).
+
 #show method/1.

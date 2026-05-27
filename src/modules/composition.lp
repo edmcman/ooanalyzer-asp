@@ -79,11 +79,19 @@ derivedClassRelationship(DerivedMethod, BaseMethod, Off) :-
     derivedClass(DerivedMethod, BaseMethod, Off).
 
 % reasonDerivedClassRelationship (2069): transitive through intermediate class.
+% iso_dif(Derived,Middle) and iso_dif(Middle,Base) from the Prolog version.
+% != guards are evaluated at grounding time (sameClass is in a non-stratified SCC
+% so `not sameClass` is deferred to solve time and cannot break the grounding loop).
+% not sameClass guards add class-level semantics at solve time.
 derivedClassRelationship(DerivedMethod, BaseMethod, Off) :-
     derivedClassRelationship(DerivedMethod, MiddleMethod1, Off1),
     sameClass(MiddleMethod1, MiddleMethod2),
     derivedClassRelationship(MiddleMethod2, BaseMethod, Off2),
-    Off = Off1 + Off2.
+    Off = Off1 + Off2,
+    DerivedMethod != MiddleMethod2,
+    not sameClass(DerivedMethod, MiddleMethod2),
+    MiddleMethod1 != BaseMethod,
+    not sameClass(MiddleMethod1, BaseMethod).
 
 % Arity-2 variant.
 derivedClassRelationship(DerivedMethod, BaseMethod) :-
@@ -177,6 +185,19 @@ insanity(noBaseConsistency, Class) :-
 % ============================================================
 % OUTPUT
 % ============================================================
+
+%!show_trace derivedClass(Outer, Inner, Off).
+%!show_trace embeddedObject(Outer, Inner, Off).
+%!show_trace objectInObject(Outer, Inner, Off).
+%!show_trace classRelationship_closed(A, B).
+%!show_trace classHasNoBase(V).
+%!show_trace classHasNoDerived(V).
+%!trace {"% derives from % at offset %", Outer, Inner, Off} derivedClass(Outer, Inner, Off).
+%!trace {"% embeds % at offset %", Outer, Inner, Off} embeddedObject(Outer, Inner, Off).
+%!trace {"% contains % at offset %", Outer, Inner, Off} objectInObject(Outer, Inner, Off).
+%!trace {"% has a class relationship with %", A, B} classRelationship_closed(A, B).
+%!trace {"% has no base class", V} classHasNoBase(V).
+%!trace {"% has no derived class", V} classHasNoDerived(V).
 
 #show derivedClass/3.
 #show objectInObject/3.

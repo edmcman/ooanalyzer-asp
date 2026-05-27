@@ -140,6 +140,17 @@ insanity(insanityTwoRealDestructorsOnClass, (D1, D2)) :-
     D1 < D2,
     sameClass(D1, D2).
 
+%!show_trace constructor(M).
+%!show_trace realDestructor(M).
+%!show_trace deletingDestructor(M).
+%!show_trace -constructor(M).
+%!show_trace -deletingDestructor(M).
+%!trace {"% is a constructor", M} constructor(M).
+%!trace {"% is a real destructor", M} realDestructor(M).
+%!trace {"% is a deleting destructor", M} deletingDestructor(M).
+%!trace {"% is not a constructor", M} -constructor(M).
+%!trace {"% is not a deleting destructor", M} -deletingDestructor(M).
+
 #show constructor/1.
 #show realDestructor/1.
 #show deletingDestructor/1.

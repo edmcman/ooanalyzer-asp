@@ -340,3 +340,6 @@ validMethodCallAtOffset(Insn, Caller, Callee, Offset) :-
     Offset < 0x100000.
 
 % callAtOffset/3 is not present in the Prolog; use methodCallAtOffset/4 directly.
+
+%!trace {"thunk % resolves to %", T, M} dethunk(T, M).
+%!trace {"RTTI type descriptor % maps to class %", TDA, C} rTTITDA2Class(TDA, C).
