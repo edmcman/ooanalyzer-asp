@@ -90,6 +90,19 @@ reasonNOTMergeClassesCAsymmetric(DerivedClass, MethodClass) :-
     not sameClass(Class1, Class2),
     sortPair(Class1, Class2, A, B).                                          % rules.pl:3196
 
+% reasonNOTMergeClasses_R: If a derived class calls a method that installs the
+% derived class' vftable, the called method cannot be on the base class.
+% Counterpart: reasonNOTMergeClasses_R (rules.pl:3366)
+%!trace_rule {"% and % must NOT be merged because method % called by derived % writes its vftable at offset %", A, B, CalledMethod, DerivedClass, Offset}
+-mergeClasses(A, B) :-
+    classCallsMethod(DerivedClass, CalledMethod),
+    not purecall(CalledMethod),
+    derivedClass_closed(DerivedClass, BaseClass, Offset),
+    vfTableWrite(_Insn, CalledMethod, Offset, V),
+    sameClass(V, DerivedClass),
+    not sameClass(BaseClass, CalledMethod),
+    sortPair(BaseClass, CalledMethod, A, B).                                      % rules.pl:3366
+
 % reasonNOTMergeClasses_K: methods with conflicting symbol class names
 % cannot belong to the same recovered class.
 % Counterpart: reasonNOTMergeClasses_K (rules.pl:3222)
