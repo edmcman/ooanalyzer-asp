@@ -58,7 +58,7 @@ def symbolize(text, addr_map):
         if n in addr_map:
             return f"{addr_map[n]}@{m.group(0)}"
         return m.group(0)
-    return re.sub(r'\b\d{6,}\b', replacer, text)
+    return re.sub(r'(?<![0-9a-fA-F.])\d{6,}(?!\d)', replacer, text)
 
 def main():
     ap = argparse.ArgumentParser(description='Symbolize OOAnalyzer/clingo output')

@@ -124,7 +124,7 @@ sameClass(A, C) :- sameClass(A, B), merged(B, C).
 % ============================================================
 
 % guessMergeClasses_B: vftable writer may be on the same class as vftable entries.
-%!trace_rule {"% and % are strong merge candidates because writer % shares vftable % with entry %", A, B, Writer, VFTable, Entry}
+%!trace_rule {"% and % are strong merge candidates because method % installs vftable % that contains entry %", A, B, Writer, VFTable, Entry}
 strongMergeCandidate(A, B) :-
     vfTableWrite(_Insn, Writer, _ObjectOffset, VFTable),
     vfTableEntry(VFTable, _VFTableOffset, Entry),
