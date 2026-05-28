@@ -21,7 +21,6 @@ classCallsMethod(VFTable, Method2) :-
     not purecall(Method2),
     not sameClass(VFTable, Method2).                                      % rules.pl:2462
 
-%!show_trace classCallsMethod(V, M).
 %!trace {"% calls %", V, M} classCallsMethod(V, M).
 
 #show classCallsMethod/2.

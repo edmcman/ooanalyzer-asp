@@ -127,11 +127,6 @@ guessVFTableReward(VFTable) :- vfTable(VFTable), possibleVFTable(VFTable).
 #maximize { 1@2, vfTable, V : guessVFTableReward(V) }.
 
 
-%!show_trace vfTable(V).
-%!show_trace vfTableEntry(V, Off, E).
-%!show_trace vfTableWrite(I, M, Off, V).
-%!show_trace vfTableOverwrite(M, V1, V2, Off).
-%!show_trace -vfTableEntry(V, Off, E).
 %!trace {"% is a confirmed vftable", V} vfTable(V).
 %!trace {"vftable % entry at offset %: %", V, Off, E} vfTableEntry(V, Off, E).
 %!trace {"% overwrites vftable % with % at offset %", M, V1, V2, Off} vfTableOverwrite(M, V1, V2, Off).

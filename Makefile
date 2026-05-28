@@ -8,7 +8,7 @@ CLINGO_FLAGS := --quiet=1,2 --time-limit=30 --opt-strategy bb,inc --heuristic=do
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 XCLINGO      := xclingo
-XCLINGO_FLAGS := -n -1 0 -- $(CLINGO_FLAGS)
+XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
 
 OOA_DIR      := examples/ooa
 # Recursively find all .facts files in the test subdirectories
@@ -131,11 +131,11 @@ LAZY_SYM_FILES := $(foreach sym,$(patsubst %.symbols,%.lazy.sym,$(SYMBOLS_FILES)
 
 symbolize: $(SYM_FILES) $(LAZY_SYM_FILES)
 
-$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out
+$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py
 	@echo "=== Symbolizing $* ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
 
-$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out
+$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py
 	@echo "=== Symbolizing $* (lazy) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
 

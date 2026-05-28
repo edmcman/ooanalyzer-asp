@@ -56,7 +56,7 @@ def symbolize(text, addr_map):
     def replacer(m):
         n = int(m.group(0))
         if n in addr_map:
-            return addr_map[n]
+            return f"{addr_map[n]}@{m.group(0)}"
         return m.group(0)
     return re.sub(r'\b\d{6,}\b', replacer, text)
 

@@ -199,12 +199,6 @@ insanity(noBaseConsistency, Class) :-
 % OUTPUT
 % ============================================================
 
-%!show_trace derivedClass(Outer, Inner, Off).
-%!show_trace embeddedObject(Outer, Inner, Off).
-%!show_trace objectInObject(Outer, Inner, Off).
-%!show_trace classRelationship_closed(A, B).
-%!show_trace classHasNoBase(V).
-%!show_trace classHasNoDerived(V).
 %!trace {"% derives from % at offset %", Outer, Inner, Off} derivedClass(Outer, Inner, Off).
 %!trace {"% embeds % at offset %", Outer, Inner, Off} embeddedObject(Outer, Inner, Off).
 %!trace {"% contains % at offset %", Outer, Inner, Off} objectInObject(Outer, Inner, Off).

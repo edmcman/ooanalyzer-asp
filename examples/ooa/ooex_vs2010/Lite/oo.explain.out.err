@@ -2,17 +2,20 @@ Traceback (most recent call last):
   File "/Users/eschwartz/.local/bin/xclingo", line 10, in <module>
     sys.exit(main())
              ^^^^^^
-  File "/Users/eschwartz/Projects/ooanalyzer-asp/xclingo2/xclingo/__main__.py", line 105, in main
-    xControl = XclingoControl(
-               ^^^^^^^^^^^^^^^
-  File "/Users/eschwartz/Projects/ooanalyzer-asp/xclingo2/xclingo/_main.py", line 163, in __init__
-    self.control = Control([n_solutions if type(n_solutions)==str else str(n_solutions)] + (clingo_flags or []))
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/control.py", line 233, in __init__
-    self._rep = _c_call(
-                ^^^^^^^^
-  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/_internal.py", line 50, in _c_call
-    _handle_error(c_fun(*args, p_ret), handler)
-  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/_internal.py", line 81, in _handle_error
-    raise RuntimeError(msg)
-RuntimeError: In context '<libclingo>': unknown option: 'quiet'
+  File "/Users/eschwartz/Projects/ooanalyzer-asp/xclingo2/xclingo/__main__.py", line 121, in main
+    print_text_explanations(xControl)
+  File "/Users/eschwartz/Projects/ooanalyzer-asp/xclingo2/xclingo/__main__.py", line 84, in print_text_explanations
+    for expl in answer:
+  File "/Users/eschwartz/Projects/ooanalyzer-asp/xclingo2/xclingo/_main.py", line 132, in _get_explanations
+    for expl_model in it:
+  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/solving.py", line 527, in __iter__
+    m = self.model()
+        ^^^^^^^^^^^^
+  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/solving.py", line 596, in model
+    _handle_error(_lib.clingo_solve_handle_model(self._rep, p_model), self._handler)
+  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/_internal.py", line 77, in _handle_error
+    raise handler.error[0](handler.error[1]).with_traceback(handler.error[2])
+  File "/Users/eschwartz/.local/share/uv/tools/xclingo/lib/python3.11/site-packages/clingo/control.py", line 130, in _pyclingo_solve_event_callback
+    @_ffi.def_extern(
+    
+KeyboardInterrupt

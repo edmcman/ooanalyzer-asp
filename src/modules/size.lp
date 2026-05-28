@@ -47,7 +47,6 @@ candidateVFTableSize(VFTable, Size) :-
 % OUTPUT
 % ============================================================
 
-%!show_trace vfTableSize(V, S).
 %!trace {"vftable % is % bytes", V, S} vfTableSize(V, S).
 
 #show vfTableSize/2.

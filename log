@@ -1,0 +1,78 @@
+Answer 1
+  *
+  |__-deletingDestructor(4264106);4264106 is not a deleting destructor;4264106 is not a deleting destructor because deleting destructors must be virtual
+  |  |__4264106 is a method;method(4264106)
+  |  |  |__4264106 could be a method;guessMethodDomain(4264106)
+  |  |  |  |__possibleMethod(4264106)
+  |  |  |  |  |__callingConvention(4264106,"__fastcall")
+
+  *
+  |__4263996 is a method;4263996 is a method because it is a confirmed vftable entry;method(4263996)
+  |  |__vfTableEntry(4290684,0,4263996);vftable 4290684 entry at offset 0: 4263996;vftable 4290684 entry at offset 0: 4263996 because it precedes a later known entry
+  |  |  |__vfTableEntry(4290684,4,4264211);vftable 4290684 entry at offset 4: 4264211;vftable 4290684 entry at offset 4: 4264211 because it fits within the chosen vftable size
+  |  |  |  |__choose size for vftable 4290684;vfTableSize(4290684,8);vftable 4290684 is 8 bytes
+  |  |  |  |  |__4290684 is a confirmed vftable;4290684 is a confirmed vftable because RTTI says so;vfTable(4290684)
+  |  |  |  |  |  |__rTTIEnabledAndValid
+  |  |  |  |  |  |  |__rTTIEnabled
+  |  |  |  |  |  |  |__rTTIValid
+  |  |  |  |  |  |  |  |__rTTIEnabled
+  |  |  |  |  |  |  |  |__rTTIAllTypeDescriptors(4300828)
+  |  |  |  |  |  |  |  |  |__rTTIBaseClassDescriptor(4294228,4300828,0,0,-1,0,64,4294264)
+  |  |  |  |  |  |  |  |__rTTIShouldHaveSelfRef(4300852)
+  |  |  |  |  |  |  |  |  |__rTTITypeDescriptor(4300852,4290716,".?AVCls2@@","Cls2")
+  |  |  |  |  |  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |  |  |__rTTITDA2VFTable(4300852,4290684)
+  |  |  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |  |  |__rTTITypeDescriptor(4300852,4290716,".?AVCls2@@","Cls2")
+  |  |  |  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |  |__candidateVFTableSize(4290684,8)
+  |  |  |  |  |  |__4290684 is a confirmed vftable;4290684 is a confirmed vftable because RTTI says so;vfTable(4290684)
+  |  |  |  |  |  |  |__rTTIEnabledAndValid
+  |  |  |  |  |  |  |  |__rTTIEnabled
+  |  |  |  |  |  |  |  |__rTTIValid
+  |  |  |  |  |  |  |  |  |__rTTIEnabled
+  |  |  |  |  |  |  |  |  |__rTTIAllTypeDescriptors(4300828)
+  |  |  |  |  |  |  |  |  |  |__rTTIBaseClassDescriptor(4294228,4300828,0,0,-1,0,64,4294264)
+  |  |  |  |  |  |  |  |  |__rTTIShouldHaveSelfRef(4300852)
+  |  |  |  |  |  |  |  |  |  |__rTTITypeDescriptor(4300852,4290716,".?AVCls2@@","Cls2")
+  |  |  |  |  |  |  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |  |  |  |__rTTITDA2VFTable(4300852,4290684)
+  |  |  |  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |  |  |  |__rTTITypeDescriptor(4300852,4290716,".?AVCls2@@","Cls2")
+  |  |  |  |  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |  |__possibleVFTableEntry(4290684,4,4264211)
+  |  |  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |  |  |__possibleVFTableEntry(4290684,0,4263996)
+  |  |  |  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |  |  |  |  |__initialMemory(4290684,4263996)
+  |  |  |  |  |  |  |__initialMemory(4290688,4264211)
+  |  |  |  |__pointerSize(4)
+  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |__possibleVFTableEntry(4290684,4,4264211)
+  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |__possibleVFTableEntry(4290684,0,4263996)
+  |  |  |  |  |  |__pointerSize(4)
+  |  |  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |  |  |__initialMemory(4290684,4263996)
+  |  |  |  |  |__initialMemory(4290688,4264211)
+  |  |  |__possibleVFTableEntry(4290684,0,4263996)
+  |  |  |  |__pointerSize(4)
+  |  |  |  |  |__fileInfo("F7786378E1E4EAB9F78BD129903E280E","oo.exe","MSVC_32",4)
+  |  |  |  |__rTTICompleteObjectLocator(4290680,4294440,4300852,4294328,0,0)
+  |  |  |  |__initialMemory(4290684,4263996)
+
+  *
+  |__4263991 is a method;method(4263991)
+  |  |__4263991 could be a method;guessMethodDomain(4263991)
+  |  |  |__possibleMethod(4263991)
+  |  |  |  |__callingConvention(4263991,"__cdecl")
+
