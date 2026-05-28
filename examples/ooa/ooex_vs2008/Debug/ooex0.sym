@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.092s)
+Answer: 1 (Time: 1.163s)
 method(ClassA::~ClassA(void))
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int),ClassA::~ClassA(void))
 method(j___setdefaultprecision)
@@ -433,5 +433,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -212
 Calls        : 1
-Time         : 0.092s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.091s
+Time         : 1.163s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 1.161s

@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 3 (Time: 0.206s)
+Answer: 3 (Time: 1.212s)
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void))
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void))
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void))
@@ -759,7 +759,7 @@ OPTIMUM FOUND
 
 Models       : 3
   Optimum    : yes
-Optimization : -75 -4 -20 -309 -28
+Optimization : -75 -4 -24 -309 -28
 Calls        : 1
-Time         : 0.206s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.202s
+Time         : 1.212s (Solving: 0.02s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 1.159s

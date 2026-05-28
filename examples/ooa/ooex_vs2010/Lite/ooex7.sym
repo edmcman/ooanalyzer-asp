@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 12 (Time: 1.882s)
+Answer: 13 (Time: 18.960s)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_cast::`vector deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int))
@@ -662,9 +662,6 @@ method(std::locale::id::operator unsigned int(void))
 method(std::locale::facet::_Incref(void))
 method(class std::locale::facet * std::locale::facet::_Decref(void))
 method(std::locale::facet::_Register(void))
-method(std::locale::locale(class std::locale const &))
-method(std::locale::~locale(void))
-method(class std::locale::facet const * std::locale::_Getfacet(unsigned int)const)
 method(class std::error_code __cdecl std::make_error_code(enum  std::io_errc::io_errc))
 method(virtual std::system_error::~system_error(void))
 method(bool std::ios_base::good(void)const)
@@ -749,7 +746,6 @@ method(static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale
 method(static __cdecl std::locale::_Setgloballocale(*))
 method(class std::_Yarn<char> & std::_Yarn<char>::operator=(char const *))
 method(virtual std::locale::_Locimp::~_Locimp(void))
-method(bool std::error_condition::operator==(class std::error_condition const &)const)
 method(virtual char const * std::_Generic_error_category::name(void)const)
 method(virtual char const * std::_System_error_category::name(void)const)
 method(class std::error_category const & __cdecl std::iostream_category(void))
@@ -770,7 +766,6 @@ method(bool __cdecl std::_Fputc<char>(char, struct _iobuf *))
 method(bool __cdecl std::_Ungetc<char>(char const &, struct _iobuf *))
 method(std::basic_ios<char, CHAR_TRAITS>::init(class std::basic_streambuf<char, CHAR_TRAITS> *, bool))
 method(bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void))
-method(class std::basic_filebuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::close(void))
 method(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void))
 method(_ReleaseCPLocHash)
 method(_InitCPLocHash)
@@ -1306,9 +1301,6 @@ sameClass(std::locale::id::operator unsigned int(void),std::locale::id::operator
 sameClass(std::locale::facet::_Incref(void),std::locale::facet::_Incref(void))
 sameClass(class std::locale::facet * std::locale::facet::_Decref(void),class std::locale::facet * std::locale::facet::_Decref(void))
 sameClass(std::locale::facet::_Register(void),std::locale::facet::_Register(void))
-sameClass(std::locale::locale(class std::locale const &),std::locale::locale(class std::locale const &))
-sameClass(std::locale::~locale(void),std::locale::~locale(void))
-sameClass(class std::locale::facet const * std::locale::_Getfacet(unsigned int)const,class std::locale::facet const * std::locale::_Getfacet(unsigned int)const)
 sameClass(class std::error_code __cdecl std::make_error_code(enum  std::io_errc::io_errc),class std::error_code __cdecl std::make_error_code(enum  std::io_errc::io_errc))
 sameClass(virtual std::system_error::~system_error(void),virtual std::system_error::~system_error(void))
 sameClass(int std::ios_base::rdstate(void)const,int std::ios_base::rdstate(void)const)
@@ -1438,7 +1430,6 @@ sameClass(static __cdecl std::locale::_Setgloballocale(*),static __cdecl std::lo
 sameClass(class std::_Yarn<char> & std::_Yarn<char>::operator=(char const *),class std::_Yarn<char> & std::_Yarn<char>::operator=(char const *))
 sameClass(std::locale::_Locimp::_Locimp(bool),std::locale::_Locimp::_Locimp(bool))
 sameClass(virtual std::locale::_Locimp::~_Locimp(void),virtual std::locale::_Locimp::~_Locimp(void))
-sameClass(bool std::error_condition::operator==(class std::error_condition const &)const,bool std::error_condition::operator==(class std::error_condition const &)const)
 sameClass(virtual bool std::error_category::equivalent(int, class std::error_condition const &)const,virtual bool std::error_category::equivalent(int, class std::error_condition const &)const)
 sameClass(virtual bool std::error_category::equivalent(class std::error_code const &, int)const,virtual bool std::error_category::equivalent(class std::error_code const &, int)const)
 sameClass(virtual char const * std::_Generic_error_category::name(void)const,virtual char const * std::_Generic_error_category::name(void)const)
@@ -1502,7 +1493,6 @@ sameClass(bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void),bool std::
 sameClass(virtual int std::basic_filebuf<char, CHAR_TRAITS>::overflow(int),virtual int std::basic_filebuf<char, CHAR_TRAITS>::overflow(int))
 sameClass(virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int),virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int))
 sameClass(virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int),virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int))
-sameClass(class std::basic_filebuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::close(void),class std::basic_filebuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::close(void))
 sameClass(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void),virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void))
 sameClass(_ReleaseCPLocHash,_ReleaseCPLocHash)
 sameClass(_InitCPLocHash,_InitCPLocHash)
@@ -4254,13 +4244,13 @@ constructor(std::bad_cast::bad_cast(char const *))
 constructor(std::exception::exception(class std::exception const &))
 constructor(std::bad_cast::bad_cast(class std::bad_cast const &))
 constructor(std::bad_exception::bad_exception(class std::bad_exception const &))
+constructor(virtual std::bad_alloc::~bad_alloc(void))
 constructor(std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void))
-constructor(virtual std::exception::~exception(void))
-realDestructor(virtual std::bad_alloc::~bad_alloc(void))
 realDestructor(virtual std::locale::facet::~facet(void))
 realDestructor(virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void))
 realDestructor(virtual std::numpunct<char>::~numpunct<char>(void))
 realDestructor(virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void))
+realDestructor(virtual std::exception::~exception(void))
 realDestructor(virtual type_info::~type_info(void))
 vfTableSize(const std::basic_ios<char, CHAR_TRAITS>::`vftable',4)
 vfTableSize(const std::basic_ostream<char, CHAR_TRAITS>::`vftable',4)
@@ -4270,9 +4260,9 @@ vfTableSize(const std::locale::_Locimp::`vftable',4)
 vfTableSize(const std::locale::facet::`vftable',4)
 OPTIMUM FOUND
 
-Models       : 12
+Models       : 13
   Optimum    : yes
-Optimization : -1834 -16 -120 -793 -380
+Optimization : -1834 -16 -133 -788 -380
 Calls        : 1
-Time         : 1.882s (Solving: 0.03s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 1.859s
+Time         : 18.978s (Solving: 0.21s 1st Model: 0.08s Unsat: 0.02s)
+CPU Time     : 18.524s

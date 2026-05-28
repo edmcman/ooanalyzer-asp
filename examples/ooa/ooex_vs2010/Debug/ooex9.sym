@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 0.090s)
+Answer: 2 (Time: 0.563s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void))
 method(virtual int A::get_a(void))
 method(virtual int C::get_c(void))
@@ -611,5 +611,5 @@ Models       : 2
   Optimum    : yes
 Optimization : -109 -12 -25 -224 -40
 Calls        : 1
-Time         : 0.090s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.090s
+Time         : 0.563s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.562s

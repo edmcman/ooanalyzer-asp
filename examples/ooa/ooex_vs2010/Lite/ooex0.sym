@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 4 (Time: 0.109s)
+Answer: 4 (Time: 0.931s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int))
 method(virtual std::bad_alloc::~bad_alloc(void))
@@ -582,7 +582,7 @@ OPTIMUM FOUND
 
 Models       : 4
   Optimum    : yes
-Optimization : -184 -1 -15 -233 -24
+Optimization : -184 -1 -17 -233 -24
 Calls        : 1
-Time         : 0.109s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.109s
+Time         : 0.931s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 0.911s

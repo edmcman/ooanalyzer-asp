@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.061s)
+Answer: 1 (Time: 1.100s)
 method(int Composite::func3(void))
 method(Composite::Composite(void))
 method(j___setdefaultprecision)
@@ -432,5 +432,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -212
 Calls        : 1
-Time         : 0.061s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.057s
+Time         : 1.101s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 1.097s

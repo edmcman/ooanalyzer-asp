@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 5 (Time: 0.076s)
+Answer: 6 (Time: 0.758s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int))
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int))
 method(A::A(void))
@@ -157,11 +157,6 @@ classCallsMethod(const std::exception::`vftable',virtual char const * std::excep
 method(virtual int D::get_d(void))
 method(virtual char const * std::exception::what(void)const)
 method(_main)
-method(* __cdecl operator new(unsigned int))
-method(fast_error_exit)
-method($LN10)
-method(__cdecl operator delete(*))
-method(_strcmp)
 method(_onexit_nolock)
 method(___onexitinit)
 method($LN5)
@@ -286,8 +281,6 @@ method(_strpbrk)
 method(___ascii_strnicmp)
 method(__stdcall RtlUnwind(x, x, x, x))
 method(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__)
-method(_mainCRTStartup)
-method(static __cdecl type_info::_Type_info_dtor(class type_info *))
 method(__onexit)
 method(__cinit)
 method(doexit)
@@ -312,11 +305,6 @@ method($LN9_0)
 method(___report_gsfailure)
 sameClass(virtual int D::get_d(void),virtual int D::get_d(void))
 sameClass(_main,_main)
-sameClass(* __cdecl operator new(unsigned int),* __cdecl operator new(unsigned int))
-sameClass(fast_error_exit,fast_error_exit)
-sameClass($LN10,$LN10)
-sameClass(__cdecl operator delete(*),__cdecl operator delete(*))
-sameClass(_strcmp,_strcmp)
 sameClass(virtual char const * std::exception::what(void)const,virtual char const * std::exception::what(void)const)
 sameClass(_onexit_nolock,_onexit_nolock)
 sameClass(___onexitinit,___onexitinit)
@@ -442,8 +430,6 @@ sameClass(_strpbrk,_strpbrk)
 sameClass(___ascii_strnicmp,___ascii_strnicmp)
 sameClass(__stdcall RtlUnwind(x, x, x, x),__stdcall RtlUnwind(x, x, x, x))
 sameClass(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__,_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__)
-sameClass(_mainCRTStartup,_mainCRTStartup)
-sameClass(static __cdecl type_info::_Type_info_dtor(class type_info *),static __cdecl type_info::_Type_info_dtor(class type_info *))
 sameClass(__onexit,__onexit)
 sameClass(__cinit,__cinit)
 sameClass(doexit,doexit)
@@ -570,8 +556,8 @@ constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &))
 constructor(std::exception::exception(char const * const &, int))
 constructor(std::exception::exception(class std::exception const &))
 constructor(virtual std::bad_alloc::~bad_alloc(void))
-constructor(virtual std::exception::~exception(void))
 realDestructor(virtual type_info::~type_info(void))
+realDestructor(virtual std::exception::~exception(void))
 vfTableSize(const type_info::`vftable',4)
 vfTableSize(const D::`vftable'{for `C'},4)
 vfTableSize(const D::`vftable'{for `A'},4)
@@ -582,9 +568,9 @@ vfTableSize(const A::`vftable',4)
 vfTableSize(const C::`vftable'{for `C'},4)
 OPTIMUM FOUND
 
-Models       : 5
+Models       : 6
   Optimum    : yes
-Optimization : -261 -13 -35 -174 -56
+Optimization : -261 -13 -38 -167 -56
 Calls        : 1
-Time         : 0.076s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.076s
+Time         : 0.759s (Solving: 0.02s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 0.733s
