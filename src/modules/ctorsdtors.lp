@@ -56,6 +56,18 @@ deletingDestructor(Method) :-
     vfTableEntry(_VFTable, _Offset, Entry),
     dethunk(Entry, Method).
 
+% reasonNOTConstructor_H: if a method's class has a confirmed vftable that the
+% method doesn't install, the method is not a constructor.
+% Imported methods (with symbolClass evidence) are exempt since we may lack
+% visibility into their vftable writes.
+% Counterpart: reasonNOTConstructor_H (rules.pl:345)
+%!trace_rule {"% is not a constructor because it does not install vftable % which belongs to its class", Method, VFTable}
+-constructor(Method) :-
+    vfTable(VFTable),
+    sameClass(VFTable, Method),
+    not possibleVFTableWrite(_, Method, _, _, VFTable),
+    not symbolClass(Method, _, _, _).
+
 % reasonNOTDeletingDestructor_G: deleting destructors must be virtual.
 % Counterpart: reasonNOTDeletingDestructor_G (rules.pl:687)
 %!trace_rule {"% is not a deleting destructor because deleting destructors must be virtual", Method}

@@ -52,7 +52,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTConstructor_D` (297) — appears in vftable (strong negation; replaces `insanityConstructorInVFTable`)
 - [ ] `reasonNOTConstructor_F` (316) — called by non-constructor
 - [ ] `reasonNOTConstructor_G` (327) — vftable entry requirement
-- [ ] `reasonNOTConstructor_H` (345) — derived class ordering
+- [x] `reasonNOTConstructor_H` (345) — vftable not installed by method on same class
 - [ ] `reasonNOTConstructor_I` (359) — negative offset call
 - [ ] `reasonNOTConstructor_J` (367) — called after constructor
 
@@ -317,7 +317,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_O` (3296) — called method member access exceeds caller class size
 - [ ] `reasonNOTMergeClasses_P` (3318) — different constructors at same offset
 - [x] `reasonNOTMergeClasses_Q` (3352) — symbol class name missing/mismatch within class
-- [ ] `reasonNOTMergeClasses_R` (3366) — two deleting destructors in candidate merge
+- [x] `reasonNOTMergeClasses_R` (3366) — derived vftable installed by called method
 
 ### Guess (guess.pl)
 - [x] `guessMergeClasses_B`
