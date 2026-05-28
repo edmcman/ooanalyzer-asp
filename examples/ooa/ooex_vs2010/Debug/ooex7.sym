@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 4.563s)
+Answer: 2 (Time: 4.171s)
 constructor(__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
 constructor(__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
 constructor(__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
@@ -865,5 +865,725 @@ Models       : 2
   Optimum    : yes
 Optimization : -102 -20 -370 -12
 Calls        : 1
-Time         : 4.563s (Solving: 0.17s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 4.544s
+Time         : 4.171s (Solving: 0.12s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 4.140s
+class 0x411005:
+  0x411005  j___setdefaultprecision
+class 0x41100a:
+  0x41100a  public: bool __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Inside(char const *)
+class 0x41100f:
+  0x41100f  public: class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::assign(char const *)
+class 0x411014:
+  0x411014  j___setargv
+class 0x411019:
+  0x411019  public: void __thiscall std::_Container_base12::_Orphan_all(void)
+class 0x41101e:
+  0x41101e  public: bool __thiscall std::ios_base::good(void)const
+class 0x411023:
+  0x411023  j___RTC_GetErrDesc
+class 0x411028:
+  0x411028  public: __thiscall std::allocator<char>::allocator<char>(class std::allocator<char> const &)
+class 0x41102d:
+  0x41102d  __fastcall __security_check_cookie(x)
+class 0x411032:
+  0x411032  __stdcall IsDebuggerPresent()
+class 0x411037:
+  0x411037  void * __cdecl operator new(unsigned int, void *)
+class 0x41103c:
+  0x41103c  public: __thiscall std::bad_alloc::bad_alloc(char const *)
+class 0x411041:
+  0x411041  private: class type_info & __thiscall type_info::operator=(class type_info const &)
+class 0x411046:
+  0x411046  public: void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Copy(unsigned int, unsigned int)
+class 0x41104b:
+  0x41104b  public: void __thiscall std::allocator<struct std::_Container_proxy>::deallocate(struct std::_Container_proxy *, unsigned int)
+class 0x411050:
+  0x411050  j___RTC_Terminate
+class 0x411055:
+  0x411055  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
+class 0x41105a:
+  0x41105a  __fastcall _RTC_AllocaHelper(x, x, x)
+class 0x41105f:
+  0x41105f  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
+class 0x411064:
+  0x411064  j___RTC_NumErrors
+class 0x411069:
+  0x411069  public: class std::basic_streambuf<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::rdbuf(void)const
+class 0x41106e:
+  0x41106e  public: char * __thiscall std::allocator<char>::allocate(unsigned int)
+class 0x411073:
+  0x411073  j____setusermatherr
+class 0x411078:
+  0x411078  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
+class 0x41107d:
+  0x41107d  __stdcall Sleep(x)
+class 0x411082:
+  0x411082  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
+  0x41138e  public: virtual char const * __thiscall std::exception::what(void)const
+  0x413b50  public: __thiscall std::bad_alloc::bad_alloc(char const *)
+  0x413bd0  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
+  0x413d60  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+class 0x411087:
+  0x411087  public: virtual __thiscall type_info::~type_info(void)
+class 0x41108c:
+  0x41108c  public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::setstate(int, bool)
+class 0x411091:
+  0x411091  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::operator int std::_Bool_struct::*(void)const
+class 0x411096:
+  0x411096  __stdcall GetModuleFileNameW(x, x, x)
+class 0x41109b:
+  0x41109b  j____security_init_cookie
+class 0x4110a0:
+  0x4110a0  __stdcall SetUnhandledExceptionFilter(x)
+class 0x4110a5:
+  0x4110a5  j___cexit
+class 0x4110aa:
+  0x4110aa  public: void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Xlen(void)const
+class 0x4110af:
+  0x4110af  j___CrtDbgReportW
+class 0x4110b4:
+  0x4110b4  public: class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::assign(char const *, unsigned int)
+class 0x4110b9:
+  0x4110b9  __stdcall VirtualQuery(x, x, x)
+class 0x4110be:
+  0x4110be  j__atexit
+class 0x4110c3:
+  0x4110c3  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
+class 0x4110c8:
+  0x4110c8  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::endl(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x4110cd:
+  0x4110cd  j___RTC_SetErrorType
+class 0x4110d2:
+  0x4110d2  j___except_handler4
+class 0x4110d7:
+  0x4110d7  j___lock
+class 0x4110dc:
+  0x4110dc  __stdcall GetProcAddress(x, x)
+class 0x4110e1:
+  0x4110e1  public: static void __cdecl std::char_traits<char>::assign(char &, char const &)
+class 0x4110e6:
+  0x4110e6  __fastcall _RTC_CheckStackVars(x, x)
+class 0x4110eb:
+  0x4110eb  public: static unsigned int __cdecl std::char_traits<char>::length(char const *)
+class 0x4110f0:
+  0x4110f0  void __cdecl operator delete(void *)
+class 0x4110f5:
+  0x4110f5  public: static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)
+class 0x4110fa:
+  0x4110fa  public: virtual __thiscall type_info::~type_info(void)
+class 0x4110ff:
+  0x4110ff  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(int)
+class 0x411104:
+  0x411104  bool __cdecl std::uncaught_exception(void)
+class 0x41110e:
+  0x41110e  void __cdecl terminate(void)
+class 0x411113:
+  0x411113  j___exit
+class 0x411118:
+  0x411118  public: __int64 __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputn(char const *, __int64)
+class 0x41111d:
+  0x41111d  __stdcall GetCurrentThreadId()
+class 0x411122:
+  0x411122  j___initterm
+class 0x411127:
+  0x411127  j__strlen
+class 0x41112c:
+  0x41112c  void __cdecl std::_Dest_val<class std::allocator<struct std::_Container_proxy>, struct std::_Container_proxy>(class std::allocator<struct std::_Container_proxy> &, struct std::_Container_proxy *)
+class 0x411131:
+  0x411131  public: __int64 __thiscall std::ios_base::width(void)const
+class 0x411136:
+  0x411136  public: __thiscall ObjectTest::ObjectTest(int, int)
+class 0x41113b:
+  0x41113b  public: class std::basic_ostream<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::tie(void)const
+class 0x411140:
+  0x411140  void __cdecl std::_Destroy<struct std::_Container_proxy>(struct std::_Container_proxy *)
+class 0x411145:
+  0x411145  public: char const * __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Myptr(void)const
+class 0x41114a:
+  0x41114a  __stdcall GetCurrentProcess()
+class 0x41114f:
+  0x41114f  public: char * __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Myptr(void)
+class 0x411154:
+  0x411154  public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputc(char)
+class 0x411159:
+  0x411159  public: __thiscall std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(class std::allocator<char> const &)
+class 0x41115e:
+  0x41115e  public: class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::erase(unsigned int, unsigned int)
+class 0x411163:
+  0x411163  j___RTC_UninitUse
+class 0x411168:
+  0x411168  j___RTC_Shutdown
+class 0x41116d:
+  0x41116d  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
+  0x414360  private: __thiscall type_info::type_info(class type_info const &)
+class 0x411172:
+  0x411172  j___FindPESection
+class 0x411177:
+  0x411177  __stdcall LoadLibraryW(x)
+class 0x41117c:
+  0x41117c  __stdcall HeapSetInformation(x, x, x, x)
+class 0x411181:
+  0x411181  j___configthreadlocale
+class 0x411186:
+  0x411186  j___RTC_InitBase
+class 0x41118b:
+  0x41118b  void __cdecl _RTC_StackFailure(void *, char const *)
+class 0x411190:
+  0x411190  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
+class 0x411195:
+  0x411195  struct std::_Container_proxy && __cdecl std::forward<struct std::_Container_proxy>(struct std::_Container_proxy &)
+class 0x41119a:
+  0x41119a  __stdcall RaiseException(x, x, x, x)
+class 0x41119f:
+  0x41119f  public: __thiscall std::_Container_proxy::_Container_proxy(void)
+class 0x4111a4:
+  0x4111a4  j___crt_debugger_hook
+class 0x4111a9:
+  0x4111a9  public: void __thiscall std::allocator<struct std::_Container_proxy>::destroy(struct std::_Container_proxy *)
+class 0x4111ae:
+  0x4111ae  public: static char * __cdecl std::char_traits<char>::copy(char *, char const *, unsigned int)
+class 0x4111b3:
+  0x4111b3  j___ValidateImageBase
+class 0x4111b8:
+  0x4111b8  __stdcall InterlockedCompareExchange(x, x, x)
+class 0x4111bd:
+  0x4111bd  public: bool __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Grow(unsigned int, bool)
+class 0x4111c2:
+  0x4111c2  public: void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Xran(void)const
+class 0x4111c7:
+  0x4111c7  public: __thiscall std::_Container_base12::~_Container_base12(void)
+class 0x4111cc:
+  0x4111cc  public: static int __cdecl std::char_traits<char>::eof(void)
+class 0x4111d1:
+  0x4111d1  public: char const * __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::c_str(void)const
+class 0x4111d6:
+  0x4111d6  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::~sentry(void)
+class 0x4111db:
+  0x4111db  __stdcall _CxxThrowException(x, x)
+class 0x4111e0:
+  0x4111e0  j__memmove
+class 0x4111e5:
+  0x4111e5  j__memcpy
+class 0x4111ea:
+  0x4111ea  __stdcall GetProcessHeap()
+class 0x4111ef:
+  0x4111ef  j___RTC_SetErrorFuncW
+class 0x4111f4:
+  0x4111f4  j___onexit
+class 0x4111f9:
+  0x4111f9  j__NtCurrentTeb
+class 0x4111fe:
+  0x4111fe  public: __thiscall std::_Container_base12::_Container_base12(void)
+class 0x411203:
+  0x411203  struct std::_Container_proxy * __cdecl std::_Allocate<struct std::_Container_proxy>(unsigned int, struct std::_Container_proxy *)
+class 0x411208:
+  0x411208  void __cdecl operator delete(void *, void *)
+class 0x41120d:
+  0x41120d  __stdcall HeapFree(x, x, x)
+class 0x411212:
+  0x411212  public: __thiscall std::_String_val<char, class std::allocator<char>>::~_String_val<char, class std::allocator<char>>(void)
+class 0x411217:
+  0x411217  public: static char * __cdecl std::char_traits<char>::move(char *, char const *, unsigned int)
+class 0x41121c:
+  0x41121c  j___RTC_SetErrorFunc
+class 0x411221:
+  0x411221  j___invoke_watson_if_error
+class 0x411226:
+  0x411226  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(class std::basic_ostream<char, struct std::char_traits<char>> & (__cdecl *)(class std::basic_ostream<char, struct std::char_traits<char>> &))
+class 0x41122b:
+  0x41122b  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Sentry_base::~_Sentry_base(void)
+class 0x411230:
+  0x411230  public: void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Eos(unsigned int)
+class 0x411235:
+  0x411235  __stdcall TerminateProcess(x, x)
+class 0x41123a:
+  0x41123a  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::flush(void)
+class 0x41123f:
+  0x41123f  start
+class 0x411244:
+  0x411244  public: void __thiscall std::allocator<struct std::_Container_proxy>::construct(struct std::_Container_proxy *, struct std::_Container_proxy &&)
+class 0x411249:
+  0x411249  public: struct std::_Container_proxy * __thiscall std::allocator<struct std::_Container_proxy>::allocate(unsigned int)
+class 0x41124e:
+  0x41124e  void __cdecl std::_Cons_val<class std::allocator<struct std::_Container_proxy>, struct std::_Container_proxy, struct std::_Container_proxy>(class std::allocator<struct std::_Container_proxy> &, struct std::_Container_proxy *, struct std::_Container_proxy &&)
+class 0x411253:
+  0x411253  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+class 0x411258:
+  0x411258  void __cdecl bar(class ObjectTest, int, int, class ObjectTest)
+class 0x41125d:
+  0x41125d  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x411262:
+  0x411262  j____CxxSetUnhandledExceptionFilter
+class 0x411267:
+  0x411267  __stdcall QueryPerformanceCounter(x)
+class 0x41126c:
+  0x41126c  char * __cdecl std::_Allocate<char>(unsigned int, char *)
+class 0x411271:
+  0x411271  public: __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::~basic_string<char, struct std::char_traits<char>, class std::allocator<char>>(void)
+class 0x411276:
+  0x411276  j___unlock
+class 0x41127b:
+  0x41127b  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::operator<<<char, struct std::char_traits<char>, class std::allocator<char>>(class std::basic_ostream<char, struct std::char_traits<char>> &, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const &)
+class 0x411280:
+  0x411280  __stdcall GetCurrentProcessId()
+class 0x411285:
+  0x411285  __fastcall _RTC_CheckStackVars2(x, x, x)
+class 0x41128a:
+  0x41128a  j____set_app_type
+class 0x41128f:
+  0x41128f  public: class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::assign(class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const &, unsigned int, unsigned int)
+class 0x411294:
+  0x411294  j___RTC_CheckEsp
+class 0x411299:
+  0x411299  j__main
+class 0x41129e:
+  0x41129e  __stdcall EncodePointer(x)
+class 0x4112a3:
+  0x4112a3  j___RTC_Initialize
+class 0x4112a8:
+  0x4112a8  void __cdecl std::_Debug_pointer<char>(char const *, wchar_t const *, unsigned int)
+class 0x4112ad:
+  0x4112ad  public: __int64 __thiscall std::ios_base::width(__int64)
+class 0x4112b2:
+  0x4112b2  public: void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::_Tidy(bool, unsigned int)
+class 0x4112b7:
+  0x4112b7  j___controlfp_s
+class 0x4112bc:
+  0x4112bc  __stdcall GetSystemTimeAsFileTime(x)
+class 0x4112c1:
+  0x4112c1  __stdcall DecodePointer(x)
+class 0x4112c6:
+  0x4112c6  public: unsigned int __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::max_size(void)const
+class 0x4112cb:
+  0x4112cb  void __cdecl std::_Debug_message(wchar_t const *, wchar_t const *, unsigned int)
+class 0x4112d0:
+  0x4112d0  public: unsigned int __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::size(void)const
+class 0x4112d5:
+  0x4112d5  j___invoke_watson
+class 0x4112da:
+  0x4112da  void __cdecl foo(int, class ObjectTest, int)
+class 0x4112df:
+  0x4112df  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
+class 0x4112e4:
+  0x4112e4  public: __thiscall std::exception::exception(char const * const &)
+class 0x4112e9:
+  0x4112e9  j___CRT_RTC_INITW
+class 0x4112ee:
+  0x4112ee  __stdcall GetTickCount()
+class 0x4112f3:
+  0x4112f3  j___IsNonwritableInCurrentImage
+class 0x4112f8:
+  0x4112f8  j____CxxFrameHandler3
+class 0x4112fd:
+  0x4112fd  __stdcall HeapAlloc(x, x, x)
+class 0x411302:
+  0x411302  public: void __thiscall ObjectTest::print(class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>)
+class 0x411307:
+  0x411307  public: unsigned int __thiscall std::allocator<char>::max_size(void)const
+class 0x41130c:
+  0x41130c  j___amsg_exit
+class 0x411311:
+  0x411311  void * __cdecl operator new(unsigned int)
+class 0x411316:
+  0x411316  j___XcptFilter
+class 0x41131b:
+  0x41131b  public: int __thiscall ObjectTest::add(void)
+class 0x411320:
+  0x411320  j___CrtSetCheckCount
+class 0x411325:
+  0x411325  __stdcall InterlockedExchange(x, x)
+class 0x41132a:
+  0x41132a  __stdcall UnhandledExceptionFilter(x)
+class 0x41132f:
+  0x41132f  public: __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>(char const *)
+class 0x411334:
+  0x411334  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::sentry(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x411339:
+  0x411339  public: __thiscall std::exception::exception(class std::exception const &)
+class 0x41133e:
+  0x41133e  private: __thiscall type_info::type_info(class type_info const &)
+class 0x411343:
+  0x411343  j___except_handler4_common
+class 0x411348:
+  0x411348  void __cdecl std::_Xout_of_range(char const *)
+class 0x41134d:
+  0x41134d  j___matherr
+class 0x411352:
+  0x411352  public: char __thiscall std::basic_ios<char, struct std::char_traits<char>>::fill(void)const
+class 0x411357:
+  0x411357  j____getmainargs
+class 0x41135c:
+  0x41135c  void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x411361:
+  0x411361  public: __thiscall std::_String_val<char, class std::allocator<char>>::_String_val<char, class std::allocator<char>>(class std::allocator<char>)
+class 0x411366:
+  0x411366  __stdcall lstrlenA(x)
+class 0x41136b:
+  0x41136b  void __cdecl _RTC_Failure(void *, int)
+class 0x411370:
+  0x411370  public: int __thiscall std::ios_base::flags(void)const
+class 0x411375:
+  0x411375  public: __thiscall std::allocator<char>::allocator<char>(void)
+class 0x41137a:
+  0x41137a  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
+class 0x41137f:
+  0x41137f  void __cdecl std::_Xlength_error(char const *)
+class 0x411384:
+  0x411384  j__exit_0
+class 0x411389:
+  0x411389  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x413c40:
+  0x413c40  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
+class 0x413cb0:
+  0x413cb0  char * __cdecl std::_Allocate<char>(unsigned int, char *)
+class 0x413de0:
+  0x413de0  public: void __thiscall std::allocator<struct std::_Container_proxy>::construct(struct std::_Container_proxy *, struct std::_Container_proxy &&)
+class 0x413ef0:
+  0x413ef0  void * __cdecl operator new(unsigned int, void *)
+class 0x413f30:
+  0x413f30  void __cdecl operator delete(void *, void *)
+class 0x413f60:
+  0x413f60  public: void __thiscall std::allocator<struct std::_Container_proxy>::destroy(struct std::_Container_proxy *)
+class 0x413fc0:
+  0x413fc0  struct std::_Container_proxy && __cdecl std::forward<struct std::_Container_proxy>(struct std::_Container_proxy &)
+class 0x414000:
+  0x414000  void __cdecl std::_Destroy<struct std::_Container_proxy>(struct std::_Container_proxy *)
+class 0x41402e:
+  0x41402e  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(class std::basic_ostream<char, struct std::char_traits<char>> & (__cdecl *)(class std::basic_ostream<char, struct std::char_traits<char>> &))
+class 0x414034:
+  0x414034  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::endl(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x41403a:
+  0x41403a  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(int)
+class 0x414040:
+  0x414040  public: __thiscall std::_Container_base12::~_Container_base12(void)
+class 0x414046:
+  0x414046  public: __thiscall std::_Container_base12::_Container_base12(void)
+class 0x41404c:
+  0x41404c  public: void __thiscall std::_Container_base12::_Orphan_all(void)
+class 0x414052:
+  0x414052  void __cdecl std::_Xout_of_range(char const *)
+class 0x414058:
+  0x414058  void __cdecl std::_Xlength_error(char const *)
+class 0x41405e:
+  0x41405e  public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::setstate(int, bool)
+class 0x414064:
+  0x414064  public: __int64 __thiscall std::ios_base::width(__int64)
+class 0x41406a:
+  0x41406a  public: __int64 __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputn(char const *, __int64)
+class 0x414070:
+  0x414070  public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputc(char)
+class 0x414076:
+  0x414076  public: class std::basic_streambuf<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::rdbuf(void)const
+class 0x41407c:
+  0x41407c  public: char __thiscall std::basic_ios<char, struct std::char_traits<char>>::fill(void)const
+class 0x414082:
+  0x414082  public: int __thiscall std::ios_base::flags(void)const
+class 0x414088:
+  0x414088  public: __int64 __thiscall std::ios_base::width(void)const
+class 0x41408e:
+  0x41408e  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::flush(void)
+class 0x414094:
+  0x414094  public: class std::basic_ostream<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::tie(void)const
+class 0x41409a:
+  0x41409a  public: bool __thiscall std::ios_base::good(void)const
+class 0x4140a0:
+  0x4140a0  public: void __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Osfx(void)
+class 0x4140a6:
+  0x4140a6  bool __cdecl std::uncaught_exception(void)
+class 0x4140ac:
+  0x4140ac  void __cdecl std::_Debug_message(wchar_t const *, wchar_t const *, unsigned int)
+class 0x4140c0:
+  0x4140c0  __RTC_CheckEsp
+class 0x4140f0:
+  0x4140f0  __fastcall _RTC_CheckStackVars(x, x)
+class 0x414170:
+  0x414170  __fastcall _RTC_AllocaHelper(x, x, x)
+class 0x4141b0:
+  0x4141b0  __fastcall _RTC_CheckStackVars2(x, x, x)
+class 0x4142c0:
+  0x4142c0  __RTC_InitBase
+class 0x414300:
+  0x414300  __RTC_Shutdown
+class 0x414318:
+  0x414318  ___CxxFrameHandler3
+class 0x414320:
+  0x414320  __fastcall __security_check_cookie(x)
+class 0x414332:
+  0x414332  _strlen
+class 0x414338:
+  0x414338  _memcpy
+class 0x41433e:
+  0x41433e  void __cdecl operator delete(void *)
+class 0x414344:
+  0x414344  _memmove
+class 0x41434a:
+  0x41434a  __stdcall _CxxThrowException(x, x)
+class 0x414350:
+  0x414350  void * __cdecl operator new(unsigned int)
+class 0x414390:
+  0x414390  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
+class 0x414420:
+  0x414420  private: class type_info & __thiscall type_info::operator=(class type_info const &)
+class 0x414436:
+  0x414436  public: __thiscall std::exception::exception(class std::exception const &)
+class 0x41443c:
+  0x41443c  public: __thiscall std::exception::exception(char const * const &)
+class 0x414442:
+  0x414442  public: virtual char const * __thiscall std::exception::what(void)const
+class 0x414448:
+  0x414448  public: virtual __thiscall std::exception::~exception(void)
+class 0x414450:
+  0x414450  pre_c_init
+class 0x414500:
+  0x414500  pre_cpp_init
+class 0x414570:
+  0x414570  _mainCRTStartup
+class 0x414590:
+  0x414590  __tmainCRTStartup
+class 0x414890:
+  0x414890  _NtCurrentTeb
+class 0x4148a0:
+  0x4148a0  check_managed_app
+class 0x414930:
+  0x414930  void __cdecl _RTC_Failure(void *, int)
+class 0x4149a0:
+  0x4149a0  failwithmessage
+class 0x414c40:
+  0x414c40  DebuggerProbe
+class 0x414cf0:
+  0x414cf0  DebuggerRuntime
+class 0x414dc0:
+  0x414dc0  void __cdecl _RTC_StackFailure(void *, char const *)
+class 0x414f00:
+  0x414f00  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
+class 0x415080:
+  0x415080  _getMemBlockDataString
+class 0x415110:
+  0x415110  __RTC_UninitUse
+class 0x415240:
+  0x415240  __RTC_NumErrors
+class 0x415250:
+  0x415250  __RTC_GetErrDesc
+class 0x4152a0:
+  0x4152a0  __RTC_SetErrorFunc
+class 0x4152d0:
+  0x4152d0  __RTC_SetErrorFuncW
+class 0x415300:
+  0x415300  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
+class 0x415310:
+  0x415310  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
+class 0x415316:
+  0x415316  __CRT_RTC_INITW
+class 0x415320:
+  0x415320  ___report_gsfailure
+class 0x415480:
+  0x415480  void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x415502:
+  0x415502  $LN11
+class 0x415560:
+  0x415560  void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x415610:
+  0x415610  ArrayUnwindFilter
+class 0x415650:
+  0x415650  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x4156d0:
+  0x4156d0  ___CxxSetUnhandledExceptionFilter
+class 0x4156ea:
+  0x4156ea  __configthreadlocale
+class 0x4156f0:
+  0x4156f0  __setdefaultprecision
+class 0x415740:
+  0x415740  __invoke_watson_if_error
+class 0x415772:
+  0x415772  ___setusermatherr
+class 0x415780:
+  0x415780  __matherr
+class 0x415790:
+  0x415790  __setargv
+class 0x4157a0:
+  0x4157a0  __RTC_Initialize
+class 0x4157d0:
+  0x4157d0  __RTC_Terminate
+class 0x415800:
+  0x415800  __onexit
+class 0x4158d3:
+  0x4158d3  $LN6_1
+class 0x415930:
+  0x415930  _atexit
+class 0x415954:
+  0x415954  ___set_app_type
+class 0x41595a:
+  0x41595a  __amsg_exit
+class 0x415960:
+  0x415960  ___getmainargs
+class 0x415970:
+  0x415970  ___security_init_cookie
+class 0x415a88:
+  0x415a88  __exit
+class 0x415a8e:
+  0x415a8e  __XcptFilter
+class 0x415a94:
+  0x415a94  __cexit
+class 0x415a9a:
+  0x415a9a  _exit_0
+class 0x415aa0:
+  0x415aa0  __CrtSetCheckCount
+class 0x415ab0:
+  0x415ab0  __ValidateImageBase
+class 0x415b30:
+  0x415b30  __FindPESection
+class 0x415bd0:
+  0x415bd0  __IsNonwritableInCurrentImage
+class 0x415d26:
+  0x415d26  __CrtDbgReportW
+class 0x415d2c:
+  0x415d2c  __initterm
+class 0x415d32:
+  0x415d32  __initterm_e
+class 0x415d40:
+  0x415d40  __except_handler4
+class 0x415d80:
+  0x415d80  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
+class 0x4160f0:
+  0x4160f0  GetPdbDll
+class 0x416356:
+  0x416356  __crt_debugger_hook
+class 0x41635c:
+  0x41635c  void __cdecl terminate(void)
+class 0x416362:
+  0x416362  public: virtual __thiscall type_info::~type_info(void)
+class 0x416368:
+  0x416368  __controlfp_s
+class 0x41636e:
+  0x41636e  __invoke_watson
+class 0x416374:
+  0x416374  __unlock
+class 0x41637a:
+  0x41637a  ___dllonexit
+class 0x416380:
+  0x416380  __lock
+class 0x416386:
+  0x416386  __except_handler4_common
+class 0x41638c:
+  0x41638c  __stdcall EncodePointer(x)
+class 0x416392:
+  0x416392  __stdcall InterlockedExchange(x, x)
+class 0x416398:
+  0x416398  __stdcall Sleep(x)
+class 0x41639e:
+  0x41639e  __stdcall InterlockedCompareExchange(x, x, x)
+class 0x4163a4:
+  0x4163a4  __stdcall HeapSetInformation(x, x, x, x)
+class 0x4163aa:
+  0x4163aa  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
+class 0x4163b0:
+  0x4163b0  __stdcall IsDebuggerPresent()
+class 0x4163b6:
+  0x4163b6  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
+class 0x4163bc:
+  0x4163bc  __stdcall RaiseException(x, x, x, x)
+class 0x4163c2:
+  0x4163c2  __stdcall lstrlenA(x)
+class 0x4163c8:
+  0x4163c8  __stdcall GetProcAddress(x, x)
+class 0x4163ce:
+  0x4163ce  __stdcall LoadLibraryW(x)
+class 0x4163d4:
+  0x4163d4  __stdcall TerminateProcess(x, x)
+class 0x4163da:
+  0x4163da  __stdcall GetCurrentProcess()
+class 0x4163e0:
+  0x4163e0  __stdcall UnhandledExceptionFilter(x)
+class 0x4163e6:
+  0x4163e6  __stdcall SetUnhandledExceptionFilter(x)
+class 0x4163ec:
+  0x4163ec  __stdcall DecodePointer(x)
+class 0x4163f2:
+  0x4163f2  __stdcall QueryPerformanceCounter(x)
+class 0x4163f8:
+  0x4163f8  __stdcall GetTickCount()
+class 0x4163fe:
+  0x4163fe  __stdcall GetCurrentThreadId()
+class 0x416404:
+  0x416404  __stdcall GetCurrentProcessId()
+class 0x41640a:
+  0x41640a  __stdcall GetSystemTimeAsFileTime(x)
+class 0x416410:
+  0x416410  __stdcall HeapFree(x, x, x)
+class 0x416416:
+  0x416416  __stdcall HeapAlloc(x, x, x)
+class 0x41641c:
+  0x41641c  __stdcall GetProcessHeap()
+class 0x416422:
+  0x416422  __stdcall GetModuleFileNameW(x, x, x)
+class 0x416428:
+  0x416428  __stdcall VirtualQuery(x, x, x)
+class 0x41642e:
+  0x41642e  __stdcall FreeLibrary(x)
+class 0x4172f0:
+  0x4172f0  __unwindfunclet$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0
+class 0x4172f8:
+  0x4172f8  __ehhandler$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+class 0x417320:
+  0x417320  __unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z$0
+class 0x417328:
+  0x417328  __ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
+class 0x417350:
+  0x417350  __unwindfunclet$??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ$0
+class 0x417358:
+  0x417358  __ehhandler$??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+class 0x417380:
+  0x417380  __unwindfunclet$??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z$0
+class 0x417392:
+  0x417392  __ehhandler$??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z
+class 0x4173c0:
+  0x4173c0  __unwindfunclet$??1?$_String_val@DV?$allocator@D@std@@@std@@QAE@XZ$0
+class 0x4173d2:
+  0x4173d2  __ehhandler$??1?$_String_val@DV?$allocator@D@std@@@std@@QAE@XZ
+class 0x417400:
+  0x417400  __ehhandler$?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z
+class 0x417430:
+  0x417430  __unwindfunclet$??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z$2
+class 0x417438:
+  0x417438  __ehhandler$??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z
+class 0x417460:
+  0x417460  __unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0
+class 0x417468:
+  0x417468  __ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
+class 0x417490:
+  0x417490  __unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0
+class 0x417498:
+  0x417498  __ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+class 0x4174c0:
+  0x4174c0  __unwindfunclet$?construct@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@$$QAU32@@Z$0
+class 0x4174d4:
+  0x4174d4  __ehhandler$?construct@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@$$QAU32@@Z
+class 0x41d330:
+  0x41d330  __declspec(dllimport) public: void __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Osfx(void)
+  0x41d33c  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::flush(void)
+  0x41d36c  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(class std::basic_ostream<char, struct std::char_traits<char>> & (__cdecl *)(class std::basic_ostream<char, struct std::char_traits<char>> &))
+  0x41d378  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(int)
+class 0x41d334:
+  0x41d334  __declspec(dllimport) public: bool __thiscall std::ios_base::good(void)const
+  0x41d340  __declspec(dllimport) public: __int64 __thiscall std::ios_base::width(void)const
+  0x41d344  __declspec(dllimport) public: int __thiscall std::ios_base::flags(void)const
+  0x41d358  __declspec(dllimport) public: __int64 __thiscall std::ios_base::width(__int64)
+class 0x41d338:
+  0x41d338  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::tie(void)const
+  0x41d348  __declspec(dllimport) public: char __thiscall std::basic_ios<char, struct std::char_traits<char>>::fill(void)const
+  0x41d34c  __declspec(dllimport) public: class std::basic_streambuf<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::rdbuf(void)const
+  0x41d35c  __declspec(dllimport) public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::setstate(int, bool)
+class 0x41d350:
+  0x41d350  __declspec(dllimport) public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputc(char)
+  0x41d354  __declspec(dllimport) public: __int64 __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputn(char const *, __int64)
+class 0x41d368:
+  0x41d368  __declspec(dllimport) public: void __thiscall std::_Container_base12::_Orphan_all(void)
+  0x41d370  __declspec(dllimport) public: __thiscall std::_Container_base12::_Container_base12(void)
+  0x41d374  __declspec(dllimport) public: __thiscall std::_Container_base12::~_Container_base12(void)
+class 0x41d3c8:
+  0x41d3c8  __declspec(dllimport) public: void __thiscall type_info::_type_info_dtor_internal_method(void)
+class 0x41d428:
+  0x41d428  __declspec(dllimport) public: virtual __thiscall std::exception::~exception(void)
+  0x41d42c  __declspec(dllimport) public: virtual char const * __thiscall std::exception::what(void)const
+  0x41d430  __declspec(dllimport) public: __thiscall std::exception::exception(char const * const &)
+  0x41d434  __declspec(dllimport) public: __thiscall std::exception::exception(class std::exception const &)

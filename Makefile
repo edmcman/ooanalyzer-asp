@@ -131,13 +131,15 @@ LAZY_SYM_FILES := $(foreach sym,$(patsubst %.symbols,%.lazy.sym,$(SYMBOLS_FILES)
 
 symbolize: $(SYM_FILES) $(LAZY_SYM_FILES)
 
-$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py
+$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py out2classes.py
 	@echo "=== Symbolizing $* ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
+	$(PYTHON) out2classes.py $(word 2,$^) $< >> $@
 
-$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py
+$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py out2classes.py
 	@echo "=== Symbolizing $* (lazy) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
+	$(PYTHON) out2classes.py $(word 2,$^) $< >> $@
 
 # ----------------------------------------------------------------
 # Clean generated files

@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 5 (Time: 0.429s)
+Answer: 5 (Time: 0.394s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200633)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198635)
 method(virtual std::bad_alloc::~bad_alloc(void)@4198624)
@@ -432,5 +432,311 @@ Models       : 5
   Optimum    : yes
 Optimization : -173 -1 -18 -157 -20
 Calls        : 1
-Time         : 0.430s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.426s
+Time         : 0.394s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.393s
+class 0x401000:
+  0x401000  public: __thiscall Base::Base(void)
+class 0x401020:
+  0x401020  public: int __thiscall Base::func3(void)
+class 0x401030:
+  0x401030  public: __thiscall Derived::Derived(void)
+class 0x401070:
+  0x401070  public: int __thiscall Derived::func4(void)
+class 0x401080:
+  0x401080  _main
+class 0x4010b4:
+  0x4010b4  _rand
+class 0x4010d5:
+  0x4010d5  void __cdecl operator delete(void *)
+class 0x4010e0:
+  0x4010e0  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
+  0x4010eb  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
+  0x401112  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+  0x4017f1  public: __thiscall std::exception::exception(char const * const &, int)
+  0x40180e  public: virtual char const * __thiscall std::exception::what(void)const
+  0x4018ae  public: virtual __thiscall std::exception::~exception(void)
+  0x4018b9  public: virtual void * __thiscall std::exception::`scalar deleting destructor'(unsigned int)
+  0x4018e0  public: __thiscall std::exception::exception(class std::exception const &)
+class 0x40181b:
+  0x40181b  private: void __thiscall std::exception::_Copy_str(char const *)
+class 0x40185b:
+  0x40185b  private: void __thiscall std::exception::_Tidy(void)
+class 0x401879:
+  0x401879  public: class std::exception & __thiscall std::exception::operator=(class std::exception const &)
+class 0x401905:
+  0x401905  public: virtual __thiscall type_info::~type_info(void)
+  0x401915  public: virtual void * __thiscall type_info::`scalar deleting destructor'(unsigned int)
+class 0x401936:
+  0x401936  _onexit_nolock
+class 0x4019ec:
+  0x4019ec  ___onexitinit
+class 0x401a1d:
+  0x401a1d  __onexit
+class 0x401a53:
+  0x401a53  $LN5
+class 0x401a59:
+  0x401a59  _atexit
+class 0x401a70:
+  0x401a70  _malloc
+class 0x401b04:
+  0x401b04  __initp_heap_handler
+class 0x401b13:
+  0x401b13  __callnewh
+class 0x401b3b:
+  0x401b3b  __stdcall _CxxThrowException(x, x)
+class 0x401b87:
+  0x401b87  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x401bc9:
+  0x401bc9  ___CxxSetUnhandledExceptionFilter
+class 0x401bd7:
+  0x401bd7  ___crtCorExitProcess
+class 0x401c02:
+  0x401c02  ___crtExitProcess
+class 0x401c1a:
+  0x401c1a  __lockexit
+class 0x401c23:
+  0x401c23  __unlockexit
+class 0x401c2c:
+  0x401c2c  __init_pointers
+class 0x401c5f:
+  0x401c5f  __initterm_e
+class 0x401c83:
+  0x401c83  __cinit
+class 0x401d1a:
+  0x401d1a  doexit
+class 0x401e45:
+  0x401e45  $LN52
+class 0x401e5a:
+  0x401e5a  _exit
+class 0x401e70:
+  0x401e70  __exit
+class 0x401e86:
+  0x401e86  __cexit
+class 0x401e95:
+  0x401e95  __c_exit
+class 0x401ea4:
+  0x401ea4  __amsg_exit
+class 0x401ec2:
+  0x401ec2  __GET_RTERRMSG
+class 0x401ee8:
+  0x401ee8  __NMSG_WRITE
+class 0x402097:
+  0x402097  __FF_MSGBANNER
+class 0x4020d0:
+  0x4020d0  __XcptFilter
+class 0x40221a:
+  0x40221a  __setenvp
+class 0x4022f6:
+  0x4022f6  parse_cmdline
+class 0x402490:
+  0x402490  __setargv
+class 0x40254b:
+  0x40254b  ___crtGetEnvironmentStringsA
+class 0x4025e2:
+  0x4025e2  __ioinit
+class 0x402827:
+  0x402827  __RTC_Initialize
+class 0x40284d:
+  0x40284d  __RTC_Terminate
+class 0x402873:
+  0x402873  __heap_init
+class 0x402900:
+  0x402900  __except_handler4
+class 0x402a8f:
+  0x402a8f  ___security_init_cookie
+class 0x402b2a:
+  0x402b2a  __mtinitlocks
+class 0x402bcb:
+  0x402bcb  __unlock
+class 0x402be2:
+  0x402be2  __mtinitlocknum
+class 0x402c9b:
+  0x402c9b  $LN12_0
+class 0x402ca4:
+  0x402ca4  __lock
+class 0x402cd7:
+  0x402cd7  ___addlocaleref
+class 0x402d66:
+  0x402d66  ___removelocaleref
+class 0x402dff:
+  0x402dff  ___freetlocinfo
+class 0x402f4a:
+  0x402f4a  __updatetlocinfoEx_nolock
+class 0x402f97:
+  0x402f97  ___updatetlocinfo
+class 0x403004:
+  0x403004  $LN9_0
+class 0x40303f:
+  0x40303f  setSBCS
+class 0x4030a3:
+  0x4030a3  setSBUpLow
+class 0x403233:
+  0x403233  ___updatetmbcinfo
+class 0x4032ce:
+  0x4032ce  $LN13_0
+class 0x4032d7:
+  0x4032d7  public: __thiscall _LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)
+class 0x40335e:
+  0x40335e  getSystemCP
+class 0x4033da:
+  0x4033da  __setmbcp_nolock
+class 0x4035c3:
+  0x4035c3  __setmbcp
+class 0x403724:
+  0x403724  $LN25_1
+class 0x40372d:
+  0x40372d
+class 0x403754:
+  0x403754  $LN28
+class 0x40375d:
+  0x40375d  ___initmbctable
+class 0x40377b:
+  0x40377b  __malloc_crt
+class 0x4037c0:
+  0x4037c0  __calloc_crt
+class 0x40380c:
+  0x40380c  __realloc_crt
+class 0x40385a:
+  0x40385a  __get_errno_from_oserr
+class 0x40389c:
+  0x40389c  __errno
+class 0x4038af:
+  0x4038af  _strcpy_s
+class 0x403910:
+  0x403910  _strlen
+class 0x40399b:
+  0x40399b  private: static void __cdecl type_info::_Type_info_dtor(class type_info *)
+class 0x403a02:
+  0x403a02  $LN10_1
+class 0x403a10:
+  0x403a10  _strcmp
+class 0x403a98:
+  0x403a98  __msize
+class 0x403acb:
+  0x403acb  void __cdecl terminate(void)
+class 0x403b04:
+  0x403b04  __initp_eh_hooks
+class 0x403b15:
+  0x403b15  __initp_misc_winsig
+class 0x403b33:
+  0x403b33  siglookup
+class 0x403b6a:
+  0x403b6a  ___get_sigabrt
+class 0x403b77:
+  0x403b77  _raise
+class 0x403cde:
+  0x403cde  $LN37
+class 0x403d1a:
+  0x403d1a  __initp_misc_rand_s
+class 0x403d29:
+  0x403d29  __initp_misc_purevirt
+class 0x403d38:
+  0x403d38  __initp_misc_invarg
+class 0x403d47:
+  0x403d47  __call_reportfault
+class 0x403e70:
+  0x403e70  __invoke_watson
+class 0x403e95:
+  0x403e95  __invalid_parameter
+class 0x403ec2:
+  0x403ec2  __invalid_parameter_noinfo
+class 0x403ed2:
+  0x403ed2  __initp_misc_cfltcvt_tab
+class 0x403f00:
+  0x403f00  __ValidateImageBase
+class 0x403f40:
+  0x403f40  __FindPESection
+class 0x403f90:
+  0x403f90  __IsNonwritableInCurrentImage
+class 0x40404c:
+  0x40404c  ___crtMessageBoxW
+class 0x4041b8:
+  0x4041b8  _wcscat_s
+class 0x40422d:
+  0x40422d  _wcsncpy_s
+class 0x4042fa:
+  0x4042fa  _wcslen
+class 0x404315:
+  0x404315  _wcscpy_s
+class 0x404378:
+  0x404378  __set_error_mode
+class 0x4043b7:
+  0x4043b7  __fastcall __security_check_cookie(x)
+class 0x4043c6:
+  0x4043c6  x_ismbbtype_l
+class 0x404419:
+  0x404419  __ismbblead
+class 0x404440:
+  0x404440  __local_unwind4
+class 0x4044d0:
+  0x4044d0  _unwind_handler4
+class 0x404516:
+  0x404516  __stdcall _seh_longjmp_unwind4(x)
+class 0x404532:
+  0x404532  __fastcall _EH4_CallFilterFunc(x, x)
+class 0x404549:
+  0x404549  __fastcall _EH4_TransferToHandler(x, x)
+class 0x404562:
+  0x404562  __fastcall _EH4_GlobalUnwind2(x, x)
+class 0x40457b:
+  0x40457b  __fastcall _EH4_LocalUnwind(x, x, x, x)
+class 0x404592:
+  0x404592  ___free_lc_time
+class 0x404909:
+  0x404909  ___free_lconv_num
+class 0x404972:
+  0x404972  ___free_lconv_mon
+class 0x404a70:
+  0x404a70  _memset
+class 0x404aea:
+  0x404aea  __freea
+class 0x404b0a:
+  0x404b0a  __crtLCMapStringA_stat
+class 0x404cf1:
+  0x404cf1  ___crtLCMapStringA
+class 0x404d37:
+  0x404d37  __crtGetStringTypeA_stat
+class 0x404e1e:
+  0x404e1e  ___crtGetStringTypeA
+class 0x404e5e:
+  0x404e5e  __calloc_impl
+class 0x404ee0:
+  0x404ee0  _realloc
+class 0x404f8d:
+  0x404f8d  _abort
+class 0x405321:
+  0x405321  __crt_debugger_hook
+class 0x405329:
+  0x405329  __fptrap
+class 0x405332:
+  0x405332  ___report_gsfailure
+class 0x405440:
+  0x405440  __global_unwind2
+class 0x405460:
+  0x405460  __unwind_handler
+class 0x4054a5:
+  0x4054a5  __local_unwind2
+class 0x405529:
+  0x405529  __abnormal_termination
+class 0x40554c:
+  0x40554c  __NLG_Notify1
+class 0x405631:
+  0x405631  ___sse2_available_init
+class 0x405650:
+  0x405650  __alloca_probe_16
+class 0x405666:
+  0x405666  __alloca_probe_8
+class 0x405680:
+  0x405680  __aulldvrm
+class 0x405850:
+  0x405850  __allmul
+class 0x405890:
+  0x405890  _strcspn
+class 0x4058e0:
+  0x4058e0  _strpbrk
+class 0x405920:
+  0x405920  ___ascii_strnicmp
+class 0x405982:
+  0x405982  __stdcall RtlUnwind(x, x, x, x)
+class 0x405988:
+  0x405988  _operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__

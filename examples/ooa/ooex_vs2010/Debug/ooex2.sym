@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 1.042s)
+Answer: 1 (Time: 0.934s)
 method(Base::Base(void)@4265360)
 method(Derived::Derived(void)@4265200)
 method(int Base::func3(void)@4265456)
@@ -414,5 +414,409 @@ Models       : 1
   Optimum    : yes
 Optimization : -202
 Calls        : 1
-Time         : 1.042s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 1.038s
+Time         : 0.935s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 0.934s
+class 0x411005:
+  0x411005  j___setdefaultprecision
+class 0x41100a:
+  0x41100a  public: int __thiscall Derived::func4(void)
+class 0x41100f:
+  0x41100f  public: int __thiscall Base::func3(void)
+class 0x411014:
+  0x411014  j___setargv
+class 0x411019:
+  0x411019  j___RTC_GetErrDesc
+class 0x41101e:
+  0x41101e  __fastcall __security_check_cookie(x)
+class 0x411023:
+  0x411023  __stdcall IsDebuggerPresent()
+class 0x411028:
+  0x411028  j___RTC_Terminate
+class 0x41102d:
+  0x41102d  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
+class 0x411032:
+  0x411032  __fastcall _RTC_AllocaHelper(x, x, x)
+class 0x411037:
+  0x411037  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
+class 0x41103c:
+  0x41103c  j___RTC_NumErrors
+class 0x411041:
+  0x411041  j____setusermatherr
+class 0x411046:
+  0x411046  __stdcall Sleep(x)
+class 0x41104b:
+  0x41104b  __stdcall GetModuleFileNameW(x, x, x)
+class 0x411050:
+  0x411050  j____security_init_cookie
+class 0x411055:
+  0x411055  __stdcall SetUnhandledExceptionFilter(x)
+class 0x41105a:
+  0x41105a  j___cexit
+class 0x41105f:
+  0x41105f  j___CrtDbgReportW
+class 0x411064:
+  0x411064  __stdcall VirtualQuery(x, x, x)
+class 0x411069:
+  0x411069  j__atexit
+class 0x41106e:
+  0x41106e  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
+class 0x411073:
+  0x411073  j___RTC_SetErrorType
+class 0x411078:
+  0x411078  j___except_handler4
+class 0x41107d:
+  0x41107d  j___lock
+class 0x411082:
+  0x411082  __stdcall GetProcAddress(x, x)
+class 0x411087:
+  0x411087  __fastcall _RTC_CheckStackVars(x, x)
+class 0x41108c:
+  0x41108c  void __cdecl operator delete(void *)
+class 0x411096:
+  0x411096  void __cdecl terminate(void)
+class 0x41109b:
+  0x41109b  j___exit
+class 0x4110a0:
+  0x4110a0  __stdcall GetCurrentThreadId()
+class 0x4110a5:
+  0x4110a5  j___initterm
+class 0x4110aa:
+  0x4110aa  __stdcall GetCurrentProcess()
+class 0x4110af:
+  0x4110af  j___RTC_UninitUse
+class 0x4110b4:
+  0x4110b4  j___RTC_Shutdown
+class 0x4110b9:
+  0x4110b9  j___FindPESection
+class 0x4110be:
+  0x4110be  __stdcall LoadLibraryW(x)
+class 0x4110c3:
+  0x4110c3  __stdcall HeapSetInformation(x, x, x, x)
+class 0x4110c8:
+  0x4110c8  j___configthreadlocale
+class 0x4110cd:
+  0x4110cd  j___RTC_InitBase
+class 0x4110d2:
+  0x4110d2  void __cdecl _RTC_StackFailure(void *, char const *)
+class 0x4110d7:
+  0x4110d7  __stdcall RaiseException(x, x, x, x)
+class 0x4110dc:
+  0x4110dc  public: __thiscall Base::Base(void)
+class 0x4110e1:
+  0x4110e1  j___crt_debugger_hook
+class 0x4110e6:
+  0x4110e6  j___ValidateImageBase
+class 0x4110eb:
+  0x4110eb  __stdcall InterlockedCompareExchange(x, x, x)
+class 0x4110f0:
+  0x4110f0  __stdcall GetProcessHeap()
+class 0x4110f5:
+  0x4110f5  j___RTC_SetErrorFuncW
+class 0x4110fa:
+  0x4110fa  j___onexit
+class 0x4110ff:
+  0x4110ff  j__NtCurrentTeb
+class 0x411104:
+  0x411104  __stdcall HeapFree(x, x, x)
+class 0x411109:
+  0x411109  j___RTC_SetErrorFunc
+class 0x41110e:
+  0x41110e  j___invoke_watson_if_error
+class 0x411113:
+  0x411113  __stdcall TerminateProcess(x, x)
+class 0x411118:
+  0x411118  j__rand
+class 0x41111d:
+  0x41111d  start
+class 0x411122:
+  0x411122  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x411127:
+  0x411127  j____CxxSetUnhandledExceptionFilter
+class 0x41112c:
+  0x41112c  __stdcall QueryPerformanceCounter(x)
+class 0x411131:
+  0x411131  j___unlock
+class 0x411136:
+  0x411136  __stdcall GetCurrentProcessId()
+class 0x41113b:
+  0x41113b  __fastcall _RTC_CheckStackVars2(x, x, x)
+class 0x411140:
+  0x411140  j____set_app_type
+class 0x411145:
+  0x411145  j___RTC_CheckEsp
+class 0x41114a:
+  0x41114a  j__main
+class 0x41114f:
+  0x41114f  __stdcall EncodePointer(x)
+class 0x411154:
+  0x411154  j___RTC_Initialize
+class 0x411159:
+  0x411159  public: __thiscall Derived::Derived(void)
+class 0x41115e:
+  0x41115e  j___controlfp_s
+class 0x411163:
+  0x411163  __stdcall GetSystemTimeAsFileTime(x)
+class 0x411168:
+  0x411168  __stdcall DecodePointer(x)
+class 0x41116d:
+  0x41116d  j___invoke_watson
+class 0x411172:
+  0x411172  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
+class 0x411177:
+  0x411177  j___CRT_RTC_INITW
+class 0x41117c:
+  0x41117c  __stdcall GetTickCount()
+class 0x411181:
+  0x411181  j___IsNonwritableInCurrentImage
+class 0x411186:
+  0x411186  j____CxxFrameHandler3
+class 0x41118b:
+  0x41118b  __stdcall HeapAlloc(x, x, x)
+class 0x411190:
+  0x411190  j___amsg_exit
+class 0x411195:
+  0x411195  void * __cdecl operator new(unsigned int)
+class 0x41119a:
+  0x41119a  j___XcptFilter
+class 0x41119f:
+  0x41119f  j___CrtSetCheckCount
+class 0x4111a4:
+  0x4111a4  __stdcall InterlockedExchange(x, x)
+class 0x4111a9:
+  0x4111a9  __stdcall UnhandledExceptionFilter(x)
+class 0x4111ae:
+  0x4111ae  j___except_handler4_common
+class 0x4111b3:
+  0x4111b3  j___matherr
+class 0x4111b8:
+  0x4111b8  j____getmainargs
+class 0x4111bd:
+  0x4111bd  __stdcall lstrlenA(x)
+class 0x4111c2:
+  0x4111c2  void __cdecl _RTC_Failure(void *, int)
+class 0x4111c7:
+  0x4111c7  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
+class 0x4111cc:
+  0x4111cc  j__exit_0
+class 0x4111d1:
+  0x4111d1  j____dllonexit
+class 0x4111d6:
+  0x4111d6  __stdcall FreeLibrary(x)
+class 0x4111db:
+  0x4111db  j___initterm_e
+class 0x4111e0:
+  0x4111e0  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
+class 0x4113d0:
+  0x4113d0  _main
+class 0x4114f0:
+  0x4114f0  public: __thiscall Derived::Derived(void)
+class 0x411590:
+  0x411590  public: __thiscall Base::Base(void)
+class 0x4115f0:
+  0x4115f0  public: int __thiscall Base::func3(void)
+class 0x411640:
+  0x411640  public: int __thiscall Derived::func4(void)
+class 0x411680:
+  0x411680  void __cdecl operator delete(void *)
+class 0x411686:
+  0x411686  void * __cdecl operator new(unsigned int)
+class 0x41168c:
+  0x41168c  ___CxxFrameHandler3
+class 0x4116a0:
+  0x4116a0  __fastcall __security_check_cookie(x)
+class 0x4116c0:
+  0x4116c0  __RTC_CheckEsp
+class 0x4116f0:
+  0x4116f0  __fastcall _RTC_CheckStackVars(x, x)
+class 0x411770:
+  0x411770  __fastcall _RTC_AllocaHelper(x, x, x)
+class 0x4117b0:
+  0x4117b0  __fastcall _RTC_CheckStackVars2(x, x, x)
+class 0x4118c0:
+  0x4118c0  __RTC_InitBase
+class 0x411900:
+  0x411900  __RTC_Shutdown
+class 0x411918:
+  0x411918  _rand
+class 0x411920:
+  0x411920  pre_c_init
+class 0x4119d0:
+  0x4119d0  pre_cpp_init
+class 0x411a40:
+  0x411a40  _mainCRTStartup
+class 0x411a60:
+  0x411a60  __tmainCRTStartup
+class 0x411d60:
+  0x411d60  _NtCurrentTeb
+class 0x411d70:
+  0x411d70  check_managed_app
+class 0x411e00:
+  0x411e00  ___report_gsfailure
+class 0x411f60:
+  0x411f60  void __cdecl _RTC_Failure(void *, int)
+class 0x411fd0:
+  0x411fd0  failwithmessage
+class 0x412270:
+  0x412270  DebuggerProbe
+class 0x412320:
+  0x412320  DebuggerRuntime
+class 0x4123f0:
+  0x4123f0  void __cdecl _RTC_StackFailure(void *, char const *)
+class 0x412530:
+  0x412530  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
+class 0x4126b0:
+  0x4126b0  _getMemBlockDataString
+class 0x412740:
+  0x412740  __RTC_UninitUse
+class 0x412870:
+  0x412870  __RTC_NumErrors
+class 0x412880:
+  0x412880  __RTC_GetErrDesc
+class 0x4128d0:
+  0x4128d0  __RTC_SetErrorFunc
+class 0x412900:
+  0x412900  __RTC_SetErrorFuncW
+class 0x412930:
+  0x412930  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
+class 0x412940:
+  0x412940  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
+class 0x412946:
+  0x412946  __CRT_RTC_INITW
+class 0x412950:
+  0x412950  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x4129d0:
+  0x4129d0  ___CxxSetUnhandledExceptionFilter
+class 0x4129ea:
+  0x4129ea  __configthreadlocale
+class 0x4129f0:
+  0x4129f0  __setdefaultprecision
+class 0x412a40:
+  0x412a40  __invoke_watson_if_error
+class 0x412a72:
+  0x412a72  ___setusermatherr
+class 0x412a80:
+  0x412a80  __matherr
+class 0x412a90:
+  0x412a90  __setargv
+class 0x412aa0:
+  0x412aa0  __RTC_Initialize
+class 0x412ad0:
+  0x412ad0  __RTC_Terminate
+class 0x412b00:
+  0x412b00  __onexit
+class 0x412bd3:
+  0x412bd3  $LN6_1
+class 0x412c30:
+  0x412c30  _atexit
+class 0x412c54:
+  0x412c54  ___set_app_type
+class 0x412c5a:
+  0x412c5a  __amsg_exit
+class 0x412c60:
+  0x412c60  ___getmainargs
+class 0x412c70:
+  0x412c70  ___security_init_cookie
+class 0x412d88:
+  0x412d88  __exit
+class 0x412d8e:
+  0x412d8e  __XcptFilter
+class 0x412d94:
+  0x412d94  __cexit
+class 0x412d9a:
+  0x412d9a  _exit_0
+class 0x412da0:
+  0x412da0  __CrtSetCheckCount
+class 0x412db0:
+  0x412db0  __ValidateImageBase
+class 0x412e30:
+  0x412e30  __FindPESection
+class 0x412ed0:
+  0x412ed0  __IsNonwritableInCurrentImage
+class 0x413026:
+  0x413026  __CrtDbgReportW
+class 0x41302c:
+  0x41302c  __initterm
+class 0x413032:
+  0x413032  __initterm_e
+class 0x413040:
+  0x413040  __except_handler4
+class 0x413074:
+  0x413074  __crt_debugger_hook
+class 0x413080:
+  0x413080  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
+class 0x4133f0:
+  0x4133f0  GetPdbDll
+class 0x413656:
+  0x413656  void __cdecl terminate(void)
+class 0x41365c:
+  0x41365c  __controlfp_s
+class 0x413662:
+  0x413662  __invoke_watson
+class 0x413668:
+  0x413668  __unlock
+class 0x41366e:
+  0x41366e  ___dllonexit
+class 0x413674:
+  0x413674  __lock
+class 0x41367a:
+  0x41367a  __except_handler4_common
+class 0x413680:
+  0x413680  __stdcall EncodePointer(x)
+class 0x413686:
+  0x413686  __stdcall InterlockedExchange(x, x)
+class 0x41368c:
+  0x41368c  __stdcall Sleep(x)
+class 0x413692:
+  0x413692  __stdcall InterlockedCompareExchange(x, x, x)
+class 0x413698:
+  0x413698  __stdcall HeapSetInformation(x, x, x, x)
+class 0x41369e:
+  0x41369e  __stdcall TerminateProcess(x, x)
+class 0x4136a4:
+  0x4136a4  __stdcall GetCurrentProcess()
+class 0x4136aa:
+  0x4136aa  __stdcall UnhandledExceptionFilter(x)
+class 0x4136b0:
+  0x4136b0  __stdcall SetUnhandledExceptionFilter(x)
+class 0x4136b6:
+  0x4136b6  __stdcall IsDebuggerPresent()
+class 0x4136bc:
+  0x4136bc  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
+class 0x4136c2:
+  0x4136c2  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
+class 0x4136c8:
+  0x4136c8  __stdcall RaiseException(x, x, x, x)
+class 0x4136ce:
+  0x4136ce  __stdcall lstrlenA(x)
+class 0x4136d4:
+  0x4136d4  __stdcall GetProcAddress(x, x)
+class 0x4136da:
+  0x4136da  __stdcall LoadLibraryW(x)
+class 0x4136e0:
+  0x4136e0  __stdcall DecodePointer(x)
+class 0x4136e6:
+  0x4136e6  __stdcall QueryPerformanceCounter(x)
+class 0x4136ec:
+  0x4136ec  __stdcall GetTickCount()
+class 0x4136f2:
+  0x4136f2  __stdcall GetCurrentThreadId()
+class 0x4136f8:
+  0x4136f8  __stdcall GetCurrentProcessId()
+class 0x4136fe:
+  0x4136fe  __stdcall GetSystemTimeAsFileTime(x)
+class 0x413704:
+  0x413704  __stdcall HeapFree(x, x, x)
+class 0x41370a:
+  0x41370a  __stdcall HeapAlloc(x, x, x)
+class 0x413710:
+  0x413710  __stdcall GetProcessHeap()
+class 0x413716:
+  0x413716  __stdcall GetModuleFileNameW(x, x, x)
+class 0x41371c:
+  0x41371c  __stdcall VirtualQuery(x, x, x)
+class 0x413722:
+  0x413722  __stdcall FreeLibrary(x)
+class 0x414690:
+  0x414690  __unwindfunclet$_main$0
+class 0x41469e:
+  0x41469e  __ehhandler$_main

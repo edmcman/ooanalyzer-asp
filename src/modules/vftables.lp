@@ -153,7 +153,7 @@ vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     not embeddedObject(Class, _, 0).                                         % rules.pl:1065-1071 / 1173-1179
 
 % Additional-check 1 (constructor): confirmed constructor with no possible overwrite at Offset.
-%!trace_rule {"vftable % at offset % belongs to %'s class because it is a constructor", VFTable, Offset, Method}
+%!trace_rule {"vftable % at offset % belongs to %'s class because it is a constructor and there is no overwrite", VFTable, Offset, Method}
 vftableBelongsToClass(VFTable, Offset, Method) :-
     vftableBelongsToClassOwns(Method, Offset, VFTable, _),
     not possibleVFTableOverwrite(_, _, Method, Offset, VFTable, _),
