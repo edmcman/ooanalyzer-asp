@@ -125,6 +125,11 @@ reasonNOTMergeClassesCAsymmetric(DerivedClass, MethodClass) :-
     not symbolClass(OtherMethod, _, ClassName, _),
     sortPair(MethodWithSymbol, OtherMethod, A, B).                         % rules.pl:3352
 
+% reasonMergeVFTables: merge vftable with the class that owns it.
+% Counterpart: reasonMergeVFTables (rules.pl:2722)
+%!trace_rule {"merge vftable % with class % because vftable belongs to this class", VFTable, Method}
+mergeClasses(VFTable, Method) :- vftableBelongsToClass(VFTable, Offset, Method).
+
 % Compact transitive closure over hard merges.
 merged(A, B) :- mergeClasses(A, B).
 merged(B, A) :- mergeClasses(A, B).
