@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 5 (Time: 0.366s)
+Answer: 5 (Time: 0.401s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 method(virtual int Base::func1(void)@4264426)
@@ -23,6 +23,9 @@ sameClass(const type_info::`vftable'@4286312,const type_info::`vftable'@4286312)
 vfTableEntry(const type_info::`vftable'@4286312,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 vfTableEntry(const Base::`vftable'@4286292,0,virtual int Base::func1(void)@4264426)
 vfTableEntry(const Derived::`vftable'@4286272,0,virtual int Base::func1(void)@4264426)
+vftableBelongsToClass(const type_info::`vftable'@4286312,0,type_info::type_info(class type_info const &)@4266512)
+vftableBelongsToClass(const Base::`vftable'@4286292,0,Base::Base(void)@4265472)
+vftableBelongsToClass(const Derived::`vftable'@4286272,0,Derived::Derived(void)@4265296)
 vfTableWrite(4266524,type_info::type_info(class type_info const &)@4266512,0,const type_info::`vftable'@4286312)
 vfTableWrite(4265510,Base::Base(void)@4265472,0,const Base::`vftable'@4286292)
 vfTableWrite(4265342,Derived::Derived(void)@4265296,0,const Derived::`vftable'@4286272)
@@ -508,5 +511,5 @@ Models       : 5
   Optimum    : yes
 Optimization : -63 -2 -15 -222 -28
 Calls        : 1
-Time         : 0.375s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.01s)
-CPU Time     : 0.362s
+Time         : 0.412s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.412s

@@ -159,8 +159,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTVFTableEntry_E` (1313) — entry dethunks to a constructor
 
 ### Belongs-to-Class (rules.pl:1007–1228)
-- [ ] `reasonVFTableBelongsToClass` (1007) — clause 1 (via VFTable write)
-- [ ] `reasonVFTableBelongsToClass` (1118) — clause 2 (via inheritance)
+- [x] `reasonVFTableBelongsToClass` (1007) — clause 1 (via VFTable write)
+- [x] `reasonVFTableBelongsToClass` (1118) — clause 2 (via inheritance)
 
 ### Sizing (rules.pl:1333–1406)
 - [x] `reasonVFTableSizeGTE` (1333) — existing fact (identity rule; covered by input fact architecture)

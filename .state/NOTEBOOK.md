@@ -45,13 +45,18 @@ still expects `UNSATISFIABLE`.
 1. **`reasonNOTDerivedClass` (2025)** — identity rule; marked done in TODO.md (covered by input fact / strong-negation architecture, no code change needed).
 2. **`reasonMergeClasses_E` (2847)** — two classes both direct bases of the same derived class at the same offset must merge. Added to `src/modules/merges.lp` using `derivedClass_closed` and `not sameClass`. All 6 non-diagnostic regression checks pass.
 
+## Last completed batch
+
+1. **`reasonVFTableBelongsToClass` (1007 / 1118)** — both Prolog clauses (binding-mode variants) collapsed into a single unified set of ASP rules. Added to `src/modules/vftables.lp`. Structure: `vftableBelongsToClassCandidate` (core thisptr check), three ownership sub-cases (A: ancestor at Offset!=0 + base-reuse check; B: ancestor at 0; C: hierarchy root, no embed), three additional-check sub-cases (constructor, destructor, hasnobase). `mergeEntity(Class)` added to ground `Class` in the `OtherWriter` helper. All 6 non-diagnostic regression checks pass; predicate fires on real `.facts` data.
+
 ## Suggested next steps
 
 Ranked candidates for next implementation (by complexity, predicate availability, and downstream impact):
 
 ### Current one-at-a-time queue
-1. **`reasonDerivedClass_B` (1834)** — constructor call at object offset plus matching confirmed vftable writes derives a base/derived relationship. Primary non-RTTI inheritance detection mechanism; requires a careful decision on `find/2`, `hasPendingVFTableMerge/1`, and `reasonClassRelationship/2` replacements.
-2. **`reasonNOTMergeClasses_O` (3296)** — class with known maximum size calls a method whose member access would exceed that size. Delayed with class-size work because it depends on `classSizeLTE/2` and `validMethodMemberAccess/4`.
+1. **`reasonMergeVFTables` (2722)** — both vftable writes belong to the same class; uses `vftableBelongsToClass` which is now available.
+2. **`reasonDerivedClass_B` (1834)** — constructor call at object offset plus matching confirmed vftable writes derives a base/derived relationship. Primary non-RTTI inheritance detection mechanism; requires a careful decision on `find/2`, `hasPendingVFTableMerge/1`, and `reasonClassRelationship/2` replacements.
+3. **`reasonNOTMergeClasses_O` (3296)** — class with known maximum size calls a method whose member access would exceed that size. Delayed with class-size work because it depends on `classSizeLTE/2` and `validMethodMemberAccess/4`.
 
 Delayed:
 - **Class size rules** — useful later, but they are a bounds-and-constraints subsystem rather than the next inheritance/merge focus.

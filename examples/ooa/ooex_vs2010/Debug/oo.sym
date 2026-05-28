@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 3 (Time: 0.815s)
+Answer: 3 (Time: 0.935s)
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305644)
 method(__declspec(dllimport) bool std::ios_base::good(void)const@4305648)
 method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305652)
@@ -97,6 +97,10 @@ vfTableEntry(const Cls2::`vftable'@4290732,0,virtual Cls2::func3(void)@4263981)
 vfTableEntry(const Cls1::`vftable'@4290704,0,virtual Cls1::func1(void)@4264091)
 vfTableEntry(const Cls3::`vftable'{for `Cls1'}@4290644,0,virtual Cls3::func1(void)@4264096)
 vfTableEntry(const Cls3::`vftable'{for `Cls2'}@4290628,0,virtual Cls3::func3(void)@4264446)
+vftableBelongsToClass(const type_info::`vftable'@4290764,0,type_info::type_info(class type_info const &)@4270528)
+vftableBelongsToClass(const Cls2::`vftable'@4290732,0,Cls2::Cls2(void)@4266768)
+vftableBelongsToClass(const Cls1::`vftable'@4290704,0,Cls1::Cls1(void)@4266560)
+vftableBelongsToClass(const Cls3::`vftable'{for `Cls1'}@4290644,0,Cls3::Cls3(void)@4266032)
 vfTableWrite(4270540,type_info::type_info(class type_info const &)@4270528,0,const type_info::`vftable'@4290764)
 vfTableWrite(4266806,Cls2::Cls2(void)@4266768,0,const Cls2::`vftable'@4290732)
 vfTableWrite(4266598,Cls1::Cls1(void)@4266560,0,const Cls1::`vftable'@4290704)
@@ -719,5 +723,5 @@ Models       : 3
   Optimum    : yes
 Optimization : -75 -4 -22 -296 -28
 Calls        : 1
-Time         : 0.815s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.813s
+Time         : 0.935s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.935s

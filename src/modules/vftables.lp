@@ -101,6 +101,77 @@ vfTableEntry(VFTable, Offset, Entry) :-
     constructor(Method).                                                  % rules.pl:1313
 
 % ============================================================
+% VFTABLE BELONGS TO CLASS
+% ============================================================
+% reasonVFTableBelongsToClass (rules.pl:1007 / 1118)
+% vftableBelongsToClass(VFTable, Offset, Method): Method's class owns VFTable at Offset
+% in its own object (not an embedded sub-object). Method is a class witness; callers
+% use sameClass to join to the class.
+
+% VFTable is written at offset 0 by some method (indicates it may be a base-class vftable reused).
+vftableBelongsToClassInstalledAtZero(VFTable) :-
+    vfTableWrite(_, _, 0, VFTable).                                          % rules.pl:1075 / 1183
+
+% Some method outside Class writes VFTable without overwriting it (refutes exclusive ownership).
+vftableBelongsToClassOtherWriter(VFTable, Class) :-
+    mergeEntity(Class),
+    vfTableWrite(_, OtherMethod, OtherOffset, VFTable),
+    not vfTableOverwrite(OtherMethod, VFTable, _, OtherOffset),
+    not sameClass(OtherMethod, Class).                                       % rules.pl:1101-1106 / 1209-1214
+
+% Core candidate: confirmed write to method's own this-pointer, not overwritten.
+% possibleVFTableWrite + thisParamFuncParameter guards against inlined sub-constructor writes.
+vftableBelongsToClassCandidate(Method, Offset, VFTable, Class) :-
+    vfTableWrite(Insn, Method, Offset, VFTable),
+    possibleVFTableWrite(Insn, Method, ThisPtr, Offset, VFTable),
+    thisParamFuncParameter(Method, ThisPtr),
+    sameClass(Method, Class),
+    not vfTableOverwrite(Method, VFTable, _, Offset).                        % rules.pl:1007-1031 / 1118-1140
+
+% Ownership sub-case A (Offset != 0): ancestor at Offset has a vftable we need to replace.
+% Base reuse check: VFTable must not also be written at offset 0 (which would indicate reuse).
+vftableBelongsToClassOwns(Method, Offset, VFTable, Class) :-
+    vftableBelongsToClassCandidate(Method, Offset, VFTable, Class),
+    Offset != 0,
+    derivedClassRelationship(Class, AncestorClass, Offset),
+    vftableBelongsToClass(_, 0, AncestorWitness),
+    sameClass(AncestorWitness, AncestorClass),
+    not vftableBelongsToClassInstalledAtZero(VFTable).                       % rules.pl:1057-1058 / 1165-1166
+
+% Ownership sub-case B (Offset = 0): ancestor at offset 0 has a vftable we need to replace.
+vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
+    vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
+    derivedClassRelationship(Class, AncestorClass, 0),
+    vftableBelongsToClass(_, 0, AncestorWitness),
+    sameClass(AncestorWitness, AncestorClass).                               % rules.pl:1057-1058 / 1165-1166
+
+% Ownership sub-case C (Offset = 0): Class is a hierarchy root — no ancestor at offset 0,
+% and does not embed anything at offset 0.
+vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
+    vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
+    not derivedClassRelationship(Class, _, 0),
+    not embeddedObject(Class, _, 0).                                         % rules.pl:1065-1071 / 1173-1179
+
+% Additional-check 1 (constructor): confirmed constructor with no possible overwrite at Offset.
+%!trace_rule {"vftable % at offset % belongs to %'s class because it is a constructor", VFTable, Offset, Method}
+vftableBelongsToClass(VFTable, Offset, Method) :-
+    vftableBelongsToClassOwns(Method, Offset, VFTable, _),
+    not possibleVFTableOverwrite(_, _, Method, Offset, VFTable, _),
+    constructor(Method).                                                      % rules.pl:1090-1096 / 1198-1204
+
+% Additional-check 2 (destructor): no other class has a non-overwritten write of VFTable.
+%!trace_rule {"vftable % at offset % belongs to %'s class because no other class writes it", VFTable, Offset, Method}
+vftableBelongsToClass(VFTable, Offset, Method) :-
+    vftableBelongsToClassOwns(Method, Offset, VFTable, Class),
+    not vftableBelongsToClassOtherWriter(VFTable, Class).                    % rules.pl:1101-1106 / 1209-1214
+
+% Additional-check 3 (hasnobase): class has no known base class.
+%!trace_rule {"vftable % at offset % belongs to %'s class because it has no base", VFTable, Offset, Method}
+vftableBelongsToClass(VFTable, Offset, Method) :-
+    vftableBelongsToClassOwns(Method, Offset, VFTable, Class),
+    classHasNoBase(Class).                                                    % rules.pl:1109-1110 / 1217-1218
+
+% ============================================================
 % GUESS
 % ============================================================
 
@@ -136,3 +207,4 @@ guessVFTableReward(VFTable) :- vfTable(VFTable), possibleVFTable(VFTable).
 #show vfTableWrite/4.
 #show vfTableOverwrite/4.
 #show vfTableEntry/3.
+#show vftableBelongsToClass/3.

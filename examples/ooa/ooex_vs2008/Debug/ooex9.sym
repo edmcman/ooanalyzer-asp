@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 0.569s)
+Answer: 2 (Time: 0.636s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424)
 method(virtual int A::get_a(void)@4263961)
 method(virtual int C::get_c(void)@4264121)
@@ -59,6 +59,11 @@ vfTableEntry(const B::`vftable'{for `A'}@4286348,0,virtual int A::get_a(void)@42
 vfTableEntry(const D::`vftable'{for `B'}@4286296,0,virtual int B::get_b(void)@4264251)
 vfTableEntry(const D::`vftable'{for `C'}@4286284,0,virtual int C::get_c(void)@4264121)
 vfTableEntry(const D::`vftable'{for `A'}@4286272,0,virtual int A::get_a(void)@4263961)
+vftableBelongsToClass(const type_info::`vftable'@4286420,0,type_info::type_info(class type_info const &)@4267024)
+vftableBelongsToClass(const C::`vftable'{for `C'}@4286396,0,C::C(void)@4266080)
+vftableBelongsToClass(const B::`vftable'{for `B'}@4286360,0,B::B(void)@4265856)
+vftableBelongsToClass(const A::`vftable'@4286336,0,A::A(void)@4265712)
+vftableBelongsToClass(const D::`vftable'{for `B'}@4286296,0,D::D(void)@4265488)
 vfTableWrite(4267036,type_info::type_info(class type_info const &)@4267024,0,const type_info::`vftable'@4286420)
 vfTableWrite(4266145,C::C(void)@4266080,0,const C::`vftable'{for `C'}@4286396)
 vfTableWrite(4266163,C::C(void)@4266080,4,const C::`vftable'{for `A'}@4286384)
@@ -623,5 +628,5 @@ Models       : 2
   Optimum    : yes
 Optimization : -109 -12 -25 -230 -40
 Calls        : 1
-Time         : 0.570s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.566s
+Time         : 0.636s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.635s

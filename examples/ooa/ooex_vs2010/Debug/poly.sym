@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.634s)
+Answer: 1 (Time: 0.671s)
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305648)
 method(__declspec(dllimport) bool std::ios_base::good(void)const@4305652)
 method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305656)
@@ -97,6 +97,11 @@ vfTableEntry(const Shape::`vftable'@4290712,0,j___purecall@4264381)
 vfTableEntry(const Triangle::`vftable'@4290680,0,virtual Triangle::draw(void)@4264546)
 vfTableEntry(const Circle::`vftable'@4290648,0,virtual Circle::draw(void)@4263941)
 vfTableEntry(const Rectangle::`vftable'@4290612,0,virtual Rectangle::draw(void)@4263986)
+vftableBelongsToClass(const type_info::`vftable'@4290724,0,type_info::type_info(class type_info const &)@4269952)
+vftableBelongsToClass(const Shape::`vftable'@4290712,0,Shape::Shape(void)@4266368)
+vftableBelongsToClass(const Triangle::`vftable'@4290680,0,Triangle::Triangle(void)@4266144)
+vftableBelongsToClass(const Circle::`vftable'@4290648,0,Circle::Circle(void)@4265920)
+vftableBelongsToClass(const Rectangle::`vftable'@4290612,0,Rectangle::Rectangle(void)@4265696)
 vfTableWrite(4269964,type_info::type_info(class type_info const &)@4269952,0,const type_info::`vftable'@4290724)
 vfTableWrite(4266406,Shape::Shape(void)@4266368,0,const Shape::`vftable'@4290712)
 vfTableWrite(4266190,Triangle::Triangle(void)@4266144,0,const Triangle::`vftable'@4290680)
@@ -677,5 +682,5 @@ Models       : 1
   Optimum    : yes
 Optimization : -45 -6 -27 -291 -20
 Calls        : 1
-Time         : 0.634s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.627s
+Time         : 0.671s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.669s
