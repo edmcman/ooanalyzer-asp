@@ -937,6 +937,7 @@ class 0x411082:
   0x413b50  public: __thiscall std::bad_alloc::bad_alloc(char const *)
   0x413bd0  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
   0x413d60  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+  vftable 0x419940  const std::bad_alloc::`vftable'
 class 0x411087:
   0x411087  public: virtual __thiscall type_info::~type_info(void)
 class 0x41108c:
@@ -1030,6 +1031,7 @@ class 0x411168:
 class 0x41116d:
   0x41116d  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
   0x414360  private: __thiscall type_info::type_info(class type_info const &)
+  vftable 0x419950  const type_info::`vftable'
 class 0x411172:
   0x411172  j___FindPESection
 class 0x411177:

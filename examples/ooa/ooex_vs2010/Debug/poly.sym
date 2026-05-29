@@ -735,6 +735,7 @@ CPU Time     : 0.606s
 class 0x411005:
   0x411005  public: virtual void __thiscall Circle::draw(void)
   0x4117c0  public: __thiscall Circle::Circle(void)
+  vftable 0x417858  const Circle::`vftable'
 class 0x41100a:
   0x41100a  j___setdefaultprecision
 class 0x41100f:
@@ -754,6 +755,7 @@ class 0x41102d:
 class 0x411032:
   0x411032  public: virtual void __thiscall Rectangle::draw(void)
   0x4116e0  public: __thiscall Rectangle::Rectangle(void)
+  vftable 0x417834  const Rectangle::`vftable'
 class 0x411037:
   0x411037  j___RTC_Terminate
 class 0x41103c:
@@ -843,6 +845,7 @@ class 0x41110e:
 class 0x411113:
   0x411113  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
   0x412780  private: __thiscall type_info::type_info(class type_info const &)
+  vftable 0x4178a4  const type_info::`vftable'
 class 0x411118:
   0x411118  j___FindPESection
 class 0x41111d:
@@ -978,6 +981,7 @@ class 0x41125d:
 class 0x411262:
   0x411262  public: virtual void __thiscall Triangle::draw(void)
   0x4118a0  public: __thiscall Triangle::Triangle(void)
+  vftable 0x417878  const Triangle::`vftable'
 class 0x411267:
   0x411267  public: __thiscall Shape::Shape(void)
 class 0x41126c:
@@ -1006,6 +1010,7 @@ class 0x411900:
   0x411900  public: virtual void __thiscall Triangle::draw(void)
 class 0x411980:
   0x411980  public: __thiscall Shape::Shape(void)
+  vftable 0x417898  const Shape::`vftable'
 class 0x4119d0:
   0x4119d0  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::operator<<<struct std::char_traits<char>>(class std::basic_ostream<char, struct std::char_traits<char>> &, char const *)
 class 0x411fd0:

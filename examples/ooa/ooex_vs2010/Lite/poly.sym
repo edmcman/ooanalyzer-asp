@@ -2801,9 +2801,11 @@ CPU Time     : 29.585s
 warning: examples/ooa/ooex_vs2010/Lite/poly.lp exited 11
 class 0x401000:
   0x401000  public: __thiscall Shape::Shape(void)
+  vftable 0x4121b0  const Shape::`vftable'
 class 0x401010:
   0x401010  public: __thiscall Rectangle::Rectangle(void)
   0x401b40  public: virtual void __thiscall Rectangle::draw(void)
+  vftable 0x4121b8  const Rectangle::`vftable'
 class 0x401030:
   0x401030  public: static unsigned int __cdecl std::char_traits<char>::length(char const *)
 class 0x401050:
@@ -2814,6 +2816,7 @@ class 0x401090:
   0x401090  public: __thiscall std::runtime_error::runtime_error(char const *)
   0x4012a0  public: virtual void * __thiscall std::runtime_error::`vector deleting destructor'(unsigned int)
   0x401430  public: __thiscall std::runtime_error::runtime_error(class std::runtime_error const &)
+  vftable 0x4121c0  const std::runtime_error::`vftable'
 class 0x4010b0:
   0x4010b0  public: virtual __thiscall std::runtime_error::~runtime_error(void)
 class 0x4010c0:
@@ -2860,10 +2863,12 @@ class 0x4012d0:
   0x4012d0  public: __thiscall std::system_error::system_error(class std::error_code, char const *)
   0x401300  public: virtual void * __thiscall std::system_error::`vector deleting destructor'(unsigned int)
   0x401450  public: __thiscall std::system_error::system_error(class std::system_error const &)
+  vftable 0x4121cc  const std::system_error::`vftable'
 class 0x401330:
   0x401330  public: __thiscall std::ios_base::failure::failure(char const *, class std::error_code const &)
   0x401480  public: virtual void * __thiscall std::ios_base::failure::`scalar deleting destructor'(unsigned int)
   0x4014b0  public: __thiscall std::ios_base::failure::failure(class std::ios_base::failure const &)
+  vftable 0x4121d8  const std::ios_base::failure::`vftable'
 class 0x401360:
   0x401360  public: virtual __thiscall std::ios_base::failure::~failure(void)
 class 0x401370:
@@ -2871,9 +2876,11 @@ class 0x401370:
 class 0x4014d0:
   0x4014d0  public: __thiscall Circle::Circle(void)
   0x401b60  public: virtual void __thiscall Circle::draw(void)
+  vftable 0x41222c  const Circle::`vftable'
 class 0x4014f0:
   0x4014f0  public: __thiscall Triangle::Triangle(void)
   0x401b80  public: virtual void __thiscall Triangle::draw(void)
+  vftable 0x412234  const Triangle::`vftable'
 class 0x401510:
   0x401510  public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::clear(int, bool)
 class 0x401530:
@@ -2909,10 +2916,12 @@ class 0x401bc0:
   0x401be1  public: virtual bool __thiscall std::error_category::equivalent(class std::error_code const &, int)const
   0x401c3a  public: virtual class std::error_condition __thiscall std::_System_error_category::default_error_condition(int)const
   0x401cba  public: virtual void * __thiscall std::_System_error_category::`scalar deleting destructor'(unsigned int)
+  vftable 0x412274  const std::error_category::`vftable'
 class 0x401c00:
   0x401c00  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
   0x401c0b  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
   0x401c9d  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+  vftable 0x4122b4  const std::bad_alloc::`vftable'
 class 0x401c32:
   0x401c32  public: virtual char const * __thiscall std::_Generic_error_category::name(void)const
 class 0x401c36:
@@ -2989,6 +2998,7 @@ class 0x402236:
   0x402bc9  protected: virtual void * __thiscall std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)
   0x402c9d  public: static unsigned int __cdecl std::codecvt<char, char, int>::_Getcat(class std::locale::facet const * *, class std::locale const *)
   0x403ae9  protected: virtual __thiscall std::locale::_Locimp::~_Locimp(void)
+  vftable 0x41236c  const std::ctype<char>::`vftable'
 class 0x40226b:
   0x40226b  protected: void __thiscall std::ctype<char>::_Tidy(void)
 class 0x40239d:
@@ -3084,14 +3094,17 @@ class 0x40359d:
 class 0x4035a2:
   0x4035a2  public: __thiscall std::logic_error::logic_error(class std::logic_error const &)
   0x403659  public: virtual void * __thiscall std::out_of_range::`vector deleting destructor'(unsigned int)
+  vftable 0x412460  const std::logic_error::`vftable'
 class 0x4035bf:
   0x4035bf  void __cdecl std::_Xlength_error(char const *)
 class 0x4035ef:
   0x4035ef  public: __thiscall std::length_error::length_error(class std::length_error const &)
+  vftable 0x41246c  const std::length_error::`vftable'
 class 0x40360c:
   0x40360c  void __cdecl std::_Xout_of_range(char const *)
 class 0x40363c:
   0x40363c  public: __thiscall std::out_of_range::out_of_range(class std::out_of_range const &)
+  vftable 0x412478  const std::out_of_range::`vftable'
 class 0x40367a:
   0x40367a  __Tolower
 class 0x403787:
@@ -3166,6 +3179,7 @@ class 0x403ebc:
 class 0x403ecc:
   0x403ecc  public: virtual __thiscall type_info::~type_info(void)
   0x403edc  public: virtual void * __thiscall type_info::`scalar deleting destructor'(unsigned int)
+  vftable 0x41249c  const type_info::`vftable'
 class 0x403efd:
   0x403efd  public: bool __thiscall type_info::operator==(class type_info const &)const
 class 0x403f1d:
@@ -3177,6 +3191,7 @@ class 0x403f47:
   0x404049  public: virtual __thiscall std::exception::~exception(void)
   0x404054  public: virtual void * __thiscall std::bad_cast::`vector deleting destructor'(unsigned int)
   0x40407b  public: __thiscall std::exception::exception(class std::exception const &)
+  vftable 0x4124a4  const std::exception::`vftable'
 class 0x403f71:
   0x403f71  private: void __thiscall std::exception::_Copy_str(char const *)
 class 0x403fb1:
@@ -3186,6 +3201,7 @@ class 0x403ff6:
 class 0x40402b:
   0x40402b  public: __thiscall std::bad_cast::bad_cast(char const *)
   0x4040a0  public: __thiscall std::bad_cast::bad_cast(class std::bad_cast const &)
+  vftable 0x4124c4  const std::bad_cast::`vftable'
 class 0x4040bd:
   0x4040bd  void __cdecl operator delete(void *)
 class 0x4040c8:
@@ -3244,6 +3260,7 @@ class 0x40510f:
   0x40510f  public: virtual __thiscall std::bad_exception::~bad_exception(void)
   0x40511a  public: virtual void * __thiscall std::bad_exception::`vector deleting destructor'(unsigned int)
   0x405cf5  public: __thiscall std::bad_exception::bad_exception(class std::bad_exception const &)
+  vftable 0x412548  const std::bad_exception::`vftable'
 class 0x405141:
   0x405141  ___TypeMatch
 class 0x4051a0:
@@ -3987,3 +4004,21 @@ class 0x411591:
   0x411591  _dynamic_atexit_destructor_for__init_atexit__
 class 0x41159b:
   0x41159b  _operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__
+class 0x41234c:
+  vftable 0x41234c  const std::locale::facet::`vftable'
+class 0x412354:
+  vftable 0x412354  const std::ios_base::`vftable'
+class 0x41235c:
+  vftable 0x41235c  const std::basic_ostream<char, struct std::char_traits<char>>::`vftable'
+class 0x412364:
+  vftable 0x412364  const std::basic_ios<char, struct std::char_traits<char>>::`vftable'
+class 0x412394:
+  vftable 0x412394  const std::basic_streambuf<char, struct std::char_traits<char>>::`vftable'
+class 0x4123f4:
+  vftable 0x4123f4  const std::basic_filebuf<char, struct std::char_traits<char>>::`vftable'
+class 0x412434:
+  vftable 0x412434  const std::codecvt<char, char, int>::`vftable'
+class 0x412488:
+  vftable 0x412488  const std::locale::_Locimp::`vftable'
+class 0x4174d0:
+  vftable 0x4174d0  __iob

@@ -71,6 +71,7 @@ def main():
         sys.exit(1)
 
     methods = {int(m) for m in re.findall(r'\bmethod\((\d+)\)', atoms)}
+    vftables = {int(v) for v in re.findall(r'\bvfTable\((\d+)\)', atoms)}
     pairs = [(int(a), int(b)) for a, b in re.findall(r'sameClass\((\d+),(\d+)\)', atoms)]
 
     groups = union_find(pairs)
@@ -81,11 +82,14 @@ def main():
 
     for members in sorted(groups.values(), key=lambda s: min(s)):
         method_members = members & methods
-        if not method_members:
+        vftable_members = members & vftables
+        if not method_members and not vftable_members:
             continue
-        print(f"class {hex(min(method_members))}:")
+        print(f"class {hex(min(method_members or vftable_members))}:")
         for m in sorted(method_members):
             print(f"  {fmt(m)}")
+        for v in sorted(vftable_members):
+            print(f"  vftable {fmt(v)}")
 
 
 if __name__ == "__main__":

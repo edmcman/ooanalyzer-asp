@@ -513,6 +513,7 @@ class 0x401134:
   0x401134  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
   0x40113f  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
   0x401166  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+  vftable 0x406158  const std::bad_alloc::`vftable'
 class 0x401183:
   0x401183  void * __cdecl operator new(unsigned int)
 class 0x401203:
@@ -525,6 +526,7 @@ class 0x401397:
   0x401454  public: virtual __thiscall std::exception::~exception(void)
   0x40145f  public: virtual void * __thiscall std::exception::`scalar deleting destructor'(unsigned int)
   0x401486  public: __thiscall std::exception::exception(class std::exception const &)
+  vftable 0x406174  const std::exception::`vftable'
 class 0x4013c1:
   0x4013c1  private: void __thiscall std::exception::_Copy_str(char const *)
 class 0x401401:
@@ -534,6 +536,7 @@ class 0x40141f:
 class 0x4014ab:
   0x4014ab  public: virtual __thiscall type_info::~type_info(void)
   0x4014bb  public: virtual void * __thiscall type_info::`scalar deleting destructor'(unsigned int)
+  vftable 0x406194  const type_info::`vftable'
 class 0x4014dc:
   0x4014dc  void __cdecl operator delete(void *)
 class 0x4014e7:

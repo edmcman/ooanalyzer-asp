@@ -705,6 +705,7 @@ class 0x4010e7:
   0x4010e7  public: virtual __thiscall std::bad_alloc::~bad_alloc(void)
   0x4010f2  public: virtual void * __thiscall std::bad_alloc::`vector deleting destructor'(unsigned int)
   0x401119  public: __thiscall std::bad_alloc::bad_alloc(class std::bad_alloc const &)
+  vftable 0x407140  const std::bad_alloc::`vftable'
 class 0x401136:
   0x401136  void * __cdecl operator new(unsigned int)
 class 0x4011b6:
@@ -748,6 +749,7 @@ class 0x401769:
   0x40184d  public: virtual __thiscall std::exception::~exception(void)
   0x401858  public: virtual void * __thiscall std::exception::`scalar deleting destructor'(unsigned int)
   0x40187f  public: __thiscall std::exception::exception(class std::exception const &)
+  vftable 0x40715c  const std::exception::`vftable'
 class 0x401793:
   0x401793  private: void __thiscall std::exception::_Copy_str(char const *)
 class 0x4017d3:
@@ -757,6 +759,7 @@ class 0x401818:
 class 0x4018a4:
   0x4018a4  public: virtual __thiscall type_info::~type_info(void)
   0x4018b4  public: virtual void * __thiscall type_info::`scalar deleting destructor'(unsigned int)
+  vftable 0x40717c  const type_info::`vftable'
 class 0x4018d5:
   0x4018d5  public: bool __thiscall type_info::operator==(class type_info const &)const
 class 0x4018f5:
@@ -809,6 +812,7 @@ class 0x401ff4:
   0x401ff4  public: virtual __thiscall std::bad_exception::~bad_exception(void)
   0x401fff  public: virtual void * __thiscall std::bad_exception::`vector deleting destructor'(unsigned int)
   0x402bc9  public: __thiscall std::bad_exception::bad_exception(class std::bad_exception const &)
+  vftable 0x4071f0  const std::bad_exception::`vftable'
 class 0x402026:
   0x402026  ___TypeMatch
 class 0x402085:
