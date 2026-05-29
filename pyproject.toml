@@ -1,0 +1,11 @@
+[project]
+name = "ooanalyzer-asp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "clingexplaid>=1.4.0",
+    "clingo>=5.8.0",
+    "pdbparse>=1.5",
+]
