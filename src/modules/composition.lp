@@ -187,12 +187,11 @@ purecallNotMostDerivedReward(Derived, Base, Off) :-
 % reasonNOTEmbeddedObject / reasonNOTDerivedClass / reasonDerivedClass_C / insanityEmbeddedAndNot:
 % derivedClass and embeddedObject are mutually exclusive.
 % derivedClass and embeddedObject are mutually exclusive.
-insanity(embeddedAndDerived, (Outer, Inner, Off)) :- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,1960,2025 / insanity.pl:308
+:- embeddedObject(Outer, Inner, Off), derivedClass(Outer, Inner, Off).  % rules.pl:1791,1960,2025 / insanity.pl:308
 
 % insanityNoBaseConsistency: a class with no base cannot also be a derived class.
 %!trace_rule {"% has no base class but is also a derived class", Class}
-insanity(noBaseConsistency, Class) :-
-    classHasNoBase(Class),
+:- classHasNoBase(Class),
     derivedClass_closed(Class, _, _).                                    % insanity.pl:8
 
 % ============================================================

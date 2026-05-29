@@ -31,8 +31,7 @@ candidateVFTableSize(VFTable, Size) :-
 % ============================================================
 
 % Constraint: chosen vftable extent must accommodate all confirmed entries.
-insanity(vfTableSizeTooSmall, (VFTable, Size, Offset)) :-
-   vfTableSize(VFTable, Size),
+:- vfTableSize(VFTable, Size),
    vfTableGTE(VFTable, Offset),
    pointerSize(PtrSize),
    Offset + PtrSize > Size.
