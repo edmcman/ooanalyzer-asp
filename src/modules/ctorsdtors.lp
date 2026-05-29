@@ -151,7 +151,7 @@ constructorDestructorKind(Method, deletingDestructor) :-
 %   reasonNOTDeletingDestructor_B (rules.pl:632) — constructor → notDeletingDestructor
 %   reasonNOTDeletingDestructor_C (rules.pl:637) — realDestructor → notDeletingDestructor
 %!trace_rule {"% has multiple constructor/destructor kinds", Method}
-:- method(Method), 2 #count { Kind : constructorDestructorKind(Method, Kind) }.
+:- method(Method), 1 < #count { Kind : constructorDestructorKind(Method, Kind) }.
 
 % insanityTwoRealDestructorsOnClass: a class may not have more than one real destructor.
 % Counterpart: insanityTwoRealDestructorsOnClass (insanity.pl:253)
