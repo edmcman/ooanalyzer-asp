@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 5 (Time: 0.349s)
+Answer: 4 (Time: 0.362s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 method(virtual int Base::func1(void)@4264426)
@@ -23,9 +23,6 @@ sameClass(const type_info::`vftable'@4286312,const type_info::`vftable'@4286312)
 vfTableEntry(const type_info::`vftable'@4286312,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 vfTableEntry(const Base::`vftable'@4286292,0,virtual int Base::func1(void)@4264426)
 vfTableEntry(const Derived::`vftable'@4286272,0,virtual int Base::func1(void)@4264426)
-vftableBelongsToClass(const type_info::`vftable'@4286312,0,type_info::type_info(class type_info const &)@4266512)
-vftableBelongsToClass(const Base::`vftable'@4286292,0,Base::Base(void)@4265472)
-vftableBelongsToClass(const Derived::`vftable'@4286272,0,Derived::Derived(void)@4265296)
 vfTableWrite(4266524,type_info::type_info(class type_info const &)@4266512,0,const type_info::`vftable'@4286312)
 vfTableWrite(4265510,Base::Base(void)@4265472,0,const Base::`vftable'@4286292)
 vfTableWrite(4265342,Derived::Derived(void)@4265296,0,const Derived::`vftable'@4286272)
@@ -42,9 +39,10 @@ classCallsMethod(const type_info::`vftable'@4286312,virtual * type_info::`vector
 sameClass(virtual int Base::func1(void)@4265584,virtual int Base::func1(void)@4265584)
 sameClass(virtual int Base::func2(void)@4265680,virtual int Base::func2(void)@4265680)
 sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4266560,virtual * type_info::`vector deleting destructor'(unsigned int)@4266560)
-derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
-objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
-sameClass(Derived::Derived(void)@4265296,Base::Base(void)@4265472)
+vftableBelongsToClass(const type_info::`vftable'@4286312,0,type_info::type_info(class type_info const &)@4266512)
+sameClass(const type_info::`vftable'@4286312,type_info::type_info(class type_info const &)@4266512)
+sameClass(type_info::type_info(class type_info const &)@4266512,const type_info::`vftable'@4286312)
+classCallsMethod(Derived::Derived(void)@4265296,Base::Base(void)@4265472)
 vfTableEntry(const Base::`vftable'@4286292,4,virtual int Base::func2(void)@4264186)
 vfTableSize(const Base::`vftable'@4286292,12)
 vfTableEntry(const Base::`vftable'@4286292,8,j___purecall@4264281)
@@ -483,36 +481,63 @@ sameClass(__unwindfunclet$_main$0@4278816,__unwindfunclet$_main$0@4278816)
 sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264126,type_info::type_info(class type_info const &)@4266512)
 sameClass(virtual int Base::func1(void)@4264426,Base::Base(void)@4265472)
 sameClass(virtual int Base::func2(void)@4264186,Base::Base(void)@4265472)
-sameClass(virtual int Base::func1(void)@4264426,Derived::Derived(void)@4265296)
-sameClass(virtual int Base::func2(void)@4264186,Derived::Derived(void)@4265296)
 sameClass(virtual int Derived::func3(void)@4264241,Derived::Derived(void)@4265296)
 sameClass(type_info::type_info(class type_info const &)@4266512,virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 sameClass(Base::Base(void)@4265472,virtual int Base::func1(void)@4264426)
 sameClass(Base::Base(void)@4265472,virtual int Base::func2(void)@4264186)
-sameClass(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4264426)
-sameClass(Derived::Derived(void)@4265296,virtual int Base::func2(void)@4264186)
 sameClass(Derived::Derived(void)@4265296,virtual int Derived::func3(void)@4264241)
-sameClass(Base::Base(void)@4265472,Derived::Derived(void)@4265296)
-sameClass(virtual int Derived::func3(void)@4264241,virtual int Base::func2(void)@4264186)
-sameClass(virtual int Derived::func3(void)@4264241,virtual int Base::func1(void)@4264426)
-sameClass(virtual int Base::func2(void)@4264186,virtual int Derived::func3(void)@4264241)
+derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
 sameClass(virtual int Base::func2(void)@4264186,virtual int Base::func1(void)@4264426)
-sameClass(virtual int Base::func1(void)@4264426,virtual int Derived::func3(void)@4264241)
 sameClass(virtual int Base::func1(void)@4264426,virtual int Base::func2(void)@4264186)
-sameClass(virtual int Derived::func3(void)@4264241,Base::Base(void)@4265472)
-sameClass(Base::Base(void)@4265472,virtual int Derived::func3(void)@4264241)
+vftableBelongsToClass(const Base::`vftable'@4286292,0,Base::Base(void)@4265472)
+vftableBelongsToClass(const Derived::`vftable'@4286272,0,Derived::Derived(void)@4265296)
+objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
 constructor(Derived::Derived(void)@4265296)
 constructor(Base::Base(void)@4265472)
 constructor(type_info::type_info(class type_info const &)@4266512)
+sameClass(const Derived::`vftable'@4286272,Derived::Derived(void)@4265296)
+sameClass(const Base::`vftable'@4286292,Base::Base(void)@4265472)
+sameClass(Derived::Derived(void)@4265296,const Derived::`vftable'@4286272)
+sameClass(virtual int Derived::func3(void)@4264241,const Derived::`vftable'@4286272)
+sameClass(Base::Base(void)@4265472,const Base::`vftable'@4286292)
+sameClass(virtual int Base::func1(void)@4264426,const Base::`vftable'@4286292)
+sameClass(virtual int Base::func2(void)@4264186,const Base::`vftable'@4286292)
+sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264126,const type_info::`vftable'@4286312)
+sameClass(const type_info::`vftable'@4286312,virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
+sameClass(const Base::`vftable'@4286292,virtual int Base::func2(void)@4264186)
+sameClass(const Base::`vftable'@4286292,virtual int Base::func1(void)@4264426)
+sameClass(const Derived::`vftable'@4286272,virtual int Derived::func3(void)@4264241)
+derivedClass(const Derived::`vftable'@4286272,Base::Base(void)@4265472,0)
+derivedClass(Derived::Derived(void)@4265296,Base::Base(void)@4265472,0)
+derivedClass(Derived::Derived(void)@4265296,const Base::`vftable'@4286292,0)
+objectInObject(Derived::Derived(void)@4265296,const Base::`vftable'@4286292,0)
+objectInObject(Derived::Derived(void)@4265296,Base::Base(void)@4265472,0)
+objectInObject(const Derived::`vftable'@4286272,Base::Base(void)@4265472,0)
+derivedClass(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4264186,0)
+derivedClass(Derived::Derived(void)@4265296,virtual int Base::func2(void)@4264186,0)
+derivedClass(virtual int Derived::func3(void)@4264241,virtual int Base::func2(void)@4264186,0)
+derivedClass(const Derived::`vftable'@4286272,virtual int Base::func1(void)@4264426,0)
+derivedClass(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4264426,0)
+derivedClass(virtual int Derived::func3(void)@4264241,virtual int Base::func1(void)@4264426,0)
+derivedClass(virtual int Derived::func3(void)@4264241,const Base::`vftable'@4286292,0)
+derivedClass(virtual int Derived::func3(void)@4264241,Base::Base(void)@4265472,0)
+objectInObject(virtual int Derived::func3(void)@4264241,Base::Base(void)@4265472,0)
+objectInObject(virtual int Derived::func3(void)@4264241,const Base::`vftable'@4286292,0)
+objectInObject(virtual int Derived::func3(void)@4264241,virtual int Base::func1(void)@4264426,0)
+objectInObject(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4264426,0)
+objectInObject(const Derived::`vftable'@4286272,virtual int Base::func1(void)@4264426,0)
+objectInObject(virtual int Derived::func3(void)@4264241,virtual int Base::func2(void)@4264186,0)
+objectInObject(Derived::Derived(void)@4265296,virtual int Base::func2(void)@4264186,0)
+objectInObject(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4264186,0)
 vfTableSize(const type_info::`vftable'@4286312,4)
 OPTIMUM FOUND
 
-Models       : 5
+Models       : 4
   Optimum    : yes
-Optimization : -63 -2 -15 -222 -28
+Optimization : -43 -24 -15 -222 -28
 Calls        : 1
-Time         : 0.397s (Solving: 0.06s 1st Model: 0.00s Unsat: 0.05s)
-CPU Time     : 0.363s
+Time         : 0.427s (Solving: 0.07s 1st Model: 0.00s Unsat: 0.07s)
+CPU Time     : 0.424s
 class 0x411005:
   0x411005  j___setdefaultprecision
 class 0x41100a:
@@ -612,9 +637,7 @@ class 0x4110f5:
   0x4110f5  __stdcall InterlockedCompareExchange(x, x, x)
 class 0x4110fa:
   0x4110fa  public: virtual int __thiscall Base::func2(void)
-  0x411131  public: virtual int __thiscall Derived::func3(void)
   0x4111ea  public: virtual int __thiscall Base::func1(void)
-  0x411550  public: __thiscall Derived::Derived(void)
   0x411600  public: __thiscall Base::Base(void)
 class 0x4110ff:
   0x4110ff  __stdcall GetProcessHeap()
@@ -636,6 +659,9 @@ class 0x411127:
   0x411127  j__rand
 class 0x41112c:
   0x41112c  start
+class 0x411131:
+  0x411131  public: virtual int __thiscall Derived::func3(void)
+  0x411550  public: __thiscall Derived::Derived(void)
 class 0x411136:
   0x411136  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
 class 0x41113b:

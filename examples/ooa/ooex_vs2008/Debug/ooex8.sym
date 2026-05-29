@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 1.055s)
+Answer: 1 (Time: 0.975s)
 method(B::B(void)@4265664)
 method(D::D(void)@4265392)
 method(C::C(void)@4265792)
@@ -421,8 +421,8 @@ Models       : 1
   Optimum    : yes
 Optimization : -206
 Calls        : 1
-Time         : 1.055s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 1.031s
+Time         : 0.975s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 0.975s
 class 0x411005:
   0x411005  j___setdefaultprecision
 class 0x41100a:

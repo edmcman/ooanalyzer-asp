@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 4.171s)
+Answer: 2 (Time: 4.063s)
 constructor(__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
 constructor(__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
 constructor(__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
@@ -125,7 +125,6 @@ sameClass(__declspec(dllimport) std::exception::exception(class std::exception c
 sameClass(__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164,__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
 vfTableEntry(const type_info::`vftable'@4299088,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264301)
 vfTableEntry(const std::bad_alloc::`vftable'@4299072,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066)
-vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(class type_info const &)@4277088)
 vfTableWrite(4277100,type_info::type_info(class type_info const &)@4277088,0,const type_info::`vftable'@4299088)
 vfTableWrite(4275084,std::bad_alloc::bad_alloc(char const *)@4275024,0,const std::bad_alloc::`vftable'@4299072)
 vfTableWrite(4275190,virtual std::bad_alloc::~bad_alloc(void)@4275152,0,const std::bad_alloc::`vftable'@4299072)
@@ -146,6 +145,9 @@ classCallsMethod(const std::bad_alloc::`vftable'@4299072,virtual * std::bad_allo
 classCallsMethod(const type_info::`vftable'@4299088,virtual * type_info::`vector deleting destructor'(unsigned int)@4277136)
 sameClass(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264)
 sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136,virtual * type_info::`vector deleting destructor'(unsigned int)@4277136)
+vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(class type_info const &)@4277088)
+sameClass(const type_info::`vftable'@4299088,type_info::type_info(class type_info const &)@4277088)
+sameClass(type_info::type_info(class type_info const &)@4277088,const type_info::`vftable'@4299088)
 vfTableEntry(const std::bad_alloc::`vftable'@4299072,4,virtual char const * std::exception::what(void)const@4264846)
 vfTableSize(const std::bad_alloc::`vftable'@4299072,8)
 classCallsMethod(const std::bad_alloc::`vftable'@4299072,__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156)
@@ -851,13 +853,25 @@ sameClass(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552,std::b
 sameClass(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552,virtual std::bad_alloc::~bad_alloc(void)@4275152)
 sameClass(virtual char const * std::exception::what(void)const@4264846,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066)
 sameClass(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066,virtual char const * std::exception::what(void)const@4264846)
-constructor(std::bad_alloc::bad_alloc(char const *)@4275024)
-constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
-constructor(type_info::type_info(class type_info const &)@4277088)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4275152)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4299072,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4299072,0,virtual std::bad_alloc::~bad_alloc(void)@4275152)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4299072,0,std::bad_alloc::bad_alloc(char const *)@4275024)
+constructor(std::bad_alloc::bad_alloc(char const *)@4275024)
+constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
+constructor(type_info::type_info(class type_info const &)@4277088)
+sameClass(const std::bad_alloc::`vftable'@4299072,std::bad_alloc::bad_alloc(char const *)@4275024)
+sameClass(const std::bad_alloc::`vftable'@4299072,virtual std::bad_alloc::~bad_alloc(void)@4275152)
+sameClass(const std::bad_alloc::`vftable'@4299072,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
+sameClass(std::bad_alloc::bad_alloc(char const *)@4275024,const std::bad_alloc::`vftable'@4299072)
+sameClass(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066,const std::bad_alloc::`vftable'@4299072)
+sameClass(virtual char const * std::exception::what(void)const@4264846,const std::bad_alloc::`vftable'@4299072)
+sameClass(virtual std::bad_alloc::~bad_alloc(void)@4275152,const std::bad_alloc::`vftable'@4299072)
+sameClass(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552,const std::bad_alloc::`vftable'@4299072)
+sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264301,const type_info::`vftable'@4299088)
+sameClass(const type_info::`vftable'@4299088,virtual * type_info::`vector deleting destructor'(unsigned int)@4264301)
+sameClass(const std::bad_alloc::`vftable'@4299072,virtual char const * std::exception::what(void)const@4264846)
+sameClass(const std::bad_alloc::`vftable'@4299072,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4275152)
 vfTableSize(const type_info::`vftable'@4299088,4)
 OPTIMUM FOUND
 
@@ -865,8 +879,8 @@ Models       : 2
   Optimum    : yes
 Optimization : -102 -20 -370 -12
 Calls        : 1
-Time         : 4.171s (Solving: 0.12s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 4.140s
+Time         : 4.063s (Solving: 0.13s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 4.058s
 class 0x411005:
   0x411005  j___setdefaultprecision
 class 0x41100a:
