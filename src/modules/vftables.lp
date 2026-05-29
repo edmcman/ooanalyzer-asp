@@ -145,12 +145,24 @@ vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     vftableBelongsToClass(_, 0, AncestorWitness),
     sameClass(AncestorWitness, AncestorClass).                               % rules.pl:1057-1058 / 1165-1166
 
-% Ownership sub-case C (Offset = 0): Class is a hierarchy root — no ancestor at offset 0,
-% and does not embed anything at offset 0.
+% Ownership branch 2 (Offset = 0): "starting a new inheritance hierarchy" (rules.pl:1060-1071).
+% The Prolog wrote branches 1 and 2 as `(reasonDerivedClassRelationship -> ...) ; (Offset=0,...)`,
+% but the "one way / the other way" comments show the intent is a *disjunction* of two
+% independent ownership conditions, not an if-then-else. Translating the `->` literally injects
+% `not derivedClassRelationship(Class,_,0)` into branch 2, which closes an `a :- not a` odd loop
+% (vftableBelongsToClass -> reasonMergeVFTables -> sameClass -> derivedClassRelationship -> not ->
+% back) and makes RTTI inputs UNSAT. The OR reading drops that negation. The inner
+% `(UsOrBase=Class ; reasonDerivedClassRelationship(Class,UsOrBase,0))` becomes two sub-cases:
+% check no-embedding-at-0 on us (2a) or on our offset-0 base (2b).
+% branch 2a: UsOrBase = Class
 vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
-    not derivedClassRelationship(Class, _, 0),
-    not embeddedObject(Class, _, 0).                                         % rules.pl:1065-1071 / 1173-1179
+    not embeddedObject(Class, _, 0).                                         % rules.pl:1065,1069-1071
+% branch 2b: UsOrBase = a base of Class at offset 0
+vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
+    vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
+    derivedClassRelationship(Class, Base, 0),
+    not embeddedObject(Base, _, 0).                                          % rules.pl:1067,1069-1071
 
 % Additional-check 1 (constructor): confirmed constructor with no possible overwrite at Offset.
 %!trace_rule {"vftable % at offset % belongs to %'s class because it is a constructor and there is no overwrite", VFTable, Offset, Method}
