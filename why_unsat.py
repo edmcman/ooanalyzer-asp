@@ -10,6 +10,8 @@ UNSAT. Also identifies which constraints are violated.
 Requires: clingexplaid (https://github.com/potassco/clingo-explaid)
 """
 
+import sys
+from pathlib import Path
 from clingo import Control
 from clingexplaid.preprocessors import AssumptionPreprocessor
 from clingexplaid.mus import CoreComputer
@@ -23,7 +25,7 @@ def read_program(files):
     return "\n".join(parts)
 
 
-def explain_unsat(program, max_mus=None):
+def explain_unsat(program, max_mus=1):
     """Find MUS and unsat constraints for an ASP program."""
     results = {}
 
@@ -60,8 +62,6 @@ def explain_unsat(program, max_mus=None):
             mus_strs = cc.mus_to_string(mus)
             print(f"  MUS {i+1}: {', '.join(sorted(mus_strs))}")
             found = True
-            if max_mus and i + 1 >= max_mus:
-                break
     except Exception as e:
         print(f"  Error computing MUS: {e}")
 
@@ -92,12 +92,15 @@ def explain_unsat(program, max_mus=None):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print(__doc__)
-        sys.exit(1)
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('files', nargs='+', help='ASP program files')
+    parser.add_argument('-n', '--num-mus', type=int, default=1, help='Number of MUS to find (default: 1, use 0 for all)')
+    args = parser.parse_args()
 
-    program = read_program(sys.argv[1:])
-    explain_unsat(program)
+    program = read_program(args.files)
+    max_mus = None if args.num_mus == 0 else args.num_mus
+    explain_unsat(program, max_mus=max_mus)
 
 
 if __name__ == "__main__":
