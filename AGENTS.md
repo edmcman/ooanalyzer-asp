@@ -175,6 +175,62 @@ derived facts with N×N fan-out each, giving O(N⁴) total groundings. The
 two-rule form joins one dimension at a time — O(N³) total — and is strictly
 better despite requiring one extra fixpoint round.
 
+## Transitive closures with accumulated offsets
+
+Prolog rules like `reasonDerivedClassRelationship(D, B, Off) :- ..., Off is Off1 + Off2.`
+rely on SLG tabling to terminate. A literal ASP port hits **two** grounding traps:
+
+1. **Symmetric recursion blowup.** A body of shape `pred(D, M1, Off1), sameClass(M1, M2), pred(M2, B, Off2)`
+   with both arms recursive materializes a quadratic-in-fixpoint cross product per round.
+   Make the recursion **linear**: one arm is the recursive predicate, the other is the witness
+   one-edge predicate (e.g. `derivedClass`, not `derivedClassRelationship`).
+2. **Unbounded `Off = Off1 + Off2`.** Because `not sameClass(...)` cannot prune at grounding
+   time, the grounder must consider every potential cycle. With cycles open, `Off` ratchets
+   upward and the fixpoint never closes. Measured: `derivedClassRelationship` on
+   `examples/ooa/ooex_vs2008/Debug/oo.lp` grounded `Off ∈ {0, 12, …, 1536}` (129 values, ~53M
+   ground rules).
+
+**Fix pattern** — split into a `/2` reachability closure (no `Off`, naturally bounded by
+methods²) and a `/3` whose head is constrained to a bounded `relevantOffset` domain:
+
+```prolog
+maxOffsetDepth(4).
+primitiveOffset(0).
+primitiveOffset(Off) :- derivedClass(_, _, Off).
+relevantOffset(Off, 1) :- primitiveOffset(Off).
+relevantOffset(Off1 + Off2, N + 1) :-
+    relevantOffset(Off1, N), primitiveOffset(Off2),
+    maxOffsetDepth(MaxD), N < MaxD.
+relevantOffset(Off) :- relevantOffset(Off, _).
+
+derivedClassRelationship(D, B, Off) :-
+    derivedClass(D, M1, Off1),
+    sameClass(M1, M2),
+    derivedClassRelationship(M2, B, Off2),
+    Off = Off1 + Off2,
+    relevantOffset(Off),         % <-- bounds head to sum-of-primitives-up-to-depth-MaxD
+    ...
+```
+
+`relevantOffset` is the grounding-time analog of Prolog's
+`(integer(Off) -> Off1 < Off; true)` mode pruning — ASP has no modes, so the bound goes
+in the body. The depth cap trades coverage for grounding cost; depth 4 handles
+inheritance chains with up to 4 non-zero offset edges (the dominant case in real
+binaries). Raising it widens coverage at quadratic-ish cost in grounding size.
+
+**Anti-patterns to avoid:**
+
+- **`_closed × _closed` recursion.** Tempting because both arms are already
+  sameClass-closed, but `derivedClass_closed` contains atoms like `(B, B, 8)` (via
+  the reflexive `sameClass(A, A) :- mergeEntity(A).`), which open self-cycles the
+  grounder walks unboundedly accumulating `Off`. Measured to blow up to 13M+ ground
+  rules on the tiny `multi_inherit_example`.
+- **Bounding `relevantOffset` to `possibleVFTableWrite` offsets only.** Classes
+  without vftables still legitimately participate in inheritance chains, and
+  primitive offsets from `derivedClass` itself can fall outside the vftable-write
+  offset set. Seed `primitiveOffset` from `derivedClass` (and any other source of
+  primitive edges).
+
 ## Porting guidelines
 
 - **Update `TODO.md` immediately after porting each rule** — mark it `[x]` as soon as it lands in a file.

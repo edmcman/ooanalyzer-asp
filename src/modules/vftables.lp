@@ -130,20 +130,21 @@ vftableBelongsToClassCandidate(Method, Offset, VFTable, Class) :-
 
 % Ownership sub-case A (Offset != 0): ancestor at Offset has a vftable we need to replace.
 % Base reuse check: VFTable must not also be written at offset 0 (which would indicate reuse).
+% derivedClassRelationship_closed is sameClass-closed on both sides, so the witness
+% method from vftableBelongsToClass can be matched directly without an explicit
+% sameClass(AncestorWitness, AncestorClass) join.
 vftableBelongsToClassOwns(Method, Offset, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, Offset, VFTable, Class),
     Offset != 0,
-    derivedClassRelationship(Class, AncestorClass, Offset),
+    derivedClassRelationship_closed(Class, AncestorWitness, Offset),
     vftableBelongsToClass(_, 0, AncestorWitness),
-    sameClass(AncestorWitness, AncestorClass),
     not vftableBelongsToClassInstalledAtZero(VFTable).                       % rules.pl:1057-1058 / 1165-1166
 
 % Ownership sub-case B (Offset = 0): ancestor at offset 0 has a vftable we need to replace.
 vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
-    derivedClassRelationship(Class, AncestorClass, 0),
-    vftableBelongsToClass(_, 0, AncestorWitness),
-    sameClass(AncestorWitness, AncestorClass).                               % rules.pl:1057-1058 / 1165-1166
+    derivedClassRelationship_closed(Class, AncestorWitness, 0),
+    vftableBelongsToClass(_, 0, AncestorWitness).                            % rules.pl:1057-1058 / 1165-1166
 
 % Ownership branch 2 (Offset = 0): "starting a new inheritance hierarchy" (rules.pl:1060-1071).
 % The Prolog wrote branches 1 and 2 as `(reasonDerivedClassRelationship -> ...) ; (Offset=0,...)`,
@@ -161,7 +162,7 @@ vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
 % branch 2b: UsOrBase = a base of Class at offset 0
 vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
-    derivedClassRelationship(Class, Base, 0),
+    derivedClassRelationship_closed(Class, Base, 0),
     not embeddedObject(Base, _, 0).                                          % rules.pl:1067,1069-1071
 
 % Additional-check 1 (constructor): confirmed constructor with no possible overwrite at Offset.

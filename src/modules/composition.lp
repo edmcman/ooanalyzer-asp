@@ -78,28 +78,84 @@ derivedClass_closed(DerivedClass, BaseClass2, ObjectOffset) :-
     derivedClass_closed(DerivedClass, BaseClass1, ObjectOffset),
     sameClass(BaseClass1, BaseClass2).
 
-% reasonDerivedClassRelationship (2063): base case — direct derivation.
-derivedClassRelationship(DerivedMethod, BaseMethod, Off) :-
-    derivedClass(DerivedMethod, BaseMethod, Off).
+% reasonDerivedClassRelationship (2063, 2069). The Prolog runs on class IDs with
+% SLG tabling for termination. A literal method-level port has two problems:
+%
+%   1. Symmetric recursion (drcRel × sameClass × drcRel) materializes a quadratic-
+%      in-fixpoint cross product per round.
+%   2. Off = Off1 + Off2 is unbounded — every iteration that finds a new Off keeps
+%      the fixpoint open. With the grounder considering every potential sameClass
+%      cycle, Off ratchets upward indefinitely. Baseline on oo.lp grounded Off
+%      values from 0 to 1536 (129 multiples of 12).
+%
+% Two-phase decomposition:
+%
+% Phase 1 — /2 reachability closure. No Off, so the fixpoint is bounded by
+% methods² regardless of cycles. This is the cheap predicate that captures "D has
+% B as a transitive ancestor"; most uses care about existence only.
+%
+% Phase 2 — /3 with explicit Off, computed only over the bounded sum-of-primitives
+% domain (relevantOffset). This is the grounding-time analog of Prolog's
+% `(integer(Off) -> Off1 < Off; true)` mode pruning — ASP has no modes, so we
+% bound at the head. Depth cap (maxOffsetDepth) prevents the relevantOffset
+% domain from itself growing without bound.
+%
+% != guards filter at grounding time; not sameClass guards add class-level
+% semantics at solve time (sameClass is in a non-stratified SCC, so the negation
+% is deferred and cannot break the grounding loop).
 
-% reasonDerivedClassRelationship (2069): transitive through intermediate class.
-% iso_dif(Derived,Middle) and iso_dif(Middle,Base) from the Prolog version.
-% != guards are evaluated at grounding time (sameClass is in a non-stratified SCC
-% so `not sameClass` is deferred to solve time and cannot break the grounding loop).
-% not sameClass guards add class-level semantics at solve time.
-derivedClassRelationship(DerivedMethod, BaseMethod, Off) :-
-    derivedClassRelationship(DerivedMethod, MiddleMethod1, Off1),
-    sameClass(MiddleMethod1, MiddleMethod2),
-    derivedClassRelationship(MiddleMethod2, BaseMethod, Off2),
+% --- Phase 1: /2 reachability closure (bounded by methods²) ----------------
+derivedClassRelationship(D, B) :- derivedClass(D, B, _).
+
+derivedClassRelationship(D, B) :-
+    derivedClass(D, M1, _),
+    sameClass(M1, M2),
+    derivedClassRelationship(M2, B),
+    D != M2,
+    not sameClass(D, M2),
+    M1 != B,
+    not sameClass(M1, B).
+
+derivedClassRelationship_closed(D, B) :- derivedClassRelationship(D, B).
+derivedClassRelationship_closed(D2, B) :-
+    derivedClassRelationship_closed(D1, B), sameClass(D1, D2).
+derivedClassRelationship_closed(D, B2) :-
+    derivedClassRelationship_closed(D, B1), sameClass(B1, B2).
+
+% --- Phase 2: /3 with bounded Off domain -----------------------------------
+% Build the relevant-offset domain: 0 plus all sums of derivedClass offsets up
+% to depth maxOffsetDepth. The depth cap is the parameter that trades coverage
+% for grounding cost; 4 covers depth-4 inheritance chains with non-zero offsets.
+maxOffsetDepth(4).
+primitiveOffset(0).
+primitiveOffset(Off) :- derivedClass(_, _, Off).
+
+relevantOffset(Off, 1) :- primitiveOffset(Off).
+relevantOffset(Off1 + Off2, N + 1) :-
+    relevantOffset(Off1, N),
+    primitiveOffset(Off2),
+    maxOffsetDepth(MaxD),
+    N < MaxD.
+relevantOffset(Off) :- relevantOffset(Off, _).
+
+derivedClassRelationship(D, B, Off) :- derivedClass(D, B, Off).
+
+derivedClassRelationship(D, B, Off) :-
+    derivedClass(D, M1, Off1),
+    sameClass(M1, M2),
+    derivedClassRelationship(M2, B, Off2),
     Off = Off1 + Off2,
-    DerivedMethod != MiddleMethod2,
-    not sameClass(DerivedMethod, MiddleMethod2),
-    MiddleMethod1 != BaseMethod,
-    not sameClass(MiddleMethod1, BaseMethod).
+    relevantOffset(Off),
+    D != M2,
+    not sameClass(D, M2),
+    M1 != B,
+    not sameClass(M1, B).
 
-% Arity-2 variant.
-derivedClassRelationship(DerivedMethod, BaseMethod) :-
-    derivedClassRelationship(DerivedMethod, BaseMethod, _).
+derivedClassRelationship_closed(D, B, Off) :- derivedClassRelationship(D, B, Off).
+derivedClassRelationship_closed(D2, B, Off) :-
+    derivedClassRelationship_closed(D1, B, Off), sameClass(D1, D2).
+derivedClassRelationship_closed(D, B2, Off) :-
+    derivedClassRelationship_closed(D, B1, Off), sameClass(B1, B2).
 
 % objectInObject_B / objectInObject_C: OIO holds when either inheritance or
 % embedding is known for the same witness methods.
