@@ -15,6 +15,7 @@ original module set.
 | File | Purpose |
 |---|---|
 | `ooanalyzer.lp` | Entry point: `#include`s the modules below |
+| `src/util/config.lp` | Tunable `#const`s (e.g. `max_class_size`, `max_offset_depth`) — override on the command line |
 | `src/util/facts.lp` | Input vocabulary and `#defined` directives |
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
 | `facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
@@ -43,6 +44,16 @@ clingo ooanalyzer.lp examples/rtti_example.lp         # same but RTTI-driven, fe
 clingo ooanalyzer.lp examples/multi_inherit_example.lp  # C : A(0), B(8)
 clingo ooanalyzer.lp examples/inherited_entry_example.lp  # derived inherits un-overridden entry
 clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
+```
+
+Tune solver constants on the command line (see `src/util/config.lp` for the list):
+
+```sh
+# Tighter offset bounds — useful for very small classes.
+clingo --const max_class_size=128 ooanalyzer.lp examples/ooa/ooex_vs2008/Debug/oo.lp
+
+# Allow deeper transitive inheritance chains.
+clingo --const max_offset_depth=6 ooanalyzer.lp examples/ooa/ooex_vs2008/Debug/oo.lp
 ```
 
 Or use the Makefile:
@@ -194,13 +205,20 @@ rely on SLG tabling to terminate. A literal ASP port hits **two** grounding trap
 methods²) and a `/3` whose head is constrained to a bounded `relevantOffset` domain:
 
 ```prolog
-maxOffsetDepth(4).
+% From src/util/config.lp (overridable with --const at the command line).
+#const max_offset_depth = 4.
+#const max_class_size = 256.
+maxOffsetDepth(max_offset_depth).
+maxClassSize(max_class_size).
+
 primitiveOffset(0).
 primitiveOffset(Off) :- derivedClass(_, _, Off).
+
 relevantOffset(Off, 1) :- primitiveOffset(Off).
 relevantOffset(Off1 + Off2, N + 1) :-
     relevantOffset(Off1, N), primitiveOffset(Off2),
-    maxOffsetDepth(MaxD), N < MaxD.
+    maxOffsetDepth(MaxD), N < MaxD,
+    maxClassSize(MaxS), Off1 + Off2 <= MaxS.
 relevantOffset(Off) :- relevantOffset(Off, _).
 
 derivedClassRelationship(D, B, Off) :-
@@ -208,15 +226,22 @@ derivedClassRelationship(D, B, Off) :-
     sameClass(M1, M2),
     derivedClassRelationship(M2, B, Off2),
     Off = Off1 + Off2,
-    relevantOffset(Off),         % <-- bounds head to sum-of-primitives-up-to-depth-MaxD
+    relevantOffset(Off),         % <-- bounds head; depth AND size bound intersected
     ...
 ```
 
 `relevantOffset` is the grounding-time analog of Prolog's
 `(integer(Off) -> Off1 < Off; true)` mode pruning — ASP has no modes, so the bound goes
-in the body. The depth cap trades coverage for grounding cost; depth 4 handles
-inheritance chains with up to 4 non-zero offset edges (the dominant case in real
-binaries). Raising it widens coverage at quadratic-ish cost in grounding size.
+in the body. The two caps trade off differently:
+
+- **`max_offset_depth`** wins when primitive offsets are sparse and chains are shallow
+  (e.g. `{0, 12}` → 5 sums at depth 4).
+- **`max_class_size`** wins when primitives are dense (e.g. `{0, 4, 8, 12, 16}` →
+  depthᴾ explodes faster than `S/g`).
+
+Intersecting both gives the tighter of the two for any given input. Tune via
+`clingo --const max_class_size=512 ...` when you encounter a binary that needs more
+headroom; both constants live in `src/util/config.lp`.
 
 **Anti-patterns to avoid:**
 

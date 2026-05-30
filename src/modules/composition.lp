@@ -123,10 +123,12 @@ derivedClassRelationship_closed(D, B2) :-
     derivedClassRelationship_closed(D, B1), sameClass(B1, B2).
 
 % --- Phase 2: /3 with bounded Off domain -----------------------------------
-% Build the relevant-offset domain: 0 plus all sums of derivedClass offsets up
-% to depth maxOffsetDepth. The depth cap is the parameter that trades coverage
-% for grounding cost; 4 covers depth-4 inheritance chains with non-zero offsets.
-maxOffsetDepth(4).
+% Build the relevant-offset domain: 0 plus all sums of derivedClass offsets that
+% satisfy BOTH bounds in src/util/config.lp:
+%   * maxOffsetDepth — chain length cap (sums of up to N primitives).
+%   * maxClassSize   — absolute byte ceiling on any sum.
+% Intersecting both bounds keeps the domain small when primitive offsets are
+% dense (size cap dominates) and when they are sparse (depth cap dominates).
 primitiveOffset(0).
 primitiveOffset(Off) :- derivedClass(_, _, Off).
 
@@ -135,7 +137,9 @@ relevantOffset(Off1 + Off2, N + 1) :-
     relevantOffset(Off1, N),
     primitiveOffset(Off2),
     maxOffsetDepth(MaxD),
-    N < MaxD.
+    N < MaxD,
+    maxClassSize(MaxS),
+    Off1 + Off2 <= MaxS.
 relevantOffset(Off) :- relevantOffset(Off, _).
 
 derivedClassRelationship(D, B, Off) :- derivedClass(D, B, Off).
