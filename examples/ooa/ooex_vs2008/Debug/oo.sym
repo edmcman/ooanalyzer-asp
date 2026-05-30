@@ -1,11 +1,1478 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
-*** Info : (clingo): INTERRUPTED by signal!
-UNKNOWN
+Solving...
+Answer: 4 (Time: 1.005s)
+method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656)
+method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660)
+method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668)
+method(__declspec(dllimport) bool std::ios_base::good(void)const@4305672)
+method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676)
+method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680)
+method(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692)
+method(__declspec(dllimport) int std::ios_base::width(int)@4305696)
+method(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700)
+method(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704)
+method(__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708)
+method(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712)
+method(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716)
+method(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720)
+method(__declspec(dllimport) int std::ios_base::flags(void)const@4305724)
+method(__declspec(dllimport) int std::ios_base::width(void)const@4305728)
+method(__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732)
+method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736)
+method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305832)
+method(virtual Cls2::func3(void)@4263996)
+method(virtual Cls1::func1(void)@4264101)
+method(virtual Cls3::func1(void)@4264106)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
+method(virtual Cls3::func3(void)@4264456)
+method(Cls3::Cls3(void)@4266080)
+method(Cls1::Cls1(void)@4266608)
+method(Cls2::Cls2(void)@4266816)
+method(type_info::type_info(class type_info const &)@4270080)
+vfTable(const Cls3::`vftable'{for `Cls2'}@4290580)
+vfTable(const Cls3::`vftable'{for `Cls1'}@4290596)
+vfTable(const Cls1::`vftable'@4290656)
+vfTable(const Cls2::`vftable'@4290684)
+vfTable(const type_info::`vftable'@4290716)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660)
+sameClass(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668,__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668)
+sameClass(__declspec(dllimport) bool std::ios_base::good(void)const@4305672,__declspec(dllimport) bool std::ios_base::good(void)const@4305672)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680)
+sameClass(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692)
+sameClass(__declspec(dllimport) int std::ios_base::width(int)@4305696,__declspec(dllimport) int std::ios_base::width(int)@4305696)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700)
+sameClass(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704,__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704)
+sameClass(__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708,__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712)
+sameClass(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716)
+sameClass(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720)
+sameClass(__declspec(dllimport) int std::ios_base::flags(void)const@4305724,__declspec(dllimport) int std::ios_base::flags(void)const@4305724)
+sameClass(__declspec(dllimport) int std::ios_base::width(void)const@4305728,__declspec(dllimport) int std::ios_base::width(void)const@4305728)
+sameClass(__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732,__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736)
+sameClass(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305832,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305832)
+sameClass(virtual Cls2::func3(void)@4263996,virtual Cls2::func3(void)@4263996)
+sameClass(virtual Cls1::func1(void)@4264101,virtual Cls1::func1(void)@4264101)
+sameClass(virtual Cls3::func1(void)@4264106,virtual Cls3::func1(void)@4264106)
+sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226,virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
+sameClass(virtual Cls3::func3(void)@4264456,virtual Cls3::func3(void)@4264456)
+sameClass(Cls3::Cls3(void)@4266080,Cls3::Cls3(void)@4266080)
+sameClass(Cls1::Cls1(void)@4266608,Cls1::Cls1(void)@4266608)
+sameClass(Cls2::Cls2(void)@4266816,Cls2::Cls2(void)@4266816)
+sameClass(type_info::type_info(class type_info const &)@4270080,type_info::type_info(class type_info const &)@4270080)
+sameClass(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls3::`vftable'{for `Cls2'}@4290580)
+sameClass(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls3::`vftable'{for `Cls1'}@4290596)
+sameClass(const Cls1::`vftable'@4290656,const Cls1::`vftable'@4290656)
+sameClass(const Cls2::`vftable'@4290684,const Cls2::`vftable'@4290684)
+sameClass(const type_info::`vftable'@4290716,const type_info::`vftable'@4290716)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712)
+sameClass(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680)
+sameClass(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736)
+sameClass(__declspec(dllimport) bool std::ios_base::good(void)const@4305672,__declspec(dllimport) int std::ios_base::width(int)@4305696)
+sameClass(__declspec(dllimport) bool std::ios_base::good(void)const@4305672,__declspec(dllimport) int std::ios_base::flags(void)const@4305724)
+sameClass(__declspec(dllimport) bool std::ios_base::good(void)const@4305672,__declspec(dllimport) int std::ios_base::width(void)const@4305728)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736)
+sameClass(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716)
+sameClass(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720)
+sameClass(__declspec(dllimport) int std::ios_base::width(int)@4305696,__declspec(dllimport) int std::ios_base::flags(void)const@4305724)
+sameClass(__declspec(dllimport) int std::ios_base::width(int)@4305696,__declspec(dllimport) int std::ios_base::width(void)const@4305728)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712)
+sameClass(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704,__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708)
+sameClass(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704,__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732)
+sameClass(__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708,__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732)
+sameClass(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720)
+sameClass(__declspec(dllimport) int std::ios_base::flags(void)const@4305724,__declspec(dllimport) int std::ios_base::width(void)const@4305728)
+sameClass(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls3::`vftable'{for `Cls1'}@4290596)
+sameClass(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305656)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305660)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680,__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736,__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305668)
+sameClass(__declspec(dllimport) int std::ios_base::width(int)@4305696,__declspec(dllimport) bool std::ios_base::good(void)const@4305672)
+sameClass(__declspec(dllimport) int std::ios_base::flags(void)const@4305724,__declspec(dllimport) bool std::ios_base::good(void)const@4305672)
+sameClass(__declspec(dllimport) int std::ios_base::width(void)const@4305728,__declspec(dllimport) bool std::ios_base::good(void)const@4305672)
+sameClass(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676)
+sameClass(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676)
+sameClass(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305676)
+sameClass(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305736,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305680)
+sameClass(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692)
+sameClass(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305692)
+sameClass(__declspec(dllimport) int std::ios_base::flags(void)const@4305724,__declspec(dllimport) int std::ios_base::width(int)@4305696)
+sameClass(__declspec(dllimport) int std::ios_base::width(void)const@4305728,__declspec(dllimport) int std::ios_base::width(int)@4305696)
+sameClass(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305712,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305700)
+sameClass(__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708,__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704)
+sameClass(__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732,__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704)
+sameClass(__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732,__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708)
+sameClass(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305720,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305716)
+sameClass(__declspec(dllimport) int std::ios_base::width(void)const@4305728,__declspec(dllimport) int std::ios_base::flags(void)const@4305724)
+sameClass(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls3::`vftable'{for `Cls2'}@4290580)
+vfTableEntry(const type_info::`vftable'@4290716,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
+vfTableEntry(const Cls2::`vftable'@4290684,0,virtual Cls2::func3(void)@4263996)
+vfTableEntry(const Cls1::`vftable'@4290656,0,virtual Cls1::func1(void)@4264101)
+vfTableEntry(const Cls3::`vftable'{for `Cls1'}@4290596,0,virtual Cls3::func1(void)@4264106)
+vfTableEntry(const Cls3::`vftable'{for `Cls2'}@4290580,0,virtual Cls3::func3(void)@4264456)
+vfTableWrite(4270092,type_info::type_info(class type_info const &)@4270080,0,const type_info::`vftable'@4290716)
+vfTableWrite(4266854,Cls2::Cls2(void)@4266816,0,const Cls2::`vftable'@4290684)
+vfTableWrite(4266646,Cls1::Cls1(void)@4266608,0,const Cls1::`vftable'@4290656)
+vfTableWrite(4266137,Cls3::Cls3(void)@4266080,0,const Cls3::`vftable'{for `Cls1'}@4290596)
+vfTableWrite(4266146,Cls3::Cls3(void)@4266080,12,const Cls3::`vftable'{for `Cls2'}@4290580)
+deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4270128)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4270128)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4270128,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305832)
+classCallsMethod(Cls3::Cls3(void)@4266080,Cls1::Cls1(void)@4266608)
+classCallsMethod(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls3::func3(void)@4266480)
+classCallsMethod(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls3::func1(void)@4266352)
+classCallsMethod(const Cls1::`vftable'@4290656,virtual Cls1::func1(void)@4266688)
+classCallsMethod(const Cls2::`vftable'@4290684,virtual Cls2::func3(void)@4266896)
+classCallsMethod(const type_info::`vftable'@4290716,virtual * type_info::`vector deleting destructor'(unsigned int)@4270128)
+method(virtual Cls2::func3(void)@4266896)
+method(virtual Cls1::func1(void)@4266688)
+method(virtual Cls3::func1(void)@4266352)
+method(virtual Cls3::func3(void)@4266480)
+sameClass(virtual Cls3::func1(void)@4266352,virtual Cls3::func1(void)@4266352)
+sameClass(virtual Cls3::func3(void)@4266480,virtual Cls3::func3(void)@4266480)
+sameClass(virtual Cls1::func1(void)@4266688,virtual Cls1::func1(void)@4266688)
+sameClass(virtual Cls2::func3(void)@4266896,virtual Cls2::func3(void)@4266896)
+sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4270128,virtual * type_info::`vector deleting destructor'(unsigned int)@4270128)
+derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls1::`vftable'@4290656,0)
+derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls1::`vftable'@4290656,0)
+vftableBelongsToClass(const type_info::`vftable'@4290716,0,type_info::type_info(class type_info const &)@4270080)
+vftableBelongsToClass(const Cls1::`vftable'@4290656,0,Cls1::Cls1(void)@4266608)
+objectInObject(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls1::`vftable'@4290656,0)
+objectInObject(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls1::`vftable'@4290656,0)
+sameClass(const Cls1::`vftable'@4290656,Cls1::Cls1(void)@4266608)
+sameClass(const type_info::`vftable'@4290716,type_info::type_info(class type_info const &)@4270080)
+sameClass(Cls1::Cls1(void)@4266608,const Cls1::`vftable'@4290656)
+sameClass(type_info::type_info(class type_info const &)@4270080,const type_info::`vftable'@4290716)
+derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,Cls1::Cls1(void)@4266608,0)
+derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,Cls1::Cls1(void)@4266608,0)
+objectInObject(const Cls3::`vftable'{for `Cls2'}@4290580,Cls1::Cls1(void)@4266608,0)
+objectInObject(const Cls3::`vftable'{for `Cls1'}@4290596,Cls1::Cls1(void)@4266608,0)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4269248)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268784)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4269056)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4268432)
+classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4268432,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4269056)
+classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268784,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4269248)
+vfTableEntry(const Cls2::`vftable'@4290684,4,virtual Cls2::func4(void)@4264211)
+vfTableSize(const Cls2::`vftable'@4290684,8)
+vfTableEntry(const Cls3::`vftable'{for `Cls2'}@4290580,4,virtual Cls2::func4(void)@4264211)
+vfTableSize(const Cls3::`vftable'{for `Cls2'}@4290580,8)
+classCallsMethod(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls2::func4(void)@4266224)
+classCallsMethod(const Cls2::`vftable'@4290684,virtual Cls2::func4(void)@4266224)
+method(virtual Cls2::func4(void)@4264211)
+method(virtual Cls2::func4(void)@4266224)
+method(j___setdefaultprecision@4263941)
+method(j___setargv@4263946)
+method(bool std::ios_base::good(void)const@4263951)
+method(__stdcall DebugBreak()@4263956)
+method(j___RTC_GetErrDesc@4263961)
+method(j____p__fmode@4263966)
+method(__fastcall __security_check_cookie(x)@4263971)
+method(__stdcall IsDebuggerPresent()@4263976)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263981)
+method(class type_info & type_info::operator=(class type_info const &)@4263986)
+method(j___RTC_Terminate@4263991)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264001)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@4264006)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264011)
+method(j___RTC_NumErrors@4264016)
+method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264021)
+method(j____setusermatherr@4264026)
+method(__stdcall Sleep(x)@4264031)
+method(virtual type_info::~type_info(void)@4264036)
+method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264041)
+method(__stdcall GetModuleFileNameW(x, x, x)@4264046)
+method(j____security_init_cookie@4264051)
+method(__stdcall SetUnhandledExceptionFilter(x)@4264056)
+method(j___cexit@4264061)
+method(j___CrtDbgReportW@4264066)
+method(__stdcall VirtualQuery(x, x, x)@4264071)
+method(j__atexit@4264076)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264081)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264086)
+method(j___RTC_SetErrorType@4264091)
+method(j___except_handler4@4264096)
+method(j___lock@4264111)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116)
+method(__stdcall GetProcAddress(x, x)@4264121)
+method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126)
+method(__fastcall _RTC_CheckStackVars(x, x)@4264131)
+method(__cdecl operator delete(*)@4264136)
+method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141)
+method(virtual type_info::~type_info(void)@4264146)
+method(bool __cdecl std::uncaught_exception(void)@4264151)
+method(__cdecl terminate(void)@4264161)
+method(j___exit@4264166)
+method(__stdcall GetCurrentThreadId()@4264171)
+method(j___initterm@4264176)
+method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264181)
+method(int std::ios_base::width(int)@4264186)
+method(__stdcall GetCurrentProcess()@4264191)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264196)
+method(j___encode_pointer@4264201)
+method(int std::ios_base::width(void)const@4264206)
+method(j___RTC_UninitUse@4264216)
+method(j___RTC_Shutdown@4264221)
+method(j___FindPESection@4264231)
+method(j___configthreadlocale@4264236)
+method(j___RTC_InitBase@4264241)
+method(Cls2::Cls2(void)@4264246)
+method(Cls3::Cls3(void)@4264251)
+method(Cls1::Cls1(void)@4264256)
+method(__cdecl _RTC_StackFailure(*, char const *)@4264261)
+method(__stdcall LoadLibraryA(x)@4264266)
+method(__stdcall RaiseException(x, x, x, x)@4264271)
+method(j___crt_debugger_hook@4264276)
+method(j___ValidateImageBase@4264281)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4264286)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4264291)
+method(Cls1::func2(void)@4264296)
+method(static int __cdecl std::char_traits<char>::eof(void)@4264301)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4264306)
+method(__stdcall GetProcessHeap()@4264311)
+method(j___RTC_SetErrorFuncW@4264316)
+method(j___onexit@4264321)
+method(j__NtCurrentTeb@4264326)
+method(__stdcall HeapFree(x, x, x)@4264331)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4264336)
+method(j___RTC_SetErrorFunc@4264341)
+method(j___invoke_watson_if_error@4264346)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264351)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264356)
+method(__stdcall TerminateProcess(x, x)@4264361)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264366)
+method(start@4264371)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264376)
+method(j____CxxSetUnhandledExceptionFilter@4264381)
+method(__stdcall QueryPerformanceCounter(x)@4264386)
+method(j____p__commode@4264391)
+method(j___unlock@4264396)
+method(__stdcall GetCurrentProcessId()@4264401)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264406)
+method(j____set_app_type@4264411)
+method(j___RTC_CheckEsp@4264416)
+method(j__main@4264421)
+method(j___RTC_Initialize@4264426)
+method(j___controlfp_s@4264431)
+method(__stdcall GetSystemTimeAsFileTime(x)@4264436)
+method(j___decode_pointer@4264441)
+method(j___invoke_watson@4264446)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264451)
+method(j___CRT_RTC_INITW@4264461)
+method(__stdcall GetTickCount()@4264466)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4264471)
+method(j___IsNonwritableInCurrentImage@4264476)
+method(j____CxxFrameHandler3@4264481)
+method(__stdcall HeapAlloc(x, x, x)@4264486)
+method(j___amsg_exit@4264491)
+method(* __cdecl operator new(unsigned int)@4264496)
+method(j___XcptFilter@4264501)
+method(j___CrtSetCheckCount@4264506)
+method(__stdcall InterlockedExchange(x, x)@4264511)
+method(__stdcall UnhandledExceptionFilter(x)@4264516)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4264521)
+method(type_info::type_info(class type_info const &)@4264526)
+method(j___except_handler4_common@4264531)
+method(j___matherr@4264536)
+method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264541)
+method(j____getmainargs@4264546)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264551)
+method(__stdcall lstrlenA(x)@4264556)
+method(__cdecl _RTC_Failure(*, int)@4264561)
+method(int std::ios_base::flags(void)const@4264566)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264571)
+method(j__DebuggerKnownHandle@4264576)
+method(j__exit_0@4264581)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264586)
+method(j____dllonexit@4264591)
+method(__stdcall FreeLibrary(x)@4264596)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264601)
+method(j___initterm_e@4264606)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264611)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264616)
+method(_main@4265312)
+method(Cls1::func2(void)@4265952)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4267024)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4268992)
+method(__cdecl operator delete(*)@4269418)
+method(* __cdecl operator new(unsigned int)@4269424)
+method(___CxxFrameHandler3@4269430)
+method(__fastcall __security_check_cookie(x)@4269440)
+method(__fastcall _RTC_CheckStackVars(x, x)@4269520)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@4269648)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@4269712)
+method(__RTC_InitBase@4269984)
+method(__RTC_Shutdown@4270048)
+method(class type_info & type_info::operator=(class type_info const &)@4270272)
+method(pre_c_init@4270304)
+method(pre_cpp_init@4270512)
+method(_mainCRTStartup@4270624)
+method(__tmainCRTStartup@4270656)
+method(_NtCurrentTeb@4271392)
+method(check_managed_app@4271408)
+method(_DebuggerKnownHandle@4271984)
+method(DebuggerProbe@4272032)
+method(__cdecl _RTC_Failure(*, int)@4272208)
+method(failwithmessage@4272320)
+method(DebuggerRuntime@4272976)
+method(__cdecl _RTC_StackFailure(*, char const *)@4273184)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4273504)
+method(_getMemBlockDataString@4273888)
+method(__RTC_UninitUse@4274032)
+method(__RTC_NumErrors@4274336)
+method(__RTC_GetErrDesc@4274352)
+method(__RTC_SetErrorFunc@4274432)
+method(__RTC_SetErrorFuncW@4274480)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4274528)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4274544)
+method(__CRT_RTC_INITW@4274550)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4274560)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4274784)
+method(ArrayUnwindFilter@4274960)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4275024)
+method(___CxxSetUnhandledExceptionFilter@4275152)
+method(__configthreadlocale@4275178)
+method(__setdefaultprecision@4275184)
+method(__invoke_watson_if_error@4275264)
+method(___setusermatherr@4275318)
+method(__matherr@4275328)
+method(__setargv@4275344)
+method(__RTC_Initialize@4275360)
+method(__RTC_Terminate@4275408)
+method(___p__commode@4275456)
+method(___p__fmode@4275462)
+method(__onexit@4275472)
+method($LN6_1@4275701)
+method(_atexit@4275808)
+method(__encode_pointer@4275844)
+method(___set_app_type@4275850)
+method(__amsg_exit@4275856)
+method(___getmainargs@4275862)
+method(___security_init_cookie@4275872)
+method(__exit@4276146)
+method(__XcptFilter@4276152)
+method(__cexit@4276158)
+method(_exit_0@4276164)
+method(__CrtSetCheckCount@4276170)
+method(__ValidateImageBase@4276176)
+method(__FindPESection@4276304)
+method(__IsNonwritableInCurrentImage@4276464)
+method(__CrtDbgReportW@4276806)
+method(__initterm@4276812)
+method(__initterm_e@4276818)
+method(__except_handler4@4276832)
+method(__crt_debugger_hook@4276884)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4276896)
+method(GetPdbDll@4277776)
+method(__cdecl terminate(void)@4278364)
+method(virtual type_info::~type_info(void)@4278370)
+method(__controlfp_s@4278376)
+method(__invoke_watson@4278382)
+method(__unlock@4278388)
+method(___dllonexit@4278394)
+method(__lock@4278400)
+method(__decode_pointer@4278406)
+method(__except_handler4_common@4278412)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4278418)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4278424)
+method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4278430)
+method(int std::ios_base::width(int)@4278436)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4278442)
+method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4278448)
+method(static int __cdecl std::char_traits<char>::eof(void)@4278454)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4278460)
+method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4278466)
+method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4278472)
+method(int std::ios_base::flags(void)const@4278478)
+method(int std::ios_base::width(void)const@4278484)
+method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4278490)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4278496)
+method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4278502)
+method(bool std::ios_base::good(void)const@4278508)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4278514)
+method(bool __cdecl std::uncaught_exception(void)@4278520)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278526)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278532)
+method(__stdcall InterlockedExchange(x, x)@4278538)
+method(__stdcall Sleep(x)@4278544)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4278550)
+method(__stdcall TerminateProcess(x, x)@4278556)
+method(__stdcall GetCurrentProcess()@4278562)
+method(__stdcall UnhandledExceptionFilter(x)@4278568)
+method(__stdcall SetUnhandledExceptionFilter(x)@4278574)
+method(__stdcall IsDebuggerPresent()@4278580)
+method(__stdcall RaiseException(x, x, x, x)@4278586)
+method(__stdcall DebugBreak()@4278592)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4278598)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4278604)
+method(__stdcall lstrlenA(x)@4278610)
+method(__stdcall GetProcAddress(x, x)@4278616)
+method(__stdcall LoadLibraryA(x)@4278622)
+method(__stdcall QueryPerformanceCounter(x)@4278628)
+method(__stdcall GetTickCount()@4278634)
+method(__stdcall GetCurrentThreadId()@4278640)
+method(__stdcall GetCurrentProcessId()@4278646)
+method(__stdcall GetSystemTimeAsFileTime(x)@4278652)
+method(__stdcall HeapFree(x, x, x)@4278658)
+method(__stdcall HeapAlloc(x, x, x)@4278664)
+method(__stdcall GetProcessHeap()@4278670)
+method(__stdcall GetModuleFileNameW(x, x, x)@4278676)
+method(__stdcall VirtualQuery(x, x, x)@4278682)
+method(__stdcall FreeLibrary(x)@4278688)
+method(__ehhandler$_main@4282588)
+method(__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282648)
+method(__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282696)
+method(__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@4282744)
+method(__RTC_CheckEsp@4269472)
+method(___report_gsfailure@4271632)
+method($LN8@4274686)
+method(__unwindfunclet$_main$0@4282560)
+method(__unwindfunclet$_main$1@4282574)
+method(__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@4282640)
+method(__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@4282688)
+method(__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@4282736)
+sameClass(j___setdefaultprecision@4263941,j___setdefaultprecision@4263941)
+sameClass(j___setargv@4263946,j___setargv@4263946)
+sameClass(bool std::ios_base::good(void)const@4263951,bool std::ios_base::good(void)const@4263951)
+sameClass(__stdcall DebugBreak()@4263956,__stdcall DebugBreak()@4263956)
+sameClass(j___RTC_GetErrDesc@4263961,j___RTC_GetErrDesc@4263961)
+sameClass(j____p__fmode@4263966,j____p__fmode@4263966)
+sameClass(__fastcall __security_check_cookie(x)@4263971,__fastcall __security_check_cookie(x)@4263971)
+sameClass(__stdcall IsDebuggerPresent()@4263976,__stdcall IsDebuggerPresent()@4263976)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263981,std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263981)
+sameClass(class type_info & type_info::operator=(class type_info const &)@4263986,class type_info & type_info::operator=(class type_info const &)@4263986)
+sameClass(j___RTC_Terminate@4263991,j___RTC_Terminate@4263991)
+sameClass(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264001,__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264001)
+sameClass(__fastcall _RTC_AllocaHelper(x, x, x)@4264006,__fastcall _RTC_AllocaHelper(x, x, x)@4264006)
+sameClass(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264011,int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264011)
+sameClass(j___RTC_NumErrors@4264016,j___RTC_NumErrors@4264016)
+sameClass(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264021,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264021)
+sameClass(j____setusermatherr@4264026,j____setusermatherr@4264026)
+sameClass(__stdcall Sleep(x)@4264031,__stdcall Sleep(x)@4264031)
+sameClass(virtual type_info::~type_info(void)@4264036,virtual type_info::~type_info(void)@4264036)
+sameClass(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264041,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264041)
+sameClass(__stdcall GetModuleFileNameW(x, x, x)@4264046,__stdcall GetModuleFileNameW(x, x, x)@4264046)
+sameClass(j____security_init_cookie@4264051,j____security_init_cookie@4264051)
+sameClass(__stdcall SetUnhandledExceptionFilter(x)@4264056,__stdcall SetUnhandledExceptionFilter(x)@4264056)
+sameClass(j___cexit@4264061,j___cexit@4264061)
+sameClass(j___CrtDbgReportW@4264066,j___CrtDbgReportW@4264066)
+sameClass(__stdcall VirtualQuery(x, x, x)@4264071,__stdcall VirtualQuery(x, x, x)@4264071)
+sameClass(j__atexit@4264076,j__atexit@4264076)
+sameClass(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264081,__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264081)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264086,class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264086)
+sameClass(j___RTC_SetErrorType@4264091,j___RTC_SetErrorType@4264091)
+sameClass(j___except_handler4@4264096,j___except_handler4@4264096)
+sameClass(j___lock@4264111,j___lock@4264111)
+sameClass(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116,std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116)
+sameClass(__stdcall GetProcAddress(x, x)@4264121,__stdcall GetProcAddress(x, x)@4264121)
+sameClass(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126,static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126)
+sameClass(__fastcall _RTC_CheckStackVars(x, x)@4264131,__fastcall _RTC_CheckStackVars(x, x)@4264131)
+sameClass(__cdecl operator delete(*)@4264136,__cdecl operator delete(*)@4264136)
+sameClass(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141,static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141)
+sameClass(virtual type_info::~type_info(void)@4264146,virtual type_info::~type_info(void)@4264146)
+sameClass(bool __cdecl std::uncaught_exception(void)@4264151,bool __cdecl std::uncaught_exception(void)@4264151)
+sameClass(__cdecl terminate(void)@4264161,__cdecl terminate(void)@4264161)
+sameClass(j___exit@4264166,j___exit@4264166)
+sameClass(__stdcall GetCurrentThreadId()@4264171,__stdcall GetCurrentThreadId()@4264171)
+sameClass(j___initterm@4264176,j___initterm@4264176)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264181,class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264181)
+sameClass(int std::ios_base::width(int)@4264186,int std::ios_base::width(int)@4264186)
+sameClass(__stdcall GetCurrentProcess()@4264191,__stdcall GetCurrentProcess()@4264191)
+sameClass(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264196,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264196)
+sameClass(j___encode_pointer@4264201,j___encode_pointer@4264201)
+sameClass(int std::ios_base::width(void)const@4264206,int std::ios_base::width(void)const@4264206)
+sameClass(virtual Cls2::func4(void)@4264211,virtual Cls2::func4(void)@4264211)
+sameClass(j___RTC_UninitUse@4264216,j___RTC_UninitUse@4264216)
+sameClass(j___RTC_Shutdown@4264221,j___RTC_Shutdown@4264221)
+sameClass(j___FindPESection@4264231,j___FindPESection@4264231)
+sameClass(j___configthreadlocale@4264236,j___configthreadlocale@4264236)
+sameClass(j___RTC_InitBase@4264241,j___RTC_InitBase@4264241)
+sameClass(Cls2::Cls2(void)@4264246,Cls2::Cls2(void)@4264246)
+sameClass(Cls3::Cls3(void)@4264251,Cls3::Cls3(void)@4264251)
+sameClass(Cls1::Cls1(void)@4264256,Cls1::Cls1(void)@4264256)
+sameClass(__cdecl _RTC_StackFailure(*, char const *)@4264261,__cdecl _RTC_StackFailure(*, char const *)@4264261)
+sameClass(__stdcall LoadLibraryA(x)@4264266,__stdcall LoadLibraryA(x)@4264266)
+sameClass(__stdcall RaiseException(x, x, x, x)@4264271,__stdcall RaiseException(x, x, x, x)@4264271)
+sameClass(j___crt_debugger_hook@4264276,j___crt_debugger_hook@4264276)
+sameClass(j___ValidateImageBase@4264281,j___ValidateImageBase@4264281)
+sameClass(__stdcall InterlockedCompareExchange(x, x, x)@4264286,__stdcall InterlockedCompareExchange(x, x, x)@4264286)
+sameClass(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4264291,std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4264291)
+sameClass(Cls1::func2(void)@4264296,Cls1::func2(void)@4264296)
+sameClass(static int __cdecl std::char_traits<char>::eof(void)@4264301,static int __cdecl std::char_traits<char>::eof(void)@4264301)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4264306,std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4264306)
+sameClass(__stdcall GetProcessHeap()@4264311,__stdcall GetProcessHeap()@4264311)
+sameClass(j___RTC_SetErrorFuncW@4264316,j___RTC_SetErrorFuncW@4264316)
+sameClass(j___onexit@4264321,j___onexit@4264321)
+sameClass(j__NtCurrentTeb@4264326,j__NtCurrentTeb@4264326)
+sameClass(__stdcall HeapFree(x, x, x)@4264331,__stdcall HeapFree(x, x, x)@4264331)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4264336,class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4264336)
+sameClass(j___RTC_SetErrorFunc@4264341,j___RTC_SetErrorFunc@4264341)
+sameClass(j___invoke_watson_if_error@4264346,j___invoke_watson_if_error@4264346)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264351,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264351)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264356,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264356)
+sameClass(__stdcall TerminateProcess(x, x)@4264361,__stdcall TerminateProcess(x, x)@4264361)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264366,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264366)
+sameClass(start@4264371,start@4264371)
+sameClass(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264376,long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264376)
+sameClass(j____CxxSetUnhandledExceptionFilter@4264381,j____CxxSetUnhandledExceptionFilter@4264381)
+sameClass(__stdcall QueryPerformanceCounter(x)@4264386,__stdcall QueryPerformanceCounter(x)@4264386)
+sameClass(j____p__commode@4264391,j____p__commode@4264391)
+sameClass(j___unlock@4264396,j___unlock@4264396)
+sameClass(__stdcall GetCurrentProcessId()@4264401,__stdcall GetCurrentProcessId()@4264401)
+sameClass(__fastcall _RTC_CheckStackVars2(x, x, x)@4264406,__fastcall _RTC_CheckStackVars2(x, x, x)@4264406)
+sameClass(j____set_app_type@4264411,j____set_app_type@4264411)
+sameClass(j___RTC_CheckEsp@4264416,j___RTC_CheckEsp@4264416)
+sameClass(j__main@4264421,j__main@4264421)
+sameClass(j___RTC_Initialize@4264426,j___RTC_Initialize@4264426)
+sameClass(j___controlfp_s@4264431,j___controlfp_s@4264431)
+sameClass(__stdcall GetSystemTimeAsFileTime(x)@4264436,__stdcall GetSystemTimeAsFileTime(x)@4264436)
+sameClass(j___decode_pointer@4264441,j___decode_pointer@4264441)
+sameClass(j___invoke_watson@4264446,j___invoke_watson@4264446)
+sameClass(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264451,int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264451)
+sameClass(j___CRT_RTC_INITW@4264461,j___CRT_RTC_INITW@4264461)
+sameClass(__stdcall GetTickCount()@4264466,__stdcall GetTickCount()@4264466)
+sameClass(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4264471,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4264471)
+sameClass(j___IsNonwritableInCurrentImage@4264476,j___IsNonwritableInCurrentImage@4264476)
+sameClass(j____CxxFrameHandler3@4264481,j____CxxFrameHandler3@4264481)
+sameClass(__stdcall HeapAlloc(x, x, x)@4264486,__stdcall HeapAlloc(x, x, x)@4264486)
+sameClass(j___amsg_exit@4264491,j___amsg_exit@4264491)
+sameClass(* __cdecl operator new(unsigned int)@4264496,* __cdecl operator new(unsigned int)@4264496)
+sameClass(j___XcptFilter@4264501,j___XcptFilter@4264501)
+sameClass(j___CrtSetCheckCount@4264506,j___CrtSetCheckCount@4264506)
+sameClass(__stdcall InterlockedExchange(x, x)@4264511,__stdcall InterlockedExchange(x, x)@4264511)
+sameClass(__stdcall UnhandledExceptionFilter(x)@4264516,__stdcall UnhandledExceptionFilter(x)@4264516)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4264521,std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4264521)
+sameClass(type_info::type_info(class type_info const &)@4264526,type_info::type_info(class type_info const &)@4264526)
+sameClass(j___except_handler4_common@4264531,j___except_handler4_common@4264531)
+sameClass(j___matherr@4264536,j___matherr@4264536)
+sameClass(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264541,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264541)
+sameClass(j____getmainargs@4264546,j____getmainargs@4264546)
+sameClass(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264551,__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264551)
+sameClass(__stdcall lstrlenA(x)@4264556,__stdcall lstrlenA(x)@4264556)
+sameClass(__cdecl _RTC_Failure(*, int)@4264561,__cdecl _RTC_Failure(*, int)@4264561)
+sameClass(int std::ios_base::flags(void)const@4264566,int std::ios_base::flags(void)const@4264566)
+sameClass(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264571,__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264571)
+sameClass(j__DebuggerKnownHandle@4264576,j__DebuggerKnownHandle@4264576)
+sameClass(j__exit_0@4264581,j__exit_0@4264581)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264586,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264586)
+sameClass(j____dllonexit@4264591,j____dllonexit@4264591)
+sameClass(__stdcall FreeLibrary(x)@4264596,__stdcall FreeLibrary(x)@4264596)
+sameClass(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264601,__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264601)
+sameClass(j___initterm_e@4264606,j___initterm_e@4264606)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264611,std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264611)
+sameClass(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264616,int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264616)
+sameClass(_main@4265312,_main@4265312)
+sameClass(Cls1::func2(void)@4265952,Cls1::func2(void)@4265952)
+sameClass(virtual Cls2::func4(void)@4266224,virtual Cls2::func4(void)@4266224)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4267024,class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4267024)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4268432,std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4268432)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268784,std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268784)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4268992,std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4268992)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4269056,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4269056)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4269248,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4269248)
+sameClass(__cdecl operator delete(*)@4269418,__cdecl operator delete(*)@4269418)
+sameClass(* __cdecl operator new(unsigned int)@4269424,* __cdecl operator new(unsigned int)@4269424)
+sameClass(___CxxFrameHandler3@4269430,___CxxFrameHandler3@4269430)
+sameClass(__fastcall __security_check_cookie(x)@4269440,__fastcall __security_check_cookie(x)@4269440)
+sameClass(__fastcall _RTC_CheckStackVars(x, x)@4269520,__fastcall _RTC_CheckStackVars(x, x)@4269520)
+sameClass(__fastcall _RTC_AllocaHelper(x, x, x)@4269648,__fastcall _RTC_AllocaHelper(x, x, x)@4269648)
+sameClass(__fastcall _RTC_CheckStackVars2(x, x, x)@4269712,__fastcall _RTC_CheckStackVars2(x, x, x)@4269712)
+sameClass(__RTC_InitBase@4269984,__RTC_InitBase@4269984)
+sameClass(__RTC_Shutdown@4270048,__RTC_Shutdown@4270048)
+sameClass(class type_info & type_info::operator=(class type_info const &)@4270272,class type_info & type_info::operator=(class type_info const &)@4270272)
+sameClass(pre_c_init@4270304,pre_c_init@4270304)
+sameClass(pre_cpp_init@4270512,pre_cpp_init@4270512)
+sameClass(_mainCRTStartup@4270624,_mainCRTStartup@4270624)
+sameClass(__tmainCRTStartup@4270656,__tmainCRTStartup@4270656)
+sameClass(_NtCurrentTeb@4271392,_NtCurrentTeb@4271392)
+sameClass(check_managed_app@4271408,check_managed_app@4271408)
+sameClass(_DebuggerKnownHandle@4271984,_DebuggerKnownHandle@4271984)
+sameClass(DebuggerProbe@4272032,DebuggerProbe@4272032)
+sameClass(__cdecl _RTC_Failure(*, int)@4272208,__cdecl _RTC_Failure(*, int)@4272208)
+sameClass(failwithmessage@4272320,failwithmessage@4272320)
+sameClass(DebuggerRuntime@4272976,DebuggerRuntime@4272976)
+sameClass(__cdecl _RTC_StackFailure(*, char const *)@4273184,__cdecl _RTC_StackFailure(*, char const *)@4273184)
+sameClass(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4273504,__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4273504)
+sameClass(_getMemBlockDataString@4273888,_getMemBlockDataString@4273888)
+sameClass(__RTC_UninitUse@4274032,__RTC_UninitUse@4274032)
+sameClass(__RTC_NumErrors@4274336,__RTC_NumErrors@4274336)
+sameClass(__RTC_GetErrDesc@4274352,__RTC_GetErrDesc@4274352)
+sameClass(__RTC_SetErrorFunc@4274432,__RTC_SetErrorFunc@4274432)
+sameClass(__RTC_SetErrorFuncW@4274480,__RTC_SetErrorFuncW@4274480)
+sameClass(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4274528,int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4274528)
+sameClass(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4274544,int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4274544)
+sameClass(__CRT_RTC_INITW@4274550,__CRT_RTC_INITW@4274550)
+sameClass(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4274560,__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4274560)
+sameClass(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4274784,__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4274784)
+sameClass(ArrayUnwindFilter@4274960,ArrayUnwindFilter@4274960)
+sameClass(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4275024,long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4275024)
+sameClass(___CxxSetUnhandledExceptionFilter@4275152,___CxxSetUnhandledExceptionFilter@4275152)
+sameClass(__configthreadlocale@4275178,__configthreadlocale@4275178)
+sameClass(__setdefaultprecision@4275184,__setdefaultprecision@4275184)
+sameClass(__invoke_watson_if_error@4275264,__invoke_watson_if_error@4275264)
+sameClass(___setusermatherr@4275318,___setusermatherr@4275318)
+sameClass(__matherr@4275328,__matherr@4275328)
+sameClass(__setargv@4275344,__setargv@4275344)
+sameClass(__RTC_Initialize@4275360,__RTC_Initialize@4275360)
+sameClass(__RTC_Terminate@4275408,__RTC_Terminate@4275408)
+sameClass(___p__commode@4275456,___p__commode@4275456)
+sameClass(___p__fmode@4275462,___p__fmode@4275462)
+sameClass(__onexit@4275472,__onexit@4275472)
+sameClass($LN6_1@4275701,$LN6_1@4275701)
+sameClass(_atexit@4275808,_atexit@4275808)
+sameClass(__encode_pointer@4275844,__encode_pointer@4275844)
+sameClass(___set_app_type@4275850,___set_app_type@4275850)
+sameClass(__amsg_exit@4275856,__amsg_exit@4275856)
+sameClass(___getmainargs@4275862,___getmainargs@4275862)
+sameClass(___security_init_cookie@4275872,___security_init_cookie@4275872)
+sameClass(__exit@4276146,__exit@4276146)
+sameClass(__XcptFilter@4276152,__XcptFilter@4276152)
+sameClass(__cexit@4276158,__cexit@4276158)
+sameClass(_exit_0@4276164,_exit_0@4276164)
+sameClass(__CrtSetCheckCount@4276170,__CrtSetCheckCount@4276170)
+sameClass(__ValidateImageBase@4276176,__ValidateImageBase@4276176)
+sameClass(__FindPESection@4276304,__FindPESection@4276304)
+sameClass(__IsNonwritableInCurrentImage@4276464,__IsNonwritableInCurrentImage@4276464)
+sameClass(__CrtDbgReportW@4276806,__CrtDbgReportW@4276806)
+sameClass(__initterm@4276812,__initterm@4276812)
+sameClass(__initterm_e@4276818,__initterm_e@4276818)
+sameClass(__except_handler4@4276832,__except_handler4@4276832)
+sameClass(__crt_debugger_hook@4276884,__crt_debugger_hook@4276884)
+sameClass(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4276896,int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4276896)
+sameClass(GetPdbDll@4277776,GetPdbDll@4277776)
+sameClass(__cdecl terminate(void)@4278364,__cdecl terminate(void)@4278364)
+sameClass(virtual type_info::~type_info(void)@4278370,virtual type_info::~type_info(void)@4278370)
+sameClass(__controlfp_s@4278376,__controlfp_s@4278376)
+sameClass(__invoke_watson@4278382,__invoke_watson@4278382)
+sameClass(__unlock@4278388,__unlock@4278388)
+sameClass(___dllonexit@4278394,___dllonexit@4278394)
+sameClass(__lock@4278400,__lock@4278400)
+sameClass(__decode_pointer@4278406,__decode_pointer@4278406)
+sameClass(__except_handler4_common@4278412,__except_handler4_common@4278412)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4278418,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4278418)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4278424,class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4278424)
+sameClass(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4278430,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4278430)
+sameClass(int std::ios_base::width(int)@4278436,int std::ios_base::width(int)@4278436)
+sameClass(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4278442,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4278442)
+sameClass(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4278448,static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4278448)
+sameClass(static int __cdecl std::char_traits<char>::eof(void)@4278454,static int __cdecl std::char_traits<char>::eof(void)@4278454)
+sameClass(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4278460,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4278460)
+sameClass(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4278466,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4278466)
+sameClass(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4278472,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4278472)
+sameClass(int std::ios_base::flags(void)const@4278478,int std::ios_base::flags(void)const@4278478)
+sameClass(int std::ios_base::width(void)const@4278484,int std::ios_base::width(void)const@4278484)
+sameClass(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4278490,static unsigned int __cdecl std::char_traits<char>::length(char const *)@4278490)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4278496,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4278496)
+sameClass(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4278502,class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4278502)
+sameClass(bool std::ios_base::good(void)const@4278508,bool std::ios_base::good(void)const@4278508)
+sameClass(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4278514,std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4278514)
+sameClass(bool __cdecl std::uncaught_exception(void)@4278520,bool __cdecl std::uncaught_exception(void)@4278520)
+sameClass(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278526,std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278526)
+sameClass(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278532,std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278532)
+sameClass(__stdcall InterlockedExchange(x, x)@4278538,__stdcall InterlockedExchange(x, x)@4278538)
+sameClass(__stdcall Sleep(x)@4278544,__stdcall Sleep(x)@4278544)
+sameClass(__stdcall InterlockedCompareExchange(x, x, x)@4278550,__stdcall InterlockedCompareExchange(x, x, x)@4278550)
+sameClass(__stdcall TerminateProcess(x, x)@4278556,__stdcall TerminateProcess(x, x)@4278556)
+sameClass(__stdcall GetCurrentProcess()@4278562,__stdcall GetCurrentProcess()@4278562)
+sameClass(__stdcall UnhandledExceptionFilter(x)@4278568,__stdcall UnhandledExceptionFilter(x)@4278568)
+sameClass(__stdcall SetUnhandledExceptionFilter(x)@4278574,__stdcall SetUnhandledExceptionFilter(x)@4278574)
+sameClass(__stdcall IsDebuggerPresent()@4278580,__stdcall IsDebuggerPresent()@4278580)
+sameClass(__stdcall RaiseException(x, x, x, x)@4278586,__stdcall RaiseException(x, x, x, x)@4278586)
+sameClass(__stdcall DebugBreak()@4278592,__stdcall DebugBreak()@4278592)
+sameClass(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4278598,__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4278598)
+sameClass(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4278604,__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4278604)
+sameClass(__stdcall lstrlenA(x)@4278610,__stdcall lstrlenA(x)@4278610)
+sameClass(__stdcall GetProcAddress(x, x)@4278616,__stdcall GetProcAddress(x, x)@4278616)
+sameClass(__stdcall LoadLibraryA(x)@4278622,__stdcall LoadLibraryA(x)@4278622)
+sameClass(__stdcall QueryPerformanceCounter(x)@4278628,__stdcall QueryPerformanceCounter(x)@4278628)
+sameClass(__stdcall GetTickCount()@4278634,__stdcall GetTickCount()@4278634)
+sameClass(__stdcall GetCurrentThreadId()@4278640,__stdcall GetCurrentThreadId()@4278640)
+sameClass(__stdcall GetCurrentProcessId()@4278646,__stdcall GetCurrentProcessId()@4278646)
+sameClass(__stdcall GetSystemTimeAsFileTime(x)@4278652,__stdcall GetSystemTimeAsFileTime(x)@4278652)
+sameClass(__stdcall HeapFree(x, x, x)@4278658,__stdcall HeapFree(x, x, x)@4278658)
+sameClass(__stdcall HeapAlloc(x, x, x)@4278664,__stdcall HeapAlloc(x, x, x)@4278664)
+sameClass(__stdcall GetProcessHeap()@4278670,__stdcall GetProcessHeap()@4278670)
+sameClass(__stdcall GetModuleFileNameW(x, x, x)@4278676,__stdcall GetModuleFileNameW(x, x, x)@4278676)
+sameClass(__stdcall VirtualQuery(x, x, x)@4278682,__stdcall VirtualQuery(x, x, x)@4278682)
+sameClass(__stdcall FreeLibrary(x)@4278688,__stdcall FreeLibrary(x)@4278688)
+sameClass(__ehhandler$_main@4282588,__ehhandler$_main@4282588)
+sameClass(__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282648,__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282648)
+sameClass(__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282696,__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282696)
+sameClass(__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@4282744,__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@4282744)
+sameClass(__RTC_CheckEsp@4269472,__RTC_CheckEsp@4269472)
+sameClass(___report_gsfailure@4271632,___report_gsfailure@4271632)
+sameClass($LN8@4274686,$LN8@4274686)
+sameClass(__unwindfunclet$_main$0@4282560,__unwindfunclet$_main$0@4282560)
+sameClass(__unwindfunclet$_main$1@4282574,__unwindfunclet$_main$1@4282574)
+sameClass(__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@4282640,__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@4282640)
+sameClass(__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@4282688,__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@4282688)
+sameClass(__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@4282736,__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@4282736)
+sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226,type_info::type_info(class type_info const &)@4270080)
+sameClass(virtual Cls2::func3(void)@4263996,Cls2::Cls2(void)@4266816)
+sameClass(virtual Cls1::func1(void)@4264101,Cls1::Cls1(void)@4266608)
+sameClass(virtual Cls3::func1(void)@4264106,Cls3::Cls3(void)@4266080)
+sameClass(virtual Cls3::func3(void)@4264456,Cls3::Cls3(void)@4266080)
+sameClass(virtual Cls2::func4(void)@4264211,Cls3::Cls3(void)@4266080)
+sameClass(type_info::type_info(class type_info const &)@4270080,virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
+sameClass(Cls2::Cls2(void)@4266816,virtual Cls2::func3(void)@4263996)
+sameClass(Cls1::Cls1(void)@4266608,virtual Cls1::func1(void)@4264101)
+sameClass(Cls3::Cls3(void)@4266080,virtual Cls3::func1(void)@4264106)
+sameClass(Cls3::Cls3(void)@4266080,virtual Cls3::func3(void)@4264456)
+sameClass(Cls3::Cls3(void)@4266080,virtual Cls2::func4(void)@4264211)
+derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls2::`vftable'@4290684,12)
+derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls2::`vftable'@4290684,12)
+sameClass(virtual Cls2::func4(void)@4264211,virtual Cls3::func3(void)@4264456)
+sameClass(virtual Cls2::func4(void)@4264211,virtual Cls3::func1(void)@4264106)
+sameClass(virtual Cls3::func3(void)@4264456,virtual Cls2::func4(void)@4264211)
+sameClass(virtual Cls3::func3(void)@4264456,virtual Cls3::func1(void)@4264106)
+sameClass(virtual Cls3::func1(void)@4264106,virtual Cls2::func4(void)@4264211)
+sameClass(virtual Cls3::func1(void)@4264106,virtual Cls3::func3(void)@4264456)
+vftableBelongsToClass(const Cls2::`vftable'@4290684,0,Cls2::Cls2(void)@4266816)
+vftableBelongsToClass(const Cls3::`vftable'{for `Cls1'}@4290596,0,Cls3::Cls3(void)@4266080)
+objectInObject(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls2::`vftable'@4290684,12)
+objectInObject(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls2::`vftable'@4290684,12)
+constructor(Cls3::Cls3(void)@4266080)
+constructor(Cls1::Cls1(void)@4266608)
+constructor(Cls2::Cls2(void)@4266816)
+constructor(type_info::type_info(class type_info const &)@4270080)
+sameClass(const Cls3::`vftable'{for `Cls1'}@4290596,Cls3::Cls3(void)@4266080)
+sameClass(const Cls3::`vftable'{for `Cls2'}@4290580,Cls3::Cls3(void)@4266080)
+sameClass(const Cls2::`vftable'@4290684,Cls2::Cls2(void)@4266816)
+sameClass(Cls3::Cls3(void)@4266080,const Cls3::`vftable'{for `Cls1'}@4290596)
+sameClass(virtual Cls3::func1(void)@4264106,const Cls3::`vftable'{for `Cls1'}@4290596)
+sameClass(virtual Cls3::func3(void)@4264456,const Cls3::`vftable'{for `Cls1'}@4290596)
+sameClass(virtual Cls2::func4(void)@4264211,const Cls3::`vftable'{for `Cls1'}@4290596)
+sameClass(virtual Cls1::func1(void)@4264101,const Cls1::`vftable'@4290656)
+sameClass(Cls2::Cls2(void)@4266816,const Cls2::`vftable'@4290684)
+sameClass(virtual Cls2::func3(void)@4263996,const Cls2::`vftable'@4290684)
+sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226,const type_info::`vftable'@4290716)
+sameClass(virtual Cls2::func4(void)@4264211,const Cls3::`vftable'{for `Cls2'}@4290580)
+sameClass(virtual Cls3::func3(void)@4264456,const Cls3::`vftable'{for `Cls2'}@4290580)
+sameClass(virtual Cls3::func1(void)@4264106,const Cls3::`vftable'{for `Cls2'}@4290580)
+sameClass(Cls3::Cls3(void)@4266080,const Cls3::`vftable'{for `Cls2'}@4290580)
+sameClass(const type_info::`vftable'@4290716,virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
+sameClass(const Cls2::`vftable'@4290684,virtual Cls2::func3(void)@4263996)
+sameClass(const Cls1::`vftable'@4290656,virtual Cls1::func1(void)@4264101)
+sameClass(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls2::func4(void)@4264211)
+sameClass(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls3::func3(void)@4264456)
+sameClass(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls3::func1(void)@4264106)
+sameClass(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls2::func4(void)@4264211)
+sameClass(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls3::func3(void)@4264456)
+sameClass(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls3::func1(void)@4264106)
+derivedClass(Cls3::Cls3(void)@4266080,Cls1::Cls1(void)@4266608,0)
+derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,Cls2::Cls2(void)@4266816,12)
+derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,Cls2::Cls2(void)@4266816,12)
+derivedClass(Cls3::Cls3(void)@4266080,Cls2::Cls2(void)@4266816,12)
+derivedClass(Cls3::Cls3(void)@4266080,const Cls1::`vftable'@4290656,0)
+derivedClass(Cls3::Cls3(void)@4266080,const Cls2::`vftable'@4290684,12)
+vftableBelongsToClass(const Cls3::`vftable'{for `Cls2'}@4290580,12,Cls3::Cls3(void)@4266080)
+objectInObject(Cls3::Cls3(void)@4266080,const Cls2::`vftable'@4290684,12)
+objectInObject(Cls3::Cls3(void)@4266080,const Cls1::`vftable'@4290656,0)
+objectInObject(Cls3::Cls3(void)@4266080,Cls2::Cls2(void)@4266816,12)
+objectInObject(const Cls3::`vftable'{for `Cls2'}@4290580,Cls2::Cls2(void)@4266816,12)
+objectInObject(const Cls3::`vftable'{for `Cls1'}@4290596,Cls2::Cls2(void)@4266816,12)
+objectInObject(Cls3::Cls3(void)@4266080,Cls1::Cls1(void)@4266608,0)
+derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls2::func3(void)@4263996,12)
+derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls2::func3(void)@4263996,12)
+derivedClass(Cls3::Cls3(void)@4266080,virtual Cls2::func3(void)@4263996,12)
+derivedClass(virtual Cls3::func1(void)@4264106,virtual Cls2::func3(void)@4263996,12)
+derivedClass(virtual Cls3::func3(void)@4264456,virtual Cls2::func3(void)@4263996,12)
+derivedClass(virtual Cls2::func4(void)@4264211,virtual Cls2::func3(void)@4263996,12)
+derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls1::func1(void)@4264101,0)
+derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls1::func1(void)@4264101,0)
+derivedClass(Cls3::Cls3(void)@4266080,virtual Cls1::func1(void)@4264101,0)
+derivedClass(virtual Cls3::func1(void)@4264106,virtual Cls1::func1(void)@4264101,0)
+derivedClass(virtual Cls3::func3(void)@4264456,virtual Cls1::func1(void)@4264101,0)
+derivedClass(virtual Cls2::func4(void)@4264211,virtual Cls1::func1(void)@4264101,0)
+derivedClass(virtual Cls2::func4(void)@4264211,const Cls1::`vftable'@4290656,0)
+derivedClass(virtual Cls2::func4(void)@4264211,Cls1::Cls1(void)@4266608,0)
+derivedClass(virtual Cls2::func4(void)@4264211,const Cls2::`vftable'@4290684,12)
+derivedClass(virtual Cls2::func4(void)@4264211,Cls2::Cls2(void)@4266816,12)
+derivedClass(virtual Cls3::func3(void)@4264456,const Cls1::`vftable'@4290656,0)
+derivedClass(virtual Cls3::func3(void)@4264456,Cls1::Cls1(void)@4266608,0)
+derivedClass(virtual Cls3::func3(void)@4264456,const Cls2::`vftable'@4290684,12)
+derivedClass(virtual Cls3::func3(void)@4264456,Cls2::Cls2(void)@4266816,12)
+derivedClass(virtual Cls3::func1(void)@4264106,const Cls1::`vftable'@4290656,0)
+derivedClass(virtual Cls3::func1(void)@4264106,Cls1::Cls1(void)@4266608,0)
+derivedClass(virtual Cls3::func1(void)@4264106,const Cls2::`vftable'@4290684,12)
+derivedClass(virtual Cls3::func1(void)@4264106,Cls2::Cls2(void)@4266816,12)
+objectInObject(virtual Cls3::func1(void)@4264106,Cls2::Cls2(void)@4266816,12)
+objectInObject(virtual Cls3::func1(void)@4264106,const Cls2::`vftable'@4290684,12)
+objectInObject(virtual Cls3::func1(void)@4264106,Cls1::Cls1(void)@4266608,0)
+objectInObject(virtual Cls3::func1(void)@4264106,const Cls1::`vftable'@4290656,0)
+objectInObject(virtual Cls3::func3(void)@4264456,Cls2::Cls2(void)@4266816,12)
+objectInObject(virtual Cls3::func3(void)@4264456,const Cls2::`vftable'@4290684,12)
+objectInObject(virtual Cls3::func3(void)@4264456,Cls1::Cls1(void)@4266608,0)
+objectInObject(virtual Cls3::func3(void)@4264456,const Cls1::`vftable'@4290656,0)
+objectInObject(virtual Cls2::func4(void)@4264211,Cls2::Cls2(void)@4266816,12)
+objectInObject(virtual Cls2::func4(void)@4264211,const Cls2::`vftable'@4290684,12)
+objectInObject(virtual Cls2::func4(void)@4264211,Cls1::Cls1(void)@4266608,0)
+objectInObject(virtual Cls2::func4(void)@4264211,const Cls1::`vftable'@4290656,0)
+objectInObject(virtual Cls2::func4(void)@4264211,virtual Cls1::func1(void)@4264101,0)
+objectInObject(virtual Cls3::func3(void)@4264456,virtual Cls1::func1(void)@4264101,0)
+objectInObject(virtual Cls3::func1(void)@4264106,virtual Cls1::func1(void)@4264101,0)
+objectInObject(Cls3::Cls3(void)@4266080,virtual Cls1::func1(void)@4264101,0)
+objectInObject(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls1::func1(void)@4264101,0)
+objectInObject(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls1::func1(void)@4264101,0)
+objectInObject(virtual Cls2::func4(void)@4264211,virtual Cls2::func3(void)@4263996,12)
+objectInObject(virtual Cls3::func3(void)@4264456,virtual Cls2::func3(void)@4263996,12)
+objectInObject(virtual Cls3::func1(void)@4264106,virtual Cls2::func3(void)@4263996,12)
+objectInObject(Cls3::Cls3(void)@4266080,virtual Cls2::func3(void)@4263996,12)
+objectInObject(const Cls3::`vftable'{for `Cls2'}@4290580,virtual Cls2::func3(void)@4263996,12)
+objectInObject(const Cls3::`vftable'{for `Cls1'}@4290596,virtual Cls2::func3(void)@4263996,12)
+vfTableSize(const type_info::`vftable'@4290716,4)
+vfTableSize(const Cls1::`vftable'@4290656,4)
+vfTableSize(const Cls3::`vftable'{for `Cls1'}@4290596,4)
+OPTIMUM FOUND
 
-TIME LIMIT   : 1
-Models       : 0+
+Models       : 4
+  Optimum    : yes
+Optimization : -65 -36 -24 -309 -28
 Calls        : 1
-Time         : 30.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 29.626s
-warning: examples/ooa/ooex_vs2008/Debug/oo.lp exited 1
+Time         : 1.014s (Solving: 0.05s 1st Model: 0.01s Unsat: 0.01s)
+CPU Time     : 1.013s
+
+Choices      : 3310     (Domain: 3226)
+Conflicts    : 70       (Analyzed: 63)
+Restarts     : 0       
+Model-Level  : 220.2   
+Problems     : 7        (Average Length: 0.00 Splits: 0)
+Lemmas       : 195      (Deleted: 0)
+  Binary     : 66       (Ratio:  33.85%)
+  Ternary    : 11       (Ratio:   5.64%)
+  Conflict   : 63       (Average Length:   38.1 Ratio:  32.31%) 
+  Loop       : 132      (Average Length:   49.3 Ratio:  67.69%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 63       (Average: 47.92 Max: 333 Sum:   3019)
+  Executed   : 59       (Average: 47.86 Max: 333 Sum:   3015 Ratio:  99.87%)
+  Bounded    : 4        (Average:  1.00 Max:   1 Sum:      4 Ratio:   0.13%)
+
+Rules        : 1348043  (Original: 1347677)
+  Choice     : 423     
+  Minimize   : 5       
+  Heuristic  : 292      (Original: 330)
+Atoms        : 200963  
+Bodies       : 142908   (Original: 143002)
+  Count      : 0        (Original: 400)
+Equivalences : 406438   (Atom=Atom: 77727 Body=Body: 8755 Other: 319956)
+Tight        : No       (SCCs: 34 Non-Hcfs: 0 Nodes: 18092 Gammas: 0)
+Variables    : 111823   (Eliminated:    0 Frozen: 17657)
+Constraints  : 1088920  (Binary:  90.5% Ternary:   6.4% Other:   3.1%)
+
+class 0x411005:
+  0x411005  j___setdefaultprecision
+class 0x41100a:
+  0x41100a  j___setargv
+class 0x41100f:
+  0x41100f  public: bool __thiscall std::ios_base::good(void)const
+class 0x411014:
+  0x411014  __stdcall DebugBreak()
+class 0x411019:
+  0x411019  j___RTC_GetErrDesc
+class 0x41101e:
+  0x41101e  j____p__fmode
+class 0x411023:
+  0x411023  __fastcall __security_check_cookie(x)
+class 0x411028:
+  0x411028  __stdcall IsDebuggerPresent()
+class 0x41102d:
+  0x41102d  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::operator bool(void)const
+class 0x411032:
+  0x411032  private: class type_info & __thiscall type_info::operator=(class type_info const &)
+class 0x411037:
+  0x411037  j___RTC_Terminate
+class 0x41103c:
+  0x41103c  public: virtual void __thiscall Cls2::func3(void)
+  0x411b40  public: __thiscall Cls2::Cls2(void)
+  vftable 0x41787c  const Cls2::`vftable'
+class 0x411041:
+  0x411041  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
+class 0x411046:
+  0x411046  __fastcall _RTC_AllocaHelper(x, x, x)
+class 0x41104b:
+  0x41104b  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
+class 0x411050:
+  0x411050  j___RTC_NumErrors
+class 0x411055:
+  0x411055  public: class std::basic_streambuf<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::rdbuf(void)const
+class 0x41105a:
+  0x41105a  j____setusermatherr
+class 0x41105f:
+  0x41105f  __stdcall Sleep(x)
+class 0x411064:
+  0x411064  public: virtual __thiscall type_info::~type_info(void)
+class 0x411069:
+  0x411069  public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::setstate(int, bool)
+class 0x41106e:
+  0x41106e  __stdcall GetModuleFileNameW(x, x, x)
+class 0x411073:
+  0x411073  j____security_init_cookie
+class 0x411078:
+  0x411078  __stdcall SetUnhandledExceptionFilter(x)
+class 0x41107d:
+  0x41107d  j___cexit
+class 0x411082:
+  0x411082  j___CrtDbgReportW
+class 0x411087:
+  0x411087  __stdcall VirtualQuery(x, x, x)
+class 0x41108c:
+  0x41108c  j__atexit
+class 0x411091:
+  0x411091  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
+class 0x411096:
+  0x411096  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::endl(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x41109b:
+  0x41109b  j___RTC_SetErrorType
+class 0x4110a0:
+  0x4110a0  j___except_handler4
+class 0x4110a5:
+  0x4110a5  public: virtual void __thiscall Cls1::func1(void)
+  0x411a70  public: __thiscall Cls1::Cls1(void)
+  vftable 0x417860  const Cls1::`vftable'
+class 0x4110aa:
+  0x4110aa  public: virtual void __thiscall Cls3::func1(void)
+  0x411113  public: virtual void __thiscall Cls2::func4(void)
+  0x411208  public: virtual void __thiscall Cls3::func3(void)
+  0x411860  public: __thiscall Cls3::Cls3(void)
+  vftable 0x417814  const Cls3::`vftable'{for `Cls2'}
+  vftable 0x417824  const Cls3::`vftable'{for `Cls1'}
+class 0x4110af:
+  0x4110af  j___lock
+class 0x4110b4:
+  0x4110b4  public: void __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::_Unlock(void)
+class 0x4110b9:
+  0x4110b9  __stdcall GetProcAddress(x, x)
+class 0x4110be:
+  0x4110be  public: static unsigned int __cdecl std::char_traits<char>::length(char const *)
+class 0x4110c3:
+  0x4110c3  __fastcall _RTC_CheckStackVars(x, x)
+class 0x4110c8:
+  0x4110c8  void __cdecl operator delete(void *)
+class 0x4110cd:
+  0x4110cd  public: static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)
+class 0x4110d2:
+  0x4110d2  public: virtual __thiscall type_info::~type_info(void)
+class 0x4110d7:
+  0x4110d7  bool __cdecl std::uncaught_exception(void)
+class 0x4110e1:
+  0x4110e1  void __cdecl terminate(void)
+class 0x4110e6:
+  0x4110e6  j___exit
+class 0x4110eb:
+  0x4110eb  __stdcall GetCurrentThreadId()
+class 0x4110f0:
+  0x4110f0  j___initterm
+class 0x4110f5:
+  0x4110f5  public: class std::basic_ostream<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::tie(void)const
+class 0x4110fa:
+  0x4110fa  public: int __thiscall std::ios_base::width(int)
+class 0x4110ff:
+  0x4110ff  __stdcall GetCurrentProcess()
+class 0x411104:
+  0x411104  public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputc(char)
+class 0x411109:
+  0x411109  j___encode_pointer
+class 0x41110e:
+  0x41110e  public: int __thiscall std::ios_base::width(void)const
+class 0x411118:
+  0x411118  j___RTC_UninitUse
+class 0x41111d:
+  0x41111d  j___RTC_Shutdown
+class 0x411122:
+  0x411122  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
+  0x412800  private: __thiscall type_info::type_info(class type_info const &)
+  vftable 0x41789c  const type_info::`vftable'
+class 0x411127:
+  0x411127  j___FindPESection
+class 0x41112c:
+  0x41112c  j___configthreadlocale
+class 0x411131:
+  0x411131  j___RTC_InitBase
+class 0x411136:
+  0x411136  public: __thiscall Cls2::Cls2(void)
+class 0x41113b:
+  0x41113b  public: __thiscall Cls3::Cls3(void)
+class 0x411140:
+  0x411140  public: __thiscall Cls1::Cls1(void)
+class 0x411145:
+  0x411145  void __cdecl _RTC_StackFailure(void *, char const *)
+class 0x41114a:
+  0x41114a  __stdcall LoadLibraryA(x)
+class 0x41114f:
+  0x41114f  __stdcall RaiseException(x, x, x, x)
+class 0x411154:
+  0x411154  j___crt_debugger_hook
+class 0x411159:
+  0x411159  j___ValidateImageBase
+class 0x41115e:
+  0x41115e  __stdcall InterlockedCompareExchange(x, x, x)
+class 0x411163:
+  0x411163  public: void __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::_Lock(void)
+class 0x411168:
+  0x411168  public: void __thiscall Cls1::func2(void)
+class 0x41116d:
+  0x41116d  public: static int __cdecl std::char_traits<char>::eof(void)
+class 0x411172:
+  0x411172  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::~sentry(void)
+class 0x411177:
+  0x411177  __stdcall GetProcessHeap()
+class 0x41117c:
+  0x41117c  j___RTC_SetErrorFuncW
+class 0x411181:
+  0x411181  j___onexit
+class 0x411186:
+  0x411186  j__NtCurrentTeb
+class 0x41118b:
+  0x41118b  __stdcall HeapFree(x, x, x)
+class 0x411190:
+  0x411190  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::operator<<<struct std::char_traits<char>>(class std::basic_ostream<char, struct std::char_traits<char>> &, char const *)
+class 0x411195:
+  0x411195  j___RTC_SetErrorFunc
+class 0x41119a:
+  0x41119a  j___invoke_watson_if_error
+class 0x41119f:
+  0x41119f  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(class std::basic_ostream<char, struct std::char_traits<char>> & (__cdecl *)(class std::basic_ostream<char, struct std::char_traits<char>> &))
+class 0x4111a4:
+  0x4111a4  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Sentry_base::~_Sentry_base(void)
+class 0x4111a9:
+  0x4111a9  __stdcall TerminateProcess(x, x)
+class 0x4111ae:
+  0x4111ae  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::flush(void)
+class 0x4111b3:
+  0x4111b3  start
+class 0x4111b8:
+  0x4111b8  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x4111bd:
+  0x4111bd  j____CxxSetUnhandledExceptionFilter
+class 0x4111c2:
+  0x4111c2  __stdcall QueryPerformanceCounter(x)
+class 0x4111c7:
+  0x4111c7  j____p__commode
+class 0x4111cc:
+  0x4111cc  j___unlock
+class 0x4111d1:
+  0x4111d1  __stdcall GetCurrentProcessId()
+class 0x4111d6:
+  0x4111d6  __fastcall _RTC_CheckStackVars2(x, x, x)
+class 0x4111db:
+  0x4111db  j____set_app_type
+class 0x4111e0:
+  0x4111e0  j___RTC_CheckEsp
+class 0x4111e5:
+  0x4111e5  j__main
+class 0x4111ea:
+  0x4111ea  j___RTC_Initialize
+class 0x4111ef:
+  0x4111ef  j___controlfp_s
+class 0x4111f4:
+  0x4111f4  __stdcall GetSystemTimeAsFileTime(x)
+class 0x4111f9:
+  0x4111f9  j___decode_pointer
+class 0x4111fe:
+  0x4111fe  j___invoke_watson
+class 0x411203:
+  0x411203  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
+class 0x41120d:
+  0x41120d  j___CRT_RTC_INITW
+class 0x411212:
+  0x411212  __stdcall GetTickCount()
+class 0x411217:
+  0x411217  public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputn(char const *, int)
+class 0x41121c:
+  0x41121c  j___IsNonwritableInCurrentImage
+class 0x411221:
+  0x411221  j____CxxFrameHandler3
+class 0x411226:
+  0x411226  __stdcall HeapAlloc(x, x, x)
+class 0x41122b:
+  0x41122b  j___amsg_exit
+class 0x411230:
+  0x411230  void * __cdecl operator new(unsigned int)
+class 0x411235:
+  0x411235  j___XcptFilter
+class 0x41123a:
+  0x41123a  j___CrtSetCheckCount
+class 0x41123f:
+  0x41123f  __stdcall InterlockedExchange(x, x)
+class 0x411244:
+  0x411244  __stdcall UnhandledExceptionFilter(x)
+class 0x411249:
+  0x411249  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::sentry(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x41124e:
+  0x41124e  private: __thiscall type_info::type_info(class type_info const &)
+class 0x411253:
+  0x411253  j___except_handler4_common
+class 0x411258:
+  0x411258  j___matherr
+class 0x41125d:
+  0x41125d  public: char __thiscall std::basic_ios<char, struct std::char_traits<char>>::fill(void)const
+class 0x411262:
+  0x411262  j____getmainargs
+class 0x411267:
+  0x411267  void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x41126c:
+  0x41126c  __stdcall lstrlenA(x)
+class 0x411271:
+  0x411271  void __cdecl _RTC_Failure(void *, int)
+class 0x411276:
+  0x411276  public: int __thiscall std::ios_base::flags(void)const
+class 0x41127b:
+  0x41127b  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
+class 0x411280:
+  0x411280  j__DebuggerKnownHandle
+class 0x411285:
+  0x411285  j__exit_0
+class 0x41128a:
+  0x41128a  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x41128f:
+  0x41128f  j____dllonexit
+class 0x411294:
+  0x411294  __stdcall FreeLibrary(x)
+class 0x411299:
+  0x411299  void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x41129e:
+  0x41129e  j___initterm_e
+class 0x4112a3:
+  0x4112a3  public: void __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Osfx(void)
+class 0x4112a8:
+  0x4112a8  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
+class 0x411560:
+  0x411560  _main
+class 0x4117e0:
+  0x4117e0  public: void __thiscall Cls1::func2(void)
+class 0x4118f0:
+  0x4118f0  public: virtual void __thiscall Cls2::func4(void)
+class 0x411970:
+  0x411970  public: virtual void __thiscall Cls3::func1(void)
+class 0x4119f0:
+  0x4119f0  public: virtual void __thiscall Cls3::func3(void)
+class 0x411ac0:
+  0x411ac0  public: virtual void __thiscall Cls1::func1(void)
+class 0x411b90:
+  0x411b90  public: virtual void __thiscall Cls2::func3(void)
+class 0x411c10:
+  0x411c10  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::operator<<<struct std::char_traits<char>>(class std::basic_ostream<char, struct std::char_traits<char>> &, char const *)
+class 0x412190:
+  0x412190  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::sentry(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x4122f0:
+  0x4122f0  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::~sentry(void)
+class 0x4123c0:
+  0x4123c0  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::sentry::operator bool(void)const
+class 0x412400:
+  0x412400  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x4124c0:
+  0x4124c0  public: __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Sentry_base::~_Sentry_base(void)
+class 0x41256a:
+  0x41256a  void __cdecl operator delete(void *)
+class 0x412570:
+  0x412570  void * __cdecl operator new(unsigned int)
+class 0x412576:
+  0x412576  ___CxxFrameHandler3
+class 0x412580:
+  0x412580  __fastcall __security_check_cookie(x)
+class 0x4125a0:
+  0x4125a0  __RTC_CheckEsp
+class 0x4125d0:
+  0x4125d0  __fastcall _RTC_CheckStackVars(x, x)
+class 0x412650:
+  0x412650  __fastcall _RTC_AllocaHelper(x, x, x)
+class 0x412690:
+  0x412690  __fastcall _RTC_CheckStackVars2(x, x, x)
+class 0x4127a0:
+  0x4127a0  __RTC_InitBase
+class 0x4127e0:
+  0x4127e0  __RTC_Shutdown
+class 0x412830:
+  0x412830  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
+class 0x4128c0:
+  0x4128c0  private: class type_info & __thiscall type_info::operator=(class type_info const &)
+class 0x4128e0:
+  0x4128e0  pre_c_init
+class 0x4129b0:
+  0x4129b0  pre_cpp_init
+class 0x412a20:
+  0x412a20  _mainCRTStartup
+class 0x412a40:
+  0x412a40  __tmainCRTStartup
+class 0x412d20:
+  0x412d20  _NtCurrentTeb
+class 0x412d30:
+  0x412d30  check_managed_app
+class 0x412e10:
+  0x412e10  ___report_gsfailure
+class 0x412f70:
+  0x412f70  _DebuggerKnownHandle
+class 0x412fa0:
+  0x412fa0  DebuggerProbe
+class 0x413050:
+  0x413050  void __cdecl _RTC_Failure(void *, int)
+class 0x4130c0:
+  0x4130c0  failwithmessage
+class 0x413350:
+  0x413350  DebuggerRuntime
+class 0x413420:
+  0x413420  void __cdecl _RTC_StackFailure(void *, char const *)
+class 0x413560:
+  0x413560  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
+class 0x4136e0:
+  0x4136e0  _getMemBlockDataString
+class 0x413770:
+  0x413770  __RTC_UninitUse
+class 0x4138a0:
+  0x4138a0  __RTC_NumErrors
+class 0x4138b0:
+  0x4138b0  __RTC_GetErrDesc
+class 0x413900:
+  0x413900  __RTC_SetErrorFunc
+class 0x413930:
+  0x413930  __RTC_SetErrorFuncW
+class 0x413960:
+  0x413960  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
+class 0x413970:
+  0x413970  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
+class 0x413976:
+  0x413976  __CRT_RTC_INITW
+class 0x413980:
+  0x413980  void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x4139fe:
+  0x4139fe  $LN8
+class 0x413a60:
+  0x413a60  void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *))
+class 0x413b10:
+  0x413b10  ArrayUnwindFilter
+class 0x413b50:
+  0x413b50  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+class 0x413bd0:
+  0x413bd0  ___CxxSetUnhandledExceptionFilter
+class 0x413bea:
+  0x413bea  __configthreadlocale
+class 0x413bf0:
+  0x413bf0  __setdefaultprecision
+class 0x413c40:
+  0x413c40  __invoke_watson_if_error
+class 0x413c76:
+  0x413c76  ___setusermatherr
+class 0x413c80:
+  0x413c80  __matherr
+class 0x413c90:
+  0x413c90  __setargv
+class 0x413ca0:
+  0x413ca0  __RTC_Initialize
+class 0x413cd0:
+  0x413cd0  __RTC_Terminate
+class 0x413d00:
+  0x413d00  ___p__commode
+class 0x413d06:
+  0x413d06  ___p__fmode
+class 0x413d10:
+  0x413d10  __onexit
+class 0x413df5:
+  0x413df5  $LN6_1
+class 0x413e60:
+  0x413e60  _atexit
+class 0x413e84:
+  0x413e84  __encode_pointer
+class 0x413e8a:
+  0x413e8a  ___set_app_type
+class 0x413e90:
+  0x413e90  __amsg_exit
+class 0x413e96:
+  0x413e96  ___getmainargs
+class 0x413ea0:
+  0x413ea0  ___security_init_cookie
+class 0x413fb2:
+  0x413fb2  __exit
+class 0x413fb8:
+  0x413fb8  __XcptFilter
+class 0x413fbe:
+  0x413fbe  __cexit
+class 0x413fc4:
+  0x413fc4  _exit_0
+class 0x413fca:
+  0x413fca  __CrtSetCheckCount
+class 0x413fd0:
+  0x413fd0  __ValidateImageBase
+class 0x414050:
+  0x414050  __FindPESection
+class 0x4140f0:
+  0x4140f0  __IsNonwritableInCurrentImage
+class 0x414246:
+  0x414246  __CrtDbgReportW
+class 0x41424c:
+  0x41424c  __initterm
+class 0x414252:
+  0x414252  __initterm_e
+class 0x414260:
+  0x414260  __except_handler4
+class 0x414294:
+  0x414294  __crt_debugger_hook
+class 0x4142a0:
+  0x4142a0  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
+class 0x414610:
+  0x414610  GetPdbDll
+class 0x41485c:
+  0x41485c  void __cdecl terminate(void)
+class 0x414862:
+  0x414862  public: virtual __thiscall type_info::~type_info(void)
+class 0x414868:
+  0x414868  __controlfp_s
+class 0x41486e:
+  0x41486e  __invoke_watson
+class 0x414874:
+  0x414874  __unlock
+class 0x41487a:
+  0x41487a  ___dllonexit
+class 0x414880:
+  0x414880  __lock
+class 0x414886:
+  0x414886  __decode_pointer
+class 0x41488c:
+  0x41488c  __except_handler4_common
+class 0x414892:
+  0x414892  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(class std::basic_ostream<char, struct std::char_traits<char>> & (__cdecl *)(class std::basic_ostream<char, struct std::char_traits<char>> &))
+class 0x414898:
+  0x414898  class std::basic_ostream<char, struct std::char_traits<char>> & __cdecl std::endl(class std::basic_ostream<char, struct std::char_traits<char>> &)
+class 0x41489e:
+  0x41489e  public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::setstate(int, bool)
+class 0x4148a4:
+  0x4148a4  public: int __thiscall std::ios_base::width(int)
+class 0x4148aa:
+  0x4148aa  public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputn(char const *, int)
+class 0x4148b0:
+  0x4148b0  public: static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)
+class 0x4148b6:
+  0x4148b6  public: static int __cdecl std::char_traits<char>::eof(void)
+class 0x4148bc:
+  0x4148bc  public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputc(char)
+class 0x4148c2:
+  0x4148c2  public: class std::basic_streambuf<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::rdbuf(void)const
+class 0x4148c8:
+  0x4148c8  public: char __thiscall std::basic_ios<char, struct std::char_traits<char>>::fill(void)const
+class 0x4148ce:
+  0x4148ce  public: int __thiscall std::ios_base::flags(void)const
+class 0x4148d4:
+  0x4148d4  public: int __thiscall std::ios_base::width(void)const
+class 0x4148da:
+  0x4148da  public: static unsigned int __cdecl std::char_traits<char>::length(char const *)
+class 0x4148e0:
+  0x4148e0  public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::flush(void)
+class 0x4148e6:
+  0x4148e6  public: class std::basic_ostream<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::tie(void)const
+class 0x4148ec:
+  0x4148ec  public: bool __thiscall std::ios_base::good(void)const
+class 0x4148f2:
+  0x4148f2  public: void __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Osfx(void)
+class 0x4148f8:
+  0x4148f8  bool __cdecl std::uncaught_exception(void)
+class 0x4148fe:
+  0x4148fe  public: void __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::_Lock(void)
+class 0x414904:
+  0x414904  public: void __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::_Unlock(void)
+class 0x41490a:
+  0x41490a  __stdcall InterlockedExchange(x, x)
+class 0x414910:
+  0x414910  __stdcall Sleep(x)
+class 0x414916:
+  0x414916  __stdcall InterlockedCompareExchange(x, x, x)
+class 0x41491c:
+  0x41491c  __stdcall TerminateProcess(x, x)
+class 0x414922:
+  0x414922  __stdcall GetCurrentProcess()
+class 0x414928:
+  0x414928  __stdcall UnhandledExceptionFilter(x)
+class 0x41492e:
+  0x41492e  __stdcall SetUnhandledExceptionFilter(x)
+class 0x414934:
+  0x414934  __stdcall IsDebuggerPresent()
+class 0x41493a:
+  0x41493a  __stdcall RaiseException(x, x, x, x)
+class 0x414940:
+  0x414940  __stdcall DebugBreak()
+class 0x414946:
+  0x414946  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
+class 0x41494c:
+  0x41494c  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
+class 0x414952:
+  0x414952  __stdcall lstrlenA(x)
+class 0x414958:
+  0x414958  __stdcall GetProcAddress(x, x)
+class 0x41495e:
+  0x41495e  __stdcall LoadLibraryA(x)
+class 0x414964:
+  0x414964  __stdcall QueryPerformanceCounter(x)
+class 0x41496a:
+  0x41496a  __stdcall GetTickCount()
+class 0x414970:
+  0x414970  __stdcall GetCurrentThreadId()
+class 0x414976:
+  0x414976  __stdcall GetCurrentProcessId()
+class 0x41497c:
+  0x41497c  __stdcall GetSystemTimeAsFileTime(x)
+class 0x414982:
+  0x414982  __stdcall HeapFree(x, x, x)
+class 0x414988:
+  0x414988  __stdcall HeapAlloc(x, x, x)
+class 0x41498e:
+  0x41498e  __stdcall GetProcessHeap()
+class 0x414994:
+  0x414994  __stdcall GetModuleFileNameW(x, x, x)
+class 0x41499a:
+  0x41499a  __stdcall VirtualQuery(x, x, x)
+class 0x4149a0:
+  0x4149a0  __stdcall FreeLibrary(x)
+class 0x4158c0:
+  0x4158c0  __unwindfunclet$_main$0
+class 0x4158ce:
+  0x4158ce  __unwindfunclet$_main$1
+class 0x4158dc:
+  0x4158dc  __ehhandler$_main
+class 0x415910:
+  0x415910  __unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2
+class 0x415918:
+  0x415918  __ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
+class 0x415940:
+  0x415940  __unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0
+class 0x415948:
+  0x415948  __ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
+class 0x415970:
+  0x415970  __unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0
+class 0x415978:
+  0x415978  __ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+class 0x41b2f8:
+  0x41b2f8  __declspec(dllimport) public: void __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::_Unlock(void)
+  0x41b2fc  __declspec(dllimport) public: void __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::_Lock(void)
+  0x41b324  __declspec(dllimport) public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputn(char const *, int)
+  0x41b330  __declspec(dllimport) public: int __thiscall std::basic_streambuf<char, struct std::char_traits<char>>::sputc(char)
+class 0x41b304:
+  0x41b304  __declspec(dllimport) public: void __thiscall std::basic_ostream<char, struct std::char_traits<char>>::_Osfx(void)
+  0x41b310  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::operator<<(class std::basic_ostream<char, struct std::char_traits<char>> & (__cdecl *)(class std::basic_ostream<char, struct std::char_traits<char>> &))
+  0x41b348  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> & __thiscall std::basic_ostream<char, struct std::char_traits<char>>::flush(void)
+class 0x41b308:
+  0x41b308  __declspec(dllimport) public: bool __thiscall std::ios_base::good(void)const
+  0x41b320  __declspec(dllimport) public: int __thiscall std::ios_base::width(int)
+  0x41b33c  __declspec(dllimport) public: int __thiscall std::ios_base::flags(void)const
+  0x41b340  __declspec(dllimport) public: int __thiscall std::ios_base::width(void)const
+class 0x41b30c:
+  0x41b30c  __declspec(dllimport) public: class std::basic_ostream<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::tie(void)const
+  0x41b31c  __declspec(dllimport) public: void __thiscall std::basic_ios<char, struct std::char_traits<char>>::setstate(int, bool)
+  0x41b334  __declspec(dllimport) public: class std::basic_streambuf<char, struct std::char_traits<char>> * __thiscall std::basic_ios<char, struct std::char_traits<char>>::rdbuf(void)const
+  0x41b338  __declspec(dllimport) public: char __thiscall std::basic_ios<char, struct std::char_traits<char>>::fill(void)const
+class 0x41b328:
+  0x41b328  __declspec(dllimport) public: static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)
+  0x41b32c  __declspec(dllimport) public: static int __cdecl std::char_traits<char>::eof(void)
+  0x41b344  __declspec(dllimport) public: static unsigned int __cdecl std::char_traits<char>::length(char const *)
+class 0x41b3a8:
+  0x41b3a8  __declspec(dllimport) public: void __thiscall type_info::_type_info_dtor_internal_method(void)

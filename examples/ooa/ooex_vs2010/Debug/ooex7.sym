@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 4.063s)
+Answer: 2 (Time: 4.269s)
 constructor(__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
 constructor(__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
 constructor(__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
@@ -879,8 +879,36 @@ Models       : 2
   Optimum    : yes
 Optimization : -102 -20 -370 -12
 Calls        : 1
-Time         : 4.063s (Solving: 0.13s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 4.058s
+Time         : 4.269s (Solving: 0.13s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 4.252s
+
+Choices      : 7813     (Domain: 7811)
+Conflicts    : 47       (Analyzed: 47)
+Restarts     : 0       
+Model-Level  : 371.5   
+Problems     : 1        (Average Length: 0.00 Splits: 0)
+Lemmas       : 47       (Deleted: 0)
+  Binary     : 47       (Ratio: 100.00%)
+  Ternary    : 0        (Ratio:   0.00%)
+  Conflict   : 47       (Average Length:    2.0 Ratio: 100.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 47       (Average: 150.47 Max: 298 Sum:   7072)
+  Executed   : 47       (Average: 150.47 Max: 298 Sum:   7072 Ratio: 100.00%)
+  Bounded    : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+
+Rules        : 6754875  (Original: 6754484)
+  Choice     : 444     
+  Minimize   : 4       
+  Heuristic  : 418      (Original: 454)
+Atoms        : 469268  
+Bodies       : 265263   (Original: 265259)
+  Count      : 0        (Original: 423)
+Equivalences : 873869   (Atom=Atom: 152085 Body=Body: 11268 Other: 710516)
+Tight        : No       (SCCs: 4 Non-Hcfs: 0 Nodes: 170 Gammas: 0)
+Variables    : 175744   (Eliminated:    0 Frozen:  575)
+Constraints  : 2751091  (Binary:  93.7% Ternary:   4.6% Other:   1.7%)
+
 class 0x411005:
   0x411005  j___setdefaultprecision
 class 0x41100a:

@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 0.852s)
+Answer: 7 (Time: 5.100s)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4202495)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200536)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642)
@@ -687,12 +687,40 @@ realDestructor(virtual type_info::~type_info(void)@4200612)
 vfTableSize(const type_info::`vftable'@4223356,4)
 OPTIMUM FOUND
 
-Models       : 2
+Models       : 7
   Optimum    : yes
 Optimization : -224 -56 -29 -216 -28
 Calls        : 1
-Time         : 15.759s (Solving: 14.92s 1st Model: 0.01s Unsat: 14.91s)
-CPU Time     : 15.600s
+Time         : 6.163s (Solving: 5.25s 1st Model: 0.02s Unsat: 1.06s)
+CPU Time     : 6.111s
+
+Choices      : 169550   (Domain: 164559)
+Conflicts    : 15993    (Analyzed: 15987)
+Restarts     : 106      (Average: 150.82 Last: 194 Blocked: 0)
+Model-Level  : 235.6   
+Problems     : 6        (Average Length: 0.00 Splits: 0)
+Lemmas       : 24635    (Deleted: 7698)
+  Binary     : 117      (Ratio:   0.47%)
+  Ternary    : 2575     (Ratio:  10.45%)
+  Conflict   : 15987    (Average Length:  322.8 Ratio:  64.90%) 
+  Loop       : 8648     (Average Length:   18.2 Ratio:  35.10%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 15987    (Average: 10.58 Max: 220 Sum: 169131)
+  Executed   : 15976    (Average: 10.58 Max: 220 Sum: 169120 Ratio:  99.99%)
+  Bounded    : 11       (Average:  1.00 Max:   1 Sum:     11 Ratio:   0.01%)
+
+Rules        : 1235524  (Original: 1235076)
+  Choice     : 467     
+  Minimize   : 5       
+  Heuristic  : 248      (Original: 283)
+Atoms        : 134802  
+Bodies       : 193912   (Original: 194108)
+  Count      : 0        (Original: 471)
+Equivalences : 256013   (Atom=Atom: 36162 Body=Body: 2093 Other: 217758)
+Tight        : No       (SCCs: 33 Non-Hcfs: 0 Nodes: 105498 Gammas: 0)
+Variables    : 179209   (Eliminated:    0 Frozen: 104635)
+Constraints  : 2058413  (Binary:  91.3% Ternary:   3.7% Other:   4.9%)
+
 class 0x401000:
   0x401000  public: __thiscall Composite::Composite(void)
 class 0x401010:

@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 6 (Time: 0.402s)
+Answer: 4 (Time: 0.443s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136)
 method(virtual int Base::func1(void)@4264441)
@@ -579,12 +579,40 @@ objectInObject(virtual * Derived::`vector deleting destructor'(unsigned int)@426
 vfTableSize(const type_info::`vftable'@4286316,4)
 OPTIMUM FOUND
 
-Models       : 6
+Models       : 4
   Optimum    : yes
 Optimization : -103 -28 -20 -227 -32
 Calls        : 1
-Time         : 0.454s (Solving: 0.06s 1st Model: 0.00s Unsat: 0.05s)
-CPU Time     : 0.454s
+Time         : 0.485s (Solving: 0.05s 1st Model: 0.00s Unsat: 0.04s)
+CPU Time     : 0.462s
+
+Choices      : 5564     (Domain: 5499)
+Conflicts    : 176      (Analyzed: 171)
+Restarts     : 0       
+Model-Level  : 235.0   
+Problems     : 5        (Average Length: 0.00 Splits: 0)
+Lemmas       : 379      (Deleted: 0)
+  Binary     : 131      (Ratio:  34.56%)
+  Ternary    : 7        (Ratio:   1.85%)
+  Conflict   : 171      (Average Length:   56.4 Ratio:  45.12%) 
+  Loop       : 208      (Average Length:   49.4 Ratio:  54.88%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 171      (Average: 30.74 Max: 221 Sum:   5256)
+  Executed   : 168      (Average: 30.72 Max: 221 Sum:   5253 Ratio:  99.94%)
+  Bounded    : 3        (Average:  1.00 Max:   1 Sum:      3 Ratio:   0.06%)
+
+Rules        : 499453   (Original: 499133)
+  Choice     : 322     
+  Minimize   : 5       
+  Heuristic  : 239      (Original: 254)
+Atoms        : 104218  
+Bodies       : 74704    (Original: 74768)
+  Count      : 0        (Original: 323)
+Equivalences : 220149   (Atom=Atom: 35263 Body=Body: 1906 Other: 182980)
+Tight        : No       (SCCs: 22 Non-Hcfs: 0 Nodes: 14188 Gammas: 0)
+Variables    : 68750    (Eliminated:    0 Frozen: 14138)
+Constraints  : 634277   (Binary:  89.3% Ternary:   7.1% Other:   3.6%)
+
 class 0x411005:
   0x411005  j___setdefaultprecision
 class 0x41100a:

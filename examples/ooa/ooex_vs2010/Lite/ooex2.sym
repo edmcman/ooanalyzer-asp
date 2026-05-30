@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 0.403s)
+Answer: 4 (Time: 0.409s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200633)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198635)
 method(virtual std::bad_alloc::~bad_alloc(void)@4198624)
@@ -496,12 +496,40 @@ realDestructor(virtual type_info::~type_info(void)@4200709)
 vfTableSize(const type_info::`vftable'@4219332,4)
 OPTIMUM FOUND
 
-Models       : 2
+Models       : 4
   Optimum    : yes
 Optimization : -143 -24 -18 -174 -20
 Calls        : 1
-Time         : 0.553s (Solving: 0.16s 1st Model: 0.01s Unsat: 0.15s)
-CPU Time     : 0.548s
+Time         : 0.609s (Solving: 0.21s 1st Model: 0.01s Unsat: 0.20s)
+CPU Time     : 0.608s
+
+Choices      : 11691    (Domain: 11564)
+Conflicts    : 828      (Analyzed: 823)
+Restarts     : 9        (Average: 91.44 Last: 44 Blocked: 0)
+Model-Level  : 184.8   
+Problems     : 5        (Average Length: 0.00 Splits: 0)
+Lemmas       : 1041     (Deleted: 0)
+  Binary     : 136      (Ratio:  13.06%)
+  Ternary    : 30       (Ratio:   2.88%)
+  Conflict   : 823      (Average Length:   48.9 Ratio:  79.06%) 
+  Loop       : 218      (Average Length:   24.6 Ratio:  20.94%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 823      (Average: 14.17 Max: 171 Sum:  11661)
+  Executed   : 822      (Average: 14.17 Max: 171 Sum:  11660 Ratio:  99.99%)
+  Bounded    : 1        (Average:  1.00 Max:   1 Sum:      1 Ratio:   0.01%)
+
+Rules        : 546391   (Original: 546115)
+  Choice     : 290     
+  Minimize   : 5       
+  Heuristic  : 193      (Original: 217)
+Atoms        : 83869   
+Bodies       : 71282    (Original: 71363)
+  Count      : 0        (Original: 292)
+Equivalences : 174082   (Atom=Atom: 20913 Body=Body: 1503 Other: 151666)
+Tight        : No       (SCCs: 24 Non-Hcfs: 0 Nodes: 21986 Gammas: 0)
+Variables    : 74654    (Eliminated:    0 Frozen: 21695)
+Constraints  : 1126360  (Binary:  93.4% Ternary:   3.7% Other:   2.9%)
+
 class 0x401000:
   0x401000  public: __thiscall Base::Base(void)
 class 0x401020:

@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.678s)
+Answer: 1 (Time: 0.709s)
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660)
 method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
 method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672)
@@ -772,8 +772,36 @@ Models       : 1
   Optimum    : yes
 Optimization : -45 -36 -30 -304 -20
 Calls        : 1
-Time         : 0.678s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.678s
+Time         : 0.710s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.709s
+
+Choices      : 283      (Domain: 280)
+Conflicts    : 0        (Analyzed: 0)
+Restarts     : 0       
+Model-Level  : 284.0   
+Problems     : 1        (Average Length: 0.00 Splits: 0)
+Lemmas       : 0        (Deleted: 0)
+  Binary     : 0        (Ratio:   0.00%)
+  Ternary    : 0        (Ratio:   0.00%)
+  Conflict   : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 0        (Average:  0.00 Max:   0 Sum:      0)
+  Executed   : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+  Bounded    : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio: 100.00%)
+
+Rules        : 900703   (Original: 900425)
+  Choice     : 336     
+  Minimize   : 5       
+  Heuristic  : 285      (Original: 324)
+Atoms        : 178834  
+Bodies       : 91133    (Original: 91146)
+  Count      : 0        (Original: 312)
+Equivalences : 372776   (Atom=Atom: 71479 Body=Body: 7738 Other: 293559)
+Tight        : No       (SCCs: 12 Non-Hcfs: 0 Nodes: 297 Gammas: 0)
+Variables    : 79364    (Eliminated:    0 Frozen:  478)
+Constraints  : 976250   (Binary:  92.0% Ternary:   6.0% Other:   2.1%)
+
 class 0x411005:
   0x411005  public: virtual void __thiscall Circle::draw(void)
   0x4117e0  public: __thiscall Circle::Circle(void)

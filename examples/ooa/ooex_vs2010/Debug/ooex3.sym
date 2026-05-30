@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 0.955s)
+Answer: 1 (Time: 0.981s)
 method(Base::Base(void)@4265456)
 method(Derived::Derived(void)@4265280)
 method(int Base::func3(void)@4265200)
@@ -418,8 +418,36 @@ Models       : 1
   Optimum    : yes
 Optimization : -204
 Calls        : 1
-Time         : 0.955s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 0.953s
+Time         : 0.981s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 0.979s
+
+Choices      : 204      (Domain: 204)
+Conflicts    : 0        (Analyzed: 0)
+Restarts     : 0       
+Model-Level  : 205.0   
+Problems     : 1        (Average Length: 0.00 Splits: 0)
+Lemmas       : 0        (Deleted: 0)
+  Binary     : 0        (Ratio:   0.00%)
+  Ternary    : 0        (Ratio:   0.00%)
+  Conflict   : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 0        (Average:  0.00 Max:   0 Sum:      0)
+  Executed   : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+  Bounded    : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio: 100.00%)
+
+Rules        : 1524674  (Original: 1524470)
+  Choice     : 204     
+  Minimize   : 1       
+  Heuristic  : 204     
+Atoms        : 129855  
+Bodies       : 84258   
+  Count      : 0        (Original: 204)
+Equivalences : 211779   (Atom=Atom: 22347 Body=Body: 618 Other: 188814)
+Tight        : Yes
+Variables    : 103735   (Eliminated:    0 Frozen:  204)
+Constraints  : 3077482  (Binary:  96.6% Ternary:   2.0% Other:   1.3%)
+
 class 0x411005:
   0x411005  j___setdefaultprecision
 class 0x41100a:

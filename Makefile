@@ -58,7 +58,7 @@ run: $(OUT_FILES)
 $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
 	@echo "=== Running: $(CLINGO) $(CLINGO_FLAGS) $< ==="
 	$(call CLINGO_RUN,$<,$@)
-	@tail -6 $@
+	@tail -20 $@
 
 verify: verify-core
 
