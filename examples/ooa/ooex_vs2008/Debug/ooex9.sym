@@ -2,7 +2,7 @@ clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
 *** Info : (clingo): INTERRUPTED by signal!
-Answer: 1 (Time: 4.530s)
+Answer: 1 (Time: 1.310s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424)
 method(virtual int A::get_a(void)@4263961)
 method(virtual int C::get_c(void)@4264121)
@@ -736,35 +736,35 @@ Models       : 1+
   Optimum    : unknown
 Optimization : -59 -60 -25 -230 -40
 Calls        : 1
-Time         : 60.004s (Solving: 55.67s 1st Model: 0.20s Unsat: 0.00s)
-CPU Time     : 58.636s
+Time         : 60.004s (Solving: 58.80s 1st Model: 0.10s Unsat: 0.00s)
+CPU Time     : 59.640s
 
-Choices      : 5802     (Domain: 5798)
-Conflicts    : 2993     (Analyzed: 2993)
-Restarts     : 22       (Average: 136.05 Last: 2918 Blocked: 0)
+Choices      : 12037    (Domain: 12033)
+Conflicts    : 6303     (Analyzed: 6303)
+Restarts     : 43       (Average: 146.58 Last: 6213 Blocked: 0)
 Model-Level  : 228.0   
 Problems     : 1        (Average Length: 0.00 Splits: 0)
-Lemmas       : 453359   (Deleted: 133386)
-  Binary     : 321      (Ratio:   0.07%)
-  Ternary    : 551      (Ratio:   0.12%)
-  Conflict   : 2993     (Average Length:  122.8 Ratio:   0.66%) 
-  Loop       : 450366   (Average Length:   89.5 Ratio:  99.34%) 
+Lemmas       : 873553   (Deleted: 278721)
+  Binary     : 423      (Ratio:   0.05%)
+  Ternary    : 368      (Ratio:   0.04%)
+  Conflict   : 6303     (Average Length:  135.9 Ratio:   0.72%) 
+  Loop       : 867250   (Average Length:   70.8 Ratio:  99.28%) 
   Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
-Backjumps    : 2993     (Average:  1.13 Max:  77 Sum:   3382)
-  Executed   : 2987     (Average:  1.13 Max:  77 Sum:   3376 Ratio:  99.82%)
-  Bounded    : 6        (Average:  1.00 Max:   1 Sum:      6 Ratio:   0.18%)
+Backjumps    : 6303     (Average:  1.29 Max:  77 Sum:   8105)
+  Executed   : 6301     (Average:  1.29 Max:  77 Sum:   8103 Ratio:  99.98%)
+  Bounded    : 2        (Average:  1.00 Max:   1 Sum:      2 Ratio:   0.02%)
 
-Rules        : 2765376  (Original: 2764456)
+Rules        : 1397704  (Original: 1396784)
   Choice     : 952     
   Minimize   : 5       
   Heuristic  : 238      (Original: 262)
-Atoms        : 141701  
-Bodies       : 1900755  (Original: 1901443)
+Atoms        : 145797  
+Bodies       : 524283   (Original: 524971)
   Count      : 0        (Original: 939)
-Equivalences : 292068   (Atom=Atom: 46385 Body=Body: 4417 Other: 241266)
-Tight        : No       (SCCs: 264 Non-Hcfs: 0 Nodes: 1506239 Gammas: 0)
-Variables    : 1658605  (Eliminated:    0 Frozen: 1497792)
-Constraints  : 12335830 (Binary:  86.6% Ternary:   1.8% Other:  11.7%)
+Equivalences : 304356   (Atom=Atom: 46385 Body=Body: 4417 Other: 253554)
+Tight        : No       (SCCs: 54 Non-Hcfs: 0 Nodes: 434577 Gammas: 0)
+Variables    : 487729   (Eliminated:    0 Frozen: 421824)
+Constraints  : 2612584  (Binary:  81.4% Ternary:  12.6% Other:   6.0%)
 
 warning: examples/ooa/ooex_vs2008/Debug/ooex9.lp exited 11
 class 0x411005:

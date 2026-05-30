@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 3 (Time: 0.396s)
+Answer: 3 (Time: 0.390s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264141)
 method(virtual int Base::func1(void)@4264436)
@@ -491,16 +491,16 @@ sameClass(___report_gsfailure@4268096,___report_gsfailure@4268096)
 sameClass($LN8@4271150,$LN8@4271150)
 sameClass(__unwindfunclet$_main$0@4278960,__unwindfunclet$_main$0@4278960)
 sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264141,type_info::type_info(class type_info const &)@4266544)
-sameClass(virtual int Base::func1(void)@4264436,Base::Base(void)@4265504)
-sameClass(virtual int Base::func2(void)@4264196,Derived::Derived(void)@4265328)
+sameClass(virtual int Base::func2(void)@4264196,Base::Base(void)@4265504)
+sameClass(virtual int Base::func1(void)@4264436,Derived::Derived(void)@4265328)
 sameClass(virtual int Derived::func3(void)@4264251,Derived::Derived(void)@4265328)
 sameClass(type_info::type_info(class type_info const &)@4266544,virtual * type_info::`vector deleting destructor'(unsigned int)@4264141)
-sameClass(Base::Base(void)@4265504,virtual int Base::func1(void)@4264436)
-sameClass(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4264196)
+sameClass(Base::Base(void)@4265504,virtual int Base::func2(void)@4264196)
+sameClass(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4264436)
 sameClass(Derived::Derived(void)@4265328,virtual int Derived::func3(void)@4264251)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
-sameClass(virtual int Derived::func3(void)@4264251,virtual int Base::func2(void)@4264196)
-sameClass(virtual int Base::func2(void)@4264196,virtual int Derived::func3(void)@4264251)
+sameClass(virtual int Derived::func3(void)@4264251,virtual int Base::func1(void)@4264436)
+sameClass(virtual int Base::func1(void)@4264436,virtual int Derived::func3(void)@4264251)
 vftableBelongsToClass(const Base::`vftable'@4286292,0,Base::Base(void)@4265504)
 vftableBelongsToClass(const Derived::`vftable'@4286272,0,Derived::Derived(void)@4265328)
 objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
@@ -510,37 +510,37 @@ constructor(type_info::type_info(class type_info const &)@4266544)
 sameClass(const Derived::`vftable'@4286272,Derived::Derived(void)@4265328)
 sameClass(const Base::`vftable'@4286292,Base::Base(void)@4265504)
 sameClass(Derived::Derived(void)@4265328,const Derived::`vftable'@4286272)
-sameClass(virtual int Base::func2(void)@4264196,const Derived::`vftable'@4286272)
+sameClass(virtual int Base::func1(void)@4264436,const Derived::`vftable'@4286272)
 sameClass(virtual int Derived::func3(void)@4264251,const Derived::`vftable'@4286272)
 sameClass(Base::Base(void)@4265504,const Base::`vftable'@4286292)
-sameClass(virtual int Base::func1(void)@4264436,const Base::`vftable'@4286292)
+sameClass(virtual int Base::func2(void)@4264196,const Base::`vftable'@4286292)
 sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264141,const type_info::`vftable'@4286312)
 sameClass(const type_info::`vftable'@4286312,virtual * type_info::`vector deleting destructor'(unsigned int)@4264141)
-sameClass(const Base::`vftable'@4286292,virtual int Base::func1(void)@4264436)
+sameClass(const Base::`vftable'@4286292,virtual int Base::func2(void)@4264196)
 sameClass(const Derived::`vftable'@4286272,virtual int Derived::func3(void)@4264251)
-sameClass(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4264196)
+sameClass(const Derived::`vftable'@4286272,virtual int Base::func1(void)@4264436)
 derivedClass(const Derived::`vftable'@4286272,Base::Base(void)@4265504,0)
 derivedClass(Derived::Derived(void)@4265328,Base::Base(void)@4265504,0)
 derivedClass(Derived::Derived(void)@4265328,const Base::`vftable'@4286292,0)
 objectInObject(Derived::Derived(void)@4265328,const Base::`vftable'@4286292,0)
 objectInObject(Derived::Derived(void)@4265328,Base::Base(void)@4265504,0)
 objectInObject(const Derived::`vftable'@4286272,Base::Base(void)@4265504,0)
-derivedClass(const Derived::`vftable'@4286272,virtual int Base::func1(void)@4264436,0)
-derivedClass(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4264436,0)
-derivedClass(virtual int Base::func2(void)@4264196,virtual int Base::func1(void)@4264436,0)
-derivedClass(virtual int Derived::func3(void)@4264251,virtual int Base::func1(void)@4264436,0)
+derivedClass(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4264196,0)
+derivedClass(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4264196,0)
+derivedClass(virtual int Base::func1(void)@4264436,virtual int Base::func2(void)@4264196,0)
+derivedClass(virtual int Derived::func3(void)@4264251,virtual int Base::func2(void)@4264196,0)
 derivedClass(virtual int Derived::func3(void)@4264251,const Base::`vftable'@4286292,0)
 derivedClass(virtual int Derived::func3(void)@4264251,Base::Base(void)@4265504,0)
-derivedClass(virtual int Base::func2(void)@4264196,const Base::`vftable'@4286292,0)
-derivedClass(virtual int Base::func2(void)@4264196,Base::Base(void)@4265504,0)
-objectInObject(virtual int Base::func2(void)@4264196,Base::Base(void)@4265504,0)
-objectInObject(virtual int Base::func2(void)@4264196,const Base::`vftable'@4286292,0)
+derivedClass(virtual int Base::func1(void)@4264436,const Base::`vftable'@4286292,0)
+derivedClass(virtual int Base::func1(void)@4264436,Base::Base(void)@4265504,0)
+objectInObject(virtual int Base::func1(void)@4264436,Base::Base(void)@4265504,0)
+objectInObject(virtual int Base::func1(void)@4264436,const Base::`vftable'@4286292,0)
 objectInObject(virtual int Derived::func3(void)@4264251,Base::Base(void)@4265504,0)
 objectInObject(virtual int Derived::func3(void)@4264251,const Base::`vftable'@4286292,0)
-objectInObject(virtual int Derived::func3(void)@4264251,virtual int Base::func1(void)@4264436,0)
-objectInObject(virtual int Base::func2(void)@4264196,virtual int Base::func1(void)@4264436,0)
-objectInObject(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4264436,0)
-objectInObject(const Derived::`vftable'@4286272,virtual int Base::func1(void)@4264436,0)
+objectInObject(virtual int Derived::func3(void)@4264251,virtual int Base::func2(void)@4264196,0)
+objectInObject(virtual int Base::func1(void)@4264436,virtual int Base::func2(void)@4264196,0)
+objectInObject(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4264196,0)
+objectInObject(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4264196,0)
 vfTableSize(const type_info::`vftable'@4286312,4)
 OPTIMUM FOUND
 
@@ -548,35 +548,35 @@ Models       : 3
   Optimum    : yes
 Optimization : -43 -24 -15 -228 -28
 Calls        : 1
-Time         : 0.481s (Solving: 0.09s 1st Model: 0.00s Unsat: 0.09s)
-CPU Time     : 0.481s
+Time         : 0.455s (Solving: 0.07s 1st Model: 0.00s Unsat: 0.07s)
+CPU Time     : 0.455s
 
-Choices      : 12455    (Domain: 12396)
-Conflicts    : 219      (Analyzed: 213)
-Restarts     : 1        (Average: 213.00 Last: 39 Blocked: 0)
-Model-Level  : 229.7   
-Problems     : 6        (Average Length: 0.00 Splits: 0)
-Lemmas       : 331      (Deleted: 0)
-  Binary     : 85       (Ratio:  25.68%)
-  Ternary    : 12       (Ratio:   3.63%)
-  Conflict   : 213      (Average Length:   35.4 Ratio:  64.35%) 
-  Loop       : 118      (Average Length:   32.4 Ratio:  35.65%) 
+Choices      : 10549    (Domain: 10473)
+Conflicts    : 190      (Analyzed: 185)
+Restarts     : 1        (Average: 185.00 Last: 38 Blocked: 0)
+Model-Level  : 231.7   
+Problems     : 5        (Average Length: 0.00 Splits: 0)
+Lemmas       : 310      (Deleted: 0)
+  Binary     : 93       (Ratio:  30.00%)
+  Ternary    : 19       (Ratio:   6.13%)
+  Conflict   : 185      (Average Length:   29.4 Ratio:  59.68%) 
+  Loop       : 125      (Average Length:   37.7 Ratio:  40.32%) 
   Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
-Backjumps    : 213      (Average: 58.42 Max: 224 Sum:  12444)
-  Executed   : 211      (Average: 58.41 Max: 224 Sum:  12442 Ratio:  99.98%)
+Backjumps    : 185      (Average: 56.97 Max: 224 Sum:  10539)
+  Executed   : 183      (Average: 56.96 Max: 224 Sum:  10537 Ratio:  99.98%)
   Bounded    : 2        (Average:  1.00 Max:   1 Sum:      2 Ratio:   0.02%)
 
-Rules        : 502819   (Original: 502539)
+Rules        : 501993   (Original: 501713)
   Choice     : 285     
   Minimize   : 5       
   Heuristic  : 233      (Original: 245)
-Atoms        : 104500  
-Bodies       : 65382    (Original: 65419)
+Atoms        : 104598  
+Bodies       : 64472    (Original: 64509)
   Count      : 0        (Original: 285)
-Equivalences : 221358   (Atom=Atom: 35156 Body=Body: 1832 Other: 184370)
-Tight        : No       (SCCs: 18 Non-Hcfs: 0 Nodes: 5511 Gammas: 0)
-Variables    : 60964    (Eliminated:    0 Frozen: 5577)
-Constraints  : 612146   (Binary:  90.2% Ternary:   7.0% Other:   2.9%)
+Equivalences : 221652   (Atom=Atom: 35156 Body=Body: 1832 Other: 184664)
+Tight        : No       (SCCs: 12 Non-Hcfs: 0 Nodes: 5557 Gammas: 0)
+Variables    : 60726    (Eliminated:    0 Frozen: 5519)
+Constraints  : 606606   (Binary:  90.1% Ternary:   7.2% Other:   2.7%)
 
 class 0x411005:
   0x411005  j___setdefaultprecision
@@ -682,9 +682,8 @@ class 0x4110ff:
   0x4110ff  __stdcall InterlockedCompareExchange(x, x, x)
 class 0x411104:
   0x411104  public: virtual int __thiscall Base::func2(void)
-  0x41113b  public: virtual int __thiscall Derived::func3(void)
-  0x411570  public: __thiscall Derived::Derived(void)
-  vftable 0x416740  const Derived::`vftable'
+  0x411620  public: __thiscall Base::Base(void)
+  vftable 0x416754  const Base::`vftable'
 class 0x411109:
   0x411109  __stdcall GetProcessHeap()
 class 0x41110e:
@@ -705,6 +704,11 @@ class 0x411131:
   0x411131  j__rand
 class 0x411136:
   0x411136  start
+class 0x41113b:
+  0x41113b  public: virtual int __thiscall Derived::func3(void)
+  0x4111f4  public: virtual int __thiscall Base::func1(void)
+  0x411570  public: __thiscall Derived::Derived(void)
+  vftable 0x416740  const Derived::`vftable'
 class 0x411140:
   0x411140  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
 class 0x411145:
@@ -777,10 +781,6 @@ class 0x4111ea:
   0x4111ea  __stdcall lstrlenA(x)
 class 0x4111ef:
   0x4111ef  void __cdecl _RTC_Failure(void *, int)
-class 0x4111f4:
-  0x4111f4  public: virtual int __thiscall Base::func1(void)
-  0x411620  public: __thiscall Base::Base(void)
-  vftable 0x416754  const Base::`vftable'
 class 0x4111f9:
   0x4111f9  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
 class 0x4111fe:

@@ -2,7 +2,7 @@ clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
 *** Info : (clingo): INTERRUPTED by signal!
-Answer: 4 (Time: 9.301s)
+Answer: 4 (Time: 1.769s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4199920)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198855)
 method(A::A(void)@4198400)
@@ -713,35 +713,35 @@ Models       : 4+
   Optimum    : unknown
 Optimization : -181 -80 -38 -174 -56
 Calls        : 1
-Time         : 60.006s (Solving: 50.88s 1st Model: 0.16s Unsat: 0.00s)
-CPU Time     : 58.930s
+Time         : 60.003s (Solving: 58.32s 1st Model: 0.08s Unsat: 0.00s)
+CPU Time     : 59.793s
 
-Choices      : 6661     (Domain: 6590)
-Conflicts    : 3413     (Analyzed: 3413)
-Restarts     : 28       (Average: 121.89 Last: 3303 Blocked: 0)
-Model-Level  : 186.8   
+Choices      : 21281    (Domain: 21133)
+Conflicts    : 6821     (Analyzed: 6821)
+Restarts     : 45       (Average: 151.58 Last: 6820 Blocked: 0)
+Model-Level  : 184.0   
 Problems     : 1        (Average Length: 0.00 Splits: 0)
-Lemmas       : 304876   (Deleted: 85101)
-  Binary     : 306      (Ratio:   0.10%)
-  Ternary    : 287      (Ratio:   0.09%)
-  Conflict   : 3413     (Average Length:  170.1 Ratio:   1.12%) 
-  Loop       : 301463   (Average Length:  109.2 Ratio:  98.88%) 
+Lemmas       : 702962   (Deleted: 431788)
+  Binary     : 474      (Ratio:   0.07%)
+  Ternary    : 302      (Ratio:   0.04%)
+  Conflict   : 6821     (Average Length:  149.6 Ratio:   0.97%) 
+  Loop       : 696141   (Average Length:   69.6 Ratio:  99.03%) 
   Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
-Backjumps    : 3413     (Average:  1.06 Max:  12 Sum:   3605)
-  Executed   : 3413     (Average:  1.06 Max:  12 Sum:   3605 Ratio: 100.00%)
-  Bounded    : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+Backjumps    : 6821     (Average:  2.60 Max: 163 Sum:  17704)
+  Executed   : 6818     (Average:  2.60 Max: 163 Sum:  17701 Ratio:  99.98%)
+  Bounded    : 3        (Average:  1.00 Max:   1 Sum:      3 Ratio:   0.02%)
 
-Rules        : 6896184  (Original: 6894645)
+Rules        : 2092472  (Original: 2090933)
   Choice     : 1574    
   Minimize   : 5       
   Heuristic  : 210      (Original: 255)
-Atoms        : 139241  
-Bodies       : 5971455  (Original: 5972783)
+Atoms        : 146497  
+Bodies       : 1154283  (Original: 1155611)
   Count      : 0        (Original: 1572)
-Equivalences : 239580   (Atom=Atom: 28951 Body=Body: 3824 Other: 206805)
-Tight        : No       (SCCs: 273 Non-Hcfs: 0 Nodes: 1143072 Gammas: 0)
-Variables    : 1284807  (Eliminated:    0 Frozen: 1135058)
-Constraints  : 10262490 (Binary:  87.5% Ternary:   1.8% Other:  10.7%)
+Equivalences : 250980   (Atom=Atom: 28951 Body=Body: 3824 Other: 218205)
+Tight        : No       (SCCs: 68 Non-Hcfs: 0 Nodes: 371481 Gammas: 0)
+Variables    : 432861   (Eliminated:    0 Frozen: 359462)
+Constraints  : 3145922  (Binary:  86.3% Ternary:   9.1% Other:   4.6%)
 
 warning: examples/ooa/ooex_vs2010/Lite/ooex9.lp exited 11
 class 0x401000:

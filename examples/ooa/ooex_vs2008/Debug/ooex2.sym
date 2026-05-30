@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 1.010s)
+Answer: 1 (Time: 1.139s)
 method(Base::Base(void)@4265392)
 method(Derived::Derived(void)@4265232)
 method(int Base::func3(void)@4265488)
@@ -426,8 +426,8 @@ Models       : 1
   Optimum    : yes
 Optimization : -208
 Calls        : 1
-Time         : 1.011s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 1.010s
+Time         : 1.139s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 1.054s
 
 Choices      : 207      (Domain: 207)
 Conflicts    : 0        (Analyzed: 0)

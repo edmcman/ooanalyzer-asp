@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 2 (Time: 0.359s)
+Answer: 3 (Time: 0.358s)
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 method(virtual int Base::func1(void)@4264426)
@@ -532,39 +532,39 @@ objectInObject(const Derived::`vftable'@4286272,virtual int Base::func2(void)@42
 vfTableSize(const type_info::`vftable'@4286312,4)
 OPTIMUM FOUND
 
-Models       : 2
+Models       : 3
   Optimum    : yes
 Optimization : -43 -24 -15 -222 -28
 Calls        : 1
-Time         : 0.419s (Solving: 0.06s 1st Model: 0.00s Unsat: 0.06s)
-CPU Time     : 0.419s
+Time         : 0.418s (Solving: 0.06s 1st Model: 0.00s Unsat: 0.06s)
+CPU Time     : 0.417s
 
-Choices      : 9056     (Domain: 8999)
-Conflicts    : 168      (Analyzed: 163)
-Restarts     : 1        (Average: 163.00 Last: 33 Blocked: 0)
-Model-Level  : 223.5   
+Choices      : 9083     (Domain: 9025)
+Conflicts    : 185      (Analyzed: 180)
+Restarts     : 1        (Average: 180.00 Last: 35 Blocked: 0)
+Model-Level  : 224.7   
 Problems     : 5        (Average Length: 0.00 Splits: 0)
-Lemmas       : 269      (Deleted: 0)
-  Binary     : 76       (Ratio:  28.25%)
-  Ternary    : 11       (Ratio:   4.09%)
-  Conflict   : 163      (Average Length:   33.9 Ratio:  60.59%) 
-  Loop       : 106      (Average Length:   30.4 Ratio:  39.41%) 
+Lemmas       : 305      (Deleted: 0)
+  Binary     : 92       (Ratio:  30.16%)
+  Ternary    : 9        (Ratio:   2.95%)
+  Conflict   : 180      (Average Length:   27.4 Ratio:  59.02%) 
+  Loop       : 125      (Average Length:   35.4 Ratio:  40.98%) 
   Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
-Backjumps    : 163      (Average: 55.52 Max: 219 Sum:   9050)
-  Executed   : 161      (Average: 55.51 Max: 219 Sum:   9048 Ratio:  99.98%)
+Backjumps    : 180      (Average: 50.41 Max: 217 Sum:   9074)
+  Executed   : 178      (Average: 50.40 Max: 217 Sum:   9072 Ratio:  99.98%)
   Bounded    : 2        (Average:  1.00 Max:   1 Sum:      2 Ratio:   0.02%)
 
-Rules        : 465623   (Original: 465349)
+Rules        : 464797   (Original: 464523)
   Choice     : 279     
   Minimize   : 5       
   Heuristic  : 227      (Original: 239)
-Atoms        : 99364   
-Bodies       : 62349    (Original: 62386)
+Atoms        : 99462   
+Bodies       : 61439    (Original: 61476)
   Count      : 0        (Original: 279)
-Equivalences : 210585   (Atom=Atom: 33452 Body=Body: 1790 Other: 175343)
-Tight        : No       (SCCs: 18 Non-Hcfs: 0 Nodes: 5511 Gammas: 0)
-Variables    : 58210    (Eliminated:    0 Frozen: 5571)
-Constraints  : 573901   (Binary:  90.0% Ternary:   7.1% Other:   2.9%)
+Equivalences : 210879   (Atom=Atom: 33452 Body=Body: 1790 Other: 175637)
+Tight        : No       (SCCs: 12 Non-Hcfs: 0 Nodes: 5557 Gammas: 0)
+Variables    : 57972    (Eliminated:    0 Frozen: 5513)
+Constraints  : 568361   (Binary:  89.9% Ternary:   7.3% Other:   2.7%)
 
 class 0x411005:
   0x411005  j___setdefaultprecision

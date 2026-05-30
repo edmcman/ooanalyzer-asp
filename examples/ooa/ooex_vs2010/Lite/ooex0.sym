@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 4 (Time: 0.787s)
+Answer: 4 (Time: 0.744s)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4205813)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198868)
 method(virtual std::bad_alloc::~bad_alloc(void)@4198857)
@@ -626,35 +626,35 @@ Models       : 4
   Optimum    : yes
 Optimization : -154 -24 -18 -233 -24
 Calls        : 1
-Time         : 1.013s (Solving: 0.24s 1st Model: 0.01s Unsat: 0.23s)
-CPU Time     : 1.010s
+Time         : 0.949s (Solving: 0.21s 1st Model: 0.01s Unsat: 0.21s)
+CPU Time     : 0.949s
 
-Choices      : 13331    (Domain: 13233)
-Conflicts    : 582      (Analyzed: 577)
-Restarts     : 6        (Average: 96.17 Last: 24 Blocked: 0)
+Choices      : 13663    (Domain: 13553)
+Conflicts    : 585      (Analyzed: 580)
+Restarts     : 5        (Average: 116.00 Last: 26 Blocked: 0)
 Model-Level  : 247.8   
 Problems     : 5        (Average Length: 0.00 Splits: 0)
-Lemmas       : 812      (Deleted: 0)
-  Binary     : 131      (Ratio:  16.13%)
-  Ternary    : 24       (Ratio:   2.96%)
-  Conflict   : 577      (Average Length:   49.5 Ratio:  71.06%) 
-  Loop       : 235      (Average Length:   22.7 Ratio:  28.94%) 
+Lemmas       : 728      (Deleted: 0)
+  Binary     : 146      (Ratio:  20.05%)
+  Ternary    : 19       (Ratio:   2.61%)
+  Conflict   : 580      (Average Length:   51.1 Ratio:  79.67%) 
+  Loop       : 148      (Average Length:   39.6 Ratio:  20.33%) 
   Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
-Backjumps    : 577      (Average: 23.06 Max: 234 Sum:  13303)
-  Executed   : 576      (Average: 23.05 Max: 234 Sum:  13302 Ratio:  99.99%)
+Backjumps    : 580      (Average: 23.51 Max: 235 Sum:  13637)
+  Executed   : 579      (Average: 23.51 Max: 235 Sum:  13636 Ratio:  99.99%)
   Bounded    : 1        (Average:  1.00 Max:   1 Sum:      1 Ratio:   0.01%)
 
-Rules        : 1041754  (Original: 1041416)
+Rules        : 1034034  (Original: 1033696)
   Choice     : 353     
   Minimize   : 5       
   Heuristic  : 254      (Original: 279)
-Atoms        : 141349  
-Bodies       : 103866   (Original: 103948)
+Atoms        : 141549  
+Bodies       : 95966    (Original: 96048)
   Count      : 0        (Original: 355)
-Equivalences : 295832   (Atom=Atom: 36262 Body=Body: 2189 Other: 257381)
-Tight        : No       (SCCs: 27 Non-Hcfs: 0 Nodes: 22003 Gammas: 0)
-Variables    : 110740   (Eliminated:    0 Frozen: 21766)
-Constraints  : 2061154  (Binary:  94.7% Ternary:   3.2% Other:   2.1%)
+Equivalences : 296432   (Atom=Atom: 36262 Body=Body: 2189 Other: 257981)
+Tight        : No       (SCCs: 18 Non-Hcfs: 0 Nodes: 17426 Gammas: 0)
+Variables    : 105306   (Eliminated:    0 Frozen: 16980)
+Constraints  : 2011730  (Binary:  94.8% Ternary:   3.4% Other:   1.8%)
 
 class 0x401000:
   0x401000  public: __thiscall ClassA::ClassA(void)

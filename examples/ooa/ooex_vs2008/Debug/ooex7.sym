@@ -1,7 +1,7 @@
 clingo version 5.8.0
 Reading from ooanalyzer.lp ...
 Solving...
-Answer: 1 (Time: 1.113s)
+Answer: 1 (Time: 1.181s)
 constructor(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
 method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4297384)
 method(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
@@ -454,8 +454,8 @@ Models       : 1
   Optimum    : yes
 Optimization : -220
 Calls        : 1
-Time         : 1.113s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
-CPU Time     : 1.111s
+Time         : 1.181s (Solving: 0.01s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 1.143s
 
 Choices      : 216      (Domain: 216)
 Conflicts    : 0        (Analyzed: 0)
