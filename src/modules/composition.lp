@@ -105,16 +105,28 @@ derivedClass_closed(DerivedClass, BaseClass2, ObjectOffset) :-
 % is deferred and cannot break the grounding loop).
 
 % --- Phase 1: /2 reachability closure (bounded by methods²) ----------------
+% Decomposed: sameClass join removed from the recursive body.  Instead,
+%   (1) extend dCR by one derivedClass edge (no sameClass join), then
+%   (2) close over sameClass via two linear rules.
+% The alternating fixpoint replaces the old 3-way join
+%   derivedClass × sameClass × dCR
+% with cheaper 2-way joins per round:
+%   extension:  derivedClass × dCR      (no sameClass)
+%   closure:    dCR × sameClass         (linear, like _closed)
 derivedClassRelationship(D, B) :- derivedClass(D, B, _).
 
-derivedClassRelationship(D, B) :-
-    derivedClass(D, M1, _),
-    sameClass(M1, M2),
-    derivedClassRelationship(M2, B),
-    D != M2,
-    not sameClass(D, M2),
-    M1 != B,
-    not sameClass(M1, B).
+dCR_step2(D, B) :-
+    derivedClass(D, M, _),
+    derivedClassRelationship(M, B),
+    D != M,
+    not sameClass(D, M),
+    M != B,
+    not sameClass(M, B).
+
+derivedClassRelationship(D, B) :- dCR_step2(D, B).
+
+derivedClassRelationship(D2, B) :- derivedClassRelationship(D1, B), sameClass(D1, D2).
+derivedClassRelationship(D, B2) :- derivedClassRelationship(D, B1), sameClass(B1, B2).
 
 derivedClassRelationship_closed(D, B) :- derivedClassRelationship(D, B).
 derivedClassRelationship_closed(D2, B) :-
@@ -144,16 +156,20 @@ relevantOffset(Off) :- relevantOffset(Off, _).
 
 derivedClassRelationship(D, B, Off) :- derivedClass(D, B, Off).
 
-derivedClassRelationship(D, B, Off) :-
-    derivedClass(D, M1, Off1),
-    sameClass(M1, M2),
-    derivedClassRelationship(M2, B, Off2),
+dCR_step3(D, B, Off) :-
+    derivedClass(D, M, Off1),
+    derivedClassRelationship(M, B, Off2),
     Off = Off1 + Off2,
     relevantOffset(Off),
-    D != M2,
-    not sameClass(D, M2),
-    M1 != B,
-    not sameClass(M1, B).
+    D != M,
+    not sameClass(D, M),
+    M != B,
+    not sameClass(M, B).
+
+derivedClassRelationship(D, B, Off) :- dCR_step3(D, B, Off).
+
+derivedClassRelationship(D2, B, Off) :- derivedClassRelationship(D1, B, Off), sameClass(D1, D2).
+derivedClassRelationship(D, B2, Off) :- derivedClassRelationship(D, B1, Off), sameClass(B1, B2).
 
 derivedClassRelationship_closed(D, B, Off) :- derivedClassRelationship(D, B, Off).
 derivedClassRelationship_closed(D2, B, Off) :-
