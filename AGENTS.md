@@ -15,9 +15,13 @@ original module set.
 | File | Purpose |
 |---|---|
 | `ooanalyzer.lp` | Entry point: `#include`s the modules below |
+| `ooanalyzer.py` | Clingo driver that registers the `&sameClass/2` propagator |
 | `src/util/config.lp` | Tunable `#const`s (e.g. `max_class_size`, `max_offset_depth`) — override on the command line |
+| `src/util/theory.lp` | Clingo theory declaration for `&sameClass/2` |
 | `src/util/facts.lp` | Input vocabulary and `#defined` directives |
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
+| `propagator/sameclass.py` | Python union-find propagator implementing `&sameClass/2` |
+| `tests/test_propagator.py` | Focused regression harness for the propagator |
 | `facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
 | `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
@@ -36,24 +40,30 @@ original module set.
 ## Running
 
 ```sh
-clingo ooanalyzer.lp examples/example.lp              # find optimal model
-clingo ooanalyzer.lp examples/example.lp 0            # enumerate all models
-clingo ooanalyzer.lp examples/invalid_example.lp      # should print UNSATISFIABLE
-clingo ooanalyzer.lp examples/inherit_example.lp      # derivedClass(2300, 2100, 0)
-clingo ooanalyzer.lp examples/rtti_example.lp         # same but RTTI-driven, fewer models
-clingo ooanalyzer.lp examples/multi_inherit_example.lp  # C : A(0), B(8)
-clingo ooanalyzer.lp examples/inherited_entry_example.lp  # derived inherits un-overridden entry
-clingo ooanalyzer.lp examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
+python ooanalyzer.py examples/example.lp              # find optimal model
+python ooanalyzer.py examples/example.lp -n 0         # enumerate all models
+python ooanalyzer.py examples/invalid_example.lp      # should print UNSATISFIABLE
+python ooanalyzer.py examples/inherit_example.lp      # derivedClass(2300, 2100, 0)
+python ooanalyzer.py examples/rtti_example.lp         # same but RTTI-driven, fewer models
+python ooanalyzer.py examples/multi_inherit_example.lp  # C : A(0), B(8)
+python ooanalyzer.py examples/inherited_entry_example.lp  # derived inherits an un-overridden entry
+python ooanalyzer.py examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
+python tests/test_propagator.py                       # focused &sameClass regression test
 ```
+
+`ooanalyzer.lp` contains the `#theory` declaration, but solving must use
+`ooanalyzer.py` for normal runs because the Python driver registers the
+`&sameClass/2` propagator. Calling `clingo ooanalyzer.lp ...` directly leaves
+the theory atoms uninterpreted.
 
 Tune solver constants on the command line (see `src/util/config.lp` for the list):
 
 ```sh
 # Tighter offset bounds — useful for very small classes.
-clingo --const max_class_size=128 ooanalyzer.lp examples/ooa/ooex_vs2008/Debug/oo.lp
+python ooanalyzer.py --const max_class_size=128 examples/ooa/ooex_vs2008/Debug/oo.lp
 
 # Allow deeper transitive inheritance chains.
-clingo --const max_offset_depth=6 ooanalyzer.lp examples/ooa/ooex_vs2008/Debug/oo.lp
+python ooanalyzer.py --const max_offset_depth=6 examples/ooa/ooex_vs2008/Debug/oo.lp
 ```
 
 Or use the Makefile:
@@ -61,7 +71,8 @@ Or use the Makefile:
 ```sh
 make examples/ooa/ooex_vs2008/Debug/oo.lp   # convert one .facts file
 make convert                                 # convert all examples/ooa/*/*/*.facts
-make run                                     # convert and run clingo on all of them
+make run                                     # convert and run ooanalyzer.py on all of them
+make propagator-run                          # alias for make run
 make clean                                   # remove generated .lp/.out files
 ```
 
@@ -69,7 +80,7 @@ make clean                                   # remove generated .lp/.out files
 
 ```sh
 python facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
-clingo ooanalyzer.lp /tmp/oo.lp
+python ooanalyzer.py /tmp/oo.lp
 ```
 
 `oo.facts` is the complete export with vftable writes, RTTI, symbols, and
@@ -148,54 +159,54 @@ See `src/util/initial.lp` for the exact derivation rules.
 
 See [TODO.md](TODO.md) for the full rule coverage tracker (217 rules across 12 entity groups).
 
-## Class-level relations and `sameClass`
+## Class-level relations and `&sameClass`
 
-Prolog uses explicit class IDs; ASP uses `sameClass/2` to group methods into
-classes. For class-level conclusions like `derivedClass(A, B, Off)`:
+Prolog uses explicit class IDs. This ASP port represents class membership with
+`mergeClasses/2` evidence and queries the induced equivalence relation through
+the `&sameClass/2` theory atom. `propagator/sameclass.py` maintains a union-find
+over true `mergeClasses/2` atoms, handles reflexive and disconnected cases, and
+adds reason clauses for true/false theory decisions.
 
-- **Defining rules** record concrete witness methods (the methods that provided
-  evidence), without joining `sameClass`.
-- **Close the relation** with a `_closed` variant using three rules immediately
-  after the defining rules. The base predicate only ever accumulates raw witness
-  facts; all closure writes to `_closed`:
+For class-level conclusions like `derivedClass(A, B, Off)`:
 
-```prolog
-% seed
-derivedClass_closed(A, B, Off) :- derivedClass(A, B, Off).
-% close first argument
-derivedClass_closed(B, C, Off) :- derivedClass_closed(A, C, Off), sameClass(A, B).
-% close second argument
-derivedClass_closed(A, C, Off) :- derivedClass_closed(A, B, Off), sameClass(B, C).
-```
+- **Defining rules record concrete witness entities only.** Do not close the
+  base predicate over class membership in the head.
+- **Querying rules join witnesses explicitly with `&sameClass(...)`.** If a use
+  site needs "some member of this class", keep the witness predicate raw and add
+  the theory atom in the body.
+- **Do not reintroduce materialized `sameClass/2`, `merged/2`, or `_closed`
+  variants** for the normal solver path. Those were removed to avoid large
+  same-class closure groundings.
 
-- **Querying rules** use `pred_closed` — never the base predicate — so no extra
-  `sameClass` join is needed at the call site.
-- **Declare `#defined pred_closed/N`** alongside `#defined pred/N` at the top of
-  the module, so Clingo does not complain when the predicate is empty.
-
-**Do not collapse the two propagation rules into one combined rule:**
+Example pattern:
 
 ```prolog
-% BAD — O(N^4) grounding
-derivedClass(MA, MB, Off) :- derivedClass(A, B, Off), sameClass(A, MA), sameClass(B, MB).
+% Witness-only fact.
+derivedClass(DerivedCtor, BaseCtor, Off) :- ... .
+
+% Use site joins the caller's class witness to the derived-class witness.
+-mergeClasses(A, B) :-
+    classCallsMethod(DC1, CalledMethod),
+    derivedClass(DC2, BaseClass, Off),
+    &sameClass(DC1, DC2),
+    not &sameClass(BaseClass, CalledMethod),
+    sortPair(BaseClass, CalledMethod, A, B).
 ```
 
-The combined form joins both `sameClass` dimensions simultaneously. With
-semi-naive evaluation, the grounder re-instantiates it against the N² newly
-derived facts with N×N fan-out each, giving O(N⁴) total groundings. The
-two-rule form joins one dimension at a time — O(N³) total — and is strictly
-better despite requiring one extra fixpoint round.
+When adding theory atoms, remember that `not &sameClass(A, B)` is a solver-time
+condition. It can reduce search but does not prune grounding the way a positive
+ordinary predicate might.
 
 ## Transitive closures with accumulated offsets
 
 Prolog rules like `reasonDerivedClassRelationship(D, B, Off) :- ..., Off is Off1 + Off2.`
 rely on SLG tabling to terminate. A literal ASP port hits **two** grounding traps:
 
-1. **Symmetric recursion blowup.** A body of shape `pred(D, M1, Off1), sameClass(M1, M2), pred(M2, B, Off2)`
+1. **Symmetric recursion blowup.** A body of shape `pred(D, M1, Off1), &sameClass(M1, M2), pred(M2, B, Off2)`
    with both arms recursive materializes a quadratic-in-fixpoint cross product per round.
    Make the recursion **linear**: one arm is the recursive predicate, the other is the witness
    one-edge predicate (e.g. `derivedClass`, not `derivedClassRelationship`).
-2. **Unbounded `Off = Off1 + Off2`.** Because `not sameClass(...)` cannot prune at grounding
+2. **Unbounded `Off = Off1 + Off2`.** Because `not &sameClass(...)` cannot prune at grounding
    time, the grounder must consider every potential cycle. With cycles open, `Off` ratchets
    upward and the fixpoint never closes. Measured: `derivedClassRelationship` on
    `examples/ooa/ooex_vs2008/Debug/oo.lp` grounded `Off ∈ {0, 12, …, 1536}` (129 values, ~53M
@@ -223,7 +234,7 @@ relevantOffset(Off) :- relevantOffset(Off, _).
 
 derivedClassRelationship(D, B, Off) :-
     derivedClass(D, M1, Off1),
-    sameClass(M1, M2),
+    &sameClass(M1, M2),
     derivedClassRelationship(M2, B, Off2),
     Off = Off1 + Off2,
     relevantOffset(Off),         % <-- bounds head; depth AND size bound intersected
@@ -240,16 +251,16 @@ in the body. The two caps trade off differently:
   depthᴾ explodes faster than `S/g`).
 
 Intersecting both gives the tighter of the two for any given input. Tune via
-`clingo --const max_class_size=512 ...` when you encounter a binary that needs more
-headroom; both constants live in `src/util/config.lp`.
+`python ooanalyzer.py --const max_class_size=512 ...` when you encounter a
+binary that needs more headroom; both constants live in `src/util/config.lp`.
 
 **Anti-patterns to avoid:**
 
-- **`_closed × _closed` recursion.** Tempting because both arms are already
-  sameClass-closed, but `derivedClass_closed` contains atoms like `(B, B, 8)` (via
-  the reflexive `sameClass(A, A) :- mergeEntity(A).`), which open self-cycles the
-  grounder walks unboundedly accumulating `Off`. Measured to blow up to 13M+ ground
-  rules on the tiny `multi_inherit_example`.
+- **Reintroducing `_closed × _closed` recursion.** The old materialized
+  same-class closure made predicates like `derivedClass_closed` contain atoms
+  such as `(B, B, 8)`, which opened self-cycles the grounder walked unboundedly
+  while accumulating `Off`. Measured to blow up to 13M+ ground rules on the tiny
+  `multi_inherit_example`.
 - **Bounding `relevantOffset` to `possibleVFTableWrite` offsets only.** Classes
   without vftables still legitimately participate in inheritance chains, and
   primitive offsets from `derivedClass` itself can fall outside the vftable-write

@@ -1,10 +1,8 @@
 # OOAnalyzer Clingo Prototype — Makefile
-# Converts OOAnalyzer .facts files to Clingo .lp and runs the solver.
+# Converts OOAnalyzer .facts files to Clingo .lp and runs the propagator solver.
 
 PYTHON       := python3
 TIME         := time
-CLINGO       := clingo ooanalyzer.lp
-CLINGO_FLAGS := --quiet=1,2 --time-limit=60 --opt-strategy bb,inc --heuristic=domain --stats
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
@@ -18,7 +16,7 @@ FACTS        := $(shell find $(OOA_DIR) -name '*.facts')
 LP_FILES     := $(FACTS:%.facts=%.lp)
 
 # ----------------------------------------------------------------
-# Default: convert all .facts and run clingo
+# Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
 .PHONY: all convert run verify verify-core verify-real lazyrun propagator-run explain-all symbolize clean help
 
@@ -27,8 +25,9 @@ all: run
 help:
 	@echo "Targets:"
 	@echo "  make convert    — convert all $(OOA_DIR)/*/*/*.facts to .lp"
-	@echo "  make run        — convert and run clingo on all .lp files"
+	@echo "  make run        — convert and run ooanalyzer.py on all .lp files"
 	@echo "  make verify     — run marker checks for core fixtures"
+	@echo "  make propagator-run — alias for run"
 	@echo "  make lazyrun    — convert and run dualgrounder on all .lp files"
 	@echo "  make explain-all — convert and explain optimal models via xclingo"
 	@echo "  make symbolize  — symbolize all .out files to .sym files"
@@ -46,20 +45,20 @@ $(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts facts2clingo.py
 	$(PYTHON) facts2clingo.py $< > $@
 
 # ----------------------------------------------------------------
-# Run clingo on generated .lp files
+# Run ooanalyzer.py on generated .lp files
 # ----------------------------------------------------------------
 OUT_FILES := $(LP_FILES:%.lp=%.out)
 
-define CLINGO_RUN
-	rc=0; $(TIME) $(CLINGO) $(CLINGO_FLAGS) $(1) >"$(2)" 2>&1 || rc=$$?; \
+define PROPAGATOR_RUN
+	rc=0; $(TIME) $(PROPAGATOR) $(1) $(PROP_FLAGS) >"$(2)" 2>&1 || rc=$$?; \
 	case "$$rc" in 0|10|20|30) ;; *) echo "warning: $(1) exited $$rc" >>"$(2)" ;; esac
 endef
 
 run: $(OUT_FILES)
 
-$(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/*.lp)
-	@echo "=== Running: $(CLINGO) $(CLINGO_FLAGS) $< ==="
-	$(call CLINGO_RUN,$<,$@)
+$(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/**/*.lp)
+	@echo "=== Running: $(PROPAGATOR) $< $(PROP_FLAGS) ==="
+	$(call PROPAGATOR_RUN,$<,$@)
 	@tail -20 $@
 
 verify: verify-core
@@ -79,33 +78,24 @@ verify-core:
 		rm -f "$$out"; \
 	}; \
 	echo "=== Verifying examples/example.lp ==="; \
-	run_case 'OPTIMUM FOUND' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/example.lp; \
+	run_case 'OPTIMUM FOUND' '' '' '' $(PROPAGATOR) examples/example.lp $(PROP_FLAGS); \
 	echo "=== Verifying examples/invalid_example.lp ==="; \
-	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/invalid_example.lp; \
+	run_case 'UNSATISFIABLE' '' '' '' $(PROPAGATOR) examples/invalid_example.lp $(PROP_FLAGS); \
 	echo "=== Verifying examples/strong_negation_contradiction.lp ==="; \
-	run_case 'UNSATISFIABLE' '' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/strong_negation_contradiction.lp; \
+	run_case 'UNSATISFIABLE' '' '' '' $(PROPAGATOR) examples/strong_negation_contradiction.lp $(PROP_FLAGS); \
 	echo "=== Verifying examples/constructor_vftable_entry_example.lp ==="; \
-	run_case 'SATISFIABLE' '-vfTableEntry(2000,0,1000)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/constructor_vftable_entry_example.lp; \
+	run_case 'SATISFIABLE' '-vfTableEntry(2000,0,1000)' '' '' $(PROPAGATOR) examples/constructor_vftable_entry_example.lp $(PROP_FLAGS); \
 	echo "=== Verifying examples/symbol_conflict_example.lp ==="; \
-	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '' $(CLINGO) $(CLINGO_FLAGS) examples/symbol_conflict_example.lp; \
+	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '' $(PROPAGATOR) examples/symbol_conflict_example.lp $(PROP_FLAGS); \
 	echo "=== Verifying examples/symbol_missing_conflict_example.lp ==="; \
-	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(CLINGO) $(CLINGO_FLAGS) examples/symbol_missing_conflict_example.lp; \
-	echo "=== Verifying diagnostic contradiction fixture ==="; \
-	run_case 'SATISFIABLE' 'violate(insanityTwoRealDestructorsOnClass' '' '' $(CLINGO) --const diagnose=1 ooanalyzer.lp examples/strong_negation_contradiction.lp --quiet=1,2
+	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(PROPAGATOR) examples/symbol_missing_conflict_example.lp $(PROP_FLAGS)
 
 # ----------------------------------------------------------------
 # Run dualgrounder on generated .lp files
 # ----------------------------------------------------------------
 LAZY_OUT_FILES := $(LP_FILES:%.lp=%.lazy.out)
 
-PROP_OUT_FILES := $(LP_FILES:%.lp=%.prop.out)
-
-propagator-run: $(PROP_OUT_FILES)
-
-$(OOA_DIR)/%.prop.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/**/*.lp)
-	@echo "=== Running propagator: $(PROPAGATOR) $< ==="
-	$(TIME) $(PROPAGATOR) $< $(PROP_FLAGS) > $@ 2>&1 || true
-	@tail -10 $@
+propagator-run: run
 
 lazyrun: $(LAZY_OUT_FILES)
 

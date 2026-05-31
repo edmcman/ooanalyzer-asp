@@ -12,41 +12,49 @@ thin entry point that includes them in order.
 ## Quick Start
 
 ```sh
-clingo ooanalyzer.lp examples/example.lp          # find optimal model
-clingo ooanalyzer.lp examples/example.lp 0        # enumerate all models
-clingo ooanalyzer.lp examples/invalid_example.lp  # UNSATISFIABLE (contradictory facts)
+python ooanalyzer.py examples/example.lp              # find optimal model
+python ooanalyzer.py examples/example.lp -n 0         # enumerate all models
+python ooanalyzer.py examples/invalid_example.lp      # UNSATISFIABLE
+python tests/test_propagator.py                       # propagator regression test
 ```
+
+The ASP rules use the `&sameClass/2` theory atom, so normal solving should go
+through [`ooanalyzer.py`](ooanalyzer.py). The wrapper loads
+[`ooanalyzer.lp`](ooanalyzer.lp), registers the Python propagator, and then loads
+the fact/example files passed on the command line.
 
 Or use the Makefile:
 
 ```sh
-make examples/ooa/oo.lp   # convert one .facts file
-make convert              # convert all examples/ooa/*.facts
-make run                  # convert and run clingo on all of them
-make verify               # run marker checks for core fixtures
-make clean                # remove generated .lp files
+make examples/ooa/ooex_vs2008/Debug/oo.lp  # convert one .facts file
+make convert                                # convert all examples/ooa/*/*/*.facts
+make run                                    # convert and run ooanalyzer.py on all of them
+make propagator-run                         # alias for make run
+make verify                                 # run marker checks for core fixtures
+make clean                                  # remove generated .lp/.out files
 ```
 
-`make run` uses `--quiet=1,2 --time-limit=30` by default to suppress model I/O
-and cap solve time; most examples complete in <3s. `oo.lp` and `ooex5.lp` may
-hit the 30s cap on slower hardware.
+`make run` is the current solver path for the `&sameClass/2` prototype and uses
+the Python propagator driver.
 
-`make verify` is the regression gate: it checks the hand-written fixtures'
-expected markers and accepts Clingo exits 10/20/30. `make run` remains the
-artifact path for the larger real-fixture corpus under `examples/ooa/`.
+`python tests/test_propagator.py` is the focused regression check for the
+current theory path. `make verify` also uses the Python propagator driver.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | [`ooanalyzer.lp`](ooanalyzer.lp) | Entry point: `#include`s the modules below |
+| [`ooanalyzer.py`](ooanalyzer.py) | Clingo driver that registers the `&sameClass/2` propagator |
+| [`src/util/theory.lp`](src/util/theory.lp) | Clingo theory declaration for `&sameClass/2` |
 | [`src/util/facts.lp`](src/util/facts.lp) | Input vocabulary and `#defined` directives |
 | [`src/util/initial.lp`](src/util/initial.lp) | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
-| [`src/util/sanity.lp`](src/util/sanity.lp) | Diagnostic infrastructure and `#show` directives |
 | [`src/modules/methods.lp`](src/modules/methods.lp) | Method identification rules |
 | [`src/modules/ctorsdtors.lp`](src/modules/ctorsdtors.lp) | Constructor/destructor identification and guessing |
 | [`src/modules/vftables.lp`](src/modules/vftables.lp) | VFTable identification, entries, and guessing |
-| [`src/modules/merges.lp`](src/modules/merges.lp) | Class merge rules and transitive closure |
+| [`src/modules/merges.lp`](src/modules/merges.lp) | Class merge and non-merge evidence |
+| [`propagator/sameclass.py`](propagator/sameclass.py) | Union-find propagator for `&sameClass/2` |
+| [`tests/test_propagator.py`](tests/test_propagator.py) | Focused propagator regression harness |
 | [`src/old/`](src/old/) | v1 Clingo modules (reference only) |
 | [`facts2clingo.py`](facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | [`examples/example.lp`](examples/example.lp) | Valid 3-class example |
