@@ -1,92 +1,8 @@
-clingo version 5.8.0
-Reading from ooanalyzer.lp ...
-Solving...
-Answer: 3 (Time: 0.896s)
+
+Answer: 1
 method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
-method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
-method(virtual int Base2::func1(void)@4264346)
-method(virtual int Base::func1(void)@4264456)
-method(Derived::Derived(void)@4265424)
-method(Base::Base(void)@4265632)
-method(Base2::Base2(void)@4265936)
-method(type_info::type_info(class type_info const &)@4267040)
-vfTable(const Derived::`vftable'{for `Base2'}@4286272)
-vfTable(const Derived::`vftable'{for `Base'}@4286292)
-vfTable(const Base::`vftable'@4286312)
-vfTable(const Base2::`vftable'@4286332)
-vfTable(const type_info::`vftable'@4286352)
-sameClass(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
-sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
-sameClass(virtual int Base2::func1(void)@4264346,virtual int Base2::func1(void)@4264346)
-sameClass(virtual int Base::func1(void)@4264456,virtual int Base::func1(void)@4264456)
-sameClass(Derived::Derived(void)@4265424,Derived::Derived(void)@4265424)
-sameClass(Base::Base(void)@4265632,Base::Base(void)@4265632)
-sameClass(Base2::Base2(void)@4265936,Base2::Base2(void)@4265936)
-sameClass(type_info::type_info(class type_info const &)@4267040,type_info::type_info(class type_info const &)@4267040)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,const Derived::`vftable'{for `Base2'}@4286272)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(const Base::`vftable'@4286312,const Base::`vftable'@4286312)
-sameClass(const Base2::`vftable'@4286332,const Base2::`vftable'@4286332)
-sameClass(const type_info::`vftable'@4286352,const type_info::`vftable'@4286352)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,const Derived::`vftable'{for `Base2'}@4286272)
-vfTableEntry(const type_info::`vftable'@4286352,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
-vfTableEntry(const Base2::`vftable'@4286332,0,virtual int Base2::func1(void)@4264346)
-vfTableEntry(const Base::`vftable'@4286312,0,virtual int Base::func1(void)@4264456)
-vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,0,virtual int Base::func1(void)@4264456)
-vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,0,virtual int Base2::func1(void)@4264346)
-vfTableWrite(4267052,type_info::type_info(class type_info const &)@4267040,0,const type_info::`vftable'@4286352)
-vfTableWrite(4265974,Base2::Base2(void)@4265936,0,const Base2::`vftable'@4286332)
-vfTableWrite(4265670,Base::Base(void)@4265632,0,const Base::`vftable'@4286312)
-vfTableWrite(4265481,Derived::Derived(void)@4265424,0,const Derived::`vftable'{for `Base'}@4286292)
-vfTableWrite(4265490,Derived::Derived(void)@4265424,16,const Derived::`vftable'{for `Base2'}@4286272)
-method(virtual int Base::func2(void)@4265840)
-method(virtual int Base2::func1(void)@4266048)
-deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
-method(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
-classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
-classCallsMethod(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4265840)
-classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func1(void)@4266048)
-classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func1(void)@4265744)
-classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func1(void)@4265744)
-classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4266048)
-classCallsMethod(const type_info::`vftable'@4286352,virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
-method(virtual int Base::func1(void)@4265744)
-sameClass(virtual int Base::func1(void)@4265744,virtual int Base::func1(void)@4265744)
-sameClass(virtual int Base::func2(void)@4265840,virtual int Base::func2(void)@4265840)
-sameClass(virtual int Base2::func1(void)@4266048,virtual int Base2::func1(void)@4266048)
-sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088,virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
-vftableBelongsToClass(const type_info::`vftable'@4286352,0,type_info::type_info(class type_info const &)@4267040)
-sameClass(const type_info::`vftable'@4286352,type_info::type_info(class type_info const &)@4267040)
-sameClass(type_info::type_info(class type_info const &)@4267040,const type_info::`vftable'@4286352)
-classCallsMethod(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
-vfTableEntry(const Base2::`vftable'@4286332,4,virtual int Base2::func2(void)@4264291)
-vfTableSize(const Base2::`vftable'@4286332,12)
-vfTableEntry(const Base2::`vftable'@4286332,8,j___purecall@4264311)
-vfTableEntry(const Base::`vftable'@4286312,4,virtual int Base::func2(void)@4264206)
-vfTableSize(const Base::`vftable'@4286312,12)
-vfTableEntry(const Base::`vftable'@4286312,8,j___purecall@4264311)
-vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,4,virtual int Base::func2(void)@4264206)
-vfTableSize(const Derived::`vftable'{for `Base'}@4286292,12)
-vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,8,virtual int Derived::func3(void)@4264261)
-vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,4,virtual int Base2::func2(void)@4264291)
-vfTableSize(const Derived::`vftable'{for `Base2'}@4286272,12)
-vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,8,virtual int Derived::func4(void)@4263946)
-classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Derived::func4(void)@4266240)
-classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4266144)
-classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Derived::func3(void)@4266304)
-classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4265840)
-classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func2(void)@4265840)
-classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func2(void)@4266144)
-method(virtual int Derived::func4(void)@4263946)
-method(virtual int Base2::func2(void)@4264291)
-method(virtual int Derived::func3(void)@4264261)
-method(virtual int Base::func2(void)@4264206)
-method(j___purecall@4264311)
-method(virtual int Base2::func2(void)@4266144)
-method(virtual int Derived::func3(void)@4266304)
-method(virtual int Derived::func4(void)@4266240)
 method(j___setdefaultprecision@4263941)
+method(virtual int Derived::func4(void)@4263946)
 method(j___setargv@4263951)
 method(__stdcall DebugBreak()@4263956)
 method(Base2::Base2(void)@4263961)
@@ -126,6 +42,7 @@ method(__stdcall GetCurrentProcess()@4264131)
 method(j___encode_pointer@4264136)
 method(j___RTC_UninitUse@4264141)
 method(j___RTC_Shutdown@4264146)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
 method(j___FindPESection@4264156)
 method(j___configthreadlocale@4264161)
 method(j___RTC_InitBase@4264166)
@@ -136,6 +53,7 @@ method(Base::Base(void)@4264186)
 method(j___crt_debugger_hook@4264191)
 method(j___ValidateImageBase@4264196)
 method(__stdcall InterlockedCompareExchange(x, x, x)@4264201)
+method(virtual int Base::func2(void)@4264206)
 method(__stdcall GetProcessHeap()@4264211)
 method(j___RTC_SetErrorFuncW@4264216)
 method(j___onexit@4264221)
@@ -146,20 +64,24 @@ method(j___invoke_watson_if_error@4264241)
 method(__stdcall TerminateProcess(x, x)@4264246)
 method(j__rand@4264251)
 method(start@4264256)
+method(virtual int Derived::func3(void)@4264261)
 method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264266)
 method(j____CxxSetUnhandledExceptionFilter@4264271)
 method(__stdcall QueryPerformanceCounter(x)@4264276)
 method(j____p__commode@4264281)
 method(j___unlock@4264286)
+method(virtual int Base2::func2(void)@4264291)
 method(__stdcall GetCurrentProcessId()@4264296)
 method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264301)
 method(j____set_app_type@4264306)
+method(j___purecall@4264311)
 method(j___RTC_CheckEsp@4264316)
 method(j__main@4264321)
 method(j___RTC_Initialize@4264326)
 method(Derived::Derived(void)@4264331)
 method(j___controlfp_s@4264336)
 method(__stdcall GetSystemTimeAsFileTime(x)@4264341)
+method(virtual int Base2::func1(void)@4264346)
 method(j___decode_pointer@4264351)
 method(j___invoke_watson@4264356)
 method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264361)
@@ -181,6 +103,7 @@ method(j____getmainargs@4264436)
 method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264441)
 method(__stdcall lstrlenA(x)@4264446)
 method(__cdecl _RTC_Failure(*, int)@4264451)
+method(virtual int Base::func1(void)@4264456)
 method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264461)
 method(j__DebuggerKnownHandle@4264466)
 method(j__exit_0@4264471)
@@ -190,6 +113,15 @@ method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4
 method(j___initterm_e@4264491)
 method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264496)
 method(_main@4265072)
+method(Derived::Derived(void)@4265424)
+method(Base::Base(void)@4265632)
+method(virtual int Base::func1(void)@4265744)
+method(virtual int Base::func2(void)@4265840)
+method(Base2::Base2(void)@4265936)
+method(virtual int Base2::func1(void)@4266048)
+method(virtual int Base2::func2(void)@4266144)
+method(virtual int Derived::func4(void)@4266240)
+method(virtual int Derived::func3(void)@4266304)
 method(_rand@4266368)
 method(__cdecl operator delete(*)@4266374)
 method(* __cdecl operator new(unsigned int)@4266380)
@@ -200,6 +132,8 @@ method(__fastcall _RTC_AllocaHelper(x, x, x)@4266608)
 method(__fastcall _RTC_CheckStackVars2(x, x, x)@4266672)
 method(__RTC_InitBase@4266944)
 method(__RTC_Shutdown@4267008)
+method(type_info::type_info(class type_info const &)@4267040)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
 method(class type_info & type_info::operator=(class type_info const &)@4267232)
 method(__purecall@4267254)
 method(pre_c_init@4267264)
@@ -302,882 +236,768 @@ method(__RTC_CheckEsp@4266432)
 method(___report_gsfailure@4268592)
 method($LN8@4271646)
 method(__unwindfunclet$_main$0@4279440)
-sameClass(j___setdefaultprecision@4263941,j___setdefaultprecision@4263941)
-sameClass(virtual int Derived::func4(void)@4263946,virtual int Derived::func4(void)@4263946)
-sameClass(j___setargv@4263951,j___setargv@4263951)
-sameClass(__stdcall DebugBreak()@4263956,__stdcall DebugBreak()@4263956)
-sameClass(Base2::Base2(void)@4263961,Base2::Base2(void)@4263961)
-sameClass(j___RTC_GetErrDesc@4263966,j___RTC_GetErrDesc@4263966)
-sameClass(j____p__fmode@4263971,j____p__fmode@4263971)
-sameClass(__fastcall __security_check_cookie(x)@4263976,__fastcall __security_check_cookie(x)@4263976)
-sameClass(__stdcall IsDebuggerPresent()@4263981,__stdcall IsDebuggerPresent()@4263981)
-sameClass(class type_info & type_info::operator=(class type_info const &)@4263986,class type_info & type_info::operator=(class type_info const &)@4263986)
-sameClass(j___RTC_Terminate@4263991,j___RTC_Terminate@4263991)
-sameClass(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263996,__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263996)
-sameClass(__fastcall _RTC_AllocaHelper(x, x, x)@4264001,__fastcall _RTC_AllocaHelper(x, x, x)@4264001)
-sameClass(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264006,int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264006)
-sameClass(j___RTC_NumErrors@4264011,j___RTC_NumErrors@4264011)
-sameClass(j____setusermatherr@4264016,j____setusermatherr@4264016)
-sameClass(__stdcall Sleep(x)@4264021,__stdcall Sleep(x)@4264021)
-sameClass(virtual type_info::~type_info(void)@4264026,virtual type_info::~type_info(void)@4264026)
-sameClass(__stdcall GetModuleFileNameW(x, x, x)@4264031,__stdcall GetModuleFileNameW(x, x, x)@4264031)
-sameClass(j____security_init_cookie@4264036,j____security_init_cookie@4264036)
-sameClass(__stdcall SetUnhandledExceptionFilter(x)@4264041,__stdcall SetUnhandledExceptionFilter(x)@4264041)
-sameClass(j___cexit@4264046,j___cexit@4264046)
-sameClass(j___CrtDbgReportW@4264051,j___CrtDbgReportW@4264051)
-sameClass(__stdcall VirtualQuery(x, x, x)@4264056,__stdcall VirtualQuery(x, x, x)@4264056)
-sameClass(j__atexit@4264061,j__atexit@4264061)
-sameClass(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264066,__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264066)
-sameClass(j___RTC_SetErrorType@4264071,j___RTC_SetErrorType@4264071)
-sameClass(j___except_handler4@4264076,j___except_handler4@4264076)
-sameClass(j___lock@4264081,j___lock@4264081)
-sameClass(__stdcall GetProcAddress(x, x)@4264086,__stdcall GetProcAddress(x, x)@4264086)
-sameClass(__fastcall _RTC_CheckStackVars(x, x)@4264091,__fastcall _RTC_CheckStackVars(x, x)@4264091)
-sameClass(__cdecl operator delete(*)@4264096,__cdecl operator delete(*)@4264096)
-sameClass(virtual type_info::~type_info(void)@4264101,virtual type_info::~type_info(void)@4264101)
-sameClass(__cdecl terminate(void)@4264111,__cdecl terminate(void)@4264111)
-sameClass(j___exit@4264116,j___exit@4264116)
-sameClass(__stdcall GetCurrentThreadId()@4264121,__stdcall GetCurrentThreadId()@4264121)
-sameClass(j___initterm@4264126,j___initterm@4264126)
-sameClass(__stdcall GetCurrentProcess()@4264131,__stdcall GetCurrentProcess()@4264131)
-sameClass(j___encode_pointer@4264136,j___encode_pointer@4264136)
-sameClass(j___RTC_UninitUse@4264141,j___RTC_UninitUse@4264141)
-sameClass(j___RTC_Shutdown@4264146,j___RTC_Shutdown@4264146)
-sameClass(j___FindPESection@4264156,j___FindPESection@4264156)
-sameClass(j___configthreadlocale@4264161,j___configthreadlocale@4264161)
-sameClass(j___RTC_InitBase@4264166,j___RTC_InitBase@4264166)
-sameClass(__cdecl _RTC_StackFailure(*, char const *)@4264171,__cdecl _RTC_StackFailure(*, char const *)@4264171)
-sameClass(__stdcall LoadLibraryA(x)@4264176,__stdcall LoadLibraryA(x)@4264176)
-sameClass(__stdcall RaiseException(x, x, x, x)@4264181,__stdcall RaiseException(x, x, x, x)@4264181)
-sameClass(Base::Base(void)@4264186,Base::Base(void)@4264186)
-sameClass(j___crt_debugger_hook@4264191,j___crt_debugger_hook@4264191)
-sameClass(j___ValidateImageBase@4264196,j___ValidateImageBase@4264196)
-sameClass(__stdcall InterlockedCompareExchange(x, x, x)@4264201,__stdcall InterlockedCompareExchange(x, x, x)@4264201)
-sameClass(virtual int Base::func2(void)@4264206,virtual int Base::func2(void)@4264206)
-sameClass(__stdcall GetProcessHeap()@4264211,__stdcall GetProcessHeap()@4264211)
-sameClass(j___RTC_SetErrorFuncW@4264216,j___RTC_SetErrorFuncW@4264216)
-sameClass(j___onexit@4264221,j___onexit@4264221)
-sameClass(j__NtCurrentTeb@4264226,j__NtCurrentTeb@4264226)
-sameClass(__stdcall HeapFree(x, x, x)@4264231,__stdcall HeapFree(x, x, x)@4264231)
-sameClass(j___RTC_SetErrorFunc@4264236,j___RTC_SetErrorFunc@4264236)
-sameClass(j___invoke_watson_if_error@4264241,j___invoke_watson_if_error@4264241)
-sameClass(__stdcall TerminateProcess(x, x)@4264246,__stdcall TerminateProcess(x, x)@4264246)
-sameClass(j__rand@4264251,j__rand@4264251)
-sameClass(start@4264256,start@4264256)
-sameClass(virtual int Derived::func3(void)@4264261,virtual int Derived::func3(void)@4264261)
-sameClass(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264266,long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264266)
-sameClass(j____CxxSetUnhandledExceptionFilter@4264271,j____CxxSetUnhandledExceptionFilter@4264271)
-sameClass(__stdcall QueryPerformanceCounter(x)@4264276,__stdcall QueryPerformanceCounter(x)@4264276)
-sameClass(j____p__commode@4264281,j____p__commode@4264281)
-sameClass(j___unlock@4264286,j___unlock@4264286)
-sameClass(virtual int Base2::func2(void)@4264291,virtual int Base2::func2(void)@4264291)
-sameClass(__stdcall GetCurrentProcessId()@4264296,__stdcall GetCurrentProcessId()@4264296)
-sameClass(__fastcall _RTC_CheckStackVars2(x, x, x)@4264301,__fastcall _RTC_CheckStackVars2(x, x, x)@4264301)
-sameClass(j____set_app_type@4264306,j____set_app_type@4264306)
-sameClass(j___purecall@4264311,j___purecall@4264311)
-sameClass(j___RTC_CheckEsp@4264316,j___RTC_CheckEsp@4264316)
-sameClass(j__main@4264321,j__main@4264321)
-sameClass(j___RTC_Initialize@4264326,j___RTC_Initialize@4264326)
-sameClass(Derived::Derived(void)@4264331,Derived::Derived(void)@4264331)
-sameClass(j___controlfp_s@4264336,j___controlfp_s@4264336)
-sameClass(__stdcall GetSystemTimeAsFileTime(x)@4264341,__stdcall GetSystemTimeAsFileTime(x)@4264341)
-sameClass(j___decode_pointer@4264351,j___decode_pointer@4264351)
-sameClass(j___invoke_watson@4264356,j___invoke_watson@4264356)
-sameClass(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264361,int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264361)
-sameClass(j___CRT_RTC_INITW@4264366,j___CRT_RTC_INITW@4264366)
-sameClass(__stdcall GetTickCount()@4264371,__stdcall GetTickCount()@4264371)
-sameClass(j___IsNonwritableInCurrentImage@4264376,j___IsNonwritableInCurrentImage@4264376)
-sameClass(j____CxxFrameHandler3@4264381,j____CxxFrameHandler3@4264381)
-sameClass(__stdcall HeapAlloc(x, x, x)@4264386,__stdcall HeapAlloc(x, x, x)@4264386)
-sameClass(j___amsg_exit@4264391,j___amsg_exit@4264391)
-sameClass(* __cdecl operator new(unsigned int)@4264396,* __cdecl operator new(unsigned int)@4264396)
-sameClass(j___XcptFilter@4264401,j___XcptFilter@4264401)
-sameClass(j___CrtSetCheckCount@4264406,j___CrtSetCheckCount@4264406)
-sameClass(__stdcall InterlockedExchange(x, x)@4264411,__stdcall InterlockedExchange(x, x)@4264411)
-sameClass(__stdcall UnhandledExceptionFilter(x)@4264416,__stdcall UnhandledExceptionFilter(x)@4264416)
-sameClass(type_info::type_info(class type_info const &)@4264421,type_info::type_info(class type_info const &)@4264421)
-sameClass(j___except_handler4_common@4264426,j___except_handler4_common@4264426)
-sameClass(j___matherr@4264431,j___matherr@4264431)
-sameClass(j____getmainargs@4264436,j____getmainargs@4264436)
-sameClass(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264441,__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264441)
-sameClass(__stdcall lstrlenA(x)@4264446,__stdcall lstrlenA(x)@4264446)
-sameClass(__cdecl _RTC_Failure(*, int)@4264451,__cdecl _RTC_Failure(*, int)@4264451)
-sameClass(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264461,__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264461)
-sameClass(j__DebuggerKnownHandle@4264466,j__DebuggerKnownHandle@4264466)
-sameClass(j__exit_0@4264471,j__exit_0@4264471)
-sameClass(j____dllonexit@4264476,j____dllonexit@4264476)
-sameClass(__stdcall FreeLibrary(x)@4264481,__stdcall FreeLibrary(x)@4264481)
-sameClass(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264486,__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264486)
-sameClass(j___initterm_e@4264491,j___initterm_e@4264491)
-sameClass(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264496,int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264496)
-sameClass(_main@4265072,_main@4265072)
-sameClass(virtual int Base2::func2(void)@4266144,virtual int Base2::func2(void)@4266144)
-sameClass(virtual int Derived::func4(void)@4266240,virtual int Derived::func4(void)@4266240)
-sameClass(virtual int Derived::func3(void)@4266304,virtual int Derived::func3(void)@4266304)
-sameClass(_rand@4266368,_rand@4266368)
-sameClass(__cdecl operator delete(*)@4266374,__cdecl operator delete(*)@4266374)
-sameClass(* __cdecl operator new(unsigned int)@4266380,* __cdecl operator new(unsigned int)@4266380)
-sameClass(___CxxFrameHandler3@4266386,___CxxFrameHandler3@4266386)
-sameClass(__fastcall __security_check_cookie(x)@4266400,__fastcall __security_check_cookie(x)@4266400)
-sameClass(__fastcall _RTC_CheckStackVars(x, x)@4266480,__fastcall _RTC_CheckStackVars(x, x)@4266480)
-sameClass(__fastcall _RTC_AllocaHelper(x, x, x)@4266608,__fastcall _RTC_AllocaHelper(x, x, x)@4266608)
-sameClass(__fastcall _RTC_CheckStackVars2(x, x, x)@4266672,__fastcall _RTC_CheckStackVars2(x, x, x)@4266672)
-sameClass(__RTC_InitBase@4266944,__RTC_InitBase@4266944)
-sameClass(__RTC_Shutdown@4267008,__RTC_Shutdown@4267008)
-sameClass(class type_info & type_info::operator=(class type_info const &)@4267232,class type_info & type_info::operator=(class type_info const &)@4267232)
-sameClass(__purecall@4267254,__purecall@4267254)
-sameClass(pre_c_init@4267264,pre_c_init@4267264)
-sameClass(pre_cpp_init@4267472,pre_cpp_init@4267472)
-sameClass(_mainCRTStartup@4267584,_mainCRTStartup@4267584)
-sameClass(__tmainCRTStartup@4267616,__tmainCRTStartup@4267616)
-sameClass(_NtCurrentTeb@4268352,_NtCurrentTeb@4268352)
-sameClass(check_managed_app@4268368,check_managed_app@4268368)
-sameClass(_DebuggerKnownHandle@4268944,_DebuggerKnownHandle@4268944)
-sameClass(DebuggerProbe@4268992,DebuggerProbe@4268992)
-sameClass(__cdecl _RTC_Failure(*, int)@4269168,__cdecl _RTC_Failure(*, int)@4269168)
-sameClass(failwithmessage@4269280,failwithmessage@4269280)
-sameClass(DebuggerRuntime@4269936,DebuggerRuntime@4269936)
-sameClass(__cdecl _RTC_StackFailure(*, char const *)@4270144,__cdecl _RTC_StackFailure(*, char const *)@4270144)
-sameClass(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4270464,__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4270464)
-sameClass(_getMemBlockDataString@4270848,_getMemBlockDataString@4270848)
-sameClass(__RTC_UninitUse@4270992,__RTC_UninitUse@4270992)
-sameClass(__RTC_NumErrors@4271296,__RTC_NumErrors@4271296)
-sameClass(__RTC_GetErrDesc@4271312,__RTC_GetErrDesc@4271312)
-sameClass(__RTC_SetErrorFunc@4271392,__RTC_SetErrorFunc@4271392)
-sameClass(__RTC_SetErrorFuncW@4271440,__RTC_SetErrorFuncW@4271440)
-sameClass(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271488,int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271488)
-sameClass(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4271504,int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4271504)
-sameClass(__CRT_RTC_INITW@4271510,__CRT_RTC_INITW@4271510)
-sameClass(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4271520,__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4271520)
-sameClass(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4271744,__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4271744)
-sameClass(ArrayUnwindFilter@4271920,ArrayUnwindFilter@4271920)
-sameClass(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4271984,long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4271984)
-sameClass(___CxxSetUnhandledExceptionFilter@4272112,___CxxSetUnhandledExceptionFilter@4272112)
-sameClass(__configthreadlocale@4272138,__configthreadlocale@4272138)
-sameClass(__setdefaultprecision@4272144,__setdefaultprecision@4272144)
-sameClass(__invoke_watson_if_error@4272224,__invoke_watson_if_error@4272224)
-sameClass(___setusermatherr@4272278,___setusermatherr@4272278)
-sameClass(__matherr@4272288,__matherr@4272288)
-sameClass(__setargv@4272304,__setargv@4272304)
-sameClass(__RTC_Initialize@4272320,__RTC_Initialize@4272320)
-sameClass(__RTC_Terminate@4272368,__RTC_Terminate@4272368)
-sameClass(___p__commode@4272416,___p__commode@4272416)
-sameClass(___p__fmode@4272422,___p__fmode@4272422)
-sameClass(__onexit@4272432,__onexit@4272432)
-sameClass($LN6_1@4272661,$LN6_1@4272661)
-sameClass(_atexit@4272768,_atexit@4272768)
-sameClass(__encode_pointer@4272804,__encode_pointer@4272804)
-sameClass(___set_app_type@4272810,___set_app_type@4272810)
-sameClass(__amsg_exit@4272816,__amsg_exit@4272816)
-sameClass(___getmainargs@4272822,___getmainargs@4272822)
-sameClass(___security_init_cookie@4272832,___security_init_cookie@4272832)
-sameClass(__exit@4273106,__exit@4273106)
-sameClass(__XcptFilter@4273112,__XcptFilter@4273112)
-sameClass(__cexit@4273118,__cexit@4273118)
-sameClass(_exit_0@4273124,_exit_0@4273124)
-sameClass(__CrtSetCheckCount@4273130,__CrtSetCheckCount@4273130)
-sameClass(__ValidateImageBase@4273136,__ValidateImageBase@4273136)
-sameClass(__FindPESection@4273264,__FindPESection@4273264)
-sameClass(__IsNonwritableInCurrentImage@4273424,__IsNonwritableInCurrentImage@4273424)
-sameClass(__CrtDbgReportW@4273766,__CrtDbgReportW@4273766)
-sameClass(__initterm@4273772,__initterm@4273772)
-sameClass(__initterm_e@4273778,__initterm_e@4273778)
-sameClass(__except_handler4@4273792,__except_handler4@4273792)
-sameClass(__crt_debugger_hook@4273844,__crt_debugger_hook@4273844)
-sameClass(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4273856,int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4273856)
-sameClass(GetPdbDll@4274736,GetPdbDll@4274736)
-sameClass(__cdecl terminate(void)@4275324,__cdecl terminate(void)@4275324)
-sameClass(virtual type_info::~type_info(void)@4275330,virtual type_info::~type_info(void)@4275330)
-sameClass(__controlfp_s@4275336,__controlfp_s@4275336)
-sameClass(__invoke_watson@4275342,__invoke_watson@4275342)
-sameClass(__unlock@4275348,__unlock@4275348)
-sameClass(___dllonexit@4275354,___dllonexit@4275354)
-sameClass(__lock@4275360,__lock@4275360)
-sameClass(__decode_pointer@4275366,__decode_pointer@4275366)
-sameClass(__except_handler4_common@4275372,__except_handler4_common@4275372)
-sameClass(__stdcall InterlockedExchange(x, x)@4275378,__stdcall InterlockedExchange(x, x)@4275378)
-sameClass(__stdcall Sleep(x)@4275384,__stdcall Sleep(x)@4275384)
-sameClass(__stdcall InterlockedCompareExchange(x, x, x)@4275390,__stdcall InterlockedCompareExchange(x, x, x)@4275390)
-sameClass(__stdcall TerminateProcess(x, x)@4275396,__stdcall TerminateProcess(x, x)@4275396)
-sameClass(__stdcall GetCurrentProcess()@4275402,__stdcall GetCurrentProcess()@4275402)
-sameClass(__stdcall UnhandledExceptionFilter(x)@4275408,__stdcall UnhandledExceptionFilter(x)@4275408)
-sameClass(__stdcall SetUnhandledExceptionFilter(x)@4275414,__stdcall SetUnhandledExceptionFilter(x)@4275414)
-sameClass(__stdcall IsDebuggerPresent()@4275420,__stdcall IsDebuggerPresent()@4275420)
-sameClass(__stdcall RaiseException(x, x, x, x)@4275426,__stdcall RaiseException(x, x, x, x)@4275426)
-sameClass(__stdcall DebugBreak()@4275432,__stdcall DebugBreak()@4275432)
-sameClass(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4275438,__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4275438)
-sameClass(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4275444,__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4275444)
-sameClass(__stdcall lstrlenA(x)@4275450,__stdcall lstrlenA(x)@4275450)
-sameClass(__stdcall GetProcAddress(x, x)@4275456,__stdcall GetProcAddress(x, x)@4275456)
-sameClass(__stdcall LoadLibraryA(x)@4275462,__stdcall LoadLibraryA(x)@4275462)
-sameClass(__stdcall QueryPerformanceCounter(x)@4275468,__stdcall QueryPerformanceCounter(x)@4275468)
-sameClass(__stdcall GetTickCount()@4275474,__stdcall GetTickCount()@4275474)
-sameClass(__stdcall GetCurrentThreadId()@4275480,__stdcall GetCurrentThreadId()@4275480)
-sameClass(__stdcall GetCurrentProcessId()@4275486,__stdcall GetCurrentProcessId()@4275486)
-sameClass(__stdcall GetSystemTimeAsFileTime(x)@4275492,__stdcall GetSystemTimeAsFileTime(x)@4275492)
-sameClass(__stdcall HeapFree(x, x, x)@4275498,__stdcall HeapFree(x, x, x)@4275498)
-sameClass(__stdcall HeapAlloc(x, x, x)@4275504,__stdcall HeapAlloc(x, x, x)@4275504)
-sameClass(__stdcall GetProcessHeap()@4275510,__stdcall GetProcessHeap()@4275510)
-sameClass(__stdcall GetModuleFileNameW(x, x, x)@4275516,__stdcall GetModuleFileNameW(x, x, x)@4275516)
-sameClass(__stdcall VirtualQuery(x, x, x)@4275522,__stdcall VirtualQuery(x, x, x)@4275522)
-sameClass(__stdcall FreeLibrary(x)@4275528,__stdcall FreeLibrary(x)@4275528)
-sameClass(__ehhandler$_main@4279454,__ehhandler$_main@4279454)
-sameClass(__RTC_CheckEsp@4266432,__RTC_CheckEsp@4266432)
-sameClass(___report_gsfailure@4268592,___report_gsfailure@4268592)
-sameClass($LN8@4271646,$LN8@4271646)
-sameClass(__unwindfunclet$_main$0@4279440,__unwindfunclet$_main$0@4279440)
-sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4267040)
-sameClass(virtual int Base2::func2(void)@4264291,Base2::Base2(void)@4265936)
-sameClass(virtual int Base::func2(void)@4264206,Base::Base(void)@4265632)
-sameClass(virtual int Base::func1(void)@4264456,Derived::Derived(void)@4265424)
-sameClass(virtual int Derived::func3(void)@4264261,Derived::Derived(void)@4265424)
-sameClass(virtual int Base2::func1(void)@4264346,Derived::Derived(void)@4265424)
-sameClass(virtual int Derived::func4(void)@4263946,Derived::Derived(void)@4265424)
-sameClass(type_info::type_info(class type_info const &)@4267040,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
-sameClass(Base2::Base2(void)@4265936,virtual int Base2::func2(void)@4264291)
-sameClass(Base::Base(void)@4265632,virtual int Base::func2(void)@4264206)
-sameClass(Derived::Derived(void)@4265424,virtual int Base::func1(void)@4264456)
-sameClass(Derived::Derived(void)@4265424,virtual int Derived::func3(void)@4264261)
-sameClass(Derived::Derived(void)@4265424,virtual int Base2::func1(void)@4264346)
-sameClass(Derived::Derived(void)@4265424,virtual int Derived::func4(void)@4263946)
-derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
-derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
-derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
-derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
-sameClass(virtual int Derived::func4(void)@4263946,virtual int Base2::func1(void)@4264346)
-sameClass(virtual int Derived::func4(void)@4263946,virtual int Derived::func3(void)@4264261)
-sameClass(virtual int Derived::func4(void)@4263946,virtual int Base::func1(void)@4264456)
-sameClass(virtual int Base2::func1(void)@4264346,virtual int Derived::func4(void)@4263946)
-sameClass(virtual int Base2::func1(void)@4264346,virtual int Derived::func3(void)@4264261)
-sameClass(virtual int Base2::func1(void)@4264346,virtual int Base::func1(void)@4264456)
-sameClass(virtual int Derived::func3(void)@4264261,virtual int Derived::func4(void)@4263946)
-sameClass(virtual int Derived::func3(void)@4264261,virtual int Base2::func1(void)@4264346)
-sameClass(virtual int Derived::func3(void)@4264261,virtual int Base::func1(void)@4264456)
-sameClass(virtual int Base::func1(void)@4264456,virtual int Derived::func4(void)@4263946)
-sameClass(virtual int Base::func1(void)@4264456,virtual int Base2::func1(void)@4264346)
-sameClass(virtual int Base::func1(void)@4264456,virtual int Derived::func3(void)@4264261)
-vftableBelongsToClass(const Base2::`vftable'@4286332,0,Base2::Base2(void)@4265936)
-vftableBelongsToClass(const Base::`vftable'@4286312,0,Base::Base(void)@4265632)
-vftableBelongsToClass(const Derived::`vftable'{for `Base'}@4286292,0,Derived::Derived(void)@4265424)
-objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
-objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
-objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
-objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
 constructor(Derived::Derived(void)@4265424)
 constructor(Base::Base(void)@4265632)
 constructor(Base2::Base2(void)@4265936)
 constructor(type_info::type_info(class type_info const &)@4267040)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,Derived::Derived(void)@4265424)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,Derived::Derived(void)@4265424)
-sameClass(const Base::`vftable'@4286312,Base::Base(void)@4265632)
-sameClass(const Base2::`vftable'@4286332,Base2::Base2(void)@4265936)
-sameClass(Derived::Derived(void)@4265424,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(virtual int Base::func1(void)@4264456,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(virtual int Derived::func3(void)@4264261,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(virtual int Base2::func1(void)@4264346,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(virtual int Derived::func4(void)@4263946,const Derived::`vftable'{for `Base'}@4286292)
-sameClass(Base::Base(void)@4265632,const Base::`vftable'@4286312)
-sameClass(virtual int Base::func2(void)@4264206,const Base::`vftable'@4286312)
-sameClass(Base2::Base2(void)@4265936,const Base2::`vftable'@4286332)
-sameClass(virtual int Base2::func2(void)@4264291,const Base2::`vftable'@4286332)
-sameClass(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,const type_info::`vftable'@4286352)
-sameClass(virtual int Derived::func4(void)@4263946,const Derived::`vftable'{for `Base2'}@4286272)
-sameClass(virtual int Base2::func1(void)@4264346,const Derived::`vftable'{for `Base2'}@4286272)
-sameClass(virtual int Derived::func3(void)@4264261,const Derived::`vftable'{for `Base2'}@4286272)
-sameClass(virtual int Base::func1(void)@4264456,const Derived::`vftable'{for `Base2'}@4286272)
-sameClass(Derived::Derived(void)@4265424,const Derived::`vftable'{for `Base2'}@4286272)
-sameClass(const type_info::`vftable'@4286352,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
-sameClass(const Base2::`vftable'@4286332,virtual int Base2::func2(void)@4264291)
-sameClass(const Base::`vftable'@4286312,virtual int Base::func2(void)@4264206)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,virtual int Derived::func4(void)@4263946)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func1(void)@4264346)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,virtual int Derived::func3(void)@4264261)
-sameClass(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base::func1(void)@4264456)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,virtual int Derived::func4(void)@4263946)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,virtual int Base2::func1(void)@4264346)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,virtual int Derived::func3(void)@4264261)
-sameClass(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func1(void)@4264456)
-derivedClass(const Derived::`vftable'{for `Base'}@4286292,Base::Base(void)@4265632,0)
-derivedClass(const Derived::`vftable'{for `Base2'}@4286272,Base::Base(void)@4265632,0)
-derivedClass(Derived::Derived(void)@4265424,Base::Base(void)@4265632,0)
-derivedClass(const Derived::`vftable'{for `Base'}@4286292,Base2::Base2(void)@4265936,16)
-derivedClass(const Derived::`vftable'{for `Base2'}@4286272,Base2::Base2(void)@4265936,16)
-derivedClass(Derived::Derived(void)@4265424,Base2::Base2(void)@4265936,16)
-derivedClass(Derived::Derived(void)@4265424,const Base::`vftable'@4286312,0)
-derivedClass(Derived::Derived(void)@4265424,const Base2::`vftable'@4286332,16)
-vftableBelongsToClass(const Derived::`vftable'{for `Base2'}@4286272,16,Derived::Derived(void)@4265424)
-objectInObject(Derived::Derived(void)@4265424,const Base2::`vftable'@4286332,16)
-objectInObject(Derived::Derived(void)@4265424,const Base::`vftable'@4286312,0)
-objectInObject(Derived::Derived(void)@4265424,Base2::Base2(void)@4265936,16)
-objectInObject(const Derived::`vftable'{for `Base2'}@4286272,Base2::Base2(void)@4265936,16)
-objectInObject(const Derived::`vftable'{for `Base'}@4286292,Base2::Base2(void)@4265936,16)
-objectInObject(Derived::Derived(void)@4265424,Base::Base(void)@4265632,0)
-objectInObject(const Derived::`vftable'{for `Base2'}@4286272,Base::Base(void)@4265632,0)
-objectInObject(const Derived::`vftable'{for `Base'}@4286292,Base::Base(void)@4265632,0)
-derivedClass(const Derived::`vftable'{for `Base'}@4286292,virtual int Base2::func2(void)@4264291,16)
-derivedClass(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4264291,16)
-derivedClass(Derived::Derived(void)@4265424,virtual int Base2::func2(void)@4264291,16)
-derivedClass(virtual int Base::func1(void)@4264456,virtual int Base2::func2(void)@4264291,16)
-derivedClass(virtual int Derived::func3(void)@4264261,virtual int Base2::func2(void)@4264291,16)
-derivedClass(virtual int Base2::func1(void)@4264346,virtual int Base2::func2(void)@4264291,16)
-derivedClass(virtual int Derived::func4(void)@4263946,virtual int Base2::func2(void)@4264291,16)
-derivedClass(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4264206,0)
-derivedClass(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base::func2(void)@4264206,0)
-derivedClass(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4264206,0)
-derivedClass(virtual int Base::func1(void)@4264456,virtual int Base::func2(void)@4264206,0)
-derivedClass(virtual int Derived::func3(void)@4264261,virtual int Base::func2(void)@4264206,0)
-derivedClass(virtual int Base2::func1(void)@4264346,virtual int Base::func2(void)@4264206,0)
-derivedClass(virtual int Derived::func4(void)@4263946,virtual int Base::func2(void)@4264206,0)
-derivedClass(virtual int Derived::func4(void)@4263946,const Base::`vftable'@4286312,0)
-derivedClass(virtual int Derived::func4(void)@4263946,Base::Base(void)@4265632,0)
-derivedClass(virtual int Derived::func4(void)@4263946,const Base2::`vftable'@4286332,16)
-derivedClass(virtual int Derived::func4(void)@4263946,Base2::Base2(void)@4265936,16)
-derivedClass(virtual int Base2::func1(void)@4264346,const Base::`vftable'@4286312,0)
-derivedClass(virtual int Base2::func1(void)@4264346,Base::Base(void)@4265632,0)
-derivedClass(virtual int Base2::func1(void)@4264346,const Base2::`vftable'@4286332,16)
-derivedClass(virtual int Base2::func1(void)@4264346,Base2::Base2(void)@4265936,16)
-derivedClass(virtual int Derived::func3(void)@4264261,const Base::`vftable'@4286312,0)
-derivedClass(virtual int Derived::func3(void)@4264261,Base::Base(void)@4265632,0)
-derivedClass(virtual int Derived::func3(void)@4264261,const Base2::`vftable'@4286332,16)
-derivedClass(virtual int Derived::func3(void)@4264261,Base2::Base2(void)@4265936,16)
-derivedClass(virtual int Base::func1(void)@4264456,const Base::`vftable'@4286312,0)
-derivedClass(virtual int Base::func1(void)@4264456,Base::Base(void)@4265632,0)
-derivedClass(virtual int Base::func1(void)@4264456,const Base2::`vftable'@4286332,16)
-derivedClass(virtual int Base::func1(void)@4264456,Base2::Base2(void)@4265936,16)
-objectInObject(virtual int Base::func1(void)@4264456,Base2::Base2(void)@4265936,16)
-objectInObject(virtual int Base::func1(void)@4264456,const Base2::`vftable'@4286332,16)
-objectInObject(virtual int Base::func1(void)@4264456,Base::Base(void)@4265632,0)
-objectInObject(virtual int Base::func1(void)@4264456,const Base::`vftable'@4286312,0)
-objectInObject(virtual int Derived::func3(void)@4264261,Base2::Base2(void)@4265936,16)
-objectInObject(virtual int Derived::func3(void)@4264261,const Base2::`vftable'@4286332,16)
-objectInObject(virtual int Derived::func3(void)@4264261,Base::Base(void)@4265632,0)
-objectInObject(virtual int Derived::func3(void)@4264261,const Base::`vftable'@4286312,0)
-objectInObject(virtual int Base2::func1(void)@4264346,Base2::Base2(void)@4265936,16)
-objectInObject(virtual int Base2::func1(void)@4264346,const Base2::`vftable'@4286332,16)
-objectInObject(virtual int Base2::func1(void)@4264346,Base::Base(void)@4265632,0)
-objectInObject(virtual int Base2::func1(void)@4264346,const Base::`vftable'@4286312,0)
-objectInObject(virtual int Derived::func4(void)@4263946,Base2::Base2(void)@4265936,16)
-objectInObject(virtual int Derived::func4(void)@4263946,const Base2::`vftable'@4286332,16)
-objectInObject(virtual int Derived::func4(void)@4263946,Base::Base(void)@4265632,0)
-objectInObject(virtual int Derived::func4(void)@4263946,const Base::`vftable'@4286312,0)
-objectInObject(virtual int Derived::func4(void)@4263946,virtual int Base::func2(void)@4264206,0)
-objectInObject(virtual int Base2::func1(void)@4264346,virtual int Base::func2(void)@4264206,0)
-objectInObject(virtual int Derived::func3(void)@4264261,virtual int Base::func2(void)@4264206,0)
-objectInObject(virtual int Base::func1(void)@4264456,virtual int Base::func2(void)@4264206,0)
-objectInObject(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4264206,0)
-objectInObject(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base::func2(void)@4264206,0)
-objectInObject(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4264206,0)
-objectInObject(virtual int Derived::func4(void)@4263946,virtual int Base2::func2(void)@4264291,16)
-objectInObject(virtual int Base2::func1(void)@4264346,virtual int Base2::func2(void)@4264291,16)
-objectInObject(virtual int Derived::func3(void)@4264261,virtual int Base2::func2(void)@4264291,16)
-objectInObject(virtual int Base::func1(void)@4264456,virtual int Base2::func2(void)@4264291,16)
-objectInObject(Derived::Derived(void)@4265424,virtual int Base2::func2(void)@4264291,16)
-objectInObject(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4264291,16)
-objectInObject(const Derived::`vftable'{for `Base'}@4286292,virtual int Base2::func2(void)@4264291,16)
+deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+vfTableEntry(const type_info::`vftable'@4286352,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
+vfTableEntry(const Base2::`vftable'@4286332,0,virtual int Base2::func1(void)@4264346)
+vfTableEntry(const Base::`vftable'@4286312,0,virtual int Base::func1(void)@4264456)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,0,virtual int Base::func1(void)@4264456)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,0,virtual int Base2::func1(void)@4264346)
+vfTableEntry(const Base2::`vftable'@4286332,4,virtual int Base2::func2(void)@4264291)
+vfTableEntry(const Base::`vftable'@4286312,4,virtual int Base::func2(void)@4264206)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,4,virtual int Base::func2(void)@4264206)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,4,virtual int Base2::func2(void)@4264291)
+vfTable(const Derived::`vftable'{for `Base2'}@4286272)
+vfTable(const Derived::`vftable'{for `Base'}@4286292)
+vfTable(const Base::`vftable'@4286312)
+vfTable(const Base2::`vftable'@4286332)
+vfTable(const type_info::`vftable'@4286352)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
+classCallsMethod(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
+classCallsMethod(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func1(void)@4266048)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func1(void)@4265744)
+classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func1(void)@4265744)
+classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4266048)
+classCallsMethod(const type_info::`vftable'@4286352,virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4266144)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func2(void)@4266144)
+vfTableWrite(4267052,type_info::type_info(class type_info const &)@4267040,0,const type_info::`vftable'@4286352)
+vfTableWrite(4265974,Base2::Base2(void)@4265936,0,const Base2::`vftable'@4286332)
+vfTableWrite(4265670,Base::Base(void)@4265632,0,const Base::`vftable'@4286312)
+vfTableWrite(4265481,Derived::Derived(void)@4265424,0,const Derived::`vftable'{for `Base'}@4286292)
+vfTableWrite(4265490,Derived::Derived(void)@4265424,16,const Derived::`vftable'{for `Base2'}@4286272)
+vfTableSize(const Derived::`vftable'{for `Base2'}@4286272,8)
+vfTableSize(const Derived::`vftable'{for `Base'}@4286292,8)
+vfTableSize(const Base::`vftable'@4286312,8)
+vfTableSize(const Base2::`vftable'@4286332,8)
 vfTableSize(const type_info::`vftable'@4286352,4)
+vftableBelongsToClass(const type_info::`vftable'@4286352,0,type_info::type_info(class type_info const &)@4267040)
+vftableBelongsToClass(const Base2::`vftable'@4286332,0,Base2::Base2(void)@4265936)
+vftableBelongsToClass(const Base::`vftable'@4286312,0,Base::Base(void)@4265632)
+vftableBelongsToClass(const Derived::`vftable'{for `Base'}@4286292,0,Derived::Derived(void)@4265424)
+mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Derived::`vftable'{for `Base'}@4286292)
+mergeClasses(const type_info::`vftable'@4286352,type_info::type_info(class type_info const &)@4267040)
+mergeClasses(const Base2::`vftable'@4286332,Base2::Base2(void)@4265936)
+mergeClasses(const Base::`vftable'@4286312,Base::Base(void)@4265632)
+mergeClasses(const Derived::`vftable'{for `Base'}@4286292,Derived::Derived(void)@4265424)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4267040)
+mergeClasses(virtual int Base2::func1(void)@4264346,Base2::Base2(void)@4265936)
+mergeClasses(virtual int Base2::func2(void)@4264291,Base2::Base2(void)@4265936)
+mergeClasses(virtual int Base::func1(void)@4264456,Base::Base(void)@4265632)
+mergeClasses(virtual int Base::func2(void)@4264206,Base::Base(void)@4265632)
+derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
+derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
+derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
+derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
+-mergeClasses(virtual int Base::func1(void)@4264456,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base::func2(void)@4264206,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base2::func1(void)@4264346,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base2::func2(void)@4264291,Derived::Derived(void)@4265424)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const type_info::`vftable'@4286352)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const type_info::`vftable'@4286352)
+-mergeClasses(const Base::`vftable'@4286312,const Base2::`vftable'@4286332)
+-mergeClasses(const Base::`vftable'@4286312,const type_info::`vftable'@4286352)
+-mergeClasses(const Base2::`vftable'@4286332,const type_info::`vftable'@4286352)
+-mergeClasses(virtual int Base::func2(void)@4265840,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base::func1(void)@4265744,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base2::func1(void)@4266048,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base2::func2(void)@4266144,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base::func2(void)@4265840,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base::func1(void)@4265744,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base2::func1(void)@4266048,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base2::func2(void)@4266144,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(Derived::Derived(void)@4265424,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Base::Base(void)@4265632,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Base2::Base2(void)@4265936,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Derived::Derived(void)@4265424,Base2::Base2(void)@4265936)
+-mergeClasses(Base::Base(void)@4265632,Base2::Base2(void)@4265936)
+-mergeClasses(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
+objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
+objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
+objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
+objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
+Optimization: -55 -4 -20 -236 -36
+
+Answer: 2
+method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
+method(j___setdefaultprecision@4263941)
+method(virtual int Derived::func4(void)@4263946)
+method(j___setargv@4263951)
+method(__stdcall DebugBreak()@4263956)
+method(Base2::Base2(void)@4263961)
+method(j___RTC_GetErrDesc@4263966)
+method(j____p__fmode@4263971)
+method(__fastcall __security_check_cookie(x)@4263976)
+method(__stdcall IsDebuggerPresent()@4263981)
+method(class type_info & type_info::operator=(class type_info const &)@4263986)
+method(j___RTC_Terminate@4263991)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263996)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@4264001)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264006)
+method(j___RTC_NumErrors@4264011)
+method(j____setusermatherr@4264016)
+method(__stdcall Sleep(x)@4264021)
+method(virtual type_info::~type_info(void)@4264026)
+method(__stdcall GetModuleFileNameW(x, x, x)@4264031)
+method(j____security_init_cookie@4264036)
+method(__stdcall SetUnhandledExceptionFilter(x)@4264041)
+method(j___cexit@4264046)
+method(j___CrtDbgReportW@4264051)
+method(__stdcall VirtualQuery(x, x, x)@4264056)
+method(j__atexit@4264061)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264066)
+method(j___RTC_SetErrorType@4264071)
+method(j___except_handler4@4264076)
+method(j___lock@4264081)
+method(__stdcall GetProcAddress(x, x)@4264086)
+method(__fastcall _RTC_CheckStackVars(x, x)@4264091)
+method(__cdecl operator delete(*)@4264096)
+method(virtual type_info::~type_info(void)@4264101)
+method(__cdecl terminate(void)@4264111)
+method(j___exit@4264116)
+method(__stdcall GetCurrentThreadId()@4264121)
+method(j___initterm@4264126)
+method(__stdcall GetCurrentProcess()@4264131)
+method(j___encode_pointer@4264136)
+method(j___RTC_UninitUse@4264141)
+method(j___RTC_Shutdown@4264146)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
+method(j___FindPESection@4264156)
+method(j___configthreadlocale@4264161)
+method(j___RTC_InitBase@4264166)
+method(__cdecl _RTC_StackFailure(*, char const *)@4264171)
+method(__stdcall LoadLibraryA(x)@4264176)
+method(__stdcall RaiseException(x, x, x, x)@4264181)
+method(Base::Base(void)@4264186)
+method(j___crt_debugger_hook@4264191)
+method(j___ValidateImageBase@4264196)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4264201)
+method(virtual int Base::func2(void)@4264206)
+method(__stdcall GetProcessHeap()@4264211)
+method(j___RTC_SetErrorFuncW@4264216)
+method(j___onexit@4264221)
+method(j__NtCurrentTeb@4264226)
+method(__stdcall HeapFree(x, x, x)@4264231)
+method(j___RTC_SetErrorFunc@4264236)
+method(j___invoke_watson_if_error@4264241)
+method(__stdcall TerminateProcess(x, x)@4264246)
+method(j__rand@4264251)
+method(start@4264256)
+method(virtual int Derived::func3(void)@4264261)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264266)
+method(j____CxxSetUnhandledExceptionFilter@4264271)
+method(__stdcall QueryPerformanceCounter(x)@4264276)
+method(j____p__commode@4264281)
+method(j___unlock@4264286)
+method(virtual int Base2::func2(void)@4264291)
+method(__stdcall GetCurrentProcessId()@4264296)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264301)
+method(j____set_app_type@4264306)
+method(j___purecall@4264311)
+method(j___RTC_CheckEsp@4264316)
+method(j__main@4264321)
+method(j___RTC_Initialize@4264326)
+method(Derived::Derived(void)@4264331)
+method(j___controlfp_s@4264336)
+method(__stdcall GetSystemTimeAsFileTime(x)@4264341)
+method(virtual int Base2::func1(void)@4264346)
+method(j___decode_pointer@4264351)
+method(j___invoke_watson@4264356)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264361)
+method(j___CRT_RTC_INITW@4264366)
+method(__stdcall GetTickCount()@4264371)
+method(j___IsNonwritableInCurrentImage@4264376)
+method(j____CxxFrameHandler3@4264381)
+method(__stdcall HeapAlloc(x, x, x)@4264386)
+method(j___amsg_exit@4264391)
+method(* __cdecl operator new(unsigned int)@4264396)
+method(j___XcptFilter@4264401)
+method(j___CrtSetCheckCount@4264406)
+method(__stdcall InterlockedExchange(x, x)@4264411)
+method(__stdcall UnhandledExceptionFilter(x)@4264416)
+method(type_info::type_info(class type_info const &)@4264421)
+method(j___except_handler4_common@4264426)
+method(j___matherr@4264431)
+method(j____getmainargs@4264436)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264441)
+method(__stdcall lstrlenA(x)@4264446)
+method(__cdecl _RTC_Failure(*, int)@4264451)
+method(virtual int Base::func1(void)@4264456)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264461)
+method(j__DebuggerKnownHandle@4264466)
+method(j__exit_0@4264471)
+method(j____dllonexit@4264476)
+method(__stdcall FreeLibrary(x)@4264481)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264486)
+method(j___initterm_e@4264491)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264496)
+method(_main@4265072)
+method(Derived::Derived(void)@4265424)
+method(Base::Base(void)@4265632)
+method(virtual int Base::func1(void)@4265744)
+method(virtual int Base::func2(void)@4265840)
+method(Base2::Base2(void)@4265936)
+method(virtual int Base2::func1(void)@4266048)
+method(virtual int Base2::func2(void)@4266144)
+method(virtual int Derived::func4(void)@4266240)
+method(virtual int Derived::func3(void)@4266304)
+method(_rand@4266368)
+method(__cdecl operator delete(*)@4266374)
+method(* __cdecl operator new(unsigned int)@4266380)
+method(___CxxFrameHandler3@4266386)
+method(__fastcall __security_check_cookie(x)@4266400)
+method(__fastcall _RTC_CheckStackVars(x, x)@4266480)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@4266608)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@4266672)
+method(__RTC_InitBase@4266944)
+method(__RTC_Shutdown@4267008)
+method(type_info::type_info(class type_info const &)@4267040)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+method(class type_info & type_info::operator=(class type_info const &)@4267232)
+method(__purecall@4267254)
+method(pre_c_init@4267264)
+method(pre_cpp_init@4267472)
+method(_mainCRTStartup@4267584)
+method(__tmainCRTStartup@4267616)
+method(_NtCurrentTeb@4268352)
+method(check_managed_app@4268368)
+method(_DebuggerKnownHandle@4268944)
+method(DebuggerProbe@4268992)
+method(__cdecl _RTC_Failure(*, int)@4269168)
+method(failwithmessage@4269280)
+method(DebuggerRuntime@4269936)
+method(__cdecl _RTC_StackFailure(*, char const *)@4270144)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4270464)
+method(_getMemBlockDataString@4270848)
+method(__RTC_UninitUse@4270992)
+method(__RTC_NumErrors@4271296)
+method(__RTC_GetErrDesc@4271312)
+method(__RTC_SetErrorFunc@4271392)
+method(__RTC_SetErrorFuncW@4271440)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271488)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4271504)
+method(__CRT_RTC_INITW@4271510)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4271520)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4271744)
+method(ArrayUnwindFilter@4271920)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4271984)
+method(___CxxSetUnhandledExceptionFilter@4272112)
+method(__configthreadlocale@4272138)
+method(__setdefaultprecision@4272144)
+method(__invoke_watson_if_error@4272224)
+method(___setusermatherr@4272278)
+method(__matherr@4272288)
+method(__setargv@4272304)
+method(__RTC_Initialize@4272320)
+method(__RTC_Terminate@4272368)
+method(___p__commode@4272416)
+method(___p__fmode@4272422)
+method(__onexit@4272432)
+method($LN6_1@4272661)
+method(_atexit@4272768)
+method(__encode_pointer@4272804)
+method(___set_app_type@4272810)
+method(__amsg_exit@4272816)
+method(___getmainargs@4272822)
+method(___security_init_cookie@4272832)
+method(__exit@4273106)
+method(__XcptFilter@4273112)
+method(__cexit@4273118)
+method(_exit_0@4273124)
+method(__CrtSetCheckCount@4273130)
+method(__ValidateImageBase@4273136)
+method(__FindPESection@4273264)
+method(__IsNonwritableInCurrentImage@4273424)
+method(__CrtDbgReportW@4273766)
+method(__initterm@4273772)
+method(__initterm_e@4273778)
+method(__except_handler4@4273792)
+method(__crt_debugger_hook@4273844)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4273856)
+method(GetPdbDll@4274736)
+method(__cdecl terminate(void)@4275324)
+method(virtual type_info::~type_info(void)@4275330)
+method(__controlfp_s@4275336)
+method(__invoke_watson@4275342)
+method(__unlock@4275348)
+method(___dllonexit@4275354)
+method(__lock@4275360)
+method(__decode_pointer@4275366)
+method(__except_handler4_common@4275372)
+method(__stdcall InterlockedExchange(x, x)@4275378)
+method(__stdcall Sleep(x)@4275384)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4275390)
+method(__stdcall TerminateProcess(x, x)@4275396)
+method(__stdcall GetCurrentProcess()@4275402)
+method(__stdcall UnhandledExceptionFilter(x)@4275408)
+method(__stdcall SetUnhandledExceptionFilter(x)@4275414)
+method(__stdcall IsDebuggerPresent()@4275420)
+method(__stdcall RaiseException(x, x, x, x)@4275426)
+method(__stdcall DebugBreak()@4275432)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4275438)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4275444)
+method(__stdcall lstrlenA(x)@4275450)
+method(__stdcall GetProcAddress(x, x)@4275456)
+method(__stdcall LoadLibraryA(x)@4275462)
+method(__stdcall QueryPerformanceCounter(x)@4275468)
+method(__stdcall GetTickCount()@4275474)
+method(__stdcall GetCurrentThreadId()@4275480)
+method(__stdcall GetCurrentProcessId()@4275486)
+method(__stdcall GetSystemTimeAsFileTime(x)@4275492)
+method(__stdcall HeapFree(x, x, x)@4275498)
+method(__stdcall HeapAlloc(x, x, x)@4275504)
+method(__stdcall GetProcessHeap()@4275510)
+method(__stdcall GetModuleFileNameW(x, x, x)@4275516)
+method(__stdcall VirtualQuery(x, x, x)@4275522)
+method(__stdcall FreeLibrary(x)@4275528)
+method(__ehhandler$_main@4279454)
+method(__RTC_CheckEsp@4266432)
+method(___report_gsfailure@4268592)
+method($LN8@4271646)
+method(__unwindfunclet$_main$0@4279440)
+constructor(Derived::Derived(void)@4265424)
+constructor(Base::Base(void)@4265632)
+constructor(Base2::Base2(void)@4265936)
+constructor(type_info::type_info(class type_info const &)@4267040)
+deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+vfTableEntry(const type_info::`vftable'@4286352,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
+vfTableEntry(const Base2::`vftable'@4286332,0,virtual int Base2::func1(void)@4264346)
+vfTableEntry(const Base::`vftable'@4286312,0,virtual int Base::func1(void)@4264456)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,0,virtual int Base::func1(void)@4264456)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,0,virtual int Base2::func1(void)@4264346)
+vfTableEntry(const Base2::`vftable'@4286332,4,virtual int Base2::func2(void)@4264291)
+vfTableEntry(const Base::`vftable'@4286312,4,virtual int Base::func2(void)@4264206)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,4,virtual int Base::func2(void)@4264206)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,8,virtual int Derived::func3(void)@4264261)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,4,virtual int Base2::func2(void)@4264291)
+vfTable(const Derived::`vftable'{for `Base2'}@4286272)
+vfTable(const Derived::`vftable'{for `Base'}@4286292)
+vfTable(const Base::`vftable'@4286312)
+vfTable(const Base2::`vftable'@4286332)
+vfTable(const type_info::`vftable'@4286352)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
+classCallsMethod(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
+classCallsMethod(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func1(void)@4266048)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func1(void)@4265744)
+classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func1(void)@4265744)
+classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4266048)
+classCallsMethod(const type_info::`vftable'@4286352,virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4266144)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Derived::func3(void)@4266304)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func2(void)@4266144)
+vfTableWrite(4267052,type_info::type_info(class type_info const &)@4267040,0,const type_info::`vftable'@4286352)
+vfTableWrite(4265974,Base2::Base2(void)@4265936,0,const Base2::`vftable'@4286332)
+vfTableWrite(4265670,Base::Base(void)@4265632,0,const Base::`vftable'@4286312)
+vfTableWrite(4265481,Derived::Derived(void)@4265424,0,const Derived::`vftable'{for `Base'}@4286292)
+vfTableWrite(4265490,Derived::Derived(void)@4265424,16,const Derived::`vftable'{for `Base2'}@4286272)
+vfTableSize(const Derived::`vftable'{for `Base2'}@4286272,8)
+vfTableSize(const Derived::`vftable'{for `Base'}@4286292,12)
+vfTableSize(const Base::`vftable'@4286312,8)
+vfTableSize(const Base2::`vftable'@4286332,8)
+vfTableSize(const type_info::`vftable'@4286352,4)
+vftableBelongsToClass(const type_info::`vftable'@4286352,0,type_info::type_info(class type_info const &)@4267040)
+vftableBelongsToClass(const Base2::`vftable'@4286332,0,Base2::Base2(void)@4265936)
+vftableBelongsToClass(const Base::`vftable'@4286312,0,Base::Base(void)@4265632)
+vftableBelongsToClass(const Derived::`vftable'{for `Base'}@4286292,0,Derived::Derived(void)@4265424)
+mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Derived::`vftable'{for `Base'}@4286292)
+mergeClasses(const type_info::`vftable'@4286352,type_info::type_info(class type_info const &)@4267040)
+mergeClasses(const Base2::`vftable'@4286332,Base2::Base2(void)@4265936)
+mergeClasses(const Base::`vftable'@4286312,Base::Base(void)@4265632)
+mergeClasses(const Derived::`vftable'{for `Base'}@4286292,Derived::Derived(void)@4265424)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4267040)
+mergeClasses(virtual int Base2::func1(void)@4264346,Base2::Base2(void)@4265936)
+mergeClasses(virtual int Base2::func2(void)@4264291,Base2::Base2(void)@4265936)
+mergeClasses(virtual int Base::func1(void)@4264456,Base::Base(void)@4265632)
+mergeClasses(virtual int Base::func2(void)@4264206,Base::Base(void)@4265632)
+mergeClasses(virtual int Derived::func3(void)@4264261,Derived::Derived(void)@4265424)
+derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
+derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
+derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
+derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
+-mergeClasses(virtual int Base::func1(void)@4264456,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base::func2(void)@4264206,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base2::func1(void)@4264346,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base2::func2(void)@4264291,Derived::Derived(void)@4265424)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const type_info::`vftable'@4286352)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const type_info::`vftable'@4286352)
+-mergeClasses(const Base::`vftable'@4286312,const Base2::`vftable'@4286332)
+-mergeClasses(const Base::`vftable'@4286312,const type_info::`vftable'@4286352)
+-mergeClasses(const Base2::`vftable'@4286332,const type_info::`vftable'@4286352)
+-mergeClasses(virtual int Base::func2(void)@4265840,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base::func1(void)@4265744,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base2::func1(void)@4266048,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base2::func2(void)@4266144,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base::func2(void)@4265840,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base::func1(void)@4265744,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base2::func1(void)@4266048,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base2::func2(void)@4266144,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(Derived::Derived(void)@4265424,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Base::Base(void)@4265632,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Base2::Base2(void)@4265936,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Derived::Derived(void)@4265424,Base2::Base2(void)@4265936)
+-mergeClasses(Base::Base(void)@4265632,Base2::Base2(void)@4265936)
+-mergeClasses(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
+objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
+objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
+objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
+objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
+Optimization: -65 -4 -20 -236 -40
+
+Answer: 3
+method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
+method(j___setdefaultprecision@4263941)
+method(virtual int Derived::func4(void)@4263946)
+method(j___setargv@4263951)
+method(__stdcall DebugBreak()@4263956)
+method(Base2::Base2(void)@4263961)
+method(j___RTC_GetErrDesc@4263966)
+method(j____p__fmode@4263971)
+method(__fastcall __security_check_cookie(x)@4263976)
+method(__stdcall IsDebuggerPresent()@4263981)
+method(class type_info & type_info::operator=(class type_info const &)@4263986)
+method(j___RTC_Terminate@4263991)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263996)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@4264001)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264006)
+method(j___RTC_NumErrors@4264011)
+method(j____setusermatherr@4264016)
+method(__stdcall Sleep(x)@4264021)
+method(virtual type_info::~type_info(void)@4264026)
+method(__stdcall GetModuleFileNameW(x, x, x)@4264031)
+method(j____security_init_cookie@4264036)
+method(__stdcall SetUnhandledExceptionFilter(x)@4264041)
+method(j___cexit@4264046)
+method(j___CrtDbgReportW@4264051)
+method(__stdcall VirtualQuery(x, x, x)@4264056)
+method(j__atexit@4264061)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264066)
+method(j___RTC_SetErrorType@4264071)
+method(j___except_handler4@4264076)
+method(j___lock@4264081)
+method(__stdcall GetProcAddress(x, x)@4264086)
+method(__fastcall _RTC_CheckStackVars(x, x)@4264091)
+method(__cdecl operator delete(*)@4264096)
+method(virtual type_info::~type_info(void)@4264101)
+method(__cdecl terminate(void)@4264111)
+method(j___exit@4264116)
+method(__stdcall GetCurrentThreadId()@4264121)
+method(j___initterm@4264126)
+method(__stdcall GetCurrentProcess()@4264131)
+method(j___encode_pointer@4264136)
+method(j___RTC_UninitUse@4264141)
+method(j___RTC_Shutdown@4264146)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
+method(j___FindPESection@4264156)
+method(j___configthreadlocale@4264161)
+method(j___RTC_InitBase@4264166)
+method(__cdecl _RTC_StackFailure(*, char const *)@4264171)
+method(__stdcall LoadLibraryA(x)@4264176)
+method(__stdcall RaiseException(x, x, x, x)@4264181)
+method(Base::Base(void)@4264186)
+method(j___crt_debugger_hook@4264191)
+method(j___ValidateImageBase@4264196)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4264201)
+method(virtual int Base::func2(void)@4264206)
+method(__stdcall GetProcessHeap()@4264211)
+method(j___RTC_SetErrorFuncW@4264216)
+method(j___onexit@4264221)
+method(j__NtCurrentTeb@4264226)
+method(__stdcall HeapFree(x, x, x)@4264231)
+method(j___RTC_SetErrorFunc@4264236)
+method(j___invoke_watson_if_error@4264241)
+method(__stdcall TerminateProcess(x, x)@4264246)
+method(j__rand@4264251)
+method(start@4264256)
+method(virtual int Derived::func3(void)@4264261)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264266)
+method(j____CxxSetUnhandledExceptionFilter@4264271)
+method(__stdcall QueryPerformanceCounter(x)@4264276)
+method(j____p__commode@4264281)
+method(j___unlock@4264286)
+method(virtual int Base2::func2(void)@4264291)
+method(__stdcall GetCurrentProcessId()@4264296)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264301)
+method(j____set_app_type@4264306)
+method(j___purecall@4264311)
+method(j___RTC_CheckEsp@4264316)
+method(j__main@4264321)
+method(j___RTC_Initialize@4264326)
+method(Derived::Derived(void)@4264331)
+method(j___controlfp_s@4264336)
+method(__stdcall GetSystemTimeAsFileTime(x)@4264341)
+method(virtual int Base2::func1(void)@4264346)
+method(j___decode_pointer@4264351)
+method(j___invoke_watson@4264356)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264361)
+method(j___CRT_RTC_INITW@4264366)
+method(__stdcall GetTickCount()@4264371)
+method(j___IsNonwritableInCurrentImage@4264376)
+method(j____CxxFrameHandler3@4264381)
+method(__stdcall HeapAlloc(x, x, x)@4264386)
+method(j___amsg_exit@4264391)
+method(* __cdecl operator new(unsigned int)@4264396)
+method(j___XcptFilter@4264401)
+method(j___CrtSetCheckCount@4264406)
+method(__stdcall InterlockedExchange(x, x)@4264411)
+method(__stdcall UnhandledExceptionFilter(x)@4264416)
+method(type_info::type_info(class type_info const &)@4264421)
+method(j___except_handler4_common@4264426)
+method(j___matherr@4264431)
+method(j____getmainargs@4264436)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264441)
+method(__stdcall lstrlenA(x)@4264446)
+method(__cdecl _RTC_Failure(*, int)@4264451)
+method(virtual int Base::func1(void)@4264456)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264461)
+method(j__DebuggerKnownHandle@4264466)
+method(j__exit_0@4264471)
+method(j____dllonexit@4264476)
+method(__stdcall FreeLibrary(x)@4264481)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264486)
+method(j___initterm_e@4264491)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264496)
+method(_main@4265072)
+method(Derived::Derived(void)@4265424)
+method(Base::Base(void)@4265632)
+method(virtual int Base::func1(void)@4265744)
+method(virtual int Base::func2(void)@4265840)
+method(Base2::Base2(void)@4265936)
+method(virtual int Base2::func1(void)@4266048)
+method(virtual int Base2::func2(void)@4266144)
+method(virtual int Derived::func4(void)@4266240)
+method(virtual int Derived::func3(void)@4266304)
+method(_rand@4266368)
+method(__cdecl operator delete(*)@4266374)
+method(* __cdecl operator new(unsigned int)@4266380)
+method(___CxxFrameHandler3@4266386)
+method(__fastcall __security_check_cookie(x)@4266400)
+method(__fastcall _RTC_CheckStackVars(x, x)@4266480)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@4266608)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@4266672)
+method(__RTC_InitBase@4266944)
+method(__RTC_Shutdown@4267008)
+method(type_info::type_info(class type_info const &)@4267040)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+method(class type_info & type_info::operator=(class type_info const &)@4267232)
+method(__purecall@4267254)
+method(pre_c_init@4267264)
+method(pre_cpp_init@4267472)
+method(_mainCRTStartup@4267584)
+method(__tmainCRTStartup@4267616)
+method(_NtCurrentTeb@4268352)
+method(check_managed_app@4268368)
+method(_DebuggerKnownHandle@4268944)
+method(DebuggerProbe@4268992)
+method(__cdecl _RTC_Failure(*, int)@4269168)
+method(failwithmessage@4269280)
+method(DebuggerRuntime@4269936)
+method(__cdecl _RTC_StackFailure(*, char const *)@4270144)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4270464)
+method(_getMemBlockDataString@4270848)
+method(__RTC_UninitUse@4270992)
+method(__RTC_NumErrors@4271296)
+method(__RTC_GetErrDesc@4271312)
+method(__RTC_SetErrorFunc@4271392)
+method(__RTC_SetErrorFuncW@4271440)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271488)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4271504)
+method(__CRT_RTC_INITW@4271510)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4271520)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4271744)
+method(ArrayUnwindFilter@4271920)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4271984)
+method(___CxxSetUnhandledExceptionFilter@4272112)
+method(__configthreadlocale@4272138)
+method(__setdefaultprecision@4272144)
+method(__invoke_watson_if_error@4272224)
+method(___setusermatherr@4272278)
+method(__matherr@4272288)
+method(__setargv@4272304)
+method(__RTC_Initialize@4272320)
+method(__RTC_Terminate@4272368)
+method(___p__commode@4272416)
+method(___p__fmode@4272422)
+method(__onexit@4272432)
+method($LN6_1@4272661)
+method(_atexit@4272768)
+method(__encode_pointer@4272804)
+method(___set_app_type@4272810)
+method(__amsg_exit@4272816)
+method(___getmainargs@4272822)
+method(___security_init_cookie@4272832)
+method(__exit@4273106)
+method(__XcptFilter@4273112)
+method(__cexit@4273118)
+method(_exit_0@4273124)
+method(__CrtSetCheckCount@4273130)
+method(__ValidateImageBase@4273136)
+method(__FindPESection@4273264)
+method(__IsNonwritableInCurrentImage@4273424)
+method(__CrtDbgReportW@4273766)
+method(__initterm@4273772)
+method(__initterm_e@4273778)
+method(__except_handler4@4273792)
+method(__crt_debugger_hook@4273844)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4273856)
+method(GetPdbDll@4274736)
+method(__cdecl terminate(void)@4275324)
+method(virtual type_info::~type_info(void)@4275330)
+method(__controlfp_s@4275336)
+method(__invoke_watson@4275342)
+method(__unlock@4275348)
+method(___dllonexit@4275354)
+method(__lock@4275360)
+method(__decode_pointer@4275366)
+method(__except_handler4_common@4275372)
+method(__stdcall InterlockedExchange(x, x)@4275378)
+method(__stdcall Sleep(x)@4275384)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4275390)
+method(__stdcall TerminateProcess(x, x)@4275396)
+method(__stdcall GetCurrentProcess()@4275402)
+method(__stdcall UnhandledExceptionFilter(x)@4275408)
+method(__stdcall SetUnhandledExceptionFilter(x)@4275414)
+method(__stdcall IsDebuggerPresent()@4275420)
+method(__stdcall RaiseException(x, x, x, x)@4275426)
+method(__stdcall DebugBreak()@4275432)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4275438)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4275444)
+method(__stdcall lstrlenA(x)@4275450)
+method(__stdcall GetProcAddress(x, x)@4275456)
+method(__stdcall LoadLibraryA(x)@4275462)
+method(__stdcall QueryPerformanceCounter(x)@4275468)
+method(__stdcall GetTickCount()@4275474)
+method(__stdcall GetCurrentThreadId()@4275480)
+method(__stdcall GetCurrentProcessId()@4275486)
+method(__stdcall GetSystemTimeAsFileTime(x)@4275492)
+method(__stdcall HeapFree(x, x, x)@4275498)
+method(__stdcall HeapAlloc(x, x, x)@4275504)
+method(__stdcall GetProcessHeap()@4275510)
+method(__stdcall GetModuleFileNameW(x, x, x)@4275516)
+method(__stdcall VirtualQuery(x, x, x)@4275522)
+method(__stdcall FreeLibrary(x)@4275528)
+method(__ehhandler$_main@4279454)
+method(__RTC_CheckEsp@4266432)
+method(___report_gsfailure@4268592)
+method($LN8@4271646)
+method(__unwindfunclet$_main$0@4279440)
+constructor(Derived::Derived(void)@4265424)
+constructor(Base::Base(void)@4265632)
+constructor(Base2::Base2(void)@4265936)
+constructor(type_info::type_info(class type_info const &)@4267040)
+deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+vfTableEntry(const type_info::`vftable'@4286352,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
+vfTableEntry(const Base2::`vftable'@4286332,0,virtual int Base2::func1(void)@4264346)
+vfTableEntry(const Base::`vftable'@4286312,0,virtual int Base::func1(void)@4264456)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,0,virtual int Base::func1(void)@4264456)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,0,virtual int Base2::func1(void)@4264346)
+vfTableEntry(const Base2::`vftable'@4286332,4,virtual int Base2::func2(void)@4264291)
+vfTableEntry(const Base::`vftable'@4286312,4,virtual int Base::func2(void)@4264206)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,4,virtual int Base::func2(void)@4264206)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,8,virtual int Derived::func3(void)@4264261)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,4,virtual int Base2::func2(void)@4264291)
+vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,8,virtual int Derived::func4(void)@4263946)
+vfTable(const Derived::`vftable'{for `Base2'}@4286272)
+vfTable(const Derived::`vftable'{for `Base'}@4286292)
+vfTable(const Base::`vftable'@4286312)
+vfTable(const Base2::`vftable'@4286332)
+vfTable(const type_info::`vftable'@4286352)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4267088,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
+classCallsMethod(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
+classCallsMethod(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func1(void)@4266048)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func1(void)@4265744)
+classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func1(void)@4265744)
+classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4266048)
+classCallsMethod(const type_info::`vftable'@4286352,virtual * type_info::`vector deleting destructor'(unsigned int)@4267088)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Derived::func4(void)@4266240)
+classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4266144)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Derived::func3(void)@4266304)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func2(void)@4265840)
+classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func2(void)@4266144)
+vfTableWrite(4267052,type_info::type_info(class type_info const &)@4267040,0,const type_info::`vftable'@4286352)
+vfTableWrite(4265974,Base2::Base2(void)@4265936,0,const Base2::`vftable'@4286332)
+vfTableWrite(4265670,Base::Base(void)@4265632,0,const Base::`vftable'@4286312)
+vfTableWrite(4265481,Derived::Derived(void)@4265424,0,const Derived::`vftable'{for `Base'}@4286292)
+vfTableWrite(4265490,Derived::Derived(void)@4265424,16,const Derived::`vftable'{for `Base2'}@4286272)
+vfTableSize(const Derived::`vftable'{for `Base2'}@4286272,12)
+vfTableSize(const Derived::`vftable'{for `Base'}@4286292,12)
+vfTableSize(const Base::`vftable'@4286312,8)
+vfTableSize(const Base2::`vftable'@4286332,8)
+vfTableSize(const type_info::`vftable'@4286352,4)
+vftableBelongsToClass(const type_info::`vftable'@4286352,0,type_info::type_info(class type_info const &)@4267040)
+vftableBelongsToClass(const Base2::`vftable'@4286332,0,Base2::Base2(void)@4265936)
+vftableBelongsToClass(const Base::`vftable'@4286312,0,Base::Base(void)@4265632)
+vftableBelongsToClass(const Derived::`vftable'{for `Base'}@4286292,0,Derived::Derived(void)@4265424)
+mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Derived::`vftable'{for `Base'}@4286292)
+mergeClasses(const type_info::`vftable'@4286352,type_info::type_info(class type_info const &)@4267040)
+mergeClasses(const Base2::`vftable'@4286332,Base2::Base2(void)@4265936)
+mergeClasses(const Base::`vftable'@4286312,Base::Base(void)@4265632)
+mergeClasses(const Derived::`vftable'{for `Base'}@4286292,Derived::Derived(void)@4265424)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4267040)
+mergeClasses(virtual int Base2::func1(void)@4264346,Base2::Base2(void)@4265936)
+mergeClasses(virtual int Base2::func2(void)@4264291,Base2::Base2(void)@4265936)
+mergeClasses(virtual int Base::func1(void)@4264456,Base::Base(void)@4265632)
+mergeClasses(virtual int Base::func2(void)@4264206,Base::Base(void)@4265632)
+mergeClasses(virtual int Derived::func3(void)@4264261,Derived::Derived(void)@4265424)
+mergeClasses(virtual int Derived::func4(void)@4263946,Derived::Derived(void)@4265424)
+derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
+derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
+derivedClass(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
+derivedClass(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
+-mergeClasses(virtual int Base::func1(void)@4264456,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base::func2(void)@4264206,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base2::func1(void)@4264346,Derived::Derived(void)@4265424)
+-mergeClasses(virtual int Base2::func2(void)@4264291,Derived::Derived(void)@4265424)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332)
+-mergeClasses(const Derived::`vftable'{for `Base2'}@4286272,const type_info::`vftable'@4286352)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332)
+-mergeClasses(const Derived::`vftable'{for `Base'}@4286292,const type_info::`vftable'@4286352)
+-mergeClasses(const Base::`vftable'@4286312,const Base2::`vftable'@4286332)
+-mergeClasses(const Base::`vftable'@4286312,const type_info::`vftable'@4286352)
+-mergeClasses(const Base2::`vftable'@4286332,const type_info::`vftable'@4286352)
+-mergeClasses(virtual int Base::func2(void)@4265840,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base::func1(void)@4265744,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base2::func1(void)@4266048,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base2::func2(void)@4266144,const Derived::`vftable'{for `Base2'}@4286272)
+-mergeClasses(virtual int Base::func2(void)@4265840,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base::func1(void)@4265744,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base2::func1(void)@4266048,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(virtual int Base2::func2(void)@4266144,const Derived::`vftable'{for `Base'}@4286292)
+-mergeClasses(Derived::Derived(void)@4265424,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Base::Base(void)@4265632,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Base2::Base2(void)@4265936,type_info::type_info(class type_info const &)@4267040)
+-mergeClasses(Derived::Derived(void)@4265424,Base2::Base2(void)@4265936)
+-mergeClasses(Base::Base(void)@4265632,Base2::Base2(void)@4265936)
+-mergeClasses(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
+objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftable'@4286332,16)
+objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
+objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
+objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
+Optimization: -75 -4 -20 -236 -44
 OPTIMUM FOUND
 
-Models       : 3
-  Optimum    : yes
-Optimization : -75 -84 -20 -236 -52
-Calls        : 1
-Time         : 4.460s (Solving: 3.96s 1st Model: 0.03s Unsat: 3.56s)
-CPU Time     : 4.449s
-
-Choices      : 97117    (Domain: 89420)
-Conflicts    : 4819     (Analyzed: 4813)
-Restarts     : 41       (Average: 117.39 Last: 102 Blocked: 0)
-Model-Level  : 243.7   
-Problems     : 6        (Average Length: 0.00 Splits: 0)
-Lemmas       : 58995    (Deleted: 0)
-  Binary     : 925      (Ratio:   1.57%)
-  Ternary    : 2463     (Ratio:   4.17%)
-  Conflict   : 4813     (Average Length:  607.7 Ratio:   8.16%) 
-  Loop       : 54182    (Average Length:   15.3 Ratio:  91.84%) 
-  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
-Backjumps    : 4813     (Average: 20.08 Max: 417 Sum:  96622)
-  Executed   : 4783     (Average: 20.07 Max: 417 Sum:  96592 Ratio:  99.97%)
-  Bounded    : 30       (Average:  1.00 Max:   1 Sum:     30 Ratio:   0.03%)
-
-Rules        : 623199   (Original: 622629)
-  Choice     : 574     
-  Minimize   : 5       
-  Heuristic  : 245      (Original: 262)
-Atoms        : 116155  
-Bodies       : 161470   (Original: 161774)
-  Count      : 0        (Original: 575)
-Equivalences : 244582   (Atom=Atom: 40142 Body=Body: 3472 Other: 200968)
-Tight        : No       (SCCs: 28 Non-Hcfs: 0 Nodes: 93270 Gammas: 0)
-Variables    : 148228   (Eliminated:    0 Frozen: 90738)
-Constraints  : 962866   (Binary:  84.7% Ternary:  11.2% Other:   4.1%)
-
-class 0x411005:
-  0x411005  j___setdefaultprecision
-class 0x41100a:
-  0x41100a  public: virtual int __thiscall Derived::func4(void)
-  0x411145  public: virtual int __thiscall Derived::func3(void)
-  0x41119a  public: virtual int __thiscall Base2::func1(void)
-  0x411208  public: virtual int __thiscall Base::func1(void)
-  0x4115d0  public: __thiscall Derived::Derived(void)
-  vftable 0x416740  const Derived::`vftable'{for `Base2'}
-  vftable 0x416754  const Derived::`vftable'{for `Base'}
-class 0x41100f:
-  0x41100f  j___setargv
-class 0x411014:
-  0x411014  __stdcall DebugBreak()
-class 0x411019:
-  0x411019  public: __thiscall Base2::Base2(void)
-class 0x41101e:
-  0x41101e  j___RTC_GetErrDesc
-class 0x411023:
-  0x411023  j____p__fmode
-class 0x411028:
-  0x411028  __fastcall __security_check_cookie(x)
-class 0x41102d:
-  0x41102d  __stdcall IsDebuggerPresent()
-class 0x411032:
-  0x411032  private: class type_info & __thiscall type_info::operator=(class type_info const &)
-class 0x411037:
-  0x411037  j___RTC_Terminate
-class 0x41103c:
-  0x41103c  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
-class 0x411041:
-  0x411041  __fastcall _RTC_AllocaHelper(x, x, x)
-class 0x411046:
-  0x411046  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
-class 0x41104b:
-  0x41104b  j___RTC_NumErrors
-class 0x411050:
-  0x411050  j____setusermatherr
-class 0x411055:
-  0x411055  __stdcall Sleep(x)
-class 0x41105a:
-  0x41105a  public: virtual __thiscall type_info::~type_info(void)
-class 0x41105f:
-  0x41105f  __stdcall GetModuleFileNameW(x, x, x)
-class 0x411064:
-  0x411064  j____security_init_cookie
-class 0x411069:
-  0x411069  __stdcall SetUnhandledExceptionFilter(x)
-class 0x41106e:
-  0x41106e  j___cexit
-class 0x411073:
-  0x411073  j___CrtDbgReportW
-class 0x411078:
-  0x411078  __stdcall VirtualQuery(x, x, x)
-class 0x41107d:
-  0x41107d  j__atexit
-class 0x411082:
-  0x411082  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
-class 0x411087:
-  0x411087  j___RTC_SetErrorType
-class 0x41108c:
-  0x41108c  j___except_handler4
-class 0x411091:
-  0x411091  j___lock
-class 0x411096:
-  0x411096  __stdcall GetProcAddress(x, x)
-class 0x41109b:
-  0x41109b  __fastcall _RTC_CheckStackVars(x, x)
-class 0x4110a0:
-  0x4110a0  void __cdecl operator delete(void *)
-class 0x4110a5:
-  0x4110a5  public: virtual __thiscall type_info::~type_info(void)
-class 0x4110af:
-  0x4110af  void __cdecl terminate(void)
-class 0x4110b4:
-  0x4110b4  j___exit
-class 0x4110b9:
-  0x4110b9  __stdcall GetCurrentThreadId()
-class 0x4110be:
-  0x4110be  j___initterm
-class 0x4110c3:
-  0x4110c3  __stdcall GetCurrentProcess()
-class 0x4110c8:
-  0x4110c8  j___encode_pointer
-class 0x4110cd:
-  0x4110cd  j___RTC_UninitUse
-class 0x4110d2:
-  0x4110d2  j___RTC_Shutdown
-class 0x4110d7:
-  0x4110d7  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
-  0x411c20  private: __thiscall type_info::type_info(class type_info const &)
-  vftable 0x416790  const type_info::`vftable'
-class 0x4110dc:
-  0x4110dc  j___FindPESection
-class 0x4110e1:
-  0x4110e1  j___configthreadlocale
-class 0x4110e6:
-  0x4110e6  j___RTC_InitBase
-class 0x4110eb:
-  0x4110eb  void __cdecl _RTC_StackFailure(void *, char const *)
-class 0x4110f0:
-  0x4110f0  __stdcall LoadLibraryA(x)
-class 0x4110f5:
-  0x4110f5  __stdcall RaiseException(x, x, x, x)
-class 0x4110fa:
-  0x4110fa  public: __thiscall Base::Base(void)
-class 0x4110ff:
-  0x4110ff  j___crt_debugger_hook
-class 0x411104:
-  0x411104  j___ValidateImageBase
-class 0x411109:
-  0x411109  __stdcall InterlockedCompareExchange(x, x, x)
-class 0x41110e:
-  0x41110e  public: virtual int __thiscall Base::func2(void)
-  0x4116a0  public: __thiscall Base::Base(void)
-  vftable 0x416768  const Base::`vftable'
-class 0x411113:
-  0x411113  __stdcall GetProcessHeap()
-class 0x411118:
-  0x411118  j___RTC_SetErrorFuncW
-class 0x41111d:
-  0x41111d  j___onexit
-class 0x411122:
-  0x411122  j__NtCurrentTeb
-class 0x411127:
-  0x411127  __stdcall HeapFree(x, x, x)
-class 0x41112c:
-  0x41112c  j___RTC_SetErrorFunc
-class 0x411131:
-  0x411131  j___invoke_watson_if_error
-class 0x411136:
-  0x411136  __stdcall TerminateProcess(x, x)
-class 0x41113b:
-  0x41113b  j__rand
-class 0x411140:
-  0x411140  start
-class 0x41114a:
-  0x41114a  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
-class 0x41114f:
-  0x41114f  j____CxxSetUnhandledExceptionFilter
-class 0x411154:
-  0x411154  __stdcall QueryPerformanceCounter(x)
-class 0x411159:
-  0x411159  j____p__commode
-class 0x41115e:
-  0x41115e  j___unlock
-class 0x411163:
-  0x411163  public: virtual int __thiscall Base2::func2(void)
-  0x4117d0  public: __thiscall Base2::Base2(void)
-  vftable 0x41677c  const Base2::`vftable'
-class 0x411168:
-  0x411168  __stdcall GetCurrentProcessId()
-class 0x41116d:
-  0x41116d  __fastcall _RTC_CheckStackVars2(x, x, x)
-class 0x411172:
-  0x411172  j____set_app_type
-class 0x411177:
-  0x411177  j___purecall
-class 0x41117c:
-  0x41117c  j___RTC_CheckEsp
-class 0x411181:
-  0x411181  j__main
-class 0x411186:
-  0x411186  j___RTC_Initialize
-class 0x41118b:
-  0x41118b  public: __thiscall Derived::Derived(void)
-class 0x411190:
-  0x411190  j___controlfp_s
-class 0x411195:
-  0x411195  __stdcall GetSystemTimeAsFileTime(x)
-class 0x41119f:
-  0x41119f  j___decode_pointer
-class 0x4111a4:
-  0x4111a4  j___invoke_watson
-class 0x4111a9:
-  0x4111a9  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
-class 0x4111ae:
-  0x4111ae  j___CRT_RTC_INITW
-class 0x4111b3:
-  0x4111b3  __stdcall GetTickCount()
-class 0x4111b8:
-  0x4111b8  j___IsNonwritableInCurrentImage
-class 0x4111bd:
-  0x4111bd  j____CxxFrameHandler3
-class 0x4111c2:
-  0x4111c2  __stdcall HeapAlloc(x, x, x)
-class 0x4111c7:
-  0x4111c7  j___amsg_exit
-class 0x4111cc:
-  0x4111cc  void * __cdecl operator new(unsigned int)
-class 0x4111d1:
-  0x4111d1  j___XcptFilter
-class 0x4111d6:
-  0x4111d6  j___CrtSetCheckCount
-class 0x4111db:
-  0x4111db  __stdcall InterlockedExchange(x, x)
-class 0x4111e0:
-  0x4111e0  __stdcall UnhandledExceptionFilter(x)
-class 0x4111e5:
-  0x4111e5  private: __thiscall type_info::type_info(class type_info const &)
-class 0x4111ea:
-  0x4111ea  j___except_handler4_common
-class 0x4111ef:
-  0x4111ef  j___matherr
-class 0x4111f4:
-  0x4111f4  j____getmainargs
-class 0x4111f9:
-  0x4111f9  void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *))
-class 0x4111fe:
-  0x4111fe  __stdcall lstrlenA(x)
-class 0x411203:
-  0x411203  void __cdecl _RTC_Failure(void *, int)
-class 0x41120d:
-  0x41120d  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
-class 0x411212:
-  0x411212  j__DebuggerKnownHandle
-class 0x411217:
-  0x411217  j__exit_0
-class 0x41121c:
-  0x41121c  j____dllonexit
-class 0x411221:
-  0x411221  __stdcall FreeLibrary(x)
-class 0x411226:
-  0x411226  void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *))
-class 0x41122b:
-  0x41122b  j___initterm_e
-class 0x411230:
-  0x411230  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
-class 0x411470:
-  0x411470  _main
-class 0x411710:
-  0x411710  public: virtual int __thiscall Base::func1(void)
-class 0x411770:
-  0x411770  public: virtual int __thiscall Base::func2(void)
-class 0x411840:
-  0x411840  public: virtual int __thiscall Base2::func1(void)
-class 0x4118a0:
-  0x4118a0  public: virtual int __thiscall Base2::func2(void)
-class 0x411900:
-  0x411900  public: virtual int __thiscall Derived::func4(void)
-class 0x411940:
-  0x411940  public: virtual int __thiscall Derived::func3(void)
-class 0x411980:
-  0x411980  _rand
-class 0x411986:
-  0x411986  void __cdecl operator delete(void *)
-class 0x41198c:
-  0x41198c  void * __cdecl operator new(unsigned int)
-class 0x411992:
-  0x411992  ___CxxFrameHandler3
-class 0x4119a0:
-  0x4119a0  __fastcall __security_check_cookie(x)
-class 0x4119c0:
-  0x4119c0  __RTC_CheckEsp
-class 0x4119f0:
-  0x4119f0  __fastcall _RTC_CheckStackVars(x, x)
-class 0x411a70:
-  0x411a70  __fastcall _RTC_AllocaHelper(x, x, x)
-class 0x411ab0:
-  0x411ab0  __fastcall _RTC_CheckStackVars2(x, x, x)
-class 0x411bc0:
-  0x411bc0  __RTC_InitBase
-class 0x411c00:
-  0x411c00  __RTC_Shutdown
-class 0x411c50:
-  0x411c50  public: virtual void * __thiscall type_info::`vector deleting destructor'(unsigned int)
-class 0x411ce0:
-  0x411ce0  private: class type_info & __thiscall type_info::operator=(class type_info const &)
-class 0x411cf6:
-  0x411cf6  __purecall
-class 0x411d00:
-  0x411d00  pre_c_init
-class 0x411dd0:
-  0x411dd0  pre_cpp_init
-class 0x411e40:
-  0x411e40  _mainCRTStartup
-class 0x411e60:
-  0x411e60  __tmainCRTStartup
-class 0x412140:
-  0x412140  _NtCurrentTeb
-class 0x412150:
-  0x412150  check_managed_app
-class 0x412230:
-  0x412230  ___report_gsfailure
-class 0x412390:
-  0x412390  _DebuggerKnownHandle
-class 0x4123c0:
-  0x4123c0  DebuggerProbe
-class 0x412470:
-  0x412470  void __cdecl _RTC_Failure(void *, int)
-class 0x4124e0:
-  0x4124e0  failwithmessage
-class 0x412770:
-  0x412770  DebuggerRuntime
-class 0x412840:
-  0x412840  void __cdecl _RTC_StackFailure(void *, char const *)
-class 0x412980:
-  0x412980  void __cdecl _RTC_AllocaFailure(void *, struct _RTC_ALLOCA_NODE *, int)
-class 0x412b00:
-  0x412b00  _getMemBlockDataString
-class 0x412b90:
-  0x412b90  __RTC_UninitUse
-class 0x412cc0:
-  0x412cc0  __RTC_NumErrors
-class 0x412cd0:
-  0x412cd0  __RTC_GetErrDesc
-class 0x412d20:
-  0x412d20  __RTC_SetErrorFunc
-class 0x412d50:
-  0x412d50  __RTC_SetErrorFuncW
-class 0x412d80:
-  0x412d80  int (__cdecl *__cdecl _RTC_GetErrorFunc(void const *))(int, char const *, int, char const *, char const *, ...)
-class 0x412d90:
-  0x412d90  int (__cdecl *__cdecl _RTC_GetErrorFuncW(void const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)
-class 0x412d96:
-  0x412d96  __CRT_RTC_INITW
-class 0x412da0:
-  0x412da0  void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *))
-class 0x412e1e:
-  0x412e1e  $LN8
-class 0x412e80:
-  0x412e80  void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *))
-class 0x412f30:
-  0x412f30  ArrayUnwindFilter
-class 0x412f70:
-  0x412f70  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
-class 0x412ff0:
-  0x412ff0  ___CxxSetUnhandledExceptionFilter
-class 0x41300a:
-  0x41300a  __configthreadlocale
-class 0x413010:
-  0x413010  __setdefaultprecision
-class 0x413060:
-  0x413060  __invoke_watson_if_error
-class 0x413096:
-  0x413096  ___setusermatherr
-class 0x4130a0:
-  0x4130a0  __matherr
-class 0x4130b0:
-  0x4130b0  __setargv
-class 0x4130c0:
-  0x4130c0  __RTC_Initialize
-class 0x4130f0:
-  0x4130f0  __RTC_Terminate
-class 0x413120:
-  0x413120  ___p__commode
-class 0x413126:
-  0x413126  ___p__fmode
-class 0x413130:
-  0x413130  __onexit
-class 0x413215:
-  0x413215  $LN6_1
-class 0x413280:
-  0x413280  _atexit
-class 0x4132a4:
-  0x4132a4  __encode_pointer
-class 0x4132aa:
-  0x4132aa  ___set_app_type
-class 0x4132b0:
-  0x4132b0  __amsg_exit
-class 0x4132b6:
-  0x4132b6  ___getmainargs
-class 0x4132c0:
-  0x4132c0  ___security_init_cookie
-class 0x4133d2:
-  0x4133d2  __exit
-class 0x4133d8:
-  0x4133d8  __XcptFilter
-class 0x4133de:
-  0x4133de  __cexit
-class 0x4133e4:
-  0x4133e4  _exit_0
-class 0x4133ea:
-  0x4133ea  __CrtSetCheckCount
-class 0x4133f0:
-  0x4133f0  __ValidateImageBase
-class 0x413470:
-  0x413470  __FindPESection
-class 0x413510:
-  0x413510  __IsNonwritableInCurrentImage
-class 0x413666:
-  0x413666  __CrtDbgReportW
-class 0x41366c:
-  0x41366c  __initterm
-class 0x413672:
-  0x413672  __initterm_e
-class 0x413680:
-  0x413680  __except_handler4
-class 0x4136b4:
-  0x4136b4  __crt_debugger_hook
-class 0x4136c0:
-  0x4136c0  int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)
-class 0x413a30:
-  0x413a30  GetPdbDll
-class 0x413c7c:
-  0x413c7c  void __cdecl terminate(void)
-class 0x413c82:
-  0x413c82  public: virtual __thiscall type_info::~type_info(void)
-class 0x413c88:
-  0x413c88  __controlfp_s
-class 0x413c8e:
-  0x413c8e  __invoke_watson
-class 0x413c94:
-  0x413c94  __unlock
-class 0x413c9a:
-  0x413c9a  ___dllonexit
-class 0x413ca0:
-  0x413ca0  __lock
-class 0x413ca6:
-  0x413ca6  __decode_pointer
-class 0x413cac:
-  0x413cac  __except_handler4_common
-class 0x413cb2:
-  0x413cb2  __stdcall InterlockedExchange(x, x)
-class 0x413cb8:
-  0x413cb8  __stdcall Sleep(x)
-class 0x413cbe:
-  0x413cbe  __stdcall InterlockedCompareExchange(x, x, x)
-class 0x413cc4:
-  0x413cc4  __stdcall TerminateProcess(x, x)
-class 0x413cca:
-  0x413cca  __stdcall GetCurrentProcess()
-class 0x413cd0:
-  0x413cd0  __stdcall UnhandledExceptionFilter(x)
-class 0x413cd6:
-  0x413cd6  __stdcall SetUnhandledExceptionFilter(x)
-class 0x413cdc:
-  0x413cdc  __stdcall IsDebuggerPresent()
-class 0x413ce2:
-  0x413ce2  __stdcall RaiseException(x, x, x, x)
-class 0x413ce8:
-  0x413ce8  __stdcall DebugBreak()
-class 0x413cee:
-  0x413cee  __stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)
-class 0x413cf4:
-  0x413cf4  __stdcall MultiByteToWideChar(x, x, x, x, x, x)
-class 0x413cfa:
-  0x413cfa  __stdcall lstrlenA(x)
-class 0x413d00:
-  0x413d00  __stdcall GetProcAddress(x, x)
-class 0x413d06:
-  0x413d06  __stdcall LoadLibraryA(x)
-class 0x413d0c:
-  0x413d0c  __stdcall QueryPerformanceCounter(x)
-class 0x413d12:
-  0x413d12  __stdcall GetTickCount()
-class 0x413d18:
-  0x413d18  __stdcall GetCurrentThreadId()
-class 0x413d1e:
-  0x413d1e  __stdcall GetCurrentProcessId()
-class 0x413d24:
-  0x413d24  __stdcall GetSystemTimeAsFileTime(x)
-class 0x413d2a:
-  0x413d2a  __stdcall HeapFree(x, x, x)
-class 0x413d30:
-  0x413d30  __stdcall HeapAlloc(x, x, x)
-class 0x413d36:
-  0x413d36  __stdcall GetProcessHeap()
-class 0x413d3c:
-  0x413d3c  __stdcall GetModuleFileNameW(x, x, x)
-class 0x413d42:
-  0x413d42  __stdcall VirtualQuery(x, x, x)
-class 0x413d48:
-  0x413d48  __stdcall FreeLibrary(x)
-class 0x414c90:
-  0x414c90  __unwindfunclet$_main$0
-class 0x414c9e:
-  0x414c9e  __ehhandler$_main
-class 0x419260:
-  0x419260  __declspec(dllimport) public: void __thiscall type_info::_type_info_dtor_internal_method(void)
+% Equivalence classes (4 classes, 9 entities):
+%   {Derived::Derived(void)@4265424, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292}
+%   {Base::Base(void)@4265632, const Base::`vftable'@4286312}
+%   {Base2::Base2(void)@4265936, const Base2::`vftable'@4286332}
+%   {type_info::type_info(class type_info const &)@4267040, const type_info::`vftable'@4286352}

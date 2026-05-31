@@ -27,7 +27,7 @@ def load_symbols(path):
 
 def best_answer(content):
     # Each answer block: "Answer: N (Time: ...)\n<atoms on one line>"
-    answers = re.findall(r'^Answer: \d+ \(Time: [^)]+\)\n(.*)', content, re.MULTILINE)
+    answers = re.findall(r'^Answer: \d+[^\n]*\n(.*)', content, re.MULTILINE)
     return answers[-1] if answers else None
 
 
