@@ -8,7 +8,7 @@
 %!trace_rule {"% calls % because of a direct call on the same this-pointer", Method1, Method2}
 classCallsMethod(Method1, Method2) :-
     validMethodCallAtOffset(_Insn, Method1, Method2, 0),
-    not sameClass(Method1, Method2).                                      % rules.pl:2481
+    not &sameClass(Method1, Method2).                                     % rules.pl:2481
 
 % reasonClassCallsMethod_B: a class can call methods in its vftable, excluding
 % purecall stubs and methods already known to be on the same class.
@@ -19,7 +19,7 @@ classCallsMethod(VFTable, Method2) :-
     dethunk(Entry2, Method2),
     not purecall(Entry2),
     not purecall(Method2),
-    not sameClass(VFTable, Method2).                                      % rules.pl:2462
+    not &sameClass(VFTable, Method2).                                     % rules.pl:2462
 
 %!trace {"% calls %", V, M} classCallsMethod(V, M).
 

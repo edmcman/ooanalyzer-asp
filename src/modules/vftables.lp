@@ -117,33 +117,33 @@ vftableBelongsToClassOtherWriter(VFTable, Class) :-
     mergeEntity(Class),
     vfTableWrite(_, OtherMethod, OtherOffset, VFTable),
     not vfTableOverwrite(OtherMethod, VFTable, _, OtherOffset),
-    not sameClass(OtherMethod, Class).                                       % rules.pl:1101-1106 / 1209-1214
+    not &sameClass(OtherMethod, Class).                                      % rules.pl:1101-1106 / 1209-1214
 
 % Core candidate: confirmed write to method's own this-pointer, not overwritten.
 % possibleVFTableWrite + thisParamFuncParameter guards against inlined sub-constructor writes.
-vftableBelongsToClassCandidate(Method, Offset, VFTable, Class) :-
+% Class = Method: the installing method is its own class witness.
+vftableBelongsToClassCandidate(Method, Offset, VFTable, Method) :-
     vfTableWrite(Insn, Method, Offset, VFTable),
     possibleVFTableWrite(Insn, Method, ThisPtr, Offset, VFTable),
     thisParamFuncParameter(Method, ThisPtr),
-    sameClass(Method, Class),
     not vfTableOverwrite(Method, VFTable, _, Offset).                        % rules.pl:1007-1031 / 1118-1140
 
 % Ownership sub-case A (Offset != 0): ancestor at Offset has a vftable we need to replace.
 % Base reuse check: VFTable must not also be written at offset 0 (which would indicate reuse).
-% derivedClassRelationship_closed is sameClass-closed on both sides, so the witness
-% method from vftableBelongsToClass can be matched directly without an explicit
-% sameClass(AncestorWitness, AncestorClass) join.
+% W is the derivedClassRelationship witness for Class's side; &sameClass(Class, W) bridges.
 vftableBelongsToClassOwns(Method, Offset, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, Offset, VFTable, Class),
     Offset != 0,
-    derivedClassRelationship_closed(Class, AncestorWitness, Offset),
+    derivedClassRelationship(W, AncestorWitness, Offset),
+    &sameClass(Class, W),
     vftableBelongsToClass(_, 0, AncestorWitness),
     not vftableBelongsToClassInstalledAtZero(VFTable).                       % rules.pl:1057-1058 / 1165-1166
 
 % Ownership sub-case B (Offset = 0): ancestor at offset 0 has a vftable we need to replace.
 vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
-    derivedClassRelationship_closed(Class, AncestorWitness, 0),
+    derivedClassRelationship(W, AncestorWitness, 0),
+    &sameClass(Class, W),
     vftableBelongsToClass(_, 0, AncestorWitness).                            % rules.pl:1057-1058 / 1165-1166
 
 % Ownership branch 2 (Offset = 0): "starting a new inheritance hierarchy" (rules.pl:1060-1071).
@@ -162,7 +162,8 @@ vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
 % branch 2b: UsOrBase = a base of Class at offset 0
 vftableBelongsToClassOwns(Method, 0, VFTable, Class) :-
     vftableBelongsToClassCandidate(Method, 0, VFTable, Class),
-    derivedClassRelationship_closed(Class, Base, 0),
+    derivedClassRelationship(W, Base, 0),
+    &sameClass(Class, W),
     not embeddedObject(Base, _, 0).                                          % rules.pl:1067,1069-1071
 
 % Additional-check 1 (constructor): confirmed constructor with no possible overwrite at Offset.

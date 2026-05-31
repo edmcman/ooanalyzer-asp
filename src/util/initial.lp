@@ -234,9 +234,10 @@ rTTINoBase(TDA) :-
     rTTIBaseClassDescriptor(_, TDA, 0, _, _, _, _, _).
 
 % Counterpart: rTTITDA2Class/2 (rtti.pl:26-31)
-rTTITDA2Class(TDA, Class) :-
-    rTTITDA2VFTable(TDA, VFTable),
-    sameClass(VFTable, Class).
+% Witness-based: the vftable IS the class witness.  Use sites join to other
+% class members via &sameClass(OtherMember, VFTable).
+rTTITDA2Class(TDA, VFTable) :-
+    rTTITDA2VFTable(TDA, VFTable).
 
 % ----------------------------------------------------------------
 % possibleMethod: at least some evidence that Address is a function.

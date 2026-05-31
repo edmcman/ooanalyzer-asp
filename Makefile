@@ -7,6 +7,8 @@ CLINGO       := clingo ooanalyzer.lp
 CLINGO_FLAGS := --quiet=1,2 --time-limit=60 --opt-strategy bb,inc --heuristic=domain --stats
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
+PROPAGATOR   := $(PYTHON) ooanalyzer.py
+PROP_FLAGS   := --opt-strategy bb,inc --heuristic domain
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
 
@@ -18,7 +20,7 @@ LP_FILES     := $(FACTS:%.facts=%.lp)
 # ----------------------------------------------------------------
 # Default: convert all .facts and run clingo
 # ----------------------------------------------------------------
-.PHONY: all convert run verify verify-core verify-real lazyrun explain-all symbolize clean help
+.PHONY: all convert run verify verify-core verify-real lazyrun propagator-run explain-all symbolize clean help
 
 all: run
 
@@ -95,6 +97,15 @@ verify-core:
 # Run dualgrounder on generated .lp files
 # ----------------------------------------------------------------
 LAZY_OUT_FILES := $(LP_FILES:%.lp=%.lazy.out)
+
+PROP_OUT_FILES := $(LP_FILES:%.lp=%.prop.out)
+
+propagator-run: $(PROP_OUT_FILES)
+
+$(OOA_DIR)/%.prop.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/**/*.lp)
+	@echo "=== Running propagator: $(PROPAGATOR) $< ==="
+	$(TIME) $(PROPAGATOR) $< $(PROP_FLAGS) > $@ 2>&1 || true
+	@tail -10 $@
 
 lazyrun: $(LAZY_OUT_FILES)
 

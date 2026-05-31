@@ -64,7 +64,8 @@ deletingDestructor(Method) :-
 %!trace_rule {"% is not a constructor because it does not install vftable % which belongs to its class", Method, VFTable}
 -constructor(Method) :-
     vfTable(VFTable),
-    sameClass(VFTable, Method),
+    method(Method),
+    &sameClass(VFTable, Method),
     not possibleVFTableWrite(_, Method, _, _, VFTable),
     not symbolClass(Method, _, _, _).
 
@@ -156,7 +157,7 @@ constructorDestructorKind(Method, deletingDestructor) :-
 % insanityTwoRealDestructorsOnClass: a class may not have more than one real destructor.
 % Counterpart: insanityTwoRealDestructorsOnClass (insanity.pl:253)
 %!trace_rule {"% and % are two real destructors on the same class", D1, D2}
-:- realDestructor(D1), realDestructor(D2), D1 < D2, sameClass(D1, D2).
+:- realDestructor(D1), realDestructor(D2), D1 < D2, &sameClass(D1, D2).
 
 %!trace {"% is a constructor", M} constructor(M).
 %!trace {"% is a real destructor", M} realDestructor(M).

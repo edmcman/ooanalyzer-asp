@@ -23,7 +23,7 @@
 %!show_trace derivedClass(Outer, Inner, Off).
 %!show_trace embeddedObject(Outer, Inner, Off).
 %!show_trace objectInObject(Outer, Inner, Off).
-%!show_trace classRelationship_closed(A, B).
+%!show_trace classRelationship(A, B).
 %!show_trace classHasNoBase(V).
 %!show_trace classHasNoDerived(V).
 
