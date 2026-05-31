@@ -46,6 +46,34 @@ terms from the underlying base predicate. Whether this saves grounding is
 case-by-case and needs measurement — sometimes the closure version's natural
 joins are cheaper than the refactored version.
 
+## Witness-based class facts
+
+The `&sameClass` propagator pairs naturally with a witness-based encoding of
+class-indexed facts. Rather than tracking properties like vftable ownership via
+a canonical class representative (which requires a dynamic domain) or closing
+them over equivalence class members via O(N²) closure rules:
+
+```
+hasVftable(B, V) :- hasVftable(A, V), sameClass(A, B).
+```
+
+keep only the base witness fact and rewrite each use site to query `&sameClass`
+directly:
+
+```
+classHasVftable(M, V) :- methodHasVftable(W, V), &sameClass(M, W).
+```
+
+This works because witness predicates are always grounded in EDB or base
+derivations, so `W` is always grounding-time bound — satisfying the "both vars
+bound" requirement for theory atoms. The closure rules that propagated class
+properties across equivalence class members are eliminated entirely.
+
+**Caveat:** use sites must have the non-witness variable `M` bound by some other
+body literal. Any rule that iterates over "all classes with property P" without
+a concrete anchor entity cannot be rewritten this way and may need special
+handling.
+
 ## Optimization
 
 `#minimize`/`#maximize` and `#heuristic` cannot reference theory atoms directly.
