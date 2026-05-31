@@ -11,6 +11,13 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ---
 
+## Solver Engineering
+
+- [ ] Put `sortPair` in theory
+- [ ] Put `nextRegularMethod` in theory
+
+---
+
 ## 1. Method (`method`)
 
 ### Deductive (rules.pl:26–177)
