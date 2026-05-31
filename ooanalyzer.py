@@ -10,6 +10,7 @@ Usage:
 import argparse
 import os
 import sys
+import time
 import clingo
 from propagator.sameclass import SameClassPropagator
 
@@ -22,7 +23,8 @@ def parse_args():
     p.add_argument("files", nargs="+", help=".lp fact/example files to load")
     p.add_argument("-n", "--models", type=int,
                    help="number of models (0 = all, default: clingo default)")
-    p.add_argument("--stats", action="store_true", help="print clingo stats")
+    p.add_argument("--stats", nargs="?", const=1, default=0, type=int,
+                   help="print clingo stats (optionally pass a clingo stats level)")
     p.add_argument("--quiet", type=str, default="1,2",
                    help="clingo --quiet level (default 1,2)")
     p.add_argument("--opt-strategy", default="bb,inc")
@@ -46,8 +48,8 @@ def main():
         f"--opt-strategy={args.opt_strategy}",
         f"--heuristic={args.heuristic}",
     ]
-    if args.time_limit:
-        ctl_args.append(f"--time-limit={args.time_limit}")
+    if args.stats:
+        ctl_args.append(f"--stats={args.stats}")
     for c in args.const:
         ctl_args.append(f"--const={c}")
 
@@ -61,16 +63,30 @@ def main():
     for f in args.files:
         ctl.load(f)
 
+    ground_start = time.perf_counter()
     ctl.ground([("base", [])])
+    ground_time = time.perf_counter() - ground_start
 
+    keep_all_models = args.models == 0 or (args.models is not None and args.models > 1)
     found = []
 
     def on_model(model):
         shown = list(model.symbols(shown=True))
         cost = list(model.cost)
-        found.append((shown, cost))
+        if keep_all_models:
+            found.append((shown, cost))
+        else:
+            found[:] = [(shown, cost)]
 
-    result = ctl.solve(on_model=on_model)
+    timed_out = False
+    if args.time_limit:
+        handle = ctl.solve(on_model=on_model, async_=True)
+        if not handle.wait(args.time_limit):
+            timed_out = True
+            handle.cancel()
+        result = handle.get()
+    else:
+        result = ctl.solve(on_model=on_model)
 
     if result.unsatisfiable:
         print("UNSATISFIABLE")
@@ -86,6 +102,8 @@ def main():
             print("OPTIMUM FOUND" if any(found[-1][1]) else "SATISFIABLE")
         elif result.satisfiable:
             print("SATISFIABLE")
+    if timed_out:
+        print("% TIME LIMIT REACHED")
 
     # Print partition
     parts = prop.partition()
@@ -96,17 +114,33 @@ def main():
             print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
 
     if args.stats:
+        def stat(path):
+            cur = ctl.statistics
+            for key in path.split("."):
+                if not isinstance(cur, dict) or key not in cur:
+                    return None
+                cur = cur[key]
+            return cur
+
         print("\n% Stats:")
-        stats = ctl.statistics
-        prob = stats.get("problem", {})
-        for k in ("atoms", "bodies", "rules", "variables", "constraints"):
-            val = prob.get(k)
+        fields = (
+            ("atoms", "problem.lp.atoms"),
+            ("bodies", "problem.lp.bodies"),
+            ("rules", "problem.lp.rules"),
+            ("variables", "problem.generator.vars"),
+            ("constraints", "problem.generator.constraints"),
+            ("choices", "solving.solvers.choices"),
+            ("conflicts", "solving.solvers.conflicts"),
+            ("models", "summary.models.enumerated"),
+            ("optimal_models", "summary.models.optimal"),
+            ("total_time", "summary.times.total"),
+            ("ground_time", None),
+            ("solve_time", "summary.times.solve"),
+        )
+        for name, path in fields:
+            val = ground_time if path is None else stat(path)
             if val is not None:
-                print(f"%   {k}: {val}")
-        solving = stats.get("solving", {})
-        choices = solving.get("choices")
-        if choices is not None:
-            print(f"%   choices: {choices}")
+                print(f"%   {name}: {val}")
 
 
 if __name__ == "__main__":

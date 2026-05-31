@@ -5,7 +5,7 @@ PYTHON       := python3
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain
+PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain --time-limit=30
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
 
@@ -50,7 +50,7 @@ OUT_FILES := $(LP_FILES:%.lp=%.out)
 
 define PROPAGATOR_RUN
 	rc=0; /usr/bin/time -o "$(3)" $(PROPAGATOR) $(1) $(PROP_FLAGS) >"$(2)" 2>&1 || rc=$$?; \
-	case "$$rc" in 0|10|20|30) ;; *) echo "warning: $(1) exited $$rc" >>"$(2)" ;; esac
+	case "$$rc" in 0|10|20|30) ;; *) echo "error: $(1) exited $$rc" >>"$(2)"; exit "$$rc" ;; esac
 endef
 
 run: $(OUT_FILES)
