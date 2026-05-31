@@ -448,16 +448,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396, __declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400}
 
 % Stats:
-%   atoms: 55377.0
-%   bodies: 25169.0
-%   rules: 55817.0
-%   variables: 23868.0
-%   constraints: 0.0
+%   atoms: 148697.0
+%   bodies: 95474.0
+%   rules: 1805497.0
+%   variables: 116532.0
+%   constraints: 45795.0
 %   choices: 216.0
 %   conflicts: 0.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 0.12973999977111816
-%   ground_time: 0.07850491598946974
-%   time_to_first_model: 0.10494024999206886
-%   solve_time: 0.003017902374267578
+%   total_time: 1.7957639694213867
+%   ground_time: 1.1788502500276081
+%   time_to_first_model: 1.76146529201651
+%   solve_time: 0.010463953018188477

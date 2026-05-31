@@ -176,9 +176,9 @@ method(___report_gsfailure@4213619)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198758)
 constructor(std::exception::exception(char const * const &, int)@4199319)
 constructor(std::exception::exception(class std::exception const &)@4199558)
-constructor(virtual type_info::~type_info(void)@4199595)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198708)
 realDestructor(virtual std::exception::~exception(void)@4199508)
+realDestructor(virtual type_info::~type_info(void)@4199595)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4199611)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4199519)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198719)
@@ -413,16 +413,16 @@ OPTIMUM FOUND
 %   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4217336}
 
 % Stats:
-%   atoms: 43302.0
-%   bodies: 16446.0
-%   rules: 43094.0
-%   variables: 17749.0
-%   constraints: 354.0
-%   choices: 1042.0
-%   conflicts: 50.0
+%   atoms: 90767.0
+%   bodies: 52274.0
+%   rules: 676992.0
+%   variables: 63940.0
+%   constraints: 23193.0
+%   choices: 1092.0
+%   conflicts: 52.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 0.1406397819519043
-%   ground_time: 0.05200779199367389
-%   time_to_first_model: 0.07952216698322445
-%   solve_time: 0.006842851638793945
+%   total_time: 0.7140259742736816
+%   ground_time: 0.45219629199709743
+%   time_to_first_model: 0.6853476249962114
+%   solve_time: 0.02283191680908203

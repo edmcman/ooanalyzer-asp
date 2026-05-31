@@ -182,7 +182,7 @@ constructor(Derived::Derived(void)@4198496)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198815)
 constructor(std::exception::exception(char const * const &, int)@4201447)
 constructor(std::exception::exception(class std::exception const &)@4201686)
-constructor(virtual type_info::~type_info(void)@4198630)
+realDestructor(virtual type_info::~type_info(void)@4198630)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198765)
 realDestructor(virtual std::exception::~exception(void)@4201636)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201647)
@@ -443,16 +443,16 @@ OPTIMUM FOUND
 %   {const std::bad_alloc::`RTTI Complete Object Locator'@4227536}
 
 % Stats:
-%   atoms: 48066.0
-%   bodies: 18255.0
-%   rules: 47624.0
-%   variables: 19402.0
-%   constraints: 440.0
-%   choices: 14443.0
-%   conflicts: 161.0
-%   models: 1.0
+%   atoms: 107826.0
+%   bodies: 63311.0
+%   rules: 955471.0
+%   variables: 55980.0
+%   constraints: 18650.0
+%   choices: 16116.0
+%   conflicts: 167.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.21939301490783691
-%   ground_time: 0.04679470800329
-%   time_to_first_model: 0.13579262502025813
-%   solve_time: 0.06366300582885742
+%   total_time: 1.279264211654663
+%   ground_time: 0.6631162500125356
+%   time_to_first_model: 1.2131630000076257
+%   solve_time: 0.3287200927734375

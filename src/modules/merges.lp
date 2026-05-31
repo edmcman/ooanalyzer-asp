@@ -178,18 +178,18 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 % New non-prolog merging reward: adjacent regular methods are more likely to be
 % on the same class. This is true at least for non-debug executables.
 % Disabled for now: the next/method-between relation should move into theory.
-% regularMethod(M) :- method(M), not constructor(M).
-%
-% nextRegularMethod(M1, M2) :-
-%     regularMethod(M1),
-%     M2 = #min{ M3 : regularMethod(M3), M3 > M1 }.
-%
-% adjacentMethodCandidate(A, B) :-
-%     nextRegularMethod(M1, M2),
-%     sortPair(M1, M2, A, B).
+regularMethod(M) :- method(M), not constructor(M).
+
+nextRegularMethod(M1, M2) :-
+    regularMethod(M1),
+    M2 = #min{ M3 : regularMethod(M3), M3 > M1 }.
+
+adjacentMethodCandidate(A, B) :-
+    nextRegularMethod(M1, M2),
+    sortPair(M1, M2, A, B).
 %
 % #maximize { 1@0, adjacent, M1, M2 : mergeClasses(M1, M2), adjacentMethodCandidate(M1, M2) }.
-% #heuristic mergeClasses(A, B) : mergeCandidate(A, B), adjacentMethodCandidate(A, B). [1@0, true]
+#heuristic mergeClasses(A, B) : mergeCandidate(A, B), adjacentMethodCandidate(A, B). [1@0, true]
 
 %!NOshow_trace mergeClasses(A, B).
 %!NOshow_trace -mergeClasses(A, B).

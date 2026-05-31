@@ -485,16 +485,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336}
 
 % Stats:
-%   atoms: 58681.0
-%   bodies: 25836.0
-%   rules: 58325.0
-%   variables: 26375.0
-%   constraints: 14.0
-%   choices: 2047.0
+%   atoms: 99725.0
+%   bodies: 56941.0
+%   rules: 458481.0
+%   variables: 61105.0
+%   constraints: 14163.0
+%   choices: 2043.0
 %   conflicts: 24.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 0.1566169261932373
-%   ground_time: 0.058748750016093254
-%   time_to_first_model: 0.14122504100669175
-%   solve_time: 0.025421857833862305
+%   total_time: 0.7604720592498779
+%   ground_time: 0.3856418340001255
+%   time_to_first_model: 0.7047800000291318
+%   solve_time: 0.07276296615600586
