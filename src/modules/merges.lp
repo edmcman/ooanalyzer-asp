@@ -196,4 +196,3 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 %!trace {"% and % should be merged", A, B} mergeClasses(A, B).
 
 #show mergeClasses/2.
-#show -mergeClasses/2.

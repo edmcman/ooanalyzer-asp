@@ -93,8 +93,7 @@ def main():
         print(f"\n% Equivalence classes ({len(parts)} classes, "
               f"{sum(len(g) for g in parts.values())} entities):")
         for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
-            if len(members) > 1:
-                print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
+            print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
 
     if args.stats:
         print("\n% Stats:")

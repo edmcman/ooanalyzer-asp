@@ -2,11 +2,10 @@
 # Converts OOAnalyzer .facts files to Clingo .lp and runs the propagator solver.
 
 PYTHON       := python3
-TIME         := time
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := --opt-strategy bb,inc --heuristic domain
+PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
 
@@ -50,7 +49,7 @@ $(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts facts2clingo.py
 OUT_FILES := $(LP_FILES:%.lp=%.out)
 
 define PROPAGATOR_RUN
-	rc=0; $(TIME) $(PROPAGATOR) $(1) $(PROP_FLAGS) >"$(2)" 2>&1 || rc=$$?; \
+	rc=0; /usr/bin/time -o "$(3)" $(PROPAGATOR) $(1) $(PROP_FLAGS) >"$(2)" 2>&1 || rc=$$?; \
 	case "$$rc" in 0|10|20|30) ;; *) echo "warning: $(1) exited $$rc" >>"$(2)" ;; esac
 endef
 
@@ -58,7 +57,7 @@ run: $(OUT_FILES)
 
 $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(wildcard src/**/*.lp)
 	@echo "=== Running: $(PROPAGATOR) $< $(PROP_FLAGS) ==="
-	$(call PROPAGATOR_RUN,$<,$@)
+	$(call PROPAGATOR_RUN,$<,$@,$(@:.out=.time))
 	@tail -20 $@
 
 verify: verify-core
@@ -132,15 +131,13 @@ LAZY_SYM_FILES := $(foreach sym,$(patsubst %.symbols,%.lazy.sym,$(SYMBOLS_FILES)
 
 symbolize: $(SYM_FILES) $(LAZY_SYM_FILES)
 
-$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py out2classes.py
+$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py
 	@echo "=== Symbolizing $* ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
-	$(PYTHON) out2classes.py $(word 2,$^) $< >> $@ || true
 
-$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py out2classes.py
+$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py
 	@echo "=== Symbolizing $* (lazy) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
-	$(PYTHON) out2classes.py $(word 2,$^) $< >> $@ || true
 
 # ----------------------------------------------------------------
 # Clean generated files
@@ -148,6 +145,7 @@ $(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py o
 clean:
 	find $(OOA_DIR) -name '*.lp' -delete
 	find $(OOA_DIR) -name '*.out' -delete
+	find $(OOA_DIR) -name '*.time' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
 	find $(OOA_DIR) -name '*.sym' -delete
 	find $(OOA_DIR) -name '*.lazy.sym' -delete
