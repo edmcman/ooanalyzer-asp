@@ -308,8 +308,248 @@ objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftabl
 Optimization: -75 -4 -20 -236 -44
 OPTIMUM FOUND
 
-% Equivalence classes (4 classes, 9 entities):
-%   {Derived::Derived(void)@4265424, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292}
-%   {Base::Base(void)@4265632, const Base::`vftable'@4286312}
-%   {Base2::Base2(void)@4265936, const Base2::`vftable'@4286332}
-%   {type_info::type_info(class type_info const &)@4267040, const type_info::`vftable'@4286352}
+% Equivalence classes (229 classes, 241 entities):
+%   {j___setdefaultprecision@4263941}
+%   {virtual int Derived::func4(void)@4263946, virtual int Derived::func3(void)@4264261, Derived::Derived(void)@4265424, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292}
+%   {j___setargv@4263951}
+%   {__stdcall DebugBreak()@4263956}
+%   {Base2::Base2(void)@4263961}
+%   {j___RTC_GetErrDesc@4263966}
+%   {j____p__fmode@4263971}
+%   {__fastcall __security_check_cookie(x)@4263976}
+%   {__stdcall IsDebuggerPresent()@4263981}
+%   {class type_info & type_info::operator=(class type_info const &)@4263986}
+%   {j___RTC_Terminate@4263991}
+%   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263996}
+%   {__fastcall _RTC_AllocaHelper(x, x, x)@4264001}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264006}
+%   {j___RTC_NumErrors@4264011}
+%   {j____setusermatherr@4264016}
+%   {__stdcall Sleep(x)@4264021}
+%   {virtual type_info::~type_info(void)@4264026}
+%   {__stdcall GetModuleFileNameW(x, x, x)@4264031}
+%   {j____security_init_cookie@4264036}
+%   {__stdcall SetUnhandledExceptionFilter(x)@4264041}
+%   {j___cexit@4264046}
+%   {j___CrtDbgReportW@4264051}
+%   {__stdcall VirtualQuery(x, x, x)@4264056}
+%   {j__atexit@4264061}
+%   {__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264066}
+%   {j___RTC_SetErrorType@4264071}
+%   {j___except_handler4@4264076}
+%   {j___lock@4264081}
+%   {__stdcall GetProcAddress(x, x)@4264086}
+%   {__fastcall _RTC_CheckStackVars(x, x)@4264091}
+%   {__cdecl operator delete(*)@4264096}
+%   {virtual type_info::~type_info(void)@4264101}
+%   {__cdecl terminate(void)@4264111}
+%   {j___exit@4264116}
+%   {__stdcall GetCurrentThreadId()@4264121}
+%   {j___initterm@4264126}
+%   {__stdcall GetCurrentProcess()@4264131}
+%   {j___encode_pointer@4264136}
+%   {j___RTC_UninitUse@4264141}
+%   {j___RTC_Shutdown@4264146}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264151, type_info::type_info(class type_info const &)@4267040, const type_info::`vftable'@4286352}
+%   {j___FindPESection@4264156}
+%   {j___configthreadlocale@4264161}
+%   {j___RTC_InitBase@4264166}
+%   {__cdecl _RTC_StackFailure(*, char const *)@4264171}
+%   {__stdcall LoadLibraryA(x)@4264176}
+%   {__stdcall RaiseException(x, x, x, x)@4264181}
+%   {Base::Base(void)@4264186}
+%   {j___crt_debugger_hook@4264191}
+%   {j___ValidateImageBase@4264196}
+%   {__stdcall InterlockedCompareExchange(x, x, x)@4264201}
+%   {virtual int Base::func2(void)@4264206, virtual int Base::func1(void)@4264456, Base::Base(void)@4265632, const Base::`vftable'@4286312}
+%   {__stdcall GetProcessHeap()@4264211}
+%   {j___RTC_SetErrorFuncW@4264216}
+%   {j___onexit@4264221}
+%   {j__NtCurrentTeb@4264226}
+%   {__stdcall HeapFree(x, x, x)@4264231}
+%   {j___RTC_SetErrorFunc@4264236}
+%   {j___invoke_watson_if_error@4264241}
+%   {__stdcall TerminateProcess(x, x)@4264246}
+%   {j__rand@4264251}
+%   {start@4264256}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264266}
+%   {j____CxxSetUnhandledExceptionFilter@4264271}
+%   {__stdcall QueryPerformanceCounter(x)@4264276}
+%   {j____p__commode@4264281}
+%   {j___unlock@4264286}
+%   {virtual int Base2::func2(void)@4264291, virtual int Base2::func1(void)@4264346, Base2::Base2(void)@4265936, const Base2::`vftable'@4286332}
+%   {__stdcall GetCurrentProcessId()@4264296}
+%   {__fastcall _RTC_CheckStackVars2(x, x, x)@4264301}
+%   {j____set_app_type@4264306}
+%   {j___purecall@4264311}
+%   {j___RTC_CheckEsp@4264316}
+%   {j__main@4264321}
+%   {j___RTC_Initialize@4264326}
+%   {Derived::Derived(void)@4264331}
+%   {j___controlfp_s@4264336}
+%   {__stdcall GetSystemTimeAsFileTime(x)@4264341}
+%   {j___decode_pointer@4264351}
+%   {j___invoke_watson@4264356}
+%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264361}
+%   {j___CRT_RTC_INITW@4264366}
+%   {__stdcall GetTickCount()@4264371}
+%   {j___IsNonwritableInCurrentImage@4264376}
+%   {j____CxxFrameHandler3@4264381}
+%   {__stdcall HeapAlloc(x, x, x)@4264386}
+%   {j___amsg_exit@4264391}
+%   {* __cdecl operator new(unsigned int)@4264396}
+%   {j___XcptFilter@4264401}
+%   {j___CrtSetCheckCount@4264406}
+%   {__stdcall InterlockedExchange(x, x)@4264411}
+%   {__stdcall UnhandledExceptionFilter(x)@4264416}
+%   {type_info::type_info(class type_info const &)@4264421}
+%   {j___except_handler4_common@4264426}
+%   {j___matherr@4264431}
+%   {j____getmainargs@4264436}
+%   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264441}
+%   {__stdcall lstrlenA(x)@4264446}
+%   {__cdecl _RTC_Failure(*, int)@4264451}
+%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264461}
+%   {j__DebuggerKnownHandle@4264466}
+%   {j__exit_0@4264471}
+%   {j____dllonexit@4264476}
+%   {__stdcall FreeLibrary(x)@4264481}
+%   {__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264486}
+%   {j___initterm_e@4264491}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264496}
+%   {_main@4265072}
+%   {virtual int Base::func1(void)@4265744}
+%   {virtual int Base::func2(void)@4265840}
+%   {virtual int Base2::func1(void)@4266048}
+%   {virtual int Base2::func2(void)@4266144}
+%   {virtual int Derived::func4(void)@4266240}
+%   {virtual int Derived::func3(void)@4266304}
+%   {_rand@4266368}
+%   {__cdecl operator delete(*)@4266374}
+%   {* __cdecl operator new(unsigned int)@4266380}
+%   {___CxxFrameHandler3@4266386}
+%   {__fastcall __security_check_cookie(x)@4266400}
+%   {__RTC_CheckEsp@4266432}
+%   {__fastcall _RTC_CheckStackVars(x, x)@4266480}
+%   {__fastcall _RTC_AllocaHelper(x, x, x)@4266608}
+%   {__fastcall _RTC_CheckStackVars2(x, x, x)@4266672}
+%   {__RTC_InitBase@4266944}
+%   {__RTC_Shutdown@4267008}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4267088}
+%   {class type_info & type_info::operator=(class type_info const &)@4267232}
+%   {__purecall@4267254}
+%   {pre_c_init@4267264}
+%   {pre_cpp_init@4267472}
+%   {_mainCRTStartup@4267584}
+%   {__tmainCRTStartup@4267616}
+%   {_NtCurrentTeb@4268352}
+%   {check_managed_app@4268368}
+%   {___report_gsfailure@4268592}
+%   {_DebuggerKnownHandle@4268944}
+%   {DebuggerProbe@4268992}
+%   {__cdecl _RTC_Failure(*, int)@4269168}
+%   {failwithmessage@4269280}
+%   {DebuggerRuntime@4269936}
+%   {__cdecl _RTC_StackFailure(*, char const *)@4270144}
+%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4270464}
+%   {_getMemBlockDataString@4270848}
+%   {__RTC_UninitUse@4270992}
+%   {__RTC_NumErrors@4271296}
+%   {__RTC_GetErrDesc@4271312}
+%   {__RTC_SetErrorFunc@4271392}
+%   {__RTC_SetErrorFuncW@4271440}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271488}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4271504}
+%   {__CRT_RTC_INITW@4271510}
+%   {__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4271520}
+%   {$LN8@4271646}
+%   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4271744}
+%   {ArrayUnwindFilter@4271920}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4271984}
+%   {___CxxSetUnhandledExceptionFilter@4272112}
+%   {__configthreadlocale@4272138}
+%   {__setdefaultprecision@4272144}
+%   {__invoke_watson_if_error@4272224}
+%   {___setusermatherr@4272278}
+%   {__matherr@4272288}
+%   {__setargv@4272304}
+%   {__RTC_Initialize@4272320}
+%   {__RTC_Terminate@4272368}
+%   {___p__commode@4272416}
+%   {___p__fmode@4272422}
+%   {__onexit@4272432}
+%   {$LN6_1@4272661}
+%   {_atexit@4272768}
+%   {__encode_pointer@4272804}
+%   {___set_app_type@4272810}
+%   {__amsg_exit@4272816}
+%   {___getmainargs@4272822}
+%   {___security_init_cookie@4272832}
+%   {__exit@4273106}
+%   {__XcptFilter@4273112}
+%   {__cexit@4273118}
+%   {_exit_0@4273124}
+%   {__CrtSetCheckCount@4273130}
+%   {__ValidateImageBase@4273136}
+%   {__FindPESection@4273264}
+%   {__IsNonwritableInCurrentImage@4273424}
+%   {__CrtDbgReportW@4273766}
+%   {__initterm@4273772}
+%   {__initterm_e@4273778}
+%   {__except_handler4@4273792}
+%   {__crt_debugger_hook@4273844}
+%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4273856}
+%   {GetPdbDll@4274736}
+%   {__cdecl terminate(void)@4275324}
+%   {virtual type_info::~type_info(void)@4275330}
+%   {__controlfp_s@4275336}
+%   {__invoke_watson@4275342}
+%   {__unlock@4275348}
+%   {___dllonexit@4275354}
+%   {__lock@4275360}
+%   {__decode_pointer@4275366}
+%   {__except_handler4_common@4275372}
+%   {__stdcall InterlockedExchange(x, x)@4275378}
+%   {__stdcall Sleep(x)@4275384}
+%   {__stdcall InterlockedCompareExchange(x, x, x)@4275390}
+%   {__stdcall TerminateProcess(x, x)@4275396}
+%   {__stdcall GetCurrentProcess()@4275402}
+%   {__stdcall UnhandledExceptionFilter(x)@4275408}
+%   {__stdcall SetUnhandledExceptionFilter(x)@4275414}
+%   {__stdcall IsDebuggerPresent()@4275420}
+%   {__stdcall RaiseException(x, x, x, x)@4275426}
+%   {__stdcall DebugBreak()@4275432}
+%   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4275438}
+%   {__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4275444}
+%   {__stdcall lstrlenA(x)@4275450}
+%   {__stdcall GetProcAddress(x, x)@4275456}
+%   {__stdcall LoadLibraryA(x)@4275462}
+%   {__stdcall QueryPerformanceCounter(x)@4275468}
+%   {__stdcall GetTickCount()@4275474}
+%   {__stdcall GetCurrentThreadId()@4275480}
+%   {__stdcall GetCurrentProcessId()@4275486}
+%   {__stdcall GetSystemTimeAsFileTime(x)@4275492}
+%   {__stdcall HeapFree(x, x, x)@4275498}
+%   {__stdcall HeapAlloc(x, x, x)@4275504}
+%   {__stdcall GetProcessHeap()@4275510}
+%   {__stdcall GetModuleFileNameW(x, x, x)@4275516}
+%   {__stdcall VirtualQuery(x, x, x)@4275522}
+%   {__stdcall FreeLibrary(x)@4275528}
+%   {__unwindfunclet$_main$0@4279440}
+%   {__ehhandler$_main@4279454}
+%   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312}
+
+% Stats:
+%   atoms: 68309.0
+%   bodies: 29629.0
+%   rules: 67842.0
+%   variables: 31071.0
+%   constraints: 108.0
+%   choices: 6546.0
+%   conflicts: 94.0
+%   models: 3.0
+%   optimal_models: 1.0
+%   total_time: 0.2323770523071289
+%   ground_time: 0.0902722500031814
+%   time_to_first_model: 0.1732211250346154
+%   solve_time: 0.04283499717712402

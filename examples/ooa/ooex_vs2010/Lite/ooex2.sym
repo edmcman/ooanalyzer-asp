@@ -246,5 +246,186 @@ objectInObject(const std::bad_alloc::`vftable'@4219200,const std::exception::`vf
 Optimization: -143 -1 -15 -174 -20
 OPTIMUM FOUND
 
-% Equivalence classes (1 classes, 2 entities):
-%   {virtual type_info::~type_info(void)@4200709, const type_info::`vftable'@4219332}
+% Equivalence classes (167 classes, 177 entities):
+%   {Base::Base(void)@4198400}
+%   {int Base::func3(void)@4198432}
+%   {Derived::Derived(void)@4198448}
+%   {int Derived::func4(void)@4198512}
+%   {_main@4198528}
+%   {_rand@4198580}
+%   {__cdecl operator delete(*)@4198613}
+%   {virtual std::bad_alloc::~bad_alloc(void)@4198624, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198635, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198674, const std::bad_alloc::`vftable'@4219200}
+%   {* __cdecl operator new(unsigned int)@4198703}
+%   {fast_error_exit@4198831}
+%   {_mainCRTStartup@4199225}
+%   {__encoded_null@4199235}
+%   {__stdcall __crtTlsAlloc(x)@4199244}
+%   {___set_flsgetvalue@4199253}
+%   {__mtterm@4199305}
+%   {__initptd@4199366}
+%   {$LN9@4199528}
+%   {$LN11@4199537}
+%   {__getptd_noexit@4199546}
+%   {__getptd@4199667}
+%   {__stdcall _freefls(x)@4199693}
+%   {$LN20@4199975}
+%   {$LN24@4199987}
+%   {__mtinit@4199996}
+%   {_free@4200375}
+%   {std::exception::exception(char const * const &, int)@4200433, virtual char const * std::exception::what(void)const@4200462, virtual std::exception::~exception(void)@4200622, virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200633, std::exception::exception(class std::exception const &)@4200672, const std::exception::`vftable'@4219300}
+%   {std::exception::_Copy_str(char const *)@4200475}
+%   {std::exception::_Tidy(void)@4200539}
+%   {class std::exception & std::exception::operator=(class std::exception const &)@4200569}
+%   {virtual type_info::~type_info(void)@4200709, virtual * type_info::`scalar deleting destructor'(unsigned int)@4200725, const type_info::`vftable'@4219332}
+%   {_onexit_nolock@4200758}
+%   {___onexitinit@4200940}
+%   {__onexit@4200989}
+%   {$LN5@4201043}
+%   {_atexit@4201049}
+%   {_malloc@4201072}
+%   {__initp_heap_handler@4201220}
+%   {__callnewh@4201235}
+%   {__stdcall _CxxThrowException(x, x)@4201275}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4201351}
+%   {___CxxSetUnhandledExceptionFilter@4201417}
+%   {___crtCorExitProcess@4201431}
+%   {___crtExitProcess@4201474}
+%   {__lockexit@4201498}
+%   {__unlockexit@4201507}
+%   {__init_pointers@4201516}
+%   {__initterm_e@4201567}
+%   {__cinit@4201603}
+%   {doexit@4201754}
+%   {$LN52@4202053}
+%   {_exit@4202074}
+%   {__exit@4202096}
+%   {__cexit@4202118}
+%   {__c_exit@4202133}
+%   {__amsg_exit@4202148}
+%   {__GET_RTERRMSG@4202178}
+%   {__NMSG_WRITE@4202216}
+%   {__FF_MSGBANNER@4202647}
+%   {__XcptFilter@4202704}
+%   {__setenvp@4203034}
+%   {parse_cmdline@4203254}
+%   {__setargv@4203664}
+%   {___crtGetEnvironmentStringsA@4203851}
+%   {__ioinit@4204002}
+%   {__RTC_Initialize@4204583}
+%   {__RTC_Terminate@4204621}
+%   {__heap_init@4204659}
+%   {__except_handler4@4204800}
+%   {___security_init_cookie@4205199}
+%   {__mtinitlocks@4205354}
+%   {__unlock@4205515}
+%   {__mtinitlocknum@4205538}
+%   {$LN12_0@4205723}
+%   {__lock@4205732}
+%   {___addlocaleref@4205783}
+%   {___removelocaleref@4205926}
+%   {___freetlocinfo@4206079}
+%   {__updatetlocinfoEx_nolock@4206410}
+%   {___updatetlocinfo@4206487}
+%   {$LN9_0@4206596}
+%   {setSBCS@4206655}
+%   {setSBUpLow@4206755}
+%   {___updatetmbcinfo@4207155}
+%   {$LN13_0@4207310}
+%   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@4207319}
+%   {getSystemCP@4207454}
+%   {__setmbcp_nolock@4207578}
+%   {__setmbcp@4208067}
+%   {$LN25_1@4208420}
+%   {4208429}
+%   {$LN28@4208468}
+%   {___initmbctable@4208477}
+%   {__malloc_crt@4208507}
+%   {__calloc_crt@4208576}
+%   {__realloc_crt@4208652}
+%   {__get_errno_from_oserr@4208730}
+%   {__errno@4208796}
+%   {_strcpy_s@4208815}
+%   {_strlen@4208912}
+%   {static __cdecl type_info::_Type_info_dtor(class type_info *)@4209051}
+%   {$LN10_1@4209154}
+%   {_strcmp@4209168}
+%   {__msize@4209304}
+%   {__cdecl terminate(void)@4209355}
+%   {__initp_eh_hooks@4209412}
+%   {__initp_misc_winsig@4209429}
+%   {siglookup@4209459}
+%   {___get_sigabrt@4209514}
+%   {_raise@4209527}
+%   {$LN37@4209886}
+%   {__initp_misc_rand_s@4209946}
+%   {__initp_misc_purevirt@4209961}
+%   {__initp_misc_invarg@4209976}
+%   {__call_reportfault@4209991}
+%   {__invoke_watson@4210288}
+%   {__invalid_parameter@4210325}
+%   {__invalid_parameter_noinfo@4210370}
+%   {__initp_misc_cfltcvt_tab@4210386}
+%   {__ValidateImageBase@4210432}
+%   {__FindPESection@4210496}
+%   {__IsNonwritableInCurrentImage@4210576}
+%   {___crtMessageBoxW@4210764}
+%   {_wcscat_s@4211128}
+%   {_wcsncpy_s@4211245}
+%   {_wcslen@4211450}
+%   {_wcscpy_s@4211477}
+%   {__set_error_mode@4211576}
+%   {__fastcall __security_check_cookie(x)@4211639}
+%   {x_ismbbtype_l@4211654}
+%   {__ismbblead@4211737}
+%   {__local_unwind4@4211776}
+%   {_unwind_handler4@4211920}
+%   {__stdcall _seh_longjmp_unwind4(x)@4211990}
+%   {__fastcall _EH4_CallFilterFunc(x, x)@4212018}
+%   {__fastcall _EH4_TransferToHandler(x, x)@4212041}
+%   {__fastcall _EH4_GlobalUnwind2(x, x)@4212066}
+%   {__fastcall _EH4_LocalUnwind(x, x, x, x)@4212091}
+%   {___free_lc_time@4212114}
+%   {___free_lconv_num@4213001}
+%   {___free_lconv_mon@4213106}
+%   {_memset@4213360}
+%   {__freea@4213482}
+%   {__crtLCMapStringA_stat@4213514}
+%   {___crtLCMapStringA@4214001}
+%   {__crtGetStringTypeA_stat@4214071}
+%   {___crtGetStringTypeA@4214302}
+%   {__calloc_impl@4214366}
+%   {_realloc@4214496}
+%   {_abort@4214669}
+%   {__crt_debugger_hook@4215585}
+%   {__fptrap@4215593}
+%   {___report_gsfailure@4215602}
+%   {__global_unwind2@4215872}
+%   {__unwind_handler@4215904}
+%   {__local_unwind2@4215973}
+%   {__abnormal_termination@4216105}
+%   {__NLG_Notify1@4216140}
+%   {___sse2_available_init@4216369}
+%   {__alloca_probe_16@4216400}
+%   {__alloca_probe_8@4216422}
+%   {__aulldvrm@4216448}
+%   {__allmul@4216912}
+%   {_strcspn@4216976}
+%   {_strpbrk@4217056}
+%   {___ascii_strnicmp@4217120}
+%   {__stdcall RtlUnwind(x, x, x, x)@4217218}
+%   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4217224}
+
+% Stats:
+%   atoms: 43331.0
+%   bodies: 16627.0
+%   rules: 43122.0
+%   variables: 17942.0
+%   constraints: 356.0
+%   choices: 1608.0
+%   conflicts: 50.0
+%   models: 1.0
+%   optimal_models: 1.0
+%   total_time: 0.10734701156616211
+%   ground_time: 0.046296708984300494
+%   time_to_first_model: 0.07745525002246723
+%   solve_time: 0.010797977447509766

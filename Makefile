@@ -5,7 +5,7 @@ PYTHON       := python3
 DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
 DG_FLAGS     := -v --max-time 300
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain --time-limit=30
+PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain --time-limit=300 --stats
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
 

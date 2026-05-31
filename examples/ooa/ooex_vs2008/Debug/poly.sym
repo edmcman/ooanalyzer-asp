@@ -387,8 +387,8 @@ objectInObject(const Rectangle::`vftable'@4290564,const Shape::`vftable'@4290664
 Optimization: -45 -6 -25 -304 -20
 OPTIMUM FOUND
 
-% Equivalence classes (303 classes, 309 entities):
-%   {virtual Circle::draw(void)@4263941}
+% Equivalence classes (287 classes, 309 entities):
+%   {virtual Circle::draw(void)@4263941, Circle::Circle(void)@4265952, const Circle::`vftable'@4290600}
 %   {j___setdefaultprecision@4263946}
 %   {j___setargv@4263951}
 %   {bool std::ios_base::good(void)const@4263956}
@@ -400,7 +400,7 @@ OPTIMUM FOUND
 %   {__stdcall IsDebuggerPresent()@4263986}
 %   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263991}
 %   {class type_info & type_info::operator=(class type_info const &)@4263996}
-%   {virtual Rectangle::draw(void)@4264001}
+%   {virtual Rectangle::draw(void)@4264001, Rectangle::Rectangle(void)@4265728, const Rectangle::`vftable'@4290564}
 %   {j___RTC_Terminate@4264006}
 %   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264011}
 %   {__fastcall _RTC_AllocaHelper(x, x, x)@4264016}
@@ -444,7 +444,7 @@ OPTIMUM FOUND
 %   {int std::ios_base::width(void)const@4264211}
 %   {j___RTC_UninitUse@4264216}
 %   {j___RTC_Shutdown@4264221}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264226}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264226, type_info::type_info(class type_info const &)@4269488, const type_info::`vftable'@4290676}
 %   {j___FindPESection@4264231}
 %   {j___configthreadlocale@4264236}
 %   {j___RTC_InitBase@4264241}
@@ -511,7 +511,7 @@ OPTIMUM FOUND
 %   {__cdecl _RTC_Failure(*, int)@4264546}
 %   {int std::ios_base::flags(void)const@4264551}
 %   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264556}
-%   {virtual Triangle::draw(void)@4264561}
+%   {virtual Triangle::draw(void)@4264561, Triangle::Triangle(void)@4266176, const Triangle::`vftable'@4290632}
 %   {Shape::Shape(void)@4264566}
 %   {j__DebuggerKnownHandle@4264571}
 %   {j__exit_0@4264576}
@@ -523,11 +523,8 @@ OPTIMUM FOUND
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264606}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264611}
 %   {_main@4265296}
-%   {Rectangle::Rectangle(void)@4265728, const Rectangle::`vftable'@4290564}
 %   {virtual Rectangle::draw(void)@4265824}
-%   {Circle::Circle(void)@4265952, const Circle::`vftable'@4290600}
 %   {virtual Circle::draw(void)@4266048}
-%   {Triangle::Triangle(void)@4266176, const Triangle::`vftable'@4290632}
 %   {virtual Triangle::draw(void)@4266272}
 %   {Shape::Shape(void)@4266400, const Shape::`vftable'@4290664}
 %   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4266480}
@@ -543,7 +540,6 @@ OPTIMUM FOUND
 %   {__fastcall _RTC_CheckStackVars2(x, x, x)@4269120}
 %   {__RTC_InitBase@4269392}
 %   {__RTC_Shutdown@4269456}
-%   {type_info::type_info(class type_info const &)@4269488, const type_info::`vftable'@4290676}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4269536}
 %   {class type_info & type_info::operator=(class type_info const &)@4269680}
 %   {__purecall@4269702}
@@ -673,21 +669,24 @@ OPTIMUM FOUND
 %   {__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282088}
 %   {__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@4282128}
 %   {__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@4282136}
-%   {__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660}
-%   {__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664}
-%   {__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672}
-%   {__declspec(dllimport) bool std::ios_base::good(void)const@4305676}
-%   {__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680}
-%   {__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684}
-%   {__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688}
-%   {__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700}
-%   {__declspec(dllimport) int std::ios_base::width(int)@4305704}
-%   {__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708}
-%   {__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712}
-%   {__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305716}
-%   {__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720}
-%   {__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724}
-%   {__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728}
-%   {__declspec(dllimport) int std::ios_base::flags(void)const@4305732, __declspec(dllimport) int std::ios_base::width(void)const@4305736}
-%   {__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740}
+%   {__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660, __declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664, __declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708, __declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720}
+%   {__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688}
+%   {__declspec(dllimport) bool std::ios_base::good(void)const@4305676, __declspec(dllimport) int std::ios_base::width(int)@4305704, __declspec(dllimport) int std::ios_base::flags(void)const@4305732, __declspec(dllimport) int std::ios_base::width(void)const@4305736}
+%   {__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680, __declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700, __declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724, __declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728}
+%   {__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712, __declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305716, __declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740}
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305840}
+
+% Stats:
+%   atoms: 120100.0
+%   bodies: 47265.0
+%   rules: 118999.0
+%   variables: 44678.0
+%   constraints: 0.0
+%   choices: 278.0
+%   conflicts: 0.0
+%   models: 1.0
+%   optimal_models: 1.0
+%   total_time: 0.2701449394226074
+%   ground_time: 0.16860337503021583
+%   time_to_first_model: 0.22980695898877457
+%   solve_time: 0.0016701221466064453

@@ -283,7 +283,7 @@ objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
 Optimization: -103 -1 -20 -227 -24
 OPTIMUM FOUND
 
-% Equivalence classes (228 classes, 230 entities):
+% Equivalence classes (221 classes, 230 entities):
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {j___RTC_GetErrDesc@4263951}
@@ -320,9 +320,9 @@ OPTIMUM FOUND
 %   {j___initterm@4264111}
 %   {__stdcall GetCurrentProcess()@4264116}
 %   {j___RTC_UninitUse@4264121}
-%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264126}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264126, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264256, virtual int Base::func1(void)@4264441, Derived::Derived(void)@4265328, virtual Derived::~Derived(void)@4265984, const Derived::`vftable'@4286272}
 %   {j___RTC_Shutdown@4264131}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264136}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264136, type_info::type_info(class type_info const &)@4266720, const type_info::`vftable'@4286316}
 %   {j___FindPESection@4264141}
 %   {__stdcall LoadLibraryW(x)@4264146}
 %   {__stdcall HeapSetInformation(x, x, x, x)@4264151}
@@ -334,7 +334,6 @@ OPTIMUM FOUND
 %   {j___crt_debugger_hook@4264181}
 %   {j___ValidateImageBase@4264186}
 %   {__stdcall InterlockedCompareExchange(x, x, x)@4264191}
-%   {virtual int Base::func2(void)@4264196}
 %   {__stdcall GetProcessHeap()@4264201}
 %   {j___RTC_SetErrorFuncW@4264206}
 %   {j___onexit@4264211}
@@ -346,7 +345,6 @@ OPTIMUM FOUND
 %   {j__rand@4264241}
 %   {start@4264246}
 %   {virtual Derived::~Derived(void)@4264251}
-%   {virtual int Derived::func3(void)@4264256}
 %   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264261}
 %   {j____CxxSetUnhandledExceptionFilter@4264266}
 %   {__stdcall QueryPerformanceCounter(x)@4264271}
@@ -383,7 +381,6 @@ OPTIMUM FOUND
 %   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264426}
 %   {__stdcall lstrlenA(x)@4264431}
 %   {__cdecl _RTC_Failure(*, int)@4264436}
-%   {virtual int Base::func1(void)@4264441}
 %   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264446}
 %   {j__exit_0@4264451}
 %   {j____dllonexit@4264456}
@@ -392,13 +389,11 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264471}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264476}
 %   {_main@4265024}
-%   {Derived::Derived(void)@4265328}
 %   {Base::Base(void)@4265504, const Base::`vftable'@4286296}
 %   {virtual int Base::func1(void)@4265616}
 %   {virtual int Base::func2(void)@4265712}
 %   {virtual int Derived::func3(void)@4265808}
 %   {virtual * Derived::`vector deleting destructor'(unsigned int)@4265872}
-%   {virtual Derived::~Derived(void)@4265984}
 %   {__cdecl operator delete(*)@4266060}
 %   {* __cdecl operator new(unsigned int)@4266066}
 %   {___CxxFrameHandler3@4266072}
@@ -410,7 +405,6 @@ OPTIMUM FOUND
 %   {__RTC_InitBase@4266624}
 %   {__RTC_Shutdown@4266688}
 %   {_rand@4266712}
-%   {type_info::type_info(class type_info const &)@4266720, const type_info::`vftable'@4286316}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4266768}
 %   {class type_info & type_info::operator=(class type_info const &)@4266912}
 %   {__purecall@4266934}
@@ -510,5 +504,19 @@ OPTIMUM FOUND
 %   {__stdcall FreeLibrary(x)@4275096}
 %   {__unwindfunclet$_main$0@4279008}
 %   {__ehhandler$_main@4279022}
-%   {const Derived::`vftable'@4286272}
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336}
+
+% Stats:
+%   atoms: 61619.0
+%   bodies: 27066.0
+%   rules: 61287.0
+%   variables: 28025.0
+%   constraints: 21.0
+%   choices: 2626.0
+%   conflicts: 35.0
+%   models: 2.0
+%   optimal_models: 1.0
+%   total_time: 0.19118094444274902
+%   ground_time: 0.06542533298488706
+%   time_to_first_model: 0.16058787499787286
+%   solve_time: 0.021602869033813477

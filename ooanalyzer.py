@@ -63,14 +63,19 @@ def main():
     for f in args.files:
         ctl.load(f)
 
-    ground_start = time.perf_counter()
+    run_start = time.perf_counter()
+    ground_start = run_start
     ctl.ground([("base", [])])
     ground_time = time.perf_counter() - ground_start
 
     keep_all_models = args.models == 0 or (args.models is not None and args.models > 1)
     found = []
+    first_model_time = None
 
     def on_model(model):
+        nonlocal first_model_time
+        if first_model_time is None:
+            first_model_time = time.perf_counter() - run_start
         shown = list(model.symbols(shown=True))
         cost = list(model.cost)
         if keep_all_models:
@@ -105,8 +110,14 @@ def main():
     if timed_out:
         print("% TIME LIMIT REACHED")
 
-    # Print partition
-    parts = prop.partition()
+    # Print partition for the same model printed above. The propagator's live
+    # union-find may have been undone by solver backtracking after on_model.
+    merge_pairs = []
+    if found:
+        for atom in found[-1][0]:
+            if atom.name == "mergeClasses" and len(atom.arguments) == 2:
+                merge_pairs.append(tuple(atom.arguments))
+    parts = prop.partition(merge_pairs) if found else {}
     if parts:
         print(f"\n% Equivalence classes ({len(parts)} classes, "
               f"{sum(len(g) for g in parts.values())} entities):")
@@ -135,10 +146,16 @@ def main():
             ("optimal_models", "summary.models.optimal"),
             ("total_time", "summary.times.total"),
             ("ground_time", None),
+            ("time_to_first_model", None),
             ("solve_time", "summary.times.solve"),
         )
         for name, path in fields:
-            val = ground_time if path is None else stat(path)
+            if name == "ground_time":
+                val = ground_time
+            elif name == "time_to_first_model":
+                val = first_model_time
+            else:
+                val = stat(path)
             if val is not None:
                 print(f"%   {name}: {val}")
 

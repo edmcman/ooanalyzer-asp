@@ -284,6 +284,189 @@ objectInObject(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
 Optimization: -235 -2 -25 -179 -40
 OPTIMUM FOUND
 
-% Equivalence classes (2 classes, 4 entities):
+% Equivalence classes (170 classes, 187 entities):
 %   {Base::Base(void)@4198400, const Base::`vftable'@4219200}
-%   {virtual type_info::~type_info(void)@4198694, const type_info::`vftable'@4219236}
+%   {virtual int Base::func1(void)@4198432, virtual int Base::func2(void)@4198464, Derived::Derived(void)@4198496, virtual Derived::~Derived(void)@4198560, virtual int Derived::func3(void)@4198576, virtual * Derived::`vector deleting destructor'(unsigned int)@4198592, const Derived::`vftable'@4219216}
+%   {_main@4198640}
+%   {virtual type_info::~type_info(void)@4198694, virtual * type_info::`scalar deleting destructor'(unsigned int)@4198710, const type_info::`vftable'@4219236}
+%   {__purecall@4198743}
+%   {_rand@4198785}
+%   {__cdecl operator delete(*)@4198818}
+%   {virtual std::bad_alloc::~bad_alloc(void)@4198829, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879, const std::bad_alloc::`vftable'@4219244}
+%   {* __cdecl operator new(unsigned int)@4198908}
+%   {fast_error_exit@4199036}
+%   {_mainCRTStartup@4199430}
+%   {static __cdecl type_info::_Type_info_dtor(class type_info *)@4199440}
+%   {$LN10@4199543}
+%   {_strcmp@4199552}
+%   {_abort@4199688}
+%   {__set_abort_behavior@4199739}
+%   {__GET_RTERRMSG@4199772}
+%   {__NMSG_WRITE@4199810}
+%   {__FF_MSGBANNER@4200241}
+%   {__initp_misc_purevirt@4200298}
+%   {__encoded_null@4200313}
+%   {__stdcall __crtTlsAlloc(x)@4200322}
+%   {___set_flsgetvalue@4200331}
+%   {__mtterm@4200383}
+%   {__initptd@4200444}
+%   {$LN9@4200606}
+%   {$LN11_0@4200615}
+%   {__getptd_noexit@4200624}
+%   {__getptd@4200745}
+%   {__stdcall _freefls(x)@4200771}
+%   {$LN20@4201053}
+%   {$LN24@4201065}
+%   {__mtinit@4201074}
+%   {_free@4201453}
+%   {std::exception::exception(char const * const &, int)@4201511, virtual char const * std::exception::what(void)const@4201540, virtual std::exception::~exception(void)@4201700, virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711, std::exception::exception(class std::exception const &)@4201750, const std::exception::`vftable'@4221892}
+%   {std::exception::_Copy_str(char const *)@4201553}
+%   {std::exception::_Tidy(void)@4201617}
+%   {class std::exception & std::exception::operator=(class std::exception const &)@4201647}
+%   {_onexit_nolock@4201787}
+%   {___onexitinit@4201969}
+%   {__onexit@4202018}
+%   {$LN5@4202072}
+%   {_atexit@4202078}
+%   {_malloc@4202101}
+%   {__initp_heap_handler@4202249}
+%   {__callnewh@4202264}
+%   {__stdcall _CxxThrowException(x, x)@4202304}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4202380}
+%   {___CxxSetUnhandledExceptionFilter@4202446}
+%   {___crtCorExitProcess@4202460}
+%   {___crtExitProcess@4202503}
+%   {__lockexit@4202527}
+%   {__unlockexit@4202536}
+%   {__init_pointers@4202545}
+%   {__initterm_e@4202596}
+%   {__cinit@4202632}
+%   {doexit@4202783}
+%   {$LN52@4203082}
+%   {_exit@4203103}
+%   {__exit@4203125}
+%   {__cexit@4203147}
+%   {__c_exit@4203162}
+%   {__amsg_exit@4203177}
+%   {__XcptFilter@4203207}
+%   {__setenvp@4203537}
+%   {parse_cmdline@4203757}
+%   {__setargv@4204167}
+%   {___crtGetEnvironmentStringsA@4204354}
+%   {__ioinit@4204505}
+%   {__RTC_Initialize@4205086}
+%   {__RTC_Terminate@4205124}
+%   {__heap_init@4205162}
+%   {__except_handler4@4205296}
+%   {___security_init_cookie@4205695}
+%   {__initp_misc_invarg@4205850}
+%   {__call_reportfault@4205865}
+%   {__invoke_watson@4206162}
+%   {__invalid_parameter@4206199}
+%   {__invalid_parameter_noinfo@4206244}
+%   {__mtinitlocks@4206260}
+%   {__unlock@4206421}
+%   {__mtinitlocknum@4206444}
+%   {$LN12_0@4206629}
+%   {__lock@4206638}
+%   {_strcpy_s@4206689}
+%   {_strlen@4206784}
+%   {__local_unwind4@4206928}
+%   {_unwind_handler4@4207072}
+%   {__stdcall _seh_longjmp_unwind4(x)@4207142}
+%   {__fastcall _EH4_CallFilterFunc(x, x)@4207170}
+%   {__fastcall _EH4_TransferToHandler(x, x)@4207193}
+%   {__fastcall _EH4_GlobalUnwind2(x, x)@4207218}
+%   {__fastcall _EH4_LocalUnwind(x, x, x, x)@4207243}
+%   {__initp_misc_winsig@4207266}
+%   {siglookup@4207296}
+%   {___get_sigabrt@4207351}
+%   {_raise@4207364}
+%   {$LN37@4207723}
+%   {___crtMessageBoxW@4207783}
+%   {_wcscat_s@4208147}
+%   {_wcsncpy_s@4208264}
+%   {_wcslen@4208469}
+%   {_wcscpy_s@4208496}
+%   {__set_error_mode@4208595}
+%   {__fastcall __security_check_cookie(x)@4208658}
+%   {__malloc_crt@4208673}
+%   {__calloc_crt@4208742}
+%   {__realloc_crt@4208818}
+%   {__freea@4208896}
+%   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@4208928}
+%   {___addlocaleref@4209063}
+%   {___removelocaleref@4209206}
+%   {___freetlocinfo@4209359}
+%   {__updatetlocinfoEx_nolock@4209690}
+%   {___updatetlocinfo@4209767}
+%   {$LN9_0@4209876}
+%   {setSBCS@4209935}
+%   {setSBUpLow@4210035}
+%   {___updatetmbcinfo@4210435}
+%   {$LN13_1@4210590}
+%   {getSystemCP@4210599}
+%   {__setmbcp_nolock@4210723}
+%   {__setmbcp@4211212}
+%   {$LN25_1@4211565}
+%   {4211574}
+%   {$LN28@4211613}
+%   {___initmbctable@4211622}
+%   {__get_errno_from_oserr@4211652}
+%   {__errno@4211718}
+%   {__msize@4211737}
+%   {__cdecl terminate(void)@4211788}
+%   {__initp_eh_hooks@4211845}
+%   {__initp_misc_rand_s@4211862}
+%   {__initp_misc_cfltcvt_tab@4211877}
+%   {__ValidateImageBase@4211920}
+%   {__FindPESection@4211984}
+%   {__IsNonwritableInCurrentImage@4212064}
+%   {x_ismbbtype_l@4212252}
+%   {__ismbblead@4212335}
+%   {__crt_debugger_hook@4212359}
+%   {_memset@4212368}
+%   {__aulldvrm@4212496}
+%   {__global_unwind2@4212656}
+%   {__unwind_handler@4212688}
+%   {__local_unwind2@4212757}
+%   {__abnormal_termination@4212889}
+%   {__NLG_Notify1@4212924}
+%   {___report_gsfailure@4213841}
+%   {__calloc_impl@4214103}
+%   {_realloc@4214233}
+%   {__alloca_probe_16@4214416}
+%   {__alloca_probe_8@4214438}
+%   {___free_lc_time@4214460}
+%   {___free_lconv_num@4215347}
+%   {___free_lconv_mon@4215452}
+%   {__crtLCMapStringA_stat@4215706}
+%   {___crtLCMapStringA@4216193}
+%   {__crtGetStringTypeA_stat@4216263}
+%   {___crtGetStringTypeA@4216494}
+%   {__fptrap@4216558}
+%   {___sse2_available_init@4216753}
+%   {__allmul@4217088}
+%   {_strcspn@4217152}
+%   {_strpbrk@4217232}
+%   {___ascii_strnicmp@4217296}
+%   {__stdcall RtlUnwind(x, x, x, x)@4217394}
+%   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4217400}
+%   {const Derived::`RTTI Complete Object Locator'@4227396}
+%   {const type_info::`RTTI Complete Object Locator'@4227472}
+%   {const std::bad_alloc::`RTTI Complete Object Locator'@4227544}
+
+% Stats:
+%   atoms: 49419.0
+%   bodies: 18744.0
+%   rules: 49016.0
+%   variables: 20200.0
+%   constraints: 454.0
+%   choices: 13458.0
+%   conflicts: 133.0
+%   models: 1.0
+%   optimal_models: 1.0
+%   total_time: 0.22426795959472656
+%   ground_time: 0.05067937501007691
+%   time_to_first_model: 0.1575109590194188
+%   solve_time: 0.08171510696411133

@@ -117,10 +117,10 @@ class _UF:
             reasons.update(self._path_to_root(n))
         return reasons
 
-    def groups(self):
+    def groups(self, universe=None):
         from collections import defaultdict
         out = defaultdict(set)
-        for x in self._parent:
+        for x in self._parent if universe is None else universe:
             out[self._root(x)].add(x)
         return dict(out)
 
@@ -138,6 +138,9 @@ class SameClassPropagator:
         # entity_key → [(other_key, mergeClasses solver_lit)]
         self._merge_by_entity = {}
         self._entities = set()
+
+        for sym_atom in init.symbolic_atoms.by_signature("mergeEntity", 1):
+            self._entities.add(_sym_key(sym_atom.symbol.arguments[0]))
 
         for sym_atom in init.symbolic_atoms.by_signature("mergeClasses", 2):
             args = sym_atom.symbol.arguments
@@ -305,5 +308,11 @@ class SameClassPropagator:
                 if not self._assert_not_same(ctl, x, y, slit):
                     return
 
-    def partition(self):
-        return self._uf.groups()
+    def partition(self, merge_pairs=None):
+        if merge_pairs is None:
+            return self._uf.groups(self._entities)
+
+        uf = _UF()
+        for a, b in merge_pairs:
+            uf.union(_sym_key(a), _sym_key(b), 0)
+        return uf.groups(self._entities)
