@@ -213,10 +213,11 @@ method(___report_gsfailure@4267984)
 method(__unwindfunclet$_main$0@4278384)
 method(__unwindfunclet$_main$1@4278398)
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@4265872,ClassA::~ClassA(void)@4265584)
-Optimization: 0 -212
+mergeClasses(ClassA::~ClassA(void)@4265584,* ClassA::`scalar deleting destructor'(unsigned int)@4265872)
+Optimization: -1 -212
 OPTIMUM FOUND
 
-% Equivalence classes (213 classes, 213 entities):
+% Equivalence classes (212 classes, 213 entities):
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {__stdcall DebugBreak()@4263951}
@@ -319,10 +320,9 @@ OPTIMUM FOUND
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264441}
 %   {_main@4264960}
 %   {ClassA::ClassA(void)@4265488}
-%   {ClassA::~ClassA(void)@4265584}
+%   {ClassA::~ClassA(void)@4265584, * ClassA::`scalar deleting destructor'(unsigned int)@4265872}
 %   {int ClassA::func1(void)@4265696}
 %   {int ClassA::func2(void)@4265792}
-%   {* ClassA::`scalar deleting destructor'(unsigned int)@4265872}
 %   {__cdecl operator delete(*)@4265982}
 %   {* __cdecl operator new(unsigned int)@4265988}
 %   {___CxxFrameHandler3@4265994}
@@ -432,16 +432,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278406}
 
 % Stats:
-%   atoms: 141465.0
-%   bodies: 91604.0
-%   rules: 1729886.0
-%   variables: 113105.0
-%   constraints: 44515.0
-%   choices: 212.0
+%   atoms: 4905.0
+%   bodies: 870.0
+%   rules: 5339.0
+%   variables: 643.0
+%   constraints: 0.0
+%   choices: 424.0
 %   conflicts: 0.0
-%   models: 1.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 2.195990800857544
-%   ground_time: 1.3063190839602612
-%   time_to_first_model: 2.1764264589874074
-%   solve_time: 0.009437799453735352
+%   total_time: 0.02892303466796875
+%   ground_time: 0.00919741700636223
+%   time_to_first_model: 0.01041870896006003
+%   solve_time: 0.00026798248291015625

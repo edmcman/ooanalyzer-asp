@@ -94,6 +94,22 @@ method(j___CrtSetCheckCount@4264391)
 method(__stdcall InterlockedExchange(x, x)@4264396)
 method(__stdcall UnhandledExceptionFilter(x)@4264401)
 method(virtual int D::get_d(void)@4264406)
+method(type_info::type_info(class type_info const &)@4264411)
+method(j___except_handler4_common@4264416)
+method(j___matherr@4264421)
+method(j____getmainargs@4264426)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264431)
+method(__stdcall lstrlenA(x)@4264436)
+method(__cdecl _RTC_Failure(*, int)@4264441)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264446)
+method(j__DebuggerKnownHandle@4264451)
+method(j__exit_0@4264456)
+method(j____dllonexit@4264461)
+method(__stdcall FreeLibrary(x)@4264466)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264471)
+method(j___initterm_e@4264476)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264481)
+method(_main@4265040)
 method(D::D(void)@4265488)
 method(A::A(void)@4265712)
 method(virtual int A::get_a(void)@4265792)
@@ -113,7 +129,107 @@ method(__RTC_InitBase@4266928)
 method(__RTC_Shutdown@4266992)
 method(type_info::type_info(class type_info const &)@4267024)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4267072)
+method(class type_info & type_info::operator=(class type_info const &)@4267216)
+method(pre_c_init@4267248)
+method(pre_cpp_init@4267456)
+method(_mainCRTStartup@4267568)
+method(__tmainCRTStartup@4267600)
+method(_NtCurrentTeb@4268336)
+method(check_managed_app@4268352)
+method(_DebuggerKnownHandle@4268928)
+method(DebuggerProbe@4268976)
+method(__cdecl _RTC_Failure(*, int)@4269152)
+method(failwithmessage@4269264)
+method(DebuggerRuntime@4269920)
+method(__cdecl _RTC_StackFailure(*, char const *)@4270128)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4270448)
+method(_getMemBlockDataString@4270832)
+method(__RTC_UninitUse@4270976)
+method(__RTC_NumErrors@4271280)
+method(__RTC_GetErrDesc@4271296)
+method(__RTC_SetErrorFunc@4271376)
+method(__RTC_SetErrorFuncW@4271424)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271472)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4271488)
+method(__CRT_RTC_INITW@4271494)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4271504)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4271728)
+method(ArrayUnwindFilter@4271904)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4271968)
+method(___CxxSetUnhandledExceptionFilter@4272096)
+method(__configthreadlocale@4272122)
+method(__setdefaultprecision@4272128)
+method(__invoke_watson_if_error@4272208)
+method(___setusermatherr@4272262)
+method(__matherr@4272272)
+method(__setargv@4272288)
+method(__RTC_Initialize@4272304)
+method(__RTC_Terminate@4272352)
+method(___p__commode@4272400)
+method(___p__fmode@4272406)
+method(__onexit@4272416)
+method($LN6_1@4272645)
+method(_atexit@4272752)
+method(__encode_pointer@4272788)
+method(___set_app_type@4272794)
+method(__amsg_exit@4272800)
+method(___getmainargs@4272806)
+method(___security_init_cookie@4272816)
+method(__exit@4273090)
+method(__XcptFilter@4273096)
+method(__cexit@4273102)
+method(_exit_0@4273108)
+method(__CrtSetCheckCount@4273114)
+method(__ValidateImageBase@4273120)
+method(__FindPESection@4273248)
+method(__IsNonwritableInCurrentImage@4273408)
+method(__CrtDbgReportW@4273750)
+method(__initterm@4273756)
+method(__initterm_e@4273762)
+method(__except_handler4@4273776)
+method(__crt_debugger_hook@4273828)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4273840)
+method(GetPdbDll@4274720)
+method(__cdecl terminate(void)@4275308)
+method(virtual type_info::~type_info(void)@4275314)
+method(__controlfp_s@4275320)
+method(__invoke_watson@4275326)
+method(__unlock@4275332)
+method(___dllonexit@4275338)
+method(__lock@4275344)
+method(__decode_pointer@4275350)
+method(__except_handler4_common@4275356)
+method(__stdcall InterlockedExchange(x, x)@4275362)
+method(__stdcall Sleep(x)@4275368)
+method(__stdcall InterlockedCompareExchange(x, x, x)@4275374)
+method(__stdcall TerminateProcess(x, x)@4275380)
+method(__stdcall GetCurrentProcess()@4275386)
+method(__stdcall UnhandledExceptionFilter(x)@4275392)
+method(__stdcall SetUnhandledExceptionFilter(x)@4275398)
+method(__stdcall IsDebuggerPresent()@4275404)
+method(__stdcall RaiseException(x, x, x, x)@4275410)
+method(__stdcall DebugBreak()@4275416)
+method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4275422)
+method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4275428)
+method(__stdcall lstrlenA(x)@4275434)
+method(__stdcall GetProcAddress(x, x)@4275440)
+method(__stdcall LoadLibraryA(x)@4275446)
+method(__stdcall QueryPerformanceCounter(x)@4275452)
+method(__stdcall GetTickCount()@4275458)
+method(__stdcall GetCurrentThreadId()@4275464)
+method(__stdcall GetCurrentProcessId()@4275470)
+method(__stdcall GetSystemTimeAsFileTime(x)@4275476)
+method(__stdcall HeapFree(x, x, x)@4275482)
+method(__stdcall HeapAlloc(x, x, x)@4275488)
+method(__stdcall GetProcessHeap()@4275494)
+method(__stdcall GetModuleFileNameW(x, x, x)@4275500)
+method(__stdcall VirtualQuery(x, x, x)@4275506)
+method(__stdcall FreeLibrary(x)@4275512)
+method(__ehhandler$_main@4279438)
 method(__RTC_CheckEsp@4266416)
+method(___report_gsfailure@4268576)
+method($LN8@4271630)
+method(__unwindfunclet$_main$0@4279424)
 constructor(type_info::type_info(class type_info const &)@4267024)
 realDestructor(D::D(void)@4265488)
 realDestructor(B::B(void)@4265856)
@@ -187,12 +303,11 @@ mergeClasses(const D::`vftable'{for `B'}@4286296,D::D(void)@4265488)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4267024)
 mergeClasses(virtual int C::get_c(void)@4264121,C::C(void)@4266080)
 mergeClasses(virtual int A::get_a(void)@4263961,C::C(void)@4266080)
+mergeClasses(virtual int A::get_a(void)@4263961,A::A(void)@4265712)
 mergeClasses(virtual int B::get_b(void)@4264251,B::B(void)@4265856)
-mergeClasses(virtual int B::get_b(void)@4264251,D::D(void)@4265488)
+mergeClasses(virtual int A::get_a(void)@4263961,B::B(void)@4265856)
 mergeClasses(virtual int D::get_d(void)@4264406,D::D(void)@4265488)
-mergeClasses(virtual int A::get_a(void)@4265792,const B::`vftable'{for `A'}@4286348)
 mergeClasses(virtual int B::get_b(void)@4266016,const B::`vftable'{for `B'}@4286360)
-mergeClasses(virtual int A::get_a(void)@4265792,const A::`vftable'@4286336)
 mergeClasses(virtual int C::get_c(void)@4266240,const C::`vftable'{for `C'}@4286396)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4267072,const type_info::`vftable'@4286420)
 mergeClasses(virtual int D::get_d(void)@4266304,const D::`vftable'{for `B'}@4286296)
@@ -209,7 +324,9 @@ derivedClass(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `A'}@428
 derivedClass(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `C'}@4286396,12)
 derivedClass(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `A'}@4286384,12)
 derivedClass(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `C'}@4286396,12)
+derivedClass(const B::`vftable'{for `A'}@4286348,const A::`vftable'@4286336,28)
 derivedClass(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,28)
+derivedClass(const B::`vftable'{for `A'}@4286348,const A::`vftable'@4286336,12)
 derivedClass(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,12)
 derivedClass(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,28)
 derivedClass(const C::`vftable'{for `C'}@4286396,const A::`vftable'@4286336,28)
@@ -220,7 +337,9 @@ objectInObject(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,12
 objectInObject(const C::`vftable'{for `C'}@4286396,const A::`vftable'@4286336,28)
 objectInObject(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,28)
 objectInObject(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,12)
+objectInObject(const B::`vftable'{for `A'}@4286348,const A::`vftable'@4286336,12)
 objectInObject(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,28)
+objectInObject(const B::`vftable'{for `A'}@4286348,const A::`vftable'@4286336,28)
 objectInObject(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `C'}@4286396,12)
 objectInObject(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `A'}@4286384,12)
 objectInObject(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `C'}@4286396,12)
@@ -233,15 +352,15 @@ objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `B'}@4
 objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `A'}@4286348,0)
 objectInObject(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `B'}@4286360,0)
 objectInObject(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `A'}@4286348,0)
-Optimization: -69 -18 -18 -114 -40
+Optimization: -79 -20 -14 -230 -40
 OPTIMUM FOUND
 
-% Equivalence classes (217 classes, 239 entities):
+% Equivalence classes (218 classes, 239 entities):
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {__stdcall DebugBreak()@4263951}
 %   {j___RTC_GetErrDesc@4263956}
-%   {virtual int A::get_a(void)@4263961, virtual int C::get_c(void)@4264121, C::C(void)@4266080, virtual int C::get_c(void)@4266240, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
+%   {virtual int A::get_a(void)@4263961, virtual int C::get_c(void)@4264121, virtual int B::get_b(void)@4264251, A::A(void)@4265712, B::B(void)@4265856, virtual int B::get_b(void)@4266016, C::C(void)@4266080, virtual int C::get_c(void)@4266240, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
 %   {j____p__fmode@4263966}
 %   {__fastcall __security_check_cookie(x)@4263971}
 %   {__stdcall IsDebuggerPresent()@4263976}
@@ -297,7 +416,6 @@ OPTIMUM FOUND
 %   {j__NtCurrentTeb@4264236}
 %   {__stdcall HeapFree(x, x, x)@4264241}
 %   {j___RTC_SetErrorFunc@4264246}
-%   {virtual int B::get_b(void)@4264251, virtual int D::get_d(void)@4264406, D::D(void)@4265488, A::A(void)@4265712, virtual int A::get_a(void)@4265792, B::B(void)@4265856, virtual int B::get_b(void)@4266016, virtual int D::get_d(void)@4266304, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
 %   {j___invoke_watson_if_error@4264256}
 %   {__stdcall TerminateProcess(x, x)@4264261}
 %   {start@4264266}
@@ -328,6 +446,7 @@ OPTIMUM FOUND
 %   {j___CrtSetCheckCount@4264391}
 %   {__stdcall InterlockedExchange(x, x)@4264396}
 %   {__stdcall UnhandledExceptionFilter(x)@4264401}
+%   {virtual int D::get_d(void)@4264406, D::D(void)@4265488, virtual int D::get_d(void)@4266304, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {type_info::type_info(class type_info const &)@4264411}
 %   {j___except_handler4_common@4264416}
 %   {j___matherr@4264421}
@@ -344,6 +463,7 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264476}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264481}
 %   {_main@4265040}
+%   {virtual int A::get_a(void)@4265792}
 %   {__cdecl operator delete(*)@4266364}
 %   {* __cdecl operator new(unsigned int)@4266370}
 %   {___CxxFrameHandler3@4266376}
@@ -456,16 +576,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4279438}
 
 % Stats:
-%   atoms: 98765.0
-%   bodies: 50536.0
-%   rules: 290958.0
-%   variables: 59071.0
-%   constraints: 13551.0
-%   choices: 11974.0
-%   conflicts: 64.0
-%   models: 10.0
+%   atoms: 12696.0
+%   bodies: 5473.0
+%   rules: 12791.0
+%   variables: 7818.0
+%   constraints: 89.0
+%   choices: 9473.0
+%   conflicts: 81.0
+%   models: 15.0
 %   optimal_models: 1.0
-%   total_time: 0.6801300048828125
-%   ground_time: 0.33504158299183473
-%   time_to_first_model: 0.4993312500300817
-%   solve_time: 0.17161011695861816
+%   total_time: 0.12994694709777832
+%   ground_time: 0.023513166001066566
+%   time_to_first_model: 0.06981166603509337
+%   solve_time: 0.046028852462768555

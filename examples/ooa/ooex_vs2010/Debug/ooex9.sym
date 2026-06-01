@@ -224,11 +224,11 @@ method(__RTC_CheckEsp@4266384)
 method(___report_gsfailure@4268464)
 method($LN11@4271490)
 method(__unwindfunclet$_main$0@4279296)
-constructor(A::A(void)@4265680)
-constructor(C::C(void)@4266048)
 constructor(type_info::type_info(class type_info const &)@4266992)
 realDestructor(D::D(void)@4265456)
 realDestructor(B::B(void)@4265824)
+realDestructor(A::A(void)@4265680)
+realDestructor(C::C(void)@4266048)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4267040)
 vfTableEntry(const type_info::`vftable'@4286420,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264136)
 vfTableEntry(const C::`vftable'{for `C'}@4286396,0,virtual int C::get_c(void)@4264111)
@@ -296,12 +296,13 @@ mergeClasses(const A::`vftable'@4286336,A::A(void)@4265680)
 mergeClasses(const D::`vftable'{for `B'}@4286296,D::D(void)@4265456)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136,type_info::type_info(class type_info const &)@4266992)
 mergeClasses(virtual int C::get_c(void)@4264111,C::C(void)@4266048)
-mergeClasses(virtual int A::get_a(void)@4263956,C::C(void)@4266048)
+mergeClasses(virtual int A::get_a(void)@4263956,A::A(void)@4265680)
 mergeClasses(virtual int B::get_b(void)@4264241,B::B(void)@4265824)
-mergeClasses(virtual int B::get_b(void)@4264241,D::D(void)@4265456)
+mergeClasses(virtual int A::get_a(void)@4263956,B::B(void)@4265824)
 mergeClasses(virtual int D::get_d(void)@4264396,D::D(void)@4265456)
+mergeClasses(virtual int C::get_c(void)@4264111,D::D(void)@4265456)
 mergeClasses(virtual int B::get_b(void)@4265984,const B::`vftable'{for `B'}@4286360)
-mergeClasses(virtual int A::get_a(void)@4265760,const A::`vftable'@4286336)
+mergeClasses(virtual int C::get_c(void)@4266208,const C::`vftable'{for `C'}@4286396)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4267040,const type_info::`vftable'@4286420)
 mergeClasses(virtual int D::get_d(void)@4266272,const D::`vftable'{for `B'}@4286296)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4267040,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424)
@@ -345,14 +346,14 @@ objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `B'}@4
 objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `A'}@4286348,0)
 objectInObject(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `B'}@4286360,0)
 objectInObject(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `A'}@4286348,0)
-Optimization: -69 -20 -30 -224 -40
+Optimization: -79 -20 -14 -224 -40
 OPTIMUM FOUND
 
-% Equivalence classes (213 classes, 233 entities):
+% Equivalence classes (212 classes, 233 entities):
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {j___RTC_GetErrDesc@4263951}
-%   {virtual int A::get_a(void)@4263956, virtual int C::get_c(void)@4264111, C::C(void)@4266048, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
+%   {virtual int A::get_a(void)@4263956, virtual int B::get_b(void)@4264241, A::A(void)@4265680, B::B(void)@4265824, virtual int B::get_b(void)@4265984, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
 %   {__fastcall __security_check_cookie(x)@4263961}
 %   {__stdcall IsDebuggerPresent()@4263966}
 %   {class type_info & type_info::operator=(class type_info const &)@4263971}
@@ -382,6 +383,7 @@ OPTIMUM FOUND
 %   {__cdecl terminate(void)@4264096}
 %   {j___exit@4264101}
 %   {__stdcall GetCurrentThreadId()@4264106}
+%   {virtual int C::get_c(void)@4264111, virtual int D::get_d(void)@4264396, D::D(void)@4265456, C::C(void)@4266048, virtual int C::get_c(void)@4266208, virtual int D::get_d(void)@4266272, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
 %   {j___initterm@4264116}
 %   {__stdcall GetCurrentProcess()@4264121}
 %   {j___RTC_UninitUse@4264126}
@@ -407,7 +409,6 @@ OPTIMUM FOUND
 %   {j__NtCurrentTeb@4264226}
 %   {__stdcall HeapFree(x, x, x)@4264231}
 %   {j___RTC_SetErrorFunc@4264236}
-%   {virtual int B::get_b(void)@4264241, virtual int D::get_d(void)@4264396, D::D(void)@4265456, B::B(void)@4265824, virtual int B::get_b(void)@4265984, virtual int D::get_d(void)@4266272, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
 %   {j___invoke_watson_if_error@4264246}
 %   {__stdcall TerminateProcess(x, x)@4264251}
 %   {start@4264256}
@@ -453,8 +454,7 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264461}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264466}
 %   {_main@4265008}
-%   {A::A(void)@4265680, virtual int A::get_a(void)@4265760, const A::`vftable'@4286336}
-%   {virtual int C::get_c(void)@4266208}
+%   {virtual int A::get_a(void)@4265760}
 %   {__cdecl operator delete(*)@4266332}
 %   {* __cdecl operator new(unsigned int)@4266338}
 %   {___CxxFrameHandler3@4266344}
@@ -564,16 +564,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4279310}
 
 % Stats:
-%   atoms: 94185.0
-%   bodies: 48037.0
-%   rules: 270414.0
-%   variables: 56159.0
-%   constraints: 12841.0
-%   choices: 7974.0
-%   conflicts: 84.0
+%   atoms: 12424.0
+%   bodies: 5365.0
+%   rules: 12543.0
+%   variables: 7626.0
+%   constraints: 89.0
+%   choices: 10024.0
+%   conflicts: 81.0
 %   models: 14.0
 %   optimal_models: 1.0
-%   total_time: 1.0530221462249756
-%   ground_time: 0.6090547079802491
-%   time_to_first_model: 0.8550035409862176
-%   solve_time: 0.1772451400756836
+%   total_time: 0.13589000701904297
+%   ground_time: 0.021246040996629745
+%   time_to_first_model: 0.06562454102095217
+%   solve_time: 0.050087928771972656

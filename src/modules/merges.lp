@@ -135,6 +135,10 @@ notMergeUnsorted(MethodWithSymbol, OtherMethod) :-
 -mergeClasses(A, B) :- notMergeUnsorted(A, B), A < B.
 -mergeClasses(A, B) :- notMergeUnsorted(B, A), A < B.
 
+% A not-merge fact forbids direct or transitive same-class membership.  This is
+% bounded by existing -mergeClasses/2 atoms; it does not generate all pairs.
+:- -mergeClasses(A, B), &sameClass(A, B).
+
 % ============================================================
 % GUESS
 % ============================================================

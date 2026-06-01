@@ -99,6 +99,7 @@ method(j___initterm_e@4264421)
 method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264426)
 method(_main@4264928)
 method(D::D(void)@4265392)
+method(A::A(void)@4265568)
 method(B::B(void)@4265664)
 method(C::C(void)@4265792)
 method(__cdecl operator delete(*)@4265912)
@@ -207,7 +208,7 @@ method(___report_gsfailure@4270256)
 method(__unwindfunclet$_main$0@4278304)
 classCallsMethod(D::D(void)@4265392,B::B(void)@4265664)
 mergeClasses(D::D(void)@4265392,B::B(void)@4265664)
-Optimization: -2 -205
+Optimization: -1 -206
 OPTIMUM FOUND
 
 % Equivalence classes (205 classes, 206 entities):
@@ -418,16 +419,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278318}
 
 % Stats:
-%   atoms: 132246.0
-%   bodies: 85712.0
-%   rules: 1568485.0
-%   variables: 105789.0
-%   constraints: 41615.0
-%   choices: 552.0
+%   atoms: 4836.0
+%   bodies: 844.0
+%   rules: 5254.0
+%   variables: 623.0
+%   constraints: 0.0
+%   choices: 412.0
 %   conflicts: 0.0
-%   models: 3.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 1.9265871047973633
-%   ground_time: 1.3536525000235997
-%   time_to_first_model: 1.9025439170072787
-%   solve_time: 0.03198504447937012
+%   total_time: 0.043272972106933594
+%   ground_time: 0.008889125019777566
+%   time_to_first_model: 0.010590041987597942
+%   solve_time: 0.0005359649658203125

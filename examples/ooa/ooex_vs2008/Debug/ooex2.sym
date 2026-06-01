@@ -212,7 +212,7 @@ classCallsMethod(Derived::Derived(void)@4265232,Base::Base(void)@4265392)
 classCallsMethod(Derived::Derived(void)@4265232,int Base::func3(void)@4265488)
 mergeClasses(Derived::Derived(void)@4265232,Base::Base(void)@4265392)
 mergeClasses(Derived::Derived(void)@4265232,int Base::func3(void)@4265488)
-Optimization: -3 -208
+Optimization: -2 -208
 OPTIMUM FOUND
 
 % Equivalence classes (206 classes, 208 entities):
@@ -424,16 +424,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278062}
 
 % Stats:
-%   atoms: 134513.0
-%   bodies: 87386.0
-%   rules: 1613197.0
-%   variables: 107863.0
-%   constraints: 42435.0
-%   choices: 363.0
-%   conflicts: 1.0
-%   models: 2.0
+%   atoms: 4797.0
+%   bodies: 863.0
+%   rules: 5223.0
+%   variables: 634.0
+%   constraints: 0.0
+%   choices: 416.0
+%   conflicts: 0.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 1.9822571277618408
-%   ground_time: 1.1806796659948304
-%   time_to_first_model: 1.9538569579599425
-%   solve_time: 0.018906116485595703
+%   total_time: 0.0377199649810791
+%   ground_time: 0.010231583029963076
+%   time_to_first_model: 0.012050166027620435
+%   solve_time: 0.0004210472106933594

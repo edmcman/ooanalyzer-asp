@@ -333,21 +333,21 @@ vftableBelongsToClass(const Triangle::`vftable'@4290680,0,Triangle::Triangle(voi
 vftableBelongsToClass(const Circle::`vftable'@4290648,0,Circle::Circle(void)@4265920)
 vftableBelongsToClass(const Rectangle::`vftable'@4290612,0,Rectangle::Rectangle(void)@4265696)
 mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305648,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305660)
-mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305648,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305684)
 mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305652,__declspec(dllimport) __int64 std::ios_base::width(void)const@4305664)
 mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305652,__declspec(dllimport) int std::ios_base::flags(void)const@4305668)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305652,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305692)
+mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305664,__declspec(dllimport) int std::ios_base::flags(void)const@4305668)
 mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305656,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305672)
 mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305656,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305676)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305656,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305696)
+mergeClasses(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305672,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305676)
+mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305648,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305684)
 mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305660,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305684)
-mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305664,__declspec(dllimport) int std::ios_base::flags(void)const@4305668)
+mergeClasses(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305680,__declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4305688)
+mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305652,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305692)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305664,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305692)
 mergeClasses(__declspec(dllimport) int std::ios_base::flags(void)const@4305668,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305692)
-mergeClasses(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305672,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305676)
+mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305656,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305696)
 mergeClasses(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305672,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305696)
 mergeClasses(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305676,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305696)
-mergeClasses(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305680,__declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4305688)
 mergeClasses(const type_info::`vftable'@4290724,type_info::type_info(class type_info const &)@4269952)
 mergeClasses(const Shape::`vftable'@4290712,Shape::Shape(void)@4266368)
 mergeClasses(const Triangle::`vftable'@4290680,Triangle::Triangle(void)@4266144)
@@ -357,20 +357,20 @@ mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@426
 mergeClasses(virtual Triangle::draw(void)@4264546,Triangle::Triangle(void)@4266144)
 mergeClasses(virtual Circle::draw(void)@4263941,Circle::Circle(void)@4265920)
 mergeClasses(virtual Rectangle::draw(void)@4263986,Rectangle::Rectangle(void)@4265696)
-mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4268208,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268848)
-mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268560,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4269056)
 mergeClasses(virtual Rectangle::draw(void)@4265792,const Rectangle::`vftable'@4290612)
 mergeClasses(virtual Circle::draw(void)@4266016,const Circle::`vftable'@4290648)
 mergeClasses(virtual Triangle::draw(void)@4266240,const Triangle::`vftable'@4290680)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4270000,const type_info::`vftable'@4290724)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4270000,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305796)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4268208,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268848)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268560,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4269056)
 derivedClass(const Rectangle::`vftable'@4290612,const Shape::`vftable'@4290712,0)
 derivedClass(const Circle::`vftable'@4290648,const Shape::`vftable'@4290712,0)
 derivedClass(const Triangle::`vftable'@4290680,const Shape::`vftable'@4290712,0)
 objectInObject(const Triangle::`vftable'@4290680,const Shape::`vftable'@4290712,0)
 objectInObject(const Circle::`vftable'@4290648,const Shape::`vftable'@4290712,0)
 objectInObject(const Rectangle::`vftable'@4290612,const Shape::`vftable'@4290712,0)
-Optimization: -45 -6 -44 -291 -20
+Optimization: -45 -6 -42 -291 -20
 OPTIMUM FOUND
 
 % Equivalence classes (271 classes, 296 entities):
@@ -647,16 +647,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305680, __declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4305688}
 
 % Stats:
-%   atoms: 144110.0
-%   bodies: 68343.0
-%   rules: 372530.0
-%   variables: 74206.0
-%   constraints: 15949.0
-%   choices: 1359.0
-%   conflicts: 10.0
-%   models: 11.0
+%   atoms: 23411.0
+%   bodies: 11187.0
+%   rules: 22448.0
+%   variables: 10172.0
+%   constraints: 9.0
+%   choices: 2619.0
+%   conflicts: 12.0
+%   models: 12.0
 %   optimal_models: 1.0
-%   total_time: 1.1449999809265137
-%   ground_time: 0.7045699169975705
-%   time_to_first_model: 1.0617384589859284
-%   solve_time: 0.06728816032409668
+%   total_time: 0.12987399101257324
+%   ground_time: 0.023455124988686293
+%   time_to_first_model: 0.09467024996411055
+%   solve_time: 0.00541996955871582

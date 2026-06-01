@@ -277,18 +277,12 @@ mergeClasses(virtual int Base::func2(void)@4264196,virtual Derived::~Derived(voi
 mergeClasses(virtual int Derived::func3(void)@4264256,virtual Derived::~Derived(void)@4265984)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4264126,virtual Derived::~Derived(void)@4265984)
 mergeClasses(Derived::Derived(void)@4265328,virtual Derived::~Derived(void)@4265984)
-mergeClasses(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
-mergeClasses(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4265712)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266768,const type_info::`vftable'@4286316)
-mergeClasses(virtual int Derived::func3(void)@4265808,const Derived::`vftable'@4286272)
-mergeClasses(virtual int Base::func2(void)@4265712,const Derived::`vftable'@4286272)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266768,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
 objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
-Optimization: -93 -1 -38 -227 -24
+Optimization: -93 -1 -20 -227 -24
 OPTIMUM FOUND
 
-% Equivalence classes (216 classes, 230 entities):
+% Equivalence classes (221 classes, 230 entities):
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {j___RTC_GetErrDesc@4263951}
@@ -325,9 +319,9 @@ OPTIMUM FOUND
 %   {j___initterm@4264111}
 %   {__stdcall GetCurrentProcess()@4264116}
 %   {j___RTC_UninitUse@4264121}
-%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264126, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264256, Derived::Derived(void)@4265328, virtual int Base::func1(void)@4265616, virtual int Base::func2(void)@4265712, virtual int Derived::func3(void)@4265808, virtual Derived::~Derived(void)@4265984, const Derived::`vftable'@4286272}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264126, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264256, Derived::Derived(void)@4265328, virtual Derived::~Derived(void)@4265984, const Derived::`vftable'@4286272}
 %   {j___RTC_Shutdown@4264131}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264136, type_info::type_info(class type_info const &)@4266720, virtual * type_info::`vector deleting destructor'(unsigned int)@4266768, const type_info::`vftable'@4286316, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264136, type_info::type_info(class type_info const &)@4266720, const type_info::`vftable'@4286316}
 %   {j___FindPESection@4264141}
 %   {__stdcall LoadLibraryW(x)@4264146}
 %   {__stdcall HeapSetInformation(x, x, x, x)@4264151}
@@ -395,6 +389,9 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264471}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264476}
 %   {_main@4265024}
+%   {virtual int Base::func1(void)@4265616}
+%   {virtual int Base::func2(void)@4265712}
+%   {virtual int Derived::func3(void)@4265808}
 %   {virtual * Derived::`vector deleting destructor'(unsigned int)@4265872}
 %   {__cdecl operator delete(*)@4266060}
 %   {* __cdecl operator new(unsigned int)@4266066}
@@ -407,6 +404,7 @@ OPTIMUM FOUND
 %   {__RTC_InitBase@4266624}
 %   {__RTC_Shutdown@4266688}
 %   {_rand@4266712}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4266768}
 %   {class type_info & type_info::operator=(class type_info const &)@4266912}
 %   {__purecall@4266934}
 %   {pre_c_init@4266944}
@@ -505,18 +503,19 @@ OPTIMUM FOUND
 %   {__stdcall FreeLibrary(x)@4275096}
 %   {__unwindfunclet$_main$0@4279008}
 %   {__ehhandler$_main@4279022}
+%   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336}
 
 % Stats:
-%   atoms: 92558.0
-%   bodies: 50164.0
-%   rules: 294400.0
-%   variables: 57766.0
-%   constraints: 14519.0
-%   choices: 4841.0
-%   conflicts: 88.0
+%   atoms: 8553.0
+%   bodies: 2945.0
+%   rules: 8281.0
+%   variables: 4489.0
+%   constraints: 59.0
+%   choices: 4565.0
+%   conflicts: 74.0
 %   models: 5.0
 %   optimal_models: 1.0
-%   total_time: 1.1679179668426514
-%   ground_time: 0.602440208022017
-%   time_to_first_model: 0.857963667018339
-%   solve_time: 0.20941781997680664
+%   total_time: 0.07399487495422363
+%   ground_time: 0.011462374997790903
+%   time_to_first_model: 0.043008208042010665
+%   solve_time: 0.01397395133972168

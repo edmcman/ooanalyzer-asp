@@ -222,8 +222,8 @@ method(___report_gsfailure@4270576)
 method(__unwindfunclet$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0@4278432)
 constructor(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
 realDestructor(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4297384,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4297404)
 mergeClasses(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396,__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400)
+mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4297384,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4297404)
 Optimization: -220
 OPTIMUM FOUND
 
@@ -448,16 +448,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396, __declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400}
 
 % Stats:
-%   atoms: 148729.0
-%   bodies: 95474.0
-%   rules: 1805529.0
-%   variables: 116532.0
-%   constraints: 45795.0
+%   atoms: 7666.0
+%   bodies: 2597.0
+%   rules: 8106.0
+%   variables: 1512.0
+%   constraints: 0.0
 %   choices: 216.0
 %   conflicts: 0.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 2.0411319732666016
-%   ground_time: 1.2147149580414407
-%   time_to_first_model: 2.0274562920094468
-%   solve_time: 0.02419900894165039
+%   total_time: 0.0305941104888916
+%   ground_time: 0.010061457986012101
+%   time_to_first_model: 0.020503874984569848
+%   solve_time: 0.0003380775451660156
