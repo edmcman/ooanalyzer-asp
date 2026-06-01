@@ -31,13 +31,15 @@ xclingo2 produces explanation trees from `#!trace_rule`, `#!trace`, and `#!show_
 - `#!show_trace atom.` selects which atoms to explain.
 
 ```sh
-cd xclingo2 && python -m xclingo -n 0 0 [--show-trace ATOM] [--auto-tracing {none,facts,all}] [--only-last] <file.lp>
+cd xclingo2 && python -m xclingo -n 0 1 --only-last [--show-trace ATOM] [--auto-tracing {none,facts,all}] ../ooanalyzer.lp <facts.lp> --opt-mode=optN
 ```
 
-- `-n A E` computes up to A answer sets and E explanations each.
-- `--show-trace ATOM` trace a specific atom without modifying the source (repeatable). E.g. `--show-trace "sameClass(4,2)."`.
+- `-n 0 1` enumerates all optimal models, explaining the last (optimal) one per `--only-last`.
+- `--opt-mode=optN` is a pass-through clingo flag — required for OOAnalyzer to find the correct (optimal) answer set.
+- `--show-trace ATOM` trace a specific atom without modifying the source (repeatable). E.g. `--show-trace "constructor(4266080)."`.
 - `--auto-tracing facts` auto-traces all facts; `--auto-tracing all` auto-traces everything.
 - `--only-last` only explain the last/optimal answer set.
+- The `&sameClass` propagator is registered automatically when `&sameClass` appears in the program.
 
 ## Workflow
 

@@ -96,7 +96,7 @@ reasonNOTMergeClassesCAsymmetric(DC, Method) :-
 % derived class' vftable, the called method cannot be on the base class.
 % Witness: DC (derived), BC (base from derivedClass).
 % Counterpart: reasonNOTMergeClasses_R (rules.pl:3366)
-%!trace_rule {"% and % must NOT be merged because method % called by derived % writes its vftable at offset %", A, B, CalledMethod, DC, Offset}
+%!trace_rule {"% and % must NOT be merged because method % called by derived % writes its vftable at offset %", A, B, CalledMethod, DC1, Offset}
 -mergeClasses(A, B) :-
     classCallsMethod(DC1, CalledMethod),
     not purecall(CalledMethod),

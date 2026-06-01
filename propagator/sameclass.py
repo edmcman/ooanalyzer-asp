@@ -316,3 +316,19 @@ class SameClassPropagator:
         for a, b in merge_pairs:
             uf.union(_sym_key(a), _sym_key(b), 0)
         return uf.groups(self._entities)
+
+
+def sc_pairs_from_merges(merge_pairs):
+    """Given [(Symbol, Symbol)] mergeClasses pairs, yield all (a, b) same-class pairs."""
+    uf = _UF()
+    sym_map = {}
+    for a, b in merge_pairs:
+        ka, kb = _sym_key(a), _sym_key(b)
+        sym_map.setdefault(ka, a)
+        sym_map.setdefault(kb, b)
+        uf.union(ka, kb, 0)
+    entities = set(sym_map)
+    for ka in entities:
+        for kb in entities:
+            if uf.same(ka, kb):
+                yield sym_map[ka], sym_map[kb]

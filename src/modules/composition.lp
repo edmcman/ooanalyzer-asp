@@ -130,7 +130,7 @@ objectInObject(Outer, Inner, Off) :- derivedClass(Outer, Inner, Off).     % rule
 objectInObject(Outer, Inner, Off) :- embeddedObject(Outer, Inner, Off).   % rules.pl:1577
 
 % reasonClassRelationship_internal: direct object composition/inheritance.
-%!trace_rule {"% has a class relationship with % because of direct composition/inheritance", DerivedClass, BaseClass}
+%!trace_rule {"% has a class relationship with % because of direct composition/inheritance", D, B}
 classRelationship(D, B) :-
     objectInObject(D, B, _).                                               % rules.pl:2114
 
