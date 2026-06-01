@@ -155,10 +155,22 @@ strongMergeCandidate(A, B) :-
 
 mergeCandidate(A, B) :- strongMergeCandidate(A, B).
 
+% guessLateMergeClasses_G2: class-related method is a weak merge candidate
+% when not purecall and not known virtual.
+% Counterpart: guessLateMergeClasses_G2 / _G1 (guess.pl:923, 879)
+weakMergeCandidate(A, B) :-
+    classRelatedMethod(X, Y),
+    not purecall(Y),
+    not knownVirtualMethod(Y),
+    sortPair(X, Y, A, B).
+
+mergeCandidate(A, B) :- weakMergeCandidate(A, B).
+
 % guessMergeClasses: choose merge or not-merge for each candidate pair.
 %!trace_rule {"guess whether % and % are the same class or not", A, B}
 1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :- mergeCandidate(A, B). % guess.pl:1084
-#heuristic mergeClasses(A, B) : mergeCandidate(A, B). [1@1, true]
+% Heuristic disabled so we get an initial model faster
+%#heuristic mergeClasses(A, B) : mergeCandidate(A, B). [1@1, true]
 
 % ============================================================
 % REWARDS
@@ -168,6 +180,21 @@ mergeCandidate(A, B) :- strongMergeCandidate(A, B).
 strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 
 #maximize { 10@2, merge, M1, M2 : strongMergeReward(M1, M2) }.
+
+% Base G2 reward: prefer weak merges when chosen.
+weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).
+#maximize { 1@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
+
+% G1 constructor bonus: extra reward when either side's class has a constructor.
+% Uses &sameClass to check class membership at solver time.
+% Counterpart: guessLateMergeClasses_G1 constructor condition (guess.pl:879)
+weakG1Bonus(M1, M2) :-
+    mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
+    constructor(Ctor), &sameClass(M1, Ctor).
+weakG1Bonus(M1, M2) :-
+    mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
+    constructor(Ctor), &sameClass(M2, Ctor).
+#maximize { 2@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
 
 % New non-prolog merging reward: adjacent regular methods are more likely to be
 % on the same class. This is true at least for non-debug executables.
@@ -181,9 +208,10 @@ nextRegularMethod(M1, M2) :-
 adjacentMethodCandidate(A, B) :-
     nextRegularMethod(M1, M2),
     sortPair(M1, M2, A, B).
-%
-% #maximize { 1@0, adjacent, M1, M2 : mergeClasses(M1, M2), adjacentMethodCandidate(M1, M2) }.
-#heuristic mergeClasses(A, B) : mergeCandidate(A, B), adjacentMethodCandidate(A, B). [1@0, true]
+
+#maximize { 1@0, adjacent, M1, M2 : mergeClasses(M1, M2), adjacentMethodCandidate(M1, M2) }.
+% Heuristic disabled so we get an initial model faster
+%#heuristic mergeClasses(A, B) : mergeCandidate(A, B), adjacentMethodCandidate(A, B). [1@0, true]
 
 %!NOshow_trace mergeClasses(A, B).
 %!NOshow_trace -mergeClasses(A, B).

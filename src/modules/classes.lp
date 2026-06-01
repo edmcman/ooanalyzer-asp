@@ -21,4 +21,15 @@ classCallsMethod(VFTable, Method2) :-
 
 %!trace {"% calls %", V, M} classCallsMethod(V, M).
 
+% classRelatedMethod: undirected version of classCallsMethod.
+% Prolog _A rule (rules.pl:2361): every classCallsMethod implies classRelatedMethod.
+classRelatedMethod(A, B) :- classCallsMethod(A, B).
+classRelatedMethod(A, B) :- classCallsMethod(B, A).
+
+% knownVirtualMethod: method is known to be virtual.
+% Prolog (rules.pl:780): symbolProperty(Method, virtual) or factMethodInVFTable.
+% Uses vfTableEntry (confirmed entries) not possibleVFTableEntry (candidates).
+knownVirtualMethod(M) :- vfTableEntry(_, _, Entry), dethunk(Entry, M).
+knownVirtualMethod(M) :- symbolProperty(M, virtual).
+
 #show classCallsMethod/2.
