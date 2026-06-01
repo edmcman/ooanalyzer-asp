@@ -96,7 +96,6 @@ method(j___initterm_e@4264406)
 method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264411)
 method(_main@4264896)
 method(D::D(void)@4265360)
-method(A::A(void)@4265536)
 method(B::B(void)@4265632)
 method(C::C(void)@4265760)
 method(__cdecl operator delete(*)@4265880)
@@ -201,10 +200,11 @@ method(__RTC_CheckEsp@4265936)
 method(___report_gsfailure@4270112)
 method(__unwindfunclet$_main$0@4278176)
 classCallsMethod(D::D(void)@4265360,B::B(void)@4265632)
-Optimization: -200
+mergeClasses(D::D(void)@4265360,B::B(void)@4265632)
+Optimization: -2 -199
 OPTIMUM FOUND
 
-% Equivalence classes (200 classes, 200 entities):
+% Equivalence classes (199 classes, 200 entities):
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {j___RTC_GetErrDesc@4263951}
@@ -300,9 +300,8 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264406}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264411}
 %   {_main@4264896}
-%   {D::D(void)@4265360}
+%   {D::D(void)@4265360, B::B(void)@4265632}
 %   {A::A(void)@4265536}
-%   {B::B(void)@4265632}
 %   {C::C(void)@4265760}
 %   {__cdecl operator delete(*)@4265880}
 %   {* __cdecl operator new(unsigned int)@4265886}
@@ -407,16 +406,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278190}
 
 % Stats:
-%   atoms: 124798.0
-%   bodies: 80804.0
-%   rules: 1438601.0
-%   variables: 99701.0
+%   atoms: 124810.0
+%   bodies: 80816.0
+%   rules: 1438617.0
+%   variables: 99708.0
 %   constraints: 39203.0
-%   choices: 199.0
+%   choices: 518.0
 %   conflicts: 0.0
-%   models: 1.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 1.6424238681793213
-%   ground_time: 1.152688957983628
-%   time_to_first_model: 1.606675916002132
-%   solve_time: 0.005728006362915039
+%   total_time: 2.689781904220581
+%   ground_time: 1.7375052089919336
+%   time_to_first_model: 2.5829435419873334
+%   solve_time: 0.03816390037536621

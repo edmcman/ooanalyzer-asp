@@ -206,10 +206,12 @@ method(___report_gsfailure@4267632)
 method(__unwindfunclet$_main$0@4278016)
 classCallsMethod(Derived::Derived(void)@4265280,int Base::func3(void)@4265200)
 classCallsMethod(Derived::Derived(void)@4265280,Base::Base(void)@4265456)
-Optimization: -204
+mergeClasses(int Base::func3(void)@4265200,Derived::Derived(void)@4265280)
+mergeClasses(Derived::Derived(void)@4265280,Base::Base(void)@4265456)
+Optimization: -4 -204
 OPTIMUM FOUND
 
-% Equivalence classes (204 classes, 204 entities):
+% Equivalence classes (202 classes, 204 entities):
 %   {j___setdefaultprecision@4263941}
 %   {int Base::func3(void)@4263946}
 %   {j___setargv@4263951}
@@ -307,9 +309,7 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264416}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264421}
 %   {_main@4264912}
-%   {int Base::func3(void)@4265200}
-%   {Derived::Derived(void)@4265280}
-%   {Base::Base(void)@4265456}
+%   {int Base::func3(void)@4265200, Derived::Derived(void)@4265280, Base::Base(void)@4265456}
 %   {Base2::Base2(void)@4265552}
 %   {int Base2::func3(void)@4265648}
 %   {__cdecl operator delete(*)@4265718}
@@ -416,16 +416,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278030}
 
 % Stats:
-%   atoms: 129667.0
-%   bodies: 84052.0
-%   rules: 1524284.0
-%   variables: 103735.0
+%   atoms: 129691.0
+%   bodies: 84076.0
+%   rules: 1524315.0
+%   variables: 103749.0
 %   constraints: 40803.0
-%   choices: 204.0
+%   choices: 206.0
 %   conflicts: 0.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 2.381585121154785
-%   ground_time: 1.7969455840066075
-%   time_to_first_model: 2.3296838749665767
-%   solve_time: 0.013308048248291016
+%   total_time: 2.6432199478149414
+%   ground_time: 1.8373059169971384
+%   time_to_first_model: 2.6195038330042735
+%   solve_time: 0.01636195182800293

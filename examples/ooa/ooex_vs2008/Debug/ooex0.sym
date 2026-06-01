@@ -213,7 +213,7 @@ method(___report_gsfailure@4267984)
 method(__unwindfunclet$_main$0@4278384)
 method(__unwindfunclet$_main$1@4278398)
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@4265872,ClassA::~ClassA(void)@4265584)
-Optimization: -212
+Optimization: 0 -212
 OPTIMUM FOUND
 
 % Equivalence classes (213 classes, 213 entities):
@@ -432,16 +432,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278406}
 
 % Stats:
-%   atoms: 141453.0
-%   bodies: 91592.0
-%   rules: 1729870.0
-%   variables: 113098.0
+%   atoms: 141465.0
+%   bodies: 91604.0
+%   rules: 1729886.0
+%   variables: 113105.0
 %   constraints: 44515.0
 %   choices: 212.0
 %   conflicts: 0.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 3.8155009746551514
-%   ground_time: 2.533079875051044
-%   time_to_first_model: 3.79163570899982
-%   solve_time: 0.0233609676361084
+%   total_time: 2.195990800857544
+%   ground_time: 1.3063190839602612
+%   time_to_first_model: 2.1764264589874074
+%   solve_time: 0.009437799453735352

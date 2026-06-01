@@ -184,10 +184,10 @@ constructor(Derived::Derived(void)@4198496)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
 constructor(std::exception::exception(char const * const &, int)@4201511)
 constructor(std::exception::exception(class std::exception const &)@4201750)
+constructor(virtual type_info::~type_info(void)@4198694)
+constructor(virtual std::exception::~exception(void)@4201700)
 realDestructor(virtual Derived::~Derived(void)@4198560)
-realDestructor(virtual type_info::~type_info(void)@4198694)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198829)
-realDestructor(virtual std::exception::~exception(void)@4201700)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4198710)
@@ -249,8 +249,6 @@ vftableBelongsToClass(const std::exception::`vftable'@4221892,0,virtual * std::e
 vftableBelongsToClass(const std::exception::`vftable'@4221892,0,virtual std::exception::~exception(void)@4201700)
 vftableBelongsToClass(const std::exception::`vftable'@4221892,0,std::exception::exception(char const * const &, int)@4201511)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219244,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@4219244,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@4219244,0,virtual std::bad_alloc::~bad_alloc(void)@4198829)
 vftableBelongsToClass(const type_info::`vftable'@4219236,0,virtual type_info::~type_info(void)@4198694)
 vftableBelongsToClass(const Derived::`vftable'@4219216,0,virtual Derived::~Derived(void)@4198560)
 vftableBelongsToClass(const Derived::`vftable'@4219216,0,Derived::Derived(void)@4198496)
@@ -260,8 +258,6 @@ mergeClasses(const std::exception::`vftable'@4221892,virtual * std::exception::`
 mergeClasses(const std::exception::`vftable'@4221892,virtual std::exception::~exception(void)@4201700)
 mergeClasses(const std::exception::`vftable'@4221892,std::exception::exception(char const * const &, int)@4201511)
 mergeClasses(const std::bad_alloc::`vftable'@4219244,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
-mergeClasses(const std::bad_alloc::`vftable'@4219244,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840)
-mergeClasses(const std::bad_alloc::`vftable'@4219244,virtual std::bad_alloc::~bad_alloc(void)@4198829)
 mergeClasses(const type_info::`vftable'@4219236,virtual type_info::~type_info(void)@4198694)
 mergeClasses(const Derived::`vftable'@4219216,virtual Derived::~Derived(void)@4198560)
 mergeClasses(const Derived::`vftable'@4219216,Derived::Derived(void)@4198496)
@@ -274,7 +270,8 @@ mergeClasses(virtual char const * std::exception::what(void)const@4201540,virtua
 mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711,std::exception::exception(class std::exception const &)@4201750)
 mergeClasses(virtual char const * std::exception::what(void)const@4201540,std::exception::exception(class std::exception const &)@4201750)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198829,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840)
-mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
+mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198829,virtual char const * std::exception::what(void)const@4201540)
+mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840,virtual char const * std::exception::what(void)const@4201540)
 mergeClasses(virtual type_info::~type_info(void)@4198694,virtual * type_info::`scalar deleting destructor'(unsigned int)@4198710)
 mergeClasses(virtual int Base::func1(void)@4198432,Derived::Derived(void)@4198496)
 mergeClasses(virtual int Base::func2(void)@4198464,Derived::Derived(void)@4198496)
@@ -287,16 +284,25 @@ mergeClasses(virtual Derived::~Derived(void)@4198560,virtual * Derived::`vector 
 mergeClasses(std::exception::exception(char const * const &, int)@4201511,virtual std::exception::~exception(void)@4201700)
 mergeClasses(std::exception::exception(char const * const &, int)@4201511,std::exception::exception(class std::exception const &)@4201750)
 mergeClasses(virtual std::exception::~exception(void)@4201700,std::exception::exception(class std::exception const &)@4201750)
-mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198829,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
 mergeClasses(Derived::Derived(void)@4198496,virtual Derived::~Derived(void)@4198560)
+mergeClasses(std::exception::_Copy_str(char const *)@4201553,class std::exception & std::exception::operator=(class std::exception const &)@4201647)
+mergeClasses(std::exception::_Tidy(void)@4201617,class std::exception & std::exception::operator=(class std::exception const &)@4201647)
+mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@4201647,std::exception::exception(class std::exception const &)@4201750)
+mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@4198710,const type_info::`vftable'@4219236)
+mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711,const std::exception::`vftable'@4221892)
+mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4198592,const Derived::`vftable'@4219216)
+mergeClasses(virtual int Derived::func3(void)@4198576,const Derived::`vftable'@4219216)
+mergeClasses(virtual int Base::func2(void)@4198464,const Derived::`vftable'@4219216)
+mergeClasses(virtual char const * std::exception::what(void)const@4201540,const std::exception::`vftable'@4221892)
+mergeClasses(std::exception::_Tidy(void)@4201617,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711)
 derivedClass(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
 derivedClass(const std::bad_alloc::`vftable'@4219244,const std::exception::`vftable'@4221892,0)
 objectInObject(const std::bad_alloc::`vftable'@4219244,const std::exception::`vftable'@4221892,0)
 objectInObject(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
-Optimization: -235 -2 -25 -179 -40
+Optimization: -235 -2 -71 -179 -40
 OPTIMUM FOUND
 
-% Equivalence classes (170 classes, 187 entities):
+% Equivalence classes (167 classes, 187 entities):
 %   {Base::Base(void)@4198400, const Base::`vftable'@4219200}
 %   {virtual int Base::func1(void)@4198432, virtual int Base::func2(void)@4198464, Derived::Derived(void)@4198496, virtual Derived::~Derived(void)@4198560, virtual int Derived::func3(void)@4198576, virtual * Derived::`vector deleting destructor'(unsigned int)@4198592, const Derived::`vftable'@4219216}
 %   {_main@4198640}
@@ -304,7 +310,8 @@ OPTIMUM FOUND
 %   {__purecall@4198743}
 %   {_rand@4198785}
 %   {__cdecl operator delete(*)@4198818}
-%   {virtual std::bad_alloc::~bad_alloc(void)@4198829, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879, const std::bad_alloc::`vftable'@4219244}
+%   {virtual std::bad_alloc::~bad_alloc(void)@4198829, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840, std::exception::exception(char const * const &, int)@4201511, virtual char const * std::exception::what(void)const@4201540, std::exception::_Copy_str(char const *)@4201553, std::exception::_Tidy(void)@4201617, class std::exception & std::exception::operator=(class std::exception const &)@4201647, virtual std::exception::~exception(void)@4201700, virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711, std::exception::exception(class std::exception const &)@4201750, const std::exception::`vftable'@4221892}
+%   {std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879, const std::bad_alloc::`vftable'@4219244}
 %   {* __cdecl operator new(unsigned int)@4198908}
 %   {fast_error_exit@4199036}
 %   {_mainCRTStartup@4199430}
@@ -331,10 +338,6 @@ OPTIMUM FOUND
 %   {$LN24@4201065}
 %   {__mtinit@4201074}
 %   {_free@4201453}
-%   {std::exception::exception(char const * const &, int)@4201511, virtual char const * std::exception::what(void)const@4201540, virtual std::exception::~exception(void)@4201700, virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201711, std::exception::exception(class std::exception const &)@4201750, const std::exception::`vftable'@4221892}
-%   {std::exception::_Copy_str(char const *)@4201553}
-%   {std::exception::_Tidy(void)@4201617}
-%   {class std::exception & std::exception::operator=(class std::exception const &)@4201647}
 %   {_onexit_nolock@4201787}
 %   {___onexitinit@4201969}
 %   {__onexit@4202018}
@@ -469,16 +472,16 @@ OPTIMUM FOUND
 %   {const std::bad_alloc::`RTTI Complete Object Locator'@4227544}
 
 % Stats:
-%   atoms: 109317.0
-%   bodies: 63730.0
-%   rules: 956957.0
-%   variables: 56677.0
-%   constraints: 18573.0
-%   choices: 4180.0
-%   conflicts: 125.0
-%   models: 3.0
+%   atoms: 109773.0
+%   bodies: 64514.0
+%   rules: 957820.0
+%   variables: 57256.0
+%   constraints: 18721.0
+%   choices: 26421.0
+%   conflicts: 845.0
+%   models: 7.0
 %   optimal_models: 1.0
-%   total_time: 2.0440618991851807
-%   ground_time: 1.5728459589881822
-%   time_to_first_model: 1.97841724997852
-%   solve_time: 0.07934880256652832
+%   total_time: 2.3472719192504883
+%   ground_time: 0.7352389160078019
+%   time_to_first_model: 1.1308860409772024
+%   solve_time: 1.2245569229125977
