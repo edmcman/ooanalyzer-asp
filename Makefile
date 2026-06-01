@@ -68,7 +68,6 @@ $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 	@echo "=== Running: $(PROPAGATOR) $< $(PROP_FLAGS) ==="
 	@rc=0; $(TIME_CMD) -o $(@:.out=.time) $(PROPAGATOR) $< $(PROP_FLAGS) >$@ 2>&1 || rc=$$?; \
 	case "$$rc" in 0|10|20|30) ;; *) echo "error: $< exited $$rc" >>$@; exit $$rc ;; esac
-	@tail -20 $@
 
 verify: verify-core
 
@@ -109,7 +108,6 @@ lazyrun: $(LAZY_OUT_FILES)
 $(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 	@echo "=== Running: $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< ==="
 	$(TIME_CMD) $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2> $@.err || true
-	@tail -6 $@
 
 # ----------------------------------------------------------------
 # Explain: run xclingo on optimal model only
@@ -119,7 +117,6 @@ explain-all: $(EXPLAIN_OUT_FILES)
 $(OOA_DIR)/%.explain.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 	@echo "=== Explaining: $(XCLINGO) ooanalyzer.lp $< ==="
 	$(TIME_CMD) $(XCLINGO) ooanalyzer.lp $< $(XCLINGO_FLAGS) > $@ 2> $@.err || true
-	@tail -6 $@
 
 # ----------------------------------------------------------------
 # Symbolize: .out + .symbols → .sym (human-readable)
