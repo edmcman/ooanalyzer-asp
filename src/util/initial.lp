@@ -271,7 +271,7 @@ thisPtrParam(Function, rcx) :- callingConvention(Function, "__x64call").
 thisPtrParam(Function, 0)   :- callingConvention(Function, "__sysv32call").
 thisPtrParam(Function, rdi) :- callingConvention(Function, "__sysv64call").
 thisPtrParam(Function, Param) :-
-    callingConvention(Function, "genericthisptr"),
+    callingConvention(Function, genericthisptr),
     genericThisPtrABIParam(Param).
 
 genericThisPtrABIParam(ecx) :- fileInfo(_, _, "MSVC_32", _).
