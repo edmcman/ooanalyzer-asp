@@ -249,7 +249,13 @@ classCallsMethod(virtual * std::bad_exception::`vector deleting destructor'(unsi
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642,virtual std::exception::~exception(void)@4200525)
 classCallsMethod(std::bad_exception::bad_exception(class std::bad_exception const &)@4205513,std::exception::exception(class std::exception const &)@4200575)
 classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198681,std::exception::exception(class std::exception const &)@4200575)
+classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200628,virtual type_info::~type_info(void)@4200612)
+classCallsMethod(const std::bad_alloc::`vftable'@4223296,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642)
+classCallsMethod(const std::exception::`vftable'@4223324,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200536)
+classCallsMethod(const type_info::`vftable'@4223356,virtual * type_info::`scalar deleting destructor'(unsigned int)@4200628)
+classCallsMethod(const std::bad_exception::`vftable'@4223472,virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4202495)
 classCallsMethod(const std::bad_alloc::`vftable'@4223296,virtual char const * std::exception::what(void)const@4200326)
+classCallsMethod(const std::exception::`vftable'@4223324,virtual char const * std::exception::what(void)const@4200326)
 classCallsMethod(const std::bad_exception::`vftable'@4223472,virtual char const * std::exception::what(void)const@4200326)
 vfTableWrite(virtual std::bad_exception::~bad_exception(void)@4202484,virtual std::bad_exception::~bad_exception(void)@4202484,0,const std::bad_exception::`vftable'@4223472)
 vfTableWrite(4202503,virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4202495,0,const std::bad_exception::`vftable'@4223472)
@@ -529,16 +535,16 @@ OPTIMUM FOUND
 %   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4222801}
 
 % Stats:
-%   atoms: 133943.0
-%   bodies: 76742.0
-%   rules: 1112131.0
-%   variables: 77873.0
-%   constraints: 25097.0
-%   choices: 5244.0
-%   conflicts: 132.0
+%   atoms: 133922.0
+%   bodies: 76660.0
+%   rules: 1112032.0
+%   variables: 77767.0
+%   constraints: 25037.0
+%   choices: 4331.0
+%   conflicts: 121.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 1.5770299434661865
-%   ground_time: 1.0481921250466257
-%   time_to_first_model: 1.51063537504524
-%   solve_time: 0.06587386131286621
+%   total_time: 1.118746042251587
+%   ground_time: 0.7504453330184333
+%   time_to_first_model: 1.057228582969401
+%   solve_time: 0.04658913612365723

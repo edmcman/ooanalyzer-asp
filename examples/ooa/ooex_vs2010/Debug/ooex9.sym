@@ -297,7 +297,7 @@ mergeClasses(const D::`vftable'{for `B'}@4286296,D::D(void)@4265456)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136,type_info::type_info(class type_info const &)@4266992)
 mergeClasses(virtual int C::get_c(void)@4264111,C::C(void)@4266048)
 mergeClasses(virtual int A::get_a(void)@4263956,C::C(void)@4266048)
-mergeClasses(virtual int B::get_b(void)@4264241,B::B(void)@4265824)
+mergeClasses(virtual int B::get_b(void)@4264241,D::D(void)@4265456)
 mergeClasses(virtual int D::get_d(void)@4264396,D::D(void)@4265456)
 derivedClass(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `A'}@4286348,0)
 derivedClass(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `B'}@4286360,0)
@@ -309,18 +309,20 @@ derivedClass(const D::`vftable'{for `A'}@4286272,const C::`vftable'{for `A'}@428
 derivedClass(const D::`vftable'{for `A'}@4286272,const C::`vftable'{for `C'}@4286396,12)
 derivedClass(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `A'}@4286384,12)
 derivedClass(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `C'}@4286396,12)
+derivedClass(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `A'}@4286384,12)
+derivedClass(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `C'}@4286396,12)
 derivedClass(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,28)
 derivedClass(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,12)
 derivedClass(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,28)
-derivedClass(const C::`vftable'{for `C'}@4286396,const A::`vftable'@4286336,28)
 derivedClass(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,12)
 derivedClass(const C::`vftable'{for `C'}@4286396,const A::`vftable'@4286336,12)
 objectInObject(const C::`vftable'{for `C'}@4286396,const A::`vftable'@4286336,12)
 objectInObject(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,12)
-objectInObject(const C::`vftable'{for `C'}@4286396,const A::`vftable'@4286336,28)
 objectInObject(const C::`vftable'{for `A'}@4286384,const A::`vftable'@4286336,28)
 objectInObject(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,12)
 objectInObject(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,28)
+objectInObject(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `C'}@4286396,12)
+objectInObject(const D::`vftable'{for `B'}@4286296,const C::`vftable'{for `A'}@4286384,12)
 objectInObject(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `C'}@4286396,12)
 objectInObject(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `A'}@4286384,12)
 objectInObject(const D::`vftable'{for `A'}@4286272,const C::`vftable'{for `C'}@4286396,12)
@@ -331,7 +333,7 @@ objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `B'}@4
 objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `A'}@4286348,0)
 objectInObject(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `B'}@4286360,0)
 objectInObject(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `A'}@4286348,0)
-Optimization: -59 -16 -25 -224 -40
+Optimization: -59 -17 -25 -224 -40
 OPTIMUM FOUND
 
 % Equivalence classes (219 classes, 233 entities):
@@ -393,7 +395,7 @@ OPTIMUM FOUND
 %   {j__NtCurrentTeb@4264226}
 %   {__stdcall HeapFree(x, x, x)@4264231}
 %   {j___RTC_SetErrorFunc@4264236}
-%   {virtual int B::get_b(void)@4264241, B::B(void)@4265824, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
+%   {virtual int B::get_b(void)@4264241, virtual int D::get_d(void)@4264396, D::D(void)@4265456, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {j___invoke_watson_if_error@4264246}
 %   {__stdcall TerminateProcess(x, x)@4264251}
 %   {start@4264256}
@@ -424,7 +426,6 @@ OPTIMUM FOUND
 %   {j___CrtSetCheckCount@4264381}
 %   {__stdcall InterlockedExchange(x, x)@4264386}
 %   {__stdcall UnhandledExceptionFilter(x)@4264391}
-%   {virtual int D::get_d(void)@4264396, D::D(void)@4265456, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {type_info::type_info(class type_info const &)@4264401}
 %   {j___except_handler4_common@4264406}
 %   {j___matherr@4264411}
@@ -442,6 +443,7 @@ OPTIMUM FOUND
 %   {_main@4265008}
 %   {A::A(void)@4265680, const A::`vftable'@4286336}
 %   {virtual int A::get_a(void)@4265760}
+%   {B::B(void)@4265824, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
 %   {virtual int B::get_b(void)@4265984}
 %   {virtual int C::get_c(void)@4266208}
 %   {virtual int D::get_d(void)@4266272}
@@ -556,16 +558,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424}
 
 % Stats:
-%   atoms: 123443.0
-%   bodies: 71690.0
-%   rules: 851171.0
-%   variables: 87291.0
-%   constraints: 12839.0
-%   choices: 2805.0
+%   atoms: 93981.0
+%   bodies: 47855.0
+%   rules: 270126.0
+%   variables: 55964.0
+%   constraints: 12720.0
+%   choices: 5962.0
 %   conflicts: 51.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 2.5084869861602783
-%   ground_time: 0.5573454580153339
-%   time_to_first_model: 2.4093067499925382
-%   solve_time: 0.04091000556945801
+%   total_time: 0.537790060043335
+%   ground_time: 0.2725349999964237
+%   time_to_first_model: 0.4756524169933982
+%   solve_time: 0.12828803062438965

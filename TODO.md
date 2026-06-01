@@ -365,7 +365,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 12. Class–Method Relations
 
 ### Related Methods (rules.pl:2354–2496)
-- [ ] `reasonClassRelatedMethod_A` (2361) — method in class's VFTable
+- [ ] `reasonClassRelatedMethod_A` (2361) — `classCallsMethod` implies class-related method
 - [ ] `reasonClassRelatedMethod_B` (2372) — method called by class method
 - [ ] `reasonClassRelatedMethod_C` (2414) — method of embedded inner class
 

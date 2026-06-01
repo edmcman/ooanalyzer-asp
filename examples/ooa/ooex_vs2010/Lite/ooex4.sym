@@ -203,6 +203,9 @@ vfTable(const type_info::`vftable'@4219232)
 vfTable(const std::bad_alloc::`vftable'@4219240)
 vfTable(const std::exception::`vftable'@4221884)
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
+classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func1(void)@4198432)
+classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func2(void)@4198464)
+classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4198646,virtual type_info::~type_info(void)@4198630)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4201583,std::exception::_Copy_str(char const *)@4201489)
 classCallsMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201647,std::exception::_Tidy(void)@4201553)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4201583,std::exception::_Tidy(void)@4201553)
@@ -210,7 +213,14 @@ classCallsMethod(std::exception::exception(class std::exception const &)@4201686
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198776,virtual std::exception::~exception(void)@4201636)
 classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198815,std::exception::exception(class std::exception const &)@4201686)
 classCallsMethod(const Base::`vftable'@4219200,virtual int Base::func1(void)@4198432)
+classCallsMethod(const Derived::`vftable'@4219216,virtual int Base::func1(void)@4198432)
+classCallsMethod(const type_info::`vftable'@4219232,virtual * type_info::`scalar deleting destructor'(unsigned int)@4198646)
+classCallsMethod(const std::bad_alloc::`vftable'@4219240,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198776)
+classCallsMethod(const std::exception::`vftable'@4221884,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201647)
+classCallsMethod(const Derived::`vftable'@4219216,virtual int Derived::func3(void)@4198560)
+classCallsMethod(const Derived::`vftable'@4219216,virtual int Base::func2(void)@4198464)
 classCallsMethod(const std::bad_alloc::`vftable'@4219240,virtual char const * std::exception::what(void)const@4201476)
+classCallsMethod(const std::exception::`vftable'@4221884,virtual char const * std::exception::what(void)const@4201476)
 vfTableWrite(4201457,std::exception::exception(char const * const &, int)@4201447,0,const std::exception::`vftable'@4221884)
 vfTableWrite(virtual std::exception::~exception(void)@4201636,virtual std::exception::~exception(void)@4201636,0,const std::exception::`vftable'@4221884)
 vfTableWrite(4201655,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201647,0,const std::exception::`vftable'@4221884)
@@ -443,16 +453,16 @@ OPTIMUM FOUND
 %   {const std::bad_alloc::`RTTI Complete Object Locator'@4227536}
 
 % Stats:
-%   atoms: 107826.0
-%   bodies: 63311.0
-%   rules: 955471.0
-%   variables: 55980.0
-%   constraints: 18650.0
-%   choices: 16116.0
-%   conflicts: 167.0
+%   atoms: 107797.0
+%   bodies: 63196.0
+%   rules: 955365.0
+%   variables: 55853.0
+%   constraints: 18552.0
+%   choices: 6146.0
+%   conflicts: 104.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 1.279264211654663
-%   ground_time: 0.6631162500125356
-%   time_to_first_model: 1.2131630000076257
-%   solve_time: 0.3287200927734375
+%   total_time: 1.0928280353546143
+%   ground_time: 0.6311823340365663
+%   time_to_first_model: 0.9906886669923551
+%   solve_time: 0.20853209495544434

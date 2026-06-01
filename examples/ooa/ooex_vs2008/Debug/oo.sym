@@ -382,10 +382,10 @@ mergeClasses(const Cls1::`vftable'@4290656,Cls1::Cls1(void)@4266608)
 mergeClasses(const Cls3::`vftable'{for `Cls1'}@4290596,Cls3::Cls3(void)@4266080)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226,type_info::type_info(class type_info const &)@4270080)
 mergeClasses(virtual Cls2::func3(void)@4263996,Cls2::Cls2(void)@4266816)
+mergeClasses(virtual Cls2::func4(void)@4264211,Cls2::Cls2(void)@4266816)
 mergeClasses(virtual Cls1::func1(void)@4264101,Cls1::Cls1(void)@4266608)
 mergeClasses(virtual Cls3::func1(void)@4264106,Cls3::Cls3(void)@4266080)
 mergeClasses(virtual Cls3::func3(void)@4264456,Cls3::Cls3(void)@4266080)
-mergeClasses(virtual Cls2::func4(void)@4264211,Cls3::Cls3(void)@4266080)
 derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls1::`vftable'@4290656,0)
 derivedClass(const Cls3::`vftable'{for `Cls1'}@4290596,const Cls1::`vftable'@4290656,0)
 derivedClass(const Cls3::`vftable'{for `Cls2'}@4290580,const Cls2::`vftable'@4290684,12)
@@ -409,7 +409,7 @@ OPTIMUM FOUND
 %   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263981}
 %   {class type_info & type_info::operator=(class type_info const &)@4263986}
 %   {j___RTC_Terminate@4263991}
-%   {virtual Cls2::func3(void)@4263996, Cls2::Cls2(void)@4266816, const Cls2::`vftable'@4290684}
+%   {virtual Cls2::func3(void)@4263996, virtual Cls2::func4(void)@4264211, Cls2::Cls2(void)@4266816, const Cls2::`vftable'@4290684}
 %   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264001}
 %   {__fastcall _RTC_AllocaHelper(x, x, x)@4264006}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264011}
@@ -431,7 +431,7 @@ OPTIMUM FOUND
 %   {j___RTC_SetErrorType@4264091}
 %   {j___except_handler4@4264096}
 %   {virtual Cls1::func1(void)@4264101, Cls1::Cls1(void)@4266608, const Cls1::`vftable'@4290656}
-%   {virtual Cls3::func1(void)@4264106, virtual Cls2::func4(void)@4264211, virtual Cls3::func3(void)@4264456, Cls3::Cls3(void)@4266080, const Cls3::`vftable'{for `Cls2'}@4290580, const Cls3::`vftable'{for `Cls1'}@4290596}
+%   {virtual Cls3::func1(void)@4264106, virtual Cls3::func3(void)@4264456, Cls3::Cls3(void)@4266080, const Cls3::`vftable'{for `Cls2'}@4290580, const Cls3::`vftable'{for `Cls1'}@4290596}
 %   {j___lock@4264111}
 %   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116}
 %   {__stdcall GetProcAddress(x, x)@4264121}
@@ -690,16 +690,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305832}
 
 % Stats:
-%   atoms: 200945.0
-%   bodies: 107099.0
-%   rules: 1308457.0
-%   variables: 121885.0
-%   constraints: 20178.0
-%   choices: 1554.0
-%   conflicts: 13.0
-%   models: 2.0
+%   atoms: 166410.0
+%   bodies: 79561.0
+%   rules: 533966.0
+%   variables: 85827.0
+%   constraints: 20173.0
+%   choices: 471.0
+%   conflicts: 23.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 4.776698112487793
-%   ground_time: 1.0312805830035359
-%   time_to_first_model: 4.6801057910197414
-%   solve_time: 0.05343794822692871
+%   total_time: 0.8759100437164307
+%   ground_time: 0.6251504169777036
+%   time_to_first_model: 0.8303262499975972
+%   solve_time: 0.024795055389404297

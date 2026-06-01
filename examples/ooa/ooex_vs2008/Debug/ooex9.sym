@@ -256,6 +256,7 @@ vfTable(const C::`vftable'{for `A'}@4286384)
 vfTable(const C::`vftable'{for `C'}@4286396)
 vfTable(const type_info::`vftable'@4286420)
 classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4267072,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424)
+classCallsMethod(D::D(void)@4265488,B::B(void)@4265856)
 classCallsMethod(const D::`vftable'{for `A'}@4286272,virtual int A::get_a(void)@4265792)
 classCallsMethod(const D::`vftable'{for `C'}@4286284,virtual int C::get_c(void)@4266240)
 classCallsMethod(const D::`vftable'{for `B'}@4286296,virtual int B::get_b(void)@4266016)
@@ -302,7 +303,7 @@ mergeClasses(const D::`vftable'{for `B'}@4286296,D::D(void)@4265488)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4267024)
 mergeClasses(virtual int C::get_c(void)@4264121,C::C(void)@4266080)
 mergeClasses(virtual int A::get_a(void)@4263961,C::C(void)@4266080)
-mergeClasses(virtual int B::get_b(void)@4264251,B::B(void)@4265856)
+mergeClasses(virtual int B::get_b(void)@4264251,D::D(void)@4265488)
 mergeClasses(virtual int D::get_d(void)@4264406,D::D(void)@4265488)
 derivedClass(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `A'}@4286348,0)
 derivedClass(const D::`vftable'{for `A'}@4286272,const B::`vftable'{for `B'}@4286360,0)
@@ -404,7 +405,7 @@ OPTIMUM FOUND
 %   {j__NtCurrentTeb@4264236}
 %   {__stdcall HeapFree(x, x, x)@4264241}
 %   {j___RTC_SetErrorFunc@4264246}
-%   {virtual int B::get_b(void)@4264251, B::B(void)@4265856, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
+%   {virtual int B::get_b(void)@4264251, virtual int D::get_d(void)@4264406, D::D(void)@4265488, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {j___invoke_watson_if_error@4264256}
 %   {__stdcall TerminateProcess(x, x)@4264261}
 %   {start@4264266}
@@ -435,7 +436,6 @@ OPTIMUM FOUND
 %   {j___CrtSetCheckCount@4264391}
 %   {__stdcall InterlockedExchange(x, x)@4264396}
 %   {__stdcall UnhandledExceptionFilter(x)@4264401}
-%   {virtual int D::get_d(void)@4264406, D::D(void)@4265488, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {type_info::type_info(class type_info const &)@4264411}
 %   {j___except_handler4_common@4264416}
 %   {j___matherr@4264421}
@@ -454,6 +454,7 @@ OPTIMUM FOUND
 %   {_main@4265040}
 %   {A::A(void)@4265712, const A::`vftable'@4286336}
 %   {virtual int A::get_a(void)@4265792}
+%   {B::B(void)@4265856, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
 %   {virtual int B::get_b(void)@4266016}
 %   {virtual int C::get_c(void)@4266240}
 %   {virtual int D::get_d(void)@4266304}
@@ -571,16 +572,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424}
 
 % Stats:
-%   atoms: 129287.0
-%   bodies: 75161.0
-%   rules: 911701.0
-%   variables: 91491.0
-%   constraints: 13549.0
-%   choices: 5704.0
-%   conflicts: 52.0
+%   atoms: 98561.0
+%   bodies: 50354.0
+%   rules: 290670.0
+%   variables: 58876.0
+%   constraints: 13430.0
+%   choices: 4461.0
+%   conflicts: 51.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 3.4655849933624268
-%   ground_time: 0.8647782090120018
-%   time_to_first_model: 3.423314624989871
-%   solve_time: 0.1428050994873047
+%   total_time: 0.5349009037017822
+%   ground_time: 0.290282208006829
+%   time_to_first_model: 0.5135303330025636
+%   solve_time: 0.07891011238098145

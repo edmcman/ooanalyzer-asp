@@ -34,7 +34,6 @@ mergeClasses(A, B) :-
     derivedClass(DC1, W1, ObjectOffset),
     derivedClass(DC2, W2, ObjectOffset),
     &sameClass(DC1, DC2),
-    not &sameClass(W1, W2),
     sortPair(W1, W2, A, B).                                                % rules.pl:2847
 
 % reasonNOTMergeClasses_E: methods writing different vftables at offset 0
@@ -46,7 +45,6 @@ mergeClasses(A, B) :-
     vfTableWrite(_Insn2, Method2, 0, VFTable2),
     VFTable1 != VFTable2,
     sortPair(Method1, Method2, A, B),
-    not &sameClass(Method1, Method2),
     not vfTableWrite(_, Method1, 0, VFTable2),
     not vfTableWrite(_, Method2, 0, VFTable1).                             % rules.pl:3123
 
@@ -68,8 +66,7 @@ mergeClasses(A, B) :-
 reasonNOTMergeClassesCAsymmetric(DC, Method) :-
     derivedClass(DC, BC, _ObjectOffset),
     classCallsMethod(DC2, Method), &sameClass(DC, DC2),
-    classCallsMethod(BC2, Method), &sameClass(BC, BC2),
-    not &sameClass(DC, Method).
+    classCallsMethod(BC2, Method), &sameClass(BC, BC2).
 
 %!trace_rule {"% and % must NOT be merged because a method is called by both derived and base class", A, B}
 -mergeClasses(A, B) :-
@@ -82,7 +79,6 @@ reasonNOTMergeClassesCAsymmetric(DC, Method) :-
 %!trace_rule {"% and % must NOT be merged because % is composed of or derived from %", A, B, X, Y}
 -mergeClasses(A, B) :-
     classRelationship(X, Y),
-    not &sameClass(X, Y),
     sortPair(X, Y, A, B).                                                  % rules.pl:3212
 
 % reasonNOTMergeClasses_I: RTTI says two TDAs map to different classes.
@@ -94,7 +90,6 @@ reasonNOTMergeClassesCAsymmetric(DC, Method) :-
     rTTITDA2Class(TDA1, W1),
     rTTITDA2Class(TDA2, W2),
     TDA1 != TDA2,
-    not &sameClass(W1, W2),
     sortPair(W1, W2, A, B).                                                % rules.pl:3196
 
 % reasonNOTMergeClasses_R: If a derived class calls a method that installs the
@@ -109,7 +104,6 @@ reasonNOTMergeClassesCAsymmetric(DC, Method) :-
     &sameClass(DC1, DC2),
     vfTableWrite(_Insn, CalledMethod, Offset, V),
     &sameClass(V, DC1),
-    not &sameClass(BC, CalledMethod),
     sortPair(BC, CalledMethod, A, B).                                       % rules.pl:3366
 
 % reasonNOTMergeClasses_K: methods with conflicting symbol class names

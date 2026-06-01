@@ -229,6 +229,7 @@ deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned in
 vfTableEntry(const type_info::`vftable'@4286312,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264126)
 vfTableEntry(const Base::`vftable'@4286292,0,virtual int Base::func1(void)@4264426)
 vfTableEntry(const Derived::`vftable'@4286272,0,virtual int Base::func1(void)@4264426)
+vfTableEntry(const Base::`vftable'@4286292,4,virtual int Base::func2(void)@4264186)
 vfTableEntry(const Derived::`vftable'@4286272,4,virtual int Base::func2(void)@4264186)
 vfTableEntry(const Derived::`vftable'@4286272,8,virtual int Derived::func3(void)@4264241)
 vfTable(const Derived::`vftable'@4286272)
@@ -243,11 +244,12 @@ classCallsMethod(const Base::`vftable'@4286292,virtual int Base::func1(void)@426
 classCallsMethod(const type_info::`vftable'@4286312,virtual * type_info::`vector deleting destructor'(unsigned int)@4266560)
 classCallsMethod(const Derived::`vftable'@4286272,virtual int Derived::func3(void)@4265776)
 classCallsMethod(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4265680)
+classCallsMethod(const Base::`vftable'@4286292,virtual int Base::func2(void)@4265680)
 vfTableWrite(4266524,type_info::type_info(class type_info const &)@4266512,0,const type_info::`vftable'@4286312)
 vfTableWrite(4265510,Base::Base(void)@4265472,0,const Base::`vftable'@4286292)
 vfTableWrite(4265342,Derived::Derived(void)@4265296,0,const Derived::`vftable'@4286272)
 vfTableSize(const Derived::`vftable'@4286272,12)
-vfTableSize(const Base::`vftable'@4286292,4)
+vfTableSize(const Base::`vftable'@4286292,8)
 vfTableSize(const type_info::`vftable'@4286312,4)
 vftableBelongsToClass(const type_info::`vftable'@4286312,0,type_info::type_info(class type_info const &)@4266512)
 vftableBelongsToClass(const Base::`vftable'@4286292,0,Base::Base(void)@4265472)
@@ -257,11 +259,11 @@ mergeClasses(const Base::`vftable'@4286292,Base::Base(void)@4265472)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265296)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264126,type_info::type_info(class type_info const &)@4266512)
 mergeClasses(virtual int Base::func1(void)@4264426,Base::Base(void)@4265472)
-mergeClasses(virtual int Base::func2(void)@4264186,Derived::Derived(void)@4265296)
+mergeClasses(virtual int Base::func2(void)@4264186,Base::Base(void)@4265472)
 mergeClasses(virtual int Derived::func3(void)@4264241,Derived::Derived(void)@4265296)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
 objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
-Optimization: -43 -1 -15 -222 -20
+Optimization: -43 -1 -15 -222 -24
 OPTIMUM FOUND
 
 % Equivalence classes (218 classes, 225 entities):
@@ -313,7 +315,7 @@ OPTIMUM FOUND
 %   {j___crt_debugger_hook@4264171}
 %   {j___ValidateImageBase@4264176}
 %   {__stdcall InterlockedCompareExchange(x, x, x)@4264181}
-%   {virtual int Base::func2(void)@4264186, virtual int Derived::func3(void)@4264241, Derived::Derived(void)@4265296, const Derived::`vftable'@4286272}
+%   {virtual int Base::func2(void)@4264186, virtual int Base::func1(void)@4264426, Base::Base(void)@4265472, const Base::`vftable'@4286292}
 %   {__stdcall GetProcessHeap()@4264191}
 %   {j___RTC_SetErrorFuncW@4264196}
 %   {j___onexit@4264201}
@@ -324,6 +326,7 @@ OPTIMUM FOUND
 %   {__stdcall TerminateProcess(x, x)@4264226}
 %   {j__rand@4264231}
 %   {start@4264236}
+%   {virtual int Derived::func3(void)@4264241, Derived::Derived(void)@4265296, const Derived::`vftable'@4286272}
 %   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264246}
 %   {j____CxxSetUnhandledExceptionFilter@4264251}
 %   {__stdcall QueryPerformanceCounter(x)@4264256}
@@ -360,7 +363,6 @@ OPTIMUM FOUND
 %   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264411}
 %   {__stdcall lstrlenA(x)@4264416}
 %   {__cdecl _RTC_Failure(*, int)@4264421}
-%   {virtual int Base::func1(void)@4264426, Base::Base(void)@4265472, const Base::`vftable'@4286292}
 %   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264431}
 %   {j__exit_0@4264436}
 %   {j____dllonexit@4264441}
@@ -485,16 +487,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336}
 
 % Stats:
-%   atoms: 99725.0
-%   bodies: 56941.0
-%   rules: 458481.0
-%   variables: 61105.0
-%   constraints: 14163.0
-%   choices: 2043.0
-%   conflicts: 24.0
-%   models: 1.0
+%   atoms: 88755.0
+%   bodies: 48234.0
+%   rules: 287211.0
+%   variables: 55308.0
+%   constraints: 14151.0
+%   choices: 2708.0
+%   conflicts: 29.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.7604720592498779
-%   ground_time: 0.3856418340001255
-%   time_to_first_model: 0.7047800000291318
-%   solve_time: 0.07276296615600586
+%   total_time: 0.5804998874664307
+%   ground_time: 0.3268954580416903
+%   time_to_first_model: 0.47727366600884125
+%   solve_time: 0.06266999244689941

@@ -242,6 +242,7 @@ deletingDestructor(virtual * Derived::`vector deleting destructor'(unsigned int)
 vfTableEntry(const type_info::`vftable'@4286316,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264151)
 vfTableEntry(const Base::`vftable'@4286296,0,virtual int Base::func1(void)@4264451)
 vfTableEntry(const Derived::`vftable'@4286272,0,virtual int Base::func1(void)@4264451)
+vfTableEntry(const Base::`vftable'@4286296,4,virtual int Base::func2(void)@4264206)
 vfTableEntry(const Derived::`vftable'@4286272,4,virtual int Base::func2(void)@4264206)
 vfTableEntry(const Derived::`vftable'@4286272,8,virtual int Derived::func3(void)@4264266)
 vfTableEntry(const Derived::`vftable'@4286272,12,virtual * Derived::`vector deleting destructor'(unsigned int)@4264141)
@@ -259,12 +260,13 @@ classCallsMethod(const type_info::`vftable'@4286316,virtual * type_info::`vector
 classCallsMethod(const Derived::`vftable'@4286272,virtual * Derived::`vector deleting destructor'(unsigned int)@4265904)
 classCallsMethod(const Derived::`vftable'@4286272,virtual int Derived::func3(void)@4265840)
 classCallsMethod(const Derived::`vftable'@4286272,virtual int Base::func2(void)@4265744)
+classCallsMethod(const Base::`vftable'@4286296,virtual int Base::func2(void)@4265744)
 vfTableWrite(4266764,type_info::type_info(class type_info const &)@4266752,0,const type_info::`vftable'@4286316)
 vfTableWrite(4265574,Base::Base(void)@4265536,0,const Base::`vftable'@4286296)
 vfTableWrite(4265406,Derived::Derived(void)@4265360,0,const Derived::`vftable'@4286272)
 vfTableWrite(4266054,virtual Derived::~Derived(void)@4266016,0,const Derived::`vftable'@4286272)
 vfTableSize(const Derived::`vftable'@4286272,16)
-vfTableSize(const Base::`vftable'@4286296,4)
+vfTableSize(const Base::`vftable'@4286296,8)
 vfTableSize(const type_info::`vftable'@4286316,4)
 vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(class type_info const &)@4266752)
 vftableBelongsToClass(const Derived::`vftable'@4286272,0,virtual Derived::~Derived(void)@4266016)
@@ -276,16 +278,15 @@ mergeClasses(const Base::`vftable'@4286296,Base::Base(void)@4265536)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265360)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4266752)
 mergeClasses(virtual int Base::func1(void)@4264451,Base::Base(void)@4265536)
-mergeClasses(virtual int Base::func2(void)@4264206,Derived::Derived(void)@4265360)
+mergeClasses(virtual int Base::func2(void)@4264206,Base::Base(void)@4265536)
 mergeClasses(virtual int Derived::func3(void)@4264266,Derived::Derived(void)@4265360)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4264141,Derived::Derived(void)@4265360)
-mergeClasses(virtual int Base::func2(void)@4264206,virtual Derived::~Derived(void)@4266016)
 mergeClasses(virtual int Derived::func3(void)@4264266,virtual Derived::~Derived(void)@4266016)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4264141,virtual Derived::~Derived(void)@4266016)
 mergeClasses(Derived::Derived(void)@4265360,virtual Derived::~Derived(void)@4266016)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
 objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
-Optimization: -93 -1 -20 -233 -24
+Optimization: -83 -1 -20 -233 -28
 OPTIMUM FOUND
 
 % Equivalence classes (227 classes, 236 entities):
@@ -328,7 +329,7 @@ OPTIMUM FOUND
 %   {__stdcall GetCurrentProcess()@4264126}
 %   {j___encode_pointer@4264131}
 %   {j___RTC_UninitUse@4264136}
-%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Base::func2(void)@4264206, virtual int Derived::func3(void)@4264266, Derived::Derived(void)@4265360, virtual Derived::~Derived(void)@4266016, const Derived::`vftable'@4286272}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Derived::func3(void)@4264266, Derived::Derived(void)@4265360, virtual Derived::~Derived(void)@4266016, const Derived::`vftable'@4286272}
 %   {j___RTC_Shutdown@4264146}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264151, type_info::type_info(class type_info const &)@4266752, const type_info::`vftable'@4286316}
 %   {j___FindPESection@4264156}
@@ -341,6 +342,7 @@ OPTIMUM FOUND
 %   {j___crt_debugger_hook@4264191}
 %   {j___ValidateImageBase@4264196}
 %   {__stdcall InterlockedCompareExchange(x, x, x)@4264201}
+%   {virtual int Base::func2(void)@4264206, virtual int Base::func1(void)@4264451, Base::Base(void)@4265536, const Base::`vftable'@4286296}
 %   {__stdcall GetProcessHeap()@4264211}
 %   {j___RTC_SetErrorFuncW@4264216}
 %   {j___onexit@4264221}
@@ -388,7 +390,6 @@ OPTIMUM FOUND
 %   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264436}
 %   {__stdcall lstrlenA(x)@4264441}
 %   {__cdecl _RTC_Failure(*, int)@4264446}
-%   {virtual int Base::func1(void)@4264451, Base::Base(void)@4265536, const Base::`vftable'@4286296}
 %   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264456}
 %   {j__DebuggerKnownHandle@4264461}
 %   {j__exit_0@4264466}
@@ -518,16 +519,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312}
 
 % Stats:
-%   atoms: 109501.0
-%   bodies: 62477.0
-%   rules: 520186.0
-%   variables: 67280.0
-%   constraints: 15197.0
-%   choices: 4008.0
-%   conflicts: 50.0
-%   models: 1.0
+%   atoms: 96836.0
+%   bodies: 52477.0
+%   rules: 313954.0
+%   variables: 60481.0
+%   constraints: 15180.0
+%   choices: 2126.0
+%   conflicts: 61.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.9721660614013672
-%   ground_time: 0.48084941698471084
-%   time_to_first_model: 0.9229010419803672
-%   solve_time: 0.10872197151184082
+%   total_time: 0.5138301849365234
+%   ground_time: 0.2867770409793593
+%   time_to_first_model: 0.4614163329824805
+%   solve_time: 0.06564998626708984

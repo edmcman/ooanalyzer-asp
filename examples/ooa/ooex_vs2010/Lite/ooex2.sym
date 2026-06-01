@@ -199,7 +199,12 @@ classCallsMethod(class std::exception & std::exception::operator=(class std::exc
 classCallsMethod(std::exception::exception(class std::exception const &)@4200672,class std::exception & std::exception::operator=(class std::exception const &)@4200569)
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198635,virtual std::exception::~exception(void)@4200622)
 classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198674,std::exception::exception(class std::exception const &)@4200672)
+classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200725,virtual type_info::~type_info(void)@4200709)
+classCallsMethod(const std::bad_alloc::`vftable'@4219200,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198635)
+classCallsMethod(const std::exception::`vftable'@4219300,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200633)
+classCallsMethod(const type_info::`vftable'@4219332,virtual * type_info::`scalar deleting destructor'(unsigned int)@4200725)
 classCallsMethod(const std::bad_alloc::`vftable'@4219200,virtual char const * std::exception::what(void)const@4200462)
+classCallsMethod(const std::exception::`vftable'@4219300,virtual char const * std::exception::what(void)const@4200462)
 vfTableWrite(4200712,virtual type_info::~type_info(void)@4200709,0,const type_info::`vftable'@4219332)
 vfTableWrite(4200443,std::exception::exception(char const * const &, int)@4200433,0,const std::exception::`vftable'@4219300)
 vfTableWrite(virtual std::exception::~exception(void)@4200622,virtual std::exception::~exception(void)@4200622,0,const std::exception::`vftable'@4219300)
@@ -416,16 +421,16 @@ OPTIMUM FOUND
 %   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4217224}
 
 % Stats:
-%   atoms: 83873.0
-%   bodies: 47268.0
-%   rules: 519357.0
-%   variables: 56256.0
-%   constraints: 19246.0
-%   choices: 1616.0
-%   conflicts: 50.0
+%   atoms: 83856.0
+%   bodies: 47225.0
+%   rules: 519317.0
+%   variables: 56209.0
+%   constraints: 19230.0
+%   choices: 1571.0
+%   conflicts: 49.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 0.6917431354522705
-%   ground_time: 0.4350758330547251
-%   time_to_first_model: 0.6375225830124691
-%   solve_time: 0.039611101150512695
+%   total_time: 0.6191699504852295
+%   ground_time: 0.40354958397801965
+%   time_to_first_model: 0.5834449169924483
+%   solve_time: 0.02979278564453125
