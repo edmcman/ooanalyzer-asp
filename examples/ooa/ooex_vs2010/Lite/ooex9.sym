@@ -514,16 +514,16 @@ OPTIMUM FOUND
 %   {const std::bad_alloc::`RTTI Complete Object Locator'@4227900}
 
 % Stats:
-%   atoms: 113885.0
+%   atoms: 113974.0
 %   bodies: 65524.0
-%   rules: 947669.0
+%   rules: 947758.0
 %   variables: 68744.0
 %   constraints: 23780.0
 %   choices: 5395.0
 %   conflicts: 138.0
 %   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 1.011064052581787
-%   ground_time: 0.5952750840224326
-%   time_to_first_model: 0.9053693340392783
-%   solve_time: 0.1331310272216797
+%   total_time: 1.9765088558197021
+%   ground_time: 1.2817665840266272
+%   time_to_first_model: 1.8904563340474851
+%   solve_time: 0.10274696350097656

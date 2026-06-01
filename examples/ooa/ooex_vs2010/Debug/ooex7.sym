@@ -474,9 +474,12 @@ classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640,char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488)
 classCallsMethod(char const * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::c_str(void)const@4273376,char const * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)const@4269840)
+classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952)
+classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4270304)
+classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@4270432)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024,unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4270880)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4270880)
@@ -954,16 +957,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) virtual std::exception::~exception(void)@4314152, __declspec(dllimport) virtual char const * std::exception::what(void)const@4314156, __declspec(dllimport) std::exception::exception(char const * const &)@4314160, __declspec(dllimport) std::exception::exception(class std::exception const &)@4314164}
 
 % Stats:
-%   atoms: 336704.0
-%   bodies: 165534.0
-%   rules: 1461723.0
+%   atoms: 337408.0
+%   bodies: 165540.0
+%   rules: 1462433.0
 %   variables: 181337.0
 %   constraints: 47047.0
-%   choices: 396.0
+%   choices: 394.0
 %   conflicts: 1.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 2.0984790325164795
-%   ground_time: 1.4414704579976387
-%   time_to_first_model: 2.044349042000249
-%   solve_time: 0.030805110931396484
+%   total_time: 2.974601984024048
+%   ground_time: 2.330120582948439
+%   time_to_first_model: 2.892454374989029
+%   solve_time: 0.023599863052368164

@@ -535,16 +535,16 @@ OPTIMUM FOUND
 %   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4222801}
 
 % Stats:
-%   atoms: 133922.0
+%   atoms: 134107.0
 %   bodies: 76660.0
-%   rules: 1112032.0
+%   rules: 1112217.0
 %   variables: 77767.0
 %   constraints: 25037.0
 %   choices: 4331.0
 %   conflicts: 121.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 1.0307550430297852
-%   ground_time: 0.6808616670314223
-%   time_to_first_model: 0.9957737090298906
-%   solve_time: 0.03984808921813965
+%   total_time: 2.438184976577759
+%   ground_time: 1.7817773339920677
+%   time_to_first_model: 2.3206510840100236
+%   solve_time: 0.06665301322937012
