@@ -288,6 +288,8 @@ thisParamFuncParameter(Function, ThisPtr) :-
     funcParameter(Function, Param, ThisPtr).
 
 thisParamCallParameter(Insn, CallerFunc, Callee, ThisPtr) :-
+    callTarget(Insn, CallerFunc, Thunk),
+    dethunk(Thunk, Callee),
     thisPtrParam(Callee, Param),
     callParameter(Insn, CallerFunc, Param, ThisPtr).
 
