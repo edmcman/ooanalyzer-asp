@@ -242,6 +242,8 @@ vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,0,virtual int Base::fu
 vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,0,virtual int Base2::func1(void)@4264336)
 vfTableEntry(const Base2::`vftable'@4286332,4,virtual int Base2::func2(void)@4264276)
 vfTableEntry(const Base::`vftable'@4286312,4,virtual int Base::func2(void)@4264196)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,4,virtual int Base::func2(void)@4264196)
+vfTableEntry(const Derived::`vftable'{for `Base'}@4286292,8,virtual int Derived::func3(void)@4264251)
 vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,4,virtual int Base2::func2(void)@4264276)
 vfTableEntry(const Derived::`vftable'{for `Base2'}@4286272,8,virtual int Derived::func4(void)@4263946)
 vfTable(const Derived::`vftable'{for `Base2'}@4286272)
@@ -259,6 +261,8 @@ classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4
 classCallsMethod(const type_info::`vftable'@4286352,virtual * type_info::`vector deleting destructor'(unsigned int)@4267056)
 classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Derived::func4(void)@4266208)
 classCallsMethod(const Derived::`vftable'{for `Base2'}@4286272,virtual int Base2::func2(void)@4266112)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Derived::func3(void)@4266272)
+classCallsMethod(const Derived::`vftable'{for `Base'}@4286292,virtual int Base::func2(void)@4265808)
 classCallsMethod(const Base::`vftable'@4286312,virtual int Base::func2(void)@4265808)
 classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func2(void)@4266112)
 vfTableWrite(4267020,type_info::type_info(class type_info const &)@4267008,0,const type_info::`vftable'@4286352)
@@ -267,7 +271,7 @@ vfTableWrite(4265638,Base::Base(void)@4265600,0,const Base::`vftable'@4286312)
 vfTableWrite(4265449,Derived::Derived(void)@4265392,0,const Derived::`vftable'{for `Base'}@4286292)
 vfTableWrite(4265458,Derived::Derived(void)@4265392,16,const Derived::`vftable'{for `Base2'}@4286272)
 vfTableSize(const Derived::`vftable'{for `Base2'}@4286272,12)
-vfTableSize(const Derived::`vftable'{for `Base'}@4286292,4)
+vfTableSize(const Derived::`vftable'{for `Base'}@4286292,12)
 vfTableSize(const Base::`vftable'@4286312,8)
 vfTableSize(const Base2::`vftable'@4286332,8)
 vfTableSize(const type_info::`vftable'@4286352,4)
@@ -283,8 +287,9 @@ mergeClasses(const Derived::`vftable'{for `Base'}@4286292,Derived::Derived(void)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136,type_info::type_info(class type_info const &)@4267008)
 mergeClasses(virtual int Base2::func1(void)@4264336,Base2::Base2(void)@4265904)
 mergeClasses(virtual int Base2::func2(void)@4264276,Base2::Base2(void)@4265904)
-mergeClasses(virtual int Base::func1(void)@4264446,Base::Base(void)@4265600)
 mergeClasses(virtual int Base::func2(void)@4264196,Base::Base(void)@4265600)
+mergeClasses(virtual int Base::func1(void)@4264446,Derived::Derived(void)@4265392)
+mergeClasses(virtual int Derived::func3(void)@4264251,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Base2::func1(void)@4264336,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Base2::func2(void)@4264276,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Derived::func4(void)@4263946,Derived::Derived(void)@4265392)
@@ -296,12 +301,12 @@ objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftabl
 objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
 objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
 objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
-Optimization: -85 -4 -10 -230 -36
+Optimization: -95 -4 -10 -230 -44
 OPTIMUM FOUND
 
-% Equivalence classes (223 classes, 235 entities):
+% Equivalence classes (222 classes, 235 entities):
 %   {j___setdefaultprecision@4263941}
-%   {virtual int Derived::func4(void)@4263946, virtual int Base2::func2(void)@4264276, virtual int Base2::func1(void)@4264336, Derived::Derived(void)@4265392, Base2::Base2(void)@4265904, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292, const Base2::`vftable'@4286332}
+%   {virtual int Derived::func4(void)@4263946, virtual int Derived::func3(void)@4264251, virtual int Base2::func2(void)@4264276, virtual int Base2::func1(void)@4264336, virtual int Base::func1(void)@4264446, Derived::Derived(void)@4265392, Base2::Base2(void)@4265904, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292, const Base2::`vftable'@4286332}
 %   {j___setargv@4263951}
 %   {Base2::Base2(void)@4263956}
 %   {j___RTC_GetErrDesc@4263961}
@@ -350,7 +355,7 @@ OPTIMUM FOUND
 %   {j___crt_debugger_hook@4264181}
 %   {j___ValidateImageBase@4264186}
 %   {__stdcall InterlockedCompareExchange(x, x, x)@4264191}
-%   {virtual int Base::func2(void)@4264196, virtual int Base::func1(void)@4264446, Base::Base(void)@4265600, const Base::`vftable'@4286312}
+%   {virtual int Base::func2(void)@4264196, Base::Base(void)@4265600, const Base::`vftable'@4286312}
 %   {__stdcall GetProcessHeap()@4264201}
 %   {j___RTC_SetErrorFuncW@4264206}
 %   {j___onexit@4264211}
@@ -361,7 +366,6 @@ OPTIMUM FOUND
 %   {__stdcall TerminateProcess(x, x)@4264236}
 %   {j__rand@4264241}
 %   {start@4264246}
-%   {virtual int Derived::func3(void)@4264251}
 %   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264256}
 %   {j____CxxSetUnhandledExceptionFilter@4264261}
 %   {__stdcall QueryPerformanceCounter(x)@4264266}
@@ -525,16 +529,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301432}
 
 % Stats:
-%   atoms: 9881.0
-%   bodies: 3554.0
-%   rules: 9421.0
-%   variables: 5289.0
-%   constraints: 74.0
-%   choices: 10315.0
-%   conflicts: 82.0
+%   atoms: 9884.0
+%   bodies: 3568.0
+%   rules: 10313.0
+%   variables: 5519.0
+%   constraints: 80.0
+%   choices: 7721.0
+%   conflicts: 95.0
 %   models: 6.0
 %   optimal_models: 1.0
-%   total_time: 0.08893918991088867
-%   ground_time: 0.020338458998594433
-%   time_to_first_model: 0.049658041971269995
-%   solve_time: 0.02801513671875
+%   total_time: 0.11143112182617188
+%   ground_time: 0.01722487504594028
+%   time_to_first_model: 0.06100379198323935
+%   solve_time: 0.03503012657165527

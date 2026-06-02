@@ -660,16 +660,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305676, __declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4305684}
 
 % Stats:
-%   atoms: 23582.0
-%   bodies: 11092.0
-%   rules: 22873.0
-%   variables: 9826.0
-%   constraints: 47.0
-%   choices: 7718.0
-%   conflicts: 69.0
-%   models: 12.0
+%   atoms: 23650.0
+%   bodies: 11171.0
+%   rules: 24033.0
+%   variables: 10188.0
+%   constraints: 52.0
+%   choices: 8890.0
+%   conflicts: 78.0
+%   models: 10.0
 %   optimal_models: 1.0
-%   total_time: 0.19327592849731445
-%   ground_time: 0.037044959026388824
-%   time_to_first_model: 0.14391254202928394
-%   solve_time: 0.02537393569946289
+%   total_time: 0.2214829921722412
+%   ground_time: 0.03845333307981491
+%   time_to_first_model: 0.13140683306846768
+%   solve_time: 0.03896903991699219

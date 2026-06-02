@@ -690,16 +690,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305704, __declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305708, __declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305732}
 
 % Stats:
-%   atoms: 28940.0
-%   bodies: 14189.0
-%   rules: 28217.0
-%   variables: 11486.0
-%   constraints: 47.0
-%   choices: 7846.0
-%   conflicts: 69.0
-%   models: 12.0
+%   atoms: 29033.0
+%   bodies: 14293.0
+%   rules: 29429.0
+%   variables: 11886.0
+%   constraints: 52.0
+%   choices: 9018.0
+%   conflicts: 78.0
+%   models: 10.0
 %   optimal_models: 1.0
-%   total_time: 0.1739330291748047
-%   ground_time: 0.04226554196793586
-%   time_to_first_model: 0.1286701249773614
-%   solve_time: 0.030140161514282227
+%   total_time: 0.22975707054138184
+%   ground_time: 0.0468779590446502
+%   time_to_first_model: 0.1814154590247199
+%   solve_time: 0.031579017639160156

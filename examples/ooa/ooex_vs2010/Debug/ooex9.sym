@@ -296,11 +296,11 @@ mergeClasses(const A::`vftable'@4286336,A::A(void)@4265680)
 mergeClasses(const D::`vftable'{for `B'}@4286296,D::D(void)@4265456)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136,type_info::type_info(class type_info const &)@4266992)
 mergeClasses(virtual int C::get_c(void)@4264111,C::C(void)@4266048)
+mergeClasses(virtual int A::get_a(void)@4263956,C::C(void)@4266048)
 mergeClasses(virtual int A::get_a(void)@4263956,A::A(void)@4265680)
 mergeClasses(virtual int B::get_b(void)@4264241,B::B(void)@4265824)
 mergeClasses(virtual int A::get_a(void)@4263956,B::B(void)@4265824)
 mergeClasses(virtual int D::get_d(void)@4264396,D::D(void)@4265456)
-mergeClasses(virtual int C::get_c(void)@4264111,D::D(void)@4265456)
 mergeClasses(virtual int B::get_b(void)@4265984,const B::`vftable'{for `B'}@4286360)
 mergeClasses(virtual int C::get_c(void)@4266208,const C::`vftable'{for `C'}@4286396)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4267040,const type_info::`vftable'@4286420)
@@ -353,7 +353,7 @@ OPTIMUM FOUND
 %   {j___setdefaultprecision@4263941}
 %   {j___setargv@4263946}
 %   {j___RTC_GetErrDesc@4263951}
-%   {virtual int A::get_a(void)@4263956, virtual int B::get_b(void)@4264241, A::A(void)@4265680, B::B(void)@4265824, virtual int B::get_b(void)@4265984, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360}
+%   {virtual int A::get_a(void)@4263956, virtual int C::get_c(void)@4264111, virtual int B::get_b(void)@4264241, A::A(void)@4265680, B::B(void)@4265824, virtual int B::get_b(void)@4265984, C::C(void)@4266048, virtual int C::get_c(void)@4266208, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
 %   {__fastcall __security_check_cookie(x)@4263961}
 %   {__stdcall IsDebuggerPresent()@4263966}
 %   {class type_info & type_info::operator=(class type_info const &)@4263971}
@@ -383,7 +383,6 @@ OPTIMUM FOUND
 %   {__cdecl terminate(void)@4264096}
 %   {j___exit@4264101}
 %   {__stdcall GetCurrentThreadId()@4264106}
-%   {virtual int C::get_c(void)@4264111, virtual int D::get_d(void)@4264396, D::D(void)@4265456, C::C(void)@4266048, virtual int C::get_c(void)@4266208, virtual int D::get_d(void)@4266272, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
 %   {j___initterm@4264116}
 %   {__stdcall GetCurrentProcess()@4264121}
 %   {j___RTC_UninitUse@4264126}
@@ -439,6 +438,7 @@ OPTIMUM FOUND
 %   {j___CrtSetCheckCount@4264381}
 %   {__stdcall InterlockedExchange(x, x)@4264386}
 %   {__stdcall UnhandledExceptionFilter(x)@4264391}
+%   {virtual int D::get_d(void)@4264396, D::D(void)@4265456, virtual int D::get_d(void)@4266272, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {type_info::type_info(class type_info const &)@4264401}
 %   {j___except_handler4_common@4264406}
 %   {j___matherr@4264411}
@@ -564,16 +564,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4279310}
 
 % Stats:
-%   atoms: 12424.0
-%   bodies: 5365.0
-%   rules: 12543.0
-%   variables: 7626.0
-%   constraints: 89.0
-%   choices: 10024.0
-%   conflicts: 81.0
+%   atoms: 12426.0
+%   bodies: 5388.0
+%   rules: 14295.0
+%   variables: 7852.0
+%   constraints: 93.0
+%   choices: 10374.0
+%   conflicts: 60.0
 %   models: 14.0
 %   optimal_models: 1.0
-%   total_time: 0.13589000701904297
-%   ground_time: 0.021246040996629745
-%   time_to_first_model: 0.06562454102095217
-%   solve_time: 0.050087928771972656
+%   total_time: 0.14020180702209473
+%   ground_time: 0.024918417097069323
+%   time_to_first_model: 0.07360475009772927
+%   solve_time: 0.05095386505126953
