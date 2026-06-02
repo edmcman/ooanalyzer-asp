@@ -41,12 +41,19 @@ def _theory_key(theory_term):
 
 
 class _UF:
-    """Union-find without path compression so reason paths are extractable."""
+    """Union-find augmented with a true-mc adjacency graph.
+
+    UF is used for fast same-component checks. The adjacency graph stores the
+    actual mc edges (a, b, slit) added via union(); reason paths come from BFS
+    over the adjacency, NOT from walking the UF tree (which is rank-balanced
+    and whose parent slits do not in general witness child↔parent connectivity).
+    """
     def __init__(self):
         self._parent = {}
-        self._reason = {}  # child → solver_lit that caused this tree edge
         self._rank = {}
-        self._trail = []
+        self._trail = []         # UF tree edits, for restore
+        self._adj = {}           # node → list of (other, slit)  (true mc edges)
+        self._adj_trail = []     # list of (a, b, slit), for restore
 
     def _root(self, x):
         self._parent.setdefault(x, x)
@@ -55,54 +62,82 @@ class _UF:
             curr = self._parent[curr]
         return curr
 
-    def _path_to_root(self, x):
-        self._parent.setdefault(x, x)
-        lits = []
-        curr = x
-        while self._parent[curr] != curr:
-            lits.append(self._reason[curr])
-            curr = self._parent[curr]
-        return lits
-
     def union(self, a, b, slit):
+        # Always record the actual mc edge, even if a and b are already
+        # in the same UF component (redundant edge in the mc graph).
+        self._adj.setdefault(a, []).append((b, slit))
+        self._adj.setdefault(b, []).append((a, slit))
+        self._adj_trail.append((a, b, slit))
+
         ra, rb = self._root(a), self._root(b)
         if ra == rb:
             return False
         if self._rank.get(ra, 0) < self._rank.get(rb, 0):
             ra, rb = rb, ra
-        old_reason = self._reason.get(rb)
         old_rank = self._rank.get(ra)
-        self._trail.append((rb, self._parent[rb], rb in self._reason,
-                            old_reason, ra, ra in self._rank, old_rank))
+        self._trail.append((rb, self._parent[rb], ra, ra in self._rank, old_rank))
         self._parent[rb] = ra
-        self._reason[rb] = slit
         if self._rank.get(ra, 0) == self._rank.get(rb, 0):
             self._rank[ra] = self._rank.get(ra, 0) + 1
         return True
 
     def snapshot(self):
-        return len(self._trail)
+        return (len(self._trail), len(self._adj_trail))
 
     def restore(self, snapshot):
-        while len(self._trail) > snapshot:
-            rb, old_parent, had_reason, old_reason, ra, had_rank, old_rank = self._trail.pop()
+        trail_size, adj_size = snapshot
+        while len(self._trail) > trail_size:
+            rb, old_parent, ra, had_rank, old_rank = self._trail.pop()
             self._parent[rb] = old_parent
-            if had_reason:
-                self._reason[rb] = old_reason
-            else:
-                self._reason.pop(rb, None)
             if had_rank:
                 self._rank[ra] = old_rank
             else:
                 self._rank.pop(ra, None)
+        while len(self._adj_trail) > adj_size:
+            a, b, slit = self._adj_trail.pop()
+            # Pop the LAST matching entry (LIFO order matches addition).
+            for i in range(len(self._adj[a]) - 1, -1, -1):
+                if self._adj[a][i] == (b, slit):
+                    del self._adj[a][i]
+                    break
+            for i in range(len(self._adj[b]) - 1, -1, -1):
+                if self._adj[b][i] == (a, slit):
+                    del self._adj[b][i]
+                    break
+
+    def _path_between(self, x, y):
+        """BFS through true mc edges; returns list of slits along an x→y path,
+        or None if no path exists."""
+        if x == y:
+            return []
+        if x not in self._adj:
+            return None
+        visited = {x}
+        # Each queue entry: (node, list_of_slits_so_far)
+        queue = [(x, [])]
+        while queue:
+            node, path = queue.pop(0)
+            for other, slit in self._adj.get(node, ()):
+                if other == y:
+                    return path + [slit]
+                if other not in visited:
+                    visited.add(other)
+                    queue.append((other, path + [slit]))
+        return None
 
     def same_with_reason(self, a, b):
+        if a == b:
+            return True, []
         if a not in self._parent and b not in self._parent:
-            return a == b, []
+            return False, []
         ra, rb = self._root(a), self._root(b)
         if ra != rb:
             return False, []
-        return True, self._path_to_root(a) + self._path_to_root(b)
+        path = self._path_between(a, b)
+        if path is None:
+            # Defensive: UF and adj graph disagree (shouldn't happen).
+            return False, []
+        return True, path
 
     def same(self, a, b):
         return self.same_with_reason(a, b)[0]
@@ -112,9 +147,13 @@ class _UF:
         return {n for n in universe if self._root(n) == rx}
 
     def component_reasons(self, members):
+        """All true mc edges with both endpoints inside `members`."""
+        members_set = set(members)
         reasons = set()
-        for n in members:
-            reasons.update(self._path_to_root(n))
+        for n in members_set:
+            for other, slit in self._adj.get(n, ()):
+                if other in members_set:
+                    reasons.add(slit)
         return reasons
 
     def groups(self, universe=None):
