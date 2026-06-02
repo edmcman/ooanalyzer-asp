@@ -74,6 +74,7 @@ def main():
     inp = open(args.input_file) if args.input_file else sys.stdin
     out = open(args.output_file, 'w') if args.output_file else sys.stdout
 
+    facts, equiv, other = [], [], []
     try:
         for line in inp:
             tokens = line.split()
@@ -82,17 +83,23 @@ def main():
                     fact = symbolize(fact, addr_map)
                     if args.filter and args.filter not in fact:
                         continue
-                    out.write(fact + '\n')
+                    facts.append(fact)
             else:
                 line = symbolize(line, addr_map)
                 if args.filter and args.filter not in line:
                     continue
-                out.write(line)
+                (equiv if line.startswith('%   {') else other).append(line)
     finally:
         if args.input_file:
             inp.close()
-        if args.output_file:
-            out.close()
+    for line in other:
+        out.write(line)
+    for fact in sorted(facts):
+        out.write(fact + '\n')
+    for line in sorted(equiv):
+        out.write(line)
+    if args.output_file:
+        out.close()
 
 if __name__ == '__main__':
     main()
