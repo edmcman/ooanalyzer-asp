@@ -69,11 +69,25 @@ deletingDestructor(Method) :-
     not possibleVFTableWrite(_, Method, _, _, VFTable),
     not symbolClass(Method, _, _, _).
 
-% reasonNOTDeletingDestructor_G: deleting destructors must be virtual.
+% reasonNOTDeletingDestructor_G: if Method's class is known to have a vftable
+% but Method itself does not appear in any vftable, then Method is not a
+% deleting destructor.
+%
+% NOTE: The Prolog version (rules.pl:687) is WRONG — it asserts "deleting
+% destructors must be virtual" unconditionally. Confirmed on mysql.exe:
+% yaSSL's *Impl classes (AES, DES, MD5, SHA, ...) have ground-truth
+% nonvirtual scalar_deleting_destructor thunks that the Prolog rule
+% misclassifies. Pharos hides the unsoundness via forward-chaining ordering
+% (concludeNOTDeletingDestructor is skipped if factDeletingDestructor is
+% already asserted); our classical-negation port surfaces it as UNSAT. The
+% fix here narrows the rule to fire only when the class has a vftable, so
+% classes without their own vftable are exempt.
 % Counterpart: reasonNOTDeletingDestructor_G (rules.pl:687)
-%!trace_rule {"% is not a deleting destructor because deleting destructors must be virtual", Method}
+%!trace_rule {"% is not a deleting destructor because its class has a vftable but % does not appear in any vftable", Method, Method}
 -deletingDestructor(Method) :-
     method(Method),
+    vfTable(VFTable),
+    &sameClass(VFTable, Method),
     not possiblyVirtual(Method).
 
 % ============================================================
