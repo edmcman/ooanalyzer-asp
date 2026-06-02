@@ -40,12 +40,49 @@ the Python propagator driver.
 `python tests/test_propagator.py` is the focused regression check for the
 current theory path. `make verify` also uses the Python propagator driver.
 
+## Configuration
+
+Solver constants live in [`src/util/config.lp`](src/util/config.lp) and can be
+overridden with repeated `--const` flags:
+
+```sh
+python ooanalyzer.py mysql.exe.lp --const enable_dynamic_guess_gates=0 --stats=1
+python ooanalyzer.py mysql.exe.lp --const max_class_size=512 --const max_offset_depth=6
+```
+
+Core bounds:
+
+| Constant | Default | Meaning |
+|---|---:|---|
+| `max_offset_depth` | `4` | Maximum number of primitive inheritance offsets summed for transitive offset domains |
+| `max_class_size` | `256` | Maximum accumulated object offset admitted by `relevantOffset/1` |
+
+Guess-family gates:
+
+| Constant | Default | Meaning |
+|---|---:|---|
+| `enable_dynamic_guess_gates` | `1` | Guard each guess family with a `guessEnabled/1` atom initially biased false |
+| `enable_guess_method` | `1` | Enable `method/1` guessing from `possibleMethod/1` |
+| `enable_guess_constructor` | `1` | Enable constructor guessing from constructor candidates |
+| `enable_guess_vftable` | `1` | Enable `vfTable/1` guessing from possible vftables |
+| `enable_guess_vftable_size` | `1` | Enable exact `vfTableSize/2` choice per confirmed vftable |
+| `enable_guess_merge` | `1` | Enable `mergeClasses/2` vs `-mergeClasses/2` choices for merge candidates |
+| `enable_guess_derived_class` | `1` | Enable embedded-object vs derived-class choices for `objectInObject/3` |
+
+Scoring and heuristic gates:
+
+| Constant | Default | Meaning |
+|---|---:|---|
+| `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
+| `enable_vftable_size_heuristic` | `1` | Prefer larger `vfTableSize/2` choices once the vftable-size gate is open |
+
 ## Files
 
 | File | Purpose |
 |---|---|
 | [`ooanalyzer.lp`](ooanalyzer.lp) | Entry point: `#include`s the modules below |
 | [`ooanalyzer.py`](ooanalyzer.py) | Clingo driver that registers the `&sameClass/2` propagator |
+| [`src/util/config.lp`](src/util/config.lp) | Tunable solver constants and guess-gate configuration |
 | [`src/util/theory.lp`](src/util/theory.lp) | Clingo theory declaration for `&sameClass/2` |
 | [`src/util/facts.lp`](src/util/facts.lp) | Input vocabulary and `#defined` directives |
 | [`src/util/initial.lp`](src/util/initial.lp) | Derives simplified predicates from full-arity OOAnalyzer `.facts` |

@@ -24,7 +24,13 @@ candidateVFTableSize(VFTable, Size) :-
 % Choose one exact extent for each confirmed vftable.
 %!trace_rule {"choose size for vftable %", VFTable}
 1 { vfTableSize(VFTable, Size) : candidateVFTableSize(VFTable, Size) } 1 :-
+    guessEnabled(vftable_size),
     vfTable(VFTable).
+
+#heuristic vfTableSize(VFTable, Size) :
+    guessEnabled(vftable_size_heuristic),
+    guessEnabled(vftable_size),
+    candidateVFTableSize(VFTable, Size). [Size@1, true]
 
 % ============================================================
 % CONSTRAINTS

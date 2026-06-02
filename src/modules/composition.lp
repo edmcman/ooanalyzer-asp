@@ -168,6 +168,7 @@ classHasNoDerived(Class) :-
 % objectInObject + NOT embeddedObject → derivedClass.
 %!trace_rule {"% is either embedded in or derived from % at offset %", Outer, Inner, Off}
 1 { embeddedObject(Outer, Inner, Off) ; derivedClass(Outer, Inner, Off) } :-
+    guessEnabled(derived_class),
     objectInObject(Outer, Inner, Off).          % guess.pl:317 / rules.pl:1740 / rules.pl:1960
 
 % ============================================================

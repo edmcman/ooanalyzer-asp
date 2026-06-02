@@ -180,7 +180,9 @@ mergeCandidate(A, B) :- weakMergeCandidate(A, B).
 
 % guessMergeClasses: choose merge or not-merge for each candidate pair.
 %!trace_rule {"guess whether % and % are the same class or not", A, B}
-1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :- mergeCandidate(A, B).   % guess.pl:1084
+1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :-
+    guessEnabled(merge),
+    mergeCandidate(A, B).                                                   % guess.pl:1084
 % Heuristic disabled so we get an initial model faster
 %#heuristic mergeClasses(A, B) : mergeCandidate(A, B). [1@1, true]
 
@@ -201,9 +203,11 @@ weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).
 % Uses &sameClass to check class membership at solver time.
 % Counterpart: guessLateMergeClasses_G1 constructor condition (guess.pl:879)
 weakG1Bonus(M1, M2) :-
+    guessEnabled(weak_g1_bonus),
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
     constructor(Ctor), &sameClass(M1, Ctor).
 weakG1Bonus(M1, M2) :-
+    guessEnabled(weak_g1_bonus),
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
     constructor(Ctor), &sameClass(M2, Ctor).
 #maximize { 2@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.

@@ -64,7 +64,35 @@ python ooanalyzer.py --const max_class_size=128 examples/ooa/ooex_vs2008/Debug/o
 
 # Allow deeper transitive inheritance chains.
 python ooanalyzer.py --const max_offset_depth=6 examples/ooa/ooex_vs2008/Debug/oo.lp
+
+# Disable dynamic guess gates for comparison/profiling.
+python ooanalyzer.py --const enable_dynamic_guess_gates=0 mysql.exe.lp
 ```
+
+### Solver configuration constants
+
+All solver configuration constants live in `src/util/config.lp`. Override them
+with repeated `--const NAME=VALUE` arguments to `ooanalyzer.py`.
+
+| Constant | Default | Meaning |
+|---|---:|---|
+| `max_offset_depth` | `4` | Maximum number of primitive offsets summed when building transitive offset domains |
+| `max_class_size` | `256` | Maximum accumulated object offset admitted by `relevantOffset/1` |
+| `enable_dynamic_guess_gates` | `1` | Guard guess families with `guessEnabled/1` atoms initially biased false |
+| `enable_guess_method` | `1` | Enable `method/1` guessing from `possibleMethod/1` |
+| `enable_guess_constructor` | `1` | Enable constructor guessing |
+| `enable_guess_vftable` | `1` | Enable `vfTable/1` guessing |
+| `enable_guess_vftable_size` | `1` | Enable `vfTableSize/2` exact-size choices |
+| `enable_guess_merge` | `1` | Enable `mergeClasses/2` vs `-mergeClasses/2` choices |
+| `enable_guess_derived_class` | `1` | Enable embedded-object vs derived-class choices |
+| `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
+| `enable_vftable_size_heuristic` | `1` | Prefer larger `vfTableSize/2` choices once the vftable-size gate is open |
+
+`enable_guess_*`, `enable_weak_g1_bonus`, and
+`enable_vftable_size_heuristic` are converted into `guessGate/1` facts in
+`src/util/config.lp`; modules should consume `guessEnabled/1` gates, not read
+the `enable_*` constants directly. The only normal direct `enable_*` references
+should be in `src/util/config.lp`.
 
 Or use the Makefile:
 

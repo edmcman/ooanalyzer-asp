@@ -113,8 +113,14 @@ vftableBelongsToClassInstalledAtZero(VFTable) :-
     vfTableWrite(_, _, 0, VFTable).                                          % rules.pl:1075 / 1183
 
 % Some method outside Class writes VFTable without overwriting it (refutes exclusive ownership).
+%
+% Performance note: the direct Prolog-style domain is mergeEntity(Class), but
+% on large inputs (mysql.exe.lp) that grounds a Class x VFTable cross product and
+% millions of &sameClass checks.  We bound the helper to candidate owners instead.
+% This may not be fully equivalent to the original rule if a non-candidate class
+% should be allowed to refute ownership, but it keeps the prototype tractable.
 vftableBelongsToClassOtherWriter(VFTable, Class) :-
-    mergeEntity(Class),
+    vftableBelongsToClassCandidate(_, _, VFTable, Class),
     vfTableWrite(_, OtherMethod, OtherOffset, VFTable),
     not vfTableOverwrite(OtherMethod, VFTable, _, OtherOffset),
     not &sameClass(OtherMethod, Class).                                      % rules.pl:1101-1106 / 1209-1214
@@ -199,8 +205,12 @@ possibleVFTable(VFTable) :-
 % guessVFTable: choose vfTable or -vfTable for each candidate.
 % Counterpart: guessVFTable (guess.pl:180)
 %!trace_rule {"guess whether % is a confirmed vftable or not", VFTable}
-1 { vfTable(VFTable) ; -vfTable(VFTable) } 1 :- possibleVFTable(VFTable).
-#heuristic vfTable(VFTable) : possibleVFTable(VFTable). [1@2, true]
+1 { vfTable(VFTable) ; -vfTable(VFTable) } 1 :-
+    guessEnabled(vftable),
+    possibleVFTable(VFTable).
+#heuristic vfTable(VFTable) :
+    guessEnabled(vftable),
+    possibleVFTable(VFTable). [1@2, true]
 
 % ============================================================
 % REWARDS

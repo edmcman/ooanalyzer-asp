@@ -17,5 +17,45 @@
 % when the primitive-offset GCD is small.
 #const max_class_size = 256.
 
+% Enable the guessLateMergeClasses_G1 constructor bonus. This is faithful to
+% the Prolog scoring rule, but can ground many &sameClass checks on large inputs.
+#const enable_weak_g1_bonus = 1.
+
+% Diagnostic gates for isolating performance. Defaults preserve normal solving.
+#const enable_guess_method = 1.
+#const enable_guess_constructor = 1.
+#const enable_guess_vftable = 1.
+#const enable_guess_vftable_size = 1.
+% Try larger vftable extents first once the vftable-size guess gate is open.
+#const enable_vftable_size_heuristic = 1.
+#const enable_guess_merge = 1.
+#const enable_guess_derived_class = 1.
+
+% Dynamic guess gates: when enabled, each guess family is guarded by a solver
+% atom that is initially biased false.  This lets the solver find a conservative
+% model before opening expensive guess families for optimization.
+#const enable_dynamic_guess_gates = 1.
+
 maxOffsetDepth(max_offset_depth).
 maxClassSize(max_class_size).
+
+guessGate(method) :- enable_guess_method != 0.
+guessGate(constructor) :- enable_guess_constructor != 0.
+guessGate(vftable) :- enable_guess_vftable != 0.
+guessGate(vftable_size) :- enable_guess_vftable_size != 0.
+guessGate(merge) :- enable_guess_merge != 0.
+guessGate(derived_class) :- enable_guess_derived_class != 0.
+guessGate(weak_g1_bonus) :- enable_weak_g1_bonus != 0.
+guessGate(vftable_size_heuristic) :- enable_vftable_size_heuristic != 0.
+
+{ guessEnabled(Gate) } :-
+    enable_dynamic_guess_gates != 0,
+    guessGate(Gate).
+
+guessEnabled(Gate) :-
+    enable_dynamic_guess_gates = 0,
+    guessGate(Gate).
+
+#heuristic guessEnabled(Gate) :
+    enable_dynamic_guess_gates != 0,
+    guessGate(Gate). [1@4, false]

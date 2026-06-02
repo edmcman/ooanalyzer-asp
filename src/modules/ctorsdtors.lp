@@ -127,11 +127,17 @@ guessConstructor2Domain(Method) :-
 guessConstructorDomain(Method) :- guessConstructor1Domain(Method).
 guessConstructorDomain(Method) :- guessConstructor2Domain(Method).
 
-1 { constructor(Method) ; -constructor(Method) } 1 :- guessConstructorDomain(Method).
+1 { constructor(Method) ; -constructor(Method) } 1 :-
+    guessEnabled(constructor),
+    guessConstructorDomain(Method).
 
 % Stronger heuristic for the perfect case (no uninitialized reads).
-#heuristic constructor(Method) : guessConstructor1Domain(Method). [2@0, true]
-#heuristic constructor(Method) : guessConstructor2Domain(Method). [1@0, true]
+#heuristic constructor(Method) :
+    guessEnabled(constructor),
+    guessConstructor1Domain(Method). [2@0, true]
+#heuristic constructor(Method) :
+    guessEnabled(constructor),
+    guessConstructor2Domain(Method). [1@0, true]
 
 % ============================================================
 % REWARDS

@@ -58,8 +58,12 @@ method(Method) :-
 % Counterpart: guessMethodA (guess.pl:382)
 %!trace_rule {"% could be a method", M}
 guessMethodDomain(M) :- possibleMethod(M).
-1 { method(M) ; -method(M) } 1 :- guessMethodDomain(M).
-#heuristic method(M) : guessMethodDomain(M). [1@0, true]
+1 { method(M) ; -method(M) } 1 :-
+    guessEnabled(method),
+    guessMethodDomain(M).
+#heuristic method(M) :
+    guessEnabled(method),
+    guessMethodDomain(M). [1@0, true]
 
 % ============================================================
 % REWARDS
