@@ -16,6 +16,7 @@ from clingo import Control
 from clingexplaid.preprocessors import AssumptionPreprocessor
 from clingexplaid.mus import CoreComputer
 from clingexplaid.unsat_constraints import UnsatConstraintComputer
+from propagator.sameclass import SameClassPropagator
 
 
 def read_program(files):
@@ -27,49 +28,10 @@ def read_program(files):
 
 def explain_unsat(program, max_mus=1):
     """Find MUS and unsat constraints for an ASP program."""
-    results = {}
 
-    # Check if program is actually UNSAT
-    ctl = Control()
-    ctl.add("base", [], program)
-    ctl.ground([("base", [])])
-    result = ctl.solve()
-    if result.satisfiable:
-        print("Program is SATISFIABLE — no UNSAT explanation needed.")
-        return None
-
-    print("Program is UNSATISFIABLE\n")
-
-    # MUS extraction via AssumptionPreprocessor
-    ap = AssumptionPreprocessor()
-    try:
-        transformed = ap.process(program)
-    except Exception as e:
-        print(f"Error transforming program: {e}")
-        return None
-
-    ctl2 = Control(["0"])
-    ctl2.add("base", [], transformed)
-    ctl2.ground([("base", [])])
-
-    cc = CoreComputer(ctl2, ap.assumptions)
-
-    print("Minimal Unsatisfiable Subsets (MUS):")
-    print("=" * 40)
-    found = False
-    try:
-        for i, mus in enumerate(cc.get_multiple_minimal(max_mus=max_mus)):
-            mus_strs = cc.mus_to_string(mus)
-            print(f"  MUS {i+1}: {', '.join(sorted(mus_strs))}")
-            found = True
-    except Exception as e:
-        print(f"  Error computing MUS: {e}")
-
-    if not found:
-        print("  (none found)")
-
-    # Unsat constraint identification
-    print()
+    # Unsat constraint identification first — fast, and often points directly
+    # at the offending integrity constraint.
+    any_finding = False
     print("Violated constraints:")
     print("=" * 40)
     try:
@@ -77,6 +39,7 @@ def explain_unsat(program, max_mus=1):
         ucc.parse_string(program)
         constraints = ucc.get_unsat_constraints()
         if constraints:
+            any_finding = True
             for cid, body in sorted(constraints.items()):
                 body = body.lstrip(": ").lstrip(":-").lstrip()
                 print(f"  Constraint {cid}: :- {body}")
@@ -88,7 +51,49 @@ def explain_unsat(program, max_mus=1):
     except Exception as e:
         print(f"  Error identifying constraints: {e}")
 
-    return results
+    # MUS extraction via AssumptionPreprocessor
+    ap = AssumptionPreprocessor()
+    try:
+        transformed = ap.process(program)
+    except Exception as e:
+        print(f"Error transforming program: {e}")
+        return None
+
+    ctl2 = Control(["0"])
+    ctl2.register_propagator(SameClassPropagator())
+    ctl2.add("base", [], transformed)
+    ctl2.ground([("base", [])])
+
+    # Drop assumptions whose symbol didn't survive grounding (e.g. facts whose
+    # arguments are #const placeholders like `maxOffsetDepth(max_offset_depth)`
+    # — the grounder substitutes the constant, so the original Symbol has no
+    # matching atom and clingexplaid's symbol_lookup raises KeyError).
+    grounded_symbols = {a.symbol for a in ctl2.symbolic_atoms}
+    assumptions = {(sym, sign) for (sym, sign) in ap.assumptions
+                   if sym in grounded_symbols}
+
+    cc = CoreComputer(ctl2, assumptions)
+
+    print()
+    print("Minimal Unsatisfiable Subsets (MUS):")
+    print("=" * 40)
+    found = False
+    try:
+        for i, mus in enumerate(cc.get_multiple_minimal(max_mus=max_mus)):
+            mus_strs = cc.mus_to_string(mus)
+            print(f"  MUS {i+1}: {', '.join(sorted(mus_strs))}")
+            found = True
+            any_finding = True
+    except Exception as e:
+        print(f"  Error computing MUS: {e}")
+
+    if not found:
+        print("  (none found)")
+
+    if not any_finding:
+        print()
+        print("No UNSAT findings — program may be SATISFIABLE,")
+        print("or UNSAT may depend on a propagator the analyzers do not see.")
 
 
 def main():
