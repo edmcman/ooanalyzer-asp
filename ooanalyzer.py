@@ -36,6 +36,8 @@ def parse_args():
     p.add_argument("--heuristic", default="domain")
     p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
     p.add_argument("--debug-propagator", action="store_true")
+    p.add_argument("-t", "--threads", type=str, default=None,
+                   help="parallel search: N[,compete|split] (default: 1)")
     p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
                    help="pass --const to clingo (repeatable)")
     return p.parse_args()
@@ -55,6 +57,8 @@ def main():
     ]
     if args.stats:
         ctl_args.append(f"--stats={args.stats}")
+    if args.threads is not None:
+        ctl_args.extend(["-t", args.threads])
     for c in args.const:
         ctl_args.append(f"--const={c}")
 
