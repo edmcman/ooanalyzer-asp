@@ -287,14 +287,15 @@ mergeClasses(const Base2::`vftable'@4286332,Base2::Base2(void)@4265904)
 mergeClasses(const Base::`vftable'@4286312,Base::Base(void)@4265600)
 mergeClasses(const Derived::`vftable'{for `Base'}@4286292,Derived::Derived(void)@4265392)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136,type_info::type_info(class type_info const &)@4267008)
+mergeClasses(virtual int Base2::func2(void)@4264276,Base2::Base2(void)@4265904)
 mergeClasses(virtual int Base::func1(void)@4264446,Base::Base(void)@4265600)
 mergeClasses(virtual int Base::func2(void)@4264196,Base::Base(void)@4265600)
 mergeClasses(virtual int Base::func1(void)@4264446,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Base::func2(void)@4264196,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Derived::func3(void)@4264251,Derived::Derived(void)@4265392)
-mergeClasses(virtual int Base2::func2(void)@4264276,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Derived::func4(void)@4263946,Derived::Derived(void)@4265392)
 mergeClasses(virtual int Base::func1(void)@4265712,const Base::`vftable'@4286312)
+mergeClasses(virtual int Base2::func1(void)@4266016,const Base2::`vftable'@4286332)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4267056,const type_info::`vftable'@4286352)
 mergeClasses(virtual int Derived::func4(void)@4266208,const Derived::`vftable'{for `Base2'}@4286272)
 mergeClasses(virtual int Derived::func3(void)@4266272,const Derived::`vftable'{for `Base'}@4286292)
@@ -307,12 +308,12 @@ objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base2::`vftabl
 objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base2::`vftable'@4286332,16)
 objectInObject(const Derived::`vftable'{for `Base'}@4286292,const Base::`vftable'@4286312,0)
 objectInObject(const Derived::`vftable'{for `Base2'}@4286272,const Base::`vftable'@4286312,0)
-Optimization: -85 -8 -30 -230 -52
+Optimization: -85 -8 -33 -230 -52
 OPTIMUM FOUND
 
-% Equivalence classes (218 classes, 235 entities):
+% Equivalence classes (217 classes, 235 entities):
 %   {j___setdefaultprecision@4263941}
-%   {virtual int Derived::func4(void)@4263946, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264251, virtual int Base2::func2(void)@4264276, virtual int Base::func1(void)@4264446, Derived::Derived(void)@4265392, Base::Base(void)@4265600, virtual int Base::func1(void)@4265712, virtual int Derived::func4(void)@4266208, virtual int Derived::func3(void)@4266272, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292, const Base::`vftable'@4286312}
+%   {virtual int Derived::func4(void)@4263946, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264251, virtual int Base::func1(void)@4264446, Derived::Derived(void)@4265392, Base::Base(void)@4265600, virtual int Base::func1(void)@4265712, virtual int Derived::func4(void)@4266208, virtual int Derived::func3(void)@4266272, const Derived::`vftable'{for `Base2'}@4286272, const Derived::`vftable'{for `Base'}@4286292, const Base::`vftable'@4286312}
 %   {j___setargv@4263951}
 %   {Base2::Base2(void)@4263956}
 %   {j___RTC_GetErrDesc@4263961}
@@ -375,6 +376,7 @@ OPTIMUM FOUND
 %   {j____CxxSetUnhandledExceptionFilter@4264261}
 %   {__stdcall QueryPerformanceCounter(x)@4264266}
 %   {j___unlock@4264271}
+%   {virtual int Base2::func2(void)@4264276, Base2::Base2(void)@4265904, virtual int Base2::func1(void)@4266016, const Base2::`vftable'@4286332}
 %   {__stdcall GetCurrentProcessId()@4264281}
 %   {__fastcall _RTC_CheckStackVars2(x, x, x)@4264286}
 %   {j____set_app_type@4264291}
@@ -417,8 +419,6 @@ OPTIMUM FOUND
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264481}
 %   {_main@4265040}
 %   {virtual int Base::func2(void)@4265808}
-%   {Base2::Base2(void)@4265904, const Base2::`vftable'@4286332}
-%   {virtual int Base2::func1(void)@4266016}
 %   {virtual int Base2::func2(void)@4266112}
 %   {_rand@4266336}
 %   {__cdecl operator delete(*)@4266342}
@@ -531,16 +531,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4279326}
 
 % Stats:
-%   atoms: 7812.0
-%   bodies: 3147.0
-%   rules: 9185.0
-%   variables: 3751.0
+%   atoms: 9900.0
+%   bodies: 4083.0
+%   rules: 10350.0
+%   variables: 5546.0
 %   constraints: 94.0
-%   choices: 13732.0
-%   conflicts: 261.0
-%   models: 13.0
+%   choices: 15459.0
+%   conflicts: 236.0
+%   models: 12.0
 %   optimal_models: 1.0
-%   total_time: 0.11903214454650879
-%   ground_time: 0.024010166991502047
-%   time_to_first_model: 0.039248041925020516
-%   solve_time: 0.05537605285644531
+%   total_time: 0.10132813453674316
+%   ground_time: 0.013933959067799151
+%   time_to_first_model: 0.03647675004322082
+%   solve_time: 0.04724717140197754

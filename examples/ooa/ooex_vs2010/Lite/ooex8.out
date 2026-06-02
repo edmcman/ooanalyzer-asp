@@ -1,20 +1,23 @@
 
 Answer: 1
-method(4198708) method(4198719) method(4198758) method(4199319) method(4199348) method(4199361) method(4199425) method(4199455) method(4199508) method(4199519) method(4199558) method(4199595) method(4199611) constructor(4199558) constructor(4198708) constructor(4199508) realDestructor(4198758) realDestructor(4199319) realDestructor(4199595) deletingDestructor(4199611) deletingDestructor(4199519) deletingDestructor(4198719) vfTableEntry(4219284,0,4199611) vfTableEntry(4219252,0,4199519) vfTableEntry(4219224,0,4198719) vfTableEntry(4219252,4,4199348) vfTableEntry(4219224,4,4199348) vfTable(4219224) vfTable(4219252) vfTable(4219284) classCallsMethod(4199455,4199361) classCallsMethod(4199519,4199425) classCallsMethod(4199455,4199425) classCallsMethod(4199558,4199455) classCallsMethod(4198719,4199508) classCallsMethod(4198758,4199558) classCallsMethod(4199611,4199595) classCallsMethod(4219224,4198719) classCallsMethod(4219252,4199519) classCallsMethod(4219284,4199611) classCallsMethod(4219224,4199348) classCallsMethod(4219252,4199348) vfTableWrite(4199598,4199595,0,4219284) vfTableWrite(4199329,4199319,0,4219252) vfTableWrite(4199508,4199508,0,4219252) vfTableWrite(4199527,4199519,0,4219252) vfTableWrite(4199573,4199558,0,4219252) vfTableWrite(4198708,4198708,0,4219224) vfTableWrite(4198727,4198719,0,4219224) vfTableWrite(4198774,4198758,0,4219224) vfTableSize(4219224,8) vfTableSize(4219252,8) vfTableSize(4219284,4) vftableBelongsToClass(4219284,0,4199595) vftableBelongsToClass(4219252,0,4199558) vftableBelongsToClass(4219252,0,4199519) vftableBelongsToClass(4219252,0,4199508) vftableBelongsToClass(4219252,0,4199319) vftableBelongsToClass(4219224,0,4198758) vftableBelongsToClass(4219224,0,4198719) vftableBelongsToClass(4219224,0,4198708) mergeClasses(4219284,4199595) mergeClasses(4219252,4199558) mergeClasses(4219252,4199519) mergeClasses(4219252,4199508) mergeClasses(4219252,4199319) mergeClasses(4219224,4198758) mergeClasses(4219224,4198719) mergeClasses(4219224,4198708) mergeClasses(4199595,4199611) mergeClasses(4199319,4199519) mergeClasses(4199508,4199519) mergeClasses(4198708,4198719) mergeClasses(4199319,4199348) mergeClasses(4199519,4199558) mergeClasses(4198719,4198758) mergeClasses(4199348,4199508) mergeClasses(4199348,4199519) mergeClasses(4199348,4199558) mergeClasses(4199319,4199508) mergeClasses(4199319,4199558) mergeClasses(4199508,4199558) mergeClasses(4198708,4198758) mergeClasses(4199361,4199455) mergeClasses(4199425,4199455) mergeClasses(4199455,4199558) mergeClasses(4198719,4219224) mergeClasses(4199519,4219252) mergeClasses(4199611,4219284) mergeClasses(4199348,4219252) mergeClasses(4199425,4199519) derivedClass(4219224,4219252,0) objectInObject(4219224,4219252,0)
-Optimization: -143 -1 -14 -13 -20
+method(4198400) method(4198432) method(4198480) method(4198528) method(4198608) method(4198708) method(4198719) method(4198758) method(4198787) method(4198915) method(4199319) method(4199348) method(4199361) method(4199425) method(4199455) method(4199508) method(4199519) method(4199558) method(4199595) method(4199611) method(4199644) method(4199655) method(4199837) method(4199940) method(4199946) method(4199969) method(4200117) method(4200132) method(4200172) method(4200248) method(4200314) method(4200328) method(4200371) method(4200395) method(4200404) method(4200413) method(4200464) method(4200971) method(4200993) method(4201015) method(4201030) method(4201045) method(4201075) method(4201113) method(4201544) method(4201601) method(4201931) method(4202151) method(4202561) method(4202748) method(4202899) method(4203480) method(4203518) method(4203556) method(4203565) method(4203574) method(4203849) method(4203858) method(4203867) method(4203988) method(4204296) method(4204308) method(4204317) method(4204696) method(4204832) method(4205231) method(4205386) method(4205488) method(4205627) method(4205788) method(4205808) method(4206013) method(4206089) method(4206167) method(4206218) method(4206284) method(4206303) method(4206464) method(4206672) method(4206681) method(4206789) method(4206806) method(4206836) method(4206891) method(4207323) method(4207338) method(4207353) method(4207665) method(4207702) method(4207747) method(4207763) method(4207808) method(4207872) method(4207952) method(4208140) method(4208504) method(4208621) method(4208826) method(4208853) method(4208952) method(4209015) method(4209732) method(4209741) method(4210000) method(4210845) method(4210854) method(4210902) method(4210932) method(4211015) method(4211039) method(4211182) method(4211335) method(4211666) method(4211872) method(4212016) method(4212086) method(4212114) method(4212137) method(4212162) method(4212187) method(4212210) method(4212340) method(4212513) method(4213441) method(4213473) method(4213488) method(4213610) method(4213881) method(4214368) method(4214438) method(4214669) method(4214733) method(4215620) method(4215725) method(4215984) method(4216016) method(4216085) method(4216217) method(4216252) method(4216304) method(4216712) method(4216736) method(4216758) method(4217024) method(4217088) method(4217168) method(4217232) method(4217330) method(4217336) method(4199309) method(4199886) method(4200500) method(4200651) method(4200950) method(4203626) method(4203687) method(4204014) method(4205685) method(4205944) method(4206487) method(4206732) method(4206904) method(4207263) method(4207368) method(4209077) method(4209177) method(4209577) method(4209876) method(4210492) method(4210893) method(4211743) method(4211852) method(4213619) constructor(4199558) constructor(4199595) realDestructor(4198708) realDestructor(4199508) deletingDestructor(4199611) deletingDestructor(4199519) deletingDestructor(4198719) deletingDestructor(4198758) deletingDestructor(4199319) vfTableEntry(4219284,0,4199611) vfTableEntry(4219252,0,4199519) vfTableEntry(4219224,0,4198719) vfTableEntry(4219252,4,4199348) vfTableEntry(4219224,4,4199348) vfTable(4219224) vfTable(4219252) vfTable(4219284) classCallsMethod(4198528,4198432) classCallsMethod(4199455,4199361) classCallsMethod(4199519,4199425) classCallsMethod(4199455,4199425) classCallsMethod(4199558,4199455) classCallsMethod(4198719,4199508) classCallsMethod(4198758,4199558) classCallsMethod(4199611,4199595) classCallsMethod(4219224,4198719) classCallsMethod(4219252,4199519) classCallsMethod(4219284,4199611) classCallsMethod(4219224,4199348) classCallsMethod(4219252,4199348) vfTableWrite(4199598,4199595,0,4219284) vfTableWrite(4199329,4199319,0,4219252) vfTableWrite(4199508,4199508,0,4219252) vfTableWrite(4199527,4199519,0,4219252) vfTableWrite(4199573,4199558,0,4219252) vfTableWrite(4198708,4198708,0,4219224) vfTableWrite(4198727,4198719,0,4219224) vfTableWrite(4198774,4198758,0,4219224) vfTableSize(4219224,8) vfTableSize(4219252,8) vfTableSize(4219284,4) vftableBelongsToClass(4219284,0,4199595) vftableBelongsToClass(4219252,0,4199558) mergeClasses(4219284,4199595) mergeClasses(4219252,4199558) mergeClasses(4199595,4199611) mergeClasses(4199319,4199519) mergeClasses(4199508,4199519) mergeClasses(4199319,4199348) mergeClasses(4198708,4199348) mergeClasses(4198758,4199348) mergeClasses(4199348,4199508) mergeClasses(4199348,4199519) mergeClasses(4199319,4199508) mergeClasses(4198708,4198758) mergeClasses(4198432,4198528) mergeClasses(4199611,4219284) derivedClass(4219224,4219252,0) objectInObject(4219224,4219252,0)
+Optimization: -103 -1 -12 -173 -20
 OPTIMUM FOUND
 
-% Equivalence classes (163 classes, 176 entities):
+% Equivalence classes (167 classes, 176 entities):
 %   {4198400}
-%   {4198432}
+%   {4198432, 4198528}
 %   {4198480}
-%   {4198528}
 %   {4198608}
-%   {4198708, 4198719, 4198758, 4219224}
+%   {4198708, 4198758, 4199319, 4199348, 4199508, 4199519}
+%   {4198719}
 %   {4198787}
 %   {4198915}
 %   {4199309}
-%   {4199319, 4199348, 4199361, 4199425, 4199455, 4199508, 4199519, 4199558, 4219252}
+%   {4199361}
+%   {4199425}
+%   {4199455}
+%   {4199558, 4219252}
 %   {4199595, 4199611, 4219284}
 %   {4199644}
 %   {4199655}
@@ -168,18 +171,19 @@ OPTIMUM FOUND
 %   {4217232}
 %   {4217330}
 %   {4217336}
+%   {4219224}
 
 % Stats:
-%   atoms: 7270.0
-%   bodies: 2258.0
-%   rules: 8030.0
-%   variables: 2263.0
-%   constraints: 95.0
-%   choices: 6364.0
-%   conflicts: 243.0
-%   models: 7.0
+%   atoms: 9113.0
+%   bodies: 3640.0
+%   rules: 9404.0
+%   variables: 5221.0
+%   constraints: 428.0
+%   choices: 8025.0
+%   conflicts: 293.0
+%   models: 5.0
 %   optimal_models: 1.0
-%   total_time: 0.11762118339538574
-%   ground_time: 0.011605000006966293
-%   time_to_first_model: 0.019169667037203908
-%   solve_time: 0.02484416961669922
+%   total_time: 0.13953185081481934
+%   ground_time: 0.03111945907585323
+%   time_to_first_model: 0.05992050003260374
+%   solve_time: 0.05507493019104004

@@ -968,16 +968,16 @@ OPTIMUM FOUND
 %   {__declspec(dllimport) virtual std::exception::~exception(void)@4314152, __declspec(dllimport) virtual char const * std::exception::what(void)const@4314156, __declspec(dllimport) std::exception::exception(char const * const &)@4314160, __declspec(dllimport) std::exception::exception(class std::exception const &)@4314164}
 
 % Stats:
-%   atoms: 39757.0
-%   bodies: 21499.0
-%   rules: 41242.0
-%   variables: 13122.0
-%   constraints: 98.0
-%   choices: 162934.0
-%   conflicts: 3737.0
+%   atoms: 42237.0
+%   bodies: 23213.0
+%   rules: 42952.0
+%   variables: 16750.0
+%   constraints: 500.0
+%   choices: 139495.0
+%   conflicts: 1732.0
 %   models: 16.0
 %   optimal_models: 1.0
-%   total_time: 1.5856919288635254
-%   ground_time: 0.048563500051386654
-%   time_to_first_model: 0.14701770804822445
-%   solve_time: 1.4167630672454834
+%   total_time: 0.896049976348877
+%   ground_time: 0.058085374999791384
+%   time_to_first_model: 0.1792524999473244
+%   solve_time: 0.6907689571380615

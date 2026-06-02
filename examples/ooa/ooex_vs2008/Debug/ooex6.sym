@@ -275,20 +275,21 @@ mergeClasses(const type_info::`vftable'@4286316,type_info::type_info(class type_
 mergeClasses(const Base::`vftable'@4286296,Base::Base(void)@4265536)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4266752)
 mergeClasses(virtual int Base::func1(void)@4264451,Base::Base(void)@4265536)
+mergeClasses(virtual int Base::func2(void)@4264206,Base::Base(void)@4265536)
 mergeClasses(virtual int Base::func1(void)@4264451,Derived::Derived(void)@4265360)
+mergeClasses(virtual int Base::func2(void)@4264206,Derived::Derived(void)@4265360)
 mergeClasses(virtual int Derived::func3(void)@4264266,Derived::Derived(void)@4265360)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4264141,Derived::Derived(void)@4265360)
 mergeClasses(virtual int Base::func1(void)@4265648,const Base::`vftable'@4286296)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,const type_info::`vftable'@4286316)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4265904,const Derived::`vftable'@4286272)
-mergeClasses(virtual int Derived::func3(void)@4265840,const Derived::`vftable'@4286272)
 mergeClasses(virtual int Base::func2(void)@4265744,const Base::`vftable'@4286296)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
 mergeClasses(Derived::Derived(void)@4265360,virtual int Base::func2(void)@4265744)
 mergeClasses(Derived::Derived(void)@4265360,virtual int Base::func1(void)@4265648)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
 objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
-Optimization: -53 -2 -30 -233 -32
+Optimization: -73 -2 -29 -233 -32
 OPTIMUM FOUND
 
 % Equivalence classes (223 classes, 236 entities):
@@ -331,7 +332,7 @@ OPTIMUM FOUND
 %   {__stdcall GetCurrentProcess()@4264126}
 %   {j___encode_pointer@4264131}
 %   {j___RTC_UninitUse@4264136}
-%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Derived::func3(void)@4264266, virtual int Base::func1(void)@4264451, Derived::Derived(void)@4265360, Base::Base(void)@4265536, virtual int Base::func1(void)@4265648, virtual int Base::func2(void)@4265744, const Base::`vftable'@4286296}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Base::func2(void)@4264206, virtual int Derived::func3(void)@4264266, virtual int Base::func1(void)@4264451, Derived::Derived(void)@4265360, Base::Base(void)@4265536, virtual int Base::func1(void)@4265648, virtual int Base::func2(void)@4265744, const Base::`vftable'@4286296}
 %   {j___RTC_Shutdown@4264146}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264151, type_info::type_info(class type_info const &)@4266752, virtual * type_info::`vector deleting destructor'(unsigned int)@4266800, const type_info::`vftable'@4286316, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312}
 %   {j___FindPESection@4264156}
@@ -344,7 +345,6 @@ OPTIMUM FOUND
 %   {j___crt_debugger_hook@4264191}
 %   {j___ValidateImageBase@4264196}
 %   {__stdcall InterlockedCompareExchange(x, x, x)@4264201}
-%   {virtual int Base::func2(void)@4264206}
 %   {__stdcall GetProcessHeap()@4264211}
 %   {j___RTC_SetErrorFuncW@4264216}
 %   {j___onexit@4264221}
@@ -401,7 +401,8 @@ OPTIMUM FOUND
 %   {j___initterm_e@4264486}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264491}
 %   {_main@4265056}
-%   {virtual int Derived::func3(void)@4265840, virtual * Derived::`vector deleting destructor'(unsigned int)@4265904, const Derived::`vftable'@4286272}
+%   {virtual int Derived::func3(void)@4265840}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4265904, const Derived::`vftable'@4286272}
 %   {virtual Derived::~Derived(void)@4266016}
 %   {__cdecl operator delete(*)@4266092}
 %   {* __cdecl operator new(unsigned int)@4266098}
@@ -517,16 +518,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4279166}
 
 % Stats:
-%   atoms: 7141.0
-%   bodies: 2592.0
-%   rules: 8017.0
-%   variables: 2811.0
+%   atoms: 8765.0
+%   bodies: 3530.0
+%   rules: 8951.0
+%   variables: 4859.0
 %   constraints: 67.0
-%   choices: 9245.0
-%   conflicts: 262.0
-%   models: 10.0
+%   choices: 8832.0
+%   conflicts: 204.0
+%   models: 11.0
 %   optimal_models: 1.0
-%   total_time: 0.08919405937194824
-%   ground_time: 0.016810708912089467
-%   time_to_first_model: 0.031493583926931024
-%   solve_time: 0.03109908103942871
+%   total_time: 0.11026191711425781
+%   ground_time: 0.019863625057041645
+%   time_to_first_model: 0.038897791993804276
+%   solve_time: 0.05558490753173828
