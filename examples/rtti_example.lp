@@ -36,7 +36,7 @@ methodCallAtOffset(0, 2300, 2100, 0).
 
 % ----------------------------------------------------------------
 % RTTI facts. The CHD lists are already expanded into one fact per BCD,
-% matching facts2clingo.py output.
+% matching scripts/facts2clingo.py output.
 % ----------------------------------------------------------------
 fileInfo("dummy", "dummy", "MSVC_32", 4).
 

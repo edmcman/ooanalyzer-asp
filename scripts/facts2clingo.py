@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-facts2clingo.py -- Convert OOAnalyzer .facts files to Clingo-compatible .lp syntax.
+scripts/facts2clingo.py -- Convert OOAnalyzer .facts files to Clingo-compatible .lp syntax.
 
 Usage:
-    python facts2clingo.py input.facts > output.lp
+    python scripts/facts2clingo.py input.facts > output.lp
     clingo ooanalyzer.lp output.lp
 
 What it does:

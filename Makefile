@@ -48,10 +48,10 @@ help:
 # ----------------------------------------------------------------
 convert: $(LP_FILES)
 
-$(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts facts2clingo.py
+$(OOA_DIR)/%.lp: $(OOA_DIR)/%.facts scripts/facts2clingo.py
 	@echo "=== Converting $< → $@ ==="
 	@mkdir -p $(dir $@)
-	$(PYTHON) facts2clingo.py $< > $@
+	$(PYTHON) scripts/facts2clingo.py $< > $@
 
 # ----------------------------------------------------------------
 # Run ooanalyzer.py on generated .lp files
@@ -107,16 +107,16 @@ $(OOA_DIR)/%.explain.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 # Symbolize: .out + .symbols → .sym (human-readable)
 # Filter to key predicates; override with FILTER= for custom grep.
 # ----------------------------------------------------------------
-SYMBOLIZE    := $(PYTHON) symbolize.py
+SYMBOLIZE    := $(PYTHON) scripts/symbolize.py
 SYM_FILTER   ?= classRep\|constructor\|derivedClass\|embeddedObject\|classHasNoBase
 
 symbolize: $(SYM_FILES)
 
-$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py
+$(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out scripts/symbolize.py
 	@echo "=== Symbolizing $* ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
 
-$(OOA_DIR)/%.sym: $(OOA_DIR)/%.ground $(OOA_DIR)/%.out symbolize.py
+$(OOA_DIR)/%.sym: $(OOA_DIR)/%.ground $(OOA_DIR)/%.out scripts/symbolize.py
 	@echo "=== Symbolizing $* (ground) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
 

@@ -25,7 +25,7 @@ clingo ooanalyzer.lp examples/example.lp 0      # all models
 
 Convert and run:
 ```sh
-python facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
+python scripts/facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
 clingo ooanalyzer.lp /tmp/oo.lp
 # or via Makefile:
 make examples/ooa/ooex_vs2008/Debug/oo.lp   # convert one

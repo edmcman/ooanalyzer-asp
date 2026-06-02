@@ -93,7 +93,7 @@ Scoring and heuristic gates:
 | [`propagator/sameclass.py`](propagator/sameclass.py) | Union-find propagator for `&sameClass/2` |
 | [`tests/test_propagator.py`](tests/test_propagator.py) | Focused propagator regression harness |
 | [`src/old/`](src/old/) | v1 Clingo modules (reference only) |
-| [`facts2clingo.py`](facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
+| [`scripts/facts2clingo.py`](scripts/facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | [`examples/example.lp`](examples/example.lp) | Valid 3-class example |
 | [`examples/inherit_example.lp`](examples/inherit_example.lp) | Single inheritance: Base + Derived |
 | [`examples/multi_inherit_example.lp`](examples/multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |

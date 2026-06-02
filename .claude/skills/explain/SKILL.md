@@ -1,6 +1,6 @@
 ---
 name: explain
-description: Explain why an ASP atom is true/false or why a program is UNSAT. Uses why_unsat.py for unsatisfiability analysis and xclingo2 for trace-based explanations of derived atoms.
+description: Explain why an ASP atom is true/false or why a program is UNSAT. Uses scripts/why_unsat.py for unsatisfiability analysis and xclingo2 for trace-based explanations of derived atoms.
 argument-hint: "[atom | files...]"
 ---
 
@@ -8,12 +8,12 @@ Explain the ASP reasoning for: $ARGUMENTS
 
 You have two tools available. Choose the right one (or both) based on what the user is asking:
 
-## 1. UNSAT explanation (`why_unsat.py`)
+## 1. UNSAT explanation (`scripts/why_unsat.py`)
 
 Use when the user asks why a program is unsatisfiable, or when `ooanalyzer.py` returns UNSAT.
 
 ```sh
-python why_unsat.py <file.lp> [file2.lp ...] [-n NUM_MUS]
+python scripts/why_unsat.py <file.lp> [file2.lp ...] [-n NUM_MUS]
 ```
 
 - Finds Minimal Unsatisfiable Subsets (MUS) — the smallest sets of facts that cause UNSAT.
@@ -44,6 +44,6 @@ cd xclingo2 && python -m xclingo -n 0 1 --only-last [--show-trace ATOM] [--auto-
 ## Workflow
 
 1. Determine if the question is about UNSAT or about a specific atom's truth.
-2. For UNSAT: run `why_unsat.py` and report MUS + violated constraints.
+2. For UNSAT: run `scripts/why_unsat.py` and report MUS + violated constraints.
 3. For atom truth: run xclingo2 with `--show-trace ATOM` to trace a specific atom. Use `--auto-tracing facts` if the program lacks annotations. If explanations are still thin, suggest adding `#!trace_rule` annotations to key rules.
-4. If both apply (e.g., "why can't this atom be true?"), combine both tools — xclingo2 for the positive derivation path and `why_unsat.py` for the conflict.
+4. If both apply (e.g., "why can't this atom be true?"), combine both tools — xclingo2 for the positive derivation path and `scripts/why_unsat.py` for the conflict.

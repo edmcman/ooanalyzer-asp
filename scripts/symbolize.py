@@ -4,7 +4,7 @@ Symbolize clingo output by replacing decimal addresses with human-readable
 symbols from an OOAnalyzer .symbols file.
 
 Usage:
-    python symbolize.py SYMBOLS_FILE [INPUT_FILE] [-o OUTPUT_FILE] [-f FILTER]
+    python scripts/symbolize.py SYMBOLS_FILE [INPUT_FILE] [-o OUTPUT_FILE] [-f FILTER]
 
 SYMBOLS_FILE: tab-separated: addr  type  idasymbol  demangled_name
 INPUT_FILE:   clingo .out (or any text with decimal addresses); stdin if omitted

@@ -2,7 +2,7 @@
 """Explain why an ASP program is unsatisfiable using clingexplaid.
 
 Usage:
-    why_unsat.py program.lp [program2.lp ...]
+    scripts/why_unsat.py program.lp [program2.lp ...]
 
 Finds Minimal Unsatisfiable Subsets (MUS) of facts that make the program
 UNSAT. Also identifies which constraints are violated.
@@ -10,8 +10,13 @@ UNSAT. Also identifies which constraints are violated.
 Requires: clingexplaid (https://github.com/potassco/clingo-explaid)
 """
 
+import os
 import sys
 from pathlib import Path
+
+_PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _PROJECT_ROOT)
+
 from clingo import Control
 from clingexplaid.preprocessors import AssumptionPreprocessor
 from clingexplaid.mus import CoreComputer

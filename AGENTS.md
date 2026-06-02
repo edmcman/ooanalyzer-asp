@@ -22,7 +22,7 @@ original module set.
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
 | `propagator/sameclass.py` | Python union-find propagator implementing `&sameClass/2` |
 | `tests/test_propagator.py` | Focused regression harness for the propagator |
-| `facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
+| `scripts/facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
 | `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
 | `examples/inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |
@@ -107,7 +107,7 @@ make clean                                   # remove generated .lp/.out files
 ### From OOAnalyzer .facts files
 
 ```sh
-python facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
+python scripts/facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
 python ooanalyzer.py /tmp/oo.lp
 ```
 
@@ -159,7 +159,7 @@ The prototype accepts **two vocabularies**:
 | `symbolClass` | 4 | Drops mangled name and method name |
 | `rTTICompleteObjectLocator` | 6 | Computes V = Pointer + PtrSize |
 | `rTTITypeDescriptor` | 4 | Drops VFTable check and demangled name |
-| `rTTIClassHierarchyDescriptor` | 3 | List expanded by `facts2clingo.py` |
+| `rTTIClassHierarchyDescriptor` | 3 | List expanded by `scripts/facts2clingo.py` |
 | `rTTIBaseClassDescriptor` | 8 | Drives `rTTIInheritsFrom` in `initial.lp` |
 | `initialMemory` | 2 | Drives `possibleVFTableEntry` / `possibleVBTableEntry` |
 | `thisPtrOffset` | 3 | Drives `callAtOffset` in `initial.lp` |
