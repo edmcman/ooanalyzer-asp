@@ -18,6 +18,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import clingo
 from propagator.sameclass import SameClassPropagator
 
+ROOT = Path(__file__).resolve().parents[1]
+MAIN_LP = ROOT / "ooanalyzer.lp"
+
 THEORY = """
 #theory sc {
     t {};
@@ -55,6 +58,49 @@ def run(name, asp, expected_models, expected_atoms=None, ctl_args=None):
     if not ok:
         for m in models:
             print(f"       {sorted(m)}")
+    return ok
+
+
+def optimal_cost_for_files(files, ctl_args, timeout=10):
+    prop = SameClassPropagator()
+    ctl = clingo.Control(ctl_args)
+    ctl.register_propagator(prop)
+    ctl.load(str(MAIN_LP))
+    for path in files:
+        ctl.load(str(path))
+    ctl.ground([("base", [])])
+
+    costs = []
+
+    def on_model(model):
+        if model.cost:
+            costs.append(tuple(model.cost))
+
+    handle = ctl.solve(on_model=on_model, async_=True)
+    if not handle.wait(timeout):
+        handle.cancel()
+        handle.get()
+        raise AssertionError(f"solver did not finish within {timeout}s")
+    result = handle.get()
+    if not costs:
+        raise AssertionError("no optimization cost reported")
+    if not result.exhausted:
+        raise AssertionError("solver did not exhaust optimization search")
+    if result.unsatisfiable:
+        raise AssertionError("case is unexpectedly unsatisfiable")
+    return costs[-1]
+
+
+def run_reward_consistency(name, files, configurations):
+    costs = {}
+    for config_name, ctl_args in configurations:
+        costs[config_name] = optimal_cost_for_files(files, ctl_args)
+
+    unique_costs = set(costs.values())
+    ok = len(unique_costs) == 1
+    status = "PASS" if ok else "FAIL"
+    rendered = ", ".join(f"{h}={cost}" for h, cost in costs.items())
+    print(f"  {status}  {name}  ({rendered})")
     return ok
 
 
@@ -158,6 +204,57 @@ def main():
                 passed += 1
             else:
                 failed += 1
+
+    print("\nMode: heuristic reward consistency")
+    basic_heuristic_configs = [
+        (
+            "domain",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=domain"],
+        ),
+        (
+            "berkmin",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=berkmin"],
+        ),
+        (
+            "vmtf",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=vmtf"],
+        ),
+        (
+            "vsids",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=vsids"],
+        ),
+    ]
+    lite_heuristic_configs = [
+        (
+            "domain",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=domain"],
+        ),
+        (
+            "vmtf",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=vmtf"],
+        ),
+        (
+            "vsids",
+            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=vsids"],
+        ),
+    ]
+    reward_tests = [
+        (
+            "example.lp optimal reward is stable across heuristics",
+            [ROOT / "examples" / "example.lp"],
+            basic_heuristic_configs,
+        ),
+        (
+            "Lite/ooex0 optimal reward is stable across finishing heuristics",
+            [ROOT / "examples" / "ooa" / "ooex_vs2010" / "Lite" / "ooex0.lp"],
+            lite_heuristic_configs,
+        ),
+    ]
+    for name, files, configurations in reward_tests:
+        if run_reward_consistency(name, files, configurations):
+            passed += 1
+        else:
+            failed += 1
 
     print(f"\n{passed}/{passed+failed} passed")
     return 0 if failed == 0 else 1
