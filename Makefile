@@ -2,10 +2,8 @@
 # Converts OOAnalyzer .facts files to Clingo .lp and runs the propagator solver.
 
 PYTHON       := python3
-DUALGROUNDER := $(PYTHON) DualGrounder/dualgrounder.py
-DG_FLAGS     := -v --max-time 300
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain --time-limit=300 --stats
+PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain --time-limit=300 -t2 --stats
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
 TIME_CMD     := /usr/bin/time
@@ -19,16 +17,15 @@ SRC_LP       := $(shell find src -name '*.lp' -not -path '*/old/*')
 # Derived file lists
 LP_FILES          := $(FACTS:%.facts=%.lp)
 OUT_FILES         := $(LP_FILES:%.lp=%.out)
-LAZY_OUT_FILES    := $(LP_FILES:%.lp=%.lazy.out)
 EXPLAIN_OUT_FILES := $(LP_FILES:%.lp=%.explain.out)
-SYM_FILES         := $(FACTS:%.facts=%.sym)
-LAZY_SYM_FILES    := $(FACTS:%.facts=%.lazy.sym)
+GROUND        := $(shell find $(OOA_DIR) -name '*.ground')
+SYM_FILES         := $(FACTS:%.facts=%.sym) $(GROUND:%.ground=%.sym)
 
 # ----------------------------------------------------------------
 # Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
-.PHONY: all convert run verify verify-core verify-real lazyrun propagator-run \
-        explain-all symbolize lazy-symbolize symbolize-all clean help single
+.PHONY: all convert run verify verify-core verify-real propagator-run \
+        explain-all symbolize clean help single
 
 all: run
 
@@ -36,11 +33,8 @@ help:
 	@echo "Targets:"
 	@echo "  make convert       — convert all .facts to .lp"
 	@echo "  make run           — convert and run ooanalyzer.py on all .lp files"
-	@echo "  make lazyrun       — convert and run dualgrounder on all .lp files"
 	@echo "  make explain-all   — convert and explain optimal models via xclingo"
 	@echo "  make symbolize     — symbolize all .out → .sym"
-	@echo "  make lazy-symbolize — symbolize all .lazy.out → .lazy.sym"
-	@echo "  make symbolize-all — symbolize both regular and lazy outputs"
 	@echo "  make verify        — run marker checks for core fixtures"
 	@echo "  make propagator-run — alias for run"
 	@echo "  make clean         — remove generated .lp/.out/.sym files"
@@ -98,16 +92,7 @@ verify-core:
 	echo "=== Verifying examples/symbol_missing_conflict_example.lp ==="; \
 	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(PROPAGATOR) examples/symbol_missing_conflict_example.lp $(PROP_FLAGS)
 
-# ----------------------------------------------------------------
-# Run dualgrounder on generated .lp files
-# ----------------------------------------------------------------
 propagator-run: run
-
-lazyrun: $(LAZY_OUT_FILES)
-
-$(OOA_DIR)/%.lazy.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
-	@echo "=== Running: $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< ==="
-	$(TIME_CMD) $(DUALGROUNDER) $(DG_FLAGS) ooanalyzer.lp $< > $@ 2> $@.err || true
 
 # ----------------------------------------------------------------
 # Explain: run xclingo on optimal model only
@@ -131,13 +116,9 @@ $(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out symbolize.py
 	@echo "=== Symbolizing $* ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
 
-lazy-symbolize: $(LAZY_SYM_FILES)
-
-$(OOA_DIR)/%.lazy.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.lazy.out symbolize.py
-	@echo "=== Symbolizing $* (lazy) ==="
+$(OOA_DIR)/%.sym: $(OOA_DIR)/%.ground $(OOA_DIR)/%.out symbolize.py
+	@echo "=== Symbolizing $* (ground) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
-
-symbolize-all: $(SYM_FILES) $(LAZY_SYM_FILES)
 
 # ----------------------------------------------------------------
 # Convenience: single-file pipeline
@@ -155,5 +136,3 @@ clean:
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
 	find $(OOA_DIR) -name '*.sym' -delete
-	find $(OOA_DIR) -name '*.lazy.sym' -delete
-	find $(OOA_DIR) -name '*.lazy.out' -delete
