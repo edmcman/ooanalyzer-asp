@@ -18,6 +18,7 @@ Undo strategy: rebuild from scratch on backtrack (correct; PoC).
 """
 
 import clingo
+from dataclasses import dataclass, field
 
 DEBUG = False
 
@@ -164,6 +165,12 @@ class _UF:
         return dict(out)
 
 
+@dataclass
+class _ThreadState:
+    uf: _UF = field(default_factory=_UF)
+    merge_trail: list = field(default_factory=list)
+
+
 class SameClassPropagator:
     def init(self, init):
         # solver_lit → (a_key, b_key)
@@ -238,30 +245,32 @@ class SameClassPropagator:
                     init.add_clause([-merge_slit, sc_slit])   # merge → same
                     init.add_clause([merge_slit, -sc_slit])   # ¬merge → ¬same
 
-        self._uf = _UF()
-        self._merge_trail = []
+        self._states = [_ThreadState() for _ in range(init.number_of_threads)]
         _dprint(f"[init] {len(self._merge_to_pair)} mergeClasses, "
                 f"{len(self._sc_to_lit)} &sameClass atoms")
 
-    def _rebuild(self, assignment):
-        self._uf = _UF()
+    def _state(self, thread_id):
+        return self._states[thread_id]
+
+    def _rebuild(self, state, assignment):
+        state.uf = _UF()
         for slit, (a, b) in self._merge_to_pair.items():
             if assignment.is_true(slit):
-                self._uf.union(a, b, slit)
+                state.uf.union(a, b, slit)
 
-    def _assert_same(self, ctl, x, y, slit):
+    def _assert_same(self, state, ctl, x, y, slit):
         """Add permanent reason clause: reason_lits → sameClass(x,y)."""
-        _, reason = self._uf.same_with_reason(x, y)
+        _, reason = state.uf.same_with_reason(x, y)
         clause = [-r for r in reason] + [slit]
         _dprint(f"[assert-true] &sameClass({x},{y}) via {reason}")
         return ctl.add_clause(clause, tag=False)
 
-    def _component_cut_and_reasons(self, x, cache):
-        root = self._uf._root(x)
+    def _component_cut_and_reasons(self, state, x, cache):
+        root = state.uf._root(x)
         if root in cache:
             return cache[root]
-        component = self._uf.component(x, self._entities)
-        reason = self._uf.component_reasons(component)
+        component = state.uf.component(x, self._entities)
+        reason = state.uf.component_reasons(component)
         cut = set()
         for member in component:
             for other, merge_slit in self._merge_by_entity.get(member, ()):
@@ -270,7 +279,7 @@ class SameClassPropagator:
         cache[root] = (reason, cut)
         return reason, cut
 
-    def _assert_not_same(self, ctl, x, y, slit, cache=None):
+    def _assert_not_same(self, state, ctl, x, y, slit, cache=None):
         """Assert sameClass(x,y)=false with a sound explanation."""
         if not self._potential_uf.same(x, y):
             _dprint(f"[assert-false/perm] &sameClass({x},{y})")
@@ -278,7 +287,7 @@ class SameClassPropagator:
 
         if cache is None:
             cache = {}
-        reason, cut = self._component_cut_and_reasons(x, cache)
+        reason, cut = self._component_cut_and_reasons(state, x, cache)
         clause = [-r for r in reason] + list(cut) + [-slit]
         _dprint(
             f"[assert-false/cut] &sameClass({x},{y}) "
@@ -288,23 +297,24 @@ class SameClassPropagator:
 
     def propagate(self, ctl, changes):
         asgn = ctl.assignment
+        state = self._state(ctl.thread_id)
         for lit in changes:
             if lit in self._merge_to_pair:
                 a, b = self._merge_to_pair[lit]
-                if self._uf.same(a, b):
+                if state.uf.same(a, b):
                     continue
-                comp_a = self._uf.component(a, self._entities)
-                comp_b = self._uf.component(b, self._entities)
-                snapshot = self._uf.snapshot()
-                if self._uf.union(a, b, lit):
-                    self._merge_trail.append((lit, snapshot))
+                comp_a = state.uf.component(a, self._entities)
+                comp_b = state.uf.component(b, self._entities)
+                snapshot = state.uf.snapshot()
+                if state.uf.union(a, b, lit):
+                    state.merge_trail.append((lit, snapshot))
                     _dprint(f"[propagate] union({a},{b})")
                     if len(comp_a) > len(comp_b):
                         comp_a, comp_b = comp_b, comp_a
                     for x in comp_a:
                         for y, sc_lit in self._sc_by_entity.get(x, ()):
                             if y in comp_b and not asgn.is_fixed(sc_lit):
-                                if not self._assert_same(ctl, x, y, sc_lit):
+                                if not self._assert_same(state, ctl, x, y, sc_lit):
                                     return
             elif lit in self._sc_lit_to_pair:
                 # Solver guessed this theory atom true — validate immediately.
@@ -319,37 +329,45 @@ class SameClassPropagator:
 
     def undo(self, thread_id, assignment, changes):
         _dprint(f"[undo] restore at level {assignment.decision_level}")
+        state = self._state(thread_id)
         for lit in changes:
             if lit not in self._merge_to_pair:
                 continue
-            if self._merge_trail and self._merge_trail[-1][0] == lit:
-                _lit, snapshot = self._merge_trail.pop()
-                self._uf.restore(snapshot)
+            if state.merge_trail and state.merge_trail[-1][0] == lit:
+                _lit, snapshot = state.merge_trail.pop()
+                state.uf.restore(snapshot)
             else:
                 # Fallback for any non-LIFO undo ordering from clingo.
-                self._rebuild(assignment)
-                self._merge_trail = []
+                self._rebuild(state, assignment)
+                state.merge_trail = []
                 return
 
     def check(self, ctl):
         """Validate assigned &sameClass atoms without eagerly deciding negatives."""
         asgn = ctl.assignment
+        state = self._state(ctl.thread_id)
         for x, y, slit in self._check_atoms:
-            is_same, _ = self._uf.same_with_reason(x, y)
+            is_same, _ = state.uf.same_with_reason(x, y)
             if is_same:
                 if not asgn.is_fixed(slit):
-                    if not self._assert_same(ctl, x, y, slit):
+                    if not self._assert_same(state, ctl, x, y, slit):
                         return
                 continue
 
             if asgn.is_true(slit):
                 _dprint(f"[check] &sameClass({x},{y}) → false")
-                if not self._assert_not_same(ctl, x, y, slit):
+                if not self._assert_not_same(state, ctl, x, y, slit):
                     return
 
     def partition(self, merge_pairs=None):
+        """Return class groups.
+
+        Prefer passing model mergeClasses/2 pairs after solving. Without
+        merge_pairs this exposes thread 0's live groups for compatibility with
+        older direct callers.
+        """
         if merge_pairs is None:
-            return self._uf.groups(self._entities)
+            return self._state(0).uf.groups(self._entities)
 
         uf = _UF()
         for a, b in merge_pairs:

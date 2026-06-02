@@ -25,10 +25,16 @@ THEORY = """
 }.
 """
 
-def run(name, asp, expected_models, expected_atoms=None):
+CONTROL_MODES = [
+    ("single", ["--warn=none", "0"]),
+    ("threads=4", ["--warn=none", "0", "-t", "4"]),
+]
+
+
+def run(name, asp, expected_models, expected_atoms=None, ctl_args=None):
     prog = THEORY + asp
     prop = SameClassPropagator()
-    ctl = clingo.Control(["--warn=none", "0"])
+    ctl = clingo.Control(ctl_args or ["--warn=none", "0"])
     ctl.register_propagator(prop)
     ctl.add("base", [], prog)
     ctl.ground([("base", [])])
@@ -124,14 +130,34 @@ def main():
          """,
          2,
          frozenset(["-mergeClasses(a,b)", "different"])),
+
+        # ── 7. Multi-thread transitive regression ─────────────────────────────
+        ("multi-thread transitive: force a-d through a-b-c-d chain",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c). mergeEntity(d).
+         mergeEntity(e). mergeEntity(f). mergeEntity(g). mergeEntity(h).
+         1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
+         1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
+         1 { mergeClasses(c,d) ; -mergeClasses(c,d) } 1.
+         1 { mergeClasses(e,f) ; -mergeClasses(e,f) } 1.
+         1 { mergeClasses(f,g) ; -mergeClasses(f,g) } 1.
+         1 { mergeClasses(g,h) ; -mergeClasses(g,h) } 1.
+         1 { mergeClasses(e,h) ; -mergeClasses(e,h) } 1.
+         :- not &sameClass(a, d).
+         #show mergeClasses/2.
+         """,
+         16,
+         frozenset(["mergeClasses(a,b)", "mergeClasses(b,c)", "mergeClasses(c,d)"])),
     ]
 
-    for name, asp, expected_models, *rest in tests:
-        expected_atoms = rest[0] if rest else None
-        if run(name, asp, expected_models, expected_atoms):
-            passed += 1
-        else:
-            failed += 1
+    for mode, ctl_args in CONTROL_MODES:
+        print(f"\nMode: {mode}")
+        for name, asp, expected_models, *rest in tests:
+            expected_atoms = rest[0] if rest else None
+            if run(name, asp, expected_models, expected_atoms, ctl_args):
+                passed += 1
+            else:
+                failed += 1
 
     print(f"\n{passed}/{passed+failed} passed")
     return 0 if failed == 0 else 1
