@@ -60,7 +60,7 @@ def main():
 
     prop = SameClassPropagator()
     ctl = clingo.Control(ctl_args)
-    if args.models is not None:
+    if args.models is not None and args.models != -1:
         ctl.configuration.solve.models = args.models
     ctl.register_propagator(prop)
 
@@ -75,21 +75,31 @@ def main():
     ground_time = time.perf_counter() - ground_start
     log.info("Grounding done (%.2fs)", ground_time)
 
-    keep_all_models = args.models == 0 or (args.models is not None and args.models > 1)
-    found = []
+    defer_print = args.models == -1
+    last_shown = []
+    last_cost = []
+    model_num = 0
+    had_cost = False
     first_model_time = None
 
     def on_model(model):
-        nonlocal first_model_time
+        nonlocal first_model_time, model_num, last_shown, last_cost, had_cost
         if first_model_time is None:
             first_model_time = time.perf_counter() - run_start
             log.info("Model found (%.2fs)", first_model_time)
         shown = list(model.symbols(shown=True))
         cost = list(model.cost)
-        if keep_all_models:
-            found.append((shown, cost))
-        else:
-            found[:] = [(shown, cost)]
+        model_num += 1
+        if cost:
+            had_cost = True
+        last_shown = shown
+        last_cost = cost
+        if not defer_print:
+            print(f"\nAnswer: {model_num}")
+            print(" ".join(str(a) for a in shown))
+            if cost:
+                print("Optimization:", " ".join(str(c) for c in cost))
+            sys.stdout.flush()
 
     timed_out = False
     solve_start = time.perf_counter()
@@ -110,33 +120,30 @@ def main():
     elif result.unsatisfiable:
         print("UNSATISFIABLE")
         log.info("Solving done: UNSATISFIABLE (%.2fs)", solve_time)
-    elif not found:
+    elif model_num == 0:
         print("UNKNOWN")
-    else:
-        for i, (atoms, cost) in enumerate(found):
-            print(f"\nAnswer: {i+1}")
-            print(" ".join(str(a) for a in atoms))
-            if cost:
-                print("Optimization:", " ".join(str(c) for c in cost))
-        if result.exhausted:
-            if any(found[-1][1]):
-                print("OPTIMUM FOUND")
-                log.info("Solving done: OPTIMUM FOUND (%.2fs)", solve_time)
-            else:
-                print("SATISFIABLE")
-                log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
-        elif result.satisfiable:
-            print("SATISFIABLE")
-            log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
+    elif result.exhausted:
+        print("OPTIMUM FOUND" if had_cost else "SATISFIABLE")
+        log.info("Solving done: %s (%.2fs)",
+                 "OPTIMUM FOUND" if had_cost else "SATISFIABLE",
+                 solve_time)
+    elif result.satisfiable:
+        print("SATISFIABLE")
+        log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
 
-    # Print partition for the same model printed above. The propagator's live
+    if defer_print and model_num > 0:
+        print(f"\nAnswer: {model_num}")
+        print(" ".join(str(a) for a in last_shown))
+        if last_cost:
+            print("Optimization:", " ".join(str(c) for c in last_cost))
+
+    # Print partition for the last model printed above. The propagator's live
     # union-find may have been undone by solver backtracking after on_model.
     merge_pairs = []
-    if found:
-        for atom in found[-1][0]:
-            if atom.name == "mergeClasses" and len(atom.arguments) == 2:
-                merge_pairs.append(tuple(atom.arguments))
-    parts = prop.partition(merge_pairs) if found else {}
+    for atom in last_shown:
+        if atom.name == "mergeClasses" and len(atom.arguments) == 2:
+            merge_pairs.append(tuple(atom.arguments))
+    parts = prop.partition(merge_pairs) if last_shown else {}
     if parts:
         print(f"\n% Equivalence classes ({len(parts)} classes, "
               f"{sum(len(g) for g in parts.values())} entities):")
