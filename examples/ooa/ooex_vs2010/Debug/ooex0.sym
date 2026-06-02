@@ -1,8 +1,8 @@
-17:19:44 Grounding...
-17:19:44 Grounding done (0.01s)
-17:19:44 Solving...
-17:19:44 Model found (0.01s)
-17:19:44 Solving done: OPTIMUM FOUND (0.00s)
+18:00:29 Grounding...
+18:00:29 Grounding done (0.01s)
+18:00:29 Solving...
+18:00:29 Model found (0.01s)
+18:00:29 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -16,14 +16,14 @@ Optimization: -1 -207
 %   rules: 5016.0
 %   variables: 635.0
 %   constraints: 0.0
-%   choices: 221.0
+%   choices: 441.0
 %   conflicts: 1.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.0248110294342041
-%   ground_time: 0.008068084018304944
-%   time_to_first_model: 0.011494584032334387
-%   solve_time: 0.0007131099700927734
+%   total_time: 0.024084091186523438
+%   ground_time: 0.008591832942329347
+%   time_to_first_model: 0.011300457990728319
+%   solve_time: 0.0021331310272216797
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@4265840,ClassA::~ClassA(void)@4265552)
 deletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)@4265840)
 mergeClasses(ClassA::~ClassA(void)@4265552,* ClassA::`scalar deleting destructor'(unsigned int)@4265840)

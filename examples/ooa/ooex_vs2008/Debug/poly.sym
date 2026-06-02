@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.03s)
-17:19:43 Solving...
-17:19:43 Model found (0.10s)
-17:19:43 Solving done: OPTIMUM FOUND (0.07s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.03s)
+18:00:28 Solving...
+18:00:28 Model found (0.11s)
+18:00:28 Solving done: OPTIMUM FOUND (0.09s)
 OPTIMUM FOUND
 
-Answer: 14
+Answer: 8
 Optimization: -45 -6 -34 -304 -20
 
 % Equivalence classes (280 classes, 309 entities):
@@ -16,14 +16,14 @@ Optimization: -45 -6 -34 -304 -20
 %   rules: 27425.0
 %   variables: 9455.0
 %   constraints: 5.0
-%   choices: 994.0
-%   conflicts: 6.0
-%   models: 14.0
+%   choices: 1056.0
+%   conflicts: 9.0
+%   models: 8.0
 %   optimal_models: 1.0
-%   total_time: 0.11741900444030762
-%   ground_time: 0.03256924997549504
-%   time_to_first_model: 0.09683079202659428
-%   solve_time: 0.005591869354248047
+%   total_time: 0.14683103561401367
+%   ground_time: 0.027179500088095665
+%   time_to_first_model: 0.10834862501360476
+%   solve_time: 0.01415395736694336
 classCallsMethod(Circle::Circle(void)@4265952,Shape::Shape(void)@4266400)
 classCallsMethod(Rectangle::Rectangle(void)@4265728,Shape::Shape(void)@4266400)
 classCallsMethod(Triangle::Triangle(void)@4266176,Shape::Shape(void)@4266400)

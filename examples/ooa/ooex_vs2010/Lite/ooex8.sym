@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.01s)
-17:19:43 Solving...
-17:19:43 Model found (0.02s)
-17:19:43 Solving done: OPTIMUM FOUND (0.05s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.01s)
+18:00:28 Solving...
+18:00:29 Model found (0.03s)
+18:00:29 Solving done: OPTIMUM FOUND (0.07s)
 OPTIMUM FOUND
 
-Answer: 13
+Answer: 9
 Optimization: -143 -1 -43 -173 -20
 
 % Equivalence classes (162 classes, 176 entities):
@@ -16,14 +16,14 @@ Optimization: -143 -1 -43 -173 -20
 %   rules: 8204.0
 %   variables: 2355.0
 %   constraints: 101.0
-%   choices: 6580.0
-%   conflicts: 320.0
-%   models: 13.0
+%   choices: 8323.0
+%   conflicts: 248.0
+%   models: 9.0
 %   optimal_models: 1.0
-%   total_time: 0.08723211288452148
-%   ground_time: 0.012545208912342787
-%   time_to_first_model: 0.022520917002111673
-%   solve_time: 0.0408480167388916
+%   total_time: 0.10669207572937012
+%   ground_time: 0.014133832999505103
+%   time_to_first_model: 0.026639290968887508
+%   solve_time: 0.0572509765625
 classCallsMethod(D::D(void)@4198528,B::B(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Copy_str(char const *)@4199361)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Tidy(void)@4199425)

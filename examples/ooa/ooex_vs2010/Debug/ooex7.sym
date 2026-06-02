@@ -1,11 +1,11 @@
-17:19:44 Grounding...
-17:19:44 Grounding done (0.06s)
-17:19:44 Solving...
-17:19:44 Model found (0.19s)
-17:20:12 Solving done: OPTIMUM FOUND (28.20s)
+18:00:29 Grounding...
+18:00:29 Grounding done (0.05s)
+18:00:29 Solving...
+18:00:29 Model found (0.15s)
+18:01:38 Solving done: OPTIMUM FOUND (68.43s)
 OPTIMUM FOUND
 
-Answer: 17
+Answer: 20
 Optimization: -102 -68 -425 -12
 
 % Equivalence classes (387 classes, 431 entities):
@@ -16,14 +16,14 @@ Optimization: -102 -68 -425 -12
 %   rules: 41268.0
 %   variables: 13149.0
 %   constraints: 101.0
-%   choices: 2141792.0
-%   conflicts: 104531.0
-%   models: 17.0
+%   choices: 3271637.0
+%   conflicts: 153614.0
+%   models: 20.0
 %   optimal_models: 1.0
-%   total_time: 28.287424087524414
-%   ground_time: 0.05929624999407679
-%   time_to_first_model: 0.1908423330169171
-%   solve_time: 28.075103044509888
+%   total_time: 68.50917100906372
+%   ground_time: 0.048838208080269396
+%   time_to_first_model: 0.14648020802997053
+%   solve_time: 68.33986711502075
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)

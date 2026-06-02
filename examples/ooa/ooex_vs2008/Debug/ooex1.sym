@@ -1,8 +1,8 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.01s)
-17:19:43 Solving...
-17:19:43 Model found (0.01s)
-17:19:43 Solving done: OPTIMUM FOUND (0.00s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.01s)
+18:00:28 Solving...
+18:00:28 Model found (0.01s)
+18:00:28 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -16,14 +16,14 @@ Optimization: -212
 %   rules: 5137.0
 %   variables: 856.0
 %   constraints: 0.0
-%   choices: 227.0
-%   conflicts: 0.0
+%   choices: 447.0
+%   conflicts: 1.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.0255429744720459
-%   ground_time: 0.010611584060825408
-%   time_to_first_model: 0.011901417048648
-%   solve_time: 0.00023508071899414062
+%   total_time: 0.027395009994506836
+%   ground_time: 0.012032833066768944
+%   time_to_first_model: 0.014521791017614305
+%   solve_time: 0.0007331371307373047
 method($LN6_1@4271605)
 method(* __cdecl operator new(unsigned int)@4264351)
 method(* __cdecl operator new(unsigned int)@4266018)

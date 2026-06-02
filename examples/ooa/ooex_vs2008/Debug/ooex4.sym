@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.01s)
-17:19:43 Solving...
-17:19:43 Model found (0.02s)
-17:19:43 Solving done: OPTIMUM FOUND (0.02s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.01s)
+18:00:28 Solving...
+18:00:28 Model found (0.02s)
+18:00:28 Solving done: OPTIMUM FOUND (0.03s)
 OPTIMUM FOUND
 
-Answer: 12
+Answer: 9
 Optimization: -63 -2 -19 -228 -28
 
 % Equivalence classes (218 classes, 231 entities):
@@ -16,14 +16,14 @@ Optimization: -63 -2 -19 -228 -28
 %   rules: 7613.0
 %   variables: 2661.0
 %   constraints: 34.0
-%   choices: 747.0
-%   conflicts: 15.0
-%   models: 12.0
+%   choices: 1936.0
+%   conflicts: 26.0
+%   models: 9.0
 %   optimal_models: 1.0
-%   total_time: 0.04101705551147461
-%   ground_time: 0.01222208293620497
-%   time_to_first_model: 0.02314233290962875
-%   solve_time: 0.005414009094238281
+%   total_time: 0.060914039611816406
+%   ground_time: 0.011674499954096973
+%   time_to_first_model: 0.023973749950528145
+%   solve_time: 0.01969003677368164
 classCallsMethod(Derived::Derived(void)@4265328,Base::Base(void)@4265504)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4265712)

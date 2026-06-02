@@ -1,11 +1,11 @@
-17:19:44 Grounding...
-17:19:44 Grounding done (0.01s)
-17:19:44 Solving...
-17:19:44 Model found (0.01s)
-17:19:44 Solving done: OPTIMUM FOUND (0.00s)
+18:00:29 Grounding...
+18:00:29 Grounding done (0.01s)
+18:00:29 Solving...
+18:00:29 Model found (0.01s)
+18:00:29 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 2
 method(4263941) method(4263946) method(4263951) method(4263956) method(4263961) method(4263966) method(4263971) method(4263976) method(4263981) method(4263986) method(4263991) method(4263996) method(4264001) method(4264006) method(4264011) method(4264016) method(4264021) method(4264026) method(4264031) method(4264036) method(4264041) method(4264046) method(4264051) method(4264056) method(4264061) method(4264066) method(4264071) method(4264076) method(4264086) method(4264091) method(4264096) method(4264101) method(4264106) method(4264111) method(4264116) method(4264121) method(4264126) method(4264131) method(4264136) method(4264141) method(4264146) method(4264151) method(4264156) method(4264161) method(4264166) method(4264171) method(4264176) method(4264181) method(4264186) method(4264191) method(4264196) method(4264201) method(4264206) method(4264211) method(4264216) method(4264221) method(4264226) method(4264231) method(4264236) method(4264241) method(4264246) method(4264251) method(4264256) method(4264261) method(4264266) method(4264271) method(4264276) method(4264281) method(4264286) method(4264291) method(4264296) method(4264301) method(4264306) method(4264311) method(4264316) method(4264321) method(4264326) method(4264331) method(4264336) method(4264341) method(4264346) method(4264351) method(4264356) method(4264361) method(4264366) method(4264371) method(4264376) method(4264381) method(4264386) method(4264391) method(4264396) method(4264401) method(4264406) method(4264411) method(4264416) method(4264912) method(4265200) method(4265360) method(4265456) method(4265536) method(4265600) method(4265606) method(4265612) method(4265632) method(4265712) method(4265840) method(4265904) method(4266176) method(4266240) method(4266264) method(4266272) method(4266448) method(4266560) method(4266592) method(4267360) method(4267376) method(4267872) method(4267984) method(4268656) method(4268832) method(4269040) method(4269360) method(4269744) method(4269888) method(4270192) method(4270208) method(4270288) method(4270336) method(4270384) method(4270400) method(4270406) method(4270416) method(4270544) method(4270570) method(4270576) method(4270656) method(4270706) method(4270720) method(4270736) method(4270752) method(4270800) method(4270848) method(4271059) method(4271152) method(4271188) method(4271194) method(4271200) method(4271216) method(4271496) method(4271502) method(4271508) method(4271514) method(4271520) method(4271536) method(4271664) method(4271824) method(4272166) method(4272172) method(4272178) method(4272192) method(4272244) method(4272256) method(4273136) method(4273750) method(4273756) method(4273762) method(4273768) method(4273774) method(4273780) method(4273786) method(4273792) method(4273798) method(4273804) method(4273810) method(4273816) method(4273822) method(4273828) method(4273834) method(4273840) method(4273846) method(4273852) method(4273858) method(4273864) method(4273870) method(4273876) method(4273882) method(4273888) method(4273894) method(4273900) method(4273906) method(4273912) method(4273918) method(4273924) method(4273930) method(4273936) method(4273942) method(4273948) method(4273954) method(4277918) method(4265664) method(4267520) method(4277904) classCallsMethod(4265200,4265360) classCallsMethod(4265200,4265456) mergeClasses(4265200,4265360) mergeClasses(4265200,4265456)
 Optimization: -2 -202
 
@@ -217,11 +217,11 @@ Optimization: -2 -202
 %   rules: 4905.0
 %   variables: 626.0
 %   constraints: 0.0
-%   choices: 423.0
-%   conflicts: 1.0
-%   models: 3.0
+%   choices: 639.0
+%   conflicts: 3.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.025366783142089844
-%   ground_time: 0.007932791020721197
-%   time_to_first_model: 0.009350375039502978
-%   solve_time: 0.0009648799896240234
+%   total_time: 0.03124094009399414
+%   ground_time: 0.008442666963674128
+%   time_to_first_model: 0.010139958001673222
+%   solve_time: 0.0010700225830078125

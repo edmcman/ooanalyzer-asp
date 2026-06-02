@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.02s)
-17:19:43 Solving...
-17:19:43 Model found (0.04s)
-17:19:43 Solving done: OPTIMUM FOUND (0.12s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.01s)
+18:00:28 Solving...
+18:00:28 Model found (0.03s)
+18:00:28 Solving done: OPTIMUM FOUND (0.12s)
 OPTIMUM FOUND
 
-Answer: 16
+Answer: 9
 Optimization: -195 -3 -59 -177 -44
 
 % Equivalence classes (166 classes, 185 entities):
@@ -16,14 +16,14 @@ Optimization: -195 -3 -59 -177 -44
 %   rules: 10188.0
 %   variables: 3415.0
 %   constraints: 139.0
-%   choices: 11338.0
-%   conflicts: 582.0
-%   models: 16.0
+%   choices: 9222.0
+%   conflicts: 481.0
+%   models: 9.0
 %   optimal_models: 1.0
-%   total_time: 0.16294288635253906
-%   ground_time: 0.01845666696317494
-%   time_to_first_model: 0.037029959028586745
-%   solve_time: 0.10112690925598145
+%   total_time: 0.24134612083435059
+%   ground_time: 0.014885791926644742
+%   time_to_first_model: 0.031202082987874746
+%   solve_time: 0.1081380844116211
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func1(void)@4198432)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func2(void)@4198464)
@@ -48,7 +48,7 @@ constructor(Base::Base(void)@4198400)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198815)
 constructor(std::exception::exception(char const * const &, int)@4201447)
 constructor(std::exception::exception(class std::exception const &)@4201686)
-constructor(virtual std::exception::~exception(void)@4201636)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4198765)
 constructor(virtual type_info::~type_info(void)@4198630)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198776)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201647)
@@ -274,7 +274,7 @@ method(x_ismbbtype_l@4212188)
 objectInObject(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
 objectInObject(const std::bad_alloc::`vftable'@4219240,const std::exception::`vftable'@4221884,0)
 realDestructor(Derived::Derived(void)@4198496)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198765)
+realDestructor(virtual std::exception::~exception(void)@4201636)
 vfTable(const Base::`vftable'@4219200)
 vfTable(const Derived::`vftable'@4219216)
 vfTable(const std::bad_alloc::`vftable'@4219240)

@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.02s)
-17:19:43 Solving...
-17:19:43 Model found (0.03s)
-17:19:43 Solving done: OPTIMUM FOUND (0.08s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.02s)
+18:00:28 Solving...
+18:00:28 Model found (0.04s)
+18:00:28 Solving done: OPTIMUM FOUND (0.08s)
 OPTIMUM FOUND
 
-Answer: 13
+Answer: 11
 Optimization: -154 -1 -43 -234 -24
 
 % Equivalence classes (224 classes, 239 entities):
@@ -16,14 +16,14 @@ Optimization: -154 -1 -43 -234 -24
 %   rules: 11128.0
 %   variables: 3564.0
 %   constraints: 104.0
-%   choices: 10165.0
-%   conflicts: 298.0
-%   models: 13.0
+%   choices: 8881.0
+%   conflicts: 279.0
+%   models: 11.0
 %   optimal_models: 1.0
-%   total_time: 0.13941097259521484
-%   ground_time: 0.01616316696163267
-%   time_to_first_model: 0.030384707963094115
-%   solve_time: 0.06906008720397949
+%   total_time: 0.1455061435699463
+%   ground_time: 0.022248290944844484
+%   time_to_first_model: 0.03658616589382291
+%   solve_time: 0.07105016708374023
 classCallsMethod(__iob@4239424,__bufin@4246560)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4205749,std::exception::_Copy_str(char const *)@4205655)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4205749,std::exception::_Tidy(void)@4205719)
@@ -40,7 +40,6 @@ classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198907)
 constructor(std::exception::exception(char const * const &, int)@4205613)
 constructor(std::exception::exception(class std::exception const &)@4205852)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@4198857)
 constructor(virtual std::exception::~exception(void)@4205802)
 constructor(virtual type_info::~type_info(void)@4205889)
 deletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)@4198480)
@@ -316,6 +315,7 @@ method(write_char@4200248)
 method(write_string@4200299)
 method(x_ismbbtype_l@4217827)
 objectInObject(const std::bad_alloc::`vftable'@4227440,const std::exception::`vftable'@4227656,0)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198857)
 vfTable(__iob@4239424)
 vfTable(const std::bad_alloc::`vftable'@4227440)
 vfTable(const std::exception::`vftable'@4227656)

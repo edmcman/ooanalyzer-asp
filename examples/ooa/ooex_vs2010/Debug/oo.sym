@@ -1,11 +1,11 @@
-17:19:44 Grounding...
-17:19:44 Grounding done (0.03s)
-17:19:44 Solving...
-17:19:44 Model found (0.08s)
-17:19:44 Solving done: OPTIMUM FOUND (0.07s)
+18:00:30 Grounding...
+18:00:30 Grounding done (0.03s)
+18:00:30 Solving...
+18:00:30 Model found (0.08s)
+18:00:30 Solving done: OPTIMUM FOUND (0.07s)
 OPTIMUM FOUND
 
-Answer: 12
+Answer: 7
 Optimization: -75 -4 -26 -296 -28
 
 % Equivalence classes (271 classes, 301 entities):
@@ -16,14 +16,14 @@ Optimization: -75 -4 -26 -296 -28
 %   rules: 22578.0
 %   variables: 7996.0
 %   constraints: 10.0
-%   choices: 541.0
-%   conflicts: 4.0
-%   models: 12.0
+%   choices: 865.0
+%   conflicts: 9.0
+%   models: 7.0
 %   optimal_models: 1.0
-%   total_time: 0.11067414283752441
-%   ground_time: 0.028741582995280623
-%   time_to_first_model: 0.0828339169966057
-%   solve_time: 0.012315034866333008
+%   total_time: 0.11877107620239258
+%   ground_time: 0.02560245804488659
+%   time_to_first_model: 0.07890600000973791
+%   solve_time: 0.019418954849243164
 classCallsMethod(Cls3::Cls3(void)@4266032,Cls1::Cls1(void)@4266560)
 classCallsMethod(const Cls1::`vftable'@4290704,virtual Cls1::func1(void)@4266640)
 classCallsMethod(const Cls2::`vftable'@4290732,virtual Cls2::func3(void)@4266848)

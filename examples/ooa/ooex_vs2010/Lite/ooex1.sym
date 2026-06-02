@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.03s)
-17:19:43 Solving...
-17:19:43 Model found (0.04s)
-17:19:43 Solving done: OPTIMUM FOUND (0.19s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.03s)
+18:00:28 Solving...
+18:00:28 Model found (0.06s)
+18:00:28 Solving done: OPTIMUM FOUND (0.40s)
 OPTIMUM FOUND
 
-Answer: 15
+Answer: 19
 Optimization: -224 -2 -58 -216 -28
 
 % Equivalence classes (203 classes, 220 entities):
@@ -16,14 +16,14 @@ Optimization: -224 -2 -58 -216 -28
 %   rules: 11510.0
 %   variables: 3590.0
 %   constraints: 232.0
-%   choices: 28199.0
-%   conflicts: 1243.0
-%   models: 15.0
+%   choices: 24077.0
+%   conflicts: 2425.0
+%   models: 19.0
 %   optimal_models: 1.0
-%   total_time: 0.25008702278137207
-%   ground_time: 0.02776279195677489
-%   time_to_first_model: 0.044434707961045206
-%   solve_time: 0.1763010025024414
+%   total_time: 0.4673168659210205
+%   ground_time: 0.03280283301137388
+%   time_to_first_model: 0.06279179092962295
+%   solve_time: 0.37430381774902344
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200472,std::exception::_Copy_str(char const *)@4200339)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200472,std::exception::_Tidy(void)@4200403)
 classCallsMethod(const std::bad_alloc::`vftable'@4223296,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642)
@@ -46,8 +46,6 @@ constructor(std::bad_exception::bad_exception(class std::bad_exception const &)@
 constructor(std::exception::exception(char const * const &)@4200433)
 constructor(std::exception::exception(char const * const &, int)@4200297)
 constructor(std::exception::exception(class std::exception const &)@4200575)
-constructor(virtual std::bad_exception::~bad_exception(void)@4202484)
-constructor(virtual std::exception::~exception(void)@4200525)
 constructor(virtual type_info::~type_info(void)@4200612)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4202495)
@@ -318,6 +316,8 @@ method(x_ismbbtype_l@4217799)
 objectInObject(const std::bad_alloc::`vftable'@4223296,const std::exception::`vftable'@4223324,0)
 objectInObject(const std::bad_exception::`vftable'@4223472,const std::exception::`vftable'@4223324,0)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198631)
+realDestructor(virtual std::bad_exception::~bad_exception(void)@4202484)
+realDestructor(virtual std::exception::~exception(void)@4200525)
 vfTable(const std::bad_alloc::`vftable'@4223296)
 vfTable(const std::bad_exception::`vftable'@4223472)
 vfTable(const std::exception::`vftable'@4223324)

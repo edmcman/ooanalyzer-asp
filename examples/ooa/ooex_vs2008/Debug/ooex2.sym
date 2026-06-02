@@ -1,11 +1,11 @@
-17:19:43 Grounding...
-17:19:43 Grounding done (0.01s)
-17:19:43 Solving...
-17:19:43 Model found (0.01s)
-17:19:43 Solving done: OPTIMUM FOUND (0.00s)
+18:00:28 Grounding...
+18:00:28 Grounding done (0.01s)
+18:00:28 Solving...
+18:00:28 Model found (0.01s)
+18:00:28 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 2
 Optimization: -2 -208
 
 % Equivalence classes (206 classes, 208 entities):
@@ -16,14 +16,14 @@ Optimization: -2 -208
 %   rules: 5039.0
 %   variables: 644.0
 %   constraints: 0.0
-%   choices: 435.0
-%   conflicts: 1.0
-%   models: 3.0
+%   choices: 657.0
+%   conflicts: 3.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.042684078216552734
-%   ground_time: 0.008904166985303164
-%   time_to_first_model: 0.010527416947297752
-%   solve_time: 0.0005271434783935547
+%   total_time: 0.03739786148071289
+%   ground_time: 0.00809324998408556
+%   time_to_first_model: 0.009599457960575819
+%   solve_time: 0.0010199546813964844
 classCallsMethod(Derived::Derived(void)@4265232,Base::Base(void)@4265392)
 classCallsMethod(Derived::Derived(void)@4265232,int Base::func3(void)@4265488)
 mergeClasses(Derived::Derived(void)@4265232,Base::Base(void)@4265392)

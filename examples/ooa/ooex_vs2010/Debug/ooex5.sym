@@ -1,11 +1,11 @@
-17:19:44 Grounding...
-17:19:44 Grounding done (0.02s)
-17:19:44 Solving...
-17:19:44 Model found (0.04s)
-17:19:44 Solving done: OPTIMUM FOUND (0.04s)
+18:00:29 Grounding...
+18:00:29 Grounding done (0.01s)
+18:00:29 Solving...
+18:00:29 Model found (0.03s)
+18:00:29 Solving done: OPTIMUM FOUND (0.04s)
 OPTIMUM FOUND
 
-Answer: 19
+Answer: 10
 Optimization: -115 -8 -22 -230 -52
 
 % Equivalence classes (213 classes, 235 entities):
@@ -16,14 +16,14 @@ Optimization: -115 -8 -22 -230 -52
 %   rules: 9194.0
 %   variables: 3752.0
 %   constraints: 47.0
-%   choices: 985.0
-%   conflicts: 31.0
-%   models: 19.0
+%   choices: 993.0
+%   conflicts: 11.0
+%   models: 10.0
 %   optimal_models: 1.0
-%   total_time: 0.0654439926147461
-%   ground_time: 0.01811699999962002
-%   time_to_first_model: 0.03557049995288253
-%   solve_time: 0.021522045135498047
+%   total_time: 0.10486102104187012
+%   ground_time: 0.013062292011454701
+%   time_to_first_model: 0.029399042017757893
+%   solve_time: 0.026175975799560547
 classCallsMethod(Derived::Derived(void)@4265392,Base::Base(void)@4265600)
 classCallsMethod(Derived::Derived(void)@4265392,virtual int Base::func2(void)@4265808)
 classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4266016)
