@@ -8,10 +8,15 @@ Usage:
 """
 
 import argparse
+import logging
 import os
 import sys
 import time
 import clingo
+
+log = logging.getLogger("ooanalyzer")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
+
 from propagator.sameclass import SameClassPropagator
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -65,8 +70,10 @@ def main():
 
     run_start = time.perf_counter()
     ground_start = run_start
+    log.info("Grounding...")
     ctl.ground([("base", [])])
     ground_time = time.perf_counter() - ground_start
+    log.info("Grounding done (%.2fs)", ground_time)
 
     keep_all_models = args.models == 0 or (args.models is not None and args.models > 1)
     found = []
@@ -76,6 +83,7 @@ def main():
         nonlocal first_model_time
         if first_model_time is None:
             first_model_time = time.perf_counter() - run_start
+            log.info("Model found (%.2fs)", first_model_time)
         shown = list(model.symbols(shown=True))
         cost = list(model.cost)
         if keep_all_models:
@@ -84,6 +92,8 @@ def main():
             found[:] = [(shown, cost)]
 
     timed_out = False
+    solve_start = time.perf_counter()
+    log.info("Solving...")
     if args.time_limit:
         handle = ctl.solve(on_model=on_model, async_=True)
         if not handle.wait(args.time_limit):
@@ -92,9 +102,14 @@ def main():
         result = handle.get()
     else:
         result = ctl.solve(on_model=on_model)
+    solve_time = time.perf_counter() - solve_start
 
-    if result.unsatisfiable:
+    if timed_out:
+        print("% TIME LIMIT REACHED")
+        log.info("Solving done: TIME LIMIT REACHED (%.2fs)", solve_time)
+    elif result.unsatisfiable:
         print("UNSATISFIABLE")
+        log.info("Solving done: UNSATISFIABLE (%.2fs)", solve_time)
     elif not found:
         print("UNKNOWN")
     else:
@@ -104,11 +119,15 @@ def main():
             if cost:
                 print("Optimization:", " ".join(str(c) for c in cost))
         if result.exhausted:
-            print("OPTIMUM FOUND" if any(found[-1][1]) else "SATISFIABLE")
+            if any(found[-1][1]):
+                print("OPTIMUM FOUND")
+                log.info("Solving done: OPTIMUM FOUND (%.2fs)", solve_time)
+            else:
+                print("SATISFIABLE")
+                log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
         elif result.satisfiable:
             print("SATISFIABLE")
-    if timed_out:
-        print("% TIME LIMIT REACHED")
+            log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
 
     # Print partition for the same model printed above. The propagator's live
     # union-find may have been undone by solver backtracking after on_model.
