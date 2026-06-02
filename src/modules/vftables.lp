@@ -116,14 +116,24 @@ vftableBelongsToClassInstalledAtZero(VFTable) :-
 %
 % Performance note: the direct Prolog-style domain is mergeEntity(Class), but
 % on large inputs (mysql.exe.lp) that grounds a Class x VFTable cross product and
-% millions of &sameClass checks.  We bound the helper to candidate owners instead.
-% This may not be fully equivalent to the original rule if a non-candidate class
-% should be allowed to refute ownership, but it keeps the prototype tractable.
-vftableBelongsToClassOtherWriter(VFTable, Class) :-
-    vftableBelongsToClassCandidate(_, _, VFTable, Class),
+% millions of &sameClass checks.  We bound Class to vftable writers via
+% vfTableWrite(_, Class, _, _) in the body, since &sameClass/2 is a theory
+% atom that the grounder cannot see and therefore does not count as a domain
+% provider.  We further pin Class via &sameClass(Class, SomeMethod) for a
+% non-overwriting writer of VFTable, so the class witness must already be in
+% the same class as a real writer of VFTable.
+%
+% Ed is not 100% sure this is semantically equivalent to the original
+% mergeEntity version. But it's so much faster. See rules.pl:1101-1106 /
+% 1209-1214.
+vftableBelongsToClassOtherWriter(VFTable, Class) :-                       % rules.pl:1101-1106 / 1209-1214
+    vfTableWrite(_, Class, _, _),
+    vfTableWrite(_, SomeMethod, SomeOffset, VFTable),
+    not vfTableOverwrite(SomeMethod, VFTable, _, SomeOffset),
+    &sameClass(Class, SomeMethod),
     vfTableWrite(_, OtherMethod, OtherOffset, VFTable),
     not vfTableOverwrite(OtherMethod, VFTable, _, OtherOffset),
-    not &sameClass(OtherMethod, Class).                                      % rules.pl:1101-1106 / 1209-1214
+    not &sameClass(OtherMethod, Class).
 
 % Core candidate: confirmed write to method's own this-pointer, not overwritten.
 % possibleVFTableWrite + thisParamFuncParameter guards against inlined sub-constructor writes.
