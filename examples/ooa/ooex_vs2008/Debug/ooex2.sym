@@ -424,16 +424,16 @@ OPTIMUM FOUND
 %   {__ehhandler$_main@4278062}
 
 % Stats:
-%   atoms: 4589.0
-%   bodies: 863.0
-%   rules: 5015.0
-%   variables: 634.0
+%   atoms: 4605.0
+%   bodies: 1280.0
+%   rules: 5039.0
+%   variables: 644.0
 %   constraints: 0.0
-%   choices: 416.0
-%   conflicts: 0.0
+%   choices: 435.0
+%   conflicts: 1.0
 %   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.0429689884185791
-%   ground_time: 0.013741082977503538
-%   time_to_first_model: 0.015425791963934898
-%   solve_time: 0.0008871555328369141
+%   total_time: 0.04301118850708008
+%   ground_time: 0.012788707972504199
+%   time_to_first_model: 0.01504741597454995
+%   solve_time: 0.0005710124969482422
