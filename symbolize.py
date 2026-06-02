@@ -33,10 +33,32 @@ def _fixup(sym):
     return sym
 
 def build_symbol_map(symbols_file):
-    """Return dict: int_addr -> display_string."""
+    """Return dict: int_addr -> display_string.
+
+    Supports two formats:
+      .symbols: tab-separated lines  hex  kind  idasym  [demangled]
+      .ground:  symbol(0xHEX, kind, 'name') and demangledName(0xHEX, kind, 'demangled')
+    """
     m = {}
     with open(symbols_file) as f:
-        for line in f:
+        lines = f.readlines()
+    if symbols_file.endswith('.ground'):
+        import re as _re
+        _sym = _re.compile(r"symbol\((0x[0-9a-fA-F]+)\s*,\s*\w+\s*,\s*'([^']*)'\)")
+        _dem = _re.compile(r"demangledName\((0x[0-9a-fA-F]+)\s*,\s*[^,]*\s*,\s*'([^']*)'\)")
+        for line in lines:
+            mo = _dem.match(line)
+            if mo:
+                addr = int(mo.group(1), 16)
+                m[addr] = _fixup(mo.group(2))
+                continue
+            mo = _sym.match(line)
+            if mo:
+                addr = int(mo.group(1), 16)
+                if addr not in m:
+                    m[addr] = mo.group(2)
+    elif symbols_file.endswith('.symbols'):
+        for line in lines:
             line = line.rstrip()
             if not line:
                 continue
