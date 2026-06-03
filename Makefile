@@ -3,9 +3,9 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,inc --heuristic domain --time-limit=300 -t2 --stats
+PROP_FLAGS   := -n -1 --opt-strategy bb,hier --heuristic domain --time-limit=300 -t2 --stats
 XCLINGO      := xclingo
-XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,inc --heuristic=domain
+XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,hier --heuristic=domain
 TIME_CMD     := /usr/bin/time
 
 OOA_DIR      := examples/ooa

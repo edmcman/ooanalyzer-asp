@@ -1,25 +1,31 @@
-10:57:13 Grounding...
-10:57:13 Grounding done (0.02s)
-10:57:13 Solving...
-10:57:13 Model found (0.03s)
-10:57:13 Model found (0.03s, +0.00s)
-10:57:13 Model found (0.03s, +0.00s)
-10:57:13 Model found (0.04s, +0.00s)
-10:57:13 Model found (0.04s, +0.00s)
-10:57:13 Model found (0.04s, +0.00s)
-10:57:13 Model found (0.05s, +0.01s)
-10:57:13 Model found (0.05s, +0.00s)
-10:57:13 Model found (0.05s, +0.00s)
-10:57:13 Model found (0.06s, +0.01s)
-10:57:13 Model found (0.06s, +0.00s)
-10:57:13 Model found (0.06s, +0.00s)
-10:57:13 Model found (0.07s, +0.00s)
-10:57:13 Model found (0.07s, +0.00s)
-10:57:13 Model found (0.07s, +0.00s)
-10:57:13 Solving done: OPTIMUM FOUND (0.06s)
+12:09:35 Grounding...
+12:09:35 Grounding done (0.04s)
+12:09:35 Solving...
+12:09:35 Model found (0.07s)
+12:09:35 Model found (0.08s, +0.00s)
+12:09:35 Model found (0.08s, +0.00s)
+12:09:35 Model found (0.08s, +0.00s)
+12:09:35 Model found (0.09s, +0.01s)
+12:09:35 Model found (0.10s, +0.01s)
+12:09:35 Model found (0.10s, +0.01s)
+12:09:35 Model found (0.11s, +0.00s)
+12:09:35 Model found (0.11s, +0.00s)
+12:09:35 Model found (0.11s, +0.00s)
+12:09:35 Model found (0.11s, +0.00s)
+12:09:35 Model found (0.12s, +0.00s)
+12:09:35 Model found (0.12s, +0.00s)
+12:09:35 Model found (0.12s, +0.01s)
+12:09:35 Model found (0.13s, +0.01s)
+12:09:35 Model found (0.14s, +0.01s)
+12:09:35 Model found (0.15s, +0.00s)
+12:09:35 Model found (0.16s, +0.01s)
+12:09:35 Model found (0.17s, +0.01s)
+12:09:35 Model found (0.17s, +0.00s)
+12:09:35 Model found (0.19s, +0.02s)
+12:09:35 Solving done: OPTIMUM FOUND (0.16s)
 OPTIMUM FOUND
 
-Answer: 15
+Answer: 21
 Optimization: -154 -1 -43 -234 -24
 
 % Equivalence classes (224 classes, 239 entities):
@@ -30,14 +36,14 @@ Optimization: -154 -1 -43 -234 -24
 %   rules: 11115.0
 %   variables: 3552.0
 %   constraints: 99.0
-%   choices: 11891.0
-%   conflicts: 261.0
-%   models: 15.0
+%   choices: 10674.0
+%   conflicts: 254.0
+%   models: 21.0
 %   optimal_models: 1.0
-%   total_time: 0.09288406372070312
-%   ground_time: 0.016291000065393746
-%   time_to_first_model: 0.031570417108014226
-%   solve_time: 0.04478621482849121
+%   total_time: 0.2443091869354248
+%   ground_time: 0.03898845799267292
+%   time_to_first_model: 0.07470612495671958
+%   solve_time: 0.12954115867614746
 classCallsMethod(__iob@4239424,__bufin@4246560)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4205749,std::exception::_Copy_str(char const *)@4205655)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4205749,std::exception::_Tidy(void)@4205719)

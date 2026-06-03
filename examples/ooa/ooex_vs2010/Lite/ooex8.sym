@@ -1,24 +1,35 @@
-10:57:13 Grounding...
-10:57:13 Grounding done (0.01s)
-10:57:13 Solving...
-10:57:13 Model found (0.02s)
-10:57:13 Model found (0.02s, +0.00s)
-10:57:13 Model found (0.03s, +0.00s)
-10:57:13 Model found (0.03s, +0.00s)
-10:57:13 Model found (0.03s, +0.00s)
-10:57:13 Model found (0.04s, +0.00s)
-10:57:13 Model found (0.04s, +0.00s)
-10:57:13 Model found (0.04s, +0.00s)
-10:57:13 Model found (0.05s, +0.01s)
-10:57:13 Model found (0.05s, +0.00s)
-10:57:13 Model found (0.05s, +0.00s)
-10:57:13 Model found (0.06s, +0.00s)
-10:57:13 Model found (0.06s, +0.00s)
-10:57:13 Model found (0.06s, +0.00s)
-10:57:13 Solving done: OPTIMUM FOUND (0.06s)
+12:09:35 Grounding...
+12:09:35 Grounding done (0.03s)
+12:09:35 Solving...
+12:09:35 Model found (0.06s)
+12:09:35 Model found (0.06s, +0.00s)
+12:09:35 Model found (0.06s, +0.00s)
+12:09:35 Model found (0.07s, +0.01s)
+12:09:35 Model found (0.07s, +0.01s)
+12:09:35 Model found (0.08s, +0.00s)
+12:09:35 Model found (0.08s, +0.00s)
+12:09:35 Model found (0.09s, +0.01s)
+12:09:35 Model found (0.09s, +0.00s)
+12:09:35 Model found (0.09s, +0.00s)
+12:09:35 Model found (0.10s, +0.00s)
+12:09:35 Model found (0.10s, +0.00s)
+12:09:35 Model found (0.10s, +0.00s)
+12:09:35 Model found (0.12s, +0.01s)
+12:09:35 Model found (0.12s, +0.01s)
+12:09:35 Model found (0.12s, +0.00s)
+12:09:35 Model found (0.13s, +0.00s)
+12:09:35 Model found (0.13s, +0.00s)
+12:09:35 Model found (0.13s, +0.00s)
+12:09:35 Model found (0.14s, +0.01s)
+12:09:35 Model found (0.14s, +0.00s)
+12:09:35 Model found (0.15s, +0.00s)
+12:09:35 Model found (0.15s, +0.00s)
+12:09:35 Model found (0.15s, +0.00s)
+12:09:35 Model found (0.15s, +0.00s)
+12:09:35 Solving done: OPTIMUM FOUND (0.13s)
 OPTIMUM FOUND
 
-Answer: 14
+Answer: 25
 Optimization: -143 -1 -43 -173 -20
 
 % Equivalence classes (162 classes, 176 entities):
@@ -29,14 +40,14 @@ Optimization: -143 -1 -43 -173 -20
 %   rules: 8192.0
 %   variables: 2347.0
 %   constraints: 97.0
-%   choices: 13880.0
-%   conflicts: 296.0
-%   models: 14.0
+%   choices: 8522.0
+%   conflicts: 264.0
+%   models: 25.0
 %   optimal_models: 1.0
-%   total_time: 0.08267498016357422
-%   ground_time: 0.01213683292735368
-%   time_to_first_model: 0.022593291010707617
-%   solve_time: 0.04741382598876953
+%   total_time: 0.20193696022033691
+%   ground_time: 0.03312841698061675
+%   time_to_first_model: 0.05753783299587667
+%   solve_time: 0.1121969223022461
 classCallsMethod(D::D(void)@4198528,B::B(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Copy_str(char const *)@4199361)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Tidy(void)@4199425)

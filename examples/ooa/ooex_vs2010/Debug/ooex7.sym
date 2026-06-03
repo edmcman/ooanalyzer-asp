@@ -1,31 +1,68 @@
-11:02:14 Grounding...
-11:02:15 Grounding done (0.11s)
-11:02:15 Solving...
-11:02:15 Model found (0.34s)
-11:02:15 Model found (0.35s, +0.00s)
-11:02:15 Model found (0.35s, +0.00s)
-11:02:15 Model found (0.35s, +0.00s)
-11:02:15 Model found (0.36s, +0.01s)
-11:02:15 Model found (0.36s, +0.00s)
-11:02:15 Model found (0.36s, +0.00s)
-11:02:15 Model found (0.37s, +0.00s)
-11:02:15 Model found (0.37s, +0.00s)
-11:02:15 Model found (0.38s, +0.00s)
-11:02:15 Model found (0.38s, +0.01s)
-11:02:15 Model found (0.39s, +0.00s)
-11:02:15 Model found (0.41s, +0.02s)
-11:02:15 Model found (0.45s, +0.04s)
-11:02:15 Model found (0.50s, +0.05s)
-11:02:15 Model found (0.52s, +0.02s)
-11:02:17 Model found (2.68s, +2.16s)
-11:02:17 Model found (2.70s, +0.02s)
-11:02:17 Model found (2.71s, +0.01s)
-11:02:36 Model found (21.53s, +18.82s)
-11:02:36 Model found (21.92s, +0.39s)
-11:03:17 Solving done: OPTIMUM FOUND (62.35s)
+12:09:38 Grounding...
+12:09:38 Grounding done (0.11s)
+12:09:38 Solving...
+12:09:38 Model found (0.40s)
+12:09:38 Model found (0.40s, +0.00s)
+12:09:38 Model found (0.40s, +0.00s)
+12:09:38 Model found (0.41s, +0.00s)
+12:09:38 Model found (0.41s, +0.00s)
+12:09:38 Model found (0.41s, +0.00s)
+12:09:38 Model found (0.42s, +0.00s)
+12:09:38 Model found (0.42s, +0.00s)
+12:09:38 Model found (0.43s, +0.00s)
+12:09:38 Model found (0.43s, +0.00s)
+12:09:38 Model found (0.43s, +0.00s)
+12:09:38 Model found (0.44s, +0.00s)
+12:09:38 Model found (0.44s, +0.00s)
+12:09:38 Model found (0.45s, +0.01s)
+12:09:38 Model found (0.45s, +0.01s)
+12:09:38 Model found (0.46s, +0.00s)
+12:09:38 Model found (0.47s, +0.01s)
+12:09:38 Model found (0.48s, +0.01s)
+12:09:38 Model found (0.49s, +0.01s)
+12:09:38 Model found (0.51s, +0.02s)
+12:09:38 Model found (0.52s, +0.01s)
+12:09:38 Model found (0.54s, +0.02s)
+12:09:38 Model found (0.55s, +0.01s)
+12:09:38 Model found (0.56s, +0.01s)
+12:09:38 Model found (0.57s, +0.02s)
+12:09:38 Model found (0.59s, +0.02s)
+12:09:38 Model found (0.61s, +0.02s)
+12:09:38 Model found (0.62s, +0.01s)
+12:09:38 Model found (0.65s, +0.03s)
+12:09:38 Model found (0.68s, +0.02s)
+12:09:38 Model found (0.70s, +0.02s)
+12:09:38 Model found (0.72s, +0.02s)
+12:09:38 Model found (0.73s, +0.01s)
+12:09:38 Model found (0.74s, +0.00s)
+12:09:38 Model found (0.74s, +0.00s)
+12:09:38 Model found (0.76s, +0.02s)
+12:09:38 Model found (0.77s, +0.01s)
+12:09:38 Model found (0.78s, +0.01s)
+12:09:38 Model found (0.78s, +0.00s)
+12:09:38 Model found (0.80s, +0.01s)
+12:09:38 Model found (0.80s, +0.01s)
+12:09:38 Model found (0.81s, +0.01s)
+12:09:38 Model found (0.82s, +0.01s)
+12:09:38 Model found (0.83s, +0.01s)
+12:09:38 Model found (0.84s, +0.01s)
+12:09:38 Model found (0.85s, +0.00s)
+12:09:38 Model found (0.86s, +0.01s)
+12:09:38 Model found (0.86s, +0.00s)
+12:09:38 Model found (0.87s, +0.01s)
+12:09:38 Model found (0.88s, +0.01s)
+12:09:38 Model found (0.88s, +0.00s)
+12:09:38 Model found (0.90s, +0.02s)
+12:09:38 Model found (0.91s, +0.01s)
+12:09:39 Model found (0.92s, +0.01s)
+12:09:39 Model found (1.58s, +0.66s)
+12:09:40 Model found (2.04s, +0.47s)
+12:09:40 Model found (2.10s, +0.06s)
+12:09:41 Model found (3.40s, +1.30s)
+12:11:34 Solving done: OPTIMUM FOUND (115.86s)
 OPTIMUM FOUND
 
-Answer: 21
+Answer: 58
 Optimization: -102 -68 -425 -12
 
 % Equivalence classes (387 classes, 431 entities):
@@ -36,14 +73,14 @@ Optimization: -102 -68 -425 -12
 %   rules: 41258.0
 %   variables: 13141.0
 %   constraints: 88.0
-%   choices: 3408930.0
-%   conflicts: 165170.0
-%   models: 21.0
+%   choices: 3315314.0
+%   conflicts: 168307.0
+%   models: 58.0
 %   optimal_models: 1.0
-%   total_time: 62.497761964797974
-%   ground_time: 0.10680254106409848
-%   time_to_first_model: 0.3430341660277918
-%   solve_time: 62.12266397476196
+%   total_time: 116.01383304595947
+%   ground_time: 0.1125382500467822
+%   time_to_first_model: 0.3981649170164019
+%   solve_time: 115.58065390586853
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)

@@ -1,24 +1,27 @@
-10:57:12 Grounding...
-10:57:12 Grounding done (0.01s)
-10:57:12 Solving...
-10:57:12 Model found (0.02s)
-10:57:12 Model found (0.02s, +0.00s)
-10:57:12 Model found (0.02s, +0.00s)
-10:57:12 Model found (0.02s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.04s, +0.00s)
-10:57:12 Model found (0.04s, +0.00s)
-10:57:12 Solving done: OPTIMUM FOUND (0.03s)
+12:09:33 Grounding...
+12:09:33 Grounding done (0.03s)
+12:09:33 Solving...
+12:09:33 Model found (0.05s)
+12:09:33 Model found (0.05s, +0.00s)
+12:09:33 Model found (0.06s, +0.00s)
+12:09:33 Model found (0.06s, +0.00s)
+12:09:33 Model found (0.06s, +0.00s)
+12:09:33 Model found (0.07s, +0.01s)
+12:09:33 Model found (0.07s, +0.00s)
+12:09:33 Model found (0.07s, +0.00s)
+12:09:33 Model found (0.07s, +0.00s)
+12:09:33 Model found (0.08s, +0.00s)
+12:09:33 Model found (0.08s, +0.00s)
+12:09:33 Model found (0.08s, +0.00s)
+12:09:33 Model found (0.08s, +0.00s)
+12:09:33 Model found (0.09s, +0.00s)
+12:09:33 Model found (0.09s, +0.00s)
+12:09:33 Model found (0.09s, +0.00s)
+12:09:33 Model found (0.09s, +0.00s)
+12:09:33 Solving done: OPTIMUM FOUND (0.06s)
 OPTIMUM FOUND
 
-Answer: 14
+Answer: 17
 Optimization: -63 -2 -19 -228 -28
 
 % Equivalence classes (218 classes, 231 entities):
@@ -29,14 +32,14 @@ Optimization: -63 -2 -19 -228 -28
 %   rules: 7599.0
 %   variables: 2649.0
 %   constraints: 29.0
-%   choices: 6172.0
-%   conflicts: 37.0
-%   models: 14.0
+%   choices: 4915.0
+%   conflicts: 40.0
+%   models: 17.0
 %   optimal_models: 1.0
-%   total_time: 0.044957876205444336
-%   ground_time: 0.011050416040234268
-%   time_to_first_model: 0.022094957996159792
-%   solve_time: 0.016403913497924805
+%   total_time: 0.11697101593017578
+%   ground_time: 0.0287097500404343
+%   time_to_first_model: 0.05265216599218547
+%   solve_time: 0.04078793525695801
 classCallsMethod(Derived::Derived(void)@4265328,Base::Base(void)@4265504)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4265712)

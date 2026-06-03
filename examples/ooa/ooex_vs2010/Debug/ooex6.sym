@@ -1,25 +1,22 @@
-11:02:15 Grounding...
-11:02:15 Grounding done (0.03s)
-11:02:15 Solving...
-11:02:15 Model found (0.05s)
-11:02:15 Model found (0.06s, +0.00s)
-11:02:15 Model found (0.06s, +0.00s)
-11:02:15 Model found (0.06s, +0.00s)
-11:02:15 Model found (0.06s, +0.00s)
-11:02:15 Model found (0.07s, +0.00s)
-11:02:15 Model found (0.07s, +0.00s)
-11:02:15 Model found (0.07s, +0.00s)
-11:02:15 Model found (0.08s, +0.02s)
-11:02:15 Model found (0.09s, +0.00s)
-11:02:15 Model found (0.09s, +0.00s)
-11:02:15 Model found (0.09s, +0.00s)
-11:02:15 Model found (0.09s, +0.00s)
-11:02:15 Model found (0.10s, +0.00s)
-11:02:15 Model found (0.10s, +0.00s)
-11:02:15 Solving done: OPTIMUM FOUND (0.11s)
+12:11:35 Grounding...
+12:11:35 Grounding done (0.02s)
+12:11:35 Solving...
+12:11:35 Model found (0.05s)
+12:11:35 Model found (0.05s, +0.00s)
+12:11:35 Model found (0.05s, +0.00s)
+12:11:35 Model found (0.06s, +0.01s)
+12:11:35 Model found (0.06s, +0.00s)
+12:11:35 Model found (0.07s, +0.01s)
+12:11:35 Model found (0.07s, +0.01s)
+12:11:35 Model found (0.08s, +0.00s)
+12:11:35 Model found (0.08s, +0.00s)
+12:11:35 Model found (0.08s, +0.00s)
+12:11:35 Model found (0.08s, +0.00s)
+12:11:35 Model found (0.09s, +0.01s)
+12:11:35 Solving done: OPTIMUM FOUND (0.08s)
 OPTIMUM FOUND
 
-Answer: 15
+Answer: 12
 Optimization: -103 -2 -37 -227 -32
 
 % Equivalence classes (215 classes, 230 entities):
@@ -30,14 +27,14 @@ Optimization: -103 -2 -37 -227 -32
 %   rules: 7846.0
 %   variables: 2740.0
 %   constraints: 56.0
-%   choices: 21002.0
-%   conflicts: 233.0
-%   models: 15.0
+%   choices: 14581.0
+%   conflicts: 187.0
+%   models: 12.0
 %   optimal_models: 1.0
-%   total_time: 0.1483449935913086
-%   ground_time: 0.02504337497521192
-%   time_to_first_model: 0.05493129196111113
-%   solve_time: 0.0840461254119873
+%   total_time: 0.11911892890930176
+%   ground_time: 0.020339209004305303
+%   time_to_first_model: 0.045033458969555795
+%   solve_time: 0.06528592109680176
 classCallsMethod(Derived::Derived(void)@4265328,Base::Base(void)@4265504)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4265712)

@@ -32,7 +32,7 @@ def parse_args():
                    help="print clingo stats (optionally pass a clingo stats level)")
     p.add_argument("--quiet", type=str, default="1,2",
                    help="clingo --quiet level (default 1,2)")
-    p.add_argument("--opt-strategy", default="bb,inc")
+    p.add_argument("--opt-strategy", default="bb,hier")
     p.add_argument("--heuristic", default="domain")
     p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
     p.add_argument("--debug-propagator", action="store_true")

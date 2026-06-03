@@ -1,29 +1,42 @@
-10:57:12 Grounding...
-10:57:12 Grounding done (0.01s)
-10:57:12 Solving...
-10:57:12 Model found (0.02s)
-10:57:12 Model found (0.02s, +0.00s)
-10:57:12 Model found (0.02s, +0.00s)
-10:57:12 Model found (0.02s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.03s, +0.00s)
-10:57:12 Model found (0.04s, +0.00s)
-10:57:12 Model found (0.04s, +0.00s)
-10:57:12 Model found (0.05s, +0.01s)
-10:57:12 Model found (0.05s, +0.00s)
-10:57:12 Model found (0.05s, +0.00s)
-10:57:12 Model found (0.05s, +0.00s)
-10:57:12 Model found (0.06s, +0.00s)
-10:57:12 Model found (0.06s, +0.00s)
-10:57:12 Model found (0.06s, +0.00s)
-10:57:12 Model found (0.06s, +0.00s)
-10:57:12 Model found (0.06s, +0.00s)
-10:57:12 Model found (0.06s, +0.00s)
-10:57:12 Solving done: OPTIMUM FOUND (0.06s)
+12:09:34 Grounding...
+12:09:34 Grounding done (0.05s)
+12:09:34 Solving...
+12:09:34 Model found (0.08s)
+12:09:34 Model found (0.08s, +0.00s)
+12:09:34 Model found (0.08s, +0.00s)
+12:09:34 Model found (0.09s, +0.00s)
+12:09:34 Model found (0.09s, +0.00s)
+12:09:34 Model found (0.10s, +0.01s)
+12:09:34 Model found (0.10s, +0.00s)
+12:09:34 Model found (0.10s, +0.00s)
+12:09:34 Model found (0.11s, +0.01s)
+12:09:34 Model found (0.12s, +0.01s)
+12:09:34 Model found (0.12s, +0.00s)
+12:09:34 Model found (0.12s, +0.00s)
+12:09:34 Model found (0.13s, +0.00s)
+12:09:34 Model found (0.14s, +0.02s)
+12:09:34 Model found (0.15s, +0.01s)
+12:09:34 Model found (0.15s, +0.00s)
+12:09:34 Model found (0.16s, +0.00s)
+12:09:34 Model found (0.16s, +0.01s)
+12:09:34 Model found (0.16s, +0.00s)
+12:09:34 Model found (0.16s, +0.00s)
+12:09:34 Model found (0.17s, +0.00s)
+12:09:34 Model found (0.17s, +0.00s)
+12:09:34 Model found (0.17s, +0.00s)
+12:09:34 Model found (0.18s, +0.00s)
+12:09:34 Model found (0.18s, +0.00s)
+12:09:34 Model found (0.19s, +0.01s)
+12:09:34 Model found (0.19s, +0.00s)
+12:09:34 Model found (0.20s, +0.00s)
+12:09:34 Model found (0.20s, +0.01s)
+12:09:34 Model found (0.21s, +0.01s)
+12:09:34 Model found (0.21s, +0.00s)
+12:09:34 Model found (0.23s, +0.02s)
+12:09:34 Solving done: OPTIMUM FOUND (0.18s)
 OPTIMUM FOUND
 
-Answer: 19
+Answer: 32
 Optimization: -143 -1 -44 -175 -20
 
 % Equivalence classes (163 classes, 178 entities):
@@ -34,14 +47,14 @@ Optimization: -143 -1 -44 -175 -20
 %   rules: 8331.0
 %   variables: 2398.0
 %   constraints: 97.0
-%   choices: 16437.0
-%   conflicts: 305.0
-%   models: 19.0
+%   choices: 8361.0
+%   conflicts: 298.0
+%   models: 32.0
 %   optimal_models: 1.0
-%   total_time: 0.08792710304260254
-%   ground_time: 0.012020875001326203
-%   time_to_first_model: 0.022182999993674457
-%   solve_time: 0.05096101760864258
+%   total_time: 0.26770496368408203
+%   ground_time: 0.04979845799971372
+%   time_to_first_model: 0.07860662508755922
+%   solve_time: 0.15543603897094727
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198496,int Base::func3(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200617,std::exception::_Copy_str(char const *)@4200523)

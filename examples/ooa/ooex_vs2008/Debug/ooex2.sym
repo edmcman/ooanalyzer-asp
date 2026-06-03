@@ -1,10 +1,10 @@
-10:57:12 Grounding...
-10:57:12 Grounding done (0.01s)
-10:57:12 Solving...
-10:57:12 Model found (0.01s)
-10:57:12 Model found (0.01s, +0.00s)
-10:57:12 Model found (0.01s, +0.00s)
-10:57:12 Solving done: OPTIMUM FOUND (0.00s)
+12:09:33 Grounding...
+12:09:33 Grounding done (0.02s)
+12:09:33 Solving...
+12:09:33 Model found (0.03s)
+12:09:33 Model found (0.03s, +0.00s)
+12:09:33 Model found (0.03s, +0.01s)
+12:09:33 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 3
@@ -18,14 +18,14 @@ Optimization: -2 -208
 %   rules: 5032.0
 %   variables: 637.0
 %   constraints: 0.0
-%   choices: 1249.0
+%   choices: 1044.0
 %   conflicts: 1.0
 %   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.019178152084350586
-%   ground_time: 0.008042957982979715
-%   time_to_first_model: 0.009403500007465482
-%   solve_time: 0.002691984176635742
+%   total_time: 0.053034067153930664
+%   ground_time: 0.022053458029404283
+%   time_to_first_model: 0.02814987499732524
+%   solve_time: 0.007863044738769531
 classCallsMethod(Derived::Derived(void)@4265232,Base::Base(void)@4265392)
 classCallsMethod(Derived::Derived(void)@4265232,int Base::func3(void)@4265488)
 guessEnabled(constructor)

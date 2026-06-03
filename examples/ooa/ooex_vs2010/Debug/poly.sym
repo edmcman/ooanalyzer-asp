@@ -1,23 +1,24 @@
-11:02:16 Grounding...
-11:02:16 Grounding done (0.06s)
-11:02:16 Solving...
-11:02:16 Model found (0.17s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.17s, +0.00s)
-11:02:16 Model found (0.18s, +0.00s)
-11:02:16 Model found (0.18s, +0.00s)
-11:02:16 Model found (0.18s, +0.00s)
-11:02:16 Model found (0.18s, +0.00s)
-11:02:16 Solving done: OPTIMUM FOUND (0.12s)
+12:11:35 Grounding...
+12:11:35 Grounding done (0.05s)
+12:11:35 Solving...
+12:11:36 Model found (0.15s)
+12:11:36 Model found (0.15s, +0.00s)
+12:11:36 Model found (0.15s, +0.00s)
+12:11:36 Model found (0.15s, +0.00s)
+12:11:36 Model found (0.15s, +0.00s)
+12:11:36 Model found (0.16s, +0.00s)
+12:11:36 Model found (0.16s, +0.00s)
+12:11:36 Model found (0.16s, +0.00s)
+12:11:36 Model found (0.16s, +0.00s)
+12:11:36 Model found (0.16s, +0.00s)
+12:11:36 Model found (0.16s, +0.00s)
+12:11:36 Model found (0.17s, +0.00s)
+12:11:36 Model found (0.17s, +0.00s)
+12:11:36 Model found (0.17s, +0.00s)
+12:11:36 Solving done: OPTIMUM FOUND (0.12s)
 OPTIMUM FOUND
 
-Answer: 13
+Answer: 14
 Optimization: -45 -6 -34 -291 -20
 
 % Equivalence classes (271 classes, 296 entities):
@@ -28,14 +29,14 @@ Optimization: -45 -6 -34 -291 -20
 %   rules: 22158.0
 %   variables: 7838.0
 %   constraints: 4.0
-%   choices: 3311.0
+%   choices: 3589.0
 %   conflicts: 3.0
-%   models: 13.0
+%   models: 14.0
 %   optimal_models: 1.0
-%   total_time: 0.2046210765838623
-%   ground_time: 0.05946095800027251
-%   time_to_first_model: 0.16601816599722952
-%   solve_time: 0.017566919326782227
+%   total_time: 0.18951892852783203
+%   ground_time: 0.04633412498515099
+%   time_to_first_model: 0.15015116694848984
+%   solve_time: 0.021353960037231445
 classCallsMethod(Circle::Circle(void)@4265920,Shape::Shape(void)@4266368)
 classCallsMethod(Rectangle::Rectangle(void)@4265696,Shape::Shape(void)@4266368)
 classCallsMethod(Triangle::Triangle(void)@4266144,Shape::Shape(void)@4266368)

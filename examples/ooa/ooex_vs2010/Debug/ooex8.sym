@@ -1,9 +1,9 @@
-11:02:15 Grounding...
-11:02:15 Grounding done (0.02s)
-11:02:15 Solving...
-11:02:15 Model found (0.02s)
-11:02:15 Model found (0.02s, +0.00s)
-11:02:15 Solving done: OPTIMUM FOUND (0.00s)
+12:11:35 Grounding...
+12:11:35 Grounding done (0.02s)
+12:11:35 Solving...
+12:11:35 Model found (0.02s)
+12:11:35 Model found (0.02s, +0.00s)
+12:11:35 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -21,10 +21,10 @@ Optimization: -1 -200
 %   conflicts: 0.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.03813910484313965
-%   ground_time: 0.01801437500398606
-%   time_to_first_model: 0.02101262495853007
-%   solve_time: 0.0014951229095458984
+%   total_time: 0.08178305625915527
+%   ground_time: 0.018822666024789214
+%   time_to_first_model: 0.02159383299294859
+%   solve_time: 0.0013980865478515625
 classCallsMethod(D::D(void)@4265360,B::B(void)@4265632)
 guessEnabled(constructor)
 guessEnabled(derived_class)
