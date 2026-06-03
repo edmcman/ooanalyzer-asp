@@ -129,14 +129,15 @@ def main():
         if cost:
             had_cost = True
         if not defer_print:
-            print(f"\nAnswer: {model_num}")
-            if args.diff_models and model_num > 1:
-                diff = format_model_diff(last_shown, shown, last_cost, cost)
-                if diff:
-                    print(diff)
-            print(" ".join(str(a) for a in shown))
-            if cost:
-                print("Optimization:", " ".join(str(c) for c in cost))
+            diff = format_model_diff(last_shown, shown, last_cost, cost) if args.diff_models and model_num > 1 else ""
+            if diff:
+                print(f"\nΔ Answer: {model_num}")
+                print(diff)
+            else:
+                print(f"\nAnswer: {model_num}")
+                print(" ".join(str(a) for a in shown))
+                if cost:
+                    print("Optimization:", " ".join(str(c) for c in cost))
             sys.stdout.flush()
         last_shown = shown
         last_cost = cost
