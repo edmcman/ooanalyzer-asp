@@ -193,7 +193,7 @@ mergeCandidate(A, B) :- weakMergeCandidate(A, B).
 % Optimization reward for confirmed strong merges (priority @2).
 strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 
-#maximize { 10@2, merge, M1, M2 : strongMergeReward(M1, M2) }.
+#maximize { 10@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
 % Base G2 reward: prefer weak merges when chosen.
 weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).

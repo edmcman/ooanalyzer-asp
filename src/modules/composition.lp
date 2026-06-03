@@ -180,14 +180,14 @@ guessDerivedClassReward(Outer, Inner, Off) :-
     derivedClass(Outer, Inner, Off),
     objectInObject(Outer, Inner, Off).
 
-#maximize { 1@1, guessDerivedClass, Outer, Inner, Off : guessDerivedClassReward(Outer, Inner, Off) }.
+#maximize { 1@0, guessDerivedClass, Outer, Inner, Off : guessDerivedClassReward(Outer, Inner, Off) }.
 
 % NEW RULE: penalize embedding a class that is already known to be a base.
 embedsKnownBasePenalty(Outer, Inner, Off) :-
     embeddedObject(Outer, Inner, Off),
     derivedClass(_, Inner, _).
 
-#minimize { 1@1, embedsKnownBase, Outer, Inner, Off : embedsKnownBasePenalty(Outer, Inner, Off) }.
+#minimize { 1@0, embedsKnownBase, Outer, Inner, Off : embedsKnownBasePenalty(Outer, Inner, Off) }.
 
 % NEW RULE: reward when a class with a purecall vftable entry is inherited from.
 purecallNotMostDerivedReward(Derived, Base, Off) :-
@@ -196,7 +196,7 @@ purecallNotMostDerivedReward(Derived, Base, Off) :-
     vfTableEntry(VFTable, _, Entry),
     purecall(Entry).
 
-#maximize { 1@1, purecallNotMostDerived, Derived, Base, Off : purecallNotMostDerivedReward(Derived, Base, Off) }.
+#maximize { 1@0, purecallNotMostDerived, Derived, Base, Off : purecallNotMostDerivedReward(Derived, Base, Off) }.
 
 % ============================================================
 % CONSTRAINTS

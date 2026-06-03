@@ -41,8 +41,8 @@ candidateVFTableSize(VFTable, Size) :-
 % REWARDS
 % ============================================================
 
-% Prefer larger extents only as a low-priority tie-breaker.
-#maximize { Size@-2, vfTableSize, VFTable : vfTableSize(VFTable, Size) }.
+% Prefer larger extents at the highest priority.
+#maximize { Size@3, vfTableSize, VFTable : vfTableSize(VFTable, Size) }.
 
 % ============================================================
 % OUTPUT

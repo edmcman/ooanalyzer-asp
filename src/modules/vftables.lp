@@ -60,6 +60,16 @@ vfTableEntry(VFTable, Offset, Entry) :-
     virtualFunctionCall(_Insn, _Method, _ObjectOffset, VFTable, Offset),
     possibleVFTableEntry(VFTable, Offset, Entry).                         % rules.pl:1247
 
+% NEW RULE (no Prolog counterpart): a confirmed method at a possible entry
+% slot forces the entry. Ties vftable extent to method evidence so the
+% solver cannot narrow a vftable to dodge merge constraints.
+%!trace_rule {"vftable % entry at offset %: % because % is a confirmed method", VFTable, Offset, Entry, Method}
+vfTableEntry(VFTable, Offset, Entry) :-
+    vfTable(VFTable),
+    possibleVFTableEntry(VFTable, Offset, Entry),
+    dethunk(Entry, Method),
+    method(Method).
+
 % reasonNOTVFTableEntry_D: RTTI COL addresses are not valid vftable entries.
 % Counterpart: reasonNOTVFTableEntry_D (rules.pl:1303)
 %!trace_rule {"vftable % entry at offset %: % is invalid because RTTI COL data is not a function pointer", VFTable, Offset, Entry}
@@ -226,10 +236,8 @@ possibleVFTable(VFTable) :-
 % REWARDS
 % ============================================================
 
-% Optimization reward for confirmed vftables (priority @2).
-guessVFTableReward(VFTable) :- vfTable(VFTable), possibleVFTable(VFTable).
-
-#maximize { 1@2, vfTable, V : guessVFTableReward(V) }.
+% Vftable-related reward lives in size.lp as Size@3 (vfTableSize). No
+% separate per-vftable or per-entry reward here.
 
 
 %!trace {"% is a confirmed vftable", V} vfTable(V).
