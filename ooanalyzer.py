@@ -42,7 +42,9 @@ def parse_args():
                    help="parallel search: N[,compete|split] (default: 1)")
     p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
                    help="pass --const to clingo (repeatable)")
-    return p.parse_args()
+    args, extra = p.parse_known_args()
+    args.clingo_extra = extra
+    return args
 
 
 def format_model_diff(prev_shown, cur_shown, prev_cost, cur_cost):
@@ -84,6 +86,7 @@ def main():
         ctl_args.extend(["-t", args.threads])
     for c in args.const:
         ctl_args.append(f"--const={c}")
+    ctl_args.extend(args.clingo_extra)
 
     prop = SameClassPropagator()
     ctl = clingo.Control(ctl_args)
@@ -225,6 +228,25 @@ def main():
                 val = stat(path)
             if val is not None:
                 print(f"%   {name}: {val}")
+
+        if args.stats >= 2:
+            print("\n% Full clingo statistics:")
+            def dump(node, indent=2):
+                if isinstance(node, dict):
+                    for k, v in node.items():
+                        if isinstance(v, (dict, list)):
+                            print(f"%{' ' * indent}{k}:")
+                            dump(v, indent + 2)
+                        else:
+                            print(f"%{' ' * indent}{k}: {v}")
+                elif isinstance(node, list):
+                    for i, v in enumerate(node):
+                        if isinstance(v, (dict, list)):
+                            print(f"%{' ' * indent}[{i}]:")
+                            dump(v, indent + 2)
+                        else:
+                            print(f"%{' ' * indent}[{i}]: {v}")
+            dump(ctl.statistics)
 
 
 if __name__ == "__main__":
