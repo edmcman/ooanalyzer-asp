@@ -1,31 +1,40 @@
-18:00:28 Grounding...
-18:00:28 Grounding done (0.01s)
-18:00:28 Solving...
-18:00:28 Model found (0.01s)
-18:00:28 Solving done: OPTIMUM FOUND (0.00s)
+10:57:12 Grounding...
+10:57:12 Grounding done (0.01s)
+10:57:12 Solving...
+10:57:12 Model found (0.01s)
+10:57:12 Model found (0.01s, +0.00s)
+10:57:12 Model found (0.01s, +0.00s)
+10:57:12 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 3
 Optimization: -2 -208
 
 % Equivalence classes (206 classes, 208 entities):
 
 % Stats:
-%   atoms: 4605.0
-%   bodies: 1280.0
-%   rules: 5039.0
-%   variables: 644.0
+%   atoms: 4604.0
+%   bodies: 863.0
+%   rules: 5032.0
+%   variables: 637.0
 %   constraints: 0.0
-%   choices: 657.0
-%   conflicts: 3.0
-%   models: 2.0
+%   choices: 1249.0
+%   conflicts: 1.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.03739786148071289
-%   ground_time: 0.00809324998408556
-%   time_to_first_model: 0.009599457960575819
-%   solve_time: 0.0010199546813964844
+%   total_time: 0.019178152084350586
+%   ground_time: 0.008042957982979715
+%   time_to_first_model: 0.009403500007465482
+%   solve_time: 0.002691984176635742
 classCallsMethod(Derived::Derived(void)@4265232,Base::Base(void)@4265392)
 classCallsMethod(Derived::Derived(void)@4265232,int Base::func3(void)@4265488)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4265232,Base::Base(void)@4265392)
 mergeClasses(Derived::Derived(void)@4265232,int Base::func3(void)@4265488)
 method($LN6_1@4271237)

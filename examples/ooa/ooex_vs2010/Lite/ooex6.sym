@@ -1,29 +1,43 @@
-18:00:28 Grounding...
-18:00:28 Grounding done (0.02s)
-18:00:28 Solving...
-18:00:28 Model found (0.03s)
-18:00:29 Solving done: OPTIMUM FOUND (0.57s)
+10:57:13 Grounding...
+10:57:13 Grounding done (0.01s)
+10:57:13 Solving...
+10:57:13 Model found (0.03s)
+10:57:13 Model found (0.03s, +0.00s)
+10:57:13 Model found (0.04s, +0.00s)
+10:57:13 Model found (0.04s, +0.00s)
+10:57:13 Model found (0.04s, +0.00s)
+10:57:13 Model found (0.04s, +0.01s)
+10:57:13 Model found (0.05s, +0.00s)
+10:57:13 Model found (0.05s, +0.00s)
+10:57:13 Model found (0.05s, +0.00s)
+10:57:13 Model found (0.06s, +0.01s)
+10:57:13 Model found (0.06s, +0.00s)
+10:57:13 Model found (0.10s, +0.04s)
+10:57:13 Model found (0.10s, +0.00s)
+10:57:13 Model found (0.10s, +0.00s)
+10:57:13 Model found (0.11s, +0.00s)
+10:57:13 Solving done: OPTIMUM FOUND (0.12s)
 OPTIMUM FOUND
 
-Answer: 25
+Answer: 15
 Optimization: -235 -2 -70 -179 -40
 
 % Equivalence classes (167 classes, 187 entities):
 
 % Stats:
-%   atoms: 8892.0
-%   bodies: 3860.0
-%   rules: 10628.0
-%   variables: 3605.0
-%   constraints: 168.0
-%   choices: 17699.0
-%   conflicts: 4543.0
-%   models: 25.0
+%   atoms: 8891.0
+%   bodies: 3472.0
+%   rules: 10606.0
+%   variables: 3590.0
+%   constraints: 159.0
+%   choices: 27588.0
+%   conflicts: 1090.0
+%   models: 15.0
 %   optimal_models: 1.0
-%   total_time: 0.6642389297485352
-%   ground_time: 0.01642562507186085
-%   time_to_first_model: 0.034577124984934926
-%   solve_time: 0.5536148548126221
+%   total_time: 0.14971184730529785
+%   ground_time: 0.01482983399182558
+%   time_to_first_model: 0.033303249976597726
+%   solve_time: 0.10342597961425781
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func1(void)@4198432)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func2(void)@4198464)
@@ -57,6 +71,13 @@ deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsign
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4198710)
 derivedClass(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
 derivedClass(const std::bad_alloc::`vftable'@4219244,const std::exception::`vftable'@4221892,0)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4198496,virtual * Derived::`vector deleting destructor'(unsigned int)@4198592)
 mergeClasses(Derived::Derived(void)@4198496,virtual Derived::~Derived(void)@4198560)
 mergeClasses(Derived::Derived(void)@4198496,virtual int Derived::func3(void)@4198576)

@@ -1,29 +1,42 @@
-18:00:28 Grounding...
-18:00:28 Grounding done (0.01s)
-18:00:28 Solving...
-18:00:28 Model found (0.02s)
-18:00:28 Solving done: OPTIMUM FOUND (0.03s)
+10:57:12 Grounding...
+10:57:12 Grounding done (0.01s)
+10:57:12 Solving...
+10:57:12 Model found (0.02s)
+10:57:12 Model found (0.02s, +0.00s)
+10:57:12 Model found (0.02s, +0.00s)
+10:57:12 Model found (0.02s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.03s, +0.00s)
+10:57:12 Model found (0.04s, +0.00s)
+10:57:12 Model found (0.04s, +0.00s)
+10:57:12 Solving done: OPTIMUM FOUND (0.03s)
 OPTIMUM FOUND
 
-Answer: 9
+Answer: 14
 Optimization: -63 -2 -19 -228 -28
 
 % Equivalence classes (218 classes, 231 entities):
 
 % Stats:
-%   atoms: 6811.0
-%   bodies: 2394.0
-%   rules: 7613.0
-%   variables: 2661.0
-%   constraints: 34.0
-%   choices: 1936.0
-%   conflicts: 26.0
-%   models: 9.0
+%   atoms: 6810.0
+%   bodies: 1917.0
+%   rules: 7599.0
+%   variables: 2649.0
+%   constraints: 29.0
+%   choices: 6172.0
+%   conflicts: 37.0
+%   models: 14.0
 %   optimal_models: 1.0
-%   total_time: 0.060914039611816406
-%   ground_time: 0.011674499954096973
-%   time_to_first_model: 0.023973749950528145
-%   solve_time: 0.01969003677368164
+%   total_time: 0.044957876205444336
+%   ground_time: 0.011050416040234268
+%   time_to_first_model: 0.022094957996159792
+%   solve_time: 0.016403913497924805
 classCallsMethod(Derived::Derived(void)@4265328,Base::Base(void)@4265504)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4265712)
@@ -38,6 +51,13 @@ constructor(Derived::Derived(void)@4265328)
 constructor(type_info::type_info(class type_info const &)@4266544)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4266592)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 mergeClasses(const Base::`vftable'@4286292,Base::Base(void)@4265504)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265328)

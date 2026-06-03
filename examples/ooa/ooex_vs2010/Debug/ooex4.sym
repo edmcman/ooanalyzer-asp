@@ -1,29 +1,41 @@
-18:00:29 Grounding...
-18:00:29 Grounding done (0.01s)
-18:00:29 Solving...
-18:00:29 Model found (0.02s)
-18:00:30 Solving done: OPTIMUM FOUND (0.03s)
+11:02:15 Grounding...
+11:02:15 Grounding done (0.02s)
+11:02:15 Solving...
+11:02:15 Model found (0.05s)
+11:02:15 Model found (0.05s, +0.00s)
+11:02:15 Model found (0.05s, +0.00s)
+11:02:15 Model found (0.05s, +0.00s)
+11:02:15 Model found (0.05s, +0.00s)
+11:02:15 Model found (0.06s, +0.00s)
+11:02:15 Model found (0.06s, +0.00s)
+11:02:15 Model found (0.06s, +0.00s)
+11:02:15 Model found (0.06s, +0.00s)
+11:02:15 Model found (0.06s, +0.00s)
+11:02:15 Model found (0.07s, +0.00s)
+11:02:15 Model found (0.07s, +0.00s)
+11:02:15 Model found (0.07s, +0.00s)
+11:02:15 Solving done: OPTIMUM FOUND (0.05s)
 OPTIMUM FOUND
 
-Answer: 11
+Answer: 13
 Optimization: -63 -2 -19 -222 -28
 
 % Equivalence classes (212 classes, 225 entities):
 
 % Stats:
-%   atoms: 6659.0
-%   bodies: 2340.0
-%   rules: 7443.0
-%   variables: 2595.0
-%   constraints: 34.0
-%   choices: 1114.0
-%   conflicts: 26.0
-%   models: 11.0
+%   atoms: 6658.0
+%   bodies: 1875.0
+%   rules: 7429.0
+%   variables: 2583.0
+%   constraints: 29.0
+%   choices: 5300.0
+%   conflicts: 33.0
+%   models: 13.0
 %   optimal_models: 1.0
-%   total_time: 0.06157207489013672
-%   ground_time: 0.01167283405084163
-%   time_to_first_model: 0.022776999976485968
-%   solve_time: 0.02399611473083496
+%   total_time: 0.08865189552307129
+%   ground_time: 0.02386779198423028
+%   time_to_first_model: 0.045950707979500294
+%   solve_time: 0.030690908432006836
 classCallsMethod(Derived::Derived(void)@4265296,Base::Base(void)@4265472)
 classCallsMethod(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4265584)
 classCallsMethod(Derived::Derived(void)@4265296,virtual int Base::func2(void)@4265680)
@@ -38,6 +50,13 @@ constructor(Derived::Derived(void)@4265296)
 constructor(type_info::type_info(class type_info const &)@4266512)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4266560)
 derivedClass(const Derived::`vftable'@4286272,const Base::`vftable'@4286292,0)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4265584)
 mergeClasses(const Base::`vftable'@4286292,Base::Base(void)@4265472)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265296)

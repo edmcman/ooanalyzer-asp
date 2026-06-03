@@ -1,8 +1,9 @@
-18:00:28 Grounding...
-18:00:28 Grounding done (0.01s)
-18:00:28 Solving...
-18:00:28 Model found (0.01s)
-18:00:28 Solving done: OPTIMUM FOUND (0.00s)
+10:57:12 Grounding...
+10:57:12 Grounding done (0.01s)
+10:57:12 Solving...
+10:57:12 Model found (0.01s)
+10:57:12 Model found (0.01s, +0.00s)
+10:57:12 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -11,20 +12,27 @@ Optimization: -1 -206
 % Equivalence classes (205 classes, 206 entities):
 
 % Stats:
-%   atoms: 4646.0
-%   bodies: 1257.0
-%   rules: 5072.0
-%   variables: 632.0
+%   atoms: 4645.0
+%   bodies: 844.0
+%   rules: 5065.0
+%   variables: 625.0
 %   constraints: 0.0
-%   choices: 220.0
-%   conflicts: 1.0
+%   choices: 824.0
+%   conflicts: 0.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.04530906677246094
-%   ground_time: 0.008268499979749322
-%   time_to_first_model: 0.010836374945938587
-%   solve_time: 0.0012269020080566406
+%   total_time: 0.017635107040405273
+%   ground_time: 0.008283874951303005
+%   time_to_first_model: 0.009726583026349545
+%   solve_time: 0.0007779598236083984
 classCallsMethod(D::D(void)@4265392,B::B(void)@4265664)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(D::D(void)@4265392,B::B(void)@4265664)
 method($LN6_1@4273045)
 method(* __cdecl operator new(unsigned int)@4264346)

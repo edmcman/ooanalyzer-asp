@@ -1,29 +1,42 @@
-18:00:28 Grounding...
-18:00:28 Grounding done (0.01s)
-18:00:28 Solving...
-18:00:29 Model found (0.03s)
-18:00:29 Solving done: OPTIMUM FOUND (0.07s)
+10:57:13 Grounding...
+10:57:13 Grounding done (0.01s)
+10:57:13 Solving...
+10:57:13 Model found (0.02s)
+10:57:13 Model found (0.02s, +0.00s)
+10:57:13 Model found (0.03s, +0.00s)
+10:57:13 Model found (0.03s, +0.00s)
+10:57:13 Model found (0.03s, +0.00s)
+10:57:13 Model found (0.04s, +0.00s)
+10:57:13 Model found (0.04s, +0.00s)
+10:57:13 Model found (0.04s, +0.00s)
+10:57:13 Model found (0.05s, +0.01s)
+10:57:13 Model found (0.05s, +0.00s)
+10:57:13 Model found (0.05s, +0.00s)
+10:57:13 Model found (0.06s, +0.00s)
+10:57:13 Model found (0.06s, +0.00s)
+10:57:13 Model found (0.06s, +0.00s)
+10:57:13 Solving done: OPTIMUM FOUND (0.06s)
 OPTIMUM FOUND
 
-Answer: 9
+Answer: 14
 Optimization: -143 -1 -43 -173 -20
 
 % Equivalence classes (162 classes, 176 entities):
 
 % Stats:
-%   atoms: 7289.0
-%   bodies: 2432.0
-%   rules: 8204.0
-%   variables: 2355.0
-%   constraints: 101.0
-%   choices: 8323.0
-%   conflicts: 248.0
-%   models: 9.0
+%   atoms: 7288.0
+%   bodies: 2067.0
+%   rules: 8192.0
+%   variables: 2347.0
+%   constraints: 97.0
+%   choices: 13880.0
+%   conflicts: 296.0
+%   models: 14.0
 %   optimal_models: 1.0
-%   total_time: 0.10669207572937012
-%   ground_time: 0.014133832999505103
-%   time_to_first_model: 0.026639290968887508
-%   solve_time: 0.0572509765625
+%   total_time: 0.08267498016357422
+%   ground_time: 0.01213683292735368
+%   time_to_first_model: 0.022593291010707617
+%   solve_time: 0.04741382598876953
 classCallsMethod(D::D(void)@4198528,B::B(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Copy_str(char const *)@4199361)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Tidy(void)@4199425)
@@ -40,13 +53,18 @@ classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198758)
 constructor(std::exception::exception(char const * const &, int)@4199319)
 constructor(std::exception::exception(class std::exception const &)@4199558)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@4198708)
-constructor(virtual std::exception::~exception(void)@4199508)
 constructor(virtual type_info::~type_info(void)@4199595)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198719)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4199519)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4199611)
 derivedClass(const std::bad_alloc::`vftable'@4219224,const std::exception::`vftable'@4219252,0)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(B::B(void)@4198432,D::D(void)@4198528)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::exception(class std::exception const &)@4199558)
 mergeClasses(const std::bad_alloc::`vftable'@4219224,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198758)
@@ -252,6 +270,8 @@ method(virtual std::exception::~exception(void)@4199508)
 method(virtual type_info::~type_info(void)@4199595)
 method(x_ismbbtype_l@4210932)
 objectInObject(const std::bad_alloc::`vftable'@4219224,const std::exception::`vftable'@4219252,0)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198708)
+realDestructor(virtual std::exception::~exception(void)@4199508)
 vfTable(const std::bad_alloc::`vftable'@4219224)
 vfTable(const std::exception::`vftable'@4219252)
 vfTable(const type_info::`vftable'@4219284)

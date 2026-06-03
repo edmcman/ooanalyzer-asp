@@ -1,29 +1,41 @@
-18:00:30 Grounding...
-18:00:30 Grounding done (0.03s)
-18:00:30 Solving...
-18:00:30 Model found (0.08s)
-18:00:30 Solving done: OPTIMUM FOUND (0.06s)
+11:02:16 Grounding...
+11:02:16 Grounding done (0.06s)
+11:02:16 Solving...
+11:02:16 Model found (0.17s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Solving done: OPTIMUM FOUND (0.12s)
 OPTIMUM FOUND
 
-Answer: 7
+Answer: 13
 Optimization: -45 -6 -34 -291 -20
 
 % Equivalence classes (271 classes, 296 entities):
 
 % Stats:
-%   atoms: 20668.0
-%   bodies: 10438.0
-%   rules: 22170.0
-%   variables: 7846.0
-%   constraints: 5.0
-%   choices: 1595.0
-%   conflicts: 12.0
-%   models: 7.0
+%   atoms: 20667.0
+%   bodies: 9826.0
+%   rules: 22158.0
+%   variables: 7838.0
+%   constraints: 4.0
+%   choices: 3311.0
+%   conflicts: 3.0
+%   models: 13.0
 %   optimal_models: 1.0
-%   total_time: 0.11208200454711914
-%   ground_time: 0.02540954202413559
-%   time_to_first_model: 0.0757949590915814
-%   solve_time: 0.013275146484375
+%   total_time: 0.2046210765838623
+%   ground_time: 0.05946095800027251
+%   time_to_first_model: 0.16601816599722952
+%   solve_time: 0.017566919326782227
 classCallsMethod(Circle::Circle(void)@4265920,Shape::Shape(void)@4266368)
 classCallsMethod(Rectangle::Rectangle(void)@4265696,Shape::Shape(void)@4266368)
 classCallsMethod(Triangle::Triangle(void)@4266144,Shape::Shape(void)@4266368)
@@ -43,6 +55,13 @@ deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned in
 derivedClass(const Circle::`vftable'@4290648,const Shape::`vftable'@4290712,0)
 derivedClass(const Rectangle::`vftable'@4290612,const Shape::`vftable'@4290712,0)
 derivedClass(const Triangle::`vftable'@4290680,const Shape::`vftable'@4290712,0)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305664,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305692)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305664,__declspec(dllimport) int std::ios_base::flags(void)const@4305668)
 mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305652,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305692)

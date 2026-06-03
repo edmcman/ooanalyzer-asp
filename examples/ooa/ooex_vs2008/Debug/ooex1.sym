@@ -1,29 +1,35 @@
-18:00:28 Grounding...
-18:00:28 Grounding done (0.01s)
-18:00:28 Solving...
-18:00:28 Model found (0.01s)
-18:00:28 Solving done: OPTIMUM FOUND (0.00s)
+10:57:12 Grounding...
+10:57:12 Grounding done (0.01s)
+10:57:12 Solving...
+10:57:12 Model found (0.01s)
+10:57:12 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 1
 Optimization: -212
 
 % Equivalence classes (212 classes, 212 entities):
 
 % Stats:
-%   atoms: 4704.0
-%   bodies: 1277.0
-%   rules: 5137.0
-%   variables: 856.0
+%   atoms: 4703.0
+%   bodies: 852.0
+%   rules: 5130.0
+%   variables: 637.0
 %   constraints: 0.0
-%   choices: 447.0
-%   conflicts: 1.0
-%   models: 2.0
+%   choices: 213.0
+%   conflicts: 0.0
+%   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 0.027395009994506836
-%   ground_time: 0.012032833066768944
-%   time_to_first_model: 0.014521791017614305
-%   solve_time: 0.0007331371307373047
+%   total_time: 0.023211002349853516
+%   ground_time: 0.008481791941449046
+%   time_to_first_model: 0.010150125017389655
+%   solve_time: 0.00036406517028808594
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 method($LN6_1@4271605)
 method(* __cdecl operator new(unsigned int)@4264351)
 method(* __cdecl operator new(unsigned int)@4266018)

@@ -1,29 +1,49 @@
-18:00:29 Grounding...
-18:00:29 Grounding done (0.05s)
-18:00:29 Solving...
-18:00:29 Model found (0.15s)
-18:01:38 Solving done: OPTIMUM FOUND (68.43s)
+11:02:14 Grounding...
+11:02:15 Grounding done (0.11s)
+11:02:15 Solving...
+11:02:15 Model found (0.34s)
+11:02:15 Model found (0.35s, +0.00s)
+11:02:15 Model found (0.35s, +0.00s)
+11:02:15 Model found (0.35s, +0.00s)
+11:02:15 Model found (0.36s, +0.01s)
+11:02:15 Model found (0.36s, +0.00s)
+11:02:15 Model found (0.36s, +0.00s)
+11:02:15 Model found (0.37s, +0.00s)
+11:02:15 Model found (0.37s, +0.00s)
+11:02:15 Model found (0.38s, +0.00s)
+11:02:15 Model found (0.38s, +0.01s)
+11:02:15 Model found (0.39s, +0.00s)
+11:02:15 Model found (0.41s, +0.02s)
+11:02:15 Model found (0.45s, +0.04s)
+11:02:15 Model found (0.50s, +0.05s)
+11:02:15 Model found (0.52s, +0.02s)
+11:02:17 Model found (2.68s, +2.16s)
+11:02:17 Model found (2.70s, +0.02s)
+11:02:17 Model found (2.71s, +0.01s)
+11:02:36 Model found (21.53s, +18.82s)
+11:02:36 Model found (21.92s, +0.39s)
+11:03:17 Solving done: OPTIMUM FOUND (62.35s)
 OPTIMUM FOUND
 
-Answer: 20
+Answer: 21
 Optimization: -102 -68 -425 -12
 
 % Equivalence classes (387 classes, 431 entities):
 
 % Stats:
-%   atoms: 39764.0
-%   bodies: 21525.0
-%   rules: 41268.0
-%   variables: 13149.0
-%   constraints: 101.0
-%   choices: 3271637.0
-%   conflicts: 153614.0
-%   models: 20.0
+%   atoms: 39763.0
+%   bodies: 20653.0
+%   rules: 41258.0
+%   variables: 13141.0
+%   constraints: 88.0
+%   choices: 3408930.0
+%   conflicts: 165170.0
+%   models: 21.0
 %   optimal_models: 1.0
-%   total_time: 68.50917100906372
-%   ground_time: 0.048838208080269396
-%   time_to_first_model: 0.14648020802997053
-%   solve_time: 68.33986711502075
+%   total_time: 62.497761964797974
+%   ground_time: 0.10680254106409848
+%   time_to_first_model: 0.3430341660277918
+%   solve_time: 62.12266397476196
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
@@ -75,6 +95,13 @@ constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 constructor(type_info::type_info(class type_info const &)@4277088)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4313920,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4313920,__declspec(dllimport) int std::ios_base::flags(void)const@4313924)
 mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4313908,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944)

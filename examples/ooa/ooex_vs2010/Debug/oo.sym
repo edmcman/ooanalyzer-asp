@@ -1,29 +1,41 @@
-18:00:30 Grounding...
-18:00:30 Grounding done (0.03s)
-18:00:30 Solving...
-18:00:30 Model found (0.08s)
-18:00:30 Solving done: OPTIMUM FOUND (0.07s)
+11:02:16 Grounding...
+11:02:16 Grounding done (0.06s)
+11:02:16 Solving...
+11:02:16 Model found (0.16s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.17s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Model found (0.18s, +0.00s)
+11:02:16 Model found (0.19s, +0.00s)
+11:02:16 Model found (0.19s, +0.00s)
+11:02:16 Model found (0.19s, +0.00s)
+11:02:16 Model found (0.19s, +0.00s)
+11:02:16 Model found (0.19s, +0.00s)
+11:02:16 Solving done: OPTIMUM FOUND (0.14s)
 OPTIMUM FOUND
 
-Answer: 7
+Answer: 13
 Optimization: -75 -4 -26 -296 -28
 
 % Equivalence classes (271 classes, 301 entities):
 
 % Stats:
-%   atoms: 21054.0
-%   bodies: 10622.0
-%   rules: 22578.0
-%   variables: 7996.0
-%   constraints: 10.0
-%   choices: 865.0
-%   conflicts: 9.0
-%   models: 7.0
+%   atoms: 21053.0
+%   bodies: 10002.0
+%   rules: 22564.0
+%   variables: 7988.0
+%   constraints: 7.0
+%   choices: 3080.0
+%   conflicts: 2.0
+%   models: 13.0
 %   optimal_models: 1.0
-%   total_time: 0.11877107620239258
-%   ground_time: 0.02560245804488659
-%   time_to_first_model: 0.07890600000973791
-%   solve_time: 0.019418954849243164
+%   total_time: 0.21914386749267578
+%   ground_time: 0.05588887503836304
+%   time_to_first_model: 0.16413095803000033
+%   solve_time: 0.03156399726867676
 classCallsMethod(Cls3::Cls3(void)@4266032,Cls1::Cls1(void)@4266560)
 classCallsMethod(const Cls1::`vftable'@4290704,virtual Cls1::func1(void)@4266640)
 classCallsMethod(const Cls2::`vftable'@4290732,virtual Cls2::func3(void)@4266848)
@@ -43,6 +55,13 @@ derivedClass(const Cls3::`vftable'{for `Cls1'}@4290644,const Cls1::`vftable'@429
 derivedClass(const Cls3::`vftable'{for `Cls1'}@4290644,const Cls2::`vftable'@4290732,12)
 derivedClass(const Cls3::`vftable'{for `Cls2'}@4290628,const Cls1::`vftable'@4290704,0)
 derivedClass(const Cls3::`vftable'{for `Cls2'}@4290628,const Cls2::`vftable'@4290732,12)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305660,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305688)
 mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4305660,__declspec(dllimport) int std::ios_base::flags(void)const@4305664)
 mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305648,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4305688)

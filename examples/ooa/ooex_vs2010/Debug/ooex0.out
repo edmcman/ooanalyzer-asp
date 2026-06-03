@@ -1,12 +1,13 @@
-18:00:29 Grounding...
-18:00:29 Grounding done (0.01s)
-18:00:29 Solving...
-18:00:29 Model found (0.01s)
-18:00:29 Solving done: OPTIMUM FOUND (0.00s)
+11:02:15 Grounding...
+11:02:15 Grounding done (0.02s)
+11:02:15 Solving...
+11:02:15 Model found (0.02s)
+11:02:15 Model found (0.02s, +0.00s)
+11:02:15 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
-method(4263941) method(4263946) method(4263951) method(4263956) method(4263961) method(4263966) method(4263971) method(4263976) method(4263981) method(4263986) method(4263991) method(4263996) method(4264001) method(4264006) method(4264011) method(4264016) method(4264021) method(4264026) method(4264031) method(4264036) method(4264041) method(4264046) method(4264051) method(4264056) method(4264061) method(4264066) method(4264071) method(4264076) method(4264086) method(4264091) method(4264096) method(4264101) method(4264106) method(4264111) method(4264116) method(4264121) method(4264126) method(4264131) method(4264136) method(4264141) method(4264146) method(4264151) method(4264156) method(4264161) method(4264166) method(4264171) method(4264176) method(4264181) method(4264186) method(4264191) method(4264196) method(4264201) method(4264206) method(4264211) method(4264216) method(4264221) method(4264226) method(4264231) method(4264236) method(4264241) method(4264246) method(4264251) method(4264256) method(4264261) method(4264266) method(4264271) method(4264276) method(4264281) method(4264286) method(4264291) method(4264296) method(4264301) method(4264306) method(4264311) method(4264316) method(4264321) method(4264326) method(4264331) method(4264336) method(4264341) method(4264346) method(4264351) method(4264356) method(4264361) method(4264366) method(4264371) method(4264376) method(4264381) method(4264386) method(4264391) method(4264396) method(4264401) method(4264406) method(4264411) method(4264416) method(4264421) method(4264426) method(4264928) method(4265456) method(4265552) method(4265664) method(4265760) method(4265840) method(4265950) method(4265956) method(4265962) method(4265968) method(4266048) method(4266176) method(4266240) method(4266512) method(4266576) method(4266600) method(4266606) method(4266624) method(4266800) method(4266912) method(4266944) method(4267712) method(4267728) method(4268224) method(4268336) method(4269008) method(4269184) method(4269392) method(4269712) method(4270096) method(4270240) method(4270544) method(4270560) method(4270640) method(4270688) method(4270736) method(4270752) method(4270758) method(4270768) method(4270896) method(4270922) method(4270928) method(4271008) method(4271058) method(4271072) method(4271088) method(4271104) method(4271152) method(4271200) method(4271411) method(4271504) method(4271540) method(4271546) method(4271552) method(4271568) method(4271848) method(4271854) method(4271860) method(4271866) method(4271872) method(4271888) method(4272016) method(4272176) method(4272518) method(4272524) method(4272530) method(4272544) method(4272596) method(4272608) method(4273488) method(4274102) method(4274108) method(4274114) method(4274120) method(4274126) method(4274132) method(4274138) method(4274144) method(4274150) method(4274156) method(4274162) method(4274168) method(4274174) method(4274180) method(4274186) method(4274192) method(4274198) method(4274204) method(4274210) method(4274216) method(4274222) method(4274228) method(4274234) method(4274240) method(4274246) method(4274252) method(4274258) method(4274264) method(4274270) method(4274276) method(4274282) method(4274288) method(4274294) method(4274300) method(4274306) method(4278262) method(4266000) method(4267872) method(4278240) method(4278254) deletingDestructor(4265840) classCallsMethod(4265840,4265552) mergeClasses(4265552,4265840)
+guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) guessEnabled(merge) method(4263941) method(4263946) method(4263951) method(4263956) method(4263961) method(4263966) method(4263971) method(4263976) method(4263981) method(4263986) method(4263991) method(4263996) method(4264001) method(4264006) method(4264011) method(4264016) method(4264021) method(4264026) method(4264031) method(4264036) method(4264041) method(4264046) method(4264051) method(4264056) method(4264061) method(4264066) method(4264071) method(4264076) method(4264086) method(4264091) method(4264096) method(4264101) method(4264106) method(4264111) method(4264116) method(4264121) method(4264126) method(4264131) method(4264136) method(4264141) method(4264146) method(4264151) method(4264156) method(4264161) method(4264166) method(4264171) method(4264176) method(4264181) method(4264186) method(4264191) method(4264196) method(4264201) method(4264206) method(4264211) method(4264216) method(4264221) method(4264226) method(4264231) method(4264236) method(4264241) method(4264246) method(4264251) method(4264256) method(4264261) method(4264266) method(4264271) method(4264276) method(4264281) method(4264286) method(4264291) method(4264296) method(4264301) method(4264306) method(4264311) method(4264316) method(4264321) method(4264326) method(4264331) method(4264336) method(4264341) method(4264346) method(4264351) method(4264356) method(4264361) method(4264366) method(4264371) method(4264376) method(4264381) method(4264386) method(4264391) method(4264396) method(4264401) method(4264406) method(4264411) method(4264416) method(4264421) method(4264426) method(4264928) method(4265456) method(4265552) method(4265664) method(4265760) method(4265840) method(4265950) method(4265956) method(4265962) method(4265968) method(4266048) method(4266176) method(4266240) method(4266512) method(4266576) method(4266600) method(4266606) method(4266624) method(4266800) method(4266912) method(4266944) method(4267712) method(4267728) method(4268224) method(4268336) method(4269008) method(4269184) method(4269392) method(4269712) method(4270096) method(4270240) method(4270544) method(4270560) method(4270640) method(4270688) method(4270736) method(4270752) method(4270758) method(4270768) method(4270896) method(4270922) method(4270928) method(4271008) method(4271058) method(4271072) method(4271088) method(4271104) method(4271152) method(4271200) method(4271411) method(4271504) method(4271540) method(4271546) method(4271552) method(4271568) method(4271848) method(4271854) method(4271860) method(4271866) method(4271872) method(4271888) method(4272016) method(4272176) method(4272518) method(4272524) method(4272530) method(4272544) method(4272596) method(4272608) method(4273488) method(4274102) method(4274108) method(4274114) method(4274120) method(4274126) method(4274132) method(4274138) method(4274144) method(4274150) method(4274156) method(4274162) method(4274168) method(4274174) method(4274180) method(4274186) method(4274192) method(4274198) method(4274204) method(4274210) method(4274216) method(4274222) method(4274228) method(4274234) method(4274240) method(4274246) method(4274252) method(4274258) method(4274264) method(4274270) method(4274276) method(4274282) method(4274288) method(4274294) method(4274300) method(4274306) method(4278262) method(4266000) method(4267872) method(4278240) method(4278254) deletingDestructor(4265840) classCallsMethod(4265840,4265552) mergeClasses(4265552,4265840)
 Optimization: -1 -207
 
 % Equivalence classes (206 classes, 207 entities):
@@ -218,16 +219,16 @@ Optimization: -1 -207
 %   {4278262}
 
 % Stats:
-%   atoms: 4587.0
-%   bodies: 1260.0
-%   rules: 5016.0
-%   variables: 635.0
+%   atoms: 4586.0
+%   bodies: 845.0
+%   rules: 5009.0
+%   variables: 628.0
 %   constraints: 0.0
-%   choices: 441.0
-%   conflicts: 1.0
+%   choices: 828.0
+%   conflicts: 0.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.024084091186523438
-%   ground_time: 0.008591832942329347
-%   time_to_first_model: 0.011300457990728319
-%   solve_time: 0.0021331310272216797
+%   total_time: 0.03384518623352051
+%   ground_time: 0.016097416984848678
+%   time_to_first_model: 0.01846337504684925
+%   solve_time: 0.0010781288146972656
