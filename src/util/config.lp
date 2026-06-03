@@ -59,3 +59,5 @@ guessEnabled(Gate) :-
 #heuristic guessEnabled(Gate) :
     enable_dynamic_guess_gates != 0,
     guessGate(Gate). [1@4, false]
+
+#show guessEnabled/1.
