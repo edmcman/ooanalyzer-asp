@@ -28,6 +28,8 @@ def parse_args():
     p.add_argument("files", nargs="+", help=".lp fact/example files to load")
     p.add_argument("-n", "--models", type=int,
                    help="number of models (0 = all, default: clingo default)")
+    p.add_argument("-d", "--diff-models", action="store_true",
+                   help="print delta between consecutive answer sets (requires -n 0)")
     p.add_argument("--stats", nargs="?", const=1, default=0, type=int,
                    help="print clingo stats (optionally pass a clingo stats level)")
     p.add_argument("--quiet", type=str, default="1,2",
@@ -41,6 +43,27 @@ def parse_args():
     p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
                    help="pass --const to clingo (repeatable)")
     return p.parse_args()
+
+
+def format_model_diff(prev_shown, cur_shown, prev_cost, cur_cost):
+    prev_s = set(str(a) for a in prev_shown)
+    cur_s = set(str(a) for a in cur_shown)
+    added = sorted(cur_s - prev_s)
+    removed = sorted(prev_s - cur_s)
+    if not added and not removed and list(prev_cost) == list(cur_cost):
+        return ""
+    lines = ["Δ vs. previous:"]
+    for a in added:
+        lines.append(f"+ {a}")
+    for a in removed:
+        lines.append(f"- {a}")
+    if prev_cost and cur_cost and prev_cost != cur_cost:
+        delta = [c2 - c1 for c1, c2 in zip(prev_cost, cur_cost)]
+        prev_str = "[" + ",".join(str(c) for c in prev_cost) + "]"
+        cur_str = "[" + ",".join(str(c) for c in cur_cost) + "]"
+        d_str = "[" + ",".join(f"{'+' if d >= 0 else ''}{d}" for d in delta) + "]"
+        lines.append(f"cost: {prev_str} -> {cur_str}  (Δ {d_str})")
+    return "\n".join(lines)
 
 
 def main():
@@ -87,6 +110,9 @@ def main():
     first_model_time = None
     last_model_time = None
 
+    if args.diff_models and args.models != 0:
+        log.info("--diff-models requires -n 0 to take effect; ignoring")
+
     def on_model(model):
         nonlocal first_model_time, last_model_time, model_num, last_shown, last_cost, had_cost
         now = time.perf_counter() - run_start
@@ -102,14 +128,18 @@ def main():
         model_num += 1
         if cost:
             had_cost = True
-        last_shown = shown
-        last_cost = cost
         if not defer_print:
             print(f"\nAnswer: {model_num}")
+            if args.diff_models and model_num > 1:
+                diff = format_model_diff(last_shown, shown, last_cost, cost)
+                if diff:
+                    print(diff)
             print(" ".join(str(a) for a in shown))
             if cost:
                 print("Optimization:", " ".join(str(c) for c in cost))
             sys.stdout.flush()
+        last_shown = shown
+        last_cost = cost
 
     timed_out = False
     solve_start = time.perf_counter()
