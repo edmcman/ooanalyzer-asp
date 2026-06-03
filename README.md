@@ -74,7 +74,6 @@ Scoring and heuristic gates:
 | Constant | Default | Meaning |
 |---|---:|---|
 | `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
-| `enable_vftable_size_heuristic` | `1` | Prefer larger `vfTableSize/2` choices once the vftable-size gate is open |
 
 ## Files
 

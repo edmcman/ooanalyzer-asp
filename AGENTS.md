@@ -86,10 +86,8 @@ with repeated `--const NAME=VALUE` arguments to `ooanalyzer.py`.
 | `enable_guess_merge` | `1` | Enable `mergeClasses/2` vs `-mergeClasses/2` choices |
 | `enable_guess_derived_class` | `1` | Enable embedded-object vs derived-class choices |
 | `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
-| `enable_vftable_size_heuristic` | `1` | Prefer larger `vfTableSize/2` choices once the vftable-size gate is open |
 
-`enable_guess_*`, `enable_weak_g1_bonus`, and
-`enable_vftable_size_heuristic` are converted into `guessGate/1` facts in
+`enable_guess_*` and `enable_weak_g1_bonus` are converted into `guessGate/1` facts in
 `src/util/config.lp`; modules should consume `guessEnabled/1` gates, not read
 the `enable_*` constants directly. The only normal direct `enable_*` references
 should be in `src/util/config.lp`.

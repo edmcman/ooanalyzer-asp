@@ -26,8 +26,6 @@
 #const enable_guess_constructor = 1.
 #const enable_guess_vftable = 1.
 #const enable_guess_vftable_size = 1.
-% Try larger vftable extents first once the vftable-size guess gate is open.
-#const enable_vftable_size_heuristic = 1.
 #const enable_guess_merge = 1.
 #const enable_guess_derived_class = 1.
 
@@ -46,18 +44,37 @@ guessGate(vftable_size) :- enable_guess_vftable_size != 0.
 guessGate(merge) :- enable_guess_merge != 0.
 guessGate(derived_class) :- enable_guess_derived_class != 0.
 guessGate(weak_g1_bonus) :- enable_weak_g1_bonus != 0.
-guessGate(vftable_size_heuristic) :- enable_vftable_size_heuristic != 0.
+
+% Empirically, only `merge` must be dynamically gated: its candidate-pair space
+% is too large to ground/propagate before other constraints narrow it.
+% Every other gate is safe to force open and improves optimization significantly.
+% Measured on mysql.exe: P2=-2442 vs -705 baseline, TTF 57s vs 40s.
+dynamicallyGated(merge).
+
+guessEnabled(Gate) :-
+    enable_dynamic_guess_gates != 0,
+    guessGate(Gate),
+    not dynamicallyGated(Gate).
 
 { guessEnabled(Gate) } :-
     enable_dynamic_guess_gates != 0,
-    guessGate(Gate).
+    guessGate(Gate),
+    dynamicallyGated(Gate).
 
 guessEnabled(Gate) :-
     enable_dynamic_guess_gates = 0,
     guessGate(Gate).
 
+% Hybrid heuristic only applies to dynamically-gated gates: branch on them
+% early (level=4), weakly prefer false (level=1) so phase saving and conflicts
+% can flip the polarity once it appears in a learned clause.
 #heuristic guessEnabled(Gate) :
     enable_dynamic_guess_gates != 0,
-    guessGate(Gate). [1@4, false]
+    guessGate(Gate),
+    dynamicallyGated(Gate). [4, level]
+#heuristic guessEnabled(Gate) :
+    enable_dynamic_guess_gates != 0,
+    guessGate(Gate),
+    dynamicallyGated(Gate). [1, false]
 
 #show guessEnabled/1.

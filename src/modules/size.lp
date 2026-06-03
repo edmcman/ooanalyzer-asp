@@ -27,11 +27,6 @@ candidateVFTableSize(VFTable, Size) :-
     guessEnabled(vftable_size),
     vfTable(VFTable).
 
-#heuristic vfTableSize(VFTable, Size) :
-    guessEnabled(vftable_size_heuristic),
-    guessEnabled(vftable_size),
-    candidateVFTableSize(VFTable, Size). [Size@1, true]
-
 % ============================================================
 % CONSTRAINTS
 % ============================================================
