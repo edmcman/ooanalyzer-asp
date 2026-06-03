@@ -90,14 +90,15 @@ def main():
     def on_model(model):
         nonlocal first_model_time, last_model_time, model_num, last_shown, last_cost, had_cost
         now = time.perf_counter() - run_start
-        if first_model_time is None:
-            first_model_time = now
-            log.info("Model found (%.2fs)", now)
-        else:
-            log.info("Model found (%.2fs, +%.2fs)", now, now - last_model_time)
-        last_model_time = now
         shown = list(model.symbols(shown=True))
         cost = list(model.cost)
+        cost_str = cost if cost else "0"
+        if first_model_time is None:
+            first_model_time = now
+            log.info("Model found (%.2fs): %s)", now, cost_str)
+        else:
+            log.info("Model found (%.2fs, +%.2fs): %s)", now, now - last_model_time, cost_str)
+        last_model_time = now
         model_num += 1
         if cost:
             had_cost = True
