@@ -10,6 +10,7 @@ Usage:
 import argparse
 import logging
 import os
+import resource
 import sys
 import time
 import clingo
@@ -37,6 +38,8 @@ def parse_args():
     p.add_argument("--opt-strategy", default="bb,hier")
     p.add_argument("--heuristic", default="domain")
     p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
+    p.add_argument("--benchmark", action="store_true",
+                   help="log model timing/costs and stats without collecting or printing model atoms")
     p.add_argument("--debug-propagator", action="store_true")
     p.add_argument("-t", "--threads", type=str, default=None,
                    help="parallel search: N[,compete|split] (default: 1)")
@@ -105,7 +108,7 @@ def main():
     ground_time = time.perf_counter() - ground_start
     log.info("Grounding done (%.2fs)", ground_time)
 
-    defer_print = args.models == -1
+    defer_print = args.models == -1 or args.benchmark
     last_shown = []
     last_cost = []
     model_num = 0
@@ -119,7 +122,7 @@ def main():
     def on_model(model):
         nonlocal first_model_time, last_model_time, model_num, last_shown, last_cost, had_cost
         now = time.perf_counter() - run_start
-        shown = list(model.symbols(shown=True))
+        shown = [] if args.benchmark else list(model.symbols(shown=True))
         cost = list(model.cost)
         cost_str = cost if cost else "0"
         if first_model_time is None:
@@ -142,7 +145,8 @@ def main():
                 if cost:
                     print("Optimization:", " ".join(str(c) for c in cost))
             sys.stdout.flush()
-        last_shown = shown
+        if not args.benchmark:
+            last_shown = shown
         last_cost = cost
 
     timed_out = False
@@ -175,7 +179,7 @@ def main():
         print("SATISFIABLE")
         log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
 
-    if defer_print and model_num > 0:
+    if defer_print and model_num > 0 and not args.benchmark:
         print(f"\nAnswer: {model_num}")
         print(" ".join(str(a) for a in last_shown))
         if last_cost:
@@ -183,16 +187,17 @@ def main():
 
     # Print partition for the last model printed above. The propagator's live
     # union-find may have been undone by solver backtracking after on_model.
-    merge_pairs = []
-    for atom in last_shown:
-        if atom.name == "mergeClasses" and len(atom.arguments) == 2:
-            merge_pairs.append(tuple(atom.arguments))
-    parts = prop.partition(merge_pairs) if last_shown else {}
-    if parts:
-        print(f"\n% Equivalence classes ({len(parts)} classes, "
-              f"{sum(len(g) for g in parts.values())} entities):")
-        for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
-            print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
+    if not args.benchmark:
+        merge_pairs = []
+        for atom in last_shown:
+            if atom.name == "mergeClasses" and len(atom.arguments) == 2:
+                merge_pairs.append(tuple(atom.arguments))
+        parts = prop.partition(merge_pairs) if last_shown else {}
+        if parts:
+            print(f"\n% Equivalence classes ({len(parts)} classes, "
+                  f"{sum(len(g) for g in parts.values())} entities):")
+            for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
+                print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
 
     if args.stats:
         def stat(path):
@@ -217,6 +222,7 @@ def main():
             ("total_time", "summary.times.total"),
             ("ground_time", None),
             ("time_to_first_model", None),
+            ("max_rss_bytes", None),
             ("solve_time", "summary.times.solve"),
         )
         for name, path in fields:
@@ -224,6 +230,9 @@ def main():
                 val = ground_time
             elif name == "time_to_first_model":
                 val = first_model_time
+            elif name == "max_rss_bytes":
+                max_rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+                val = max_rss if sys.platform == "darwin" else max_rss * 1024
             else:
                 val = stat(path)
             if val is not None:

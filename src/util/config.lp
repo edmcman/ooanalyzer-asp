@@ -45,10 +45,10 @@ guessGate(merge) :- enable_guess_merge != 0.
 guessGate(derived_class) :- enable_guess_derived_class != 0.
 guessGate(weak_g1_bonus) :- enable_weak_g1_bonus != 0.
 
-% Empirically, only `merge` must be dynamically gated: its candidate-pair space
-% is too large to ground/propagate before other constraints narrow it.
-% Every other gate is safe to force open and improves optimization significantly.
-% Measured on mysql.exe: P2=-2442 vs -705 baseline, TTF 57s vs 40s.
+% Keep expensive feedback-loop guesses closed for the first conservative model.
+% The method -> vfTableEntry rule can otherwise force vftable extents and class
+% call/merge candidates before deterministic evidence has narrowed the search.
+dynamicallyGated(method).
 dynamicallyGated(merge).
 
 guessEnabled(Gate) :-
