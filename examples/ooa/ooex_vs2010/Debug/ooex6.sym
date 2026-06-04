@@ -1,40 +1,33 @@
-12:11:35 Grounding...
-12:11:35 Grounding done (0.02s)
-12:11:35 Solving...
-12:11:35 Model found (0.05s)
-12:11:35 Model found (0.05s, +0.00s)
-12:11:35 Model found (0.05s, +0.00s)
-12:11:35 Model found (0.06s, +0.01s)
-12:11:35 Model found (0.06s, +0.00s)
-12:11:35 Model found (0.07s, +0.01s)
-12:11:35 Model found (0.07s, +0.01s)
-12:11:35 Model found (0.08s, +0.00s)
-12:11:35 Model found (0.08s, +0.00s)
-12:11:35 Model found (0.08s, +0.00s)
-12:11:35 Model found (0.08s, +0.00s)
-12:11:35 Model found (0.09s, +0.01s)
-12:11:35 Solving done: OPTIMUM FOUND (0.08s)
+09:27:57 Grounding...
+09:27:57 Grounding done (0.03s)
+09:27:57 Solving...
+09:27:57 Model found (0.07s): [-32, -244])
+09:27:57 Model found (0.10s, +0.03s): [-32, -346])
+09:27:57 Model found (0.12s, +0.01s): [-32, -356])
+09:27:57 Model found (0.13s, +0.02s): [-32, -366])
+09:27:57 Solving done: OPTIMUM FOUND (0.12s)
 OPTIMUM FOUND
 
-Answer: 12
-Optimization: -103 -2 -37 -227 -32
+Answer: 4
+Optimization: -32 -366
 
-% Equivalence classes (215 classes, 230 entities):
+% Equivalence classes (216 classes, 231 entities):
 
 % Stats:
-%   atoms: 6999.0
-%   bodies: 2075.0
-%   rules: 7846.0
+%   atoms: 7001.0
+%   bodies: 2085.0
+%   rules: 7853.0
 %   variables: 2740.0
-%   constraints: 56.0
-%   choices: 14581.0
-%   conflicts: 187.0
-%   models: 12.0
+%   constraints: 45.0
+%   choices: 9333.0
+%   conflicts: 159.0
+%   models: 4.0
 %   optimal_models: 1.0
-%   total_time: 0.11911892890930176
-%   ground_time: 0.020339209004305303
-%   time_to_first_model: 0.045033458969555795
-%   solve_time: 0.06528592109680176
+%   total_time: 0.16489696502685547
+%   ground_time: 0.029309333069249988
+%   time_to_first_model: 0.07000333303585649
+%   max_rss_bytes: 33210368
+%   solve_time: 0.08700084686279297
 classCallsMethod(Derived::Derived(void)@4265328,Base::Base(void)@4265504)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 classCallsMethod(Derived::Derived(void)@4265328,virtual int Base::func2(void)@4265712)
@@ -62,7 +55,6 @@ guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4265328,virtual Derived::~Derived(void)@4265984)
-mergeClasses(Derived::Derived(void)@4265328,virtual int Base::func1(void)@4265616)
 mergeClasses(const Base::`vftable'@4286296,Base::Base(void)@4265504)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265328)
 mergeClasses(const Derived::`vftable'@4286272,virtual Derived::~Derived(void)@4265984)
@@ -76,6 +68,7 @@ mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@426
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266768,const type_info::`vftable'@4286316)
 mergeClasses(virtual int Base::func1(void)@4264441,Derived::Derived(void)@4265328)
 mergeClasses(virtual int Base::func1(void)@4264441,virtual Derived::~Derived(void)@4265984)
+mergeClasses(virtual int Base::func1(void)@4265616,const Base::`vftable'@4286296)
 mergeClasses(virtual int Base::func2(void)@4264196,Derived::Derived(void)@4265328)
 mergeClasses(virtual int Base::func2(void)@4264196,virtual Derived::~Derived(void)@4265984)
 mergeClasses(virtual int Base::func2(void)@4265712,const Base::`vftable'@4286296)
@@ -148,6 +141,7 @@ method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264286)
 method(__fastcall _RTC_CheckStackVars2(x, x, x)@4266352)
 method(__fastcall __security_check_cookie(x)@4263956)
 method(__fastcall __security_check_cookie(x)@4266080)
+method(__imp___purecall@4297416)
 method(__initterm@4273308)
 method(__initterm_e@4273314)
 method(__invoke_watson@4274904)
@@ -338,7 +332,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {* __cdecl operator new(unsigned int)@4266066}
 %   {ArrayUnwindFilter@4271488}
 %   {Base::Base(void)@4264176}
-%   {Base::Base(void)@4265504, virtual int Base::func2(void)@4265712, const Base::`vftable'@4286296}
+%   {Base::Base(void)@4265504, virtual int Base::func1(void)@4265616, virtual int Base::func2(void)@4265712, const Base::`vftable'@4286296}
 %   {DebuggerProbe@4269328}
 %   {DebuggerRuntime@4269504}
 %   {Derived::Derived(void)@4264321}
@@ -396,6 +390,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {__fastcall _RTC_CheckStackVars2(x, x, x)@4266352}
 %   {__fastcall __security_check_cookie(x)@4263956}
 %   {__fastcall __security_check_cookie(x)@4266080}
+%   {__imp___purecall@4297416}
 %   {__initterm@4273308}
 %   {__initterm_e@4273314}
 %   {__invoke_watson@4274904}
@@ -541,7 +536,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {start@4264246}
 %   {type_info::type_info(class type_info const &)@4264406}
 %   {virtual * Derived::`vector deleting destructor'(unsigned int)@4263971}
-%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264126, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264256, virtual int Base::func1(void)@4264441, Derived::Derived(void)@4265328, virtual int Base::func1(void)@4265616, virtual int Derived::func3(void)@4265808, virtual * Derived::`vector deleting destructor'(unsigned int)@4265872, virtual Derived::~Derived(void)@4265984, const Derived::`vftable'@4286272}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264126, virtual int Base::func2(void)@4264196, virtual int Derived::func3(void)@4264256, virtual int Base::func1(void)@4264441, Derived::Derived(void)@4265328, virtual int Derived::func3(void)@4265808, virtual * Derived::`vector deleting destructor'(unsigned int)@4265872, virtual Derived::~Derived(void)@4265984, const Derived::`vftable'@4286272}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264136, type_info::type_info(class type_info const &)@4266720, virtual * type_info::`vector deleting destructor'(unsigned int)@4266768, const type_info::`vftable'@4286316, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297336}
 %   {virtual Derived::~Derived(void)@4264251}
 %   {virtual type_info::~type_info(void)@4264011}

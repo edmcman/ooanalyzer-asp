@@ -1,60 +1,40 @@
-12:09:34 Grounding...
-12:09:34 Grounding done (0.05s)
-12:09:34 Solving...
-12:09:34 Model found (0.11s)
-12:09:34 Model found (0.11s, +0.00s)
-12:09:34 Model found (0.12s, +0.00s)
-12:09:34 Model found (0.12s, +0.00s)
-12:09:34 Model found (0.12s, +0.00s)
-12:09:34 Model found (0.12s, +0.00s)
-12:09:34 Model found (0.13s, +0.00s)
-12:09:34 Model found (0.13s, +0.00s)
-12:09:34 Model found (0.18s, +0.05s)
-12:09:34 Model found (0.19s, +0.00s)
-12:09:34 Model found (0.20s, +0.01s)
-12:09:34 Model found (0.21s, +0.01s)
-12:09:34 Model found (0.22s, +0.02s)
-12:09:34 Model found (0.23s, +0.00s)
-12:09:34 Model found (0.24s, +0.01s)
-12:09:34 Model found (0.25s, +0.02s)
-12:09:34 Model found (0.27s, +0.02s)
-12:09:34 Model found (0.28s, +0.01s)
-12:09:34 Model found (0.29s, +0.01s)
-12:09:34 Model found (0.30s, +0.01s)
-12:09:34 Model found (0.39s, +0.09s)
-12:09:34 Model found (0.40s, +0.01s)
-12:09:34 Model found (0.41s, +0.01s)
-12:09:34 Model found (0.41s, +0.00s)
-12:09:34 Model found (0.41s, +0.00s)
-12:09:34 Model found (0.41s, +0.00s)
-12:09:34 Model found (0.42s, +0.00s)
-12:09:34 Model found (0.43s, +0.01s)
-12:09:34 Model found (0.43s, +0.00s)
-12:09:34 Model found (0.44s, +0.01s)
-12:09:34 Model found (0.45s, +0.01s)
-12:09:34 Model found (0.46s, +0.01s)
-12:09:35 Solving done: OPTIMUM FOUND (0.46s)
+09:22:55 Grounding...
+09:22:55 Grounding done (0.02s)
+09:22:55 Solving...
+09:22:55 Model found (0.05s): [-68, -215])
+09:22:55 Model found (0.09s, +0.04s): [-68, -399])
+09:22:55 Model found (0.10s, +0.00s): [-68, -406])
+09:22:55 Model found (0.10s, +0.00s): [-68, -449])
+09:22:55 Model found (0.10s, +0.00s): [-68, -456])
+09:22:55 Model found (0.11s, +0.00s): [-68, -459])
+09:22:55 Model found (0.11s, +0.00s): [-68, -466])
+09:22:55 Model found (0.12s, +0.00s): [-68, -473])
+09:22:55 Model found (0.13s, +0.02s): [-68, -474])
+09:22:55 Model found (0.17s, +0.03s): [-68, -477])
+09:22:55 Model found (0.18s, +0.02s): [-68, -486])
+09:22:55 Solving done: OPTIMUM FOUND (0.18s)
 OPTIMUM FOUND
 
-Answer: 32
-Optimization: -247 -9 -56 -181 -68
+Answer: 11
+Optimization: -68 -486
 
 % Equivalence classes (168 classes, 193 entities):
 
 % Stats:
-%   atoms: 9864.0
-%   bodies: 4214.0
-%   rules: 12046.0
-%   variables: 4540.0
-%   constraints: 184.0
-%   choices: 22819.0
-%   conflicts: 750.0
-%   models: 32.0
+%   atoms: 9857.0
+%   bodies: 4215.0
+%   rules: 12053.0
+%   variables: 4521.0
+%   constraints: 163.0
+%   choices: 19662.0
+%   conflicts: 655.0
+%   models: 11.0
 %   optimal_models: 1.0
-%   total_time: 0.5512969493865967
-%   ground_time: 0.04983779205940664
-%   time_to_first_model: 0.11241262499243021
-%   solve_time: 0.3998410701751709
+%   total_time: 0.21053600311279297
+%   ground_time: 0.019932499970309436
+%   time_to_first_model: 0.05012012494262308
+%   max_rss_bytes: 36814848
+%   solve_time: 0.15224599838256836
 classCallsMethod(Derived::Derived(void)@4198592,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198592,virtual int Base::func2(void)@4198464)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4201727,std::exception::_Copy_str(char const *)@4201633)
@@ -83,6 +63,7 @@ constructor(Base::Base(void)@4198400)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 constructor(std::exception::exception(char const * const &, int)@4201591)
 constructor(std::exception::exception(class std::exception const &)@4201830)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4198909)
 constructor(virtual type_info::~type_info(void)@4198774)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791)
@@ -333,7 +314,6 @@ objectInObject(const Derived::`vftable'{for `Base2'}@4219232,const Base::`vftabl
 objectInObject(const std::bad_alloc::`vftable'@4219272,const std::exception::`vftable'@4221916,0)
 realDestructor(Base2::Base2(void)@4198496)
 realDestructor(Derived::Derived(void)@4198592)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198909)
 realDestructor(virtual std::exception::~exception(void)@4201780)
 vfTable(const Base2::`vftable'@4219216)
 vfTable(const Base::`vftable'@4219200)

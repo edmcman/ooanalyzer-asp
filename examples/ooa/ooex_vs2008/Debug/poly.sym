@@ -1,42 +1,49 @@
-12:09:33 Grounding...
-12:09:33 Grounding done (0.08s)
-12:09:33 Solving...
-12:09:33 Model found (0.24s)
-12:09:33 Model found (0.24s, +0.00s)
-12:09:33 Model found (0.25s, +0.01s)
-12:09:33 Model found (0.25s, +0.00s)
-12:09:33 Model found (0.25s, +0.00s)
-12:09:33 Model found (0.25s, +0.00s)
-12:09:33 Model found (0.26s, +0.00s)
-12:09:33 Model found (0.26s, +0.00s)
-12:09:33 Model found (0.26s, +0.00s)
-12:09:33 Model found (0.26s, +0.00s)
-12:09:34 Model found (0.26s, +0.00s)
-12:09:34 Model found (0.27s, +0.00s)
-12:09:34 Model found (0.27s, +0.00s)
-12:09:34 Model found (0.27s, +0.00s)
-12:09:34 Solving done: OPTIMUM FOUND (0.20s)
+09:22:54 Grounding...
+09:22:54 Grounding done (0.03s)
+09:22:54 Solving...
+09:22:54 Model found (0.10s): [-20, -335])
+09:22:54 Model found (0.10s, +0.00s): [-20, -345])
+09:22:54 Model found (0.10s, +0.00s): [-20, -355])
+09:22:54 Model found (0.10s, +0.00s): [-20, -365])
+09:22:54 Model found (0.10s, +0.00s): [-20, -366])
+09:22:54 Model found (0.10s, +0.00s): [-20, -367])
+09:22:54 Model found (0.10s, +0.00s): [-20, -368])
+09:22:54 Model found (0.11s, +0.00s): [-20, -369])
+09:22:54 Model found (0.11s, +0.00s): [-20, -370])
+09:22:54 Model found (0.11s, +0.00s): [-20, -371])
+09:22:54 Model found (0.11s, +0.00s): [-20, -375])
+09:22:54 Model found (0.11s, +0.00s): [-20, -376])
+09:22:54 Model found (0.11s, +0.00s): [-20, -377])
+09:22:54 Model found (0.11s, +0.00s): [-20, -378])
+09:22:54 Model found (0.11s, +0.00s): [-20, -379])
+09:22:54 Model found (0.11s, +0.00s): [-20, -380])
+09:22:54 Model found (0.12s, +0.00s): [-20, -381])
+09:22:54 Model found (0.12s, +0.00s): [-20, -382])
+09:22:54 Model found (0.12s, +0.00s): [-20, -383])
+09:22:54 Model found (0.12s, +0.00s): [-20, -384])
+09:22:54 Solving done: OPTIMUM FOUND (0.09s)
 OPTIMUM FOUND
 
-Answer: 14
-Optimization: -45 -6 -34 -304 -20
+Answer: 20
+Optimization: -20 -384
 
-% Equivalence classes (280 classes, 309 entities):
+% Equivalence classes (281 classes, 310 entities):
 
 % Stats:
-%   atoms: 25877.0
-%   bodies: 12846.0
-%   rules: 27413.0
-%   variables: 9447.0
+%   atoms: 25933.0
+%   bodies: 13049.0
+%   rules: 27475.0
+%   variables: 9582.0
 %   constraints: 4.0
-%   choices: 3432.0
-%   conflicts: 4.0
-%   models: 14.0
+%   choices: 3571.0
+%   conflicts: 5.0
+%   models: 20.0
 %   optimal_models: 1.0
-%   total_time: 0.29502296447753906
-%   ground_time: 0.07831662497483194
-%   time_to_first_model: 0.24261741701047868
-%   solve_time: 0.03279304504394531
+%   total_time: 0.13892221450805664
+%   ground_time: 0.0317720000166446
+%   time_to_first_model: 0.10087666707113385
+%   max_rss_bytes: 46268416
+%   solve_time: 0.018804073333740234
 classCallsMethod(Circle::Circle(void)@4265952,Shape::Shape(void)@4266400)
 classCallsMethod(Rectangle::Rectangle(void)@4265728,Shape::Shape(void)@4266400)
 classCallsMethod(Triangle::Triangle(void)@4266176,Shape::Shape(void)@4266400)
@@ -198,6 +205,7 @@ method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264391)
 method(__fastcall _RTC_CheckStackVars2(x, x, x)@4269120)
 method(__fastcall __security_check_cookie(x)@4263981)
 method(__fastcall __security_check_cookie(x)@4269728)
+method(__imp___purecall@4305932)
 method(__initterm@4276284)
 method(__initterm_e@4276290)
 method(__invoke_watson@4277860)
@@ -513,6 +521,7 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {__fastcall _RTC_CheckStackVars2(x, x, x)@4269120}
 %   {__fastcall __security_check_cookie(x)@4263981}
 %   {__fastcall __security_check_cookie(x)@4269728}
+%   {__imp___purecall@4305932}
 %   {__initterm@4276284}
 %   {__initterm_e@4276290}
 %   {__invoke_watson@4277860}

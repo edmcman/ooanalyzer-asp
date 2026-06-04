@@ -1,53 +1,32 @@
-12:09:35 Grounding...
-12:09:35 Grounding done (0.03s)
-12:09:35 Solving...
-12:09:35 Model found (0.06s)
-12:09:35 Model found (0.06s, +0.00s)
-12:09:35 Model found (0.06s, +0.00s)
-12:09:35 Model found (0.07s, +0.01s)
-12:09:35 Model found (0.07s, +0.01s)
-12:09:35 Model found (0.08s, +0.00s)
-12:09:35 Model found (0.08s, +0.00s)
-12:09:35 Model found (0.09s, +0.01s)
-12:09:35 Model found (0.09s, +0.00s)
-12:09:35 Model found (0.09s, +0.00s)
-12:09:35 Model found (0.10s, +0.00s)
-12:09:35 Model found (0.10s, +0.00s)
-12:09:35 Model found (0.10s, +0.00s)
-12:09:35 Model found (0.12s, +0.01s)
-12:09:35 Model found (0.12s, +0.01s)
-12:09:35 Model found (0.12s, +0.00s)
-12:09:35 Model found (0.13s, +0.00s)
-12:09:35 Model found (0.13s, +0.00s)
-12:09:35 Model found (0.13s, +0.00s)
-12:09:35 Model found (0.14s, +0.01s)
-12:09:35 Model found (0.14s, +0.00s)
-12:09:35 Model found (0.15s, +0.00s)
-12:09:35 Model found (0.15s, +0.00s)
-12:09:35 Model found (0.15s, +0.00s)
-12:09:35 Model found (0.15s, +0.00s)
-12:09:35 Solving done: OPTIMUM FOUND (0.13s)
+09:22:55 Grounding...
+09:22:55 Grounding done (0.01s)
+09:22:55 Solving...
+09:22:55 Model found (0.02s): [-20, -184])
+09:22:55 Model found (0.03s, +0.01s): [-20, -330])
+09:22:55 Model found (0.04s, +0.01s): [-20, -357])
+09:22:55 Solving done: OPTIMUM FOUND (0.03s)
 OPTIMUM FOUND
 
-Answer: 25
-Optimization: -143 -1 -43 -173 -20
+Answer: 3
+Optimization: -20 -357
 
 % Equivalence classes (162 classes, 176 entities):
 
 % Stats:
-%   atoms: 7288.0
+%   atoms: 7285.0
 %   bodies: 2067.0
-%   rules: 8192.0
-%   variables: 2347.0
+%   rules: 8189.0
+%   variables: 2349.0
 %   constraints: 97.0
-%   choices: 8522.0
-%   conflicts: 264.0
-%   models: 25.0
+%   choices: 2546.0
+%   conflicts: 65.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.20193696022033691
-%   ground_time: 0.03312841698061675
-%   time_to_first_model: 0.05753783299587667
-%   solve_time: 0.1121969223022461
+%   total_time: 0.05626201629638672
+%   ground_time: 0.012570374994538724
+%   time_to_first_model: 0.023255249951034784
+%   max_rss_bytes: 32866304
+%   solve_time: 0.021203041076660156
 classCallsMethod(D::D(void)@4198528,B::B(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Copy_str(char const *)@4199361)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Tidy(void)@4199425)
@@ -64,6 +43,8 @@ classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198758)
 constructor(std::exception::exception(char const * const &, int)@4199319)
 constructor(std::exception::exception(class std::exception const &)@4199558)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4198708)
+constructor(virtual std::exception::~exception(void)@4199508)
 constructor(virtual type_info::~type_info(void)@4199595)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198719)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4199519)
@@ -281,8 +262,6 @@ method(virtual std::exception::~exception(void)@4199508)
 method(virtual type_info::~type_info(void)@4199595)
 method(x_ismbbtype_l@4210932)
 objectInObject(const std::bad_alloc::`vftable'@4219224,const std::exception::`vftable'@4219252,0)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198708)
-realDestructor(virtual std::exception::~exception(void)@4199508)
 vfTable(const std::bad_alloc::`vftable'@4219224)
 vfTable(const std::exception::`vftable'@4219252)
 vfTable(const type_info::`vftable'@4219284)

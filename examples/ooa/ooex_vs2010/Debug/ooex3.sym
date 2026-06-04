@@ -1,31 +1,32 @@
-12:09:37 Grounding...
-12:09:37 Grounding done (0.02s)
-12:09:37 Solving...
-12:09:37 Model found (0.02s)
-12:09:37 Model found (0.02s, +0.00s)
-12:09:37 Model found (0.02s, +0.00s)
-12:09:37 Solving done: OPTIMUM FOUND (0.01s)
+09:27:56 Grounding...
+09:27:56 Grounding done (0.02s)
+09:27:56 Solving...
+09:27:56 Model found (0.02s): [-204])
+09:27:56 Model found (0.03s, +0.01s): [-205])
+09:27:56 Model found (0.03s, +0.00s): [-206])
+09:27:56 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 3
-Optimization: -2 -204
+Optimization: -206
 
 % Equivalence classes (202 classes, 204 entities):
 
 % Stats:
 %   atoms: 4550.0
 %   bodies: 849.0
-%   rules: 4970.0
+%   rules: 4969.0
 %   variables: 625.0
 %   constraints: 0.0
-%   choices: 1225.0
+%   choices: 617.0
 %   conflicts: 1.0
 %   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.041896820068359375
-%   ground_time: 0.017981667071580887
-%   time_to_first_model: 0.020566083025187254
-%   solve_time: 0.0055789947509765625
+%   total_time: 0.05621480941772461
+%   ground_time: 0.021179207949899137
+%   time_to_first_model: 0.02449787501245737
+%   max_rss_bytes: 31064064
+%   solve_time: 0.007239818572998047
 classCallsMethod(Derived::Derived(void)@4265280,Base::Base(void)@4265456)
 classCallsMethod(Derived::Derived(void)@4265280,int Base::func3(void)@4265200)
 guessEnabled(constructor)

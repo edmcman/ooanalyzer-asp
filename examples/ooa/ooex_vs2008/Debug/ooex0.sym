@@ -1,30 +1,31 @@
-12:09:33 Grounding...
-12:09:33 Grounding done (0.02s)
-12:09:33 Solving...
-12:09:33 Model found (0.02s)
-12:09:33 Model found (0.02s, +0.00s)
-12:09:33 Solving done: OPTIMUM FOUND (0.00s)
+09:22:54 Grounding...
+09:22:54 Grounding done (0.01s)
+09:22:54 Solving...
+09:22:54 Model found (0.01s): [-213])
+09:22:54 Model found (0.01s, +0.00s): [-214])
+09:22:54 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
-Optimization: -1 -213
+Optimization: -214
 
 % Equivalence classes (212 classes, 213 entities):
 
 % Stats:
 %   atoms: 4707.0
 %   bodies: 869.0
-%   rules: 5142.0
+%   rules: 5141.0
 %   variables: 646.0
 %   constraints: 0.0
-%   choices: 852.0
+%   choices: 428.0
 %   conflicts: 0.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.0441739559173584
-%   ground_time: 0.020365834003314376
-%   time_to_first_model: 0.023610666976310313
-%   solve_time: 0.0015769004821777344
+%   total_time: 0.019156932830810547
+%   ground_time: 0.008371459087356925
+%   time_to_first_model: 0.009716459084302187
+%   max_rss_bytes: 31113216
+%   solve_time: 0.0021800994873046875
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@4265872,ClassA::~ClassA(void)@4265584)
 deletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)@4265872)
 guessEnabled(constructor)

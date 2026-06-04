@@ -1,47 +1,43 @@
-12:09:33 Grounding...
-12:09:33 Grounding done (0.08s)
-12:09:33 Solving...
-12:09:34 Model found (0.26s)
-12:09:34 Model found (0.26s, +0.00s)
-12:09:34 Model found (0.26s, +0.00s)
-12:09:34 Model found (0.26s, +0.00s)
-12:09:34 Model found (0.26s, +0.00s)
-12:09:34 Model found (0.27s, +0.00s)
-12:09:34 Model found (0.27s, +0.00s)
-12:09:34 Model found (0.28s, +0.00s)
-12:09:34 Model found (0.28s, +0.00s)
-12:09:34 Model found (0.28s, +0.00s)
-12:09:34 Model found (0.28s, +0.00s)
-12:09:34 Model found (0.28s, +0.00s)
-12:09:34 Model found (0.29s, +0.00s)
-12:09:34 Model found (0.29s, +0.00s)
-12:09:34 Model found (0.29s, +0.00s)
-12:09:34 Model found (0.29s, +0.00s)
-12:09:34 Model found (0.30s, +0.00s)
-12:09:34 Model found (0.30s, +0.00s)
-12:09:34 Model found (0.31s, +0.01s)
-12:09:34 Solving done: OPTIMUM FOUND (0.22s)
+09:22:54 Grounding...
+09:22:54 Grounding done (0.03s)
+09:22:54 Solving...
+09:22:54 Model found (0.10s): [-28, -333])
+09:22:54 Model found (0.10s, +0.00s): [-28, -343])
+09:22:54 Model found (0.10s, +0.00s): [-28, -391])
+09:22:54 Model found (0.11s, +0.00s): [-28, -392])
+09:22:54 Model found (0.11s, +0.00s): [-28, -393])
+09:22:54 Model found (0.11s, +0.00s): [-28, -394])
+09:22:54 Model found (0.11s, +0.00s): [-28, -401])
+09:22:54 Model found (0.11s, +0.00s): [-28, -402])
+09:22:54 Model found (0.11s, +0.00s): [-28, -403])
+09:22:54 Model found (0.12s, +0.00s): [-28, -404])
+09:22:54 Model found (0.12s, +0.00s): [-28, -405])
+09:22:54 Model found (0.12s, +0.00s): [-28, -407])
+09:22:54 Model found (0.12s, +0.00s): [-28, -408])
+09:22:54 Model found (0.13s, +0.00s): [-28, -409])
+09:22:54 Solving done: OPTIMUM FOUND (0.09s)
 OPTIMUM FOUND
 
-Answer: 19
-Optimization: -75 -4 -26 -309 -28
+Answer: 14
+Optimization: -28 -409
 
 % Equivalence classes (280 classes, 314 entities):
 
 % Stats:
-%   atoms: 26339.0
-%   bodies: 13072.0
-%   rules: 27895.0
-%   variables: 9622.0
+%   atoms: 26334.0
+%   bodies: 13271.0
+%   rules: 27898.0
+%   variables: 9754.0
 %   constraints: 7.0
-%   choices: 3798.0
-%   conflicts: 3.0
-%   models: 19.0
+%   choices: 3610.0
+%   conflicts: 10.0
+%   models: 14.0
 %   optimal_models: 1.0
-%   total_time: 0.3383450508117676
-%   ground_time: 0.0814421670511365
-%   time_to_first_model: 0.25638133310712874
-%   solve_time: 0.05185103416442871
+%   total_time: 0.14375782012939453
+%   ground_time: 0.03197195800021291
+%   time_to_first_model: 0.10239041701424867
+%   max_rss_bytes: 46055424
+%   solve_time: 0.02557086944580078
 classCallsMethod(Cls3::Cls3(void)@4266080,Cls1::Cls1(void)@4266608)
 classCallsMethod(const Cls1::`vftable'@4290656,virtual Cls1::func1(void)@4266688)
 classCallsMethod(const Cls2::`vftable'@4290684,virtual Cls2::func3(void)@4266896)

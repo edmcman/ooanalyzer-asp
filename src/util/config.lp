@@ -45,10 +45,9 @@ guessGate(merge) :- enable_guess_merge != 0.
 guessGate(derived_class) :- enable_guess_derived_class != 0.
 guessGate(weak_g1_bonus) :- enable_weak_g1_bonus != 0.
 
-% Keep expensive feedback-loop guesses closed for the first conservative model.
-% The method -> vfTableEntry rule can otherwise force vftable extents and class
-% call/merge candidates before deterministic evidence has narrowed the search.
-dynamicallyGated(method).
+% Keep the merge guess family closed for the first conservative model. Other
+% gates stay forced open because delaying method/vftable evidence can strand
+% optimization before useful merge candidates are available.
 dynamicallyGated(merge).
 
 guessEnabled(Gate) :-

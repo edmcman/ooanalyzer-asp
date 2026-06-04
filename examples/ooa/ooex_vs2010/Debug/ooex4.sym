@@ -1,45 +1,38 @@
-12:11:35 Grounding...
-12:11:35 Grounding done (0.02s)
-12:11:35 Solving...
-12:11:35 Model found (0.04s)
-12:11:35 Model found (0.04s, +0.00s)
-12:11:35 Model found (0.04s, +0.00s)
-12:11:35 Model found (0.04s, +0.00s)
-12:11:35 Model found (0.05s, +0.00s)
-12:11:35 Model found (0.05s, +0.01s)
-12:11:35 Model found (0.06s, +0.00s)
-12:11:35 Model found (0.06s, +0.00s)
-12:11:35 Model found (0.06s, +0.00s)
-12:11:35 Model found (0.06s, +0.00s)
-12:11:35 Model found (0.06s, +0.00s)
-12:11:35 Model found (0.07s, +0.00s)
-12:11:35 Model found (0.07s, +0.00s)
-12:11:35 Model found (0.07s, +0.00s)
-12:11:35 Model found (0.07s, +0.00s)
-12:11:35 Model found (0.07s, +0.00s)
-12:11:35 Model found (0.08s, +0.00s)
-12:11:35 Solving done: OPTIMUM FOUND (0.06s)
+09:27:57 Grounding...
+09:27:57 Grounding done (0.03s)
+09:27:57 Solving...
+09:27:57 Model found (0.05s): [-24, -238])
+09:27:57 Model found (0.05s, +0.00s): [-28, -239])
+09:27:57 Model found (0.06s, +0.01s): [-28, -288])
+09:27:57 Model found (0.06s, +0.00s): [-28, -289])
+09:27:57 Model found (0.07s, +0.00s): [-28, -290])
+09:27:57 Model found (0.07s, +0.00s): [-28, -291])
+09:27:57 Model found (0.07s, +0.00s): [-28, -298])
+09:27:57 Model found (0.08s, +0.00s): [-28, -302])
+09:27:57 Model found (0.08s, +0.01s): [-28, -305])
+09:27:57 Solving done: OPTIMUM FOUND (0.06s)
 OPTIMUM FOUND
 
-Answer: 17
-Optimization: -63 -2 -19 -222 -28
+Answer: 9
+Optimization: -28 -305
 
-% Equivalence classes (212 classes, 225 entities):
+% Equivalence classes (213 classes, 226 entities):
 
 % Stats:
-%   atoms: 6658.0
-%   bodies: 1875.0
-%   rules: 7429.0
-%   variables: 2583.0
-%   constraints: 29.0
-%   choices: 5854.0
-%   conflicts: 35.0
-%   models: 17.0
+%   atoms: 6660.0
+%   bodies: 1885.0
+%   rules: 7435.0
+%   variables: 2584.0
+%   constraints: 22.0
+%   choices: 4750.0
+%   conflicts: 57.0
+%   models: 9.0
 %   optimal_models: 1.0
-%   total_time: 0.09203696250915527
-%   ground_time: 0.020906875026412308
-%   time_to_first_model: 0.04043520800769329
-%   solve_time: 0.03829598426818848
+%   total_time: 0.10338497161865234
+%   ground_time: 0.026826207991689444
+%   time_to_first_model: 0.04902591707650572
+%   max_rss_bytes: 33325056
+%   solve_time: 0.0373530387878418
 classCallsMethod(Derived::Derived(void)@4265296,Base::Base(void)@4265472)
 classCallsMethod(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4265584)
 classCallsMethod(Derived::Derived(void)@4265296,virtual int Base::func2(void)@4265680)
@@ -62,6 +55,7 @@ guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4265296,virtual int Base::func1(void)@4265584)
+mergeClasses(Derived::Derived(void)@4265296,virtual int Base::func2(void)@4265680)
 mergeClasses(const Base::`vftable'@4286292,Base::Base(void)@4265472)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265296)
 mergeClasses(const type_info::`vftable'@4286312,type_info::type_info(class type_info const &)@4266512)
@@ -72,7 +66,6 @@ mergeClasses(virtual int Base::func1(void)@4264426,Base::Base(void)@4265472)
 mergeClasses(virtual int Base::func1(void)@4264426,Derived::Derived(void)@4265296)
 mergeClasses(virtual int Base::func2(void)@4264186,Base::Base(void)@4265472)
 mergeClasses(virtual int Base::func2(void)@4264186,Derived::Derived(void)@4265296)
-mergeClasses(virtual int Base::func2(void)@4265680,const Base::`vftable'@4286292)
 mergeClasses(virtual int Derived::func3(void)@4264241,Derived::Derived(void)@4265296)
 mergeClasses(virtual int Derived::func3(void)@4265776,const Derived::`vftable'@4286272)
 method($LN11@4271010)
@@ -141,6 +134,7 @@ method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264271)
 method(__fastcall _RTC_CheckStackVars2(x, x, x)@4266144)
 method(__fastcall __security_check_cookie(x)@4263956)
 method(__fastcall __security_check_cookie(x)@4265872)
+method(__imp___purecall@4297416)
 method(__initterm@4273100)
 method(__initterm_e@4273106)
 method(__invoke_watson@4274696)
@@ -381,6 +375,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286312,0,type_info::type_info(
 %   {__fastcall _RTC_CheckStackVars2(x, x, x)@4266144}
 %   {__fastcall __security_check_cookie(x)@4263956}
 %   {__fastcall __security_check_cookie(x)@4265872}
+%   {__imp___purecall@4297416}
 %   {__initterm@4273100}
 %   {__initterm_e@4273106}
 %   {__invoke_watson@4274696}
