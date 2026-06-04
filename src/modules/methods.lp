@@ -22,9 +22,11 @@ method(M) :- symbolClass(M, _, _, _).                                        % r
 %!trace_rule {"% is a method because it has a symbol property", M}
 method(M) :- symbolProperty(M, _).                                     % rules.pl:68
 
-% reasonMethod_G: entries in confirmed vftables are methods (vfTableEntry already dethunks).
-%!trace_rule {"% is a method because it is a confirmed vftable entry", M}
-method(M) :- vfTableEntry(_, _, M).                                % rules.pl:73
+% reasonMethod_G: confirmed vftable entries prove their dethunked targets are methods.
+%!trace_rule {"% is a method because it is the dethunked target of a confirmed vftable entry", Method}
+method(Method) :-
+    vfTableEntry(_, _, Entry),
+    dethunk(Entry, Method).                                           % rules.pl:73
 
 % reasonMethod_H: method writes a confirmed vftable into its own this-pointer.
 % Counterpart: reasonMethod_H (rules.pl:80)
