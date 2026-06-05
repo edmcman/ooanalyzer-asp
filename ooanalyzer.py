@@ -36,8 +36,8 @@ def parse_args():
                    help="print clingo stats (optionally pass a clingo stats level)")
     p.add_argument("--quiet", type=str, default="1,2",
                    help="clingo --quiet level (default 1,2)")
-    p.add_argument("--opt-strategy", default="bb,hier")
-    p.add_argument("--heuristic", default="domain")
+    p.add_argument("--opt-strategy", default="bb,lin")
+    p.add_argument("--heuristic", default="vsids")
     p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
     p.add_argument("--benchmark", action="store_true",
                    help="log model timing/costs and stats without collecting or printing model atoms")
@@ -133,9 +133,9 @@ def main():
         cost_str = cost if cost else "0"
         if first_model_time is None:
             first_model_time = now
-            log.info("Model found (%.2fs): %s)", now, cost_str)
+            log.info("Model found (%.2fs): %s", now, cost_str)
         else:
-            log.info("Model found (%.2fs, +%.2fs): %s)", now, now - last_model_time, cost_str)
+            log.info("Model found (%.2fs, +%.2fs): %s", now, now - last_model_time, cost_str)
         last_model_time = now
         model_num += 1
         if cost:
@@ -155,17 +155,25 @@ def main():
             last_shown = shown
         last_cost = cost
 
+    def on_unsat(lower):
+        now = time.perf_counter() - run_start
+        if last_cost:
+            gap = [u - l for u, l in zip(last_cost, lower)]
+            log.info("Lower bound: %s  upper: %s  gap: %s (%.2fs)", list(lower), last_cost, gap, now)
+        else:
+            log.info("Lower bound: %s (%.2fs)", list(lower), now)
+
     timed_out = False
     solve_start = time.perf_counter()
     log.info("Solving...")
     if args.time_limit:
-        handle = ctl.solve(on_model=on_model, async_=True)
+        handle = ctl.solve(on_model=on_model, on_unsat=on_unsat, async_=True)
         if not handle.wait(args.time_limit):
             timed_out = True
             handle.cancel()
         result = handle.get()
     else:
-        result = ctl.solve(on_model=on_model)
+        result = ctl.solve(on_model=on_model, on_unsat=on_unsat)
     solve_time = time.perf_counter() - solve_start
 
     if timed_out:
