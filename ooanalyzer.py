@@ -38,6 +38,8 @@ def parse_args():
                    help="clingo --quiet level (default 1,2)")
     p.add_argument("--opt-strategy", default="bb,lin")
     p.add_argument("--heuristic", default="vsids")
+    p.add_argument("--sign-def", default="neg",
+                   help="clingo default sign heuristic (default: neg for conservative guesses)")
     p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
     p.add_argument("--benchmark", action="store_true",
                    help="log model timing/costs and stats without collecting or printing model atoms")
@@ -85,6 +87,7 @@ def main():
         "--warn=none",
         f"--opt-strategy={args.opt_strategy}",
         f"--heuristic={args.heuristic}",
+        f"--sign-def={args.sign_def}",
     ]
     if args.stats:
         ctl_args.append(f"--stats={args.stats}")

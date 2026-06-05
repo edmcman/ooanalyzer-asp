@@ -3,7 +3,7 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic vsids --time-limit=300 -t2 --stats
+PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=vsids
 TIME_CMD     := /usr/bin/time

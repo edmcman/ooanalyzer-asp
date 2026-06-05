@@ -1,41 +1,36 @@
-14:06:23 Grounding...
-14:06:23 Grounding done (0.02s)
-14:06:23 Solving...
-14:06:23 Model found (0.06s): [-28, -119]
-14:06:23 Model found (0.06s, +0.00s): [-28, -120]
-14:06:23 Model found (0.06s, +0.00s): [-28, -121]
-14:06:23 Model found (0.06s, +0.00s): [-28, -122]
-14:06:23 Model found (0.06s, +0.00s): [-28, -123]
-14:06:23 Model found (0.06s, +0.00s): [-28, -124]
-14:06:23 Model found (0.06s, +0.00s): [-28, -125]
-14:06:23 Model found (0.06s, +0.00s): [-28, -126]
-14:06:23 Model found (0.06s, +0.00s): [-28, -127]
-14:06:23 Model found (0.06s, +0.00s): [-28, -128]
-14:06:23 Model found (0.06s, +0.00s): [-28, -129]
-14:06:23 Model found (0.07s, +0.00s): [-28, -257]
-14:06:23 Model found (0.07s, +0.00s): [-32, -131]
-14:06:23 Model found (0.07s, +0.00s): [-32, -258]
-14:06:23 Model found (0.07s, +0.00s): [-40, -133]
-14:06:23 Model found (0.07s, +0.00s): [-40, -259]
-14:06:23 Model found (0.07s, +0.00s): [-48, -138]
-14:06:23 Model found (0.07s, +0.00s): [-48, -263]
-14:06:23 Model found (0.08s, +0.01s): [-52, -150]
-14:06:23 Model found (0.08s, +0.00s): [-52, -151]
-14:06:23 Model found (0.08s, +0.00s): [-52, -259]
-14:06:23 Model found (0.08s, +0.00s): [-52, -260]
-14:06:23 Model found (0.08s, +0.00s): [-52, -264]
-14:06:23 Model found (0.09s, +0.01s): [-52, -265]
-14:06:23 Model found (0.10s, +0.01s): [-52, -266]
-14:06:23 Model found (0.10s, +0.00s): [-52, -267]
-14:06:23 Model found (0.10s, +0.00s): [-52, -268]
-14:06:23 Model found (0.10s, +0.00s): [-52, -371]
-14:06:23 Model found (0.11s, +0.00s): [-52, -372]
-14:06:23 Model found (0.14s, +0.03s): [-52, -382]
-14:06:23 Model found (0.14s, +0.01s): [-52, -383]
-14:06:23 Solving done: OPTIMUM FOUND (0.16s)
+15:09:40 Grounding...
+15:09:40 Grounding done (0.02s)
+15:09:40 Solving...
+15:09:40 Model found (0.06s): [-28, -119]
+15:09:40 Model found (0.06s, +0.00s): [-28, -257]
+15:09:40 Model found (0.06s, +0.00s): [-32, -121]
+15:09:40 Model found (0.06s, +0.00s): [-32, -258]
+15:09:40 Model found (0.06s, +0.00s): [-40, -123]
+15:09:40 Model found (0.06s, +0.00s): [-40, -259]
+15:09:40 Model found (0.06s, +0.00s): [-48, -128]
+15:09:40 Model found (0.06s, +0.00s): [-48, -263]
+15:09:40 Model found (0.06s, +0.00s): [-52, -130]
+15:09:40 Model found (0.06s, +0.00s): [-52, -131]
+15:09:40 Model found (0.06s, +0.00s): [-52, -264]
+15:09:40 Model found (0.09s, +0.02s): [-52, -265]
+15:09:40 Model found (0.09s, +0.00s): [-52, -266]
+15:09:40 Model found (0.09s, +0.00s): [-52, -371]
+15:09:40 Model found (0.09s, +0.00s): [-52, -372]
+15:09:40 Model found (0.11s, +0.01s): [-52, -373]
+15:09:40 Model found (0.12s, +0.01s): [-52, -374]
+15:09:40 Model found (0.13s, +0.01s): [-52, -375]
+15:09:40 Model found (0.13s, +0.00s): [-52, -376]
+15:09:40 Model found (0.13s, +0.00s): [-52, -377]
+15:09:40 Model found (0.14s, +0.00s): [-52, -378]
+15:09:40 Model found (0.14s, +0.00s): [-52, -379]
+15:09:40 Model found (0.15s, +0.01s): [-52, -380]
+15:09:40 Model found (0.15s, +0.00s): [-52, -381]
+15:09:40 Model found (0.15s, +0.00s): [-52, -382]
+15:09:40 Model found (0.16s, +0.00s): [-52, -383]
+15:09:40 Solving done: OPTIMUM FOUND (0.15s)
 OPTIMUM FOUND
 
-Answer: 31
+Answer: 26
 Optimization: -52 -383
 
 % Equivalence classes (222 classes, 242 entities):
@@ -46,15 +41,15 @@ Optimization: -52 -383
 %   rules: 9365.0
 %   variables: 3845.0
 %   constraints: 77.0
-%   choices: 17925.0
-%   conflicts: 195.0
-%   models: 31.0
+%   choices: 11507.0
+%   conflicts: 225.0
+%   models: 26.0
 %   optimal_models: 1.0
-%   total_time: 0.19072389602661133
-%   ground_time: 0.019268671050667763
-%   time_to_first_model: 0.05515515012666583
+%   total_time: 0.17970800399780273
+%   ground_time: 0.01942824525758624
+%   time_to_first_model: 0.05541604803875089
 %   max_rss_bytes: 27525120
-%   solve_time: 0.12838196754455566
+%   solve_time: 0.11705899238586426
 classCallsMethod(Derived::Derived(void)@4265424,Base::Base(void)@4265632)
 classCallsMethod(Derived::Derived(void)@4265424,virtual int Base::func2(void)@4265840)
 classCallsMethod(const Base2::`vftable'@4286332,virtual int Base2::func1(void)@4266048)

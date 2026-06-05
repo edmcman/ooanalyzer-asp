@@ -1,23 +1,21 @@
-14:06:24 Grounding...
-14:06:24 Grounding done (0.02s)
-14:06:24 Solving...
-14:06:24 Model found (0.06s): [-28, -91]
-14:06:24 Model found (0.06s, +0.00s): [-28, -197]
-14:06:24 Model found (0.06s, +0.00s): [-32, -199]
-14:06:24 Model found (0.06s, +0.00s): [-36, -200]
-14:06:24 Model found (0.06s, +0.00s): [-44, -201]
-14:06:24 Model found (0.06s, +0.00s): [-48, -202]
-14:06:24 Model found (0.12s, +0.06s): [-48, -451]
-14:06:24 Model found (0.13s, +0.01s): [-48, -489]
-14:06:24 Model found (0.15s, +0.01s): [-48, -490]
-14:06:24 Model found (0.15s, +0.00s): [-48, -491]
-14:06:24 Model found (0.15s, +0.00s): [-48, -492]
-14:06:24 Model found (0.15s, +0.00s): [-48, -493]
-14:06:24 Model found (0.16s, +0.00s): [-48, -494]
-14:06:24 Solving done: OPTIMUM FOUND (0.15s)
+15:09:41 Grounding...
+15:09:41 Grounding done (0.02s)
+15:09:41 Solving...
+15:09:41 Model found (0.06s): [-28, -91]
+15:09:41 Model found (0.06s, +0.00s): [-28, -197]
+15:09:41 Model found (0.06s, +0.00s): [-32, -199]
+15:09:41 Model found (0.06s, +0.00s): [-36, -200]
+15:09:41 Model found (0.06s, +0.00s): [-44, -201]
+15:09:41 Model found (0.06s, +0.00s): [-48, -107]
+15:09:41 Model found (0.06s, +0.00s): [-48, -202]
+15:09:41 Model found (0.09s, +0.02s): [-48, -446]
+15:09:41 Model found (0.09s, +0.00s): [-48, -450]
+15:09:41 Model found (0.11s, +0.02s): [-48, -451]
+15:09:41 Model found (0.15s, +0.03s): [-48, -494]
+15:09:41 Solving done: OPTIMUM FOUND (0.15s)
 OPTIMUM FOUND
 
-Answer: 13
+Answer: 11
 Optimization: -48 -494
 
 % Equivalence classes (167 classes, 187 entities):
@@ -28,15 +26,15 @@ Optimization: -48 -494
 %   rules: 10280.0
 %   variables: 3456.0
 %   constraints: 138.0
-%   choices: 6628.0
-%   conflicts: 289.0
-%   models: 13.0
+%   choices: 5020.0
+%   conflicts: 254.0
+%   models: 11.0
 %   optimal_models: 1.0
-%   total_time: 0.192061185836792
-%   ground_time: 0.02166324108839035
-%   time_to_first_model: 0.05754060298204422
+%   total_time: 0.19443798065185547
+%   ground_time: 0.021667462307959795
+%   time_to_first_model: 0.057409702334553
 %   max_rss_bytes: 28311552
-%   solve_time: 0.11885619163513184
+%   solve_time: 0.1209571361541748
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func1(void)@4198432)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func2(void)@4198464)
@@ -63,8 +61,7 @@ constructor(Derived::Derived(void)@4198496)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
 constructor(std::exception::exception(char const * const &, int)@4201511)
 constructor(std::exception::exception(class std::exception const &)@4201750)
-constructor(virtual Derived::~Derived(void)@4198560)
-constructor(virtual std::exception::~exception(void)@4201700)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4198829)
 constructor(virtual type_info::~type_info(void)@4198694)
 deletingDestructor(virtual * Derived::`vector deleting destructor'(unsigned int)@4198592)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840)
@@ -306,7 +303,8 @@ method(x_ismbbtype_l@4212252)
 objectInObject(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
 objectInObject(const std::bad_alloc::`vftable'@4219244,const std::exception::`vftable'@4221892,0)
 realDestructor(Base::Base(void)@4198400)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198829)
+realDestructor(virtual Derived::~Derived(void)@4198560)
+realDestructor(virtual std::exception::~exception(void)@4201700)
 vfTable(const Base::`vftable'@4219200)
 vfTable(const Derived::`vftable'@4219216)
 vfTable(const std::bad_alloc::`vftable'@4219244)

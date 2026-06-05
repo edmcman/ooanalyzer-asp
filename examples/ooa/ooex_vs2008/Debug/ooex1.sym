@@ -1,8 +1,8 @@
-14:06:23 Grounding...
-14:06:23 Grounding done (0.01s)
-14:06:23 Solving...
-14:06:23 Model found (0.01s): [-212]
-14:06:23 Solving done: OPTIMUM FOUND (0.00s)
+15:09:40 Grounding...
+15:09:40 Grounding done (0.01s)
+15:09:40 Solving...
+15:09:40 Model found (0.01s): [-212]
+15:09:40 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 1
@@ -20,11 +20,11 @@ Optimization: -212
 %   conflicts: 0.0
 %   models: 1.0
 %   optimal_models: 1.0
-%   total_time: 0.02280902862548828
-%   ground_time: 0.011975640896707773
-%   time_to_first_model: 0.014655465725809336
-%   max_rss_bytes: 25165824
-%   solve_time: 0.0005078315734863281
+%   total_time: 0.023211002349853516
+%   ground_time: 0.011979603674262762
+%   time_to_first_model: 0.014739037957042456
+%   max_rss_bytes: 24379392
+%   solve_time: 0.0005509853363037109
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(method)

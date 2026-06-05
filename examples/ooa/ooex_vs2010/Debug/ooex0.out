@@ -1,9 +1,9 @@
-14:06:23 Grounding...
-14:06:23 Grounding done (0.01s)
-14:06:23 Solving...
-14:06:23 Model found (0.01s): [-207]
-14:06:23 Model found (0.02s, +0.00s): [-208]
-14:06:23 Solving done: OPTIMUM FOUND (0.00s)
+15:09:40 Grounding...
+15:09:40 Grounding done (0.01s)
+15:09:40 Solving...
+15:09:40 Model found (0.01s): [-207]
+15:09:40 Model found (0.02s, +0.00s): [-208]
+15:09:40 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -224,12 +224,12 @@ Optimization: -208
 %   rules: 5008.0
 %   variables: 628.0
 %   constraints: 0.0
-%   choices: 416.0
+%   choices: 418.0
 %   conflicts: 0.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.0234529972076416
-%   ground_time: 0.011980177834630013
-%   time_to_first_model: 0.01485702907666564
+%   total_time: 0.02330803871154785
+%   ground_time: 0.01186715206131339
+%   time_to_first_model: 0.014749024994671345
 %   max_rss_bytes: 24379392
-%   solve_time: 0.0011110305786132812
+%   solve_time: 0.0010900497436523438
