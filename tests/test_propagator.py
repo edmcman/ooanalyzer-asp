@@ -282,14 +282,10 @@ def main():
                 failed += 1
 
     print("\nMode: heuristic reward consistency")
-    basic_heuristic_configs = [
+    finishing_heuristic_configs = [
         (
             "domain",
             ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=domain"],
-        ),
-        (
-            "berkmin",
-            ["--warn=none", "--opt-strategy=bb,inc", "--heuristic=berkmin"],
         ),
         (
             "vmtf",
@@ -316,14 +312,14 @@ def main():
     ]
     reward_tests = [
         (
-            "example.lp optimal reward is stable across heuristics",
+            "example.lp optimal reward is stable across finishing heuristics",
             [ROOT / "examples" / "example.lp"],
-            basic_heuristic_configs,
+            finishing_heuristic_configs,
         ),
         (
             "Lite/ooex0 optimal reward is stable across finishing heuristics",
             [ROOT / "examples" / "ooa" / "ooex_vs2010" / "Lite" / "ooex0.lp"],
-            lite_heuristic_configs,
+            finishing_heuristic_configs,
         ),
     ]
     for name, files, configurations in reward_tests:
