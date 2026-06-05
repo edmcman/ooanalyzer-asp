@@ -3,9 +3,9 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic vsids --time-limit=300 -t2 --stats
+PROP_FLAGS   := -n -1 --opt-strategy usc,oll --heuristic vsids --time-limit=300 -t2 --stats
 XCLINGO      := xclingo
-XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=vsids
+XCLINGO_FLAGS := -n -1 0 --opt-strategy usc,oll --heuristic=vsids
 TIME_CMD     := /usr/bin/time
 
 OOA_DIR      := examples/ooa
@@ -27,7 +27,13 @@ SYM_FILES         := $(FACTS:%.facts=%.sym) $(GROUND:%.ground=%.sym)
 .PHONY: all convert run verify verify-core verify-real propagator-run \
         explain-all symbolize clean help single
 
-all: run
+all: symbolize
+
+# When 'clean' is explicitly requested alongside a build target, force
+# sequencing so clean finishes before any build work starts.
+ifneq ($(filter clean,$(MAKECMDGOALS)),)
+convert run symbolize: clean
+endif
 
 help:
 	@echo "Targets:"
