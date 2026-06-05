@@ -1,12 +1,14 @@
-15:09:40 Grounding...
-15:09:40 Grounding done (0.01s)
-15:09:40 Solving...
-15:09:40 Model found (0.01s): [-206]
-15:09:40 Model found (0.02s, +0.00s): [-207]
-15:09:40 Solving done: OPTIMUM FOUND (0.00s)
+Domain options require heuristic 'Domain'!
+17:05:44 Grounding...
+17:05:44 Grounding done (0.01s)
+17:05:44 Solving...
+17:05:44 Model found (0.02s): [-197]
+17:05:44 Model found (0.02s, +0.00s): [-206]
+17:05:44 Model found (0.02s, +0.00s): [-207]
+17:05:44 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 3
 Optimization: -207
 
 % Equivalence classes (205 classes, 206 entities):
@@ -17,15 +19,17 @@ Optimization: -207
 %   rules: 5064.0
 %   variables: 625.0
 %   constraints: 0.0
-%   choices: 416.0
+%   choices: 1665.0
 %   conflicts: 0.0
-%   models: 2.0
+%   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.023335933685302734
-%   ground_time: 0.011799285188317299
-%   time_to_first_model: 0.014607747085392475
+%   final_cost: [-207.0]
+%   lower_bound: [-207.0]
+%   total_time: 0.026073932647705078
+%   ground_time: 0.012040471192449331
+%   time_to_first_model: 0.015326832421123981
 %   max_rss_bytes: 25165824
-%   solve_time: 0.0010628700256347656
+%   solve_time: 0.0033681392669677734
 classCallsMethod(D::D(void)@4265392,B::B(void)@4265664)
 guessEnabled(constructor)
 guessEnabled(derived_class)

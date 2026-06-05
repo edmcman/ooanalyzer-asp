@@ -1,37 +1,38 @@
-15:09:41 Grounding...
-15:09:41 Grounding done (0.02s)
-15:09:41 Solving...
-15:09:41 Model found (0.06s): [-16, -232]
-15:09:41 Model found (0.06s, +0.00s): [-28, -233]
-15:09:41 Model found (0.07s, +0.01s): [-28, -477]
-15:09:41 Model found (0.07s, +0.00s): [-28, -482]
-15:09:41 Model found (0.08s, +0.00s): [-28, -486]
-15:09:41 Model found (0.08s, +0.00s): [-28, -491]
-15:09:41 Model found (0.08s, +0.00s): [-28, -496]
-15:09:41 Model found (0.14s, +0.05s): [-28, -509]
-15:09:41 Solving done: OPTIMUM FOUND (0.13s)
+Domain options require heuristic 'Domain'!
+17:05:45 Grounding...
+17:05:45 Grounding done (0.02s)
+17:05:45 Solving...
+17:05:45 Model found (0.07s): [-28, -182]
+17:05:45 Model found (0.08s, +0.01s): [-28, -183]
+17:05:45 Model found (0.10s, +0.02s): [-28, -434]
+17:05:45 Model found (0.16s, +0.06s): [-28, -435]
+17:05:45 Model found (0.21s, +0.05s): [-28, -465]
+17:05:45 Model found (0.26s, +0.05s): [-28, -509]
+17:05:45 Solving done: OPTIMUM FOUND (0.36s)
 OPTIMUM FOUND
 
-Answer: 8
+Answer: 6
 Optimization: -28 -509
 
 % Equivalence classes (204 classes, 220 entities):
 
 % Stats:
-%   atoms: 9678.0
-%   bodies: 2840.0
-%   rules: 10976.0
+%   atoms: 9689.0
+%   bodies: 2844.0
+%   rules: 10987.0
 %   variables: 3391.0
 %   constraints: 201.0
-%   choices: 3434.0
-%   conflicts: 286.0
-%   models: 8.0
+%   choices: 13196.0
+%   conflicts: 699.0
+%   models: 6.0
 %   optimal_models: 1.0
-%   total_time: 0.16867804527282715
-%   ground_time: 0.02161797508597374
-%   time_to_first_model: 0.056773369666188955
+%   final_cost: [-28.0, -509.0]
+%   lower_bound: [-28.0, -509.0]
+%   total_time: 0.3963282108306885
+%   ground_time: 0.02180125517770648
+%   time_to_first_model: 0.0661246981471777
 %   max_rss_bytes: 28311552
-%   solve_time: 0.0976860523223877
+%   solve_time: 0.3244760036468506
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200472,std::exception::_Copy_str(char const *)@4200339)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200472,std::exception::_Tidy(void)@4200403)
 classCallsMethod(const std::bad_alloc::`vftable'@4223296,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642)
@@ -50,15 +51,15 @@ classCallsMethod(virtual * std::bad_exception::`vector deleting destructor'(unsi
 classCallsMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200536,std::exception::_Tidy(void)@4200403)
 classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200628,virtual type_info::~type_info(void)@4200612)
 constructor(virtual type_info::~type_info(void)@4200612)
+deletingDestructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198681)
 deletingDestructor(std::bad_exception::bad_exception(class std::bad_exception const &)@4205513)
 deletingDestructor(std::exception::exception(char const * const &)@4200433)
-deletingDestructor(std::exception::exception(char const * const &, int)@4200297)
 deletingDestructor(std::exception::exception(class std::exception const &)@4200575)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198642)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4202495)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200536)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200628)
-deletingDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198631)
+deletingDestructor(virtual std::exception::~exception(void)@4200525)
 derivedClass(const std::bad_alloc::`vftable'@4223296,const std::exception::`vftable'@4223324,0)
 derivedClass(const std::bad_exception::`vftable'@4223472,const std::exception::`vftable'@4223324,0)
 guessEnabled(constructor)
@@ -321,9 +322,9 @@ method(virtual type_info::~type_info(void)@4200612)
 method(x_ismbbtype_l@4217799)
 objectInObject(const std::bad_alloc::`vftable'@4223296,const std::exception::`vftable'@4223324,0)
 objectInObject(const std::bad_exception::`vftable'@4223472,const std::exception::`vftable'@4223324,0)
-realDestructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198681)
+realDestructor(std::exception::exception(char const * const &, int)@4200297)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198631)
 realDestructor(virtual std::bad_exception::~bad_exception(void)@4202484)
-realDestructor(virtual std::exception::~exception(void)@4200525)
 vfTable(const std::bad_alloc::`vftable'@4223296)
 vfTable(const std::bad_exception::`vftable'@4223472)
 vfTable(const std::exception::`vftable'@4223324)

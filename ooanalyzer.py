@@ -23,6 +23,30 @@ from propagator.conflict_profiler import ConflictProfiler
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _MAIN_LP = os.path.join(_SCRIPT_DIR, "ooanalyzer.lp")
+_DEFAULT_PROFILE_PREDS = (
+    "guessEnabled",
+    "method",
+    "constructor",
+    "realDestructor",
+    "deletingDestructor",
+    "constructorDestructorKind",
+    "vfTable",
+    "vfTableSize",
+    "vfTableEntry",
+    "mergeClasses",
+    "mergeCandidate",
+    "strongMergeCandidate",
+    "strongMergeReward",
+    "weakMergeCandidate",
+    "weakMergeReward",
+    "weakG1Bonus",
+    "notMergeUnsorted",
+    "derivedClass",
+    "embeddedObject",
+    "objectInObject",
+    "classRelationship",
+    "knownVirtualMethod",
+)
 
 
 def parse_args():
@@ -50,6 +74,15 @@ def parse_args():
                    help="pass --const to clingo (repeatable)")
     p.add_argument("--profile-conflicts", action="store_true",
                    help="register ConflictProfiler and print backtrack histogram after solving")
+    p.add_argument("--profile-predicate", action="append", default=[],
+                   help=("predicate to watch with --profile-conflicts; repeatable. "
+                         "Defaults to core search predicates; use '*' to watch all atoms"))
+    p.add_argument("--profile-max-atoms", type=int, default=10000,
+                   help=("maximum number of symbolic atoms to watch with --profile-conflicts "
+                         "(0 = no cap; default: 10000)"))
+    p.add_argument("--profile-max-atoms-per-predicate", type=int, default=500,
+                   help=("maximum watched atoms per predicate with --profile-conflicts "
+                         "(0 = no per-predicate cap; default: 500)"))
     args, extra = p.parse_known_args()
     args.clingo_extra = extra
     return args
@@ -76,6 +109,16 @@ def format_model_diff(prev_shown, cur_shown, prev_cost, cur_cost):
     return "\n".join(lines)
 
 
+def format_cost_values(values):
+    formatted = []
+    for value in values:
+        if isinstance(value, float) and value.is_integer():
+            formatted.append(str(int(value)))
+        else:
+            formatted.append(str(value))
+    return " ".join(formatted)
+
+
 def main():
     args = parse_args()
 
@@ -98,7 +141,22 @@ def main():
     ctl_args.extend(args.clingo_extra)
 
     prop = SameClassPropagator()
-    profiler = ConflictProfiler() if args.profile_conflicts else None
+    profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
+    if "*" in profile_preds:
+        profile_preds = None
+    profile_max_atoms = None if args.profile_max_atoms == 0 else args.profile_max_atoms
+    profile_max_atoms_per_predicate = (
+        None if args.profile_max_atoms_per_predicate == 0
+        else args.profile_max_atoms_per_predicate
+    )
+    profiler = (
+        ConflictProfiler(
+            profile_preds,
+            max_atoms=profile_max_atoms,
+            max_atoms_per_predicate=profile_max_atoms_per_predicate,
+        )
+        if args.profile_conflicts else None
+    )
     ctl = clingo.Control(ctl_args)
     if args.models is not None and args.models != -1:
         ctl.configuration.solve.models = args.models
@@ -152,7 +210,7 @@ def main():
                 print(f"\nAnswer: {model_num}")
                 print(" ".join(str(a) for a in shown))
                 if cost:
-                    print("Optimization:", " ".join(str(c) for c in cost))
+                    print("Optimization:", format_cost_values(cost))
             sys.stdout.flush()
         if not args.benchmark:
             last_shown = shown
@@ -179,6 +237,16 @@ def main():
         result = ctl.solve(on_model=on_model, on_unsat=on_unsat)
     solve_time = time.perf_counter() - solve_start
 
+    def stat(path):
+        cur = ctl.statistics
+        for key in path.split("."):
+            if not isinstance(cur, dict) or key not in cur:
+                return None
+            cur = cur[key]
+        return cur
+
+    final_lower_bound = stat("summary.lower")
+
     if timed_out:
         print("% TIME LIMIT REACHED")
         log.info("Solving done: TIME LIMIT REACHED (%.2fs)", solve_time)
@@ -200,7 +268,19 @@ def main():
         print(f"\nAnswer: {model_num}")
         print(" ".join(str(a) for a in last_shown))
         if last_cost:
-            print("Optimization:", " ".join(str(c) for c in last_cost))
+            print("Optimization:", format_cost_values(last_cost))
+            if final_lower_bound and not result.exhausted:
+                print("Lower bound:", format_cost_values(final_lower_bound))
+
+    if (
+        not defer_print
+        and model_num > 0
+        and last_cost
+        and final_lower_bound
+        and not result.exhausted
+        and not args.benchmark
+    ):
+        print("Lower bound:", format_cost_values(final_lower_bound))
 
     if profiler:
         profiler.report()
@@ -220,14 +300,6 @@ def main():
                 print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
 
     if args.stats:
-        def stat(path):
-            cur = ctl.statistics
-            for key in path.split("."):
-                if not isinstance(cur, dict) or key not in cur:
-                    return None
-                cur = cur[key]
-            return cur
-
         print("\n% Stats:")
         fields = (
             ("atoms", "problem.lp.atoms"),
@@ -239,6 +311,8 @@ def main():
             ("conflicts", "solving.solvers.conflicts"),
             ("models", "summary.models.enumerated"),
             ("optimal_models", "summary.models.optimal"),
+            ("final_cost", "summary.costs"),
+            ("lower_bound", "summary.lower"),
             ("total_time", "summary.times.total"),
             ("ground_time", None),
             ("time_to_first_model", None),

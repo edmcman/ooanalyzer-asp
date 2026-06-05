@@ -1,11 +1,13 @@
-15:09:40 Grounding...
-15:09:40 Grounding done (0.01s)
-15:09:40 Solving...
-15:09:40 Model found (0.01s): [-212]
-15:09:40 Solving done: OPTIMUM FOUND (0.00s)
+Domain options require heuristic 'Domain'!
+17:05:44 Grounding...
+17:05:44 Grounding done (0.01s)
+17:05:44 Solving...
+17:05:44 Model found (0.02s): [-207]
+17:05:44 Model found (0.02s, +0.00s): [-212]
+17:05:44 Solving done: OPTIMUM FOUND (0.00s)
 OPTIMUM FOUND
 
-Answer: 1
+Answer: 2
 Optimization: -212
 
 % Equivalence classes (212 classes, 212 entities):
@@ -16,15 +18,17 @@ Optimization: -212
 %   rules: 5130.0
 %   variables: 637.0
 %   constraints: 0.0
-%   choices: 426.0
+%   choices: 1919.0
 %   conflicts: 0.0
-%   models: 1.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.023211002349853516
-%   ground_time: 0.011979603674262762
-%   time_to_first_model: 0.014739037957042456
-%   max_rss_bytes: 24379392
-%   solve_time: 0.0005509853363037109
+%   final_cost: [-212.0]
+%   lower_bound: [-212.0]
+%   total_time: 0.02378392219543457
+%   ground_time: 0.012037351727485657
+%   time_to_first_model: 0.015066972933709621
+%   max_rss_bytes: 25165824
+%   solve_time: 0.0013360977172851562
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(method)

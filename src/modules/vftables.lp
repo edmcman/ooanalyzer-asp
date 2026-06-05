@@ -222,8 +222,9 @@ possibleVFTable(VFTable) :-
 % REWARDS
 % ============================================================
 
-% Vftable-related reward lives in size.lp as Size@3 (vfTableSize). No
-% separate per-vftable or per-entry reward here.
+% Vftable-related reward lives in size.lp as a highest-priority
+% max-candidate-minus-gap objective. No separate per-vftable or per-entry
+% reward here.
 
 
 %!trace {"% is a confirmed vftable", V} vfTable(V).

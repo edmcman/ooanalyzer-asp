@@ -1,10 +1,11 @@
-15:09:40 Grounding...
-15:09:40 Grounding done (0.01s)
-15:09:40 Solving...
-15:09:40 Model found (0.01s): [-204]
-15:09:40 Model found (0.02s, +0.00s): [-205]
-15:09:40 Model found (0.02s, +0.00s): [-206]
-15:09:40 Solving done: OPTIMUM FOUND (0.00s)
+Domain options require heuristic 'Domain'!
+17:05:44 Grounding...
+17:05:44 Grounding done (0.01s)
+17:05:44 Solving...
+17:05:44 Model found (0.02s): [-204]
+17:05:44 Model found (0.02s, +0.00s): [-205]
+17:05:44 Model found (0.02s, +0.00s): [-206]
+17:05:44 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 3
@@ -18,15 +19,17 @@ Optimization: -206
 %   rules: 4969.0
 %   variables: 625.0
 %   constraints: 0.0
-%   choices: 416.0
-%   conflicts: 0.0
+%   choices: 1464.0
+%   conflicts: 3.0
 %   models: 3.0
 %   optimal_models: 1.0
-%   total_time: 0.024253129959106445
-%   ground_time: 0.011701616924256086
-%   time_to_first_model: 0.014679147861897945
+%   final_cost: [-206.0]
+%   lower_bound: [-206.0]
+%   total_time: 0.027747154235839844
+%   ground_time: 0.012188566382974386
+%   time_to_first_model: 0.015748821198940277
 %   max_rss_bytes: 25165824
-%   solve_time: 0.0021469593048095703
+%   solve_time: 0.0050411224365234375
 classCallsMethod(Derived::Derived(void)@4265280,Base::Base(void)@4265456)
 classCallsMethod(Derived::Derived(void)@4265280,int Base::func3(void)@4265200)
 guessEnabled(constructor)

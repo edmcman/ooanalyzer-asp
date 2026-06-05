@@ -1,12 +1,15 @@
-15:09:40 Grounding...
-15:09:40 Grounding done (0.02s)
-15:09:40 Solving...
-15:09:40 Model found (0.04s): [-215]
-15:09:40 Model found (0.04s, +0.00s): [-220]
-15:09:40 Solving done: OPTIMUM FOUND (0.02s)
+Domain options require heuristic 'Domain'!
+17:05:44 Grounding...
+17:05:44 Grounding done (0.02s)
+17:05:44 Solving...
+17:05:44 Model found (0.04s): [-215]
+17:05:44 Model found (0.04s, +0.00s): [-216]
+17:05:44 Model found (0.04s, +0.00s): [-218]
+17:05:44 Model found (0.04s, +0.00s): [-220]
+17:05:44 Solving done: OPTIMUM FOUND (0.03s)
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 4
 Optimization: -220
 
 % Equivalence classes (218 classes, 220 entities):
@@ -17,15 +20,17 @@ Optimization: -220
 %   rules: 7903.0
 %   variables: 1513.0
 %   constraints: 0.0
-%   choices: 435.0
+%   choices: 1921.0
 %   conflicts: 0.0
-%   models: 2.0
+%   models: 4.0
 %   optimal_models: 1.0
-%   total_time: 0.047644853591918945
-%   ground_time: 0.0157984490506351
-%   time_to_first_model: 0.038613651879131794
+%   final_cost: [-220.0]
+%   lower_bound: [-220.0]
+%   total_time: 0.05052495002746582
+%   ground_time: 0.01594666112214327
+%   time_to_first_model: 0.04094632202759385
 %   max_rss_bytes: 26738688
-%   solve_time: 0.0014488697052001953
+%   solve_time: 0.003303050994873047
 constructor(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
 guessEnabled(constructor)
 guessEnabled(derived_class)

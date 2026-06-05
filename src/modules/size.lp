@@ -41,8 +41,20 @@ candidateVFTableSize(VFTable, Size) :-
 % REWARDS
 % ============================================================
 
-% Prefer larger extents at the highest priority.
-#maximize { Size@3, vfTableSize, VFTable : vfTableSize(VFTable, Size) }.
+% Prefer larger extents at the highest priority.  Encode the selected size as
+% MaxCandidateSize - Gap instead of a raw candidate-size reward so branch-and-
+% bound has an explicit per-vftable gap to close.
+maxCandidateVFTableSize(VFTable, MaxSize) :-
+    vfTable(VFTable),
+    MaxSize = #max { Size : candidateVFTableSize(VFTable, Size) }.
+
+vfTableSizeGap(VFTable, Gap) :-
+    vfTableSize(VFTable, Size),
+    maxCandidateVFTableSize(VFTable, MaxSize),
+    Gap = MaxSize - Size.
+
+#maximize { MaxSize@3, vfTableMaxSize, VFTable : maxCandidateVFTableSize(VFTable, MaxSize) }.
+#minimize { Gap@3, vfTableSizeGap, VFTable : vfTableSizeGap(VFTable, Gap) }.
 
 % ============================================================
 % OUTPUT
