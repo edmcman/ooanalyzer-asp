@@ -24,7 +24,8 @@ MAIN_LP = ROOT / "ooanalyzer.lp"
 THEORY = """
 #theory sc {
     t {};
-    &sameClass/2 : t, body
+    &sameClass/2         : t, body;
+    &allWritersInClass/2 : t, body
 }.
 """
 
@@ -177,7 +178,82 @@ def main():
          2,
          frozenset(["-mergeClasses(a,b)", "different"])),
 
-        # ── 7. Multi-thread transitive regression ─────────────────────────────
+        # ── &allWritersInClass tests ──────────────────────────────────────────
+
+        # ── 7a. Single writer in own class → AWC true ─────────────────────────
+        ("awc: single writer in own class → awc true",
+         """
+         mergeEntity(m1).
+         nonOverwritingWrite(m1, 0, vt1).
+         allIn :- &allWritersInClass(vt1, m1).
+         :- not allIn.
+         #show allIn/0.
+         """,
+         1,
+         frozenset(["allIn"])),
+
+        # ── 7b. Out-of-class writer → AWC must be false ───────────────────────
+        ("awc: out-of-class writer → constraint on awc-true is satisfiable",
+         """
+         mergeEntity(m1). mergeEntity(m2).
+         nonOverwritingWrite(m1, 0, vt1).
+         nonOverwritingWrite(m2, 0, vt1).
+         :- &allWritersInClass(vt1, m1).
+         """,
+         1),   # 1 model: AWC is false (m2 out-of-class), constraint satisfied
+
+        # ── 7c. Merging writers makes AWC true ────────────────────────────────
+        ("awc: merging both writers makes awc true",
+         """
+         mergeEntity(m1). mergeEntity(m2).
+         nonOverwritingWrite(m1, 0, vt1).
+         nonOverwritingWrite(m2, 0, vt1).
+         1 { mergeClasses(m1, m2) ; -mergeClasses(m1, m2) } 1.
+         allIn :- &allWritersInClass(vt1, m1).
+         :- allIn, not mergeClasses(m1, m2).
+         :- not allIn, mergeClasses(m1, m2).
+         #show mergeClasses/2. #show allIn/0.
+         """,
+         2,
+         frozenset(["mergeClasses(m1,m2)", "allIn"])),
+
+        # ── 7d. AWC requires ALL writers in class, not just one ───────────────
+        # AWC can be true iff all three writers are merged (propagator blocks AWC=true
+        # when any writer is out-of-class). We force allIn ↔ (m1-m2 ∧ m2-m3) via
+        # two prevention constraints + one requirement constraint, giving 4 models.
+        ("awc: blocked unless all three writers are merged (biconditional)",
+         """
+         mergeEntity(m1). mergeEntity(m2). mergeEntity(m3).
+         nonOverwritingWrite(m1, 0, vt1).
+         nonOverwritingWrite(m2, 0, vt1).
+         nonOverwritingWrite(m3, 0, vt1).
+         1 { mergeClasses(m1, m2) ; -mergeClasses(m1, m2) } 1.
+         1 { mergeClasses(m2, m3) ; -mergeClasses(m2, m3) } 1.
+         allIn :- &allWritersInClass(vt1, m1).
+         :- allIn, not mergeClasses(m1, m2).
+         :- allIn, not mergeClasses(m2, m3).
+         :- mergeClasses(m1, m2), mergeClasses(m2, m3), not allIn.
+         #show mergeClasses/2. #show allIn/0.
+         """,
+         4,
+         frozenset(["mergeClasses(m1,m2)", "mergeClasses(m2,m3)", "allIn"])),
+
+        # ── 7e. AWC per-vftable: separate vftables don't interfere ────────────
+        ("awc: independent per-vftable — each vftable decided separately",
+         """
+         mergeEntity(m1). mergeEntity(m2).
+         nonOverwritingWrite(m1, 0, vt1).
+         nonOverwritingWrite(m2, 0, vt2).
+         allIn1 :- &allWritersInClass(vt1, m1).
+         allIn2 :- &allWritersInClass(vt2, m2).
+         :- not allIn1.
+         :- not allIn2.
+         #show allIn1/0. #show allIn2/0.
+         """,
+         1,
+         frozenset(["allIn1", "allIn2"])),
+
+        # ── 8. Multi-thread transitive regression ─────────────────────────────
         ("multi-thread transitive: force a-d through a-b-c-d chain",
          """
          mergeEntity(a). mergeEntity(b). mergeEntity(c). mergeEntity(d).

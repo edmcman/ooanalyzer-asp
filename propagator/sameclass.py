@@ -245,9 +245,44 @@ class SameClassPropagator:
                     init.add_clause([-merge_slit, sc_slit])   # merge → same
                     init.add_clause([merge_slit, -sc_slit])   # ¬merge → ¬same
 
+        # nonOverwritingWrite(Method, Offset, VFTable) ground atoms.
+        # abs(slit) → (method_key, vftable_key); vftable_key → {(method_key, abs_slit)}
+        self._now_slit_to_key     = {}
+        self._now_writers_by_vft  = {}
+
+        for sym_atom in init.symbolic_atoms.by_signature("nonOverwritingWrite", 3):
+            args = sym_atom.symbol.arguments
+            method  = _sym_key(args[0])
+            vftable = _sym_key(args[2])
+            lit  = init.solver_literal(sym_atom.literal)
+            alit = abs(lit)
+            self._now_slit_to_key[alit] = (method, vftable)
+            self._now_writers_by_vft.setdefault(vftable, set()).add((method, alit))
+            init.add_watch(lit)
+
+        # &allWritersInClass(VFTable, Class) theory atoms.
+        # (vftable_key, class_key) → slit; abs(slit) → (vftable_key, class_key)
+        # vftable_key → {(class_key, slit)}
+        self._awc_to_slit      = {}
+        self._awc_slit_to_pair = {}
+        self._awc_by_vft       = {}
+
+        for tatom in init.theory_atoms:
+            if tatom.term.name != "allWritersInClass" or len(tatom.term.arguments) != 2:
+                continue
+            vftable = _theory_key(tatom.term.arguments[0])
+            class_  = _theory_key(tatom.term.arguments[1])
+            slit = init.solver_literal(tatom.literal)
+            self._awc_to_slit[(vftable, class_)] = slit
+            self._awc_slit_to_pair[abs(slit)] = (vftable, class_)
+            self._awc_by_vft.setdefault(vftable, set()).add((class_, slit))
+            init.add_watch(slit)
+
         self._states = [_ThreadState() for _ in range(init.number_of_threads)]
         _dprint(f"[init] {len(self._merge_to_pair)} mergeClasses, "
-                f"{len(self._sc_to_lit)} &sameClass atoms")
+                f"{len(self._sc_to_lit)} &sameClass atoms, "
+                f"{len(self._now_slit_to_key)} nonOverwritingWrite atoms, "
+                f"{len(self._awc_to_slit)} &allWritersInClass atoms")
 
     def _state(self, thread_id):
         return self._states[thread_id]
@@ -295,6 +330,21 @@ class SameClassPropagator:
         )
         return ctl.add_clause(clause, tag=False)
 
+    def _assert_not_all_writers(self, state, ctl, now_alit, class_, awc_slit, cache=None):
+        """Assert &allWritersInClass=false: now_alit writer is outside Class's component.
+
+        Clause: ¬nonOverwritingWrite ∨ ¬reason_1 ∨ … ∨ cut_1 ∨ … ∨ ¬awc
+        Mirrors _assert_not_same: satisfied once any internal reason is unset
+        (backtrack) or any cut edge (bridging mergeClasses) becomes true.
+        """
+        if cache is None:
+            cache = {}
+        reason_class, cut_class = self._component_cut_and_reasons(state, class_, cache)
+        clause = [-now_alit] + [-r for r in reason_class] + list(cut_class) + [-awc_slit]
+        _dprint(f"[awc-false] now_alit={now_alit} class={class_} awc={awc_slit} "
+                f"reason={sorted(reason_class)} cut={sorted(cut_class)}")
+        return ctl.add_clause(clause, tag=False)
+
     def propagate(self, ctl, changes):
         asgn = ctl.assignment
         state = self._state(ctl.thread_id)
@@ -327,6 +377,29 @@ class SameClassPropagator:
                     if not ctl.add_clause([-lit], tag=False):
                         return
 
+        # &allWritersInClass: handle nonOverwritingWrite and awc literal changes.
+        # We only watch the positive literal for each, so lit in changes always means
+        # the atom became true (no polarity ambiguity).
+        for lit in changes:
+            alit = abs(lit)
+
+            if alit in self._now_slit_to_key:
+                # A non-overwriting write became confirmed — check awc atoms for its vftable.
+                method, vftable = self._now_slit_to_key[alit]
+                for class_, awc_slit in self._awc_by_vft.get(vftable, ()):
+                    if not state.uf.same(method, class_):
+                        if not self._assert_not_all_writers(state, ctl, alit, class_, awc_slit):
+                            return
+
+            elif alit in self._awc_slit_to_pair:
+                # Solver guessed &allWritersInClass true — verify no out-of-class writer.
+                vftable, class_ = self._awc_slit_to_pair[alit]
+                awc_slit = lit  # positive literal (we only watch positive)
+                for method, now_alit in self._now_writers_by_vft.get(vftable, ()):
+                    if asgn.is_true(now_alit) and not state.uf.same(method, class_):
+                        if not self._assert_not_all_writers(state, ctl, now_alit, class_, awc_slit):
+                            return
+
     def undo(self, thread_id, assignment, changes):
         _dprint(f"[undo] restore at level {assignment.decision_level}")
         state = self._state(thread_id)
@@ -357,6 +430,21 @@ class SameClassPropagator:
             if asgn.is_true(slit):
                 _dprint(f"[check] &sameClass({x},{y}) → false")
                 if not self._assert_not_same(state, ctl, x, y, slit):
+                    return
+
+        # Verify &allWritersInClass atoms at stable search states.
+        cache = {}
+        for (vftable, class_), awc_slit in self._awc_to_slit.items():
+            out_of_class_now_alit = None
+            for method, now_alit in self._now_writers_by_vft.get(vftable, ()):
+                if asgn.is_true(now_alit) and not state.uf.same(method, class_):
+                    out_of_class_now_alit = now_alit
+                    break
+
+            if out_of_class_now_alit is not None and asgn.is_true(awc_slit):
+                _dprint(f"[check] &allWritersInClass({vftable},{class_}) → false (out-of-class writer)")
+                if not self._assert_not_all_writers(state, ctl, out_of_class_now_alit,
+                                                    class_, awc_slit, cache):
                     return
 
     def partition(self, merge_pairs=None):

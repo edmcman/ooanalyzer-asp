@@ -122,28 +122,11 @@ vfTableEntry(VFTable, Offset, Entry) :-
 vftableBelongsToClassInstalledAtZero(VFTable) :-
     vfTableWrite(_, _, 0, VFTable).                                          % rules.pl:1075 / 1183
 
-% Some method outside Class writes VFTable without overwriting it (refutes exclusive ownership).
-%
-% Performance note: the direct Prolog-style domain is mergeEntity(Class), but
-% on large inputs (mysql.exe.lp) that grounds a Class x VFTable cross product and
-% millions of &sameClass checks.  We bound Class to vftable writers via
-% vfTableWrite(_, Class, _, _) in the body, since &sameClass/2 is a theory
-% atom that the grounder cannot see and therefore does not count as a domain
-% provider.  We further pin Class via &sameClass(Class, SomeMethod) for a
-% non-overwriting writer of VFTable, so the class witness must already be in
-% the same class as a real writer of VFTable.
-%
-% Ed is not 100% sure this is semantically equivalent to the original
-% mergeEntity version. But it's so much faster. See rules.pl:1101-1106 /
-% 1209-1214.
-vftableBelongsToClassOtherWriter(VFTable, Class) :-                       % rules.pl:1101-1106 / 1209-1214
-    vfTableWrite(_, Class, _, _),
-    vfTableWrite(_, SomeMethod, SomeOffset, VFTable),
-    not vfTableOverwrite(SomeMethod, VFTable, _, SomeOffset),
-    &sameClass(Class, SomeMethod),
-    vfTableWrite(_, OtherMethod, OtherOffset, VFTable),
-    not vfTableOverwrite(OtherMethod, VFTable, _, OtherOffset),
-    not &sameClass(OtherMethod, Class).
+% Helper: confirmed write to VFTable by Method that is not part of a ctor/dtor overwrite
+% sequence. These are the writes the propagator uses to decide &allWritersInClass/2.
+nonOverwritingWrite(Method, Offset, VFTable) :-
+    vfTableWrite(_, Method, Offset, VFTable),
+    not vfTableOverwrite(Method, VFTable, _, Offset).
 
 % Core candidate: confirmed write to method's own this-pointer, not overwritten.
 % possibleVFTableWrite + thisParamFuncParameter guards against inlined sub-constructor writes.
@@ -199,11 +182,14 @@ vftableBelongsToClass(VFTable, Offset, Method) :-
     not possibleVFTableOverwrite(_, _, Method, Offset, VFTable, _),
     constructor(Method).                                                      % rules.pl:1090-1096 / 1198-1204
 
-% Additional-check 2 (destructor): no other class has a non-overwritten write of VFTable.
+% Additional-check 2 (destructor): all non-overwriting writers of VFTable are in Class's
+% equivalence class. Decided by the propagator via &allWritersInClass/2, which provides
+% mergeClasses-grounded reason clauses — avoiding the weak nogoods produced by the former
+% NAF-over-negative-theory-atom pattern (not vftableBelongsToClassOtherWriter).
 %!trace_rule {"vftable % at offset % belongs to %'s class because no other class writes it", VFTable, Offset, Method}
 vftableBelongsToClass(VFTable, Offset, Method) :-
     vftableBelongsToClassOwns(Method, Offset, VFTable, Class),
-    not vftableBelongsToClassOtherWriter(VFTable, Class).                    % rules.pl:1101-1106 / 1209-1214
+    &allWritersInClass(VFTable, Class).                                       % rules.pl:1101-1106 / 1209-1214
 
 % Additional-check 3 (hasnobase): class has no known base class.
 %!trace_rule {"vftable % at offset % belongs to %'s class because it has no base", VFTable, Offset, Method}
