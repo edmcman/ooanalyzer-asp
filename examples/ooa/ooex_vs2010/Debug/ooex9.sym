@@ -1,42 +1,83 @@
-09:27:58 Grounding...
-09:27:58 Grounding done (0.04s)
-09:27:58 Solving...
-09:27:58 Model found (0.10s): [-40, -262])
-09:27:58 Model found (0.10s, +0.00s): [-40, -263])
-09:27:58 Model found (0.10s, +0.00s): [-40, -271])
-09:27:58 Model found (0.11s, +0.00s): [-40, -281])
-09:27:58 Model found (0.11s, +0.00s): [-40, -331])
-09:27:58 Model found (0.12s, +0.01s): [-40, -341])
-09:27:58 Model found (0.13s, +0.01s): [-40, -344])
-09:27:58 Model found (0.14s, +0.01s): [-40, -345])
-09:27:58 Model found (0.15s, +0.01s): [-40, -354])
-09:27:58 Model found (0.16s, +0.01s): [-40, -355])
-09:27:58 Model found (0.17s, +0.01s): [-40, -358])
-09:27:59 Model found (0.18s, +0.00s): [-40, -359])
-09:27:59 Model found (0.18s, +0.01s): [-40, -360])
-09:27:59 Solving done: OPTIMUM FOUND (0.14s)
+14:06:23 Grounding...
+14:06:23 Grounding done (0.02s)
+14:06:23 Solving...
+14:06:23 Model found (0.08s): [-36, -130]
+14:06:23 Model found (0.08s, +0.00s): [-36, -131]
+14:06:23 Model found (0.09s, +0.00s): [-36, -264]
+14:06:23 Model found (0.09s, +0.00s): [-40, -133]
+14:06:23 Model found (0.09s, +0.00s): [-40, -134]
+14:06:23 Model found (0.09s, +0.00s): [-40, -264]
+14:06:23 Model found (0.09s, +0.00s): [-40, -265]
+14:06:23 Model found (0.09s, +0.00s): [-40, -266]
+14:06:23 Model found (0.10s, +0.00s): [-40, -267]
+14:06:23 Model found (0.10s, +0.00s): [-40, -268]
+14:06:23 Model found (0.10s, +0.00s): [-40, -269]
+14:06:23 Model found (0.10s, +0.00s): [-40, -278]
+14:06:23 Model found (0.10s, +0.00s): [-40, -279]
+14:06:23 Model found (0.11s, +0.00s): [-40, -281]
+14:06:23 Model found (0.11s, +0.00s): [-40, -282]
+14:06:23 Model found (0.11s, +0.00s): [-40, -291]
+14:06:23 Model found (0.12s, +0.00s): [-40, -301]
+14:06:23 Model found (0.12s, +0.00s): [-40, -311]
+14:06:23 Model found (0.13s, +0.01s): [-40, -312]
+14:06:23 Model found (0.13s, +0.00s): [-40, -325]
+14:06:23 Model found (0.13s, +0.01s): [-40, -326]
+14:06:23 Model found (0.14s, +0.01s): [-40, -331]
+14:06:24 Model found (0.15s, +0.01s): [-40, -332]
+14:06:24 Model found (0.16s, +0.01s): [-40, -333]
+14:06:24 Model found (0.16s, +0.00s): [-40, -334]
+14:06:24 Model found (0.17s, +0.01s): [-40, -335]
+14:06:24 Model found (0.17s, +0.00s): [-40, -336]
+14:06:24 Model found (0.18s, +0.00s): [-40, -337]
+14:06:24 Model found (0.18s, +0.00s): [-40, -338]
+14:06:24 Model found (0.18s, +0.00s): [-40, -339]
+14:06:24 Model found (0.19s, +0.01s): [-40, -340]
+14:06:24 Model found (0.20s, +0.01s): [-40, -341]
+14:06:24 Model found (0.20s, +0.00s): [-40, -342]
+14:06:24 Model found (0.20s, +0.00s): [-40, -345]
+14:06:24 Model found (0.21s, +0.00s): [-40, -346]
+14:06:24 Model found (0.21s, +0.00s): [-40, -347]
+14:06:24 Model found (0.21s, +0.00s): [-40, -348]
+14:06:24 Model found (0.22s, +0.00s): [-40, -349]
+14:06:24 Model found (0.22s, +0.00s): [-40, -350]
+14:06:24 Model found (0.22s, +0.00s): [-40, -351]
+14:06:24 Model found (0.23s, +0.01s): [-40, -352]
+14:06:24 Model found (0.23s, +0.00s): [-40, -353]
+14:06:24 Model found (0.24s, +0.00s): [-40, -354]
+14:06:24 Model found (0.24s, +0.00s): [-40, -355]
+14:06:24 Model found (0.24s, +0.00s): [-40, -356]
+14:06:24 Model found (0.25s, +0.00s): [-40, -362]
+14:06:24 Model found (0.26s, +0.01s): [-40, -363]
+14:06:24 Model found (0.26s, +0.01s): [-40, -365]
+14:06:24 Model found (0.27s, +0.01s): [-40, -367]
+14:06:24 Model found (0.28s, +0.01s): [-40, -368]
+14:06:24 Model found (0.28s, +0.00s): [-40, -369]
+14:06:24 Model found (0.29s, +0.00s): [-40, -370]
+14:06:24 Model found (0.30s, +0.01s): [-40, -371]
+14:06:24 Model found (0.31s, +0.02s): [-40, -372]
+14:06:24 Solving done: OPTIMUM FOUND (0.29s)
 OPTIMUM FOUND
 
-Answer: 13
-Optimization: -40 -360
+Answer: 54
+Optimization: -40 -372
 
-% Equivalence classes (210 classes, 233 entities):
+% Equivalence classes (211 classes, 233 entities):
 
 % Stats:
-%   atoms: 9263.0
-%   bodies: 4297.0
-%   rules: 12258.0
-%   variables: 5726.0
-%   constraints: 20.0
-%   choices: 6388.0
-%   conflicts: 111.0
-%   models: 13.0
+%   atoms: 9216.0
+%   bodies: 4277.0
+%   rules: 12226.0
+%   variables: 5725.0
+%   constraints: 121.0
+%   choices: 20897.0
+%   conflicts: 293.0
+%   models: 54.0
 %   optimal_models: 1.0
-%   total_time: 0.20497608184814453
-%   ground_time: 0.04089787509292364
-%   time_to_first_model: 0.0995900840498507
-%   max_rss_bytes: 36716544
-%   solve_time: 0.08530116081237793
+%   total_time: 0.3229968547821045
+%   ground_time: 0.024630197789520025
+%   time_to_first_model: 0.08335864683613181
+%   max_rss_bytes: 30670848
+%   solve_time: 0.23323702812194824
 classCallsMethod(D::D(void)@4265456,B::B(void)@4265824)
 classCallsMethod(const A::`vftable'@4286336,virtual int A::get_a(void)@4265760)
 classCallsMethod(const B::`vftable'{for `A'}@4286348,virtual int A::get_a(void)@4265760)
@@ -49,7 +90,7 @@ classCallsMethod(const D::`vftable'{for `B'}@4286296,virtual int D::get_d(void)@
 classCallsMethod(const D::`vftable'{for `C'}@4286284,virtual int C::get_c(void)@4266208)
 classCallsMethod(const type_info::`vftable'@4286420,virtual * type_info::`vector deleting destructor'(unsigned int)@4267040)
 classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4267040,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424)
-constructor(D::D(void)@4265456)
+constructor(B::B(void)@4265824)
 constructor(type_info::type_info(class type_info const &)@4266992)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4267040)
 derivedClass(const B::`vftable'{for `B'}@4286360,const A::`vftable'@4286336,12)
@@ -73,14 +114,11 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(const A::`vftable'@4286336,A::A(void)@4265680)
 mergeClasses(const B::`vftable'{for `A'}@4286348,const B::`vftable'{for `B'}@4286360)
 mergeClasses(const B::`vftable'{for `B'}@4286360,B::B(void)@4265824)
 mergeClasses(const C::`vftable'{for `A'}@4286384,const C::`vftable'{for `C'}@4286396)
-mergeClasses(const C::`vftable'{for `C'}@4286396,C::C(void)@4266048)
 mergeClasses(const D::`vftable'{for `A'}@4286272,const D::`vftable'{for `B'}@4286296)
 mergeClasses(const D::`vftable'{for `A'}@4286272,const D::`vftable'{for `C'}@4286284)
-mergeClasses(const D::`vftable'{for `B'}@4286296,D::D(void)@4265456)
 mergeClasses(const D::`vftable'{for `C'}@4286284,const D::`vftable'{for `B'}@4286296)
 mergeClasses(const type_info::`vftable'@4286420,type_info::type_info(class type_info const &)@4266992)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264136,type_info::type_info(class type_info const &)@4266992)
@@ -340,8 +378,8 @@ objectInObject(const D::`vftable'{for `C'}@4286284,const B::`vftable'{for `B'}@4
 objectInObject(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `A'}@4286384,12)
 objectInObject(const D::`vftable'{for `C'}@4286284,const C::`vftable'{for `C'}@4286396,12)
 realDestructor(A::A(void)@4265680)
-realDestructor(B::B(void)@4265824)
 realDestructor(C::C(void)@4266048)
+realDestructor(D::D(void)@4265456)
 vfTable(const A::`vftable'@4286336)
 vfTable(const B::`vftable'{for `A'}@4286348)
 vfTable(const B::`vftable'{for `B'}@4286360)
@@ -379,10 +417,7 @@ vfTableWrite(4265907,B::B(void)@4265824,4,const B::`vftable'{for `A'}@4286348)
 vfTableWrite(4266113,C::C(void)@4266048,0,const C::`vftable'{for `C'}@4286396)
 vfTableWrite(4266131,C::C(void)@4266048,4,const C::`vftable'{for `A'}@4286384)
 vfTableWrite(4267004,type_info::type_info(class type_info const &)@4266992,0,const type_info::`vftable'@4286420)
-vftableBelongsToClass(const A::`vftable'@4286336,0,A::A(void)@4265680)
 vftableBelongsToClass(const B::`vftable'{for `B'}@4286360,0,B::B(void)@4265824)
-vftableBelongsToClass(const C::`vftable'{for `C'}@4286396,0,C::C(void)@4266048)
-vftableBelongsToClass(const D::`vftable'{for `B'}@4286296,0,D::D(void)@4265456)
 vftableBelongsToClass(const type_info::`vftable'@4286420,0,type_info::type_info(class type_info const &)@4266992)
 %   {$LN11@4271490}
 %   {$LN6_1@4272467}
@@ -590,7 +625,8 @@ vftableBelongsToClass(const type_info::`vftable'@4286420,0,type_info::type_info(
 %   {start@4264256}
 %   {type_info::type_info(class type_info const &)@4264401}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264136, type_info::type_info(class type_info const &)@4266992, virtual * type_info::`vector deleting destructor'(unsigned int)@4267040, const type_info::`vftable'@4286420, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4301424}
-%   {virtual int A::get_a(void)@4263956, virtual int C::get_c(void)@4264111, virtual int B::get_b(void)@4264241, virtual int D::get_d(void)@4264396, D::D(void)@4265456, A::A(void)@4265680, virtual int A::get_a(void)@4265760, B::B(void)@4265824, virtual int B::get_b(void)@4265984, C::C(void)@4266048, virtual int C::get_c(void)@4266208, virtual int D::get_d(void)@4266272, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
+%   {virtual int A::get_a(void)@4263956, virtual int C::get_c(void)@4264111, virtual int B::get_b(void)@4264241, virtual int D::get_d(void)@4264396, D::D(void)@4265456, A::A(void)@4265680, virtual int A::get_a(void)@4265760, B::B(void)@4265824, virtual int B::get_b(void)@4265984, C::C(void)@4266048, virtual int C::get_c(void)@4266208, const A::`vftable'@4286336, const B::`vftable'{for `A'}@4286348, const B::`vftable'{for `B'}@4286360, const C::`vftable'{for `A'}@4286384, const C::`vftable'{for `C'}@4286396}
+%   {virtual int D::get_d(void)@4266272, const D::`vftable'{for `A'}@4286272, const D::`vftable'{for `C'}@4286284, const D::`vftable'{for `B'}@4286296}
 %   {virtual type_info::~type_info(void)@4264011}
 %   {virtual type_info::~type_info(void)@4264086}
 %   {virtual type_info::~type_info(void)@4275164}

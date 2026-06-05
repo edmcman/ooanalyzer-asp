@@ -1,40 +1,52 @@
-09:22:55 Grounding...
-09:22:55 Grounding done (0.02s)
-09:22:55 Solving...
-09:22:55 Model found (0.05s): [-68, -215])
-09:22:55 Model found (0.09s, +0.04s): [-68, -399])
-09:22:55 Model found (0.10s, +0.00s): [-68, -406])
-09:22:55 Model found (0.10s, +0.00s): [-68, -449])
-09:22:55 Model found (0.10s, +0.00s): [-68, -456])
-09:22:55 Model found (0.11s, +0.00s): [-68, -459])
-09:22:55 Model found (0.11s, +0.00s): [-68, -466])
-09:22:55 Model found (0.12s, +0.00s): [-68, -473])
-09:22:55 Model found (0.13s, +0.02s): [-68, -474])
-09:22:55 Model found (0.17s, +0.03s): [-68, -477])
-09:22:55 Model found (0.18s, +0.02s): [-68, -486])
-09:22:55 Solving done: OPTIMUM FOUND (0.18s)
+14:06:24 Grounding...
+14:06:24 Grounding done (0.02s)
+14:06:24 Solving...
+14:06:24 Model found (0.07s): [-36, -117]
+14:06:24 Model found (0.07s, +0.00s): [-36, -206]
+14:06:24 Model found (0.07s, +0.00s): [-40, -119]
+14:06:24 Model found (0.08s, +0.00s): [-40, -207]
+14:06:24 Model found (0.08s, +0.00s): [-48, -121]
+14:06:24 Model found (0.08s, +0.00s): [-48, -208]
+14:06:24 Model found (0.08s, +0.00s): [-56, -123]
+14:06:24 Model found (0.08s, +0.00s): [-56, -124]
+14:06:24 Model found (0.08s, +0.00s): [-56, -125]
+14:06:24 Model found (0.08s, +0.00s): [-56, -126]
+14:06:24 Model found (0.09s, +0.00s): [-56, -127]
+14:06:24 Model found (0.09s, +0.00s): [-68, -215]
+14:06:24 Model found (0.12s, +0.03s): [-68, -463]
+14:06:24 Model found (0.12s, +0.00s): [-68, -468]
+14:06:24 Model found (0.13s, +0.01s): [-68, -469]
+14:06:24 Model found (0.13s, +0.00s): [-68, -470]
+14:06:24 Model found (0.13s, +0.00s): [-68, -471]
+14:06:24 Model found (0.14s, +0.00s): [-68, -472]
+14:06:24 Model found (0.18s, +0.04s): [-68, -474]
+14:06:24 Model found (0.22s, +0.04s): [-68, -477]
+14:06:24 Model found (0.27s, +0.06s): [-68, -478]
+14:06:24 Model found (0.29s, +0.02s): [-68, -479]
+14:06:24 Model found (0.30s, +0.01s): [-68, -486]
+14:06:24 Solving done: OPTIMUM FOUND (0.33s)
 OPTIMUM FOUND
 
-Answer: 11
+Answer: 23
 Optimization: -68 -486
 
-% Equivalence classes (168 classes, 193 entities):
+% Equivalence classes (170 classes, 193 entities):
 
 % Stats:
-%   atoms: 9857.0
-%   bodies: 4215.0
-%   rules: 12053.0
-%   variables: 4521.0
-%   constraints: 163.0
-%   choices: 19662.0
-%   conflicts: 655.0
-%   models: 11.0
+%   atoms: 9777.0
+%   bodies: 3907.0
+%   rules: 11736.0
+%   variables: 4426.0
+%   constraints: 152.0
+%   choices: 15608.0
+%   conflicts: 624.0
+%   models: 23.0
 %   optimal_models: 1.0
-%   total_time: 0.21053600311279297
-%   ground_time: 0.019932499970309436
-%   time_to_first_model: 0.05012012494262308
-%   max_rss_bytes: 36814848
-%   solve_time: 0.15224599838256836
+%   total_time: 0.37257981300354004
+%   ground_time: 0.02375650219619274
+%   time_to_first_model: 0.07111050514504313
+%   max_rss_bytes: 29097984
+%   solve_time: 0.28898096084594727
 classCallsMethod(Derived::Derived(void)@4198592,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198592,virtual int Base::func2(void)@4198464)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4201727,std::exception::_Copy_str(char const *)@4201633)
@@ -59,11 +71,11 @@ classCallsMethod(std::exception::exception(class std::exception const &)@4201830
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920,virtual std::exception::~exception(void)@4201780)
 classCallsMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791,std::exception::_Tidy(void)@4201697)
 classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4198790,virtual type_info::~type_info(void)@4198774)
-constructor(Base::Base(void)@4198400)
+constructor(Base2::Base2(void)@4198496)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 constructor(std::exception::exception(char const * const &, int)@4201591)
 constructor(std::exception::exception(class std::exception const &)@4201830)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@4198909)
+constructor(virtual std::exception::~exception(void)@4201780)
 constructor(virtual type_info::~type_info(void)@4198774)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791)
@@ -88,8 +100,6 @@ mergeClasses(Derived::Derived(void)@4198592,virtual int Derived::func3(void)@419
 mergeClasses(Derived::Derived(void)@4198592,virtual int Derived::func4(void)@4198672)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@4201727,std::exception::exception(class std::exception const &)@4201830)
 mergeClasses(const Base2::`vftable'@4219216,Base2::Base2(void)@4198496)
-mergeClasses(const Base::`vftable'@4219200,Base::Base(void)@4198400)
-mergeClasses(const Derived::`vftable'{for `Base'}@4219248,Derived::Derived(void)@4198592)
 mergeClasses(const Derived::`vftable'{for `Base2'}@4219232,const Derived::`vftable'{for `Base'}@4219248)
 mergeClasses(const std::bad_alloc::`vftable'@4219272,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 mergeClasses(const std::bad_alloc::`vftable'@4219272,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
@@ -116,11 +126,11 @@ mergeClasses(virtual char const * std::exception::what(void)const@4201620,std::e
 mergeClasses(virtual char const * std::exception::what(void)const@4201620,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791)
 mergeClasses(virtual char const * std::exception::what(void)const@4201620,virtual std::exception::~exception(void)@4201780)
 mergeClasses(virtual int Base2::func1(void)@4198528,Derived::Derived(void)@4198592)
+mergeClasses(virtual int Base2::func1(void)@4198528,const Base2::`vftable'@4219216)
 mergeClasses(virtual int Base2::func2(void)@4198560,Derived::Derived(void)@4198592)
+mergeClasses(virtual int Base2::func2(void)@4198560,const Base2::`vftable'@4219216)
 mergeClasses(virtual int Base::func1(void)@4198432,Derived::Derived(void)@4198592)
-mergeClasses(virtual int Base::func1(void)@4198432,const Base::`vftable'@4219200)
 mergeClasses(virtual int Base::func2(void)@4198464,Derived::Derived(void)@4198592)
-mergeClasses(virtual int Base::func2(void)@4198464,const Base::`vftable'@4219200)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198909,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198909,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 mergeClasses(virtual std::exception::~exception(void)@4201780,std::exception::exception(class std::exception const &)@4201830)
@@ -312,9 +322,9 @@ objectInObject(const Derived::`vftable'{for `Base'}@4219248,const Base::`vftable
 objectInObject(const Derived::`vftable'{for `Base2'}@4219232,const Base2::`vftable'@4219216,16)
 objectInObject(const Derived::`vftable'{for `Base2'}@4219232,const Base::`vftable'@4219200,0)
 objectInObject(const std::bad_alloc::`vftable'@4219272,const std::exception::`vftable'@4221916,0)
-realDestructor(Base2::Base2(void)@4198496)
+realDestructor(Base::Base(void)@4198400)
 realDestructor(Derived::Derived(void)@4198592)
-realDestructor(virtual std::exception::~exception(void)@4201780)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198909)
 vfTable(const Base2::`vftable'@4219216)
 vfTable(const Base::`vftable'@4219200)
 vfTable(const Derived::`vftable'{for `Base'}@4219248)
@@ -359,8 +369,6 @@ vfTableWrite(4201845,std::exception::exception(class std::exception const &)@420
 vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@4198909,virtual std::bad_alloc::~bad_alloc(void)@4198909,0,const std::bad_alloc::`vftable'@4219272)
 vfTableWrite(virtual std::exception::~exception(void)@4201780,virtual std::exception::~exception(void)@4201780,0,const std::exception::`vftable'@4221916)
 vftableBelongsToClass(const Base2::`vftable'@4219216,0,Base2::Base2(void)@4198496)
-vftableBelongsToClass(const Base::`vftable'@4219200,0,Base::Base(void)@4198400)
-vftableBelongsToClass(const Derived::`vftable'{for `Base'}@4219248,0,Derived::Derived(void)@4198592)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219272,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219272,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219272,0,virtual std::bad_alloc::~bad_alloc(void)@4198909)
@@ -384,7 +392,7 @@ vftableBelongsToClass(const type_info::`vftable'@4219264,0,virtual type_info::~t
 %   {$LN9_0@4209956}
 %   {* __cdecl operator new(unsigned int)@4198988}
 %   {4211654}
-%   {Base::Base(void)@4198400, virtual int Base::func1(void)@4198432, virtual int Base::func2(void)@4198464, Base2::Base2(void)@4198496, virtual int Base2::func1(void)@4198528, virtual int Base2::func2(void)@4198560, Derived::Derived(void)@4198592, virtual int Derived::func4(void)@4198672, virtual int Derived::func3(void)@4198688, const Base::`vftable'@4219200, const Base2::`vftable'@4219216, const Derived::`vftable'{for `Base2'}@4219232, const Derived::`vftable'{for `Base'}@4219248}
+%   {Base::Base(void)@4198400, virtual int Base::func1(void)@4198432, virtual int Base::func2(void)@4198464, Base2::Base2(void)@4198496, virtual int Base2::func1(void)@4198528, virtual int Base2::func2(void)@4198560, Derived::Derived(void)@4198592, virtual int Derived::func4(void)@4198672, virtual int Derived::func3(void)@4198688, const Base2::`vftable'@4219216}
 %   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@4209008}
 %   {__FF_MSGBANNER@4200321}
 %   {__FindPESection@4212064}
@@ -520,8 +528,10 @@ vftableBelongsToClass(const type_info::`vftable'@4219264,0,virtual type_info::~t
 %   {_wcslen@4208549}
 %   {_wcsncpy_s@4208344}
 %   {const Base2::`RTTI Complete Object Locator'@4227420}
+%   {const Base::`vftable'@4219200}
 %   {const Derived::`RTTI Complete Object Locator'{for `Base'}@4227492}
 %   {const Derived::`RTTI Complete Object Locator'{for `Base2'}@4227600}
+%   {const Derived::`vftable'{for `Base2'}@4219232, const Derived::`vftable'{for `Base'}@4219248}
 %   {const std::bad_alloc::`RTTI Complete Object Locator'@4227692}
 %   {const type_info::`RTTI Complete Object Locator'@4227620}
 %   {doexit@4202863}

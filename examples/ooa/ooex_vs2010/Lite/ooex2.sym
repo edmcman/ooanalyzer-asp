@@ -1,34 +1,39 @@
-09:22:55 Grounding...
-09:22:55 Grounding done (0.02s)
-09:22:55 Solving...
-09:22:55 Model found (0.03s): [-20, -185])
-09:22:55 Model found (0.04s, +0.01s): [-20, -232])
-09:22:55 Model found (0.04s, +0.00s): [-20, -242])
-09:22:55 Model found (0.04s, +0.00s): [-20, -243])
-09:22:55 Model found (0.04s, +0.00s): [-20, -359])
-09:22:55 Solving done: OPTIMUM FOUND (0.03s)
+14:06:23 Grounding...
+14:06:23 Grounding done (0.02s)
+14:06:23 Solving...
+14:06:23 Model found (0.04s): [-12, -184]
+14:06:23 Model found (0.04s, +0.00s): [-20, -185]
+14:06:23 Model found (0.05s, +0.01s): [-20, -186]
+14:06:23 Model found (0.05s, +0.00s): [-20, -187]
+14:06:23 Model found (0.05s, +0.00s): [-20, -188]
+14:06:23 Model found (0.05s, +0.00s): [-20, -354]
+14:06:23 Model found (0.07s, +0.01s): [-20, -355]
+14:06:23 Model found (0.07s, +0.00s): [-20, -356]
+14:06:23 Model found (0.08s, +0.01s): [-20, -357]
+14:06:24 Model found (0.08s, +0.01s): [-20, -359]
+14:06:24 Solving done: OPTIMUM FOUND (0.07s)
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 10
 Optimization: -20 -359
 
 % Equivalence classes (162 classes, 177 entities):
 
 % Stats:
-%   atoms: 7359.0
-%   bodies: 2105.0
-%   rules: 8277.0
-%   variables: 2389.0
-%   constraints: 97.0
-%   choices: 2127.0
-%   conflicts: 42.0
-%   models: 5.0
+%   atoms: 7338.0
+%   bodies: 1905.0
+%   rules: 8077.0
+%   variables: 2296.0
+%   constraints: 88.0
+%   choices: 2759.0
+%   conflicts: 148.0
+%   models: 10.0
 %   optimal_models: 1.0
-%   total_time: 0.05783796310424805
-%   ground_time: 0.015131792053580284
-%   time_to_first_model: 0.027859542053192854
-%   max_rss_bytes: 33341440
-%   solve_time: 0.015748977661132812
+%   total_time: 0.10133814811706543
+%   ground_time: 0.01741619734093547
+%   time_to_first_model: 0.039729558397084475
+%   max_rss_bytes: 26738688
+%   solve_time: 0.04992318153381348
 classCallsMethod(Derived::Derived(void)@4198448,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198448,int Base::func3(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200569,std::exception::_Copy_str(char const *)@4200475)

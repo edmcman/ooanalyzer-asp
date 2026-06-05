@@ -1,11 +1,12 @@
-09:22:54 Grounding...
-09:22:54 Grounding done (0.01s)
-09:22:54 Solving...
-09:22:54 Model found (0.02s): [-220])
-09:22:54 Solving done: OPTIMUM FOUND (0.01s)
+14:06:23 Grounding...
+14:06:23 Grounding done (0.02s)
+14:06:23 Solving...
+14:06:23 Model found (0.04s): [-215]
+14:06:23 Model found (0.04s, +0.00s): [-220]
+14:06:23 Solving done: OPTIMUM FOUND (0.02s)
 OPTIMUM FOUND
 
-Answer: 1
+Answer: 2
 Optimization: -220
 
 % Equivalence classes (218 classes, 220 entities):
@@ -16,15 +17,15 @@ Optimization: -220
 %   rules: 7903.0
 %   variables: 1513.0
 %   constraints: 0.0
-%   choices: 434.0
+%   choices: 435.0
 %   conflicts: 0.0
-%   models: 1.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   total_time: 0.03271818161010742
-%   ground_time: 0.011055500013753772
-%   time_to_first_model: 0.022120167035609484
-%   max_rss_bytes: 32440320
-%   solve_time: 0.0004551410675048828
+%   total_time: 0.04789304733276367
+%   ground_time: 0.015780405141413212
+%   time_to_first_model: 0.038647599052637815
+%   max_rss_bytes: 26738688
+%   solve_time: 0.0014901161193847656
 constructor(__declspec(dllimport) std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
 guessEnabled(constructor)
 guessEnabled(derived_class)

@@ -1,35 +1,61 @@
-09:22:54 Grounding...
-09:22:54 Grounding done (0.01s)
-09:22:54 Solving...
-09:22:54 Model found (0.03s): [-32, -250])
-09:22:54 Model found (0.04s, +0.01s): [-32, -352])
-09:22:54 Model found (0.05s, +0.01s): [-32, -356])
-09:22:54 Model found (0.05s, +0.00s): [-32, -362])
-09:22:54 Model found (0.05s, +0.01s): [-32, -369])
-09:22:54 Model found (0.06s, +0.00s): [-32, -372])
-09:22:54 Solving done: OPTIMUM FOUND (0.05s)
+14:06:23 Grounding...
+14:06:23 Grounding done (0.02s)
+14:06:23 Solving...
+14:06:23 Model found (0.04s): [-28, -261]
+14:06:23 Model found (0.05s, +0.00s): [-28, -262]
+14:06:23 Model found (0.05s, +0.00s): [-28, -263]
+14:06:23 Model found (0.05s, +0.00s): [-28, -264]
+14:06:23 Model found (0.05s, +0.00s): [-28, -265]
+14:06:23 Model found (0.05s, +0.00s): [-28, -266]
+14:06:23 Model found (0.05s, +0.00s): [-28, -267]
+14:06:23 Model found (0.05s, +0.00s): [-28, -268]
+14:06:23 Model found (0.05s, +0.00s): [-28, -269]
+14:06:23 Model found (0.05s, +0.00s): [-28, -270]
+14:06:23 Model found (0.06s, +0.00s): [-32, -250]
+14:06:23 Model found (0.07s, +0.01s): [-32, -251]
+14:06:23 Model found (0.08s, +0.01s): [-32, -252]
+14:06:23 Model found (0.08s, +0.00s): [-32, -253]
+14:06:23 Model found (0.08s, +0.00s): [-32, -338]
+14:06:23 Model found (0.08s, +0.00s): [-32, -339]
+14:06:23 Model found (0.08s, +0.00s): [-32, -343]
+14:06:23 Model found (0.09s, +0.00s): [-32, -344]
+14:06:23 Model found (0.09s, +0.00s): [-32, -345]
+14:06:23 Model found (0.09s, +0.00s): [-32, -358]
+14:06:23 Model found (0.09s, +0.00s): [-32, -359]
+14:06:23 Model found (0.10s, +0.00s): [-32, -363]
+14:06:23 Model found (0.10s, +0.00s): [-32, -364]
+14:06:23 Model found (0.10s, +0.00s): [-32, -378]
+14:06:23 Model found (0.11s, +0.00s): [-32, -379]
+14:06:23 Model found (0.11s, +0.00s): [-32, -383]
+14:06:23 Model found (0.11s, +0.00s): [-32, -386]
+14:06:23 Model found (0.11s, +0.00s): [-32, -387]
+14:06:23 Model found (0.12s, +0.01s): [-32, -388]
+14:06:23 Model found (0.13s, +0.00s): [-32, -389]
+14:06:23 Model found (0.14s, +0.01s): [-32, -390]
+14:06:23 Model found (0.14s, +0.00s): [-32, -391]
+14:06:23 Solving done: OPTIMUM FOUND (0.13s)
 OPTIMUM FOUND
 
-Answer: 6
-Optimization: -32 -372
+Answer: 32
+Optimization: -32 -391
 
 % Equivalence classes (222 classes, 237 entities):
 
 % Stats:
-%   atoms: 7153.0
-%   bodies: 2127.0
-%   rules: 8023.0
-%   variables: 2806.0
-%   constraints: 45.0
-%   choices: 9846.0
-%   conflicts: 158.0
-%   models: 6.0
+%   atoms: 7141.0
+%   bodies: 2107.0
+%   rules: 8003.0
+%   variables: 2797.0
+%   constraints: 51.0
+%   choices: 8517.0
+%   conflicts: 121.0
+%   models: 32.0
 %   optimal_models: 1.0
-%   total_time: 0.08307790756225586
-%   ground_time: 0.01355504197999835
-%   time_to_first_model: 0.028182541951537132
-%   max_rss_bytes: 32997376
-%   solve_time: 0.03542900085449219
+%   total_time: 0.15390491485595703
+%   ground_time: 0.016917536035180092
+%   time_to_first_model: 0.044339532032608986
+%   max_rss_bytes: 26738688
+%   solve_time: 0.10635089874267578
 classCallsMethod(Derived::Derived(void)@4265360,Base::Base(void)@4265536)
 classCallsMethod(Derived::Derived(void)@4265360,virtual int Base::func1(void)@4265648)
 classCallsMethod(Derived::Derived(void)@4265360,virtual int Base::func2(void)@4265744)
@@ -42,7 +68,6 @@ classCallsMethod(const Derived::`vftable'@4286272,virtual int Derived::func3(voi
 classCallsMethod(const type_info::`vftable'@4286316,virtual * type_info::`vector deleting destructor'(unsigned int)@4266800)
 classCallsMethod(virtual * Derived::`vector deleting destructor'(unsigned int)@4265904,virtual Derived::~Derived(void)@4266016)
 classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
-constructor(Base::Base(void)@4265536)
 constructor(Derived::Derived(void)@4265360)
 constructor(type_info::type_info(class type_info const &)@4266752)
 constructor(virtual Derived::~Derived(void)@4266016)
@@ -57,7 +82,8 @@ guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
 mergeClasses(Derived::Derived(void)@4265360,virtual Derived::~Derived(void)@4266016)
-mergeClasses(const Base::`vftable'@4286296,Base::Base(void)@4265536)
+mergeClasses(Derived::Derived(void)@4265360,virtual int Base::func1(void)@4265648)
+mergeClasses(Derived::Derived(void)@4265360,virtual int Base::func2(void)@4265744)
 mergeClasses(const Derived::`vftable'@4286272,Derived::Derived(void)@4265360)
 mergeClasses(const Derived::`vftable'@4286272,virtual Derived::~Derived(void)@4266016)
 mergeClasses(const type_info::`vftable'@4286316,type_info::type_info(class type_info const &)@4266752)
@@ -68,12 +94,12 @@ mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@42659
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4266752)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,const type_info::`vftable'@4286316)
+mergeClasses(virtual int Base::func1(void)@4264451,Base::Base(void)@4265536)
 mergeClasses(virtual int Base::func1(void)@4264451,Derived::Derived(void)@4265360)
 mergeClasses(virtual int Base::func1(void)@4264451,virtual Derived::~Derived(void)@4266016)
-mergeClasses(virtual int Base::func1(void)@4265648,const Base::`vftable'@4286296)
+mergeClasses(virtual int Base::func2(void)@4264206,Base::Base(void)@4265536)
 mergeClasses(virtual int Base::func2(void)@4264206,Derived::Derived(void)@4265360)
 mergeClasses(virtual int Base::func2(void)@4264206,virtual Derived::~Derived(void)@4266016)
-mergeClasses(virtual int Base::func2(void)@4265744,const Base::`vftable'@4286296)
 mergeClasses(virtual int Derived::func3(void)@4264266,Derived::Derived(void)@4265360)
 mergeClasses(virtual int Derived::func3(void)@4264266,virtual Derived::~Derived(void)@4266016)
 mergeClasses(virtual int Derived::func3(void)@4265840,const Derived::`vftable'@4286272)
@@ -312,6 +338,7 @@ method(virtual type_info::~type_info(void)@4264021)
 method(virtual type_info::~type_info(void)@4264096)
 method(virtual type_info::~type_info(void)@4275042)
 objectInObject(const Derived::`vftable'@4286272,const Base::`vftable'@4286296,0)
+realDestructor(Base::Base(void)@4265536)
 vfTable(const Base::`vftable'@4286296)
 vfTable(const Derived::`vftable'@4286272)
 vfTable(const type_info::`vftable'@4286316)
@@ -330,7 +357,6 @@ vfTableWrite(4265406,Derived::Derived(void)@4265360,0,const Derived::`vftable'@4
 vfTableWrite(4265574,Base::Base(void)@4265536,0,const Base::`vftable'@4286296)
 vfTableWrite(4266054,virtual Derived::~Derived(void)@4266016,0,const Derived::`vftable'@4286272)
 vfTableWrite(4266764,type_info::type_info(class type_info const &)@4266752,0,const type_info::`vftable'@4286316)
-vftableBelongsToClass(const Base::`vftable'@4286296,0,Base::Base(void)@4265536)
 vftableBelongsToClass(const Derived::`vftable'@4286272,0,Derived::Derived(void)@4265360)
 vftableBelongsToClass(const Derived::`vftable'@4286272,0,virtual Derived::~Derived(void)@4266016)
 vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(class type_info const &)@4266752)
@@ -340,7 +366,6 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {* __cdecl operator new(unsigned int)@4266098}
 %   {ArrayUnwindFilter@4271632}
 %   {Base::Base(void)@4264186}
-%   {Base::Base(void)@4265536, virtual int Base::func1(void)@4265648, virtual int Base::func2(void)@4265744, const Base::`vftable'@4286296}
 %   {DebuggerProbe@4268704}
 %   {DebuggerRuntime@4269648}
 %   {Derived::Derived(void)@4264331}
@@ -482,6 +507,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {check_managed_app@4268080}
 %   {class type_info & type_info::operator=(class type_info const &)@4263976}
 %   {class type_info & type_info::operator=(class type_info const &)@4266944}
+%   {const Base::`vftable'@4286296}
 %   {failwithmessage@4268992}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264491}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4271200}
@@ -550,7 +576,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {start@4264256}
 %   {type_info::type_info(class type_info const &)@4264416}
 %   {virtual * Derived::`vector deleting destructor'(unsigned int)@4263981}
-%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Base::func2(void)@4264206, virtual int Derived::func3(void)@4264266, virtual int Base::func1(void)@4264451, Derived::Derived(void)@4265360, virtual int Derived::func3(void)@4265840, virtual * Derived::`vector deleting destructor'(unsigned int)@4265904, virtual Derived::~Derived(void)@4266016, const Derived::`vftable'@4286272}
+%   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Base::func2(void)@4264206, virtual int Derived::func3(void)@4264266, virtual int Base::func1(void)@4264451, Derived::Derived(void)@4265360, Base::Base(void)@4265536, virtual int Base::func1(void)@4265648, virtual int Base::func2(void)@4265744, virtual int Derived::func3(void)@4265840, virtual * Derived::`vector deleting destructor'(unsigned int)@4265904, virtual Derived::~Derived(void)@4266016, const Derived::`vftable'@4286272}
 %   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264151, type_info::type_info(class type_info const &)@4266752, virtual * type_info::`vector deleting destructor'(unsigned int)@4266800, const type_info::`vftable'@4286316, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312}
 %   {virtual Derived::~Derived(void)@4264261}
 %   {virtual type_info::~type_info(void)@4264021}
