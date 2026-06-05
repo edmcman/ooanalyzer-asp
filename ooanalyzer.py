@@ -19,6 +19,7 @@ log = logging.getLogger("ooanalyzer")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
 from propagator.sameclass import SameClassPropagator
+from propagator.conflict_profiler import ConflictProfiler
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _MAIN_LP = os.path.join(_SCRIPT_DIR, "ooanalyzer.lp")
@@ -45,6 +46,8 @@ def parse_args():
                    help="parallel search: N[,compete|split] (default: 1)")
     p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
                    help="pass --const to clingo (repeatable)")
+    p.add_argument("--profile-conflicts", action="store_true",
+                   help="register ConflictProfiler and print backtrack histogram after solving")
     args, extra = p.parse_known_args()
     args.clingo_extra = extra
     return args
@@ -92,10 +95,13 @@ def main():
     ctl_args.extend(args.clingo_extra)
 
     prop = SameClassPropagator()
+    profiler = ConflictProfiler() if args.profile_conflicts else None
     ctl = clingo.Control(ctl_args)
     if args.models is not None and args.models != -1:
         ctl.configuration.solve.models = args.models
     ctl.register_propagator(prop)
+    if profiler:
+        ctl.register_propagator(profiler)
 
     ctl.load(_MAIN_LP)
     for f in args.files:
@@ -184,6 +190,9 @@ def main():
         print(" ".join(str(a) for a in last_shown))
         if last_cost:
             print("Optimization:", " ".join(str(c) for c in last_cost))
+
+    if profiler:
+        profiler.report()
 
     # Print partition for the last model printed above. The propagator's live
     # union-find may have been undone by solver backtracking after on_model.

@@ -21,6 +21,7 @@ original module set.
 | `src/util/facts.lp` | Input vocabulary and `#defined` directives |
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
 | `propagator/sameclass.py` | Python union-find propagator implementing `&sameClass/2` |
+| `propagator/conflict_profiler.py` | Propagator that counts per-predicate backtrack rates; use `--profile-conflicts` when solver performance is poor to identify which predicates drive the most search |
 | `tests/test_propagator.py` | Focused regression harness for the propagator |
 | `scripts/facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
