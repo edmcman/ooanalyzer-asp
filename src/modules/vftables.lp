@@ -208,6 +208,13 @@ possibleVFTable(VFTable) :-
     possibleVFTableWrite(_Insn, Func, _ThisPtr, _Offset2, VFTable),
     1 { method(Func); method(Entry) }.
 
+possibleVFTableMaxSize(VFTable, MaxSize) :-
+    possibleVFTable(VFTable),
+    pointerSize(PtrSize),
+    MaxSize = #max {
+        Offset + PtrSize : possibleVFTableEntry(VFTable, Offset, _Entry)
+    }.
+
 % guessVFTable: choose vfTable or -vfTable for each candidate.
 % Counterpart: guessVFTable (guess.pl:180)
 %!trace_rule {"guess whether % is a confirmed vftable or not", VFTable}
@@ -217,6 +224,9 @@ possibleVFTable(VFTable) :-
 #heuristic vfTable(VFTable) :
     guessEnabled(vftable),
     possibleVFTable(VFTable). [1@2, true]
+#heuristic vfTable(VFTable) :
+    guessEnabled(vftable),
+    possibleVFTableMaxSize(VFTable, MaxSize). [MaxSize@3, true]
 
 % ============================================================
 % REWARDS

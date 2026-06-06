@@ -27,6 +27,12 @@ candidateVFTableSize(VFTable, Size) :-
     guessEnabled(vftable_size),
     vfTable(VFTable).
 
+% Domain heuristic: the highest-priority objective already prefers larger
+% extents, so try the largest candidate before branch-and-bound has to climb.
+#heuristic vfTableSize(VFTable, Size) :
+    guessEnabled(vftable_size),
+    candidateVFTableSize(VFTable, Size). [Size@3, true]
+
 % ============================================================
 % CONSTRAINTS
 % ============================================================
