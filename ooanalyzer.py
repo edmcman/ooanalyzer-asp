@@ -83,6 +83,9 @@ def parse_args():
     p.add_argument("--profile-max-atoms-per-predicate", type=int, default=500,
                    help=("maximum watched atoms per predicate with --profile-conflicts "
                          "(0 = no per-predicate cap; default: 500)"))
+    p.add_argument("--profile-interval", type=float, default=0,
+                   help=("seconds between periodic conflict profile reports during solving "
+                         "(0 = no periodic output; default: 0)"))
     args, extra = p.parse_known_args()
     args.clingo_extra = extra
     return args
@@ -155,6 +158,7 @@ def main():
             profile_preds,
             max_atoms=profile_max_atoms,
             max_atoms_per_predicate=profile_max_atoms_per_predicate,
+            interval=args.profile_interval,
         )
         if args.profile_conflicts else None
     )
