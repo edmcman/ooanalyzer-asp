@@ -58,6 +58,8 @@ def parse_args():
                    help="print delta between consecutive answer sets (requires -n 0)")
     p.add_argument("--stats", nargs="?", const=1, default=0, type=int,
                    help="print clingo stats (optionally pass a clingo stats level)")
+    p.add_argument("--results", nargs="?", const="", default=None, metavar="FILE",
+                   help="write .results file; omit FILE to auto-derive from first input")
     p.add_argument("--quiet", type=str, default="1,2",
                    help="clingo --quiet level (default 1,2)")
     p.add_argument("--opt-strategy", default="bb,lin")
@@ -182,6 +184,7 @@ def main():
 
     defer_print = args.models == -1 or args.benchmark
     last_shown = []
+    last_all_atoms = []
     last_cost = []
     model_num = 0
     had_cost = False
@@ -192,7 +195,7 @@ def main():
         log.info("--diff-models requires -n 0 to take effect; ignoring")
 
     def on_model(model):
-        nonlocal first_model_time, last_model_time, model_num, last_shown, last_cost, had_cost
+        nonlocal first_model_time, last_model_time, model_num, last_shown, last_all_atoms, last_cost, had_cost
         now = time.perf_counter() - run_start
         shown = [] if args.benchmark else list(model.symbols(shown=True))
         cost = list(model.cost)
@@ -219,6 +222,8 @@ def main():
             sys.stdout.flush()
         if not args.benchmark:
             last_shown = shown
+            if args.results is not None:
+                last_all_atoms = list(model.symbols(atoms=True))
         last_cost = cost
 
     def on_unsat(lower):
@@ -304,6 +309,16 @@ def main():
                   f"{sum(len(g) for g in parts.values())} entities):")
             for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
                 print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
+
+        if args.results is not None and last_all_atoms:
+            from results import write_results
+            if args.results == "":
+                base = os.path.splitext(args.files[0])[0]
+                results_path = base + ".results"
+            else:
+                results_path = args.results
+            log.info("Writing results to %s", results_path)
+            write_results(ctl, last_all_atoms, merge_pairs, results_path)
 
     if args.stats:
         print("\n% Stats:")

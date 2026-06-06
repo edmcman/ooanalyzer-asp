@@ -17,6 +17,7 @@ SRC_LP       := $(shell find src -name '*.lp' -not -path '*/old/*')
 # Derived file lists
 LP_FILES          := $(FACTS:%.facts=%.lp)
 OUT_FILES         := $(LP_FILES:%.lp=%.out)
+RESULTS_FILES     := $(LP_FILES:%.lp=%.results)
 EXPLAIN_OUT_FILES := $(LP_FILES:%.lp=%.explain.out)
 GROUND        := $(shell find $(OOA_DIR) -name '*.ground')
 SYM_FILES         := $(FACTS:%.facts=%.sym) $(GROUND:%.ground=%.sym)
@@ -66,7 +67,7 @@ run: $(OUT_FILES)
 
 $(OOA_DIR)/%.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 	@echo "=== Running: $(PROPAGATOR) $< $(PROP_FLAGS) ==="
-	@rc=0; $(TIME_CMD) -o $(@:.out=.time) $(PROPAGATOR) $< $(PROP_FLAGS) >$@ 2>&1 || rc=$$?; \
+	@rc=0; $(TIME_CMD) -o $(@:.out=.time) $(PROPAGATOR) $< $(PROP_FLAGS) --results $(@:.out=.results) >$@ 2>&1 || rc=$$?; \
 	case "$$rc" in 0|10|20|30) ;; *) echo "error: $< exited $$rc" >>$@; exit $$rc ;; esac
 
 verify: verify-core
@@ -138,6 +139,7 @@ single: $(OOA_DIR)/$(STEM).sym
 clean:
 	find $(OOA_DIR) -name '*.lp' -delete
 	find $(OOA_DIR) -name '*.out' -delete
+	find $(OOA_DIR) -name '*.results' -delete
 	find $(OOA_DIR) -name '*.time' -delete
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
