@@ -1,81 +1,73 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:46 Grounding done (0.22s)
-17:05:46 Solving...
-17:05:46 Model found (0.97s): [-108, -467]
-17:05:46 Model found (1.03s, +0.06s): [-152, -684]
-17:05:47 Model found (1.16s, +0.13s): [-184, -456]
-17:05:47 Model found (1.23s, +0.07s): [-184, -494]
-17:05:47 Model found (1.30s, +0.07s): [-184, -495]
-17:05:47 Model found (1.37s, +0.07s): [-184, -496]
-17:05:47 Model found (1.47s, +0.10s): [-184, -697]
-17:05:47 Model found (1.53s, +0.07s): [-184, -698]
-17:05:47 Model found (1.62s, +0.08s): [-188, -498]
-17:05:47 Model found (1.67s, +0.05s): [-188, -698]
-17:05:47 Model found (1.74s, +0.07s): [-196, -698]
-17:05:47 Model found (1.80s, +0.06s): [-200, -699]
-17:05:47 Model found (1.87s, +0.07s): [-204, -700]
-17:05:47 Model found (1.93s, +0.06s): [-208, -701]
-17:05:47 Model found (1.99s, +0.06s): [-212, -702]
-17:05:47 Model found (2.11s, +0.12s): [-228, -493]
-17:05:48 Model found (2.22s, +0.11s): [-232, -707]
-17:05:48 Model found (2.30s, +0.09s): [-272, -707]
-17:05:48 Model found (2.43s, +0.13s): [-308, -412]
-17:05:48 Model found (2.59s, +0.16s): [-312, -709]
-17:05:48 Model found (2.66s, +0.08s): [-316, -520]
-17:05:48 Model found (2.77s, +0.10s): [-316, -521]
-17:05:48 Model found (2.83s, +0.07s): [-316, -522]
-17:05:48 Model found (2.89s, +0.06s): [-332, -715]
-17:05:48 Model found (2.97s, +0.08s): [-336, -528]
-17:05:48 Model found (3.09s, +0.11s): [-336, -529]
-17:05:49 Model found (3.15s, +0.06s): [-336, -530]
-17:05:49 Model found (3.21s, +0.07s): [-336, -717]
-17:05:49 Model found (3.28s, +0.07s): [-336, -718]
-17:05:49 Model found (3.58s, +0.30s): [-336, -719]
-17:05:49 Model found (3.69s, +0.11s): [-336, -720]
-17:05:49 Model found (3.81s, +0.11s): [-336, -721]
-17:05:49 Model found (3.89s, +0.08s): [-336, -722]
-17:05:49 Model found (4.00s, +0.11s): [-336, -729]
-17:05:49 Model found (4.10s, +0.11s): [-336, -739]
-17:05:50 Model found (4.37s, +0.27s): [-336, -740]
-17:05:50 Model found (4.48s, +0.10s): [-336, -741]
-17:05:50 Model found (4.55s, +0.07s): [-336, -742]
-17:05:50 Model found (4.67s, +0.13s): [-336, -744]
-17:05:50 Model found (4.79s, +0.12s): [-336, -745]
-17:05:50 Model found (4.91s, +0.12s): [-336, -752]
-17:05:51 Model found (5.22s, +0.31s): [-336, -753]
-17:05:51 Model found (5.37s, +0.15s): [-336, -754]
-17:05:51 Model found (5.47s, +0.09s): [-336, -759]
-17:05:51 Model found (5.59s, +0.12s): [-336, -764]
-17:05:51 Model found (5.94s, +0.35s): [-336, -769]
-17:05:51 Model found (6.04s, +0.10s): [-336, -772]
-17:05:52 Model found (6.16s, +0.12s): [-336, -773]
-17:05:52 Model found (6.32s, +0.16s): [-336, -774]
-17:05:52 Model found (6.46s, +0.13s): [-336, -782]
-17:05:52 Model found (6.53s, +0.07s): [-336, -1336]
-17:05:53 Model found (7.73s, +1.20s): [-336, -1386]
-17:05:55 Model found (9.68s, +1.95s): [-336, -1387]
-17:05:56 Model found (10.97s, +1.29s): [-336, -1388]
-17:05:57 Model found (11.66s, +0.70s): [-336, -1407]
-17:05:59 Model found (13.18s, +1.52s): [-336, -1409]
-17:05:59 Model found (13.51s, +0.33s): [-336, -1501]
-17:06:00 Model found (15.03s, +1.52s): [-336, -1502]
-17:06:03 Model found (17.27s, +2.23s): [-336, -1521]
-17:06:03 Model found (18.04s, +0.77s): [-336, -2120]
-17:06:06 Model found (20.13s, +2.09s): [-336, -2121]
-17:06:13 Model found (28.05s, +7.92s): [-336, -2169]
-17:06:19 Model found (33.43s, +5.38s): [-336, -2173]
-17:06:24 Model found (38.56s, +5.14s): [-336, -2187]
-17:06:27 Model found (41.92s, +3.36s): [-336, -2207]
-17:06:29 Model found (43.48s, +1.56s): [-336, -2212]
-17:10:46 Solving done: TIME LIMIT REACHED (300.72s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.23s)
+08:15:24 Solving...
+08:15:25 Model found (0.91s): [-108, -466]
+08:15:25 Model found (0.92s, +0.01s): [-152, -664]
+08:15:25 Model found (0.93s, +0.01s): [-156, -477]
+08:15:25 Model found (0.94s, +0.01s): [-156, -478]
+08:15:25 Model found (0.94s, +0.01s): [-156, -670]
+08:15:25 Model found (0.95s, +0.01s): [-160, -480]
+08:15:25 Model found (0.96s, +0.01s): [-160, -481]
+08:15:25 Model found (0.97s, +0.01s): [-160, -671]
+08:15:25 Model found (0.98s, +0.01s): [-164, -672]
+08:15:25 Model found (0.99s, +0.01s): [-168, -673]
+08:15:25 Model found (1.00s, +0.01s): [-172, -674]
+08:15:25 Model found (1.01s, +0.01s): [-188, -676]
+08:15:25 Model found (1.03s, +0.01s): [-192, -677]
+08:15:25 Model found (1.04s, +0.02s): [-196, -678]
+08:15:25 Model found (1.05s, +0.01s): [-200, -679]
+08:15:25 Model found (1.06s, +0.01s): [-204, -680]
+08:15:25 Model found (1.08s, +0.02s): [-208, -681]
+08:15:25 Model found (1.09s, +0.02s): [-212, -682]
+08:15:25 Model found (1.10s, +0.01s): [-216, -683]
+08:15:25 Model found (1.11s, +0.01s): [-220, -684]
+08:15:25 Model found (1.13s, +0.01s): [-224, -685]
+08:15:25 Model found (1.15s, +0.02s): [-228, -686]
+08:15:25 Model found (1.16s, +0.01s): [-232, -687]
+08:15:25 Model found (1.17s, +0.01s): [-236, -688]
+08:15:25 Model found (1.18s, +0.01s): [-240, -689]
+08:15:25 Model found (1.20s, +0.02s): [-244, -690]
+08:15:25 Model found (1.21s, +0.01s): [-248, -689]
+08:15:25 Model found (1.22s, +0.01s): [-252, -690]
+08:15:31 Model found (6.90s, +5.68s): [-304, -1139]
+08:15:33 Model found (8.88s, +1.98s): [-304, -1140]
+08:15:36 Model found (11.50s, +2.63s): [-304, -1157]
+08:15:36 Model found (11.91s, +0.41s): [-304, -1165]
+08:15:39 Model found (15.15s, +3.23s): [-304, -1174]
+08:15:50 Model found (26.02s, +10.87s): [-304, -1177]
+08:15:50 Model found (26.31s, +0.29s): [-304, -1178]
+08:15:50 Model found (26.35s, +0.05s): [-304, -1179]
+08:15:51 Model found (26.40s, +0.04s): [-304, -1180]
+08:15:51 Model found (26.46s, +0.06s): [-304, -1184]
+08:15:51 Model found (26.51s, +0.05s): [-304, -1185]
+08:15:51 Model found (26.76s, +0.25s): [-304, -1186]
+08:16:03 Model found (38.84s, +12.08s): [-304, -1192]
+08:16:07 Model found (42.89s, +4.05s): [-304, -1197]
+08:16:09 Model found (44.98s, +2.09s): [-304, -1202]
+08:16:12 Model found (47.58s, +2.60s): [-304, -1203]
+08:16:12 Model found (47.89s, +0.30s): [-336, -1508]
+08:16:13 Model found (49.03s, +1.14s): [-336, -1512]
+08:16:14 Model found (50.01s, +0.98s): [-336, -1517]
+08:16:18 Model found (53.54s, +3.53s): [-336, -1526]
+08:19:39 Model found (255.22s, +201.68s): [-336, -1529]
+08:19:41 Model found (256.60s, +1.38s): [-336, -1534]
+08:19:41 Model found (256.87s, +0.27s): [-336, -1542]
+08:19:41 Model found (256.98s, +0.11s): [-336, -1547]
+08:19:41 Model found (257.21s, +0.22s): [-336, -1556]
+08:19:42 Model found (257.40s, +0.19s): [-336, -1565]
+08:19:42 Model found (257.68s, +0.29s): [-336, -1570]
+08:19:43 Model found (258.67s, +0.98s): [-336, -1573]
+08:19:44 Model found (259.85s, +1.18s): [-336, -1576]
+08:19:55 Model found (270.67s, +10.82s): [-336, -1577]
+08:20:25 Solving done: TIME LIMIT REACHED (300.67s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/poly.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 % TIME LIMIT REACHED
 
-Answer: 66
-Optimization: -336 -2212
+Answer: 58
+Optimization: -336 -1577
 Lower bound: -360 -2459
 
-% Equivalence classes (536 classes, 665 entities):
+% Equivalence classes (544 classes, 665 entities):
 
 % Stats:
 %   atoms: 64391.0
@@ -83,17 +75,17 @@ Lower bound: -360 -2459
 %   rules: 94934.0
 %   variables: 58076.0
 %   constraints: 1725.0
-%   choices: 1174952.0
-%   conflicts: 367020.0
-%   models: 66.0
+%   choices: 4263351.0
+%   conflicts: 714397.0
+%   models: 58.0
 %   optimal_models: 0.0
-%   final_cost: [-336.0, -2212.0]
+%   final_cost: [-336.0, -1577.0]
 %   lower_bound: [-360.0, -2459.0]
-%   total_time: 300.97980093955994
-%   ground_time: 0.2203519931063056
-%   time_to_first_model: 0.9731851532123983
-%   max_rss_bytes: 150204416
-%   solve_time: 300.060751914978
+%   total_time: 300.9396560192108
+%   ground_time: 0.22846090700477362
+%   time_to_first_model: 0.9084742679260671
+%   max_rss_bytes: 133332992
+%   solve_time: 300.0078270435333
 classCallsMethod(Circle::Circle(void)@4199632,Shape::Shape(void)@4198400)
 classCallsMethod(Rectangle::Rectangle(void)@4198416,Shape::Shape(void)@4198400)
 classCallsMethod(Triangle::Triangle(void)@4199664,Shape::Shape(void)@4198400)
@@ -252,17 +244,21 @@ constructor(Circle::Circle(void)@4199632)
 constructor(Rectangle::Rectangle(void)@4198416)
 constructor(Shape::Shape(void)@4198400)
 constructor(Triangle::Triangle(void)@4199664)
+constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629)
+constructor(std::bad_cast::bad_cast(char const *)@4210731)
+constructor(std::bad_cast::bad_cast(class std::bad_cast const &)@4210848)
+constructor(std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
 constructor(std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@4206431)
-constructor(std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-constructor(virtual std::locale::_Locimp::~_Locimp(void)@4209385)
+constructor(std::exception::exception(char const * const &)@4210639)
+constructor(std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600)
+constructor(std::locale::_Locimp::_Locimp(bool)@4209322)
+constructor(std::runtime_error::runtime_error(char const *)@4198544)
+constructor(std::system_error::system_error(class std::error_code, char const *)@4199120)
+constructor(std::system_error::system_error(class std::system_error const &)@4199504)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4201472)
+constructor(virtual std::locale::facet::~facet(void)@4202853)
 constructor(virtual type_info::~type_info(void)@4210380)
-deletingDestructor(std::bad_cast::bad_cast(char const *)@4210731)
-deletingDestructor(std::exception::exception(char const * const &)@4210639)
 deletingDestructor(std::exception::exception(char const * const &, int)@4210503)
-deletingDestructor(std::exception::exception(class std::exception const &)@4210811)
-deletingDestructor(std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216)
-deletingDestructor(std::runtime_error::runtime_error(class std::runtime_error const &)@4199472)
-deletingDestructor(std::system_error::system_error(class std::error_code, char const *)@4199120)
 deletingDestructor(virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4201483)
 deletingDestructor(virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772)
@@ -278,8 +274,7 @@ deletingDestructor(virtual * std::out_of_range::`vector deleting destructor'(uns
 deletingDestructor(virtual * std::runtime_error::`vector deleting destructor'(unsigned int)@4199072)
 deletingDestructor(virtual * std::system_error::`vector deleting destructor'(unsigned int)@4199168)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4210396)
-deletingDestructor(virtual std::bad_alloc::~bad_alloc(void)@4201472)
-deletingDestructor(virtual std::bad_exception::~bad_exception(void)@4215055)
+deletingDestructor(virtual std::exception::~exception(void)@4210761)
 derivedClass(const Circle::`vftable'@4268588,const Shape::`vftable'@4268464,0)
 derivedClass(const Rectangle::`vftable'@4268472,const Shape::`vftable'@4268464,0)
 derivedClass(const Triangle::`vftable'@4268596,const Shape::`vftable'@4268464,0)
@@ -308,13 +303,9 @@ guessEnabled(weak_g1_bonus)
 mergeClasses(Circle::Circle(void)@4199632,virtual Circle::draw(void)@4201312)
 mergeClasses(Rectangle::Rectangle(void)@4198416,virtual Rectangle::draw(void)@4201280)
 mergeClasses(Triangle::Triangle(void)@4199664,virtual Triangle::draw(void)@4201344)
-mergeClasses(___init_collate@4224087,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(___initstdio@4219393,__bufin@4297760)
 mergeClasses(__int64 std::basic_streambuf<char, CHAR_TRAITS>::_Pnavail(void)const@4198832,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4199728)
 mergeClasses(__iob@4289744,__bufin@4297760)
-mergeClasses(bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void)@4206890,class std::basic_filebuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::close(void)@4207853)
-mergeClasses(bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void)@4206890,virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4207485)
-mergeClasses(bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void)@4206890,virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4207669)
 mergeClasses(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4202182,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::append(unsigned int, char)@4206179)
 mergeClasses(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4202182,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4202439)
 mergeClasses(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4202182,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4202284)
@@ -331,22 +322,29 @@ mergeClasses(const Circle::`vftable'@4268588,Circle::Circle(void)@4199632)
 mergeClasses(const Rectangle::`vftable'@4268472,Rectangle::Rectangle(void)@4198416)
 mergeClasses(const Shape::`vftable'@4268464,Shape::Shape(void)@4198400)
 mergeClasses(const Triangle::`vftable'@4268596,Triangle::Triangle(void)@4199664)
-mergeClasses(const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948,virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642)
+mergeClasses(const std::bad_alloc::`vftable'@4268724,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629)
+mergeClasses(const std::bad_alloc::`vftable'@4268724,virtual std::bad_alloc::~bad_alloc(void)@4201472)
+mergeClasses(const std::bad_cast::`vftable'@4269252,std::bad_cast::bad_cast(char const *)@4210731)
+mergeClasses(const std::bad_cast::`vftable'@4269252,std::bad_cast::bad_cast(class std::bad_cast const &)@4210848)
+mergeClasses(const std::bad_exception::`vftable'@4269384,std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
 mergeClasses(const std::error_category::`vftable'@4268660,virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658)
-mergeClasses(const std::locale::facet::`vftable'@4268876,virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513)
-mergeClasses(const std::locale::facet::`vftable'@4268876,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
+mergeClasses(const std::exception::`vftable'@4269220,std::exception::exception(char const * const &)@4210639)
+mergeClasses(const std::ios_base::failure::`vftable'@4268504,std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216)
+mergeClasses(const std::ios_base::failure::`vftable'@4268504,std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600)
+mergeClasses(const std::locale::_Locimp::`vftable'@4269192,std::locale::_Locimp::_Locimp(bool)@4209322)
+mergeClasses(const std::locale::_Locimp::`vftable'@4269192,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
 mergeClasses(const std::locale::facet::`vftable'@4268876,virtual std::locale::facet::~facet(void)@4202853)
+mergeClasses(const std::runtime_error::`vftable'@4268480,std::runtime_error::runtime_error(char const *)@4198544)
+mergeClasses(const std::runtime_error::`vftable'@4268480,std::runtime_error::runtime_error(class std::runtime_error const &)@4199472)
+mergeClasses(const std::system_error::`vftable'@4268492,std::system_error::system_error(class std::error_code, char const *)@4199120)
+mergeClasses(const std::system_error::`vftable'@4268492,std::system_error::system_error(class std::system_error const &)@4199504)
 mergeClasses(const type_info::`vftable'@4269212,virtual type_info::~type_info(void)@4210380)
 mergeClasses(int std::ios_base::rdstate(void)const@4198672,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4199936)
 mergeClasses(std::_Locinfo::_Locinfo(char const *)@4204477,std::_Lockit::_Lockit(int)@4208705)
 mergeClasses(std::_Locinfo::~_Locinfo(void)@4204599,std::_Lockit::~_Lockit(void)@4208745)
-mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629,virtual char const * std::exception::what(void)const@4210532)
 mergeClasses(std::bad_cast::bad_cast(char const *)@4210731,std::bad_cast::bad_cast(class std::bad_cast const &)@4210848)
 mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Init(struct _iobuf *, enum  std::basic_filebuf<char, CHAR_TRAITS>::_Initfl)@4204917,virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4205852)
 mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Initcvt(class std::codecvt<char, char, int> const *)@4205680,virtual std::basic_filebuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4206149)
-mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316,virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4207485)
-mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316,virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4207669)
 mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316,virtual int std::basic_filebuf<char, CHAR_TRAITS>::overflow(int)@4207138)
 mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316,virtual int std::basic_filebuf<char, CHAR_TRAITS>::uflow(void)@4206521)
 mergeClasses(std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
@@ -368,22 +366,14 @@ mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsig
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4201875,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4201945)
 mergeClasses(std::ctype<char>::_Tidy(void)@4203115,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
 mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
-mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char const * std::ctype<char>::do_narrow(char const *, char const *, char, char *)const@4203343)
 mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char const * std::ctype<char>::do_tolower(char *, char const *)const@4203169)
 mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char const * std::ctype<char>::do_toupper(char *, char const *)const@4203240)
 mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char const * std::ctype<char>::do_widen(char const *, char const *, char *)const@4203298)
 mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char std::ctype<char>::do_narrow(char, char)const@4203331)
-mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char std::ctype<char>::do_tolower(char)const@4203144)
-mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char std::ctype<char>::do_toupper(char)const@4203215)
 mergeClasses(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062,virtual char std::ctype<char>::do_widen(char)const@4203286)
 mergeClasses(std::exception::_Copy_str(char const *)@4210545,class std::exception & std::exception::operator=(class std::exception const &)@4210678)
-mergeClasses(std::exception::_Copy_str(char const *)@4210545,std::exception::exception(char const * const &)@4210639)
 mergeClasses(std::exception::_Tidy(void)@4210609,class std::exception & std::exception::operator=(class std::exception const &)@4210678)
 mergeClasses(std::exception::_Tidy(void)@4210609,virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772)
-mergeClasses(std::exception::exception(char const * const &)@4210639,std::exception::exception(class std::exception const &)@4210811)
-mergeClasses(std::exception::exception(char const * const &)@4210639,virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772)
-mergeClasses(std::exception::exception(char const * const &)@4210639,virtual std::exception::~exception(void)@4210761)
-mergeClasses(std::exception::exception(char const * const &, int)@4210503,std::exception::exception(char const * const &)@4210639)
 mergeClasses(std::exception::exception(char const * const &, int)@4210503,std::exception::exception(class std::exception const &)@4210811)
 mergeClasses(std::exception::exception(char const * const &, int)@4210503,virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772)
 mergeClasses(std::exception::exception(char const * const &, int)@4210503,virtual char const * std::exception::what(void)const@4210532)
@@ -394,56 +384,30 @@ mergeClasses(std::ios_base::clear(int, bool)@4199280,std::basic_ios<char, CHAR_T
 mergeClasses(std::ios_base::clear(int, bool)@4199280,std::basic_ios<char, CHAR_TRAITS>::init(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@4206277)
 mergeClasses(std::ios_base::clear(int, bool)@4199280,std::ios_base::_Init(void)@4203421)
 mergeClasses(std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216,std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600)
-mergeClasses(std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216,virtual * std::ios_base::failure::`scalar deleting destructor'(unsigned int)@4199552)
-mergeClasses(std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(std::length_error::length_error(class std::length_error const &)@4208111,virtual * std::out_of_range::`vector deleting destructor'(unsigned int)@4208217)
 mergeClasses(std::length_error::length_error(class std::length_error const &)@4208111,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(std::locale::_Locimp::_Locimp(bool)@4209322,virtual * std::locale::_Locimp::`scalar deleting destructor'(unsigned int)@4209452)
 mergeClasses(std::locale::_Locimp::_Locimp(bool)@4209322,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
-mergeClasses(std::logic_error::logic_error(class std::logic_error const &)@4208034,virtual * std::out_of_range::`vector deleting destructor'(unsigned int)@4208217)
 mergeClasses(std::logic_error::logic_error(class std::logic_error const &)@4208034,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(std::out_of_range::out_of_range(class std::out_of_range const &)@4208188,virtual * std::out_of_range::`vector deleting destructor'(unsigned int)@4208217)
 mergeClasses(std::out_of_range::out_of_range(class std::out_of_range const &)@4208188,virtual char const * std::exception::what(void)const@4210532)
 mergeClasses(std::runtime_error::runtime_error(char const *)@4198544,std::runtime_error::runtime_error(class std::runtime_error const &)@4199472)
-mergeClasses(std::runtime_error::runtime_error(char const *)@4198544,virtual * std::runtime_error::`vector deleting destructor'(unsigned int)@4199072)
-mergeClasses(std::runtime_error::runtime_error(char const *)@4198544,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(std::runtime_error::runtime_error(class std::runtime_error const &)@4199472,virtual char const * std::exception::what(void)const@4210532)
 mergeClasses(std::system_error::system_error(class std::error_code, char const *)@4199120,std::system_error::system_error(class std::system_error const &)@4199504)
-mergeClasses(std::system_error::system_error(class std::error_code, char const *)@4199120,virtual * std::system_error::`vector deleting destructor'(unsigned int)@4199168)
-mergeClasses(std::system_error::system_error(class std::error_code, char const *)@4199120,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(std::system_error::system_error(class std::system_error const &)@4199504,virtual char const * std::exception::what(void)const@4210532)
 mergeClasses(virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658,const std::error_category::`vftable'@4268660)
-mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4201483,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4201483,virtual char const * std::exception::what(void)const@4210532)
 mergeClasses(virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772,std::exception::exception(class std::exception const &)@4210811)
-mergeClasses(virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4215066,std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
+mergeClasses(virtual * std::basic_filebuf<char, CHAR_TRAITS>::`scalar deleting destructor'(unsigned int)@4207996,const std::basic_filebuf<char, CHAR_TRAITS>::`vftable'@4269044)
 mergeClasses(virtual * std::basic_ios<char, CHAR_TRAITS>::`scalar deleting destructor'(unsigned int)@4203005,virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@4203046)
 mergeClasses(virtual * std::basic_ostream<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204247,const std::basic_ostream<char, CHAR_TRAITS>::`vftable'@4268892)
 mergeClasses(virtual * std::basic_ostream<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204247,std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@4206431)
-mergeClasses(virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204283,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204283,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513,const std::locale::facet::`vftable'@4268876)
 mergeClasses(virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
 mergeClasses(virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376,virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513)
-mergeClasses(virtual * std::ios_base::failure::`scalar deleting destructor'(unsigned int)@4199552,std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600)
 mergeClasses(virtual * std::ios_base::failure::`scalar deleting destructor'(unsigned int)@4199552,virtual std::exception::~exception(void)@4210761)
-mergeClasses(virtual * std::out_of_range::`vector deleting destructor'(unsigned int)@4208217,virtual std::exception::~exception(void)@4210761)
-mergeClasses(virtual * std::runtime_error::`vector deleting destructor'(unsigned int)@4199072,std::runtime_error::runtime_error(class std::runtime_error const &)@4199472)
 mergeClasses(virtual * std::runtime_error::`vector deleting destructor'(unsigned int)@4199072,virtual std::exception::~exception(void)@4210761)
-mergeClasses(virtual * std::system_error::`vector deleting destructor'(unsigned int)@4199168,std::system_error::system_error(class std::system_error const &)@4199504)
-mergeClasses(virtual * std::system_error::`vector deleting destructor'(unsigned int)@4199168,virtual std::exception::~exception(void)@4210761)
 mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@4210396,const type_info::`vftable'@4269212)
 mergeClasses(virtual Circle::draw(void)@4201312,const Circle::`vftable'@4268588)
 mergeClasses(virtual Rectangle::draw(void)@4201280,const Rectangle::`vftable'@4268472)
 mergeClasses(virtual Triangle::draw(void)@4201344,const Triangle::`vftable'@4268596)
-mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@4203707,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@4203707,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@4203707,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@4203763,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@4203763,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
 mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@4203763,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@4203964,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@4203964,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
 mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@4203964,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual bool std::codecvt_base::do_always_noconv(void)const@4205152,const std::codecvt<char, char, int>::`vftable'@4269108)
@@ -452,45 +416,28 @@ mergeClasses(virtual bool std::error_category::equivalent(class std::error_code 
 mergeClasses(virtual bool std::error_category::equivalent(class std::error_code const &, int)const@4201441,virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658)
 mergeClasses(virtual bool std::error_category::equivalent(int, class std::error_condition const &)const@4201408,const std::error_category::`vftable'@4268660)
 mergeClasses(virtual bool std::error_category::equivalent(int, class std::error_condition const &)const@4201408,virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658)
-mergeClasses(virtual char const * std::ctype<char>::do_narrow(char const *, char const *, char, char *)const@4203343,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
+mergeClasses(virtual char const * std::ctype<char>::do_narrow(char const *, char const *, char, char *)const@4203343,const std::ctype<char>::`vftable'@4268908)
 mergeClasses(virtual char const * std::ctype<char>::do_tolower(char *, char const *)const@4203169,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
 mergeClasses(virtual char const * std::ctype<char>::do_toupper(char *, char const *)const@4203240,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
 mergeClasses(virtual char const * std::ctype<char>::do_widen(char const *, char const *, char *)const@4203298,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
-mergeClasses(virtual char const * std::exception::what(void)const@4210532,std::bad_cast::bad_cast(char const *)@4210731)
-mergeClasses(virtual char const * std::exception::what(void)const@4210532,std::bad_cast::bad_cast(class std::bad_cast const &)@4210848)
-mergeClasses(virtual char const * std::exception::what(void)const@4210532,std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
-mergeClasses(virtual char const * std::exception::what(void)const@4210532,std::exception::exception(char const * const &)@4210639)
 mergeClasses(virtual char const * std::exception::what(void)const@4210532,std::exception::exception(class std::exception const &)@4210811)
 mergeClasses(virtual char const * std::exception::what(void)const@4210532,virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772)
 mergeClasses(virtual char const * std::exception::what(void)const@4210532,virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4215066)
 mergeClasses(virtual char const * std::exception::what(void)const@4210532,virtual std::bad_exception::~bad_exception(void)@4215055)
 mergeClasses(virtual char const * std::exception::what(void)const@4210532,virtual std::exception::~exception(void)@4210761)
 mergeClasses(virtual char std::ctype<char>::do_narrow(char, char)const@4203331,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
-mergeClasses(virtual char std::ctype<char>::do_tolower(char)const@4203144,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
-mergeClasses(virtual char std::ctype<char>::do_toupper(char)const@4203215,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
+mergeClasses(virtual char std::ctype<char>::do_toupper(char)const@4203215,const std::ctype<char>::`vftable'@4268908)
 mergeClasses(virtual char std::ctype<char>::do_widen(char)const@4203286,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
 mergeClasses(virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4205852,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4203716,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4203716,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
 mergeClasses(virtual class std::error_condition std::_System_error_category::default_error_condition(int)const@4201530,const std::error_category::`vftable'@4268660)
 mergeClasses(virtual class std::error_condition std::_System_error_category::default_error_condition(int)const@4201530,virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658)
-mergeClasses(virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4207485,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4207669,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4204167,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4204167,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4204207,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4204207,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
+mergeClasses(virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4207669,const std::basic_filebuf<char, CHAR_TRAITS>::`vftable'@4269044)
 mergeClasses(virtual int std::basic_filebuf<char, CHAR_TRAITS>::overflow(int)@4207138,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual int std::basic_filebuf<char, CHAR_TRAITS>::pbackfail(int)@4205547,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual int std::basic_filebuf<char, CHAR_TRAITS>::sync(void)@4205283,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual int std::basic_filebuf<char, CHAR_TRAITS>::uflow(void)@4206521,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual int std::basic_filebuf<char, CHAR_TRAITS>::underflow(void)@4205328,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@4203701,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@4203701,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@4203724,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@4203724,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@4203712,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@4203712,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
 mergeClasses(virtual int std::codecvt<char, char, int>::do_length(int const &, char const *, char const *, unsigned int)const@4205490,const std::codecvt<char, char, int>::`vftable'@4269108)
 mergeClasses(virtual int std::codecvt<char, char, int>::do_length(int const &, char const *, char const *, unsigned int)const@4205490,static unsigned int __cdecl std::codecvt<char, char, int>::_Getcat(class std::locale::facet const * *, class std::locale const *)@4205725)
 mergeClasses(virtual int std::codecvt<char, char, int>::do_out(int &, char const *, char const *, char const * &, char *, char *, char * &)const@4205442,const std::codecvt<char, char, int>::`vftable'@4269108)
@@ -500,41 +447,21 @@ mergeClasses(virtual int std::codecvt<char, char, int>::do_unshift(int &, char *
 mergeClasses(virtual int std::codecvt_base::do_encoding(void)const@4205155,const std::codecvt<char, char, int>::`vftable'@4269108)
 mergeClasses(virtual int std::codecvt_base::do_encoding(void)const@4205155,static unsigned int __cdecl std::codecvt<char, char, int>::_Getcat(class std::locale::facet const * *, class std::locale const *)@4205725)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4201472,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629)
-mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4201472,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4201483)
-mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4201472,virtual char const * std::exception::what(void)const@4210532)
-mergeClasses(virtual std::bad_exception::~bad_exception(void)@4215055,std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
 mergeClasses(virtual std::bad_exception::~bad_exception(void)@4215055,virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4215066)
 mergeClasses(virtual std::basic_filebuf<char, CHAR_TRAITS>::_Lock(void)@4205253,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual std::basic_filebuf<char, CHAR_TRAITS>::_Unlock(void)@4205268,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 mergeClasses(virtual std::basic_filebuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4206149,virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
-mergeClasses(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928,virtual * std::basic_filebuf<char, CHAR_TRAITS>::`scalar deleting destructor'(unsigned int)@4207996)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4203685,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4203685,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4203693,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4203693,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4203721,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4203721,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,___init_collate@4224087)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204283)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@4203707)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@4203763)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@4203964)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4203716)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4204167)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4204207)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@4203701)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@4203724)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@4203712)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4203685)
 mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4203693)
-mergeClasses(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642,virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4203721)
 mergeClasses(virtual std::exception::~exception(void)@4210761,std::exception::exception(class std::exception const &)@4210811)
 mergeClasses(virtual std::exception::~exception(void)@4210761,virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772)
-mergeClasses(virtual std::locale::_Locimp::~_Locimp(void)@4209385,virtual * std::locale::_Locimp::`scalar deleting destructor'(unsigned int)@4209452)
-mergeClasses(virtual std::locale::facet::~facet(void)@4202853,virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513)
-mergeClasses(virtual std::locale::facet::~facet(void)@4202853,virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376)
-mergeClasses(virtual std::locale::facet::~facet(void)@4202853,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
 mergeClasses(virtual type_info::~type_info(void)@4210380,virtual * type_info::`scalar deleting destructor'(unsigned int)@4210396)
 method($LN10_3@4221788)
 method($LN10_5@4227524)
@@ -1179,23 +1106,20 @@ objectInObject(const std::logic_error::`vftable'@4269152,const std::exception::`
 objectInObject(const std::out_of_range::`vftable'@4269176,const std::logic_error::`vftable'@4269152,0)
 objectInObject(const std::runtime_error::`vftable'@4268480,const std::exception::`vftable'@4269220,0)
 objectInObject(const std::system_error::`vftable'@4268492,const std::runtime_error::`vftable'@4268480,0)
-realDestructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629)
-realDestructor(std::bad_cast::bad_cast(class std::bad_cast const &)@4210848)
-realDestructor(std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
 realDestructor(std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@4203503)
+realDestructor(std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
 realDestructor(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062)
-realDestructor(std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600)
+realDestructor(std::exception::exception(class std::exception const &)@4210811)
+realDestructor(std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216)
 realDestructor(std::length_error::length_error(class std::length_error const &)@4208111)
-realDestructor(std::locale::_Locimp::_Locimp(bool)@4209322)
 realDestructor(std::logic_error::logic_error(class std::logic_error const &)@4208034)
 realDestructor(std::out_of_range::out_of_range(class std::out_of_range const &)@4208188)
-realDestructor(std::runtime_error::runtime_error(char const *)@4198544)
-realDestructor(std::system_error::system_error(class std::system_error const &)@4199504)
+realDestructor(std::runtime_error::runtime_error(class std::runtime_error const &)@4199472)
+realDestructor(virtual std::bad_exception::~bad_exception(void)@4215055)
 realDestructor(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928)
 realDestructor(virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@4203046)
 realDestructor(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642)
-realDestructor(virtual std::exception::~exception(void)@4210761)
-realDestructor(virtual std::locale::facet::~facet(void)@4202853)
+realDestructor(virtual std::locale::_Locimp::~_Locimp(void)@4209385)
 vfTable(__iob@4289744)
 vfTable(const Circle::`vftable'@4268588)
 vfTable(const Rectangle::`vftable'@4268472)
@@ -1307,7 +1231,7 @@ vfTableEntry(const std::system_error::`vftable'@4268492,0,virtual * std::system_
 vfTableEntry(const std::system_error::`vftable'@4268492,4,virtual char const * std::exception::what(void)const@4210532)
 vfTableEntry(const type_info::`vftable'@4269212,0,virtual * type_info::`scalar deleting destructor'(unsigned int)@4210396)
 vfTableOverwrite(virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376,const std::locale::facet::`vftable'@4268876,const std::ctype<char>::`vftable'@4268908,0)
-vfTableOverwrite(virtual std::locale::_Locimp::~_Locimp(void)@4209385,const std::locale::_Locimp::`vftable'@4269192,const std::locale::facet::`vftable'@4268876,0)
+vfTableOverwrite(virtual std::locale::_Locimp::~_Locimp(void)@4209385,const std::locale::facet::`vftable'@4268876,const std::locale::_Locimp::`vftable'@4269192,0)
 vfTableSize(__iob@4289744,4)
 vfTableSize(const Circle::`vftable'@4268588,4)
 vfTableSize(const Rectangle::`vftable'@4268472,4)
@@ -1385,12 +1309,22 @@ vftableBelongsToClass(const Circle::`vftable'@4268588,0,Circle::Circle(void)@419
 vftableBelongsToClass(const Rectangle::`vftable'@4268472,0,Rectangle::Rectangle(void)@4198416)
 vftableBelongsToClass(const Shape::`vftable'@4268464,0,Shape::Shape(void)@4198400)
 vftableBelongsToClass(const Triangle::`vftable'@4268596,0,Triangle::Triangle(void)@4199664)
-vftableBelongsToClass(const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948,0,std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841)
-vftableBelongsToClass(const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948,0,virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@4268724,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@4268724,0,virtual std::bad_alloc::~bad_alloc(void)@4201472)
+vftableBelongsToClass(const std::bad_cast::`vftable'@4269252,0,std::bad_cast::bad_cast(char const *)@4210731)
+vftableBelongsToClass(const std::bad_cast::`vftable'@4269252,0,std::bad_cast::bad_cast(class std::bad_cast const &)@4210848)
+vftableBelongsToClass(const std::bad_exception::`vftable'@4269384,0,std::bad_exception::bad_exception(class std::bad_exception const &)@4218101)
 vftableBelongsToClass(const std::error_category::`vftable'@4268660,0,virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658)
-vftableBelongsToClass(const std::locale::facet::`vftable'@4268876,0,virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513)
-vftableBelongsToClass(const std::locale::facet::`vftable'@4268876,0,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
+vftableBelongsToClass(const std::exception::`vftable'@4269220,0,std::exception::exception(char const * const &)@4210639)
+vftableBelongsToClass(const std::ios_base::failure::`vftable'@4268504,0,std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216)
+vftableBelongsToClass(const std::ios_base::failure::`vftable'@4268504,0,std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600)
+vftableBelongsToClass(const std::locale::_Locimp::`vftable'@4269192,0,std::locale::_Locimp::_Locimp(bool)@4209322)
+vftableBelongsToClass(const std::locale::_Locimp::`vftable'@4269192,0,virtual std::locale::_Locimp::~_Locimp(void)@4209385)
 vftableBelongsToClass(const std::locale::facet::`vftable'@4268876,0,virtual std::locale::facet::~facet(void)@4202853)
+vftableBelongsToClass(const std::runtime_error::`vftable'@4268480,0,std::runtime_error::runtime_error(char const *)@4198544)
+vftableBelongsToClass(const std::runtime_error::`vftable'@4268480,0,std::runtime_error::runtime_error(class std::runtime_error const &)@4199472)
+vftableBelongsToClass(const std::system_error::`vftable'@4268492,0,std::system_error::system_error(class std::error_code, char const *)@4199120)
+vftableBelongsToClass(const std::system_error::`vftable'@4268492,0,std::system_error::system_error(class std::system_error const &)@4199504)
 vftableBelongsToClass(const type_info::`vftable'@4269212,0,virtual type_info::~type_info(void)@4210380)
 %   {$LN10_3@4221788}
 %   {$LN10_5@4227524}
@@ -1786,6 +1720,7 @@ vftableBelongsToClass(const type_info::`vftable'@4269212,0,virtual type_info::~t
 %   {bool __cdecl std::_Fputc<char>(char, struct _iobuf *)@4205191}
 %   {bool __cdecl std::_Ungetc<char>(char const &, struct _iobuf *)@4205221}
 %   {bool __cdecl std::uncaught_exception(void)@4202690}
+%   {bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void)@4206890}
 %   {bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4201692, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4201753, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4201875, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4201945, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4202182, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4202284, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4202439, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4202558, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Chassign(unsigned int, unsigned int, char)@4204349, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::append(unsigned int, char)@4206179, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(unsigned int, char)@4206352}
 %   {bool std::error_condition::operator==(class std::error_condition const &)const@4201375}
 %   {bool std::ios_base::fail(void)const@4198704}
@@ -1811,33 +1746,24 @@ vftableBelongsToClass(const type_info::`vftable'@4269212,0,virtual type_info::~t
 %   {class std::locale::facet const * std::locale::_Getfacet(unsigned int)const@4202912}
 %   {const Rectangle::`RTTI Complete Object Locator'@4280496}
 %   {const Triangle::`RTTI Complete Object Locator'@4280940}
-%   {const std::bad_alloc::`vftable'@4268724}
-%   {const std::bad_cast::`vftable'@4269252}
-%   {const std::bad_exception::`vftable'@4269384}
-%   {const std::basic_filebuf<char, CHAR_TRAITS>::`vftable'@4269044}
 %   {const std::basic_ios<char, CHAR_TRAITS>::`RTTI Complete Object Locator'@4281908}
 %   {const std::basic_ios<char, CHAR_TRAITS>::`vftable'@4268900}
 %   {const std::basic_ostream<char, CHAR_TRAITS>::`RTTI Complete Object Locator'@4281680}
 %   {const std::basic_streambuf<char, CHAR_TRAITS>::`RTTI Complete Object Locator'@4282008}
+%   {const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948}
 %   {const std::codecvt<char, char, int>::`RTTI Complete Object Locator'@4282212}
 %   {const std::ctype<char>::`RTTI Complete Object Locator'@4281928}
-%   {const std::ctype<char>::`vftable'@4268908}
 %   {const std::exception::`RTTI Complete Object Locator'@4282676}
-%   {const std::exception::`vftable'@4269220}
 %   {const std::ios_base::`RTTI Complete Object Locator'@4281524}
 %   {const std::ios_base::`vftable'@4268884}
 %   {const std::ios_base::failure::`RTTI Complete Object Locator'@4280780}
-%   {const std::ios_base::failure::`vftable'@4268504}
 %   {const std::length_error::`RTTI Complete Object Locator'@4282368}
 %   {const std::length_error::`vftable'@4269164}
-%   {const std::locale::_Locimp::`vftable'@4269192}
 %   {const std::logic_error::`vftable'@4269152}
 %   {const std::out_of_range::`RTTI Complete Object Locator'@4282448}
 %   {const std::out_of_range::`vftable'@4269176}
 %   {const std::runtime_error::`RTTI Complete Object Locator'@4280572}
-%   {const std::runtime_error::`vftable'@4268480}
 %   {const std::system_error::`RTTI Complete Object Locator'@4280700}
-%   {const std::system_error::`vftable'@4268492}
 %   {doexit@4230821}
 %   {fast_error_exit@4212103}
 %   {flsall@4220000}
@@ -1897,32 +1823,48 @@ vftableBelongsToClass(const type_info::`vftable'@4269212,0,virtual type_info::~t
 %   {std::_dynamic_initializer_for__init_cout__@4265168}
 %   {std::_dynamic_initializer_for__initlocks__@4265178}
 %   {std::_dynamic_initializer_for__initlocks___0@4265224}
+%   {std::bad_cast::bad_cast(char const *)@4210731, std::bad_cast::bad_cast(class std::bad_cast const &)@4210848, const std::bad_cast::`vftable'@4269252}
+%   {std::bad_exception::bad_exception(class std::bad_exception const &)@4218101, const std::bad_exception::`vftable'@4269384}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4198912, std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4200064}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4198976, std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4200320}
 %   {std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@4203503, virtual * std::basic_ostream<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204247, std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@4206431, const std::basic_ostream<char, CHAR_TRAITS>::`vftable'@4268892}
 %   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator int std::_Bool_struct::*(void)const@4198864}
 %   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4202172}
+%   {std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062, std::ctype<char>::_Tidy(void)@4203115, virtual char const * std::ctype<char>::do_tolower(char *, char const *)const@4203169, virtual char const * std::ctype<char>::do_toupper(char *, char const *)const@4203240, virtual char std::ctype<char>::do_widen(char)const@4203286, virtual char const * std::ctype<char>::do_widen(char const *, char const *, char *)const@4203298, virtual char std::ctype<char>::do_narrow(char, char)const@4203331, virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376, virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513, std::locale::_Locimp::_Locimp(bool)@4209322, virtual std::locale::_Locimp::~_Locimp(void)@4209385, const std::locale::_Locimp::`vftable'@4269192}
 %   {std::error_code::error_code(int, class std::error_category const &)@4198592}
+%   {std::exception::exception(char const * const &)@4210639, const std::exception::`vftable'@4269220}
 %   {std::ios_base::_Callfns(enum  std::ios_base::event)@4209628, std::ios_base::_Tidy(void)@4209667}
+%   {std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216, std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600, const std::ios_base::failure::`vftable'@4268504}
 %   {std::locale::facet::_Incref(void)@4202750}
 %   {std::locale::id::operator unsigned int(void)@4202695}
 %   {std::locale::locale(void)@4202860}
 %   {std::locale::~locale(void)@4202888}
-%   {std::runtime_error::runtime_error(char const *)@4198544, virtual * std::runtime_error::`vector deleting destructor'(unsigned int)@4199072, std::system_error::system_error(class std::error_code, char const *)@4199120, virtual * std::system_error::`vector deleting destructor'(unsigned int)@4199168, std::ios_base::failure::failure(char const *, class std::error_code const &)@4199216, std::runtime_error::runtime_error(class std::runtime_error const &)@4199472, std::system_error::system_error(class std::system_error const &)@4199504, virtual * std::ios_base::failure::`scalar deleting destructor'(unsigned int)@4199552, std::ios_base::failure::failure(class std::ios_base::failure const &)@4199600, virtual std::bad_alloc::~bad_alloc(void)@4201472, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4201483, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629, std::logic_error::logic_error(class std::logic_error const &)@4208034, std::length_error::length_error(class std::length_error const &)@4208111, std::out_of_range::out_of_range(class std::out_of_range const &)@4208188, virtual * std::out_of_range::`vector deleting destructor'(unsigned int)@4208217, std::exception::exception(char const * const &, int)@4210503, virtual char const * std::exception::what(void)const@4210532, std::exception::_Copy_str(char const *)@4210545, std::exception::_Tidy(void)@4210609, std::exception::exception(char const * const &)@4210639, class std::exception & std::exception::operator=(class std::exception const &)@4210678, std::bad_cast::bad_cast(char const *)@4210731, virtual std::exception::~exception(void)@4210761, virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772, std::exception::exception(class std::exception const &)@4210811, std::bad_cast::bad_cast(class std::bad_cast const &)@4210848, virtual std::bad_exception::~bad_exception(void)@4215055, virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4215066, std::bad_exception::bad_exception(class std::bad_exception const &)@4218101}
+%   {std::runtime_error::runtime_error(char const *)@4198544, std::runtime_error::runtime_error(class std::runtime_error const &)@4199472, const std::runtime_error::`vftable'@4268480}
+%   {std::system_error::system_error(class std::error_code, char const *)@4199120, std::system_error::system_error(class std::system_error const &)@4199504, const std::system_error::`vftable'@4268492}
 %   {strtoxl@4263417}
 %   {struct _s_TryBlockMapEntry const * __cdecl _GetRangeOfTrysToCheck(struct _s_FuncInfo const *, int, int, unsigned int *, unsigned int *)@4211712}
 %   {tidy_global@4208864}
 %   {virtual * std::basic_ios<char, CHAR_TRAITS>::`scalar deleting destructor'(unsigned int)@4203005, virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@4203046}
+%   {virtual * std::locale::_Locimp::`scalar deleting destructor'(unsigned int)@4209452}
+%   {virtual * std::out_of_range::`vector deleting destructor'(unsigned int)@4208217}
+%   {virtual * std::runtime_error::`vector deleting destructor'(unsigned int)@4199072, virtual * std::ios_base::failure::`scalar deleting destructor'(unsigned int)@4199552, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4201483, std::logic_error::logic_error(class std::logic_error const &)@4208034, std::length_error::length_error(class std::length_error const &)@4208111, std::out_of_range::out_of_range(class std::out_of_range const &)@4208188, std::exception::exception(char const * const &, int)@4210503, virtual char const * std::exception::what(void)const@4210532, std::exception::_Copy_str(char const *)@4210545, std::exception::_Tidy(void)@4210609, class std::exception & std::exception::operator=(class std::exception const &)@4210678, virtual std::exception::~exception(void)@4210761, virtual * std::bad_cast::`vector deleting destructor'(unsigned int)@4210772, std::exception::exception(class std::exception const &)@4210811, virtual std::bad_exception::~bad_exception(void)@4215055, virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@4215066}
+%   {virtual * std::system_error::`vector deleting destructor'(unsigned int)@4199168}
 %   {virtual bool std::codecvt_base::do_always_noconv(void)const@4205152, virtual int std::codecvt_base::do_encoding(void)const@4205155, virtual int std::codecvt<char, char, int>::do_out(int &, char const *, char const *, char const * &, char *, char *, char * &)const@4205442, virtual int std::codecvt<char, char, int>::do_unshift(int &, char *, char *, char * &)const@4205470, virtual int std::codecvt<char, char, int>::do_length(int const &, char const *, char const *, unsigned int)const@4205490, static unsigned int __cdecl std::codecvt<char, char, int>::_Getcat(class std::locale::facet const * *, class std::locale const *)@4205725, const std::codecvt<char, char, int>::`vftable'@4269108}
 %   {virtual bool std::error_category::equivalent(int, class std::error_condition const &)const@4201408, virtual bool std::error_category::equivalent(class std::error_code const &, int)const@4201441, virtual class std::error_condition std::_System_error_category::default_error_condition(int)const@4201530, virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@4201658, const std::error_category::`vftable'@4268660}
 %   {virtual char const * std::_Generic_error_category::name(void)const@4201522}
 %   {virtual char const * std::_System_error_category::name(void)const@4201526}
+%   {virtual char std::ctype<char>::do_tolower(char)const@4203144}
+%   {virtual char std::ctype<char>::do_toupper(char)const@4203215, virtual char const * std::ctype<char>::do_narrow(char const *, char const *, char, char *)const@4203343, const std::ctype<char>::`vftable'@4268908}
 %   {virtual class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> std::_Generic_error_category::message(int)const@4202607}
 %   {virtual class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> std::_Iostream_error_category::message(int)const@4202642}
-%   {virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642, virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4203685, virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4203693, virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@4203701, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@4203707, virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@4203712, virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4203716, virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4203721, virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@4203724, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@4203763, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@4203964, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4204167, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4204207, virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204283, std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316, std::basic_streambuf<char, CHAR_TRAITS>::_Init(void)@4204411, std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841, std::basic_filebuf<char, CHAR_TRAITS>::_Init(struct _iobuf *, enum  std::basic_filebuf<char, CHAR_TRAITS>::_Initfl)@4204917, virtual std::basic_filebuf<char, CHAR_TRAITS>::_Lock(void)@4205253, virtual std::basic_filebuf<char, CHAR_TRAITS>::_Unlock(void)@4205268, virtual int std::basic_filebuf<char, CHAR_TRAITS>::sync(void)@4205283, virtual int std::basic_filebuf<char, CHAR_TRAITS>::underflow(void)@4205328, std::basic_filebuf<char, CHAR_TRAITS>::_Set_back(void)@4205390, virtual int std::basic_filebuf<char, CHAR_TRAITS>::pbackfail(int)@4205547, std::basic_filebuf<char, CHAR_TRAITS>::_Initcvt(class std::codecvt<char, char, int> const *)@4205680, virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4205852, virtual std::basic_filebuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4206149, virtual int std::basic_filebuf<char, CHAR_TRAITS>::uflow(void)@4206521, bool std::basic_filebuf<char, CHAR_TRAITS>::_Endwrite(void)@4206890, virtual int std::basic_filebuf<char, CHAR_TRAITS>::overflow(int)@4207138, virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4207485, virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4207669, class std::basic_filebuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::close(void)@4207853, virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928, virtual * std::basic_filebuf<char, CHAR_TRAITS>::`scalar deleting destructor'(unsigned int)@4207996, ___init_collate@4224087, const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@4268948}
+%   {virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4207485}
+%   {virtual class std::fpos<int> std::basic_filebuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4207669, virtual * std::basic_filebuf<char, CHAR_TRAITS>::`scalar deleting destructor'(unsigned int)@4207996, const std::basic_filebuf<char, CHAR_TRAITS>::`vftable'@4269044}
+%   {virtual std::bad_alloc::~bad_alloc(void)@4201472, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4201629, const std::bad_alloc::`vftable'@4268724}
+%   {virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4203685, virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@4203701, virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4203721, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@4203763, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@4203964, virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@4204283, std::basic_filebuf<char, CHAR_TRAITS>::_Reset_back(void)@4204316, std::basic_streambuf<char, CHAR_TRAITS>::_Init(void)@4204411, std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@4204841, std::basic_filebuf<char, CHAR_TRAITS>::_Init(struct _iobuf *, enum  std::basic_filebuf<char, CHAR_TRAITS>::_Initfl)@4204917, virtual std::basic_filebuf<char, CHAR_TRAITS>::_Lock(void)@4205253, virtual std::basic_filebuf<char, CHAR_TRAITS>::_Unlock(void)@4205268, virtual int std::basic_filebuf<char, CHAR_TRAITS>::sync(void)@4205283, virtual int std::basic_filebuf<char, CHAR_TRAITS>::underflow(void)@4205328, std::basic_filebuf<char, CHAR_TRAITS>::_Set_back(void)@4205390, virtual int std::basic_filebuf<char, CHAR_TRAITS>::pbackfail(int)@4205547, std::basic_filebuf<char, CHAR_TRAITS>::_Initcvt(class std::codecvt<char, char, int> const *)@4205680, virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4205852, virtual std::basic_filebuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@4206149, virtual int std::basic_filebuf<char, CHAR_TRAITS>::uflow(void)@4206521, virtual int std::basic_filebuf<char, CHAR_TRAITS>::overflow(int)@4207138, class std::basic_filebuf<char, CHAR_TRAITS> * std::basic_filebuf<char, CHAR_TRAITS>::close(void)@4207853, virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@4207928, ___init_collate@4224087}
+%   {virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@4203642, virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4203693, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@4203707, virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@4203712, virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@4203716, virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@4203724, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@4204167, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@4204207}
 %   {virtual std::ios_base::failure::~failure(void)@4199264}
 %   {virtual std::length_error::~length_error(void)@4208029}
-%   {virtual std::locale::facet::~facet(void)@4202853, std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@4203062, std::ctype<char>::_Tidy(void)@4203115, virtual char std::ctype<char>::do_tolower(char)const@4203144, virtual char const * std::ctype<char>::do_tolower(char *, char const *)const@4203169, virtual char std::ctype<char>::do_toupper(char)const@4203215, virtual char const * std::ctype<char>::do_toupper(char *, char const *)const@4203240, virtual char std::ctype<char>::do_widen(char)const@4203286, virtual char const * std::ctype<char>::do_widen(char const *, char const *, char *)const@4203298, virtual char std::ctype<char>::do_narrow(char, char)const@4203331, virtual char const * std::ctype<char>::do_narrow(char const *, char const *, char, char *)const@4203343, virtual * std::ctype<char>::`vector deleting destructor'(unsigned int)@4203376, virtual * std::codecvt<char, char, int>::`vector deleting destructor'(unsigned int)@4205513, std::locale::_Locimp::_Locimp(bool)@4209322, virtual std::locale::_Locimp::~_Locimp(void)@4209385, virtual * std::locale::_Locimp::`scalar deleting destructor'(unsigned int)@4209452, const std::locale::facet::`vftable'@4268876}
+%   {virtual std::locale::facet::~facet(void)@4202853, const std::locale::facet::`vftable'@4268876}
 %   {virtual std::runtime_error::~runtime_error(void)@4198576}
 %   {virtual std::system_error::~system_error(void)@4198656}
 %   {virtual type_info::~type_info(void)@4210380, virtual * type_info::`scalar deleting destructor'(unsigned int)@4210396, const type_info::`vftable'@4269212}

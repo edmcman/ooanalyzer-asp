@@ -1,85 +1,55 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:45 Grounding done (0.07s)
-17:05:45 Solving...
-17:05:45 Model found (0.32s): [-12, -283]
-17:05:45 Model found (0.32s, +0.01s): [-12, -382]
-17:05:45 Model found (0.33s, +0.00s): [-12, -439]
-17:05:45 Model found (0.34s, +0.02s): [-12, -440]
-17:05:45 Model found (0.36s, +0.01s): [-12, -524]
-17:05:45 Model found (0.37s, +0.02s): [-12, -525]
-17:05:45 Model found (0.39s, +0.02s): [-12, -526]
-17:05:45 Model found (0.43s, +0.04s): [-12, -527]
-17:05:45 Model found (0.51s, +0.08s): [-12, -529]
-17:05:45 Model found (0.65s, +0.13s): [-12, -530]
-17:05:45 Model found (0.67s, +0.03s): [-12, -531]
-17:05:45 Model found (0.69s, +0.02s): [-12, -532]
-17:05:45 Model found (0.70s, +0.01s): [-12, -533]
-17:05:45 Model found (0.70s, +0.01s): [-12, -534]
-17:05:45 Model found (0.71s, +0.01s): [-12, -535]
-17:05:45 Model found (0.72s, +0.01s): [-12, -536]
-17:05:45 Model found (0.73s, +0.01s): [-12, -537]
-17:05:45 Model found (0.74s, +0.01s): [-12, -538]
-17:05:45 Model found (0.74s, +0.01s): [-12, -539]
-17:05:45 Model found (0.75s, +0.01s): [-12, -540]
-17:05:45 Model found (0.76s, +0.01s): [-12, -541]
-17:05:45 Model found (0.77s, +0.01s): [-12, -542]
-17:05:45 Model found (0.78s, +0.01s): [-12, -543]
-17:05:45 Model found (0.78s, +0.00s): [-12, -544]
-17:05:45 Model found (0.79s, +0.01s): [-12, -545]
-17:05:45 Model found (0.80s, +0.01s): [-12, -546]
-17:05:45 Model found (0.81s, +0.01s): [-12, -547]
-17:05:45 Model found (0.82s, +0.01s): [-12, -548]
-17:05:45 Model found (0.83s, +0.01s): [-12, -549]
-17:05:45 Model found (0.84s, +0.01s): [-12, -550]
-17:05:45 Model found (0.84s, +0.00s): [-12, -551]
-17:05:45 Model found (0.94s, +0.09s): [-12, -552]
-17:05:45 Model found (0.94s, +0.01s): [-12, -553]
-17:05:45 Model found (0.95s, +0.01s): [-12, -554]
-17:05:45 Model found (0.96s, +0.01s): [-12, -555]
-17:05:45 Model found (0.97s, +0.01s): [-12, -556]
-17:05:45 Model found (0.98s, +0.01s): [-12, -557]
-17:05:46 Model found (0.99s, +0.01s): [-12, -558]
-17:05:46 Model found (1.00s, +0.01s): [-12, -559]
-17:05:46 Model found (1.01s, +0.00s): [-12, -560]
-17:05:46 Model found (1.02s, +0.01s): [-12, -561]
-17:05:46 Model found (1.03s, +0.01s): [-12, -562]
-17:05:46 Model found (1.04s, +0.01s): [-12, -563]
-17:05:46 Model found (1.06s, +0.03s): [-12, -564]
-17:05:46 Model found (1.08s, +0.01s): [-12, -565]
-17:05:46 Model found (1.09s, +0.01s): [-12, -566]
-17:05:46 Model found (1.10s, +0.01s): [-12, -567]
-17:05:46 Model found (1.11s, +0.01s): [-12, -568]
-17:05:46 Model found (1.12s, +0.01s): [-12, -569]
-17:05:46 Model found (1.13s, +0.01s): [-12, -570]
-17:05:46 Model found (1.14s, +0.01s): [-12, -571]
-17:05:46 Model found (1.15s, +0.01s): [-12, -572]
-17:05:46 Model found (1.17s, +0.02s): [-12, -573]
-17:05:46 Model found (1.19s, +0.01s): [-12, -574]
-17:05:46 Model found (1.19s, +0.01s): [-12, -575]
-17:05:46 Model found (1.20s, +0.01s): [-12, -576]
-17:05:46 Model found (1.21s, +0.01s): [-12, -577]
-17:05:46 Model found (1.23s, +0.02s): [-12, -578]
-17:05:46 Model found (1.24s, +0.01s): [-12, -579]
-17:05:46 Model found (1.25s, +0.01s): [-12, -580]
-17:05:46 Model found (1.33s, +0.08s): [-12, -581]
-17:05:47 Model found (2.54s, +1.21s): [-12, -582]
-17:05:48 Model found (3.03s, +0.49s): [-12, -583]
-17:05:49 Model found (4.10s, +1.07s): [-12, -584]
-17:05:49 Model found (4.37s, +0.27s): [-12, -585]
-17:05:49 Model found (4.46s, +0.09s): [-12, -586]
-17:05:49 Model found (4.55s, +0.09s): [-12, -587]
-17:05:49 Model found (4.81s, +0.26s): [-12, -588]
-17:05:49 Model found (4.83s, +0.02s): [-12, -589]
-17:05:50 Model found (5.33s, +0.50s): [-12, -590]
-17:05:53 Model found (8.92s, +3.59s): [-12, -591]
-17:05:59 Model found (14.38s, +5.47s): [-12, -592]
-17:05:59 Model found (14.41s, +0.02s): [-12, -593]
-17:06:05 Model found (20.12s, +5.71s): [-12, -594]
-17:06:12 Solving done: OPTIMUM FOUND (27.74s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.08s)
+08:15:24 Solving...
+08:15:24 Model found (0.32s): [-12, -439]
+08:15:24 Model found (0.33s, +0.01s): [-12, -475]
+08:15:24 Model found (0.33s, +0.00s): [-12, -476]
+08:15:24 Model found (0.34s, +0.00s): [-12, -477]
+08:15:24 Model found (0.34s, +0.00s): [-12, -478]
+08:15:24 Model found (0.34s, +0.00s): [-12, -479]
+08:15:24 Model found (0.35s, +0.00s): [-12, -484]
+08:15:24 Model found (0.35s, +0.00s): [-12, -485]
+08:15:24 Model found (0.35s, +0.00s): [-12, -486]
+08:15:24 Model found (0.36s, +0.00s): [-12, -487]
+08:15:24 Model found (0.36s, +0.00s): [-12, -488]
+08:15:24 Model found (0.36s, +0.00s): [-12, -489]
+08:15:24 Model found (0.37s, +0.01s): [-12, -493]
+08:15:24 Model found (0.37s, +0.00s): [-12, -494]
+08:15:24 Model found (0.37s, +0.00s): [-12, -495]
+08:15:24 Model found (0.38s, +0.00s): [-12, -496]
+08:15:24 Model found (0.38s, +0.00s): [-12, -497]
+08:15:24 Model found (0.44s, +0.06s): [-12, -564]
+08:15:24 Model found (0.45s, +0.01s): [-12, -565]
+08:15:24 Model found (0.46s, +0.01s): [-12, -566]
+08:15:24 Model found (0.48s, +0.01s): [-12, -567]
+08:15:24 Model found (0.51s, +0.03s): [-12, -568]
+08:15:24 Model found (0.52s, +0.01s): [-12, -569]
+08:15:25 Model found (0.98s, +0.47s): [-12, -571]
+08:15:25 Model found (1.00s, +0.01s): [-12, -572]
+08:15:25 Model found (1.00s, +0.01s): [-12, -576]
+08:15:25 Model found (1.01s, +0.01s): [-12, -577]
+08:15:25 Model found (1.07s, +0.06s): [-12, -578]
+08:15:25 Model found (1.11s, +0.05s): [-12, -579]
+08:15:28 Model found (3.70s, +2.58s): [-12, -580]
+08:15:28 Model found (4.43s, +0.73s): [-12, -581]
+08:15:28 Model found (4.46s, +0.03s): [-12, -582]
+08:15:28 Model found (4.52s, +0.06s): [-12, -583]
+08:15:28 Model found (4.53s, +0.01s): [-12, -584]
+08:15:48 Model found (24.04s, +19.50s): [-12, -585]
+08:15:55 Model found (31.30s, +7.26s): [-12, -586]
+08:15:55 Model found (31.35s, +0.05s): [-12, -587]
+08:15:55 Model found (31.36s, +0.01s): [-12, -588]
+08:15:55 Model found (31.37s, +0.01s): [-12, -589]
+08:15:55 Model found (31.37s, +0.01s): [-12, -590]
+08:15:55 Model found (31.38s, +0.01s): [-12, -591]
+08:16:14 Model found (50.26s, +18.88s): [-12, -592]
+08:16:14 Model found (50.29s, +0.03s): [-12, -593]
+08:16:14 Model found (50.30s, +0.01s): [-12, -594]
+08:16:18 Solving done: OPTIMUM FOUND (54.30s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 74
+Answer: 44
 Optimization: -12 -594
 
 % Equivalence classes (386 classes, 431 entities):
@@ -90,17 +60,17 @@ Optimization: -12 -594
 %   rules: 41224.0
 %   variables: 13159.0
 %   constraints: 86.0
-%   choices: 318481.0
-%   conflicts: 41476.0
-%   models: 74.0
+%   choices: 1215983.0
+%   conflicts: 78973.0
+%   models: 44.0
 %   optimal_models: 1.0
 %   final_cost: [-12.0, -594.0]
 %   lower_bound: [-12.0, -594.0]
-%   total_time: 27.829276084899902
-%   ground_time: 0.07042415300384164
-%   time_to_first_model: 0.3186424537561834
-%   max_rss_bytes: 58904576
-%   solve_time: 27.513862133026123
+%   total_time: 54.39318299293518
+%   ground_time: 0.07603727094829082
+%   time_to_first_model: 0.3206151966005564
+%   max_rss_bytes: 50257920
+%   solve_time: 54.06358289718628
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
@@ -122,14 +92,14 @@ classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::b
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528,char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952)
-classCallsMethod(const std::bad_alloc::`vftable'@4299072,__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156)
 classCallsMethod(const std::bad_alloc::`vftable'@4299072,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264)
+classCallsMethod(const std::bad_alloc::`vftable'@4299072,virtual char const * std::exception::what(void)const@4314156)
 classCallsMethod(const type_info::`vftable'@4299088,virtual * type_info::`vector deleting destructor'(unsigned int)@4277136)
-classCallsMethod(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776,__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
-classCallsMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,__declspec(dllimport) std::_Container_base12::_Orphan_all(void)@4313960)
-classCallsMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,__declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972)
-classCallsMethod(std::bad_alloc::bad_alloc(char const *)@4275024,__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
-classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552,__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
+classCallsMethod(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776,std::_Container_base12::_Container_base12(void)@4313968)
+classCallsMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,std::_Container_base12::_Orphan_all(void)@4313960)
+classCallsMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,std::_Container_base12::~_Container_base12(void)@4313972)
+classCallsMethod(std::bad_alloc::bad_alloc(char const *)@4275024,std::exception::exception(char const * const &)@4314160)
+classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552,std::exception::exception(class std::exception const &)@4314164)
 classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4273456,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4274096)
 classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4273808,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4274304)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024,char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088)
@@ -142,14 +112,15 @@ classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4267072,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264,virtual std::bad_alloc::~bad_alloc(void)@4275152)
-classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4314056)
-classCallsMethod(virtual std::bad_alloc::~bad_alloc(void)@4275152,__declspec(dllimport) virtual std::exception::~exception(void)@4314152)
-constructor(__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
-constructor(__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
-constructor(__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136,type_info::_type_info_dtor_internal_method(void)@4314056)
+classCallsMethod(virtual std::bad_alloc::~bad_alloc(void)@4275152,virtual std::exception::~exception(void)@4314152)
+constructor(std::_Container_base12::_Container_base12(void)@4313968)
 constructor(std::bad_alloc::bad_alloc(char const *)@4275024)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
+constructor(std::exception::exception(char const * const &)@4314160)
+constructor(std::exception::exception(class std::exception const &)@4314164)
 constructor(type_info::type_info(class type_info const &)@4277088)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4275152)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136)
 guessEnabled(constructor)
@@ -159,42 +130,28 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4313920,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944)
-mergeClasses(__declspec(dllimport) __int64 std::ios_base::width(void)const@4313920,__declspec(dllimport) int std::ios_base::flags(void)const@4313924)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4313908,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4313908,__declspec(dllimport) __int64 std::ios_base::width(void)const@4313920)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4313908,__declspec(dllimport) int std::ios_base::flags(void)const@4313924)
-mergeClasses(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932)
-mergeClasses(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
-mergeClasses(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
-mergeClasses(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4313936,__declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4313940)
-mergeClasses(__declspec(dllimport) int std::ios_base::flags(void)const@4313924,__declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944)
-mergeClasses(__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968,__declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972)
-mergeClasses(__declspec(dllimport) std::_Container_base12::_Orphan_all(void)@4313960,__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
-mergeClasses(__declspec(dllimport) std::_Container_base12::_Orphan_all(void)@4313960,__declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972)
-mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916)
-mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964)
-mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
-mergeClasses(__declspec(dllimport) std::exception::exception(char const * const &)@4314160,__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
-mergeClasses(__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156,__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
-mergeClasses(__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156,__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
-mergeClasses(__declspec(dllimport) virtual std::exception::~exception(void)@4314152,__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
-mergeClasses(__declspec(dllimport) virtual std::exception::~exception(void)@4314152,__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
-mergeClasses(__declspec(dllimport) virtual std::exception::~exception(void)@4314152,__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156)
+mergeClasses(__int64 std::ios_base::width(void)const@4313920,__int64 std::ios_base::width(__int64)@4313944)
+mergeClasses(__int64 std::ios_base::width(void)const@4313920,int std::ios_base::flags(void)const@4313924)
 mergeClasses(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 mergeClasses(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@4270432)
 mergeClasses(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4270880)
+mergeClasses(bool std::ios_base::good(void)const@4313908,__int64 std::ios_base::width(__int64)@4313944)
+mergeClasses(bool std::ios_base::good(void)const@4313908,__int64 std::ios_base::width(void)const@4313920)
+mergeClasses(bool std::ios_base::good(void)const@4313908,int std::ios_base::flags(void)const@4313924)
 mergeClasses(char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4270304)
 mergeClasses(char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488)
 mergeClasses(char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528)
 mergeClasses(char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 mergeClasses(char const * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)const@4269840,char const * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::c_str(void)const@4273376)
+mergeClasses(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932)
+mergeClasses(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
+mergeClasses(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
 mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640)
 mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048)
 mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4270304)
@@ -204,16 +161,24 @@ mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic
 mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048)
 mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528)
 mergeClasses(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952)
-mergeClasses(const std::bad_alloc::`vftable'@4299072,__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156)
 mergeClasses(const std::bad_alloc::`vftable'@4299072,std::bad_alloc::bad_alloc(char const *)@4275024)
 mergeClasses(const std::bad_alloc::`vftable'@4299072,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
+mergeClasses(const std::bad_alloc::`vftable'@4299072,virtual char const * std::exception::what(void)const@4314156)
 mergeClasses(const std::bad_alloc::`vftable'@4299072,virtual std::bad_alloc::~bad_alloc(void)@4275152)
 mergeClasses(const type_info::`vftable'@4299088,type_info::type_info(class type_info const &)@4277088)
-mergeClasses(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776,__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
-mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,__declspec(dllimport) std::_Container_base12::_Orphan_all(void)@4313960)
-mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,__declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972)
+mergeClasses(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4313936,__int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4313940)
+mergeClasses(int std::ios_base::flags(void)const@4313924,__int64 std::ios_base::width(__int64)@4313944)
+mergeClasses(std::_Container_base12::_Container_base12(void)@4313968,std::_Container_base12::~_Container_base12(void)@4313972)
+mergeClasses(std::_Container_base12::_Orphan_all(void)@4313960,std::_Container_base12::_Container_base12(void)@4313968)
+mergeClasses(std::_Container_base12::_Orphan_all(void)@4313960,std::_Container_base12::~_Container_base12(void)@4313972)
+mergeClasses(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776,std::_Container_base12::_Container_base12(void)@4313968)
+mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,std::_Container_base12::_Orphan_all(void)@4313960)
+mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,std::_Container_base12::~_Container_base12(void)@4313972)
 mergeClasses(std::bad_alloc::bad_alloc(char const *)@4275024,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 mergeClasses(std::bad_alloc::bad_alloc(char const *)@4275024,virtual std::bad_alloc::~bad_alloc(void)@4275152)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
 mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4273456,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4274096)
 mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4273808,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4274304)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048)
@@ -228,19 +193,25 @@ mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4267072,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
+mergeClasses(std::exception::exception(char const * const &)@4314160,std::exception::exception(class std::exception const &)@4314164)
 mergeClasses(unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4270880,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066,std::bad_alloc::bad_alloc(char const *)@4275024)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066,virtual std::bad_alloc::~bad_alloc(void)@4275152)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264,const std::bad_alloc::`vftable'@4299072)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264301,type_info::type_info(class type_info const &)@4277088)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4314056)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136,const type_info::`vftable'@4299088)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136,type_info::_type_info_dtor_internal_method(void)@4314056)
 mergeClasses(virtual char const * std::exception::what(void)const@4264846,std::bad_alloc::bad_alloc(char const *)@4275024)
 mergeClasses(virtual char const * std::exception::what(void)const@4264846,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 mergeClasses(virtual char const * std::exception::what(void)const@4264846,virtual std::bad_alloc::~bad_alloc(void)@4275152)
+mergeClasses(virtual char const * std::exception::what(void)const@4314156,std::exception::exception(char const * const &)@4314160)
+mergeClasses(virtual char const * std::exception::what(void)const@4314156,std::exception::exception(class std::exception const &)@4314164)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4275152,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4275152,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264)
+mergeClasses(virtual std::exception::~exception(void)@4314152,std::exception::exception(char const * const &)@4314160)
+mergeClasses(virtual std::exception::~exception(void)@4314152,std::exception::exception(class std::exception const &)@4314164)
+mergeClasses(virtual std::exception::~exception(void)@4314152,virtual char const * std::exception::what(void)const@4314156)
 method($LN11@4281602)
 method($LN6_1@4282579)
 method(* __cdecl operator new(unsigned int)@4264721)
@@ -316,28 +287,6 @@ method(__cexit@4283028)
 method(__configthreadlocale@4282090)
 method(__controlfp_s@4285288)
 method(__crt_debugger_hook@4285270)
-method(__declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4313940)
-method(__declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944)
-method(__declspec(dllimport) __int64 std::ios_base::width(void)const@4313920)
-method(__declspec(dllimport) bool std::ios_base::good(void)const@4313908)
-method(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912)
-method(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932)
-method(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4313936)
-method(__declspec(dllimport) int std::ios_base::flags(void)const@4313924)
-method(__declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968)
-method(__declspec(dllimport) std::_Container_base12::_Orphan_all(void)@4313960)
-method(__declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972)
-method(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
-method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904)
-method(__declspec(dllimport) std::exception::exception(char const * const &)@4314160)
-method(__declspec(dllimport) std::exception::exception(class std::exception const &)@4314164)
-method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4314056)
-method(__declspec(dllimport) virtual char const * std::exception::what(void)const@4314156)
-method(__declspec(dllimport) virtual std::exception::~exception(void)@4314152)
 method(__ehhandler$??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z@4289592)
 method(__ehhandler$??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z@4289426)
 method(__ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z@4289320)
@@ -363,10 +312,13 @@ method(__initterm@4283692)
 method(__initterm_e@4283698)
 method(__int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4264216)
 method(__int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4276330)
+method(__int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4313940)
 method(__int64 std::ios_base::width(__int64)@4264621)
 method(__int64 std::ios_base::width(__int64)@4276324)
+method(__int64 std::ios_base::width(__int64)@4313944)
 method(__int64 std::ios_base::width(void)const@4264241)
 method(__int64 std::ios_base::width(void)const@4276360)
+method(__int64 std::ios_base::width(void)const@4313920)
 method(__invoke_watson@4285294)
 method(__invoke_watson_if_error@4282176)
 method(__lock@4285312)
@@ -463,6 +415,7 @@ method(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const
 method(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4270304)
 method(bool std::ios_base::good(void)const@4263966)
 method(bool std::ios_base::good(void)const@4276378)
+method(bool std::ios_base::good(void)const@4313908)
 method(char * __cdecl std::_Allocate<char>(unsigned int, char *)@4264556)
 method(char * __cdecl std::_Allocate<char>(unsigned int, char *)@4275376)
 method(char * std::allocator<char>::allocate(unsigned int)@4264046)
@@ -475,6 +428,7 @@ method(char const * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::c_str(void
 method(char const * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::c_str(void)const@4273376)
 method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264786)
 method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4276348)
+method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928)
 method(check_managed_app@4278432)
 method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264136)
 method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4276276)
@@ -482,14 +436,19 @@ method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<cha
 method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@4271792)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264506)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4276366)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264486)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4276270)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4264191)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4276282)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976)
 method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264251)
 method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4276372)
+method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912)
 method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264041)
 method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4276342)
+method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932)
 method(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4263951)
 method(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248)
 method(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4264116)
@@ -511,8 +470,10 @@ method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, in
 method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4283776)
 method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264276)
 method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4276336)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4313936)
 method(int std::ios_base::flags(void)const@4264816)
 method(int std::ios_base::flags(void)const@4276354)
+method(int std::ios_base::flags(void)const@4313924)
 method(j__NtCurrentTeb@4264441)
 method(j___CRT_RTC_INITW@4264681)
 method(j___CrtDbgReportW@4264111)
@@ -582,10 +543,13 @@ method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@
 method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4267392)
 method(std::_Container_base12::_Container_base12(void)@4264446)
 method(std::_Container_base12::_Container_base12(void)@4276294)
+method(std::_Container_base12::_Container_base12(void)@4313968)
 method(std::_Container_base12::_Orphan_all(void)@4263961)
 method(std::_Container_base12::_Orphan_all(void)@4276300)
+method(std::_Container_base12::_Orphan_all(void)@4313960)
 method(std::_Container_base12::~_Container_base12(void)@4264391)
 method(std::_Container_base12::~_Container_base12(void)@4276288)
+method(std::_Container_base12::~_Container_base12(void)@4313972)
 method(std::_Container_proxy::_Container_proxy(void)@4264351)
 method(std::_Container_proxy::_Container_proxy(void)@4268112)
 method(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4264801)
@@ -610,8 +574,10 @@ method(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4264531)
 method(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
 method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264076)
 method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4276318)
+method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264876)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4276384)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264841)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4274096)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264491)
@@ -636,14 +602,17 @@ method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4264561)
 method(std::exception::exception(char const * const &)@4264676)
 method(std::exception::exception(char const * const &)@4277308)
+method(std::exception::exception(char const * const &)@4314160)
 method(std::exception::exception(class std::exception const &)@4264761)
 method(std::exception::exception(class std::exception const &)@4277302)
+method(std::exception::exception(class std::exception const &)@4314164)
 method(struct std::_Container_proxy && __cdecl std::forward<struct std::_Container_proxy>(struct std::_Container_proxy &)@4264341)
 method(struct std::_Container_proxy && __cdecl std::forward<struct std::_Container_proxy>(struct std::_Container_proxy &)@4276160)
 method(struct std::_Container_proxy * __cdecl std::_Allocate<struct std::_Container_proxy>(unsigned int, struct std::_Container_proxy *)@4264451)
 method(struct std::_Container_proxy * __cdecl std::_Allocate<struct std::_Container_proxy>(unsigned int, struct std::_Container_proxy *)@4274848)
 method(struct std::_Container_proxy * std::allocator<struct std::_Container_proxy>::allocate(unsigned int)@4264521)
 method(struct std::_Container_proxy * std::allocator<struct std::_Container_proxy>::allocate(unsigned int)@4269392)
+method(type_info::_type_info_dtor_internal_method(void)@4314056)
 method(type_info::type_info(class type_info const &)@4264766)
 method(type_info::type_info(class type_info const &)@4277088)
 method(unsigned int std::allocator<char>::max_size(void)const@4264711)
@@ -657,16 +626,17 @@ method(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264301)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4277136)
 method(virtual char const * std::exception::what(void)const@4277314)
+method(virtual char const * std::exception::what(void)const@4314156)
 method(virtual std::bad_alloc::~bad_alloc(void)@4264056)
 method(virtual std::bad_alloc::~bad_alloc(void)@4275152)
 method(virtual std::exception::~exception(void)@4264886)
 method(virtual std::exception::~exception(void)@4277320)
+method(virtual std::exception::~exception(void)@4314152)
 method(virtual type_info::~type_info(void)@4264071)
 method(virtual type_info::~type_info(void)@4264186)
 method(virtual type_info::~type_info(void)@4285282)
-realDestructor(__declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972)
-realDestructor(__declspec(dllimport) virtual std::exception::~exception(void)@4314152)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4275152)
+realDestructor(std::_Container_base12::~_Container_base12(void)@4313972)
+realDestructor(virtual std::exception::~exception(void)@4314152)
 vfTable(const std::bad_alloc::`vftable'@4299072)
 vfTable(const type_info::`vftable'@4299088)
 vfTableEntry(const std::bad_alloc::`vftable'@4299072,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066)
@@ -757,10 +727,6 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {__configthreadlocale@4282090}
 %   {__controlfp_s@4285288}
 %   {__crt_debugger_hook@4285270}
-%   {__declspec(dllimport) bool std::ios_base::good(void)const@4313908, __declspec(dllimport) __int64 std::ios_base::width(void)const@4313920, __declspec(dllimport) int std::ios_base::flags(void)const@4313924, __declspec(dllimport) __int64 std::ios_base::width(__int64)@4313944}
-%   {__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912, __declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928, __declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932, __declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948}
-%   {__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4313936, __declspec(dllimport) __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4313940}
-%   {__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976}
 %   {__ehhandler$??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z@4289592}
 %   {__ehhandler$??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z@4289426}
 %   {__ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z@4289320}
@@ -884,6 +850,7 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4263946}
 %   {bool std::ios_base::good(void)const@4263966}
 %   {bool std::ios_base::good(void)const@4276378}
+%   {bool std::ios_base::good(void)const@4313908, __int64 std::ios_base::width(void)const@4313920, int std::ios_base::flags(void)const@4313924, __int64 std::ios_base::width(__int64)@4313944}
 %   {char * __cdecl std::_Allocate<char>(unsigned int, char *)@4264556}
 %   {char * __cdecl std::_Allocate<char>(unsigned int, char *)@4275376}
 %   {char * std::allocator<char>::allocate(unsigned int)@4264046}
@@ -907,6 +874,7 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4276282}
 %   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264251}
 %   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4276372}
+%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4313912, char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4313928, class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4313932, std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4313948}
 %   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264041}
 %   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4276342}
 %   {class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4263951}
@@ -926,6 +894,7 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4283776}
 %   {int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264276}
 %   {int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4276336}
+%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4313936, __int64 std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, __int64)@4313940}
 %   {int std::ios_base::flags(void)const@4264816}
 %   {int std::ios_base::flags(void)const@4276354}
 %   {j__NtCurrentTeb@4264441}
@@ -1004,7 +973,7 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {std::_Container_proxy::_Container_proxy(void)@4264351}
 %   {std::_Container_proxy::_Container_proxy(void)@4268112}
 %   {std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4264801}
-%   {std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776, std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192, __declspec(dllimport) std::_Container_base12::_Orphan_all(void)@4313960, __declspec(dllimport) std::_Container_base12::_Container_base12(void)@4313968, __declspec(dllimport) std::_Container_base12::~_Container_base12(void)@4313972}
+%   {std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776, std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192, std::_Container_base12::_Orphan_all(void)@4313960, std::_Container_base12::_Container_base12(void)@4313968, std::_Container_base12::~_Container_base12(void)@4313972}
 %   {std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4264466}
 %   {std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@4263976}
 %   {std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@4268576}
@@ -1026,6 +995,7 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4276318}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264876}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4276384}
+%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4313904, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4313916, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4313964, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4313976}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264841}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264491}
 %   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator int std::_Bool_struct::*(void)const@4264081}
@@ -1058,9 +1028,9 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4264646}
 %   {unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::size(void)const@4264656}
 %   {unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::size(void)const@4269776}
-%   {virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066, virtual char const * std::exception::what(void)const@4264846, std::bad_alloc::bad_alloc(char const *)@4275024, virtual std::bad_alloc::~bad_alloc(void)@4275152, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552, const std::bad_alloc::`vftable'@4299072, __declspec(dllimport) virtual std::exception::~exception(void)@4314152, __declspec(dllimport) virtual char const * std::exception::what(void)const@4314156, __declspec(dllimport) std::exception::exception(char const * const &)@4314160, __declspec(dllimport) std::exception::exception(class std::exception const &)@4314164}
+%   {virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264066, virtual char const * std::exception::what(void)const@4264846, std::bad_alloc::bad_alloc(char const *)@4275024, virtual std::bad_alloc::~bad_alloc(void)@4275152, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552, const std::bad_alloc::`vftable'@4299072, virtual std::exception::~exception(void)@4314152, virtual char const * std::exception::what(void)const@4314156, std::exception::exception(char const * const &)@4314160, std::exception::exception(class std::exception const &)@4314164}
 %   {virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4264336}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264301, type_info::type_info(class type_info const &)@4277088, virtual * type_info::`vector deleting destructor'(unsigned int)@4277136, const type_info::`vftable'@4299088, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4314056}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264301, type_info::type_info(class type_info const &)@4277088, virtual * type_info::`vector deleting destructor'(unsigned int)@4277136, const type_info::`vftable'@4299088, type_info::_type_info_dtor_internal_method(void)@4314056}
 %   {virtual char const * std::exception::what(void)const@4277314}
 %   {virtual std::bad_alloc::~bad_alloc(void)@4264056}
 %   {virtual std::exception::~exception(void)@4264886}

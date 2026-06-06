@@ -1,14 +1,13 @@
-Domain options require heuristic 'Domain'!
-17:05:44 Grounding...
-17:05:44 Grounding done (0.01s)
-17:05:44 Solving...
-17:05:44 Model found (0.02s): [-199]
-17:05:44 Model found (0.02s, +0.00s): [-207]
-17:05:44 Model found (0.02s, +0.00s): [-208]
-17:05:44 Solving done: OPTIMUM FOUND (0.01s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.01s)
+08:15:24 Solving...
+08:15:24 Model found (0.02s): [-207]
+08:15:24 Model found (0.02s, +0.00s): [-208]
+08:15:24 Solving done: OPTIMUM FOUND (0.00s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex0.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 2
 Optimization: -208
 
 % Equivalence classes (206 classes, 207 entities):
@@ -19,17 +18,17 @@ Optimization: -208
 %   rules: 5008.0
 %   variables: 628.0
 %   constraints: 0.0
-%   choices: 1672.0
+%   choices: 418.0
 %   conflicts: 0.0
-%   models: 3.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-208.0]
 %   lower_bound: [-208.0]
-%   total_time: 0.02560901641845703
-%   ground_time: 0.012070291209965944
-%   time_to_first_model: 0.015380249824374914
+%   total_time: 0.023864030838012695
+%   ground_time: 0.01227367389947176
+%   time_to_first_model: 0.01529987482354045
 %   max_rss_bytes: 25165824
-%   solve_time: 0.0030760765075683594
+%   solve_time: 0.0011289119720458984
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@4265840,ClassA::~ClassA(void)@4265552)
 deletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)@4265840)
 guessEnabled(constructor)

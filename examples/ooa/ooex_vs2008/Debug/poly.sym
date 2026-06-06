@@ -1,26 +1,41 @@
-Domain options require heuristic 'Domain'!
-17:05:44 Grounding...
-17:05:44 Grounding done (0.05s)
-17:05:44 Solving...
-17:05:44 Model found (0.22s): [-20, -266]
-17:05:44 Model found (0.22s, +0.00s): [-20, -335]
-17:05:44 Model found (0.23s, +0.01s): [-20, -341]
-17:05:44 Model found (0.24s, +0.01s): [-20, -350]
-17:05:44 Model found (0.24s, +0.01s): [-20, -359]
-17:05:44 Model found (0.25s, +0.01s): [-20, -368]
-17:05:44 Model found (0.26s, +0.01s): [-20, -369]
-17:05:44 Model found (0.28s, +0.02s): [-20, -370]
-17:05:45 Model found (0.29s, +0.01s): [-20, -371]
-17:05:45 Model found (0.29s, +0.01s): [-20, -372]
-17:05:45 Model found (0.30s, +0.01s): [-20, -373]
-17:05:45 Model found (0.31s, +0.01s): [-20, -374]
-17:05:45 Model found (0.32s, +0.01s): [-20, -375]
-17:05:45 Model found (0.33s, +0.01s): [-20, -376]
-17:05:45 Model found (0.34s, +0.01s): [-20, -392]
-17:05:45 Solving done: OPTIMUM FOUND (0.30s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.05s)
+08:15:24 Solving...
+08:15:24 Model found (0.22s): [-20, -254]
+08:15:24 Model found (0.22s, +0.00s): [-20, -335]
+08:15:24 Model found (0.22s, +0.00s): [-20, -341]
+08:15:24 Model found (0.23s, +0.00s): [-20, -350]
+08:15:24 Model found (0.23s, +0.00s): [-20, -359]
+08:15:24 Model found (0.23s, +0.00s): [-20, -368]
+08:15:24 Model found (0.23s, +0.00s): [-20, -369]
+08:15:24 Model found (0.23s, +0.00s): [-20, -370]
+08:15:24 Model found (0.24s, +0.00s): [-20, -371]
+08:15:24 Model found (0.24s, +0.00s): [-20, -372]
+08:15:24 Model found (0.24s, +0.00s): [-20, -373]
+08:15:24 Model found (0.24s, +0.00s): [-20, -374]
+08:15:24 Model found (0.24s, +0.00s): [-20, -375]
+08:15:24 Model found (0.25s, +0.00s): [-20, -376]
+08:15:24 Model found (0.25s, +0.00s): [-20, -377]
+08:15:24 Model found (0.25s, +0.00s): [-20, -378]
+08:15:24 Model found (0.26s, +0.00s): [-20, -379]
+08:15:24 Model found (0.26s, +0.00s): [-20, -380]
+08:15:24 Model found (0.26s, +0.00s): [-20, -381]
+08:15:24 Model found (0.27s, +0.00s): [-20, -382]
+08:15:24 Model found (0.27s, +0.00s): [-20, -383]
+08:15:24 Model found (0.27s, +0.00s): [-20, -384]
+08:15:24 Model found (0.28s, +0.00s): [-20, -385]
+08:15:24 Model found (0.28s, +0.00s): [-20, -386]
+08:15:24 Model found (0.28s, +0.00s): [-20, -387]
+08:15:24 Model found (0.28s, +0.00s): [-20, -388]
+08:15:24 Model found (0.29s, +0.00s): [-20, -389]
+08:15:24 Model found (0.29s, +0.00s): [-20, -390]
+08:15:24 Model found (0.29s, +0.00s): [-20, -391]
+08:15:24 Model found (0.29s, +0.00s): [-20, -392]
+08:15:24 Solving done: OPTIMUM FOUND (0.24s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 15
+Answer: 30
 Optimization: -20 -392
 
 % Equivalence classes (281 classes, 310 entities):
@@ -31,17 +46,17 @@ Optimization: -20 -392
 %   rules: 27465.0
 %   variables: 9587.0
 %   constraints: 13.0
-%   choices: 7720.0
-%   conflicts: 28.0
-%   models: 15.0
+%   choices: 3529.0
+%   conflicts: 33.0
+%   models: 30.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -392.0]
 %   lower_bound: [-20.0, -392.0]
-%   total_time: 0.3552861213684082
-%   ground_time: 0.045996304135769606
-%   time_to_first_model: 0.21905948920175433
-%   max_rss_bytes: 48758784
-%   solve_time: 0.13445091247558594
+%   total_time: 0.30089688301086426
+%   ground_time: 0.0497341831214726
+%   time_to_first_model: 0.22003347193822265
+%   max_rss_bytes: 40108032
+%   solve_time: 0.07319402694702148
 classCallsMethod(Circle::Circle(void)@4265952,Shape::Shape(void)@4266400)
 classCallsMethod(Rectangle::Rectangle(void)@4265728,Shape::Shape(void)@4266400)
 classCallsMethod(Triangle::Triangle(void)@4266176,Shape::Shape(void)@4266400)
@@ -51,7 +66,7 @@ classCallsMethod(const Triangle::`vftable'@4290632,virtual Triangle::draw(void)@
 classCallsMethod(const type_info::`vftable'@4290676,virtual * type_info::`vector deleting destructor'(unsigned int)@4269536)
 classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4267888,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512)
 classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4268704)
-classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305840)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,type_info::_type_info_dtor_internal_method(void)@4305840)
 constructor(Circle::Circle(void)@4265952)
 constructor(Rectangle::Rectangle(void)@4265728)
 constructor(Shape::Shape(void)@4266400)
@@ -68,40 +83,40 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305676,__declspec(dllimport) int std::ios_base::flags(void)const@4305732)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305676,__declspec(dllimport) int std::ios_base::width(int)@4305704)
-mergeClasses(__declspec(dllimport) bool std::ios_base::good(void)const@4305676,__declspec(dllimport) int std::ios_base::width(void)const@4305736)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
-mergeClasses(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700)
-mergeClasses(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-mergeClasses(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-mergeClasses(__declspec(dllimport) int std::ios_base::flags(void)const@4305732,__declspec(dllimport) int std::ios_base::width(void)const@4305736)
-mergeClasses(__declspec(dllimport) int std::ios_base::width(int)@4305704,__declspec(dllimport) int std::ios_base::flags(void)const@4305732)
-mergeClasses(__declspec(dllimport) int std::ios_base::width(int)@4305704,__declspec(dllimport) int std::ios_base::width(void)const@4305736)
-mergeClasses(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712,__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305716)
-mergeClasses(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712,__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
-mergeClasses(__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305716,__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
-mergeClasses(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700,__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-mergeClasses(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700,__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
-mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684)
-mergeClasses(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672,__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
-mergeClasses(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-mergeClasses(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
-mergeClasses(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-mergeClasses(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
-mergeClasses(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
+mergeClasses(bool std::ios_base::good(void)const@4305676,int std::ios_base::flags(void)const@4305732)
+mergeClasses(bool std::ios_base::good(void)const@4305676,int std::ios_base::width(int)@4305704)
+mergeClasses(bool std::ios_base::good(void)const@4305676,int std::ios_base::width(void)const@4305736)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700)
+mergeClasses(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
 mergeClasses(const Circle::`vftable'@4290600,Circle::Circle(void)@4265952)
 mergeClasses(const Rectangle::`vftable'@4290564,Rectangle::Rectangle(void)@4265728)
 mergeClasses(const Shape::`vftable'@4290664,Shape::Shape(void)@4266400)
 mergeClasses(const Triangle::`vftable'@4290632,Triangle::Triangle(void)@4266176)
 mergeClasses(const type_info::`vftable'@4290676,type_info::type_info(class type_info const &)@4269488)
+mergeClasses(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
+mergeClasses(int std::ios_base::flags(void)const@4305732,int std::ios_base::width(void)const@4305736)
+mergeClasses(int std::ios_base::width(int)@4305704,int std::ios_base::flags(void)const@4305732)
+mergeClasses(int std::ios_base::width(int)@4305704,int std::ios_base::width(void)const@4305736)
+mergeClasses(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712,static int __cdecl std::char_traits<char>::eof(void)@4305716)
+mergeClasses(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712,static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
+mergeClasses(static int __cdecl std::char_traits<char>::eof(void)@4305716,static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
+mergeClasses(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
+mergeClasses(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
 mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4267888,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512)
 mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4268704)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226,type_info::type_info(class type_info const &)@4269488)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305840)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,const type_info::`vftable'@4290676)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,type_info::_type_info_dtor_internal_method(void)@4305840)
 mergeClasses(virtual Circle::draw(void)@4263941,Circle::Circle(void)@4265952)
 mergeClasses(virtual Circle::draw(void)@4266048,const Circle::`vftable'@4290600)
 mergeClasses(virtual Rectangle::draw(void)@4264001,Rectangle::Rectangle(void)@4265728)
@@ -168,25 +183,6 @@ method(__cexit@4275630)
 method(__configthreadlocale@4274650)
 method(__controlfp_s@4277854)
 method(__crt_debugger_hook@4277848)
-method(__declspec(dllimport) bool std::ios_base::good(void)const@4305676)
-method(__declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
-method(__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680)
-method(__declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
-method(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-method(__declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
-method(__declspec(dllimport) int std::ios_base::flags(void)const@4305732)
-method(__declspec(dllimport) int std::ios_base::width(int)@4305704)
-method(__declspec(dllimport) int std::ios_base::width(void)const@4305736)
-method(__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712)
-method(__declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305716)
-method(__declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
-method(__declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700)
-method(__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672)
-method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
-method(__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660)
-method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305840)
 method(__decode_pointer@4277884)
 method(__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282040)
 method(__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282088)
@@ -284,8 +280,10 @@ method(bool __cdecl std::uncaught_exception(void)@4264151)
 method(bool __cdecl std::uncaught_exception(void)@4277998)
 method(bool std::ios_base::good(void)const@4263956)
 method(bool std::ios_base::good(void)const@4277986)
+method(bool std::ios_base::good(void)const@4305676)
 method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264526)
 method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4277950)
+method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
 method(check_managed_app@4270864)
 method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264096)
 method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4277902)
@@ -293,12 +291,16 @@ method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHA
 method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4266480)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264346)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4277974)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264331)
 method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4277896)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
 method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264186)
 method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4277980)
+method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680)
 method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264031)
 method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4277944)
+method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
 method(class type_info & type_info::operator=(class type_info const &)@4263996)
 method(class type_info & type_info::operator=(class type_info const &)@4269680)
 method(failwithmessage@4271424)
@@ -310,14 +312,19 @@ method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, in
 method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4276368)
 method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264201)
 method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4277938)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
 method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4264456)
 method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4277920)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
 method(int std::ios_base::flags(void)const@4264551)
 method(int std::ios_base::flags(void)const@4277956)
+method(int std::ios_base::flags(void)const@4305732)
 method(int std::ios_base::width(int)@4264191)
 method(int std::ios_base::width(int)@4277914)
+method(int std::ios_base::width(int)@4305704)
 method(int std::ios_base::width(void)const@4264211)
 method(int std::ios_base::width(void)const@4277962)
+method(int std::ios_base::width(void)const@4305736)
 method(j__DebuggerKnownHandle@4264571)
 method(j__NtCurrentTeb@4264306)
 method(j___CRT_RTC_INITW@4264446)
@@ -378,14 +385,19 @@ method(pre_cpp_init@4269968)
 method(start@4264351)
 method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141)
 method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4277926)
+method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712)
 method(static int __cdecl std::char_traits<char>::eof(void)@4264281)
 method(static int __cdecl std::char_traits<char>::eof(void)@4277932)
+method(static int __cdecl std::char_traits<char>::eof(void)@4305716)
 method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126)
 method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4277968)
+method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
 method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264051)
 method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4277908)
+method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264606)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4277992)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264581)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512)
 method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264336)
@@ -398,8 +410,11 @@ method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4264286)
 method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240)
 method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4264276)
 method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278004)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
 method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116)
 method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278010)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660)
+method(type_info::_type_info_dtor_internal_method(void)@4305840)
 method(type_info::type_info(class type_info const &)@4264511)
 method(type_info::type_info(class type_info const &)@4269488)
 method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
@@ -498,11 +513,6 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {__configthreadlocale@4274650}
 %   {__controlfp_s@4277854}
 %   {__crt_debugger_hook@4277848}
-%   {__declspec(dllimport) bool std::ios_base::good(void)const@4305676, __declspec(dllimport) int std::ios_base::width(int)@4305704, __declspec(dllimport) int std::ios_base::flags(void)const@4305732, __declspec(dllimport) int std::ios_base::width(void)const@4305736}
-%   {__declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680, __declspec(dllimport) std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700, __declspec(dllimport) class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724, __declspec(dllimport) char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728}
-%   {__declspec(dllimport) static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712, __declspec(dllimport) static int __cdecl std::char_traits<char>::eof(void)@4305716, __declspec(dllimport) static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740}
-%   {__declspec(dllimport) std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684, __declspec(dllimport) class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688}
-%   {__declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660, __declspec(dllimport) std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664, __declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708, __declspec(dllimport) int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720}
 %   {__decode_pointer@4277884}
 %   {__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282040}
 %   {__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282088}
@@ -600,6 +610,7 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {bool __cdecl std::uncaught_exception(void)@4277998}
 %   {bool std::ios_base::good(void)const@4263956}
 %   {bool std::ios_base::good(void)const@4277986}
+%   {bool std::ios_base::good(void)const@4305676, int std::ios_base::width(int)@4305704, int std::ios_base::flags(void)const@4305732, int std::ios_base::width(void)const@4305736}
 %   {char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264526}
 %   {char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4277950}
 %   {check_managed_app@4270864}
@@ -613,6 +624,7 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4277896}
 %   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264186}
 %   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4277980}
+%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680, std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700, class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724, char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728}
 %   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264031}
 %   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4277944}
 %   {class type_info & type_info::operator=(class type_info const &)@4263996}
@@ -694,6 +706,7 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {start@4264351}
 %   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141}
 %   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4277926}
+%   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712, static int __cdecl std::char_traits<char>::eof(void)@4305716, static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740}
 %   {static int __cdecl std::char_traits<char>::eof(void)@4264281}
 %   {static int __cdecl std::char_traits<char>::eof(void)@4277932}
 %   {static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126}
@@ -702,6 +715,7 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4277908}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264606}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4277992}
+%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264581}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264336}
 %   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263991}
@@ -714,8 +728,9 @@ vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(
 %   {std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278004}
 %   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116}
 %   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278010}
+%   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660, std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664, int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708, int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720}
 %   {type_info::type_info(class type_info const &)@4264511}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264226, type_info::type_info(class type_info const &)@4269488, virtual * type_info::`vector deleting destructor'(unsigned int)@4269536, const type_info::`vftable'@4290676, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4305840}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264226, type_info::type_info(class type_info const &)@4269488, virtual * type_info::`vector deleting destructor'(unsigned int)@4269536, const type_info::`vftable'@4290676, type_info::_type_info_dtor_internal_method(void)@4305840}
 %   {virtual Circle::draw(void)@4263941, Circle::Circle(void)@4265952, virtual Circle::draw(void)@4266048, const Circle::`vftable'@4290600}
 %   {virtual Rectangle::draw(void)@4264001, Rectangle::Rectangle(void)@4265728, virtual Rectangle::draw(void)@4265824, const Rectangle::`vftable'@4290564}
 %   {virtual Triangle::draw(void)@4264561, Triangle::Triangle(void)@4266176, virtual Triangle::draw(void)@4266272, const Triangle::`vftable'@4290632}

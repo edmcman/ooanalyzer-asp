@@ -1,32 +1,18 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:45 Grounding done (0.02s)
-17:05:45 Solving...
-17:05:45 Model found (0.05s): [-12, -94]
-17:05:45 Model found (0.05s, +0.01s): [-12, -184]
-17:05:45 Model found (0.06s, +0.01s): [-20, -100]
-17:05:45 Model found (0.08s, +0.02s): [-20, -185]
-17:05:45 Model found (0.09s, +0.01s): [-20, -186]
-17:05:45 Model found (0.09s, +0.00s): [-20, -303]
-17:05:45 Model found (0.10s, +0.01s): [-20, -304]
-17:05:45 Model found (0.11s, +0.01s): [-20, -305]
-17:05:45 Model found (0.12s, +0.01s): [-20, -306]
-17:05:45 Model found (0.13s, +0.01s): [-20, -307]
-17:05:45 Model found (0.14s, +0.01s): [-20, -308]
-17:05:45 Model found (0.15s, +0.01s): [-20, -309]
-17:05:45 Model found (0.15s, +0.01s): [-20, -310]
-17:05:45 Model found (0.16s, +0.01s): [-20, -312]
-17:05:45 Model found (0.18s, +0.02s): [-20, -337]
-17:05:45 Model found (0.20s, +0.03s): [-20, -338]
-17:05:45 Model found (0.21s, +0.00s): [-20, -355]
-17:05:45 Model found (0.25s, +0.04s): [-20, -356]
-17:05:45 Model found (0.26s, +0.01s): [-20, -357]
-17:05:45 Model found (0.29s, +0.03s): [-20, -358]
-17:05:45 Model found (0.29s, +0.01s): [-20, -359]
-17:05:45 Solving done: OPTIMUM FOUND (0.28s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.02s)
+08:15:24 Solving...
+08:15:24 Model found (0.04s): [-12, -184]
+08:15:24 Model found (0.04s, +0.00s): [-20, -185]
+08:15:24 Model found (0.05s, +0.01s): [-20, -350]
+08:15:24 Model found (0.06s, +0.00s): [-20, -354]
+08:15:24 Model found (0.08s, +0.02s): [-20, -357]
+08:15:24 Model found (0.08s, +0.00s): [-20, -358]
+08:15:24 Model found (0.09s, +0.01s): [-20, -359]
+08:15:24 Solving done: OPTIMUM FOUND (0.08s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex2.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 21
+Answer: 7
 Optimization: -20 -359
 
 % Equivalence classes (162 classes, 177 entities):
@@ -37,17 +23,17 @@ Optimization: -20 -359
 %   rules: 8085.0
 %   variables: 2296.0
 %   constraints: 88.0
-%   choices: 13045.0
-%   conflicts: 419.0
-%   models: 21.0
+%   choices: 1954.0
+%   conflicts: 69.0
+%   models: 7.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -359.0]
 %   lower_bound: [-20.0, -359.0]
-%   total_time: 0.3117220401763916
-%   ground_time: 0.017355151940137148
-%   time_to_first_model: 0.04640525113791227
-%   max_rss_bytes: 27525120
-%   solve_time: 0.2600228786468506
+%   total_time: 0.11167788505554199
+%   ground_time: 0.01803906401619315
+%   time_to_first_model: 0.04075490403920412
+%   max_rss_bytes: 26738688
+%   solve_time: 0.059265851974487305
 classCallsMethod(Derived::Derived(void)@4198448,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198448,int Base::func3(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200569,std::exception::_Copy_str(char const *)@4200475)

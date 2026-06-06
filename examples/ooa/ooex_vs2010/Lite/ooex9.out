@@ -1,49 +1,150 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:45 Grounding done (0.03s)
-17:05:45 Solving...
-17:05:45 Model found (0.11s): [-44, -140]
-17:05:45 Model found (0.12s, +0.01s): [-44, -207]
-17:05:45 Model found (0.13s, +0.01s): [-52, -125]
-17:05:45 Model found (0.14s, +0.01s): [-52, -126]
-17:05:45 Model found (0.14s, +0.00s): [-52, -209]
-17:05:45 Model found (0.16s, +0.01s): [-56, -143]
-17:05:45 Model found (0.17s, +0.02s): [-56, -144]
-17:05:45 Model found (0.19s, +0.01s): [-56, -209]
-17:05:46 Model found (0.21s, +0.02s): [-56, -210]
-17:05:46 Model found (0.22s, +0.01s): [-56, -396]
-17:05:46 Model found (0.28s, +0.06s): [-56, -397]
-17:05:46 Model found (0.29s, +0.02s): [-56, -398]
-17:05:46 Model found (0.32s, +0.02s): [-56, -437]
-17:05:46 Model found (0.34s, +0.02s): [-56, -438]
-17:05:46 Model found (0.36s, +0.02s): [-56, -440]
-17:05:46 Model found (0.39s, +0.03s): [-56, -441]
-17:05:46 Model found (0.40s, +0.01s): [-56, -442]
-17:05:46 Model found (0.42s, +0.01s): [-56, -443]
-17:05:46 Model found (0.44s, +0.02s): [-56, -444]
-17:05:46 Model found (0.46s, +0.03s): [-56, -445]
-17:05:46 Model found (0.50s, +0.04s): [-56, -446]
-17:05:46 Model found (0.52s, +0.02s): [-56, -447]
-17:05:46 Model found (0.56s, +0.03s): [-56, -448]
-17:05:46 Model found (0.64s, +0.08s): [-56, -452]
-17:05:46 Model found (0.67s, +0.03s): [-56, -453]
-17:05:46 Model found (0.71s, +0.04s): [-56, -454]
-17:05:46 Model found (0.75s, +0.04s): [-56, -455]
-17:05:46 Model found (0.80s, +0.04s): [-56, -456]
-17:05:46 Model found (0.83s, +0.03s): [-56, -457]
-17:05:46 Model found (0.85s, +0.02s): [-56, -458]
-17:05:46 Model found (0.90s, +0.04s): [-56, -463]
-17:05:46 Model found (1.02s, +0.12s): [-56, -464]
-17:05:46 Model found (1.09s, +0.07s): [-56, -465]
-17:05:46 Solving done: OPTIMUM FOUND (1.06s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.03s)
+08:15:24 Solving...
+08:15:24 Model found (0.10s): [-44, -140]
+08:15:24 Model found (0.10s, +0.00s): [-44, -219]
+08:15:24 Model found (0.10s, +0.00s): [-48, -220]
+08:15:24 Model found (0.11s, +0.00s): [-56, -143]
+08:15:24 Model found (0.11s, +0.00s): [-56, -144]
+08:15:24 Model found (0.11s, +0.00s): [-56, -221]
+08:15:24 Model found (0.11s, +0.00s): [-56, -222]
+08:15:24 Model found (0.12s, +0.00s): [-56, -223]
+08:15:24 Model found (0.12s, +0.00s): [-56, -224]
+08:15:24 Model found (0.12s, +0.00s): [-56, -225]
+08:15:24 Model found (0.13s, +0.01s): [-56, -226]
+08:15:24 Model found (0.14s, +0.00s): [-56, -227]
+08:15:24 Model found (0.14s, +0.00s): [-56, -228]
+08:15:24 Model found (0.14s, +0.00s): [-56, -229]
+08:15:24 Model found (0.15s, +0.00s): [-56, -230]
+08:15:24 Model found (0.15s, +0.00s): [-56, -231]
+08:15:24 Model found (0.15s, +0.00s): [-56, -232]
+08:15:24 Model found (0.16s, +0.00s): [-56, -233]
+08:15:24 Model found (0.16s, +0.00s): [-56, -236]
+08:15:24 Model found (0.16s, +0.00s): [-56, -237]
+08:15:24 Model found (0.17s, +0.00s): [-56, -238]
+08:15:24 Model found (0.17s, +0.00s): [-56, -241]
+08:15:24 Model found (0.17s, +0.00s): [-56, -246]
+08:15:24 Model found (0.18s, +0.00s): [-56, -251]
+08:15:24 Model found (0.18s, +0.00s): [-56, -252]
+08:15:24 Model found (0.19s, +0.00s): [-56, -253]
+08:15:24 Model found (0.19s, +0.00s): [-56, -254]
+08:15:24 Model found (0.19s, +0.00s): [-56, -255]
+08:15:24 Model found (0.20s, +0.00s): [-56, -258]
+08:15:24 Model found (0.20s, +0.01s): [-56, -259]
+08:15:24 Model found (0.21s, +0.00s): [-56, -260]
+08:15:24 Model found (0.21s, +0.00s): [-56, -261]
+08:15:24 Model found (0.21s, +0.00s): [-56, -262]
+08:15:24 Model found (0.22s, +0.00s): [-56, -263]
+08:15:24 Model found (0.22s, +0.00s): [-56, -264]
+08:15:24 Model found (0.23s, +0.00s): [-56, -265]
+08:15:24 Model found (0.23s, +0.00s): [-56, -268]
+08:15:24 Model found (0.23s, +0.01s): [-56, -269]
+08:15:24 Model found (0.24s, +0.00s): [-56, -271]
+08:15:24 Model found (0.24s, +0.00s): [-56, -272]
+08:15:24 Model found (0.25s, +0.00s): [-56, -278]
+08:15:24 Model found (0.25s, +0.01s): [-56, -279]
+08:15:24 Model found (0.26s, +0.00s): [-56, -281]
+08:15:24 Model found (0.26s, +0.01s): [-56, -282]
+08:15:24 Model found (0.26s, +0.00s): [-56, -286]
+08:15:24 Model found (0.27s, +0.01s): [-56, -287]
+08:15:24 Model found (0.27s, +0.00s): [-56, -288]
+08:15:24 Model found (0.28s, +0.00s): [-56, -289]
+08:15:24 Model found (0.28s, +0.00s): [-56, -290]
+08:15:24 Model found (0.28s, +0.00s): [-56, -291]
+08:15:24 Model found (0.29s, +0.00s): [-56, -292]
+08:15:24 Model found (0.29s, +0.01s): [-56, -293]
+08:15:24 Model found (0.30s, +0.00s): [-56, -294]
+08:15:24 Model found (0.30s, +0.00s): [-56, -296]
+08:15:24 Model found (0.31s, +0.00s): [-56, -297]
+08:15:24 Model found (0.31s, +0.01s): [-56, -301]
+08:15:24 Model found (0.31s, +0.00s): [-56, -302]
+08:15:24 Model found (0.32s, +0.00s): [-56, -303]
+08:15:24 Model found (0.32s, +0.00s): [-56, -304]
+08:15:24 Model found (0.33s, +0.00s): [-56, -306]
+08:15:24 Model found (0.34s, +0.01s): [-56, -307]
+08:15:24 Model found (0.34s, +0.00s): [-56, -311]
+08:15:24 Model found (0.35s, +0.00s): [-56, -312]
+08:15:24 Model found (0.35s, +0.00s): [-56, -313]
+08:15:24 Model found (0.35s, +0.00s): [-56, -314]
+08:15:24 Model found (0.36s, +0.00s): [-56, -315]
+08:15:24 Model found (0.36s, +0.00s): [-56, -318]
+08:15:24 Model found (0.37s, +0.01s): [-56, -319]
+08:15:24 Model found (0.37s, +0.00s): [-56, -320]
+08:15:24 Model found (0.38s, +0.00s): [-56, -321]
+08:15:24 Model found (0.38s, +0.00s): [-56, -323]
+08:15:24 Model found (0.41s, +0.03s): [-56, -326]
+08:15:25 Model found (0.42s, +0.02s): [-56, -333]
+08:15:25 Model found (0.43s, +0.01s): [-56, -334]
+08:15:25 Model found (0.44s, +0.00s): [-56, -335]
+08:15:25 Model found (0.45s, +0.01s): [-56, -341]
+08:15:25 Model found (0.46s, +0.01s): [-56, -348]
+08:15:25 Model found (0.49s, +0.03s): [-56, -353]
+08:15:25 Model found (0.53s, +0.04s): [-56, -354]
+08:15:25 Model found (0.54s, +0.01s): [-56, -355]
+08:15:25 Model found (0.54s, +0.01s): [-56, -359]
+08:15:25 Model found (0.56s, +0.01s): [-56, -364]
+08:15:25 Model found (0.58s, +0.02s): [-56, -365]
+08:15:25 Model found (0.58s, +0.01s): [-56, -369]
+08:15:25 Model found (0.61s, +0.02s): [-56, -370]
+08:15:25 Model found (0.66s, +0.06s): [-56, -371]
+08:15:25 Model found (0.81s, +0.15s): [-56, -372]
+08:15:25 Model found (0.85s, +0.04s): [-56, -373]
+08:15:25 Model found (0.86s, +0.01s): [-56, -374]
+08:15:25 Model found (0.87s, +0.01s): [-56, -375]
+08:15:25 Model found (0.87s, +0.01s): [-56, -376]
+08:15:25 Model found (0.87s, +0.00s): [-56, -377]
+08:15:25 Model found (0.94s, +0.07s): [-56, -378]
+08:15:25 Model found (0.95s, +0.01s): [-56, -379]
+08:15:25 Model found (0.95s, +0.00s): [-56, -380]
+08:15:25 Model found (1.02s, +0.07s): [-56, -381]
+08:15:25 Model found (1.03s, +0.01s): [-56, -382]
+08:15:25 Model found (1.03s, +0.01s): [-56, -383]
+08:15:25 Model found (1.04s, +0.01s): [-56, -384]
+08:15:25 Model found (1.04s, +0.01s): [-56, -385]
+08:15:25 Model found (1.05s, +0.01s): [-56, -386]
+08:15:25 Model found (1.06s, +0.01s): [-56, -387]
+08:15:25 Model found (1.06s, +0.01s): [-56, -388]
+08:15:25 Model found (1.07s, +0.01s): [-56, -389]
+08:15:25 Model found (1.08s, +0.01s): [-56, -390]
+08:15:25 Model found (1.09s, +0.01s): [-56, -391]
+08:15:25 Model found (1.09s, +0.01s): [-56, -392]
+08:15:25 Model found (1.12s, +0.03s): [-56, -395]
+08:15:25 Model found (1.13s, +0.01s): [-56, -396]
+08:15:25 Model found (1.23s, +0.10s): [-56, -400]
+08:15:25 Model found (1.24s, +0.01s): [-56, -401]
+08:15:25 Model found (1.28s, +0.04s): [-56, -402]
+08:15:26 Model found (1.56s, +0.28s): [-56, -403]
+08:15:26 Model found (1.57s, +0.01s): [-56, -404]
+08:15:26 Model found (1.58s, +0.01s): [-56, -405]
+08:15:26 Model found (1.65s, +0.07s): [-56, -421]
+08:15:26 Model found (1.68s, +0.03s): [-56, -426]
+08:15:26 Model found (1.72s, +0.04s): [-56, -427]
+08:15:26 Model found (1.91s, +0.19s): [-56, -428]
+08:15:26 Model found (1.91s, +0.00s): [-56, -429]
+08:15:26 Model found (1.92s, +0.00s): [-56, -430]
+08:15:26 Model found (2.00s, +0.08s): [-56, -434]
+08:15:26 Model found (2.02s, +0.01s): [-56, -436]
+08:15:26 Model found (2.04s, +0.03s): [-56, -447]
+08:15:26 Model found (2.07s, +0.03s): [-56, -452]
+08:15:26 Model found (2.09s, +0.02s): [-56, -454]
+08:15:26 Model found (2.10s, +0.01s): [-56, -455]
+08:15:26 Model found (2.11s, +0.01s): [-56, -456]
+08:15:26 Model found (2.11s, +0.00s): [-56, -457]
+08:15:26 Model found (2.12s, +0.01s): [-56, -461]
+08:15:26 Model found (2.13s, +0.01s): [-56, -462]
+08:15:26 Model found (2.14s, +0.01s): [-56, -463]
+08:15:26 Model found (2.15s, +0.01s): [-56, -464]
+08:15:26 Model found (2.16s, +0.00s): [-56, -465]
+08:15:26 Solving done: OPTIMUM FOUND (2.17s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex9.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 33
-guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) guessEnabled(merge) method(4198400) method(4198416) method(4198432) method(4198496) method(4198560) method(4198576) method(4198672) method(4198688) method(4198795) method(4198811) method(4198844) method(4198855) method(4198894) method(4198923) method(4199051) method(4199558) method(4199567) method(4199584) method(4199720) method(4199749) method(4199762) method(4199826) method(4199856) method(4199909) method(4199920) method(4199959) method(4199996) method(4200178) method(4200281) method(4200287) method(4200310) method(4200458) method(4200473) method(4200513) method(4200589) method(4200655) method(4200669) method(4200712) method(4200736) method(4200745) method(4200754) method(4200805) method(4201312) method(4201334) method(4201356) method(4201371) method(4201386) method(4201416) method(4201454) method(4201885) method(4201942) method(4202272) method(4202492) method(4202902) method(4203089) method(4203240) method(4203821) method(4203859) method(4203897) method(4203906) method(4203915) method(4204190) method(4204199) method(4204208) method(4204329) method(4204637) method(4204649) method(4204658) method(4205037) method(4205168) method(4205567) method(4205722) method(4206034) method(4206071) method(4206116) method(4206132) method(4206293) method(4206501) method(4206510) method(4206561) method(4206619) method(4206720) method(4206864) method(4207008) method(4207078) method(4207106) method(4207129) method(4207154) method(4207179) method(4207271) method(4207347) method(4207425) method(4207476) method(4207542) method(4207618) method(4207635) method(4207665) method(4207720) method(4208152) method(4208167) method(4208182) method(4208224) method(4208288) method(4208368) method(4208556) method(4208920) method(4209037) method(4209242) method(4209269) method(4209368) method(4209431) method(4210148) method(4210157) method(4210416) method(4211258) method(4211267) method(4211315) method(4211345) method(4211428) method(4211452) method(4211595) method(4211748) method(4212079) method(4212277) method(4212288) method(4212416) method(4212576) method(4212608) method(4212677) method(4212809) method(4212844) method(4212887) method(4213017) method(4213190) method(4214113) method(4214145) method(4214416) method(4214903) method(4214973) method(4215204) method(4215268) method(4216155) method(4216260) method(4216700) method(4216976) method(4217136) method(4217216) method(4217280) method(4217378) method(4217384) method(4199445) method(4199455) method(4200227) method(4200841) method(4200992) method(4201291) method(4203967) method(4204028) method(4204355) method(4205737) method(4206316) method(4207202) method(4207561) method(4207733) method(4208092) method(4209493) method(4209593) method(4209993) method(4210292) method(4210905) method(4211306) method(4212156) method(4212265) method(4214154) constructor(4198576) constructor(4198894) constructor(4199720) constructor(4199959) constructor(4198795) realDestructor(4198400) realDestructor(4198432) realDestructor(4198496) realDestructor(4198844) realDestructor(4199909) deletingDestructor(4199920) deletingDestructor(4198855) deletingDestructor(4198811) vfTable(4219200) vfTable(4219208) vfTable(4219216) vfTable(4219224) vfTable(4219232) vfTable(4219248) vfTable(4219256) vfTable(4219264) vfTable(4219292) vfTable(4219300) vfTable(4219328) classCallsMethod(4198576,4198432) classCallsMethod(4198811,4198795) classCallsMethod(4199856,4199762) classCallsMethod(4199920,4199826) classCallsMethod(4199856,4199826) classCallsMethod(4199959,4199856) classCallsMethod(4198855,4199909) classCallsMethod(4198894,4199959) classCallsMethod(4219248,4198416) classCallsMethod(4219224,4198416) classCallsMethod(4219208,4198416) classCallsMethod(4219200,4198416) classCallsMethod(4219256,4198560) classCallsMethod(4219264,4198560) classCallsMethod(4219232,4198560) classCallsMethod(4219216,4198560) classCallsMethod(4219264,4198672) classCallsMethod(4219292,4198811) classCallsMethod(4219300,4198855) classCallsMethod(4219328,4199749) classCallsMethod(4219300,4199749) classCallsMethod(4219328,4199920) vfTableWrite(4199730,4199720,0,4219328) vfTableWrite(4199909,4199909,0,4219328) vfTableWrite(4199928,4199920,0,4219328) vfTableWrite(4199974,4199959,0,4219328) vfTableWrite(4198844,4198844,0,4219300) vfTableWrite(4198863,4198855,0,4219300) vfTableWrite(4198910,4198894,0,4219300) vfTableWrite(4198798,4198795,0,4219292) vfTableWrite(4198633,4198576,0,4219264) vfTableWrite(4198639,4198576,12,4219256) vfTableWrite(4198649,4198576,4,4219248) vfTableWrite(4198526,4198496,0,4219232) vfTableWrite(4198535,4198496,4,4219224) vfTableWrite(4198462,4198432,0,4219216) vfTableWrite(4198471,4198432,4,4219208) vfTableWrite(4198402,4198400,0,4219200) vfTableEntry(4219328,0,4199920) vfTableEntry(4219300,4,4199749) vfTableEntry(4219328,4,4199749) vfTableEntry(4219300,0,4198855) vfTableEntry(4219292,0,4198811) vfTableEntry(4219264,4,4198672) vfTableEntry(4219216,0,4198560) vfTableEntry(4219232,0,4198560) vfTableEntry(4219264,0,4198560) vfTableEntry(4219256,0,4198560) vfTableEntry(4219200,0,4198416) vfTableEntry(4219208,0,4198416) vfTableEntry(4219224,0,4198416) vfTableEntry(4219248,0,4198416) vfTableSize(4219200,4) vfTableSize(4219208,4) vfTableSize(4219216,4) vfTableSize(4219224,4) vfTableSize(4219232,4) vfTableSize(4219248,4) vfTableSize(4219256,4) vfTableSize(4219264,8) vfTableSize(4219292,4) vfTableSize(4219300,8) vfTableSize(4219328,8) vftableBelongsToClass(4219264,0,4198576) vftableBelongsToClass(4219292,0,4198795) vftableBelongsToClass(4219300,0,4198844) vftableBelongsToClass(4219300,0,4198855) vftableBelongsToClass(4219300,0,4198894) vftableBelongsToClass(4219328,0,4199720) vftableBelongsToClass(4219328,0,4199909) vftableBelongsToClass(4219328,0,4199920) vftableBelongsToClass(4219328,0,4199959) mergeClasses(4219208,4219216) mergeClasses(4219224,4219232) mergeClasses(4219248,4219256) mergeClasses(4219248,4219264) mergeClasses(4219256,4219264) mergeClasses(4219264,4198576) mergeClasses(4219292,4198795) mergeClasses(4219300,4198844) mergeClasses(4219300,4198855) mergeClasses(4219300,4198894) mergeClasses(4219328,4199720) mergeClasses(4219328,4199909) mergeClasses(4219328,4199920) mergeClasses(4219328,4199959) mergeClasses(4199720,4199920) mergeClasses(4199720,4199749) mergeClasses(4199909,4199920) mergeClasses(4198844,4198855) mergeClasses(4198795,4198811) mergeClasses(4198576,4198672) mergeClasses(4198496,4198560) mergeClasses(4198432,4198560) mergeClasses(4198400,4198416) mergeClasses(4199749,4199909) mergeClasses(4199749,4199920) mergeClasses(4199920,4199959) mergeClasses(4199749,4199959) mergeClasses(4198855,4198894) mergeClasses(4198560,4198576) mergeClasses(4198416,4198576) mergeClasses(4198416,4198496) mergeClasses(4198416,4198432) mergeClasses(4199720,4199909) mergeClasses(4199720,4199959) mergeClasses(4199909,4199959) mergeClasses(4198844,4198894) mergeClasses(4199762,4199856) mergeClasses(4199826,4199856) mergeClasses(4199856,4199959) mergeClasses(4198672,4219264) mergeClasses(4198811,4219292) mergeClasses(4198855,4219300) mergeClasses(4199749,4219328) mergeClasses(4199920,4219328) mergeClasses(4199826,4199920) derivedClass(4219248,4219208,0) derivedClass(4219248,4219216,0) derivedClass(4219256,4219208,0) derivedClass(4219256,4219216,0) derivedClass(4219264,4219208,0) derivedClass(4219264,4219216,0) derivedClass(4219248,4219224,12) derivedClass(4219248,4219232,12) derivedClass(4219256,4219224,12) derivedClass(4219256,4219232,12) derivedClass(4219264,4219224,12) derivedClass(4219264,4219232,12) derivedClass(4219300,4219328,0) derivedClass(4219208,4219200,12) derivedClass(4219216,4219200,12) derivedClass(4219224,4219200,12) derivedClass(4219232,4219200,12) derivedClass(4219208,4219200,28) derivedClass(4219216,4219200,28) derivedClass(4219224,4219200,28) derivedClass(4219232,4219200,28) objectInObject(4219232,4219200,28) objectInObject(4219224,4219200,28) objectInObject(4219216,4219200,28) objectInObject(4219208,4219200,28) objectInObject(4219232,4219200,12) objectInObject(4219224,4219200,12) objectInObject(4219216,4219200,12) objectInObject(4219208,4219200,12) objectInObject(4219300,4219328,0) objectInObject(4219264,4219232,12) objectInObject(4219264,4219224,12) objectInObject(4219256,4219232,12) objectInObject(4219256,4219224,12) objectInObject(4219248,4219232,12) objectInObject(4219248,4219224,12) objectInObject(4219264,4219216,0) objectInObject(4219264,4219208,0) objectInObject(4219256,4219216,0) objectInObject(4219256,4219208,0) objectInObject(4219248,4219216,0) objectInObject(4219248,4219208,0)
+Answer: 134
+guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) guessEnabled(merge) method(4198400) method(4198416) method(4198432) method(4198496) method(4198560) method(4198576) method(4198672) method(4198688) method(4198795) method(4198811) method(4198844) method(4198855) method(4198894) method(4198923) method(4199051) method(4199558) method(4199567) method(4199584) method(4199720) method(4199749) method(4199762) method(4199826) method(4199856) method(4199909) method(4199920) method(4199959) method(4199996) method(4200178) method(4200281) method(4200287) method(4200310) method(4200458) method(4200473) method(4200513) method(4200589) method(4200655) method(4200669) method(4200712) method(4200736) method(4200745) method(4200754) method(4200805) method(4201312) method(4201334) method(4201356) method(4201371) method(4201386) method(4201416) method(4201454) method(4201885) method(4201942) method(4202272) method(4202492) method(4202902) method(4203089) method(4203240) method(4203821) method(4203859) method(4203897) method(4203906) method(4203915) method(4204190) method(4204199) method(4204208) method(4204329) method(4204637) method(4204649) method(4204658) method(4205037) method(4205168) method(4205567) method(4205722) method(4206034) method(4206071) method(4206116) method(4206132) method(4206293) method(4206501) method(4206510) method(4206561) method(4206619) method(4206720) method(4206864) method(4207008) method(4207078) method(4207106) method(4207129) method(4207154) method(4207179) method(4207271) method(4207347) method(4207425) method(4207476) method(4207542) method(4207618) method(4207635) method(4207665) method(4207720) method(4208152) method(4208167) method(4208182) method(4208224) method(4208288) method(4208368) method(4208556) method(4208920) method(4209037) method(4209242) method(4209269) method(4209368) method(4209431) method(4210148) method(4210157) method(4210416) method(4211258) method(4211267) method(4211315) method(4211345) method(4211428) method(4211452) method(4211595) method(4211748) method(4212079) method(4212277) method(4212288) method(4212416) method(4212576) method(4212608) method(4212677) method(4212809) method(4212844) method(4212887) method(4213017) method(4213190) method(4214113) method(4214145) method(4214416) method(4214903) method(4214973) method(4215204) method(4215268) method(4216155) method(4216260) method(4216700) method(4216976) method(4217136) method(4217216) method(4217280) method(4217378) method(4217384) method(4199445) method(4199455) method(4200227) method(4200841) method(4200992) method(4201291) method(4203967) method(4204028) method(4204355) method(4205737) method(4206316) method(4207202) method(4207561) method(4207733) method(4208092) method(4209493) method(4209593) method(4209993) method(4210292) method(4210905) method(4211306) method(4212156) method(4212265) method(4214154) constructor(4198432) constructor(4198894) constructor(4199720) constructor(4199959) constructor(4198795) realDestructor(4198400) realDestructor(4198496) realDestructor(4198576) realDestructor(4198844) realDestructor(4199909) deletingDestructor(4199920) deletingDestructor(4198855) deletingDestructor(4198811) vfTable(4219200) vfTable(4219208) vfTable(4219216) vfTable(4219224) vfTable(4219232) vfTable(4219248) vfTable(4219256) vfTable(4219264) vfTable(4219292) vfTable(4219300) vfTable(4219328) classCallsMethod(4198576,4198432) classCallsMethod(4198811,4198795) classCallsMethod(4199856,4199762) classCallsMethod(4199920,4199826) classCallsMethod(4199856,4199826) classCallsMethod(4199959,4199856) classCallsMethod(4198855,4199909) classCallsMethod(4198894,4199959) classCallsMethod(4219248,4198416) classCallsMethod(4219224,4198416) classCallsMethod(4219208,4198416) classCallsMethod(4219200,4198416) classCallsMethod(4219256,4198560) classCallsMethod(4219264,4198560) classCallsMethod(4219232,4198560) classCallsMethod(4219216,4198560) classCallsMethod(4219264,4198672) classCallsMethod(4219292,4198811) classCallsMethod(4219300,4198855) classCallsMethod(4219328,4199749) classCallsMethod(4219300,4199749) classCallsMethod(4219328,4199920) vfTableWrite(4199730,4199720,0,4219328) vfTableWrite(4199909,4199909,0,4219328) vfTableWrite(4199928,4199920,0,4219328) vfTableWrite(4199974,4199959,0,4219328) vfTableWrite(4198844,4198844,0,4219300) vfTableWrite(4198863,4198855,0,4219300) vfTableWrite(4198910,4198894,0,4219300) vfTableWrite(4198798,4198795,0,4219292) vfTableWrite(4198633,4198576,0,4219264) vfTableWrite(4198639,4198576,12,4219256) vfTableWrite(4198649,4198576,4,4219248) vfTableWrite(4198526,4198496,0,4219232) vfTableWrite(4198535,4198496,4,4219224) vfTableWrite(4198462,4198432,0,4219216) vfTableWrite(4198471,4198432,4,4219208) vfTableWrite(4198402,4198400,0,4219200) vfTableEntry(4219328,0,4199920) vfTableEntry(4219300,4,4199749) vfTableEntry(4219328,4,4199749) vfTableEntry(4219300,0,4198855) vfTableEntry(4219292,0,4198811) vfTableEntry(4219264,4,4198672) vfTableEntry(4219216,0,4198560) vfTableEntry(4219232,0,4198560) vfTableEntry(4219264,0,4198560) vfTableEntry(4219256,0,4198560) vfTableEntry(4219200,0,4198416) vfTableEntry(4219208,0,4198416) vfTableEntry(4219224,0,4198416) vfTableEntry(4219248,0,4198416) vfTableSize(4219200,4) vfTableSize(4219208,4) vfTableSize(4219216,4) vfTableSize(4219224,4) vfTableSize(4219232,4) vfTableSize(4219248,4) vfTableSize(4219256,4) vfTableSize(4219264,8) vfTableSize(4219292,4) vfTableSize(4219300,8) vfTableSize(4219328,8) vftableBelongsToClass(4219216,0,4198432) vftableBelongsToClass(4219292,0,4198795) vftableBelongsToClass(4219300,0,4198844) vftableBelongsToClass(4219300,0,4198855) vftableBelongsToClass(4219300,0,4198894) vftableBelongsToClass(4219328,0,4199720) vftableBelongsToClass(4219328,0,4199909) vftableBelongsToClass(4219328,0,4199920) vftableBelongsToClass(4219328,0,4199959) mergeClasses(4219208,4219216) mergeClasses(4219224,4219232) mergeClasses(4219248,4219256) mergeClasses(4219248,4219264) mergeClasses(4219256,4219264) mergeClasses(4219216,4198432) mergeClasses(4219292,4198795) mergeClasses(4219300,4198844) mergeClasses(4219300,4198855) mergeClasses(4219300,4198894) mergeClasses(4219328,4199720) mergeClasses(4219328,4199909) mergeClasses(4219328,4199920) mergeClasses(4219328,4199959) mergeClasses(4199720,4199920) mergeClasses(4199720,4199749) mergeClasses(4199909,4199920) mergeClasses(4198844,4198855) mergeClasses(4198795,4198811) mergeClasses(4198576,4198672) mergeClasses(4198496,4198560) mergeClasses(4198432,4198560) mergeClasses(4198400,4198416) mergeClasses(4199749,4199909) mergeClasses(4199749,4199920) mergeClasses(4199920,4199959) mergeClasses(4199749,4199959) mergeClasses(4198855,4198894) mergeClasses(4198560,4198576) mergeClasses(4198416,4198576) mergeClasses(4198416,4198496) mergeClasses(4198416,4198432) mergeClasses(4199720,4199909) mergeClasses(4199720,4199959) mergeClasses(4199909,4199959) mergeClasses(4198844,4198894) mergeClasses(4199762,4199856) mergeClasses(4199826,4199856) mergeClasses(4199856,4199959) mergeClasses(4198560,4219216) mergeClasses(4198811,4219292) mergeClasses(4198855,4219300) mergeClasses(4199749,4219328) mergeClasses(4199920,4219328) mergeClasses(4199826,4199920) derivedClass(4219248,4219208,0) derivedClass(4219248,4219216,0) derivedClass(4219256,4219208,0) derivedClass(4219256,4219216,0) derivedClass(4219264,4219208,0) derivedClass(4219264,4219216,0) derivedClass(4219248,4219224,12) derivedClass(4219248,4219232,12) derivedClass(4219256,4219224,12) derivedClass(4219256,4219232,12) derivedClass(4219264,4219224,12) derivedClass(4219264,4219232,12) derivedClass(4219300,4219328,0) derivedClass(4219208,4219200,12) derivedClass(4219216,4219200,12) derivedClass(4219224,4219200,12) derivedClass(4219232,4219200,12) derivedClass(4219208,4219200,28) derivedClass(4219216,4219200,28) derivedClass(4219224,4219200,28) derivedClass(4219232,4219200,28) objectInObject(4219232,4219200,28) objectInObject(4219224,4219200,28) objectInObject(4219216,4219200,28) objectInObject(4219208,4219200,28) objectInObject(4219232,4219200,12) objectInObject(4219224,4219200,12) objectInObject(4219216,4219200,12) objectInObject(4219208,4219200,12) objectInObject(4219300,4219328,0) objectInObject(4219264,4219232,12) objectInObject(4219264,4219224,12) objectInObject(4219256,4219232,12) objectInObject(4219256,4219224,12) objectInObject(4219248,4219232,12) objectInObject(4219248,4219224,12) objectInObject(4219264,4219216,0) objectInObject(4219264,4219208,0) objectInObject(4219256,4219216,0) objectInObject(4219256,4219208,0) objectInObject(4219248,4219216,0) objectInObject(4219248,4219208,0)
 Optimization: -56 -465
 
 % Equivalence classes (168 classes, 192 entities):
-%   {4198400, 4198416, 4198432, 4198496, 4198560, 4198576, 4198672, 4219248, 4219256, 4219264}
+%   {4198400, 4198416, 4198432, 4198496, 4198560, 4198576, 4198672, 4219208, 4219216}
 %   {4198688}
 %   {4198795, 4198811, 4219292}
 %   {4198844, 4198855, 4198894, 4219300}
@@ -202,8 +303,8 @@ Optimization: -56 -465
 %   {4217378}
 %   {4217384}
 %   {4219200}
-%   {4219208, 4219216}
 %   {4219224, 4219232}
+%   {4219248, 4219256, 4219264}
 %   {4227452}
 %   {4227556}
 %   {4227576}
@@ -218,14 +319,14 @@ Optimization: -56 -465
 %   rules: 15333.0
 %   variables: 6282.0
 %   constraints: 216.0
-%   choices: 37039.0
-%   conflicts: 2087.0
-%   models: 33.0
+%   choices: 80376.0
+%   conflicts: 9235.0
+%   models: 134.0
 %   optimal_models: 1.0
 %   final_cost: [-56.0, -465.0]
 %   lower_bound: [-56.0, -465.0]
-%   total_time: 1.1107940673828125
-%   ground_time: 0.029484035447239876
-%   time_to_first_model: 0.11468939017504454
-%   max_rss_bytes: 36962304
-%   solve_time: 0.998986005783081
+%   total_time: 2.219782829284668
+%   ground_time: 0.029747347347438335
+%   time_to_first_model: 0.10003316821530461
+%   max_rss_bytes: 33030144
+%   solve_time: 2.106106996536255

@@ -1,33 +1,34 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:45 Grounding done (0.02s)
-17:05:45 Solving...
-17:05:45 Model found (0.08s): [-36, -119]
-17:05:45 Model found (0.09s, +0.01s): [-36, -206]
-17:05:45 Model found (0.10s, +0.01s): [-40, -120]
-17:05:45 Model found (0.12s, +0.01s): [-40, -207]
-17:05:45 Model found (0.12s, +0.01s): [-68, -320]
-17:05:45 Model found (0.18s, +0.05s): [-68, -384]
-17:05:45 Model found (0.19s, +0.01s): [-68, -385]
-17:05:45 Model found (0.21s, +0.02s): [-68, -392]
-17:05:45 Model found (0.26s, +0.05s): [-68, -393]
-17:05:45 Model found (0.29s, +0.03s): [-68, -423]
-17:05:45 Model found (0.30s, +0.01s): [-68, -427]
-17:05:45 Model found (0.42s, +0.12s): [-68, -428]
-17:05:45 Model found (0.46s, +0.04s): [-68, -429]
-17:05:45 Model found (0.48s, +0.02s): [-68, -431]
-17:05:46 Model found (0.54s, +0.05s): [-68, -432]
-17:05:46 Model found (0.60s, +0.06s): [-68, -433]
-17:05:46 Model found (0.66s, +0.06s): [-68, -434]
-17:05:46 Model found (0.72s, +0.06s): [-68, -435]
-17:05:46 Model found (0.75s, +0.04s): [-68, -437]
-17:05:46 Model found (0.77s, +0.01s): [-68, -438]
-17:05:46 Model found (0.77s, +0.01s): [-68, -484]
-17:05:46 Model found (0.86s, +0.08s): [-68, -486]
-17:05:46 Solving done: OPTIMUM FOUND (0.90s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.02s)
+08:15:24 Solving...
+08:15:24 Model found (0.07s): [-36, -117]
+08:15:24 Model found (0.07s, +0.00s): [-36, -206]
+08:15:24 Model found (0.08s, +0.00s): [-40, -207]
+08:15:24 Model found (0.08s, +0.00s): [-48, -208]
+08:15:24 Model found (0.08s, +0.00s): [-56, -125]
+08:15:24 Model found (0.08s, +0.00s): [-64, -214]
+08:15:24 Model found (0.08s, +0.00s): [-68, -128]
+08:15:24 Model found (0.08s, +0.00s): [-68, -129]
+08:15:24 Model found (0.09s, +0.00s): [-68, -215]
+08:15:24 Model found (0.11s, +0.03s): [-68, -450]
+08:15:24 Model found (0.12s, +0.01s): [-68, -455]
+08:15:24 Model found (0.14s, +0.02s): [-68, -459]
+08:15:24 Model found (0.15s, +0.02s): [-68, -468]
+08:15:24 Model found (0.23s, +0.08s): [-68, -469]
+08:15:24 Model found (0.24s, +0.01s): [-68, -470]
+08:15:24 Model found (0.24s, +0.00s): [-68, -471]
+08:15:24 Model found (0.25s, +0.01s): [-68, -472]
+08:15:24 Model found (0.26s, +0.01s): [-68, -475]
+08:15:24 Model found (0.28s, +0.02s): [-68, -476]
+08:15:24 Model found (0.29s, +0.01s): [-68, -477]
+08:15:24 Model found (0.32s, +0.04s): [-68, -484]
+08:15:24 Model found (0.36s, +0.04s): [-68, -485]
+08:15:24 Model found (0.37s, +0.01s): [-68, -486]
+08:15:24 Solving done: OPTIMUM FOUND (0.40s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex5.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 22
+Answer: 23
 Optimization: -68 -486
 
 % Equivalence classes (170 classes, 193 entities):
@@ -38,17 +39,17 @@ Optimization: -68 -486
 %   rules: 11765.0
 %   variables: 4426.0
 %   constraints: 152.0
-%   choices: 33126.0
-%   conflicts: 1115.0
-%   models: 22.0
+%   choices: 10761.0
+%   conflicts: 599.0
+%   models: 23.0
 %   optimal_models: 1.0
 %   final_cost: [-68.0, -486.0]
 %   lower_bound: [-68.0, -486.0]
-%   total_time: 0.9387238025665283
-%   ground_time: 0.023787168320268393
-%   time_to_first_model: 0.07962156925350428
-%   max_rss_bytes: 29884416
-%   solve_time: 0.8541679382324219
+%   total_time: 0.4411940574645996
+%   ground_time: 0.024232672061771154
+%   time_to_first_model: 0.07264818390831351
+%   max_rss_bytes: 30670848
+%   solve_time: 0.3563840389251709
 classCallsMethod(Derived::Derived(void)@4198592,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198592,virtual int Base::func2(void)@4198464)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4201727,std::exception::_Copy_str(char const *)@4201633)
@@ -73,11 +74,10 @@ classCallsMethod(std::exception::exception(class std::exception const &)@4201830
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920,virtual std::exception::~exception(void)@4201780)
 classCallsMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791,std::exception::_Tidy(void)@4201697)
 classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4198790,virtual type_info::~type_info(void)@4198774)
-constructor(Base2::Base2(void)@4198496)
+constructor(Base::Base(void)@4198400)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 constructor(std::exception::exception(char const * const &, int)@4201591)
 constructor(std::exception::exception(class std::exception const &)@4201830)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@4198909)
 constructor(virtual type_info::~type_info(void)@4198774)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791)
@@ -101,7 +101,7 @@ mergeClasses(Base::Base(void)@4198400,virtual int Base::func2(void)@4198464)
 mergeClasses(Derived::Derived(void)@4198592,virtual int Derived::func3(void)@4198688)
 mergeClasses(Derived::Derived(void)@4198592,virtual int Derived::func4(void)@4198672)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@4201727,std::exception::exception(class std::exception const &)@4201830)
-mergeClasses(const Base2::`vftable'@4219216,Base2::Base2(void)@4198496)
+mergeClasses(const Base::`vftable'@4219200,Base::Base(void)@4198400)
 mergeClasses(const Derived::`vftable'{for `Base2'}@4219232,const Derived::`vftable'{for `Base'}@4219248)
 mergeClasses(const std::bad_alloc::`vftable'@4219272,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 mergeClasses(const std::bad_alloc::`vftable'@4219272,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
@@ -128,11 +128,11 @@ mergeClasses(virtual char const * std::exception::what(void)const@4201620,std::e
 mergeClasses(virtual char const * std::exception::what(void)const@4201620,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4201791)
 mergeClasses(virtual char const * std::exception::what(void)const@4201620,virtual std::exception::~exception(void)@4201780)
 mergeClasses(virtual int Base2::func1(void)@4198528,Derived::Derived(void)@4198592)
-mergeClasses(virtual int Base2::func1(void)@4198528,const Base2::`vftable'@4219216)
 mergeClasses(virtual int Base2::func2(void)@4198560,Derived::Derived(void)@4198592)
-mergeClasses(virtual int Base2::func2(void)@4198560,const Base2::`vftable'@4219216)
 mergeClasses(virtual int Base::func1(void)@4198432,Derived::Derived(void)@4198592)
+mergeClasses(virtual int Base::func1(void)@4198432,const Base::`vftable'@4219200)
 mergeClasses(virtual int Base::func2(void)@4198464,Derived::Derived(void)@4198592)
+mergeClasses(virtual int Base::func2(void)@4198464,const Base::`vftable'@4219200)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198909,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198909,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 mergeClasses(virtual std::exception::~exception(void)@4201780,std::exception::exception(class std::exception const &)@4201830)
@@ -324,8 +324,9 @@ objectInObject(const Derived::`vftable'{for `Base'}@4219248,const Base::`vftable
 objectInObject(const Derived::`vftable'{for `Base2'}@4219232,const Base2::`vftable'@4219216,16)
 objectInObject(const Derived::`vftable'{for `Base2'}@4219232,const Base::`vftable'@4219200,0)
 objectInObject(const std::bad_alloc::`vftable'@4219272,const std::exception::`vftable'@4221916,0)
-realDestructor(Base::Base(void)@4198400)
+realDestructor(Base2::Base2(void)@4198496)
 realDestructor(Derived::Derived(void)@4198592)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198909)
 realDestructor(virtual std::exception::~exception(void)@4201780)
 vfTable(const Base2::`vftable'@4219216)
 vfTable(const Base::`vftable'@4219200)
@@ -370,7 +371,7 @@ vfTableWrite(4201799,virtual * std::exception::`scalar deleting destructor'(unsi
 vfTableWrite(4201845,std::exception::exception(class std::exception const &)@4201830,0,const std::exception::`vftable'@4221916)
 vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@4198909,virtual std::bad_alloc::~bad_alloc(void)@4198909,0,const std::bad_alloc::`vftable'@4219272)
 vfTableWrite(virtual std::exception::~exception(void)@4201780,virtual std::exception::~exception(void)@4201780,0,const std::exception::`vftable'@4221916)
-vftableBelongsToClass(const Base2::`vftable'@4219216,0,Base2::Base2(void)@4198496)
+vftableBelongsToClass(const Base::`vftable'@4219200,0,Base::Base(void)@4198400)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219272,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198959)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219272,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198920)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@4219272,0,virtual std::bad_alloc::~bad_alloc(void)@4198909)
@@ -394,7 +395,7 @@ vftableBelongsToClass(const type_info::`vftable'@4219264,0,virtual type_info::~t
 %   {$LN9_0@4209956}
 %   {* __cdecl operator new(unsigned int)@4198988}
 %   {4211654}
-%   {Base::Base(void)@4198400, virtual int Base::func1(void)@4198432, virtual int Base::func2(void)@4198464, Base2::Base2(void)@4198496, virtual int Base2::func1(void)@4198528, virtual int Base2::func2(void)@4198560, Derived::Derived(void)@4198592, virtual int Derived::func4(void)@4198672, virtual int Derived::func3(void)@4198688, const Base2::`vftable'@4219216}
+%   {Base::Base(void)@4198400, virtual int Base::func1(void)@4198432, virtual int Base::func2(void)@4198464, Base2::Base2(void)@4198496, virtual int Base2::func1(void)@4198528, virtual int Base2::func2(void)@4198560, Derived::Derived(void)@4198592, virtual int Derived::func4(void)@4198672, virtual int Derived::func3(void)@4198688, const Base::`vftable'@4219200}
 %   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@4209008}
 %   {__FF_MSGBANNER@4200321}
 %   {__FindPESection@4212064}
@@ -530,7 +531,7 @@ vftableBelongsToClass(const type_info::`vftable'@4219264,0,virtual type_info::~t
 %   {_wcslen@4208549}
 %   {_wcsncpy_s@4208344}
 %   {const Base2::`RTTI Complete Object Locator'@4227420}
-%   {const Base::`vftable'@4219200}
+%   {const Base2::`vftable'@4219216}
 %   {const Derived::`RTTI Complete Object Locator'{for `Base'}@4227492}
 %   {const Derived::`RTTI Complete Object Locator'{for `Base2'}@4227600}
 %   {const Derived::`vftable'{for `Base2'}@4219232, const Derived::`vftable'{for `Base'}@4219248}

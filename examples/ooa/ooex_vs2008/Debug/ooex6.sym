@@ -1,37 +1,177 @@
-Domain options require heuristic 'Domain'!
-17:05:44 Grounding...
-17:05:44 Grounding done (0.02s)
-17:05:44 Solving...
-17:05:44 Model found (0.05s): [-20, -159]
-17:05:44 Model found (0.05s, +0.01s): [-28, -269]
-17:05:44 Model found (0.06s, +0.01s): [-32, -163]
-17:05:44 Model found (0.06s, +0.00s): [-32, -164]
-17:05:44 Model found (0.07s, +0.00s): [-32, -165]
-17:05:44 Model found (0.07s, +0.00s): [-32, -166]
-17:05:44 Model found (0.08s, +0.00s): [-32, -167]
-17:05:44 Model found (0.08s, +0.00s): [-32, -168]
-17:05:44 Model found (0.09s, +0.01s): [-32, -169]
-17:05:44 Model found (0.10s, +0.01s): [-32, -270]
-17:05:44 Model found (0.10s, +0.01s): [-32, -271]
-17:05:44 Model found (0.11s, +0.01s): [-32, -276]
-17:05:44 Model found (0.12s, +0.01s): [-32, -277]
-17:05:44 Model found (0.13s, +0.01s): [-32, -278]
-17:05:44 Model found (0.13s, +0.00s): [-32, -366]
-17:05:44 Model found (0.14s, +0.01s): [-32, -367]
-17:05:44 Model found (0.15s, +0.01s): [-32, -368]
-17:05:44 Model found (0.16s, +0.01s): [-32, -369]
-17:05:44 Model found (0.17s, +0.01s): [-32, -370]
-17:05:44 Model found (0.17s, +0.01s): [-32, -371]
-17:05:44 Model found (0.20s, +0.03s): [-32, -372]
-17:05:44 Model found (0.21s, +0.01s): [-32, -373]
-17:05:44 Model found (0.22s, +0.01s): [-32, -374]
-17:05:44 Model found (0.23s, +0.01s): [-32, -375]
-17:05:44 Model found (0.24s, +0.01s): [-32, -376]
-17:05:44 Model found (0.25s, +0.01s): [-32, -391]
-17:05:44 Solving done: OPTIMUM FOUND (0.24s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.02s)
+08:15:24 Solving...
+08:15:24 Model found (0.04s): [-28, -261]
+08:15:24 Model found (0.06s, +0.01s): [-28, -262]
+08:15:24 Model found (0.06s, +0.00s): [-28, -263]
+08:15:24 Model found (0.06s, +0.00s): [-28, -264]
+08:15:24 Model found (0.07s, +0.00s): [-28, -265]
+08:15:24 Model found (0.07s, +0.00s): [-28, -266]
+08:15:24 Model found (0.07s, +0.00s): [-28, -267]
+08:15:24 Model found (0.07s, +0.00s): [-28, -268]
+08:15:24 Model found (0.07s, +0.00s): [-28, -269]
+08:15:24 Model found (0.08s, +0.00s): [-28, -270]
+08:15:24 Model found (0.08s, +0.00s): [-28, -271]
+08:15:24 Model found (0.08s, +0.00s): [-28, -272]
+08:15:24 Model found (0.08s, +0.00s): [-28, -273]
+08:15:24 Model found (0.09s, +0.00s): [-28, -274]
+08:15:24 Model found (0.09s, +0.00s): [-28, -275]
+08:15:24 Model found (0.09s, +0.00s): [-28, -276]
+08:15:24 Model found (0.09s, +0.00s): [-28, -277]
+08:15:24 Model found (0.09s, +0.00s): [-28, -278]
+08:15:24 Model found (0.10s, +0.00s): [-28, -279]
+08:15:24 Model found (0.10s, +0.00s): [-28, -280]
+08:15:24 Model found (0.10s, +0.00s): [-28, -281]
+08:15:24 Model found (0.10s, +0.00s): [-28, -282]
+08:15:24 Model found (0.10s, +0.00s): [-28, -283]
+08:15:24 Model found (0.11s, +0.00s): [-28, -284]
+08:15:24 Model found (0.11s, +0.00s): [-28, -285]
+08:15:24 Model found (0.11s, +0.00s): [-28, -286]
+08:15:24 Model found (0.11s, +0.00s): [-28, -287]
+08:15:24 Model found (0.11s, +0.00s): [-28, -288]
+08:15:24 Model found (0.12s, +0.00s): [-28, -289]
+08:15:24 Model found (0.12s, +0.00s): [-28, -290]
+08:15:24 Model found (0.12s, +0.00s): [-28, -291]
+08:15:24 Model found (0.12s, +0.00s): [-28, -292]
+08:15:24 Model found (0.12s, +0.00s): [-28, -293]
+08:15:24 Model found (0.13s, +0.00s): [-28, -294]
+08:15:24 Model found (0.13s, +0.00s): [-28, -295]
+08:15:24 Model found (0.13s, +0.00s): [-28, -296]
+08:15:24 Model found (0.13s, +0.00s): [-28, -297]
+08:15:24 Model found (0.13s, +0.00s): [-28, -298]
+08:15:24 Model found (0.14s, +0.00s): [-28, -299]
+08:15:24 Model found (0.14s, +0.00s): [-28, -300]
+08:15:24 Model found (0.14s, +0.00s): [-28, -301]
+08:15:24 Model found (0.14s, +0.00s): [-28, -302]
+08:15:24 Model found (0.14s, +0.00s): [-28, -303]
+08:15:24 Model found (0.15s, +0.00s): [-28, -304]
+08:15:24 Model found (0.15s, +0.00s): [-28, -305]
+08:15:24 Model found (0.15s, +0.00s): [-28, -306]
+08:15:24 Model found (0.15s, +0.00s): [-28, -307]
+08:15:24 Model found (0.15s, +0.00s): [-28, -308]
+08:15:24 Model found (0.16s, +0.00s): [-28, -309]
+08:15:24 Model found (0.16s, +0.00s): [-28, -310]
+08:15:24 Model found (0.16s, +0.00s): [-28, -311]
+08:15:24 Model found (0.16s, +0.00s): [-28, -312]
+08:15:24 Model found (0.16s, +0.00s): [-28, -313]
+08:15:24 Model found (0.16s, +0.00s): [-28, -314]
+08:15:24 Model found (0.17s, +0.00s): [-28, -315]
+08:15:24 Model found (0.17s, +0.00s): [-28, -316]
+08:15:24 Model found (0.17s, +0.00s): [-28, -317]
+08:15:24 Model found (0.17s, +0.00s): [-28, -318]
+08:15:24 Model found (0.18s, +0.00s): [-28, -319]
+08:15:24 Model found (0.18s, +0.00s): [-28, -320]
+08:15:24 Model found (0.18s, +0.00s): [-28, -321]
+08:15:24 Model found (0.18s, +0.00s): [-28, -322]
+08:15:24 Model found (0.18s, +0.00s): [-28, -323]
+08:15:24 Model found (0.19s, +0.00s): [-28, -324]
+08:15:24 Model found (0.19s, +0.00s): [-28, -325]
+08:15:24 Model found (0.19s, +0.00s): [-28, -326]
+08:15:24 Model found (0.19s, +0.00s): [-28, -327]
+08:15:24 Model found (0.19s, +0.00s): [-28, -328]
+08:15:24 Model found (0.20s, +0.00s): [-28, -329]
+08:15:24 Model found (0.20s, +0.00s): [-28, -330]
+08:15:24 Model found (0.20s, +0.00s): [-28, -331]
+08:15:24 Model found (0.20s, +0.00s): [-28, -332]
+08:15:24 Model found (0.20s, +0.00s): [-28, -333]
+08:15:24 Model found (0.21s, +0.00s): [-28, -334]
+08:15:24 Model found (0.21s, +0.00s): [-28, -335]
+08:15:24 Model found (0.21s, +0.00s): [-32, -263]
+08:15:24 Model found (0.22s, +0.01s): [-32, -264]
+08:15:24 Model found (0.22s, +0.00s): [-32, -265]
+08:15:24 Model found (0.22s, +0.00s): [-32, -266]
+08:15:24 Model found (0.22s, +0.00s): [-32, -267]
+08:15:24 Model found (0.22s, +0.00s): [-32, -268]
+08:15:24 Model found (0.22s, +0.00s): [-32, -269]
+08:15:24 Model found (0.22s, +0.00s): [-32, -270]
+08:15:24 Model found (0.23s, +0.00s): [-32, -271]
+08:15:24 Model found (0.23s, +0.00s): [-32, -272]
+08:15:24 Model found (0.23s, +0.00s): [-32, -273]
+08:15:24 Model found (0.23s, +0.00s): [-32, -274]
+08:15:24 Model found (0.23s, +0.00s): [-32, -275]
+08:15:24 Model found (0.23s, +0.00s): [-32, -276]
+08:15:24 Model found (0.24s, +0.00s): [-32, -277]
+08:15:24 Model found (0.24s, +0.00s): [-32, -278]
+08:15:24 Model found (0.24s, +0.00s): [-32, -279]
+08:15:24 Model found (0.24s, +0.00s): [-32, -280]
+08:15:24 Model found (0.24s, +0.00s): [-32, -281]
+08:15:24 Model found (0.24s, +0.00s): [-32, -282]
+08:15:24 Model found (0.24s, +0.00s): [-32, -283]
+08:15:24 Model found (0.24s, +0.00s): [-32, -284]
+08:15:24 Model found (0.25s, +0.00s): [-32, -285]
+08:15:24 Model found (0.25s, +0.00s): [-32, -286]
+08:15:24 Model found (0.25s, +0.00s): [-32, -287]
+08:15:24 Model found (0.25s, +0.00s): [-32, -288]
+08:15:24 Model found (0.25s, +0.00s): [-32, -289]
+08:15:24 Model found (0.25s, +0.00s): [-32, -290]
+08:15:24 Model found (0.25s, +0.00s): [-32, -291]
+08:15:24 Model found (0.25s, +0.00s): [-32, -292]
+08:15:24 Model found (0.25s, +0.00s): [-32, -293]
+08:15:24 Model found (0.25s, +0.00s): [-32, -294]
+08:15:24 Model found (0.26s, +0.00s): [-32, -295]
+08:15:24 Model found (0.26s, +0.00s): [-32, -296]
+08:15:24 Model found (0.26s, +0.00s): [-32, -297]
+08:15:24 Model found (0.26s, +0.00s): [-32, -298]
+08:15:24 Model found (0.26s, +0.00s): [-32, -301]
+08:15:24 Model found (0.26s, +0.00s): [-32, -302]
+08:15:24 Model found (0.26s, +0.00s): [-32, -303]
+08:15:24 Model found (0.26s, +0.00s): [-32, -304]
+08:15:24 Model found (0.27s, +0.00s): [-32, -305]
+08:15:24 Model found (0.27s, +0.00s): [-32, -306]
+08:15:24 Model found (0.27s, +0.00s): [-32, -307]
+08:15:24 Model found (0.27s, +0.00s): [-32, -308]
+08:15:24 Model found (0.27s, +0.00s): [-32, -309]
+08:15:24 Model found (0.27s, +0.00s): [-32, -310]
+08:15:24 Model found (0.27s, +0.00s): [-32, -311]
+08:15:24 Model found (0.27s, +0.00s): [-32, -312]
+08:15:24 Model found (0.27s, +0.00s): [-32, -313]
+08:15:24 Model found (0.27s, +0.00s): [-32, -334]
+08:15:24 Model found (0.28s, +0.00s): [-32, -335]
+08:15:24 Model found (0.28s, +0.00s): [-32, -336]
+08:15:24 Model found (0.28s, +0.00s): [-32, -337]
+08:15:24 Model found (0.28s, +0.00s): [-32, -338]
+08:15:24 Model found (0.28s, +0.00s): [-32, -339]
+08:15:24 Model found (0.28s, +0.00s): [-32, -340]
+08:15:24 Model found (0.28s, +0.00s): [-32, -341]
+08:15:24 Model found (0.29s, +0.00s): [-32, -342]
+08:15:24 Model found (0.29s, +0.00s): [-32, -343]
+08:15:24 Model found (0.29s, +0.00s): [-32, -346]
+08:15:24 Model found (0.29s, +0.00s): [-32, -347]
+08:15:24 Model found (0.29s, +0.00s): [-32, -348]
+08:15:24 Model found (0.29s, +0.00s): [-32, -349]
+08:15:24 Model found (0.29s, +0.00s): [-32, -350]
+08:15:24 Model found (0.29s, +0.00s): [-32, -351]
+08:15:24 Model found (0.30s, +0.00s): [-32, -352]
+08:15:24 Model found (0.30s, +0.00s): [-32, -353]
+08:15:24 Model found (0.30s, +0.00s): [-32, -354]
+08:15:24 Model found (0.30s, +0.00s): [-32, -355]
+08:15:24 Model found (0.30s, +0.00s): [-32, -356]
+08:15:24 Model found (0.30s, +0.00s): [-32, -357]
+08:15:24 Model found (0.31s, +0.00s): [-32, -360]
+08:15:24 Model found (0.31s, +0.00s): [-32, -361]
+08:15:24 Model found (0.31s, +0.00s): [-32, -362]
+08:15:24 Model found (0.31s, +0.00s): [-32, -363]
+08:15:24 Model found (0.31s, +0.00s): [-32, -364]
+08:15:24 Model found (0.32s, +0.00s): [-32, -365]
+08:15:24 Model found (0.32s, +0.00s): [-32, -369]
+08:15:24 Model found (0.32s, +0.00s): [-32, -370]
+08:15:24 Model found (0.32s, +0.00s): [-32, -375]
+08:15:24 Model found (0.32s, +0.00s): [-32, -376]
+08:15:24 Model found (0.33s, +0.00s): [-32, -380]
+08:15:24 Model found (0.33s, +0.00s): [-32, -381]
+08:15:24 Model found (0.33s, +0.00s): [-32, -382]
+08:15:24 Model found (0.33s, +0.00s): [-32, -383]
+08:15:24 Model found (0.34s, +0.00s): [-32, -386]
+08:15:24 Model found (0.34s, +0.00s): [-32, -387]
+08:15:24 Model found (0.34s, +0.00s): [-32, -388]
+08:15:24 Model found (0.34s, +0.00s): [-32, -389]
+08:15:24 Model found (0.35s, +0.01s): [-32, -390]
+08:15:24 Model found (0.35s, +0.00s): [-32, -391]
+08:15:24 Solving done: OPTIMUM FOUND (0.34s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 26
+Answer: 166
 Optimization: -32 -391
 
 % Equivalence classes (222 classes, 237 entities):
@@ -42,17 +182,17 @@ Optimization: -32 -391
 %   rules: 8014.0
 %   variables: 2797.0
 %   constraints: 51.0
-%   choices: 17118.0
-%   conflicts: 227.0
-%   models: 26.0
+%   choices: 45934.0
+%   conflicts: 255.0
+%   models: 166.0
 %   optimal_models: 1.0
 %   final_cost: [-32.0, -391.0]
 %   lower_bound: [-32.0, -391.0]
-%   total_time: 0.27081990242004395
-%   ground_time: 0.017138404306024313
-%   time_to_first_model: 0.045102212112396955
-%   max_rss_bytes: 26738688
-%   solve_time: 0.22321200370788574
+%   total_time: 0.3638288974761963
+%   ground_time: 0.017549654003232718
+%   time_to_first_model: 0.04418032197281718
+%   max_rss_bytes: 27525120
+%   solve_time: 0.3152148723602295
 classCallsMethod(Derived::Derived(void)@4265360,Base::Base(void)@4265536)
 classCallsMethod(Derived::Derived(void)@4265360,virtual int Base::func1(void)@4265648)
 classCallsMethod(Derived::Derived(void)@4265360,virtual int Base::func2(void)@4265744)
@@ -64,7 +204,7 @@ classCallsMethod(const Derived::`vftable'@4286272,virtual int Base::func2(void)@
 classCallsMethod(const Derived::`vftable'@4286272,virtual int Derived::func3(void)@4265840)
 classCallsMethod(const type_info::`vftable'@4286316,virtual * type_info::`vector deleting destructor'(unsigned int)@4266800)
 classCallsMethod(virtual * Derived::`vector deleting destructor'(unsigned int)@4265904,virtual Derived::~Derived(void)@4266016)
-classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,type_info::_type_info_dtor_internal_method(void)@4297312)
 constructor(Derived::Derived(void)@4265360)
 constructor(type_info::type_info(class type_info const &)@4266752)
 constructor(virtual Derived::~Derived(void)@4266016)
@@ -89,8 +229,8 @@ mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@42641
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4265904,const Derived::`vftable'@4286272)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@4265904,virtual Derived::~Derived(void)@4266016)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264151,type_info::type_info(class type_info const &)@4266752)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,const type_info::`vftable'@4286316)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4266800,type_info::_type_info_dtor_internal_method(void)@4297312)
 mergeClasses(virtual int Base::func1(void)@4264451,Base::Base(void)@4265536)
 mergeClasses(virtual int Base::func1(void)@4264451,Derived::Derived(void)@4265360)
 mergeClasses(virtual int Base::func1(void)@4264451,virtual Derived::~Derived(void)@4266016)
@@ -156,7 +296,6 @@ method(__cexit@4272830)
 method(__configthreadlocale@4271850)
 method(__controlfp_s@4275048)
 method(__crt_debugger_hook@4273556)
-method(__declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312)
 method(__decode_pointer@4275078)
 method(__ehhandler$_main@4279166)
 method(__encode_pointer@4272516)
@@ -316,6 +455,7 @@ method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *
 method(pre_c_init@4266976)
 method(pre_cpp_init@4267184)
 method(start@4264256)
+method(type_info::_type_info_dtor_internal_method(void)@4297312)
 method(type_info::type_info(class type_info const &)@4264416)
 method(type_info::type_info(class type_info const &)@4266752)
 method(virtual * Derived::`vector deleting destructor'(unsigned int)@4263981)
@@ -574,7 +714,7 @@ vftableBelongsToClass(const type_info::`vftable'@4286316,0,type_info::type_info(
 %   {type_info::type_info(class type_info const &)@4264416}
 %   {virtual * Derived::`vector deleting destructor'(unsigned int)@4263981}
 %   {virtual * Derived::`vector deleting destructor'(unsigned int)@4264141, virtual int Base::func2(void)@4264206, virtual int Derived::func3(void)@4264266, virtual int Base::func1(void)@4264451, Derived::Derived(void)@4265360, Base::Base(void)@4265536, virtual int Base::func1(void)@4265648, virtual int Base::func2(void)@4265744, virtual int Derived::func3(void)@4265840, virtual * Derived::`vector deleting destructor'(unsigned int)@4265904, virtual Derived::~Derived(void)@4266016, const Derived::`vftable'@4286272}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264151, type_info::type_info(class type_info const &)@4266752, virtual * type_info::`vector deleting destructor'(unsigned int)@4266800, const type_info::`vftable'@4286316, __declspec(dllimport) type_info::_type_info_dtor_internal_method(void)@4297312}
+%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264151, type_info::type_info(class type_info const &)@4266752, virtual * type_info::`vector deleting destructor'(unsigned int)@4266800, const type_info::`vftable'@4286316, type_info::_type_info_dtor_internal_method(void)@4297312}
 %   {virtual Derived::~Derived(void)@4264261}
 %   {virtual type_info::~type_info(void)@4264021}
 %   {virtual type_info::~type_info(void)@4264096}

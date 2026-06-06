@@ -1,14 +1,13 @@
-Domain options require heuristic 'Domain'!
-17:05:44 Grounding...
-17:05:44 Grounding done (0.01s)
-17:05:44 Solving...
-17:05:44 Model found (0.02s): [-197]
-17:05:44 Model found (0.02s, +0.00s): [-206]
-17:05:44 Model found (0.02s, +0.00s): [-207]
-17:05:44 Solving done: OPTIMUM FOUND (0.01s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.01s)
+08:15:24 Solving...
+08:15:24 Model found (0.02s): [-206]
+08:15:24 Model found (0.02s, +0.00s): [-207]
+08:15:24 Solving done: OPTIMUM FOUND (0.00s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex8.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 2
 Optimization: -207
 
 % Equivalence classes (205 classes, 206 entities):
@@ -19,17 +18,17 @@ Optimization: -207
 %   rules: 5064.0
 %   variables: 625.0
 %   constraints: 0.0
-%   choices: 1665.0
+%   choices: 416.0
 %   conflicts: 0.0
-%   models: 3.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-207.0]
 %   lower_bound: [-207.0]
-%   total_time: 0.026073932647705078
-%   ground_time: 0.012040471192449331
-%   time_to_first_model: 0.015326832421123981
+%   total_time: 0.024024009704589844
+%   ground_time: 0.01205312367528677
+%   time_to_first_model: 0.015082926955074072
 %   max_rss_bytes: 25165824
-%   solve_time: 0.0033681392669677734
+%   solve_time: 0.001438140869140625
 classCallsMethod(D::D(void)@4265392,B::B(void)@4265664)
 guessEnabled(constructor)
 guessEnabled(derived_class)

@@ -1,29 +1,22 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:45 Grounding done (0.02s)
-17:05:45 Solving...
-17:05:45 Model found (0.04s): [-12, -93]
-17:05:45 Model found (0.05s, +0.01s): [-12, -185]
-17:05:45 Model found (0.06s, +0.01s): [-20, -95]
-17:05:45 Model found (0.07s, +0.01s): [-20, -96]
-17:05:45 Model found (0.07s, +0.01s): [-20, -186]
-17:05:45 Model found (0.08s, +0.00s): [-20, -226]
-17:05:45 Model found (0.08s, +0.01s): [-20, -227]
-17:05:45 Model found (0.10s, +0.01s): [-20, -243]
-17:05:45 Model found (0.11s, +0.01s): [-20, -248]
-17:05:45 Model found (0.11s, +0.00s): [-20, -344]
-17:05:45 Model found (0.13s, +0.01s): [-20, -345]
-17:05:45 Model found (0.13s, +0.01s): [-20, -346]
-17:05:45 Model found (0.14s, +0.01s): [-20, -347]
-17:05:45 Model found (0.15s, +0.01s): [-20, -356]
-17:05:45 Model found (0.17s, +0.02s): [-20, -357]
-17:05:45 Model found (0.18s, +0.01s): [-20, -358]
-17:05:45 Model found (0.21s, +0.03s): [-20, -359]
-17:05:45 Model found (0.21s, +0.01s): [-20, -360]
-17:05:45 Solving done: OPTIMUM FOUND (0.20s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.02s)
+08:15:24 Solving...
+08:15:24 Model found (0.04s): [-12, -185]
+08:15:24 Model found (0.04s, +0.00s): [-20, -186]
+08:15:24 Model found (0.05s, +0.01s): [-20, -187]
+08:15:24 Model found (0.05s, +0.00s): [-20, -351]
+08:15:24 Model found (0.06s, +0.00s): [-20, -352]
+08:15:24 Model found (0.06s, +0.00s): [-20, -355]
+08:15:24 Model found (0.06s, +0.00s): [-20, -356]
+08:15:24 Model found (0.07s, +0.00s): [-20, -357]
+08:15:24 Model found (0.07s, +0.00s): [-20, -358]
+08:15:24 Model found (0.07s, +0.00s): [-20, -359]
+08:15:24 Model found (0.07s, +0.00s): [-20, -360]
+08:15:24 Solving done: OPTIMUM FOUND (0.07s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 18
+Answer: 11
 Optimization: -20 -360
 
 % Equivalence classes (163 classes, 178 entities):
@@ -34,17 +27,17 @@ Optimization: -20 -360
 %   rules: 8136.0
 %   variables: 2307.0
 %   constraints: 88.0
-%   choices: 10319.0
-%   conflicts: 268.0
-%   models: 18.0
+%   choices: 1793.0
+%   conflicts: 88.0
+%   models: 11.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -360.0]
 %   lower_bound: [-20.0, -360.0]
-%   total_time: 0.23252511024475098
-%   ground_time: 0.017702016979455948
-%   time_to_first_model: 0.044605661649256945
+%   total_time: 0.1023259162902832
+%   ground_time: 0.01767342397943139
+%   time_to_first_model: 0.04075928125530481
 %   max_rss_bytes: 26738688
-%   solve_time: 0.1803150177001953
+%   solve_time: 0.05021190643310547
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198496,int Base::func3(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200617,std::exception::_Copy_str(char const *)@4200523)
@@ -62,6 +55,7 @@ classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
 constructor(std::exception::exception(char const * const &, int)@4200481)
 constructor(std::exception::exception(class std::exception const &)@4200720)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@4198672)
 constructor(virtual type_info::~type_info(void)@4200757)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
@@ -282,7 +276,6 @@ method(virtual std::exception::~exception(void)@4200670)
 method(virtual type_info::~type_info(void)@4200757)
 method(x_ismbbtype_l@4211718)
 objectInObject(const std::bad_alloc::`vftable'@4219200,const std::exception::`vftable'@4219300,0)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198672)
 realDestructor(virtual std::exception::~exception(void)@4200670)
 vfTable(const std::bad_alloc::`vftable'@4219200)
 vfTable(const std::exception::`vftable'@4219300)

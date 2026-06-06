@@ -1,13 +1,12 @@
-Domain options require heuristic 'Domain'!
-17:05:44 Grounding...
-17:05:44 Grounding done (0.01s)
-17:05:44 Solving...
-17:05:44 Model found (0.02s): [-207]
-17:05:44 Model found (0.02s, +0.00s): [-212]
-17:05:44 Solving done: OPTIMUM FOUND (0.00s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.01s)
+08:15:24 Solving...
+08:15:24 Model found (0.02s): [-212]
+08:15:24 Solving done: OPTIMUM FOUND (0.00s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 1
 Optimization: -212
 
 % Equivalence classes (212 classes, 212 entities):
@@ -18,17 +17,17 @@ Optimization: -212
 %   rules: 5130.0
 %   variables: 637.0
 %   constraints: 0.0
-%   choices: 1919.0
+%   choices: 426.0
 %   conflicts: 0.0
-%   models: 2.0
+%   models: 1.0
 %   optimal_models: 1.0
 %   final_cost: [-212.0]
 %   lower_bound: [-212.0]
-%   total_time: 0.02378392219543457
-%   ground_time: 0.012037351727485657
-%   time_to_first_model: 0.015066972933709621
+%   total_time: 0.023497819900512695
+%   ground_time: 0.012333355378359556
+%   time_to_first_model: 0.015145444311201572
 %   max_rss_bytes: 25165824
-%   solve_time: 0.0013360977172851562
+%   solve_time: 0.0006380081176757812
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(method)

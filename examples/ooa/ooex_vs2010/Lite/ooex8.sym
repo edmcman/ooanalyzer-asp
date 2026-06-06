@@ -1,21 +1,20 @@
-Domain options require heuristic 'Domain'!
-17:05:45 Grounding...
-17:05:45 Grounding done (0.02s)
-17:05:45 Solving...
-17:05:45 Model found (0.04s): [-12, -96]
-17:05:45 Model found (0.05s, +0.01s): [-12, -183]
-17:05:45 Model found (0.06s, +0.01s): [-20, -184]
-17:05:45 Model found (0.07s, +0.01s): [-20, -185]
-17:05:45 Model found (0.08s, +0.01s): [-20, -348]
-17:05:45 Model found (0.09s, +0.01s): [-20, -352]
-17:05:45 Model found (0.11s, +0.02s): [-20, -353]
-17:05:45 Model found (0.13s, +0.02s): [-20, -354]
-17:05:45 Model found (0.15s, +0.02s): [-20, -355]
-17:05:45 Model found (0.17s, +0.01s): [-20, -357]
-17:05:45 Solving done: OPTIMUM FOUND (0.16s)
+08:15:24 Grounding...
+08:15:24 Grounding done (0.02s)
+08:15:24 Solving...
+08:15:24 Model found (0.04s): [-12, -183]
+08:15:24 Model found (0.04s, +0.00s): [-20, -184]
+08:15:24 Model found (0.05s, +0.01s): [-20, -185]
+08:15:24 Model found (0.05s, +0.00s): [-20, -348]
+08:15:24 Model found (0.06s, +0.01s): [-20, -352]
+08:15:24 Model found (0.07s, +0.01s): [-20, -353]
+08:15:24 Model found (0.07s, +0.00s): [-20, -354]
+08:15:24 Model found (0.08s, +0.02s): [-20, -355]
+08:15:24 Model found (0.09s, +0.01s): [-20, -357]
+08:15:24 Solving done: OPTIMUM FOUND (0.08s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex8.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 10
+Answer: 9
 Optimization: -20 -357
 
 % Equivalence classes (162 classes, 176 entities):
@@ -26,17 +25,17 @@ Optimization: -20 -357
 %   rules: 7997.0
 %   variables: 2256.0
 %   constraints: 88.0
-%   choices: 9085.0
-%   conflicts: 157.0
-%   models: 10.0
+%   choices: 1700.0
+%   conflicts: 89.0
+%   models: 9.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -357.0]
 %   lower_bound: [-20.0, -357.0]
-%   total_time: 0.1878058910369873
-%   ground_time: 0.017312081065028906
-%   time_to_first_model: 0.04433887777850032
+%   total_time: 0.11117792129516602
+%   ground_time: 0.017590430099517107
+%   time_to_first_model: 0.03936600033193827
 %   max_rss_bytes: 26738688
-%   solve_time: 0.1367969512939453
+%   solve_time: 0.0599970817565918
 classCallsMethod(D::D(void)@4198528,B::B(void)@4198432)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Copy_str(char const *)@4199361)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4199455,std::exception::_Tidy(void)@4199425)
