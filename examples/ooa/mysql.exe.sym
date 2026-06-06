@@ -1,118 +1,121 @@
-08:15:24 Grounding...
-08:15:36 Grounding done (11.15s)
-08:15:36 Solving...
-08:16:15 Model found (50.40s): [-896, -5831]
-08:16:15 Model found (50.62s, +0.22s): [-896, -5832]
-08:16:16 Model found (50.99s, +0.37s): [-896, -5842]
-08:16:16 Model found (51.37s, +0.38s): [-900, -5843]
-08:16:16 Model found (51.70s, +0.33s): [-904, -5844]
-08:16:16 Model found (51.99s, +0.30s): [-904, -5864]
-08:16:17 Model found (52.29s, +0.30s): [-904, -5874]
-08:16:17 Model found (52.60s, +0.31s): [-908, -5845]
-08:16:17 Model found (52.91s, +0.32s): [-912, -5846]
-08:16:18 Model found (53.08s, +0.16s): [-916, -5846]
-08:16:18 Model found (53.27s, +0.20s): [-920, -5847]
-08:16:18 Model found (53.82s, +0.54s): [-924, -5848]
-08:16:19 Model found (54.26s, +0.45s): [-928, -5849]
-08:16:19 Model found (54.89s, +0.63s): [-932, -5850]
-08:16:20 Model found (55.89s, +1.00s): [-936, -5851]
-08:16:22 Model found (57.60s, +1.71s): [-936, -5925]
-08:16:23 Model found (58.04s, +0.45s): [-936, -5926]
-08:16:23 Model found (58.83s, +0.78s): [-936, -5936]
-08:16:24 Model found (59.34s, +0.51s): [-940, -5844]
-08:16:25 Model found (60.07s, +0.73s): [-940, -5845]
-08:16:25 Model found (60.40s, +0.33s): [-940, -5938]
-08:16:26 Model found (61.10s, +0.70s): [-940, -5948]
-08:16:26 Model found (61.57s, +0.47s): [-944, -5847]
-08:16:27 Model found (62.22s, +0.66s): [-944, -5848]
-08:16:27 Model found (62.70s, +0.48s): [-944, -5959]
-08:16:28 Model found (63.42s, +0.72s): [-948, -5850]
-08:16:29 Model found (64.08s, +0.65s): [-948, -5851]
-08:16:29 Model found (64.56s, +0.48s): [-948, -5970]
-08:16:30 Model found (65.27s, +0.71s): [-948, -5980]
-08:16:31 Model found (66.09s, +0.82s): [-952, -5853]
-08:16:33 Model found (68.49s, +2.40s): [-952, -5907]
-08:16:34 Model found (69.15s, +0.65s): [-952, -5917]
-08:16:34 Model found (69.49s, +0.34s): [-952, -5927]
-08:16:34 Model found (69.77s, +0.28s): [-952, -5937]
-08:16:35 Model found (70.05s, +0.28s): [-952, -5947]
-08:16:35 Model found (70.34s, +0.29s): [-952, -5957]
-08:16:35 Model found (70.70s, +0.36s): [-952, -5967]
-08:16:36 Model found (71.91s, +1.20s): [-952, -5977]
-08:16:37 Model found (72.75s, +0.84s): [-952, -5987]
-08:16:44 Model found (79.37s, +6.62s): [-960, -5860]
-08:16:44 Model found (79.96s, +0.59s): [-960, -5861]
-08:16:45 Model found (80.46s, +0.51s): [-960, -5862]
-08:16:45 Model found (80.97s, +0.51s): [-960, -5863]
-08:16:46 Model found (81.55s, +0.58s): [-960, -5864]
-08:16:47 Model found (82.06s, +0.51s): [-960, -5865]
-08:16:47 Model found (82.78s, +0.72s): [-960, -5866]
-08:16:48 Model found (83.46s, +0.67s): [-960, -5867]
-08:16:48 Model found (83.97s, +0.52s): [-960, -5868]
-08:16:49 Model found (84.66s, +0.69s): [-960, -5869]
-08:16:50 Model found (85.37s, +0.71s): [-960, -5870]
-08:16:50 Model found (85.95s, +0.58s): [-960, -5871]
-08:16:51 Model found (86.48s, +0.53s): [-960, -5872]
-08:16:52 Model found (87.06s, +0.58s): [-960, -5873]
-08:17:20 Model found (115.76s, +28.71s): [-960, -5878]
-08:17:21 Model found (116.57s, +0.80s): [-960, -5883]
-08:17:21 Model found (117.01s, +0.44s): [-960, -5886]
-08:17:25 Model found (120.91s, +3.90s): [-960, -5895]
-08:17:27 Model found (122.93s, +2.02s): [-960, -5896]
-08:17:30 Model found (125.20s, +2.28s): [-960, -5909]
-08:17:31 Model found (126.23s, +1.03s): [-960, -5912]
-08:17:32 Model found (127.57s, +1.34s): [-960, -5913]
-08:17:58 Model found (153.25s, +25.68s): [-960, -5915]
-08:17:59 Model found (154.05s, +0.80s): [-964, -5913]
-08:17:59 Model found (154.67s, +0.62s): [-964, -5914]
-08:18:00 Model found (155.36s, +0.69s): [-964, -5923]
-08:18:01 Model found (156.29s, +0.93s): [-964, -5933]
-08:18:02 Model found (157.30s, +1.01s): [-968, -5924]
-08:18:03 Model found (158.27s, +0.97s): [-968, -5934]
-08:18:04 Model found (159.23s, +0.95s): [-972, -5935]
-08:18:05 Model found (160.22s, +0.99s): [-972, -5945]
-08:18:07 Model found (162.93s, +2.71s): [-972, -5955]
-08:18:08 Model found (163.68s, +0.75s): [-972, -5965]
-08:18:12 Model found (167.26s, +3.58s): [-972, -5968]
-08:18:14 Model found (169.37s, +2.10s): [-972, -5975]
-08:18:15 Model found (170.18s, +0.82s): [-972, -5976]
-08:18:18 Model found (173.78s, +3.59s): [-972, -5978]
-08:18:25 Model found (180.11s, +6.33s): [-972, -5979]
-08:18:47 Model found (202.06s, +21.95s): [-972, -5989]
-08:18:56 Model found (211.15s, +9.08s): [-972, -5999]
-08:19:06 Model found (221.22s, +10.07s): [-972, -6000]
-08:19:27 Model found (242.86s, +21.64s): [-972, -6007]
-08:19:45 Model found (260.36s, +17.51s): [-972, -6010]
-08:19:52 Model found (267.14s, +6.78s): [-972, -6011]
-08:20:33 Model found (308.23s, +41.09s): [-972, -6020]
-08:20:33 Model found (308.86s, +0.63s): [-972, -6021]
-08:21:14 Solving done: TIME LIMIT REACHED (337.98s)
+09:41:54 Grounding...
+09:42:21 Grounding done (27.24s)
+09:42:21 Solving...
+09:43:16 Model found (81.68s): [-856, -5834]
+09:43:16 Model found (82.13s, +0.45s): [-860, -5834]
+09:43:17 Model found (82.57s, +0.44s): [-864, -5834]
+09:43:17 Model found (83.27s, +0.70s): [-868, -5835]
+09:43:18 Model found (83.67s, +0.41s): [-872, -5836]
+09:43:18 Model found (84.11s, +0.44s): [-876, -5837]
+09:43:19 Model found (84.54s, +0.42s): [-880, -5838]
+09:43:19 Model found (85.00s, +0.46s): [-884, -5839]
+09:43:20 Model found (85.48s, +0.48s): [-888, -5840]
+09:43:20 Model found (85.92s, +0.44s): [-892, -5841]
+09:43:20 Model found (86.44s, +0.52s): [-896, -5842]
+09:43:21 Model found (86.98s, +0.54s): [-900, -5843]
+09:43:22 Model found (87.52s, +0.54s): [-904, -5844]
+09:43:22 Model found (88.05s, +0.53s): [-908, -5845]
+09:43:22 Model found (88.36s, +0.31s): [-912, -5846]
+09:43:23 Model found (88.77s, +0.41s): [-916, -5846]
+09:43:23 Model found (88.97s, +0.21s): [-920, -5847]
+09:43:24 Model found (89.55s, +0.58s): [-924, -5848]
+09:43:24 Model found (90.17s, +0.62s): [-928, -5849]
+09:43:25 Model found (90.68s, +0.50s): [-932, -5850]
+09:43:26 Model found (91.47s, +0.80s): [-936, -5851]
+09:43:34 Model found (100.09s, +8.62s): [-936, -5920]
+09:43:35 Model found (101.34s, +1.25s): [-936, -5921]
+09:43:36 Model found (101.47s, +0.13s): [-936, -5922]
+09:43:36 Model found (101.63s, +0.15s): [-936, -5923]
+09:43:36 Model found (101.76s, +0.14s): [-936, -5933]
+09:43:36 Model found (101.92s, +0.16s): [-936, -5943]
+09:43:36 Model found (102.06s, +0.14s): [-936, -5953]
+09:43:36 Model found (102.23s, +0.16s): [-936, -5963]
+09:43:36 Model found (102.38s, +0.15s): [-936, -5973]
+09:43:37 Model found (102.52s, +0.14s): [-936, -5983]
+09:43:37 Model found (102.69s, +0.17s): [-936, -5993]
+09:43:37 Model found (102.93s, +0.24s): [-936, -6003]
+09:43:37 Model found (103.16s, +0.23s): [-936, -6013]
+09:43:37 Model found (103.38s, +0.21s): [-936, -6023]
+09:43:38 Model found (103.58s, +0.20s): [-936, -6033]
+09:43:38 Model found (103.82s, +0.24s): [-936, -6043]
+09:43:42 Model found (107.63s, +3.82s): [-936, -6053]
+09:43:44 Model found (110.12s, +2.49s): [-936, -6063]
+09:43:48 Model found (114.34s, +4.22s): [-936, -6068]
+09:43:56 Model found (122.37s, +8.03s): [-936, -6073]
+09:43:58 Model found (123.65s, +1.28s): [-936, -6078]
+09:43:58 Model found (124.12s, +0.47s): [-936, -6088]
+09:44:14 Model found (140.09s, +15.96s): [-940, -5781]
+09:44:15 Model found (140.58s, +0.49s): [-940, -5782]
+09:44:15 Model found (140.99s, +0.41s): [-940, -5783]
+09:44:16 Model found (141.55s, +0.56s): [-940, -5784]
+09:44:16 Model found (142.19s, +0.64s): [-940, -5785]
+09:44:17 Model found (142.86s, +0.67s): [-948, -5728]
+09:44:18 Model found (143.73s, +0.87s): [-948, -6081]
+09:44:19 Model found (144.50s, +0.77s): [-948, -6091]
+09:44:19 Model found (145.20s, +0.70s): [-952, -6092]
+09:44:20 Model found (145.88s, +0.68s): [-952, -6102]
+09:44:21 Model found (146.66s, +0.78s): [-952, -6112]
+09:44:21 Model found (147.30s, +0.64s): [-952, -6122]
+09:44:25 Model found (150.91s, +3.62s): [-952, -6132]
+09:44:26 Model found (151.77s, +0.85s): [-952, -6133]
+09:44:30 Model found (155.71s, +3.95s): [-952, -6142]
+09:44:32 Model found (158.26s, +2.54s): [-952, -6143]
+09:44:33 Model found (158.99s, +0.74s): [-952, -6152]
+09:44:34 Model found (159.73s, +0.73s): [-952, -6153]
+09:44:35 Model found (161.28s, +1.55s): [-952, -6162]
+09:44:38 Model found (164.30s, +3.02s): [-952, -6163]
+09:44:39 Model found (164.76s, +0.47s): [-952, -6172]
+09:44:40 Model found (165.58s, +0.82s): [-952, -6173]
+09:44:41 Model found (167.28s, +1.69s): [-952, -6182]
+09:44:42 Model found (168.11s, +0.84s): [-952, -6192]
+09:44:44 Model found (169.55s, +1.44s): [-952, -6193]
+09:44:47 Model found (172.96s, +3.41s): [-952, -6212]
+09:44:49 Model found (175.38s, +2.42s): [-956, -5786]
+09:44:50 Model found (176.14s, +0.76s): [-956, -5787]
+09:44:51 Model found (177.03s, +0.88s): [-956, -6193]
+09:44:52 Model found (178.29s, +1.26s): [-960, -5789]
+09:44:53 Model found (179.15s, +0.86s): [-960, -5790]
+09:44:54 Model found (180.01s, +0.86s): [-960, -5791]
+09:45:37 Model found (223.01s, +43.00s): [-960, -5792]
+09:45:38 Model found (223.95s, +0.94s): [-960, -5793]
+09:45:39 Model found (224.65s, +0.70s): [-960, -5794]
+09:46:23 Model found (268.64s, +43.99s): [-960, -5800]
+09:46:24 Model found (270.40s, +1.76s): [-960, -5801]
+09:46:25 Model found (271.16s, +0.75s): [-960, -5802]
+09:46:27 Model found (272.94s, +1.78s): [-960, -5806]
+09:46:29 Model found (275.02s, +2.08s): [-960, -5807]
+09:46:30 Model found (275.80s, +0.78s): [-960, -5808]
+09:46:33 Model found (278.64s, +2.84s): [-960, -5811]
+09:47:12 Model found (318.32s, +39.68s): [-968, -5809]
+09:47:14 Model found (319.97s, +1.65s): [-968, -5814]
+09:47:18 Model found (323.83s, +3.86s): [-968, -5822]
+09:47:46 Solving done: TIME LIMIT REACHED (324.70s)
 % Command: ooanalyzer.py examples/ooa/mysql.exe.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 % TIME LIMIT REACHED
 
-Answer: 85
-Optimization: -972 -6021
+Answer: 88
+Optimization: -968 -5822
 Lower bound: -2720 -34496
 
-% Equivalence classes (5704 classes, 5787 entities):
+% Equivalence classes (5714 classes, 5787 entities):
 
 % Stats:
-%   atoms: 1202796.0
-%   bodies: 1396761.0
-%   rules: 2150860.0
-%   variables: 1707012.0
-%   constraints: 62842.0
-%   choices: 40199724.0
-%   conflicts: 38065.0
-%   models: 85.0
+%   atoms: 1214335.0
+%   bodies: 1396533.0
+%   rules: 2082625.0
+%   variables: 1701768.0
+%   constraints: 62574.0
+%   choices: 23227011.0
+%   conflicts: 34327.0
+%   models: 88.0
 %   optimal_models: 0.0
-%   final_cost: [-972.0, -6021.0]
+%   final_cost: [-968.0, -5822.0]
 %   lower_bound: [-2720.0, -34496.0]
-%   total_time: 349.4439239501953
-%   ground_time: 11.146700153127313
-%   time_to_first_model: 50.40420679003
-%   max_rss_bytes: 2332110848
-%   solve_time: 300.13435196876526
+%   total_time: 352.9953410625458
+%   ground_time: 27.236529083995265
+%   time_to_first_model: 81.68018858399591
+%   max_rss_bytes: 1274855424
+%   solve_time: 272.9608211517334
 -vfTable(static class std::_Generic_error_category std::_Error_objects<int>::_Generic_object@8818780)
 -vfTable(static class std::_System_error_category std::_Error_objects<int>::_System_object@8818788)
 classCallsMethod(8425728,??_C@_04PCJFHION@help?$AA@@4918472)
@@ -134,8 +137,6 @@ classCallsMethod(Handshake_client::vftable@7780992,Handshake_client::scalar_dele
 classCallsMethod(Handshake_client::vftable@7780992,Handshake_client::write_packet@4533744)
 classCallsMethod(MyCipherCtx<0>::SetKey@4478704,TaoCrypt::AES::SetKey@4662128)
 classCallsMethod(MyCipherCtx<1>::SetKey@4478608,TaoCrypt::AES::SetKey@4662128)
-classCallsMethod(Prealloced_array<near char *, 100, 1>::push_back@4343568,Prealloced_array<near char *, 100, 1>::reserve@4343744)
-classCallsMethod(Prealloced_array<struct st_mysql_lex_string, 16, 1>::push_back@4230176,Prealloced_array<struct st_mysql_lex_string, 16, 1>::reserve@4232640)
 classCallsMethod(Sid::Sid@4669808,Sid::is_valid@4670480)
 classCallsMethod(Sid::Sid@4669936,Sid::is_valid@4670480)
 classCallsMethod(Sid::operator==@4670368,Sid::is_valid@4670480)
@@ -177,7 +178,6 @@ classCallsMethod(TaoCrypt::AES::vftable@5370204,TaoCrypt::AES::scalar_deleting_d
 classCallsMethod(TaoCrypt::AES::vftable@5370204,TaoCrypt::Mode_BASE::Process@4478368)
 classCallsMethod(TaoCrypt::AbstractRing::MultiplicativeGroupT::vftable@7784944,TaoCrypt::AbstractRing::MultiplicativeGroupT::scalar_deleting_destructor@4628320)
 classCallsMethod(TaoCrypt::BER_Decoder::vftable@7784392,TaoCrypt::BER_Decoder::scalar_deleting_destructor@4598896)
-classCallsMethod(TaoCrypt::Base64Decoder::Base64Decoder@4580112,TaoCrypt::Base64Decoder::Decode@4620912)
 classCallsMethod(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::SetKey@4478528,TaoCrypt::AES::SetKey@4662128)
 classCallsMethod(TaoCrypt::BlockCipher<0, class TaoCrypt::DES_EDE3, 1>::SetKey@4592816,TaoCrypt::DES_EDE3::SetKey@4699328)
 classCallsMethod(TaoCrypt::BlockCipher<1, class TaoCrypt::AES, 1>::SetKey@4478448,TaoCrypt::AES::SetKey@4662128)
@@ -212,7 +212,6 @@ classCallsMethod(TaoCrypt::DES::vftable@7784216,TaoCrypt::Mode_BASE::Process@447
 classCallsMethod(TaoCrypt::DES_EDE3::vftable@7784232,TaoCrypt::DES_EDE3::scalar_deleting_destructor@4587776)
 classCallsMethod(TaoCrypt::DES_EDE3::vftable@7784232,TaoCrypt::Mode_BASE::Process@4478368)
 classCallsMethod(TaoCrypt::DH::Agree@4700416,TaoCrypt::Integer::ByteCount@4630800)
-classCallsMethod(TaoCrypt::DH::DH@4580832,TaoCrypt::Integer::Integer@4624432)
 classCallsMethod(TaoCrypt::DH::DH@4580928,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(TaoCrypt::DH::DH@4700224,TaoCrypt::DH::Initialize@4701328)
 classCallsMethod(TaoCrypt::DH::DH@4700224,TaoCrypt::Integer::Integer@4624976)
@@ -228,7 +227,6 @@ classCallsMethod(TaoCrypt::DH_Decoder::Decode@4601376,TaoCrypt::BER_Decoder::Get
 classCallsMethod(TaoCrypt::DH_Decoder::vftable@7799516,TaoCrypt::BER_Decoder::GetSequence@4607280)
 classCallsMethod(TaoCrypt::DH_Decoder::vftable@7799516,TaoCrypt::DH_Decoder::scalar_deleting_destructor@4700368)
 classCallsMethod(TaoCrypt::DSA_PrivateKey::DSA_PrivateKey@4460160,TaoCrypt::Integer::Integer@4624976)
-classCallsMethod(TaoCrypt::DSA_PrivateKey::DSA_PrivateKey@4656912,TaoCrypt::DSA_PrivateKey::Initialize@4658080)
 classCallsMethod(TaoCrypt::DSA_PrivateKey::DSA_PrivateKey@4656912,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(TaoCrypt::DSA_PrivateKey::Initialize@4658176,TaoCrypt::DSA_PublicKey::Initialize@4658320)
 classCallsMethod(TaoCrypt::DSA_Private_Decoder::Decode@4601584,TaoCrypt::BER_Decoder::GetInteger@4605616)
@@ -237,7 +235,6 @@ classCallsMethod(TaoCrypt::DSA_Private_Decoder::vftable@7785348,TaoCrypt::DSA_Pr
 classCallsMethod(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4460288,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4657088,TaoCrypt::DSA_PublicKey::Initialize@4658224)
 classCallsMethod(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4657088,TaoCrypt::Integer::Integer@4624976)
-classCallsMethod(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4657216,TaoCrypt::Integer::Integer@4624432)
 classCallsMethod(TaoCrypt::DSA_PublicKey::Initialize@4658320,TaoCrypt::Integer::operator=@4625808)
 classCallsMethod(TaoCrypt::DSA_PublicKey::Swap@4659392,TaoCrypt::Integer::Swap@4653904)
 classCallsMethod(TaoCrypt::DSA_PublicKey::operator=@4657600,TaoCrypt::DSA_PublicKey::Swap@4659392)
@@ -271,12 +268,10 @@ classCallsMethod(TaoCrypt::HMAC<class TaoCrypt::SHA>::Final@4590416,TaoCrypt::HM
 classCallsMethod(TaoCrypt::HMAC<class TaoCrypt::SHA>::HMAC@4579616,TaoCrypt::HMAC<class TaoCrypt::SHA>::Init@4590752)
 classCallsMethod(TaoCrypt::HMAC<class TaoCrypt::SHA>::SetKey@4593280,TaoCrypt::HMAC<class TaoCrypt::SHA>::Init@4590752)
 classCallsMethod(TaoCrypt::HMAC<class TaoCrypt::SHA>::Update@4594480,TaoCrypt::HMAC<class TaoCrypt::SHA>::KeyInnerHash@4590912)
-classCallsMethod(TaoCrypt::HexDecoder::HexDecoder@4460432,TaoCrypt::HexDecoder::Decode@4621680)
 classCallsMethod(TaoCrypt::Integer::BitCount@4630736,TaoCrypt::Integer::WordCount@4654192)
 classCallsMethod(TaoCrypt::Integer::ByteCount@4630800,TaoCrypt::Integer::WordCount@4654192)
 classCallsMethod(TaoCrypt::Integer::Compare@4631744,TaoCrypt::Integer::PositiveCompare@4647040)
 classCallsMethod(TaoCrypt::Integer::Decode@4632672,TaoCrypt::Block<unsigned int, class TaoCrypt::AllocatorWithCleanup<unsigned int> >::CleanNew@4631632)
-classCallsMethod(TaoCrypt::Integer::Doubled@4636064,TaoCrypt::Integer::Plus@4646528)
 classCallsMethod(TaoCrypt::Integer::Encode@4636096,TaoCrypt::Integer::ByteCount@4630800)
 classCallsMethod(TaoCrypt::Integer::Encode@4636096,TaoCrypt::Integer::GetByte@4636816)
 classCallsMethod(TaoCrypt::Integer::GetBits@4636752,TaoCrypt::Integer::GetBit@4636704)
@@ -303,9 +298,7 @@ classCallsMethod(TaoCrypt::Integer::Randomize@4648576,TaoCrypt::Integer::operato
 classCallsMethod(TaoCrypt::Integer::Randomize@4648752,TaoCrypt::Integer::Decode@4632976)
 classCallsMethod(TaoCrypt::Integer::SquareRoot@4652896,TaoCrypt::Integer::BitCount@4630736)
 classCallsMethod(TaoCrypt::Integer::SquareRoot@4652896,TaoCrypt::Integer::operator!@4626240)
-classCallsMethod(TaoCrypt::Integer::Squared@4653296,TaoCrypt::Integer::Times@4653968)
 classCallsMethod(TaoCrypt::Integer::operator!@4626240,TaoCrypt::Integer::WordCount@4654192)
-classCallsMethod(TaoCrypt::Integer::operator%=@4657712,TaoCrypt::Integer::Modulo@4640128)
 classCallsMethod(TaoCrypt::Integer::operator%=@4657712,TaoCrypt::Integer::operator=@4625808)
 classCallsMethod(TaoCrypt::Integer::operator++@4626368,TaoCrypt::Integer::WordCount@4654192)
 classCallsMethod(TaoCrypt::Integer::operator++@4626368,TaoCrypt::Integer::operator=@4625808)
@@ -321,7 +314,6 @@ classCallsMethod(TaoCrypt::MD2::vftable@7799556,TaoCrypt::MD2::scalar_deleting_d
 classCallsMethod(TaoCrypt::MD4::MD4@4460560,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 classCallsMethod(TaoCrypt::MD4::MD4@4460560,TaoCrypt::MD4::Init@4619584)
 classCallsMethod(TaoCrypt::MD4::MD4@4619408,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
-classCallsMethod(TaoCrypt::MD4::operator=@4619520,TaoCrypt::MD4::Swap@4619648)
 classCallsMethod(TaoCrypt::MD4::vftable@5369160,TaoCrypt::HASHwithTransform::Final@4616512)
 classCallsMethod(TaoCrypt::MD4::vftable@5369160,TaoCrypt::HASHwithTransform::Update@4617120)
 classCallsMethod(TaoCrypt::MD4::vftable@5369160,TaoCrypt::MD4::Init@4619584)
@@ -329,35 +321,33 @@ classCallsMethod(TaoCrypt::MD4::vftable@5369160,TaoCrypt::MD4::scalar_deleting_d
 classCallsMethod(TaoCrypt::MD5::MD5@4460656,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 classCallsMethod(TaoCrypt::MD5::MD5@4460656,TaoCrypt::MD5::Init@4617504)
 classCallsMethod(TaoCrypt::MD5::MD5@4617328,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
-classCallsMethod(TaoCrypt::MD5::operator=@4617440,TaoCrypt::MD5::Swap@4617568)
 classCallsMethod(TaoCrypt::MD5::vftable@5369120,TaoCrypt::HASHwithTransform::Final@4616512)
 classCallsMethod(TaoCrypt::MD5::vftable@5369120,TaoCrypt::HASHwithTransform::Update@4617120)
 classCallsMethod(TaoCrypt::MD5::vftable@5369120,TaoCrypt::MD5::Init@4617504)
 classCallsMethod(TaoCrypt::MD5::vftable@5369120,TaoCrypt::MD5::scalar_deleting_destructor@4462672)
 classCallsMethod(TaoCrypt::Mode_BASE::vftable@5370188,TaoCrypt::Mode_BASE::Process@4478368)
 classCallsMethod(TaoCrypt::Mode_BASE::vftable@5370188,TaoCrypt::Mode_BASE::scalar_deleting_destructor@4477824)
+classCallsMethod(TaoCrypt::ModularArithmetic::vftable@7785108,TaoCrypt::ModularArithmetic::Equal@4636416)
 classCallsMethod(TaoCrypt::ModularArithmetic::vftable@7785108,TaoCrypt::ModularArithmetic::scalar_deleting_destructor@4628160)
 classCallsMethod(TaoCrypt::MontgomeryRepresentation::scalar_deleting_destructor@4628272,TaoCrypt::MontgomeryRepresentation::~MontgomeryRepresentation@4625648)
+classCallsMethod(TaoCrypt::MontgomeryRepresentation::vftable@7785216,TaoCrypt::ModularArithmetic::Equal@4636416)
 classCallsMethod(TaoCrypt::MontgomeryRepresentation::vftable@7785216,TaoCrypt::MontgomeryRepresentation::scalar_deleting_destructor@4628272)
 classCallsMethod(TaoCrypt::PublicKey::PublicKey@4597520,TaoCrypt::PublicKey::SetKey@4608992)
 classCallsMethod(TaoCrypt::PublicKey::PublicKey@4597520,TaoCrypt::PublicKey::SetSize@4609280)
 classCallsMethod(TaoCrypt::RIPEMD160::RIPEMD160@4584096,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 classCallsMethod(TaoCrypt::RIPEMD160::RIPEMD160@4584096,TaoCrypt::RIPEMD160::Init@4690272)
 classCallsMethod(TaoCrypt::RIPEMD160::RIPEMD160@4690096,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
-classCallsMethod(TaoCrypt::RIPEMD160::operator=@4690208,TaoCrypt::RIPEMD160::Swap@4690336)
 classCallsMethod(TaoCrypt::RIPEMD160::vftable@7784176,TaoCrypt::HASHwithTransform::Final@4616512)
 classCallsMethod(TaoCrypt::RIPEMD160::vftable@7784176,TaoCrypt::HASHwithTransform::Update@4617120)
 classCallsMethod(TaoCrypt::RIPEMD160::vftable@7784176,TaoCrypt::RIPEMD160::Init@4690272)
 classCallsMethod(TaoCrypt::RIPEMD160::vftable@7784176,TaoCrypt::RIPEMD160::scalar_deleting_destructor@4588704)
 classCallsMethod(TaoCrypt::RSA_PrivateKey::RSA_PrivateKey@4460752,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(TaoCrypt::RSA_PrivateKey::RSA_PrivateKey@4654928,TaoCrypt::Integer::Integer@4624976)
-classCallsMethod(TaoCrypt::RSA_PrivateKey::RSA_PrivateKey@4654928,TaoCrypt::RSA_PrivateKey::Initialize@4655904)
 classCallsMethod(TaoCrypt::RSA_Private_Decoder::Decode@4602336,TaoCrypt::BER_Decoder::GetInteger@4605616)
 classCallsMethod(TaoCrypt::RSA_Private_Decoder::ReadHeader@4608208,TaoCrypt::BER_Decoder::GetSequence@4607280)
 classCallsMethod(TaoCrypt::RSA_Private_Decoder::vftable@7785324,TaoCrypt::RSA_Private_Decoder::scalar_deleting_destructor@4655296)
 classCallsMethod(TaoCrypt::RSA_PublicKey::Initialize@4590816,TaoCrypt::Integer::operator=@4625808)
 classCallsMethod(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4460912,TaoCrypt::Integer::Integer@4624976)
-classCallsMethod(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4584896,TaoCrypt::Integer::Integer@4624432)
 classCallsMethod(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4655136,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4655136,TaoCrypt::RSA_PublicKey::Initialize@4656000)
 classCallsMethod(TaoCrypt::RSA_PublicKey::Swap@4594368,TaoCrypt::Integer::Swap@4653904)
@@ -371,14 +361,12 @@ classCallsMethod(TaoCrypt::RandomNumberGenerator::RandomNumberGenerator@4699904,
 classCallsMethod(TaoCrypt::RandomNumberGenerator::RandomNumberGenerator@4699904,TaoCrypt::OS_Seed::OS_Seed@4699856)
 classCallsMethod(TaoCrypt::RandomNumberGenerator::RandomNumberGenerator@4699904,TaoCrypt::RandomNumberGenerator::GenerateBlock@4700064)
 classCallsMethod(TaoCrypt::SHA224::SHA224@4671840,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
-classCallsMethod(TaoCrypt::SHA224::operator=@4672432,TaoCrypt::SHA224::Swap@4673344)
 classCallsMethod(TaoCrypt::SHA224::vftable@7797276,TaoCrypt::HASHwithTransform::Final@4616512)
 classCallsMethod(TaoCrypt::SHA224::vftable@7797276,TaoCrypt::HASHwithTransform::Update@4617120)
 classCallsMethod(TaoCrypt::SHA224::vftable@7797276,TaoCrypt::SHA224::scalar_deleting_destructor@4672784)
 classCallsMethod(TaoCrypt::SHA256::SHA256@4534528,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 classCallsMethod(TaoCrypt::SHA256::SHA256@4534528,TaoCrypt::SHA256::Init@4672912)
 classCallsMethod(TaoCrypt::SHA256::SHA256@4671968,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
-classCallsMethod(TaoCrypt::SHA256::operator=@4672496,TaoCrypt::SHA256::Swap@4673472)
 classCallsMethod(TaoCrypt::SHA256::vftable@7781352,TaoCrypt::HASHwithTransform::Final@4616512)
 classCallsMethod(TaoCrypt::SHA256::vftable@7781352,TaoCrypt::HASHwithTransform::Update@4617120)
 classCallsMethod(TaoCrypt::SHA256::vftable@7781352,TaoCrypt::SHA256::Init@4672912)
@@ -394,7 +382,6 @@ classCallsMethod(TaoCrypt::SHA384::vftable@7784472,TaoCrypt::SHA384::scalar_dele
 classCallsMethod(TaoCrypt::SHA512::SHA512@4597680,TaoCrypt::HASH64withTransform::HASH64withTransform@4615840)
 classCallsMethod(TaoCrypt::SHA512::SHA512@4597680,TaoCrypt::SHA512::Init@4673136)
 classCallsMethod(TaoCrypt::SHA512::SHA512@4672192,TaoCrypt::HASH64withTransform::HASH64withTransform@4615840)
-classCallsMethod(TaoCrypt::SHA512::operator=@4672640,TaoCrypt::SHA512::Swap@4673680)
 classCallsMethod(TaoCrypt::SHA512::vftable@7784432,TaoCrypt::HASH64withTransform::Final@4616160)
 classCallsMethod(TaoCrypt::SHA512::vftable@7784432,TaoCrypt::HASH64withTransform::Update@4616944)
 classCallsMethod(TaoCrypt::SHA512::vftable@7784432,TaoCrypt::SHA512::Init@4673136)
@@ -402,7 +389,6 @@ classCallsMethod(TaoCrypt::SHA512::vftable@7784432,TaoCrypt::SHA512::scalar_dele
 classCallsMethod(TaoCrypt::SHA::SHA@4533968,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 classCallsMethod(TaoCrypt::SHA::SHA@4533968,TaoCrypt::SHA::Init@4673280)
 classCallsMethod(TaoCrypt::SHA::SHA@4672304,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
-classCallsMethod(TaoCrypt::SHA::operator=@4672720,TaoCrypt::SHA::Swap@4673792)
 classCallsMethod(TaoCrypt::SHA::vftable@7781308,TaoCrypt::HASHwithTransform::Final@4616512)
 classCallsMethod(TaoCrypt::SHA::vftable@7781308,TaoCrypt::HASHwithTransform::Update@4617120)
 classCallsMethod(TaoCrypt::SHA::vftable@7781308,TaoCrypt::SHA::Init@4673280)
@@ -410,14 +396,11 @@ classCallsMethod(TaoCrypt::SHA::vftable@7781308,TaoCrypt::SHA::scalar_deleting_d
 classCallsMethod(TaoCrypt::Signature_Encoder::Signature_Encoder@4597776,TaoCrypt::DER_Encoder::SetAlgoID@4608624)
 classCallsMethod(TaoCrypt::Signature_Encoder::vftable@7784424,TaoCrypt::Signature_Encoder::scalar_deleting_destructor@4599136)
 classCallsMethod(TaoCrypt::Signer::Signer@4598176,TaoCrypt::PublicKey::PublicKey@4597520)
-classCallsMethod(TaoCrypt::Signer::scalar_deleting_destructor@4611520,TaoCrypt::Signer::~Signer@4598560)
 classCallsMethod(TaoCrypt::WindowSlider::FindNextWindow@4708000,TaoCrypt::Integer::GetBit@4636704)
 classCallsMethod(TaoCrypt::WindowSlider::FindNextWindow@4708000,TaoCrypt::Integer::Modulo@4640288)
 classCallsMethod(TaoCrypt::WindowSlider::FindNextWindow@4708000,TaoCrypt::Integer::WordCount@4654192)
 classCallsMethod(TaoCrypt::WindowSlider::FindNextWindow@4708000,TaoCrypt::Integer::operator+=@4627280)
 classCallsMethod(TaoCrypt::WindowSlider::FindNextWindow@4708000,TaoCrypt::Integer::operator>>=@4627600)
-classCallsMethod(TaoCrypt::WindowSlider::WindowSlider@4705600,TaoCrypt::Integer::Integer@4624432)
-classCallsMethod(TaoCrypt::WindowSlider::WindowSlider@4705744,TaoCrypt::Integer::Integer@4624432)
 classCallsMethod(_my_charset_8bit_handler@8497536,my_cset_init_8bit@4399280)
 classCallsMethod(mySTL::list<near class yaSSL::SSL_SESSION *>::erase@4520528,mySTL::list<near class yaSSL::SSL_SESSION *>::pop_back@4523248)
 classCallsMethod(mySTL::list<near class yaSSL::SSL_SESSION *>::erase@4520528,mySTL::list<near class yaSSL::SSL_SESSION *>::pop_front@4523408)
@@ -456,8 +439,6 @@ classCallsMethod(yaSSL::BIGNUM::BIGNUM@4460144,yaSSL::Integer::Integer@4583376)
 classCallsMethod(yaSSL::BIGNUM::scalar_deleting_destructor@4462480,yaSSL::Integer::~Integer@4586512)
 classCallsMethod(yaSSL::BulkCipher::vftable@7783936,yaSSL::BulkCipher::scalar_deleting_destructor@4587584)
 classCallsMethod(yaSSL::CertManager::CopySelfCert@4611952,mySTL::list<near class yaSSL::x509 *>::push_back@4524016)
-classCallsMethod(yaSSL::CertManager::SetPrivateKey@4612128,mySTL::list<near class yaSSL::x509 *>::front@4613984)
-classCallsMethod(yaSSL::CertManager::~CertManager@4611232,mySTL::list<near class yaSSL::x509 *>::~list@4512768)
 classCallsMethod(yaSSL::Certificate::Certificate@4553088,yaSSL::HandShakeBase::set_length@4576240)
 classCallsMethod(yaSSL::Certificate::vftable@7781760,yaSSL::Certificate::Process@4561952)
 classCallsMethod(yaSSL::Certificate::vftable@7781760,yaSSL::Certificate::get@4571216)
@@ -470,11 +451,7 @@ classCallsMethod(yaSSL::CertificateRequest::vftable@7781904,yaSSL::CertificateRe
 classCallsMethod(yaSSL::CertificateVerify::Build@4559024,yaSSL::HandShakeBase::set_length@4576240)
 classCallsMethod(yaSSL::CertificateVerify::Process@4562608,yaSSL::HandShakeBase::get_length@4571904)
 classCallsMethod(yaSSL::CertificateVerify::scalar_deleting_destructor@4558096,yaSSL::CertificateVerify::~CertificateVerify@4554720)
-classCallsMethod(yaSSL::CertificateVerify::vftable@7782072,yaSSL::CertificateVerify::Process@4562608)
-classCallsMethod(yaSSL::CertificateVerify::vftable@7782072,yaSSL::CertificateVerify::get@4571280)
 classCallsMethod(yaSSL::CertificateVerify::vftable@7782072,yaSSL::CertificateVerify::get_type@4572240)
-classCallsMethod(yaSSL::CertificateVerify::vftable@7782072,yaSSL::CertificateVerify::scalar_deleting_destructor@4558096)
-classCallsMethod(yaSSL::CertificateVerify::vftable@7782072,yaSSL::CertificateVerify::set@4575920)
 classCallsMethod(yaSSL::ChangeCipherSpec::vftable@7781604,yaSSL::ChangeCipherSpec::Process@4562960)
 classCallsMethod(yaSSL::ChangeCipherSpec::vftable@7781604,yaSSL::ChangeCipherSpec::get@4571312)
 classCallsMethod(yaSSL::ChangeCipherSpec::vftable@7781604,yaSSL::ChangeCipherSpec::get_length@4571808)
@@ -501,6 +478,7 @@ classCallsMethod(yaSSL::ClientKeyExchange::vftable@7782048,yaSSL::ClientKeyExcha
 classCallsMethod(yaSSL::Connection::~Connection@4554896,yaSSL::Connection::CleanMaster@4559600)
 classCallsMethod(yaSSL::Connection::~Connection@4554896,yaSSL::Connection::CleanPreMaster@4559648)
 classCallsMethod(yaSSL::DES::scalar_deleting_destructor@4587680,yaSSL::DES::~DES@4585808)
+classCallsMethod(yaSSL::DES::vftable@7783972,yaSSL::DES::decrypt@4594672)
 classCallsMethod(yaSSL::DES::vftable@7783972,yaSSL::DES::encrypt@4594832)
 classCallsMethod(yaSSL::DES_EDE::scalar_deleting_destructor@4587824,yaSSL::DES_EDE::~DES_EDE@4585888)
 classCallsMethod(yaSSL::DES_EDE::vftable@7784008,yaSSL::DES_EDE::decrypt@4594704)
@@ -526,15 +504,12 @@ classCallsMethod(yaSSL::Data::vftable@7781660,yaSSL::Data::scalar_deleting_destr
 classCallsMethod(yaSSL::Data::vftable@7781660,yaSSL::Data::set@4576032)
 classCallsMethod(yaSSL::DiffieHellman::DHImpl::DHImpl@4581008,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(yaSSL::DiffieHellman::DHImpl::DHImpl@4581136,TaoCrypt::Integer::ByteCount@4630800)
-classCallsMethod(yaSSL::DiffieHellman::DHImpl::DHImpl@4581136,TaoCrypt::Integer::Integer@4624432)
-classCallsMethod(yaSSL::DiffieHellman::scalar_deleting_destructor@4514480,yaSSL::DiffieHellman::~DiffieHellman@4586336)
 classCallsMethod(yaSSL::Digest::vftable@7783740,yaSSL::Digest::scalar_deleting_destructor@4588160)
 classCallsMethod(yaSSL::EncryptedPreMasterSecret::build@4569984,yaSSL::EncryptedPreMasterSecret::alloc@4568272)
 classCallsMethod(yaSSL::EncryptedPreMasterSecret::read@4574912,yaSSL::EncryptedPreMasterSecret::alloc@4568272)
 classCallsMethod(yaSSL::EncryptedPreMasterSecret::scalar_deleting_destructor@4558480,yaSSL::EncryptedPreMasterSecret::~EncryptedPreMasterSecret@4554976)
 classCallsMethod(yaSSL::EncryptedPreMasterSecret::vftable@7781976,yaSSL::EncryptedPreMasterSecret::build@4569984)
 classCallsMethod(yaSSL::EncryptedPreMasterSecret::vftable@7781976,yaSSL::EncryptedPreMasterSecret::scalar_deleting_destructor@4558480)
-classCallsMethod(yaSSL::Errors::Add@4514896,mySTL::list<struct yaSSL::ThreadError>::push_back@4524112)
 classCallsMethod(yaSSL::Errors::Add@4514896,yaSSL::Errors::Remove@4517264)
 classCallsMethod(yaSSL::Errors::Lookup@4516864,mySTL::list<struct yaSSL::ThreadError>::erase@4520624)
 classCallsMethod(yaSSL::Errors::Remove@4517264,mySTL::list<struct yaSSL::ThreadError>::erase@4520624)
@@ -571,7 +546,6 @@ classCallsMethod(yaSSL::HelloRequest::vftable@7781688,yaSSL::HelloRequest::get@4
 classCallsMethod(yaSSL::HelloRequest::vftable@7781688,yaSSL::HelloRequest::get_type@4572368)
 classCallsMethod(yaSSL::HelloRequest::vftable@7781688,yaSSL::HelloRequest::scalar_deleting_destructor@4558672)
 classCallsMethod(yaSSL::HelloRequest::vftable@7781688,yaSSL::HelloRequest::set@4576128)
-classCallsMethod(yaSSL::Integer::IntegerImpl::IntegerImpl@4583504,TaoCrypt::Integer::Integer@4624432)
 classCallsMethod(yaSSL::Integer::IntegerImpl::IntegerImpl@4583536,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(yaSSL::MD5::MD5Impl::MD5Impl@4583840,TaoCrypt::MD5::MD5@4617328)
 classCallsMethod(yaSSL::MD5::MD5Impl::MD5Impl@4583872,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
@@ -583,17 +557,17 @@ classCallsMethod(yaSSL::Parameters::Parameters@4554016,yaSSL::Parameters::SetCip
 classCallsMethod(yaSSL::Parameters::Parameters@4554016,yaSSL::Parameters::SetSuites@4567520)
 classCallsMethod(yaSSL::Parameters::SetSuites@4567520,yaSSL::Parameters::SetCipherNames@4567360)
 classCallsMethod(yaSSL::RC4::scalar_deleting_destructor@4588656,yaSSL::RC4::~RC4@4586608)
+classCallsMethod(yaSSL::RC4::vftable@7784044,yaSSL::RC4::decrypt@4594736)
 classCallsMethod(yaSSL::RC4::vftable@7784044,yaSSL::RC4::encrypt@4594864)
+classCallsMethod(yaSSL::RC4::vftable@7784044,yaSSL::RC4::get_blockSize@4595072)
+classCallsMethod(yaSSL::RC4::vftable@7784044,yaSSL::RC4::get_keySize@4595696)
+classCallsMethod(yaSSL::RC4::vftable@7784044,yaSSL::RC4::set_decryptKey@4596304)
+classCallsMethod(yaSSL::RC4::vftable@7784044,yaSSL::RC4::set_encryptKey@4596480)
 classCallsMethod(yaSSL::RMD::RMDImpl::RMDImpl@4584480,TaoCrypt::RIPEMD160::RIPEMD160@4690096)
 classCallsMethod(yaSSL::RMD::RMDImpl::RMDImpl@4584512,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 classCallsMethod(yaSSL::RMD::RMDImpl::RMDImpl@4584512,TaoCrypt::RIPEMD160::Init@4690272)
 classCallsMethod(yaSSL::RMD::scalar_deleting_destructor@4588752,yaSSL::RMD::~RMD@4586656)
-classCallsMethod(yaSSL::RMD::vftable@7783824,yaSSL::RMD::get_digest@4595360)
 classCallsMethod(yaSSL::RMD::vftable@7783824,yaSSL::RMD::get_digest@4595376)
-classCallsMethod(yaSSL::RMD::vftable@7783824,yaSSL::RMD::get_digestSize@4595552)
-classCallsMethod(yaSSL::RMD::vftable@7783824,yaSSL::RMD::get_padSize@4595776)
-classCallsMethod(yaSSL::RMD::vftable@7783824,yaSSL::RMD::scalar_deleting_destructor@4588752)
-classCallsMethod(yaSSL::RMD::vftable@7783824,yaSSL::RMD::update@4596976)
 classCallsMethod(yaSSL::RSA::RSAImpl::RSAImpl@4584784,TaoCrypt::Integer::Integer@4624976)
 classCallsMethod(yaSSL::RSA::RSAImpl::SetPrivate@4593712,TaoCrypt::RSA_PublicKey::operator=@4587232)
 classCallsMethod(yaSSL::RSA::RSAImpl::SetPublic@4594144,TaoCrypt::RSA_PublicKey::Initialize@4656000)
@@ -635,8 +609,6 @@ classCallsMethod(yaSSL::SSL::makeTLSMasterSecret@4522880,yaSSL::SSL::deriveTLSKe
 classCallsMethod(yaSSL::SSL::matchSuite@4523024,yaSSL::SSL::SetError@4518400)
 classCallsMethod(yaSSL::SSL::scalar_deleting_destructor@4462768,yaSSL::SSL::~SSL@4461872)
 classCallsMethod(yaSSL::SSL::setKeys@4524432,yaSSL::Crypto::use_cipher@4529808)
-classCallsMethod(yaSSL::SSL::set_pending@4524928,yaSSL::Crypto::setCipher@4524368)
-classCallsMethod(yaSSL::SSL::set_pending@4524928,yaSSL::Crypto::setDigest@4524384)
 classCallsMethod(yaSSL::SSL::set_pending@4524928,yaSSL::SSL::SetError@4518400)
 classCallsMethod(yaSSL::SSL::set_preMaster@4528928,yaSSL::SSL::SetError@4518400)
 classCallsMethod(yaSSL::SSL::set_session@4529104,yaSSL::Crypto::use_certManager@4529776)
@@ -657,7 +629,6 @@ classCallsMethod(yaSSL::SSL::~SSL@4461872,yaSSL::Crypto::~Crypto@4513104)
 classCallsMethod(yaSSL::SSL_CTX::scalar_deleting_destructor@4462816,yaSSL::SSL_CTX::~SSL_CTX@4513408)
 classCallsMethod(yaSSL::SSL_SESSION::SSL_SESSION@4511024,yaSSL::SSL_SESSION::CopyX509@4515072)
 classCallsMethod(yaSSL::SSL_SESSION::operator=@4513840,yaSSL::SSL_SESSION::CopyX509@4515072)
-classCallsMethod(yaSSL::SSL_SESSION::scalar_deleting_destructor@4514640,yaSSL::SSL_SESSION::~SSL_SESSION@4513584)
 classCallsMethod(yaSSL::Security::Security@4511184,yaSSL::Connection::Connection@4553584)
 classCallsMethod(yaSSL::Security::~Security@4462080,yaSSL::Connection::~Connection@4554896)
 classCallsMethod(yaSSL::ServerHello::vftable@7781736,yaSSL::ServerHello::Process@4566064)
@@ -678,7 +649,6 @@ classCallsMethod(yaSSL::ServerKeyExchange::build@4570352,yaSSL::HandShakeBase::s
 classCallsMethod(yaSSL::ServerKeyExchange::scalar_deleting_destructor@4558912,yaSSL::ServerKeyExchange::~ServerKeyExchange@4555120)
 classCallsMethod(yaSSL::ServerKeyExchange::vftable@7781880,yaSSL::ServerKeyExchange::get_type@4572416)
 classCallsMethod(yaSSL::Sessions::Flush@4515328,mySTL::list<near class yaSSL::SSL_SESSION *>::erase@4520528)
-classCallsMethod(yaSSL::Sessions::add@4518944,mySTL::list<near class yaSSL::SSL_SESSION *>::push_back@4523728)
 classCallsMethod(yaSSL::Sessions::add@4518944,yaSSL::Sessions::Flush@4515328)
 classCallsMethod(yaSSL::Sessions::lookup@4522096,mySTL::list<near class yaSSL::SSL_SESSION *>::erase@4520528)
 classCallsMethod(yaSSL::Sessions::remove@4524208,mySTL::list<near class yaSSL::SSL_SESSION *>::erase@4520528)
@@ -691,22 +661,17 @@ classCallsMethod(yaSSL::input_buffer::add_size@4668288,yaSSL::input_buffer::get_
 classCallsMethod(yaSSL::input_buffer::assign@4668448,yaSSL::input_buffer::add_size@4668288)
 classCallsMethod(yaSSL::input_buffer::assign@4668448,yaSSL::input_buffer::get_capacity@4668672)
 classCallsMethod(yaSSL::input_buffer::input_buffer@4667904,yaSSL::input_buffer::assign@4668448)
-classCallsMethod(yaSSL::input_buffer::scalar_deleting_destructor@4514736,yaSSL::input_buffer::~input_buffer@4668176)
 classCallsMethod(yaSSL::output_buffer::eof@4668624,yaSSL::output_buffer::get_capacity@4668688)
-classCallsMethod(yaSSL::output_buffer::output_buffer@4668080,yaSSL::output_buffer::write@4669024)
-classCallsMethod(yaSSL::output_buffer::scalar_deleting_destructor@4514784,yaSSL::output_buffer::~output_buffer@4668192)
 classCallsMethod(yaSSL::sslHashes::sslHashes@4512480,yaSSL::MD5::MD5@4583680)
 classCallsMethod(yaSSL::sslHashes::~sslHashes@4462320,yaSSL::MD5::~MD5@4586560)
-classCallsMethod(yaSSL::x509::operator=@4611440,yaSSL::x509::Swap@4612784)
-classCallsMethod(yaSSL::x509::scalar_deleting_destructor@4463008,yaSSL::x509::~x509@4611424)
 constructor(Handshake::Handshake@4670896)
 constructor(Handshake_client::Handshake_client@4532480)
 constructor(TaoCrypt::AbstractEuclideanDomain::AbstractEuclideanDomain@4623744)
 constructor(TaoCrypt::AbstractRing::AbstractRing@4623792)
 constructor(TaoCrypt::AbstractRing::MultiplicativeGroupT::MultiplicativeGroupT@4625408)
-constructor(TaoCrypt::BER_Decoder::BER_Decoder@4597264)
 constructor(TaoCrypt::BlockCipher<1, class TaoCrypt::AES, 1>::BlockCipher@4477040)
 constructor(TaoCrypt::CertDecoder::CertDecoder@4597296)
+constructor(TaoCrypt::CertDecoder::~CertDecoder@4598416)
 constructor(TaoCrypt::DER_Encoder::DER_Encoder@4597504)
 constructor(TaoCrypt::DES::DES@4580256)
 constructor(TaoCrypt::DES_EDE3::DES_EDE3@4580544)
@@ -718,9 +683,9 @@ constructor(TaoCrypt::HASH64withTransform::HASH64withTransform@4615840)
 constructor(TaoCrypt::HASH::HASH@4615856)
 constructor(TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 constructor(TaoCrypt::HMAC<class TaoCrypt::MD5>::HMAC@4579328)
-constructor(TaoCrypt::HMAC<class TaoCrypt::MD5>::~HMAC@4585616)
 constructor(TaoCrypt::HMAC<class TaoCrypt::RIPEMD160>::HMAC@4579472)
 constructor(TaoCrypt::HMAC<class TaoCrypt::SHA>::HMAC@4579616)
+constructor(TaoCrypt::HMAC<class TaoCrypt::SHA>::~HMAC@4585648)
 constructor(TaoCrypt::MD2::MD2@4701424)
 constructor(TaoCrypt::MD4::MD4@4460560)
 constructor(TaoCrypt::Mode_BASE::Mode_BASE@4477568)
@@ -748,7 +713,6 @@ constructor(yaSSL::CertificateVerify::CertificateVerify@4553280)
 constructor(yaSSL::ChangeCipherSpec::ChangeCipherSpec@4553296)
 constructor(yaSSL::ClientDiffieHellmanPublic::ClientDiffieHellmanPublic@4553312)
 constructor(yaSSL::ClientKeyBase::ClientKeyBase@4553456)
-constructor(yaSSL::DES::DES@4580304)
 constructor(yaSSL::DES_EDE::DES_EDE@4580592)
 constructor(yaSSL::DH_Server::DH_Server@4553760)
 constructor(yaSSL::DSS::DSS@4581312)
@@ -771,7 +735,6 @@ constructor(yaSSL::Message::Message@4537696)
 constructor(yaSSL::RC4::RC4@4583984)
 constructor(yaSSL::RSA::RSA@4584608)
 constructor(yaSSL::RSA_Server::RSA_Server@4554192)
-constructor(yaSSL::SSL::~SSL@4461872)
 constructor(yaSSL::ServerHelloDone::ServerHelloDone@4554368)
 constructor(yaSSL::ServerKeyBase::ServerKeyBase@4554400)
 deletingDestructor(Handshake::scalar_deleting_destructor@4671248)
@@ -780,7 +743,6 @@ deletingDestructor(Prealloced_array<struct st_mysql_lex_string, 16, 1>::scalar_d
 deletingDestructor(TaoCrypt::AES::scalar_deleting_destructor@4477776)
 deletingDestructor(TaoCrypt::AbstractRing::MultiplicativeGroupT::scalar_deleting_destructor@4628320)
 deletingDestructor(TaoCrypt::BER_Decoder::scalar_deleting_destructor@4598896)
-deletingDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::~BlockCipher@4477648)
 deletingDestructor(TaoCrypt::CertDecoder::scalar_deleting_destructor@4598944)
 deletingDestructor(TaoCrypt::DER_Encoder::scalar_deleting_destructor@4598992)
 deletingDestructor(TaoCrypt::DES::scalar_deleting_destructor@4587632)
@@ -808,7 +770,6 @@ deletingDestructor(TaoCrypt::SHA384::scalar_deleting_destructor@4599040)
 deletingDestructor(TaoCrypt::SHA512::scalar_deleting_destructor@4599088)
 deletingDestructor(TaoCrypt::SHA::scalar_deleting_destructor@4534080)
 deletingDestructor(TaoCrypt::Signature_Encoder::scalar_deleting_destructor@4599136)
-deletingDestructor(TaoCrypt::Signer::scalar_deleting_destructor@4611520)
 deletingDestructor(TaoCrypt::WindowSlider::scalar_deleting_destructor@4706320)
 deletingDestructor(mySTL::vector<class TaoCrypt::Integer>::scalar_deleting_destructor@4706272)
 deletingDestructor(std::_Generic_error_category::scalar_deleting_destructor@4446320)
@@ -822,7 +783,6 @@ deletingDestructor(yaSSL::Auth::scalar_deleting_destructor@4587536)
 deletingDestructor(yaSSL::BIGNUM::scalar_deleting_destructor@4462480)
 deletingDestructor(yaSSL::BulkCipher::scalar_deleting_destructor@4587584)
 deletingDestructor(yaSSL::Certificate::scalar_deleting_destructor@4558000)
-deletingDestructor(yaSSL::CertificateVerify::scalar_deleting_destructor@4558096)
 deletingDestructor(yaSSL::ChangeCipherSpec::scalar_deleting_destructor@4558144)
 deletingDestructor(yaSSL::ClientDiffieHellmanPublic::scalar_deleting_destructor@4558192)
 deletingDestructor(yaSSL::ClientHello::scalar_deleting_destructor@4558240)
@@ -833,7 +793,6 @@ deletingDestructor(yaSSL::DH_Server::scalar_deleting_destructor@4558384)
 deletingDestructor(yaSSL::DSS::DSSImpl::scalar_deleting_destructor@4588080)
 deletingDestructor(yaSSL::Data::scalar_deleting_destructor@4558432)
 deletingDestructor(yaSSL::DiffieHellman::DHImpl::scalar_deleting_destructor@4587920)
-deletingDestructor(yaSSL::DiffieHellman::scalar_deleting_destructor@4514480)
 deletingDestructor(yaSSL::Digest::scalar_deleting_destructor@4588160)
 deletingDestructor(yaSSL::EncryptedPreMasterSecret::scalar_deleting_destructor@4558480)
 deletingDestructor(yaSSL::Errors::scalar_deleting_destructor@4514528)
@@ -850,23 +809,18 @@ deletingDestructor(yaSSL::Integer::IntegerImpl::scalar_deleting_destructor@45884
 deletingDestructor(yaSSL::MD5::MD5Impl::scalar_deleting_destructor@4588608)
 deletingDestructor(yaSSL::Message::scalar_deleting_destructor@4462720)
 deletingDestructor(yaSSL::RMD::RMDImpl::scalar_deleting_destructor@4588800)
-deletingDestructor(yaSSL::RMD::scalar_deleting_destructor@4588752)
 deletingDestructor(yaSSL::RSA::RSAImpl::scalar_deleting_destructor@4588896)
 deletingDestructor(yaSSL::RSA_Server::scalar_deleting_destructor@4558720)
 deletingDestructor(yaSSL::RandomPool::RandomImpl::scalar_deleting_destructor@4588992)
 deletingDestructor(yaSSL::SHA::SHAImpl::scalar_deleting_destructor@4589088)
 deletingDestructor(yaSSL::SSL::scalar_deleting_destructor@4462768)
 deletingDestructor(yaSSL::SSL_CTX::scalar_deleting_destructor@4462816)
-deletingDestructor(yaSSL::SSL_SESSION::scalar_deleting_destructor@4514640)
 deletingDestructor(yaSSL::ServerHello::scalar_deleting_destructor@4558768)
 deletingDestructor(yaSSL::ServerHelloDone::scalar_deleting_destructor@4558816)
 deletingDestructor(yaSSL::ServerKeyBase::scalar_deleting_destructor@4558864)
 deletingDestructor(yaSSL::Sessions::scalar_deleting_destructor@4514688)
 deletingDestructor(yaSSL::X509::scalar_deleting_destructor@4462864)
-deletingDestructor(yaSSL::input_buffer::scalar_deleting_destructor@4514736)
-deletingDestructor(yaSSL::output_buffer::scalar_deleting_destructor@4514784)
 deletingDestructor(yaSSL::sslFactory::scalar_deleting_destructor@4514832)
-deletingDestructor(yaSSL::x509::scalar_deleting_destructor@4463008)
 derivedClass(Handshake_client::vftable@7780992,Handshake::vftable@7796020,0)
 derivedClass(TaoCrypt::AES::vftable@5370204,TaoCrypt::Mode_BASE::vftable@5370188,0)
 derivedClass(TaoCrypt::CertDecoder::vftable@7784404,TaoCrypt::BER_Decoder::vftable@7784392,0)
@@ -936,25 +890,24 @@ mergeClasses(Handshake::vftable@7796020,Handshake::Handshake@4670896)
 mergeClasses(Handshake_client::vftable@7780992,Handshake_client::Handshake_client@4532480)
 mergeClasses(TaoCrypt::AES::vftable@5370204,TaoCrypt::BlockCipher<1, class TaoCrypt::AES, 1>::BlockCipher@4477040)
 mergeClasses(TaoCrypt::AbstractRing::MultiplicativeGroupT::vftable@7784944,TaoCrypt::AbstractRing::MultiplicativeGroupT::MultiplicativeGroupT@4625408)
-mergeClasses(TaoCrypt::BER_Decoder::GetSequence@4607280,TaoCrypt::CertDecoder::GetValidity@4607760)
-mergeClasses(TaoCrypt::BER_Decoder::vftable@7784392,TaoCrypt::BER_Decoder::BER_Decoder@4597264)
-mergeClasses(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::~BlockCipher@4477648,TaoCrypt::DES_EDE3::~DES_EDE3@4585872)
+mergeClasses(TaoCrypt::BER_Decoder::vftable@7784392,TaoCrypt::CertDecoder::~CertDecoder@4598416)
 mergeClasses(TaoCrypt::CertDecoder::vftable@7784404,TaoCrypt::CertDecoder::CertDecoder@4597296)
 mergeClasses(TaoCrypt::DER_Encoder::vftable@7784416,TaoCrypt::DER_Encoder::DER_Encoder@4597504)
-mergeClasses(TaoCrypt::DES::scalar_deleting_destructor@4587632,yaSSL::DES_EDE::DES_EDEImpl::scalar_deleting_destructor@4587872)
 mergeClasses(TaoCrypt::DES::vftable@7784216,TaoCrypt::DES::DES@4580256)
 mergeClasses(TaoCrypt::DES_EDE3::vftable@7784232,TaoCrypt::DES_EDE3::DES_EDE3@4580544)
 mergeClasses(TaoCrypt::DH_Decoder::vftable@7799516,TaoCrypt::DH_Decoder::DH_Decoder@4700320)
 mergeClasses(TaoCrypt::DSA_Private_Decoder::vftable@7785348,TaoCrypt::DSA_Private_Decoder::DSA_Private_Decoder@4657056)
 mergeClasses(TaoCrypt::DSA_Public_Decoder::vftable@7785360,TaoCrypt::DSA_Public_Decoder::DSA_Public_Decoder@4657344)
 mergeClasses(TaoCrypt::EuclideanDomainOf::vftable@7785000,TaoCrypt::EuclideanDomainOf::EuclideanDomainOf@4623888)
+mergeClasses(TaoCrypt::HASH64withTransform::AddLength@4615984,TaoCrypt::HASH64withTransform::Final@4616160)
 mergeClasses(TaoCrypt::HASH64withTransform::vftable@7784684,TaoCrypt::HASH64withTransform::HASH64withTransform@4615840)
 mergeClasses(TaoCrypt::HASH::vftable@5369092,TaoCrypt::HASH::HASH@4615856)
 mergeClasses(TaoCrypt::HASHwithTransform::vftable@7784644,TaoCrypt::HASHwithTransform::HASHwithTransform@4615872)
 mergeClasses(TaoCrypt::MD2::vftable@7799556,TaoCrypt::MD2::MD2@4701424)
 mergeClasses(TaoCrypt::MD4::vftable@5369160,TaoCrypt::MD4::MD4@4460560)
-mergeClasses(TaoCrypt::MD4::~MD4@4461552,TaoCrypt::MD5::scalar_deleting_destructor@4462672)
 mergeClasses(TaoCrypt::Mode_BASE::vftable@5370188,TaoCrypt::Mode_BASE::Mode_BASE@4477568)
+mergeClasses(TaoCrypt::ModularArithmetic::Equal@4636416,TaoCrypt::ModularArithmetic::vftable@7785108)
+mergeClasses(TaoCrypt::ModularArithmetic::ModularArithmetic@4625088,TaoCrypt::ModularArithmetic::Equal@4636416)
 mergeClasses(TaoCrypt::ModularArithmetic::vftable@7785108,TaoCrypt::ModularArithmetic::ModularArithmetic@4625088)
 mergeClasses(TaoCrypt::MontgomeryRepresentation::vftable@7785216,TaoCrypt::MontgomeryRepresentation::MontgomeryRepresentation@4625216)
 mergeClasses(TaoCrypt::RIPEMD160::vftable@7784176,TaoCrypt::RIPEMD160::RIPEMD160@4690096)
@@ -962,7 +915,7 @@ mergeClasses(TaoCrypt::RSA_Private_Decoder::vftable@7785324,TaoCrypt::RSA_Privat
 mergeClasses(TaoCrypt::RSA_Public_Decoder::vftable@7785336,TaoCrypt::RSA_Public_Decoder::RSA_Public_Decoder@4655232)
 mergeClasses(TaoCrypt::SHA224::vftable@7797276,TaoCrypt::SHA224::SHA224@4671840)
 mergeClasses(TaoCrypt::SHA256::vftable@7781352,TaoCrypt::SHA256::SHA256@4534528)
-mergeClasses(TaoCrypt::SHA256::~SHA256@4534624,TaoCrypt::SHA384::scalar_deleting_destructor@4599040)
+mergeClasses(TaoCrypt::SHA384::scalar_deleting_destructor@4599040,TaoCrypt::SHA384::vftable@7784472)
 mergeClasses(TaoCrypt::SHA384::vftable@7784472,TaoCrypt::SHA384::SHA384@4597584)
 mergeClasses(TaoCrypt::SHA::vftable@7781308,TaoCrypt::SHA::SHA@4672304)
 mergeClasses(TaoCrypt::Signature_Encoder::vftable@7784424,TaoCrypt::Signature_Encoder::Signature_Encoder@4597776)
@@ -976,48 +929,35 @@ mergeClasses(yaSSL::Alert::vftable@7781632,yaSSL::Alert::Alert@4553040)
 mergeClasses(yaSSL::Auth::vftable@7784116,yaSSL::Auth::Auth@4580096)
 mergeClasses(yaSSL::BulkCipher::vftable@7783936,yaSSL::BulkCipher::BulkCipher@4580240)
 mergeClasses(yaSSL::CertificateRequest::vftable@7781904,yaSSL::CertificateRequest::CertificateRequest@4553216)
-mergeClasses(yaSSL::CertificateVerify::CertificateVerify@4553280,yaSSL::CertificateVerify::Process@4562608)
-mergeClasses(yaSSL::CertificateVerify::CertificateVerify@4553280,yaSSL::CertificateVerify::get@4571280)
-mergeClasses(yaSSL::CertificateVerify::CertificateVerify@4553280,yaSSL::CertificateVerify::scalar_deleting_destructor@4558096)
-mergeClasses(yaSSL::CertificateVerify::CertificateVerify@4553280,yaSSL::CertificateVerify::set@4575920)
-mergeClasses(yaSSL::CertificateVerify::Process@4562608,yaSSL::CertificateVerify::vftable@7782072)
-mergeClasses(yaSSL::CertificateVerify::get@4571280,yaSSL::CertificateVerify::vftable@7782072)
-mergeClasses(yaSSL::CertificateVerify::scalar_deleting_destructor@4558096,yaSSL::CertificateVerify::vftable@7782072)
-mergeClasses(yaSSL::CertificateVerify::set@4575920,yaSSL::CertificateVerify::vftable@7782072)
 mergeClasses(yaSSL::CertificateVerify::vftable@7782072,yaSSL::CertificateVerify::CertificateVerify@4553280)
 mergeClasses(yaSSL::ChangeCipherSpec::vftable@7781604,yaSSL::ChangeCipherSpec::ChangeCipherSpec@4553296)
 mergeClasses(yaSSL::ClientDiffieHellmanPublic::vftable@7782024,yaSSL::ClientDiffieHellmanPublic::ClientDiffieHellmanPublic@4553312)
 mergeClasses(yaSSL::ClientKeyBase::vftable@7781952,yaSSL::ClientKeyBase::ClientKeyBase@4553456)
-mergeClasses(yaSSL::DES::vftable@7783972,yaSSL::DES::DES@4580304)
+mergeClasses(yaSSL::DES::decrypt@4594672,yaSSL::DES::vftable@7783972)
 mergeClasses(yaSSL::DES_EDE::vftable@7784008,yaSSL::DES_EDE::DES_EDE@4580592)
+mergeClasses(yaSSL::DES_EDE::~DES_EDE@4585888,yaSSL::DES_EDE::decrypt@4594704)
 mergeClasses(yaSSL::DH_Server::vftable@7781832,yaSSL::DH_Server::DH_Server@4553760)
 mergeClasses(yaSSL::DSS::vftable@7784136,yaSSL::DSS::DSS@4581312)
+mergeClasses(yaSSL::DSS::~DSS@4586240,yaSSL::DSS::scalar_deleting_destructor@4588032)
 mergeClasses(yaSSL::Data::vftable@7781660,yaSSL::Data::Data@4553808)
 mergeClasses(yaSSL::Digest::vftable@7783740,yaSSL::Digest::Digest@4582384)
 mergeClasses(yaSSL::EncryptedPreMasterSecret::vftable@7781976,yaSSL::EncryptedPreMasterSecret::EncryptedPreMasterSecret@4553888)
 mergeClasses(yaSSL::Finished::vftable@7782096,yaSSL::Finished::Finished@4553920)
 mergeClasses(yaSSL::FortezzaKeys::vftable@7782000,yaSSL::FortezzaKeys::FortezzaKeys@4553952)
 mergeClasses(yaSSL::Fortezza_Server::vftable@7781808,yaSSL::Fortezza_Server::Fortezza_Server@4553968)
-mergeClasses(yaSSL::HMAC_MD5::HMAC_MD5Impl::HMAC_MD5Impl@4582544,TaoCrypt::HMAC<class TaoCrypt::MD5>::Init@4590688)
 mergeClasses(yaSSL::HMAC_MD5::vftable@7783852,yaSSL::HMAC_MD5::HMAC_MD5@4582400)
 mergeClasses(yaSSL::HMAC_RMD::vftable@7783908,yaSSL::HMAC_RMD::HMAC_RMD@4582688)
 mergeClasses(yaSSL::HMAC_SHA::vftable@7783880,yaSSL::HMAC_SHA::HMAC_SHA@4582976)
 mergeClasses(yaSSL::HandShakeBase::vftable@5369068,yaSSL::HandShakeBase::HandShakeBase@4553984)
 mergeClasses(yaSSL::HandShakeHeader::vftable@7781564,yaSSL::HandShakeHeader::HandShakeHeader@4537680)
 mergeClasses(yaSSL::HelloRequest::vftable@7781688,yaSSL::HelloRequest::HelloRequest@4554000)
-mergeClasses(yaSSL::MD5::~MD5@4586560,yaSSL::MD5::scalar_deleting_destructor@4588560)
+mergeClasses(yaSSL::MD5::get_digest@4595312,yaSSL::MD5::vftable@7783768)
 mergeClasses(yaSSL::Message::vftable@5369040,yaSSL::Message::Message@4537696)
 mergeClasses(yaSSL::RC4::vftable@7784044,yaSSL::RC4::RC4@4583984)
-mergeClasses(yaSSL::RMD::RMD@4584192,yaSSL::RMD::get_digest@4595360)
-mergeClasses(yaSSL::RMD::RMD@4584192,yaSSL::RMD::scalar_deleting_destructor@4588752)
-mergeClasses(yaSSL::RMD::RMD@4584320,yaSSL::RMD::get_digestSize@4595552)
-mergeClasses(yaSSL::RMD::RMD@4584320,yaSSL::RMD::get_padSize@4595776)
-mergeClasses(yaSSL::RMD::update@4596976,yaSSL::RMD::vftable@7783824)
-mergeClasses(yaSSL::RMD::~RMD@4586656,yaSSL::RMD::get_digestSize@4595552)
-mergeClasses(yaSSL::RMD::~RMD@4586656,yaSSL::RMD::get_padSize@4595776)
+mergeClasses(yaSSL::RMD::get_digest@4595376,yaSSL::RMD::vftable@7783824)
+mergeClasses(yaSSL::RSA::RSA@4584608,yaSSL::RSA::get_signatureLength@4596080)
 mergeClasses(yaSSL::RSA::vftable@7784156,yaSSL::RSA::RSA@4584608)
 mergeClasses(yaSSL::RSA_Server::vftable@7781856,yaSSL::RSA_Server::RSA_Server@4554192)
-mergeClasses(yaSSL::SSL::~SSL@4461872,yaSSL::Crypto::~Crypto@4513104)
 mergeClasses(yaSSL::ServerHelloDone::vftable@7781928,yaSSL::ServerHelloDone::ServerHelloDone@4554368)
 mergeClasses(yaSSL::ServerKeyBase::vftable@7781784,yaSSL::ServerKeyBase::ServerKeyBase@4554400)
 method(* __cdecl mySTL::GetMemory(unsigned int)@4516000)
@@ -2242,8 +2182,6 @@ method(Prealloced_array<near char *, 100, 1>::element_size@4341312)
 method(Prealloced_array<near char *, 100, 1>::empty@4341328)
 method(Prealloced_array<near char *, 100, 1>::end@4341344)
 method(Prealloced_array<near char *, 100, 1>::operator[]@4341072)
-method(Prealloced_array<near char *, 100, 1>::push_back@4343568)
-method(Prealloced_array<near char *, 100, 1>::reserve@4343744)
 method(Prealloced_array<near char *, 100, 1>::size@4346080)
 method(Prealloced_array<near char *, 100, 1>::~Prealloced_array@4341040)
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::Prealloced_array@4212272)
@@ -2252,8 +2190,6 @@ method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::cast_rawbuff@4215424
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::clear@4215632)
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::element_size@4218544)
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::end@4218560)
-method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::push_back@4230176)
-method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::reserve@4232640)
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::scalar_deleting_destructor@4212704)
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::size@4233488)
 method(Prealloced_array<struct st_mysql_lex_string, 16, 1>::~Prealloced_array@4212464)
@@ -2374,8 +2310,6 @@ method(TaoCrypt::BER_Decoder::GetSequence@4607280)
 method(TaoCrypt::BER_Decoder::GetSet@4607376)
 method(TaoCrypt::BER_Decoder::scalar_deleting_destructor@4598896)
 method(TaoCrypt::BER_Decoder::~BER_Decoder@4598400)
-method(TaoCrypt::Base64Decoder::Base64Decoder@4580112)
-method(TaoCrypt::Base64Decoder::Decode@4620912)
 method(TaoCrypt::Base64Decoder::~Base64Decoder@4585744)
 method(TaoCrypt::Base64Encoder::Encode@4621936)
 method(TaoCrypt::BasicDES::RawProcessBlock@4696656)
@@ -2485,7 +2419,6 @@ method(TaoCrypt::DES_EDE3::SetKey@4699328)
 method(TaoCrypt::DES_EDE3::scalar_deleting_destructor@4587776)
 method(TaoCrypt::DES_EDE3::~DES_EDE3@4585872)
 method(TaoCrypt::DH::Agree@4700416)
-method(TaoCrypt::DH::DH@4580832)
 method(TaoCrypt::DH::DH@4580928)
 method(TaoCrypt::DH::DH@4700224)
 method(TaoCrypt::DH::GenerateKeyPair@4700784)
@@ -2507,9 +2440,7 @@ method(TaoCrypt::DH_Decoder::ReadHeader@4608160)
 method(TaoCrypt::DH_Decoder::scalar_deleting_destructor@4700368)
 method(TaoCrypt::DH_Decoder::~DH_Decoder@4700352)
 method(TaoCrypt::DSA_PrivateKey::DSA_PrivateKey@4460160)
-method(TaoCrypt::DSA_PrivateKey::DSA_PrivateKey@4656912)
 method(TaoCrypt::DSA_PrivateKey::GetPrivatePart@4657952)
-method(TaoCrypt::DSA_PrivateKey::Initialize@4658080)
 method(TaoCrypt::DSA_PrivateKey::Initialize@4658176)
 method(TaoCrypt::DSA_PrivateKey::SetPrivatePart@4658400)
 method(TaoCrypt::DSA_PrivateKey::~DSA_PrivateKey@4461248)
@@ -2519,7 +2450,6 @@ method(TaoCrypt::DSA_Private_Decoder::scalar_deleting_destructor@4657840)
 method(TaoCrypt::DSA_Private_Decoder::~DSA_Private_Decoder@4657568)
 method(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4460288)
 method(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4657088)
-method(TaoCrypt::DSA_PublicKey::DSA_PublicKey@4657216)
 method(TaoCrypt::DSA_PublicKey::GetModulus@4657936)
 method(TaoCrypt::DSA_PublicKey::GetPublicPart@4657968)
 method(TaoCrypt::DSA_PublicKey::GetSubGroupGenerator@4658048)
@@ -2623,8 +2553,6 @@ method(TaoCrypt::HMAC<class TaoCrypt::SHA>::KeyInnerHash@4590912)
 method(TaoCrypt::HMAC<class TaoCrypt::SHA>::SetKey@4593280)
 method(TaoCrypt::HMAC<class TaoCrypt::SHA>::Update@4594480)
 method(TaoCrypt::HMAC<class TaoCrypt::SHA>::~HMAC@4585648)
-method(TaoCrypt::HexDecoder::Decode@4621680)
-method(TaoCrypt::HexDecoder::HexDecoder@4460432)
 method(TaoCrypt::HexDecoder::~HexDecoder@4461488)
 method(TaoCrypt::HexEncoder::Encode@4622592)
 method(TaoCrypt::IPERM@4695488)
@@ -2638,7 +2566,6 @@ method(TaoCrypt::Integer::Decode@4632672)
 method(TaoCrypt::Integer::Decode@4632976)
 method(TaoCrypt::Integer::DividedBy@4635568)
 method(TaoCrypt::Integer::DividedBy@4635728)
-method(TaoCrypt::Integer::Doubled@4636064)
 method(TaoCrypt::Integer::Encode@4636096)
 method(TaoCrypt::Integer::GetBit@4636704)
 method(TaoCrypt::Integer::GetBits@4636752)
@@ -2646,7 +2573,6 @@ method(TaoCrypt::Integer::GetByte@4636816)
 method(TaoCrypt::Integer::Integer@4624000)
 method(TaoCrypt::Integer::Integer@4624128)
 method(TaoCrypt::Integer::Integer@4624256)
-method(TaoCrypt::Integer::Integer@4624432)
 method(TaoCrypt::Integer::Integer@4624576)
 method(TaoCrypt::Integer::Integer@4624720)
 method(TaoCrypt::Integer::Integer@4624848)
@@ -2663,13 +2589,11 @@ method(TaoCrypt::Integer::IsUnit@4638976)
 method(TaoCrypt::Integer::IsZero@4639088)
 method(TaoCrypt::Integer::MinEncodedSize@4639184)
 method(TaoCrypt::Integer::Minus@4639472)
-method(TaoCrypt::Integer::Modulo@4640128)
 method(TaoCrypt::Integer::Modulo@4640288)
 method(TaoCrypt::Integer::MultiplicativeInverse@4640944)
 method(TaoCrypt::Integer::Negate@4646288)
 method(TaoCrypt::Integer::NotNegative@4646368)
 method(TaoCrypt::Integer::NotZero@4646384)
-method(TaoCrypt::Integer::Plus@4646528)
 method(TaoCrypt::Integer::PositiveCompare@4647040)
 method(TaoCrypt::Integer::Randomize@4648576)
 method(TaoCrypt::Integer::Randomize@4648752)
@@ -2677,12 +2601,9 @@ method(TaoCrypt::Integer::Ref@4592096)
 method(TaoCrypt::Integer::SetBit@4651200)
 method(TaoCrypt::Integer::SetByte@4651424)
 method(TaoCrypt::Integer::SquareRoot@4652896)
-method(TaoCrypt::Integer::Squared@4653296)
 method(TaoCrypt::Integer::Swap@4653904)
-method(TaoCrypt::Integer::Times@4653968)
 method(TaoCrypt::Integer::WordCount@4654192)
 method(TaoCrypt::Integer::operator!@4626240)
-method(TaoCrypt::Integer::operator%=@4657712)
 method(TaoCrypt::Integer::operator++@4626368)
 method(TaoCrypt::Integer::operator+=@4627280)
 method(TaoCrypt::Integer::operator--@4626512)
@@ -2705,15 +2626,11 @@ method(TaoCrypt::MD2::~MD2@4701680)
 method(TaoCrypt::MD4::Init@4619584)
 method(TaoCrypt::MD4::MD4@4460560)
 method(TaoCrypt::MD4::MD4@4619408)
-method(TaoCrypt::MD4::Swap@4619648)
-method(TaoCrypt::MD4::operator=@4619520)
 method(TaoCrypt::MD4::scalar_deleting_destructor@4462624)
 method(TaoCrypt::MD4::~MD4@4461552)
 method(TaoCrypt::MD5::Init@4617504)
 method(TaoCrypt::MD5::MD5@4460656)
 method(TaoCrypt::MD5::MD5@4617328)
-method(TaoCrypt::MD5::Swap@4617568)
-method(TaoCrypt::MD5::operator=@4617440)
 method(TaoCrypt::MD5::scalar_deleting_destructor@4462672)
 method(TaoCrypt::MD5::~MD5@4461568)
 method(TaoCrypt::Mode_BASE::CBC_Decrypt@4477872)
@@ -2724,6 +2641,7 @@ method(TaoCrypt::Mode_BASE::Process@4478368)
 method(TaoCrypt::Mode_BASE::SetIV@4592640)
 method(TaoCrypt::Mode_BASE::scalar_deleting_destructor@4477824)
 method(TaoCrypt::Mode_BASE::~Mode_BASE@4477760)
+method(TaoCrypt::ModularArithmetic::Equal@4636416)
 method(TaoCrypt::ModularArithmetic::Half@4636928)
 method(TaoCrypt::ModularArithmetic::Identity@4637296)
 method(TaoCrypt::ModularArithmetic::ModularArithmetic@4625088)
@@ -2754,8 +2672,6 @@ method(TaoCrypt::PutBlock<unsigned int, struct TaoCrypt::EnumToType<enum TaoCryp
 method(TaoCrypt::RIPEMD160::Init@4690272)
 method(TaoCrypt::RIPEMD160::RIPEMD160@4584096)
 method(TaoCrypt::RIPEMD160::RIPEMD160@4690096)
-method(TaoCrypt::RIPEMD160::Swap@4690336)
-method(TaoCrypt::RIPEMD160::operator=@4690208)
 method(TaoCrypt::RIPEMD160::scalar_deleting_destructor@4588704)
 method(TaoCrypt::RIPEMD160::~RIPEMD160@4586640)
 method(TaoCrypt::RSA_BlockType1::Pad@4656096)
@@ -2772,9 +2688,7 @@ method(TaoCrypt::RSA_Encryptor<class TaoCrypt::RSA_BlockType2>::RSA_Encryptor@45
 method(TaoCrypt::RSA_Encryptor<class TaoCrypt::RSA_BlockType2>::SSL_Verify@4592304)
 method(TaoCrypt::RSA_PrivateKey::CalculateInverse@4655440)
 method(TaoCrypt::RSA_PrivateKey::GetPrivateExponent@4590672)
-method(TaoCrypt::RSA_PrivateKey::Initialize@4655904)
 method(TaoCrypt::RSA_PrivateKey::RSA_PrivateKey@4460752)
-method(TaoCrypt::RSA_PrivateKey::RSA_PrivateKey@4654928)
 method(TaoCrypt::RSA_PrivateKey::SetModPrime1PrivateExponent@4609120)
 method(TaoCrypt::RSA_PrivateKey::SetModPrime2PrivateExponent@4609136)
 method(TaoCrypt::RSA_PrivateKey::SetMultiplicativeInverseOfPrime2ModPrime1@4609168)
@@ -2792,7 +2706,6 @@ method(TaoCrypt::RSA_PublicKey::GetModulus@4590640)
 method(TaoCrypt::RSA_PublicKey::Initialize@4590816)
 method(TaoCrypt::RSA_PublicKey::Initialize@4656000)
 method(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4460912)
-method(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4584896)
 method(TaoCrypt::RSA_PublicKey::RSA_PublicKey@4655136)
 method(TaoCrypt::RSA_PublicKey::SetModulus@4609152)
 method(TaoCrypt::RSA_PublicKey::SetPublicExponent@4609232)
@@ -2812,15 +2725,11 @@ method(TaoCrypt::RandomNumberGenerator::RandomNumberGenerator@4699904)
 method(TaoCrypt::RandomNumberGenerator::~RandomNumberGenerator@4586832)
 method(TaoCrypt::RoundupSize@4651072)
 method(TaoCrypt::SHA224::SHA224@4671840)
-method(TaoCrypt::SHA224::Swap@4673344)
-method(TaoCrypt::SHA224::operator=@4672432)
 method(TaoCrypt::SHA224::scalar_deleting_destructor@4672784)
 method(TaoCrypt::SHA224::~SHA224@4672416)
 method(TaoCrypt::SHA256::Init@4672912)
 method(TaoCrypt::SHA256::SHA256@4534528)
 method(TaoCrypt::SHA256::SHA256@4671968)
-method(TaoCrypt::SHA256::Swap@4673472)
-method(TaoCrypt::SHA256::operator=@4672496)
 method(TaoCrypt::SHA256::scalar_deleting_destructor@4534640)
 method(TaoCrypt::SHA256::~SHA256@4534624)
 method(TaoCrypt::SHA384::Init@4672992)
@@ -2833,15 +2742,11 @@ method(TaoCrypt::SHA384::~SHA384@4598512)
 method(TaoCrypt::SHA512::Init@4673136)
 method(TaoCrypt::SHA512::SHA512@4597680)
 method(TaoCrypt::SHA512::SHA512@4672192)
-method(TaoCrypt::SHA512::Swap@4673680)
-method(TaoCrypt::SHA512::operator=@4672640)
 method(TaoCrypt::SHA512::scalar_deleting_destructor@4599088)
 method(TaoCrypt::SHA512::~SHA512@4598528)
 method(TaoCrypt::SHA::Init@4673280)
 method(TaoCrypt::SHA::SHA@4533968)
 method(TaoCrypt::SHA::SHA@4672304)
-method(TaoCrypt::SHA::Swap@4673792)
-method(TaoCrypt::SHA::operator=@4672720)
 method(TaoCrypt::SHA::scalar_deleting_destructor@4534080)
 method(TaoCrypt::SHA::~SHA@4534064)
 method(TaoCrypt::Signature_Encoder::SetDigest@4608912)
@@ -2851,8 +2756,6 @@ method(TaoCrypt::Signature_Encoder::~Signature_Encoder@4598544)
 method(TaoCrypt::Signer::GetHash@4605600)
 method(TaoCrypt::Signer::GetPublicKey@4607264)
 method(TaoCrypt::Signer::Signer@4598176)
-method(TaoCrypt::Signer::scalar_deleting_destructor@4611520)
-method(TaoCrypt::Signer::~Signer@4598560)
 method(TaoCrypt::Source::GetError@4463296)
 method(TaoCrypt::Source::IsLeft@4607952)
 method(TaoCrypt::Source::SetError@4608976)
@@ -2874,8 +2777,6 @@ method(TaoCrypt::Source::~Source@4462176)
 method(TaoCrypt::Transform256@4673904)
 method(TaoCrypt::TwosComplement@4654080)
 method(TaoCrypt::WindowSlider::FindNextWindow@4708000)
-method(TaoCrypt::WindowSlider::WindowSlider@4705600)
-method(TaoCrypt::WindowSlider::WindowSlider@4705744)
 method(TaoCrypt::WindowSlider::scalar_deleting_destructor@4706320)
 method(TaoCrypt::WindowSlider::~WindowSlider@4706128)
 method(UPN::UPN@4670144)
@@ -4763,7 +4664,6 @@ method(mySTL::list<near class yaSSL::SSL_SESSION *>::list@4509152)
 method(mySTL::list<near class yaSSL::SSL_SESSION *>::node::node@4512064)
 method(mySTL::list<near class yaSSL::SSL_SESSION *>::pop_back@4523248)
 method(mySTL::list<near class yaSSL::SSL_SESSION *>::pop_front@4523408)
-method(mySTL::list<near class yaSSL::SSL_SESSION *>::push_back@4523728)
 method(mySTL::list<near class yaSSL::SSL_SESSION *>::~list@4512672)
 method(mySTL::list<near class yaSSL::input_buffer *>::begin@4519328)
 method(mySTL::list<near class yaSSL::input_buffer *>::end@4520464)
@@ -4794,7 +4694,6 @@ method(mySTL::list<near class yaSSL::output_buffer *>::size@4529296)
 method(mySTL::list<near class yaSSL::output_buffer *>::~list@4512736)
 method(mySTL::list<near class yaSSL::x509 *>::begin@4519360)
 method(mySTL::list<near class yaSSL::x509 *>::end@4520496)
-method(mySTL::list<near class yaSSL::x509 *>::front@4613984)
 method(mySTL::list<near class yaSSL::x509 *>::iterator::iterator@4512032)
 method(mySTL::list<near class yaSSL::x509 *>::iterator::operator!=@4514064)
 method(mySTL::list<near class yaSSL::x509 *>::iterator::operator*@4514192)
@@ -4807,7 +4706,6 @@ method(mySTL::list<near class yaSSL::x509 *>::reverse_iterator::operator*@461148
 method(mySTL::list<near class yaSSL::x509 *>::reverse_iterator::operator++@4611504)
 method(mySTL::list<near class yaSSL::x509 *>::reverse_iterator::reverse_iterator@4611136)
 method(mySTL::list<near class yaSSL::x509 *>::size@4614624)
-method(mySTL::list<near class yaSSL::x509 *>::~list@4512768)
 method(mySTL::list<near unsigned char *>::begin@4568400)
 method(mySTL::list<near unsigned char *>::end@4571088)
 method(mySTL::list<near unsigned char *>::iterator::iterator@4554528)
@@ -4830,7 +4728,6 @@ method(mySTL::list<struct yaSSL::ThreadError>::list@4509280)
 method(mySTL::list<struct yaSSL::ThreadError>::node::node@4512192)
 method(mySTL::list<struct yaSSL::ThreadError>::pop_back@4523328)
 method(mySTL::list<struct yaSSL::ThreadError>::pop_front@4523648)
-method(mySTL::list<struct yaSSL::ThreadError>::push_back@4524112)
 method(mySTL::list<struct yaSSL::ThreadError>::~list@4512800)
 method(mySTL::pair<int, near class yaSSL::HandShakeBase * (__cdecl*)(void) >::pair@4552496)
 method(mySTL::pair<int, near struct yaSSL::ClientKeyBase * (__cdecl*)(void) >::pair@4552400)
@@ -5784,7 +5681,6 @@ method(yaSSL::CertManager::AddPeerCert@4611568)
 method(yaSSL::CertManager::CertManager@4610912)
 method(yaSSL::CertManager::CopyCaCert@4611584)
 method(yaSSL::CertManager::CopySelfCert@4611952)
-method(yaSSL::CertManager::SetPrivateKey@4612128)
 method(yaSSL::CertManager::Validate@4612832)
 method(yaSSL::CertManager::failNoCert@4613968)
 method(yaSSL::CertManager::get_cert@4614016)
@@ -5806,7 +5702,6 @@ method(yaSSL::CertManager::setVerifyNone@4614592)
 method(yaSSL::CertManager::setVerifyPeer@4614608)
 method(yaSSL::CertManager::verifyNone@4614656)
 method(yaSSL::CertManager::verifyPeer@4614672)
-method(yaSSL::CertManager::~CertManager@4611232)
 method(yaSSL::Certificate::Certificate@4553088)
 method(yaSSL::Certificate::Certificate@4553200)
 method(yaSSL::Certificate::Process@4561952)
@@ -5822,11 +5717,7 @@ method(yaSSL::CertificateRequest::get_type@4572224)
 method(yaSSL::CertificateRequest::~CertificateRequest@4554656)
 method(yaSSL::CertificateVerify::Build@4559024)
 method(yaSSL::CertificateVerify::CertificateVerify@4553280)
-method(yaSSL::CertificateVerify::Process@4562608)
-method(yaSSL::CertificateVerify::get@4571280)
 method(yaSSL::CertificateVerify::get_type@4572240)
-method(yaSSL::CertificateVerify::scalar_deleting_destructor@4558096)
-method(yaSSL::CertificateVerify::set@4575920)
 method(yaSSL::CertificateVerify::~CertificateVerify@4554720)
 method(yaSSL::ChangeCipherSpec::ChangeCipherSpec@4553296)
 method(yaSSL::ChangeCipherSpec::Process@4562960)
@@ -5880,8 +5771,6 @@ method(yaSSL::Crypto::get_cipher@4521840)
 method(yaSSL::Crypto::get_dh@4521872)
 method(yaSSL::Crypto::get_digest@4521888)
 method(yaSSL::Crypto::get_random@4522000)
-method(yaSSL::Crypto::setCipher@4524368)
-method(yaSSL::Crypto::setDigest@4524384)
 method(yaSSL::Crypto::use_certManager@4529776)
 method(yaSSL::Crypto::use_cipher@4529808)
 method(yaSSL::Crypto::use_dh@4529840)
@@ -5892,6 +5781,7 @@ method(yaSSL::DES::DES@4580304)
 method(yaSSL::DES::DESImpl::DESImpl@4580432)
 method(yaSSL::DES::DESImpl::scalar_deleting_destructor@4587728)
 method(yaSSL::DES::DESImpl::~DESImpl@4585840)
+method(yaSSL::DES::decrypt@4594672)
 method(yaSSL::DES::encrypt@4594832)
 method(yaSSL::DES::~DES@4585808)
 method(yaSSL::DES_EDE::DES_EDE@4580592)
@@ -5931,7 +5821,6 @@ method(yaSSL::Data::set_length@4576224)
 method(yaSSL::Data::~Data@4461408)
 method(yaSSL::DiffieHellman::DHImpl::AllocKeys@4589136)
 method(yaSSL::DiffieHellman::DHImpl::DHImpl@4581008)
-method(yaSSL::DiffieHellman::DHImpl::DHImpl@4581136)
 method(yaSSL::DiffieHellman::DHImpl::scalar_deleting_destructor@4587920)
 method(yaSSL::DiffieHellman::DHImpl::~DHImpl@4586016)
 method(yaSSL::DiffieHellman::DiffieHellman@4581680)
@@ -5944,9 +5833,7 @@ method(yaSSL::DiffieHellman::get_publicKey@4596032)
 method(yaSSL::DiffieHellman::get_publicKeyLength@4596048)
 method(yaSSL::DiffieHellman::makeAgreement@4596096)
 method(yaSSL::DiffieHellman::operator=@4587088)
-method(yaSSL::DiffieHellman::scalar_deleting_destructor@4514480)
 method(yaSSL::DiffieHellman::set_sizes@4596512)
-method(yaSSL::DiffieHellman::~DiffieHellman@4586336)
 method(yaSSL::Digest::Digest@4582384)
 method(yaSSL::Digest::scalar_deleting_destructor@4588160)
 method(yaSSL::Digest::~Digest@4586352)
@@ -5956,7 +5843,6 @@ method(yaSSL::EncryptedPreMasterSecret::alloc@4568272)
 method(yaSSL::EncryptedPreMasterSecret::build@4569984)
 method(yaSSL::EncryptedPreMasterSecret::scalar_deleting_destructor@4558480)
 method(yaSSL::EncryptedPreMasterSecret::~EncryptedPreMasterSecret@4554976)
-method(yaSSL::Errors::Add@4514896)
 method(yaSSL::Errors::Errors@4509872)
 method(yaSSL::Errors::Lookup@4516864)
 method(yaSSL::Errors::Remove@4517264)
@@ -6043,7 +5929,6 @@ method(yaSSL::HelloRequest::set@4576128)
 method(yaSSL::HelloRequest::~HelloRequest@4555040)
 method(yaSSL::Integer::Integer@4583264)
 method(yaSSL::Integer::Integer@4583376)
-method(yaSSL::Integer::IntegerImpl::IntegerImpl@4583504)
 method(yaSSL::Integer::IntegerImpl::IntegerImpl@4583536)
 method(yaSSL::Integer::IntegerImpl::scalar_deleting_destructor@4588496)
 method(yaSSL::Integer::IntegerImpl::~IntegerImpl@4586528)
@@ -6078,7 +5963,12 @@ method(yaSSL::Parameters::SetSuites@4567520)
 method(yaSSL::ProtocolVersion::ProtocolVersion@4554160)
 method(yaSSL::RC4::RC4@4583984)
 method(yaSSL::RC4::RC4Impl::RC4Impl@4584080)
+method(yaSSL::RC4::decrypt@4594736)
 method(yaSSL::RC4::encrypt@4594864)
+method(yaSSL::RC4::get_blockSize@4595072)
+method(yaSSL::RC4::get_keySize@4595696)
+method(yaSSL::RC4::set_decryptKey@4596304)
+method(yaSSL::RC4::set_encryptKey@4596480)
 method(yaSSL::RC4::~RC4@4586608)
 method(yaSSL::RMD::RMD@4584192)
 method(yaSSL::RMD::RMD@4584320)
@@ -6086,13 +5976,8 @@ method(yaSSL::RMD::RMDImpl::RMDImpl@4584480)
 method(yaSSL::RMD::RMDImpl::RMDImpl@4584512)
 method(yaSSL::RMD::RMDImpl::scalar_deleting_destructor@4588800)
 method(yaSSL::RMD::RMDImpl::~RMDImpl@4586688)
-method(yaSSL::RMD::get_digest@4595360)
 method(yaSSL::RMD::get_digest@4595376)
-method(yaSSL::RMD::get_digestSize@4595552)
-method(yaSSL::RMD::get_padSize@4595776)
 method(yaSSL::RMD::operator=@4587200)
-method(yaSSL::RMD::scalar_deleting_destructor@4588752)
-method(yaSSL::RMD::update@4596976)
 method(yaSSL::RMD::~RMD@4586656)
 method(yaSSL::RSA::RSA@4584608)
 method(yaSSL::RSA::RSAImpl::RSAImpl@4584784)
@@ -6164,7 +6049,6 @@ method(yaSSL::SSL::order_error@4523232)
 method(yaSSL::SSL::scalar_deleting_destructor@4462768)
 method(yaSSL::SSL::setKeys@4524432)
 method(yaSSL::SSL::set_masterSecret@4524880)
-method(yaSSL::SSL::set_pending@4524928)
 method(yaSSL::SSL::set_preMaster@4528928)
 method(yaSSL::SSL::set_random@4529024)
 method(yaSSL::SSL::set_session@4529104)
@@ -6231,8 +6115,6 @@ method(yaSSL::SSL_SESSION::SSL_SESSION@4510944)
 method(yaSSL::SSL_SESSION::SSL_SESSION@4511024)
 method(yaSSL::SSL_SESSION::SetTimeOut@4518816)
 method(yaSSL::SSL_SESSION::operator=@4513840)
-method(yaSSL::SSL_SESSION::scalar_deleting_destructor@4514640)
-method(yaSSL::SSL_SESSION::~SSL_SESSION@4513584)
 method(yaSSL::Security::GetContext@4515632)
 method(yaSSL::Security::Security@4511184)
 method(yaSSL::Security::get_connection@4521856)
@@ -6284,7 +6166,6 @@ method(yaSSL::ServerKeyExchange::get_type@4572416)
 method(yaSSL::ServerKeyExchange::~ServerKeyExchange@4555120)
 method(yaSSL::Sessions::Flush@4515328)
 method(yaSSL::Sessions::Sessions@4511328)
-method(yaSSL::Sessions::add@4518944)
 method(yaSSL::Sessions::lookup@4522096)
 method(yaSSL::Sessions::remove@4524208)
 method(yaSSL::Sessions::scalar_deleting_destructor@4514688)
@@ -6364,10 +6245,8 @@ method(yaSSL::input_buffer::input_buffer@4667984)
 method(yaSSL::input_buffer::operator[]@4668208)
 method(yaSSL::input_buffer::peek@4668784)
 method(yaSSL::input_buffer::read@4668832)
-method(yaSSL::input_buffer::scalar_deleting_destructor@4514736)
 method(yaSSL::input_buffer::set_current@4668928)
 method(yaSSL::input_buffer::set_error@4669008)
-method(yaSSL::input_buffer::~input_buffer@4668176)
 method(yaSSL::output_buffer::allocate@4668400)
 method(yaSSL::output_buffer::eof@4668624)
 method(yaSSL::output_buffer::get_buffer@4668656)
@@ -6375,12 +6254,8 @@ method(yaSSL::output_buffer::get_capacity@4668688)
 method(yaSSL::output_buffer::get_size@4668768)
 method(yaSSL::output_buffer::operator[]@4668272)
 method(yaSSL::output_buffer::output_buffer@4668032)
-method(yaSSL::output_buffer::output_buffer@4668080)
 method(yaSSL::output_buffer::output_buffer@4668144)
-method(yaSSL::output_buffer::scalar_deleting_destructor@4514784)
 method(yaSSL::output_buffer::set_current@4668992)
-method(yaSSL::output_buffer::write@4669024)
-method(yaSSL::output_buffer::~output_buffer@4668192)
 method(yaSSL::pad_check@4572464)
 method(yaSSL::sslFactory::getClientKey@4521376)
 method(yaSSL::sslFactory::getHandShake@4521472)
@@ -6400,15 +6275,11 @@ method(yaSSL::sslHashes::use_certVerify@4529792)
 method(yaSSL::sslHashes::use_verify@4529920)
 method(yaSSL::sslHashes::~sslHashes@4462320)
 method(yaSSL::timing_verify@4576400)
-method(yaSSL::x509::Swap@4612784)
 method(yaSSL::x509::get_buffer@4614000)
 method(yaSSL::x509::get_length@4614048)
-method(yaSSL::x509::operator=@4611440)
-method(yaSSL::x509::scalar_deleting_destructor@4463008)
 method(yaSSL::x509::use_buffer@4614640)
 method(yaSSL::x509::x509@4611152)
 method(yaSSL::x509::x509@4611200)
-method(yaSSL::x509::~x509@4611424)
 method(yaSSL::yassl_int_cpp_local1::SumBuffer::SumBuffer@4511712)
 method(yaSSL::yassl_int_cpp_local1::SumBuffer::operator()@4514336)
 method(yaSSL::yassl_int_cpp_local1::SumData::SumData@4511728)
@@ -6485,10 +6356,12 @@ realDestructor(MyCipherCtx<1>::MyCipherCtx@4477232)
 realDestructor(MyCipherCtx<1>::~MyCipherCtx@4477680)
 realDestructor(TaoCrypt::AES::AES@4477520)
 realDestructor(TaoCrypt::AES::~AES@4477744)
+realDestructor(TaoCrypt::BER_Decoder::BER_Decoder@4597264)
 realDestructor(TaoCrypt::BER_Decoder::~BER_Decoder@4598400)
 realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 0>::BlockCipher@4477184)
 realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 0>::~BlockCipher@4477664)
 realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::BlockCipher@4477136)
+realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::~BlockCipher@4477648)
 realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::DES, 1>::BlockCipher@4579232)
 realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::DES, 1>::~BlockCipher@4585584)
 realDestructor(TaoCrypt::BlockCipher<0, class TaoCrypt::DES_EDE3, 1>::BlockCipher@4579280)
@@ -6500,7 +6373,6 @@ realDestructor(TaoCrypt::BlockCipher<1, class TaoCrypt::DES, 1>::BlockCipher@457
 realDestructor(TaoCrypt::BlockCipher<1, class TaoCrypt::DES, 1>::~BlockCipher@4585552)
 realDestructor(TaoCrypt::BlockCipher<1, class TaoCrypt::DES_EDE3, 1>::BlockCipher@4579184)
 realDestructor(TaoCrypt::BlockCipher<1, class TaoCrypt::DES_EDE3, 1>::~BlockCipher@4585568)
-realDestructor(TaoCrypt::CertDecoder::~CertDecoder@4598416)
 realDestructor(TaoCrypt::DER_Encoder::~DER_Encoder@4598464)
 realDestructor(TaoCrypt::DES::~DES@4585792)
 realDestructor(TaoCrypt::DES_EDE3::~DES_EDE3@4585872)
@@ -6510,8 +6382,8 @@ realDestructor(TaoCrypt::DSA_Public_Decoder::~DSA_Public_Decoder@4657584)
 realDestructor(TaoCrypt::HASH64withTransform::~HASH64withTransform@4598480)
 realDestructor(TaoCrypt::HASH::~HASH@4461440)
 realDestructor(TaoCrypt::HASHwithTransform::~HASHwithTransform@4461456)
+realDestructor(TaoCrypt::HMAC<class TaoCrypt::MD5>::~HMAC@4585616)
 realDestructor(TaoCrypt::HMAC<class TaoCrypt::RIPEMD160>::~HMAC@4585632)
-realDestructor(TaoCrypt::HMAC<class TaoCrypt::SHA>::~HMAC@4585648)
 realDestructor(TaoCrypt::MD2::~MD2@4701680)
 realDestructor(TaoCrypt::MD4::MD4@4619408)
 realDestructor(TaoCrypt::MD4::~MD4@4461552)
@@ -6560,6 +6432,7 @@ realDestructor(yaSSL::ClientKeyBase::~ClientKeyBase@4554784)
 realDestructor(yaSSL::ClientKeyExchange::ClientKeyExchange@4553472)
 realDestructor(yaSSL::ClientKeyExchange::ClientKeyExchange@4553568)
 realDestructor(yaSSL::ClientKeyExchange::~ClientKeyExchange@4554800)
+realDestructor(yaSSL::DES::DES@4580304)
 realDestructor(yaSSL::DES::DESImpl::DESImpl@4580432)
 realDestructor(yaSSL::DES::DESImpl::~DESImpl@4585840)
 realDestructor(yaSSL::DES::~DES@4585808)
@@ -6603,6 +6476,7 @@ realDestructor(yaSSL::SHA::SHA@4585264)
 realDestructor(yaSSL::SHA::SHAImpl::SHAImpl@4585456)
 realDestructor(yaSSL::SHA::SHAImpl::~SHAImpl@4586896)
 realDestructor(yaSSL::SHA::~SHA@4586864)
+realDestructor(yaSSL::SSL::~SSL@4461872)
 realDestructor(yaSSL::ServerHello::ServerHello@4554256)
 realDestructor(yaSSL::ServerHello::ServerHello@4554320)
 realDestructor(yaSSL::ServerHello::~ServerHello@4537840)
@@ -6765,7 +6639,9 @@ vfTableEntry(TaoCrypt::Mode_BASE::vftable@5370188,0,TaoCrypt::Mode_BASE::scalar_
 vfTableEntry(TaoCrypt::Mode_BASE::vftable@5370188,4,TaoCrypt::Mode_BASE::Process@4478368)
 vfTableEntry(TaoCrypt::Mode_BASE::vftable@5370188,8,__purecall@4742262)
 vfTableEntry(TaoCrypt::ModularArithmetic::vftable@7785108,0,TaoCrypt::ModularArithmetic::scalar_deleting_destructor@4628160)
+vfTableEntry(TaoCrypt::ModularArithmetic::vftable@7785108,4,TaoCrypt::ModularArithmetic::Equal@4636416)
 vfTableEntry(TaoCrypt::MontgomeryRepresentation::vftable@7785216,0,TaoCrypt::MontgomeryRepresentation::scalar_deleting_destructor@4628272)
+vfTableEntry(TaoCrypt::MontgomeryRepresentation::vftable@7785216,4,TaoCrypt::ModularArithmetic::Equal@4636416)
 vfTableEntry(TaoCrypt::RIPEMD160::vftable@7784176,0,TaoCrypt::RIPEMD160::scalar_deleting_destructor@4588704)
 vfTableEntry(TaoCrypt::RIPEMD160::vftable@7784176,12,TaoCrypt::RIPEMD160::Init@4690272)
 vfTableEntry(TaoCrypt::RIPEMD160::vftable@7784176,4,TaoCrypt::HASHwithTransform::Update@4617120)
@@ -6835,10 +6711,6 @@ vfTableEntry(yaSSL::Certificate::vftable@7781760,4,yaSSL::Certificate::set@45758
 vfTableEntry(yaSSL::Certificate::vftable@7781760,8,yaSSL::Certificate::get@4571216)
 vfTableEntry(yaSSL::CertificateRequest::vftable@7781904,0,yaSSL::CertificateRequest::get_type@4572224)
 vfTableEntry(yaSSL::CertificateVerify::vftable@7782072,0,yaSSL::CertificateVerify::get_type@4572240)
-vfTableEntry(yaSSL::CertificateVerify::vftable@7782072,12,yaSSL::CertificateVerify::Process@4562608)
-vfTableEntry(yaSSL::CertificateVerify::vftable@7782072,16,yaSSL::CertificateVerify::scalar_deleting_destructor@4558096)
-vfTableEntry(yaSSL::CertificateVerify::vftable@7782072,4,yaSSL::CertificateVerify::set@4575920)
-vfTableEntry(yaSSL::CertificateVerify::vftable@7782072,8,yaSSL::CertificateVerify::get@4571280)
 vfTableEntry(yaSSL::ChangeCipherSpec::vftable@7781604,0,yaSSL::ChangeCipherSpec::set@4575952)
 vfTableEntry(yaSSL::ChangeCipherSpec::vftable@7781604,12,yaSSL::ChangeCipherSpec::get_type@4572256)
 vfTableEntry(yaSSL::ChangeCipherSpec::vftable@7781604,16,yaSSL::ChangeCipherSpec::get_length@4571808)
@@ -6856,6 +6728,7 @@ vfTableEntry(yaSSL::ClientKeyBase::vftable@7781952,0,yaSSL::ClientKeyBase::scala
 vfTableEntry(yaSSL::ClientKeyBase::vftable@7781952,4,yaSSL::ClientKeyBase::build@4568672)
 vfTableEntry(yaSSL::ClientKeyExchange::vftable@7782048,0,yaSSL::ClientKeyExchange::get_type@4572288)
 vfTableEntry(yaSSL::DES::vftable@7783972,0,yaSSL::DES::encrypt@4594832)
+vfTableEntry(yaSSL::DES::vftable@7783972,4,yaSSL::DES::decrypt@4594672)
 vfTableEntry(yaSSL::DES_EDE::vftable@7784008,0,yaSSL::DES_EDE::encrypt@4594848)
 vfTableEntry(yaSSL::DES_EDE::vftable@7784008,4,yaSSL::DES_EDE::decrypt@4594704)
 vfTableEntry(yaSSL::DH_Server::vftable@7781832,0,yaSSL::DH_Server::scalar_deleting_destructor@4558384)
@@ -6912,12 +6785,12 @@ vfTableEntry(yaSSL::Message::vftable@5369040,20,yaSSL::Message::scalar_deleting_
 vfTableEntry(yaSSL::Message::vftable@5369040,4,__purecall@4742262)
 vfTableEntry(yaSSL::Message::vftable@5369040,8,__purecall@4742262)
 vfTableEntry(yaSSL::RC4::vftable@7784044,0,yaSSL::RC4::encrypt@4594864)
+vfTableEntry(yaSSL::RC4::vftable@7784044,12,yaSSL::RC4::set_decryptKey@4596304)
+vfTableEntry(yaSSL::RC4::vftable@7784044,16,yaSSL::RC4::get_blockSize@4595072)
+vfTableEntry(yaSSL::RC4::vftable@7784044,20,yaSSL::RC4::get_keySize@4595696)
+vfTableEntry(yaSSL::RC4::vftable@7784044,4,yaSSL::RC4::decrypt@4594736)
+vfTableEntry(yaSSL::RC4::vftable@7784044,8,yaSSL::RC4::set_encryptKey@4596480)
 vfTableEntry(yaSSL::RMD::vftable@7783824,0,yaSSL::RMD::get_digest@4595376)
-vfTableEntry(yaSSL::RMD::vftable@7783824,12,yaSSL::RMD::get_digestSize@4595552)
-vfTableEntry(yaSSL::RMD::vftable@7783824,16,yaSSL::RMD::get_padSize@4595776)
-vfTableEntry(yaSSL::RMD::vftable@7783824,20,yaSSL::RMD::scalar_deleting_destructor@4588752)
-vfTableEntry(yaSSL::RMD::vftable@7783824,4,yaSSL::RMD::get_digest@4595360)
-vfTableEntry(yaSSL::RMD::vftable@7783824,8,yaSSL::RMD::update@4596976)
 vfTableEntry(yaSSL::RSA::vftable@7784156,0,yaSSL::RSA::sign@4596864)
 vfTableEntry(yaSSL::RSA::vftable@7784156,4,yaSSL::RSA::verify@4597168)
 vfTableEntry(yaSSL::RSA::vftable@7784156,8,yaSSL::RSA::get_signatureLength@4596080)
@@ -6935,7 +6808,7 @@ vfTableEntry(yaSSL::ServerHelloDone::vftable@7781928,4,yaSSL::ServerHelloDone::s
 vfTableEntry(yaSSL::ServerHelloDone::vftable@7781928,8,yaSSL::ServerHelloDone::get@4571568)
 vfTableEntry(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBase::scalar_deleting_destructor@4558864)
 vfTableEntry(yaSSL::ServerKeyExchange::vftable@7781880,0,yaSSL::ServerKeyExchange::get_type@4572416)
-vfTableOverwrite(TaoCrypt::CertDecoder::~CertDecoder@4598416,TaoCrypt::BER_Decoder::vftable@7784392,TaoCrypt::CertDecoder::vftable@7784404,0)
+vfTableOverwrite(TaoCrypt::CertDecoder::~CertDecoder@4598416,TaoCrypt::CertDecoder::vftable@7784404,TaoCrypt::BER_Decoder::vftable@7784392,0)
 vfTableOverwrite(TaoCrypt::MontgomeryRepresentation::MontgomeryRepresentation@4625216,TaoCrypt::ModularArithmetic::vftable@7785108,TaoCrypt::MontgomeryRepresentation::vftable@7785216,0)
 vfTableOverwrite(yaSSL::AES::~AES@4585664,yaSSL::BulkCipher::vftable@7783936,yaSSL::AES::vftable@7784080,0)
 vfTableOverwrite(yaSSL::CertificateRequest::~CertificateRequest@4554656,yaSSL::HandShakeBase::vftable@5369068,yaSSL::CertificateRequest::vftable@7781904,0)
@@ -6980,8 +6853,8 @@ vfTableSize(TaoCrypt::MD2::vftable@7799556,16)
 vfTableSize(TaoCrypt::MD4::vftable@5369160,16)
 vfTableSize(TaoCrypt::MD5::vftable@5369120,16)
 vfTableSize(TaoCrypt::Mode_BASE::vftable@5370188,12)
-vfTableSize(TaoCrypt::ModularArithmetic::vftable@7785108,4)
-vfTableSize(TaoCrypt::MontgomeryRepresentation::vftable@7785216,4)
+vfTableSize(TaoCrypt::ModularArithmetic::vftable@7785108,8)
+vfTableSize(TaoCrypt::MontgomeryRepresentation::vftable@7785216,8)
 vfTableSize(TaoCrypt::RIPEMD160::vftable@7784176,16)
 vfTableSize(TaoCrypt::RSA_Private_Decoder::vftable@7785324,4)
 vfTableSize(TaoCrypt::RSA_Public_Decoder::vftable@7785336,8)
@@ -7003,13 +6876,13 @@ vfTableSize(yaSSL::Auth::vftable@7784116,16)
 vfTableSize(yaSSL::BulkCipher::vftable@7783936,32)
 vfTableSize(yaSSL::Certificate::vftable@7781760,20)
 vfTableSize(yaSSL::CertificateRequest::vftable@7781904,4)
-vfTableSize(yaSSL::CertificateVerify::vftable@7782072,20)
+vfTableSize(yaSSL::CertificateVerify::vftable@7782072,4)
 vfTableSize(yaSSL::ChangeCipherSpec::vftable@7781604,24)
 vfTableSize(yaSSL::ClientDiffieHellmanPublic::vftable@7782024,8)
 vfTableSize(yaSSL::ClientHello::vftable@7781712,20)
 vfTableSize(yaSSL::ClientKeyBase::vftable@7781952,8)
 vfTableSize(yaSSL::ClientKeyExchange::vftable@7782048,4)
-vfTableSize(yaSSL::DES::vftable@7783972,4)
+vfTableSize(yaSSL::DES::vftable@7783972,8)
 vfTableSize(yaSSL::DES_EDE::vftable@7784008,8)
 vfTableSize(yaSSL::DH_Server::vftable@7781832,8)
 vfTableSize(yaSSL::DSS::vftable@7784136,12)
@@ -7027,8 +6900,8 @@ vfTableSize(yaSSL::HandShakeHeader::vftable@7781564,24)
 vfTableSize(yaSSL::HelloRequest::vftable@7781688,20)
 vfTableSize(yaSSL::MD5::vftable@7783768,4)
 vfTableSize(yaSSL::Message::vftable@5369040,24)
-vfTableSize(yaSSL::RC4::vftable@7784044,4)
-vfTableSize(yaSSL::RMD::vftable@7783824,24)
+vfTableSize(yaSSL::RC4::vftable@7784044,24)
+vfTableSize(yaSSL::RMD::vftable@7783824,4)
 vfTableSize(yaSSL::RSA::vftable@7784156,12)
 vfTableSize(yaSSL::RSA_Server::vftable@7781856,4)
 vfTableSize(yaSSL::SHA::vftable@7783796,4)
@@ -7374,7 +7247,7 @@ vftableBelongsToClass(Handshake::vftable@7796020,0,Handshake::Handshake@4670896)
 vftableBelongsToClass(Handshake_client::vftable@7780992,0,Handshake_client::Handshake_client@4532480)
 vftableBelongsToClass(TaoCrypt::AES::vftable@5370204,0,TaoCrypt::BlockCipher<1, class TaoCrypt::AES, 1>::BlockCipher@4477040)
 vftableBelongsToClass(TaoCrypt::AbstractRing::MultiplicativeGroupT::vftable@7784944,0,TaoCrypt::AbstractRing::MultiplicativeGroupT::MultiplicativeGroupT@4625408)
-vftableBelongsToClass(TaoCrypt::BER_Decoder::vftable@7784392,0,TaoCrypt::BER_Decoder::BER_Decoder@4597264)
+vftableBelongsToClass(TaoCrypt::BER_Decoder::vftable@7784392,0,TaoCrypt::CertDecoder::~CertDecoder@4598416)
 vftableBelongsToClass(TaoCrypt::CertDecoder::vftable@7784404,0,TaoCrypt::CertDecoder::CertDecoder@4597296)
 vftableBelongsToClass(TaoCrypt::DER_Encoder::vftable@7784416,0,TaoCrypt::DER_Encoder::DER_Encoder@4597504)
 vftableBelongsToClass(TaoCrypt::DES::vftable@7784216,0,TaoCrypt::DES::DES@4580256)
@@ -7413,7 +7286,6 @@ vftableBelongsToClass(yaSSL::CertificateVerify::vftable@7782072,0,yaSSL::Certifi
 vftableBelongsToClass(yaSSL::ChangeCipherSpec::vftable@7781604,0,yaSSL::ChangeCipherSpec::ChangeCipherSpec@4553296)
 vftableBelongsToClass(yaSSL::ClientDiffieHellmanPublic::vftable@7782024,0,yaSSL::ClientDiffieHellmanPublic::ClientDiffieHellmanPublic@4553312)
 vftableBelongsToClass(yaSSL::ClientKeyBase::vftable@7781952,0,yaSSL::ClientKeyBase::ClientKeyBase@4553456)
-vftableBelongsToClass(yaSSL::DES::vftable@7783972,0,yaSSL::DES::DES@4580304)
 vftableBelongsToClass(yaSSL::DES_EDE::vftable@7784008,0,yaSSL::DES_EDE::DES_EDE@4580592)
 vftableBelongsToClass(yaSSL::DH_Server::vftable@7781832,0,yaSSL::DH_Server::DH_Server@4553760)
 vftableBelongsToClass(yaSSL::DSS::vftable@7784136,0,yaSSL::DSS::DSS@4581312)
@@ -8851,11 +8723,11 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::AllocatorWithCleanup<unsigned int>::reallocate@4654832}
 %   {TaoCrypt::AtomicDivide@4630560}
 %   {TaoCrypt::AtomicInverseModPower2@4630688}
-%   {TaoCrypt::BER_Decoder::BER_Decoder@4597264, TaoCrypt::BER_Decoder::vftable@7784392}
+%   {TaoCrypt::BER_Decoder::BER_Decoder@4597264}
 %   {TaoCrypt::BER_Decoder::GetError@4605440}
 %   {TaoCrypt::BER_Decoder::GetExplicitVersion@4605472}
 %   {TaoCrypt::BER_Decoder::GetInteger@4605616}
-%   {TaoCrypt::BER_Decoder::GetSequence@4607280, TaoCrypt::CertDecoder::GetValidity@4607760}
+%   {TaoCrypt::BER_Decoder::GetSequence@4607280}
 %   {TaoCrypt::BER_Decoder::GetSet@4607376}
 %   {TaoCrypt::BER_Decoder::scalar_deleting_destructor@4598896}
 %   {TaoCrypt::BER_Decoder::~BER_Decoder@4598400}
@@ -8898,7 +8770,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::BlockCipher@4477136}
 %   {TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::Process@4478272}
 %   {TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::SetKey@4478528}
-%   {TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::~BlockCipher@4477648, TaoCrypt::DES_EDE3::~DES_EDE3@4585872}
+%   {TaoCrypt::BlockCipher<0, class TaoCrypt::AES, 1>::~BlockCipher@4477648}
 %   {TaoCrypt::BlockCipher<0, class TaoCrypt::DES, 1>::BlockCipher@4579232}
 %   {TaoCrypt::BlockCipher<0, class TaoCrypt::DES, 1>::Process@4592064}
 %   {TaoCrypt::BlockCipher<0, class TaoCrypt::DES, 1>::SetKey@4592768}
@@ -8947,13 +8819,14 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::CertDecoder::GetSignature@4607472}
 %   {TaoCrypt::CertDecoder::GetSubjectCnLength@4463360}
 %   {TaoCrypt::CertDecoder::GetSubjectCnStart@4463376}
+%   {TaoCrypt::CertDecoder::GetValidity@4607760}
 %   {TaoCrypt::CertDecoder::ReadHeader@4608000}
 %   {TaoCrypt::CertDecoder::StoreKey@4609312}
 %   {TaoCrypt::CertDecoder::ValidateSelfSignature@4609584}
 %   {TaoCrypt::CertDecoder::ValidateSignature@4609760}
 %   {TaoCrypt::CertDecoder::rtti@8396544}
 %   {TaoCrypt::CertDecoder::scalar_deleting_destructor@4598944}
-%   {TaoCrypt::CertDecoder::~CertDecoder@4598416}
+%   {TaoCrypt::CertDecoder::~CertDecoder@4598416, TaoCrypt::BER_Decoder::vftable@7784392}
 %   {TaoCrypt::Compare@4631808}
 %   {TaoCrypt::CorrectQuotientEstimate@4632320}
 %   {TaoCrypt::DER_Encoder::DER_Encoder@4597504, TaoCrypt::DER_Encoder::vftable@7784416}
@@ -8964,7 +8837,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::DES::DES@4580256, TaoCrypt::DES::vftable@7784216}
 %   {TaoCrypt::DES::ProcessAndXorBlock@4695632}
 %   {TaoCrypt::DES::rtti@8396224}
-%   {TaoCrypt::DES::scalar_deleting_destructor@4587632, yaSSL::DES_EDE::DES_EDEImpl::scalar_deleting_destructor@4587872}
+%   {TaoCrypt::DES::scalar_deleting_destructor@4587632}
 %   {TaoCrypt::DES::~DES@4585792}
 %   {TaoCrypt::DES_EDE2::ProcessAndXorBlock@4695952}
 %   {TaoCrypt::DES_EDE2::SetKey@4699248}
@@ -8974,6 +8847,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::DES_EDE3::SetKey@4699328}
 %   {TaoCrypt::DES_EDE3::rtti@8396388}
 %   {TaoCrypt::DES_EDE3::scalar_deleting_destructor@4587776}
+%   {TaoCrypt::DES_EDE3::~DES_EDE3@4585872}
 %   {TaoCrypt::DH::Agree@4700416}
 %   {TaoCrypt::DH::DH@4580832}
 %   {TaoCrypt::DH::DH@4580928}
@@ -9091,8 +8965,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::FileSource::~FileSource@4702592}
 %   {TaoCrypt::GetBlock<unsigned int, struct TaoCrypt::EnumToType<enum TaoCrypt::ByteOrder, 1>, 0>::GetBlock@4661904}
 %   {TaoCrypt::GetBlock<unsigned int, struct TaoCrypt::EnumToType<enum TaoCrypt::ByteOrder, 1>, 0>::operator()@4661088}
-%   {TaoCrypt::HASH64withTransform::AddLength@4615984}
-%   {TaoCrypt::HASH64withTransform::Final@4616160}
+%   {TaoCrypt::HASH64withTransform::AddLength@4615984, TaoCrypt::HASH64withTransform::Final@4616160}
 %   {TaoCrypt::HASH64withTransform::GetBitCountHi@4616832}
 %   {TaoCrypt::HASH64withTransform::GetBitCountLo@4616864}
 %   {TaoCrypt::HASH64withTransform::HASH64withTransform@4615840, TaoCrypt::HASH64withTransform::vftable@7784684}
@@ -9114,6 +8987,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::HASHwithTransform::~HASHwithTransform@4461456}
 %   {TaoCrypt::HMAC<class TaoCrypt::MD5>::Final@4590256}
 %   {TaoCrypt::HMAC<class TaoCrypt::MD5>::HMAC@4579328}
+%   {TaoCrypt::HMAC<class TaoCrypt::MD5>::Init@4590688}
 %   {TaoCrypt::HMAC<class TaoCrypt::MD5>::KeyInnerHash@4590848}
 %   {TaoCrypt::HMAC<class TaoCrypt::MD5>::SetKey@4592864}
 %   {TaoCrypt::HMAC<class TaoCrypt::MD5>::Update@4594416}
@@ -9225,7 +9099,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::MD4::operator=@4619520}
 %   {TaoCrypt::MD4::rtti@8392664}
 %   {TaoCrypt::MD4::scalar_deleting_destructor@4462624}
-%   {TaoCrypt::MD4::~MD4@4461552, TaoCrypt::MD5::scalar_deleting_destructor@4462672}
+%   {TaoCrypt::MD4::~MD4@4461552}
 %   {TaoCrypt::MD5::Init@4617504}
 %   {TaoCrypt::MD5::MD5@4460656}
 %   {TaoCrypt::MD5::MD5@4617328}
@@ -9237,6 +9111,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::MD5::getPadSize@4463728}
 %   {TaoCrypt::MD5::operator=@4617440}
 %   {TaoCrypt::MD5::rtti@8392580}
+%   {TaoCrypt::MD5::scalar_deleting_destructor@4462672}
 %   {TaoCrypt::MD5::vftable@5369120}
 %   {TaoCrypt::MD5::~MD5@4461568}
 %   {TaoCrypt::Mode_BASE::CBC_Decrypt@4477872}
@@ -9254,13 +9129,12 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::ModularArithmetic::ConvertOut@4632080}
 %   {TaoCrypt::ModularArithmetic::Divide@4634192}
 %   {TaoCrypt::ModularArithmetic::Double@4636016}
-%   {TaoCrypt::ModularArithmetic::Equal@4636416}
 %   {TaoCrypt::ModularArithmetic::Half@4636928}
 %   {TaoCrypt::ModularArithmetic::Identity@4637296}
 %   {TaoCrypt::ModularArithmetic::Inverse@4637520}
 %   {TaoCrypt::ModularArithmetic::IsMontgomeryRepresentation@4638688}
 %   {TaoCrypt::ModularArithmetic::IsUnit@4639008}
-%   {TaoCrypt::ModularArithmetic::ModularArithmetic@4625088, TaoCrypt::ModularArithmetic::vftable@7785108}
+%   {TaoCrypt::ModularArithmetic::ModularArithmetic@4625088, TaoCrypt::ModularArithmetic::Equal@4636416, TaoCrypt::ModularArithmetic::vftable@7785108}
 %   {TaoCrypt::ModularArithmetic::MultiplicativeIdentity@4640624}
 %   {TaoCrypt::ModularArithmetic::MultiplicativeInverse@4641008}
 %   {TaoCrypt::ModularArithmetic::Multiply@4645648}
@@ -9393,9 +9267,9 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {TaoCrypt::SHA256::getPadSize@4534864}
 %   {TaoCrypt::SHA256::operator=@4672496}
 %   {TaoCrypt::SHA256::scalar_deleting_destructor@4534640}
-%   {TaoCrypt::SHA256::~SHA256@4534624, TaoCrypt::SHA384::scalar_deleting_destructor@4599040}
+%   {TaoCrypt::SHA256::~SHA256@4534624}
 %   {TaoCrypt::SHA384::Init@4672992}
-%   {TaoCrypt::SHA384::SHA384@4597584, TaoCrypt::SHA384::vftable@7784472}
+%   {TaoCrypt::SHA384::SHA384@4597584, TaoCrypt::SHA384::scalar_deleting_destructor@4599040, TaoCrypt::SHA384::vftable@7784472}
 %   {TaoCrypt::SHA384::SHA384@4672080}
 %   {TaoCrypt::SHA384::Swap@4673584}
 %   {TaoCrypt::SHA384::Transform@4686000}
@@ -12447,9 +12321,13 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::CertificateRequest::set@4575888}
 %   {yaSSL::CertificateRequest::~CertificateRequest@4554656}
 %   {yaSSL::CertificateVerify::Build@4559024}
-%   {yaSSL::CertificateVerify::CertificateVerify@4553280, yaSSL::CertificateVerify::scalar_deleting_destructor@4558096, yaSSL::CertificateVerify::Process@4562608, yaSSL::CertificateVerify::get@4571280, yaSSL::CertificateVerify::set@4575920, yaSSL::CertificateVerify::vftable@7782072}
+%   {yaSSL::CertificateVerify::CertificateVerify@4553280, yaSSL::CertificateVerify::vftable@7782072}
+%   {yaSSL::CertificateVerify::Process@4562608}
+%   {yaSSL::CertificateVerify::get@4571280}
 %   {yaSSL::CertificateVerify::get_type@4572240}
 %   {yaSSL::CertificateVerify::rtti@8394792}
+%   {yaSSL::CertificateVerify::scalar_deleting_destructor@4558096}
+%   {yaSSL::CertificateVerify::set@4575920}
 %   {yaSSL::CertificateVerify::~CertificateVerify@4554720}
 %   {yaSSL::ChangeCipherSpec::ChangeCipherSpec@4553296, yaSSL::ChangeCipherSpec::vftable@7781604}
 %   {yaSSL::ChangeCipherSpec::Process@4562960}
@@ -12526,11 +12404,12 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::Crypto::use_dh@4529840}
 %   {yaSSL::Crypto::use_digest@4529856}
 %   {yaSSL::Crypto::use_random@4529888}
-%   {yaSSL::DES::DES@4580304, yaSSL::DES::vftable@7783972}
+%   {yaSSL::Crypto::~Crypto@4513104}
+%   {yaSSL::DES::DES@4580304}
 %   {yaSSL::DES::DESImpl::DESImpl@4580432}
 %   {yaSSL::DES::DESImpl::scalar_deleting_destructor@4587728}
 %   {yaSSL::DES::DESImpl::~DESImpl@4585840}
-%   {yaSSL::DES::decrypt@4594672}
+%   {yaSSL::DES::decrypt@4594672, yaSSL::DES::vftable@7783972}
 %   {yaSSL::DES::encrypt@4594832}
 %   {yaSSL::DES::get_blockSize@4595040}
 %   {yaSSL::DES::get_ivSize@4595600}
@@ -12542,8 +12421,8 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::DES::~DES@4585808}
 %   {yaSSL::DES_EDE::DES_EDE@4580592, yaSSL::DES_EDE::vftable@7784008}
 %   {yaSSL::DES_EDE::DES_EDEImpl::DES_EDEImpl@4580720}
+%   {yaSSL::DES_EDE::DES_EDEImpl::scalar_deleting_destructor@4587872}
 %   {yaSSL::DES_EDE::DES_EDEImpl::~DES_EDEImpl@4585920}
-%   {yaSSL::DES_EDE::decrypt@4594704}
 %   {yaSSL::DES_EDE::encrypt@4594848}
 %   {yaSSL::DES_EDE::get_blockSize@4595056}
 %   {yaSSL::DES_EDE::get_ivSize@4595616}
@@ -12552,7 +12431,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::DES_EDE::scalar_deleting_destructor@4587824}
 %   {yaSSL::DES_EDE::set_decryptKey@4596240}
 %   {yaSSL::DES_EDE::set_encryptKey@4596432}
-%   {yaSSL::DES_EDE::~DES_EDE@4585888}
+%   {yaSSL::DES_EDE::~DES_EDE@4585888, yaSSL::DES_EDE::decrypt@4594704}
 %   {yaSSL::DH_Parms::DH_Parms@4509776}
 %   {yaSSL::DH_Parms::~DH_Parms@4513232}
 %   {yaSSL::DH_Server::DH_Server@4553760, yaSSL::DH_Server::vftable@7781832}
@@ -12571,10 +12450,9 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::DSS::DSSImpl::~DSSImpl@4586272}
 %   {yaSSL::DSS::get_signatureLength@4596064}
 %   {yaSSL::DSS::rtti@8396040}
-%   {yaSSL::DSS::scalar_deleting_destructor@4588032}
 %   {yaSSL::DSS::sign@4596704}
 %   {yaSSL::DSS::verify@4597008}
-%   {yaSSL::DSS::~DSS@4586240}
+%   {yaSSL::DSS::~DSS@4586240, yaSSL::DSS::scalar_deleting_destructor@4588032}
 %   {yaSSL::Data::Data@4553808, yaSSL::Data::vftable@7781660}
 %   {yaSSL::Data::Data@4553856}
 %   {yaSSL::Data::Process@4564144}
@@ -12664,7 +12542,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::Fortezza_Server::scalar_deleting_destructor@4558624}
 %   {yaSSL::Fortezza_Server::~Fortezza_Server@4555024}
 %   {yaSSL::HMAC_MD5::HMAC_MD5@4582400, yaSSL::HMAC_MD5::vftable@7783852}
-%   {yaSSL::HMAC_MD5::HMAC_MD5Impl::HMAC_MD5Impl@4582544, TaoCrypt::HMAC<class TaoCrypt::MD5>::Init@4590688}
+%   {yaSSL::HMAC_MD5::HMAC_MD5Impl::HMAC_MD5Impl@4582544}
 %   {yaSSL::HMAC_MD5::HMAC_MD5Impl::scalar_deleting_destructor@4588256}
 %   {yaSSL::HMAC_MD5::HMAC_MD5Impl::~HMAC_MD5Impl@4586400}
 %   {yaSSL::HMAC_MD5::get_digest@4595104}
@@ -12748,14 +12626,14 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::MD5::MD5Impl::scalar_deleting_destructor@4588608}
 %   {yaSSL::MD5::MD5Impl::~MD5Impl@4586592}
 %   {yaSSL::MD5::get_digest@4595296}
-%   {yaSSL::MD5::get_digest@4595312}
+%   {yaSSL::MD5::get_digest@4595312, yaSSL::MD5::vftable@7783768}
 %   {yaSSL::MD5::get_digestSize@4595536}
 %   {yaSSL::MD5::get_padSize@4595760}
 %   {yaSSL::MD5::operator=@4587168}
 %   {yaSSL::MD5::rtti@8395028}
+%   {yaSSL::MD5::scalar_deleting_destructor@4588560}
 %   {yaSSL::MD5::update@4596960}
-%   {yaSSL::MD5::vftable@7783768}
-%   {yaSSL::MD5::~MD5@4586560, yaSSL::MD5::scalar_deleting_destructor@4588560}
+%   {yaSSL::MD5::~MD5@4586560}
 %   {yaSSL::Message::Message@4537696, yaSSL::Message::vftable@5369040}
 %   {yaSSL::Message::scalar_deleting_destructor@4462720}
 %   {yaSSL::Message::~Message@4461584}
@@ -12780,17 +12658,22 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::RC4::set_decryptKey@4596304}
 %   {yaSSL::RC4::set_encryptKey@4596480}
 %   {yaSSL::RC4::~RC4@4586608}
-%   {yaSSL::RMD::RMD@4584192, yaSSL::RMD::scalar_deleting_destructor@4588752, yaSSL::RMD::get_digest@4595360}
-%   {yaSSL::RMD::RMD@4584320, yaSSL::RMD::~RMD@4586656, yaSSL::RMD::get_digestSize@4595552, yaSSL::RMD::get_padSize@4595776}
+%   {yaSSL::RMD::RMD@4584192}
+%   {yaSSL::RMD::RMD@4584320}
 %   {yaSSL::RMD::RMDImpl::RMDImpl@4584480}
 %   {yaSSL::RMD::RMDImpl::RMDImpl@4584512}
 %   {yaSSL::RMD::RMDImpl::scalar_deleting_destructor@4588800}
 %   {yaSSL::RMD::RMDImpl::~RMDImpl@4586688}
-%   {yaSSL::RMD::get_digest@4595376}
+%   {yaSSL::RMD::get_digest@4595360}
+%   {yaSSL::RMD::get_digest@4595376, yaSSL::RMD::vftable@7783824}
+%   {yaSSL::RMD::get_digestSize@4595552}
+%   {yaSSL::RMD::get_padSize@4595776}
 %   {yaSSL::RMD::operator=@4587200}
 %   {yaSSL::RMD::rtti@8395188}
-%   {yaSSL::RMD::update@4596976, yaSSL::RMD::vftable@7783824}
-%   {yaSSL::RSA::RSA@4584608, yaSSL::RSA::vftable@7784156}
+%   {yaSSL::RMD::scalar_deleting_destructor@4588752}
+%   {yaSSL::RMD::update@4596976}
+%   {yaSSL::RMD::~RMD@4586656}
+%   {yaSSL::RSA::RSA@4584608, yaSSL::RSA::get_signatureLength@4596080, yaSSL::RSA::vftable@7784156}
 %   {yaSSL::RSA::RSAImpl::RSAImpl@4584784}
 %   {yaSSL::RSA::RSAImpl::SetPrivate@4593712}
 %   {yaSSL::RSA::RSAImpl::SetPublic@4594144}
@@ -12799,7 +12682,6 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::RSA::decrypt@4594768}
 %   {yaSSL::RSA::encrypt@4594880}
 %   {yaSSL::RSA::get_cipherLength@4595088}
-%   {yaSSL::RSA::get_signatureLength@4596080}
 %   {yaSSL::RSA::rtti@8395904}
 %   {yaSSL::RSA::scalar_deleting_destructor@4588848}
 %   {yaSSL::RSA::sign@4596864}
@@ -12890,7 +12772,7 @@ vftableBelongsToClass(yaSSL::ServerKeyBase::vftable@7781784,0,yaSSL::ServerKeyBa
 %   {yaSSL::SSL::verifyState@4530512}
 %   {yaSSL::SSL::verifyState@4530672}
 %   {yaSSL::SSL::verifyState@4530720}
-%   {yaSSL::SSL::~SSL@4461872, yaSSL::Crypto::~Crypto@4513104}
+%   {yaSSL::SSL::~SSL@4461872}
 %   {yaSSL::SSL_CTX::AddCA@4515024}
 %   {yaSSL::SSL_CTX::GetCA_List@4515584}
 %   {yaSSL::SSL_CTX::GetCiphers@4515600}

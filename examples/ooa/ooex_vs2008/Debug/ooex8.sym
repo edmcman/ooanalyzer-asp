@@ -1,9 +1,9 @@
-08:15:24 Grounding...
-08:15:24 Grounding done (0.01s)
-08:15:24 Solving...
-08:15:24 Model found (0.02s): [-206]
-08:15:24 Model found (0.02s, +0.00s): [-207]
-08:15:24 Solving done: OPTIMUM FOUND (0.00s)
+09:41:55 Grounding...
+09:41:55 Grounding done (0.05s)
+09:41:55 Solving...
+09:41:55 Model found (0.06s): [-206]
+09:41:55 Model found (0.07s, +0.01s): [-207]
+09:41:55 Solving done: OPTIMUM FOUND (0.03s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex8.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
@@ -13,22 +13,22 @@ Optimization: -207
 % Equivalence classes (205 classes, 206 entities):
 
 % Stats:
-%   atoms: 4645.0
+%   atoms: 4991.0
 %   bodies: 844.0
-%   rules: 5064.0
+%   rules: 5410.0
 %   variables: 625.0
 %   constraints: 0.0
-%   choices: 416.0
+%   choices: 208.0
 %   conflicts: 0.0
 %   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-207.0]
 %   lower_bound: [-207.0]
-%   total_time: 0.024024009704589844
-%   ground_time: 0.01205312367528677
-%   time_to_first_model: 0.015082926955074072
-%   max_rss_bytes: 25165824
-%   solve_time: 0.001438140869140625
+%   total_time: 0.2237868309020996
+%   ground_time: 0.04824887499853503
+%   time_to_first_model: 0.06357445899629965
+%   max_rss_bytes: 30883840
+%   solve_time: 0.01691579818725586
 classCallsMethod(D::D(void)@4265392,B::B(void)@4265664)
 guessEnabled(constructor)
 guessEnabled(derived_class)

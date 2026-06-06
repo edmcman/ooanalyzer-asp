@@ -1,34 +1,33 @@
-08:15:24 Grounding...
-08:15:24 Grounding done (0.02s)
-08:15:24 Solving...
-08:15:24 Model found (0.04s): [-215]
-08:15:24 Model found (0.04s, +0.00s): [-220]
-08:15:24 Solving done: OPTIMUM FOUND (0.02s)
+09:41:53 Grounding...
+09:41:53 Grounding done (0.04s)
+09:41:53 Solving...
+09:41:54 Model found (0.09s): [-220]
+09:41:54 Solving done: OPTIMUM FOUND (0.07s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 1
 Optimization: -220
 
 % Equivalence classes (218 classes, 220 entities):
 
 % Stats:
-%   atoms: 7461.0
+%   atoms: 7619.0
 %   bodies: 2597.0
-%   rules: 7903.0
+%   rules: 8061.0
 %   variables: 1513.0
 %   constraints: 0.0
-%   choices: 435.0
+%   choices: 217.0
 %   conflicts: 0.0
-%   models: 2.0
+%   models: 1.0
 %   optimal_models: 1.0
 %   final_cost: [-220.0]
 %   lower_bound: [-220.0]
-%   total_time: 0.04871201515197754
-%   ground_time: 0.016154414974153042
-%   time_to_first_model: 0.039751334115862846
-%   max_rss_bytes: 26738688
-%   solve_time: 0.00121307373046875
+%   total_time: 0.13254284858703613
+%   ground_time: 0.037476167010026984
+%   time_to_first_model: 0.09226841700728983
+%   max_rss_bytes: 32686080
+%   solve_time: 0.007386922836303711
 constructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
 guessEnabled(constructor)
 guessEnabled(derived_class)

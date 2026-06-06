@@ -1,19 +1,19 @@
-08:15:24 Grounding...
-08:15:24 Grounding done (0.02s)
-08:15:24 Solving...
-08:15:24 Model found (0.06s): [-28, -91]
-08:15:24 Model found (0.06s, +0.00s): [-28, -197]
-08:15:24 Model found (0.06s, +0.00s): [-32, -199]
-08:15:24 Model found (0.06s, +0.00s): [-36, -200]
-08:15:24 Model found (0.06s, +0.00s): [-44, -201]
-08:15:24 Model found (0.06s, +0.00s): [-48, -202]
-08:15:24 Model found (0.10s, +0.04s): [-48, -446]
-08:15:24 Model found (0.11s, +0.00s): [-48, -450]
-08:15:24 Model found (0.15s, +0.04s): [-48, -451]
-08:15:24 Model found (0.15s, +0.00s): [-48, -452]
-08:15:24 Model found (0.16s, +0.00s): [-48, -453]
-08:15:24 Model found (0.16s, +0.00s): [-48, -494]
-08:15:24 Solving done: OPTIMUM FOUND (0.16s)
+09:42:02 Grounding...
+09:42:02 Grounding done (0.04s)
+09:42:02 Solving...
+09:42:02 Model found (0.11s): [-28, -89]
+09:42:02 Model found (0.11s, +0.00s): [-28, -197]
+09:42:02 Model found (0.11s, +0.00s): [-32, -92]
+09:42:02 Model found (0.11s, +0.00s): [-32, -199]
+09:42:02 Model found (0.11s, +0.00s): [-36, -94]
+09:42:02 Model found (0.11s, +0.00s): [-36, -200]
+09:42:02 Model found (0.12s, +0.00s): [-44, -201]
+09:42:02 Model found (0.12s, +0.00s): [-48, -202]
+09:42:02 Model found (0.16s, +0.05s): [-48, -283]
+09:42:02 Model found (0.17s, +0.00s): [-48, -446]
+09:42:02 Model found (0.17s, +0.00s): [-48, -450]
+09:42:02 Model found (0.20s, +0.02s): [-48, -494]
+09:42:02 Solving done: OPTIMUM FOUND (0.17s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
@@ -23,22 +23,22 @@ Optimization: -48 -494
 % Equivalence classes (167 classes, 187 entities):
 
 % Stats:
-%   atoms: 8849.0
-%   bodies: 3147.0
-%   rules: 10300.0
-%   variables: 3456.0
+%   atoms: 9178.0
+%   bodies: 3138.0
+%   rules: 10698.0
+%   variables: 3278.0
 %   constraints: 138.0
-%   choices: 4397.0
-%   conflicts: 333.0
+%   choices: 3698.0
+%   conflicts: 141.0
 %   models: 12.0
 %   optimal_models: 1.0
 %   final_cost: [-48.0, -494.0]
 %   lower_bound: [-48.0, -494.0]
-%   total_time: 0.20130610466003418
-%   ground_time: 0.021663592662662268
-%   time_to_first_model: 0.05792661663144827
-%   max_rss_bytes: 28311552
-%   solve_time: 0.1275651454925537
+%   total_time: 0.28556084632873535
+%   ground_time: 0.04406037500302773
+%   time_to_first_model: 0.10532595799304545
+%   max_rss_bytes: 34832384
+%   solve_time: 0.10969805717468262
 classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func1(void)@4198432)
 classCallsMethod(Derived::Derived(void)@4198496,virtual int Base::func2(void)@4198464)
@@ -65,6 +65,7 @@ constructor(Derived::Derived(void)@4198496)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198879)
 constructor(std::exception::exception(char const * const &, int)@4201511)
 constructor(std::exception::exception(class std::exception const &)@4201750)
+constructor(virtual Derived::~Derived(void)@4198560)
 constructor(virtual type_info::~type_info(void)@4198694)
 deletingDestructor(virtual * Derived::`vector deleting destructor'(unsigned int)@4198592)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198840)
@@ -306,7 +307,6 @@ method(x_ismbbtype_l@4212252)
 objectInObject(const Derived::`vftable'@4219216,const Base::`vftable'@4219200,0)
 objectInObject(const std::bad_alloc::`vftable'@4219244,const std::exception::`vftable'@4221892,0)
 realDestructor(Base::Base(void)@4198400)
-realDestructor(virtual Derived::~Derived(void)@4198560)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198829)
 realDestructor(virtual std::exception::~exception(void)@4201700)
 vfTable(const Base::`vftable'@4219200)

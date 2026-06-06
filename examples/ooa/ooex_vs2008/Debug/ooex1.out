@@ -1,8 +1,8 @@
-08:15:24 Grounding...
-08:15:24 Grounding done (0.01s)
-08:15:24 Solving...
-08:15:24 Model found (0.02s): [-212]
-08:15:24 Solving done: OPTIMUM FOUND (0.00s)
+09:41:53 Grounding...
+09:41:53 Grounding done (0.03s)
+09:41:53 Solving...
+09:41:53 Model found (0.04s): [-212]
+09:41:53 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
@@ -225,19 +225,19 @@ Optimization: -212
 %   {4278478}
 
 % Stats:
-%   atoms: 4703.0
+%   atoms: 5058.0
 %   bodies: 852.0
-%   rules: 5130.0
+%   rules: 5485.0
 %   variables: 637.0
 %   constraints: 0.0
-%   choices: 426.0
+%   choices: 213.0
 %   conflicts: 0.0
 %   models: 1.0
 %   optimal_models: 1.0
 %   final_cost: [-212.0]
 %   lower_bound: [-212.0]
-%   total_time: 0.023497819900512695
-%   ground_time: 0.012333355378359556
-%   time_to_first_model: 0.015145444311201572
-%   max_rss_bytes: 25165824
-%   solve_time: 0.0006380081176757812
+%   total_time: 0.0834341049194336
+%   ground_time: 0.03163124999264255
+%   time_to_first_model: 0.03705408298992552
+%   max_rss_bytes: 30883840
+%   solve_time: 0.008651018142700195

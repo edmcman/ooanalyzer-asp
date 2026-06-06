@@ -1,76 +1,143 @@
-08:15:24 Grounding...
-08:15:24 Grounding done (0.08s)
-08:15:24 Solving...
-08:15:24 Model found (0.32s): [-12, -439]
-08:15:24 Model found (0.33s, +0.01s): [-12, -475]
-08:15:24 Model found (0.33s, +0.00s): [-12, -476]
-08:15:24 Model found (0.34s, +0.00s): [-12, -477]
-08:15:24 Model found (0.34s, +0.00s): [-12, -478]
-08:15:24 Model found (0.34s, +0.00s): [-12, -479]
-08:15:24 Model found (0.35s, +0.00s): [-12, -484]
-08:15:24 Model found (0.35s, +0.00s): [-12, -485]
-08:15:24 Model found (0.35s, +0.00s): [-12, -486]
-08:15:24 Model found (0.36s, +0.00s): [-12, -487]
-08:15:24 Model found (0.36s, +0.00s): [-12, -488]
-08:15:24 Model found (0.36s, +0.00s): [-12, -489]
-08:15:24 Model found (0.37s, +0.01s): [-12, -493]
-08:15:24 Model found (0.37s, +0.00s): [-12, -494]
-08:15:24 Model found (0.37s, +0.00s): [-12, -495]
-08:15:24 Model found (0.38s, +0.00s): [-12, -496]
-08:15:24 Model found (0.38s, +0.00s): [-12, -497]
-08:15:24 Model found (0.44s, +0.06s): [-12, -564]
-08:15:24 Model found (0.45s, +0.01s): [-12, -565]
-08:15:24 Model found (0.46s, +0.01s): [-12, -566]
-08:15:24 Model found (0.48s, +0.01s): [-12, -567]
-08:15:24 Model found (0.51s, +0.03s): [-12, -568]
-08:15:24 Model found (0.52s, +0.01s): [-12, -569]
-08:15:25 Model found (0.98s, +0.47s): [-12, -571]
-08:15:25 Model found (1.00s, +0.01s): [-12, -572]
-08:15:25 Model found (1.00s, +0.01s): [-12, -576]
-08:15:25 Model found (1.01s, +0.01s): [-12, -577]
-08:15:25 Model found (1.07s, +0.06s): [-12, -578]
-08:15:25 Model found (1.11s, +0.05s): [-12, -579]
-08:15:28 Model found (3.70s, +2.58s): [-12, -580]
-08:15:28 Model found (4.43s, +0.73s): [-12, -581]
-08:15:28 Model found (4.46s, +0.03s): [-12, -582]
-08:15:28 Model found (4.52s, +0.06s): [-12, -583]
-08:15:28 Model found (4.53s, +0.01s): [-12, -584]
-08:15:48 Model found (24.04s, +19.50s): [-12, -585]
-08:15:55 Model found (31.30s, +7.26s): [-12, -586]
-08:15:55 Model found (31.35s, +0.05s): [-12, -587]
-08:15:55 Model found (31.36s, +0.01s): [-12, -588]
-08:15:55 Model found (31.37s, +0.01s): [-12, -589]
-08:15:55 Model found (31.37s, +0.01s): [-12, -590]
-08:15:55 Model found (31.38s, +0.01s): [-12, -591]
-08:16:14 Model found (50.26s, +18.88s): [-12, -592]
-08:16:14 Model found (50.29s, +0.03s): [-12, -593]
-08:16:14 Model found (50.30s, +0.01s): [-12, -594]
-08:16:18 Solving done: OPTIMUM FOUND (54.30s)
+09:47:05 Grounding...
+09:47:05 Grounding done (0.14s)
+09:47:05 Solving...
+09:47:06 Model found (0.52s): [-12, -439]
+09:47:06 Model found (0.54s, +0.02s): [-12, -475]
+09:47:06 Model found (0.54s, +0.00s): [-12, -476]
+09:47:06 Model found (0.55s, +0.00s): [-12, -477]
+09:47:06 Model found (0.55s, +0.00s): [-12, -478]
+09:47:06 Model found (0.55s, +0.00s): [-12, -479]
+09:47:06 Model found (0.56s, +0.00s): [-12, -480]
+09:47:06 Model found (0.56s, +0.00s): [-12, -484]
+09:47:06 Model found (0.57s, +0.01s): [-12, -485]
+09:47:06 Model found (0.57s, +0.00s): [-12, -486]
+09:47:06 Model found (0.58s, +0.01s): [-12, -487]
+09:47:06 Model found (0.59s, +0.01s): [-12, -488]
+09:47:06 Model found (0.59s, +0.00s): [-12, -489]
+09:47:06 Model found (0.59s, +0.00s): [-12, -493]
+09:47:06 Model found (0.60s, +0.01s): [-12, -494]
+09:47:06 Model found (0.60s, +0.00s): [-12, -495]
+09:47:06 Model found (0.61s, +0.00s): [-12, -496]
+09:47:06 Model found (0.61s, +0.01s): [-12, -497]
+09:47:06 Model found (0.62s, +0.01s): [-12, -498]
+09:47:06 Model found (0.62s, +0.00s): [-12, -503]
+09:47:06 Model found (0.62s, +0.00s): [-12, -504]
+09:47:06 Model found (0.62s, +0.00s): [-12, -505]
+09:47:06 Model found (0.62s, +0.00s): [-12, -506]
+09:47:06 Model found (0.63s, +0.00s): [-12, -507]
+09:47:06 Model found (0.63s, +0.00s): [-12, -508]
+09:47:06 Model found (0.63s, +0.00s): [-12, -509]
+09:47:06 Model found (0.64s, +0.00s): [-12, -510]
+09:47:06 Model found (0.64s, +0.00s): [-12, -511]
+09:47:06 Model found (0.64s, +0.00s): [-12, -512]
+09:47:06 Model found (0.65s, +0.00s): [-12, -513]
+09:47:06 Model found (0.65s, +0.00s): [-12, -514]
+09:47:06 Model found (0.65s, +0.00s): [-12, -515]
+09:47:06 Model found (0.66s, +0.01s): [-12, -516]
+09:47:06 Model found (0.66s, +0.00s): [-12, -517]
+09:47:06 Model found (0.67s, +0.01s): [-12, -518]
+09:47:06 Model found (0.68s, +0.00s): [-12, -519]
+09:47:06 Model found (0.68s, +0.00s): [-12, -520]
+09:47:06 Model found (0.68s, +0.00s): [-12, -521]
+09:47:06 Model found (0.69s, +0.01s): [-12, -522]
+09:47:06 Model found (0.69s, +0.00s): [-12, -523]
+09:47:06 Model found (0.69s, +0.00s): [-12, -524]
+09:47:06 Model found (0.70s, +0.01s): [-12, -525]
+09:47:06 Model found (0.71s, +0.01s): [-12, -526]
+09:47:06 Model found (0.71s, +0.00s): [-12, -527]
+09:47:06 Model found (0.71s, +0.00s): [-12, -528]
+09:47:06 Model found (0.71s, +0.00s): [-12, -529]
+09:47:06 Model found (0.72s, +0.01s): [-12, -530]
+09:47:06 Model found (0.73s, +0.01s): [-12, -531]
+09:47:06 Model found (0.73s, +0.00s): [-12, -532]
+09:47:06 Model found (0.74s, +0.01s): [-12, -533]
+09:47:06 Model found (0.75s, +0.00s): [-12, -534]
+09:47:06 Model found (0.75s, +0.00s): [-12, -535]
+09:47:06 Model found (0.75s, +0.00s): [-12, -536]
+09:47:06 Model found (0.76s, +0.00s): [-12, -537]
+09:47:06 Model found (0.76s, +0.01s): [-12, -538]
+09:47:06 Model found (0.77s, +0.00s): [-12, -539]
+09:47:06 Model found (0.77s, +0.00s): [-12, -540]
+09:47:06 Model found (0.77s, +0.00s): [-12, -541]
+09:47:06 Model found (0.78s, +0.00s): [-12, -542]
+09:47:06 Model found (0.78s, +0.01s): [-12, -543]
+09:47:06 Model found (0.80s, +0.01s): [-12, -544]
+09:47:06 Model found (0.87s, +0.07s): [-12, -545]
+09:47:06 Model found (0.98s, +0.11s): [-12, -546]
+09:47:07 Model found (1.35s, +0.38s): [-12, -547]
+09:47:07 Model found (1.56s, +0.21s): [-12, -548]
+09:47:07 Model found (1.62s, +0.06s): [-12, -549]
+09:47:07 Model found (1.86s, +0.24s): [-12, -550]
+09:47:07 Model found (1.99s, +0.13s): [-12, -551]
+09:47:07 Model found (2.01s, +0.02s): [-12, -552]
+09:47:07 Model found (2.07s, +0.06s): [-12, -553]
+09:47:07 Model found (2.09s, +0.02s): [-12, -554]
+09:47:07 Model found (2.10s, +0.01s): [-12, -555]
+09:47:07 Model found (2.10s, +0.00s): [-12, -556]
+09:47:07 Model found (2.11s, +0.01s): [-12, -557]
+09:47:07 Model found (2.12s, +0.01s): [-12, -558]
+09:47:07 Model found (2.13s, +0.01s): [-12, -559]
+09:47:08 Model found (2.16s, +0.03s): [-12, -560]
+09:47:08 Model found (2.18s, +0.01s): [-12, -561]
+09:47:08 Model found (2.20s, +0.02s): [-12, -562]
+09:47:08 Model found (2.25s, +0.05s): [-12, -563]
+09:47:08 Model found (2.73s, +0.49s): [-12, -564]
+09:47:08 Model found (2.94s, +0.20s): [-12, -565]
+09:47:09 Model found (3.47s, +0.53s): [-12, -566]
+09:47:10 Model found (4.56s, +1.09s): [-12, -567]
+09:47:10 Model found (4.57s, +0.01s): [-12, -568]
+09:47:10 Model found (4.58s, +0.01s): [-12, -569]
+09:47:10 Model found (4.58s, +0.00s): [-12, -570]
+09:47:10 Model found (4.61s, +0.02s): [-12, -571]
+09:47:10 Model found (4.72s, +0.11s): [-12, -572]
+09:47:12 Model found (7.08s, +2.36s): [-12, -573]
+09:47:13 Model found (7.82s, +0.74s): [-12, -574]
+09:47:13 Model found (7.83s, +0.01s): [-12, -575]
+09:47:14 Model found (8.85s, +1.02s): [-12, -576]
+09:47:14 Model found (8.89s, +0.04s): [-12, -577]
+09:47:15 Model found (9.86s, +0.97s): [-12, -578]
+09:47:15 Model found (9.87s, +0.01s): [-12, -579]
+09:47:25 Model found (19.66s, +9.78s): [-12, -580]
+09:47:25 Model found (19.69s, +0.03s): [-12, -581]
+09:47:25 Model found (19.70s, +0.02s): [-12, -582]
+09:47:29 Model found (23.16s, +3.46s): [-12, -583]
+09:47:29 Model found (23.28s, +0.12s): [-12, -584]
+09:47:29 Model found (23.32s, +0.04s): [-12, -585]
+09:47:30 Model found (25.11s, +1.79s): [-12, -586]
+09:47:30 Model found (25.12s, +0.01s): [-12, -587]
+09:47:31 Model found (25.38s, +0.26s): [-12, -588]
+09:47:31 Model found (25.39s, +0.01s): [-12, -589]
+09:47:34 Model found (28.33s, +2.94s): [-12, -590]
+09:47:34 Model found (28.34s, +0.01s): [-12, -591]
+09:47:35 Model found (29.77s, +1.42s): [-12, -592]
+09:47:35 Model found (29.86s, +0.10s): [-12, -593]
+09:47:38 Model found (32.47s, +2.61s): [-12, -594]
+09:47:47 Solving done: OPTIMUM FOUND (41.76s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 44
+Answer: 111
 Optimization: -12 -594
 
 % Equivalence classes (386 classes, 431 entities):
 
 % Stats:
-%   atoms: 39758.0
-%   bodies: 20690.0
-%   rules: 41224.0
-%   variables: 13159.0
+%   atoms: 40170.0
+%   bodies: 20686.0
+%   rules: 41984.0
+%   variables: 12730.0
 %   constraints: 86.0
-%   choices: 1215983.0
-%   conflicts: 78973.0
-%   models: 44.0
+%   choices: 454123.0
+%   conflicts: 44481.0
+%   models: 111.0
 %   optimal_models: 1.0
 %   final_cost: [-12.0, -594.0]
 %   lower_bound: [-12.0, -594.0]
-%   total_time: 54.39318299293518
-%   ground_time: 0.07603727094829082
-%   time_to_first_model: 0.3206151966005564
-%   max_rss_bytes: 50257920
-%   solve_time: 54.06358289718628
+%   total_time: 41.97461986541748
+%   ground_time: 0.14042174999485724
+%   time_to_first_model: 0.5206527499976801
+%   max_rss_bytes: 53673984
+%   solve_time: 41.38841485977173
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
@@ -109,6 +176,7 @@ classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigne
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896,char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248)
+classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4267072,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4275264,virtual std::bad_alloc::~bad_alloc(void)@4275152)
@@ -171,7 +239,6 @@ mergeClasses(int std::ios_base::flags(void)const@4313924,__int64 std::ios_base::
 mergeClasses(std::_Container_base12::_Container_base12(void)@4313968,std::_Container_base12::~_Container_base12(void)@4313972)
 mergeClasses(std::_Container_base12::_Orphan_all(void)@4313960,std::_Container_base12::_Container_base12(void)@4313968)
 mergeClasses(std::_Container_base12::_Orphan_all(void)@4313960,std::_Container_base12::~_Container_base12(void)@4313972)
-mergeClasses(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776,std::_Container_base12::_Container_base12(void)@4313968)
 mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,std::_Container_base12::_Orphan_all(void)@4313960)
 mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192,std::_Container_base12::~_Container_base12(void)@4313972)
 mergeClasses(std::bad_alloc::bad_alloc(char const *)@4275024,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4275552)
@@ -191,6 +258,7 @@ mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsig
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248)
+mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4267072,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472)
 mergeClasses(std::exception::exception(char const * const &)@4314160,std::exception::exception(class std::exception const &)@4314164)
@@ -553,6 +621,7 @@ method(std::_Container_base12::~_Container_base12(void)@4313972)
 method(std::_Container_proxy::_Container_proxy(void)@4264351)
 method(std::_Container_proxy::_Container_proxy(void)@4268112)
 method(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4264801)
+method(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776)
 method(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4264466)
 method(std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@4263976)
 method(std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@4268576)
@@ -599,6 +668,7 @@ method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@427043
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4264386)
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952)
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4264751)
+method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864)
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4264561)
 method(std::exception::exception(char const * const &)@4264676)
 method(std::exception::exception(char const * const &)@4277308)
@@ -973,8 +1043,8 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {std::_Container_proxy::_Container_proxy(void)@4264351}
 %   {std::_Container_proxy::_Container_proxy(void)@4268112}
 %   {std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4264801}
-%   {std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776, std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192, std::_Container_base12::_Orphan_all(void)@4313960, std::_Container_base12::_Container_base12(void)@4313968, std::_Container_base12::~_Container_base12(void)@4313972}
 %   {std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4264466}
+%   {std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@4268192, std::_Container_base12::_Orphan_all(void)@4313960, std::_Container_base12::_Container_base12(void)@4313968, std::_Container_base12::~_Container_base12(void)@4313972}
 %   {std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@4263976}
 %   {std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@4268576}
 %   {std::allocator<char>::allocator<char>(void)@4264821}
@@ -1010,7 +1080,7 @@ vftableBelongsToClass(const type_info::`vftable'@4299088,0,type_info::type_info(
 %   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@4264106}
 %   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4264386}
 %   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4264751}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4267072, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896, char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4270304, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@4270432, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528, unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4270880, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024}
+%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4266864, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4267072, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@4267248, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@4267472, std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@4267776, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@4268640, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@4268896, char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@4269088, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@4269488, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@4269952, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@4270048, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@4270304, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@4270432, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@4270528, unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@4270880, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@4271024}
 %   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4264561}
 %   {std::exception::exception(char const * const &)@4264676}
 %   {std::exception::exception(char const * const &)@4277308}

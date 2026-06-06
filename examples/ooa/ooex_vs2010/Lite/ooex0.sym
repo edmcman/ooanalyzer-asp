@@ -1,46 +1,40 @@
-08:15:24 Grounding...
-08:15:24 Grounding done (0.02s)
-08:15:24 Solving...
-08:15:24 Model found (0.05s): [-16, -244]
-08:15:24 Model found (0.06s, +0.00s): [-24, -245]
-08:15:24 Model found (0.06s, +0.00s): [-24, -246]
-08:15:24 Model found (0.06s, +0.00s): [-24, -247]
-08:15:24 Model found (0.06s, +0.00s): [-24, -248]
-08:15:24 Model found (0.07s, +0.00s): [-24, -249]
-08:15:24 Model found (0.07s, +0.00s): [-24, -419]
-08:15:24 Model found (0.08s, +0.01s): [-24, -420]
-08:15:24 Model found (0.08s, +0.00s): [-24, -423]
-08:15:24 Model found (0.10s, +0.02s): [-24, -424]
-08:15:24 Model found (0.11s, +0.00s): [-24, -425]
-08:15:24 Model found (0.12s, +0.01s): [-24, -426]
-08:15:24 Model found (0.12s, +0.00s): [-24, -427]
-08:15:24 Model found (0.13s, +0.01s): [-24, -428]
-08:15:24 Solving done: OPTIMUM FOUND (0.11s)
+09:42:01 Grounding...
+09:42:01 Grounding done (0.05s)
+09:42:01 Solving...
+09:42:01 Model found (0.10s): [-16, -244]
+09:42:01 Model found (0.11s, +0.01s): [-20, -172]
+09:42:01 Model found (0.11s, +0.00s): [-24, -245]
+09:42:01 Model found (0.12s, +0.01s): [-24, -246]
+09:42:01 Model found (0.12s, +0.00s): [-24, -247]
+09:42:01 Model found (0.12s, +0.00s): [-24, -419]
+09:42:01 Model found (0.13s, +0.00s): [-24, -423]
+09:42:01 Model found (0.13s, +0.00s): [-24, -428]
+09:42:01 Solving done: OPTIMUM FOUND (0.09s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex0.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
 OPTIMUM FOUND
 
-Answer: 14
+Answer: 8
 Optimization: -24 -428
 
 % Equivalence classes (224 classes, 239 entities):
 
 % Stats:
-%   atoms: 9736.0
-%   bodies: 2576.0
-%   rules: 10889.0
-%   variables: 3415.0
-%   constraints: 90.0
-%   choices: 3725.0
-%   conflicts: 93.0
-%   models: 14.0
+%   atoms: 10154.0
+%   bodies: 2570.0
+%   rules: 11432.0
+%   variables: 3179.0
+%   constraints: 89.0
+%   choices: 2223.0
+%   conflicts: 22.0
+%   models: 8.0
 %   optimal_models: 1.0
 %   final_cost: [-24.0, -428.0]
 %   lower_bound: [-24.0, -428.0]
-%   total_time: 0.14774179458618164
-%   ground_time: 0.02187104895710945
-%   time_to_first_model: 0.054900366347283125
-%   max_rss_bytes: 28311552
-%   solve_time: 0.07734489440917969
+%   total_time: 0.19173884391784668
+%   ground_time: 0.04901583300670609
+%   time_to_first_model: 0.09997070800454821
+%   max_rss_bytes: 34947072
+%   solve_time: 0.03941702842712402
 classCallsMethod(__iob@4239424,__bufin@4246560)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4205749,std::exception::_Copy_str(char const *)@4205655)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4205749,std::exception::_Tidy(void)@4205719)
@@ -57,7 +51,7 @@ classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198907)
 constructor(std::exception::exception(char const * const &, int)@4205613)
 constructor(std::exception::exception(class std::exception const &)@4205852)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@4198857)
+constructor(virtual std::exception::~exception(void)@4205802)
 constructor(virtual type_info::~type_info(void)@4205889)
 deletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)@4198480)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198868)
@@ -339,7 +333,7 @@ method(write_char@4200248)
 method(write_string@4200299)
 method(x_ismbbtype_l@4217827)
 objectInObject(const std::bad_alloc::`vftable'@4227440,const std::exception::`vftable'@4227656,0)
-realDestructor(virtual std::exception::~exception(void)@4205802)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198857)
 vfTable(__iob@4239424)
 vfTable(const std::bad_alloc::`vftable'@4227440)
 vfTable(const std::exception::`vftable'@4227656)
