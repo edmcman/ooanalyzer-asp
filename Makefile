@@ -18,10 +18,13 @@ SRC_LP       := $(shell find src -name '*.lp' -not -path '*/old/*')
 LP_FILES              := $(FACTS:%.facts=%.lp)
 OUT_FILES             := $(LP_FILES:%.lp=%.out)
 RESULTS_FILES         := $(LP_FILES:%.lp=%.results)
-RESULTS_SYM_FILES     := $(LP_FILES:%.lp=%.results.sym)
 EXPLAIN_OUT_FILES     := $(LP_FILES:%.lp=%.explain.out)
-GROUND        := $(shell find $(OOA_DIR) -name '*.ground')
-SYM_FILES             := $(FACTS:%.facts=%.sym) $(GROUND:%.ground=%.sym)
+GROUND                := $(shell find $(OOA_DIR) -name '*.ground')
+# Only symbolize .lp files that have a .symbols or .ground file alongside them
+SYMBOLIZABLE_LP       := $(foreach lp,$(LP_FILES),\
+  $(if $(or $(wildcard $(lp:.lp=.symbols)),$(wildcard $(lp:.lp=.ground))),$(lp)))
+SYM_FILES             := $(SYMBOLIZABLE_LP:%.lp=%.sym) $(GROUND:%.ground=%.sym)
+RESULTS_SYM_FILES     := $(SYMBOLIZABLE_LP:%.lp=%.results.sym)
 
 # ----------------------------------------------------------------
 # Default: convert all .facts and run ooanalyzer.py
@@ -130,6 +133,10 @@ $(OOA_DIR)/%.sym: $(OOA_DIR)/%.ground $(OOA_DIR)/%.out scripts/symbolize.py
 
 $(OOA_DIR)/%.results.sym: $(OOA_DIR)/%.out $(OOA_DIR)/%.symbols scripts/symbolize.py
 	@echo "=== Symbolizing $*.results ==="
+	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) -o $@
+
+$(OOA_DIR)/%.results.sym: $(OOA_DIR)/%.out $(OOA_DIR)/%.ground scripts/symbolize.py
+	@echo "=== Symbolizing $*.results (ground) ==="
 	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) -o $@
 
 # ----------------------------------------------------------------
