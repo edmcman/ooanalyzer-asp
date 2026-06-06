@@ -1,0 +1,51 @@
+finalClass(virtual int Derived::func4(void)@0x4118e0, 0, 0, 0, 0, [virtual int Derived::func4(void)@0x4118e0, virtual int Derived::func3(void)@0x411920]).
+finalClass(const Base::`vftable'@0x416768, const Base::`vftable'@0x416768, 0, 0, Derived::Derived(void)@0x4115b0, [Derived::Derived(void)@0x4115b0, Base::Base(void)@0x411680, virtual int Base::func1(void)@0x4116f0, virtual int Base::func2(void)@0x411750, Base2::Base2(void)@0x4117b0]).
+finalClass(const Base2::`vftable'@0x41677c, 0, 0, 0, 0, [virtual int Base2::func1(void)@0x411820, virtual int Base2::func2(void)@0x411880]).
+finalClass(const type_info::`vftable'@0x416790, const type_info::`vftable'@0x416790, 0, 0, 0, [type_info::type_info(class type_info const &)@0x411c00, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c30, type_info::_type_info_dtor_internal_method(void)@0x41a278]).
+finalDemangledName(virtual int Derived::func4(void)@0x4118e0, '.?AVDerived@@', 'Derived', '').
+finalDemangledName(const Base::`vftable'@0x416768, '.?AVBase@@', 'Base', '').
+finalDemangledName(const Base2::`vftable'@0x41677c, '.?AVBase2@@', 'Base2', '').
+finalDemangledName(const type_info::`vftable'@0x416790, '.?AVtype_info@@', type_info, '').
+finalDemangledName(type_info::_type_info_dtor_internal_method(void)@0x41a278, '?_type_info_dtor_internal_method@type_info@@QAEXXZ', type_info, '_type_info_dtor_internal_method').
+finalFileInfo('3CEC980F54BE3AE1EC9A8CA2A33F0318', 'ooex5.exe').
+finalInheritance(virtual int Derived::func4(void)@0x4118e0, const Base::`vftable'@0x416768, 0, 0, false).
+finalInheritance(virtual int Derived::func4(void)@0x4118e0, const Base2::`vftable'@0x41677c, 0x10, 0, false).
+finalMethodProperty(Derived::Derived(void)@0x4115b0, realDestructor, certain).
+finalMethodProperty(Base::Base(void)@0x411680, constructor, certain).
+finalMethodProperty(virtual int Base::func1(void)@0x4116f0, virtual, certain).
+finalMethodProperty(virtual int Base::func2(void)@0x411750, virtual, certain).
+finalMethodProperty(Base2::Base2(void)@0x4117b0, realDestructor, certain).
+finalMethodProperty(virtual int Base2::func1(void)@0x411820, virtual, certain).
+finalMethodProperty(virtual int Base2::func2(void)@0x411880, virtual, certain).
+finalMethodProperty(virtual int Derived::func4(void)@0x4118e0, virtual, certain).
+finalMethodProperty(virtual int Derived::func3(void)@0x411920, virtual, certain).
+finalMethodProperty(type_info::type_info(class type_info const &)@0x411c00, constructor, certain).
+finalMethodProperty(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c30, deletingDestructor, certain).
+finalMethodProperty(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c30, virtual, certain).
+finalThunk(virtual int Derived::func4(void)@0x41100a, virtual int Derived::func4(void)@0x4118e0).
+finalThunk(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c30).
+finalThunk(virtual int Base::func2(void)@0x411104, virtual int Base::func2(void)@0x411750).
+finalThunk(virtual int Derived::func3(void)@0x41113b, virtual int Derived::func3(void)@0x411920).
+finalThunk(virtual int Base2::func2(void)@0x411154, virtual int Base2::func2(void)@0x411880).
+finalThunk(virtual int Base2::func1(void)@0x411190, virtual int Base2::func1(void)@0x411820).
+finalThunk(virtual int Base::func1(void)@0x4111fe, virtual int Base::func1(void)@0x4116f0).
+finalVFTable(const Derived::`vftable'{for `Base2'}@0x416740, 0xc, 0xc, 0x41673c, '.?AVDerived@@').
+finalVFTable(const Derived::`vftable'{for `Base'}@0x416754, 0xc, 0xc, 0x416750, '.?AVDerived@@').
+finalVFTable(const Base::`vftable'@0x416768, 0xc, 0xc, 0x416764, '.?AVBase@@').
+finalVFTable(const Base2::`vftable'@0x41677c, 0xc, 0xc, 0x416778, '.?AVBase2@@').
+finalVFTable(const type_info::`vftable'@0x416790, 0x4, 0x4, 0x41678c, '.?AVtype_info@@').
+finalVFTableEntry(const Derived::`vftable'{for `Base2'}@0x416740, 0, virtual int Base2::func1(void)@0x411190).
+finalVFTableEntry(const Derived::`vftable'{for `Base2'}@0x416740, 0x4, virtual int Base2::func2(void)@0x411154).
+finalVFTableEntry(const Derived::`vftable'{for `Base2'}@0x416740, 0x8, virtual int Derived::func4(void)@0x41100a).
+finalVFTableEntry(const Derived::`vftable'{for `Base'}@0x416754, 0, virtual int Base::func1(void)@0x4111fe).
+finalVFTableEntry(const Derived::`vftable'{for `Base'}@0x416754, 0x4, virtual int Base::func2(void)@0x411104).
+finalVFTableEntry(const Derived::`vftable'{for `Base'}@0x416754, 0x8, virtual int Derived::func3(void)@0x41113b).
+finalVFTableEntry(const Base::`vftable'@0x416768, 0, virtual int Base::func1(void)@0x4111fe).
+finalVFTableEntry(const Base::`vftable'@0x416768, 0x4, virtual int Base::func2(void)@0x411104).
+finalVFTableEntry(const Base::`vftable'@0x416768, 0x8, j___purecall@0x411168).
+finalVFTableEntry(const Base2::`vftable'@0x41677c, 0, virtual int Base2::func1(void)@0x411190).
+finalVFTableEntry(const Base2::`vftable'@0x41677c, 0x4, virtual int Base2::func2(void)@0x411154).
+finalVFTableEntry(const Base2::`vftable'@0x41677c, 0x8, j___purecall@0x411168).
+finalVFTableEntry(const type_info::`vftable'@0x416790, 0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8).
+% Object detection reporting complete.
+% Prolog results autogenerated by OOAnalyzer.
