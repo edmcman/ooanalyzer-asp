@@ -121,6 +121,7 @@ def format_cost_values(values):
 
 def main():
     args = parse_args()
+    print(f"% Command: {' '.join(sys.argv)}")
 
     if args.debug_propagator:
         import propagator.sameclass as _sc

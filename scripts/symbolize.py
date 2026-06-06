@@ -22,6 +22,8 @@ _FIXUPS = [
     ('private: ', ''),
     ('protected: ', ''),
     ('__thiscall ', ''),
+    ('__declspec(dllimport) ', ''),
+    ('near ', ''),
     ('void ', ''),
     ('struct std::char_traits<char>', 'CHAR_TRAITS'),
     ('class std::allocator<char>', 'CHAR_ALLOC'),
@@ -44,13 +46,20 @@ def build_symbol_map(symbols_file):
         lines = f.readlines()
     if symbols_file.endswith('.ground'):
         import re as _re
+        _gt = _re.compile(r"groundTruth\((0x[0-9a-fA-F]+)\s*,\s*'([^']*)'\s*,\s*'([^']*)'")
         _sym = _re.compile(r"symbol\((0x[0-9a-fA-F]+)\s*,\s*\w+\s*,\s*'([^']*)'\)")
         _dem = _re.compile(r"demangledName\((0x[0-9a-fA-F]+)\s*,\s*[^,]*\s*,\s*'([^']*)'\)")
         for line in lines:
+            mo = _gt.match(line)
+            if mo:
+                addr = int(mo.group(1), 16)
+                m[addr] = f"{mo.group(2)}::{mo.group(3)}"
+                continue
             mo = _dem.match(line)
             if mo:
                 addr = int(mo.group(1), 16)
-                m[addr] = _fixup(mo.group(2))
+                if addr not in m:
+                    m[addr] = _fixup(mo.group(2))
                 continue
             mo = _sym.match(line)
             if mo:
