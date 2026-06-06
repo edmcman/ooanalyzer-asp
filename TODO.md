@@ -120,9 +120,9 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTDeletingDestructor_C` (637) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [ ] `reasonNOTDeletingDestructor_D` (642) — call ordering violation
 - [ ] `reasonNOTDeletingDestructor_E` (648) — self-deletion pattern
-- [ ] `reasonNOTDeletingDestructor_F` (667) — delete not detected
+- [x] `reasonNOTDeletingDestructor_F` (667) — delete not detected
 - [x] `reasonNOTDeletingDestructor_G` (687) — virtual requirement missing
-- [ ] `reasonNOTDeletingDestructor_H` (695) — parameter count
+- [x] `reasonNOTDeletingDestructor_H` (695) — parameter count
 - [ ] `reasonNOTDeletingDestructor_I` (705) — negative offset
 
 ### Guess (guess.pl)

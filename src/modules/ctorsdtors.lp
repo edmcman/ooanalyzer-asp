@@ -69,6 +69,26 @@ deletingDestructor(Method) :-
     not possibleVFTableWrite(_, Method, _, _, VFTable),
     not symbolClass(Method, _, _, _).
 
+% reasonNOTDeletingDestructor_F: if delete() is detected in the program but
+% this method doesn't call delete on its own this-pointer, it's not a deleting
+% destructor.
+% Two rule bodies faithfully translate the Prolog disjunction: a method that
+% calls delete on an unknown pointer (no this-pointer info) is conservatively
+% NOT ruled out.
+% Counterpart: reasonNOTDeletingDestructor_F (rules.pl:667)
+%!trace_rule {"% is not a deleting destructor because delete() exists in the program but % does not call delete(this)", Method, Method}
+-deletingDestructor(Method) :-
+    insnCallsDelete(_, _, _),
+    possibleMethod(Method),
+    not insnCallsDeleteAnyMethod(Method).
+
+-deletingDestructor(Method) :-
+    insnCallsDelete(_, _, _),
+    possibleMethod(Method),
+    insnCallsDeleteAnyMethod(Method),
+    thisParamFuncParameter(Method, _),
+    not callsDeleteOnSelf(Method).
+
 % reasonNOTDeletingDestructor_G: if Method's class is known to have a vftable
 % but Method itself does not appear in any vftable, then Method is not a
 % deleting destructor.
@@ -89,6 +109,21 @@ deletingDestructor(Method) :-
     vfTable(VFTable),
     &sameClass(VFTable, Method),
     not possiblyVirtual(Method).
+
+% reasonNOTDeletingDestructor_H: a thiscall method with more than 2 parameters
+% cannot be a deleting destructor (ecx=this + 1 flag arg max).
+% Counterpart: reasonNOTDeletingDestructor_H (rules.pl:695)
+% Uses 3 distinct param positions instead of #count to avoid grounding blowup.
+%!trace_rule {"% is not a deleting destructor because it has more than 2 parameters", Method}
+-deletingDestructor(Method) :-
+    possibleMethod(Method),
+    callingConvention(Method, "__thiscall"),
+    funcParameter(Method, P1, _),
+    funcParameter(Method, P2, _),
+    funcParameter(Method, P3, _),
+    P1 != P2,
+    P1 != P3,
+    P2 != P3.
 
 % ============================================================
 % CONSTRAINTS

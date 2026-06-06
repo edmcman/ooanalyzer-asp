@@ -294,6 +294,19 @@ thisParamCallParameter(Insn, CallerFunc, Callee, ThisPtr) :-
     callParameter(Insn, CallerFunc, Param, ThisPtr).
 
 % ----------------------------------------------------------------
+% Delete-call helpers
+% ----------------------------------------------------------------
+
+% Method calls delete on some pointer.
+insnCallsDeleteAnyMethod(Method) :-
+    insnCallsDelete(_, Method, _).
+
+% Method calls delete on its own this-pointer.
+callsDeleteOnSelf(Method) :-
+    insnCallsDelete(_, Method, ThisPtr),
+    thisParamFuncParameter(Method, ThisPtr).
+
+% ----------------------------------------------------------------
 % dethunk / possiblyVirtual
 % Counterparts: dethunk (initial.pl:313), possiblyVirtual/1 (initial.pl:338)
 % ----------------------------------------------------------------
