@@ -229,8 +229,9 @@ def main():
     solve_start = time.perf_counter()
     log.info("Solving...")
     if args.time_limit:
+        remaining = args.time_limit - ground_time
         handle = ctl.solve(on_model=on_model, on_unsat=on_unsat, async_=True)
-        if not handle.wait(args.time_limit):
+        if not handle.wait(max(remaining, 0)):
             timed_out = True
             handle.cancel()
         result = handle.get()
