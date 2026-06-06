@@ -15,12 +15,13 @@ FACTS        := $(shell find $(OOA_DIR) -name '*.facts')
 SRC_LP       := $(shell find src -name '*.lp' -not -path '*/old/*')
 
 # Derived file lists
-LP_FILES          := $(FACTS:%.facts=%.lp)
-OUT_FILES         := $(LP_FILES:%.lp=%.out)
-RESULTS_FILES     := $(LP_FILES:%.lp=%.results)
-EXPLAIN_OUT_FILES := $(LP_FILES:%.lp=%.explain.out)
+LP_FILES              := $(FACTS:%.facts=%.lp)
+OUT_FILES             := $(LP_FILES:%.lp=%.out)
+RESULTS_FILES         := $(LP_FILES:%.lp=%.results)
+RESULTS_SYM_FILES     := $(LP_FILES:%.lp=%.results.sym)
+EXPLAIN_OUT_FILES     := $(LP_FILES:%.lp=%.explain.out)
 GROUND        := $(shell find $(OOA_DIR) -name '*.ground')
-SYM_FILES         := $(FACTS:%.facts=%.sym) $(GROUND:%.ground=%.sym)
+SYM_FILES             := $(FACTS:%.facts=%.sym) $(GROUND:%.ground=%.sym)
 
 # ----------------------------------------------------------------
 # Default: convert all .facts and run ooanalyzer.py
@@ -117,7 +118,7 @@ $(OOA_DIR)/%.explain.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 SYMBOLIZE    := $(PYTHON) scripts/symbolize.py
 SYM_FILTER   ?= classRep\|constructor\|derivedClass\|embeddedObject\|classHasNoBase
 
-symbolize: $(SYM_FILES)
+symbolize: $(SYM_FILES) $(RESULTS_SYM_FILES)
 
 $(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out scripts/symbolize.py
 	@echo "=== Symbolizing $* ==="
@@ -126,6 +127,10 @@ $(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out scripts/symbolize.py
 $(OOA_DIR)/%.sym: $(OOA_DIR)/%.ground $(OOA_DIR)/%.out scripts/symbolize.py
 	@echo "=== Symbolizing $* (ground) ==="
 	$(SYMBOLIZE) $< $(word 2,$^) -o $@
+
+$(OOA_DIR)/%.results.sym: $(OOA_DIR)/%.out $(OOA_DIR)/%.symbols scripts/symbolize.py
+	@echo "=== Symbolizing $*.results ==="
+	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) -o $@
 
 # ----------------------------------------------------------------
 # Convenience: single-file pipeline
@@ -140,6 +145,7 @@ clean:
 	find $(OOA_DIR) -name '*.lp' -delete
 	find $(OOA_DIR) -name '*.out' -delete
 	find $(OOA_DIR) -name '*.results' -delete
+	find $(OOA_DIR) -name '*.results.sym' -delete
 	find $(OOA_DIR) -name '*.time' -delete
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete

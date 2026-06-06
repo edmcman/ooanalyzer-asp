@@ -82,14 +82,14 @@ def build_symbol_map(symbols_file):
     return m
 
 def symbolize(text, addr_map):
-    """Replace every decimal integer that appears in addr_map with its symbol."""
-    # Match bare decimal integers (not preceded/followed by a hex digit or dot)
+    """Replace decimal integers and 0x hex addresses that appear in addr_map."""
     def replacer(m):
-        n = int(m.group(0))
+        s = m.group(0)
+        n = int(s, 16) if s.startswith(('0x', '0X')) else int(s)
         if n in addr_map:
-            return f"{addr_map[n]}@{m.group(0)}"
-        return m.group(0)
-    return re.sub(r'(?<![0-9a-fA-F.])\d{6,}(?!\d)', replacer, text)
+            return f"{addr_map[n]}@{s}"
+        return s
+    return re.sub(r'0x[0-9a-fA-F]+|(?<![0-9a-fA-F.])\d{6,}(?!\d)', replacer, text)
 
 def main():
     ap = argparse.ArgumentParser(description='Symbolize OOAnalyzer/clingo output')
