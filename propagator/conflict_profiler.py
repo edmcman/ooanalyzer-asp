@@ -38,6 +38,7 @@ class ConflictProfiler:
         self._total_undos   = 0
         self._watched_atoms  = 0
         self._skipped_atoms  = 0
+        self._window_label = "solve start"
 
     # ------------------------------------------------------------------
     def init(self, init):
@@ -85,19 +86,32 @@ class ConflictProfiler:
         pass
 
     # ------------------------------------------------------------------
+    def reset_counts(self, label=None):
+        self._undo_by_pred.clear()
+        self._undo_by_atom.clear()
+        self._level_by_pred.clear()
+        self._total_undos = 0
+        self._start_time = time.monotonic()
+        self._last_report_time = self._start_time
+        self._window_label = label or "reset"
+
     def _periodic_report(self, top_preds=15):
         T = max(self._total_undos, 1)
         elapsed = time.monotonic() - self._start_time
-        print(f"\n--- Conflict Profile @ {elapsed:.0f}s  ({self._total_undos:,} backtracks) ---")
+        print(f"\n--- Conflict Profile [{self._window_label}] @ {elapsed:.0f}s  "
+              f"({self._total_undos:,} backtracks) ---")
         print(f"{'Predicate':<42} {'Backtracks':>12} {'%':>6}")
         for pred, cnt in self._undo_by_pred.most_common(top_preds):
             pct = 100.0 * cnt / T
             print(f"  {pred:<40} {cnt:>12,} {pct:>5.1f}%")
         sys.stdout.flush()
 
-    def report(self, top_preds=25, top_atoms=15):
+    def report(self, top_preds=25, top_atoms=15, title=None):
         T = max(self._total_undos, 1)
-        print(f"\n=== Conflict Profile  ({self._total_undos:,} total backtracks; "
+        elapsed = time.monotonic() - self._start_time
+        heading = title or f"Conflict Profile [{self._window_label}]"
+        print(f"\n=== {heading}  ({self._total_undos:,} total backtracks; "
+              f"{elapsed:.1f}s window; "
               f"{self._watched_atoms:,} watched atoms; "
               f"{self._skipped_atoms:,} skipped by cap) ===")
         print(f"\n{'Predicate':<42} {'Backtracks':>12} {'%':>6}  {'Avg Level':>10}")

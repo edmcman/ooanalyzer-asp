@@ -62,6 +62,8 @@ def parse_args():
                    help="write .results file; omit FILE to auto-derive from first input")
     p.add_argument("--quiet", type=str, default="1,2",
                    help="clingo --quiet level (default 1,2)")
+    p.add_argument("--configuration", default=None,
+                   help="clingo solver configuration preset")
     p.add_argument("--opt-strategy", default="bb,lin")
     p.add_argument("--heuristic", default="vsids")
     p.add_argument("--sign-def", default="neg",
@@ -76,6 +78,9 @@ def parse_args():
                    help="pass --const to clingo (repeatable)")
     p.add_argument("--profile-conflicts", action="store_true",
                    help="register ConflictProfiler and print backtrack histogram after solving")
+    p.add_argument("--profile-after-first-model", action="store_true",
+                   help=("with conflict profiling, reset counters at the first model and "
+                         "report per-model search windows"))
     p.add_argument("--profile-predicate", action="append", default=[],
                    help=("predicate to watch with --profile-conflicts; repeatable. "
                          "Defaults to core search predicates; use '*' to watch all atoms"))
@@ -88,6 +93,11 @@ def parse_args():
     p.add_argument("--profile-interval", type=float, default=0,
                    help=("seconds between periodic conflict profile reports during solving "
                          "(0 = no periodic output; default: 0)"))
+    p.add_argument("--diagnose-vftable-objective", action="store_true",
+                   help=("print selected vftable sizes/gaps and largest unselected "
+                         "vftable candidates for each model"))
+    p.add_argument("--diagnose-vftable-limit", type=int, default=25,
+                   help="maximum rows per vftable objective diagnostic section (default: 25)")
     args, extra = p.parse_known_args()
     args.clingo_extra = extra
     return args
@@ -124,6 +134,97 @@ def format_cost_values(values):
     return " ".join(formatted)
 
 
+def _symbol_is_positive(sym):
+    return getattr(sym, "positive", True)
+
+
+def _symbol_number(sym):
+    if sym.type == clingo.SymbolType.Number:
+        return sym.number
+    return None
+
+
+def _sort_symbol(value):
+    number = _symbol_number(value)
+    return (0, number) if number is not None else (1, str(value))
+
+
+def _format_vftable_rows(rows, limit):
+    limited = rows[:limit]
+    return "\n".join(
+        f"%   {v}: size={size} max={max_size} gap={gap}"
+        for v, size, max_size, gap in limited
+    )
+
+
+def report_vftable_objective(model, limit):
+    selected_vftables = set()
+    selected_sizes = {}
+    selected_max_sizes = {}
+    selected_gaps = {}
+    possible_max_sizes = {}
+
+    for sym in model.symbols(atoms=True):
+        if sym.type != clingo.SymbolType.Function or not _symbol_is_positive(sym):
+            continue
+        name = sym.name
+        args = sym.arguments
+        if name == "vfTable" and len(args) == 1:
+            selected_vftables.add(args[0])
+        elif name == "vfTableSize" and len(args) == 2:
+            selected_sizes[args[0]] = args[1]
+        elif name == "maxCandidateVFTableSize" and len(args) == 2:
+            selected_max_sizes[args[0]] = args[1]
+        elif name == "vfTableSizeGap" and len(args) == 2:
+            selected_gaps[args[0]] = args[1]
+        elif name == "possibleVFTableMaxSize" and len(args) == 2:
+            possible_max_sizes[args[0]] = args[1]
+
+    selected_rows = []
+    total_size = 0
+    total_max_size = 0
+    total_gap = 0
+    for vftable in selected_vftables:
+        size = _symbol_number(selected_sizes.get(vftable, clingo.Number(0))) or 0
+        max_size = _symbol_number(
+            selected_max_sizes.get(vftable, possible_max_sizes.get(vftable, clingo.Number(0)))
+        ) or 0
+        gap = _symbol_number(selected_gaps.get(vftable, clingo.Number(0))) or 0
+        total_size += size
+        total_max_size += max_size
+        total_gap += gap
+        selected_rows.append((vftable, size, max_size, gap))
+    selected_rows.sort(key=lambda row: (-row[3], -row[2], _sort_symbol(row[0])))
+
+    unselected_rows = []
+    unselected_total_max = 0
+    for vftable, max_size_sym in possible_max_sizes.items():
+        if vftable in selected_vftables:
+            continue
+        max_size = _symbol_number(max_size_sym) or 0
+        unselected_total_max += max_size
+        unselected_rows.append((vftable, max_size))
+    unselected_rows.sort(key=lambda row: (-row[1], _sort_symbol(row[0])))
+
+    print("\n% VFTable objective diagnostics")
+    print(f"%   selected_vftables: {len(selected_rows)}")
+    print(f"%   selected_size_total: {total_size}")
+    print(f"%   selected_candidate_max_total: {total_max_size}")
+    print(f"%   selected_size_gap_total: {total_gap}")
+    print(f"%   unselected_possible_vftables: {len(unselected_rows)}")
+    print(f"%   unselected_possible_max_total: {unselected_total_max}")
+    if selected_rows:
+        print(f"%   selected vftables with largest chosen-size gaps (top {limit}):")
+        rendered = _format_vftable_rows(selected_rows, limit)
+        if rendered:
+            print(rendered)
+    if unselected_rows:
+        print(f"%   unselected possible vftables by candidate max size (top {limit}):")
+        for vftable, max_size in unselected_rows[:limit]:
+            print(f"%   {vftable}: possible_max={max_size}")
+    sys.stdout.flush()
+
+
 def main():
     args = parse_args()
     print(f"% Command: {' '.join(sys.argv)}")
@@ -132,12 +233,14 @@ def main():
         import propagator.sameclass as _sc
         _sc.DEBUG = True
 
-    ctl_args = [
-        "--warn=none",
+    ctl_args = ["--warn=none"]
+    if args.configuration:
+        ctl_args.append(f"--configuration={args.configuration}")
+    ctl_args.extend([
         f"--opt-strategy={args.opt_strategy}",
         f"--heuristic={args.heuristic}",
         f"--sign-def={args.sign_def}",
-    ]
+    ])
     if args.stats:
         ctl_args.append(f"--stats={args.stats}")
     if args.threads is not None:
@@ -162,7 +265,7 @@ def main():
             max_atoms_per_predicate=profile_max_atoms_per_predicate,
             interval=args.profile_interval,
         )
-        if args.profile_conflicts else None
+        if (args.profile_conflicts or args.profile_after_first_model) else None
     )
     ctl = clingo.Control(ctl_args)
     if args.models is not None and args.models != -1:
@@ -225,6 +328,14 @@ def main():
             if args.results is not None:
                 last_all_atoms = list(model.symbols(atoms=True))
         last_cost = cost
+        if args.diagnose_vftable_objective:
+            report_vftable_objective(model, args.diagnose_vftable_limit)
+        if profiler and args.profile_after_first_model:
+            if model_num == 1:
+                profiler.reset_counts("since model 1")
+            else:
+                profiler.report(title=f"Conflict Profile since model {model_num - 1}")
+                profiler.reset_counts(f"since model {model_num}")
 
     def on_unsat(lower):
         now = time.perf_counter() - run_start
@@ -294,7 +405,10 @@ def main():
         print("Lower bound:", format_cost_values(final_lower_bound))
 
     if profiler:
-        profiler.report()
+        if args.profile_after_first_model and model_num > 0:
+            profiler.report(title=f"Conflict Profile since model {model_num}")
+        else:
+            profiler.report()
 
     # Print partition for the last model printed above. The propagator's live
     # union-find may have been undone by solver backtracking after on_model.
