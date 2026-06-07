@@ -19,44 +19,69 @@ then commit the completed change.
 
 ## Where we are now
 
-No in-progress work. Last session landed `reasonNOTDerivedClass` (identity, TODO only) and
-`reasonMergeClasses_E` (2847) in `src/modules/merges.lp`. All 6 non-diagnostic regression
-checks pass. The diagnostic fixture (`--const diagnose=1` on `strong_negation_contradiction.lp`)
-remains pre-existing-broken: returns `SATISFIABLE` + `violate(...)` instead of `UNSATISFIABLE`.
+No in-progress work. Recent sessions completed (in order):
+- `reasonVFTableBelongsToClass` (1007 / 1118) — vftables.lp
+- `reasonMergeVFTables` (2722) — merges.lp (vftable → its owning class)
+- `reasonClassRelatedMethod_A` (2361) and `knownVirtualMethod` — classes.lp
+- `guessLateMergeClasses_G2` (weakMergeCandidate) and `G1` (weakG1Bonus) — merges.lp
+- `reasonNOTDeletingDestructor_F` (667) and `_H` (695) — ctorsdtors.lp
 
-Previous completed batch:
-1. **Tier 3 VFTable accuracy** — added `reasonNOTVFTableEntry_D`, then `B`, `C`, and `E`; `C` intentionally uses `not vfTableEntry(...)` for the previous offset per approval.
-2. **Class-call infrastructure** — added `src/modules/classes.lp` with `reasonClassCallsMethod_C` and `reasonClassCallsMethod_B`, both using direct `sameClass/2` checks instead of adding Prolog-style `find/2`.
-3. **Method expansion from class calls** — added `reasonMethod_J`, so `classCallsMethod(_, Method)` proves `method(Method)`.
-4. **Negative merge signals** — added `reasonNOTMergeClasses_E`, `K`, and `Q`; `E` negative cross-write checks use anonymous `_` arguments so Clingo grounds safely, `K` intentionally omits the redundant `Method1 != Method2` condition, and `Q` includes approved `method(MethodWithSymbol)` evidence.
-5. **Bookkeeping** — updated `TODO.md` immediately after each approved rule; corrected the stale `reasonNOTVFTableEntry_D` description from "address is a constructor" to RTTI COL address exclusion.
+Since the last rule-porting commit (`784e0cd`), work has been performance tooling only:
+plateau profiling (`--profile-after-first-model`, `--diagnose-vftable-objective`),
+`--results` output, and symbolize script improvements. No outstanding rule ports.
+
+The diagnostic fixture (`--const diagnose=1` on `strong_negation_contradiction.lp`)
+is pre-existing-broken: returns `SATISFIABLE` + `violate(...)` instead of `UNSATISFIABLE`.
 
 All 13 hand-written examples pass:
-- SAT: `constructor_vftable_entry_example.lp`, `example.lp`, `inherit_example.lp`, `inherited_entry_example.lp`, `multi_inherit_example.lp`, `rtti_example.lp`, `selfdefeating.lp`, `symbol_conflict_example.lp`, `symbol_missing_conflict_example.lp`, `synthetic_merge.lp`, `virtual_base_example.lp`
+- SAT: `constructor_vftable_entry_example.lp`, `example.lp`, `inherit_example.lp`,
+  `inherited_entry_example.lp`, `multi_inherit_example.lp`, `rtti_example.lp`,
+  `selfdefeating.lp`, `symbol_conflict_example.lp`, `symbol_missing_conflict_example.lp`,
+  `synthetic_merge.lp`, `virtual_base_example.lp`
 - UNSAT: `invalid_example.lp`, `strong_negation_contradiction.lp`
 
-Note: `make verify-core` currently reaches the final diagnostic-mode check and
-fails there because `--const diagnose=1` returns `SATISFIABLE` with
-`violate(insanityTwoRealDestructorsOnClass,(1300,1400))`, while the Makefile
-still expects `UNSATISFIABLE`.
-
 ## Last completed batch
 
-1. **`reasonNOTDerivedClass` (2025)** — identity rule; marked done in TODO.md (covered by input fact / strong-negation architecture, no code change needed).
-2. **`reasonMergeClasses_E` (2847)** — two classes both direct bases of the same derived class at the same offset must merge. Added to `src/modules/merges.lp` using `derivedClass_closed` and `not sameClass`. All 6 non-diagnostic regression checks pass.
+1. **`reasonNOTDeletingDestructor_F` (667)** — delete() exists in program but method doesn't
+   call delete(this). Two rule bodies translate the Prolog disjunction; conservatively skips
+   methods with no this-pointer info.
+2. **`reasonNOTDeletingDestructor_H` (695)** — thiscall method with >2 parameters cannot be
+   a deleting destructor. Uses three distinct `funcParameter` checks to avoid grounding blowup.
 
-## Last completed batch
+## Previous completed batch
 
-1. **`reasonVFTableBelongsToClass` (1007 / 1118)** — both Prolog clauses (binding-mode variants) collapsed into a single unified set of ASP rules. Added to `src/modules/vftables.lp`. Structure: `vftableBelongsToClassCandidate` (core thisptr check), three ownership sub-cases (A: ancestor at Offset!=0 + base-reuse check; B: ancestor at 0; C: hierarchy root, no embed), three additional-check sub-cases (constructor, destructor, hasnobase). `mergeEntity(Class)` added to ground `Class` in the `OtherWriter` helper. All 6 non-diagnostic regression checks pass; predicate fires on real `.facts` data.
+1. **`reasonVFTableBelongsToClass` (1007 / 1118)** — both Prolog clauses collapsed into a unified
+   rule set in `src/modules/vftables.lp`. Three ownership sub-cases (ancestor at Offset≠0,
+   ancestor at 0, hierarchy root) × three additional checks (constructor, `&allWritersInClass`,
+   `classHasNoBase`).
+2. **`reasonMergeVFTables` (2722)** — deterministic: `vftableBelongsToClass(VFTable, _, Method)` → `mergeClasses(VFTable, Method)`.
+3. **`reasonClassRelatedMethod_A` (2361)** — undirected `classRelatedMethod` from `classCallsMethod`.
+   Also added `knownVirtualMethod/1` helper (from confirmed `vfTableEntry` or `symbolProperty(virtual)`).
+4. **`guessLateMergeClasses_G2` / `G1`** — `weakMergeCandidate` from classRelatedMethod pairs;
+   `weakG1Bonus` adds @0 weight-2 when either merged class has a confirmed constructor.
+5. **Tier-3 VFTable accuracy** — `reasonNOTVFTableEntry_B/C/D/E` in vftables.lp.
+6. **Class-call infrastructure** — `reasonClassCallsMethod_B/C` in classes.lp.
+7. **`reasonMethod_J`** — `classCallsMethod(_, Method)` proves `method(Method)`.
+8. **Negative merge signals** — `reasonNOTMergeClasses_E`, `K`, `Q` in merges.lp.
 
 ## Suggested next steps
 
-Ranked candidates for next implementation (by complexity, predicate availability, and downstream impact):
+Ranked by availability of required predicates and incremental impact:
 
-### Current one-at-a-time queue
-1. **`reasonMergeVFTables` (2722)** — both vftable writes belong to the same class; uses `vftableBelongsToClass` which is now available.
-2. **`reasonDerivedClass_B` (1834)** — constructor call at object offset plus matching confirmed vftable writes derives a base/derived relationship. Primary non-RTTI inheritance detection mechanism; requires a careful decision on `find/2`, `hasPendingVFTableMerge/1`, and `reasonClassRelationship/2` replacements.
-3. **`reasonNOTMergeClasses_O` (3296)** — class with known maximum size calls a method whose member access would exceed that size. Delayed with class-size work because it depends on `classSizeLTE/2` and `validMethodMemberAccess/4`.
+1. **`reasonMergeClasses_K` (2939)** — `callAtOffset(0, Caller, Callee)` → same class as Caller.
+   Straightforward; uses `callAtOffset` which is already derived in `initial.lp`.
+
+2. **`reasonMergeClasses_H` (2895)** — derived constructor calls base constructor → they're in the
+   same class hierarchy / need to merge. Uses `classCallsMethod` and `derivedClass`, both available.
+
+3. **`reasonObjectInObject_C` (1577)** — VFTable write at non-zero offset → objectInObject. Uses
+   `vfTableWrite` which is available; feeds `objectInObject` which feeds composition reasoning.
+
+4. **`reasonNOTMergeClasses_A` (3073)** — two methods that have different base classes cannot merge.
+   Uses `derivedClass`; no new predicates needed.
 
 Delayed:
-- **Class size rules** — useful later, but they are a bounds-and-constraints subsystem rather than the next inheritance/merge focus.
+- **Class size rules** — useful later, but a bounds-and-constraints subsystem rather than the
+  next inheritance/merge focus.
+- **`reasonNOTMergeClasses_O` (3296)** — needs `classSizeLTE/2` and `validMethodMemberAccess/4`,
+  neither of which is implemented yet.

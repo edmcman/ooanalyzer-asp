@@ -178,7 +178,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonVFTableSizeLTE` (1406) — from derived/base relationship
 
 ### Merge (rules.pl:2722)
-- [ ] `reasonMergeVFTables` (2722) — pending VFTable merges
+- [x] `reasonMergeVFTables` (2722) — merge vftable with the class that owns it
 
 ### Guess (guess.pl)
 - [x] `guessVFTable` (guess.pl:180)
@@ -331,7 +331,9 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `guessMergeClasses_C1`–`guessMergeClasses_C4`
 - [x] `guessMergeClasses_D`
 - [ ] `guessMergeClasses_G`
-- [ ] `guessLateMergeClasses_F1`, `_F2`, `_G1`, `_G2`
+- [ ] `guessLateMergeClasses_F1`, `_F2`
+- [x] `guessLateMergeClasses_G1` — constructor bonus on weak merge candidates
+- [x] `guessLateMergeClasses_G2` — classRelatedMethod weak merge candidates
 - [ ] `guessNOTMergeClasses`
 
 ### Constraints (insanity.pl)
@@ -365,7 +367,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 12. Class–Method Relations
 
 ### Related Methods (rules.pl:2354–2496)
-- [ ] `reasonClassRelatedMethod_A` (2361) — `classCallsMethod` implies class-related method
+- [x] `reasonClassRelatedMethod_A` (2361) — `classCallsMethod` implies class-related method (undirected)
 - [ ] `reasonClassRelatedMethod_B` (2372) — method called by class method
 - [ ] `reasonClassRelatedMethod_C` (2414) — method of embedded inner class
 

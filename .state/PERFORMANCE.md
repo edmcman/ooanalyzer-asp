@@ -28,9 +28,9 @@ constructor/destructor role choices, for example:
 - `TaoCrypt::SHA384::SHA384@4597584` / `TaoCrypt::SHA384::SHA384@4672080`
   with `TaoCrypt::SHA384::vftable@7784472`
 
-## Working-tree instrumentation
+## Committed instrumentation
 
-Added opt-in diagnostics to `ooanalyzer.py`:
+Opt-in diagnostics in `ooanalyzer.py` (committed in `973790c Add plateau profiling for optimization stalls`):
 
 ```sh
 env UV_CACHE_DIR=/tmp/uv-cache uv run python ooanalyzer.py \
@@ -108,6 +108,33 @@ high-priority vftable score appears provable quickly under core-guided
 optimization, so the remaining pain is mostly the low-priority merge-reward
 layer after the vftable bound is fixed.
 
+## Bound-mode probes
+
+Short mysql probe on 2026-06-07:
+
+```sh
+env UV_CACHE_DIR=/tmp/uv-cache uv run python ooanalyzer.py \
+  examples/ooa/mysql.exe.lp \
+  --benchmark --stats --heuristic=domain \
+  --opt-mode=opt,-2576 --time-limit 300 \
+  --diagnose-vftable-objective --diagnose-vftable-limit 5
+```
+
+Result:
+
+- First model: `[-2576, -6116]` at 49.60s.
+- Same vftable decomposition as the normal Domain first model:
+  selected size total 2576, selected candidate max total 2800, selected gap
+  total 224, no unselected possible vftables.
+- No second model in the 300s window.
+- Final lower bound remained `[-2720, -34496]`.
+- Choices/conflicts: 295,292 choices, 83,649 conflicts.
+
+Interpretation: `--opt-mode=opt,-2576` appears to seed an incumbent optimization
+bound but does **not** constrain/prove the high-priority layer for branch-and-
+bound. It behaved like the baseline Domain plateau, so it is not the staged
+optimization mechanism we need.
+
 ## Non-Domain probes
 
 Additional mysql probes on 2026-06-06 focused on understanding why plain VSIDS
@@ -143,30 +170,6 @@ best non-Domain explanation so far: it reaches and proves the high-priority
 vftable score without `#heuristic` ordering, which suggests the bad VSIDS run is
 mostly a branch-and-bound/model-guided optimization pathology rather than VSIDS
 being unable to reason about vftables at all.
-
-## Suggested next commit
-
-This instrumentation is now present in the working tree. Prefer committing it
-before another heuristic experiment.
-
-Suggested title:
-
-```text
-Add plateau profiling for optimization stalls
-```
-
-Implemented pieces:
-
-- Add a `--profile-after-first-model` mode that resets or snapshots the
-  conflict profiler when the first model is found.
-- Report time since the previous model and the top predicates/atoms since the
-  previous model, not just since solve start.
-- Add objective diagnostics for vftable optimization:
-  - selected `vfTable/1` candidates and their `maxCandidateVFTableSize/2`
-  - unselected candidates that contribute to the high-priority lower-bound gap
-  - selected `vfTableSize/2` values that are below their candidate max
-- Make the diagnostics quiet by default and usable with existing
-  `--benchmark --stats` mysql runs.
 
 ## Questions to answer next
 
