@@ -29,6 +29,14 @@
 #const enable_guess_merge = 1.
 #const enable_guess_derived_class = 1.
 
+% Optional staged-optimization bounds for mysql-scale performance experiments.
+% A value of 0 disables each bound.  The high-priority vftable objective is the
+% sum of selected vfTableSize/2 extents, so fixing this total lets later runs
+% focus on the lower-priority merge/constructor rewards once a good vftable
+% layer is known or proved separately.
+#const min_vftable_size_total = 0.
+#const max_vftable_size_total = 0.
+
 % Dynamic guess gates: when enabled, each guess family is guarded by a solver
 % atom that is initially biased false.  This lets the solver find a conservative
 % model before opening expensive guess families for optimization.

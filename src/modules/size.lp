@@ -59,6 +59,17 @@ vfTableSizeGap(VFTable, Gap) :-
     maxCandidateVFTableSize(VFTable, MaxSize),
     Gap = MaxSize - Size.
 
+vftableSizeTotal(Total) :-
+    Total = #sum { Size, VFTable : vfTableSize(VFTable, Size) }.
+
+:- min_vftable_size_total > 0,
+   vftableSizeTotal(Total),
+   Total < min_vftable_size_total.
+
+:- max_vftable_size_total > 0,
+   vftableSizeTotal(Total),
+   Total > max_vftable_size_total.
+
 #maximize { MaxSize@3, vfTableMaxSize, VFTable : maxCandidateVFTableSize(VFTable, MaxSize) }.
 #minimize { Gap@3, vfTableSizeGap, VFTable : vfTableSizeGap(VFTable, Gap) }.
 
@@ -68,4 +79,5 @@ vfTableSizeGap(VFTable, Gap) :-
 
 %!trace {"vftable % is % bytes", V, S} vfTableSize(V, S).
 
+#show vftableSizeTotal/1.
 #show vfTableSize/2.
