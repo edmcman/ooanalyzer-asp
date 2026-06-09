@@ -1,44 +1,54 @@
-17:23:35 Grounding...
-17:23:35 Grounding done (0.02s)
-17:23:35 Solving...
-17:23:35 Model found (0.03s): [-281]
-17:23:35 Model found (0.03s, +0.00s): [-282]
-17:23:35 Model found (0.03s, +0.00s): [-286]
-17:23:35 Model found (0.04s, +0.00s): [-287]
-17:23:35 Model found (0.04s, +0.00s): [-288]
-17:23:35 Model found (0.04s, +0.00s): [-289]
-17:23:35 Model found (0.04s, +0.00s): [-290]
-17:23:35 Model found (0.04s, +0.00s): [-291]
-17:23:35 Model found (0.05s, +0.00s): [-292]
-17:23:35 Model found (0.05s, +0.00s): [-293]
-17:23:35 Solving done: OPTIMUM FOUND (0.03s)
+19:06:58 Grounding...
+19:06:58 Grounding done (0.02s)
+19:06:58 Solving...
+19:06:58 Model found (0.03s): [-4, -286]
+19:06:58 Model found (0.03s, +0.00s): [-4, -287]
+19:06:58 Model found (0.03s, +0.00s): [-4, -290]
+19:06:58 Model found (0.04s, +0.00s): [-4, -291]
+19:06:58 Model found (0.04s, +0.00s): [-4, -292]
+19:06:58 Model found (0.04s, +0.00s): [-4, -293]
+19:06:58 Model found (0.04s, +0.00s): [-4, -294]
+19:06:58 Model found (0.04s, +0.00s): [-4, -295]
+19:06:58 Model found (0.05s, +0.00s): [-4, -296]
+19:06:58 Model found (0.05s, +0.00s): [-4, -297]
+19:06:58 Model found (0.05s, +0.00s): [-4, -298]
+19:06:58 Model found (0.05s, +0.00s): [-4, -299]
+19:06:58 Model found (0.06s, +0.00s): [-4, -300]
+19:06:58 Model found (0.06s, +0.00s): [-4, -301]
+19:06:58 Model found (0.06s, +0.00s): [-4, -302]
+19:06:58 Model found (0.07s, +0.01s): [-4, -303]
+19:06:58 Model found (0.07s, +0.00s): [-4, -304]
+19:06:58 Model found (0.07s, +0.00s): [-4, -305]
+19:06:58 Model found (0.08s, +0.00s): [-4, -306]
+19:06:58 Model found (0.08s, +0.00s): [-4, -307]
+19:06:58 Model found (0.08s, +0.00s): [-4, -308]
+19:06:58 Solving done: OPTIMUM FOUND (0.07s)
 % Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/x3c/SimpleApp.exe.results
 OPTIMUM FOUND
 
-Answer: 10
-Optimization: -293
+Answer: 21
+Optimization: -4 -308
 
-% Equivalence classes (275 classes, 282 entities):
+% Equivalence classes (272 classes, 282 entities):
 
 
 % Stats:
-%   atoms: 7889.0
-%   bodies: 1586.0
-%   rules: 8477.0
-%   variables: 1204.0
-%   constraints: 0.0
-%   choices: 914.0
-%   conflicts: 7.0
-%   models: 10.0
+%   atoms: 7900.0
+%   bodies: 1544.0
+%   rules: 8481.0
+%   variables: 1486.0
+%   constraints: 4.0
+%   choices: 1415.0
+%   conflicts: 26.0
+%   models: 21.0
 %   optimal_models: 1.0
-%   final_cost: [-293.0]
-%   lower_bound: [-293.0]
-%   total_time: 0.06105995178222656
-%   ground_time: 0.017995051108300686
-%   time_to_first_model: 0.028847350273281336
+%   final_cost: [-4.0, -308.0]
+%   lower_bound: [-4.0, -308.0]
+%   total_time: 0.09575200080871582
+%   ground_time: 0.017954010982066393
+%   time_to_first_model: 0.029188076965510845
 %   max_rss_bytes: 28311552
-%   solve_time: 0.022094011306762695
--vfTable(type_info::vftable@0x41890c)
+%   solve_time: 0.0567319393157959
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)
@@ -46,6 +56,7 @@ classCallsMethod(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Int
 classCallsMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::Unload@0x4121b0)
 classCallsMethod(Cx_Ptr::~Cx_Ptr@0x412540,Cx_Ptr::Unload@0x4125d0)
 classCallsMethod(type_info::vector_deleting_destructor@0x412b20,type_info::_type_info_dtor_internal_method@0x41c2c4)
+classCallsMethod(type_info::vftable@0x41890c,type_info::vector_deleting_destructor@0x412b20)
 constructor(type_info::type_info@0x412af0)
 deletingDestructor(type_info::vector_deleting_destructor@0x412b20)
 guessEnabled(constructor)
@@ -61,7 +72,10 @@ mergeClasses(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4
 mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::Unload@0x412250)
 mergeClasses(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::Unload@0x4121b0)
 mergeClasses(Cx_Ptr::~Cx_Ptr@0x412540,Cx_Ptr::Unload@0x4125d0)
+mergeClasses(tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff,type_info::type_info@0x412af0)
 mergeClasses(type_info::vector_deleting_destructor@0x412b20,type_info::_type_info_dtor_internal_method@0x41c2c4)
+mergeClasses(type_info::vector_deleting_destructor@0x412b20,type_info::vftable@0x41890c)
+mergeClasses(type_info::vftable@0x41890c,type_info::type_info@0x412af0)
 method(4275346)
 method(4276323)
 method(4283104)
@@ -72,8 +86,6 @@ method(4283216)
 method(4283224)
 method(4283232)
 method(4283243)
-method(4287392)
-method(??_M@YGXPAXIHP6EX0@Z@Z@0x413c10)
 method(@_RTC_AllocaHelper@12@0x412940)
 method(@_RTC_CheckStackVars2@12@0x412980)
 method(@_RTC_CheckStackVars@8@0x4128c0)
@@ -135,11 +147,13 @@ method(__onexit@0x413f90)
 method(__setargv@0x413f20)
 method(__setdefaultprecision@0x413e80)
 method(__stdcall __ArrayUnwind(*, unsigned int, int, (__thiscall*)(*) )@0x413cf0)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (__thiscall*)(*) )@0x413c10)
 method(__tmainCRTStartup@0x412d10)
 method(_atexit@0x4140c0)
 method(_getMemBlockDataString@0x413960)
 method(_main@0x411530)
 method(_mainCRTStartup@0x412cf0)
+method(`dynamic initializer for 'CLSID_Example''@0x416ba0)
 method(check_managed_app@0x413020)
 method(failwithmessage@0x413280)
 method(int (__cdecl*__cdecl _RTC_GetErrorFunc(const *) )(int, char const *, int, char const *, char const *, ...)@0x413be0)
@@ -209,8 +223,6 @@ method(thunk:_lstrcpyW@8@0x412830)
 method(thunk:_lstrcpynA@12@0x412854)
 method(thunk:_lstrlenA@4@0x414b64)
 method(thunk:virtual type_info::~type_info(void)@0x414aec)
-method(tramp:??_Etype_info@@UAEPAXI@Z@0x4110ff)
-method(tramp:??_M@YGXPAXIHP6EX0@Z@Z@0x411280)
 method(tramp:@_RTC_AllocaHelper@12@0x411050)
 method(tramp:@_RTC_CheckStackVars2@12@0x4111a9)
 method(tramp:@_RTC_CheckStackVars@8@0x4110c8)
@@ -312,6 +324,7 @@ method(tramp:__onexit@0x411159)
 method(tramp:__setargv@0x411014)
 method(tramp:__setdefaultprecision@0x411005)
 method(tramp:__stdcall __ArrayUnwind(*, unsigned int, int, (__thiscall*)(*) )@0x411258)
+method(tramp:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (__thiscall*)(*) )@0x411280)
 method(tramp:__unlock@0x41119f)
 method(tramp:_atexit@0x4110aa)
 method(tramp:_exit@0x411271)
@@ -337,13 +350,19 @@ method(tramp:struct Ix_Object * Cx_Ptr::P(void) const@0x4111b3)
 method(tramp:struct Ix_ObjectFactory * CPluginManager::GetObjectFactory(void)@0x41123f)
 method(tramp:struct Ix_PluginLoader * CPluginManager::GetPluginLoader(void)@0x411136)
 method(tramp:type_info::type_info(class type_info const &)@0x411235)
+method(tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff)
 method(tramp:virtual type_info::~type_info(void)@0x411073)
 method(tramp:virtual type_info::~type_info(void)@0x4110d2)
 method(type_info::_type_info_dtor_internal_method@0x41c2c4)
 method(type_info::operator=@0x412bb0)
 method(type_info::type_info@0x412af0)
 method(type_info::vector_deleting_destructor@0x412b20)
-vftableSizeTotal(0)
+vfTable(type_info::vftable@0x41890c)
+vfTableEntry(type_info::vftable@0x41890c,0,tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff)
+vfTableSize(type_info::vftable@0x41890c,4)
+vfTableWrite(4270844,type_info::type_info@0x412af0,0,type_info::vftable@0x41890c)
+vftableBelongsToClass(type_info::vftable@0x41890c,0,type_info::type_info@0x412af0)
+vftableSizeTotal(4)
 %   {0x413c92}
 %   {0x414063}
 %   {0x415ae0}
@@ -354,10 +373,8 @@ vftableSizeTotal(0)
 %   {0x415b58}
 %   {0x415b60}
 %   {0x415b6b}
-%   {0x416ba0}
-%   {??_M@YGXPAXIHP6EX0@Z@Z@0x413c10}
 %   {@_RTC_AllocaHelper@12@0x412940}
-%   {@_RTC_CheckStackVars2@12@0x412980}
+%   {@_RTC_CheckStackVars2@12@0x412980}19:06:58 Writing results to examples/ooa/x3c/SimpleApp.exe.results
 %   {@_RTC_CheckStackVars@8@0x4128c0}
 %   {@__security_check_cookie@4@0x412870}
 %   {ArrayUnwindFilter@0x413da0}
@@ -411,11 +428,13 @@ vftableSizeTotal(0)
 %   {__setargv@0x413f20}
 %   {__setdefaultprecision@0x413e80}
 %   {__stdcall __ArrayUnwind(*, unsigned int, int, (__thiscall*)(*) )@0x413cf0}
+%   {__stdcall `eh vector destructor iterator'(*, unsigned int, int, (__thiscall*)(*) )@0x413c10}
 %   {__tmainCRTStartup@0x412d10}
 %   {_atexit@0x4140c0}
-%   {_getMemBlockDataString@0x413960}17:23:35 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+%   {_getMemBlockDataString@0x413960}
 %   {_main@0x411530}
 %   {_mainCRTStartup@0x412cf0}
+%   {`dynamic initializer for 'CLSID_Example''@0x416ba0}
 %   {check_managed_app@0x413020}
 %   {failwithmessage@0x413280}
 %   {int (__cdecl*__cdecl _RTC_GetErrorFunc(const *) )(int, char const *, int, char const *, char const *, ...)@0x413be0}
@@ -485,8 +504,6 @@ vftableSizeTotal(0)
 %   {thunk:_lstrcpynA@12@0x412854}
 %   {thunk:_lstrlenA@4@0x414b64}
 %   {thunk:virtual type_info::~type_info(void)@0x414aec}
-%   {tramp:??_Etype_info@@UAEPAXI@Z@0x4110ff}
-%   {tramp:??_M@YGXPAXIHP6EX0@Z@Z@0x411280}
 %   {tramp:@_RTC_AllocaHelper@12@0x411050}
 %   {tramp:@_RTC_CheckStackVars2@12@0x4111a9}
 %   {tramp:@_RTC_CheckStackVars@8@0x4110c8}
@@ -588,6 +605,7 @@ vftableSizeTotal(0)
 %   {tramp:__setargv@0x411014}
 %   {tramp:__setdefaultprecision@0x411005}
 %   {tramp:__stdcall __ArrayUnwind(*, unsigned int, int, (__thiscall*)(*) )@0x411258}
+%   {tramp:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (__thiscall*)(*) )@0x411280}
 %   {tramp:__unlock@0x41119f}
 %   {tramp:_atexit@0x4110aa}
 %   {tramp:_exit@0x411271}
@@ -613,9 +631,7 @@ vftableSizeTotal(0)
 %   {tramp:struct Ix_ObjectFactory * CPluginManager::GetObjectFactory(void)@0x41123f}
 %   {tramp:struct Ix_PluginLoader * CPluginManager::GetPluginLoader(void)@0x411136}
 %   {tramp:type_info::type_info(class type_info const &)@0x411235}
+%   {tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff, type_info::type_info@0x412af0, type_info::vector_deleting_destructor@0x412b20, type_info::vftable@0x41890c, type_info::_type_info_dtor_internal_method@0x41c2c4}
 %   {tramp:virtual type_info::~type_info(void)@0x411073}
 %   {tramp:virtual type_info::~type_info(void)@0x4110d2}
 %   {type_info::operator=@0x412bb0}
-%   {type_info::type_info@0x412af0}
-%   {type_info::vector_deleting_destructor@0x412b20, type_info::_type_info_dtor_internal_method@0x41c2c4}
-%   {type_info::vftable@0x41890c}

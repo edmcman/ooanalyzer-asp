@@ -30,6 +30,7 @@ _FIXUPS = [
 ]
 
 _DECORATED_KINDS = {'thunk', 'tramp'}
+_QUOTED = r"'((?:\\.|[^'\\])*)'"
 
 def _fixup(sym):
     for old, new in _FIXUPS:
@@ -41,6 +42,17 @@ def _decorate_kind(kind, label):
     if kind in _DECORATED_KINDS:
         return f"{kind}:{label}"
     return label
+
+def _unescape_lp_string(s):
+    """Decode the simple backslash escapes used in quoted LP strings."""
+    out = []
+    i = 0
+    while i < len(s):
+        if s[i] == '\\' and i + 1 < len(s):
+            i += 1
+        out.append(s[i])
+        i += 1
+    return ''.join(out)
 
 def build_symbol_map(symbols_file):
     """Return dict: int_addr -> display_string.
@@ -54,26 +66,36 @@ def build_symbol_map(symbols_file):
         lines = f.readlines()
     if symbols_file.endswith('.ground'):
         import re as _re
-        _gt = _re.compile(r"groundTruth\((0x[0-9a-fA-F]+)\s*,\s*'([^']*)'\s*,\s*'([^']*)'")
-        _sym = _re.compile(r"symbol\((0x[0-9a-fA-F]+)\s*,\s*(\w+)\s*,\s*'([^']*)'\)")
-        _dem = _re.compile(r"demangledName\((0x[0-9a-fA-F]+)\s*,\s*([^,]*)\s*,\s*'([^']*)'\)")
+        _gt = _re.compile(
+            rf"groundTruth\((0x[0-9a-fA-F]+)\s*,\s*{_QUOTED}\s*,\s*{_QUOTED}"
+        )
+        _sym = _re.compile(
+            rf"symbol\((0x[0-9a-fA-F]+)\s*,\s*(\w+)\s*,\s*{_QUOTED}\)"
+        )
+        _dem = _re.compile(
+            rf"demangledName\((0x[0-9a-fA-F]+)\s*,\s*([^,]*)\s*,\s*{_QUOTED}\)"
+        )
         for line in lines:
             mo = _gt.match(line)
             if mo:
                 addr = int(mo.group(1), 16)
-                m[addr] = f"{mo.group(2)}::{mo.group(3)}"
+                cls = _unescape_lp_string(mo.group(2))
+                method = _unescape_lp_string(mo.group(3))
+                m[addr] = f"{cls}::{method}"
                 continue
             mo = _dem.match(line)
             if mo:
                 addr = int(mo.group(1), 16)
                 if addr not in m:
-                    m[addr] = _decorate_kind(mo.group(2), _fixup(mo.group(3)))
+                    label = _fixup(_unescape_lp_string(mo.group(3)))
+                    m[addr] = _decorate_kind(mo.group(2), label)
                 continue
             mo = _sym.match(line)
             if mo:
                 addr = int(mo.group(1), 16)
                 if addr not in m:
-                    m[addr] = _decorate_kind(mo.group(2), mo.group(3))
+                    label = _unescape_lp_string(mo.group(3))
+                    m[addr] = _decorate_kind(mo.group(2), label)
     elif symbols_file.endswith('.symbols'):
         for line in lines:
             line = line.rstrip()
