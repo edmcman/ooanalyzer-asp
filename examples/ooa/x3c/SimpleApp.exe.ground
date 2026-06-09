@@ -1,0 +1,501 @@
+demangledName(0x411af0, 'global function', 'near void __cdecl MyFunc2(near class Cx_Ptr const &)').
+demangledName(0x411c10, 'global function', 'near void __cdecl Test(void)').
+demangledName(0x4126f0, 'global function', 'near long __cdecl xCreateObject(near class XCLSID const &, near struct Ix_Object *near  *)').
+demangledName(0x412800, 'global function', 'near near struct HINSTANCE__ * __cdecl xGetModuleHandle(void)').
+demangledName(0x413210, 'global function', 'near void __cdecl _RTC_Failure(near void *, int)').
+demangledName(0x4136a0, 'global function', 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
+demangledName(0x4137e0, 'global function', 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
+demangledName(0x413be0, 'global function', 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
+demangledName(0x413bf0, 'global function', 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
+demangledName(0x413c10, 'global function', 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x413cf0, 'global function', 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x413de0, 'global function', 'near long __stdcall __CxxUnhandledExceptionFilter(near struct _EXCEPTION_POINTERS *)').
+demangledName(0x414510, 'global function', 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
+demangledName(0x4191c8, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessDetach').
+demangledName(0x4191cc, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessAttach').
+demangledName(0x4191d0, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadAttach').
+demangledName(0x4191d4, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadDetach').
+demangledName(0x4191d8, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessVerifier').
+demangledName(0x4196d0, 'global thing 1', 'type_info::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x4196e4, 'global thing 1', 'type_info::`RTTI Base Class Array\'').
+demangledName(0x4196ec, 'global thing 1', 'type_info::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41b000, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_ObjectFactory').
+demangledName(0x41b028, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_PluginLoader').
+demangledName(0x41b04c, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_Object').
+demangledName(0x41b068, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_Example').
+demangledName(0x41b088, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_Example2').
+demangledName(0x41b0b0, 'global thing 1', 'class `RTTI Type Descriptor\'::type_info').
+demangledName(0x41b0cc, 'global object', 'near int *near  _RTC_ErrorLevels').
+demangledName(0x41b624, 'global object', 'int (__cdecl*near  wsprintffp)(near char *, near char const *, ...)').
+demangledName(0x41c324, 'global function', 'near void __cdecl operator delete(near void *)').
+demangledName(0x41c334, 'global function', 'near void __cdecl terminate(void)').
+groundTruth(0x4116f0, 'CPluginManager', 'CPluginManager', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411770, 'CPluginManager', '~CPluginManager', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4117d0, 'CPluginManager', 'Unload', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411890, 'CPluginManager', 'LoadPluginManager', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4119c0, 'CPluginManager', 'GetPluginLoader', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411a30, 'CPluginManager', 'GetObjectFactory', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411e10, 'Cx_Interface<struct Ix_Example>', 'Cx_Interface', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411f00, 'Cx_Interface<struct Ix_Example>', 'Cx_Interface', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411ff0, 'Cx_Interface<struct Ix_Example>', '~Cx_Interface', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412040, 'Cx_Interface<struct Ix_Example>', 'operator->', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412080, 'Cx_Interface<struct Ix_Example>', 'operator bool', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4120d0, 'Cx_Interface<struct Ix_Example2>', '~Cx_Interface', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412120, 'Cx_Interface<struct Ix_Example2>', 'operator->', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412160, 'Cx_Interface<struct Ix_Example2>', 'IsNotNull', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4121b0, 'Cx_Interface<struct Ix_Example>', 'Unload', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x412250, 'Cx_Interface<struct Ix_Example2>', 'Unload', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x4122f0, 'Cx_Interface<struct Ix_Example2>', 'Cx_Interface', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412400, 'Cx_Ptr', 'Cx_Ptr', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4124c0, 'Cx_Interface<struct Ix_Example>', 'P', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412500, 'Cx_Interface<struct Ix_Example2>', 'P', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412540, 'Cx_Ptr', '~Cx_Ptr', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412590, 'Cx_Ptr', 'P', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4125d0, 'Cx_Ptr', 'Unload', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x412660, 'XCLSID', 'XCLSID', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412af0, 'type_info', 'type_info', method, constructor, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x412b20, 'type_info', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x412bb0, 'type_info', 'operator=', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x41890c, 'type_info', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x4196b8, 'type_info', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41c2c4, 'type_info', '_type_info_dtor_internal_method', method, none, imported, public, nonvirtual, '__thiscall').
+% Ground truth generation was completed successfully.
+symbol(0x401000, name, '__enc$textbss$begin').
+symbol(0x411000, name, '__enc$textbss$end').
+symbol(0x411005, tramp, '__setdefaultprecision').
+symbol(0x41100a, tramp, '??1Cx_Ptr@@QAE@XZ').
+symbol(0x41100f, tramp, '??1?$Cx_Interface@UIx_Example2@@@@QAE@XZ').
+symbol(0x411014, tramp, '__setargv').
+symbol(0x411019, tramp, '?P@?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ').
+symbol(0x41101e, tramp, '__RTC_GetErrDesc').
+symbol(0x411023, tramp, '??C?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ').
+symbol(0x411028, tramp, '@__security_check_cookie@4').
+symbol(0x41102d, tramp, '_IsDebuggerPresent@0').
+symbol(0x411032, tramp, '??4type_info@@AAEAAV0@ABV0@@Z').
+symbol(0x411037, tramp, '??0?$Cx_Interface@UIx_Example@@@@QAE@ABVCx_Ptr@@@Z').
+symbol(0x41103c, tramp, '??$?0UIx_Example2@@@Cx_Ptr@@QAE@ABV?$Cx_Interface@UIx_Example2@@@@@Z').
+symbol(0x411041, tramp, '??1CPluginManager@@QAE@XZ').
+symbol(0x411046, tramp, '__RTC_Terminate').
+symbol(0x41104b, tramp, '_WideCharToMultiByte@32').
+symbol(0x411050, tramp, '@_RTC_AllocaHelper@12').
+symbol(0x411055, tramp, '?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z').
+symbol(0x41105a, tramp, '_PathRemoveFileSpecW@4').
+symbol(0x41105f, tramp, '__RTC_NumErrors').
+symbol(0x411064, tramp, '?Unload@CPluginManager@@QAEX_N@Z').
+symbol(0x411069, tramp, '___setusermatherr').
+symbol(0x41106e, tramp, '_Sleep@4').
+symbol(0x411073, tramp, '??1type_info@@UAE@XZ').
+symbol(0x411078, tramp, '??0CPluginManager@@QAE@XZ').
+symbol(0x41107d, tramp, '?LoadPluginManager@CPluginManager@@QAE_NPB_WPAUHINSTANCE__@@@Z').
+symbol(0x411082, tramp, '?xCreateObject@@YAJABVXCLSID@@PAPAUIx_Object@@@Z').
+symbol(0x411087, tramp, '?Test@@YAXXZ').
+symbol(0x41108c, tramp, '_GetModuleFileNameW@12').
+symbol(0x411091, tramp, '___security_init_cookie').
+symbol(0x411096, tramp, '_SetUnhandledExceptionFilter@4').
+symbol(0x41109b, tramp, '__cexit').
+symbol(0x4110a0, tramp, '__CrtDbgReportW').
+symbol(0x4110a5, tramp, '_VirtualQuery@12').
+symbol(0x4110aa, tramp, '_atexit').
+symbol(0x4110af, tramp, '_MultiByteToWideChar@24').
+symbol(0x4110b4, tramp, '__RTC_SetErrorType').
+symbol(0x4110b9, tramp, '__except_handler4').
+symbol(0x4110be, tramp, '__lock').
+symbol(0x4110c3, tramp, '_GetProcAddress@8').
+symbol(0x4110c8, tramp, '@_RTC_CheckStackVars@8').
+symbol(0x4110cd, tramp, '??3@YAXPAX@Z').
+symbol(0x4110d2, tramp, '??1type_info@@UAE@XZ').
+symbol(0x4110d7, tramp, '___report_gsfailure').
+symbol(0x4110dc, tramp, '?terminate@@YAXXZ').
+symbol(0x4110e1, tramp, '__exit').
+symbol(0x4110e6, tramp, '_GetCurrentThreadId@0').
+symbol(0x4110eb, tramp, '__initterm').
+symbol(0x4110f0, tramp, '_GetCurrentProcess@0').
+symbol(0x4110f5, tramp, '__RTC_UninitUse').
+symbol(0x4110fa, tramp, '__RTC_Shutdown').
+symbol(0x4110ff, tramp, '??_Etype_info@@UAEPAXI@Z').
+symbol(0x411104, tramp, '__FindPESection').
+symbol(0x411109, tramp, '_LoadLibraryW@4').
+symbol(0x41110e, tramp, '_HeapSetInformation@16').
+symbol(0x411113, tramp, '__configthreadlocale').
+symbol(0x411118, tramp, '__RTC_InitBase').
+symbol(0x41111d, tramp, '?_RTC_StackFailure@@YAXPAXPBD@Z').
+symbol(0x411122, tramp, '_RaiseException@16').
+symbol(0x411127, tramp, '__crt_debugger_hook').
+symbol(0x41112c, tramp, '??B?$Cx_Interface@UIx_Example@@@@QBE_NXZ').
+symbol(0x411131, tramp, '?IsNotNull@?$Cx_Interface@UIx_Example2@@@@QBE_NXZ').
+symbol(0x411136, tramp, '?GetPluginLoader@CPluginManager@@QAEPAUIx_PluginLoader@@XZ').
+symbol(0x41113b, tramp, '__ValidateImageBase').
+symbol(0x411140, tramp, '_InterlockedCompareExchange@12').
+symbol(0x411145, tramp, '_GetProcessHeap@0').
+symbol(0x41114a, tramp, '__RTC_SetErrorFuncW').
+symbol(0x41114f, tramp, '?P@?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ').
+symbol(0x411154, tramp, '_PathAppendW@8').
+symbol(0x411159, tramp, '__onexit').
+symbol(0x41115e, tramp, '_NtCurrentTeb').
+symbol(0x411163, tramp, '_HeapFree@12').
+symbol(0x411168, tramp, '__RTC_SetErrorFunc').
+symbol(0x41116d, tramp, '__invoke_watson_if_error').
+symbol(0x411172, tramp, '??0?$Cx_Interface@UIx_Example@@@@QAE@ABVXCLSID@@@Z').
+symbol(0x411177, tramp, '??C?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ').
+symbol(0x41117c, tramp, '_TerminateProcess@8').
+symbol(0x411181, tramp, '_mainCRTStartup').
+symbol(0x411186, tramp, '??0XCLSID@@QAE@PBD@Z').
+symbol(0x41118b, tramp, '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z').
+symbol(0x411190, tramp, '___CxxSetUnhandledExceptionFilter').
+symbol(0x411195, tramp, '_QueryPerformanceCounter@4').
+symbol(0x41119a, tramp, '?Unload@?$Cx_Interface@UIx_Example2@@@@AAEXXZ').
+symbol(0x41119f, tramp, '__unlock').
+symbol(0x4111a4, tramp, '_GetCurrentProcessId@0').
+symbol(0x4111a9, tramp, '@_RTC_CheckStackVars2@12').
+symbol(0x4111ae, tramp, '___set_app_type').
+symbol(0x4111b3, tramp, '?P@Cx_Ptr@@QBEPAUIx_Object@@XZ').
+symbol(0x4111b8, tramp, '__RTC_CheckEsp').
+symbol(0x4111bd, tramp, '_main').
+symbol(0x4111c2, tramp, '_EncodePointer@4').
+symbol(0x4111c7, tramp, '__RTC_Initialize').
+symbol(0x4111cc, tramp, '??$?0UIx_Example@@@?$Cx_Interface@UIx_Example2@@@@QAE@ABV?$Cx_Interface@UIx_Example@@@@@Z').
+symbol(0x4111d1, tramp, '?Unload@?$Cx_Interface@UIx_Example@@@@AAEXXZ').
+symbol(0x4111d6, tramp, '__controlfp_s').
+symbol(0x4111db, tramp, '_GetSystemTimeAsFileTime@4').
+symbol(0x4111e0, tramp, '_DecodePointer@4').
+symbol(0x4111e5, tramp, '__invoke_watson').
+symbol(0x4111ea, tramp, '?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z').
+symbol(0x4111ef, tramp, '__CRT_RTC_INITW').
+symbol(0x4111f4, tramp, '_GetTickCount@0').
+symbol(0x4111f9, tramp, '__IsNonwritableInCurrentImage').
+symbol(0x4111fe, tramp, '___CxxFrameHandler3').
+symbol(0x411203, tramp, '_HeapAlloc@12').
+symbol(0x411208, tramp, '__amsg_exit').
+symbol(0x41120d, tramp, '?xGetModuleHandle@@YAPAUHINSTANCE__@@XZ').
+symbol(0x411212, tramp, '__XcptFilter').
+symbol(0x411217, tramp, '_lstrcpynA@12').
+symbol(0x41121c, tramp, '?Unload@Cx_Ptr@@AAEXXZ').
+symbol(0x411221, tramp, '__CrtSetCheckCount').
+symbol(0x411226, tramp, '_lstrcpyW@8').
+symbol(0x41122b, tramp, '_InterlockedExchange@8').
+symbol(0x411230, tramp, '_UnhandledExceptionFilter@4').
+symbol(0x411235, tramp, '??0type_info@@AAE@ABV0@@Z').
+symbol(0x41123a, tramp, '__except_handler4_common').
+symbol(0x41123f, tramp, '?GetObjectFactory@CPluginManager@@QAEPAUIx_ObjectFactory@@XZ').
+symbol(0x411244, tramp, '_GetModuleHandleW@4').
+symbol(0x411249, tramp, '__matherr').
+symbol(0x41124e, tramp, '___RTDynamicCast').
+symbol(0x411253, tramp, '___getmainargs').
+symbol(0x411258, tramp, '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z').
+symbol(0x41125d, tramp, '_lstrlenA@4').
+symbol(0x411262, tramp, '?_RTC_Failure@@YAXPAXH@Z').
+symbol(0x411267, tramp, '?MyFunc2@@YAXABVCx_Ptr@@@Z').
+symbol(0x41126c, tramp, '?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z').
+symbol(0x411271, tramp, '_exit').
+symbol(0x411276, tramp, '___dllonexit').
+symbol(0x41127b, tramp, '??1?$Cx_Interface@UIx_Example@@@@QAE@XZ').
+symbol(0x411280, tramp, '??_M@YGXPAXIHP6EX0@Z@Z').
+symbol(0x411285, tramp, '_FreeLibrary@4').
+symbol(0x41128a, tramp, '__initterm_e').
+symbol(0x41128f, tramp, '?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z').
+symbol(0x411530, func, '_main').
+symbol(0x4116f0, method, '??0CPluginManager@@QAE@XZ').
+symbol(0x411770, method, '??1CPluginManager@@QAE@XZ').
+symbol(0x4117d0, method, '?Unload@CPluginManager@@QAEX_N@Z').
+symbol(0x411890, method, '?LoadPluginManager@CPluginManager@@QAE_NPB_WPAUHINSTANCE__@@@Z').
+symbol(0x4119c0, method, '?GetPluginLoader@CPluginManager@@QAEPAUIx_PluginLoader@@XZ').
+symbol(0x411a30, method, '?GetObjectFactory@CPluginManager@@QAEPAUIx_ObjectFactory@@XZ').
+symbol(0x411af0, func, '?MyFunc2@@YAXABVCx_Ptr@@@Z').
+symbol(0x411c10, func, '?Test@@YAXXZ').
+symbol(0x411e10, method, '??0?$Cx_Interface@UIx_Example@@@@QAE@ABVCx_Ptr@@@Z').
+symbol(0x411f00, method, '??0?$Cx_Interface@UIx_Example@@@@QAE@ABVXCLSID@@@Z').
+symbol(0x411ff0, method, '??1?$Cx_Interface@UIx_Example@@@@QAE@XZ').
+symbol(0x412040, method, '??C?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ').
+symbol(0x412080, method, '??B?$Cx_Interface@UIx_Example@@@@QBE_NXZ').
+symbol(0x4120d0, method, '??1?$Cx_Interface@UIx_Example2@@@@QAE@XZ').
+symbol(0x412120, method, '??C?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ').
+symbol(0x412160, method, '?IsNotNull@?$Cx_Interface@UIx_Example2@@@@QBE_NXZ').
+symbol(0x4121b0, method, '?Unload@?$Cx_Interface@UIx_Example@@@@AAEXXZ').
+symbol(0x412250, method, '?Unload@?$Cx_Interface@UIx_Example2@@@@AAEXXZ').
+symbol(0x4122f0, method, '??$?0UIx_Example@@@?$Cx_Interface@UIx_Example2@@@@QAE@ABV?$Cx_Interface@UIx_Example@@@@@Z').
+symbol(0x412400, method, '??$?0UIx_Example2@@@Cx_Ptr@@QAE@ABV?$Cx_Interface@UIx_Example2@@@@@Z').
+symbol(0x4124c0, method, '?P@?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ').
+symbol(0x412500, method, '?P@?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ').
+symbol(0x412540, method, '??1Cx_Ptr@@QAE@XZ').
+symbol(0x412590, method, '?P@Cx_Ptr@@QBEPAUIx_Object@@XZ').
+symbol(0x4125d0, method, '?Unload@Cx_Ptr@@AAEXXZ').
+symbol(0x412660, method, '??0XCLSID@@QAE@PBD@Z').
+symbol(0x4126f0, func, '?xCreateObject@@YAJABVXCLSID@@PAPAUIx_Object@@@Z').
+symbol(0x412800, func, '?xGetModuleHandle@@YAPAUHINSTANCE__@@XZ').
+symbol(0x412830, thunk, '_lstrcpyW@8').
+symbol(0x412836, thunk, '_FreeLibrary@4').
+symbol(0x41283c, thunk, '_LoadLibraryW@4').
+symbol(0x412842, thunk, '_GetModuleHandleW@4').
+symbol(0x412848, thunk, '_GetModuleFileNameW@12').
+symbol(0x41284e, thunk, '_GetProcAddress@8').
+symbol(0x412854, thunk, '_lstrcpynA@12').
+symbol(0x41285a, thunk, '_PathAppendW@8').
+symbol(0x412860, thunk, '_PathRemoveFileSpecW@4').
+symbol(0x412866, thunk, '___CxxFrameHandler3').
+symbol(0x412870, func, '@__security_check_cookie@4').
+symbol(0x412890, func, '__RTC_CheckEsp').
+symbol(0x4128c0, func, '@_RTC_CheckStackVars@8').
+symbol(0x412940, func, '@_RTC_AllocaHelper@12').
+symbol(0x412980, func, '@_RTC_CheckStackVars2@12').
+symbol(0x412a90, func, '__RTC_InitBase').
+symbol(0x412ad0, func, '__RTC_Shutdown').
+symbol(0x412ae8, thunk, '___RTDynamicCast').
+symbol(0x412af0, method, '??0type_info@@AAE@ABV0@@Z').
+symbol(0x412b20, method, '??_Etype_info@@UAEPAXI@Z').
+symbol(0x412bb0, method, '??4type_info@@AAEAAV0@ABV0@@Z').
+symbol(0x412bd0, func, 'pre_c_init').
+symbol(0x412c80, func, 'pre_cpp_init').
+symbol(0x412cf0, func, '_mainCRTStartup').
+symbol(0x412d10, func, '__tmainCRTStartup').
+symbol(0x413010, func, '_NtCurrentTeb').
+symbol(0x413020, func, 'check_managed_app').
+symbol(0x4130b0, func, '___report_gsfailure').
+symbol(0x413210, func, '?_RTC_Failure@@YAXPAXH@Z').
+symbol(0x413280, func, 'failwithmessage').
+symbol(0x413520, func, 'DebuggerProbe').
+symbol(0x4135d0, func, 'DebuggerRuntime').
+symbol(0x4136a0, func, '?_RTC_StackFailure@@YAXPAXPBD@Z').
+symbol(0x4137e0, func, '?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z').
+symbol(0x413960, func, '_getMemBlockDataString').
+symbol(0x4139f0, func, '__RTC_UninitUse').
+symbol(0x413b20, func, '__RTC_NumErrors').
+symbol(0x413b30, func, '__RTC_GetErrDesc').
+symbol(0x413b50, func, '__RTC_SetErrorType').
+symbol(0x413b80, func, '__RTC_SetErrorFunc').
+symbol(0x413bb0, func, '__RTC_SetErrorFuncW').
+symbol(0x413be0, func, '?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z').
+symbol(0x413bf0, func, '?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z').
+symbol(0x413bf6, thunk, '__CRT_RTC_INITW').
+symbol(0x413bfc, thunk, '??3@YAXPAX@Z').
+symbol(0x413c10, func, '??_M@YGXPAXIHP6EX0@Z@Z').
+symbol(0x413cf0, func, '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z').
+symbol(0x413da0, func, 'ArrayUnwindFilter').
+symbol(0x413de0, func, '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z').
+symbol(0x413e60, func, '___CxxSetUnhandledExceptionFilter').
+symbol(0x413e7a, thunk, '__configthreadlocale').
+symbol(0x413e80, func, '__setdefaultprecision').
+symbol(0x413ed0, func, '__invoke_watson_if_error').
+symbol(0x413f02, thunk, '___setusermatherr').
+symbol(0x413f10, func, '__matherr').
+symbol(0x413f20, func, '__setargv').
+symbol(0x413f30, func, '__RTC_Initialize').
+symbol(0x413f60, func, '__RTC_Terminate').
+symbol(0x413f90, func, '__onexit').
+symbol(0x4140c0, func, '_atexit').
+symbol(0x4140e4, thunk, '___set_app_type').
+symbol(0x4140ea, thunk, '__amsg_exit').
+symbol(0x4140f0, thunk, '___getmainargs').
+symbol(0x414100, func, '___security_init_cookie').
+symbol(0x414218, thunk, '__exit').
+symbol(0x41421e, thunk, '__XcptFilter').
+symbol(0x414224, thunk, '__cexit').
+symbol(0x41422a, thunk, '_exit').
+symbol(0x414230, thunk, '__CrtSetCheckCount').
+symbol(0x414240, func, '__ValidateImageBase').
+symbol(0x4142c0, func, '__FindPESection').
+symbol(0x414360, func, '__IsNonwritableInCurrentImage').
+symbol(0x4144b6, thunk, '__CrtDbgReportW').
+symbol(0x4144bc, thunk, '__initterm').
+symbol(0x4144c2, thunk, '__initterm_e').
+symbol(0x4144d0, func, '__except_handler4').
+symbol(0x414504, thunk, '__crt_debugger_hook').
+symbol(0x414510, func, '?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z').
+symbol(0x414880, func, 'GetPdbDll').
+symbol(0x414ae6, thunk, '?terminate@@YAXXZ').
+symbol(0x414aec, thunk, '??1type_info@@UAE@XZ').
+symbol(0x414aec, thunk, '?_type_info_dtor_internal_method@type_info@@QAEXXZ').
+symbol(0x414af2, thunk, '__controlfp_s').
+symbol(0x414af8, thunk, '__invoke_watson').
+symbol(0x414afe, thunk, '__unlock').
+symbol(0x414b04, thunk, '___dllonexit').
+symbol(0x414b0a, thunk, '__lock').
+symbol(0x414b10, thunk, '__except_handler4_common').
+symbol(0x414b16, thunk, '_EncodePointer@4').
+symbol(0x414b1c, thunk, '_InterlockedExchange@8').
+symbol(0x414b22, thunk, '_Sleep@4').
+symbol(0x414b28, thunk, '_InterlockedCompareExchange@12').
+symbol(0x414b2e, thunk, '_HeapSetInformation@16').
+symbol(0x414b34, thunk, '_TerminateProcess@8').
+symbol(0x414b3a, thunk, '_GetCurrentProcess@0').
+symbol(0x414b40, thunk, '_UnhandledExceptionFilter@4').
+symbol(0x414b46, thunk, '_SetUnhandledExceptionFilter@4').
+symbol(0x414b4c, thunk, '_IsDebuggerPresent@0').
+symbol(0x414b52, thunk, '_WideCharToMultiByte@32').
+symbol(0x414b58, thunk, '_MultiByteToWideChar@24').
+symbol(0x414b5e, thunk, '_RaiseException@16').
+symbol(0x414b64, thunk, '_lstrlenA@4').
+symbol(0x414b6a, thunk, '_DecodePointer@4').
+symbol(0x414b70, thunk, '_QueryPerformanceCounter@4').
+symbol(0x414b76, thunk, '_GetTickCount@0').
+symbol(0x414b7c, thunk, '_GetCurrentThreadId@0').
+symbol(0x414b82, thunk, '_GetCurrentProcessId@0').
+symbol(0x414b88, thunk, '_GetSystemTimeAsFileTime@4').
+symbol(0x414b8e, thunk, '_HeapFree@12').
+symbol(0x414b94, thunk, '_HeapAlloc@12').
+symbol(0x414b9a, thunk, '_GetProcessHeap@0').
+symbol(0x414ba0, thunk, '_VirtualQuery@12').
+symbol(0x416ba0, func, '`dynamic initializer for \'CLSID_Example\'\'').
+symbol(0x418000, name, '___xc_a').
+symbol(0x41830c, name, '___xc_z').
+symbol(0x418410, name, '___xi_a').
+symbol(0x41871c, name, '___xi_z').
+symbol(0x41883c, string, '??_C@_1DC@NGIGEBPF@?$AAW?$AAi?$AAn?$AA3?$AA2?$AAD?$AAl?$AAl?$AAT?$AAe?$AAm?$AAp?$AAl?$AA?4?$AAp?$AAl?$AAu?$AAg?$AAi?$AAn?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@').
+symbol(0x418878, string, '??_C@_1BG@NJLFECCN@?$AA?4?$AA?4?$AA?1?$AAP?$AAl?$AAu?$AAg?$AAi?$AAn?$AAs?$AA?$AA@').
+symbol(0x418894, string, '??_C@_1CI@PMKPAOJH@?$AAP?$AAl?$AAu?$AAg?$AAi?$AAn?$AAM?$AAa?$AAn?$AAa?$AAg?$AAe?$AAr?$AAX?$AA3?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@').
+symbol(0x4188c4, string, '??_C@_0BB@HDMKBDMO@xGetRegisterBank?$AA@').
+symbol(0x4188d8, string, '??_C@_0CF@EFJGDGGK@86347b32?964e4?9490c?9b273?9ec7e010f@').
+symbol(0x418904, string, '??_C@_00CNPNBAHC@?$AA@').
+symbol(0x41890c, table, '??_7type_info@@6B@').
+symbol(0x418918, string, '??_C@_1GA@EHAKPACL@?$AAf?$AA?3?$AA?2?$AAd?$AAd?$AA?2?$AAv?$AAc?$AAt?$AAo?$AAo?$AAl?$AAs?$AA?2?$AAc?$AAr?$AAt?$AA_?$AAb?$AAl?$AAd?$AA?2?$AAs?$AAe?$AAl?$AAf?$AA_?$AAx?$AA8?$AA6?$AA?2?$AAc@').
+symbol(0x418990, string, '??_C@_1FA@DALEHHGL@?$AA_?$AA_?$AAn?$AAa?$AAt?$AAi?$AAv?$AAe?$AA_?$AAs?$AAt?$AAa?$AAr?$AAt?$AAu?$AAp?$AA_?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?5?$AA?$DN?$AA?$DN?$AA?5?$AA_?$AA_?$AAi?$AAn?$AAi?$AAt@').
+symbol(0x4189fc, string, '??_C@_0BO@GNIAFIKK@Unknown?5Runtime?5Check?5Error?6?$AN?$AA@').
+symbol(0x418a20, string, '??_C@_0CM@NGINOKPC@Stack?5memory?5around?5_alloca?5was?5@').
+symbol(0x418a54, string, '??_C@_0DG@HKJMLLLP@A?5local?5variable?5was?5used?5before@').
+symbol(0x418a94, string, '??_C@_0BN@FFOINMNJ@Stack?5memory?5was?5corrupted?6?$AN?$AA@').
+symbol(0x418ab8, string, '??_C@_0BBN@GPMLNJCF@A?5cast?5to?5a?5smaller?5data?5type?5ha@').
+symbol(0x418c10, string, '??_C@_0NN@NGPKDKPD@The?5value?5of?5ESP?5was?5not?5properl@').
+symbol(0x418dd8, string, '??_C@_0CA@IODNCDPG@Run?9Time?5Check?5Failure?5?$CD?$CFd?5?9?5?$CFs?$AA@').
+symbol(0x418e00, string, '??_C@_0BE@GNBOBNCK@Unknown?5Module?5Name?$AA@').
+symbol(0x418e18, string, '??_C@_0BB@PFFGGCJP@Unknown?5Filename?$AA@').
+symbol(0x418e30, string, '??_C@_1EA@NFKNIFJP@?$AAR?$AAu?$AAn?$AA?9?$AAT?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAu?$AAr?$AAe?$AA?5?$AA?$CD?$AA?$CF?$AAd?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAs?$AA?$AA@').
+symbol(0x418e80, string, '??_C@_1GM@OLMCBDMB@?$AAR?$AAu?$AAn?$AAt?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?4?$AA?6?$AA?$AN?$AA?5?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo@').
+symbol(0x418f04, string, '??_C@_0CG@IAFNJNEE@Stack?5corrupted?5near?5unknown?5var@').
+symbol(0x418f38, string, '??_C@_0EJ@LJKNEOLN@Stack?5area?5around?5_alloca?5memory@').
+symbol(0x418f90, string, '??_C@_08KJEDNCKC@?$CFs?$CFs?$CFs?$CFs?$AA@').
+symbol(0x418f9c, string, '??_C@_02LLMPMKNF@?$DO?5?$AA@').
+symbol(0x418fa0, string, '??_C@_01EEMJAFIK@?6?$AA@').
+symbol(0x418fa4, string, '??_C@_0BC@KIBAILCI@?$CFs?$CFs?$CFp?$CFs?$CFld?$CFs?$CFd?$CFs?$AA@').
+symbol(0x418fc0, string, '??_C@_0EI@CLEPFNGI@Stack?5area?5around?5_alloca?5memory@').
+symbol(0x419018, string, '??_C@_0N@MHFFIMFG@?6Address?3?50x?$AA@').
+symbol(0x419028, string, '??_C@_07DFDJCKFN@?6Size?3?5?$AA@').
+symbol(0x419034, string, '??_C@_0CK@DKGBICFE@?6Allocation?5number?5within?5this?5f@').
+symbol(0x419068, string, '??_C@_08OMAHNMHJ@?6Data?3?5?$DM?$AA@').
+symbol(0x419074, string, '??_C@_09FOPFMPEJ@wsprintfA?$AA@').
+symbol(0x419080, string, '??_C@_1BG@OILDLIOJ@?$AAu?$AAs?$AAe?$AAr?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@').
+symbol(0x41909c, string, '??_C@_05MKKEDADM@?$CF?42X?5?$AA@').
+symbol(0x4190a4, string, '??_C@_0DE@OHJBPMBP@A?5variable?5is?5being?5used?5without@').
+symbol(0x4190e4, string, '??_C@_0BP@OGBCLIBO@Stack?5around?5_alloca?5corrupted?$AA@').
+symbol(0x41910c, string, '??_C@_0CK@CNLNOEPB@Local?5variable?5used?5before?5initi@').
+symbol(0x419140, string, '??_C@_0BI@CIGMDCBH@Stack?5memory?5corruption?$AA@').
+symbol(0x41915c, string, '??_C@_0CK@FEGOIOPB@Cast?5to?5smaller?5type?5causing?5los@').
+symbol(0x419190, string, '??_C@_0BJ@HEGAHDFO@Stack?5pointer?5corruption?$AA@').
+symbol(0x4191c8, name, '?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x4191cc, name, '?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x4191d0, name, '?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x4191d4, name, '?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x4191d8, name, '?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x4191e0, string, '??_C@_1GE@KOCFNGPB@?$AA_?$AAc?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAf?$AAp?$AA_?$AAs?$AA?$CI?$AA?$CI?$AA?$CI?$AAv?$AAo?$AAi?$AAd?$AA?5?$AA?$CK?$AA?$CJ?$AA0?$AA?$CJ?$AA?0?$AA?5?$AA0?$AAx?$AA0?$AA0?$AA0?$AA1@').
+symbol(0x419258, string, '??_C@_1CK@JMKHCBEI@?$AA_?$AAs?$AAe?$AAt?$AAd?$AAe?$AAf?$AAa?$AAu?$AAl?$AAt?$AAp?$AAr?$AAe?$AAc?$AAi?$AAs?$AAi?$AAo?$AAn?$AA?$AA@').
+symbol(0x419290, string, '??_C@_1GG@PHGJJHBC@?$AAf?$AA?3?$AA?2?$AAd?$AAd?$AA?2?$AAv?$AAc?$AAt?$AAo?$AAo?$AAl?$AAs?$AA?2?$AAc?$AAr?$AAt?$AA_?$AAb?$AAl?$AAd?$AA?2?$AAs?$AAe?$AAl?$AAf?$AA_?$AAx?$AA8?$AA6?$AA?2?$AAc@').
+symbol(0x41932c, string, '??_C@_01KDCPPGHE@r?$AA@').
+symbol(0x419330, string, '??_C@_0BB@KCIACLNC@PDBOpenValidate5?$AA@').
+symbol(0x419344, string, '??_C@_1CK@HHHCOJPD@?$AAE?$AAn?$AAv?$AAi?$AAr?$AAo?$AAn?$AAm?$AAe?$AAn?$AAt?$AAD?$AAi?$AAr?$AAe?$AAc?$AAt?$AAo?$AAr?$AAy?$AA?$AA@').
+symbol(0x419378, string, '??_C@_1FM@DNCABAP@?$AAS?$AAO?$AAF?$AAT?$AAW?$AAA?$AAR?$AAE?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?2?$AAV?$AAi?$AAs?$AAu?$AAa?$AAl?$AAS?$AAt?$AAu?$AAd?$AAi?$AAo?$AA?2@').
+symbol(0x4193e8, string, '??_C@_0M@HLOHPNFA@RegCloseKey?$AA@').
+symbol(0x4193f8, string, '??_C@_0BB@GLNAEDBD@RegQueryValueExW?$AA@').
+symbol(0x41940c, string, '??_C@_0O@COHOBMLB@RegOpenKeyExW?$AA@').
+symbol(0x41941c, string, '??_C@_1BK@GAEMIDIL@?$AAA?$AAD?$AAV?$AAA?$AAP?$AAI?$AA3?$AA2?$AA?4?$AAD?$AAL?$AAL?$AA?$AA@').
+symbol(0x4196b8, table, '??_R4type_info@@6B@').
+symbol(0x4196d0, name, '??_R3type_info@@8').
+symbol(0x4196e4, name, '??_R2type_info@@8').
+symbol(0x4196ec, name, '??_R1A@?0A@EA@type_info@@8').
+symbol(0x419810, name, '___rtc_iaa').
+symbol(0x419a20, name, '___rtc_izz').
+symbol(0x419b24, name, '___rtc_taa').
+symbol(0x419d34, name, '___rtc_tzz').
+symbol(0x41b000, name, '??_R0?AUIx_ObjectFactory@@@8').
+symbol(0x41b028, name, '??_R0?AUIx_PluginLoader@@@8').
+symbol(0x41b04c, name, '??_R0?AUIx_Object@@@8').
+symbol(0x41b068, name, '??_R0?AUIx_Example@@@8').
+symbol(0x41b088, name, '??_R0?AUIx_Example2@@@8').
+symbol(0x41b0a8, name, '___security_cookie').
+symbol(0x41b0ac, name, '___security_cookie_complement').
+symbol(0x41b0b0, name, '??_R0?AVtype_info@@@8').
+symbol(0x41b0cc, name, '?_RTC_ErrorLevels@@3PAHA').
+symbol(0x41b0e4, name, '___globallocalestatus').
+symbol(0x41b0e8, name, '___defaultmatherr').
+symbol(0x41b0ec, name, '___native_dllmain_reason').
+symbol(0x41b0f0, name, '___native_vcclrit_reason').
+symbol(0x41b624, name, '?wsprintffp@@3P6AHPADPBDZZA').
+symbol(0x41b634, name, '__commode').
+symbol(0x41b638, name, '__fmode').
+symbol(0x41b63c, name, '__dowildcard').
+symbol(0x41b640, name, '__newmode').
+symbol(0x41b64c, name, '___native_startup_state').
+symbol(0x41b65c, name, '___native_startup_lock').
+symbol(0x41b660, name, '___onexitend').
+symbol(0x41b670, name, '___onexitbegin').
+symbol(0x41b674, name, '__NoHeapEnableTerminationOnCorruption').
+symbol(0x41b678, name, '___dyn_tls_init_callback').
+symbol(0x41c000, name, '__IMPORT_DESCRIPTOR_KERNEL32').
+symbol(0x41c014, name, '__IMPORT_DESCRIPTOR_SHLWAPI').
+symbol(0x41c028, name, '__IMPORT_DESCRIPTOR_MSVCR100D').
+symbol(0x41c03c, name, '__NULL_IMPORT_DESCRIPTOR').
+symbol(0x41c200, name, '__imp__lstrcpyW@8').
+symbol(0x41c204, name, '__imp__FreeLibrary@4').
+symbol(0x41c208, name, '__imp__LoadLibraryW@4').
+symbol(0x41c20c, name, '__imp__GetModuleHandleW@4').
+symbol(0x41c210, name, '__imp__GetModuleFileNameW@12').
+symbol(0x41c214, name, '__imp__GetProcAddress@8').
+symbol(0x41c218, name, '__imp__lstrcpynA@12').
+symbol(0x41c21c, name, '__imp__GetProcessHeap@0').
+symbol(0x41c220, name, '__imp__HeapAlloc@12').
+symbol(0x41c224, name, '__imp__HeapFree@12').
+symbol(0x41c228, name, '__imp__GetSystemTimeAsFileTime@4').
+symbol(0x41c22c, name, '__imp__GetCurrentProcessId@0').
+symbol(0x41c230, name, '__imp__GetCurrentThreadId@0').
+symbol(0x41c234, name, '__imp__GetTickCount@0').
+symbol(0x41c238, name, '__imp__QueryPerformanceCounter@4').
+symbol(0x41c23c, name, '__imp__DecodePointer@4').
+symbol(0x41c240, name, '__imp__lstrlenA@4').
+symbol(0x41c244, name, '__imp__RaiseException@16').
+symbol(0x41c248, name, '__imp__MultiByteToWideChar@24').
+symbol(0x41c24c, name, '__imp__WideCharToMultiByte@32').
+symbol(0x41c250, name, '__imp__IsDebuggerPresent@0').
+symbol(0x41c254, name, '__imp__SetUnhandledExceptionFilter@4').
+symbol(0x41c258, name, '__imp__UnhandledExceptionFilter@4').
+symbol(0x41c25c, name, '__imp__GetCurrentProcess@0').
+symbol(0x41c260, name, '__imp__TerminateProcess@8').
+symbol(0x41c264, name, '__imp__HeapSetInformation@16').
+symbol(0x41c268, name, '__imp__InterlockedCompareExchange@12').
+symbol(0x41c26c, name, '__imp__Sleep@4').
+symbol(0x41c270, name, '__imp__InterlockedExchange@8').
+symbol(0x41c274, name, '__imp__EncodePointer@4').
+symbol(0x41c278, name, '__imp__VirtualQuery@12').
+symbol(0x41c27c, name, 'KERNEL32_NULL_THUNK_DATA').
+symbol(0x41c2c0, name, '__imp___crt_debugger_hook').
+symbol(0x41c2c4, method, '__imp_?_type_info_dtor_internal_method@type_info@@QAEXXZ').
+symbol(0x41c2c8, name, '__imp___controlfp_s').
+symbol(0x41c2cc, name, '__imp___invoke_watson').
+symbol(0x41c2d0, name, '__imp___unlock').
+symbol(0x41c2d4, name, '__imp____dllonexit').
+symbol(0x41c2d8, name, '__imp___lock').
+symbol(0x41c2dc, name, '__imp___onexit').
+symbol(0x41c2e0, name, '__imp___except_handler4_common').
+symbol(0x41c2e4, name, '__imp___initterm_e').
+symbol(0x41c2e8, name, '__imp___initterm').
+symbol(0x41c2ec, name, '__imp___CrtDbgReportW').
+symbol(0x41c2f0, name, '__imp___CrtSetCheckCount').
+symbol(0x41c2f4, name, '__imp____initenv').
+symbol(0x41c2f8, name, '__imp__exit').
+symbol(0x41c2fc, name, '__imp___cexit').
+symbol(0x41c300, name, '__imp___XcptFilter').
+symbol(0x41c304, name, '__imp___exit').
+symbol(0x41c308, name, '__imp____getmainargs').
+symbol(0x41c30c, name, '__imp___amsg_exit').
+symbol(0x41c310, name, '__imp____set_app_type').
+symbol(0x41c314, name, '__imp___fmode').
+symbol(0x41c318, name, '__imp___commode').
+symbol(0x41c31c, name, '__imp____setusermatherr').
+symbol(0x41c320, name, '__imp___configthreadlocale').
+symbol(0x41c324, name, '__imp_??3@YAXPAX@Z').
+symbol(0x41c328, name, '__imp___CRT_RTC_INITW').
+symbol(0x41c32c, name, '__imp____RTDynamicCast').
+symbol(0x41c330, name, '__imp____CxxFrameHandler3').
+symbol(0x41c334, name, '__imp_?terminate@@YAXXZ').
+symbol(0x41c338, name, 'MSVCR100D_NULL_THUNK_DATA').
+symbol(0x41c37c, name, '__imp__PathAppendW@8').
+symbol(0x41c380, name, '__imp__PathRemoveFileSpecW@4').
+symbol(0x41c384, name, 'SHLWAPI_NULL_THUNK_DATA').
+% Gound inheritance relationships.
+% Ground inheritance completed successfully.

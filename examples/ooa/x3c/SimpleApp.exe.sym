@@ -1,0 +1,621 @@
+17:23:35 Grounding...
+17:23:35 Grounding done (0.02s)
+17:23:35 Solving...
+17:23:35 Model found (0.03s): [-281]
+17:23:35 Model found (0.03s, +0.00s): [-282]
+17:23:35 Model found (0.03s, +0.00s): [-286]
+17:23:35 Model found (0.04s, +0.00s): [-287]
+17:23:35 Model found (0.04s, +0.00s): [-288]
+17:23:35 Model found (0.04s, +0.00s): [-289]
+17:23:35 Model found (0.04s, +0.00s): [-290]
+17:23:35 Model found (0.04s, +0.00s): [-291]
+17:23:35 Model found (0.05s, +0.00s): [-292]
+17:23:35 Model found (0.05s, +0.00s): [-293]
+17:23:35 Solving done: OPTIMUM FOUND (0.03s)
+% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/x3c/SimpleApp.exe.results
+OPTIMUM FOUND
+
+Answer: 10
+Optimization: -293
+
+% Equivalence classes (275 classes, 282 entities):
+
+
+% Stats:
+%   atoms: 7889.0
+%   bodies: 1586.0
+%   rules: 8477.0
+%   variables: 1204.0
+%   constraints: 0.0
+%   choices: 914.0
+%   conflicts: 7.0
+%   models: 10.0
+%   optimal_models: 1.0
+%   final_cost: [-293.0]
+%   lower_bound: [-293.0]
+%   total_time: 0.06105995178222656
+%   ground_time: 0.017995051108300686
+%   time_to_first_model: 0.028847350273281336
+%   max_rss_bytes: 28311552
+%   solve_time: 0.022094011306762695
+-vfTable(type_info::vftable@4294924)
+classCallsMethod(CPluginManager::GetPluginLoader@4266432,CPluginManager::GetObjectFactory@4266544)
+classCallsMethod(CPluginManager::Unload@4265936,CPluginManager::GetPluginLoader@4266432)
+classCallsMethod(CPluginManager::~CPluginManager@4265840,CPluginManager::Unload@4265936)
+classCallsMethod(Cx_Interface<struct Ix_Example2>::~Cx_Interface@4268240,Cx_Interface<struct Ix_Example2>::Unload@4268624)
+classCallsMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@4268016,Cx_Interface<struct Ix_Example>::Unload@4268464)
+classCallsMethod(Cx_Ptr::~Cx_Ptr@4269376,Cx_Ptr::Unload@4269520)
+classCallsMethod(type_info::vector_deleting_destructor@4270880,type_info::_type_info_dtor_internal_method@4309700)
+constructor(type_info::type_info@4270832)
+deletingDestructor(type_info::vector_deleting_destructor@4270880)
+guessEnabled(constructor)
+guessEnabled(derived_class)
+guessEnabled(merge)
+guessEnabled(method)
+guessEnabled(vftable)
+guessEnabled(vftable_size)
+guessEnabled(weak_g1_bonus)
+mergeClasses(CPluginManager::GetPluginLoader@4266432,CPluginManager::GetObjectFactory@4266544)
+mergeClasses(CPluginManager::Unload@4265936,CPluginManager::GetPluginLoader@4266432)
+mergeClasses(CPluginManager::~CPluginManager@4265840,CPluginManager::Unload@4265936)
+mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@4268240,Cx_Interface<struct Ix_Example2>::Unload@4268624)
+mergeClasses(Cx_Interface<struct Ix_Example>::~Cx_Interface@4268016,Cx_Interface<struct Ix_Example>::Unload@4268464)
+mergeClasses(Cx_Ptr::~Cx_Ptr@4269376,Cx_Ptr::Unload@4269520)
+mergeClasses(type_info::vector_deleting_destructor@4270880,type_info::_type_info_dtor_internal_method@4309700)
+method(4275346)
+method(4276323)
+method(4283104)
+method(4283115)
+method(4283168)
+method(4283176)
+method(4283216)
+method(4283224)
+method(4283232)
+method(4283243)
+method(4287392)
+method(??$?0UIx_Example2@@@Cx_Ptr@@QAE@ABV?$Cx_Interface@UIx_Example2@@@@@Z@4263996)
+method(??$?0UIx_Example@@@?$Cx_Interface@UIx_Example2@@@@QAE@ABV?$Cx_Interface@UIx_Example@@@@@Z@4264396)
+method(??0?$Cx_Interface@UIx_Example@@@@QAE@ABVCx_Ptr@@@Z@4263991)
+method(??0?$Cx_Interface@UIx_Example@@@@QAE@ABVXCLSID@@@Z@4264306)
+method(??0CPluginManager@@QAE@XZ@4264056)
+method(??0XCLSID@@QAE@PBD@Z@4264326)
+method(??0type_info@@AAE@ABV0@@Z@4264501)
+method(??1?$Cx_Interface@UIx_Example2@@@@QAE@XZ@4263951)
+method(??1?$Cx_Interface@UIx_Example@@@@QAE@XZ@4264571)
+method(??1CPluginManager@@QAE@XZ@4264001)
+method(??1Cx_Ptr@@QAE@XZ@4263946)
+method(??1type_info@@UAE@XZ@4264051)
+method(??1type_info@@UAE@XZ@4264146)
+method(??1type_info@@UAE@XZ@4279020)
+method(??3@YAXPAX@Z@4264141)
+method(??3@YAXPAX@Z@4275196)
+method(??4type_info@@AAEAAV0@ABV0@@Z@4263986)
+method(??B?$Cx_Interface@UIx_Example@@@@QBE_NXZ@4264236)
+method(??C?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ@4263971)
+method(??C?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ@4264311)
+method(??_Etype_info@@UAEPAXI@Z@4264191)
+method(??_M@YGXPAXIHP6EX0@Z@Z@4264576)
+method(??_M@YGXPAXIHP6EX0@Z@Z@4275216)
+method(?GetObjectFactory@CPluginManager@@QAEPAUIx_ObjectFactory@@XZ@4264511)
+method(?GetPluginLoader@CPluginManager@@QAEPAUIx_PluginLoader@@XZ@4264246)
+method(?IsNotNull@?$Cx_Interface@UIx_Example2@@@@QBE_NXZ@4264241)
+method(?LoadPluginManager@CPluginManager@@QAE_NPB_WPAUHINSTANCE__@@@Z@4264061)
+method(?MyFunc2@@YAXABVCx_Ptr@@@Z@4264551)
+method(?P@?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ@4264271)
+method(?P@?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ@4263961)
+method(?P@Cx_Ptr@@QBEPAUIx_Object@@XZ@4264371)
+method(?Test@@YAXXZ@4264071)
+method(?Unload@?$Cx_Interface@UIx_Example2@@@@AAEXXZ@4264346)
+method(?Unload@?$Cx_Interface@UIx_Example@@@@AAEXXZ@4264401)
+method(?Unload@CPluginManager@@QAEX_N@Z@4264036)
+method(?Unload@Cx_Ptr@@AAEXXZ@4264476)
+method(?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z@4264556)
+method(?_RTC_Failure@@YAXPAXH@Z@4264546)
+method(?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z@4264591)
+method(?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z@4264021)
+method(?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z@4264426)
+method(?_RTC_StackFailure@@YAXPAXPBD@Z@4264221)
+method(?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z@4264536)
+method(?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z@4264331)
+method(?terminate@@YAXXZ@4264156)
+method(?terminate@@YAXXZ@4279014)
+method(?xCreateObject@@YAJABVXCLSID@@PAPAUIx_Object@@@Z@4264066)
+method(?xGetModuleHandle@@YAPAUHINSTANCE__@@XZ@4264461)
+method(@_RTC_AllocaHelper@12@4264016)
+method(@_RTC_AllocaHelper@12@4270400)
+method(@_RTC_CheckStackVars2@12@4264361)
+method(@_RTC_CheckStackVars2@12@4270464)
+method(@_RTC_CheckStackVars@8@4264136)
+method(@_RTC_CheckStackVars@8@4270272)
+method(@__security_check_cookie@4@4263976)
+method(@__security_check_cookie@4@4270192)
+method(ArrayUnwindFilter@4275616)
+method(CPluginManager::CPluginManager@4265712)
+method(CPluginManager::GetObjectFactory@4266544)
+method(CPluginManager::GetPluginLoader@4266432)
+method(CPluginManager::LoadPluginManager@4266128)
+method(CPluginManager::Unload@4265936)
+method(CPluginManager::~CPluginManager@4265840)
+method(Cx_Interface<struct Ix_Example2>::Cx_Interface@4268784)
+method(Cx_Interface<struct Ix_Example2>::IsNotNull@4268384)
+method(Cx_Interface<struct Ix_Example2>::P@4269312)
+method(Cx_Interface<struct Ix_Example2>::Unload@4268624)
+method(Cx_Interface<struct Ix_Example2>::operator->@4268320)
+method(Cx_Interface<struct Ix_Example2>::~Cx_Interface@4268240)
+method(Cx_Interface<struct Ix_Example>::Cx_Interface@4267536)
+method(Cx_Interface<struct Ix_Example>::Cx_Interface@4267776)
+method(Cx_Interface<struct Ix_Example>::P@4269248)
+method(Cx_Interface<struct Ix_Example>::Unload@4268464)
+method(Cx_Interface<struct Ix_Example>::operator bool@4268160)
+method(Cx_Interface<struct Ix_Example>::operator->@4268096)
+method(Cx_Interface<struct Ix_Example>::~Cx_Interface@4268016)
+method(Cx_Ptr::Cx_Ptr@4269056)
+method(Cx_Ptr::P@4269456)
+method(Cx_Ptr::Unload@4269520)
+method(Cx_Ptr::~Cx_Ptr@4269376)
+method(DebuggerProbe@4273440)
+method(DebuggerRuntime@4273616)
+method(GetPdbDll@4278400)
+method(XCLSID::XCLSID@4269664)
+method(_DecodePointer@4@4264416)
+method(_DecodePointer@4@4279146)
+method(_EncodePointer@4@4264386)
+method(_EncodePointer@4@4279062)
+method(_FreeLibrary@4@4264581)
+method(_FreeLibrary@4@4270134)
+method(_GetCurrentProcess@0@4264176)
+method(_GetCurrentProcess@0@4279098)
+method(_GetCurrentProcessId@0@4264356)
+method(_GetCurrentProcessId@0@4279170)
+method(_GetCurrentThreadId@0@4264166)
+method(_GetCurrentThreadId@0@4279164)
+method(_GetModuleFileNameW@12@4264076)
+method(_GetModuleFileNameW@12@4270152)
+method(_GetModuleHandleW@4@4264516)
+method(_GetModuleHandleW@4@4270146)
+method(_GetProcAddress@8@4264131)
+method(_GetProcAddress@8@4270158)
+method(_GetProcessHeap@0@4264261)
+method(_GetProcessHeap@0@4279194)
+method(_GetSystemTimeAsFileTime@4@4264411)
+method(_GetSystemTimeAsFileTime@4@4279176)
+method(_GetTickCount@0@4264436)
+method(_GetTickCount@0@4279158)
+method(_HeapAlloc@12@4264451)
+method(_HeapAlloc@12@4279188)
+method(_HeapFree@12@4264291)
+method(_HeapFree@12@4279182)
+method(_HeapSetInformation@16@4264206)
+method(_HeapSetInformation@16@4279086)
+method(_InterlockedCompareExchange@12@4264256)
+method(_InterlockedCompareExchange@12@4279080)
+method(_InterlockedExchange@8@4264491)
+method(_InterlockedExchange@8@4279068)
+method(_IsDebuggerPresent@0@4263981)
+method(_IsDebuggerPresent@0@4279116)
+method(_LoadLibraryW@4@4264201)
+method(_LoadLibraryW@4@4270140)
+method(_MultiByteToWideChar@24@4264111)
+method(_MultiByteToWideChar@24@4279128)
+method(_NtCurrentTeb@4264286)
+method(_NtCurrentTeb@4272144)
+method(_PathAppendW@8@4264276)
+method(_PathAppendW@8@4270170)
+method(_PathRemoveFileSpecW@4@4264026)
+method(_PathRemoveFileSpecW@4@4270176)
+method(_QueryPerformanceCounter@4@4264341)
+method(_QueryPerformanceCounter@4@4279152)
+method(_RaiseException@16@4264226)
+method(_RaiseException@16@4279134)
+method(_SetUnhandledExceptionFilter@4@4264086)
+method(_SetUnhandledExceptionFilter@4@4279110)
+method(_Sleep@4@4264046)
+method(_Sleep@4@4279074)
+method(_TerminateProcess@8@4264316)
+method(_TerminateProcess@8@4279092)
+method(_UnhandledExceptionFilter@4@4264496)
+method(_UnhandledExceptionFilter@4@4279104)
+method(_VirtualQuery@12@4264101)
+method(_VirtualQuery@12@4279200)
+method(_WideCharToMultiByte@32@4264011)
+method(_WideCharToMultiByte@32@4279122)
+method(__CRT_RTC_INITW@4264431)
+method(__CRT_RTC_INITW@4275190)
+method(__CrtDbgReportW@4264096)
+method(__CrtDbgReportW@4277430)
+method(__CrtSetCheckCount@4264481)
+method(__CrtSetCheckCount@4276784)
+method(__FindPESection@4264196)
+method(__FindPESection@4276928)
+method(__IsNonwritableInCurrentImage@4264441)
+method(__IsNonwritableInCurrentImage@4277088)
+method(__RTC_CheckEsp@4264376)
+method(__RTC_CheckEsp@4270224)
+method(__RTC_GetErrDesc@4263966)
+method(__RTC_GetErrDesc@4274992)
+method(__RTC_InitBase@4264216)
+method(__RTC_InitBase@4270736)
+method(__RTC_Initialize@4264391)
+method(__RTC_Initialize@4276016)
+method(__RTC_NumErrors@4264031)
+method(__RTC_NumErrors@4274976)
+method(__RTC_SetErrorFunc@4264296)
+method(__RTC_SetErrorFunc@4275072)
+method(__RTC_SetErrorFuncW@4264266)
+method(__RTC_SetErrorFuncW@4275120)
+method(__RTC_SetErrorType@4264116)
+method(__RTC_Shutdown@4264186)
+method(__RTC_Shutdown@4270800)
+method(__RTC_Terminate@4264006)
+method(__RTC_Terminate@4276064)
+method(__RTC_UninitUse@4264181)
+method(__RTC_UninitUse@4274672)
+method(__ValidateImageBase@4264251)
+method(__ValidateImageBase@4276800)
+method(__XcptFilter@4264466)
+method(__XcptFilter@4276766)
+method(___CxxFrameHandler3@4264446)
+method(___CxxFrameHandler3@4270182)
+method(___CxxSetUnhandledExceptionFilter@4264336)
+method(___CxxSetUnhandledExceptionFilter@4275808)
+method(___RTDynamicCast@4264526)
+method(___RTDynamicCast@4270824)
+method(___dllonexit@4264566)
+method(___dllonexit@4279044)
+method(___getmainargs@4264531)
+method(___getmainargs@4276464)
+method(___report_gsfailure@4272304)
+method(___security_init_cookie@4264081)
+method(___security_init_cookie@4276480)
+method(___set_app_type@4264366)
+method(___set_app_type@4276452)
+method(___setusermatherr@4264041)
+method(___setusermatherr@4275970)
+method(__amsg_exit@4264456)
+method(__amsg_exit@4276458)
+method(__cdecl MyFunc2(class Cx_Ptr const &)@4266736)
+method(__cdecl Test(void)@4267024)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4274144)
+method(__cdecl _RTC_Failure(*, int)@4272656)
+method(__cdecl _RTC_StackFailure(*, char const *)@4273824)
+method(__cexit@4264091)
+method(__cexit@4276772)
+method(__configthreadlocale@4264211)
+method(__configthreadlocale@4275834)
+method(__controlfp_s@4264406)
+method(__controlfp_s@4279026)
+method(__crt_debugger_hook@4264231)
+method(__crt_debugger_hook@4277508)
+method(__except_handler4@4264121)
+method(__except_handler4@4277456)
+method(__except_handler4_common@4264506)
+method(__except_handler4_common@4279056)
+method(__exit@4264161)
+method(__exit@4276760)
+method(__initterm@4264171)
+method(__initterm@4277436)
+method(__initterm_e@4264586)
+method(__initterm_e@4277442)
+method(__invoke_watson@4264421)
+method(__invoke_watson@4279032)
+method(__invoke_watson_if_error@4264301)
+method(__invoke_watson_if_error@4275920)
+method(__lock@4264126)
+method(__lock@4279050)
+method(__matherr@4264521)
+method(__matherr@4275984)
+method(__onexit@4264281)
+method(__onexit@4276112)
+method(__setargv@4263956)
+method(__setargv@4276000)
+method(__setdefaultprecision@4263941)
+method(__setdefaultprecision@4275840)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (__thiscall*)(*) )@4275440)
+method(__tmainCRTStartup@4271376)
+method(__unlock@4264351)
+method(__unlock@4279038)
+method(_atexit@4264106)
+method(_atexit@4276416)
+method(_exit@4264561)
+method(_exit@4276778)
+method(_getMemBlockDataString@4274528)
+method(_lstrcpyW@8@4264486)
+method(_lstrcpyW@8@4270128)
+method(_lstrcpynA@12@4264471)
+method(_lstrcpynA@12@4270164)
+method(_lstrlenA@4@4264541)
+method(_lstrlenA@4@4279140)
+method(_main@4264381)
+method(_main@4265264)
+method(_mainCRTStartup@4264321)
+method(_mainCRTStartup@4271344)
+method(check_managed_app@4272160)
+method(failwithmessage@4272768)
+method(int (__cdecl*__cdecl _RTC_GetErrorFunc(const *) )(int, char const *, int, char const *, char const *, ...)@4275168)
+method(int (__cdecl*__cdecl _RTC_GetErrorFuncW(const *) )(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4275184)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4277520)
+method(long __cdecl xCreateObject(class XCLSID const &, struct Ix_Object * *)@4269808)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4275680)
+method(pre_c_init@4271056)
+method(pre_cpp_init@4271232)
+method(struct HINSTANCE__ * __cdecl xGetModuleHandle(void)@4270080)
+method(type_info::_type_info_dtor_internal_method@4309700)
+method(type_info::operator=@4271024)
+method(type_info::type_info@4270832)
+method(type_info::vector_deleting_destructor@4270880)
+vftableSizeTotal(0)
+%   {4275346}
+%   {4276323}
+%   {4283104}
+%   {4283115}
+%   {4283168}
+%   {4283176}
+%   {4283216}
+%   {4283224}
+%   {4283232}
+%   {4283243}
+%   {4287392}
+%   {??$?0UIx_Example2@@@Cx_Ptr@@QAE@ABV?$Cx_Interface@UIx_Example2@@@@@Z@4263996}
+%   {??$?0UIx_Example@@@?$Cx_Interface@UIx_Example2@@@@QAE@ABV?$Cx_Interface@UIx_Example@@@@@Z@4264396}
+%   {??0?$Cx_Interface@UIx_Example@@@@QAE@ABVCx_Ptr@@@Z@4263991}
+%   {??0?$Cx_Interface@UIx_Example@@@@QAE@ABVXCLSID@@@Z@4264306}
+%   {??0CPluginManager@@QAE@XZ@4264056}
+%   {??0XCLSID@@QAE@PBD@Z@4264326}
+%   {??0type_info@@AAE@ABV0@@Z@4264501}
+%   {??1?$Cx_Interface@UIx_Example2@@@@QAE@XZ@4263951}
+%   {??1?$Cx_Interface@UIx_Example@@@@QAE@XZ@4264571}
+%   {??1CPluginManager@@QAE@XZ@4264001}
+%   {??1Cx_Ptr@@QAE@XZ@4263946}
+%   {??1type_info@@UAE@XZ@4264051}
+%   {??1type_info@@UAE@XZ@4264146}
+%   {??1type_info@@UAE@XZ@4279020}
+%   {??3@YAXPAX@Z@4264141}
+%   {??3@YAXPAX@Z@4275196}
+%   {??4type_info@@AAEAAV0@ABV0@@Z@4263986}
+%   {??B?$Cx_Interface@UIx_Example@@@@QBE_NXZ@4264236}
+%   {??C?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ@4263971}
+%   {??C?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ@4264311}
+%   {??_Etype_info@@UAEPAXI@Z@4264191}
+%   {??_M@YGXPAXIHP6EX0@Z@Z@4264576}
+%   {??_M@YGXPAXIHP6EX0@Z@Z@4275216}
+%   {?GetObjectFactory@CPluginManager@@QAEPAUIx_ObjectFactory@@XZ@4264511}
+%   {?GetPluginLoader@CPluginManager@@QAEPAUIx_PluginLoader@@XZ@4264246}
+%   {?IsNotNull@?$Cx_Interface@UIx_Example2@@@@QBE_NXZ@4264241}
+%   {?LoadPluginManager@CPluginManager@@QAE_NPB_WPAUHINSTANCE__@@@Z@4264061}
+%   {?MyFunc2@@YAXABVCx_Ptr@@@Z@4264551}
+%   {?P@?$Cx_Interface@UIx_Example2@@@@QBEPAUIx_Example2@@XZ@4264271}
+%   {?P@?$Cx_Interface@UIx_Example@@@@QBEPAUIx_Example@@XZ@4263961}
+%   {?P@Cx_Ptr@@QBEPAUIx_Object@@XZ@4264371}
+%   {?Test@@YAXXZ@4264071}
+%   {?Unload@?$Cx_Interface@UIx_Example2@@@@AAEXXZ@4264346}
+%   {?Unload@?$Cx_Interface@UIx_Example@@@@AAEXXZ@4264401}
+%   {?Unload@CPluginManager@@QAEX_N@Z@4264036}
+%   {?Unload@Cx_Ptr@@AAEXXZ@4264476}
+%   {?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z@4264556}
+%   {?_RTC_Failure@@YAXPAXH@Z@4264546}
+%   {?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z@4264591}
+%   {?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z@4264021}
+%   {?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z@4264426}
+%   {?_RTC_StackFailure@@YAXPAXPBD@Z@4264221}
+%   {?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z@4264536}
+%   {?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z@4264331}
+%   {?terminate@@YAXXZ@4264156}
+%   {?terminate@@YAXXZ@4279014}
+%   {?xCreateObject@@YAJABVXCLSID@@PAPAUIx_Object@@@Z@4264066}
+%   {?xGetModuleHandle@@YAPAUHINSTANCE__@@XZ@4264461}
+%   {@_RTC_AllocaHelper@12@4264016}
+%   {@_RTC_AllocaHelper@12@4270400}
+%   {@_RTC_CheckStackVars2@12@4264361}
+%   {@_RTC_CheckStackVars2@12@4270464}
+%   {@_RTC_CheckStackVars@8@4264136}
+%   {@_RTC_CheckStackVars@8@4270272}
+%   {@__security_check_cookie@4@4263976}
+%   {@__security_check_cookie@4@4270192}
+%   {ArrayUnwindFilter@4275616}
+%   {CPluginManager::CPluginManager@4265712}
+%   {CPluginManager::LoadPluginManager@4266128}
+%   {CPluginManager::~CPluginManager@4265840, CPluginManager::Unload@4265936, CPluginManager::GetPluginLoader@4266432, CPluginManager::GetObjectFactory@4266544}
+%   {Cx_Interface<struct Ix_Example2>::Cx_Interface@4268784}
+%   {Cx_Interface<struct Ix_Example2>::IsNotNull@4268384}
+%   {Cx_Interface<struct Ix_Example2>::P@4269312}
+%   {Cx_Interface<struct Ix_Example2>::operator->@4268320}
+%   {Cx_Interface<struct Ix_Example2>::~Cx_Interface@4268240, Cx_Interface<struct Ix_Example2>::Unload@4268624}
+%   {Cx_Interface<struct Ix_Example>::Cx_Interface@4267536}
+%   {Cx_Interface<struct Ix_Example>::Cx_Interface@4267776}
+%   {Cx_Interface<struct Ix_Example>::P@4269248}
+%   {Cx_Interface<struct Ix_Example>::operator bool@4268160}
+%   {Cx_Interface<struct Ix_Example>::operator->@4268096}
+%   {Cx_Interface<struct Ix_Example>::~Cx_Interface@4268016, Cx_Interface<struct Ix_Example>::Unload@4268464}
+%   {Cx_Ptr::Cx_Ptr@4269056}
+%   {Cx_Ptr::P@4269456}
+%   {Cx_Ptr::~Cx_Ptr@4269376, Cx_Ptr::Unload@4269520}
+%   {DebuggerProbe@4273440}
+%   {DebuggerRuntime@4273616}
+%   {GetPdbDll@4278400}
+%   {XCLSID::XCLSID@4269664}
+%   {_DecodePointer@4@4264416}
+%   {_DecodePointer@4@4279146}
+%   {_EncodePointer@4@4264386}
+%   {_EncodePointer@4@4279062}
+%   {_FreeLibrary@4@4264581}
+%   {_FreeLibrary@4@4270134}
+%   {_GetCurrentProcess@0@4264176}
+%   {_GetCurrentProcess@0@4279098}
+%   {_GetCurrentProcessId@0@4264356}
+%   {_GetCurrentProcessId@0@4279170}
+%   {_GetCurrentThreadId@0@4264166}
+%   {_GetCurrentThreadId@0@4279164}
+%   {_GetModuleFileNameW@12@4264076}
+%   {_GetModuleFileNameW@12@4270152}
+%   {_GetModuleHandleW@4@4264516}
+%   {_GetModuleHandleW@4@4270146}
+%   {_GetProcAddress@8@4264131}
+%   {_GetProcAddress@8@4270158}
+%   {_GetProcessHeap@0@4264261}
+%   {_GetProcessHeap@0@4279194}
+%   {_GetSystemTimeAsFileTime@4@4264411}
+%   {_GetSystemTimeAsFileTime@4@4279176}
+%   {_GetTickCount@0@4264436}
+%   {_GetTickCount@0@4279158}
+%   {_HeapAlloc@12@4264451}
+%   {_HeapAlloc@12@4279188}
+%   {_HeapFree@12@4264291}
+%   {_HeapFree@12@4279182}
+%   {_HeapSetInformation@16@4264206}
+%   {_HeapSetInformation@16@4279086}
+%   {_InterlockedCompareExchange@12@4264256}
+%   {_InterlockedCompareExchange@12@4279080}
+%   {_InterlockedExchange@8@4264491}
+%   {_InterlockedExchange@8@4279068}
+%   {_IsDebuggerPresent@0@4263981}
+%   {_IsDebuggerPresent@0@4279116}
+%   {_LoadLibraryW@4@4264201}
+%   {_LoadLibraryW@4@4270140}
+%   {_MultiByteToWideChar@24@4264111}
+%   {_MultiByteToWideChar@24@4279128}
+%   {_NtCurrentTeb@4264286}
+%   {_NtCurrentTeb@4272144}
+%   {_PathAppendW@8@4264276}
+%   {_PathAppendW@8@4270170}
+%   {_PathRemoveFileSpecW@4@4264026}
+%   {_PathRemoveFileSpecW@4@4270176}
+%   {_QueryPerformanceCounter@4@4264341}
+%   {_QueryPerformanceCounter@4@4279152}
+%   {_RaiseException@16@4264226}
+%   {_RaiseException@16@4279134}
+%   {_SetUnhandledExceptionFilter@4@4264086}
+%   {_SetUnhandledExceptionFilter@4@4279110}
+%   {_Sleep@4@4264046}
+%   {_Sleep@4@4279074}
+%   {_TerminateProcess@8@4264316}
+%   {_TerminateProcess@8@4279092}
+%   {_UnhandledExceptionFilter@4@4264496}
+%   {_UnhandledExceptionFilter@4@4279104}
+%   {_VirtualQuery@12@4264101}
+%   {_VirtualQuery@12@4279200}
+%   {_WideCharToMultiByte@32@4264011}
+%   {_WideCharToMultiByte@32@4279122}
+%   {__CRT_RTC_INITW@4264431}
+%   {__CRT_RTC_INITW@4275190}
+%   {__CrtDbgReportW@4264096}
+%   {__CrtDbgReportW@4277430}
+%   {__CrtSetCheckCount@4264481}
+%   {__CrtSetCheckCount@4276784}
+%   {__FindPESection@4264196}
+%   {__FindPESection@4276928}
+%   {__IsNonwritableInCurrentImage@4264441}
+%   {__IsNonwritableInCurrentImage@4277088}
+%   {__RTC_CheckEsp@4264376}
+%   {__RTC_CheckEsp@4270224}
+%   {__RTC_GetErrDesc@4263966}
+%   {__RTC_GetErrDesc@4274992}
+%   {__RTC_InitBase@4264216}
+%   {__RTC_InitBase@4270736}
+%   {__RTC_Initialize@4264391}
+%   {__RTC_Initialize@4276016}
+%   {__RTC_NumErrors@4264031}
+%   {__RTC_NumErrors@4274976}
+%   {__RTC_SetErrorFunc@4264296}
+%   {__RTC_SetErrorFunc@4275072}
+%   {__RTC_SetErrorFuncW@4264266}
+%   {__RTC_SetErrorFuncW@4275120}
+%   {__RTC_SetErrorType@4264116}
+%   {__RTC_Shutdown@4264186}
+%   {__RTC_Shutdown@4270800}
+%   {__RTC_Terminate@4264006}
+%   {__RTC_Terminate@4276064}
+%   {__RTC_UninitUse@4264181}
+%   {__RTC_UninitUse@4274672}
+%   {__ValidateImageBase@4264251}
+%   {__ValidateImageBase@4276800}
+%   {__XcptFilter@4264466}
+%   {__XcptFilter@4276766}
+%   {___CxxFrameHandler3@4264446}
+%   {___CxxFrameHandler3@4270182}
+%   {___CxxSetUnhandledExceptionFilter@4264336}
+%   {___CxxSetUnhandledExceptionFilter@4275808}
+%   {___RTDynamicCast@4264526}
+%   {___RTDynamicCast@4270824}
+%   {___dllonexit@4264566}
+%   {___dllonexit@4279044}
+%   {___getmainargs@4264531}
+%   {___getmainargs@4276464}
+%   {___report_gsfailure@4272304}
+%   {___security_init_cookie@4264081}
+%   {___security_init_cookie@4276480}
+%   {___set_app_type@4264366}
+%   {___set_app_type@4276452}
+%   {___setusermatherr@4264041}
+%   {___setusermatherr@4275970}
+%   {__amsg_exit@4264456}
+%   {__amsg_exit@4276458}
+%   {__cdecl MyFunc2(class Cx_Ptr const &)@4266736}
+%   {__cdecl Test(void)@4267024}
+%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4274144}
+%   {__cdecl _RTC_Failure(*, int)@4272656}
+%   {__cdecl _RTC_StackFailure(*, char const *)@4273824}
+%   {__cexit@4264091}
+%   {__cexit@4276772}
+%   {__configthreadlocale@4264211}
+%   {__configthreadlocale@4275834}
+%   {__controlfp_s@4264406}
+%   {__controlfp_s@4279026}
+%   {__crt_debugger_hook@4264231}
+%   {__crt_debugger_hook@4277508}
+%   {__except_handler4@4264121}
+%   {__except_handler4@4277456}
+%   {__except_handler4_common@4264506}
+%   {__except_handler4_common@4279056}
+%   {__exit@4264161}
+%   {__exit@4276760}
+%   {__initterm@4264171}
+%   {__initterm@4277436}
+%   {__initterm_e@4264586}
+%   {__initterm_e@4277442}
+%   {__invoke_watson@4264421}
+%   {__invoke_watson@4279032}
+%   {__invoke_watson_if_error@4264301}
+%   {__invoke_watson_if_error@4275920}
+%   {__lock@4264126}
+%   {__lock@4279050}
+%   {__matherr@4264521}
+%   {__matherr@4275984}
+%   {__onexit@4264281}
+%   {__onexit@4276112}
+%   {__setargv@4263956}
+%   {__setargv@4276000}
+%   {__setdefaultprecision@4263941}
+%   {__setdefaultprecision@4275840}
+%   {__stdcall __ArrayUnwind(*, unsigned int, int, (__thiscall*)(*) )@4275440}
+%   {__tmainCRTStartup@4271376}
+%   {__unlock@4264351}
+%   {__unlock@4279038}
+%   {_atexit@4264106}
+%   {_atexit@4276416}
+%   {_exit@4264561}
+%   {_exit@4276778}
+%   {_getMemBlockDataString@4274528}17:23:35 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+%   {_lstrcpyW@8@4264486}
+%   {_lstrcpyW@8@4270128}
+%   {_lstrcpynA@12@4264471}
+%   {_lstrcpynA@12@4270164}
+%   {_lstrlenA@4@4264541}
+%   {_lstrlenA@4@4279140}
+%   {_main@4264381}
+%   {_main@4265264}
+%   {_mainCRTStartup@4264321}
+%   {_mainCRTStartup@4271344}
+%   {check_managed_app@4272160}
+%   {failwithmessage@4272768}
+%   {int (__cdecl*__cdecl _RTC_GetErrorFunc(const *) )(int, char const *, int, char const *, char const *, ...)@4275168}
+%   {int (__cdecl*__cdecl _RTC_GetErrorFuncW(const *) )(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4275184}
+%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4277520}
+%   {long __cdecl xCreateObject(class XCLSID const &, struct Ix_Object * *)@4269808}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4275680}
+%   {pre_c_init@4271056}
+%   {pre_cpp_init@4271232}
+%   {struct HINSTANCE__ * __cdecl xGetModuleHandle(void)@4270080}
+%   {type_info::operator=@4271024}
+%   {type_info::type_info@4270832}
+%   {type_info::vector_deleting_destructor@4270880, type_info::_type_info_dtor_internal_method@4309700}
+%   {type_info::vftable@4294924}
