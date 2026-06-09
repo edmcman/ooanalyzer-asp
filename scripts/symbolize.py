@@ -29,10 +29,18 @@ _FIXUPS = [
     ('class std::allocator<char>', 'CHAR_ALLOC'),
 ]
 
+_DECORATED_KINDS = {'thunk', 'tramp'}
+
 def _fixup(sym):
     for old, new in _FIXUPS:
         sym = sym.replace(old, new)
     return sym
+
+def _decorate_kind(kind, label):
+    kind = kind.strip().lower()
+    if kind in _DECORATED_KINDS:
+        return f"{kind}:{label}"
+    return label
 
 def build_symbol_map(symbols_file):
     """Return dict: int_addr -> display_string.
@@ -47,8 +55,8 @@ def build_symbol_map(symbols_file):
     if symbols_file.endswith('.ground'):
         import re as _re
         _gt = _re.compile(r"groundTruth\((0x[0-9a-fA-F]+)\s*,\s*'([^']*)'\s*,\s*'([^']*)'")
-        _sym = _re.compile(r"symbol\((0x[0-9a-fA-F]+)\s*,\s*\w+\s*,\s*'([^']*)'\)")
-        _dem = _re.compile(r"demangledName\((0x[0-9a-fA-F]+)\s*,\s*[^,]*\s*,\s*'([^']*)'\)")
+        _sym = _re.compile(r"symbol\((0x[0-9a-fA-F]+)\s*,\s*(\w+)\s*,\s*'([^']*)'\)")
+        _dem = _re.compile(r"demangledName\((0x[0-9a-fA-F]+)\s*,\s*([^,]*)\s*,\s*'([^']*)'\)")
         for line in lines:
             mo = _gt.match(line)
             if mo:
@@ -59,13 +67,13 @@ def build_symbol_map(symbols_file):
             if mo:
                 addr = int(mo.group(1), 16)
                 if addr not in m:
-                    m[addr] = _fixup(mo.group(2))
+                    m[addr] = _decorate_kind(mo.group(2), _fixup(mo.group(3)))
                 continue
             mo = _sym.match(line)
             if mo:
                 addr = int(mo.group(1), 16)
                 if addr not in m:
-                    m[addr] = mo.group(2)
+                    m[addr] = _decorate_kind(mo.group(2), mo.group(3))
     elif symbols_file.endswith('.symbols'):
         for line in lines:
             line = line.rstrip()
@@ -74,20 +82,22 @@ def build_symbol_map(symbols_file):
             parts = line.split(None, 3)
             if len(parts) < 3:
                 continue
-            addr_hex, _kind, idasym = parts[0], parts[1], parts[2]
+            addr_hex, kind, idasym = parts[0], parts[1], parts[2]
             demangled = parts[3] if len(parts) == 4 else None
             addr = int(addr_hex, 16)
             label = _fixup(demangled) if demangled and demangled != 'None' else idasym
-            m[addr] = label
+            m[addr] = _decorate_kind(kind, label)
     return m
 
-def symbolize(text, addr_map):
-    """Replace decimal integers and 0x hex addresses that appear in addr_map."""
+def symbolize(text, addr_map, bare_addresses_to_hex=False):
+    """Replace addresses with symbols, optionally hexifying bare decimal addresses."""
     def replacer(m):
         s = m.group(0)
         n = int(s, 16) if s.startswith(('0x', '0X')) else int(s)
         if n in addr_map:
-            return f"{addr_map[n]}@{s}"
+            return f"{addr_map[n]}@0x{n:x}"
+        if bare_addresses_to_hex and not s.startswith(('0x', '0X')):
+            return f"0x{n:x}"
         return s
     return re.sub(r'0x[0-9a-fA-F]+|(?<![0-9a-fA-F.])\d{6,}(?!\d)', replacer, text)
 
@@ -116,10 +126,11 @@ def main():
                         continue
                     facts.append(fact)
             else:
-                line = symbolize(line, addr_map)
+                is_equiv = line.startswith('%   {')
+                line = symbolize(line, addr_map, bare_addresses_to_hex=is_equiv)
                 if args.filter and args.filter not in line:
                     continue
-                (equiv if line.startswith('%   {') else other).append(line)
+                (equiv if is_equiv else other).append(line)
     finally:
         if args.input_file:
             inp.close()
