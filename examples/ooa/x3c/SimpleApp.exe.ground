@@ -1,34 +1,132 @@
-demangledName(0x411af0, 'global function', 'near void __cdecl MyFunc2(near class Cx_Ptr const &)').
-demangledName(0x411c10, 'global function', 'near void __cdecl Test(void)').
-demangledName(0x4126f0, 'global function', 'near long __cdecl xCreateObject(near class XCLSID const &, near struct Ix_Object *near  *)').
-demangledName(0x412800, 'global function', 'near near struct HINSTANCE__ * __cdecl xGetModuleHandle(void)').
-demangledName(0x413210, 'global function', 'near void __cdecl _RTC_Failure(near void *, int)').
-demangledName(0x4136a0, 'global function', 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
-demangledName(0x4137e0, 'global function', 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
-demangledName(0x413be0, 'global function', 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
-demangledName(0x413bf0, 'global function', 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
-demangledName(0x413c10, 'global function', 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
-demangledName(0x413cf0, 'global function', 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
-demangledName(0x413de0, 'global function', 'near long __stdcall __CxxUnhandledExceptionFilter(near struct _EXCEPTION_POINTERS *)').
-demangledName(0x414510, 'global function', 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
-demangledName(0x4191c8, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessDetach').
-demangledName(0x4191cc, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessAttach').
-demangledName(0x4191d0, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadAttach').
-demangledName(0x4191d4, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadDetach').
-demangledName(0x4191d8, 'static class member', 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessVerifier').
-demangledName(0x4196d0, 'global thing 1', 'type_info::`RTTI Class Hierarchy Descriptor\'').
-demangledName(0x4196e4, 'global thing 1', 'type_info::`RTTI Base Class Array\'').
-demangledName(0x4196ec, 'global thing 1', 'type_info::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
-demangledName(0x41b000, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_ObjectFactory').
-demangledName(0x41b028, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_PluginLoader').
-demangledName(0x41b04c, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_Object').
-demangledName(0x41b068, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_Example').
-demangledName(0x41b088, 'global thing 1', 'struct `RTTI Type Descriptor\'::Ix_Example2').
-demangledName(0x41b0b0, 'global thing 1', 'class `RTTI Type Descriptor\'::type_info').
-demangledName(0x41b0cc, 'global object', 'near int *near  _RTC_ErrorLevels').
-demangledName(0x41b624, 'global object', 'int (__cdecl*near  wsprintffp)(near char *, near char const *, ...)').
-demangledName(0x41c324, 'global function', 'near void __cdecl operator delete(near void *)').
-demangledName(0x41c334, 'global function', 'near void __cdecl terminate(void)').
+demangledName(0x41100a, tramp, 'public: near __thiscall Cx_Ptr::~Cx_Ptr(void)').
+demangledName(0x41100f, tramp, 'public: near __thiscall Cx_Interface<struct Ix_Example2>::~Cx_Interface(void)').
+demangledName(0x411019, tramp, 'public: near near struct Ix_Example * __thiscall Cx_Interface<struct Ix_Example>::P(void) const').
+demangledName(0x411023, tramp, 'public: near near struct Ix_Example2 * __thiscall Cx_Interface<struct Ix_Example2>::operator->(void) const').
+demangledName(0x411032, tramp, 'private: near near class type_info & __thiscall type_info::operator=(near class type_info const &)').
+demangledName(0x411037, tramp, 'public: near __thiscall Cx_Interface<struct Ix_Example>::Cx_Interface(near class Cx_Ptr const &)').
+demangledName(0x41103c, tramp, 'public: near __thiscall Cx_Ptr::Cx_Ptr<struct Ix_Example2>(near class Cx_Interface<struct Ix_Example2> const &)').
+demangledName(0x411041, tramp, 'public: near __thiscall CPluginManager::~CPluginManager(void)').
+demangledName(0x411055, tramp, 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
+demangledName(0x411064, tramp, 'public: near void __thiscall CPluginManager::Unload(bool)').
+demangledName(0x411073, tramp, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x411078, tramp, 'public: near __thiscall CPluginManager::CPluginManager(void)').
+demangledName(0x41107d, tramp, 'public: near bool __thiscall CPluginManager::LoadPluginManager(near wchar_t const *, near struct HINSTANCE__ *)').
+demangledName(0x411082, tramp, 'near long __cdecl xCreateObject(near class XCLSID const &, near struct Ix_Object *near  *)').
+demangledName(0x411087, tramp, 'near void __cdecl Test(void)').
+demangledName(0x4110cd, tramp, 'near void __cdecl operator delete(near void *)').
+demangledName(0x4110d2, tramp, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x4110dc, tramp, 'near void __cdecl terminate(void)').
+demangledName(0x4110ff, tramp, 'public: virtual near near void * __thiscall type_info::`vector deleting destructor\'(unsigned int)').
+demangledName(0x41111d, tramp, 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
+demangledName(0x41112c, tramp, 'public: near __thiscall Cx_Interface<struct Ix_Example>::operator bool(void) const').
+demangledName(0x411131, tramp, 'public: near bool __thiscall Cx_Interface<struct Ix_Example2>::IsNotNull(void) const').
+demangledName(0x411136, tramp, 'public: near near struct Ix_PluginLoader * __thiscall CPluginManager::GetPluginLoader(void)').
+demangledName(0x41114f, tramp, 'public: near near struct Ix_Example2 * __thiscall Cx_Interface<struct Ix_Example2>::P(void) const').
+demangledName(0x411172, tramp, 'public: near __thiscall Cx_Interface<struct Ix_Example>::Cx_Interface(near class XCLSID const &)').
+demangledName(0x411177, tramp, 'public: near near struct Ix_Example * __thiscall Cx_Interface<struct Ix_Example>::operator->(void) const').
+demangledName(0x411186, tramp, 'public: near __thiscall XCLSID::XCLSID(near char const *)').
+demangledName(0x41118b, tramp, 'near long __stdcall __CxxUnhandledExceptionFilter(near struct _EXCEPTION_POINTERS *)').
+demangledName(0x41119a, tramp, 'private: near void __thiscall Cx_Interface<struct Ix_Example2>::Unload(void)').
+demangledName(0x4111b3, tramp, 'public: near near struct Ix_Object * __thiscall Cx_Ptr::P(void) const').
+demangledName(0x4111cc, tramp, 'public: near __thiscall Cx_Interface<struct Ix_Example2>::Cx_Interface<struct Ix_Example>(near class Cx_Interface<struct Ix_Example> const &)').
+demangledName(0x4111d1, tramp, 'private: near void __thiscall Cx_Interface<struct Ix_Example>::Unload(void)').
+demangledName(0x4111ea, tramp, 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
+demangledName(0x41120d, tramp, 'near near struct HINSTANCE__ * __cdecl xGetModuleHandle(void)').
+demangledName(0x41121c, tramp, 'private: near void __thiscall Cx_Ptr::Unload(void)').
+demangledName(0x411235, tramp, 'private: near __thiscall type_info::type_info(near class type_info const &)').
+demangledName(0x41123f, tramp, 'public: near near struct Ix_ObjectFactory * __thiscall CPluginManager::GetObjectFactory(void)').
+demangledName(0x411258, tramp, 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x411262, tramp, 'near void __cdecl _RTC_Failure(near void *, int)').
+demangledName(0x411267, tramp, 'near void __cdecl MyFunc2(near class Cx_Ptr const &)').
+demangledName(0x41126c, tramp, 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
+demangledName(0x41127b, tramp, 'public: near __thiscall Cx_Interface<struct Ix_Example>::~Cx_Interface(void)').
+demangledName(0x411280, tramp, 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x41128f, tramp, 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
+demangledName(0x411af0, func, 'near void __cdecl MyFunc2(near class Cx_Ptr const &)').
+demangledName(0x411c10, func, 'near void __cdecl Test(void)').
+demangledName(0x4126f0, func, 'near long __cdecl xCreateObject(near class XCLSID const &, near struct Ix_Object *near  *)').
+demangledName(0x412800, func, 'near near struct HINSTANCE__ * __cdecl xGetModuleHandle(void)').
+demangledName(0x413210, func, 'near void __cdecl _RTC_Failure(near void *, int)').
+demangledName(0x4136a0, func, 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
+demangledName(0x4137e0, func, 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
+demangledName(0x413be0, func, 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
+demangledName(0x413bf0, func, 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
+demangledName(0x413bfc, thunk, 'near void __cdecl operator delete(near void *)').
+demangledName(0x413c10, func, 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x413cf0, func, 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x413de0, func, 'near long __stdcall __CxxUnhandledExceptionFilter(near struct _EXCEPTION_POINTERS *)').
+demangledName(0x414510, func, 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
+demangledName(0x414ae6, thunk, 'near void __cdecl terminate(void)').
+demangledName(0x414aec, thunk, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x414aec, thunk, 'public: near void __thiscall type_info::_type_info_dtor_internal_method(void)').
+demangledName(0x41883c, string, 'char16_t[25] = "Win32DllTempl.plugin.dll"').
+demangledName(0x418878, string, 'char16_t[11] = "../Plugins"').
+demangledName(0x418894, string, 'char16_t[20] = "PluginManagerX3.dll"').
+demangledName(0x4188c4, string, 'char[17] = "xGetRegisterBank"').
+demangledName(0x4188d8, string, 'char[37] = "86347b32-64e4-490c-b273-ec7e010f"...').
+demangledName(0x418904, string, 'char[1] = ""').
+demangledName(0x418918, string, 'char16_t[48] = "f:\\dd\\vctools\\crt_bld\\self_x86\\c"...').
+demangledName(0x418990, string, 'char16_t[40] = "__native_startup_state == __init"...').
+demangledName(0x4189fc, string, 'char[30] = "Unknown Runtime Check Error\v\r"').
+demangledName(0x418a20, string, 'char[44] = "Stack memory around _alloca was "...').
+demangledName(0x418a54, string, 'char[54] = "A local variable was used before"...').
+demangledName(0x418a94, string, 'char[29] = "Stack memory was corrupted\v\r"').
+demangledName(0x418ab8, string, 'char[285] = "A cast to a smaller data type ha"...').
+demangledName(0x418c10, string, 'char[221] = "The value of ESP was not properl"...').
+demangledName(0x418dd8, string, 'char[32] = "Run-Time Check Failure #%d - %s"').
+demangledName(0x418e00, string, 'char[20] = "Unknown Module Name"').
+demangledName(0x418e18, string, 'char[17] = "Unknown Filename"').
+demangledName(0x418e30, string, 'char16_t[32] = "Run-Time Check Failure #%d - %s"').
+demangledName(0x418e80, string, 'char16_t[54] = "Runtime Check Error.\v\r Unable to"...').
+demangledName(0x418f04, string, 'char[38] = "Stack corrupted near unknown var"...').
+demangledName(0x418f38, string, 'char[73] = "Stack area around _alloca memory"...').
+demangledName(0x418f90, string, 'char[9] = "%s%s%s%s"').
+demangledName(0x418f9c, string, 'char[3] = "> "').
+demangledName(0x418fa0, string, 'char[2] = "\v"').
+demangledName(0x418fa4, string, 'char[18] = "%s%s%p%s%ld%s%d%s"').
+demangledName(0x418fc0, string, 'char[72] = "Stack area around _alloca memory"...').
+demangledName(0x419018, string, 'char[13] = "\vAddress: 0x"').
+demangledName(0x419028, string, 'char[8] = "\vSize: "').
+demangledName(0x419034, string, 'char[42] = "\vAllocation number within this f"...').
+demangledName(0x419068, string, 'char[9] = "\vData: <"').
+demangledName(0x419074, string, 'char[10] = "wsprintfA"').
+demangledName(0x419080, string, 'char16_t[11] = "user32.dll"').
+demangledName(0x41909c, string, 'char[6] = "%.2X "').
+demangledName(0x4190a4, string, 'char[52] = "A variable is being used without"...').
+demangledName(0x4190e4, string, 'char[31] = "Stack around _alloca corrupted"').
+demangledName(0x41910c, string, 'char[42] = "Local variable used before initi"...').
+demangledName(0x419140, string, 'char[24] = "Stack memory corruption"').
+demangledName(0x41915c, string, 'char[42] = "Cast to smaller type causing los"...').
+demangledName(0x419190, string, 'char[25] = "Stack pointer corruption"').
+demangledName(0x4191c8, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessDetach').
+demangledName(0x4191cc, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessAttach').
+demangledName(0x4191d0, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadAttach').
+demangledName(0x4191d4, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadDetach').
+demangledName(0x4191d8, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessVerifier').
+demangledName(0x4191e0, string, 'char16_t[50] = "_controlfp_s(((void *)0), 0x0001"...').
+demangledName(0x419258, string, 'char16_t[21] = "_setdefaultprecision"').
+demangledName(0x419290, string, 'char16_t[51] = "f:\\dd\\vctools\\crt_bld\\self_x86\\c"...').
+demangledName(0x41932c, string, 'char[2] = "r"').
+demangledName(0x419330, string, 'char[17] = "PDBOpenValidate5"').
+demangledName(0x419344, string, 'char16_t[21] = "EnvironmentDirectory"').
+demangledName(0x419378, string, 'char16_t[46] = "SOFTWARE\\Microsoft\\VisualStudio\\"...').
+demangledName(0x4193e8, string, 'char[12] = "RegCloseKey"').
+demangledName(0x4193f8, string, 'char[17] = "RegQueryValueExW"').
+demangledName(0x41940c, string, 'char[14] = "RegOpenKeyExW"').
+demangledName(0x41941c, string, 'char16_t[13] = "ADVAPI32.DLL"').
+demangledName(0x4196d0, name, 'type_info::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x4196e4, name, 'type_info::`RTTI Base Class Array\'').
+demangledName(0x4196ec, name, 'type_info::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41b000, name, 'struct `RTTI Type Descriptor\'::Ix_ObjectFactory').
+demangledName(0x41b028, name, 'struct `RTTI Type Descriptor\'::Ix_PluginLoader').
+demangledName(0x41b04c, name, 'struct `RTTI Type Descriptor\'::Ix_Object').
+demangledName(0x41b068, name, 'struct `RTTI Type Descriptor\'::Ix_Example').
+demangledName(0x41b088, name, 'struct `RTTI Type Descriptor\'::Ix_Example2').
+demangledName(0x41b0b0, name, 'class `RTTI Type Descriptor\'::type_info').
+demangledName(0x41b0cc, name, 'near int *near  _RTC_ErrorLevels').
+demangledName(0x41b624, name, 'int (__cdecl*near  wsprintffp)(near char *, near char const *, ...)').
+demangledName(0x41c324, name, 'near void __cdecl operator delete(near void *)').
+demangledName(0x41c334, name, 'near void __cdecl terminate(void)').
 groundTruth(0x4116f0, 'CPluginManager', 'CPluginManager', method, constructor, linked, public, nonvirtual, '__thiscall').
 groundTruth(0x411770, 'CPluginManager', '~CPluginManager', method, realDestructor, linked, public, nonvirtual, '__thiscall').
 groundTruth(0x4117d0, 'CPluginManager', 'Unload', method, none, linked, public, nonvirtual, '__thiscall').
