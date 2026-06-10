@@ -93,6 +93,10 @@ def parse_args():
     p.add_argument("--profile-interval", type=float, default=0,
                    help=("seconds between periodic conflict profile reports during solving "
                          "(0 = no periodic output; default: 0)"))
+    p.add_argument("--foundedness-check", action="store_true",
+                   help=("at each total assignment, verify that every true mergeClasses "
+                         "atom has a non-circular justification; rejects circularly-founded "
+                         "models that survive the potential-UF seeding fix"))
     p.add_argument("--diagnose-vftable-objective", action="store_true",
                    help=("print selected vftable sizes/gaps and largest unselected "
                          "vftable candidates for each model"))
@@ -249,7 +253,7 @@ def main():
         ctl_args.append(f"--const={c}")
     ctl_args.extend(args.clingo_extra)
 
-    prop = SameClassPropagator()
+    prop = SameClassPropagator(foundedness_check=args.foundedness_check)
     profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
     if "*" in profile_preds:
         profile_preds = None
@@ -270,6 +274,7 @@ def main():
     ctl = clingo.Control(ctl_args)
     if args.models is not None and args.models != -1:
         ctl.configuration.solve.models = args.models
+    ctl.register_observer(prop)
     ctl.register_propagator(prop)
     if profiler:
         ctl.register_propagator(profiler)

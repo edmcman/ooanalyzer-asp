@@ -15,6 +15,19 @@ False decisions distinguish two cases:
 
 Reflexive atoms &sameClass(X,X): forced true at level 0 in init().
 Undo strategy: rebuild from scratch on backtrack (correct; PoC).
+
+Observer integration (optional but recommended):
+  Register the propagator as both propagator and observer before grounding:
+    ctl.register_observer(prop)
+    ctl.register_propagator(prop)
+  This enables the least-fixpoint potential-UF seeding that eliminates the
+  circular &sameClass bootstrap (see PROP.md).  Without observer data the
+  propagator falls back to the original union-all seeding.
+
+Foundedness check (optional, gated by foundedness_check=True):
+  At each total assignment, verifies that every true mergeClasses atom has a
+  justification that does not circularly depend on &sameClass atoms it supports.
+  Unfounded atoms are rejected via add_clause.  Enable with --foundedness-check.
 """
 
 import clingo
@@ -172,6 +185,53 @@ class _ThreadState:
 
 
 class SameClassPropagator:
+    def __init__(self, foundedness_check=False):
+        self._foundedness_check = foundedness_check
+        # Collected by observer callbacks during grounding (before init()).
+        # _obs_rules: (choice, heads_tuple, pos_body_tuple) — positive body lits only.
+        # _obs_unconditional: prog_lits derivable with no positive-body conditions.
+        self._obs_rules = []
+        self._obs_unconditional = set()
+
+    # ── Observer callbacks ───────────────────────────────────────────────────
+    # Called during ctl.ground(); program literals here are the same integers
+    # as symbolic_atoms[...].literal and theory_atoms[...].literal in init().
+
+    def rule(self, choice, head, body):
+        pos_body = tuple(l for l in body if l > 0)
+        if not pos_body:
+            self._obs_unconditional.update(head)
+        else:
+            self._obs_rules.append((choice, tuple(head), pos_body))
+
+    def weight_rule(self, choice, head, lower_bound, body):
+        # Weight-rule semantics are complex; conservatively treat all heads as
+        # potentially derivable regardless of the cardinality bound.
+        self._obs_unconditional.update(head)
+
+    def external(self, atom, value):
+        if value != clingo.TruthValue.False_:
+            self._obs_unconditional.add(atom)
+
+    def begin_step(self): pass
+    def end_step(self): pass
+    def init_program(self, incremental): pass
+    def output_atom(self, symbol, atom): pass
+    def output_term(self, symbol, condition): pass
+    def theory_term_number(self, tid, number): pass
+    def theory_term_string(self, tid, name): pass
+    def theory_term_compound(self, tid, ctype, args): pass
+    def theory_element(self, eid, terms, condition): pass
+    def theory_atom(self, atom, term, elements): pass
+    def theory_atom_with_guard(self, atom, term, elements, op, right): pass
+    def assume(self, lits): pass
+    def minimize(self, priority, lits): pass
+    def project(self, atoms): pass
+    def heuristic(self, atom, b, bias, priority, condition): pass
+    def acyc_edge(self, node_u, node_v, condition): pass
+
+    # ── PropagateInit ────────────────────────────────────────────────────────
+
     def init(self, init):
         # solver_lit → (a_key, b_key)
         self._merge_to_pair = {}
@@ -185,14 +245,23 @@ class SameClassPropagator:
         self._merge_by_entity = {}
         self._entities = set()
 
+        # Program-literal maps for potential-UF fixpoint and foundedness check.
+        # prog_lit values match sym_atom.literal / tatom.literal from PropagateInit.
+        self._merge_proglit_to_pair = {}  # prog_lit → (a_key, b_key)
+        self._merge_proglit_to_slit = {}  # prog_lit → solver_lit
+        self._sc_proglit_to_pair = {}     # prog_lit → (x_key, y_key)
+
         for sym_atom in init.symbolic_atoms.by_signature("mergeEntity", 1):
             self._entities.add(_sym_key(sym_atom.symbol.arguments[0]))
 
         for sym_atom in init.symbolic_atoms.by_signature("mergeClasses", 2):
             args = sym_atom.symbol.arguments
             a, b = _sym_key(args[0]), _sym_key(args[1])
-            slit = init.solver_literal(sym_atom.literal)
+            prog_lit = sym_atom.literal
+            slit = init.solver_literal(prog_lit)
             self._merge_to_pair[slit] = (a, b)
+            self._merge_proglit_to_pair[prog_lit] = (a, b)
+            self._merge_proglit_to_slit[prog_lit] = slit
             self._merge_by_entity.setdefault(a, []).append((b, slit))
             self._merge_by_entity.setdefault(b, []).append((a, slit))
             self._entities.update((a, b))
@@ -202,7 +271,9 @@ class SameClassPropagator:
             if tatom.term.name == "sameClass" and len(tatom.term.arguments) == 2:
                 x = _theory_key(tatom.term.arguments[0])
                 y = _theory_key(tatom.term.arguments[1])
-                slit = init.solver_literal(tatom.literal)
+                prog_lit = tatom.literal
+                slit = init.solver_literal(prog_lit)
+                self._sc_proglit_to_pair[prog_lit] = (x, y)
                 self._sc_to_lit[(x, y)] = slit
                 self._sc_lit_to_pair[slit] = (x, y)
                 self._sc_by_entity.setdefault(x, []).append((y, slit))
@@ -213,12 +284,12 @@ class SameClassPropagator:
                 # eagerly so we can add permanent-false for cross-component pairs.
                 init.add_watch(slit)
 
-        # Potential connectivity: which pairs could EVER be same class,
-        # considering all mergeClasses atoms as potentially true.
-        # Cross-component pairs are permanently false.
+        # Potential connectivity: which pairs could EVER be same class?
+        # Uses a least fixpoint over the observed ground rules so that K-rule
+        # heads (which need &sameClass in their body) cannot circularly bootstrap.
+        # Falls back to union-all if no observer data was registered.
         self._potential_uf = _UF()
-        for slit, (a, b) in self._merge_to_pair.items():
-            self._potential_uf.union(a, b, slit)
+        self._build_potential_uf()
 
         self._check_atoms = [
             (x, y, slit)
@@ -278,11 +349,88 @@ class SameClassPropagator:
             self._awc_by_vft.setdefault(vftable, set()).add((class_, slit))
             init.add_watch(slit)
 
+        # Pre-compute rule index for foundedness check (merge heads only).
+        if self._foundedness_check:
+            merge_proglits = set(self._merge_proglit_to_pair.keys())
+            self._head_to_bodies = {}
+            for _choice, heads, pos_body in self._obs_rules:
+                for h in heads:
+                    if h in merge_proglits:
+                        self._head_to_bodies.setdefault(h, []).append(pos_body)
+            self._unconditional_merge_proglits = merge_proglits & self._obs_unconditional
+
+        # Release raw observer data — no longer needed.
+        self._obs_rules = []
+        self._obs_unconditional = set()
+
         self._states = [_ThreadState() for _ in range(init.number_of_threads)]
         _dprint(f"[init] {len(self._merge_to_pair)} mergeClasses, "
                 f"{len(self._sc_to_lit)} &sameClass atoms, "
                 f"{len(self._now_slit_to_key)} nonOverwritingWrite atoms, "
                 f"{len(self._awc_to_slit)} &allWritersInClass atoms")
+
+    def _build_potential_uf(self):
+        """Least fixpoint over observed ground rules to populate _potential_uf.
+
+        A mergeClasses(a,b) atom is potentially derivable only when some rule
+        deriving it has all positive body atoms potentially derivable, where
+        &sameClass(x,y) is derivable iff (x,y) are already same-component in
+        the potential UF being built.  Non-tracked (structural) atoms are
+        treated as unconditionally derivable.
+
+        This kills the circular K-rule bootstrap: mergeClasses(CM,TI) that has
+        only a K-rule support requiring &sameClass(CM,TI) never enters the UF
+        because that sc atom is cross-component until the merge edge exists.
+
+        Falls back to union-all when no observer data is available.
+        """
+        merge_proglits = set(self._merge_proglit_to_pair.keys())
+        sc_proglits = set(self._sc_proglit_to_pair.keys())
+
+        if not self._obs_rules and not self._obs_unconditional:
+            # Observer not registered: use old behavior (union all merge atoms).
+            for slit, (a, b) in self._merge_to_pair.items():
+                self._potential_uf.union(a, b, slit)
+            return
+
+        derivable = set(self._obs_unconditional)
+
+        # Seed UF with merge atoms that are unconditionally derivable.
+        for pl in merge_proglits & derivable:
+            a, b = self._merge_proglit_to_pair[pl]
+            self._potential_uf.union(a, b, self._merge_proglit_to_slit[pl])
+
+        # Rule index: merge head prog_lit → list of positive-body tuples.
+        head_to_bodies = {}
+        for _choice, heads, pos_body in self._obs_rules:
+            for h in heads:
+                if h in merge_proglits:
+                    head_to_bodies.setdefault(h, []).append(pos_body)
+
+        def body_ok(pos_body):
+            for lit in pos_body:
+                if lit in sc_proglits:
+                    x, y = self._sc_proglit_to_pair[lit]
+                    if not self._potential_uf.same(x, y):
+                        return False
+                elif lit in merge_proglits and lit not in derivable:
+                    return False
+                # else: structural atom — treat as unconditionally derivable
+            return True
+
+        changed = True
+        while changed:
+            changed = False
+            for pl in merge_proglits:
+                if pl in derivable:
+                    continue
+                for body in head_to_bodies.get(pl, []):
+                    if body_ok(body):
+                        derivable.add(pl)
+                        a, b = self._merge_proglit_to_pair[pl]
+                        self._potential_uf.union(a, b, self._merge_proglit_to_slit[pl])
+                        changed = True
+                        break
 
     def _state(self, thread_id):
         return self._states[thread_id]
@@ -447,6 +595,94 @@ class SameClassPropagator:
                                                     class_, awc_slit, cache):
                     return
 
+        if self._foundedness_check:
+            self._check_foundedness(ctl)
+
+    def _check_foundedness(self, ctl):
+        """Reject total assignments where a true mergeClasses atom is only circularly supported.
+
+        Builds a founded union-find from merge atoms with non-circular justification,
+        then flags any true merge atom absent from it as unfounded and adds a clause
+        forcing it false.
+        """
+        asgn = ctl.assignment
+        sc_proglits = set(self._sc_proglit_to_pair.keys())
+        merge_proglits = set(self._merge_proglit_to_pair.keys())
+
+        true_merges = {}  # prog_lit → (a_key, b_key, solver_lit)
+        for pl, (a, b) in self._merge_proglit_to_pair.items():
+            slit = self._merge_proglit_to_slit[pl]
+            if asgn.is_true(slit):
+                true_merges[pl] = (a, b, slit)
+
+        if not true_merges:
+            return
+
+        founded = set()   # prog_lits of founded merge atoms
+        founded_uf = _UF()
+
+        # Seed: merge atoms with no positive-body conditions (choice facts, etc.)
+        for pl in self._unconditional_merge_proglits:
+            if pl in true_merges:
+                a, b, slit = true_merges[pl]
+                founded_uf.union(a, b, slit)
+                founded.add(pl)
+
+        def body_active(pos_body):
+            """True if all tracked atoms in this rule body are true at this assignment."""
+            for lit in pos_body:
+                if lit in sc_proglits:
+                    x, y = self._sc_proglit_to_pair[lit]
+                    sc_slit = self._sc_to_lit.get((x, y))
+                    if sc_slit is None or not asgn.is_true(sc_slit):
+                        return False
+                elif lit in merge_proglits:
+                    if not asgn.is_true(self._merge_proglit_to_slit[lit]):
+                        return False
+                # else: structural atom — treat as true (conservative)
+            return True
+
+        def body_founded(pos_body):
+            """True if all sc/merge atoms in this rule body are founded."""
+            for lit in pos_body:
+                if lit in sc_proglits:
+                    x, y = self._sc_proglit_to_pair[lit]
+                    if not founded_uf.same(x, y):
+                        return False
+                elif lit in merge_proglits and lit not in founded:
+                    return False
+            return True
+
+        changed = True
+        while changed:
+            changed = False
+            for pl, (a, b, slit) in true_merges.items():
+                if pl in founded:
+                    continue
+                for body in self._head_to_bodies.get(pl, []):
+                    if body_active(body) and body_founded(body):
+                        founded_uf.union(a, b, slit)
+                        founded.add(pl)
+                        changed = True
+                        break
+
+        for pl, (a, b, slit) in true_merges.items():
+            if pl not in founded:
+                _dprint(f"[foundedness] unfounded mergeClasses({a},{b})")
+                # Build a permanent clause: ¬mc(a,b) ∨ ⋁{frontier edges from
+                # a's founded component in potential_uf, excluding mc(a,b)'s own edge}.
+                #
+                # This is sound: if mc(a,b) is true and ALL frontier edges are
+                # false, then a's founded component has no indirect path to b,
+                # so mc(a,b) is circularly unfounded.  The clause fires only in
+                # that specific context; once some frontier edge becomes true the
+                # clause is satisfied and a later check() decides founding afresh.
+                comp_a = _founded_component(founded_uf, a)
+                frontier = _frontier_slits(self._potential_uf, comp_a, slit)
+                clause = [-slit] + frontier
+                if not ctl.add_clause(clause, tag=False):
+                    return
+
     def partition(self, merge_pairs=None):
         """Return class groups.
 
@@ -461,6 +697,36 @@ class SameClassPropagator:
         for a, b in merge_pairs:
             uf.union(_sym_key(a), _sym_key(b), 0)
         return uf.groups(self._entities)
+
+
+def _founded_component(founded_uf, x):
+    """BFS in founded_uf._adj; returns the set of entities reachable from x."""
+    visited = {x}
+    queue = [x]
+    while queue:
+        node = queue.pop()
+        for other, _ in founded_uf._adj.get(node, ()):
+            if other not in visited:
+                visited.add(other)
+                queue.append(other)
+    return visited
+
+
+def _frontier_slits(potential_uf, founded_comp, excl_slit):
+    """Solver literals of potential_uf edges that cross from founded_comp to outside.
+
+    Excludes the edge whose slit == excl_slit (the unfounded merge atom itself).
+    Returns a deduplicated list.  An empty list means mc(X,Y) is the only potential
+    connection — the caller should add a permanent unit clause ¬mc(X,Y).
+    """
+    seen = set()
+    result = []
+    for node in founded_comp:
+        for other, slit in potential_uf._adj.get(node, ()):
+            if other not in founded_comp and slit != excl_slit and slit not in seen:
+                seen.add(slit)
+                result.append(slit)
+    return result
 
 
 def sc_pairs_from_merges(merge_pairs):

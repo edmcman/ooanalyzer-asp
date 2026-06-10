@@ -8,6 +8,9 @@ Tests:
   4. cross: no path → &sameClass(a,d) always false
   5. rule-body-positive: a rule that requires &sameClass to be true fires correctly
   6. rule-body-negative: a rule using `not &sameClass` fires when they differ
+  9. circular-cross: K-rule merge blocked when its only support is a circular sc atom
+ 10. legitimate-bridge: K-rule merge allowed when sc precondition has seed support
+ 11. within-component circular: foundedness check rejects self-justifying K-merge
 """
 
 import sys
@@ -35,10 +38,11 @@ CONTROL_MODES = [
 ]
 
 
-def run(name, asp, expected_models, expected_atoms=None, ctl_args=None):
+def run(name, asp, expected_models, expected_atoms=None, ctl_args=None, foundedness=False):
     prog = THEORY + asp
-    prop = SameClassPropagator()
+    prop = SameClassPropagator(foundedness_check=foundedness)
     ctl = clingo.Control(ctl_args or ["--warn=none", "0"])
+    ctl.register_observer(prop)
     ctl.register_propagator(prop)
     ctl.add("base", [], prog)
     ctl.ground([("base", [])])
@@ -65,6 +69,7 @@ def run(name, asp, expected_models, expected_atoms=None, ctl_args=None):
 def optimal_cost_for_files(files, ctl_args, timeout=10):
     prop = SameClassPropagator()
     ctl = clingo.Control(ctl_args)
+    ctl.register_observer(prop)
     ctl.register_propagator(prop)
     ctl.load(str(MAIN_LP))
     for path in files:
@@ -270,6 +275,60 @@ def main():
          """,
          16,
          frozenset(["mergeClasses(a,b)", "mergeClasses(b,c)", "mergeClasses(c,d)"])),
+
+        # ── 9. Circular cross-component K-merge ──────────────────────────────
+        # mergeClasses(a,b) has only one support rule: :- &sameClass(a,b).
+        # With no seed edge, a and b start in different potential-UF components,
+        # so mergeClasses(a,b) is never added to _potential_uf and &sameClass(a,b)
+        # is forced permanently false at level 0.  The K-rule can never fire.
+        ("circular-cross: K-merge with no seed support is blocked",
+         """
+         mergeEntity(a). mergeEntity(b).
+         mergeClasses(a,b) :- &sameClass(a,b).
+         got_merge :- mergeClasses(a,b).
+         #show got_merge/0.
+         """,
+         1),   # 1 model, got_merge absent
+
+        # ── 10. Legitimate K-bridge ───────────────────────────────────────────
+        # mergeClasses(b,c) is derived by a K-rule conditioned on &sameClass(a,b).
+        # mergeClasses(a,b) is a seed choice, so a-b are same in _potential_uf;
+        # that makes mergeClasses(b,c) potentially derivable — it must NOT be
+        # forced false at level 0.  In the model where mergeClasses(a,b) is true,
+        # the K-rule fires and bridge must appear.
+        ("legitimate-bridge: K-merge with seed-founded sc is allowed",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
+         mergeClasses(b,c) :- &sameClass(a,b).
+         bridge :- mergeClasses(b,c).
+         :- mergeClasses(a,b), not bridge.
+         #show mergeClasses/2. #show bridge/0.
+         """,
+         2,
+         frozenset(["mergeClasses(a,b)", "bridge"])),
+    ]
+
+    # Tests that require foundedness_check=True (run once, not per control mode).
+    foundedness_tests = [
+        # ── 11. Within-component circular K-merge ─────────────────────────────
+        # Seeds: choices for a-b and b-c put a,b,c in the same potential component.
+        # K-rule: mergeClasses(a,c) :- &sameClass(a,c).  Both a and c are same in
+        # potential-UF (via seed choices), so the K-rule head is NOT pre-blocked.
+        # Without foundedness check, the solver can produce a circular model where
+        # mergeClasses(a,c)=true with both seed merges false.
+        # With foundedness_check=True, that model is rejected: mergeClasses(a,c)
+        # has no founded support when a-b and b-c are both false.
+        ("within-component circular: foundedness check blocks self-justifying K-merge",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
+         1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
+         mergeClasses(a,c) :- &sameClass(a,c).
+         circular :- mergeClasses(a,c), not mergeClasses(a,b), not mergeClasses(b,c).
+         #show mergeClasses/2. #show circular/0.
+         """,
+         4),   # 4 founded models; no model may contain "circular"
     ]
 
     for mode, ctl_args in CONTROL_MODES:
@@ -280,6 +339,30 @@ def main():
                 passed += 1
             else:
                 failed += 1
+
+    print("\nMode: foundedness check (single)")
+    for name, asp, expected_models, *rest in foundedness_tests:
+        expected_atoms = rest[0] if rest else None
+        result = run(name, asp, expected_models, expected_atoms,
+                     ctl_args=["--warn=none", "0"], foundedness=True)
+        # Also verify no model contains "circular" (the key soundness property)
+        prog = THEORY + asp
+        prop = SameClassPropagator(foundedness_check=True)
+        ctl = clingo.Control(["--warn=none", "0"])
+        ctl.register_observer(prop)
+        ctl.register_propagator(prop)
+        ctl.add("base", [], prog)
+        ctl.ground([("base", [])])
+        all_atoms = []
+        ctl.solve(on_model=lambda m: all_atoms.extend(m.symbols(shown=True)))
+        circular_found = any(str(a) == "circular" for a in all_atoms)
+        if circular_found:
+            print(f"  FAIL  {name}  (circular model found despite foundedness check)")
+            result = False
+        if result:
+            passed += 1
+        else:
+            failed += 1
 
     print("\nMode: heuristic reward consistency")
     finishing_heuristic_configs = [
