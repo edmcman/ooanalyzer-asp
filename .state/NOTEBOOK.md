@@ -25,6 +25,7 @@ No in-progress work. Recent sessions completed (in order):
 - `reasonClassRelatedMethod_A` (2361) and `knownVirtualMethod` — classes.lp
 - `guessLateMergeClasses_G2` (weakMergeCandidate) and `G1` (weakG1Bonus) — merges.lp
 - `reasonNOTDeletingDestructor_F` (667) and `_H` (695) — ctorsdtors.lp
+- `reasonMergeClasses_K` (2939) — merges.lp
 
 Since the last rule-porting commit (`784e0cd`), work has been performance tooling only:
 plateau profiling (`--profile-after-first-model`, `--diagnose-vftable-objective`),
@@ -42,13 +43,20 @@ All 13 hand-written examples pass:
 
 ## Last completed batch
 
+1. **`reasonMergeClasses_K` (2939)** — deterministic merge for class-related methods when
+   both the source class and the method's class have no base. Uses `&sameClass(Class1, NoBase1)`
+   and `&sameClass(Method, Class2)` to join witness-based no-base facts, then canonicalizes
+   pair order.
+
+## Previous completed batch
+
 1. **`reasonNOTDeletingDestructor_F` (667)** — delete() exists in program but method doesn't
    call delete(this). Two rule bodies translate the Prolog disjunction; conservatively skips
    methods with no this-pointer info.
 2. **`reasonNOTDeletingDestructor_H` (695)** — thiscall method with >2 parameters cannot be
    a deleting destructor. Uses three distinct `funcParameter` checks to avoid grounding blowup.
 
-## Previous completed batch
+## Older Completed Batch
 
 1. **`reasonVFTableBelongsToClass` (1007 / 1118)** — both Prolog clauses collapsed into a unified
    rule set in `src/modules/vftables.lp`. Three ownership sub-cases (ancestor at Offset≠0,
@@ -68,16 +76,13 @@ All 13 hand-written examples pass:
 
 Ranked by availability of required predicates and incremental impact:
 
-1. **`reasonMergeClasses_K` (2939)** — `callAtOffset(0, Caller, Callee)` → same class as Caller.
-   Straightforward; uses `callAtOffset` which is already derived in `initial.lp`.
-
-2. **`reasonMergeClasses_H` (2895)** — derived constructor calls base constructor → they're in the
+1. **`reasonMergeClasses_H` (2895)** — derived constructor calls base constructor → they're in the
    same class hierarchy / need to merge. Uses `classCallsMethod` and `derivedClass`, both available.
 
-3. **`reasonObjectInObject_C` (1577)** — VFTable write at non-zero offset → objectInObject. Uses
+2. **`reasonObjectInObject_C` (1577)** — VFTable write at non-zero offset → objectInObject. Uses
    `vfTableWrite` which is available; feeds `objectInObject` which feeds composition reasoning.
 
-4. **`reasonNOTMergeClasses_A` (3073)** — two methods that have different base classes cannot merge.
+3. **`reasonNOTMergeClasses_A` (3073)** — two methods that have different base classes cannot merge.
    Uses `derivedClass`; no new predicates needed.
 
 Delayed:

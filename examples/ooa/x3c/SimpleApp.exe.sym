@@ -1,54 +1,75 @@
-19:06:58 Grounding...
-19:06:58 Grounding done (0.02s)
-19:06:58 Solving...
-19:06:58 Model found (0.03s): [-4, -286]
-19:06:58 Model found (0.03s, +0.00s): [-4, -287]
-19:06:58 Model found (0.03s, +0.00s): [-4, -290]
-19:06:58 Model found (0.04s, +0.00s): [-4, -291]
-19:06:58 Model found (0.04s, +0.00s): [-4, -292]
-19:06:58 Model found (0.04s, +0.00s): [-4, -293]
-19:06:58 Model found (0.04s, +0.00s): [-4, -294]
-19:06:58 Model found (0.04s, +0.00s): [-4, -295]
-19:06:58 Model found (0.05s, +0.00s): [-4, -296]
-19:06:58 Model found (0.05s, +0.00s): [-4, -297]
-19:06:58 Model found (0.05s, +0.00s): [-4, -298]
-19:06:58 Model found (0.05s, +0.00s): [-4, -299]
-19:06:58 Model found (0.06s, +0.00s): [-4, -300]
-19:06:58 Model found (0.06s, +0.00s): [-4, -301]
-19:06:58 Model found (0.06s, +0.00s): [-4, -302]
-19:06:58 Model found (0.07s, +0.01s): [-4, -303]
-19:06:58 Model found (0.07s, +0.00s): [-4, -304]
-19:06:58 Model found (0.07s, +0.00s): [-4, -305]
-19:06:58 Model found (0.08s, +0.00s): [-4, -306]
-19:06:58 Model found (0.08s, +0.00s): [-4, -307]
-19:06:58 Model found (0.08s, +0.00s): [-4, -308]
-19:06:58 Solving done: OPTIMUM FOUND (0.07s)
+21:13:23 Grounding...
+21:13:23 Grounding done (0.02s)
+21:13:23 Solving...
+21:13:23 Model found (0.03s): [-4, -148]
+21:13:23 Model found (0.04s, +0.00s): [-4, -279]
+21:13:23 Model found (0.04s, +0.00s): [-4, -280]
+21:13:23 Model found (0.04s, +0.00s): [-4, -281]
+21:13:23 Model found (0.04s, +0.00s): [-4, -282]
+21:13:23 Model found (0.05s, +0.00s): [-4, -283]
+21:13:23 Model found (0.05s, +0.00s): [-4, -284]
+21:13:23 Model found (0.05s, +0.00s): [-4, -285]
+21:13:23 Model found (0.05s, +0.00s): [-4, -286]
+21:13:23 Model found (0.06s, +0.00s): [-4, -287]
+21:13:23 Model found (0.06s, +0.00s): [-4, -288]
+21:13:23 Model found (0.06s, +0.00s): [-4, -289]
+21:13:23 Model found (0.06s, +0.00s): [-4, -290]
+21:13:23 Model found (0.07s, +0.00s): [-4, -291]
+21:13:23 Model found (0.07s, +0.01s): [-4, -292]
+21:13:23 Model found (0.08s, +0.01s): [-4, -293]
+21:13:23 Model found (0.08s, +0.00s): [-4, -294]
+21:13:23 Model found (0.09s, +0.00s): [-4, -295]
+21:13:23 Model found (0.09s, +0.00s): [-4, -296]
+21:13:23 Model found (0.09s, +0.00s): [-4, -297]
+21:13:23 Model found (0.10s, +0.00s): [-4, -298]
+21:13:23 Model found (0.10s, +0.00s): [-4, -299]
+21:13:23 Model found (0.10s, +0.00s): [-4, -300]
+21:13:23 Model found (0.11s, +0.00s): [-4, -301]
+21:13:23 Model found (0.11s, +0.00s): [-4, -302]
+21:13:23 Model found (0.11s, +0.00s): [-4, -303]
+21:13:23 Model found (0.12s, +0.01s): [-4, -304]
+21:13:23 Model found (0.12s, +0.00s): [-4, -305]
+21:13:23 Model found (0.13s, +0.01s): [-4, -306]
+21:13:23 Model found (0.14s, +0.01s): [-4, -307]
+21:13:23 Model found (0.15s, +0.01s): [-4, -308]
+21:13:23 Model found (0.15s, +0.01s): [-4, -309]
+21:13:23 Model found (0.16s, +0.01s): [-4, -310]
+21:13:23 Model found (0.17s, +0.01s): [-4, -311]
+21:13:23 Model found (0.18s, +0.01s): [-4, -312]
+21:13:23 Model found (0.20s, +0.02s): [-4, -376]
+21:13:23 Model found (0.21s, +0.01s): [-4, -377]
+21:13:23 Model found (0.21s, +0.00s): [-4, -379]
+21:13:23 Model found (0.22s, +0.01s): [-4, -380]
+21:13:23 Model found (0.23s, +0.01s): [-4, -389]
+21:13:23 Model found (0.25s, +0.02s): [-4, -392]
+21:13:23 Model found (0.28s, +0.02s): [-4, -395]
+21:13:23 Solving done: OPTIMUM FOUND (0.26s)
 % Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/x3c/SimpleApp.exe.results
 OPTIMUM FOUND
 
-Answer: 21
-Optimization: -4 -308
+Answer: 42
+Optimization: -4 -395
 
-% Equivalence classes (272 classes, 282 entities):
-
+% Equivalence classes (257 classes, 282 entities):
+21:13:23 Writing results to examples/ooa/x3c/SimpleApp.exe.results
 
 % Stats:
-%   atoms: 7900.0
-%   bodies: 1544.0
-%   rules: 8481.0
-%   variables: 1486.0
-%   constraints: 4.0
-%   choices: 1415.0
-%   conflicts: 26.0
-%   models: 21.0
+%   atoms: 8355.0
+%   bodies: 2033.0
+%   rules: 9038.0
+%   variables: 1829.0
+%   constraints: 113.0
+%   choices: 12915.0
+%   conflicts: 203.0
+%   models: 42.0
 %   optimal_models: 1.0
-%   final_cost: [-4.0, -308.0]
-%   lower_bound: [-4.0, -308.0]
-%   total_time: 0.09575200080871582
-%   ground_time: 0.017954010982066393
-%   time_to_first_model: 0.029188076965510845
-%   max_rss_bytes: 28311552
-%   solve_time: 0.0567319393157959
+%   final_cost: [-4.0, -395.0]
+%   lower_bound: [-4.0, -395.0]
+%   total_time: 0.2910349369049072
+%   ground_time: 0.019783752039074898
+%   time_to_first_model: 0.03411916038021445
+%   max_rss_bytes: 29884416
+%   solve_time: 0.24727392196655273
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)
@@ -57,6 +78,72 @@ classCallsMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Inte
 classCallsMethod(Cx_Ptr::~Cx_Ptr@0x412540,Cx_Ptr::Unload@0x4125d0)
 classCallsMethod(type_info::vector_deleting_destructor@0x412b20,type_info::_type_info_dtor_internal_method@0x41c2c4)
 classCallsMethod(type_info::vftable@0x41890c,type_info::vector_deleting_destructor@0x412b20)
+classRelatedMethod(CPluginManager::CPluginManager@0x4116f0,CPluginManager::GetPluginLoader@0x4119c0)
+classRelatedMethod(CPluginManager::CPluginManager@0x4116f0,CPluginManager::LoadPluginManager@0x411890)
+classRelatedMethod(CPluginManager::CPluginManager@0x4116f0,CPluginManager::Unload@0x4117d0)
+classRelatedMethod(CPluginManager::CPluginManager@0x4116f0,CPluginManager::~CPluginManager@0x411770)
+classRelatedMethod(CPluginManager::GetObjectFactory@0x411a30,CPluginManager::GetPluginLoader@0x4119c0)
+classRelatedMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::CPluginManager@0x4116f0)
+classRelatedMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
+classRelatedMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::LoadPluginManager@0x411890)
+classRelatedMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::Unload@0x4117d0)
+classRelatedMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::~CPluginManager@0x411770)
+classRelatedMethod(CPluginManager::LoadPluginManager@0x411890,CPluginManager::CPluginManager@0x4116f0)
+classRelatedMethod(CPluginManager::LoadPluginManager@0x411890,CPluginManager::GetPluginLoader@0x4119c0)
+classRelatedMethod(CPluginManager::LoadPluginManager@0x411890,CPluginManager::Unload@0x4117d0)
+classRelatedMethod(CPluginManager::LoadPluginManager@0x411890,CPluginManager::~CPluginManager@0x411770)
+classRelatedMethod(CPluginManager::Unload@0x4117d0,CPluginManager::CPluginManager@0x4116f0)
+classRelatedMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
+classRelatedMethod(CPluginManager::Unload@0x4117d0,CPluginManager::LoadPluginManager@0x411890)
+classRelatedMethod(CPluginManager::Unload@0x4117d0,CPluginManager::~CPluginManager@0x411770)
+classRelatedMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::CPluginManager@0x4116f0)
+classRelatedMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::GetPluginLoader@0x4119c0)
+classRelatedMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::LoadPluginManager@0x411890)
+classRelatedMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0,Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0,Cx_Interface<struct Ix_Example2>::operator->@0x412120)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0,Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160,Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160,Cx_Interface<struct Ix_Example2>::operator->@0x412120)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160,Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::Unload@0x412250,Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::operator->@0x412120,Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::operator->@0x412120,Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::operator->@0x412120,Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::Unload@0x412250)
+classRelatedMethod(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::operator->@0x412120)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::P@0x4124c0,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::Unload@0x4121b0,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator bool@0x412080,Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator bool@0x412080,Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator bool@0x412080,Cx_Interface<struct Ix_Example>::P@0x4124c0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator bool@0x412080,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator bool@0x412080,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator->@0x412040,Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator->@0x412040,Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator->@0x412040,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::operator->@0x412040,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::Unload@0x4121b0)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+classRelatedMethod(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+classRelatedMethod(Cx_Ptr::Cx_Ptr@0x412400,Cx_Ptr::~Cx_Ptr@0x412540)
+classRelatedMethod(Cx_Ptr::Unload@0x4125d0,Cx_Ptr::~Cx_Ptr@0x412540)
+classRelatedMethod(Cx_Ptr::~Cx_Ptr@0x412540,Cx_Ptr::Cx_Ptr@0x412400)
+classRelatedMethod(Cx_Ptr::~Cx_Ptr@0x412540,Cx_Ptr::Unload@0x4125d0)
+classRelatedMethod(type_info::_type_info_dtor_internal_method@0x41c2c4,type_info::vector_deleting_destructor@0x412b20)
+classRelatedMethod(type_info::vector_deleting_destructor@0x412b20,type_info::_type_info_dtor_internal_method@0x41c2c4)
+classRelatedMethod(type_info::vector_deleting_destructor@0x412b20,type_info::vftable@0x41890c)
+classRelatedMethod(type_info::vftable@0x41890c,type_info::vector_deleting_destructor@0x412b20)
 constructor(type_info::type_info@0x412af0)
 deletingDestructor(type_info::vector_deleting_destructor@0x412b20)
 guessEnabled(constructor)
@@ -66,15 +153,62 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
+mergeClasses(CPluginManager::CPluginManager@0x4116f0,CPluginManager::GetPluginLoader@0x4119c0)
+mergeClasses(CPluginManager::CPluginManager@0x4116f0,CPluginManager::LoadPluginManager@0x411890)
+mergeClasses(CPluginManager::CPluginManager@0x4116f0,CPluginManager::Unload@0x4117d0)
+mergeClasses(CPluginManager::CPluginManager@0x4116f0,CPluginManager::~CPluginManager@0x411770)
+mergeClasses(CPluginManager::CPluginManager@0x4116f0,type_info::vftable@0x41890c)
+mergeClasses(CPluginManager::GetObjectFactory@0x411a30,type_info::vftable@0x41890c)
 mergeClasses(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
+mergeClasses(CPluginManager::GetPluginLoader@0x4119c0,type_info::vftable@0x41890c)
+mergeClasses(CPluginManager::LoadPluginManager@0x411890,CPluginManager::GetPluginLoader@0x4119c0)
+mergeClasses(CPluginManager::LoadPluginManager@0x411890,type_info::vftable@0x41890c)
 mergeClasses(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
+mergeClasses(CPluginManager::Unload@0x4117d0,CPluginManager::LoadPluginManager@0x411890)
+mergeClasses(CPluginManager::Unload@0x4117d0,type_info::vftable@0x41890c)
+mergeClasses(CPluginManager::~CPluginManager@0x411770,CPluginManager::GetPluginLoader@0x4119c0)
+mergeClasses(CPluginManager::~CPluginManager@0x411770,CPluginManager::LoadPluginManager@0x411890)
 mergeClasses(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)
+mergeClasses(CPluginManager::~CPluginManager@0x411770,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160,Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0)
+mergeClasses(Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example2>::Unload@0x412250,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example2>::operator->@0x412120,Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0)
+mergeClasses(Cx_Interface<struct Ix_Example2>::operator->@0x412120,Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160)
+mergeClasses(Cx_Interface<struct Ix_Example2>::operator->@0x412120,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0)
+mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160)
 mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::Unload@0x412250)
+mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,Cx_Interface<struct Ix_Example2>::operator->@0x412120)
+mergeClasses(Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0)
+mergeClasses(Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example>::P@0x4124c0,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example>::Unload@0x4121b0,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example>::operator bool@0x412080,Cx_Interface<struct Ix_Example>::P@0x4124c0)
+mergeClasses(Cx_Interface<struct Ix_Example>::operator bool@0x412080,type_info::vftable@0x41890c)
+mergeClasses(Cx_Interface<struct Ix_Example>::operator->@0x412040,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+mergeClasses(Cx_Interface<struct Ix_Example>::operator->@0x412040,type_info::vftable@0x41890c)
 mergeClasses(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::Unload@0x4121b0)
+mergeClasses(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::operator bool@0x412080)
+mergeClasses(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,Cx_Interface<struct Ix_Example>::operator->@0x412040)
+mergeClasses(Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0,type_info::vftable@0x41890c)
+mergeClasses(Cx_Ptr::Cx_Ptr@0x412400,Cx_Ptr::~Cx_Ptr@0x412540)
+mergeClasses(Cx_Ptr::Cx_Ptr@0x412400,type_info::vftable@0x41890c)
+mergeClasses(Cx_Ptr::Unload@0x4125d0,type_info::vftable@0x41890c)
 mergeClasses(Cx_Ptr::~Cx_Ptr@0x412540,Cx_Ptr::Unload@0x4125d0)
+mergeClasses(Cx_Ptr::~Cx_Ptr@0x412540,type_info::vftable@0x41890c)
 mergeClasses(tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff,type_info::type_info@0x412af0)
 mergeClasses(type_info::vector_deleting_destructor@0x412b20,type_info::_type_info_dtor_internal_method@0x41c2c4)
 mergeClasses(type_info::vector_deleting_destructor@0x412b20,type_info::vftable@0x41890c)
+mergeClasses(type_info::vftable@0x41890c,type_info::_type_info_dtor_internal_method@0x41c2c4)
 mergeClasses(type_info::vftable@0x41890c,type_info::type_info@0x412af0)
 method(4275346)
 method(4276323)
@@ -374,27 +508,12 @@ vftableSizeTotal(4)
 %   {0x415b60}
 %   {0x415b6b}
 %   {@_RTC_AllocaHelper@12@0x412940}
-%   {@_RTC_CheckStackVars2@12@0x412980}19:06:58 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+%   {@_RTC_CheckStackVars2@12@0x412980}
 %   {@_RTC_CheckStackVars@8@0x4128c0}
 %   {@__security_check_cookie@4@0x412870}
 %   {ArrayUnwindFilter@0x413da0}
-%   {CPluginManager::CPluginManager@0x4116f0}
-%   {CPluginManager::LoadPluginManager@0x411890}
-%   {CPluginManager::~CPluginManager@0x411770, CPluginManager::Unload@0x4117d0, CPluginManager::GetPluginLoader@0x4119c0, CPluginManager::GetObjectFactory@0x411a30}
-%   {Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0}
-%   {Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160}
 %   {Cx_Interface<struct Ix_Example2>::P@0x412500}
-%   {Cx_Interface<struct Ix_Example2>::operator->@0x412120}
-%   {Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0, Cx_Interface<struct Ix_Example2>::Unload@0x412250}
-%   {Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10}
-%   {Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00}
-%   {Cx_Interface<struct Ix_Example>::P@0x4124c0}
-%   {Cx_Interface<struct Ix_Example>::operator bool@0x412080}
-%   {Cx_Interface<struct Ix_Example>::operator->@0x412040}
-%   {Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0, Cx_Interface<struct Ix_Example>::Unload@0x4121b0}
-%   {Cx_Ptr::Cx_Ptr@0x412400}
 %   {Cx_Ptr::P@0x412590}
-%   {Cx_Ptr::~Cx_Ptr@0x412540, Cx_Ptr::Unload@0x4125d0}
 %   {DebuggerProbe@0x413520}
 %   {DebuggerRuntime@0x4135d0}
 %   {GetPdbDll@0x414880}
@@ -631,7 +750,7 @@ vftableSizeTotal(4)
 %   {tramp:struct Ix_ObjectFactory * CPluginManager::GetObjectFactory(void)@0x41123f}
 %   {tramp:struct Ix_PluginLoader * CPluginManager::GetPluginLoader(void)@0x411136}
 %   {tramp:type_info::type_info(class type_info const &)@0x411235}
-%   {tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff, type_info::type_info@0x412af0, type_info::vector_deleting_destructor@0x412b20, type_info::vftable@0x41890c, type_info::_type_info_dtor_internal_method@0x41c2c4}
+%   {tramp:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110ff, CPluginManager::CPluginManager@0x4116f0, CPluginManager::~CPluginManager@0x411770, CPluginManager::Unload@0x4117d0, CPluginManager::LoadPluginManager@0x411890, CPluginManager::GetPluginLoader@0x4119c0, CPluginManager::GetObjectFactory@0x411a30, Cx_Interface<struct Ix_Example>::Cx_Interface@0x411e10, Cx_Interface<struct Ix_Example>::Cx_Interface@0x411f00, Cx_Interface<struct Ix_Example>::~Cx_Interface@0x411ff0, Cx_Interface<struct Ix_Example>::operator->@0x412040, Cx_Interface<struct Ix_Example>::operator bool@0x412080, Cx_Interface<struct Ix_Example2>::~Cx_Interface@0x4120d0, Cx_Interface<struct Ix_Example2>::operator->@0x412120, Cx_Interface<struct Ix_Example2>::IsNotNull@0x412160, Cx_Interface<struct Ix_Example>::Unload@0x4121b0, Cx_Interface<struct Ix_Example2>::Unload@0x412250, Cx_Interface<struct Ix_Example2>::Cx_Interface@0x4122f0, Cx_Ptr::Cx_Ptr@0x412400, Cx_Interface<struct Ix_Example>::P@0x4124c0, Cx_Ptr::~Cx_Ptr@0x412540, Cx_Ptr::Unload@0x4125d0, type_info::type_info@0x412af0, type_info::vector_deleting_destructor@0x412b20, type_info::vftable@0x41890c, type_info::_type_info_dtor_internal_method@0x41c2c4}
 %   {tramp:virtual type_info::~type_info(void)@0x411073}
 %   {tramp:virtual type_info::~type_info(void)@0x4110d2}
 %   {type_info::operator=@0x412bb0}

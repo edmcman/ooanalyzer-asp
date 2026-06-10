@@ -41,6 +41,22 @@ mergeClasses(W1, W2) :-
 %!trace_rule {"merge vftable % with class % because vftable belongs to this class", VFTable, Method}
 mergeClasses(VFTable, Method) :- vftableBelongsToClass(VFTable, _, Method). % rules.pl:2722
 
+% reasonMergeClasses_K: if two methods are present on the same object, and
+% neither class has a base, the methods must be on the same class.
+% Asymmetric: Class1 comes from classRelatedMethod; Class2 is Method's class.
+% No-base facts are witness-based, so both sides join through &sameClass.
+% Counterpart: reasonMergeClasses_K (rules.pl:2939)
+%!trace_rule {"% and % are the same class because % is related to % and neither class has a base", Class1, Class2, Class1, Method}
+reasonMergeClassesKUnsorted(Class1, Class2) :-
+    classRelatedMethod(Class1, Method),
+    classHasNoBase(NoBase1),
+    &sameClass(Class1, NoBase1),
+    classHasNoBase(Class2),
+    &sameClass(Method, Class2).                                              % rules.pl:2939
+
+mergeClasses(A, B) :- reasonMergeClassesKUnsorted(A, B), A < B.
+mergeClasses(A, B) :- reasonMergeClassesKUnsorted(B, A), A < B.
+
 % reasonNOTMergeClasses_E: methods writing different vftables at offset 0
 % cannot be the same class, unless both cross-write the other's vftable.
 % Symmetric: both methods from vfTableWrite at offset 0.

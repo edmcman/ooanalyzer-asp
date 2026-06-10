@@ -46,3 +46,4 @@ knownVirtualMethod(M) :- vfTableEntry(_, _, Entry), dethunk(Entry, M).
 knownVirtualMethod(M) :- symbolProperty(M, virtual).
 
 #show classCallsMethod/2.
+#show classRelatedMethod/2.

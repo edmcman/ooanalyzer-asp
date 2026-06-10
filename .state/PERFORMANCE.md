@@ -24,9 +24,9 @@ Use `-t1` unless specifically testing parallel search. The best known incumbent
 was found single-threaded; `-t4` and `-t8` did not reproduce the late jump in
 their completed 3-hour probes.
 
-## Active Experiments
+## Latest Batch
 
-Started 2026-06-08:
+Completed 2026-06-08:
 
 ```sh
 env UV_CACHE_DIR=/tmp/uv-cache uv run python .state/perf/run_mysql_best_restart_batch.py
@@ -43,10 +43,22 @@ Matrix:
 | Group | Variants | Purpose |
 |---|---|---|
 | Repeatability | `--seed=1..8` | Test whether the `[-2576,-30947]` jump is consistent or a lucky tail |
-| Threading | `--seed=1 -t8` | Check whether parallel search preserves the late restart-on-model jump |
+| Threading | `--seed=1 -t8` | Check whether default parallel search preserves the late restart-on-model jump |
 | Shrinking | `--seed=1 --opt-usc-shrink={lin,inv,bin,rgs,exp,min}` | Test whether core shrinking helps longer-tail proof/incumbent progress |
 
-Also running one model-inspection run:
+Conclusion: the late `[-2576,-30947]` jump is repeatable single-threaded. All
+eight repeat seeds and all six shrink variants reached `[-2576,-7214]` within
+about 5.0-5.6 minutes, then reached `[-2576,-30947]` after a long stall around
+9206-9508s. The `-t8` run used clingo's default `compete` mode, reached
+`[-2576,-7214]` much later, at 784.48s, and finished without the late jump.
+
+| Group | Final result | Takeaway |
+|---|---|---|
+| 8 repeats, `-t1` | 8/8 at `[-2576,-30947]` | Late jump is not seed luck |
+| Shrink variants | 6/6 at `[-2576,-30947]` | No shrink algorithm improved the incumbent or bound in 3h |
+| `-t8` / `-t 8,compete` | `[-2576,-7214]`, lower `[-2576,-33717]` | Threads still hurt incumbent quality |
+
+Model-inspection run:
 
 ```sh
 env UV_CACHE_DIR=/tmp/uv-cache uv run python ooanalyzer.py \
@@ -58,7 +70,13 @@ env UV_CACHE_DIR=/tmp/uv-cache uv run python ooanalyzer.py \
 ```
 
 This is intentionally not `--benchmark`, so model atoms and diffs are available
-for inspection.
+for inspection. It has already captured the transition from `[-2576,-6116]` to
+`[-2576,-7214]`, and then the late transition to `[-2576,-30947]` at 9213.32s.
+That final transition kept the high-priority vftable objective fixed at `-2576`
+and improved the low-priority objective by 23733. The delta was dominated by
+class/role restructuring: `+2647/-33 mergeClasses`, `+77/-25 constructor`,
+`+25/-77 realDestructor`, `+133/-25 vftableBelongsToClass`, and swapped
+18 `vfTableOverwrite` atoms.
 
 ## Main Conclusions
 
@@ -80,9 +98,10 @@ Completed 3-hour Domain USC results:
 | `usc,k` | 1 | `[-2576,-6116]` | `[-2576,-33026]` | Good proof progress, poor incumbent |
 | `usc,pmres` | 1 | `[-2576,-6116]` | `[-2576,-33043]` | Good proof progress, poor incumbent |
 
-Interpretation: `--restart-on-model` appears to matter for escaping the
-`[-2576,-7214]` plateau. It did not help branch-and-bound, but it did help the
-Domain + stratified USC setting.
+Interpretation: `--restart-on-model` matters for escaping the `[-2576,-7214]`
+plateau, and the effect is repeatable for single-threaded Domain + stratified
+USC. It did not help branch-and-bound, but it did help the Domain + stratified
+USC setting.
 
 ### Branch-And-Bound Is Still Not A Good Long-Run Option
 
@@ -125,19 +144,18 @@ Completed thread probes for the best Domain+USC all-tactics setting:
 |---:|---:|---:|---:|---|
 | `-t1 --restart-on-model` | `[-2576,-30947]` | `[-2576,-33472]` | 2.91 GB | Best known incumbent |
 | `-t4` | `[-2576,-7214]` | `[-2576,-33772]` | 5.26 GB | No late jump |
-| `-t8` | `[-2576,-7214]` | `[-2576,-33707]` | 8.41 GB | Slightly tighter bound, no late jump |
+| `-t8` / `-t 8,compete` | `[-2576,-7214]` | `[-2576,-33707]` | 8.41 GB | No late jump |
+| `-t 8,compete --restart-on-model` | `[-2576,-7214]` | `[-2576,-33717]` | 8.41 GB | No late jump |
 
-Parallel search changes the trajectory, not just the runtime. Use it only as an
-experiment until repeatability data says otherwise.
+Parallel search changes the trajectory, not just the runtime. Plain `-t8`
+means `-t 8,compete`; `-t 8,split` has not been tested yet.
 
-### Shrinking Is Still Open
+### Shrinking Did Not Help The 3h Incumbent
 
-Only `--opt-usc-shrink=bin` has completed so far for the current all-tactics
-USC family. It replayed the baseline path and ended at `[-2576,-7214]`, lower
-bound `[-2576,-33772]`.
-
-The active 2026-06-08 batch tests all shrink algorithms with
-`--restart-on-model`: `lin`, `inv`, `bin`, `rgs`, `exp`, and `min`.
+All tested `--opt-usc-shrink` algorithms with `--restart-on-model` found the
+same `[-2576,-30947]` incumbent as the default setting. Their final lower bound
+was also `[-2576,-33452]`, so there is no 3-hour evidence yet that shrinking
+improves mysql.exe on this configuration.
 
 ## Staged Optimization Diagnostics
 
@@ -204,18 +222,41 @@ env UV_CACHE_DIR=/tmp/uv-cache uv run python ooanalyzer.py \
 |---|---|
 | `.state/perf/mysql_3h3_domain_usc_oll_alltactics_restart.log` | Best known run, `[-2576,-30947]` |
 | `.state/perf/mysql_3h2_summary.tsv` | Completed 28-way BB/USC comparison |
-| `.state/perf/mysql_3h4_best_restart_summary.tsv` | Active repeat/thread/shrink batch |
-| `.state/perf/mysql_3h4_best_restart_modeldiff_seed1.log` | Active `-n 0 -d` model-inspection run |
+| `.state/perf/mysql_3h4_best_restart_summary.tsv` | Completed repeat/thread/shrink batch |
+| `.state/perf/mysql_3h4_best_restart_modeldiff_seed1.log` | Completed `-n 0 -d` model-inspection run |
 | `.state/perf/run_mysql_best_restart_batch.py` | Reproducible runner for current active batch |
 | `.state/perf/run_mysql_longterm_batch.py` | Reproducible runner for completed 28-way comparison |
 
+## Active Probe
+
+Started 2026-06-08:
+
+Default `-t8,split` / `-t 8,split` was not a valid split test: clingo printed
+`Selected strategies imply Mode=compete` and followed the known compete-style
+trajectory. Pinning the ASP preset explicitly did not help; the run below also
+printed `Selected strategies imply Mode=compete` and was stopped after the first
+model:
+
+```sh
+env UV_CACHE_DIR=/tmp/uv-cache uv run python ooanalyzer.py \
+  examples/ooa/mysql.exe.lp \
+  --benchmark --stats --time-limit 10800 --configuration=tweety \
+  --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify \
+  --restart-on-model -t 8,split \
+  > .state/perf/mysql_3h5_domain_usc_oll_alltactics_t8_split_tweety_restart.log 2>&1
+```
+
+Conclusion: with the current `usc,oll,disjoint,succinct,stratify` optimization
+strategy, clingo appears to force parallel mode back to `compete`. There is no
+valid `split` result yet for the winning USC setup.
+
 ## Next Decisions
 
-- If repeats consistently find the late `[-2576,-30947]` jump, make
-  `--restart-on-model` part of the recommended mysql command.
-- If the jump is seed-sensitive, compare seed distributions and consider
-  running several independent single-threaded jobs rather than using `-t8`.
-- If shrink variants improve the final bound or find better incumbents after
-  the late jump, rerun the best shrink setting with several seeds.
+- Keep `--restart-on-model` in the recommended mysql command.
+- Prefer multiple independent single-threaded runs over `-t8` for incumbent
+  quality.
+- Test `-t 8,split` separately before ruling out threaded search entirely.
+- Treat shrink algorithms as proof/longer-run candidates only; they did not
+  improve the 3-hour incumbent or bound in this batch.
 - Inspect the `-n 0 -d` model for the `[-2576,-30947]` jump and compare it to
   `[-2576,-7214]` to understand which merge/constructor decisions changed.
