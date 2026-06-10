@@ -393,6 +393,7 @@ def main():
             print("Optimization:", format_cost_values(last_cost))
             if final_lower_bound and not result.exhausted:
                 print("Lower bound:", format_cost_values(final_lower_bound))
+        sys.stdout.flush()
 
     if (
         not defer_print
@@ -431,6 +432,7 @@ def main():
                 results_path = base + ".results"
             else:
                 results_path = args.results
+            sys.stdout.flush()
             log.info("Writing results to %s", results_path)
             write_results(ctl, last_all_atoms, merge_pairs, results_path)
 
