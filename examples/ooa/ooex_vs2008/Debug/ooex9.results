@@ -1,21 +1,22 @@
-finalClass(0x411940, 0, 0, 0, 0, [0x411940]).
-finalClass(0x416798, 0x416798, 0, 0, 0x411610, [0x411610, 0x4116f0, 0x411740, 0x411780, 0x411820, 0x411860, 0x411900]).
+finalClass(0x411740, 0, 0, 0, 0, [0x411740, 0x411820, 0x411900]).
+finalClass(0x416758, 0x416758, 0, 0, 0x4116f0, [0x411610, 0x4116f0, 0x411780, 0x411860, 0x411940]).
+finalClass(0x416780, 0, 0, 0, 0, []).
 finalClass(0x4167d4, 0x4167d4, 0, 0, 0, [0x411c10, 0x411c40, 0x41a270]).
-finalDemangledName(0x411940, '.?AVD@@', 'D', '').
-finalDemangledName(0x416798, '.?AVA@@', 'A', '').
-finalDemangledName(0x416798, '.?AVB@@', 'B', '').
-finalDemangledName(0x416798, '.?AVC@@', 'C', '').
+finalDemangledName(0x411740, '.?AVB@@', 'B', '').
+finalDemangledName(0x411740, '.?AVC@@', 'C', '').
+finalDemangledName(0x416758, '.?AVD@@', 'D', '').
+finalDemangledName(0x416780, '.?AVA@@', 'A', '').
 finalDemangledName(0x4167d4, '.?AVtype_info@@', type_info, '').
 finalDemangledName(0x41a270, '?_type_info_dtor_internal_method@type_info@@QAEXXZ', type_info, '_type_info_dtor_internal_method').
 finalFileInfo('31280CB0682773615A24584A5F440259', 'ooex9.exe').
-finalInheritance(0x411940, 0x416798, 0, 0, false).
-finalInheritance(0x411940, 0x416798, 0xc, 0, false).
-finalInheritance(0x416798, 0x416798, 0xc, 0, false).
-finalInheritance(0x416798, 0x416798, 0x1c, 0, false).
-finalMethodProperty(0x411610, realDestructor, certain).
+finalInheritance(0x411740, 0x416780, 0xc, 0, false).
+finalInheritance(0x411740, 0x416780, 0x1c, 0, false).
+finalInheritance(0x416758, 0x411740, 0, 0x416758, false).
+finalInheritance(0x416758, 0x411740, 0xc, 0, false).
+finalMethodProperty(0x411610, constructor, certain).
 finalMethodProperty(0x4116f0, realDestructor, certain).
 finalMethodProperty(0x411740, virtual, certain).
-finalMethodProperty(0x411780, constructor, certain).
+finalMethodProperty(0x411780, realDestructor, certain).
 finalMethodProperty(0x411820, virtual, certain).
 finalMethodProperty(0x411860, realDestructor, certain).
 finalMethodProperty(0x411900, virtual, certain).

@@ -1,41 +1,46 @@
-finalClass(0x401310, 0, 0, 0, 0, [0x401310, 0x4017d0, 0x401960, 0x402080, 0x404ba8, 0x405527]).
-finalClass(0x401430, 0, 0, 0, 0, [0x401430, 0x4015e0, 0x401950, 0x4019d0, 0x401a00, 0x401a60, 0x4020b0, 0x402290, 0x402520, 0x4026f0, 0x402790, 0x402a00, 0x402a90, 0x402b20, 0x402b80, 0x403130, 0x4039e0, 0x404020, 0x404060, 0x405572]).
-finalClass(0x401490, 0, 0, 0, 0, [0x401490, 0x401560, 0x401980]).
-finalClass(0x401570, 0, 0, 0, 0, [0x401570, 0x4025b0]).
-finalClass(0x4015b0, 0, 0, 0, 0, [0x4015b0, 0x4029a0]).
-finalClass(0x401890, 0, 0, 0, 0x401890, [0x401890, 0x404904, 0x404951, 0x4060cc]).
-finalClass(0x401f60, 0, 0, 0, 0, [0x401f60, 0x40446c]).
-finalClass(0x402000, 0, 0, 0, 0, [0x402000, 0x404494]).
-finalClass(0x402560, 0, 0, 0, 0, [0x402560, 0x402640]).
-finalClass(0x404714, 0, 0, 0, 0x404714, [0x404714, 0x404757]).
-finalClass(0x404a31, 0, 0, 0, 0x404a31, [0x404a08, 0x404a31]).
-finalClass(0x405e5c, 0, 0, 0, 0, [0x405e5c, 0x405e83]).
+finalClass(0x401000, 0, 0, 0, 0x401000, [0x401000]).
+finalClass(0x401020, 0, 0, 0, 0x401020, [0x401020]).
+finalClass(0x4010e0, 0, 0, 0, 0x4010e0, [0x4010e0]).
+finalClass(0x401200, 0, 0, 0, 0x401200, [0x401200]).
+finalClass(0x401790, 0, 0, 0, 0x401790, [0x401790]).
+finalClass(0x4018b0, 0, 0, 0, 0x4018b0, [0x4018b0]).
+finalClass(0x401b30, 0, 0, 0, 0x401b30, [0x401b30]).
+finalClass(0x4024d0, 0, 0, 0, 0x4024d0, [0x4024d0]).
+finalClass(0x404714, 0, 0, 0, 0x404714, [0x404714]).
+finalClass(0x404a31, 0, 0, 0, 0x404a31, [0x404a31]).
+finalClass(0x404bfa, 0, 0, 0, 0x404bfa, [0x404bfa]).
+finalClass(0x404c6e, 0, 0, 0, 0x404c6e, [0x404c6e]).
+finalClass(0x404fed, 0, 0, 0, 0x404fed, [0x404fed]).
+finalClass(0x4055c1, 0, 0, 0, 0, [0x4055c1]).
+finalClass(0x405b9a, 0, 0, 0, 0x405b9a, [0x405b9a]).
 finalClass(0x4060af, 0, 0, 0, 0x4060af, [0x4060af]).
-finalClass(0x4060d9, 0, 0, 0, 0, [0x4060d9, 0x40615e]).
-finalClass(0x4181c0, 0x4181c0, 0, 0, 0, [0x401000, 0x401020, 0x401030, 0x401680]).
-finalClass(0x4181cc, 0x4181cc, 0, 0, 0x40499e, [0x4010e0, 0x4016f0, 0x4018e0, 0x40499e, 0x4049bb, 0x4061b1, 0x4061bc]).
-finalClass(0x4181d8, 0x4181d8, 0, 0, 0, [0x401200, 0x4012b0]).
-finalClass(0x418208, 0x418208, 0, 0, 0, [0x401730, 0x401760, 0x4018b0]).
-finalClass(0x418214, 0x418214, 0, 0, 0x401910, [0x401790, 0x401910]).
-finalClass(0x418268, 0x418268, 0, 0, 0x401b30, [0x4016c0, 0x401aa0, 0x401b30, 0x401b40, 0x403a10, 0x403a90, 0x403b10, 0x403b90, 0x403c10, 0x403df0, 0x403fb0, 0x4040f0]).
-finalClass(0x4182b0, 0x4182b0, 0, 0, 0x4024d0, [0x401d00, 0x401e00, 0x402440, 0x4024b0, 0x4024c0, 0x4024d0, 0x4024f0, 0x4042b0, 0x4042e0, 0x404310]).
+finalClass(0x406137, 0, 0, 0, 0x406137, [0x406137]).
+finalClass(0x4061b1, 0, 0, 0, 0x4061b1, [0x4061b1]).
+finalClass(0x406225, 0, 0, 0, 0x406225, [0x406225]).
+finalClass(0x4181c0, 0x4181c0, 0, 0, 0, [0x401680]).
+finalClass(0x4181cc, 0x4181cc, 0, 0, 0, [0x401890]).
+finalClass(0x4181d8, 0x4181d8, 0, 0, 0x401aa0, [0x401210, 0x401aa0]).
+finalClass(0x418208, 0x418208, 0, 0, 0, [0x401730]).
+finalClass(0x418214, 0x418214, 0, 0, 0, [0x401910]).
+finalClass(0x418268, 0, 0, 0, 0, []).
+finalClass(0x4182b0, 0x4182b0, 0, 0, 0, [0x402440]).
 finalClass(0x418320, 0x418320, 0, 0, 0, [0x4046d5]).
-finalClass(0x41832c, 0x41832c, 0, 0, 0, [0x404807, 0x40484a, 0x40486b, 0x404892]).
-finalClass(0x4183d0, 0, 0, 0, 0, []).
-finalClass(0x4183dc, 0, 0, 0, 0, []).
-finalClass(0x4183e8, 0, 0, 0, 0, []).
+finalClass(0x41832c, 0, 0, 0, 0, [0x40484a, 0x40486b, 0x404892]).
+finalClass(0x4183d0, 0x4183d0, 0, 0, 0, [0x404904]).
+finalClass(0x4183dc, 0x4183dc, 0, 0, 0, [0x404951]).
+finalClass(0x4183e8, 0x4183e8, 0, 0, 0, [0x40499e]).
 finalClass(0x4183f4, 0, 0, 0, 0, []).
-finalClass(0x4183fc, 0, 0, 0, 0x404bfa, [0x404bfa, 0x404ecb, 0x4055c1]).
+finalClass(0x4183fc, 0, 0, 0, 0, []).
 finalClass(0x418404, 0, 0, 0, 0, []).
-finalClass(0x41840c, 0x41840c, 0, 0, 0x401210, [0x401210, 0x404a41, 0x404a93, 0x404aac, 0x404ada, 0x404af3, 0x404b21, 0x404b2d, 0x404b4e, 0x404b5a, 0x404b7b, 0x40528d]).
-finalClass(0x418434, 0x418434, 0, 0, 0x404c6e, [0x404c6e, 0x404c99, 0x404ca1, 0x404ca9, 0x404caf, 0x404cb4, 0x404cb8, 0x404cbd, 0x404cc0, 0x404ce7, 0x404db0, 0x404e7b, 0x404ea3, 0x404eef, 0x404f10, 0x404fed, 0x405039, 0x405189, 0x405198, 0x4051a7, 0x4051d4, 0x405212, 0x4052af, 0x405334, 0x4053e0, 0x405509, 0x40561b, 0x40578c, 0x405884, 0x4059df, 0x405a97, 0x405b4f, 0x405b9a, 0x405bde, 0x40e9a9]).
+finalClass(0x41840c, 0x41840c, 0, 0, 0, [0x404a41]).
+finalClass(0x418434, 0, 0, 0, 0, [0x404c99, 0x404ca1, 0x404ca9, 0x404caf, 0x404cb4, 0x404cb8, 0x404cbd, 0x404cc0, 0x404ce7, 0x404db0, 0x404e7b, 0x404ea3, 0x404eef, 0x40e9a9]).
 finalClass(0x418474, 0, 0, 0, 0, []).
-finalClass(0x4184b4, 0, 0, 0, 0, [0x405124, 0x405127, 0x405246, 0x405262, 0x405276, 0x405361]).
-finalClass(0x4184ec, 0x4184ec, 0, 0, 0, [0x406137, 0x4061e3]).
-finalClass(0x41850c, 0x41850c, 0, 0, 0, [0x406193, 0x406208]).
-finalClass(0x418518, 0x418518, 0, 0, 0, [0x406225, 0x406235]).
-finalClass(0x4186b8, 0x4186b8, 0, 0, 0, [0x4087e8, 0x4093c3]).
-finalClass(0x41d6e0, 0, 0, 0, 0, [0x409808, 0x41f880]).
+finalClass(0x4184b4, 0, 0, 0, 0, []).
+finalClass(0x4184ec, 0x4184ec, 0, 0, 0x406208, [0x4061e3, 0x406208]).
+finalClass(0x41850c, 0x41850c, 0, 0, 0, [0x406193]).
+finalClass(0x418518, 0, 0, 0, 0, [0x406235]).
+finalClass(0x4186b8, 0x4186b8, 0, 0, 0, [0x4093c3]).
+finalClass(0x41d6e0, 0, 0, 0, 0, []).
 finalDemangledName(0x4181c0, '.?AVbad_alloc@std@@', 'std::bad_alloc', '').
 finalDemangledName(0x4181cc, '.?AVruntime_error@std@@', 'std::runtime_error', '').
 finalDemangledName(0x4181d8, '.?AVfacet@locale@std@@', 'std::locale::facet', '').
@@ -64,89 +69,43 @@ finalInheritance(0x4181c0, 0x4184ec, 0, 0x4181c0, false).
 finalInheritance(0x4181cc, 0x4184ec, 0, 0x4181cc, false).
 finalInheritance(0x418208, 0x4181cc, 0, 0x418208, false).
 finalInheritance(0x418214, 0x418208, 0, 0x418214, false).
-finalInheritance(0x418268, 0x4181d8, 0, 0x418268, false).
+finalInheritance(0x418268, 0x4181d8, 0, 0, false).
 finalInheritance(0x4182b0, 0x4181d8, 0, 0x4182b0, false).
 finalInheritance(0x418320, 0x4181d8, 0, 0x418320, false).
-finalInheritance(0x4183d0, 0x4184ec, 0, 0, false).
-finalInheritance(0x4183dc, 0x4183d0, 0, 0, false).
-finalInheritance(0x4183e8, 0x4183d0, 0, 0, false).
-finalInheritance(0x4183fc, 0x418404, 0x8, 0, false).
+finalInheritance(0x4183d0, 0x4184ec, 0, 0x4183d0, false).
+finalInheritance(0x4183dc, 0x4183d0, 0, 0x4183dc, false).
+finalInheritance(0x4183e8, 0x4183d0, 0, 0x4183e8, false).
 finalInheritance(0x418404, 0x4183f4, 0, 0, false).
 finalInheritance(0x41840c, 0x4181d8, 0, 0x41840c, false).
 finalInheritance(0x418474, 0x418434, 0, 0, false).
 finalInheritance(0x4184b4, 0x4181d8, 0, 0, false).
 finalInheritance(0x41850c, 0x4184ec, 0, 0x41850c, false).
 finalInheritance(0x4186b8, 0x4184ec, 0, 0x4186b8, false).
-finalMethodProperty(0x401000, constructor, certain).
-finalMethodProperty(0x401020, constructor, certain).
-finalMethodProperty(0x401030, deletingDestructor, certain).
-finalMethodProperty(0x401030, virtual, certain).
-finalMethodProperty(0x4010e0, constructor, certain).
-finalMethodProperty(0x401200, constructor, certain).
-finalMethodProperty(0x401210, realDestructor, certain).
-finalMethodProperty(0x4012b0, deletingDestructor, certain).
-finalMethodProperty(0x4012b0, virtual, certain).
+finalMethodProperty(0x401000, realDestructor, certain).
+finalMethodProperty(0x401020, realDestructor, certain).
+finalMethodProperty(0x4010e0, realDestructor, certain).
+finalMethodProperty(0x401200, realDestructor, certain).
+finalMethodProperty(0x401210, constructor, certain).
 finalMethodProperty(0x401680, constructor, certain).
-finalMethodProperty(0x4016f0, deletingDestructor, certain).
-finalMethodProperty(0x4016f0, virtual, certain).
 finalMethodProperty(0x401730, constructor, certain).
-finalMethodProperty(0x401760, deletingDestructor, certain).
-finalMethodProperty(0x401760, virtual, certain).
-finalMethodProperty(0x401790, constructor, certain).
-finalMethodProperty(0x401890, realDestructor, certain).
-finalMethodProperty(0x4018b0, constructor, certain).
-finalMethodProperty(0x4018e0, deletingDestructor, certain).
-finalMethodProperty(0x4018e0, virtual, certain).
-finalMethodProperty(0x401910, realDestructor, certain).
-finalMethodProperty(0x401aa0, constructor, certain).
+finalMethodProperty(0x401790, realDestructor, certain).
+finalMethodProperty(0x401890, constructor, certain).
+finalMethodProperty(0x4018b0, realDestructor, certain).
+finalMethodProperty(0x401910, constructor, certain).
+finalMethodProperty(0x401aa0, realDestructor, certain).
 finalMethodProperty(0x401b30, realDestructor, certain).
-finalMethodProperty(0x401b40, deletingDestructor, certain).
-finalMethodProperty(0x401b40, virtual, certain).
 finalMethodProperty(0x402440, constructor, certain).
-finalMethodProperty(0x4024b0, virtual, certain).
-finalMethodProperty(0x4024c0, virtual, certain).
 finalMethodProperty(0x4024d0, realDestructor, certain).
-finalMethodProperty(0x4024f0, deletingDestructor, certain).
-finalMethodProperty(0x4024f0, virtual, certain).
-finalMethodProperty(0x403a10, virtual, certain).
-finalMethodProperty(0x403a90, virtual, certain).
-finalMethodProperty(0x403b10, virtual, certain).
-finalMethodProperty(0x403b90, virtual, certain).
-finalMethodProperty(0x403c10, virtual, certain).
-finalMethodProperty(0x403df0, virtual, certain).
-finalMethodProperty(0x403fb0, virtual, certain).
-finalMethodProperty(0x4040f0, virtual, certain).
-finalMethodProperty(0x4042b0, virtual, certain).
-finalMethodProperty(0x4042e0, virtual, certain).
-finalMethodProperty(0x404310, virtual, certain).
 finalMethodProperty(0x4046d5, constructor, certain).
 finalMethodProperty(0x404714, realDestructor, certain).
-finalMethodProperty(0x404757, deletingDestructor, certain).
-finalMethodProperty(0x404757, virtual, certain).
-finalMethodProperty(0x404807, deletingDestructor, certain).
-finalMethodProperty(0x404807, virtual, certain).
 finalMethodProperty(0x40484a, virtual, certain).
 finalMethodProperty(0x40486b, virtual, certain).
 finalMethodProperty(0x404892, virtual, certain).
-finalMethodProperty(0x404904, realDestructor, certain).
-finalMethodProperty(0x404951, realDestructor, certain).
-finalMethodProperty(0x40499e, realDestructor, certain).
-finalMethodProperty(0x4049bb, deletingDestructor, certain).
-finalMethodProperty(0x4049bb, virtual, certain).
-finalMethodProperty(0x404a08, deletingDestructor, certain).
-finalMethodProperty(0x404a08, virtual, certain).
+finalMethodProperty(0x404904, constructor, certain).
+finalMethodProperty(0x404951, constructor, certain).
+finalMethodProperty(0x40499e, constructor, certain).
 finalMethodProperty(0x404a31, realDestructor, certain).
-finalMethodProperty(0x404a41, realDestructor, certain).
-finalMethodProperty(0x404a93, virtual, certain).
-finalMethodProperty(0x404aac, virtual, certain).
-finalMethodProperty(0x404ada, virtual, certain).
-finalMethodProperty(0x404af3, virtual, certain).
-finalMethodProperty(0x404b21, virtual, certain).
-finalMethodProperty(0x404b2d, virtual, certain).
-finalMethodProperty(0x404b4e, virtual, certain).
-finalMethodProperty(0x404b5a, virtual, certain).
-finalMethodProperty(0x404b7b, deletingDestructor, certain).
-finalMethodProperty(0x404b7b, virtual, certain).
+finalMethodProperty(0x404a41, constructor, certain).
 finalMethodProperty(0x404bfa, realDestructor, certain).
 finalMethodProperty(0x404c6e, realDestructor, certain).
 finalMethodProperty(0x404c99, virtual, certain).
@@ -161,49 +120,22 @@ finalMethodProperty(0x404ce7, virtual, certain).
 finalMethodProperty(0x404db0, virtual, certain).
 finalMethodProperty(0x404e7b, virtual, certain).
 finalMethodProperty(0x404ea3, virtual, certain).
-finalMethodProperty(0x404ecb, virtual, certain).
 finalMethodProperty(0x404eef, deletingDestructor, certain).
 finalMethodProperty(0x404eef, virtual, certain).
-finalMethodProperty(0x404fed, constructor, certain).
-finalMethodProperty(0x405124, virtual, certain).
-finalMethodProperty(0x405127, virtual, certain).
-finalMethodProperty(0x405189, virtual, certain).
-finalMethodProperty(0x405198, virtual, certain).
-finalMethodProperty(0x4051a7, virtual, certain).
-finalMethodProperty(0x4051d4, virtual, certain).
-finalMethodProperty(0x405246, virtual, certain).
-finalMethodProperty(0x405262, virtual, certain).
-finalMethodProperty(0x405276, virtual, certain).
-finalMethodProperty(0x40528d, deletingDestructor, certain).
-finalMethodProperty(0x40528d, virtual, certain).
-finalMethodProperty(0x4052af, virtual, certain).
-finalMethodProperty(0x4053e0, virtual, certain).
-finalMethodProperty(0x405509, virtual, certain).
+finalMethodProperty(0x404fed, realDestructor, certain).
 finalMethodProperty(0x4055c1, constructor, certain).
-finalMethodProperty(0x40561b, virtual, certain).
-finalMethodProperty(0x405884, virtual, certain).
-finalMethodProperty(0x4059df, virtual, certain).
-finalMethodProperty(0x405a97, virtual, certain).
 finalMethodProperty(0x405b9a, realDestructor, certain).
-finalMethodProperty(0x405bde, deletingDestructor, certain).
-finalMethodProperty(0x405bde, virtual, certain).
 finalMethodProperty(0x4060af, realDestructor, certain).
-finalMethodProperty(0x4060cc, virtual, certain).
-finalMethodProperty(0x406137, constructor, certain).
+finalMethodProperty(0x406137, realDestructor, certain).
 finalMethodProperty(0x406193, constructor, certain).
 finalMethodProperty(0x4061b1, realDestructor, certain).
-finalMethodProperty(0x4061bc, deletingDestructor, certain).
-finalMethodProperty(0x4061bc, virtual, certain).
 finalMethodProperty(0x4061e3, constructor, certain).
-finalMethodProperty(0x406208, constructor, certain).
-finalMethodProperty(0x406225, constructor, certain).
+finalMethodProperty(0x406208, realDestructor, certain).
+finalMethodProperty(0x406225, realDestructor, certain).
 finalMethodProperty(0x406235, deletingDestructor, certain).
 finalMethodProperty(0x406235, virtual, certain).
-finalMethodProperty(0x4087e8, deletingDestructor, certain).
-finalMethodProperty(0x4087e8, virtual, certain).
 finalMethodProperty(0x4093c3, constructor, certain).
 finalMethodProperty(0x40e9a9, virtual, certain).
-finalMethodProperty(0x41f880, virtual, certain).
 finalVFTable(0x4181c0, 0x8, 0x8, 0x4181bc, '.?AVbad_alloc@std@@').
 finalVFTable(0x4181cc, 0x8, 0x8, 0x4181c8, '.?AVruntime_error@std@@').
 finalVFTable(0x4181d8, 0x4, 0x4, 0x4181d4, '.?AVfacet@locale@std@@').

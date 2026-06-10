@@ -1,10 +1,9 @@
-finalClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4120b0, 0, 0, 0, 0, [std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4120b0, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x412330]).
-finalClass(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x412210, 0, 0, 0, 0, [std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x412210, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x412400]).
+finalClass(Shape::Shape(void)@0x411980, 0, 0, 0, Shape::Shape(void)@0x411980, [Shape::Shape(void)@0x411980]).
 finalClass(const Rectangle::`vftable'@0x417834, const Rectangle::`vftable'@0x417834, 0, 0, 0, [Rectangle::Rectangle(void)@0x4116e0, virtual Rectangle::draw(void)@0x411740]).
 finalClass(const Circle::`vftable'@0x417858, const Circle::`vftable'@0x417858, 0, 0, 0, [Circle::Circle(void)@0x4117c0, virtual Circle::draw(void)@0x411820]).
 finalClass(const Triangle::`vftable'@0x417878, const Triangle::`vftable'@0x417878, 0, 0, 0, [Triangle::Triangle(void)@0x4118a0, virtual Triangle::draw(void)@0x411900]).
-finalClass(const Shape::`vftable'@0x417898, const Shape::`vftable'@0x417898, 0, 0, 0, [Shape::Shape(void)@0x411980]).
-finalClass(const type_info::`vftable'@0x4178a4, const type_info::`vftable'@0x4178a4, 0, 0, 0, [type_info::type_info(class type_info const &)@0x412780, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0, type_info::_type_info_dtor_internal_method(void)@0x41b384]).
+finalClass(const Shape::`vftable'@0x417898, 0, 0, 0, 0, []).
+finalClass(const type_info::`vftable'@0x4178a4, const type_info::`vftable'@0x4178a4, 0, 0, 0, [std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4120b0, std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x412210, std::basic_ostream<char, CHAR_TRAITS>::sentry::operator int std::_Bool_struct::*(void)const@0x4122e0, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x412330, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x412400, type_info::type_info(class type_info const &)@0x412780, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0, type_info::_type_info_dtor_internal_method(void)@0x41b384]).
 finalClass(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41b2f0, 0, 0, 0, 0, [std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41b2f0, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41b2fc, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41b314]).
 finalClass(bool std::ios_base::good(void)const@0x41b2f4, 0, 0, 0, 0, [bool std::ios_base::good(void)const@0x41b2f4, __int64 std::ios_base::width(void)const@0x41b300, int std::ios_base::flags(void)const@0x41b304, __int64 std::ios_base::width(__int64)@0x41b31c]).
 finalClass(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b2f8, 0, 0, 0, 0, [class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b2f8, char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b308, class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b30c, std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b320]).
@@ -38,23 +37,23 @@ finalMethodProperty(Circle::Circle(void)@0x4117c0, constructor, certain).
 finalMethodProperty(virtual Circle::draw(void)@0x411820, virtual, certain).
 finalMethodProperty(Triangle::Triangle(void)@0x4118a0, constructor, certain).
 finalMethodProperty(virtual Triangle::draw(void)@0x411900, virtual, certain).
-finalMethodProperty(Shape::Shape(void)@0x411980, constructor, certain).
+finalMethodProperty(Shape::Shape(void)@0x411980, realDestructor, certain).
 finalMethodProperty(type_info::type_info(class type_info const &)@0x412780, constructor, certain).
 finalMethodProperty(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0, deletingDestructor, certain).
 finalMethodProperty(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0, virtual, certain).
-finalThunk(virtual Circle::draw(void)@0x411005, virtual Circle::draw(void)@0x411820).
-finalThunk(virtual Rectangle::draw(void)@0x411032, virtual Rectangle::draw(void)@0x411740).
-finalThunk(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0).
-finalThunk(virtual Triangle::draw(void)@0x411262, virtual Triangle::draw(void)@0x411900).
+finalThunk(thunk:virtual Circle::draw(void)@0x411005, virtual Circle::draw(void)@0x411820).
+finalThunk(thunk:virtual Rectangle::draw(void)@0x411032, virtual Rectangle::draw(void)@0x411740).
+finalThunk(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0).
+finalThunk(thunk:virtual Triangle::draw(void)@0x411262, virtual Triangle::draw(void)@0x411900).
 finalVFTable(const Rectangle::`vftable'@0x417834, 0x4, 0x4, 0x417830, '.?AVRectangle@@').
 finalVFTable(const Circle::`vftable'@0x417858, 0x4, 0x4, 0x417854, '.?AVCircle@@').
 finalVFTable(const Triangle::`vftable'@0x417878, 0x4, 0x4, 0x417874, '.?AVTriangle@@').
 finalVFTable(const Shape::`vftable'@0x417898, 0x4, 0x4, 0x417894, '.?AVShape@@').
 finalVFTable(const type_info::`vftable'@0x4178a4, 0x4, 0x4, 0x4178a0, '.?AVtype_info@@').
-finalVFTableEntry(const Rectangle::`vftable'@0x417834, 0, virtual Rectangle::draw(void)@0x411032).
-finalVFTableEntry(const Circle::`vftable'@0x417858, 0, virtual Circle::draw(void)@0x411005).
-finalVFTableEntry(const Triangle::`vftable'@0x417878, 0, virtual Triangle::draw(void)@0x411262).
-finalVFTableEntry(const Shape::`vftable'@0x417898, 0, j___purecall@0x4111bd).
-finalVFTableEntry(const type_info::`vftable'@0x4178a4, 0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113).
+finalVFTableEntry(const Rectangle::`vftable'@0x417834, 0, thunk:virtual Rectangle::draw(void)@0x411032).
+finalVFTableEntry(const Circle::`vftable'@0x417858, 0, thunk:virtual Circle::draw(void)@0x411005).
+finalVFTableEntry(const Triangle::`vftable'@0x417878, 0, thunk:virtual Triangle::draw(void)@0x411262).
+finalVFTableEntry(const Shape::`vftable'@0x417898, 0, thunk:j___purecall@0x4111bd).
+finalVFTableEntry(const type_info::`vftable'@0x4178a4, 0, thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113).
 % Object detection reporting complete.
 % Prolog results autogenerated by OOAnalyzer.

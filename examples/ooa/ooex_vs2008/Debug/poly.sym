@@ -1,91 +1,117 @@
-09:41:56 Grounding...
-09:41:56 Grounding done (0.11s)
-09:41:56 Solving...
-09:41:56 Model found (0.36s): [-20, -261]
-09:41:56 Model found (0.36s, +0.00s): [-20, -335]
-09:41:56 Model found (0.37s, +0.00s): [-20, -336]
-09:41:56 Model found (0.37s, +0.00s): [-20, -341]
-09:41:56 Model found (0.37s, +0.00s): [-20, -342]
-09:41:56 Model found (0.37s, +0.00s): [-20, -350]
-09:41:56 Model found (0.37s, +0.00s): [-20, -351]
-09:41:56 Model found (0.38s, +0.00s): [-20, -352]
-09:41:56 Model found (0.38s, +0.00s): [-20, -353]
-09:41:56 Model found (0.38s, +0.00s): [-20, -354]
-09:41:56 Model found (0.38s, +0.00s): [-20, -355]
-09:41:56 Model found (0.38s, +0.00s): [-20, -356]
-09:41:56 Model found (0.39s, +0.00s): [-20, -359]
-09:41:56 Model found (0.39s, +0.00s): [-20, -360]
-09:41:56 Model found (0.39s, +0.00s): [-20, -361]
-09:41:56 Model found (0.39s, +0.00s): [-20, -368]
-09:41:56 Model found (0.40s, +0.00s): [-20, -369]
-09:41:56 Model found (0.40s, +0.00s): [-20, -370]
-09:41:56 Model found (0.40s, +0.00s): [-20, -371]
-09:41:56 Model found (0.40s, +0.00s): [-20, -372]
-09:41:56 Model found (0.41s, +0.00s): [-20, -373]
-09:41:56 Model found (0.42s, +0.01s): [-20, -374]
-09:41:56 Model found (0.42s, +0.00s): [-20, -375]
-09:41:56 Model found (0.42s, +0.00s): [-20, -376]
-09:41:56 Model found (0.42s, +0.01s): [-20, -377]
-09:41:56 Model found (0.43s, +0.00s): [-20, -378]
-09:41:56 Model found (0.43s, +0.00s): [-20, -379]
-09:41:56 Model found (0.43s, +0.00s): [-20, -380]
-09:41:56 Model found (0.43s, +0.00s): [-20, -381]
-09:41:56 Model found (0.44s, +0.00s): [-20, -382]
-09:41:56 Model found (0.44s, +0.01s): [-20, -383]
-09:41:56 Model found (0.45s, +0.00s): [-20, -384]
-09:41:56 Model found (0.45s, +0.01s): [-20, -385]
-09:41:56 Model found (0.46s, +0.00s): [-20, -386]
-09:41:56 Model found (0.46s, +0.00s): [-20, -387]
-09:41:56 Model found (0.46s, +0.01s): [-20, -388]
-09:41:56 Model found (0.47s, +0.00s): [-20, -389]
-09:41:56 Model found (0.47s, +0.00s): [-20, -390]
-09:41:56 Model found (0.47s, +0.00s): [-20, -391]
-09:41:56 Model found (0.47s, +0.00s): [-20, -392]
-09:41:56 Solving done: OPTIMUM FOUND (0.37s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
+21:52:41 Grounding...
+21:52:41 Grounding done (0.05s)
+21:52:41 Solving...
+21:52:41 Model found (0.24s): [-20, -336]
+21:52:41 Model found (0.24s, +0.01s): [-20, -351]
+21:52:41 Model found (0.27s, +0.02s): [-20, -401]
+21:52:41 Model found (0.29s, +0.02s): [-20, -402]
+21:52:41 Model found (0.38s, +0.09s): [-20, -404]
+21:52:42 Model found (0.65s, +0.27s): [-20, -410]
+21:52:42 Model found (0.67s, +0.02s): [-20, -416]
+21:52:42 Model found (0.70s, +0.04s): [-20, -418]
+21:52:42 Solving done: OPTIMUM FOUND (0.66s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/poly.results
 OPTIMUM FOUND
 
-Answer: 40
-Optimization: -20 -392
+Answer: 8
+Optimization: -20 -418
 
-% Equivalence classes (281 classes, 310 entities):
+% Equivalence classes (279 classes, 310 entities):
+21:52:42 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
 
 % Stats:
-%   atoms: 26113.0
-%   bodies: 13029.0
-%   rules: 27884.0
-%   variables: 9283.0
-%   constraints: 13.0
-%   choices: 2788.0
-%   conflicts: 31.0
-%   models: 40.0
+%   atoms: 26585.0
+%   bodies: 13504.0
+%   rules: 28649.0
+%   variables: 9609.0
+%   constraints: 175.0
+%   choices: 41634.0
+%   conflicts: 249.0
+%   models: 8.0
 %   optimal_models: 1.0
-%   final_cost: [-20.0, -392.0]
-%   lower_bound: [-20.0, -392.0]
-%   total_time: 0.5119509696960449
-%   ground_time: 0.1051210839941632
-%   time_to_first_model: 0.3634028749947902
-%   max_rss_bytes: 45809664
-%   solve_time: 0.11247396469116211
-classCallsMethod(Circle::Circle(void)@4265952,Shape::Shape(void)@4266400)
-classCallsMethod(Rectangle::Rectangle(void)@4265728,Shape::Shape(void)@4266400)
-classCallsMethod(Triangle::Triangle(void)@4266176,Shape::Shape(void)@4266400)
-classCallsMethod(const Circle::`vftable'@4290600,virtual Circle::draw(void)@4266048)
-classCallsMethod(const Rectangle::`vftable'@4290564,virtual Rectangle::draw(void)@4265824)
-classCallsMethod(const Triangle::`vftable'@4290632,virtual Triangle::draw(void)@4266272)
-classCallsMethod(const type_info::`vftable'@4290676,virtual * type_info::`vector deleting destructor'(unsigned int)@4269536)
-classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4267888,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512)
-classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4268704)
-classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,type_info::_type_info_dtor_internal_method(void)@4305840)
-constructor(Circle::Circle(void)@4265952)
-constructor(Rectangle::Rectangle(void)@4265728)
-constructor(Shape::Shape(void)@4266400)
-constructor(Triangle::Triangle(void)@4266176)
-constructor(type_info::type_info(class type_info const &)@4269488)
-deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536)
-derivedClass(const Circle::`vftable'@4290600,const Shape::`vftable'@4290664,0)
-derivedClass(const Rectangle::`vftable'@4290564,const Shape::`vftable'@4290664,0)
-derivedClass(const Triangle::`vftable'@4290632,const Shape::`vftable'@4290664,0)
+%   final_cost: [-20.0, -418.0]
+%   lower_bound: [-20.0, -418.0]
+%   total_time: 0.7202680110931396
+%   ground_time: 0.05189359188079834
+%   time_to_first_model: 0.23661978682503104
+%   max_rss_bytes: 46399488
+%   solve_time: 0.47855281829833984
+classCallsMethod(Circle::Circle(void)@0x4117e0,Shape::Shape(void)@0x4119a0)
+classCallsMethod(Rectangle::Rectangle(void)@0x411700,Shape::Shape(void)@0x4119a0)
+classCallsMethod(Triangle::Triangle(void)@0x4118c0,Shape::Shape(void)@0x4119a0)
+classCallsMethod(const Circle::`vftable'@0x417828,virtual Circle::draw(void)@0x411840)
+classCallsMethod(const Rectangle::`vftable'@0x417804,virtual Rectangle::draw(void)@0x411760)
+classCallsMethod(const Triangle::`vftable'@0x417848,virtual Triangle::draw(void)@0x411920)
+classCallsMethod(const type_info::`vftable'@0x417874,virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0)
+classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0)
+classCallsMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0)
+classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0,type_info::_type_info_dtor_internal_method(void)@0x41b3b0)
+classRelatedMethod(Circle::Circle(void)@0x4117e0,Shape::Shape(void)@0x4119a0)
+classRelatedMethod(Rectangle::Rectangle(void)@0x411700,Shape::Shape(void)@0x4119a0)
+classRelatedMethod(Shape::Shape(void)@0x4119a0,Circle::Circle(void)@0x4117e0)
+classRelatedMethod(Shape::Shape(void)@0x4119a0,Rectangle::Rectangle(void)@0x411700)
+classRelatedMethod(Shape::Shape(void)@0x4119a0,Triangle::Triangle(void)@0x4118c0)
+classRelatedMethod(Triangle::Triangle(void)@0x4118c0,Shape::Shape(void)@0x4119a0)
+classRelatedMethod(bool std::ios_base::good(void)const@0x41b30c,class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310)
+classRelatedMethod(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+classRelatedMethod(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340,int std::ios_base::flags(void)const@0x41b344)
+classRelatedMethod(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340,int std::ios_base::width(int)@0x41b328)
+classRelatedMethod(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340,int std::ios_base::width(void)const@0x41b348)
+classRelatedMethod(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+classRelatedMethod(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310,bool std::ios_base::good(void)const@0x41b30c)
+classRelatedMethod(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+classRelatedMethod(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c,int std::ios_base::flags(void)const@0x41b344)
+classRelatedMethod(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c,int std::ios_base::width(int)@0x41b328)
+classRelatedMethod(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c,int std::ios_base::width(void)const@0x41b348)
+classRelatedMethod(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+classRelatedMethod(const Circle::`vftable'@0x417828,virtual Circle::draw(void)@0x411840)
+classRelatedMethod(const Rectangle::`vftable'@0x417804,virtual Rectangle::draw(void)@0x411760)
+classRelatedMethod(const Triangle::`vftable'@0x417848,virtual Triangle::draw(void)@0x411920)
+classRelatedMethod(const type_info::`vftable'@0x417874,virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0)
+classRelatedMethod(int std::ios_base::flags(void)const@0x41b344,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+classRelatedMethod(int std::ios_base::flags(void)const@0x41b344,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+classRelatedMethod(int std::ios_base::flags(void)const@0x41b344,int std::ios_base::width(int)@0x41b328)
+classRelatedMethod(int std::ios_base::flags(void)const@0x41b344,int std::ios_base::width(void)const@0x41b348)
+classRelatedMethod(int std::ios_base::flags(void)const@0x41b344,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+classRelatedMethod(int std::ios_base::width(int)@0x41b328,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+classRelatedMethod(int std::ios_base::width(int)@0x41b328,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+classRelatedMethod(int std::ios_base::width(int)@0x41b328,int std::ios_base::flags(void)const@0x41b344)
+classRelatedMethod(int std::ios_base::width(int)@0x41b328,int std::ios_base::width(void)const@0x41b348)
+classRelatedMethod(int std::ios_base::width(int)@0x41b328,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+classRelatedMethod(int std::ios_base::width(void)const@0x41b348,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+classRelatedMethod(int std::ios_base::width(void)const@0x41b348,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+classRelatedMethod(int std::ios_base::width(void)const@0x41b348,int std::ios_base::flags(void)const@0x41b344)
+classRelatedMethod(int std::ios_base::width(void)const@0x41b348,int std::ios_base::width(int)@0x41b328)
+classRelatedMethod(int std::ios_base::width(void)const@0x41b348,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+classRelatedMethod(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+classRelatedMethod(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+classRelatedMethod(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,int std::ios_base::flags(void)const@0x41b344)
+classRelatedMethod(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,int std::ios_base::width(int)@0x41b328)
+classRelatedMethod(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,int std::ios_base::width(void)const@0x41b348)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0,std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0,std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0,std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0,std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0)
+classRelatedMethod(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70)
+classRelatedMethod(type_info::_type_info_dtor_internal_method(void)@0x41b3b0,virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0)
+classRelatedMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0,const type_info::`vftable'@0x417874)
+classRelatedMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0,type_info::_type_info_dtor_internal_method(void)@0x41b3b0)
+classRelatedMethod(virtual Circle::draw(void)@0x411840,const Circle::`vftable'@0x417828)
+classRelatedMethod(virtual Rectangle::draw(void)@0x411760,const Rectangle::`vftable'@0x417804)
+classRelatedMethod(virtual Triangle::draw(void)@0x411920,const Triangle::`vftable'@0x417848)
+constructor(Circle::Circle(void)@0x4117e0)
+constructor(Rectangle::Rectangle(void)@0x411700)
+constructor(Triangle::Triangle(void)@0x4118c0)
+constructor(type_info::type_info(class type_info const &)@0x4125b0)
+deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0)
+derivedClass(const Circle::`vftable'@0x417828,const Shape::`vftable'@0x417868,0)
+derivedClass(const Rectangle::`vftable'@0x417804,const Shape::`vftable'@0x417868,0)
+derivedClass(const Triangle::`vftable'@0x417848,const Shape::`vftable'@0x417868,0)
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(merge)
@@ -93,657 +119,664 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(bool std::ios_base::good(void)const@4305676,int std::ios_base::flags(void)const@4305732)
-mergeClasses(bool std::ios_base::good(void)const@4305676,int std::ios_base::width(int)@4305704)
-mergeClasses(bool std::ios_base::good(void)const@4305676,int std::ios_base::width(void)const@4305736)
-mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
-mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
-mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700)
-mergeClasses(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-mergeClasses(const Circle::`vftable'@4290600,Circle::Circle(void)@4265952)
-mergeClasses(const Rectangle::`vftable'@4290564,Rectangle::Rectangle(void)@4265728)
-mergeClasses(const Shape::`vftable'@4290664,Shape::Shape(void)@4266400)
-mergeClasses(const Triangle::`vftable'@4290632,Triangle::Triangle(void)@4266176)
-mergeClasses(const type_info::`vftable'@4290676,type_info::type_info(class type_info const &)@4269488)
-mergeClasses(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-mergeClasses(int std::ios_base::flags(void)const@4305732,int std::ios_base::width(void)const@4305736)
-mergeClasses(int std::ios_base::width(int)@4305704,int std::ios_base::flags(void)const@4305732)
-mergeClasses(int std::ios_base::width(int)@4305704,int std::ios_base::width(void)const@4305736)
-mergeClasses(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712,static int __cdecl std::char_traits<char>::eof(void)@4305716)
-mergeClasses(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712,static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
-mergeClasses(static int __cdecl std::char_traits<char>::eof(void)@4305716,static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
-mergeClasses(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-mergeClasses(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
-mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684)
-mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
-mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4267888,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512)
-mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4268704)
-mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
-mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
-mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660,std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226,type_info::type_info(class type_info const &)@4269488)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,const type_info::`vftable'@4290676)
-mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536,type_info::_type_info_dtor_internal_method(void)@4305840)
-mergeClasses(virtual Circle::draw(void)@4263941,Circle::Circle(void)@4265952)
-mergeClasses(virtual Circle::draw(void)@4266048,const Circle::`vftable'@4290600)
-mergeClasses(virtual Rectangle::draw(void)@4264001,Rectangle::Rectangle(void)@4265728)
-mergeClasses(virtual Rectangle::draw(void)@4265824,const Rectangle::`vftable'@4290564)
-mergeClasses(virtual Triangle::draw(void)@4264561,Triangle::Triangle(void)@4266176)
-mergeClasses(virtual Triangle::draw(void)@4266272,const Triangle::`vftable'@4290632)
-method($LN6_1@4275173)
-method($LN8@4273806)
-method(* __cdecl operator new(unsigned int)@4264481)
-method(* __cdecl operator new(unsigned int)@4268874)
-method(ArrayUnwindFilter@4274080)
-method(Circle::Circle(void)@4264356)
-method(Circle::Circle(void)@4265952)
-method(DebuggerProbe@4271136)
-method(DebuggerRuntime@4272080)
-method(GetPdbDll@4277248)
-method(Rectangle::Rectangle(void)@4264181)
-method(Rectangle::Rectangle(void)@4265728)
-method(Shape::Shape(void)@4264566)
-method(Shape::Shape(void)@4266400)
-method(Triangle::Triangle(void)@4263971)
-method(Triangle::Triangle(void)@4266176)
-method(_DebuggerKnownHandle@4271088)
-method(_NtCurrentTeb@4270848)
-method(__CRT_RTC_INITW@4273654)
-method(__CrtDbgReportW@4276278)
-method(__CrtSetCheckCount@4275642)
-method(__FindPESection@4275776)
-method(__IsNonwritableInCurrentImage@4275936)
-method(__RTC_CheckEsp@4268880)
-method(__RTC_GetErrDesc@4273456)
-method(__RTC_InitBase@4269392)
-method(__RTC_Initialize@4274832)
-method(__RTC_NumErrors@4273440)
-method(__RTC_SetErrorFunc@4273536)
-method(__RTC_SetErrorFuncW@4273584)
-method(__RTC_Shutdown@4269456)
-method(__RTC_Terminate@4274880)
-method(__RTC_UninitUse@4273136)
-method(__ValidateImageBase@4275648)
-method(__XcptFilter@4275624)
-method(___CxxFrameHandler3@4269708)
-method(___CxxSetUnhandledExceptionFilter@4274624)
-method(___dllonexit@4277872)
-method(___getmainargs@4275334)
-method(___p__commode@4274928)
-method(___p__fmode@4274934)
-method(___report_gsfailure@4274144)
-method(___security_init_cookie@4275344)
-method(___set_app_type@4275322)
-method(___setusermatherr@4274790)
-method(__amsg_exit@4275328)
-method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264556)
-method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4272608)
-method(__cdecl _RTC_Failure(*, int)@4264546)
-method(__cdecl _RTC_Failure(*, int)@4271312)
-method(__cdecl _RTC_StackFailure(*, char const *)@4264246)
-method(__cdecl _RTC_StackFailure(*, char const *)@4272288)
-method(__cdecl operator delete(*)@4264136)
-method(__cdecl operator delete(*)@4273660)
-method(__cdecl terminate(void)@4264161)
-method(__cdecl terminate(void)@4277836)
-method(__cexit@4275630)
-method(__configthreadlocale@4274650)
-method(__controlfp_s@4277854)
-method(__crt_debugger_hook@4277848)
-method(__decode_pointer@4277884)
-method(__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282040)
-method(__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282088)
-method(__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@4282136)
-method(__encode_pointer@4275316)
-method(__except_handler4@4276304)
-method(__except_handler4_common@4277890)
-method(__exit@4275618)
-method(__fastcall _RTC_AllocaHelper(x, x, x)@4264016)
-method(__fastcall _RTC_AllocaHelper(x, x, x)@4269056)
-method(__fastcall _RTC_CheckStackVars(x, x)@4264131)
-method(__fastcall _RTC_CheckStackVars(x, x)@4268928)
-method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264391)
-method(__fastcall _RTC_CheckStackVars2(x, x, x)@4269120)
-method(__fastcall __security_check_cookie(x)@4263981)
-method(__fastcall __security_check_cookie(x)@4269728)
-method(__imp___purecall@4305932)
-method(__initterm@4276284)
-method(__initterm_e@4276290)
-method(__invoke_watson@4277860)
-method(__invoke_watson_if_error@4274736)
-method(__lock@4277878)
-method(__matherr@4274800)
-method(__onexit@4274944)
-method(__purecall@4269702)
-method(__setargv@4274816)
-method(__setdefaultprecision@4274656)
-method(__stdcall DebugBreak()@4263961)
-method(__stdcall DebugBreak()@4278046)
-method(__stdcall FreeLibrary(x)@4264591)
-method(__stdcall FreeLibrary(x)@4278166)
-method(__stdcall GetCurrentProcess()@4264196)
-method(__stdcall GetCurrentProcess()@4278088)
-method(__stdcall GetCurrentProcessId()@4264386)
-method(__stdcall GetCurrentProcessId()@4278124)
-method(__stdcall GetCurrentThreadId()@4264171)
-method(__stdcall GetCurrentThreadId()@4278118)
-method(__stdcall GetModuleFileNameW(x, x, x)@4264056)
-method(__stdcall GetModuleFileNameW(x, x, x)@4278154)
-method(__stdcall GetProcAddress(x, x)@4264121)
-method(__stdcall GetProcAddress(x, x)@4278070)
-method(__stdcall GetProcessHeap()@4264291)
-method(__stdcall GetProcessHeap()@4278148)
-method(__stdcall GetSystemTimeAsFileTime(x)@4264426)
-method(__stdcall GetSystemTimeAsFileTime(x)@4278130)
-method(__stdcall GetTickCount()@4264451)
-method(__stdcall GetTickCount()@4278112)
-method(__stdcall HeapAlloc(x, x, x)@4264471)
-method(__stdcall HeapAlloc(x, x, x)@4278142)
-method(__stdcall HeapFree(x, x, x)@4264311)
-method(__stdcall HeapFree(x, x, x)@4278136)
-method(__stdcall InterlockedCompareExchange(x, x, x)@4264271)
-method(__stdcall InterlockedCompareExchange(x, x, x)@4278028)
-method(__stdcall InterlockedExchange(x, x)@4264496)
-method(__stdcall InterlockedExchange(x, x)@4278016)
-method(__stdcall IsDebuggerPresent()@4263986)
-method(__stdcall IsDebuggerPresent()@4278034)
-method(__stdcall LoadLibraryA(x)@4264251)
-method(__stdcall LoadLibraryA(x)@4278076)
-method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264091)
-method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4278058)
-method(__stdcall QueryPerformanceCounter(x)@4264371)
-method(__stdcall QueryPerformanceCounter(x)@4278106)
-method(__stdcall RaiseException(x, x, x, x)@4264256)
-method(__stdcall RaiseException(x, x, x, x)@4278040)
-method(__stdcall SetUnhandledExceptionFilter(x)@4264066)
-method(__stdcall SetUnhandledExceptionFilter(x)@4278100)
-method(__stdcall Sleep(x)@4264041)
-method(__stdcall Sleep(x)@4278022)
-method(__stdcall TerminateProcess(x, x)@4264341)
-method(__stdcall TerminateProcess(x, x)@4278082)
-method(__stdcall UnhandledExceptionFilter(x)@4264501)
-method(__stdcall UnhandledExceptionFilter(x)@4278094)
-method(__stdcall VirtualQuery(x, x, x)@4264081)
-method(__stdcall VirtualQuery(x, x, x)@4278160)
-method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264011)
-method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4278052)
-method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264536)
-method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4273904)
-method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264596)
-method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4273680)
-method(__stdcall lstrlenA(x)@4264541)
-method(__stdcall lstrlenA(x)@4278064)
-method(__tmainCRTStartup@4270112)
-method(__unlock@4277866)
-method(__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@4282032)
-method(__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@4282080)
-method(__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@4282128)
-method(_atexit@4275280)
-method(_exit_0@4275636)
-method(_getMemBlockDataString@4272992)
-method(_main@4265296)
-method(_mainCRTStartup@4270080)
-method(bool __cdecl std::uncaught_exception(void)@4264151)
-method(bool __cdecl std::uncaught_exception(void)@4277998)
-method(bool std::ios_base::good(void)const@4263956)
-method(bool std::ios_base::good(void)const@4277986)
-method(bool std::ios_base::good(void)const@4305676)
-method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264526)
-method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4277950)
-method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728)
-method(check_managed_app@4270864)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264096)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4277902)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4264316)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4266480)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264346)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4277974)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264331)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4277896)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688)
-method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264186)
-method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4277980)
-method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680)
-method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264031)
-method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4277944)
-method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724)
-method(class type_info & type_info::operator=(class type_info const &)@4263996)
-method(class type_info & type_info::operator=(class type_info const &)@4269680)
-method(failwithmessage@4271424)
-method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264611)
-method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4273632)
-method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264021)
-method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4273648)
-method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264441)
-method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4276368)
-method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264201)
-method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4277938)
-method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720)
-method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4264456)
-method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4277920)
-method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708)
-method(int std::ios_base::flags(void)const@4264551)
-method(int std::ios_base::flags(void)const@4277956)
-method(int std::ios_base::flags(void)const@4305732)
-method(int std::ios_base::width(int)@4264191)
-method(int std::ios_base::width(int)@4277914)
-method(int std::ios_base::width(int)@4305704)
-method(int std::ios_base::width(void)const@4264211)
-method(int std::ios_base::width(void)const@4277962)
-method(int std::ios_base::width(void)const@4305736)
-method(j__DebuggerKnownHandle@4264571)
-method(j__NtCurrentTeb@4264306)
-method(j___CRT_RTC_INITW@4264446)
-method(j___CrtDbgReportW@4264076)
-method(j___CrtSetCheckCount@4264491)
-method(j___FindPESection@4264231)
-method(j___IsNonwritableInCurrentImage@4264461)
-method(j___RTC_CheckEsp@4264406)
-method(j___RTC_GetErrDesc@4263966)
-method(j___RTC_InitBase@4264241)
-method(j___RTC_Initialize@4264416)
-method(j___RTC_NumErrors@4264026)
-method(j___RTC_SetErrorFunc@4264321)
-method(j___RTC_SetErrorFuncW@4264296)
-method(j___RTC_SetErrorType@4264101)
-method(j___RTC_Shutdown@4264221)
-method(j___RTC_Terminate@4264006)
-method(j___RTC_UninitUse@4264216)
-method(j___ValidateImageBase@4264266)
-method(j___XcptFilter@4264486)
-method(j____CxxFrameHandler3@4264466)
-method(j____CxxSetUnhandledExceptionFilter@4264366)
-method(j____dllonexit@4264586)
-method(j____getmainargs@4264531)
-method(j____p__commode@4264376)
-method(j____p__fmode@4263976)
-method(j____security_init_cookie@4264061)
-method(j____set_app_type@4264396)
-method(j____setusermatherr@4264036)
-method(j___amsg_exit@4264476)
-method(j___cexit@4264071)
-method(j___configthreadlocale@4264236)
-method(j___controlfp_s@4264421)
-method(j___crt_debugger_hook@4264261)
-method(j___decode_pointer@4264431)
-method(j___encode_pointer@4264206)
-method(j___except_handler4@4264106)
-method(j___except_handler4_common@4264516)
-method(j___exit@4264166)
-method(j___initterm@4264176)
-method(j___initterm_e@4264601)
-method(j___invoke_watson@4264436)
-method(j___invoke_watson_if_error@4264326)
-method(j___lock@4264111)
-method(j___matherr@4264521)
-method(j___onexit@4264301)
-method(j___purecall@4264401)
-method(j___setargv@4263951)
-method(j___setdefaultprecision@4263946)
-method(j___unlock@4264381)
-method(j__atexit@4264086)
-method(j__exit_0@4264576)
-method(j__main@4264411)
-method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264361)
-method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4274496)
-method(pre_c_init@4269760)
-method(pre_cpp_init@4269968)
-method(start@4264351)
-method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141)
-method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4277926)
-method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712)
-method(static int __cdecl std::char_traits<char>::eof(void)@4264281)
-method(static int __cdecl std::char_traits<char>::eof(void)@4277932)
-method(static int __cdecl std::char_traits<char>::eof(void)@4305716)
-method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126)
-method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4277968)
-method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740)
-method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264051)
-method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4277908)
-method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264606)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4277992)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264581)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264336)
-method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4268704)
-method(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263991)
-method(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4268448)
-method(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4264506)
-method(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4267888)
-method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4264286)
-method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240)
-method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4264276)
-method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278004)
-method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664)
-method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116)
-method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278010)
-method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660)
-method(type_info::_type_info_dtor_internal_method(void)@4305840)
-method(type_info::type_info(class type_info const &)@4264511)
-method(type_info::type_info(class type_info const &)@4269488)
-method(virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
-method(virtual * type_info::`vector deleting destructor'(unsigned int)@4269536)
-method(virtual Circle::draw(void)@4263941)
-method(virtual Circle::draw(void)@4266048)
-method(virtual Rectangle::draw(void)@4264001)
-method(virtual Rectangle::draw(void)@4265824)
-method(virtual Triangle::draw(void)@4264561)
-method(virtual Triangle::draw(void)@4266272)
-method(virtual type_info::~type_info(void)@4264046)
-method(virtual type_info::~type_info(void)@4264146)
-method(virtual type_info::~type_info(void)@4277842)
-objectInObject(const Circle::`vftable'@4290600,const Shape::`vftable'@4290664,0)
-objectInObject(const Rectangle::`vftable'@4290564,const Shape::`vftable'@4290664,0)
-objectInObject(const Triangle::`vftable'@4290632,const Shape::`vftable'@4290664,0)
-vfTable(const Circle::`vftable'@4290600)
-vfTable(const Rectangle::`vftable'@4290564)
-vfTable(const Shape::`vftable'@4290664)
-vfTable(const Triangle::`vftable'@4290632)
-vfTable(const type_info::`vftable'@4290676)
-vfTableEntry(const Circle::`vftable'@4290600,0,virtual Circle::draw(void)@4263941)
-vfTableEntry(const Rectangle::`vftable'@4290564,0,virtual Rectangle::draw(void)@4264001)
-vfTableEntry(const Shape::`vftable'@4290664,0,j___purecall@4264401)
-vfTableEntry(const Triangle::`vftable'@4290632,0,virtual Triangle::draw(void)@4264561)
-vfTableEntry(const type_info::`vftable'@4290676,0,virtual * type_info::`vector deleting destructor'(unsigned int)@4264226)
-vfTableSize(const Circle::`vftable'@4290600,4)
-vfTableSize(const Rectangle::`vftable'@4290564,4)
-vfTableSize(const Shape::`vftable'@4290664,4)
-vfTableSize(const Triangle::`vftable'@4290632,4)
-vfTableSize(const type_info::`vftable'@4290676,4)
-vfTableWrite(4265774,Rectangle::Rectangle(void)@4265728,0,const Rectangle::`vftable'@4290564)
-vfTableWrite(4265998,Circle::Circle(void)@4265952,0,const Circle::`vftable'@4290600)
-vfTableWrite(4266222,Triangle::Triangle(void)@4266176,0,const Triangle::`vftable'@4290632)
-vfTableWrite(4266438,Shape::Shape(void)@4266400,0,const Shape::`vftable'@4290664)
-vfTableWrite(4269500,type_info::type_info(class type_info const &)@4269488,0,const type_info::`vftable'@4290676)
-vftableBelongsToClass(const Circle::`vftable'@4290600,0,Circle::Circle(void)@4265952)
-vftableBelongsToClass(const Rectangle::`vftable'@4290564,0,Rectangle::Rectangle(void)@4265728)
-vftableBelongsToClass(const Shape::`vftable'@4290664,0,Shape::Shape(void)@4266400)
-vftableBelongsToClass(const Triangle::`vftable'@4290632,0,Triangle::Triangle(void)@4266176)
-vftableBelongsToClass(const type_info::`vftable'@4290676,0,type_info::type_info(class type_info const &)@4269488)
-%   {$LN6_1@4275173}
-%   {$LN8@4273806}
-%   {* __cdecl operator new(unsigned int)@4264481}
-%   {* __cdecl operator new(unsigned int)@4268874}
-%   {ArrayUnwindFilter@4274080}
-%   {Circle::Circle(void)@4264356}
-%   {DebuggerProbe@4271136}
-%   {DebuggerRuntime@4272080}
-%   {GetPdbDll@4277248}
-%   {Rectangle::Rectangle(void)@4264181}
-%   {Shape::Shape(void)@4264566}
-%   {Shape::Shape(void)@4266400, const Shape::`vftable'@4290664}
-%   {Triangle::Triangle(void)@4263971}
-%   {_DebuggerKnownHandle@4271088}
-%   {_NtCurrentTeb@4270848}
-%   {__CRT_RTC_INITW@4273654}
-%   {__CrtDbgReportW@4276278}
-%   {__CrtSetCheckCount@4275642}
-%   {__FindPESection@4275776}
-%   {__IsNonwritableInCurrentImage@4275936}
-%   {__RTC_CheckEsp@4268880}
-%   {__RTC_GetErrDesc@4273456}
-%   {__RTC_InitBase@4269392}
-%   {__RTC_Initialize@4274832}
-%   {__RTC_NumErrors@4273440}
-%   {__RTC_SetErrorFunc@4273536}
-%   {__RTC_SetErrorFuncW@4273584}
-%   {__RTC_Shutdown@4269456}
-%   {__RTC_Terminate@4274880}
-%   {__RTC_UninitUse@4273136}
-%   {__ValidateImageBase@4275648}
-%   {__XcptFilter@4275624}
-%   {___CxxFrameHandler3@4269708}
-%   {___CxxSetUnhandledExceptionFilter@4274624}
-%   {___dllonexit@4277872}
-%   {___getmainargs@4275334}
-%   {___p__commode@4274928}
-%   {___p__fmode@4274934}
-%   {___report_gsfailure@4274144}
-%   {___security_init_cookie@4275344}
-%   {___set_app_type@4275322}
-%   {___setusermatherr@4274790}
-%   {__amsg_exit@4275328}
-%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264556}
-%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4272608}
-%   {__cdecl _RTC_Failure(*, int)@4264546}
-%   {__cdecl _RTC_Failure(*, int)@4271312}
-%   {__cdecl _RTC_StackFailure(*, char const *)@4264246}
-%   {__cdecl _RTC_StackFailure(*, char const *)@4272288}
-%   {__cdecl operator delete(*)@4264136}
-%   {__cdecl operator delete(*)@4273660}
-%   {__cdecl terminate(void)@4264161}
-%   {__cdecl terminate(void)@4277836}
-%   {__cexit@4275630}
-%   {__configthreadlocale@4274650}
-%   {__controlfp_s@4277854}
-%   {__crt_debugger_hook@4277848}
-%   {__decode_pointer@4277884}
-%   {__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@4282040}
-%   {__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@4282088}
-%   {__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@4282136}
-%   {__encode_pointer@4275316}
-%   {__except_handler4@4276304}
-%   {__except_handler4_common@4277890}
-%   {__exit@4275618}
-%   {__fastcall _RTC_AllocaHelper(x, x, x)@4264016}
-%   {__fastcall _RTC_AllocaHelper(x, x, x)@4269056}
-%   {__fastcall _RTC_CheckStackVars(x, x)@4264131}
-%   {__fastcall _RTC_CheckStackVars(x, x)@4268928}
-%   {__fastcall _RTC_CheckStackVars2(x, x, x)@4264391}
-%   {__fastcall _RTC_CheckStackVars2(x, x, x)@4269120}
-%   {__fastcall __security_check_cookie(x)@4263981}
-%   {__fastcall __security_check_cookie(x)@4269728}
-%   {__imp___purecall@4305932}
-%   {__initterm@4276284}
-%   {__initterm_e@4276290}
-%   {__invoke_watson@4277860}
-%   {__invoke_watson_if_error@4274736}
-%   {__lock@4277878}
-%   {__matherr@4274800}
-%   {__onexit@4274944}
-%   {__purecall@4269702}
-%   {__setargv@4274816}
-%   {__setdefaultprecision@4274656}
-%   {__stdcall DebugBreak()@4263961}
-%   {__stdcall DebugBreak()@4278046}
-%   {__stdcall FreeLibrary(x)@4264591}
-%   {__stdcall FreeLibrary(x)@4278166}
-%   {__stdcall GetCurrentProcess()@4264196}
-%   {__stdcall GetCurrentProcess()@4278088}
-%   {__stdcall GetCurrentProcessId()@4264386}
-%   {__stdcall GetCurrentProcessId()@4278124}
-%   {__stdcall GetCurrentThreadId()@4264171}
-%   {__stdcall GetCurrentThreadId()@4278118}
-%   {__stdcall GetModuleFileNameW(x, x, x)@4264056}
-%   {__stdcall GetModuleFileNameW(x, x, x)@4278154}
-%   {__stdcall GetProcAddress(x, x)@4264121}
-%   {__stdcall GetProcAddress(x, x)@4278070}
-%   {__stdcall GetProcessHeap()@4264291}
-%   {__stdcall GetProcessHeap()@4278148}
-%   {__stdcall GetSystemTimeAsFileTime(x)@4264426}
-%   {__stdcall GetSystemTimeAsFileTime(x)@4278130}
-%   {__stdcall GetTickCount()@4264451}
-%   {__stdcall GetTickCount()@4278112}
-%   {__stdcall HeapAlloc(x, x, x)@4264471}
-%   {__stdcall HeapAlloc(x, x, x)@4278142}
-%   {__stdcall HeapFree(x, x, x)@4264311}
-%   {__stdcall HeapFree(x, x, x)@4278136}
-%   {__stdcall InterlockedCompareExchange(x, x, x)@4264271}
-%   {__stdcall InterlockedCompareExchange(x, x, x)@4278028}
-%   {__stdcall InterlockedExchange(x, x)@4264496}
-%   {__stdcall InterlockedExchange(x, x)@4278016}
-%   {__stdcall IsDebuggerPresent()@4263986}
-%   {__stdcall IsDebuggerPresent()@4278034}
-%   {__stdcall LoadLibraryA(x)@4264251}
-%   {__stdcall LoadLibraryA(x)@4278076}
-%   {__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264091}
-%   {__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4278058}
-%   {__stdcall QueryPerformanceCounter(x)@4264371}
-%   {__stdcall QueryPerformanceCounter(x)@4278106}
-%   {__stdcall RaiseException(x, x, x, x)@4264256}
-%   {__stdcall RaiseException(x, x, x, x)@4278040}
-%   {__stdcall SetUnhandledExceptionFilter(x)@4264066}
-%   {__stdcall SetUnhandledExceptionFilter(x)@4278100}
-%   {__stdcall Sleep(x)@4264041}
-%   {__stdcall Sleep(x)@4278022}
-%   {__stdcall TerminateProcess(x, x)@4264341}
-%   {__stdcall TerminateProcess(x, x)@4278082}
-%   {__stdcall UnhandledExceptionFilter(x)@4264501}
-%   {__stdcall UnhandledExceptionFilter(x)@4278094}
-%   {__stdcall VirtualQuery(x, x, x)@4264081}
-%   {__stdcall VirtualQuery(x, x, x)@4278160}
-%   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4264011}
-%   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4278052}
-%   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4264536}
-%   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@4273904}
-%   {__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4264596}
-%   {__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@4273680}
-%   {__stdcall lstrlenA(x)@4264541}
-%   {__stdcall lstrlenA(x)@4278064}
-%   {__tmainCRTStartup@4270112}
-%   {__unlock@4277866}
-%   {__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@4282032}
-%   {__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@4282080}
-%   {__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@4282128}
-%   {_atexit@4275280}
-%   {_exit_0@4275636}
-%   {_getMemBlockDataString@4272992}
-%   {_main@4265296}
-%   {_mainCRTStartup@4270080}
-%   {bool __cdecl std::uncaught_exception(void)@4264151}
-%   {bool __cdecl std::uncaught_exception(void)@4277998}
-%   {bool std::ios_base::good(void)const@4263956}
-%   {bool std::ios_base::good(void)const@4277986}
-%   {bool std::ios_base::good(void)const@4305676, int std::ios_base::width(int)@4305704, int std::ios_base::flags(void)const@4305732, int std::ios_base::width(void)const@4305736}
-%   {char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4264526}
-%   {char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4277950}
-%   {check_managed_app@4270864}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264096}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4277902}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4264316}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@4266480}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4264346}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4277974}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264331}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4277896}
-%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4264186}
-%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4277980}
-%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@4305680, std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4305700, class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4305724, char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@4305728}
-%   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4264031}
-%   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@4277944}
-%   {class type_info & type_info::operator=(class type_info const &)@4263996}
-%   {class type_info & type_info::operator=(class type_info const &)@4269680}
-%   {failwithmessage@4271424}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264611}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4273632}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4264021}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4273648}
-%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264441}
-%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4276368}
-%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4264201}
-%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4277938}
-%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4264456}
-%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4277920}
-%   {int std::ios_base::flags(void)const@4264551}
-%   {int std::ios_base::flags(void)const@4277956}
-%   {int std::ios_base::width(int)@4264191}
-%   {int std::ios_base::width(int)@4277914}
-%   {int std::ios_base::width(void)const@4264211}
-%   {int std::ios_base::width(void)const@4277962}
-%   {j__DebuggerKnownHandle@4264571}
-%   {j__NtCurrentTeb@4264306}
-%   {j___CRT_RTC_INITW@4264446}
-%   {j___CrtDbgReportW@4264076}
-%   {j___CrtSetCheckCount@4264491}
-%   {j___FindPESection@4264231}
-%   {j___IsNonwritableInCurrentImage@4264461}
-%   {j___RTC_CheckEsp@4264406}
-%   {j___RTC_GetErrDesc@4263966}
-%   {j___RTC_InitBase@4264241}
-%   {j___RTC_Initialize@4264416}
-%   {j___RTC_NumErrors@4264026}
-%   {j___RTC_SetErrorFunc@4264321}
-%   {j___RTC_SetErrorFuncW@4264296}
-%   {j___RTC_SetErrorType@4264101}
-%   {j___RTC_Shutdown@4264221}
-%   {j___RTC_Terminate@4264006}
-%   {j___RTC_UninitUse@4264216}
-%   {j___ValidateImageBase@4264266}
-%   {j___XcptFilter@4264486}
-%   {j____CxxFrameHandler3@4264466}
-%   {j____CxxSetUnhandledExceptionFilter@4264366}
-%   {j____dllonexit@4264586}
-%   {j____getmainargs@4264531}
-%   {j____p__commode@4264376}
-%   {j____p__fmode@4263976}
-%   {j____security_init_cookie@4264061}
-%   {j____set_app_type@4264396}
-%   {j____setusermatherr@4264036}
-%   {j___amsg_exit@4264476}
-%   {j___cexit@4264071}
-%   {j___configthreadlocale@4264236}
-%   {j___controlfp_s@4264421}
-%   {j___crt_debugger_hook@4264261}
-%   {j___decode_pointer@4264431}
-%   {j___encode_pointer@4264206}
-%   {j___except_handler4@4264106}
-%   {j___except_handler4_common@4264516}
-%   {j___exit@4264166}
-%   {j___initterm@4264176}
-%   {j___initterm_e@4264601}
-%   {j___invoke_watson@4264436}
-%   {j___invoke_watson_if_error@4264326}
-%   {j___lock@4264111}
-%   {j___matherr@4264521}
-%   {j___onexit@4264301}
-%   {j___purecall@4264401}
-%   {j___setargv@4263951}
-%   {j___setdefaultprecision@4263946}
-%   {j___unlock@4264381}
-%   {j__atexit@4264086}
-%   {j__exit_0@4264576}
-%   {j__main@4264411}
-%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264361}
-%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4274496}
-%   {pre_c_init@4269760}
-%   {pre_cpp_init@4269968}
-%   {start@4264351}
-%   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4264141}
-%   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4277926}
-%   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@4305712, static int __cdecl std::char_traits<char>::eof(void)@4305716, static unsigned int __cdecl std::char_traits<char>::length(char const *)@4305740}
-%   {static int __cdecl std::char_traits<char>::eof(void)@4264281}
-%   {static int __cdecl std::char_traits<char>::eof(void)@4277932}
-%   {static unsigned int __cdecl std::char_traits<char>::length(char const *)@4264126}
-%   {static unsigned int __cdecl std::char_traits<char>::length(char const *)@4277968}
-%   {std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4264051}
-%   {std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@4277908}
-%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4264606}
-%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4277992}
-%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@4305672, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@4305684, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4305688}
-%   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4264581}
-%   {std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4264336}
-%   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4263991}
-%   {std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@4268448}
-%   {std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4264506}
-%   {std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@4267888, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@4268512}
-%   {std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4264286}
-%   {std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@4268240, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@4268704}
-%   {std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4264276}
-%   {std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4278004}
-%   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4264116}
-%   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4278010}
-%   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@4305660, std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@4305664, int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@4305708, int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@4305720}
-%   {type_info::type_info(class type_info const &)@4264511}
-%   {virtual * type_info::`vector deleting destructor'(unsigned int)@4264226, type_info::type_info(class type_info const &)@4269488, virtual * type_info::`vector deleting destructor'(unsigned int)@4269536, const type_info::`vftable'@4290676, type_info::_type_info_dtor_internal_method(void)@4305840}
-%   {virtual Circle::draw(void)@4263941, Circle::Circle(void)@4265952, virtual Circle::draw(void)@4266048, const Circle::`vftable'@4290600}
-%   {virtual Rectangle::draw(void)@4264001, Rectangle::Rectangle(void)@4265728, virtual Rectangle::draw(void)@4265824, const Rectangle::`vftable'@4290564}
-%   {virtual Triangle::draw(void)@4264561, Triangle::Triangle(void)@4266176, virtual Triangle::draw(void)@4266272, const Triangle::`vftable'@4290632}
-%   {virtual type_info::~type_info(void)@4264046}
-%   {virtual type_info::~type_info(void)@4264146}
-%   {virtual type_info::~type_info(void)@4277842}
+mergeClasses(bool std::ios_base::good(void)const@0x41b30c,int std::ios_base::flags(void)const@0x41b344)
+mergeClasses(bool std::ios_base::good(void)const@0x41b30c,int std::ios_base::width(int)@0x41b328)
+mergeClasses(bool std::ios_base::good(void)const@0x41b30c,int std::ios_base::width(void)const@0x41b348)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41b314,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41b318)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310,std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+mergeClasses(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+mergeClasses(const Circle::`vftable'@0x417828,Circle::Circle(void)@0x4117e0)
+mergeClasses(const Rectangle::`vftable'@0x417804,Rectangle::Rectangle(void)@0x411700)
+mergeClasses(const Triangle::`vftable'@0x417848,Triangle::Triangle(void)@0x4118c0)
+mergeClasses(const type_info::`vftable'@0x417874,type_info::_type_info_dtor_internal_method(void)@0x41b3b0)
+mergeClasses(const type_info::`vftable'@0x417874,type_info::type_info(class type_info const &)@0x4125b0)
+mergeClasses(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b32c,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b338)
+mergeClasses(int std::ios_base::flags(void)const@0x41b344,int std::ios_base::width(void)const@0x41b348)
+mergeClasses(int std::ios_base::width(int)@0x41b328,int std::ios_base::flags(void)const@0x41b344)
+mergeClasses(int std::ios_base::width(int)@0x41b328,int std::ios_base::width(void)const@0x41b348)
+mergeClasses(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x41b330,static int __cdecl std::char_traits<char>::eof(void)@0x41b334)
+mergeClasses(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x41b330,static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x41b34c)
+mergeClasses(static int __cdecl std::char_traits<char>::eof(void)@0x41b334,static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x41b34c)
+mergeClasses(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+mergeClasses(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324,class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41b308,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41b314)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41b308,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41b318)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0,const type_info::`vftable'@0x417874)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0,const type_info::`vftable'@0x417874)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0,const type_info::`vftable'@0x417874)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,const type_info::`vftable'@0x417874)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70,std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,const type_info::`vftable'@0x417874)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0)
+mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0,std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x41b300,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b338)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x41b300,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b32c)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x41b2fc,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b338)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x41b2fc,int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b32c)
+mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x41b2fc,std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x41b300)
+mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122,type_info::type_info(class type_info const &)@0x4125b0)
+mergeClasses(thunk:virtual Circle::draw(void)@0x411005,Circle::Circle(void)@0x4117e0)
+mergeClasses(thunk:virtual Rectangle::draw(void)@0x411041,Rectangle::Rectangle(void)@0x411700)
+mergeClasses(thunk:virtual Triangle::draw(void)@0x411271,Triangle::Triangle(void)@0x4118c0)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0,const type_info::`vftable'@0x417874)
+mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0,type_info::_type_info_dtor_internal_method(void)@0x41b3b0)
+mergeClasses(virtual Circle::draw(void)@0x411840,const Circle::`vftable'@0x417828)
+mergeClasses(virtual Rectangle::draw(void)@0x411760,const Rectangle::`vftable'@0x417804)
+mergeClasses(virtual Triangle::draw(void)@0x411920,const Triangle::`vftable'@0x417848)
+method($LN6_1@0x413be5)
+method($LN8@0x41368e)
+method(* __cdecl operator new(unsigned int)@0x41234a)
+method(ArrayUnwindFilter@0x4137a0)
+method(Circle::Circle(void)@0x4117e0)
+method(DebuggerProbe@0x412c20)
+method(DebuggerRuntime@0x412fd0)
+method(GetPdbDll@0x414400)
+method(Rectangle::Rectangle(void)@0x411700)
+method(Shape::Shape(void)@0x4119a0)
+method(Triangle::Triangle(void)@0x4118c0)
+method(_DebuggerKnownHandle@0x412bf0)
+method(_NtCurrentTeb@0x412b00)
+method(__FindPESection@0x413e40)
+method(__IsNonwritableInCurrentImage@0x413ee0)
+method(__RTC_CheckEsp@0x412350)
+method(__RTC_GetErrDesc@0x413530)
+method(__RTC_InitBase@0x412550)
+method(__RTC_Initialize@0x413a90)
+method(__RTC_NumErrors@0x413520)
+method(__RTC_SetErrorFunc@0x413580)
+method(__RTC_SetErrorFuncW@0x4135b0)
+method(__RTC_Shutdown@0x412590)
+method(__RTC_Terminate@0x413ac0)
+method(__RTC_UninitUse@0x4133f0)
+method(__ValidateImageBase@0x413dc0)
+method(___CxxSetUnhandledExceptionFilter@0x4139c0)
+method(___report_gsfailure@0x4137e0)
+method(___security_init_cookie@0x413c90)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4131e0)
+method(__cdecl _RTC_Failure(*, int)@0x412cd0)
+method(__cdecl _RTC_StackFailure(*, char const *)@0x4130a0)
+method(__cdecl operator delete(*)@0x4135fc)
+method(__cdecl terminate(void)@0x41464c)
+method(__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@0x4156b8)
+method(__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@0x4156e8)
+method(__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@0x415718)
+method(__except_handler4@0x414050)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@0x412400)
+method(__fastcall _RTC_CheckStackVars(x, x)@0x412380)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@0x412440)
+method(__fastcall __security_check_cookie(x)@0x4126a0)
+method(__imp___purecall@0x41b40c)
+method(__invoke_watson_if_error@0x413a30)
+method(__matherr@0x413a70)
+method(__onexit@0x413b00)
+method(__setargv@0x413a80)
+method(__setdefaultprecision@0x4139e0)
+method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4136f0)
+method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x413610)
+method(__tmainCRTStartup@0x412820)
+method(__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@0x4156b0)
+method(__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@0x4156e0)
+method(__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@0x415710)
+method(_atexit@0x413c50)
+method(_exit_0@0x413db4)
+method(_getMemBlockDataString@0x413360)
+method(_main@0x411550)
+method(_mainCRTStartup@0x412800)
+method(bool __cdecl std::uncaught_exception(void)@0x4146ee)
+method(bool std::ios_base::good(void)const@0x4146e2)
+method(bool std::ios_base::good(void)const@0x41b30c)
+method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x4146be)
+method(char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340)
+method(check_managed_app@0x412b10)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x41468e)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@0x4119f0)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x4146d6)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41b314)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x414688)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41b318)
+method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x4146dc)
+method(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310)
+method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x4146b8)
+method(class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c)
+method(class type_info & type_info::operator=(class type_info const &)@0x412670)
+method(failwithmessage@0x412d40)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x4135e0)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x4135f0)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x414090)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x4146b2)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b338)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x4146a0)
+method(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b32c)
+method(int std::ios_base::flags(void)const@0x4146c4)
+method(int std::ios_base::flags(void)const@0x41b344)
+method(int std::ios_base::width(int)@0x41469a)
+method(int std::ios_base::width(int)@0x41b328)
+method(int std::ios_base::width(void)const@0x4146ca)
+method(int std::ios_base::width(void)const@0x41b348)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x413940)
+method(pre_c_init@0x4126c0)
+method(pre_cpp_init@0x412790)
+method(start@0x41119f)
+method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x4146a6)
+method(static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x41b330)
+method(static int __cdecl std::char_traits<char>::eof(void)@0x4146ac)
+method(static int __cdecl std::char_traits<char>::eof(void)@0x41b334)
+method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x4146d0)
+method(static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x41b34c)
+method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x414694)
+method(std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x4146e8)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41b308)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0)
+method(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70)
+method(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x4146f4)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x41b300)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x4146fa)
+method(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x41b2fc)
+method(thunk:* __cdecl operator new(unsigned int)@0x411221)
+method(thunk:Circle::Circle(void)@0x4111a4)
+method(thunk:Rectangle::Rectangle(void)@0x4110f5)
+method(thunk:Shape::Shape(void)@0x411276)
+method(thunk:Triangle::Triangle(void)@0x411023)
+method(thunk:__CRT_RTC_INITW@0x4135f6)
+method(thunk:__CrtDbgReportW@0x414036)
+method(thunk:__CrtSetCheckCount@0x413dba)
+method(thunk:__XcptFilter@0x413da8)
+method(thunk:___CxxFrameHandler3@0x41268c)
+method(thunk:___dllonexit@0x414670)
+method(thunk:___getmainargs@0x413c86)
+method(thunk:___p__commode@0x413af0)
+method(thunk:___p__fmode@0x413af6)
+method(thunk:___set_app_type@0x413c7a)
+method(thunk:___setusermatherr@0x413a66)
+method(thunk:__amsg_exit@0x413c80)
+method(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x41126c)
+method(thunk:__cdecl _RTC_Failure(*, int)@0x411262)
+method(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x411136)
+method(thunk:__cdecl operator delete(*)@0x4110c8)
+method(thunk:__cdecl terminate(void)@0x4110e1)
+method(thunk:__cexit@0x413dae)
+method(thunk:__configthreadlocale@0x4139da)
+method(thunk:__controlfp_s@0x41465e)
+method(thunk:__crt_debugger_hook@0x414658)
+method(thunk:__decode_pointer@0x41467c)
+method(thunk:__encode_pointer@0x413c74)
+method(thunk:__except_handler4_common@0x414682)
+method(thunk:__exit@0x413da2)
+method(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411050)
+method(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x4110c3)
+method(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x4111c7)
+method(thunk:__fastcall __security_check_cookie(x)@0x41102d)
+method(thunk:__initterm@0x41403c)
+method(thunk:__initterm_e@0x414042)
+method(thunk:__invoke_watson@0x414664)
+method(thunk:__lock@0x414676)
+method(thunk:__purecall@0x412686)
+method(thunk:__stdcall DebugBreak()@0x411019)
+method(thunk:__stdcall DebugBreak()@0x41471e)
+method(thunk:__stdcall FreeLibrary(x)@0x41128f)
+method(thunk:__stdcall FreeLibrary(x)@0x414796)
+method(thunk:__stdcall GetCurrentProcess()@0x411104)
+method(thunk:__stdcall GetCurrentProcess()@0x414748)
+method(thunk:__stdcall GetCurrentProcessId()@0x4111c2)
+method(thunk:__stdcall GetCurrentProcessId()@0x41476c)
+method(thunk:__stdcall GetCurrentThreadId()@0x4110eb)
+method(thunk:__stdcall GetCurrentThreadId()@0x414766)
+method(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411078)
+method(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x41478a)
+method(thunk:__stdcall GetProcAddress(x, x)@0x4110b9)
+method(thunk:__stdcall GetProcAddress(x, x)@0x414736)
+method(thunk:__stdcall GetProcessHeap()@0x411163)
+method(thunk:__stdcall GetProcessHeap()@0x414784)
+method(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x4111ea)
+method(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x414772)
+method(thunk:__stdcall GetTickCount()@0x411203)
+method(thunk:__stdcall GetTickCount()@0x414760)
+method(thunk:__stdcall HeapAlloc(x, x, x)@0x411217)
+method(thunk:__stdcall HeapAlloc(x, x, x)@0x41477e)
+method(thunk:__stdcall HeapFree(x, x, x)@0x411177)
+method(thunk:__stdcall HeapFree(x, x, x)@0x414778)
+method(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41114f)
+method(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41470c)
+method(thunk:__stdcall InterlockedExchange(x, x)@0x411230)
+method(thunk:__stdcall InterlockedExchange(x, x)@0x414700)
+method(thunk:__stdcall IsDebuggerPresent()@0x411032)
+method(thunk:__stdcall IsDebuggerPresent()@0x414712)
+method(thunk:__stdcall LoadLibraryA(x)@0x41113b)
+method(thunk:__stdcall LoadLibraryA(x)@0x41473c)
+method(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41109b)
+method(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41472a)
+method(thunk:__stdcall QueryPerformanceCounter(x)@0x4111b3)
+method(thunk:__stdcall QueryPerformanceCounter(x)@0x41475a)
+method(thunk:__stdcall RaiseException(x, x, x, x)@0x411140)
+method(thunk:__stdcall RaiseException(x, x, x, x)@0x414718)
+method(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x411082)
+method(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x414754)
+method(thunk:__stdcall Sleep(x)@0x411069)
+method(thunk:__stdcall Sleep(x)@0x414706)
+method(thunk:__stdcall TerminateProcess(x, x)@0x411195)
+method(thunk:__stdcall TerminateProcess(x, x)@0x414742)
+method(thunk:__stdcall UnhandledExceptionFilter(x)@0x411235)
+method(thunk:__stdcall UnhandledExceptionFilter(x)@0x41474e)
+method(thunk:__stdcall VirtualQuery(x, x, x)@0x411091)
+method(thunk:__stdcall VirtualQuery(x, x, x)@0x414790)
+method(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41104b)
+method(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x414724)
+method(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x411258)
+method(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411294)
+method(thunk:__stdcall lstrlenA(x)@0x41125d)
+method(thunk:__stdcall lstrlenA(x)@0x414730)
+method(thunk:__unlock@0x41466a)
+method(thunk:bool __cdecl std::uncaught_exception(void)@0x4110d7)
+method(thunk:bool std::ios_base::good(void)const@0x411014)
+method(thunk:char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41124e)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4110a0)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@0x41117c)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41119a)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41118b)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x4110fa)
+method(thunk:class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41105f)
+method(thunk:class type_info & type_info::operator=(class type_info const &)@0x41103c)
+method(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x4112a3)
+method(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411055)
+method(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4111f9)
+method(thunk:int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x411109)
+method(thunk:int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x411208)
+method(thunk:int std::ios_base::flags(void)const@0x411267)
+method(thunk:int std::ios_base::width(int)@0x4110ff)
+method(thunk:int std::ios_base::width(void)const@0x411113)
+method(thunk:j__DebuggerKnownHandle@0x41127b)
+method(thunk:j__NtCurrentTeb@0x411172)
+method(thunk:j___CRT_RTC_INITW@0x4111fe)
+method(thunk:j___CrtDbgReportW@0x41108c)
+method(thunk:j___CrtSetCheckCount@0x41122b)
+method(thunk:j___FindPESection@0x411127)
+method(thunk:j___IsNonwritableInCurrentImage@0x41120d)
+method(thunk:j___RTC_CheckEsp@0x4111d6)
+method(thunk:j___RTC_GetErrDesc@0x41101e)
+method(thunk:j___RTC_InitBase@0x411131)
+method(thunk:j___RTC_Initialize@0x4111e0)
+method(thunk:j___RTC_NumErrors@0x41105a)
+method(thunk:j___RTC_SetErrorFunc@0x411181)
+method(thunk:j___RTC_SetErrorFuncW@0x411168)
+method(thunk:j___RTC_SetErrorType@0x4110a5)
+method(thunk:j___RTC_Shutdown@0x41111d)
+method(thunk:j___RTC_Terminate@0x411046)
+method(thunk:j___RTC_UninitUse@0x411118)
+method(thunk:j___ValidateImageBase@0x41114a)
+method(thunk:j___XcptFilter@0x411226)
+method(thunk:j____CxxFrameHandler3@0x411212)
+method(thunk:j____CxxSetUnhandledExceptionFilter@0x4111ae)
+method(thunk:j____dllonexit@0x41128a)
+method(thunk:j____getmainargs@0x411253)
+method(thunk:j____p__commode@0x4111b8)
+method(thunk:j____p__fmode@0x411028)
+method(thunk:j____security_init_cookie@0x41107d)
+method(thunk:j____set_app_type@0x4111cc)
+method(thunk:j____setusermatherr@0x411064)
+method(thunk:j___amsg_exit@0x41121c)
+method(thunk:j___cexit@0x411087)
+method(thunk:j___configthreadlocale@0x41112c)
+method(thunk:j___controlfp_s@0x4111e5)
+method(thunk:j___crt_debugger_hook@0x411145)
+method(thunk:j___decode_pointer@0x4111ef)
+method(thunk:j___encode_pointer@0x41110e)
+method(thunk:j___except_handler4@0x4110aa)
+method(thunk:j___except_handler4_common@0x411244)
+method(thunk:j___exit@0x4110e6)
+method(thunk:j___initterm@0x4110f0)
+method(thunk:j___initterm_e@0x411299)
+method(thunk:j___invoke_watson@0x4111f4)
+method(thunk:j___invoke_watson_if_error@0x411186)
+method(thunk:j___lock@0x4110af)
+method(thunk:j___matherr@0x411249)
+method(thunk:j___onexit@0x41116d)
+method(thunk:j___purecall@0x4111d1)
+method(thunk:j___setargv@0x41100f)
+method(thunk:j___setdefaultprecision@0x41100a)
+method(thunk:j___unlock@0x4111bd)
+method(thunk:j__atexit@0x411096)
+method(thunk:j__exit_0@0x411280)
+method(thunk:j__main@0x4111db)
+method(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x4111a9)
+method(thunk:static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x4110cd)
+method(thunk:static int __cdecl std::char_traits<char>::eof(void)@0x411159)
+method(thunk:static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x4110be)
+method(thunk:std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x411073)
+method(thunk:std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41129e)
+method(thunk:std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411285)
+method(thunk:std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x411190)
+method(thunk:std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x411037)
+method(thunk:std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x41123a)
+method(thunk:std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x41115e)
+method(thunk:std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x411154)
+method(thunk:std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x4110b4)
+method(thunk:type_info::type_info(class type_info const &)@0x41123f)
+method(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122)
+method(thunk:virtual Circle::draw(void)@0x411005)
+method(thunk:virtual Rectangle::draw(void)@0x411041)
+method(thunk:virtual Triangle::draw(void)@0x411271)
+method(thunk:virtual type_info::~type_info(void)@0x41106e)
+method(thunk:virtual type_info::~type_info(void)@0x4110d2)
+method(type_info::_type_info_dtor_internal_method(void)@0x41b3b0)
+method(type_info::type_info(class type_info const &)@0x4125b0)
+method(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0)
+method(virtual Circle::draw(void)@0x411840)
+method(virtual Rectangle::draw(void)@0x411760)
+method(virtual Triangle::draw(void)@0x411920)
+method(virtual type_info::~type_info(void)@0x414652)
+objectInObject(const Circle::`vftable'@0x417828,const Shape::`vftable'@0x417868,0)
+objectInObject(const Rectangle::`vftable'@0x417804,const Shape::`vftable'@0x417868,0)
+objectInObject(const Triangle::`vftable'@0x417848,const Shape::`vftable'@0x417868,0)
+realDestructor(Shape::Shape(void)@0x4119a0)
+vfTable(const Circle::`vftable'@0x417828)
+vfTable(const Rectangle::`vftable'@0x417804)
+vfTable(const Shape::`vftable'@0x417868)
+vfTable(const Triangle::`vftable'@0x417848)
+vfTable(const type_info::`vftable'@0x417874)
+vfTableEntry(const Circle::`vftable'@0x417828,0,thunk:virtual Circle::draw(void)@0x411005)
+vfTableEntry(const Rectangle::`vftable'@0x417804,0,thunk:virtual Rectangle::draw(void)@0x411041)
+vfTableEntry(const Shape::`vftable'@0x417868,0,thunk:j___purecall@0x4111d1)
+vfTableEntry(const Triangle::`vftable'@0x417848,0,thunk:virtual Triangle::draw(void)@0x411271)
+vfTableEntry(const type_info::`vftable'@0x417874,0,thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122)
+vfTableSize(const Circle::`vftable'@0x417828,4)
+vfTableSize(const Rectangle::`vftable'@0x417804,4)
+vfTableSize(const Shape::`vftable'@0x417868,4)
+vfTableSize(const Triangle::`vftable'@0x417848,4)
+vfTableSize(const type_info::`vftable'@0x417874,4)
+vfTableWrite(4265774,Rectangle::Rectangle(void)@0x411700,0,const Rectangle::`vftable'@0x417804)
+vfTableWrite(4265998,Circle::Circle(void)@0x4117e0,0,const Circle::`vftable'@0x417828)
+vfTableWrite(4266222,Triangle::Triangle(void)@0x4118c0,0,const Triangle::`vftable'@0x417848)
+vfTableWrite(4266438,Shape::Shape(void)@0x4119a0,0,const Shape::`vftable'@0x417868)
+vfTableWrite(4269500,type_info::type_info(class type_info const &)@0x4125b0,0,const type_info::`vftable'@0x417874)
+vftableBelongsToClass(const Circle::`vftable'@0x417828,0,Circle::Circle(void)@0x4117e0)
+vftableBelongsToClass(const Rectangle::`vftable'@0x417804,0,Rectangle::Rectangle(void)@0x411700)
+vftableBelongsToClass(const Triangle::`vftable'@0x417848,0,Triangle::Triangle(void)@0x4118c0)
+vftableBelongsToClass(const type_info::`vftable'@0x417874,0,type_info::type_info(class type_info const &)@0x4125b0)
+vftableSizeTotal(20)
+%   {$LN6_1@0x413be5}
+%   {$LN8@0x41368e}
+%   {* __cdecl operator new(unsigned int)@0x41234a}
+%   {ArrayUnwindFilter@0x4137a0}
+%   {DebuggerProbe@0x412c20}
+%   {DebuggerRuntime@0x412fd0}
+%   {GetPdbDll@0x414400}
+%   {Shape::Shape(void)@0x4119a0}
+%   {_DebuggerKnownHandle@0x412bf0}
+%   {_NtCurrentTeb@0x412b00}
+%   {__FindPESection@0x413e40}
+%   {__IsNonwritableInCurrentImage@0x413ee0}
+%   {__RTC_CheckEsp@0x412350}
+%   {__RTC_GetErrDesc@0x413530}
+%   {__RTC_InitBase@0x412550}
+%   {__RTC_Initialize@0x413a90}
+%   {__RTC_NumErrors@0x413520}
+%   {__RTC_SetErrorFunc@0x413580}
+%   {__RTC_SetErrorFuncW@0x4135b0}
+%   {__RTC_Shutdown@0x412590}
+%   {__RTC_Terminate@0x413ac0}
+%   {__RTC_UninitUse@0x4133f0}
+%   {__ValidateImageBase@0x413dc0}
+%   {___CxxSetUnhandledExceptionFilter@0x4139c0}
+%   {___report_gsfailure@0x4137e0}
+%   {___security_init_cookie@0x413c90}
+%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4131e0}
+%   {__cdecl _RTC_Failure(*, int)@0x412cd0}
+%   {__cdecl _RTC_StackFailure(*, char const *)@0x4130a0}
+%   {__cdecl operator delete(*)@0x4135fc}
+%   {__cdecl terminate(void)@0x41464c}
+%   {__ehhandler$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z@0x4156b8}
+%   {__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z@0x4156e8}
+%   {__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ@0x415718}
+%   {__except_handler4@0x414050}
+%   {__fastcall _RTC_AllocaHelper(x, x, x)@0x412400}
+%   {__fastcall _RTC_CheckStackVars(x, x)@0x412380}
+%   {__fastcall _RTC_CheckStackVars2(x, x, x)@0x412440}
+%   {__fastcall __security_check_cookie(x)@0x4126a0}
+%   {__imp___purecall@0x41b40c}
+%   {__invoke_watson_if_error@0x413a30}
+%   {__matherr@0x413a70}
+%   {__onexit@0x413b00}
+%   {__setargv@0x413a80}
+%   {__setdefaultprecision@0x4139e0}
+%   {__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4136f0}
+%   {__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x413610}
+%   {__tmainCRTStartup@0x412820}
+%   {__unwindfunclet$??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z$2@0x4156b0}
+%   {__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0@0x4156e0}
+%   {__unwindfunclet$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ$0@0x415710}
+%   {_atexit@0x413c50}
+%   {_exit_0@0x413db4}
+%   {_getMemBlockDataString@0x413360}
+%   {_main@0x411550}
+%   {_mainCRTStartup@0x412800}
+%   {bool __cdecl std::uncaught_exception(void)@0x4146ee}
+%   {bool std::ios_base::good(void)const@0x4146e2}
+%   {bool std::ios_base::good(void)const@0x41b30c, int std::ios_base::width(int)@0x41b328, int std::ios_base::flags(void)const@0x41b344, int std::ios_base::width(void)const@0x41b348}
+%   {char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x4146be}
+%   {check_managed_app@0x412b10}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x41468e}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@0x4119f0}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x4146d6}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x414688}
+%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x4146dc}
+%   {class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310, std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324, class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c, char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340}
+%   {class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x4146b8}
+%   {class type_info & type_info::operator=(class type_info const &)@0x412670}
+%   {const Shape::`vftable'@0x417868}
+%   {failwithmessage@0x412d40}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x4135e0}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x4135f0}
+%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x414090}
+%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x4146b2}
+%   {int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x4146a0}
+%   {int std::ios_base::flags(void)const@0x4146c4}
+%   {int std::ios_base::width(int)@0x41469a}
+%   {int std::ios_base::width(void)const@0x4146ca}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x413940}
+%   {pre_c_init@0x4126c0}
+%   {pre_cpp_init@0x412790}
+%   {start@0x41119f}
+%   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x4146a6}
+%   {static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x41b330, static int __cdecl std::char_traits<char>::eof(void)@0x41b334, static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x41b34c}
+%   {static int __cdecl std::char_traits<char>::eof(void)@0x4146ac}
+%   {static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x4146d0}
+%   {std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x414694}
+%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x4146e8}
+%   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41b308, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41b314, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41b318}
+%   {std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x4146f4}
+%   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x4146fa}
+%   {std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x41b2fc, std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x41b300, int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b32c, int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b338}
+%   {thunk:* __cdecl operator new(unsigned int)@0x411221}
+%   {thunk:Circle::Circle(void)@0x4111a4}
+%   {thunk:Rectangle::Rectangle(void)@0x4110f5}
+%   {thunk:Shape::Shape(void)@0x411276}
+%   {thunk:Triangle::Triangle(void)@0x411023}
+%   {thunk:__CRT_RTC_INITW@0x4135f6}
+%   {thunk:__CrtDbgReportW@0x414036}
+%   {thunk:__CrtSetCheckCount@0x413dba}
+%   {thunk:__XcptFilter@0x413da8}
+%   {thunk:___CxxFrameHandler3@0x41268c}
+%   {thunk:___dllonexit@0x414670}
+%   {thunk:___getmainargs@0x413c86}
+%   {thunk:___p__commode@0x413af0}
+%   {thunk:___p__fmode@0x413af6}
+%   {thunk:___set_app_type@0x413c7a}
+%   {thunk:___setusermatherr@0x413a66}
+%   {thunk:__amsg_exit@0x413c80}
+%   {thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x41126c}
+%   {thunk:__cdecl _RTC_Failure(*, int)@0x411262}
+%   {thunk:__cdecl _RTC_StackFailure(*, char const *)@0x411136}
+%   {thunk:__cdecl operator delete(*)@0x4110c8}
+%   {thunk:__cdecl terminate(void)@0x4110e1}
+%   {thunk:__cexit@0x413dae}
+%   {thunk:__configthreadlocale@0x4139da}
+%   {thunk:__controlfp_s@0x41465e}
+%   {thunk:__crt_debugger_hook@0x414658}
+%   {thunk:__decode_pointer@0x41467c}
+%   {thunk:__encode_pointer@0x413c74}
+%   {thunk:__except_handler4_common@0x414682}
+%   {thunk:__exit@0x413da2}
+%   {thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411050}
+%   {thunk:__fastcall _RTC_CheckStackVars(x, x)@0x4110c3}
+%   {thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x4111c7}
+%   {thunk:__fastcall __security_check_cookie(x)@0x41102d}
+%   {thunk:__initterm@0x41403c}
+%   {thunk:__initterm_e@0x414042}
+%   {thunk:__invoke_watson@0x414664}
+%   {thunk:__lock@0x414676}
+%   {thunk:__purecall@0x412686}
+%   {thunk:__stdcall DebugBreak()@0x411019}
+%   {thunk:__stdcall DebugBreak()@0x41471e}
+%   {thunk:__stdcall FreeLibrary(x)@0x41128f}
+%   {thunk:__stdcall FreeLibrary(x)@0x414796}
+%   {thunk:__stdcall GetCurrentProcess()@0x411104}
+%   {thunk:__stdcall GetCurrentProcess()@0x414748}
+%   {thunk:__stdcall GetCurrentProcessId()@0x4111c2}
+%   {thunk:__stdcall GetCurrentProcessId()@0x41476c}
+%   {thunk:__stdcall GetCurrentThreadId()@0x4110eb}
+%   {thunk:__stdcall GetCurrentThreadId()@0x414766}
+%   {thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411078}
+%   {thunk:__stdcall GetModuleFileNameW(x, x, x)@0x41478a}
+%   {thunk:__stdcall GetProcAddress(x, x)@0x4110b9}
+%   {thunk:__stdcall GetProcAddress(x, x)@0x414736}
+%   {thunk:__stdcall GetProcessHeap()@0x411163}
+%   {thunk:__stdcall GetProcessHeap()@0x414784}
+%   {thunk:__stdcall GetSystemTimeAsFileTime(x)@0x4111ea}
+%   {thunk:__stdcall GetSystemTimeAsFileTime(x)@0x414772}
+%   {thunk:__stdcall GetTickCount()@0x411203}
+%   {thunk:__stdcall GetTickCount()@0x414760}
+%   {thunk:__stdcall HeapAlloc(x, x, x)@0x411217}
+%   {thunk:__stdcall HeapAlloc(x, x, x)@0x41477e}
+%   {thunk:__stdcall HeapFree(x, x, x)@0x411177}
+%   {thunk:__stdcall HeapFree(x, x, x)@0x414778}
+%   {thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41114f}
+%   {thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41470c}
+%   {thunk:__stdcall InterlockedExchange(x, x)@0x411230}
+%   {thunk:__stdcall InterlockedExchange(x, x)@0x414700}
+%   {thunk:__stdcall IsDebuggerPresent()@0x411032}
+%   {thunk:__stdcall IsDebuggerPresent()@0x414712}
+%   {thunk:__stdcall LoadLibraryA(x)@0x41113b}
+%   {thunk:__stdcall LoadLibraryA(x)@0x41473c}
+%   {thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41109b}
+%   {thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41472a}
+%   {thunk:__stdcall QueryPerformanceCounter(x)@0x4111b3}
+%   {thunk:__stdcall QueryPerformanceCounter(x)@0x41475a}
+%   {thunk:__stdcall RaiseException(x, x, x, x)@0x411140}
+%   {thunk:__stdcall RaiseException(x, x, x, x)@0x414718}
+%   {thunk:__stdcall SetUnhandledExceptionFilter(x)@0x411082}
+%   {thunk:__stdcall SetUnhandledExceptionFilter(x)@0x414754}
+%   {thunk:__stdcall Sleep(x)@0x411069}
+%   {thunk:__stdcall Sleep(x)@0x414706}
+%   {thunk:__stdcall TerminateProcess(x, x)@0x411195}
+%   {thunk:__stdcall TerminateProcess(x, x)@0x414742}
+%   {thunk:__stdcall UnhandledExceptionFilter(x)@0x411235}
+%   {thunk:__stdcall UnhandledExceptionFilter(x)@0x41474e}
+%   {thunk:__stdcall VirtualQuery(x, x, x)@0x411091}
+%   {thunk:__stdcall VirtualQuery(x, x, x)@0x414790}
+%   {thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41104b}
+%   {thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x414724}
+%   {thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x411258}
+%   {thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411294}
+%   {thunk:__stdcall lstrlenA(x)@0x41125d}
+%   {thunk:__stdcall lstrlenA(x)@0x414730}
+%   {thunk:__unlock@0x41466a}
+%   {thunk:bool __cdecl std::uncaught_exception(void)@0x4110d7}
+%   {thunk:bool std::ios_base::good(void)const@0x411014}
+%   {thunk:char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41124e}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4110a0}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<CHAR_TRAITS>(class std::basic_ostream<char, CHAR_TRAITS> &, char const *)@0x41117c}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41119a}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41118b}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x4110fa}
+%   {thunk:class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41105f}
+%   {thunk:class type_info & type_info::operator=(class type_info const &)@0x41103c}
+%   {thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x4112a3}
+%   {thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411055}
+%   {thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4111f9}
+%   {thunk:int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x411109}
+%   {thunk:int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x411208}
+%   {thunk:int std::ios_base::flags(void)const@0x411267}
+%   {thunk:int std::ios_base::width(int)@0x4110ff}
+%   {thunk:int std::ios_base::width(void)const@0x411113}
+%   {thunk:j__DebuggerKnownHandle@0x41127b}
+%   {thunk:j__NtCurrentTeb@0x411172}
+%   {thunk:j___CRT_RTC_INITW@0x4111fe}
+%   {thunk:j___CrtDbgReportW@0x41108c}
+%   {thunk:j___CrtSetCheckCount@0x41122b}
+%   {thunk:j___FindPESection@0x411127}
+%   {thunk:j___IsNonwritableInCurrentImage@0x41120d}
+%   {thunk:j___RTC_CheckEsp@0x4111d6}
+%   {thunk:j___RTC_GetErrDesc@0x41101e}
+%   {thunk:j___RTC_InitBase@0x411131}
+%   {thunk:j___RTC_Initialize@0x4111e0}
+%   {thunk:j___RTC_NumErrors@0x41105a}
+%   {thunk:j___RTC_SetErrorFunc@0x411181}
+%   {thunk:j___RTC_SetErrorFuncW@0x411168}
+%   {thunk:j___RTC_SetErrorType@0x4110a5}
+%   {thunk:j___RTC_Shutdown@0x41111d}
+%   {thunk:j___RTC_Terminate@0x411046}
+%   {thunk:j___RTC_UninitUse@0x411118}
+%   {thunk:j___ValidateImageBase@0x41114a}
+%   {thunk:j___XcptFilter@0x411226}
+%   {thunk:j____CxxFrameHandler3@0x411212}
+%   {thunk:j____CxxSetUnhandledExceptionFilter@0x4111ae}
+%   {thunk:j____dllonexit@0x41128a}
+%   {thunk:j____getmainargs@0x411253}
+%   {thunk:j____p__commode@0x4111b8}
+%   {thunk:j____p__fmode@0x411028}
+%   {thunk:j____security_init_cookie@0x41107d}
+%   {thunk:j____set_app_type@0x4111cc}
+%   {thunk:j____setusermatherr@0x411064}
+%   {thunk:j___amsg_exit@0x41121c}
+%   {thunk:j___cexit@0x411087}
+%   {thunk:j___configthreadlocale@0x41112c}
+%   {thunk:j___controlfp_s@0x4111e5}
+%   {thunk:j___crt_debugger_hook@0x411145}
+%   {thunk:j___decode_pointer@0x4111ef}
+%   {thunk:j___encode_pointer@0x41110e}
+%   {thunk:j___except_handler4@0x4110aa}
+%   {thunk:j___except_handler4_common@0x411244}
+%   {thunk:j___exit@0x4110e6}
+%   {thunk:j___initterm@0x4110f0}
+%   {thunk:j___initterm_e@0x411299}
+%   {thunk:j___invoke_watson@0x4111f4}
+%   {thunk:j___invoke_watson_if_error@0x411186}
+%   {thunk:j___lock@0x4110af}
+%   {thunk:j___matherr@0x411249}
+%   {thunk:j___onexit@0x41116d}
+%   {thunk:j___purecall@0x4111d1}
+%   {thunk:j___setargv@0x41100f}
+%   {thunk:j___setdefaultprecision@0x41100a}
+%   {thunk:j___unlock@0x4111bd}
+%   {thunk:j__atexit@0x411096}
+%   {thunk:j__exit_0@0x411280}
+%   {thunk:j__main@0x4111db}
+%   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x4111a9}
+%   {thunk:static bool __cdecl std::char_traits<char>::eq_int_type(int const &, int const &)@0x4110cd}
+%   {thunk:static int __cdecl std::char_traits<char>::eof(void)@0x411159}
+%   {thunk:static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x4110be}
+%   {thunk:std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x411073}
+%   {thunk:std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41129e}
+%   {thunk:std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411285}
+%   {thunk:std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x411190}
+%   {thunk:std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x411037}
+%   {thunk:std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x41123a}
+%   {thunk:std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x41115e}
+%   {thunk:std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x411154}
+%   {thunk:std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x4110b4}
+%   {thunk:type_info::type_info(class type_info const &)@0x41123f}
+%   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122, std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70, std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4120d0, std::basic_ostream<char, CHAR_TRAITS>::sentry::operator bool(void)const@0x4121a0, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x4122a0, type_info::type_info(class type_info const &)@0x4125b0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0, const type_info::`vftable'@0x417874, type_info::_type_info_dtor_internal_method(void)@0x41b3b0}
+%   {thunk:virtual Circle::draw(void)@0x411005, Circle::Circle(void)@0x4117e0, virtual Circle::draw(void)@0x411840, const Circle::`vftable'@0x417828}
+%   {thunk:virtual Rectangle::draw(void)@0x411041, Rectangle::Rectangle(void)@0x411700, virtual Rectangle::draw(void)@0x411760, const Rectangle::`vftable'@0x417804}
+%   {thunk:virtual Triangle::draw(void)@0x411271, Triangle::Triangle(void)@0x4118c0, virtual Triangle::draw(void)@0x411920, const Triangle::`vftable'@0x417848}
+%   {thunk:virtual type_info::~type_info(void)@0x41106e}
+%   {thunk:virtual type_info::~type_info(void)@0x4110d2}
+%   {virtual type_info::~type_info(void)@0x414652}

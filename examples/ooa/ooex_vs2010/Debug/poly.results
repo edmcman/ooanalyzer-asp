@@ -1,10 +1,9 @@
-finalClass(0x4120b0, 0, 0, 0, 0, [0x4120b0, 0x412330]).
-finalClass(0x412210, 0, 0, 0, 0, [0x412210, 0x412400]).
+finalClass(0x411980, 0, 0, 0, 0x411980, [0x411980]).
 finalClass(0x417834, 0x417834, 0, 0, 0, [0x4116e0, 0x411740]).
 finalClass(0x417858, 0x417858, 0, 0, 0, [0x4117c0, 0x411820]).
 finalClass(0x417878, 0x417878, 0, 0, 0, [0x4118a0, 0x411900]).
-finalClass(0x417898, 0x417898, 0, 0, 0, [0x411980]).
-finalClass(0x4178a4, 0x4178a4, 0, 0, 0, [0x412780, 0x4127b0, 0x41b384]).
+finalClass(0x417898, 0, 0, 0, 0, []).
+finalClass(0x4178a4, 0x4178a4, 0, 0, 0, [0x4120b0, 0x412210, 0x4122e0, 0x412330, 0x412400, 0x412780, 0x4127b0, 0x41b384]).
 finalClass(0x41b2f0, 0, 0, 0, 0, [0x41b2f0, 0x41b2fc, 0x41b314]).
 finalClass(0x41b2f4, 0, 0, 0, 0, [0x41b2f4, 0x41b300, 0x41b304, 0x41b31c]).
 finalClass(0x41b2f8, 0, 0, 0, 0, [0x41b2f8, 0x41b308, 0x41b30c, 0x41b320]).
@@ -38,7 +37,7 @@ finalMethodProperty(0x4117c0, constructor, certain).
 finalMethodProperty(0x411820, virtual, certain).
 finalMethodProperty(0x4118a0, constructor, certain).
 finalMethodProperty(0x411900, virtual, certain).
-finalMethodProperty(0x411980, constructor, certain).
+finalMethodProperty(0x411980, realDestructor, certain).
 finalMethodProperty(0x412780, constructor, certain).
 finalMethodProperty(0x4127b0, deletingDestructor, certain).
 finalMethodProperty(0x4127b0, virtual, certain).

@@ -1,59 +1,158 @@
-09:41:58 Grounding...
-09:41:58 Grounding done (0.04s)
-09:41:58 Solving...
-09:41:58 Model found (0.08s): [-12, -185]
-09:41:58 Model found (0.08s, +0.00s): [-20, -186]
-09:41:58 Model found (0.10s, +0.02s): [-20, -351]
-09:41:58 Model found (0.10s, +0.00s): [-20, -355]
-09:41:58 Model found (0.11s, +0.01s): [-20, -360]
-09:41:58 Solving done: OPTIMUM FOUND (0.08s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
+21:52:41 Grounding...
+21:52:41 Grounding done (0.02s)
+21:52:41 Solving...
+21:52:41 Model found (0.05s): [-20, -186]
+21:52:41 Model found (0.05s, +0.01s): [-20, -187]
+21:52:41 Model found (0.11s, +0.06s): [-20, -205]
+21:52:41 Model found (0.12s, +0.00s): [-20, -206]
+21:52:41 Model found (0.12s, +0.00s): [-20, -215]
+21:52:41 Model found (0.12s, +0.00s): [-20, -229]
+21:52:41 Model found (0.13s, +0.01s): [-20, -238]
+21:52:41 Model found (0.13s, +0.00s): [-20, -239]
+21:52:41 Model found (0.14s, +0.01s): [-20, -241]
+21:52:41 Model found (0.15s, +0.01s): [-20, -243]
+21:52:41 Model found (0.16s, +0.01s): [-20, -249]
+21:52:41 Model found (0.17s, +0.01s): [-20, -259]
+21:52:41 Model found (0.35s, +0.18s): [-20, -260]
+21:52:41 Model found (0.36s, +0.01s): [-20, -261]
+21:52:41 Model found (0.37s, +0.01s): [-20, -262]
+21:52:41 Model found (0.38s, +0.01s): [-20, -263]
+21:52:41 Model found (0.40s, +0.03s): [-20, -264]
+21:52:41 Model found (0.41s, +0.01s): [-20, -265]
+21:52:41 Model found (0.42s, +0.01s): [-20, -266]
+21:52:41 Model found (0.44s, +0.02s): [-20, -267]
+21:52:41 Model found (0.44s, +0.00s): [-20, -268]
+21:52:41 Model found (0.45s, +0.01s): [-20, -269]
+21:52:41 Model found (0.45s, +0.00s): [-20, -270]
+21:52:41 Model found (0.48s, +0.03s): [-20, -273]
+21:52:41 Model found (0.49s, +0.01s): [-20, -274]
+21:52:41 Model found (0.50s, +0.01s): [-20, -275]
+21:52:41 Model found (0.51s, +0.01s): [-20, -276]
+21:52:41 Model found (0.52s, +0.01s): [-20, -277]
+21:52:41 Model found (0.52s, +0.01s): [-20, -278]
+21:52:41 Model found (0.53s, +0.01s): [-20, -279]
+21:52:41 Model found (0.54s, +0.01s): [-20, -280]
+21:52:42 Model found (0.55s, +0.01s): [-20, -281]
+21:52:42 Model found (0.56s, +0.01s): [-20, -282]
+21:52:42 Model found (0.57s, +0.01s): [-20, -283]
+21:52:42 Model found (0.59s, +0.02s): [-20, -284]
+21:52:42 Model found (0.61s, +0.02s): [-20, -285]
+21:52:42 Model found (0.62s, +0.01s): [-20, -286]
+21:52:42 Model found (0.66s, +0.04s): [-20, -287]
+21:52:42 Model found (0.67s, +0.02s): [-20, -288]
+21:52:42 Model found (0.68s, +0.01s): [-20, -289]
+21:52:42 Model found (0.69s, +0.01s): [-20, -290]
+21:52:42 Model found (0.70s, +0.01s): [-20, -292]
+21:52:42 Model found (0.72s, +0.02s): [-20, -293]
+21:52:42 Model found (0.73s, +0.01s): [-20, -300]
+21:52:42 Model found (0.74s, +0.00s): [-20, -302]
+21:52:42 Model found (0.74s, +0.01s): [-20, -304]
+21:52:42 Model found (0.75s, +0.01s): [-20, -306]
+21:52:42 Model found (0.76s, +0.01s): [-20, -307]
+21:52:42 Model found (0.77s, +0.01s): [-20, -309]
+21:52:42 Model found (0.77s, +0.01s): [-20, -312]
+21:52:42 Model found (0.78s, +0.00s): [-20, -313]
+21:52:42 Model found (0.78s, +0.01s): [-20, -315]
+21:52:42 Model found (0.79s, +0.01s): [-20, -316]
+21:52:42 Model found (0.81s, +0.01s): [-20, -317]
+21:52:42 Model found (0.81s, +0.00s): [-20, -326]
+21:52:42 Model found (0.83s, +0.02s): [-20, -335]
+21:52:42 Model found (0.84s, +0.01s): [-20, -346]
+21:52:42 Model found (0.85s, +0.01s): [-20, -350]
+21:52:42 Model found (0.85s, +0.01s): [-20, -355]
+21:52:42 Model found (0.90s, +0.05s): [-20, -358]
+21:52:42 Model found (0.91s, +0.01s): [-20, -359]
+21:52:42 Model found (0.92s, +0.01s): [-20, -360]
+21:52:42 Model found (0.93s, +0.01s): [-20, -362]
+21:52:42 Model found (0.94s, +0.01s): [-20, -366]
+21:52:42 Model found (0.95s, +0.01s): [-20, -367]
+21:52:42 Model found (0.95s, +0.00s): [-20, -368]
+21:52:42 Model found (0.96s, +0.01s): [-20, -370]
+21:52:42 Model found (0.99s, +0.03s): [-20, -371]
+21:52:42 Model found (1.00s, +0.01s): [-20, -373]
+21:52:42 Solving done: OPTIMUM FOUND (0.99s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Lite/ooex3.results
 OPTIMUM FOUND
 
-Answer: 5
-Optimization: -20 -360
+Answer: 69
+Optimization: -20 -373
 
-% Equivalence classes (163 classes, 178 entities):
+% Equivalence classes (160 classes, 178 entities):
+21:52:42 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
 
 % Stats:
-%   atoms: 7711.0
-%   bodies: 1911.0
-%   rules: 8563.0
-%   variables: 2131.0
-%   constraints: 88.0
-%   choices: 1710.0
-%   conflicts: 46.0
-%   models: 5.0
+%   atoms: 7901.0
+%   bodies: 2191.0
+%   rules: 8880.0
+%   variables: 2347.0
+%   constraints: 215.0
+%   choices: 61560.0
+%   conflicts: 1101.0
+%   models: 69.0
 %   optimal_models: 1.0
-%   final_cost: [-20.0, -360.0]
-%   lower_bound: [-20.0, -360.0]
-%   total_time: 0.1667170524597168
-%   ground_time: 0.035550999993574806
-%   time_to_first_model: 0.07569037500070408
-%   max_rss_bytes: 33128448
-%   solve_time: 0.04082989692687988
-classCallsMethod(Derived::Derived(void)@4198496,Base::Base(void)@4198400)
-classCallsMethod(Derived::Derived(void)@4198496,int Base::func3(void)@4198432)
-classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200617,std::exception::_Copy_str(char const *)@4200523)
-classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@4200617,std::exception::_Tidy(void)@4200587)
-classCallsMethod(const std::bad_alloc::`vftable'@4219200,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-classCallsMethod(const std::bad_alloc::`vftable'@4219200,virtual char const * std::exception::what(void)const@4200510)
-classCallsMethod(const std::exception::`vftable'@4219300,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-classCallsMethod(const std::exception::`vftable'@4219300,virtual char const * std::exception::what(void)const@4200510)
-classCallsMethod(const type_info::`vftable'@4219332,virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773)
-classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722,std::exception::exception(class std::exception const &)@4200720)
-classCallsMethod(std::exception::exception(class std::exception const &)@4200720,class std::exception & std::exception::operator=(class std::exception const &)@4200617)
-classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683,virtual std::exception::~exception(void)@4200670)
-classCallsMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681,std::exception::_Tidy(void)@4200587)
-classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773,virtual type_info::~type_info(void)@4200757)
-constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
-constructor(std::exception::exception(char const * const &, int)@4200481)
-constructor(std::exception::exception(class std::exception const &)@4200720)
-constructor(virtual type_info::~type_info(void)@4200757)
-deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773)
-derivedClass(const std::bad_alloc::`vftable'@4219200,const std::exception::`vftable'@4219300,0)
+%   final_cost: [-20.0, -373.0]
+%   lower_bound: [-20.0, -373.0]
+%   total_time: 1.0227818489074707
+%   ground_time: 0.020227970089763403
+%   time_to_first_model: 0.04862406011670828
+%   max_rss_bytes: 29884416
+%   solve_time: 0.9640309810638428
+classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
+classCallsMethod(Derived::Derived(void)@0x401060,int Base::func3(void)@0x401020)
+classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Copy_str(char const *)@0x40184b)
+classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Tidy(void)@0x40188b)
+classCallsMethod(const std::bad_alloc::`vftable'@0x406140,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+classCallsMethod(const std::bad_alloc::`vftable'@0x406140,virtual char const * std::exception::what(void)const@0x40183e)
+classCallsMethod(const std::exception::`vftable'@0x4061a4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+classCallsMethod(const std::exception::`vftable'@0x4061a4,virtual char const * std::exception::what(void)const@0x40183e)
+classCallsMethod(const type_info::`vftable'@0x4061c4,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+classCallsMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142,std::exception::exception(class std::exception const &)@0x401910)
+classCallsMethod(std::exception::exception(class std::exception const &)@0x401910,class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b,virtual std::exception::~exception(void)@0x4018de)
+classCallsMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9,std::exception::_Tidy(void)@0x40188b)
+classCallsMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945,virtual type_info::~type_info(void)@0x401935)
+classRelatedMethod(Base2::Base2(void)@0x401030,int Base2::func3(void)@0x401050)
+classRelatedMethod(Base::Base(void)@0x401000,Derived::Derived(void)@0x401060)
+classRelatedMethod(Base::Base(void)@0x401000,int Base::func3(void)@0x401020)
+classRelatedMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
+classRelatedMethod(Derived::Derived(void)@0x401060,int Base::func3(void)@0x401020)
+classRelatedMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Copy_str(char const *)@0x40184b)
+classRelatedMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Tidy(void)@0x40188b)
+classRelatedMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::exception(class std::exception const &)@0x401910)
+classRelatedMethod(const std::bad_alloc::`vftable'@0x406140,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+classRelatedMethod(const std::bad_alloc::`vftable'@0x406140,virtual char const * std::exception::what(void)const@0x40183e)
+classRelatedMethod(const std::exception::`vftable'@0x4061a4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+classRelatedMethod(const std::exception::`vftable'@0x4061a4,virtual char const * std::exception::what(void)const@0x40183e)
+classRelatedMethod(const type_info::`vftable'@0x4061c4,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+classRelatedMethod(int Base2::func3(void)@0x401050,Base2::Base2(void)@0x401030)
+classRelatedMethod(int Base::func3(void)@0x401020,Base::Base(void)@0x401000)
+classRelatedMethod(int Base::func3(void)@0x401020,Derived::Derived(void)@0x401060)
+classRelatedMethod(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142,std::exception::exception(class std::exception const &)@0x401910)
+classRelatedMethod(std::exception::_Copy_str(char const *)@0x40184b,class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+classRelatedMethod(std::exception::_Copy_str(char const *)@0x40184b,std::exception::_Tidy(void)@0x40188b)
+classRelatedMethod(std::exception::_Tidy(void)@0x40188b,class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+classRelatedMethod(std::exception::_Tidy(void)@0x40188b,std::exception::_Copy_str(char const *)@0x40184b)
+classRelatedMethod(std::exception::_Tidy(void)@0x40188b,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+classRelatedMethod(std::exception::exception(class std::exception const &)@0x401910,class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+classRelatedMethod(std::exception::exception(class std::exception const &)@0x401910,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+classRelatedMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b,const std::bad_alloc::`vftable'@0x406140)
+classRelatedMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b,virtual std::exception::~exception(void)@0x4018de)
+classRelatedMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9,const std::exception::`vftable'@0x4061a4)
+classRelatedMethod(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9,std::exception::_Tidy(void)@0x40188b)
+classRelatedMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945,const type_info::`vftable'@0x4061c4)
+classRelatedMethod(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945,virtual type_info::~type_info(void)@0x401935)
+classRelatedMethod(virtual char const * std::exception::what(void)const@0x40183e,const std::bad_alloc::`vftable'@0x406140)
+classRelatedMethod(virtual char const * std::exception::what(void)const@0x40183e,const std::exception::`vftable'@0x4061a4)
+classRelatedMethod(virtual std::exception::~exception(void)@0x4018de,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+classRelatedMethod(virtual type_info::~type_info(void)@0x401935,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+constructor(std::exception::exception(char const * const &, int)@0x401821)
+constructor(std::exception::exception(class std::exception const &)@0x401910)
+constructor(virtual type_info::~type_info(void)@0x401935)
+deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+derivedClass(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(merge)
@@ -61,403 +160,412 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(Base::Base(void)@4198400,Derived::Derived(void)@4198496)
-mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@4200617,std::exception::exception(class std::exception const &)@4200720)
-mergeClasses(const std::bad_alloc::`vftable'@4219200,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
-mergeClasses(const std::bad_alloc::`vftable'@4219200,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-mergeClasses(const std::bad_alloc::`vftable'@4219200,virtual std::bad_alloc::~bad_alloc(void)@4198672)
-mergeClasses(const std::exception::`vftable'@4219300,std::exception::exception(char const * const &, int)@4200481)
-mergeClasses(const std::exception::`vftable'@4219300,std::exception::exception(class std::exception const &)@4200720)
-mergeClasses(const std::exception::`vftable'@4219300,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-mergeClasses(const std::exception::`vftable'@4219300,virtual std::exception::~exception(void)@4200670)
-mergeClasses(const type_info::`vftable'@4219332,virtual type_info::~type_info(void)@4200757)
-mergeClasses(int Base::func3(void)@4198432,Derived::Derived(void)@4198496)
-mergeClasses(std::exception::_Copy_str(char const *)@4200523,class std::exception & std::exception::operator=(class std::exception const &)@4200617)
-mergeClasses(std::exception::_Tidy(void)@4200587,class std::exception & std::exception::operator=(class std::exception const &)@4200617)
-mergeClasses(std::exception::_Tidy(void)@4200587,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-mergeClasses(std::exception::exception(char const * const &, int)@4200481,std::exception::exception(class std::exception const &)@4200720)
-mergeClasses(std::exception::exception(char const * const &, int)@4200481,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-mergeClasses(std::exception::exception(char const * const &, int)@4200481,virtual char const * std::exception::what(void)const@4200510)
-mergeClasses(std::exception::exception(char const * const &, int)@4200481,virtual std::exception::~exception(void)@4200670)
-mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683,const std::bad_alloc::`vftable'@4219200)
-mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
-mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681,const std::exception::`vftable'@4219300)
-mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681,std::exception::exception(class std::exception const &)@4200720)
-mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773,const type_info::`vftable'@4219332)
-mergeClasses(virtual char const * std::exception::what(void)const@4200510,const std::exception::`vftable'@4219300)
-mergeClasses(virtual char const * std::exception::what(void)const@4200510,std::exception::exception(class std::exception const &)@4200720)
-mergeClasses(virtual char const * std::exception::what(void)const@4200510,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-mergeClasses(virtual char const * std::exception::what(void)const@4200510,virtual std::exception::~exception(void)@4200670)
-mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198672,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
-mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@4198672,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-mergeClasses(virtual std::exception::~exception(void)@4200670,std::exception::exception(class std::exception const &)@4200720)
-mergeClasses(virtual std::exception::~exception(void)@4200670,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-mergeClasses(virtual type_info::~type_info(void)@4200757,virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773)
-method($LN10_1@4209202)
-method($LN11@4199585)
-method($LN12_0@4205771)
-method($LN13_0@4207358)
-method($LN20@4200023)
-method($LN24@4200035)
-method($LN25_1@4208468)
-method($LN28@4208516)
-method($LN37@4209934)
-method($LN52@4202101)
-method($LN5@4201091)
-method($LN9@4199576)
-method($LN9_0@4206644)
-method(* __cdecl operator new(unsigned int)@4198751)
+mergeClasses(Base2::Base2(void)@0x401030,const std::exception::`vftable'@0x4061a4)
+mergeClasses(Base2::Base2(void)@0x401030,int Base2::func3(void)@0x401050)
+mergeClasses(Base::Base(void)@0x401000,Derived::Derived(void)@0x401060)
+mergeClasses(Base::Base(void)@0x401000,const std::exception::`vftable'@0x4061a4)
+mergeClasses(Base::Base(void)@0x401000,int Base::func3(void)@0x401020)
+mergeClasses(Derived::Derived(void)@0x401060,const std::exception::`vftable'@0x4061a4)
+mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,const std::exception::`vftable'@0x4061a4)
+mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::exception(class std::exception const &)@0x401910)
+mergeClasses(const std::bad_alloc::`vftable'@0x406140,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+mergeClasses(const std::bad_alloc::`vftable'@0x406140,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+mergeClasses(const std::bad_alloc::`vftable'@0x406140,virtual std::bad_alloc::~bad_alloc(void)@0x401110)
+mergeClasses(const std::exception::`vftable'@0x4061a4,std::exception::exception(char const * const &, int)@0x401821)
+mergeClasses(const std::exception::`vftable'@0x4061a4,std::exception::exception(class std::exception const &)@0x401910)
+mergeClasses(const std::exception::`vftable'@0x4061a4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+mergeClasses(const type_info::`vftable'@0x4061c4,virtual type_info::~type_info(void)@0x401935)
+mergeClasses(int Base2::func3(void)@0x401050,const std::exception::`vftable'@0x4061a4)
+mergeClasses(int Base::func3(void)@0x401020,Derived::Derived(void)@0x401060)
+mergeClasses(int Base::func3(void)@0x401020,const std::exception::`vftable'@0x4061a4)
+mergeClasses(std::exception::_Copy_str(char const *)@0x40184b,class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+mergeClasses(std::exception::_Copy_str(char const *)@0x40184b,const std::exception::`vftable'@0x4061a4)
+mergeClasses(std::exception::_Copy_str(char const *)@0x40184b,std::exception::_Tidy(void)@0x40188b)
+mergeClasses(std::exception::_Tidy(void)@0x40188b,class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+mergeClasses(std::exception::_Tidy(void)@0x40188b,const std::exception::`vftable'@0x4061a4)
+mergeClasses(std::exception::_Tidy(void)@0x40188b,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+mergeClasses(std::exception::exception(char const * const &, int)@0x401821,std::exception::exception(class std::exception const &)@0x401910)
+mergeClasses(std::exception::exception(char const * const &, int)@0x401821,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+mergeClasses(std::exception::exception(char const * const &, int)@0x401821,virtual char const * std::exception::what(void)const@0x40183e)
+mergeClasses(std::exception::exception(char const * const &, int)@0x401821,virtual std::exception::~exception(void)@0x4018de)
+mergeClasses(std::exception::exception(class std::exception const &)@0x401910,const std::exception::`vftable'@0x4061a4)
+mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b,const std::bad_alloc::`vftable'@0x406140)
+mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9,const std::exception::`vftable'@0x4061a4)
+mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9,std::exception::exception(class std::exception const &)@0x401910)
+mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945,const type_info::`vftable'@0x4061c4)
+mergeClasses(virtual char const * std::exception::what(void)const@0x40183e,const std::exception::`vftable'@0x4061a4)
+mergeClasses(virtual char const * std::exception::what(void)const@0x40183e,std::exception::exception(class std::exception const &)@0x401910)
+mergeClasses(virtual char const * std::exception::what(void)const@0x40183e,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+mergeClasses(virtual char const * std::exception::what(void)const@0x40183e,virtual std::exception::~exception(void)@0x4018de)
+mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401110,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401110,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+mergeClasses(virtual std::exception::~exception(void)@0x4018de,std::exception::exception(class std::exception const &)@0x401910)
+mergeClasses(virtual std::exception::~exception(void)@0x4018de,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+mergeClasses(virtual type_info::~type_info(void)@0x401935,const type_info::`vftable'@0x4061c4)
+mergeClasses(virtual type_info::~type_info(void)@0x401935,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+method($LN10_1@0x403a32)
+method($LN11@0x4014a1)
+method($LN12_0@0x402ccb)
+method($LN13_0@0x4032fe)
+method($LN20@0x401657)
+method($LN24@0x401663)
+method($LN25_1@0x403754)
+method($LN28@0x403784)
+method($LN37@0x403d0e)
+method($LN52@0x401e75)
+method($LN5@0x401a83)
+method($LN9@0x401498)
+method($LN9_0@0x403034)
+method(* __cdecl operator new(unsigned int)@0x40115f)
 method(4208477)
-method(Base2::Base2(void)@4198448)
-method(Base::Base(void)@4198400)
-method(Derived::Derived(void)@4198496)
-method(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@4207367)
-method(__FF_MSGBANNER@4202695)
-method(__FindPESection@4210544)
-method(__GET_RTERRMSG@4202226)
-method(__IsNonwritableInCurrentImage@4210640)
-method(__NLG_Notify1@4216204)
-method(__NMSG_WRITE@4202264)
-method(__RTC_Initialize@4204631)
-method(__RTC_Terminate@4204669)
-method(__ValidateImageBase@4210480)
-method(__XcptFilter@4202752)
-method(___CxxSetUnhandledExceptionFilter@4201465)
-method(___addlocaleref@4205831)
-method(___ascii_strnicmp@4217184)
-method(___crtCorExitProcess@4201479)
-method(___crtExitProcess@4201522)
-method(___crtGetEnvironmentStringsA@4203899)
-method(___crtGetStringTypeA@4214366)
-method(___crtLCMapStringA@4214065)
-method(___crtMessageBoxW@4210828)
-method(___free_lc_time@4212178)
-method(___free_lconv_mon@4213170)
-method(___free_lconv_num@4213065)
-method(___freetlocinfo@4206127)
-method(___get_sigabrt@4209562)
-method(___initmbctable@4208525)
-method(___onexitinit@4200988)
-method(___removelocaleref@4205974)
-method(___report_gsfailure@4215666)
-method(___security_init_cookie@4205247)
-method(___set_flsgetvalue@4199301)
-method(___sse2_available_init@4216433)
-method(___updatetlocinfo@4206535)
-method(___updatetmbcinfo@4207203)
-method(__abnormal_termination@4216169)
-method(__allmul@4216976)
-method(__alloca_probe_16@4216464)
-method(__alloca_probe_8@4216486)
-method(__amsg_exit@4202196)
-method(__aulldvrm@4216512)
-method(__c_exit@4202181)
-method(__call_reportfault@4210039)
-method(__callnewh@4201283)
-method(__calloc_crt@4208624)
-method(__calloc_impl@4214430)
-method(__cdecl operator delete(*)@4198661)
-method(__cdecl terminate(void)@4209403)
-method(__cexit@4202166)
-method(__cinit@4201651)
-method(__crtGetStringTypeA_stat@4214135)
-method(__crtLCMapStringA_stat@4213578)
-method(__crt_debugger_hook@4215649)
-method(__encoded_null@4199283)
-method(__errno@4208844)
-method(__except_handler4@4204848)
-method(__exit@4202144)
-method(__fastcall _EH4_CallFilterFunc(x, x)@4212082)
-method(__fastcall _EH4_GlobalUnwind2(x, x)@4212130)
-method(__fastcall _EH4_LocalUnwind(x, x, x, x)@4212155)
-method(__fastcall _EH4_TransferToHandler(x, x)@4212105)
-method(__fastcall __security_check_cookie(x)@4211703)
-method(__fptrap@4215657)
-method(__freea@4213546)
-method(__get_errno_from_oserr@4208778)
-method(__getptd@4199715)
-method(__getptd_noexit@4199594)
-method(__global_unwind2@4215936)
-method(__heap_init@4204707)
-method(__init_pointers@4201564)
-method(__initp_eh_hooks@4209460)
-method(__initp_heap_handler@4201268)
-method(__initp_misc_cfltcvt_tab@4210434)
-method(__initp_misc_invarg@4210024)
-method(__initp_misc_purevirt@4210009)
-method(__initp_misc_rand_s@4209994)
-method(__initp_misc_winsig@4209477)
-method(__initptd@4199414)
-method(__initterm_e@4201615)
-method(__invalid_parameter@4210373)
-method(__invalid_parameter_noinfo@4210418)
-method(__invoke_watson@4210336)
-method(__ioinit@4204050)
-method(__ismbblead@4211801)
-method(__local_unwind2@4216037)
-method(__local_unwind4@4211840)
-method(__lock@4205780)
-method(__lockexit@4201546)
-method(__malloc_crt@4208555)
-method(__msize@4209352)
-method(__mtinit@4200044)
-method(__mtinitlocknum@4205586)
-method(__mtinitlocks@4205402)
-method(__mtterm@4199353)
-method(__onexit@4201037)
-method(__realloc_crt@4208700)
-method(__set_error_mode@4211640)
-method(__setargv@4203712)
-method(__setenvp@4203082)
-method(__setmbcp@4208115)
-method(__setmbcp_nolock@4207626)
-method(__stdcall RtlUnwind(x, x, x, x)@4217282)
-method(__stdcall _CxxThrowException(x, x)@4201323)
-method(__stdcall __crtTlsAlloc(x)@4199292)
-method(__stdcall _freefls(x)@4199741)
-method(__stdcall _seh_longjmp_unwind4(x)@4212054)
-method(__unlock@4205563)
-method(__unlockexit@4201555)
-method(__unwind_handler@4215968)
-method(__updatetlocinfoEx_nolock@4206458)
-method(_abort@4214733)
-method(_atexit@4201097)
-method(_exit@4202122)
-method(_free@4200423)
-method(_main@4198576)
-method(_mainCRTStartup@4199273)
-method(_malloc@4201120)
-method(_memset@4213424)
-method(_onexit_nolock@4200806)
-method(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4217288)
-method(_raise@4209575)
-method(_rand@4198628)
-method(_realloc@4214560)
-method(_strcmp@4209216)
-method(_strcpy_s@4208863)
-method(_strcspn@4217040)
-method(_strlen@4208960)
-method(_strpbrk@4217120)
-method(_unwind_handler4@4211984)
-method(_wcscat_s@4211192)
-method(_wcscpy_s@4211541)
-method(_wcslen@4211514)
-method(_wcsncpy_s@4211309)
-method(class std::exception & std::exception::operator=(class std::exception const &)@4200617)
-method(doexit@4201802)
-method(fast_error_exit@4198879)
-method(getSystemCP@4207502)
-method(int Base2::func3(void)@4198480)
-method(int Base::func3(void)@4198432)
-method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4201399)
-method(parse_cmdline@4203302)
-method(setSBCS@4206703)
-method(setSBUpLow@4206803)
-method(siglookup@4209507)
-method(static __cdecl type_info::_Type_info_dtor(class type_info *)@4209099)
-method(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
-method(std::exception::_Copy_str(char const *)@4200523)
-method(std::exception::_Tidy(void)@4200587)
-method(std::exception::exception(char const * const &, int)@4200481)
-method(std::exception::exception(class std::exception const &)@4200720)
-method(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-method(virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-method(virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773)
-method(virtual char const * std::exception::what(void)const@4200510)
-method(virtual std::bad_alloc::~bad_alloc(void)@4198672)
-method(virtual std::exception::~exception(void)@4200670)
-method(virtual type_info::~type_info(void)@4200757)
-method(x_ismbbtype_l@4211718)
-objectInObject(const std::bad_alloc::`vftable'@4219200,const std::exception::`vftable'@4219300,0)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@4198672)
-realDestructor(virtual std::exception::~exception(void)@4200670)
-vfTable(const std::bad_alloc::`vftable'@4219200)
-vfTable(const std::exception::`vftable'@4219300)
-vfTable(const type_info::`vftable'@4219332)
-vfTableEntry(const std::bad_alloc::`vftable'@4219200,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-vfTableEntry(const std::bad_alloc::`vftable'@4219200,4,virtual char const * std::exception::what(void)const@4200510)
-vfTableEntry(const std::exception::`vftable'@4219300,0,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-vfTableEntry(const std::exception::`vftable'@4219300,4,virtual char const * std::exception::what(void)const@4200510)
-vfTableEntry(const type_info::`vftable'@4219332,0,virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773)
-vfTableSize(const std::bad_alloc::`vftable'@4219200,8)
-vfTableSize(const std::exception::`vftable'@4219300,8)
-vfTableSize(const type_info::`vftable'@4219332,4)
-vfTableWrite(4198691,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683,0,const std::bad_alloc::`vftable'@4219200)
-vfTableWrite(4198738,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722,0,const std::bad_alloc::`vftable'@4219200)
-vfTableWrite(4200491,std::exception::exception(char const * const &, int)@4200481,0,const std::exception::`vftable'@4219300)
-vfTableWrite(4200689,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681,0,const std::exception::`vftable'@4219300)
-vfTableWrite(4200735,std::exception::exception(class std::exception const &)@4200720,0,const std::exception::`vftable'@4219300)
-vfTableWrite(4200760,virtual type_info::~type_info(void)@4200757,0,const type_info::`vftable'@4219332)
-vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@4198672,virtual std::bad_alloc::~bad_alloc(void)@4198672,0,const std::bad_alloc::`vftable'@4219200)
-vfTableWrite(virtual std::exception::~exception(void)@4200670,virtual std::exception::~exception(void)@4200670,0,const std::exception::`vftable'@4219300)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@4219200,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@4219200,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@4219200,0,virtual std::bad_alloc::~bad_alloc(void)@4198672)
-vftableBelongsToClass(const std::exception::`vftable'@4219300,0,std::exception::exception(char const * const &, int)@4200481)
-vftableBelongsToClass(const std::exception::`vftable'@4219300,0,std::exception::exception(class std::exception const &)@4200720)
-vftableBelongsToClass(const std::exception::`vftable'@4219300,0,virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681)
-vftableBelongsToClass(const std::exception::`vftable'@4219300,0,virtual std::exception::~exception(void)@4200670)
-vftableBelongsToClass(const type_info::`vftable'@4219332,0,virtual type_info::~type_info(void)@4200757)
-%   {$LN10_1@4209202}
-%   {$LN11@4199585}
-%   {$LN12_0@4205771}
-%   {$LN13_0@4207358}
-%   {$LN20@4200023}
-%   {$LN24@4200035}
-%   {$LN25_1@4208468}
-%   {$LN28@4208516}
-%   {$LN37@4209934}
-%   {$LN52@4202101}
-%   {$LN5@4201091}
-%   {$LN9@4199576}
-%   {$LN9_0@4206644}
-%   {* __cdecl operator new(unsigned int)@4198751}
-%   {4208477}
-%   {Base2::Base2(void)@4198448}
-%   {Base::Base(void)@4198400, int Base::func3(void)@4198432, Derived::Derived(void)@4198496}
-%   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@4207367}
-%   {__FF_MSGBANNER@4202695}
-%   {__FindPESection@4210544}
-%   {__GET_RTERRMSG@4202226}
-%   {__IsNonwritableInCurrentImage@4210640}
-%   {__NLG_Notify1@4216204}
-%   {__NMSG_WRITE@4202264}
-%   {__RTC_Initialize@4204631}
-%   {__RTC_Terminate@4204669}
-%   {__ValidateImageBase@4210480}
-%   {__XcptFilter@4202752}
-%   {___CxxSetUnhandledExceptionFilter@4201465}
-%   {___addlocaleref@4205831}
-%   {___ascii_strnicmp@4217184}
-%   {___crtCorExitProcess@4201479}
-%   {___crtExitProcess@4201522}
-%   {___crtGetEnvironmentStringsA@4203899}
-%   {___crtGetStringTypeA@4214366}
-%   {___crtLCMapStringA@4214065}
-%   {___crtMessageBoxW@4210828}
-%   {___free_lc_time@4212178}
-%   {___free_lconv_mon@4213170}
-%   {___free_lconv_num@4213065}
-%   {___freetlocinfo@4206127}
-%   {___get_sigabrt@4209562}
-%   {___initmbctable@4208525}
-%   {___onexitinit@4200988}
-%   {___removelocaleref@4205974}
-%   {___report_gsfailure@4215666}
-%   {___security_init_cookie@4205247}
-%   {___set_flsgetvalue@4199301}
-%   {___sse2_available_init@4216433}
-%   {___updatetlocinfo@4206535}
-%   {___updatetmbcinfo@4207203}
-%   {__abnormal_termination@4216169}
-%   {__allmul@4216976}
-%   {__alloca_probe_16@4216464}
-%   {__alloca_probe_8@4216486}
-%   {__amsg_exit@4202196}
-%   {__aulldvrm@4216512}
-%   {__c_exit@4202181}
-%   {__call_reportfault@4210039}
-%   {__callnewh@4201283}
-%   {__calloc_crt@4208624}
-%   {__calloc_impl@4214430}
-%   {__cdecl operator delete(*)@4198661}
-%   {__cdecl terminate(void)@4209403}
-%   {__cexit@4202166}
-%   {__cinit@4201651}
-%   {__crtGetStringTypeA_stat@4214135}
-%   {__crtLCMapStringA_stat@4213578}
-%   {__crt_debugger_hook@4215649}
-%   {__encoded_null@4199283}
-%   {__errno@4208844}
-%   {__except_handler4@4204848}
-%   {__exit@4202144}
-%   {__fastcall _EH4_CallFilterFunc(x, x)@4212082}
-%   {__fastcall _EH4_GlobalUnwind2(x, x)@4212130}
-%   {__fastcall _EH4_LocalUnwind(x, x, x, x)@4212155}
-%   {__fastcall _EH4_TransferToHandler(x, x)@4212105}
-%   {__fastcall __security_check_cookie(x)@4211703}
-%   {__fptrap@4215657}
-%   {__freea@4213546}
-%   {__get_errno_from_oserr@4208778}
-%   {__getptd@4199715}
-%   {__getptd_noexit@4199594}
-%   {__global_unwind2@4215936}
-%   {__heap_init@4204707}
-%   {__init_pointers@4201564}
-%   {__initp_eh_hooks@4209460}
-%   {__initp_heap_handler@4201268}
-%   {__initp_misc_cfltcvt_tab@4210434}
-%   {__initp_misc_invarg@4210024}
-%   {__initp_misc_purevirt@4210009}
-%   {__initp_misc_rand_s@4209994}
-%   {__initp_misc_winsig@4209477}
-%   {__initptd@4199414}
-%   {__initterm_e@4201615}
-%   {__invalid_parameter@4210373}
-%   {__invalid_parameter_noinfo@4210418}
-%   {__invoke_watson@4210336}
-%   {__ioinit@4204050}
-%   {__ismbblead@4211801}
-%   {__local_unwind2@4216037}
-%   {__local_unwind4@4211840}
-%   {__lock@4205780}
-%   {__lockexit@4201546}
-%   {__malloc_crt@4208555}
-%   {__msize@4209352}
-%   {__mtinit@4200044}
-%   {__mtinitlocknum@4205586}
-%   {__mtinitlocks@4205402}
-%   {__mtterm@4199353}
-%   {__onexit@4201037}
-%   {__realloc_crt@4208700}
-%   {__set_error_mode@4211640}
-%   {__setargv@4203712}
-%   {__setenvp@4203082}
-%   {__setmbcp@4208115}
-%   {__setmbcp_nolock@4207626}
-%   {__stdcall RtlUnwind(x, x, x, x)@4217282}
-%   {__stdcall _CxxThrowException(x, x)@4201323}
-%   {__stdcall __crtTlsAlloc(x)@4199292}
-%   {__stdcall _freefls(x)@4199741}
-%   {__stdcall _seh_longjmp_unwind4(x)@4212054}
-%   {__unlock@4205563}
-%   {__unlockexit@4201555}
-%   {__unwind_handler@4215968}
-%   {__updatetlocinfoEx_nolock@4206458}
-%   {_abort@4214733}
-%   {_atexit@4201097}
-%   {_exit@4202122}
-%   {_free@4200423}
-%   {_main@4198576}
-%   {_mainCRTStartup@4199273}
-%   {_malloc@4201120}
-%   {_memset@4213424}
-%   {_onexit_nolock@4200806}
-%   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@4217288}
-%   {_raise@4209575}
-%   {_rand@4198628}
-%   {_realloc@4214560}
-%   {_strcmp@4209216}
-%   {_strcpy_s@4208863}
-%   {_strcspn@4217040}
-%   {_strlen@4208960}
-%   {_strpbrk@4217120}
-%   {_unwind_handler4@4211984}
-%   {_wcscat_s@4211192}
-%   {_wcscpy_s@4211541}
-%   {_wcslen@4211514}
-%   {_wcsncpy_s@4211309}
-%   {doexit@4201802}
-%   {fast_error_exit@4198879}
-%   {getSystemCP@4207502}
-%   {int Base2::func3(void)@4198480}
-%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4201399}
-%   {parse_cmdline@4203302}
-%   {setSBCS@4206703}
-%   {setSBUpLow@4206803}
-%   {siglookup@4209507}
-%   {static __cdecl type_info::_Type_info_dtor(class type_info *)@4209099}
-%   {std::exception::exception(char const * const &, int)@4200481, virtual char const * std::exception::what(void)const@4200510, std::exception::_Copy_str(char const *)@4200523, std::exception::_Tidy(void)@4200587, class std::exception & std::exception::operator=(class std::exception const &)@4200617, virtual std::exception::~exception(void)@4200670, virtual * std::exception::`scalar deleting destructor'(unsigned int)@4200681, std::exception::exception(class std::exception const &)@4200720, const std::exception::`vftable'@4219300}
-%   {virtual std::bad_alloc::~bad_alloc(void)@4198672, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@4198683, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@4198722, const std::bad_alloc::`vftable'@4219200}
-%   {virtual type_info::~type_info(void)@4200757, virtual * type_info::`scalar deleting destructor'(unsigned int)@4200773, const type_info::`vftable'@4219332}
-%   {x_ismbbtype_l@4211718}
+method(Base2::Base2(void)@0x401030)
+method(Base::Base(void)@0x401000)
+method(Derived::Derived(void)@0x401060)
+method(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403307)
+method(__FF_MSGBANNER@0x4020c7)
+method(__FindPESection@0x403f70)
+method(__GET_RTERRMSG@0x401ef2)
+method(__IsNonwritableInCurrentImage@0x403fd0)
+method(__NLG_Notify1@0x40558c)
+method(__NMSG_WRITE@0x401f18)
+method(__RTC_Initialize@0x402857)
+method(__RTC_Terminate@0x40287d)
+method(__ValidateImageBase@0x403f30)
+method(__XcptFilter@0x402100)
+method(___CxxSetUnhandledExceptionFilter@0x401bf9)
+method(___addlocaleref@0x402d07)
+method(___ascii_strnicmp@0x405960)
+method(___crtCorExitProcess@0x401c07)
+method(___crtExitProcess@0x401c32)
+method(___crtGetEnvironmentStringsA@0x40257b)
+method(___crtGetStringTypeA@0x404e5e)
+method(___crtLCMapStringA@0x404d31)
+method(___crtMessageBoxW@0x40408c)
+method(___free_lc_time@0x4045d2)
+method(___free_lconv_mon@0x4049b2)
+method(___free_lconv_num@0x404949)
+method(___freetlocinfo@0x402e2f)
+method(___get_sigabrt@0x403b9a)
+method(___initmbctable@0x40378d)
+method(___onexitinit@0x401a1c)
+method(___removelocaleref@0x402d96)
+method(___report_gsfailure@0x405372)
+method(___security_init_cookie@0x402abf)
+method(___set_flsgetvalue@0x401385)
+method(___sse2_available_init@0x405671)
+method(___updatetlocinfo@0x402fc7)
+method(___updatetmbcinfo@0x403263)
+method(__abnormal_termination@0x405569)
+method(__allmul@0x405890)
+method(__alloca_probe_16@0x405690)
+method(__alloca_probe_8@0x4056a6)
+method(__amsg_exit@0x401ed4)
+method(__aulldvrm@0x4056c0)
+method(__c_exit@0x401ec5)
+method(__call_reportfault@0x403d77)
+method(__callnewh@0x401b43)
+method(__calloc_crt@0x4037f0)
+method(__calloc_impl@0x404e9e)
+method(__cdecl operator delete(*)@0x401105)
+method(__cdecl terminate(void)@0x403afb)
+method(__cexit@0x401eb6)
+method(__cinit@0x401cb3)
+method(__crtGetStringTypeA_stat@0x404d77)
+method(__crtLCMapStringA_stat@0x404b4a)
+method(__crt_debugger_hook@0x405361)
+method(__encoded_null@0x401373)
+method(__errno@0x4038cc)
+method(__except_handler4@0x402930)
+method(__exit@0x401ea0)
+method(__fastcall _EH4_CallFilterFunc(x, x)@0x404572)
+method(__fastcall _EH4_GlobalUnwind2(x, x)@0x4045a2)
+method(__fastcall _EH4_LocalUnwind(x, x, x, x)@0x4045bb)
+method(__fastcall _EH4_TransferToHandler(x, x)@0x404589)
+method(__fastcall __security_check_cookie(x)@0x4043f7)
+method(__fptrap@0x405369)
+method(__freea@0x404b2a)
+method(__get_errno_from_oserr@0x40388a)
+method(__getptd@0x401523)
+method(__getptd_noexit@0x4014aa)
+method(__global_unwind2@0x405480)
+method(__heap_init@0x4028a3)
+method(__init_pointers@0x401c5c)
+method(__initp_eh_hooks@0x403b34)
+method(__initp_heap_handler@0x401b34)
+method(__initp_misc_cfltcvt_tab@0x403f02)
+method(__initp_misc_invarg@0x403d68)
+method(__initp_misc_purevirt@0x403d59)
+method(__initp_misc_rand_s@0x403d4a)
+method(__initp_misc_winsig@0x403b45)
+method(__initptd@0x4013f6)
+method(__initterm_e@0x401c8f)
+method(__invalid_parameter@0x403ec5)
+method(__invalid_parameter_noinfo@0x403ef2)
+method(__invoke_watson@0x403ea0)
+method(__ioinit@0x402612)
+method(__ismbblead@0x404459)
+method(__local_unwind2@0x4054e5)
+method(__local_unwind4@0x404480)
+method(__lock@0x402cd4)
+method(__lockexit@0x401c4a)
+method(__malloc_crt@0x4037ab)
+method(__msize@0x403ac8)
+method(__mtinit@0x40166c)
+method(__mtinitlocknum@0x402c12)
+method(__mtinitlocks@0x402b5a)
+method(__mtterm@0x4013b9)
+method(__onexit@0x401a4d)
+method(__realloc_crt@0x40383c)
+method(__set_error_mode@0x4043b8)
+method(__setargv@0x4024c0)
+method(__setenvp@0x40224a)
+method(__setmbcp@0x4035f3)
+method(__setmbcp_nolock@0x40340a)
+method(__stdcall RtlUnwind(x, x, x, x)@0x4059c2)
+method(__stdcall _CxxThrowException(x, x)@0x401b6b)
+method(__stdcall __crtTlsAlloc(x)@0x40137c)
+method(__stdcall _freefls(x)@0x40153d)
+method(__stdcall _seh_longjmp_unwind4(x)@0x404556)
+method(__unlock@0x402bfb)
+method(__unlockexit@0x401c53)
+method(__unwind_handler@0x4054a0)
+method(__updatetlocinfoEx_nolock@0x402f7a)
+method(_abort@0x404fcd)
+method(_atexit@0x401a89)
+method(_exit@0x401e8a)
+method(_free@0x4017e7)
+method(_main@0x4010b0)
+method(_mainCRTStartup@0x401369)
+method(_malloc@0x401aa0)
+method(_memset@0x404ab0)
+method(_onexit_nolock@0x401966)
+method(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@0x4059c8)
+method(_raise@0x403ba7)
+method(_rand@0x4010e4)
+method(_realloc@0x404f20)
+method(_strcmp@0x403a40)
+method(_strcpy_s@0x4038df)
+method(_strcspn@0x4058d0)
+method(_strlen@0x403940)
+method(_strpbrk@0x405920)
+method(_unwind_handler4@0x404510)
+method(_wcscat_s@0x4041f8)
+method(_wcscpy_s@0x404355)
+method(_wcslen@0x40433a)
+method(_wcsncpy_s@0x40426d)
+method(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9)
+method(doexit@0x401d4a)
+method(fast_error_exit@0x4011df)
+method(getSystemCP@0x40338e)
+method(int Base2::func3(void)@0x401050)
+method(int Base::func3(void)@0x401020)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x401bb7)
+method(parse_cmdline@0x402326)
+method(setSBCS@0x40306f)
+method(setSBUpLow@0x4030d3)
+method(siglookup@0x403b63)
+method(static __cdecl type_info::_Type_info_dtor(class type_info *)@0x4039cb)
+method(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+method(std::exception::_Copy_str(char const *)@0x40184b)
+method(std::exception::_Tidy(void)@0x40188b)
+method(std::exception::exception(char const * const &, int)@0x401821)
+method(std::exception::exception(class std::exception const &)@0x401910)
+method(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+method(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+method(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+method(virtual char const * std::exception::what(void)const@0x40183e)
+method(virtual std::bad_alloc::~bad_alloc(void)@0x401110)
+method(virtual std::exception::~exception(void)@0x4018de)
+method(virtual type_info::~type_info(void)@0x401935)
+method(x_ismbbtype_l@0x404406)
+objectInObject(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x401110)
+realDestructor(virtual std::exception::~exception(void)@0x4018de)
+vfTable(const std::bad_alloc::`vftable'@0x406140)
+vfTable(const std::exception::`vftable'@0x4061a4)
+vfTable(const type_info::`vftable'@0x4061c4)
+vfTableEntry(const std::bad_alloc::`vftable'@0x406140,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+vfTableEntry(const std::bad_alloc::`vftable'@0x406140,4,virtual char const * std::exception::what(void)const@0x40183e)
+vfTableEntry(const std::exception::`vftable'@0x4061a4,0,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+vfTableEntry(const std::exception::`vftable'@0x4061a4,4,virtual char const * std::exception::what(void)const@0x40183e)
+vfTableEntry(const type_info::`vftable'@0x4061c4,0,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
+vfTableSize(const std::bad_alloc::`vftable'@0x406140,8)
+vfTableSize(const std::exception::`vftable'@0x4061a4,8)
+vfTableSize(const type_info::`vftable'@0x4061c4,4)
+vfTableWrite(4198691,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b,0,const std::bad_alloc::`vftable'@0x406140)
+vfTableWrite(4198738,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142,0,const std::bad_alloc::`vftable'@0x406140)
+vfTableWrite(4200491,std::exception::exception(char const * const &, int)@0x401821,0,const std::exception::`vftable'@0x4061a4)
+vfTableWrite(4200689,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9,0,const std::exception::`vftable'@0x4061a4)
+vfTableWrite(4200735,std::exception::exception(class std::exception const &)@0x401910,0,const std::exception::`vftable'@0x4061a4)
+vfTableWrite(4200760,virtual type_info::~type_info(void)@0x401935,0,const type_info::`vftable'@0x4061c4)
+vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@0x401110,virtual std::bad_alloc::~bad_alloc(void)@0x401110,0,const std::bad_alloc::`vftable'@0x406140)
+vfTableWrite(virtual std::exception::~exception(void)@0x4018de,virtual std::exception::~exception(void)@0x4018de,0,const std::exception::`vftable'@0x4061a4)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,virtual std::bad_alloc::~bad_alloc(void)@0x401110)
+vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,std::exception::exception(char const * const &, int)@0x401821)
+vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,std::exception::exception(class std::exception const &)@0x401910)
+vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
+vftableBelongsToClass(const type_info::`vftable'@0x4061c4,0,virtual type_info::~type_info(void)@0x401935)
+vftableSizeTotal(20)
+%   {$LN10_1@0x403a32}
+%   {$LN11@0x4014a1}
+%   {$LN12_0@0x402ccb}
+%   {$LN13_0@0x4032fe}
+%   {$LN20@0x401657}
+%   {$LN24@0x401663}
+%   {$LN25_1@0x403754}
+%   {$LN28@0x403784}
+%   {$LN37@0x403d0e}
+%   {$LN52@0x401e75}
+%   {$LN5@0x401a83}
+%   {$LN9@0x401498}
+%   {$LN9_0@0x403034}
+%   {* __cdecl operator new(unsigned int)@0x40115f}
+%   {0x40375d}
+%   {Base::Base(void)@0x401000, int Base::func3(void)@0x401020, Base2::Base2(void)@0x401030, int Base2::func3(void)@0x401050, Derived::Derived(void)@0x401060, std::exception::exception(char const * const &, int)@0x401821, virtual char const * std::exception::what(void)const@0x40183e, std::exception::_Copy_str(char const *)@0x40184b, std::exception::_Tidy(void)@0x40188b, class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9, virtual std::exception::~exception(void)@0x4018de, virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9, std::exception::exception(class std::exception const &)@0x401910, const std::exception::`vftable'@0x4061a4}
+%   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403307}
+%   {__FF_MSGBANNER@0x4020c7}
+%   {__FindPESection@0x403f70}
+%   {__GET_RTERRMSG@0x401ef2}
+%   {__IsNonwritableInCurrentImage@0x403fd0}
+%   {__NLG_Notify1@0x40558c}
+%   {__NMSG_WRITE@0x401f18}
+%   {__RTC_Initialize@0x402857}
+%   {__RTC_Terminate@0x40287d}
+%   {__ValidateImageBase@0x403f30}
+%   {__XcptFilter@0x402100}
+%   {___CxxSetUnhandledExceptionFilter@0x401bf9}
+%   {___addlocaleref@0x402d07}
+%   {___ascii_strnicmp@0x405960}
+%   {___crtCorExitProcess@0x401c07}
+%   {___crtExitProcess@0x401c32}
+%   {___crtGetEnvironmentStringsA@0x40257b}
+%   {___crtGetStringTypeA@0x404e5e}
+%   {___crtLCMapStringA@0x404d31}
+%   {___crtMessageBoxW@0x40408c}
+%   {___free_lc_time@0x4045d2}
+%   {___free_lconv_mon@0x4049b2}
+%   {___free_lconv_num@0x404949}
+%   {___freetlocinfo@0x402e2f}
+%   {___get_sigabrt@0x403b9a}
+%   {___initmbctable@0x40378d}
+%   {___onexitinit@0x401a1c}
+%   {___removelocaleref@0x402d96}
+%   {___report_gsfailure@0x405372}
+%   {___security_init_cookie@0x402abf}
+%   {___set_flsgetvalue@0x401385}
+%   {___sse2_available_init@0x405671}
+%   {___updatetlocinfo@0x402fc7}
+%   {___updatetmbcinfo@0x403263}
+%   {__abnormal_termination@0x405569}
+%   {__allmul@0x405890}
+%   {__alloca_probe_16@0x405690}
+%   {__alloca_probe_8@0x4056a6}
+%   {__amsg_exit@0x401ed4}
+%   {__aulldvrm@0x4056c0}
+%   {__c_exit@0x401ec5}
+%   {__call_reportfault@0x403d77}
+%   {__callnewh@0x401b43}
+%   {__calloc_crt@0x4037f0}
+%   {__calloc_impl@0x404e9e}
+%   {__cdecl operator delete(*)@0x401105}
+%   {__cdecl terminate(void)@0x403afb}
+%   {__cexit@0x401eb6}
+%   {__cinit@0x401cb3}
+%   {__crtGetStringTypeA_stat@0x404d77}
+%   {__crtLCMapStringA_stat@0x404b4a}
+%   {__crt_debugger_hook@0x405361}
+%   {__encoded_null@0x401373}
+%   {__errno@0x4038cc}
+%   {__except_handler4@0x402930}
+%   {__exit@0x401ea0}
+%   {__fastcall _EH4_CallFilterFunc(x, x)@0x404572}
+%   {__fastcall _EH4_GlobalUnwind2(x, x)@0x4045a2}
+%   {__fastcall _EH4_LocalUnwind(x, x, x, x)@0x4045bb}
+%   {__fastcall _EH4_TransferToHandler(x, x)@0x404589}
+%   {__fastcall __security_check_cookie(x)@0x4043f7}
+%   {__fptrap@0x405369}
+%   {__freea@0x404b2a}
+%   {__get_errno_from_oserr@0x40388a}
+%   {__getptd@0x401523}
+%   {__getptd_noexit@0x4014aa}
+%   {__global_unwind2@0x405480}
+%   {__heap_init@0x4028a3}
+%   {__init_pointers@0x401c5c}
+%   {__initp_eh_hooks@0x403b34}
+%   {__initp_heap_handler@0x401b34}
+%   {__initp_misc_cfltcvt_tab@0x403f02}
+%   {__initp_misc_invarg@0x403d68}
+%   {__initp_misc_purevirt@0x403d59}
+%   {__initp_misc_rand_s@0x403d4a}
+%   {__initp_misc_winsig@0x403b45}
+%   {__initptd@0x4013f6}
+%   {__initterm_e@0x401c8f}
+%   {__invalid_parameter@0x403ec5}
+%   {__invalid_parameter_noinfo@0x403ef2}
+%   {__invoke_watson@0x403ea0}
+%   {__ioinit@0x402612}
+%   {__ismbblead@0x404459}
+%   {__local_unwind2@0x4054e5}
+%   {__local_unwind4@0x404480}
+%   {__lock@0x402cd4}
+%   {__lockexit@0x401c4a}
+%   {__malloc_crt@0x4037ab}
+%   {__msize@0x403ac8}
+%   {__mtinit@0x40166c}
+%   {__mtinitlocknum@0x402c12}
+%   {__mtinitlocks@0x402b5a}
+%   {__mtterm@0x4013b9}
+%   {__onexit@0x401a4d}
+%   {__realloc_crt@0x40383c}
+%   {__set_error_mode@0x4043b8}
+%   {__setargv@0x4024c0}
+%   {__setenvp@0x40224a}
+%   {__setmbcp@0x4035f3}
+%   {__setmbcp_nolock@0x40340a}
+%   {__stdcall RtlUnwind(x, x, x, x)@0x4059c2}
+%   {__stdcall _CxxThrowException(x, x)@0x401b6b}
+%   {__stdcall __crtTlsAlloc(x)@0x40137c}
+%   {__stdcall _freefls(x)@0x40153d}
+%   {__stdcall _seh_longjmp_unwind4(x)@0x404556}
+%   {__unlock@0x402bfb}
+%   {__unlockexit@0x401c53}
+%   {__unwind_handler@0x4054a0}
+%   {__updatetlocinfoEx_nolock@0x402f7a}
+%   {_abort@0x404fcd}
+%   {_atexit@0x401a89}
+%   {_exit@0x401e8a}
+%   {_free@0x4017e7}
+%   {_main@0x4010b0}
+%   {_mainCRTStartup@0x401369}
+%   {_malloc@0x401aa0}
+%   {_memset@0x404ab0}
+%   {_onexit_nolock@0x401966}
+%   {_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@0x4059c8}
+%   {_raise@0x403ba7}
+%   {_rand@0x4010e4}
+%   {_realloc@0x404f20}
+%   {_strcmp@0x403a40}
+%   {_strcpy_s@0x4038df}
+%   {_strcspn@0x4058d0}
+%   {_strlen@0x403940}
+%   {_strpbrk@0x405920}
+%   {_unwind_handler4@0x404510}
+%   {_wcscat_s@0x4041f8}
+%   {_wcscpy_s@0x404355}
+%   {_wcslen@0x40433a}
+%   {_wcsncpy_s@0x40426d}
+%   {doexit@0x401d4a}
+%   {fast_error_exit@0x4011df}
+%   {getSystemCP@0x40338e}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x401bb7}
+%   {parse_cmdline@0x402326}
+%   {setSBCS@0x40306f}
+%   {setSBUpLow@0x4030d3}
+%   {siglookup@0x403b63}
+%   {static __cdecl type_info::_Type_info_dtor(class type_info *)@0x4039cb}
+%   {virtual std::bad_alloc::~bad_alloc(void)@0x401110, virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b, std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142, const std::bad_alloc::`vftable'@0x406140}
+%   {virtual type_info::~type_info(void)@0x401935, virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945, const type_info::`vftable'@0x4061c4}
+%   {x_ismbbtype_l@0x404406}

@@ -1,478 +1,484 @@
-09:41:53 Grounding...
-09:41:53 Grounding done (0.04s)
-09:41:53 Solving...
-09:41:54 Model found (0.09s): [-220]
-09:41:54 Solving done: OPTIMUM FOUND (0.07s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
+21:52:41 Grounding...
+21:52:41 Grounding done (0.02s)
+21:52:41 Solving...
+21:52:41 Model found (0.04s): [-220]
+21:52:41 Model found (0.04s, +0.00s): [-221]
+21:52:41 Solving done: OPTIMUM FOUND (0.03s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex7.results
 OPTIMUM FOUND
 
-Answer: 1
-Optimization: -220
+Answer: 2
+Optimization: -221
 
-% Equivalence classes (218 classes, 220 entities):
+% Equivalence classes (217 classes, 220 entities):
+21:52:41 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
 
 % Stats:
-%   atoms: 7619.0
-%   bodies: 2597.0
-%   rules: 8061.0
-%   variables: 1513.0
+%   atoms: 7635.0
+%   bodies: 2613.0
+%   rules: 8080.0
+%   variables: 1523.0
 %   constraints: 0.0
-%   choices: 217.0
+%   choices: 434.0
 %   conflicts: 0.0
-%   models: 1.0
+%   models: 2.0
 %   optimal_models: 1.0
-%   final_cost: [-220.0]
-%   lower_bound: [-220.0]
-%   total_time: 0.13254284858703613
-%   ground_time: 0.037476167010026984
-%   time_to_first_model: 0.09226841700728983
-%   max_rss_bytes: 32686080
-%   solve_time: 0.007386922836303711
-constructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
+%   final_cost: [-221.0]
+%   lower_bound: [-221.0]
+%   total_time: 0.05458784103393555
+%   ground_time: 0.017362212296575308
+%   time_to_first_model: 0.042022405192255974
+%   max_rss_bytes: 28311552
+%   solve_time: 0.004932880401611328
+classRelatedMethod(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
+classRelatedMethod(int ObjectTest::add(void)@0x411740,ObjectTest::ObjectTest(int, int)@0x4116f0)
+constructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4192b4)
 guessEnabled(constructor)
 guessEnabled(derived_class)
+guessEnabled(merge)
 guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4297384,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4297404)
-mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400)
-method($LN6_1@4271605)
-method(DebuggerProbe@4268048)
-method(DebuggerRuntime@4268992)
-method(GetPdbDll@4273680)
-method(ObjectTest::ObjectTest(int, int)@4264111)
-method(ObjectTest::ObjectTest(int, int)@4265712)
-method(ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@4264356)
-method(ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@4265120)
-method(_DebuggerKnownHandle@4268000)
-method(_NtCurrentTeb@4267760)
-method(__CRT_RTC_INITW@4270566)
-method(__CrtDbgReportW@4272710)
-method(__CrtSetCheckCount@4272074)
-method(__FindPESection@4272208)
-method(__IsNonwritableInCurrentImage@4272368)
-method(__RTC_CheckEsp@4266032)
-method(__RTC_GetErrDesc@4270368)
-method(__RTC_InitBase@4266544)
-method(__RTC_Initialize@4271264)
-method(__RTC_NumErrors@4270352)
-method(__RTC_SetErrorFunc@4270448)
-method(__RTC_SetErrorFuncW@4270496)
-method(__RTC_Shutdown@4266608)
-method(__RTC_Terminate@4271312)
-method(__RTC_UninitUse@4270048)
-method(__ValidateImageBase@4272080)
-method(__XcptFilter@4272056)
-method(___CxxFrameHandler3@4266632)
-method(___CxxSetUnhandledExceptionFilter@4271056)
-method(___dllonexit@4274298)
-method(___getmainargs@4271766)
-method(___p__commode@4271360)
-method(___p__fmode@4271366)
-method(___report_gsfailure@4270576)
-method(___security_init_cookie@4271776)
-method(___set_app_type@4271754)
-method(___setusermatherr@4271222)
-method(__amsg_exit@4271760)
-method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264421)
-method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4269520)
-method(__cdecl _RTC_Failure(*, int)@4264416)
-method(__cdecl _RTC_Failure(*, int)@4268224)
-method(__cdecl _RTC_StackFailure(*, char const *)@4264151)
-method(__cdecl _RTC_StackFailure(*, char const *)@4269200)
-method(__cdecl bar(class ObjectTest, int, int, class ObjectTest)@4264231)
-method(__cdecl bar(class ObjectTest, int, int, class ObjectTest)@4264976)
-method(__cdecl foo(int, class ObjectTest, int)@4264321)
-method(__cdecl foo(int, class ObjectTest, int)@4265472)
-method(__cdecl terminate(void)@4264091)
-method(__cdecl terminate(void)@4274274)
-method(__cexit@4272062)
-method(__configthreadlocale@4271082)
-method(__controlfp_s@4274280)
-method(__crt_debugger_hook@4274268)
-method(__decode_pointer@4274310)
-method(__ehhandler$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4278450)
-method(__encode_pointer@4271748)
-method(__except_handler4@4272736)
-method(__except_handler4_common@4274316)
-method(__exit@4272050)
-method(__fastcall _RTC_AllocaHelper(x, x, x)@4263986)
-method(__fastcall _RTC_AllocaHelper(x, x, x)@4266208)
-method(__fastcall _RTC_CheckStackVars(x, x)@4264076)
-method(__fastcall _RTC_CheckStackVars(x, x)@4266080)
-method(__fastcall _RTC_CheckStackVars2(x, x, x)@4264276)
-method(__fastcall _RTC_CheckStackVars2(x, x, x)@4266272)
-method(__fastcall __security_check_cookie(x)@4263966)
-method(__fastcall __security_check_cookie(x)@4266640)
-method(__initterm@4272716)
-method(__initterm_e@4272722)
-method(__invoke_watson@4274286)
-method(__invoke_watson_if_error@4271168)
-method(__lock@4274304)
-method(__matherr@4271232)
-method(__onexit@4271376)
-method(__setargv@4271248)
-method(__setdefaultprecision@4271088)
-method(__stdcall DebugBreak()@4263951)
-method(__stdcall DebugBreak()@4274388)
-method(__stdcall FreeLibrary(x)@4264441)
-method(__stdcall FreeLibrary(x)@4274508)
-method(__stdcall GetCurrentProcess()@4264116)
-method(__stdcall GetCurrentProcess()@4274430)
-method(__stdcall GetCurrentProcessId()@4264271)
-method(__stdcall GetCurrentProcessId()@4274466)
-method(__stdcall GetCurrentThreadId()@4264101)
-method(__stdcall GetCurrentThreadId()@4274460)
-method(__stdcall GetModuleFileNameW(x, x, x)@4264011)
-method(__stdcall GetModuleFileNameW(x, x, x)@4274496)
-method(__stdcall GetProcAddress(x, x)@4264071)
-method(__stdcall GetProcAddress(x, x)@4274412)
-method(__stdcall GetProcessHeap()@4264181)
-method(__stdcall GetProcessHeap()@4274490)
-method(__stdcall GetSystemTimeAsFileTime(x)@4264306)
-method(__stdcall GetSystemTimeAsFileTime(x)@4274472)
-method(__stdcall GetTickCount()@4264336)
-method(__stdcall GetTickCount()@4274454)
-method(__stdcall HeapAlloc(x, x, x)@4264351)
-method(__stdcall HeapAlloc(x, x, x)@4274484)
-method(__stdcall HeapFree(x, x, x)@4264201)
-method(__stdcall HeapFree(x, x, x)@4274478)
-method(__stdcall InterlockedCompareExchange(x, x, x)@4264176)
-method(__stdcall InterlockedCompareExchange(x, x, x)@4274370)
-method(__stdcall InterlockedExchange(x, x)@4264381)
-method(__stdcall InterlockedExchange(x, x)@4274358)
-method(__stdcall IsDebuggerPresent()@4263971)
-method(__stdcall IsDebuggerPresent()@4274376)
-method(__stdcall LoadLibraryA(x)@4264156)
-method(__stdcall LoadLibraryA(x)@4274418)
-method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264046)
-method(__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4274400)
-method(__stdcall QueryPerformanceCounter(x)@4264246)
-method(__stdcall QueryPerformanceCounter(x)@4274448)
-method(__stdcall RaiseException(x, x, x, x)@4264161)
-method(__stdcall RaiseException(x, x, x, x)@4274382)
-method(__stdcall SetUnhandledExceptionFilter(x)@4264021)
-method(__stdcall SetUnhandledExceptionFilter(x)@4274442)
-method(__stdcall Sleep(x)@4264006)
-method(__stdcall Sleep(x)@4274364)
-method(__stdcall TerminateProcess(x, x)@4264221)
-method(__stdcall TerminateProcess(x, x)@4274424)
-method(__stdcall UnhandledExceptionFilter(x)@4264386)
-method(__stdcall UnhandledExceptionFilter(x)@4274436)
-method(__stdcall VirtualQuery(x, x, x)@4264036)
-method(__stdcall VirtualQuery(x, x, x)@4274502)
-method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263981)
-method(__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4274394)
-method(__stdcall lstrlenA(x)@4264411)
-method(__stdcall lstrlenA(x)@4274406)
-method(__tmainCRTStartup@4267024)
-method(__unlock@4274292)
-method(__unwindfunclet$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0@4278432)
-method(_atexit@4271712)
-method(_exit_0@4272068)
-method(_getMemBlockDataString@4269904)
-method(_main@4265872)
-method(_mainCRTStartup@4266992)
-method(check_managed_app@4267776)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264051)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4274346)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@4264266)
-method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@4274340)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264216)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4274334)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4297404)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4264081)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4274352)
-method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4297384)
-method(failwithmessage@4268336)
-method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264451)
-method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4270544)
-method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4263991)
-method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4270560)
-method(int ObjectTest::add(void)@4264371)
-method(int ObjectTest::add(void)@4265792)
-method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264326)
-method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4272800)
-method(j__DebuggerKnownHandle@4264426)
-method(j__NtCurrentTeb@4264196)
-method(j___CRT_RTC_INITW@4264331)
-method(j___CrtDbgReportW@4264031)
-method(j___CrtSetCheckCount@4264376)
-method(j___FindPESection@4264136)
-method(j___IsNonwritableInCurrentImage@4264341)
-method(j___RTC_CheckEsp@4264286)
-method(j___RTC_GetErrDesc@4263956)
-method(j___RTC_InitBase@4264146)
-method(j___RTC_Initialize@4264296)
-method(j___RTC_NumErrors@4263996)
-method(j___RTC_SetErrorFunc@4264206)
-method(j___RTC_SetErrorFuncW@4264186)
-method(j___RTC_SetErrorType@4264056)
-method(j___RTC_Shutdown@4264131)
-method(j___RTC_Terminate@4263976)
-method(j___RTC_UninitUse@4264126)
-method(j___ValidateImageBase@4264171)
-method(j___XcptFilter@4264366)
-method(j____CxxFrameHandler3@4264346)
-method(j____CxxSetUnhandledExceptionFilter@4264241)
-method(j____dllonexit@4264436)
-method(j____getmainargs@4264406)
-method(j____p__commode@4264251)
-method(j____p__fmode@4263961)
-method(j____security_init_cookie@4264016)
-method(j____set_app_type@4264281)
-method(j____setusermatherr@4264001)
-method(j___amsg_exit@4264361)
-method(j___cexit@4264026)
-method(j___configthreadlocale@4264141)
-method(j___controlfp_s@4264301)
-method(j___crt_debugger_hook@4264166)
-method(j___decode_pointer@4264311)
-method(j___encode_pointer@4264121)
-method(j___except_handler4@4264061)
-method(j___except_handler4_common@4264396)
-method(j___exit@4264096)
-method(j___initterm@4264106)
-method(j___initterm_e@4264446)
-method(j___invoke_watson@4264316)
-method(j___invoke_watson_if_error@4264211)
-method(j___lock@4264066)
-method(j___matherr@4264401)
-method(j___onexit@4264191)
-method(j___setargv@4263946)
-method(j___setdefaultprecision@4263941)
-method(j___unlock@4264261)
-method(j__atexit@4264041)
-method(j__exit_0@4264431)
-method(j__main@4264291)
-method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264236)
-method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4270928)
-method(pre_c_init@4266672)
-method(pre_cpp_init@4266880)
-method(start@4264226)
-method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4264391)
-method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4274322)
-method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396)
-method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4264256)
-method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4274328)
-method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400)
-realDestructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400)
-%   {$LN6_1@4271605}
-%   {DebuggerProbe@4268048}
-%   {DebuggerRuntime@4268992}
-%   {GetPdbDll@4273680}
-%   {ObjectTest::ObjectTest(int, int)@4264111}
-%   {ObjectTest::ObjectTest(int, int)@4265712}
-%   {ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@4264356}
-%   {ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@4265120}
-%   {_DebuggerKnownHandle@4268000}
-%   {_NtCurrentTeb@4267760}
-%   {__CRT_RTC_INITW@4270566}
-%   {__CrtDbgReportW@4272710}
-%   {__CrtSetCheckCount@4272074}
-%   {__FindPESection@4272208}
-%   {__IsNonwritableInCurrentImage@4272368}
-%   {__RTC_CheckEsp@4266032}
-%   {__RTC_GetErrDesc@4270368}
-%   {__RTC_InitBase@4266544}
-%   {__RTC_Initialize@4271264}
-%   {__RTC_NumErrors@4270352}
-%   {__RTC_SetErrorFunc@4270448}
-%   {__RTC_SetErrorFuncW@4270496}
-%   {__RTC_Shutdown@4266608}
-%   {__RTC_Terminate@4271312}
-%   {__RTC_UninitUse@4270048}
-%   {__ValidateImageBase@4272080}
-%   {__XcptFilter@4272056}
-%   {___CxxFrameHandler3@4266632}
-%   {___CxxSetUnhandledExceptionFilter@4271056}
-%   {___dllonexit@4274298}
-%   {___getmainargs@4271766}
-%   {___p__commode@4271360}
-%   {___p__fmode@4271366}
-%   {___report_gsfailure@4270576}
-%   {___security_init_cookie@4271776}
-%   {___set_app_type@4271754}
-%   {___setusermatherr@4271222}
-%   {__amsg_exit@4271760}
-%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4264421}
-%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@4269520}
-%   {__cdecl _RTC_Failure(*, int)@4264416}
-%   {__cdecl _RTC_Failure(*, int)@4268224}
-%   {__cdecl _RTC_StackFailure(*, char const *)@4264151}
-%   {__cdecl _RTC_StackFailure(*, char const *)@4269200}
-%   {__cdecl bar(class ObjectTest, int, int, class ObjectTest)@4264231}
-%   {__cdecl bar(class ObjectTest, int, int, class ObjectTest)@4264976}
-%   {__cdecl foo(int, class ObjectTest, int)@4264321}
-%   {__cdecl foo(int, class ObjectTest, int)@4265472}
-%   {__cdecl terminate(void)@4264091}
-%   {__cdecl terminate(void)@4274274}
-%   {__cexit@4272062}
-%   {__configthreadlocale@4271082}
-%   {__controlfp_s@4274280}
-%   {__crt_debugger_hook@4274268}
-%   {__decode_pointer@4274310}
-%   {__ehhandler$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4278450}
-%   {__encode_pointer@4271748}
-%   {__except_handler4@4272736}
-%   {__except_handler4_common@4274316}
-%   {__exit@4272050}
-%   {__fastcall _RTC_AllocaHelper(x, x, x)@4263986}
-%   {__fastcall _RTC_AllocaHelper(x, x, x)@4266208}
-%   {__fastcall _RTC_CheckStackVars(x, x)@4264076}
-%   {__fastcall _RTC_CheckStackVars(x, x)@4266080}
-%   {__fastcall _RTC_CheckStackVars2(x, x, x)@4264276}
-%   {__fastcall _RTC_CheckStackVars2(x, x, x)@4266272}
-%   {__fastcall __security_check_cookie(x)@4263966}
-%   {__fastcall __security_check_cookie(x)@4266640}
-%   {__initterm@4272716}
-%   {__initterm_e@4272722}
-%   {__invoke_watson@4274286}
-%   {__invoke_watson_if_error@4271168}
-%   {__lock@4274304}
-%   {__matherr@4271232}
-%   {__onexit@4271376}
-%   {__setargv@4271248}
-%   {__setdefaultprecision@4271088}
-%   {__stdcall DebugBreak()@4263951}
-%   {__stdcall DebugBreak()@4274388}
-%   {__stdcall FreeLibrary(x)@4264441}
-%   {__stdcall FreeLibrary(x)@4274508}
-%   {__stdcall GetCurrentProcess()@4264116}
-%   {__stdcall GetCurrentProcess()@4274430}
-%   {__stdcall GetCurrentProcessId()@4264271}
-%   {__stdcall GetCurrentProcessId()@4274466}
-%   {__stdcall GetCurrentThreadId()@4264101}
-%   {__stdcall GetCurrentThreadId()@4274460}
-%   {__stdcall GetModuleFileNameW(x, x, x)@4264011}
-%   {__stdcall GetModuleFileNameW(x, x, x)@4274496}
-%   {__stdcall GetProcAddress(x, x)@4264071}
-%   {__stdcall GetProcAddress(x, x)@4274412}
-%   {__stdcall GetProcessHeap()@4264181}
-%   {__stdcall GetProcessHeap()@4274490}
-%   {__stdcall GetSystemTimeAsFileTime(x)@4264306}
-%   {__stdcall GetSystemTimeAsFileTime(x)@4274472}
-%   {__stdcall GetTickCount()@4264336}
-%   {__stdcall GetTickCount()@4274454}
-%   {__stdcall HeapAlloc(x, x, x)@4264351}
-%   {__stdcall HeapAlloc(x, x, x)@4274484}
-%   {__stdcall HeapFree(x, x, x)@4264201}
-%   {__stdcall HeapFree(x, x, x)@4274478}
-%   {__stdcall InterlockedCompareExchange(x, x, x)@4264176}
-%   {__stdcall InterlockedCompareExchange(x, x, x)@4274370}
-%   {__stdcall InterlockedExchange(x, x)@4264381}
-%   {__stdcall InterlockedExchange(x, x)@4274358}
-%   {__stdcall IsDebuggerPresent()@4263971}
-%   {__stdcall IsDebuggerPresent()@4274376}
-%   {__stdcall LoadLibraryA(x)@4264156}
-%   {__stdcall LoadLibraryA(x)@4274418}
-%   {__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4264046}
-%   {__stdcall MultiByteToWideChar(x, x, x, x, x, x)@4274400}
-%   {__stdcall QueryPerformanceCounter(x)@4264246}
-%   {__stdcall QueryPerformanceCounter(x)@4274448}
-%   {__stdcall RaiseException(x, x, x, x)@4264161}
-%   {__stdcall RaiseException(x, x, x, x)@4274382}
-%   {__stdcall SetUnhandledExceptionFilter(x)@4264021}
-%   {__stdcall SetUnhandledExceptionFilter(x)@4274442}
-%   {__stdcall Sleep(x)@4264006}
-%   {__stdcall Sleep(x)@4274364}
-%   {__stdcall TerminateProcess(x, x)@4264221}
-%   {__stdcall TerminateProcess(x, x)@4274424}
-%   {__stdcall UnhandledExceptionFilter(x)@4264386}
-%   {__stdcall UnhandledExceptionFilter(x)@4274436}
-%   {__stdcall VirtualQuery(x, x, x)@4264036}
-%   {__stdcall VirtualQuery(x, x, x)@4274502}
-%   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4263981}
-%   {__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@4274394}
-%   {__stdcall lstrlenA(x)@4264411}
-%   {__stdcall lstrlenA(x)@4274406}
-%   {__tmainCRTStartup@4267024}
-%   {__unlock@4274292}
-%   {__unwindfunclet$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0@4278432}
-%   {_atexit@4271712}
-%   {_exit_0@4272068}
-%   {_getMemBlockDataString@4269904}
-%   {_main@4265872}
-%   {_mainCRTStartup@4266992}
-%   {check_managed_app@4267776}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4264051}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@4274346}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@4264266}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@4274340}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4264216}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4274334}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4264081}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4274352}
-%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@4297384, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@4297404}
-%   {failwithmessage@4268336}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4264451}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@4270544}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4263991}
-%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@4270560}
-%   {int ObjectTest::add(void)@4264371}
-%   {int ObjectTest::add(void)@4265792}
-%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4264326}
-%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@4272800}
-%   {j__DebuggerKnownHandle@4264426}
-%   {j__NtCurrentTeb@4264196}
-%   {j___CRT_RTC_INITW@4264331}
-%   {j___CrtDbgReportW@4264031}
-%   {j___CrtSetCheckCount@4264376}
-%   {j___FindPESection@4264136}
-%   {j___IsNonwritableInCurrentImage@4264341}
-%   {j___RTC_CheckEsp@4264286}
-%   {j___RTC_GetErrDesc@4263956}
-%   {j___RTC_InitBase@4264146}
-%   {j___RTC_Initialize@4264296}
-%   {j___RTC_NumErrors@4263996}
-%   {j___RTC_SetErrorFunc@4264206}
-%   {j___RTC_SetErrorFuncW@4264186}
-%   {j___RTC_SetErrorType@4264056}
-%   {j___RTC_Shutdown@4264131}
-%   {j___RTC_Terminate@4263976}
-%   {j___RTC_UninitUse@4264126}
-%   {j___ValidateImageBase@4264171}
-%   {j___XcptFilter@4264366}
-%   {j____CxxFrameHandler3@4264346}
-%   {j____CxxSetUnhandledExceptionFilter@4264241}
-%   {j____dllonexit@4264436}
-%   {j____getmainargs@4264406}
-%   {j____p__commode@4264251}
-%   {j____p__fmode@4263961}
-%   {j____security_init_cookie@4264016}
-%   {j____set_app_type@4264281}
-%   {j____setusermatherr@4264001}
-%   {j___amsg_exit@4264361}
-%   {j___cexit@4264026}
-%   {j___configthreadlocale@4264141}
-%   {j___controlfp_s@4264301}
-%   {j___crt_debugger_hook@4264166}
-%   {j___decode_pointer@4264311}
-%   {j___encode_pointer@4264121}
-%   {j___except_handler4@4264061}
-%   {j___except_handler4_common@4264396}
-%   {j___exit@4264096}
-%   {j___initterm@4264106}
-%   {j___initterm_e@4264446}
-%   {j___invoke_watson@4264316}
-%   {j___invoke_watson_if_error@4264211}
-%   {j___lock@4264066}
-%   {j___matherr@4264401}
-%   {j___onexit@4264191}
-%   {j___setargv@4263946}
-%   {j___setdefaultprecision@4263941}
-%   {j___unlock@4264261}
-%   {j__atexit@4264041}
-%   {j__exit_0@4264431}
-%   {j__main@4264291}
-%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4264236}
-%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@4270928}
-%   {pre_c_init@4266672}
-%   {pre_cpp_init@4266880}
-%   {start@4264226}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4264391}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4274322}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@4297396, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4297400}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4264256}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@4274328}
+mergeClasses(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
+mergeClasses(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x4192a8,class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x4192bc)
+mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4192b4,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x4192b8)
+method($LN6_1@0x412df5)
+method(DebuggerProbe@0x412010)
+method(DebuggerRuntime@0x4123c0)
+method(GetPdbDll@0x413610)
+method(ObjectTest::ObjectTest(int, int)@0x4116f0)
+method(ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@0x4114a0)
+method(_DebuggerKnownHandle@0x411fe0)
+method(_NtCurrentTeb@0x411ef0)
+method(__FindPESection@0x413050)
+method(__IsNonwritableInCurrentImage@0x4130f0)
+method(__RTC_CheckEsp@0x411830)
+method(__RTC_GetErrDesc@0x412920)
+method(__RTC_InitBase@0x411a30)
+method(__RTC_Initialize@0x412ca0)
+method(__RTC_NumErrors@0x412910)
+method(__RTC_SetErrorFunc@0x412970)
+method(__RTC_SetErrorFuncW@0x4129a0)
+method(__RTC_Shutdown@0x411a70)
+method(__RTC_Terminate@0x412cd0)
+method(__RTC_UninitUse@0x4127e0)
+method(__ValidateImageBase@0x412fd0)
+method(___CxxSetUnhandledExceptionFilter@0x412bd0)
+method(___report_gsfailure@0x4129f0)
+method(___security_init_cookie@0x412ea0)
+method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4125d0)
+method(__cdecl _RTC_Failure(*, int)@0x4120c0)
+method(__cdecl _RTC_StackFailure(*, char const *)@0x412490)
+method(__cdecl bar(class ObjectTest, int, int, class ObjectTest)@0x411410)
+method(__cdecl foo(int, class ObjectTest, int)@0x411600)
+method(__cdecl terminate(void)@0x413862)
+method(__ehhandler$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@0x4148b2)
+method(__except_handler4@0x413260)
+method(__fastcall _RTC_AllocaHelper(x, x, x)@0x4118e0)
+method(__fastcall _RTC_CheckStackVars(x, x)@0x411860)
+method(__fastcall _RTC_CheckStackVars2(x, x, x)@0x411920)
+method(__fastcall __security_check_cookie(x)@0x411a90)
+method(__invoke_watson_if_error@0x412c40)
+method(__matherr@0x412c80)
+method(__onexit@0x412d10)
+method(__setargv@0x412c90)
+method(__setdefaultprecision@0x412bf0)
+method(__tmainCRTStartup@0x411c10)
+method(__unwindfunclet$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0@0x4148a0)
+method(_atexit@0x412e60)
+method(_exit_0@0x412fc4)
+method(_getMemBlockDataString@0x412750)
+method(_main@0x411790)
+method(_mainCRTStartup@0x411bf0)
+method(check_managed_app@0x411f00)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4138aa)
+method(class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@0x4138a4)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41389e)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x4192bc)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x4138b0)
+method(class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x4192a8)
+method(failwithmessage@0x412130)
+method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x4129d0)
+method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x4129e0)
+method(int ObjectTest::add(void)@0x411740)
+method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4132a0)
+method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412b50)
+method(pre_c_init@0x411ab0)
+method(pre_cpp_init@0x411b80)
+method(start@0x411122)
+method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x413892)
+method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4192b4)
+method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x413898)
+method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x4192b8)
+method(thunk:ObjectTest::ObjectTest(int, int)@0x4110af)
+method(thunk:ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@0x4111a4)
+method(thunk:__CRT_RTC_INITW@0x4129e6)
+method(thunk:__CrtDbgReportW@0x413246)
+method(thunk:__CrtSetCheckCount@0x412fca)
+method(thunk:__XcptFilter@0x412fb8)
+method(thunk:___CxxFrameHandler3@0x411a88)
+method(thunk:___dllonexit@0x41387a)
+method(thunk:___getmainargs@0x412e96)
+method(thunk:___p__commode@0x412d00)
+method(thunk:___p__fmode@0x412d06)
+method(thunk:___set_app_type@0x412e8a)
+method(thunk:___setusermatherr@0x412c76)
+method(thunk:__amsg_exit@0x412e90)
+method(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111e5)
+method(thunk:__cdecl _RTC_Failure(*, int)@0x4111e0)
+method(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110d7)
+method(thunk:__cdecl bar(class ObjectTest, int, int, class ObjectTest)@0x411127)
+method(thunk:__cdecl foo(int, class ObjectTest, int)@0x411181)
+method(thunk:__cdecl terminate(void)@0x41109b)
+method(thunk:__cexit@0x412fbe)
+method(thunk:__configthreadlocale@0x412bea)
+method(thunk:__controlfp_s@0x413868)
+method(thunk:__crt_debugger_hook@0x41385c)
+method(thunk:__decode_pointer@0x413886)
+method(thunk:__encode_pointer@0x412e84)
+method(thunk:__except_handler4_common@0x41388c)
+method(thunk:__exit@0x412fb2)
+method(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411032)
+method(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x41108c)
+method(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x411154)
+method(thunk:__fastcall __security_check_cookie(x)@0x41101e)
+method(thunk:__initterm@0x41324c)
+method(thunk:__initterm_e@0x413252)
+method(thunk:__invoke_watson@0x41386e)
+method(thunk:__lock@0x413880)
+method(thunk:__stdcall DebugBreak()@0x41100f)
+method(thunk:__stdcall DebugBreak()@0x4138d4)
+method(thunk:__stdcall FreeLibrary(x)@0x4111f9)
+method(thunk:__stdcall FreeLibrary(x)@0x41394c)
+method(thunk:__stdcall GetCurrentProcess()@0x4110b4)
+method(thunk:__stdcall GetCurrentProcess()@0x4138fe)
+method(thunk:__stdcall GetCurrentProcessId()@0x41114f)
+method(thunk:__stdcall GetCurrentProcessId()@0x413922)
+method(thunk:__stdcall GetCurrentThreadId()@0x4110a5)
+method(thunk:__stdcall GetCurrentThreadId()@0x41391c)
+method(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x41104b)
+method(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413940)
+method(thunk:__stdcall GetProcAddress(x, x)@0x411087)
+method(thunk:__stdcall GetProcAddress(x, x)@0x4138ec)
+method(thunk:__stdcall GetProcessHeap()@0x4110f5)
+method(thunk:__stdcall GetProcessHeap()@0x41393a)
+method(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411172)
+method(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413928)
+method(thunk:__stdcall GetTickCount()@0x411190)
+method(thunk:__stdcall GetTickCount()@0x413916)
+method(thunk:__stdcall HeapAlloc(x, x, x)@0x41119f)
+method(thunk:__stdcall HeapAlloc(x, x, x)@0x413934)
+method(thunk:__stdcall HeapFree(x, x, x)@0x411109)
+method(thunk:__stdcall HeapFree(x, x, x)@0x41392e)
+method(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x4110f0)
+method(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x4138c2)
+method(thunk:__stdcall InterlockedExchange(x, x)@0x4111bd)
+method(thunk:__stdcall InterlockedExchange(x, x)@0x4138b6)
+method(thunk:__stdcall IsDebuggerPresent()@0x411023)
+method(thunk:__stdcall IsDebuggerPresent()@0x4138c8)
+method(thunk:__stdcall LoadLibraryA(x)@0x4110dc)
+method(thunk:__stdcall LoadLibraryA(x)@0x4138f2)
+method(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41106e)
+method(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x4138e0)
+method(thunk:__stdcall QueryPerformanceCounter(x)@0x411136)
+method(thunk:__stdcall QueryPerformanceCounter(x)@0x413910)
+method(thunk:__stdcall RaiseException(x, x, x, x)@0x4110e1)
+method(thunk:__stdcall RaiseException(x, x, x, x)@0x4138ce)
+method(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x411055)
+method(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41390a)
+method(thunk:__stdcall Sleep(x)@0x411046)
+method(thunk:__stdcall Sleep(x)@0x4138bc)
+method(thunk:__stdcall TerminateProcess(x, x)@0x41111d)
+method(thunk:__stdcall TerminateProcess(x, x)@0x4138f8)
+method(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111c2)
+method(thunk:__stdcall UnhandledExceptionFilter(x)@0x413904)
+method(thunk:__stdcall VirtualQuery(x, x, x)@0x411064)
+method(thunk:__stdcall VirtualQuery(x, x, x)@0x413946)
+method(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41102d)
+method(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x4138da)
+method(thunk:__stdcall lstrlenA(x)@0x4111db)
+method(thunk:__stdcall lstrlenA(x)@0x4138e6)
+method(thunk:__unlock@0x413874)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411073)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@0x41114a)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x411118)
+method(thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x411091)
+method(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x411203)
+method(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411037)
+method(thunk:int ObjectTest::add(void)@0x4111b3)
+method(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411186)
+method(thunk:j__DebuggerKnownHandle@0x4111ea)
+method(thunk:j__NtCurrentTeb@0x411104)
+method(thunk:j___CRT_RTC_INITW@0x41118b)
+method(thunk:j___CrtDbgReportW@0x41105f)
+method(thunk:j___CrtSetCheckCount@0x4111b8)
+method(thunk:j___FindPESection@0x4110c8)
+method(thunk:j___IsNonwritableInCurrentImage@0x411195)
+method(thunk:j___RTC_CheckEsp@0x41115e)
+method(thunk:j___RTC_GetErrDesc@0x411014)
+method(thunk:j___RTC_InitBase@0x4110d2)
+method(thunk:j___RTC_Initialize@0x411168)
+method(thunk:j___RTC_NumErrors@0x41103c)
+method(thunk:j___RTC_SetErrorFunc@0x41110e)
+method(thunk:j___RTC_SetErrorFuncW@0x4110fa)
+method(thunk:j___RTC_SetErrorType@0x411078)
+method(thunk:j___RTC_Shutdown@0x4110c3)
+method(thunk:j___RTC_Terminate@0x411028)
+method(thunk:j___RTC_UninitUse@0x4110be)
+method(thunk:j___ValidateImageBase@0x4110eb)
+method(thunk:j___XcptFilter@0x4111ae)
+method(thunk:j____CxxFrameHandler3@0x41119a)
+method(thunk:j____CxxSetUnhandledExceptionFilter@0x411131)
+method(thunk:j____dllonexit@0x4111f4)
+method(thunk:j____getmainargs@0x4111d6)
+method(thunk:j____p__commode@0x41113b)
+method(thunk:j____p__fmode@0x411019)
+method(thunk:j____security_init_cookie@0x411050)
+method(thunk:j____set_app_type@0x411159)
+method(thunk:j____setusermatherr@0x411041)
+method(thunk:j___amsg_exit@0x4111a9)
+method(thunk:j___cexit@0x41105a)
+method(thunk:j___configthreadlocale@0x4110cd)
+method(thunk:j___controlfp_s@0x41116d)
+method(thunk:j___crt_debugger_hook@0x4110e6)
+method(thunk:j___decode_pointer@0x411177)
+method(thunk:j___encode_pointer@0x4110b9)
+method(thunk:j___except_handler4@0x41107d)
+method(thunk:j___except_handler4_common@0x4111cc)
+method(thunk:j___exit@0x4110a0)
+method(thunk:j___initterm@0x4110aa)
+method(thunk:j___initterm_e@0x4111fe)
+method(thunk:j___invoke_watson@0x41117c)
+method(thunk:j___invoke_watson_if_error@0x411113)
+method(thunk:j___lock@0x411082)
+method(thunk:j___matherr@0x4111d1)
+method(thunk:j___onexit@0x4110ff)
+method(thunk:j___setargv@0x41100a)
+method(thunk:j___setdefaultprecision@0x411005)
+method(thunk:j___unlock@0x411145)
+method(thunk:j__atexit@0x411069)
+method(thunk:j__exit_0@0x4111ef)
+method(thunk:j__main@0x411163)
+method(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41112c)
+method(thunk:std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4111c7)
+method(thunk:std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411140)
+realDestructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x4192b8)
+vftableSizeTotal(0)
+%   {$LN6_1@0x412df5}
+%   {DebuggerProbe@0x412010}
+%   {DebuggerRuntime@0x4123c0}
+%   {GetPdbDll@0x413610}
+%   {ObjectTest::ObjectTest(int, int)@0x4116f0, int ObjectTest::add(void)@0x411740}
+%   {ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@0x4114a0}
+%   {_DebuggerKnownHandle@0x411fe0}
+%   {_NtCurrentTeb@0x411ef0}
+%   {__FindPESection@0x413050}
+%   {__IsNonwritableInCurrentImage@0x4130f0}
+%   {__RTC_CheckEsp@0x411830}
+%   {__RTC_GetErrDesc@0x412920}
+%   {__RTC_InitBase@0x411a30}
+%   {__RTC_Initialize@0x412ca0}
+%   {__RTC_NumErrors@0x412910}
+%   {__RTC_SetErrorFunc@0x412970}
+%   {__RTC_SetErrorFuncW@0x4129a0}
+%   {__RTC_Shutdown@0x411a70}
+%   {__RTC_Terminate@0x412cd0}
+%   {__RTC_UninitUse@0x4127e0}
+%   {__ValidateImageBase@0x412fd0}
+%   {___CxxSetUnhandledExceptionFilter@0x412bd0}
+%   {___report_gsfailure@0x4129f0}
+%   {___security_init_cookie@0x412ea0}
+%   {__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4125d0}
+%   {__cdecl _RTC_Failure(*, int)@0x4120c0}
+%   {__cdecl _RTC_StackFailure(*, char const *)@0x412490}
+%   {__cdecl bar(class ObjectTest, int, int, class ObjectTest)@0x411410}
+%   {__cdecl foo(int, class ObjectTest, int)@0x411600}
+%   {__cdecl terminate(void)@0x413862}
+%   {__ehhandler$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@0x4148b2}
+%   {__except_handler4@0x413260}
+%   {__fastcall _RTC_AllocaHelper(x, x, x)@0x4118e0}
+%   {__fastcall _RTC_CheckStackVars(x, x)@0x411860}
+%   {__fastcall _RTC_CheckStackVars2(x, x, x)@0x411920}
+%   {__fastcall __security_check_cookie(x)@0x411a90}
+%   {__invoke_watson_if_error@0x412c40}
+%   {__matherr@0x412c80}
+%   {__onexit@0x412d10}
+%   {__setargv@0x412c90}
+%   {__setdefaultprecision@0x412bf0}
+%   {__tmainCRTStartup@0x411c10}
+%   {__unwindfunclet$?print@ObjectTest@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0@0x4148a0}
+%   {_atexit@0x412e60}
+%   {_exit_0@0x412fc4}
+%   {_getMemBlockDataString@0x412750}
+%   {_main@0x411790}
+%   {_mainCRTStartup@0x411bf0}
+%   {check_managed_app@0x411f00}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4138aa}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@0x4138a4}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41389e}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x4138b0}
+%   {class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x4192a8, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x4192bc}
+%   {failwithmessage@0x412130}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x4129d0}
+%   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x4129e0}
+%   {int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4132a0}
+%   {long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412b50}
+%   {pre_c_init@0x411ab0}
+%   {pre_cpp_init@0x411b80}
+%   {start@0x411122}
+%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x413892}
+%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4192b4, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x4192b8}
+%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x413898}
+%   {thunk:ObjectTest::ObjectTest(int, int)@0x4110af}
+%   {thunk:ObjectTest::print(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>)@0x4111a4}
+%   {thunk:__CRT_RTC_INITW@0x4129e6}
+%   {thunk:__CrtDbgReportW@0x413246}
+%   {thunk:__CrtSetCheckCount@0x412fca}
+%   {thunk:__XcptFilter@0x412fb8}
+%   {thunk:___CxxFrameHandler3@0x411a88}
+%   {thunk:___dllonexit@0x41387a}
+%   {thunk:___getmainargs@0x412e96}
+%   {thunk:___p__commode@0x412d00}
+%   {thunk:___p__fmode@0x412d06}
+%   {thunk:___set_app_type@0x412e8a}
+%   {thunk:___setusermatherr@0x412c76}
+%   {thunk:__amsg_exit@0x412e90}
+%   {thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111e5}
+%   {thunk:__cdecl _RTC_Failure(*, int)@0x4111e0}
+%   {thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110d7}
+%   {thunk:__cdecl bar(class ObjectTest, int, int, class ObjectTest)@0x411127}
+%   {thunk:__cdecl foo(int, class ObjectTest, int)@0x411181}
+%   {thunk:__cdecl terminate(void)@0x41109b}
+%   {thunk:__cexit@0x412fbe}
+%   {thunk:__configthreadlocale@0x412bea}
+%   {thunk:__controlfp_s@0x413868}
+%   {thunk:__crt_debugger_hook@0x41385c}
+%   {thunk:__decode_pointer@0x413886}
+%   {thunk:__encode_pointer@0x412e84}
+%   {thunk:__except_handler4_common@0x41388c}
+%   {thunk:__exit@0x412fb2}
+%   {thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411032}
+%   {thunk:__fastcall _RTC_CheckStackVars(x, x)@0x41108c}
+%   {thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x411154}
+%   {thunk:__fastcall __security_check_cookie(x)@0x41101e}
+%   {thunk:__initterm@0x41324c}
+%   {thunk:__initterm_e@0x413252}
+%   {thunk:__invoke_watson@0x41386e}
+%   {thunk:__lock@0x413880}
+%   {thunk:__stdcall DebugBreak()@0x41100f}
+%   {thunk:__stdcall DebugBreak()@0x4138d4}
+%   {thunk:__stdcall FreeLibrary(x)@0x4111f9}
+%   {thunk:__stdcall FreeLibrary(x)@0x41394c}
+%   {thunk:__stdcall GetCurrentProcess()@0x4110b4}
+%   {thunk:__stdcall GetCurrentProcess()@0x4138fe}
+%   {thunk:__stdcall GetCurrentProcessId()@0x41114f}
+%   {thunk:__stdcall GetCurrentProcessId()@0x413922}
+%   {thunk:__stdcall GetCurrentThreadId()@0x4110a5}
+%   {thunk:__stdcall GetCurrentThreadId()@0x41391c}
+%   {thunk:__stdcall GetModuleFileNameW(x, x, x)@0x41104b}
+%   {thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413940}
+%   {thunk:__stdcall GetProcAddress(x, x)@0x411087}
+%   {thunk:__stdcall GetProcAddress(x, x)@0x4138ec}
+%   {thunk:__stdcall GetProcessHeap()@0x4110f5}
+%   {thunk:__stdcall GetProcessHeap()@0x41393a}
+%   {thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411172}
+%   {thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413928}
+%   {thunk:__stdcall GetTickCount()@0x411190}
+%   {thunk:__stdcall GetTickCount()@0x413916}
+%   {thunk:__stdcall HeapAlloc(x, x, x)@0x41119f}
+%   {thunk:__stdcall HeapAlloc(x, x, x)@0x413934}
+%   {thunk:__stdcall HeapFree(x, x, x)@0x411109}
+%   {thunk:__stdcall HeapFree(x, x, x)@0x41392e}
+%   {thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x4110f0}
+%   {thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x4138c2}
+%   {thunk:__stdcall InterlockedExchange(x, x)@0x4111bd}
+%   {thunk:__stdcall InterlockedExchange(x, x)@0x4138b6}
+%   {thunk:__stdcall IsDebuggerPresent()@0x411023}
+%   {thunk:__stdcall IsDebuggerPresent()@0x4138c8}
+%   {thunk:__stdcall LoadLibraryA(x)@0x4110dc}
+%   {thunk:__stdcall LoadLibraryA(x)@0x4138f2}
+%   {thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41106e}
+%   {thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x4138e0}
+%   {thunk:__stdcall QueryPerformanceCounter(x)@0x411136}
+%   {thunk:__stdcall QueryPerformanceCounter(x)@0x413910}
+%   {thunk:__stdcall RaiseException(x, x, x, x)@0x4110e1}
+%   {thunk:__stdcall RaiseException(x, x, x, x)@0x4138ce}
+%   {thunk:__stdcall SetUnhandledExceptionFilter(x)@0x411055}
+%   {thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41390a}
+%   {thunk:__stdcall Sleep(x)@0x411046}
+%   {thunk:__stdcall Sleep(x)@0x4138bc}
+%   {thunk:__stdcall TerminateProcess(x, x)@0x41111d}
+%   {thunk:__stdcall TerminateProcess(x, x)@0x4138f8}
+%   {thunk:__stdcall UnhandledExceptionFilter(x)@0x4111c2}
+%   {thunk:__stdcall UnhandledExceptionFilter(x)@0x413904}
+%   {thunk:__stdcall VirtualQuery(x, x, x)@0x411064}
+%   {thunk:__stdcall VirtualQuery(x, x, x)@0x413946}
+%   {thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41102d}
+%   {thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x4138da}
+%   {thunk:__stdcall lstrlenA(x)@0x4111db}
+%   {thunk:__stdcall lstrlenA(x)@0x4138e6}
+%   {thunk:__unlock@0x413874}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::endl(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411073}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & __cdecl std::operator<<<char, CHAR_TRAITS, CHAR_ALLOC>(class std::basic_ostream<char, CHAR_TRAITS> &, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &)@0x41114a}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x411118}
+%   {thunk:class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x411091}
+%   {thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x411203}
+%   {thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411037}
+%   {thunk:int ObjectTest::add(void)@0x4111b3}
+%   {thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411186}
+%   {thunk:j__DebuggerKnownHandle@0x4111ea}
+%   {thunk:j__NtCurrentTeb@0x411104}
+%   {thunk:j___CRT_RTC_INITW@0x41118b}
+%   {thunk:j___CrtDbgReportW@0x41105f}
+%   {thunk:j___CrtSetCheckCount@0x4111b8}
+%   {thunk:j___FindPESection@0x4110c8}
+%   {thunk:j___IsNonwritableInCurrentImage@0x411195}
+%   {thunk:j___RTC_CheckEsp@0x41115e}
+%   {thunk:j___RTC_GetErrDesc@0x411014}
+%   {thunk:j___RTC_InitBase@0x4110d2}
+%   {thunk:j___RTC_Initialize@0x411168}
+%   {thunk:j___RTC_NumErrors@0x41103c}
+%   {thunk:j___RTC_SetErrorFunc@0x41110e}
+%   {thunk:j___RTC_SetErrorFuncW@0x4110fa}
+%   {thunk:j___RTC_SetErrorType@0x411078}
+%   {thunk:j___RTC_Shutdown@0x4110c3}
+%   {thunk:j___RTC_Terminate@0x411028}
+%   {thunk:j___RTC_UninitUse@0x4110be}
+%   {thunk:j___ValidateImageBase@0x4110eb}
+%   {thunk:j___XcptFilter@0x4111ae}
+%   {thunk:j____CxxFrameHandler3@0x41119a}
+%   {thunk:j____CxxSetUnhandledExceptionFilter@0x411131}
+%   {thunk:j____dllonexit@0x4111f4}
+%   {thunk:j____getmainargs@0x4111d6}
+%   {thunk:j____p__commode@0x41113b}
+%   {thunk:j____p__fmode@0x411019}
+%   {thunk:j____security_init_cookie@0x411050}
+%   {thunk:j____set_app_type@0x411159}
+%   {thunk:j____setusermatherr@0x411041}
+%   {thunk:j___amsg_exit@0x4111a9}
+%   {thunk:j___cexit@0x41105a}
+%   {thunk:j___configthreadlocale@0x4110cd}
+%   {thunk:j___controlfp_s@0x41116d}
+%   {thunk:j___crt_debugger_hook@0x4110e6}
+%   {thunk:j___decode_pointer@0x411177}
+%   {thunk:j___encode_pointer@0x4110b9}
+%   {thunk:j___except_handler4@0x41107d}
+%   {thunk:j___except_handler4_common@0x4111cc}
+%   {thunk:j___exit@0x4110a0}
+%   {thunk:j___initterm@0x4110aa}
+%   {thunk:j___initterm_e@0x4111fe}
+%   {thunk:j___invoke_watson@0x41117c}
+%   {thunk:j___invoke_watson_if_error@0x411113}
+%   {thunk:j___lock@0x411082}
+%   {thunk:j___matherr@0x4111d1}
+%   {thunk:j___onexit@0x4110ff}
+%   {thunk:j___setargv@0x41100a}
+%   {thunk:j___setdefaultprecision@0x411005}
+%   {thunk:j___unlock@0x411145}
+%   {thunk:j__atexit@0x411069}
+%   {thunk:j__exit_0@0x4111ef}
+%   {thunk:j__main@0x411163}
+%   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41112c}
+%   {thunk:std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4111c7}
+%   {thunk:std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411140}

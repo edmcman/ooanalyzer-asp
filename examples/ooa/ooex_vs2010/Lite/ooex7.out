@@ -1,76 +1,847 @@
-09:41:58 Grounding...
-09:41:59 Grounding done (0.72s)
-09:41:59 Solving...
-09:42:00 Model found (1.93s): [-132, -279]
-09:42:00 Model found (1.94s, +0.01s): [-132, -280]
-09:42:00 Model found (1.95s, +0.01s): [-132, -281]
-09:42:00 Model found (1.96s, +0.01s): [-132, -282]
-09:42:00 Model found (1.97s, +0.01s): [-132, -283]
-09:42:00 Model found (1.98s, +0.01s): [-132, -284]
-09:42:00 Model found (1.99s, +0.01s): [-132, -285]
-09:42:00 Model found (2.00s, +0.01s): [-132, -286]
-09:42:01 Model found (2.01s, +0.01s): [-132, -287]
-09:42:01 Model found (2.02s, +0.02s): [-136, -832]
-09:42:01 Model found (2.04s, +0.01s): [-144, -833]
-09:42:01 Model found (2.05s, +0.01s): [-148, -834]
-09:42:01 Model found (2.06s, +0.01s): [-152, -835]
-09:42:01 Model found (2.07s, +0.01s): [-156, -836]
-09:42:01 Model found (2.09s, +0.02s): [-160, -837]
-09:42:01 Model found (2.12s, +0.03s): [-164, -838]
-09:42:01 Model found (2.15s, +0.03s): [-168, -839]
-09:42:01 Model found (2.17s, +0.02s): [-172, -840]
-09:42:01 Model found (2.19s, +0.02s): [-176, -841]
-09:42:01 Model found (2.22s, +0.03s): [-180, -842]
-09:42:01 Model found (2.23s, +0.01s): [-184, -843]
-09:42:01 Model found (2.26s, +0.03s): [-188, -844]
-09:42:01 Model found (2.27s, +0.01s): [-192, -845]
-09:42:01 Model found (2.29s, +0.01s): [-196, -846]
-09:42:01 Model found (2.31s, +0.03s): [-200, -847]
-09:42:01 Model found (2.34s, +0.03s): [-204, -846]
-09:42:01 Model found (2.38s, +0.05s): [-208, -847]
-09:42:01 Model found (2.50s, +0.12s): [-212, -848]
-09:42:01 Model found (2.54s, +0.04s): [-216, -849]
-09:42:01 Model found (2.58s, +0.04s): [-220, -850]
-09:42:01 Model found (2.60s, +0.02s): [-224, -851]
-09:42:01 Model found (2.64s, +0.04s): [-228, -852]
-09:42:01 Model found (2.66s, +0.02s): [-232, -853]
-09:42:01 Model found (2.70s, +0.04s): [-236, -854]
-09:42:01 Model found (2.73s, +0.03s): [-240, -855]
-09:42:01 Model found (2.76s, +0.03s): [-244, -856]
-09:42:01 Model found (2.79s, +0.03s): [-248, -857]
-09:42:01 Model found (2.84s, +0.05s): [-252, -858]
-09:42:01 Model found (2.85s, +0.02s): [-256, -859]
-09:42:01 Model found (2.92s, +0.07s): [-260, -860]
-09:42:01 Model found (2.95s, +0.03s): [-264, -861]
-09:42:02 Model found (3.01s, +0.06s): [-268, -862]
-09:42:02 Model found (3.05s, +0.04s): [-272, -863]
-09:42:02 Model found (3.08s, +0.03s): [-276, -864]
-09:42:02 Model found (3.12s, +0.05s): [-280, -865]
-09:42:02 Model found (3.19s, +0.07s): [-284, -866]
-09:42:02 Model found (3.28s, +0.09s): [-288, -867]
-09:42:02 Model found (3.31s, +0.03s): [-296, -867]
-09:43:58 Model found (119.69s, +116.38s): [-380, -2206]
-09:44:02 Model found (123.43s, +3.74s): [-380, -2210]
-09:44:17 Model found (138.59s, +15.16s): [-380, -2214]
-09:44:18 Model found (139.10s, +0.50s): [-380, -2223]
-09:44:19 Model found (140.46s, +1.36s): [-380, -2232]
-09:44:21 Model found (142.32s, +1.86s): [-380, -2241]
-09:44:35 Model found (156.18s, +13.86s): [-380, -2249]
-09:44:38 Model found (159.52s, +3.34s): [-380, -2257]
-09:44:43 Model found (164.79s, +5.27s): [-380, -2261]
-09:44:43 Model found (164.88s, +0.09s): [-380, -2271]
-09:44:43 Model found (164.95s, +0.07s): [-380, -2272]
-09:44:44 Model found (165.14s, +0.19s): [-380, -2282]
-09:44:44 Model found (165.18s, +0.04s): [-380, -2292]
-09:44:44 Model found (165.33s, +0.15s): [-380, -2312]
-09:44:44 Model found (165.54s, +0.21s): [-380, -2313]
-09:44:44 Model found (165.64s, +0.10s): [-380, -2332]
-09:44:45 Model found (166.06s, +0.43s): [-380, -2351]
-09:44:45 Model found (166.15s, +0.09s): [-380, -2356]
-09:44:45 Model found (166.29s, +0.14s): [-380, -2370]
-09:44:45 Model found (166.38s, +0.09s): [-380, -2375]
-09:44:45 Model found (166.43s, +0.05s): [-380, -2389]
-09:44:45 Model found (166.49s, +0.06s): [-380, -2394]
-09:44:45 Model found (166.55s, +0.06s): [-380, -2408]
-09:44:45 Model found (166.61s, +0.06s): [-380, -2413]
-09:44:47 Model found (168.32s, +1.71s): [-380, -2416]
+21:52:41 Grounding...
+21:52:41 Grounding done (0.39s)
+21:52:41 Solving...
+21:52:49 Model found (8.39s): [-380, -887]
+21:52:51 Model found (9.48s, +1.09s): [-380, -888]
+21:52:51 Model found (9.54s, +0.06s): [-380, -889]
+21:52:51 Model found (9.60s, +0.06s): [-380, -890]
+21:52:51 Model found (9.67s, +0.06s): [-380, -891]
+21:52:51 Model found (9.73s, +0.06s): [-380, -892]
+21:52:51 Model found (9.79s, +0.06s): [-380, -893]
+21:52:51 Model found (9.86s, +0.07s): [-380, -894]
+21:52:51 Model found (9.92s, +0.06s): [-380, -895]
+21:52:51 Model found (9.99s, +0.06s): [-380, -896]
+21:52:51 Model found (10.06s, +0.07s): [-380, -897]
+21:52:51 Model found (10.12s, +0.06s): [-380, -898]
+21:52:51 Model found (10.18s, +0.06s): [-380, -899]
+21:52:51 Model found (10.26s, +0.07s): [-380, -900]
+21:52:51 Model found (10.32s, +0.06s): [-380, -901]
+21:52:51 Model found (10.39s, +0.07s): [-380, -902]
+21:57:43 Solving done: TIME LIMIT REACHED (301.55s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Lite/ooex7.results
+% TIME LIMIT REACHED
+
+Answer: 16
+guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) method(4198400) method(4198432) method(4198448) method(4198496) method(4198528) method(4198544) method(4198560) method(4198576) method(4198592) method(4198624) method(4198656) method(4198672) method(4198704) method(4198720) method(4198784) method(4198832) method(4198896) method(4198912) method(4198928) method(4198960) method(4198992) method(4199024) method(4199088) method(4199136) method(4199168) method(4199184) method(4199200) method(4199216) method(4199232) method(4199248) method(4199264) method(4199296) method(4199344) method(4199376) method(4199392) method(4199408) method(4199424) method(4199440) method(4199456) method(4199472) method(4199488) method(4199504) method(4199536) method(4199552) method(4199568) method(4199600) method(4199616) method(4199664) method(4199696) method(4199712) method(4199728) method(4199760) method(4199776) method(4199792) method(4199856) method(4199904) method(4199968) method(4200000) method(4200064) method(4200096) method(4200128) method(4200176) method(4200224) method(4200240) method(4200288) method(4200336) method(4200384) method(4200400) method(4200592) method(4200624) method(4200672) method(4200720) method(4200752) method(4200768) method(4200784) method(4200800) method(4200832) method(4200912) method(4200960) method(4201056) method(4201088) method(4201120) method(4201168) method(4201200) method(4201216) method(4201232) method(4201248) method(4201264) method(4201280) method(4201328) method(4201344) method(4201472) method(4201616) method(4201632) method(4201696) method(4201712) method(4201728) method(4201776) method(4201792) method(4201808) method(4201872) method(4201952) method(4201984) method(4202336) method(4202496) method(4202624) method(4202672) method(4202752) method(4202832) method(4202896) method(4202992) method(4203152) method(4203584) method(4203696) method(4203712) method(4203728) method(4203760) method(4203808) method(4203856) method(4203872) method(4203952) method(4204096) method(4204187) method(4204208) method(4204240) method(4204272) method(4204400) method(4204432) method(4204960) method(4205056) method(4205200) method(4205344) method(4205440) method(4205600) method(4206336) method(4206640) method(4206896) method(4208928) method(4208960) method(4208992) method(4209120) method(4209168) method(4209296) method(4209424) method(4209552) method(4209680) method(4210160) method(4210608) method(4210704) method(4210720) method(4210784) method(4210928) method(4211376) method(4211424) method(4211472) method(4211520) method(4211708) method(4211730) method(4211779) method(4211820) method(4211860) method(4211883) method(4211904) method(4211946) method(4211979) method(4212023) method(4212029) method(4212272) method(4212437) method(4212500) method(4212567) method(4212743) method(4212777) method(4212810) method(4212843) method(4212874) method(4212878) method(4212882) method(4212902) method(4212908) method(4212943) method(4212991) method(4212996) method(4213025) method(4213073) method(4213102) method(4213150) method(4213179) method(4213212) method(4213223) method(4213228) method(4213256) method(4213297) method(4213313) method(4213366) method(4213395) method(4213420) method(4213466) method(4213491) method(4213537) method(4213582) method(4213627) method(4213672) method(4213754) method(4213785) method(4213870) method(4213913) method(4213921) method(4213935) method(4213944) method(4213949) method(4213952) method(4213991) method(4214192) method(4214395) method(4214435) method(4214475) method(4214511) method(4214544) method(4214577) method(4214765) method(4214841) method(4215076) method(4215079) method(4215083) method(4215115) method(4215145) method(4215177) method(4215192) method(4215207) method(4215252) method(4215314) method(4215366) method(4215394) method(4215414) method(4215437) method(4215471) method(4215604) method(4215776) method(4216073) method(4216103) method(4216178) method(4216257) method(4216347) method(4216716) method(4216964) method(4217311) method(4217495) method(4217679) method(4217754) method(4217822) method(4217855) method(4217919) method(4217938) method(4217954) method(4217970) method(4217986) method(4218002) method(4218052) method(4218085) method(4218095) method(4218460) method(4218499) method(4218567) method(4218652) method(4218714) method(4218988) method(4219014) method(4219037) method(4219046) method(4219055) method(4219084) method(4219097) method(4219161) method(4219191) method(4219230) method(4219283) method(4219313) method(4219324) method(4219363) method(4219400) method(4219429) method(4219445) method(4219478) method(4219510) method(4221281) method(4221339) method(4221467) method(4221552) method(4221674) method(4221712) method(4221723) method(4221773) method(4221780) method(4221969) method(4222184) method(4222343) method(4222458) method(4222502) method(4222541) method(4222623) method(4222719) method(4222736) method(4222912) method(4223065) method(4223095) method(4223191) method(4223216) method(4223620) method(4223686) method(4223705) method(4223724) method(4224694) method(4224732) method(4224770) method(4224952) method(4225055) method(4225061) method(4225278) method(4225489) method(4225501) method(4225510) method(4225575) method(4225862) method(4226871) method(4228543) method(4228555) method(4228564) method(4228609) method(4228757) method(4228800) method(4228939) method(4228979) method(4229096) method(4229135) method(4229230) method(4229503) method(4229683) method(4229724) method(4229741) method(4229932) method(4230860) method(4232131) method(4232886) method(4233218) method(4233224) method(4233401) method(4233433) method(4233498) method(4233548) method(4233608) method(4233655) method(4233759) method(4234040) method(4234132) method(4234969) method(4235060) method(4235343) method(4235402) method(4235627) method(4235813) method(4235924) method(4236000) method(4236078) method(4236119) method(4236170) method(4236203) method(4236235) method(4236370) method(4236857) method(4236927) method(4237008) method(4237054) method(4237135) method(4237181) method(4237262) method(4237308) method(4237506) method(4237520) method(4237915) method(4237931) method(4237961) method(4237976) method(4238202) method(4238345) method(4238498) method(4238829) method(4239027) method(4239036) method(4239045) method(4239320) method(4239329) method(4239338) method(4239459) method(4239767) method(4239779) method(4239788) method(4240224) method(4240299) method(4240320) method(4240658) method(4240970) method(4241007) method(4241052) method(4241068) method(4241424) method(4241626) method(4241745) method(4241861) method(4242019) method(4242085) method(4242142) method(4242161) method(4243650) method(4244510) method(4244545) method(4244585) method(4244651) method(4244665) method(4244708) method(4244732) method(4244741) method(4244750) method(4244801) method(4245308) method(4245330) method(4245352) method(4245367) method(4245382) method(4245412) method(4245450) method(4245881) method(4245938) method(4246268) method(4246488) method(4246898) method(4247085) method(4247236) method(4247817) method(4247855) method(4248000) method(4248399) method(4248554) method(4248785) method(4248849) method(4249277) method(4249292) method(4249343) method(4251390) method(4252277) method(4252402) method(4252507) method(4253003) method(4253257) method(4254121) method(4254124) method(4254285) method(4254493) method(4254502) method(4255255) method(4255388) method(4256230) method(4256239) method(4256287) method(4256317) method(4256426) method(4256607) method(4256705) method(4256837) method(4256874) method(4256923) method(4256950) method(4257117) method(4257208) method(4257673) method(4258028) method(4258528) method(4263988) method(4264192) method(4264256) method(4264262) method(4264268) method(4264286) method(4264576) method(4264614) method(4264834) method(4267061) method(4268061) method(4268428) method(4268784) method(4268933) method(4269063) method(4269236) method(4269266) method(4269321) method(4269804) method(4270000) method(4270144) method(4270214) method(4270242) method(4270265) method(4270290) method(4270315) method(4270352) method(4270384) method(4270453) method(4270585) method(4270620) method(4270663) method(4270671) method(4270757) method(4270779) method(4271120) method(4271149) method(4271205) method(4271224) method(4271275) method(4271352) method(4274384) method(4274429) method(4274706) method(4274750) method(4274918) method(4275265) method(4275444) method(4275600) method(4275855) method(4275864) method(4275959) method(4275984) method(4276048) method(4276128) method(4276316) method(4276680) method(4276797) method(4277002) method(4277029) method(4277128) method(4277191) method(4277274) method(4277298) method(4277516) method(4277574) method(4277631) method(4277823) method(4277894) method(4277916) method(4278142) method(4278225) method(4279934) method(4280000) method(4280278) method(4280347) method(4280481) method(4280736) method(4280745) method(4280784) method(4281339) method(4281382) method(4282743) method(4284104) method(4285860) method(4288298) method(4289248) method(4289345) method(4289376) method(4289399) method(4290000) method(4290052) method(4290064) method(4290148) method(4290228) method(4290256) method(4290299) method(4290344) method(4290392) method(4290432) method(4290472) method(4290548) method(4290584) method(4290632) method(4290688) method(4290728) method(4290795) method(4290864) method(4290920) method(4290992) method(4291037) method(4291083) method(4291121) method(4291156) method(4291193) method(4291228) method(4291283) method(4291318) method(4291363) method(4291408) method(4291435) method(4291472) method(4291488) method(4291501) method(4291523) method(4291535) method(4291547) method(4291559) method(4291571) method(4291583) method(4291694) method(4291704) method(4291726) method(4291738) method(4291748) method(4291758) method(4291768) method(4291779) method(4291790) method(4291801) method(4291811) method(4291821) method(4291831) method(4291841) method(4291851) method(4202316) method(4203398) method(4203424) method(4204576) method(4204784) method(4206113) method(4206081) method(4206128) method(4207008) method(4208336) method(4211568) method(4211664) method(4212071) method(4212167) method(4212245) method(4212360) method(4212600) method(4213549) method(4213594) method(4214643) method(4214919) method(4215649) method(4215852) method(4215916) method(4218364) method(4221864) method(4221918) method(4222982) method(4223610) method(4223759) method(4225001) method(4225263) method(4225316) method(4225969) method(4226326) method(4227697) method(4228237) method(4228580) method(4229309) method(4229529) method(4229598) method(4229674) method(4229859) method(4230226) method(4230344) method(4230727) method(4230864) method(4230873) method(4230983) method(4231246) method(4232160) method(4232390) method(4232626) method(4232634) method(4232878) method(4233113) method(4233208) method(4233831) method(4233993) method(4234049) method(4234122) method(4234141) method(4234377) method(4234387) method(4234504) method(4234847) method(4234959) method(4235216) method(4235333) method(4235511) method(4235619) method(4235855) method(4237403) method(4238906) method(4239015) method(4239097) method(4239158) method(4239485) method(4240167) method(4240243) method(4240396) method(4240673) method(4242111) method(4242180) method(4242533) method(4242732) method(4242764) method(4243909) method(4244102) method(4244339) method(4244475) method(4244837) method(4244988) method(4245287) method(4254308) method(4254600) method(4254700) method(4255100) method(4255264) method(4255877) method(4256278) method(4257865) method(4257968) method(4264687) method(4264729) method(4264843) method(4266632) method(4266836) method(4266844) method(4267053) method(4267110) method(4267952) method(4268051) method(4268194) method(4268418) method(4268584) method(4268772) method(4269334) method(4269693) method(4269760) method(4269782) method(4275086) method(4279688) method(4279926) method(4280586) method(4288458) method(4289883) method(4290096) method(4290104) method(4290115) method(4290126) method(4290137) method(4290176) method(4290184) method(4290195) method(4290206) method(4290217) method(4290288) method(4290336) method(4290384) method(4290464) method(4290512) method(4290523) method(4290576) method(4290624) method(4290672) method(4290680) method(4290720) method(4290768) method(4290779) method(4290787) method(4290848) method(4290856) method(4290912) method(4290960) method(4290968) method(4290976) method(4290984) method(4291029) method(4291064) method(4291072) method(4291110) method(4291148) method(4291183) method(4291220) method(4291255) method(4291310) method(4291355) method(4291400) method(4291605) method(4291663) method(4213929) method(4213940) method(4323456) constructor(4198928) constructor(4200064) constructor(4200240) constructor(4200592) constructor(4200720) constructor(4203584) constructor(4212437) constructor(4212996) constructor(4213073) constructor(4213150) constructor(4213313) constructor(4216257) constructor(4219283) constructor(4219363) constructor(4232131) realDestructor(4198432) realDestructor(4198400) realDestructor(4198624) realDestructor(4212500) realDestructor(4198912) realDestructor(4200624) realDestructor(4200336) realDestructor(4201264) realDestructor(4201120) realDestructor(4203728) realDestructor(4213754) realDestructor(4213297) realDestructor(4214765) realDestructor(4213870) realDestructor(4217754) realDestructor(4219313) realDestructor(4219191) realDestructor(4219055) realDestructor(4219400) realDestructor(4219429) deletingDestructor(4229096) deletingDestructor(4219445) deletingDestructor(4219324) deletingDestructor(4217822) deletingDestructor(4215437) deletingDestructor(4214511) deletingDestructor(4213627) deletingDestructor(4213256) deletingDestructor(4213179) deletingDestructor(4212743) deletingDestructor(4212567) deletingDestructor(4203760) deletingDestructor(4201280) deletingDestructor(4200672) deletingDestructor(4200288) deletingDestructor(4200176) deletingDestructor(4199088) deletingDestructor(4198448) vfTable(4293056) vfTable(4293068) vfTable(4293080) vfTable(4293128) vfTable(4293140) vfTable(4293224) vfTable(4293296) vfTable(4293408) vfTable(4293420) vfTable(4293584) vfTable(4293596) vfTable(4293608) vfTable(4293620) vfTable(4293628) vfTable(4293636) vfTable(4293644) vfTable(4293684) vfTable(4293748) vfTable(4293812) vfTable(4293868) vfTable(4293900) vfTable(4293912) vfTable(4294328) vfTable(4314848) classCallsMethod(4198448,4198432) classCallsMethod(4200240,4198624) classCallsMethod(4199088,4198912) classCallsMethod(4203584,4198928) classCallsMethod(4201120,4198928) classCallsMethod(4202624,4199184) classCallsMethod(4206896,4199472) classCallsMethod(4205440,4199472) classCallsMethod(4205200,4199472) classCallsMethod(4205056,4199472) classCallsMethod(4204432,4199472) classCallsMethod(4203152,4199472) classCallsMethod(4200960,4199472) classCallsMethod(4200912,4199472) classCallsMethod(4199904,4199472) classCallsMethod(4200832,4199568) classCallsMethod(4200832,4199776) classCallsMethod(4203952,4199792) classCallsMethod(4204960,4199856) classCallsMethod(4206896,4199904) classCallsMethod(4205200,4199904) classCallsMethod(4201120,4200128) classCallsMethod(4200336,4200240) classCallsMethod(4216103,4200400) classCallsMethod(4213672,4200400) classCallsMethod(4200800,4200400) classCallsMethod(4200624,4200592) classCallsMethod(4200720,4200624) classCallsMethod(4210720,4200784) classCallsMethod(4203808,4200784) classCallsMethod(4202624,4200800) classCallsMethod(4206896,4200912) classCallsMethod(4205440,4200912) classCallsMethod(4205344,4200912) classCallsMethod(4205200,4200912) classCallsMethod(4205056,4200912) classCallsMethod(4204432,4200912) classCallsMethod(4204272,4200912) classCallsMethod(4203152,4200912) classCallsMethod(4202672,4200912) classCallsMethod(4200960,4200912) classCallsMethod(4205440,4200960) classCallsMethod(4204272,4201056) classCallsMethod(4203152,4201056) classCallsMethod(4201280,4201264) classCallsMethod(4203728,4201728) classCallsMethod(4203584,4201984) classCallsMethod(4210784,4202672) classCallsMethod(4210720,4202672) classCallsMethod(4204272,4202672) classCallsMethod(4203808,4202672) classCallsMethod(4203152,4202672) classCallsMethod(4204272,4203152) classCallsMethod(4203760,4203728) classCallsMethod(4204096,4203872) classCallsMethod(4216178,4204272) classCallsMethod(4206896,4204272) classCallsMethod(4205440,4204272) classCallsMethod(4205344,4204272) classCallsMethod(4205200,4204272) classCallsMethod(4205056,4204272) classCallsMethod(4204432,4204272) classCallsMethod(4205200,4204432) classCallsMethod(4206896,4205440) classCallsMethod(4209120,4206896) classCallsMethod(4210720,4209120) classCallsMethod(4202336,4211820) classCallsMethod(4202496,4211860) classCallsMethod(4212567,4212500) classCallsMethod(4213627,4213366) classCallsMethod(4216103,4213672) classCallsMethod(4217754,4213870) classCallsMethod(4214511,4213870) classCallsMethod(4217754,4214544) classCallsMethod(4217495,4214544) classCallsMethod(4217311,4214544) classCallsMethod(4216964,4214544) classCallsMethod(4216347,4214544) classCallsMethod(4217679,4214577) classCallsMethod(4215604,4214577) classCallsMethod(4214841,4214577) classCallsMethod(4214765,4214577) classCallsMethod(4215776,4214841) classCallsMethod(4215471,4215314) classCallsMethod(4216073,4215604) classCallsMethod(4217679,4216716) classCallsMethod(4217495,4216716) classCallsMethod(4217311,4216716) classCallsMethod(4217754,4217679) classCallsMethod(4217822,4217754) classCallsMethod(4218499,4218460) classCallsMethod(4219230,4219097) classCallsMethod(4219191,4219097) classCallsMethod(4219324,4219161) classCallsMethod(4219230,4219161) classCallsMethod(4219283,4219191) classCallsMethod(4198624,4219191) classCallsMethod(4198400,4219191) classCallsMethod(4219363,4219230) classCallsMethod(4229096,4219313) classCallsMethod(4213179,4219313) classCallsMethod(4200672,4219313) classCallsMethod(4200288,4219313) classCallsMethod(4200176,4219313) classCallsMethod(4232131,4219363) classCallsMethod(4219400,4219363) classCallsMethod(4213150,4219363) classCallsMethod(4213073,4219363) classCallsMethod(4212996,4219363) classCallsMethod(4200592,4219363) classCallsMethod(4200064,4219363) classCallsMethod(4219445,4219429) classCallsMethod(4293056,4198448) classCallsMethod(4293080,4199088) classCallsMethod(4293068,4200176) classCallsMethod(4293128,4200288) classCallsMethod(4293140,4200672) classCallsMethod(4293224,4201280) classCallsMethod(4293296,4203696) classCallsMethod(4293296,4203712) classCallsMethod(4293296,4203760) classCallsMethod(4293224,4209168) classCallsMethod(4293224,4209296) classCallsMethod(4293224,4209424) classCallsMethod(4293224,4209552) classCallsMethod(4293224,4209680) classCallsMethod(4293224,4210160) classCallsMethod(4293224,4210608) classCallsMethod(4293224,4210928) classCallsMethod(4293296,4211376) classCallsMethod(4293296,4211424) classCallsMethod(4293296,4211472) classCallsMethod(4293408,4212567) classCallsMethod(4293420,4212743) classCallsMethod(4293420,4212810) classCallsMethod(4293420,4212843) classCallsMethod(4293420,4212882) classCallsMethod(4293608,4213179) classCallsMethod(4293596,4213179) classCallsMethod(4293584,4213179) classCallsMethod(4293636,4213256) classCallsMethod(4293620,4213256) classCallsMethod(4293644,4213395) classCallsMethod(4293644,4213420) classCallsMethod(4293644,4213466) classCallsMethod(4293644,4213491) classCallsMethod(4293644,4213537) classCallsMethod(4293644,4213582) classCallsMethod(4293644,4213627) classCallsMethod(4293684,4213913) classCallsMethod(4293684,4213921) classCallsMethod(4293748,4213935) classCallsMethod(4293684,4213935) classCallsMethod(4293684,4213944) classCallsMethod(4293684,4213949) classCallsMethod(4293684,4213952) classCallsMethod(4293748,4213991) classCallsMethod(4293684,4213991) classCallsMethod(4293748,4214192) classCallsMethod(4293684,4214192) classCallsMethod(4293684,4214395) classCallsMethod(4293684,4214435) classCallsMethod(4293628,4214475) classCallsMethod(4293684,4214511) classCallsMethod(4293812,4215076) classCallsMethod(4293812,4215079) classCallsMethod(4293748,4215177) classCallsMethod(4293748,4215192) classCallsMethod(4293748,4215207) classCallsMethod(4293748,4215252) classCallsMethod(4293812,4215366) classCallsMethod(4293812,4215394) classCallsMethod(4293812,4215414) classCallsMethod(4293812,4215437) classCallsMethod(4293748,4215471) classCallsMethod(4293748,4215776) classCallsMethod(4293748,4216073) classCallsMethod(4293748,4216347) classCallsMethod(4293748,4216964) classCallsMethod(4293748,4217311) classCallsMethod(4293748,4217495) classCallsMethod(4293748,4217822) classCallsMethod(4294328,4219084) classCallsMethod(4293900,4219084) classCallsMethod(4293868,4219084) classCallsMethod(4293608,4219084) classCallsMethod(4293596,4219084) classCallsMethod(4293584,4219084) classCallsMethod(4293140,4219084) classCallsMethod(4293128,4219084) classCallsMethod(4293068,4219084) classCallsMethod(4293056,4219084) classCallsMethod(4293900,4219324) classCallsMethod(4293868,4219324) classCallsMethod(4293912,4219445) classCallsMethod(4294328,4229096) classCallsMethod(4293684,4254121) classCallsMethod(4293644,4213549) classCallsMethod(4293644,4213594) classCallsMethod(4293684,4213940) classCallsMethod(4293684,4213929) classCallsMethod(4314848,4323456) vfTableWrite(4229104,4229096,0,4294328) vfTableWrite(4232147,4232131,0,4294328) vfTableWrite(4219432,4219429,0,4293912) vfTableWrite(4219300,4219283,0,4293900) vfTableWrite(4219416,4219400,0,4293900) vfTableWrite(4219065,4219055,0,4293868) vfTableWrite(4219206,4219191,0,4293868) vfTableWrite(4219313,4219313,0,4293868) vfTableWrite(4219332,4219324,0,4293868) vfTableWrite(4219378,4219363,0,4293868) vfTableWrite(4215737,4215649,0,4293812) vfTableWrite(4217771,4217754,0,4293748) vfTableWrite(4213879,4213870,0,4293684) vfTableWrite(4214785,4214765,0,4293684) vfTableWrite(4213336,4213313,0,4293644) vfTableWrite(4213635,4213627,0,4293644) vfTableWrite(4216290,4216257,8,4293636) vfTableWrite(4213763,4213754,0,4293628) vfTableWrite(4216315,4216257,0,4293628) vfTableWrite(4213265,4213256,0,4293620) vfTableWrite(4213300,4213297,0,4293620) vfTableWrite(4213772,4213754,8,4293620) vfTableWrite(4213166,4213150,0,4293608) vfTableWrite(4213089,4213073,0,4293596) vfTableWrite(4213012,4212996,0,4293584) vfTableWrite(4212755,4212743,0,4293420) vfTableWrite(4212463,4212437,0,4293408) vfTableWrite(4212517,4212500,0,4293408) vfTableWrite(4203651,4203584,0,4293296) vfTableWrite(4203731,4203728,0,4293296) vfTableWrite(4201141,4201120,0,4293224) vfTableWrite(4201264,4201264,0,4293224) vfTableWrite(4200363,4200336,0,4293140) vfTableWrite(4200735,4200720,0,4293140) vfTableWrite(4200261,4200240,0,4293128) vfTableWrite(4200640,4200624,0,4293128) vfTableWrite(4198912,4198912,0,4293080) vfTableWrite(4198936,4198928,0,4293080) vfTableWrite(4212555,4212500,0,4293080) vfTableWrite(4213650,4213627,0,4293080) vfTableWrite(4215449,4215437,0,4293080) vfTableWrite(4198639,4198624,0,4293068) vfTableWrite(4200607,4200592,0,4293068) vfTableWrite(4198415,4198400,0,4293056) vfTableWrite(4198432,4198432,0,4293056) vfTableWrite(4200079,4200064,0,4293056) vfTableWrite(4233318,4233224,0,4314848) vfTableEntry(4293644,28,4213594) vfTableEntry(4293644,20,4213549) vfTableEntry(4293684,52,4254121) vfTableEntry(4294328,0,4229096) vfTableEntry(4293420,4,4228757) vfTableEntry(4293420,8,4228757) vfTableEntry(4293912,0,4219445) vfTableEntry(4293868,0,4219324) vfTableEntry(4293900,0,4219324) vfTableEntry(4293056,4,4219084) vfTableEntry(4293068,4,4219084) vfTableEntry(4293128,4,4219084) vfTableEntry(4293140,4,4219084) vfTableEntry(4293584,4,4219084) vfTableEntry(4293596,4,4219084) vfTableEntry(4293608,4,4219084) vfTableEntry(4293868,4,4219084) vfTableEntry(4293900,4,4219084) vfTableEntry(4294328,4,4219084) vfTableEntry(4293748,0,4217822) vfTableEntry(4293748,44,4217495) vfTableEntry(4293748,40,4217311) vfTableEntry(4293748,12,4216964) vfTableEntry(4293748,28,4216347) vfTableEntry(4293748,56,4216073) vfTableEntry(4293748,48,4215776) vfTableEntry(4293748,16,4215471) vfTableEntry(4293812,0,4215437) vfTableEntry(4293812,28,4215414) vfTableEntry(4293812,24,4215394) vfTableEntry(4293812,16,4215366) vfTableEntry(4293812,20,4215366) vfTableEntry(4293748,24,4215252) vfTableEntry(4293748,52,4215207) vfTableEntry(4293748,8,4215192) vfTableEntry(4293748,4,4215177) vfTableEntry(4293812,8,4215079) vfTableEntry(4293812,12,4215079) vfTableEntry(4293812,4,4215076) vfTableEntry(4293684,0,4214511) vfTableEntry(4293628,0,4214475) vfTableEntry(4293684,44,4214435) vfTableEntry(4293684,40,4214395) vfTableEntry(4293684,36,4214192) vfTableEntry(4293748,36,4214192) vfTableEntry(4293684,32,4213991) vfTableEntry(4293748,32,4213991) vfTableEntry(4293684,28,4213952) vfTableEntry(4293684,56,4213949) vfTableEntry(4293684,48,4213944) vfTableEntry(4293684,20,4213935) vfTableEntry(4293748,20,4213935) vfTableEntry(4293684,8,4213921) vfTableEntry(4293684,4,4213913) vfTableEntry(4293644,0,4213627) vfTableEntry(4293644,32,4213582) vfTableEntry(4293644,24,4213537) vfTableEntry(4293644,12,4213491) vfTableEntry(4293644,16,4213466) vfTableEntry(4293644,4,4213420) vfTableEntry(4293644,8,4213395) vfTableEntry(4293620,0,4213256) vfTableEntry(4293636,0,4213256) vfTableEntry(4293584,0,4213179) vfTableEntry(4293596,0,4213179) vfTableEntry(4293608,0,4213179) vfTableEntry(4293420,12,4212882) vfTableEntry(4293420,16,4212843) vfTableEntry(4293420,20,4212810) vfTableEntry(4293420,0,4212743) vfTableEntry(4293408,0,4212567) vfTableEntry(4293296,20,4211472) vfTableEntry(4293296,16,4211424) vfTableEntry(4293296,12,4211376) vfTableEntry(4293224,32,4210928) vfTableEntry(4293224,4,4210608) vfTableEntry(4293224,8,4210160) vfTableEntry(4293224,12,4209680) vfTableEntry(4293224,16,4209552) vfTableEntry(4293224,20,4209424) vfTableEntry(4293224,24,4209296) vfTableEntry(4293224,28,4209168) vfTableEntry(4293296,0,4203760) vfTableEntry(4293296,8,4203712) vfTableEntry(4293296,4,4203696) vfTableEntry(4293224,0,4201280) vfTableEntry(4293140,0,4200672) vfTableEntry(4293128,0,4200288) vfTableEntry(4293068,0,4200176) vfTableEntry(4293080,0,4199088) vfTableEntry(4293056,0,4198448) vfTableEntry(4293684,12,4213929) vfTableEntry(4293684,16,4213929) vfTableEntry(4293684,24,4213940) vfTableEntry(4314848,0,4323456) vfTableOverwrite(4212500,4293080,4293408,0) vfTableOverwrite(4213627,4293080,4293644,0) vfTableSize(4293056,8) vfTableSize(4293068,8) vfTableSize(4293080,4) vfTableSize(4293128,8) vfTableSize(4293140,8) vfTableSize(4293224,36) vfTableSize(4293296,24) vfTableSize(4293408,4) vfTableSize(4293420,24) vfTableSize(4293584,8) vfTableSize(4293596,8) vfTableSize(4293608,8) vfTableSize(4293620,4) vfTableSize(4293628,4) vfTableSize(4293636,4) vfTableSize(4293644,36) vfTableSize(4293684,60) vfTableSize(4293748,60) vfTableSize(4293812,32) vfTableSize(4293868,8) vfTableSize(4293900,8) vfTableSize(4293912,4) vfTableSize(4294328,8) vfTableSize(4314848,4) vftableBelongsToClass(4293080,0,4198928) vftableBelongsToClass(4293056,0,4200064) vftableBelongsToClass(4293128,0,4200240) vftableBelongsToClass(4293068,0,4200592) vftableBelongsToClass(4293140,0,4200720) vftableBelongsToClass(4293296,0,4203584) vftableBelongsToClass(4293408,0,4212437) vftableBelongsToClass(4293584,0,4212996) vftableBelongsToClass(4293596,0,4213073) vftableBelongsToClass(4293608,0,4213150) vftableBelongsToClass(4293644,0,4213313) vftableBelongsToClass(4293900,0,4219283) vftableBelongsToClass(4293868,0,4219363) vftableBelongsToClass(4294328,0,4232131) vftableSizeTotal(380) mergeClasses(4293080,4198928) mergeClasses(4293056,4200064) mergeClasses(4293128,4200240) mergeClasses(4293068,4200592) mergeClasses(4293140,4200720) mergeClasses(4293296,4203584) mergeClasses(4293408,4212437) mergeClasses(4293584,4212996) mergeClasses(4293596,4213073) mergeClasses(4293608,4213150) mergeClasses(4293644,4213313) mergeClasses(4293900,4219283) mergeClasses(4293868,4219363) mergeClasses(4294328,4232131) mergeClasses(4219363,4293868) mergeClasses(4219400,4293868) mergeClasses(4198928,4293080) mergeClasses(4201120,4293080) mergeClasses(4212810,4293420) mergeClasses(4212843,4293420) mergeClasses(4212882,4293420) mergeClasses(4214511,4293684) mergeClasses(4213913,4293684) mergeClasses(4213921,4293684) mergeClasses(4213935,4293684) mergeClasses(4213944,4293684) mergeClasses(4213949,4293684) mergeClasses(4213952,4293684) mergeClasses(4213991,4293684) mergeClasses(4214192,4293684) mergeClasses(4214395,4293684) mergeClasses(4214435,4293684) mergeClasses(4254121,4293684) mergeClasses(4213940,4293684) mergeClasses(4213929,4293684) mergeClasses(4219445,4293912) derivedClass(4293056,4293868,0) derivedClass(4293068,4293868,0) derivedClass(4293128,4293068,0) derivedClass(4293140,4293128,0) derivedClass(4293224,4293080,0) derivedClass(4293296,4293080,0) derivedClass(4293408,4293080,0) derivedClass(4293584,4293868,0) derivedClass(4293596,4293584,0) derivedClass(4293608,4293584,0) derivedClass(4293636,4293620,0) derivedClass(4293644,4293080,0) derivedClass(4293748,4293684,0) derivedClass(4293812,4293080,0) derivedClass(4293900,4293868,0) derivedClass(4294328,4293868,0) classRelatedMethod(4211820,4211860) classRelatedMethod(4211860,4211820) classRelatedMethod(4199568,4199776) classRelatedMethod(4199776,4199568) classRelatedMethod(4199472,4200912) classRelatedMethod(4200912,4199472) classRelatedMethod(4198928,4200128) classRelatedMethod(4200128,4198928) classRelatedMethod(4199184,4200800) classRelatedMethod(4200800,4199184) classRelatedMethod(4199488,4201872) classRelatedMethod(4201872,4199488) classRelatedMethod(4201056,4199472) classRelatedMethod(4201056,4202672) classRelatedMethod(4201056,4200912) classRelatedMethod(4199472,4201056) classRelatedMethod(4199472,4202672) classRelatedMethod(4202672,4201056) classRelatedMethod(4202672,4199472) classRelatedMethod(4202672,4200912) classRelatedMethod(4200912,4201056) classRelatedMethod(4200912,4202672) classRelatedMethod(4202336,4202496) classRelatedMethod(4202496,4202336) classRelatedMethod(4198928,4201984) classRelatedMethod(4201984,4198928) classRelatedMethod(4200784,4202672) classRelatedMethod(4202672,4200784) classRelatedMethod(4199440,4202624) classRelatedMethod(4202624,4199440) classRelatedMethod(4201056,4203152) classRelatedMethod(4203152,4201056) classRelatedMethod(4203152,4202672) classRelatedMethod(4203152,4200912) classRelatedMethod(4202672,4203152) classRelatedMethod(4200912,4203152) classRelatedMethod(4199456,4199472) classRelatedMethod(4204272,4199472) classRelatedMethod(4204272,4200912) classRelatedMethod(4199472,4199456) classRelatedMethod(4199472,4204272) classRelatedMethod(4200912,4204272) classRelatedMethod(4198784,4198896) classRelatedMethod(4198896,4198784) classRelatedMethod(4199904,4199472) classRelatedMethod(4199904,4204432) classRelatedMethod(4199904,4204272) classRelatedMethod(4199904,4200912) classRelatedMethod(4199472,4199904) classRelatedMethod(4199472,4204432) classRelatedMethod(4204432,4199904) classRelatedMethod(4204432,4199472) classRelatedMethod(4204432,4204272) classRelatedMethod(4204432,4200912) classRelatedMethod(4204272,4199904) classRelatedMethod(4204272,4204432) classRelatedMethod(4200912,4199904) classRelatedMethod(4200912,4204432) classRelatedMethod(4200960,4204272) classRelatedMethod(4200960,4199472) classRelatedMethod(4200960,4200912) classRelatedMethod(4204272,4200960) classRelatedMethod(4199472,4200960) classRelatedMethod(4200912,4200960) classRelatedMethod(4199248,4199232) classRelatedMethod(4199248,4199536) classRelatedMethod(4199248,4199440) classRelatedMethod(4199248,4199264) classRelatedMethod(4203952,4199600) classRelatedMethod(4199600,4203952) classRelatedMethod(4199232,4199248) classRelatedMethod(4199232,4199536) classRelatedMethod(4199232,4199440) classRelatedMethod(4199232,4199264) classRelatedMethod(4199536,4199248) classRelatedMethod(4199536,4199232) classRelatedMethod(4199536,4199440) classRelatedMethod(4199536,4199264) classRelatedMethod(4199440,4199248) classRelatedMethod(4199440,4199232) classRelatedMethod(4199440,4199536) classRelatedMethod(4199440,4199264) classRelatedMethod(4199264,4199248) classRelatedMethod(4199264,4199232) classRelatedMethod(4199264,4199536) classRelatedMethod(4199264,4199440) classRelatedMethod(4203952,4204960) classRelatedMethod(4199600,4204960) classRelatedMethod(4199296,4199440) classRelatedMethod(4199296,4199536) classRelatedMethod(4199440,4199296) classRelatedMethod(4199536,4199296) classRelatedMethod(4204960,4203952) classRelatedMethod(4204960,4199600) classRelatedMethod(4199904,4205440) classRelatedMethod(4199472,4205440) classRelatedMethod(4205440,4199904) classRelatedMethod(4205440,4199472) classRelatedMethod(4205440,4204272) classRelatedMethod(4205440,4200912) classRelatedMethod(4204272,4205440) classRelatedMethod(4200912,4205440) classRelatedMethod(4199296,4199248) classRelatedMethod(4199296,4199232) classRelatedMethod(4199296,4199264) classRelatedMethod(4204400,4201712) classRelatedMethod(4204400,4201696) classRelatedMethod(4201712,4204400) classRelatedMethod(4201712,4201696) classRelatedMethod(4203808,4205200) classRelatedMethod(4203808,4205344) classRelatedMethod(4203808,4205056) classRelatedMethod(4203808,4199456) classRelatedMethod(4205200,4203808) classRelatedMethod(4205200,4205344) classRelatedMethod(4205200,4205056) classRelatedMethod(4205200,4199456) classRelatedMethod(4205344,4203808) classRelatedMethod(4205344,4205200) classRelatedMethod(4205344,4205056) classRelatedMethod(4205344,4199456) classRelatedMethod(4205056,4203808) classRelatedMethod(4205056,4205200) classRelatedMethod(4205056,4205344) classRelatedMethod(4205056,4199456) classRelatedMethod(4199456,4203808) classRelatedMethod(4199456,4205200) classRelatedMethod(4199456,4205344) classRelatedMethod(4199456,4205056) classRelatedMethod(4199248,4199296) classRelatedMethod(4199232,4199296) classRelatedMethod(4201696,4204400) classRelatedMethod(4201696,4201712) classRelatedMethod(4199264,4199296) classRelatedMethod(4206640,4203872) classRelatedMethod(4203872,4206640) classRelatedMethod(4201248,4199232) classRelatedMethod(4199232,4201248) classRelatedMethod(4200784,4209120) classRelatedMethod(4202672,4209120) classRelatedMethod(4209120,4200784) classRelatedMethod(4209120,4202672) classRelatedMethod(4203808,4210784) classRelatedMethod(4203808,4199472) classRelatedMethod(4204240,4204208) classRelatedMethod(4204208,4204240) classRelatedMethod(4210784,4203808) classRelatedMethod(4210784,4199456) classRelatedMethod(4210784,4199472) classRelatedMethod(4199456,4210784) classRelatedMethod(4199472,4203808) classRelatedMethod(4199472,4210784) classRelatedMethod(4199344,4199376) classRelatedMethod(4199376,4199344) classRelatedMethod(4212437,4198784) classRelatedMethod(4198784,4212437) classRelatedMethod(4213672,4200400) classRelatedMethod(4200400,4213672) classRelatedMethod(4205344,4200960) classRelatedMethod(4205344,4202672) classRelatedMethod(4200960,4205344) classRelatedMethod(4200960,4202672) classRelatedMethod(4202672,4205344) classRelatedMethod(4202672,4200960) classRelatedMethod(4216178,4202672) classRelatedMethod(4216178,4205344) classRelatedMethod(4202672,4216178) classRelatedMethod(4205344,4216178) classRelatedMethod(4216716,4214544) classRelatedMethod(4214544,4216716) classRelatedMethod(4216716,4214577) classRelatedMethod(4214577,4216716) classRelatedMethod(4214544,4217679) classRelatedMethod(4214544,4213870) classRelatedMethod(4217679,4214544) classRelatedMethod(4217679,4213870) classRelatedMethod(4213870,4214544) classRelatedMethod(4213870,4217679) classRelatedMethod(4219161,4219097) classRelatedMethod(4219097,4219161) classRelatedMethod(4214765,4214841) classRelatedMethod(4214841,4214765) classRelatedMethod(4198432,4198448) classRelatedMethod(4198624,4200240) classRelatedMethod(4198912,4199088) classRelatedMethod(4198928,4203584) classRelatedMethod(4198928,4201120) classRelatedMethod(4199184,4202624) classRelatedMethod(4199472,4206896) classRelatedMethod(4199472,4205200) classRelatedMethod(4199472,4205056) classRelatedMethod(4199472,4203152) classRelatedMethod(4199568,4200832) classRelatedMethod(4199776,4200832) classRelatedMethod(4199792,4203952) classRelatedMethod(4199856,4204960) classRelatedMethod(4199904,4206896) classRelatedMethod(4199904,4205200) classRelatedMethod(4200128,4201120) classRelatedMethod(4200240,4200336) classRelatedMethod(4200400,4216103) classRelatedMethod(4200400,4200800) classRelatedMethod(4200592,4200624) classRelatedMethod(4200624,4200720) classRelatedMethod(4200784,4210720) classRelatedMethod(4200784,4203808) classRelatedMethod(4200800,4202624) classRelatedMethod(4200912,4206896) classRelatedMethod(4200912,4205344) classRelatedMethod(4200912,4205200) classRelatedMethod(4200912,4205056) classRelatedMethod(4200960,4205440) classRelatedMethod(4201056,4204272) classRelatedMethod(4201264,4201280) classRelatedMethod(4201728,4203728) classRelatedMethod(4201984,4203584) classRelatedMethod(4202672,4210784) classRelatedMethod(4202672,4210720) classRelatedMethod(4202672,4204272) classRelatedMethod(4202672,4203808) classRelatedMethod(4203152,4204272) classRelatedMethod(4203728,4203760) classRelatedMethod(4203872,4204096) classRelatedMethod(4204272,4216178) classRelatedMethod(4204272,4206896) classRelatedMethod(4204272,4205344) classRelatedMethod(4204272,4205200) classRelatedMethod(4204272,4205056) classRelatedMethod(4204432,4205200) classRelatedMethod(4205440,4206896) classRelatedMethod(4206896,4209120) classRelatedMethod(4209120,4210720) classRelatedMethod(4211820,4202336) classRelatedMethod(4211860,4202496) classRelatedMethod(4212500,4212567) classRelatedMethod(4213366,4213627) classRelatedMethod(4213672,4216103) classRelatedMethod(4213870,4217754) classRelatedMethod(4213870,4214511) classRelatedMethod(4214544,4217754) classRelatedMethod(4214544,4217495) classRelatedMethod(4214544,4217311) classRelatedMethod(4214544,4216964) classRelatedMethod(4214544,4216347) classRelatedMethod(4214577,4217679) classRelatedMethod(4214577,4215604) classRelatedMethod(4214577,4214841) classRelatedMethod(4214577,4214765) classRelatedMethod(4214841,4215776) classRelatedMethod(4215314,4215471) classRelatedMethod(4215604,4216073) classRelatedMethod(4216716,4217679) classRelatedMethod(4216716,4217495) classRelatedMethod(4216716,4217311) classRelatedMethod(4217679,4217754) classRelatedMethod(4217754,4217822) classRelatedMethod(4218460,4218499) classRelatedMethod(4219097,4219230) classRelatedMethod(4219097,4219191) classRelatedMethod(4219161,4219324) classRelatedMethod(4219161,4219230) classRelatedMethod(4219191,4219283) classRelatedMethod(4219191,4198624) classRelatedMethod(4219191,4198400) classRelatedMethod(4219230,4219363) classRelatedMethod(4219313,4229096) classRelatedMethod(4219313,4213179) classRelatedMethod(4219313,4200672) classRelatedMethod(4219313,4200288) classRelatedMethod(4219313,4200176) classRelatedMethod(4219363,4232131) classRelatedMethod(4219363,4219400) classRelatedMethod(4219363,4213150) classRelatedMethod(4219363,4213073) classRelatedMethod(4219363,4212996) classRelatedMethod(4219363,4200592) classRelatedMethod(4219363,4200064) classRelatedMethod(4219429,4219445) classRelatedMethod(4198448,4293056) classRelatedMethod(4199088,4293080) classRelatedMethod(4200176,4293068) classRelatedMethod(4200288,4293128) classRelatedMethod(4200672,4293140) classRelatedMethod(4201280,4293224) classRelatedMethod(4203696,4293296) classRelatedMethod(4203712,4293296) classRelatedMethod(4203760,4293296) classRelatedMethod(4209168,4293224) classRelatedMethod(4209296,4293224) classRelatedMethod(4209424,4293224) classRelatedMethod(4209552,4293224) classRelatedMethod(4209680,4293224) classRelatedMethod(4210160,4293224) classRelatedMethod(4210608,4293224) classRelatedMethod(4210928,4293224) classRelatedMethod(4211376,4293296) classRelatedMethod(4211424,4293296) classRelatedMethod(4211472,4293296) classRelatedMethod(4212567,4293408) classRelatedMethod(4212743,4293420) classRelatedMethod(4212810,4293420) classRelatedMethod(4212843,4293420) classRelatedMethod(4212882,4293420) classRelatedMethod(4213179,4293608) classRelatedMethod(4213179,4293596) classRelatedMethod(4213179,4293584) classRelatedMethod(4213256,4293636) classRelatedMethod(4213256,4293620) classRelatedMethod(4213395,4293644) classRelatedMethod(4213420,4293644) classRelatedMethod(4213466,4293644) classRelatedMethod(4213491,4293644) classRelatedMethod(4213537,4293644) classRelatedMethod(4213582,4293644) classRelatedMethod(4213627,4293644) classRelatedMethod(4213913,4293684) classRelatedMethod(4213921,4293684) classRelatedMethod(4213935,4293748) classRelatedMethod(4213935,4293684) classRelatedMethod(4213944,4293684) classRelatedMethod(4213949,4293684) classRelatedMethod(4213952,4293684) classRelatedMethod(4213991,4293748) classRelatedMethod(4213991,4293684) classRelatedMethod(4214192,4293748) classRelatedMethod(4214192,4293684) classRelatedMethod(4214395,4293684) classRelatedMethod(4214435,4293684) classRelatedMethod(4214475,4293628) classRelatedMethod(4214511,4293684) classRelatedMethod(4215076,4293812) classRelatedMethod(4215079,4293812) classRelatedMethod(4215177,4293748) classRelatedMethod(4215192,4293748) classRelatedMethod(4215207,4293748) classRelatedMethod(4215252,4293748) classRelatedMethod(4215366,4293812) classRelatedMethod(4215394,4293812) classRelatedMethod(4215414,4293812) classRelatedMethod(4215437,4293812) classRelatedMethod(4215471,4293748) classRelatedMethod(4215776,4293748) classRelatedMethod(4216073,4293748) classRelatedMethod(4216347,4293748) classRelatedMethod(4216964,4293748) classRelatedMethod(4217311,4293748) classRelatedMethod(4217495,4293748) classRelatedMethod(4217822,4293748) classRelatedMethod(4219084,4294328) classRelatedMethod(4219084,4293900) classRelatedMethod(4219084,4293868) classRelatedMethod(4219084,4293608) classRelatedMethod(4219084,4293596) classRelatedMethod(4219084,4293584) classRelatedMethod(4219084,4293140) classRelatedMethod(4219084,4293128) classRelatedMethod(4219084,4293068) classRelatedMethod(4219084,4293056) classRelatedMethod(4219324,4293900) classRelatedMethod(4219324,4293868) classRelatedMethod(4219445,4293912) classRelatedMethod(4229096,4294328) classRelatedMethod(4254121,4293684) classRelatedMethod(4213549,4293644) classRelatedMethod(4213594,4293644) classRelatedMethod(4213940,4293684) classRelatedMethod(4213929,4293684) classRelatedMethod(4323456,4314848) classRelatedMethod(4198448,4198432) classRelatedMethod(4200240,4198624) classRelatedMethod(4199088,4198912) classRelatedMethod(4203584,4198928) classRelatedMethod(4201120,4198928) classRelatedMethod(4202624,4199184) classRelatedMethod(4206896,4199472) classRelatedMethod(4205200,4199472) classRelatedMethod(4205056,4199472) classRelatedMethod(4203152,4199472) classRelatedMethod(4200832,4199568) classRelatedMethod(4200832,4199776) classRelatedMethod(4203952,4199792) classRelatedMethod(4204960,4199856) classRelatedMethod(4206896,4199904) classRelatedMethod(4205200,4199904) classRelatedMethod(4201120,4200128) classRelatedMethod(4200336,4200240) classRelatedMethod(4216103,4200400) classRelatedMethod(4200800,4200400) classRelatedMethod(4200624,4200592) classRelatedMethod(4200720,4200624) classRelatedMethod(4210720,4200784) classRelatedMethod(4203808,4200784) classRelatedMethod(4202624,4200800) classRelatedMethod(4206896,4200912) classRelatedMethod(4205344,4200912) classRelatedMethod(4205200,4200912) classRelatedMethod(4205056,4200912) classRelatedMethod(4205440,4200960) classRelatedMethod(4204272,4201056) classRelatedMethod(4201280,4201264) classRelatedMethod(4203728,4201728) classRelatedMethod(4203584,4201984) classRelatedMethod(4210784,4202672) classRelatedMethod(4210720,4202672) classRelatedMethod(4204272,4202672) classRelatedMethod(4203808,4202672) classRelatedMethod(4204272,4203152) classRelatedMethod(4203760,4203728) classRelatedMethod(4204096,4203872) classRelatedMethod(4216178,4204272) classRelatedMethod(4206896,4204272) classRelatedMethod(4205344,4204272) classRelatedMethod(4205200,4204272) classRelatedMethod(4205056,4204272) classRelatedMethod(4205200,4204432) classRelatedMethod(4206896,4205440) classRelatedMethod(4209120,4206896) classRelatedMethod(4210720,4209120) classRelatedMethod(4202336,4211820) classRelatedMethod(4202496,4211860) classRelatedMethod(4212567,4212500) classRelatedMethod(4213627,4213366) classRelatedMethod(4216103,4213672) classRelatedMethod(4217754,4213870) classRelatedMethod(4214511,4213870) classRelatedMethod(4217754,4214544) classRelatedMethod(4217495,4214544) classRelatedMethod(4217311,4214544) classRelatedMethod(4216964,4214544) classRelatedMethod(4216347,4214544) classRelatedMethod(4217679,4214577) classRelatedMethod(4215604,4214577) classRelatedMethod(4214841,4214577) classRelatedMethod(4214765,4214577) classRelatedMethod(4215776,4214841) classRelatedMethod(4215471,4215314) classRelatedMethod(4216073,4215604) classRelatedMethod(4217679,4216716) classRelatedMethod(4217495,4216716) classRelatedMethod(4217311,4216716) classRelatedMethod(4217754,4217679) classRelatedMethod(4217822,4217754) classRelatedMethod(4218499,4218460) classRelatedMethod(4219230,4219097) classRelatedMethod(4219191,4219097) classRelatedMethod(4219324,4219161) classRelatedMethod(4219230,4219161) classRelatedMethod(4219283,4219191) classRelatedMethod(4198624,4219191) classRelatedMethod(4198400,4219191) classRelatedMethod(4219363,4219230) classRelatedMethod(4229096,4219313) classRelatedMethod(4213179,4219313) classRelatedMethod(4200672,4219313) classRelatedMethod(4200288,4219313) classRelatedMethod(4200176,4219313) classRelatedMethod(4232131,4219363) classRelatedMethod(4219400,4219363) classRelatedMethod(4213150,4219363) classRelatedMethod(4213073,4219363) classRelatedMethod(4212996,4219363) classRelatedMethod(4200592,4219363) classRelatedMethod(4200064,4219363) classRelatedMethod(4219445,4219429) classRelatedMethod(4293056,4198448) classRelatedMethod(4293080,4199088) classRelatedMethod(4293068,4200176) classRelatedMethod(4293128,4200288) classRelatedMethod(4293140,4200672) classRelatedMethod(4293224,4201280) classRelatedMethod(4293296,4203696) classRelatedMethod(4293296,4203712) classRelatedMethod(4293296,4203760) classRelatedMethod(4293224,4209168) classRelatedMethod(4293224,4209296) classRelatedMethod(4293224,4209424) classRelatedMethod(4293224,4209552) classRelatedMethod(4293224,4209680) classRelatedMethod(4293224,4210160) classRelatedMethod(4293224,4210608) classRelatedMethod(4293224,4210928) classRelatedMethod(4293296,4211376) classRelatedMethod(4293296,4211424) classRelatedMethod(4293296,4211472) classRelatedMethod(4293408,4212567) classRelatedMethod(4293420,4212743) classRelatedMethod(4293420,4212810) classRelatedMethod(4293420,4212843) classRelatedMethod(4293420,4212882) classRelatedMethod(4293608,4213179) classRelatedMethod(4293596,4213179) classRelatedMethod(4293584,4213179) classRelatedMethod(4293636,4213256) classRelatedMethod(4293620,4213256) classRelatedMethod(4293644,4213395) classRelatedMethod(4293644,4213420) classRelatedMethod(4293644,4213466) classRelatedMethod(4293644,4213491) classRelatedMethod(4293644,4213537) classRelatedMethod(4293644,4213582) classRelatedMethod(4293644,4213627) classRelatedMethod(4293684,4213913) classRelatedMethod(4293684,4213921) classRelatedMethod(4293748,4213935) classRelatedMethod(4293684,4213935) classRelatedMethod(4293684,4213944) classRelatedMethod(4293684,4213949) classRelatedMethod(4293684,4213952) classRelatedMethod(4293748,4213991) classRelatedMethod(4293684,4213991) classRelatedMethod(4293748,4214192) classRelatedMethod(4293684,4214192) classRelatedMethod(4293684,4214395) classRelatedMethod(4293684,4214435) classRelatedMethod(4293628,4214475) classRelatedMethod(4293684,4214511) classRelatedMethod(4293812,4215076) classRelatedMethod(4293812,4215079) classRelatedMethod(4293748,4215177) classRelatedMethod(4293748,4215192) classRelatedMethod(4293748,4215207) classRelatedMethod(4293748,4215252) classRelatedMethod(4293812,4215366) classRelatedMethod(4293812,4215394) classRelatedMethod(4293812,4215414) classRelatedMethod(4293812,4215437) classRelatedMethod(4293748,4215471) classRelatedMethod(4293748,4215776) classRelatedMethod(4293748,4216073) classRelatedMethod(4293748,4216347) classRelatedMethod(4293748,4216964) classRelatedMethod(4293748,4217311) classRelatedMethod(4293748,4217495) classRelatedMethod(4293748,4217822) classRelatedMethod(4294328,4219084) classRelatedMethod(4293900,4219084) classRelatedMethod(4293868,4219084) classRelatedMethod(4293608,4219084) classRelatedMethod(4293596,4219084) classRelatedMethod(4293584,4219084) classRelatedMethod(4293140,4219084) classRelatedMethod(4293128,4219084) classRelatedMethod(4293068,4219084) classRelatedMethod(4293056,4219084) classRelatedMethod(4293900,4219324) classRelatedMethod(4293868,4219324) classRelatedMethod(4293912,4219445) classRelatedMethod(4294328,4229096) classRelatedMethod(4293684,4254121) classRelatedMethod(4293644,4213549) classRelatedMethod(4293644,4213594) classRelatedMethod(4293684,4213940) classRelatedMethod(4293684,4213929) classRelatedMethod(4314848,4323456) objectInObject(4294328,4293868,0) objectInObject(4293900,4293868,0) objectInObject(4293812,4293080,0) objectInObject(4293748,4293684,0) objectInObject(4293644,4293080,0) objectInObject(4293636,4293620,0) objectInObject(4293608,4293584,0) objectInObject(4293596,4293584,0) objectInObject(4293584,4293868,0) objectInObject(4293408,4293080,0) objectInObject(4293296,4293080,0) objectInObject(4293224,4293080,0) objectInObject(4293140,4293128,0) objectInObject(4293128,4293068,0) objectInObject(4293068,4293868,0) objectInObject(4293056,4293868,0)
+Optimization: -380 -902
+Lower bound: -420 -3453
+
+% Equivalence classes (799 classes, 833 entities):
+%   {4198400}
+%   {4198432}
+%   {4198448}
+%   {4198496}
+%   {4198528}
+%   {4198544}
+%   {4198560}
+%   {4198576}
+%   {4198592}
+%   {4198624}
+%   {4198656}
+%   {4198672}
+%   {4198704}
+%   {4198720}
+%   {4198784}
+%   {4198832}
+%   {4198896}
+%   {4198912}
+%   {4198928, 4201120, 4293080}
+%   {4198960}
+%   {4198992}
+%   {4199024}
+%   {4199088}
+%   {4199136}
+%   {4199168}
+%   {4199184}
+%   {4199200}
+%   {4199216}
+%   {4199232}
+%   {4199248}
+%   {4199264}
+%   {4199296}
+%   {4199344}
+%   {4199376}
+%   {4199392}
+%   {4199408}
+%   {4199424}
+%   {4199440}
+%   {4199456}
+%   {4199472}
+%   {4199488}
+%   {4199504}
+%   {4199536}
+%   {4199552}
+%   {4199568}
+%   {4199600}
+%   {4199616}
+%   {4199664}
+%   {4199696}
+%   {4199712}
+%   {4199728}
+%   {4199760}
+%   {4199776}
+%   {4199792}
+%   {4199856}
+%   {4199904}
+%   {4199968}
+%   {4200000}
+%   {4200064, 4293056}
+%   {4200096}
+%   {4200128}
+%   {4200176}
+%   {4200224}
+%   {4200240, 4293128}
+%   {4200288}
+%   {4200336}
+%   {4200384}
+%   {4200400}
+%   {4200592, 4293068}
+%   {4200624}
+%   {4200672}
+%   {4200720, 4293140}
+%   {4200752}
+%   {4200768}
+%   {4200784}
+%   {4200800}
+%   {4200832}
+%   {4200912}
+%   {4200960}
+%   {4201056}
+%   {4201088}
+%   {4201168}
+%   {4201200}
+%   {4201216}
+%   {4201232}
+%   {4201248}
+%   {4201264}
+%   {4201280}
+%   {4201328}
+%   {4201344}
+%   {4201472}
+%   {4201616}
+%   {4201632}
+%   {4201696}
+%   {4201712}
+%   {4201728}
+%   {4201776}
+%   {4201792}
+%   {4201808}
+%   {4201872}
+%   {4201952}
+%   {4201984}
+%   {4202316}
+%   {4202336}
+%   {4202496}
+%   {4202624}
+%   {4202672}
+%   {4202752}
+%   {4202832}
+%   {4202896}
+%   {4202992}
+%   {4203152}
+%   {4203398}
+%   {4203424}
+%   {4203584, 4293296}
+%   {4203696}
+%   {4203712}
+%   {4203728}
+%   {4203760}
+%   {4203808}
+%   {4203856}
+%   {4203872}
+%   {4203952}
+%   {4204096}
+%   {4204187}
+%   {4204208}
+%   {4204240}
+%   {4204272}
+%   {4204400}
+%   {4204432}
+%   {4204576}
+%   {4204784}
+%   {4204960}
+%   {4205056}
+%   {4205200}
+%   {4205344}
+%   {4205440}
+%   {4205600}
+%   {4206081}
+%   {4206113}
+%   {4206128}
+%   {4206336}
+%   {4206640}
+%   {4206896}
+%   {4207008}
+%   {4208336}
+%   {4208928}
+%   {4208960}
+%   {4208992}
+%   {4209120}
+%   {4209168}
+%   {4209296}
+%   {4209424}
+%   {4209552}
+%   {4209680}
+%   {4210160}
+%   {4210608}
+%   {4210704}
+%   {4210720}
+%   {4210784}
+%   {4210928}
+%   {4211376}
+%   {4211424}
+%   {4211472}
+%   {4211520}
+%   {4211568}
+%   {4211664}
+%   {4211708}
+%   {4211730}
+%   {4211779}
+%   {4211820}
+%   {4211860}
+%   {4211883}
+%   {4211904}
+%   {4211946}
+%   {4211979}
+%   {4212023}
+%   {4212029}
+%   {4212071}
+%   {4212167}
+%   {4212245}
+%   {4212272}
+%   {4212360}
+%   {4212437, 4293408}
+%   {4212500}
+%   {4212567}
+%   {4212600}
+%   {4212743}
+%   {4212777}
+%   {4212810, 4212843, 4212882, 4293420}
+%   {4212874}
+%   {4212878}
+%   {4212902}
+%   {4212908}
+%   {4212943}
+%   {4212991}
+%   {4212996, 4293584}
+%   {4213025}
+%   {4213073, 4293596}
+%   {4213102}
+%   {4213150, 4293608}
+%   {4213179}
+%   {4213212}
+%   {4213223}
+%   {4213228}
+%   {4213256}
+%   {4213297}
+%   {4213313, 4293644}
+%   {4213366}
+%   {4213395}
+%   {4213420}
+%   {4213466}
+%   {4213491}
+%   {4213537}
+%   {4213549}
+%   {4213582}
+%   {4213594}
+%   {4213627}
+%   {4213672}
+%   {4213754}
+%   {4213785}
+%   {4213870}
+%   {4213913, 4213921, 4213929, 4213935, 4213940, 4213944, 4213949, 4213952, 4213991, 4214192, 4214395, 4214435, 4214511, 4254121, 4293684}
+%   {4214475}
+%   {4214544}
+%   {4214577}
+%   {4214643}
+%   {4214765}
+%   {4214841}
+%   {4214919}
+%   {4215076}
+%   {4215079}
+%   {4215083}
+%   {4215115}
+%   {4215145}
+%   {4215177}
+%   {4215192}
+%   {4215207}
+%   {4215252}
+%   {4215314}
+%   {4215366}
+%   {4215394}
+%   {4215414}
+%   {4215437}
+%   {4215471}
+%   {4215604}
+%   {4215649}
+%   {4215776}
+%   {4215852}
+%   {4215916}
+%   {4216073}
+%   {4216103}
+%   {4216178}
+%   {4216257}
+%   {4216347}
+%   {4216716}
+%   {4216964}
+%   {4217311}
+%   {4217495}
+%   {4217679}
+%   {4217754}
+%   {4217822}
+%   {4217855}
+%   {4217919}
+%   {4217938}
+%   {4217954}
+%   {4217970}
+%   {4217986}
+%   {4218002}
+%   {4218052}
+%   {4218085}
+%   {4218095}
+%   {4218364}
+%   {4218460}
+%   {4218499}
+%   {4218567}
+%   {4218652}
+%   {4218714}
+%   {4218988}
+%   {4219014}
+%   {4219037}
+%   {4219046}
+%   {4219055}
+%   {4219084}
+%   {4219097}
+%   {4219161}
+%   {4219191}
+%   {4219230}
+%   {4219283, 4293900}
+%   {4219313}
+%   {4219324}
+%   {4219363, 4219400, 4293868}
+%   {4219429}
+%   {4219445, 4293912}
+%   {4219478}
+%   {4219510}
+%   {4221281}
+%   {4221339}
+%   {4221467}
+%   {4221552}
+%   {4221674}
+%   {4221712}
+%   {4221723}
+%   {4221773}
+%   {4221780}
+%   {4221864}
+%   {4221918}
+%   {4221969}
+%   {4222184}
+%   {4222343}
+%   {4222458}
+%   {4222502}
+%   {4222541}
+%   {4222623}
+%   {4222719}
+%   {4222736}
+%   {4222912}
+%   {4222982}
+%   {4223065}
+%   {4223095}
+%   {4223191}
+%   {4223216}
+%   {4223610}
+%   {4223620}
+%   {4223686}
+%   {4223705}
+%   {4223724}
+%   {4223759}
+%   {4224694}
+%   {4224732}
+%   {4224770}
+%   {4224952}
+%   {4225001}
+%   {4225055}
+%   {4225061}
+%   {4225263}
+%   {4225278}
+%   {4225316}
+%   {4225489}
+%   {4225501}
+%   {4225510}
+%   {4225575}
+%   {4225862}
+%   {4225969}
+%   {4226326}
+%   {4226871}
+%   {4227697}
+%   {4228237}
+%   {4228543}
+%   {4228555}
+%   {4228564}
+%   {4228580}
+%   {4228609}
+%   {4228757}
+%   {4228800}
+%   {4228939}
+%   {4228979}
+%   {4229096}
+%   {4229135}
+%   {4229230}
+%   {4229309}
+%   {4229503}
+%   {4229529}
+%   {4229598}
+%   {4229674}
+%   {4229683}
+%   {4229724}
+%   {4229741}
+%   {4229859}
+%   {4229932}
+%   {4230226}
+%   {4230344}
+%   {4230727}
+%   {4230860}
+%   {4230864}
+%   {4230873}
+%   {4230983}
+%   {4231246}
+%   {4232131, 4294328}
+%   {4232160}
+%   {4232390}
+%   {4232626}
+%   {4232634}
+%   {4232878}
+%   {4232886}
+%   {4233113}
+%   {4233208}
+%   {4233218}
+%   {4233224}
+%   {4233401}
+%   {4233433}
+%   {4233498}
+%   {4233548}
+%   {4233608}
+%   {4233655}
+%   {4233759}
+%   {4233831}
+%   {4233993}
+%   {4234040}
+%   {4234049}
+%   {4234122}
+%   {4234132}
+%   {4234141}
+%   {4234377}
+%   {4234387}
+%   {4234504}
+%   {4234847}
+%   {4234959}
+%   {4234969}
+%   {4235060}
+%   {4235216}
+%   {4235333}
+%   {4235343}
+%   {4235402}
+%   {4235511}
+%   {4235619}
+%   {4235627}
+%   {4235813}
+%   {4235855}
+%   {4235924}
+%   {4236000}
+%   {4236078}
+%   {4236119}
+%   {4236170}
+%   {4236203}
+%   {4236235}
+%   {4236370}
+%   {4236857}
+%   {4236927}
+%   {4237008}
+%   {4237054}
+%   {4237135}
+%   {4237181}
+%   {4237262}
+%   {4237308}
+%   {4237403}
+%   {4237506}
+%   {4237520}
+%   {4237915}
+%   {4237931}
+%   {4237961}
+%   {4237976}
+%   {4238202}
+%   {4238345}
+%   {4238498}
+%   {4238829}
+%   {4238906}
+%   {4239015}
+%   {4239027}
+%   {4239036}
+%   {4239045}
+%   {4239097}
+%   {4239158}
+%   {4239320}
+%   {4239329}
+%   {4239338}
+%   {4239459}
+%   {4239485}
+%   {4239767}
+%   {4239779}
+%   {4239788}
+%   {4240167}
+%   {4240224}
+%   {4240243}
+%   {4240299}
+%   {4240320}
+%   {4240396}
+%   {4240658}
+%   {4240673}
+%   {4240970}
+%   {4241007}
+%   {4241052}
+%   {4241068}
+%   {4241424}
+%   {4241626}
+%   {4241745}
+%   {4241861}
+%   {4242019}
+%   {4242085}
+%   {4242111}
+%   {4242142}
+%   {4242161}
+%   {4242180}
+%   {4242533}
+%   {4242732}
+%   {4242764}
+%   {4243650}
+%   {4243909}
+%   {4244102}
+%   {4244339}
+%   {4244475}
+%   {4244510}
+%   {4244545}
+%   {4244585}
+%   {4244651}
+%   {4244665}
+%   {4244708}
+%   {4244732}
+%   {4244741}
+%   {4244750}
+%   {4244801}
+%   {4244837}
+%   {4244988}
+%   {4245287}
+%   {4245308}
+%   {4245330}
+%   {4245352}
+%   {4245367}
+%   {4245382}
+%   {4245412}
+%   {4245450}
+%   {4245881}
+%   {4245938}
+%   {4246268}
+%   {4246488}
+%   {4246898}
+%   {4247085}
+%   {4247236}
+%   {4247817}
+%   {4247855}
+%   {4248000}
+%   {4248399}
+%   {4248554}
+%   {4248785}
+%   {4248849}
+%   {4249277}
+%   {4249292}
+%   {4249343}
+%   {4251390}
+%   {4252277}
+%   {4252402}
+%   {4252507}
+%   {4253003}
+%   {4253257}
+%   {4254124}
+%   {4254285}
+%   {4254308}
+%   {4254493}
+%   {4254502}
+%   {4254600}
+%   {4254700}
+%   {4255100}
+%   {4255255}
+%   {4255264}
+%   {4255388}
+%   {4255877}
+%   {4256230}
+%   {4256239}
+%   {4256278}
+%   {4256287}
+%   {4256317}
+%   {4256426}
+%   {4256607}
+%   {4256705}
+%   {4256837}
+%   {4256874}
+%   {4256923}
+%   {4256950}
+%   {4257117}
+%   {4257208}
+%   {4257673}
+%   {4257865}
+%   {4257968}
+%   {4258028}
+%   {4258528}
+%   {4263988}
+%   {4264192}
+%   {4264256}
+%   {4264262}
+%   {4264268}
+%   {4264286}
+%   {4264576}
+%   {4264614}
+%   {4264687}
+%   {4264729}
+%   {4264834}
+%   {4264843}
+%   {4266632}
+%   {4266836}
+%   {4266844}
+%   {4267053}
+%   {4267061}
+%   {4267110}
+%   {4267952}
+%   {4268051}
+%   {4268061}
+%   {4268194}
+%   {4268418}
+%   {4268428}
+%   {4268584}
+%   {4268772}
+%   {4268784}
+%   {4268933}
+%   {4269063}
+%   {4269236}
+%   {4269266}
+%   {4269321}
+%   {4269334}
+%   {4269693}
+%   {4269760}
+%   {4269782}
+%   {4269804}
+%   {4270000}
+%   {4270144}
+%   {4270214}
+%   {4270242}
+%   {4270265}
+%   {4270290}
+%   {4270315}
+%   {4270352}
+%   {4270384}
+%   {4270453}
+%   {4270585}
+%   {4270620}
+%   {4270663}
+%   {4270671}
+%   {4270757}
+%   {4270779}
+%   {4271120}
+%   {4271149}
+%   {4271205}
+%   {4271224}
+%   {4271275}
+%   {4271352}
+%   {4274384}
+%   {4274429}
+%   {4274706}
+%   {4274750}
+%   {4274918}
+%   {4275086}
+%   {4275265}
+%   {4275444}
+%   {4275600}
+%   {4275855}
+%   {4275864}
+%   {4275959}
+%   {4275984}
+%   {4276048}
+%   {4276128}
+%   {4276316}
+%   {4276680}
+%   {4276797}
+%   {4277002}
+%   {4277029}
+%   {4277128}
+%   {4277191}
+%   {4277274}
+%   {4277298}
+%   {4277516}
+%   {4277574}
+%   {4277631}
+%   {4277823}
+%   {4277894}
+%   {4277916}
+%   {4278142}
+%   {4278225}
+%   {4279688}
+%   {4279926}
+%   {4279934}
+%   {4280000}
+%   {4280278}
+%   {4280347}
+%   {4280481}
+%   {4280586}
+%   {4280736}
+%   {4280745}
+%   {4280784}
+%   {4281339}
+%   {4281382}
+%   {4282743}
+%   {4284104}
+%   {4285860}
+%   {4288298}
+%   {4288458}
+%   {4289248}
+%   {4289345}
+%   {4289376}
+%   {4289399}
+%   {4289883}
+%   {4290000}
+%   {4290052}
+%   {4290064}
+%   {4290096}
+%   {4290104}
+%   {4290115}
+%   {4290126}
+%   {4290137}
+%   {4290148}
+%   {4290176}
+%   {4290184}
+%   {4290195}
+%   {4290206}
+%   {4290217}
+%   {4290228}
+%   {4290256}
+%   {4290288}
+%   {4290299}
+%   {4290336}
+%   {4290344}
+%   {4290384}
+%   {4290392}
+%   {4290432}
+%   {4290464}
+%   {4290472}
+%   {4290512}
+%   {4290523}
+%   {4290548}
+%   {4290576}
+%   {4290584}
+%   {4290624}
+%   {4290632}
+%   {4290672}
+%   {4290680}
+%   {4290688}
+%   {4290720}
+%   {4290728}
+%   {4290768}
+%   {4290779}
+%   {4290787}
+%   {4290795}
+%   {4290848}
+%   {4290856}
+%   {4290864}
+%   {4290912}
+%   {4290920}
+%   {4290960}
+%   {4290968}
+%   {4290976}
+%   {4290984}
+%   {4290992}
+%   {4291029}
+%   {4291037}
+%   {4291064}
+%   {4291072}
+%   {4291083}
+%   {4291110}
+%   {4291121}
+%   {4291148}
+%   {4291156}
+%   {4291183}
+%   {4291193}
+%   {4291220}
+%   {4291228}
+%   {4291255}
+%   {4291283}
+%   {4291310}
+%   {4291318}
+%   {4291355}
+%   {4291363}
+%   {4291400}
+%   {4291408}
+%   {4291435}
+%   {4291472}
+%   {4291488}
+%   {4291501}
+%   {4291523}
+%   {4291535}
+%   {4291547}
+%   {4291559}
+%   {4291571}
+%   {4291583}
+%   {4291605}
+%   {4291663}
+%   {4291694}
+%   {4291704}
+%   {4291726}
+%   {4291738}
+%   {4291748}
+%   {4291758}
+%   {4291768}
+%   {4291779}
+%   {4291790}
+%   {4291801}
+%   {4291811}
+%   {4291821}
+%   {4291831}
+%   {4291841}
+%   {4291851}
+%   {4293224}
+%   {4293620}
+%   {4293628}
+%   {4293636}
+%   {4293748}
+%   {4293812}
+%   {4305468}
+%   {4305544}
+%   {4305696}
+%   {4306388}
+%   {4306468}
+%   {4306604}
+%   {4306760}
+%   {4306988}
+%   {4307008}
+%   {4307088}
+%   {4307160}
+%   {4307292}
+%   {4307468}
+%   {4314848}
+%   {4323456}
+21:57:43 Writing results to examples/ooa/ooex_vs2010/Lite/ooex7.results
+
+% Stats:
+%   atoms: 85380.0
+%   bodies: 89584.0
+%   rules: 141988.0
+%   variables: 87927.0
+%   constraints: 26387.0
+%   choices: 188860611.0
+%   conflicts: 26518.0
+%   models: 16.0
+%   optimal_models: 0.0
+%   final_cost: [-380.0, -902.0]
+%   lower_bound: [-420.0, -3453.0]
+%   total_time: 302.0365700721741
+%   ground_time: 0.38812507735565305
+%   time_to_first_model: 8.390787072014064
+%   max_rss_bytes: 170590208
+%   solve_time: 299.69011998176575

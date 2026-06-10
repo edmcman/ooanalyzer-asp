@@ -1,57 +1,94 @@
-21:13:23 Grounding...
-21:13:23 Grounding done (0.02s)
-21:13:23 Solving...
-21:13:23 Model found (0.03s): [-4, -148]
-21:13:23 Model found (0.04s, +0.00s): [-4, -279]
-21:13:23 Model found (0.04s, +0.00s): [-4, -280]
-21:13:23 Model found (0.04s, +0.00s): [-4, -281]
-21:13:23 Model found (0.04s, +0.00s): [-4, -282]
-21:13:23 Model found (0.05s, +0.00s): [-4, -283]
-21:13:23 Model found (0.05s, +0.00s): [-4, -284]
-21:13:23 Model found (0.05s, +0.00s): [-4, -285]
-21:13:23 Model found (0.05s, +0.00s): [-4, -286]
-21:13:23 Model found (0.06s, +0.00s): [-4, -287]
-21:13:23 Model found (0.06s, +0.00s): [-4, -288]
-21:13:23 Model found (0.06s, +0.00s): [-4, -289]
-21:13:23 Model found (0.06s, +0.00s): [-4, -290]
-21:13:23 Model found (0.07s, +0.00s): [-4, -291]
-21:13:23 Model found (0.07s, +0.01s): [-4, -292]
-21:13:23 Model found (0.08s, +0.01s): [-4, -293]
-21:13:23 Model found (0.08s, +0.00s): [-4, -294]
-21:13:23 Model found (0.09s, +0.00s): [-4, -295]
-21:13:23 Model found (0.09s, +0.00s): [-4, -296]
-21:13:23 Model found (0.09s, +0.00s): [-4, -297]
-21:13:23 Model found (0.10s, +0.00s): [-4, -298]
-21:13:23 Model found (0.10s, +0.00s): [-4, -299]
-21:13:23 Model found (0.10s, +0.00s): [-4, -300]
-21:13:23 Model found (0.11s, +0.00s): [-4, -301]
-21:13:23 Model found (0.11s, +0.00s): [-4, -302]
-21:13:23 Model found (0.11s, +0.00s): [-4, -303]
-21:13:23 Model found (0.12s, +0.01s): [-4, -304]
-21:13:23 Model found (0.12s, +0.00s): [-4, -305]
-21:13:23 Model found (0.13s, +0.01s): [-4, -306]
-21:13:23 Model found (0.14s, +0.01s): [-4, -307]
-21:13:23 Model found (0.15s, +0.01s): [-4, -308]
-21:13:23 Model found (0.15s, +0.01s): [-4, -309]
-21:13:23 Model found (0.16s, +0.01s): [-4, -310]
-21:13:23 Model found (0.17s, +0.01s): [-4, -311]
-21:13:23 Model found (0.18s, +0.01s): [-4, -312]
-21:13:23 Model found (0.20s, +0.02s): [-4, -376]
-21:13:23 Model found (0.21s, +0.01s): [-4, -377]
-21:13:23 Model found (0.21s, +0.00s): [-4, -379]
-21:13:23 Model found (0.22s, +0.01s): [-4, -380]
-21:13:23 Model found (0.23s, +0.01s): [-4, -389]
-21:13:23 Model found (0.25s, +0.02s): [-4, -392]
-21:13:23 Model found (0.28s, +0.02s): [-4, -395]
-21:13:23 Solving done: OPTIMUM FOUND (0.26s)
-% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/x3c/SimpleApp.exe.results
+21:52:41 Grounding...
+21:52:41 Grounding done (0.02s)
+21:52:41 Solving...
+21:52:41 Model found (0.04s): [-4, -286]
+21:52:41 Model found (0.04s, +0.00s): [-4, -289]
+21:52:41 Model found (0.04s, +0.00s): [-4, -299]
+21:52:41 Model found (0.05s, +0.01s): [-4, -302]
+21:52:41 Model found (0.06s, +0.01s): [-4, -303]
+21:52:41 Model found (0.06s, +0.01s): [-4, -305]
+21:52:41 Model found (0.08s, +0.01s): [-4, -306]
+21:52:41 Model found (0.08s, +0.01s): [-4, -308]
+21:52:41 Model found (0.10s, +0.01s): [-4, -309]
+21:52:41 Model found (0.10s, +0.01s): [-4, -310]
+21:52:41 Model found (0.11s, +0.01s): [-4, -311]
+21:52:41 Model found (0.13s, +0.01s): [-4, -312]
+21:52:41 Model found (0.13s, +0.01s): [-4, -314]
+21:52:41 Model found (0.16s, +0.02s): [-4, -315]
+21:52:41 Model found (0.17s, +0.01s): [-4, -317]
+21:52:41 Model found (0.18s, +0.02s): [-4, -318]
+21:52:41 Model found (0.25s, +0.07s): [-4, -320]
+21:52:41 Model found (0.26s, +0.01s): [-4, -321]
+21:52:41 Model found (0.26s, +0.01s): [-4, -323]
+21:52:41 Model found (0.27s, +0.01s): [-4, -324]
+21:52:41 Model found (0.28s, +0.01s): [-4, -325]
+21:52:41 Model found (0.29s, +0.01s): [-4, -326]
+21:52:41 Model found (0.29s, +0.00s): [-4, -327]
+21:52:41 Model found (0.30s, +0.01s): [-4, -328]
+21:52:41 Model found (0.32s, +0.03s): [-4, -329]
+21:52:41 Model found (0.33s, +0.01s): [-4, -330]
+21:52:41 Model found (0.34s, +0.01s): [-4, -331]
+21:52:41 Model found (0.34s, +0.01s): [-4, -332]
+21:52:41 Model found (0.35s, +0.00s): [-4, -333]
+21:52:41 Model found (0.36s, +0.01s): [-4, -334]
+21:52:41 Model found (0.38s, +0.02s): [-4, -335]
+21:52:41 Model found (0.38s, +0.01s): [-4, -336]
+21:52:41 Model found (0.40s, +0.01s): [-4, -337]
+21:52:41 Model found (0.41s, +0.02s): [-4, -338]
+21:52:41 Model found (0.42s, +0.00s): [-4, -339]
+21:52:41 Model found (0.50s, +0.08s): [-4, -340]
+21:52:41 Model found (0.51s, +0.01s): [-4, -341]
+21:52:41 Model found (0.51s, +0.00s): [-4, -342]
+21:52:41 Model found (0.54s, +0.03s): [-4, -343]
+21:52:42 Model found (0.56s, +0.02s): [-4, -344]
+21:52:42 Model found (0.57s, +0.01s): [-4, -345]
+21:52:42 Model found (0.58s, +0.01s): [-4, -346]
+21:52:42 Model found (0.59s, +0.01s): [-4, -347]
+21:52:42 Model found (0.59s, +0.01s): [-4, -348]
+21:52:42 Model found (0.79s, +0.19s): [-4, -349]
+21:52:42 Model found (0.79s, +0.01s): [-4, -350]
+21:52:42 Model found (0.81s, +0.02s): [-4, -351]
+21:52:42 Model found (0.82s, +0.01s): [-4, -352]
+21:52:42 Model found (0.83s, +0.01s): [-4, -353]
+21:52:42 Model found (0.84s, +0.01s): [-4, -354]
+21:52:42 Model found (0.84s, +0.01s): [-4, -355]
+21:52:42 Model found (0.85s, +0.00s): [-4, -356]
+21:52:42 Model found (0.86s, +0.01s): [-4, -357]
+21:52:42 Model found (0.86s, +0.00s): [-4, -358]
+21:52:42 Model found (0.87s, +0.01s): [-4, -359]
+21:52:42 Model found (0.88s, +0.01s): [-4, -360]
+21:52:42 Model found (0.91s, +0.03s): [-4, -361]
+21:52:42 Model found (0.92s, +0.00s): [-4, -362]
+21:52:42 Model found (0.92s, +0.01s): [-4, -363]
+21:52:42 Model found (0.93s, +0.01s): [-4, -364]
+21:52:42 Model found (0.94s, +0.01s): [-4, -365]
+21:52:42 Model found (0.94s, +0.01s): [-4, -366]
+21:52:42 Model found (0.95s, +0.00s): [-4, -367]
+21:52:42 Model found (0.95s, +0.01s): [-4, -368]
+21:52:42 Model found (0.96s, +0.00s): [-4, -369]
+21:52:42 Model found (0.96s, +0.01s): [-4, -370]
+21:52:42 Model found (0.98s, +0.01s): [-4, -371]
+21:52:42 Model found (0.98s, +0.01s): [-4, -372]
+21:52:42 Model found (1.02s, +0.04s): [-4, -373]
+21:52:42 Model found (1.05s, +0.03s): [-4, -374]
+21:52:42 Model found (1.06s, +0.01s): [-4, -375]
+21:52:42 Model found (1.06s, +0.01s): [-4, -376]
+21:52:42 Model found (1.12s, +0.06s): [-4, -377]
+21:52:42 Model found (1.13s, +0.01s): [-4, -378]
+21:52:42 Model found (1.13s, +0.01s): [-4, -380]
+21:52:42 Model found (1.14s, +0.01s): [-4, -381]
+21:52:42 Model found (1.15s, +0.01s): [-4, -383]
+21:52:42 Model found (1.18s, +0.03s): [-4, -386]
+21:52:42 Model found (1.27s, +0.09s): [-4, -395]
+21:52:42 Solving done: OPTIMUM FOUND (1.26s)
+% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/x3c/SimpleApp.exe.results
 OPTIMUM FOUND
 
-Answer: 42
+Answer: 79
 Optimization: -4 -395
 
 % Equivalence classes (257 classes, 282 entities):
-21:13:23 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+21:52:42 Writing results to examples/ooa/x3c/SimpleApp.exe.results
 
 % Stats:
 %   atoms: 8355.0
@@ -59,17 +96,17 @@ Optimization: -4 -395
 %   rules: 9038.0
 %   variables: 1829.0
 %   constraints: 113.0
-%   choices: 12915.0
-%   conflicts: 203.0
-%   models: 42.0
+%   choices: 17510.0
+%   conflicts: 3217.0
+%   models: 79.0
 %   optimal_models: 1.0
 %   final_cost: [-4.0, -395.0]
 %   lower_bound: [-4.0, -395.0]
-%   total_time: 0.2910349369049072
-%   ground_time: 0.019783752039074898
-%   time_to_first_model: 0.03411916038021445
-%   max_rss_bytes: 29884416
-%   solve_time: 0.24727392196655273
+%   total_time: 1.289038896560669
+%   ground_time: 0.020210639107972383
+%   time_to_first_model: 0.03507161792367697
+%   max_rss_bytes: 29097984
+%   solve_time: 1.2443339824676514
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)

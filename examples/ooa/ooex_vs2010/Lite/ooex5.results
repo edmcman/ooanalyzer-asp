@@ -1,8 +1,8 @@
-finalClass(0x406140, 0x406140, 0, 0, 0x401060, [0x401000, 0x401020, 0x401040, 0x401060, 0x401080, 0x4010a0, 0x4010c0, 0x401110, 0x401120]).
-finalClass(0x406150, 0, 0, 0, 0, []).
+finalClass(0x406140, 0, 0, 0, 0, []).
+finalClass(0x406150, 0x406150, 0, 0, 0x401000, [0x401000, 0x401020, 0x401040, 0x401060, 0x401080, 0x4010a0, 0x4010c0, 0x401110, 0x401120]).
 finalClass(0x406160, 0, 0, 0, 0, []).
 finalClass(0x406180, 0x406180, 0, 0, 0, [0x401176, 0x401186]).
-finalClass(0x406188, 0x406188, 0, 0, 0x4011fd, [0x4011fd, 0x401208, 0x40122f]).
+finalClass(0x406188, 0x406188, 0, 0, 0, [0x4011fd, 0x401208, 0x40122f]).
 finalClass(0x406bdc, 0x406bdc, 0, 0, 0x401d34, [0x401c77, 0x401c94, 0x401ca1, 0x401ce1, 0x401cff, 0x401d34, 0x401d3f, 0x401d66]).
 finalDemangledName(0x406140, '.?AVBase@@', 'Base', '').
 finalDemangledName(0x406150, '.?AVBase2@@', 'Base2', '').
@@ -14,10 +14,10 @@ finalFileInfo('ADDAB4C01E3D6D5FF635E10408B125C7', 'ooex5.exe').
 finalInheritance(0x406160, 0x406140, 0, 0, false).
 finalInheritance(0x406160, 0x406150, 0x10, 0, false).
 finalInheritance(0x406188, 0x406bdc, 0, 0x406188, false).
-finalMethodProperty(0x401000, constructor, certain).
+finalMethodProperty(0x401000, realDestructor, certain).
 finalMethodProperty(0x401020, virtual, certain).
 finalMethodProperty(0x401040, virtual, certain).
-finalMethodProperty(0x401060, realDestructor, certain).
+finalMethodProperty(0x401060, constructor, certain).
 finalMethodProperty(0x401080, virtual, certain).
 finalMethodProperty(0x4010a0, virtual, certain).
 finalMethodProperty(0x4010c0, realDestructor, certain).
@@ -26,7 +26,7 @@ finalMethodProperty(0x401120, virtual, certain).
 finalMethodProperty(0x401176, constructor, certain).
 finalMethodProperty(0x401186, deletingDestructor, certain).
 finalMethodProperty(0x401186, virtual, certain).
-finalMethodProperty(0x4011fd, realDestructor, certain).
+finalMethodProperty(0x4011fd, constructor, certain).
 finalMethodProperty(0x401208, deletingDestructor, certain).
 finalMethodProperty(0x401208, virtual, certain).
 finalMethodProperty(0x40122f, constructor, certain).

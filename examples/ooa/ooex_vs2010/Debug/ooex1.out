@@ -1,16 +1,20 @@
-09:47:05 Grounding...
-09:47:05 Grounding done (0.02s)
-09:47:05 Solving...
-09:47:05 Model found (0.03s): [-206]
-09:47:05 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic vsids --sign-def=neg --time-limit=300 -t2 --stats
+21:52:41 Grounding...
+21:52:41 Grounding done (0.01s)
+21:52:41 Solving...
+21:52:41 Model found (0.02s): [-206]
+21:52:41 Model found (0.02s, +0.00s): [-207]
+21:52:41 Model found (0.02s, +0.00s): [-208]
+21:52:41 Model found (0.02s, +0.00s): [-209]
+21:52:41 Model found (0.03s, +0.00s): [-210]
+21:52:41 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Debug/ooex1.results
 OPTIMUM FOUND
 
-Answer: 1
-guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) method(4263941) method(4263946) method(4263951) method(4263956) method(4263961) method(4263966) method(4263971) method(4263976) method(4263981) method(4263986) method(4263991) method(4263996) method(4264001) method(4264006) method(4264011) method(4264016) method(4264021) method(4264026) method(4264031) method(4264036) method(4264041) method(4264046) method(4264051) method(4264056) method(4264061) method(4264066) method(4264071) method(4264076) method(4264086) method(4264091) method(4264096) method(4264101) method(4264106) method(4264111) method(4264116) method(4264121) method(4264126) method(4264131) method(4264136) method(4264141) method(4264146) method(4264151) method(4264156) method(4264161) method(4264166) method(4264171) method(4264176) method(4264181) method(4264186) method(4264191) method(4264196) method(4264201) method(4264206) method(4264211) method(4264216) method(4264221) method(4264226) method(4264231) method(4264236) method(4264241) method(4264246) method(4264251) method(4264256) method(4264261) method(4264266) method(4264271) method(4264276) method(4264281) method(4264286) method(4264291) method(4264296) method(4264301) method(4264306) method(4264311) method(4264316) method(4264321) method(4264326) method(4264331) method(4264336) method(4264341) method(4264346) method(4264351) method(4264356) method(4264361) method(4264366) method(4264371) method(4264376) method(4264381) method(4264386) method(4264391) method(4264396) method(4264401) method(4264406) method(4264411) method(4264416) method(4264421) method(4264912) method(4265296) method(4265376) method(4265456) method(4265776) method(4265888) method(4265980) method(4265986) method(4265992) method(4266000) method(4266080) method(4266208) method(4266272) method(4266544) method(4266608) method(4266632) method(4266640) method(4266816) method(4266928) method(4266960) method(4267728) method(4267744) method(4268240) method(4268352) method(4269024) method(4269200) method(4269408) method(4269728) method(4270112) method(4270256) method(4270560) method(4270576) method(4270656) method(4270704) method(4270752) method(4270768) method(4270774) method(4270784) method(4270912) method(4270938) method(4270944) method(4271024) method(4271074) method(4271088) method(4271104) method(4271120) method(4271168) method(4271216) method(4271427) method(4271520) method(4271556) method(4271562) method(4271568) method(4271584) method(4271864) method(4271870) method(4271876) method(4271882) method(4271888) method(4271904) method(4272032) method(4272192) method(4272534) method(4272540) method(4272546) method(4272560) method(4272612) method(4272624) method(4273504) method(4274118) method(4274124) method(4274130) method(4274136) method(4274142) method(4274148) method(4274154) method(4274160) method(4274166) method(4274172) method(4274178) method(4274184) method(4274190) method(4274196) method(4274202) method(4274208) method(4274214) method(4274220) method(4274226) method(4274232) method(4274238) method(4274244) method(4274250) method(4274256) method(4274262) method(4274268) method(4274274) method(4274280) method(4274286) method(4274292) method(4274298) method(4274304) method(4274310) method(4274316) method(4274322) method(4278270) method(4278334) method(4266032) method(4267888) method(4278256) method(4278320)
-Optimization: -206
+Answer: 5
+guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) guessEnabled(merge) method(4263941) method(4263946) method(4263951) method(4263956) method(4263961) method(4263966) method(4263971) method(4263976) method(4263981) method(4263986) method(4263991) method(4263996) method(4264001) method(4264006) method(4264011) method(4264016) method(4264021) method(4264026) method(4264031) method(4264036) method(4264041) method(4264046) method(4264051) method(4264056) method(4264061) method(4264066) method(4264071) method(4264076) method(4264086) method(4264091) method(4264096) method(4264101) method(4264106) method(4264111) method(4264116) method(4264121) method(4264126) method(4264131) method(4264136) method(4264141) method(4264146) method(4264151) method(4264156) method(4264161) method(4264166) method(4264171) method(4264176) method(4264181) method(4264186) method(4264191) method(4264196) method(4264201) method(4264206) method(4264211) method(4264216) method(4264221) method(4264226) method(4264231) method(4264236) method(4264241) method(4264246) method(4264251) method(4264256) method(4264261) method(4264266) method(4264271) method(4264276) method(4264281) method(4264286) method(4264291) method(4264296) method(4264301) method(4264306) method(4264311) method(4264316) method(4264321) method(4264326) method(4264331) method(4264336) method(4264341) method(4264346) method(4264351) method(4264356) method(4264361) method(4264366) method(4264371) method(4264376) method(4264381) method(4264386) method(4264391) method(4264396) method(4264401) method(4264406) method(4264411) method(4264416) method(4264421) method(4264912) method(4265296) method(4265376) method(4265456) method(4265776) method(4265888) method(4265980) method(4265986) method(4265992) method(4266000) method(4266080) method(4266208) method(4266272) method(4266544) method(4266608) method(4266632) method(4266640) method(4266816) method(4266928) method(4266960) method(4267728) method(4267744) method(4268240) method(4268352) method(4269024) method(4269200) method(4269408) method(4269728) method(4270112) method(4270256) method(4270560) method(4270576) method(4270656) method(4270704) method(4270752) method(4270768) method(4270774) method(4270784) method(4270912) method(4270938) method(4270944) method(4271024) method(4271074) method(4271088) method(4271104) method(4271120) method(4271168) method(4271216) method(4271427) method(4271520) method(4271556) method(4271562) method(4271568) method(4271584) method(4271864) method(4271870) method(4271876) method(4271882) method(4271888) method(4271904) method(4272032) method(4272192) method(4272534) method(4272540) method(4272546) method(4272560) method(4272612) method(4272624) method(4273504) method(4274118) method(4274124) method(4274130) method(4274136) method(4274142) method(4274148) method(4274154) method(4274160) method(4274166) method(4274172) method(4274178) method(4274184) method(4274190) method(4274196) method(4274202) method(4274208) method(4274214) method(4274220) method(4274226) method(4274232) method(4274238) method(4274244) method(4274250) method(4274256) method(4274262) method(4274268) method(4274274) method(4274280) method(4274286) method(4274292) method(4274298) method(4274304) method(4274310) method(4274316) method(4274322) method(4278270) method(4278334) method(4266032) method(4267888) method(4278256) method(4278320) vftableSizeTotal(0) mergeClasses(4265456,4265776) mergeClasses(4265456,4265888) mergeClasses(4265776,4265888) mergeClasses(4265296,4265376) classRelatedMethod(4265456,4265776) classRelatedMethod(4265456,4265888) classRelatedMethod(4265776,4265456) classRelatedMethod(4265776,4265888) classRelatedMethod(4265296,4265376) classRelatedMethod(4265376,4265296) classRelatedMethod(4265888,4265456) classRelatedMethod(4265888,4265776)
+Optimization: -210
 
-% Equivalence classes (206 classes, 206 entities):
+% Equivalence classes (203 classes, 206 entities):
 %   {4263941}
 %   {4263946}
 %   {4263951}
@@ -108,11 +112,8 @@ Optimization: -206
 %   {4264416}
 %   {4264421}
 %   {4264912}
-%   {4265296}
-%   {4265376}
-%   {4265456}
-%   {4265776}
-%   {4265888}
+%   {4265296, 4265376}
+%   {4265456, 4265776, 4265888}
 %   {4265980}
 %   {4265986}
 %   {4265992}
@@ -217,21 +218,22 @@ Optimization: -206
 %   {4278270}
 %   {4278320}
 %   {4278334}
+21:52:41 Writing results to examples/ooa/ooex_vs2010/Debug/ooex1.results
 
 % Stats:
-%   atoms: 4930.0
-%   bodies: 828.0
-%   rules: 5345.0
-%   variables: 619.0
+%   atoms: 4987.0
+%   bodies: 884.0
+%   rules: 5412.0
+%   variables: 647.0
 %   constraints: 0.0
-%   choices: 414.0
-%   conflicts: 0.0
-%   models: 1.0
+%   choices: 1653.0
+%   conflicts: 6.0
+%   models: 5.0
 %   optimal_models: 1.0
-%   final_cost: [-206.0]
-%   lower_bound: [-206.0]
-%   total_time: 0.05344891548156738
-%   ground_time: 0.023044458008371294
-%   time_to_first_model: 0.027865042007761076
-%   max_rss_bytes: 30932992
-%   solve_time: 0.003896951675415039
+%   final_cost: [-210.0]
+%   lower_bound: [-210.0]
+%   total_time: 0.03618192672729492
+%   ground_time: 0.01357104629278183
+%   time_to_first_model: 0.017044179141521454
+%   max_rss_bytes: 26738688
+%   solve_time: 0.011298894882202148

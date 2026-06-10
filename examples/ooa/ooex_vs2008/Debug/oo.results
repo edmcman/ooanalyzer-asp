@@ -1,15 +1,11 @@
-finalClass(0x411970, 0, 0, 0, 0, [0x411970, 0x4119f0]).
-finalClass(0x412190, 0, 0, 0, 0, [0x412190, 0x412400]).
-finalClass(0x4122f0, 0, 0, 0, 0, [0x4122f0, 0x4124c0]).
-finalClass(0x417860, 0x417860, 0, 0, 0, [0x411a70, 0x411ac0]).
-finalClass(0x41787c, 0x41787c, 0, 0, 0x411860, [0x411860, 0x4118f0, 0x411b40, 0x411b90]).
+finalClass(0x417824, 0x417824, 0, 0, 0x411b40, [0x411860, 0x411970, 0x4119f0, 0x411b40]).
+finalClass(0x417860, 0x417860, 0, 0, 0, [0x4117e0, 0x411a70, 0x411ac0, 0x412190, 0x4122f0, 0x4123c0, 0x412400, 0x4124c0]).
+finalClass(0x41787c, 0, 0, 0, 0, [0x411b90, 0x41b308, 0x41b30c, 0x41b31c, 0x41b320, 0x41b334, 0x41b338, 0x41b33c, 0x41b340]).
 finalClass(0x41789c, 0x41789c, 0, 0, 0, [0x412800, 0x412830, 0x41b3a8]).
 finalClass(0x41b2f8, 0, 0, 0, 0, [0x41b2f8, 0x41b2fc, 0x41b324, 0x41b330]).
 finalClass(0x41b304, 0, 0, 0, 0, [0x41b304, 0x41b310, 0x41b348]).
-finalClass(0x41b308, 0, 0, 0, 0, [0x41b308, 0x41b320, 0x41b33c, 0x41b340]).
-finalClass(0x41b30c, 0, 0, 0, 0, [0x41b30c, 0x41b31c, 0x41b334, 0x41b338]).
 finalClass(0x41b328, 0, 0, 0, 0, [0x41b328, 0x41b32c, 0x41b344]).
-finalDemangledName(0x411970, '.?AVCls3@@', 'Cls3', '').
+finalDemangledName(0x417824, '.?AVCls3@@', 'Cls3', '').
 finalDemangledName(0x417860, '.?AVCls1@@', 'Cls1', '').
 finalDemangledName(0x41787c, '.?AVCls2@@', 'Cls2', '').
 finalDemangledName(0x41789c, '.?AVtype_info@@', type_info, '').
@@ -33,15 +29,14 @@ finalDemangledName(0x41b344, '?length@?$char_traits@D@std@@SAIPBD@Z', 'std::char
 finalDemangledName(0x41b348, '?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ', 'std::basic_ostream<char, struct std::char_traits<char> >', flush).
 finalDemangledName(0x41b3a8, '?_type_info_dtor_internal_method@type_info@@QAEXXZ', type_info, '_type_info_dtor_internal_method').
 finalFileInfo('F7786378E1E4EAB9F78BD129903E280E', 'oo.exe').
-finalInheritance(0x411970, 0x417860, 0, 0, false).
-finalInheritance(0x411970, 0x41787c, 0xc, 0, false).
-finalMethodProperty(0x411860, realDestructor, certain).
-finalMethodProperty(0x4118f0, virtual, certain).
+finalInheritance(0x417824, 0x417860, 0, 0x417824, false).
+finalInheritance(0x417824, 0x41787c, 0xc, 0, false).
+finalMethodProperty(0x411860, constructor, certain).
 finalMethodProperty(0x411970, virtual, certain).
 finalMethodProperty(0x4119f0, virtual, certain).
 finalMethodProperty(0x411a70, constructor, certain).
 finalMethodProperty(0x411ac0, virtual, certain).
-finalMethodProperty(0x411b40, constructor, certain).
+finalMethodProperty(0x411b40, realDestructor, certain).
 finalMethodProperty(0x411b90, virtual, certain).
 finalMethodProperty(0x412800, constructor, certain).
 finalMethodProperty(0x412830, deletingDestructor, certain).
@@ -49,7 +44,6 @@ finalMethodProperty(0x412830, virtual, certain).
 finalThunk(0x41103c, 0x411b90).
 finalThunk(0x4110a5, 0x411ac0).
 finalThunk(0x4110aa, 0x411970).
-finalThunk(0x411113, 0x4118f0).
 finalThunk(0x411122, 0x412830).
 finalThunk(0x411208, 0x4119f0).
 finalVFTable(0x417814, 0x8, 0x8, 0x417810, '.?AVCls3@@').
