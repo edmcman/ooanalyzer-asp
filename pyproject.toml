@@ -8,4 +8,8 @@ dependencies = [
     "clingexplaid>=1.4.0",
     "clingo>=5.8.0",
     "pdbparse>=1.5",
+    "xclingo",
 ]
+
+[tool.uv.sources]
+xclingo = { path = "xclingo2", editable = true }
