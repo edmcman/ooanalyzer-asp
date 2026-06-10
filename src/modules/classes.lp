@@ -26,6 +26,19 @@ classCallsMethod(VFTable, Method2) :-
 classRelatedMethod(A, B) :- classCallsMethod(A, B).
 classRelatedMethod(A, B) :- classCallsMethod(B, A).
 
+% reasonClassRelatedMethod_B: two distinct methods used with the same this-pointer
+% in the same function are related, but direction is not safe.
+% Counterpart: reasonClassRelatedMethod_B (rules.pl:2372)
+%!trace_rule {"% is related to % because both are called on the same this-pointer in %", Method1, Method2, Function}
+classRelatedMethod(Method1, Method2) :-
+    thisPtrUsage(_Insn1, Function, ThisPtr, Method1),
+    thisPtrUsage(_Insn2, Function, ThisPtr, Method2),
+    method(Method1),
+    method(Method2),
+    Method1 != Method2,
+    not objectInObject(Function, _, 0),
+    not objectInObject(Method2, _, 0).                                      % rules.pl:2372
+
 % knownVirtualMethod: method is known to be virtual.
 % Prolog (rules.pl:780): symbolProperty(Method, virtual) or factMethodInVFTable.
 % Uses vfTableEntry (confirmed entries) not possibleVFTableEntry (candidates).
