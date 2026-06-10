@@ -19,15 +19,49 @@ Limitations:
     - Complex nested Prolog terms (e.g. sv/2, add/1) are rewritten to atoms.
 """
 
-import re
 import sys
 
 
-def fix_quoted_string(match: re.Match) -> str:
-    """Convert single-quoted Prolog strings to double-quoted Clingo strings."""
-    q = match.group(0)
-    inner = q[1:-1]
-    return f'"{inner}"'
+def escape_clingo_string(value: str) -> str:
+    """Escape string contents for a Clingo double-quoted string."""
+    return value.replace("\\", "\\\\").replace('"', '\\"')
+
+
+def convert_single_quoted_strings(line: str) -> str:
+    """Convert Prolog single-quoted strings to Clingo double-quoted strings."""
+    out = []
+    i = 0
+    while i < len(line):
+        if line[i] != "'":
+            out.append(line[i])
+            i += 1
+            continue
+
+        i += 1
+        inner = []
+        while i < len(line):
+            ch = line[i]
+            if ch == "\\" and i + 1 < len(line):
+                if line[i + 1] == "'":
+                    inner.append("'")
+                    i += 2
+                else:
+                    inner.append(ch)
+                    i += 1
+                continue
+            if ch == "'":
+                i += 1
+                break
+            inner.append(ch)
+            i += 1
+        else:
+            out.append("'")
+            out.extend(inner)
+            break
+
+        out.append(f'"{escape_clingo_string("".join(inner))}"')
+
+    return "".join(out)
 
 
 def expand_list_predicate(line: str) -> list[str]:
@@ -74,7 +108,7 @@ def process_line(line: str) -> list[str]:
     for ln in lines:
         # Step 2: Convert single-quoted Prolog strings to double-quoted Clingo strings.
         # Clingo does not support single-quoted strings in predicate arguments.
-        ln = re.sub(r"'[^']*'", fix_quoted_string, ln)
+        ln = convert_single_quoted_strings(ln)
         result.append(ln)
 
     return result
