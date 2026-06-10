@@ -9,8 +9,11 @@ Tests:
   5. rule-body-positive: a rule that requires &sameClass to be true fires correctly
   6. rule-body-negative: a rule using `not &sameClass` fires when they differ
   9. circular-cross: K-rule merge blocked when its only support is a circular sc atom
- 10. legitimate-bridge: K-rule merge allowed when sc precondition has seed support
- 11. within-component circular: foundedness check rejects self-justifying K-merge
+ 10. helper-circular-cross: helper-mediated K-rule merge is also blocked
+ 11. legitimate-bridge: K-rule merge allowed when sc precondition has seed support
+ 12. legitimate-helper-bridge: helper-mediated K-rule merge allowed with seed support
+ 13. within-component circular: foundedness check rejects self-justifying K-merge
+ 14. helper within-component circular: foundedness follows helper deps
 """
 
 import sys
@@ -290,7 +293,21 @@ def main():
          """,
          1),   # 1 model, got_merge absent
 
-        # ── 10. Legitimate K-bridge ───────────────────────────────────────────
+        # ── 10. Helper-mediated circular cross-component K-merge ─────────────
+        # Same as above, but the circular sameClass dependency is hidden behind
+        # an ordinary helper atom. The potential-UF fixpoint must follow that
+        # helper dependency instead of treating it as unconditional.
+        ("helper-circular-cross: helper-mediated K-merge is blocked",
+         """
+         mergeEntity(a). mergeEntity(b).
+         mergeSupport(a,b) :- &sameClass(a,b).
+         mergeClasses(a,b) :- mergeSupport(a,b).
+         :- not &sameClass(a,b).
+         #show mergeClasses/2.
+         """,
+         0),
+
+        # ── 11. Legitimate K-bridge ───────────────────────────────────────────
         # mergeClasses(b,c) is derived by a K-rule conditioned on &sameClass(a,b).
         # mergeClasses(a,b) is a seed choice, so a-b are same in _potential_uf;
         # that makes mergeClasses(b,c) potentially derivable — it must NOT be
@@ -307,11 +324,27 @@ def main():
          """,
          2,
          frozenset(["mergeClasses(a,b)", "bridge"])),
+
+        # ── 12. Legitimate helper-mediated K-bridge ───────────────────────────
+        # The helper is valid here because its sc precondition has seed-founded
+        # potential support through mergeClasses(a,b).
+        ("legitimate-helper-bridge: helper-mediated K-merge with seed-founded sc is allowed",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
+         mergeSupport(b,c) :- &sameClass(a,b).
+         mergeClasses(b,c) :- mergeSupport(b,c).
+         bridge :- mergeClasses(b,c).
+         :- mergeClasses(a,b), not bridge.
+         #show mergeClasses/2. #show bridge/0.
+         """,
+         2,
+         frozenset(["mergeClasses(a,b)", "bridge"])),
     ]
 
     # Tests that require foundedness_check=True (run once, not per control mode).
     foundedness_tests = [
-        # ── 11. Within-component circular K-merge ─────────────────────────────
+        # ── 13. Within-component circular K-merge ─────────────────────────────
         # Seeds: choices for a-b and b-c put a,b,c in the same potential component.
         # K-rule: mergeClasses(a,c) :- &sameClass(a,c).  Both a and c are same in
         # potential-UF (via seed choices), so the K-rule head is NOT pre-blocked.
@@ -325,6 +358,21 @@ def main():
          1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
          1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
          mergeClasses(a,c) :- &sameClass(a,c).
+         circular :- mergeClasses(a,c), not mergeClasses(a,b), not mergeClasses(b,c).
+         #show mergeClasses/2. #show circular/0.
+         """,
+         4),   # 4 founded models; no model may contain "circular"
+
+        # ── 14. Helper-mediated within-component circular K-merge ─────────────
+        # Foundedness must also follow ordinary helper predicates. Otherwise
+        # mergeSupport(a,c) would make mergeClasses(a,c) look seed-founded.
+        ("helper within-component circular: foundedness follows helper deps",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
+         1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
+         mergeSupport(a,c) :- &sameClass(a,c).
+         mergeClasses(a,c) :- mergeSupport(a,c).
          circular :- mergeClasses(a,c), not mergeClasses(a,b), not mergeClasses(b,c).
          #show mergeClasses/2. #show circular/0.
          """,
