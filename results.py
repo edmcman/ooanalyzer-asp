@@ -131,6 +131,13 @@ def write_results(ctl, all_atoms, merge_pairs, output_path):
     del_destructors  = {a for (a,) in bp[("deletingDestructor", 1)]}
     vftables         = {a for (a,) in bp[("vfTable", 1)]}
     vft_size         = {v: s for v, s in bp[("vfTableSize", 2)]}
+
+    gte_by_witness = defaultdict(list)
+    for w, s in bp[("classSizeGTE", 2)]:
+        gte_by_witness[w].append(s)
+    lte_by_witness = defaultdict(list)
+    for w, s in bp[("classSizeLTE", 2)]:
+        lte_by_witness[w].append(s)
     vft_entries      = set(bp[("vfTableEntry", 3)])
     vtbc             = set(bp[("vftableBelongsToClass", 3)])
     vftables_at_zero = {v for v, o, _ in vtbc if o == 0}
@@ -213,7 +220,11 @@ def write_results(ctl, all_atoms, merge_pairs, output_path):
         cid      = class_id_map[rep]
         pvft     = min(vftables_at_zero & mset) if vftables_at_zero & mset else 0
         rdtor    = min(crdtors) if crdtors else 0
-        facts["finalClass"].append((cid, pvft, 0, 0, rdtor, cmethods))
+        gte      = [s for w in mset for s in gte_by_witness.get(w, [])]
+        lte      = [s for w in mset for s in lte_by_witness.get(w, [])]
+        min_size = max(gte) if gte else 0
+        max_size = min(lte) if lte else min_size
+        facts["finalClass"].append((cid, pvft, min_size, max_size, rdtor, cmethods))
 
     seen_rtti_class = set()   # (class_id, mangled, dname) — one entry per class
     for tda, vft_list in rtti_tda2vft.items():
