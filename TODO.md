@@ -359,7 +359,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonClassSizeLTE_D` (3716) — from base class in derived layout
 
 ### Constraints (insanity.pl)
-- [ ] `insanityClassSizeInvalid` — LTE < GTE is UNSAT
+- [x] `insanityClassSizeInvalid` — LTE < GTE is UNSAT (`size.lp`; GTE/LTE witnesses joined via `&sameClass`)
 - [ ] `insanityMemberPastEndOfObject` — member offset + size > class LTE
 
 ---

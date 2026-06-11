@@ -135,6 +135,15 @@ candidateVFTableSize(VFTable, Size) :-
 % CONSTRAINTS
 % ============================================================
 
+% insanityClassSizeInvalid (insanity.pl:84): a class's lower size bound may
+% not exceed its upper bound. GTE and LTE witnesses may be different members
+% of the class, so join them with &sameClass.
+%!trace_rule {"class of % has size >= % but class of % has size <= %", W1, GTESize, W2, LTESize}
+:- classSizeGTE(W1, GTESize),
+   classSizeLTE(W2, LTESize),
+   &sameClass(W1, W2),
+   LTESize < GTESize.
+
 % Constraint: chosen vftable extent must accommodate all confirmed entries.
 :- vfTableSize(VFTable, Size),
    vfTableGTE(VFTable, Offset),

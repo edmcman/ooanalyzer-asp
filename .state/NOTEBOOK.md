@@ -60,9 +60,13 @@ All 13 hand-written examples pass:
    `classHasInnerAtZero/1` helper (domain `thisPtrUsageEntity/1`, `&sameClass` join).
    Per user: class-wide joins wanted in both places, not the raw-witness shortcut.
 
-Next up: `insanityClassSizeInvalid` (LTE < GTE is UNSAT) — one-line constraint, now
-meaningful since `classSizeLTE` exists. Then `reasonClassSizeLTE_B` (0x0fffffff ctor seed)
-and `reasonClassSizeLTE_D` (base ≤ derived).
+3. **`insanityClassSizeInvalid` (insanity.pl:84)** — `:- classSizeGTE(W1, G), classSizeLTE(W2, L),
+   &sameClass(W1, W2), L < G.` in size.lp. No negative (UNSAT) fixture yet: deriving
+   `classSizeLTE` in a hand-written example needs the full thisPtrUsage/allocation chain
+   plus clause-1 or clause-2 preconditions — noted as a coverage gap.
+
+Next up: `reasonClassSizeLTE_B` (0x0fffffff ctor seed) and `reasonClassSizeLTE_D`
+(base ≤ derived, via `classRelationship`).
 
 ## Previous completed batch
 
