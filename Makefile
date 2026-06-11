@@ -137,20 +137,20 @@ $(OOA_DIR)/%.sym: $(OOA_DIR)/%.ground $(OOA_DIR)/%.out scripts/symbolize.py
 
 $(OOA_DIR)/%.results.sym: $(OOA_DIR)/%.out $(OOA_DIR)/%.symbols scripts/symbolize.py
 	@echo "=== Symbolizing $*.results ==="
-	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) -o $@
+	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) | sort -o $@
 
 $(OOA_DIR)/%.results.sym: $(OOA_DIR)/%.out $(OOA_DIR)/%.ground scripts/symbolize.py
 	@echo "=== Symbolizing $*.results (ground) ==="
-	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) -o $@
+	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) | sort -o $@
 
 # Symbolize OOAnalyzer's shipped reference results (.results.orig → .results.orig.sym)
 $(OOA_DIR)/%.results.orig.sym: $(OOA_DIR)/%.results.orig $(OOA_DIR)/%.symbols scripts/symbolize.py
 	@echo "=== Symbolizing $*.results.orig ==="
-	$(SYMBOLIZE) $(word 2,$^) $< -o $@
+	$(SYMBOLIZE) $(word 2,$^) $< | sort -o $@
 
 $(OOA_DIR)/%.results.orig.sym: $(OOA_DIR)/%.results.orig $(OOA_DIR)/%.ground scripts/symbolize.py
 	@echo "=== Symbolizing $*.results.orig (ground) ==="
-	$(SYMBOLIZE) $(word 2,$^) $< -o $@
+	$(SYMBOLIZE) $(word 2,$^) $< | sort -o $@
 
 # ----------------------------------------------------------------
 # Convenience: single-file pipeline
