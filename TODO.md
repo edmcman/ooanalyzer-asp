@@ -348,7 +348,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonClassSizeGTE_B` (3505) — all proven methods/vftables give size ≥ 0 (`size.lp`)
 - [x] `reasonClassSizeGTE_C` (3519) — derived class inherits base class lower bound — subsumed by `_B` + `_F` (re-add only if `_B` is dropped)
 - [x] `reasonClassSizeGTE_D` (3609) — from heap allocation size tracked to constructor (`size.lp`)
-- [ ] `reasonClassSizeGTE_E` (3624) — from member access offset + member size
+- [x] `reasonClassSizeGTE_E` (3624) — from member access offset + member size (`size.lp`; `validMethodMemberAccess` in `initial.lp`)
 - [x] `reasonClassSizeGTE_F` (3637) — from embedded object: outer offset + inner size (`size.lp`)
 - [x] `reasonClassSizeGTE_G` (3653) — from vftable write at ObjectOffset + PtrSize (`size.lp`)
 
@@ -356,11 +356,11 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonClassSizeLTE_A` (3689) — existing fact (identity rule; covered by input fact architecture)
 - [x] `reasonClassSizeLTE_B` (3693) — universal upper bound (0x0fffffff) for every constructor's class; ported but **commented out** in `size.lp` as inert
 - [x] `reasonClassSizeLTE_C` (3703) — from heap allocation size tracked to constructor (`size.lp`; shares `thisPtrAssociatedWithConstructor` with `GTE_D`)
-- [ ] `reasonClassSizeLTE_D` (3716) — from base class in derived layout
+- [x] `reasonClassSizeLTE_D` (3716) — base ≤ derived; derived's LTE propagates up via `classRelationship` (`size.lp`)
 
 ### Constraints (insanity.pl)
 - [x] `insanityClassSizeInvalid` — LTE < GTE is UNSAT (`size.lp`; GTE/LTE witnesses joined via `&sameClass`)
-- [ ] `insanityMemberPastEndOfObject` — member offset + size > class LTE
+- [x] `insanityMemberPastEndOfObject` — member offset + size > class LTE (`size.lp`; `certainMemberOnClass` in `initial.lp`, joined to LTE via `&sameClass`)
 
 ---
 

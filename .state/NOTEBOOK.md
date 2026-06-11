@@ -20,6 +20,27 @@ then commit the completed change.
 ## Where we are now
 
 No in-progress work. Recent sessions completed (in order):
+- `insanityMemberPastEndOfObject` (insanity.pl:177) — size.lp constraint. Added
+  `certainMemberOnClass/3` to initial.lp (Method as its own class witness, since
+  validMethodMemberAccess already implies method/1). Constraint joins the member
+  witness to the LTE witness via `&sameClass`. Verified: boundary case on vs2010
+  (method 0x411830 member at 80+4=84 == LTE 84, not >) correctly does NOT trip;
+  vs2008+vs2010 stay OPTIMUM FOUND. No dedicated UNSAT fixture — same coverage gap
+  as insanityClassSizeInvalid (needs the full heap-allocation→classSizeLTE chain).
+- `reasonClassSizeGTE_E` (3624) — size.lp; member access at Offset of Size bytes
+  forces accessing method's class >= Offset+Size. Method is its own witness (cf.
+  GTE_G), no &sameClass. Added `invalidMethodMemberAccess/1` (offset >= 0x100000,
+  ungated) and `validMethodMemberAccess/4` (+ method/1) to initial.lp, next to the
+  analogous `validMethodCallAtOffset`. `methodMemberAccess/4` was already a
+  `#defined` input fact. Verified on vs2010 oo.lp: 18 valid accesses, none invalid;
+  method 0x411830 gets classSizeGTE {4,16,84} matching its 84-byte LTE; OPTIMUM
+  FOUND on vs2008+vs2010. **Unblocks `reasonNOTMergeClasses_O` (3296)**, which also
+  needed validMethodMemberAccess.
+- `reasonClassSizeLTE_D` (3716) — size.lp; base ≤ derived. `classRelationship(D, B)`
+  (already in composition.lp) joins derived witness D to a size-bearing witness WD
+  via `&sameClass`, head records base witness B. Verified on vs2010 oo.lp: the two
+  heap-tracked LTEs (84@0x411830, 12@0x411a40) now propagate `84` up to base
+  classes 4290704/4290732; stays OPTIMUM FOUND, no grounding blowup.
 - `reasonVFTableBelongsToClass` (1007 / 1118) — vftables.lp
 - `reasonMergeVFTables` (2722) — merges.lp (vftable → its owning class)
 - `reasonClassRelatedMethod_A` (2361) and `knownVirtualMethod` — classes.lp
@@ -36,10 +57,12 @@ No in-progress work. Recent sessions completed (in order):
   and `reasonMaximumPossibleClassSize` (its real purpose) isn't ported. Re-enable
   with that predicate; until then it was just `#show` noise.
 
-Class size work is underway in `src/modules/size.lp`: GTE `_B/_D/_F/_G` and LTE `_A/_C`
-are in (LTE `_B` ported-but-commented-out as inert); `_C`(GTE) dropped as subsumed;
-`GTE_E` blocked on `validMethodMemberAccess`.
-Queue: `reasonClassSizeLTE_D` (needs `reasonClassRelationship/2` closure first).
+Class size subsystem in `src/modules/size.lp` is **complete** (TODO.md §11 all
+checked): GTE `_B/_D/_E/_F/_G` and LTE `_A/_C/_D` reasoning rules (LTE `_B`
+ported-but-commented-out as inert; `_C`(GTE) dropped as subsumed), plus both
+constraints `insanityClassSizeInvalid` and `insanityMemberPastEndOfObject`.
+`validMethodMemberAccess/4` + `certainMemberOnClass/3` now available (initial.lp);
+`certainMemberOnClass` also unblocks final.pl reporting and rules.pl:3449/3460.
 
 The diagnostic fixture (`--const diagnose=1` on `strong_negation_contradiction.lp`)
 is pre-existing-broken: returns `SATISFIABLE` + `violate(...)` instead of `UNSATISFIABLE`.
@@ -73,8 +96,7 @@ All 13 hand-written examples pass:
    `classSizeLTE` in a hand-written example needs the full thisPtrUsage/allocation chain
    plus clause-1 or clause-2 preconditions — noted as a coverage gap.
 
-Next up: `reasonClassSizeLTE_B` (0x0fffffff ctor seed) and `reasonClassSizeLTE_D`
-(base ≤ derived, via `classRelationship`).
+Class size subsystem now complete except `GTE_E` (blocked on member access).
 
 ## Previous completed batch
 

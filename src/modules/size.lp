@@ -26,6 +26,14 @@ classSizeGTE(Class, Off + InnerSize) :-
     &sameClass(InnerClass, Wi),
     Off + InnerSize <= max_class_size.
 
+% reasonClassSizeGTE_E (3624) / CSize-3:
+% A confirmed member access at MemberOffset of MemberSize bytes forces the
+% accessing method's class to be at least MemberOffset + MemberSize bytes. The
+% method is its own class witness (cf. GTE_G), so no &sameClass.
+%!trace_rule {"class of method % is >= % bytes (member access at offset % size %)", Method, Offset + Size, Offset, Size}
+classSizeGTE(Method, Offset + Size) :-
+    validMethodMemberAccess(_Insn, Method, Offset, Size).
+
 % reasonClassSizeGTE_G (3653) / CSize-5:
 % A vftable pointer installed at ObjectOffset requires the object to be at
 % least ObjectOffset + PtrSize bytes.
@@ -113,6 +121,18 @@ classSizeLTE(Constructor, Size) :-
 %!trace_rule {"class of constructor % is <= 0x0fffffff bytes (universal bound)", Constructor}
 %classSizeLTE(Constructor, 268435455) :- constructor(Constructor).   % 0x0fffffff
 
+% reasonClassSizeLTE_D (3716) / CSize-1:
+% A base class is no larger than any of its derived classes, so a derived
+% class's upper bound propagates up to its base. classRelationship(D, B) carries
+% derived witness D and base witness B; the size-bearing witness WD need not be
+% D itself, so join them across the derived class with &sameClass. The head
+% records B as the base class's witness.
+%!trace_rule {"base class of % is <= % bytes (derived class of % is)", B, Size, D}
+classSizeLTE(B, Size) :-
+    classRelationship(D, B),
+    classSizeLTE(WD, Size),
+    &sameClass(D, WD).
+
 % ============================================================
 % VFTABLE SIZE RULES
 % ============================================================
@@ -160,6 +180,15 @@ candidateVFTableSize(VFTable, Size) :-
    classSizeLTE(W2, LTESize),
    &sameClass(W1, W2),
    LTESize < GTESize.
+
+% insanityMemberPastEndOfObject (insanity.pl:177): a certain member may not
+% extend past its class's upper size bound. The member witness (accessing
+% method) and the LTE witness may be different members, so join with &sameClass.
+%!trace_rule {"member at offset % size % on class of % exceeds upper bound % (class of %)", Offset, Size, Method, ObjectSize, W}
+:- certainMemberOnClass(Method, Offset, Size),
+   classSizeLTE(W, ObjectSize),
+   &sameClass(Method, W),
+   Offset + Size > ObjectSize.
 
 % Constraint: chosen vftable extent must accommodate all confirmed entries.
 :- vfTableSize(VFTable, Size),

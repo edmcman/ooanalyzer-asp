@@ -357,5 +357,23 @@ validMethodCallAtOffset(Insn, Caller, Callee, Offset) :-
 
 % callAtOffset/3 is not present in the Prolog; use methodCallAtOffset/4 directly.
 
+% invalidMethodMemberAccess / validMethodMemberAccess (initial.pl:212-223).
+% An offset >= 0x100000 is treated as a non-object access; it poisons every
+% member access on the same method (the whole this-pointer is suspect).
+invalidMethodMemberAccess(Method) :-
+    methodMemberAccess(_Insn, Method, Offset, _Size),
+    Offset >= 0x100000.
+
+validMethodMemberAccess(Insn, Method, Offset, Size) :-
+    methodMemberAccess(Insn, Method, Offset, Size),
+    method(Method),
+    not invalidMethodMemberAccess(Method).
+
+% certainMemberOnClass (rules.pl:3428): a valid member access pins a member at
+% Offset/Size on the accessing method's class. validMethodMemberAccess already
+% requires method/1, so Method serves as its own class witness.
+certainMemberOnClass(Method, Offset, Size) :-
+    validMethodMemberAccess(_Insn, Method, Offset, Size).
+
 %!trace {"thunk % resolves to %", T, M} dethunk(T, M).
 %!trace {"RTTI type descriptor % maps to class %", TDA, C} rTTITDA2Class(TDA, C).

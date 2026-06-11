@@ -184,7 +184,9 @@ See `src/util/initial.lp` for the exact derivation rules.
 
 ## Known limitations / future work
 
-- No member access reasoning (`methodMemberAccess`).
+- Member access reasoning is partial: `validMethodMemberAccess/4` (initial.lp)
+  feeds `reasonClassSizeGTE_E`, but broader consumers (e.g. `reasonObjectInObject`
+  from member access) are not yet ported.
 - Virtual base inheritance offset resolution from RTTI is not yet handled. Virtual
   bases are filtered *out* of `rTTIInheritsFrom` (WhereP=0xffffffff, WhereV=0),
   which is correct behavior. Computing the actual offset from a virtual base's BCD
