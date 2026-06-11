@@ -1,0 +1,882 @@
+demangledName(0x411005, tramp, 'public: near __thiscall option::Parser::Parser(near struct option::Descriptor const * const, int, near char *near  *, near class option::Option * const, near class option::Option * const, int, bool, int)').
+demangledName(0x41100a, tramp, 'public: virtual near bool __thiscall option::Parser::StoreOptionAction::perform(near class option::Option &)').
+demangledName(0x41100f, tramp, 'public: near bool __thiscall option::Parser::error(void)').
+demangledName(0x411019, tramp, 'public: static near enum option::ArgStatus __cdecl option::Arg::None(near class option::Option const &, bool)').
+demangledName(0x411023, tramp, 'public: static near enum option::ArgStatus __cdecl option::Arg::Optional(near class option::Option const &, bool)').
+demangledName(0x411028, tramp, 'private: near bool __thiscall option::PrintUsageImplementation::LineWrapper::buf_empty(void)').
+demangledName(0x411032, tramp, 'public: near near class option::Option * __thiscall option::Option::prevwrap(void)').
+demangledName(0x411041, tramp, 'public: near int __thiscall option::PrintUsageImplementation::LinePartIterator::line(void)').
+demangledName(0x411046, tramp, 'public: near near char const * __thiscall option::Parser::nonOption(int)').
+demangledName(0x41104b, tramp, 'private: near void __thiscall option::PrintUsageImplementation::LineWrapper::output(near struct option::PrintUsageImplementation::IStringWriter &, near char const *, int)').
+demangledName(0x411050, tramp, 'private: near near class type_info & __thiscall type_info::operator=(near class type_info const &)').
+demangledName(0x411055, tramp, 'public: near __thiscall option::PrintUsageImplementation::IStringWriter::IStringWriter(void)').
+demangledName(0x41105a, tramp, 'private: static near near class option::Option * __cdecl option::Option::tag(near class option::Option *)').
+demangledName(0x41105f, tramp, 'public: static near void __cdecl option::PrintUsageImplementation::indent(near struct option::PrintUsageImplementation::IStringWriter &, near int &, int)').
+demangledName(0x411064, tramp, 'public: near __thiscall option::Stats::CountOptionsAction::CountOptionsAction(near unsigned int *)').
+demangledName(0x411069, tramp, 'public: near near class option::Option * __thiscall option::Option::first(void)').
+demangledName(0x41106e, tramp, 'private: static near bool __cdecl option::Parser::streqabbr(near char const *, near char const *, __int64)').
+demangledName(0x411082, tramp, 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
+demangledName(0x411087, tramp, 'public: near __thiscall option::PrintUsageImplementation::LinePartIterator::LinePartIterator(near struct option::Descriptor const * const)').
+demangledName(0x411091, tramp, 'public: near void __thiscall option::PrintUsageImplementation::LinePartIterator::restartTable(void)').
+demangledName(0x411096, tramp, 'public: near void __thiscall option::Parser::parse(bool, near struct option::Descriptor const * const, int, near char const *near  *, near class option::Option * const, near class option::Option * const, int, bool, int)').
+demangledName(0x4110a5, tramp, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x4110aa, tramp, 'private: near void __thiscall option::PrintUsageImplementation::LinePartIterator::update_length(void)').
+demangledName(0x4110af, tramp, 'public: near __thiscall option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::StreamWriter(unsigned int (__cdecl*)(near void const *, unsigned int, unsigned int, near struct _iobuf *) , near struct _iobuf *)').
+demangledName(0x4110f0, tramp, 'public: near int __thiscall option::PrintUsageImplementation::LinePartIterator::screenLength(void)').
+demangledName(0x411104, tramp, 'near void __cdecl operator delete(near void *)').
+demangledName(0x411109, tramp, 'public: near void __thiscall option::PrintUsageImplementation::LineWrapper::flush(near struct option::PrintUsageImplementation::IStringWriter &)').
+demangledName(0x41110e, tramp, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x411118, tramp, 'near void __cdecl terminate(void)').
+demangledName(0x41111d, tramp, 'public: near int __thiscall option::Parser::nonOptionsCount(void)').
+demangledName(0x411127, tramp, 'private: near bool __thiscall option::PrintUsageImplementation::LineWrapper::buf_full(void)').
+demangledName(0x411140, tramp, 'public: static near void __cdecl Arg::printError(near char const *, near class option::Option const &, near char const *)').
+demangledName(0x41114a, tramp, 'public: near bool __thiscall option::PrintUsageImplementation::LinePartIterator::nextTable(void)').
+demangledName(0x411154, tramp, 'public: near int __thiscall option::PrintUsageImplementation::LinePartIterator::column(void)').
+demangledName(0x41115e, tramp, 'public: virtual near near void * __thiscall type_info::`vector deleting destructor\'(unsigned int)').
+demangledName(0x411163, tramp, 'private: static near bool __cdecl option::Parser::instr(char, near char const *)').
+demangledName(0x41116d, tramp, 'public: near int __thiscall option::Option::index(void) const').
+demangledName(0x411186, tramp, 'public: near __thiscall option::Option::Option(near struct option::Descriptor const *, near char const *, near char const *)').
+demangledName(0x41118b, tramp, 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
+demangledName(0x411190, tramp, 'public: near void __thiscall option::PrintUsageImplementation::LinePartIterator::restartRow(void)').
+demangledName(0x41119f, tramp, 'public: virtual near bool __thiscall option::Parser::StoreOptionAction::finished(int, near char const *near  *)').
+demangledName(0x4111a4, tramp, 'public: near near char const * __thiscall option::PrintUsageImplementation::LinePartIterator::data(void)').
+demangledName(0x4111a9, tramp, 'public: near __thiscall option::Parser::StoreOptionAction::StoreOptionAction(near class option::Parser &, near class option::Option * const, near class option::Option * const, int)').
+demangledName(0x4111b3, tramp, 'public: virtual near bool __thiscall option::Parser::Action::perform(near class option::Option &)').
+demangledName(0x4111bd, tramp, 'public: static near enum option::ArgStatus __cdecl Arg::Required(near class option::Option const &, bool)').
+demangledName(0x4111c2, tramp, 'public: near __thiscall option::PrintUsageImplementation::LineWrapper::LineWrapper(int, int)').
+demangledName(0x4111c7, tramp, 'private: static near void __cdecl option::Parser::shift(near char const *near  *, int)').
+demangledName(0x4111cc, tramp, 'near void __cdecl option::printUsage<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>(unsigned int (__cdecl*)(near void const *, unsigned int, unsigned int, near struct _iobuf *) , near struct _iobuf *, near struct option::Descriptor const * const, int, int, int)').
+demangledName(0x4111d1, tramp, 'private: near void __thiscall option::PrintUsageImplementation::LineWrapper::buf_store(near char const *, int)').
+demangledName(0x4111d6, tramp, 'public: near void __thiscall option::Option::append(near class option::Option *)').
+demangledName(0x4111e5, tramp, 'public: near bool __thiscall option::Option::isFirst(void) const').
+demangledName(0x4111f4, tramp, 'public: static near enum option::ArgStatus __cdecl Arg::Numeric(near class option::Option const &, bool)').
+demangledName(0x411208, tramp, 'public: near void __thiscall option::Option::operator=(near class option::Option const &)').
+demangledName(0x41120d, tramp, 'public: virtual near bool __thiscall option::Parser::Action::finished(int, near char const *near  *)').
+demangledName(0x411217, tramp, 'public: near near class option::Option * __thiscall option::Option::last(void)').
+demangledName(0x411221, tramp, 'public: near __thiscall option::Parser::Action::Action(void)').
+demangledName(0x411226, tramp, 'public: static near bool __cdecl option::PrintUsageImplementation::isWideChar(unsigned int)').
+demangledName(0x41122b, tramp, 'public: near near char const *near  * __thiscall option::Parser::nonOptions(void)').
+demangledName(0x411230, tramp, 'public: static near void __cdecl option::PrintUsageImplementation::printUsage(near struct option::PrintUsageImplementation::IStringWriter &, near struct option::Descriptor const * const, int, int, int)').
+demangledName(0x411235, tramp, 'public: static near void __cdecl option::PrintUsageImplementation::upmax(near int &, int)').
+demangledName(0x41123a, tramp, 'public: near __thiscall option::Stats::Stats(near struct option::Descriptor const * const, int, near char *near  *, int, bool)').
+demangledName(0x411244, tramp, 'near long __stdcall __CxxUnhandledExceptionFilter(near struct _EXCEPTION_POINTERS *)').
+demangledName(0x411262, tramp, 'public: virtual near void __thiscall option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::operator()(near char const *, int)').
+demangledName(0x41126c, tramp, 'public: near bool __thiscall option::PrintUsageImplementation::LinePartIterator::next(void)').
+demangledName(0x411271, tramp, 'public: near int __thiscall option::PrintUsageImplementation::LinePartIterator::length(void)').
+demangledName(0x41127b, tramp, 'private: near void __thiscall option::PrintUsageImplementation::LineWrapper::buf_next(void)').
+demangledName(0x411299, tramp, 'public: near __thiscall option::Option::operator near class option::Option *(void)').
+demangledName(0x41129e, tramp, 'public: virtual near void __thiscall option::PrintUsageImplementation::IStringWriter::operator()(near char const *, int)').
+demangledName(0x4112a8, tramp, 'public: static near enum option::ArgStatus __cdecl Arg::NonEmpty(near class option::Option const &, bool)').
+demangledName(0x4112b2, tramp, 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
+demangledName(0x4112b7, tramp, 'public: virtual near bool __thiscall option::Stats::CountOptionsAction::perform(near class option::Option &)').
+demangledName(0x4112d5, tramp, 'private: static near bool __cdecl option::Parser::streq(near char const *, near char const *)').
+demangledName(0x4112da, tramp, 'public: near void __thiscall option::Stats::add(bool, near struct option::Descriptor const * const, int, near char const *near  *, int, bool)').
+demangledName(0x4112e4, tramp, 'public: static near enum option::ArgStatus __cdecl Arg::Unknown(near class option::Option const &, bool)').
+demangledName(0x4112e9, tramp, 'private: near void __thiscall option::PrintUsageImplementation::LineWrapper::write_one_line(near struct option::PrintUsageImplementation::IStringWriter &)').
+demangledName(0x4112fd, tramp, 'public: near void __thiscall option::PrintUsageImplementation::LineWrapper::process(near struct option::PrintUsageImplementation::IStringWriter &, near char const *, int)').
+demangledName(0x411302, tramp, 'private: static near near class option::Option * __cdecl option::Option::untag(near class option::Option *)').
+demangledName(0x411307, tramp, 'private: static near bool __cdecl option::Parser::workhorse(bool, near struct option::Descriptor const * const, int, near char const *near  *, near struct option::Parser::Action &, bool, bool, int)').
+demangledName(0x41130c, tramp, 'public: near int __thiscall option::Parser::optionsCount(void)').
+demangledName(0x411311, tramp, 'private: near __thiscall type_info::type_info(near class type_info const &)').
+demangledName(0x411316, tramp, 'public: static near int __cdecl option::MSC_Builtin_CLZ::builtin_clz(unsigned int)').
+demangledName(0x41132f, tramp, 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x411339, tramp, 'near void __cdecl _RTC_Failure(near void *, int)').
+demangledName(0x411343, tramp, 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
+demangledName(0x411348, tramp, 'private: near void __thiscall option::Option::init(near struct option::Descriptor const *, near char const *, near char const *)').
+demangledName(0x41135c, tramp, 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x411366, tramp, 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
+demangledName(0x41136b, tramp, 'public: near bool __thiscall option::PrintUsageImplementation::LinePartIterator::nextRow(void)').
+demangledName(0x411370, tramp, 'private: static near bool __cdecl option::Option::isTagged(near class option::Option *)').
+demangledName(0x412a30, staticmethod, 'private: static near bool __cdecl option::Parser::workhorse(bool, near struct option::Descriptor const * const, int, near char const *near  *, near struct option::Parser::Action &, bool, bool, int)').
+demangledName(0x413530, staticmethod, 'private: static near bool __cdecl option::Parser::streq(near char const *, near char const *)').
+demangledName(0x413600, staticmethod, 'private: static near bool __cdecl option::Parser::streqabbr(near char const *, near char const *, __int64)').
+demangledName(0x413700, staticmethod, 'private: static near bool __cdecl option::Parser::instr(char, near char const *)').
+demangledName(0x413770, staticmethod, 'private: static near void __cdecl option::Parser::shift(near char const *near  *, int)').
+demangledName(0x413800, func, 'near void __cdecl option::printUsage<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>(unsigned int (__cdecl*)(near void const *, unsigned int, unsigned int, near struct _iobuf *) , near struct _iobuf *, near struct option::Descriptor const * const, int, int, int)').
+demangledName(0x4138b0, staticmethod, 'public: static near void __cdecl option::PrintUsageImplementation::printUsage(near struct option::PrintUsageImplementation::IStringWriter &, near struct option::Descriptor const * const, int, int, int)').
+demangledName(0x414130, staticmethod, 'public: static near void __cdecl option::PrintUsageImplementation::upmax(near int &, int)').
+demangledName(0x4141a0, staticmethod, 'public: static near void __cdecl option::PrintUsageImplementation::indent(near struct option::PrintUsageImplementation::IStringWriter &, near int &, int)').
+demangledName(0x414b20, staticmethod, 'public: static near int __cdecl option::MSC_Builtin_CLZ::builtin_clz(unsigned int)').
+demangledName(0x414ba0, staticmethod, 'public: static near bool __cdecl option::PrintUsageImplementation::isWideChar(unsigned int)').
+demangledName(0x4157e0, staticmethod, 'public: static near enum option::ArgStatus __cdecl option::Arg::None(near class option::Option const &, bool)').
+demangledName(0x415810, staticmethod, 'public: static near enum option::ArgStatus __cdecl option::Arg::Optional(near class option::Option const &, bool)').
+demangledName(0x415880, staticmethod, 'public: static near enum option::ArgStatus __cdecl Arg::Unknown(near class option::Option const &, bool)').
+demangledName(0x4158f0, staticmethod, 'public: static near void __cdecl Arg::printError(near char const *, near class option::Option const &, near char const *)').
+demangledName(0x4159f0, staticmethod, 'public: static near enum option::ArgStatus __cdecl Arg::Required(near class option::Option const &, bool)').
+demangledName(0x415a70, staticmethod, 'public: static near enum option::ArgStatus __cdecl Arg::NonEmpty(near class option::Option const &, bool)').
+demangledName(0x415b00, staticmethod, 'public: static near enum option::ArgStatus __cdecl Arg::Numeric(near class option::Option const &, bool)').
+demangledName(0x415f70, func, 'near void __cdecl _RTC_Failure(near void *, int)').
+demangledName(0x416400, func, 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
+demangledName(0x416540, func, 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
+demangledName(0x416e40, func, 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
+demangledName(0x416e50, func, 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
+demangledName(0x416e5c, thunk, 'near void __cdecl operator delete(near void *)').
+demangledName(0x416e70, func, 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x416f50, func, 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x417040, func, 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
+demangledName(0x4177c0, func, 'near long __stdcall __CxxUnhandledExceptionFilter(near struct _EXCEPTION_POINTERS *)').
+demangledName(0x417ea8, thunk, 'near void __cdecl terminate(void)').
+demangledName(0x417eae, thunk, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x417eae, thunk, 'public: near void __thiscall type_info::_type_info_dtor_internal_method(void)').
+demangledName(0x41b83c, name, 'private: static near int const option::PrintUsageImplementation::LineWrapper::bufmask').
+demangledName(0x41b840, string, 'char[31] = "Non-option argument #%d is %s\v"').
+demangledName(0x41b868, string, 'char[31] = "--nonempty with argument \'%s\'\v"').
+demangledName(0x41b890, string, 'char[30] = "--numeric with argument \'%s\'\v"').
+demangledName(0x41b8b4, string, 'char[31] = "--required with argument \'%s\'\v"').
+demangledName(0x41b8dc, string, 'char[42] = "--optional without the optional "...').
+demangledName(0x41b910, string, 'char[40] = "--optional with optional argumen"...').
+demangledName(0x41b940, string, 'char[17] = "Argument #%d is "').
+demangledName(0x41b954, string, 'char[8] = "COLUMNS"').
+demangledName(0x41b990, string, 'char[2] = "\v"').
+demangledName(0x41b9b0, string, 'char[631] = "\vExamples:\v  example_arg --unkno"...').
+demangledName(0x41bca8, string, 'char[75] = "  -1 <arg>, \n--nonempty=<arg>  \n"...').
+demangledName(0x41bd04, string, 'char[9] = "nonempty"').
+demangledName(0x41bd10, string, 'char[2] = "1"').
+demangledName(0x41bd14, string, 'char[62] = "  -n <num>, \n--numeric=<num>  \nR"...').
+demangledName(0x41bd60, string, 'char[8] = "numeric"').
+demangledName(0x41bd6c, string, 'char[2] = "n"').
+demangledName(0x41bd70, string, 'char[55] = "  -r <arg>, \n--required=<arg>  \n"...').
+demangledName(0x41bdb4, string, 'char[9] = "required"').
+demangledName(0x41bdc0, string, 'char[2] = "r"').
+demangledName(0x41bdc8, string, 'char[79] = "  -o[<arg>], \n--optional[=<arg>]"...').
+demangledName(0x41be28, string, 'char[9] = "optional"').
+demangledName(0x41be34, string, 'char[2] = "o"').
+demangledName(0x41be38, string, 'char[34] = "  \n--help  \nPrint usage and exit"...').
+demangledName(0x41be60, string, 'char[5] = "help"').
+demangledName(0x41be68, string, 'char[39] = "USAGE: example_arg [options]\v\vOp"...').
+demangledName(0x41be96, string, 'char[1] = ""').
+demangledName(0x41be98, string, 'char[17] = "Unknown option \'"').
+demangledName(0x41beac, string, 'char[3] = "\'\v"').
+demangledName(0x41beb0, string, 'char[3] = "%s"').
+demangledName(0x41beb4, string, 'char[9] = "Option \'"').
+demangledName(0x41bec0, string, 'char[24] = "\' requires an argument\v"').
+demangledName(0x41bedc, string, 'char[33] = "\' requires a non-empty argument\v"...').
+demangledName(0x41bf04, string, 'char[31] = "\' requires a numeric argument\v"').
+demangledName(0x41bf38, string, 'char[30] = "Unknown Runtime Check Error\v\r"').
+demangledName(0x41bf5c, string, 'char[44] = "Stack memory around _alloca was "...').
+demangledName(0x41bf90, string, 'char[54] = "A local variable was used before"...').
+demangledName(0x41bfd0, string, 'char[29] = "Stack memory was corrupted\v\r"').
+demangledName(0x41bff8, string, 'char[285] = "A cast to a smaller data type ha"...').
+demangledName(0x41c150, string, 'char[221] = "The value of ESP was not properl"...').
+demangledName(0x41c318, string, 'char[32] = "Run-Time Check Failure #%d - %s"').
+demangledName(0x41c340, string, 'char[20] = "Unknown Module Name"').
+demangledName(0x41c358, string, 'char[17] = "Unknown Filename"').
+demangledName(0x41c370, string, 'char16_t[32] = "Run-Time Check Failure #%d - %s"').
+demangledName(0x41c3c0, string, 'char16_t[54] = "Runtime Check Error.\v\r Unable to"...').
+demangledName(0x41c444, string, 'char[38] = "Stack corrupted near unknown var"...').
+demangledName(0x41c478, string, 'char[73] = "Stack area around _alloca memory"...').
+demangledName(0x41c4d0, string, 'char[9] = "%s%s%s%s"').
+demangledName(0x41c4dc, string, 'char[3] = "> "').
+demangledName(0x41c4e0, string, 'char[18] = "%s%s%p%s%ld%s%d%s"').
+demangledName(0x41c4f8, string, 'char[72] = "Stack area around _alloca memory"...').
+demangledName(0x41c550, string, 'char[13] = "\vAddress: 0x"').
+demangledName(0x41c560, string, 'char[8] = "\vSize: "').
+demangledName(0x41c56c, string, 'char[42] = "\vAllocation number within this f"...').
+demangledName(0x41c5a0, string, 'char[9] = "\vData: <"').
+demangledName(0x41c5ac, string, 'char[10] = "wsprintfA"').
+demangledName(0x41c5b8, string, 'char16_t[11] = "user32.dll"').
+demangledName(0x41c5d4, string, 'char[6] = "%.2X "').
+demangledName(0x41c5dc, string, 'char[52] = "A variable is being used without"...').
+demangledName(0x41c620, string, 'char16_t[48] = "f:\\dd\\vctools\\crt_bld\\self_x86\\c"...').
+demangledName(0x41c698, string, 'char16_t[40] = "__native_startup_state == __init"...').
+demangledName(0x41c6f8, string, 'char[31] = "Stack around _alloca corrupted"').
+demangledName(0x41c720, string, 'char[42] = "Local variable used before initi"...').
+demangledName(0x41c754, string, 'char[24] = "Stack memory corruption"').
+demangledName(0x41c770, string, 'char[42] = "Cast to smaller type causing los"...').
+demangledName(0x41c7a4, string, 'char[25] = "Stack pointer corruption"').
+demangledName(0x41c7fc, string, 'char[17] = "PDBOpenValidate5"').
+demangledName(0x41c810, string, 'char16_t[21] = "EnvironmentDirectory"').
+demangledName(0x41c848, string, 'char16_t[46] = "SOFTWARE\\Microsoft\\VisualStudio\\"...').
+demangledName(0x41c8b8, string, 'char[12] = "RegCloseKey"').
+demangledName(0x41c8c8, string, 'char[17] = "RegQueryValueExW"').
+demangledName(0x41c8dc, string, 'char[14] = "RegOpenKeyExW"').
+demangledName(0x41c8ec, string, 'char16_t[13] = "ADVAPI32.DLL"').
+demangledName(0x41c918, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessDetach').
+demangledName(0x41c91c, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessAttach').
+demangledName(0x41c920, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadAttach').
+demangledName(0x41c924, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadDetach').
+demangledName(0x41c928, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessVerifier').
+demangledName(0x41c930, string, 'char16_t[50] = "_controlfp_s(((void *)0), 0x0001"...').
+demangledName(0x41c9a8, string, 'char16_t[21] = "_setdefaultprecision"').
+demangledName(0x41c9e0, string, 'char16_t[51] = "f:\\dd\\vctools\\crt_bld\\self_x86\\c"...').
+demangledName(0x41cd4c, name, 'option::Parser::StoreOptionAction::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x41cd60, name, 'option::Parser::StoreOptionAction::`RTTI Base Class Array\'').
+demangledName(0x41cd6c, name, 'option::Parser::StoreOptionAction::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41cd90, name, 'option::Parser::Action::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41cdb4, name, 'option::Parser::Action::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x41cdc8, name, 'option::Parser::Action::`RTTI Base Class Array\'').
+demangledName(0x41ce00, name, 'option::Stats::CountOptionsAction::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x41ce14, name, 'option::Stats::CountOptionsAction::`RTTI Base Class Array\'').
+demangledName(0x41ce20, name, 'option::Stats::CountOptionsAction::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41ce5c, name, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x41ce70, name, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::`RTTI Base Class Array\'').
+demangledName(0x41ce7c, name, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41cea0, name, 'option::PrintUsageImplementation::IStringWriter::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41cec4, name, 'option::PrintUsageImplementation::IStringWriter::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x41ced8, name, 'option::PrintUsageImplementation::IStringWriter::`RTTI Base Class Array\'').
+demangledName(0x41cf10, name, 'type_info::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x41cf24, name, 'type_info::`RTTI Base Class Array\'').
+demangledName(0x41cf2c, name, 'type_info::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x41e000, name, 'class `RTTI Type Descriptor\'::option::Parser::StoreOptionAction').
+demangledName(0x41e038, name, 'struct `RTTI Type Descriptor\'::option::Parser::Action').
+demangledName(0x41e064, name, 'class `RTTI Type Descriptor\'::option::Stats::CountOptionsAction').
+demangledName(0x41e0a0, name, 'struct `RTTI Type Descriptor\'::option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>').
+demangledName(0x41e10c, name, 'struct `RTTI Type Descriptor\'::option::PrintUsageImplementation::IStringWriter').
+demangledName(0x41e154, name, 'class `RTTI Type Descriptor\'::type_info').
+demangledName(0x41e170, name, 'near int *near  _RTC_ErrorLevels').
+demangledName(0x41e390, name, 'int (__cdecl*near  wsprintffp)(near char *, near char const *, ...)').
+demangledName(0x41f290, name, 'near void __cdecl terminate(void)').
+demangledName(0x41f2d4, name, 'near void __cdecl operator delete(near void *)').
+groundTruth(0x411bd0, 'option::Option', 'index', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411c40, 'option::Option', 'operator near class option::Option *', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411c90, 'option::Stats', 'Stats', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411d20, 'option::Parser', 'Parser', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411dd0, 'option::Parser', 'optionsCount', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411e10, 'option::Parser', 'nonOptionsCount', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411e50, 'option::Parser', 'nonOption', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411eb0, 'option::Parser', 'nonOptions', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411ef0, 'option::Parser', 'error', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x411f30, 'option::Parser', 'parse', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412020, 'option::Parser::StoreOptionAction', 'StoreOptionAction', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412110, 'option::Parser::Action', 'Action', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412160, 'option::Parser::Action', 'perform', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x4121a0, 'option::Parser::Action', 'finished', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x4121e0, 'option::Parser::StoreOptionAction', 'perform', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x412340, 'option::Option', 'append', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4123f0, 'option::Option', 'first', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412460, 'option::Option', 'isFirst', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4124c0, 'option::Option', 'last', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412520, 'option::Option', 'prevwrap', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412580, 'option::Option', 'operator=', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4125f0, 'option::Option', 'init', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruthException(0x412710, 'option::Option', 'tag', method, none, linked, private, nonvirtual, '__cdecl').
+groundTruthException(0x412750, 'option::Option', 'untag', method, none, linked, private, nonvirtual, '__cdecl').
+groundTruthException(0x412790, 'option::Option', 'isTagged', method, none, linked, private, nonvirtual, '__cdecl').
+groundTruth(0x4127d0, 'option::Parser::StoreOptionAction', 'finished', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x412830, 'option::Stats', 'add', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x412950, 'option::Stats::CountOptionsAction', 'CountOptionsAction', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4129c0, 'option::Stats::CountOptionsAction', 'perform', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x4134c0, 'option::Option', 'Option', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4142b0, 'option::PrintUsageImplementation::LinePartIterator', 'LinePartIterator', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414370, 'option::PrintUsageImplementation::LinePartIterator', 'nextTable', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414440, 'option::PrintUsageImplementation::LinePartIterator', 'restartTable', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4144a0, 'option::PrintUsageImplementation::LinePartIterator', 'nextRow', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4145c0, 'option::PrintUsageImplementation::LinePartIterator', 'restartRow', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414660, 'option::PrintUsageImplementation::LinePartIterator', 'next', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414920, 'option::PrintUsageImplementation::LinePartIterator', 'update_length', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x414cf0, 'option::PrintUsageImplementation::LinePartIterator', 'column', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414d30, 'option::PrintUsageImplementation::LinePartIterator', 'line', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414d70, 'option::PrintUsageImplementation::LinePartIterator', 'length', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414db0, 'option::PrintUsageImplementation::LinePartIterator', 'screenLength', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414df0, 'option::PrintUsageImplementation::LinePartIterator', 'data', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414e30, 'option::PrintUsageImplementation::LineWrapper', 'flush', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x414f40, 'option::PrintUsageImplementation::LineWrapper', 'buf_empty', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x414fa0, 'option::PrintUsageImplementation::LineWrapper', 'write_one_line', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x4150f0, 'option::PrintUsageImplementation::LineWrapper', 'buf_next', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x415150, 'option::PrintUsageImplementation::LineWrapper', 'process', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x415440, 'option::PrintUsageImplementation::LineWrapper', 'output', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x4154c0, 'option::PrintUsageImplementation::LineWrapper', 'buf_full', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x415520, 'option::PrintUsageImplementation::LineWrapper', 'buf_store', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x4155b0, 'option::PrintUsageImplementation::LineWrapper', 'LineWrapper', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x415650, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>', 'StreamWriter', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4156d0, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>', 'operator()', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x415750, 'option::PrintUsageImplementation::IStringWriter', 'IStringWriter', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x4157a0, 'option::PrintUsageImplementation::IStringWriter', 'operator()', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x415e90, 'type_info', 'type_info', method, constructor, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x415ec0, 'type_info', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x415f50, 'type_info', 'operator=', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x41b964, 'option::Parser::StoreOptionAction', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x41b974, 'option::Parser::Action', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x41b984, 'option::Stats::CountOptionsAction', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x41b998, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x41b9a4, 'option::PrintUsageImplementation::IStringWriter', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x41bf30, 'type_info', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x41cd34, 'option::Parser::StoreOptionAction', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41cdd0, 'option::Parser::Action', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41cde8, 'option::Stats::CountOptionsAction', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41ce44, 'option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41cee0, 'option::PrintUsageImplementation::IStringWriter', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41cef8, 'type_info', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x41f28c, 'type_info', '_type_info_dtor_internal_method', method, none, imported, public, nonvirtual, '__thiscall').
+% Ground truth generation was completed successfully.
+symbol(0x401000, name, '__enc$textbss$begin').
+symbol(0x411000, name, '__enc$textbss$end').
+symbol(0x411005, tramp, '??0Parser@option@@QAE@QBUDescriptor@1@HPAPADQAVOption@1@2H_NH@Z').
+symbol(0x41100a, tramp, '?perform@StoreOptionAction@Parser@option@@UAE_NAAVOption@3@@Z').
+symbol(0x41100f, tramp, '?error@Parser@option@@QAE_NXZ').
+symbol(0x411014, tramp, '__setdefaultprecision').
+symbol(0x411019, tramp, '?None@Arg@option@@SA?AW4ArgStatus@2@ABVOption@2@_N@Z').
+symbol(0x41101e, tramp, '__setargv').
+symbol(0x411023, tramp, '?Optional@Arg@option@@SA?AW4ArgStatus@2@ABVOption@2@_N@Z').
+symbol(0x411028, tramp, '?buf_empty@LineWrapper@PrintUsageImplementation@option@@AAE_NXZ').
+symbol(0x41102d, tramp, '__RTC_GetErrDesc').
+symbol(0x411032, tramp, '?prevwrap@Option@option@@QAEPAV12@XZ').
+symbol(0x411037, tramp, '@__security_check_cookie@4').
+symbol(0x41103c, tramp, '_IsDebuggerPresent@0').
+symbol(0x411041, tramp, '?line@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x411046, tramp, '?nonOption@Parser@option@@QAEPBDH@Z').
+symbol(0x41104b, tramp, '?output@LineWrapper@PrintUsageImplementation@option@@AAEXAAUIStringWriter@23@PBDH@Z').
+symbol(0x411050, tramp, '??4type_info@@AAEAAV0@ABV0@@Z').
+symbol(0x411055, tramp, '??0IStringWriter@PrintUsageImplementation@option@@QAE@XZ').
+symbol(0x41105a, tramp, '?tag@Option@option@@CAPAV12@PAV12@@Z').
+symbol(0x41105f, tramp, '?indent@PrintUsageImplementation@option@@SAXAAUIStringWriter@12@AAHH@Z').
+symbol(0x411064, tramp, '??0CountOptionsAction@Stats@option@@QAE@PAI@Z').
+symbol(0x411069, tramp, '?first@Option@option@@QAEPAV12@XZ').
+symbol(0x41106e, tramp, '?streqabbr@Parser@option@@CA_NPBD0_J@Z').
+symbol(0x411073, tramp, '__RTC_Terminate').
+symbol(0x411078, tramp, '_WideCharToMultiByte@32').
+symbol(0x41107d, tramp, '@_RTC_AllocaHelper@12').
+symbol(0x411082, tramp, '?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z').
+symbol(0x411087, tramp, '??0LinePartIterator@PrintUsageImplementation@option@@QAE@QBUDescriptor@2@@Z').
+symbol(0x41108c, tramp, '__RTC_NumErrors').
+symbol(0x411091, tramp, '?restartTable@LinePartIterator@PrintUsageImplementation@option@@QAEXXZ').
+symbol(0x411096, tramp, '?parse@Parser@option@@QAEX_NQBUDescriptor@2@HPAPBDQAVOption@2@3H0H@Z').
+symbol(0x41109b, tramp, '___setusermatherr').
+symbol(0x4110a0, tramp, '_Sleep@4').
+symbol(0x4110a5, tramp, '??1type_info@@UAE@XZ').
+symbol(0x4110aa, tramp, '?update_length@LinePartIterator@PrintUsageImplementation@option@@AAEXXZ').
+symbol(0x4110af, tramp, '??0?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@QAE@P6AIPBXIIPAU_iobuf@@@Z1@Z').
+symbol(0x4110b4, tramp, '_GetModuleFileNameW@12').
+symbol(0x4110b9, tramp, '_fprintf').
+symbol(0x4110be, tramp, '___security_init_cookie').
+symbol(0x4110c3, tramp, '_SetUnhandledExceptionFilter@4').
+symbol(0x4110c8, tramp, '__cexit').
+symbol(0x4110cd, tramp, '_fwrite').
+symbol(0x4110d2, tramp, '__CrtDbgReportW').
+symbol(0x4110d7, tramp, '_VirtualQuery@12').
+symbol(0x4110dc, tramp, '_atexit').
+symbol(0x4110e1, tramp, '_MultiByteToWideChar@24').
+symbol(0x4110e6, tramp, '__RTC_SetErrorType').
+symbol(0x4110eb, tramp, '__except_handler4').
+symbol(0x4110f0, tramp, '?screenLength@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x4110f5, tramp, '__lock').
+symbol(0x4110fa, tramp, '_GetProcAddress@8').
+symbol(0x4110ff, tramp, '@_RTC_CheckStackVars@8').
+symbol(0x411104, tramp, '??3@YAXPAX@Z').
+symbol(0x411109, tramp, '?flush@LineWrapper@PrintUsageImplementation@option@@QAEXAAUIStringWriter@23@@Z').
+symbol(0x41110e, tramp, '??1type_info@@UAE@XZ').
+symbol(0x411113, tramp, '___report_gsfailure').
+symbol(0x411118, tramp, '?terminate@@YAXXZ').
+symbol(0x41111d, tramp, '?nonOptionsCount@Parser@option@@QAEHXZ').
+symbol(0x411122, tramp, '__exit').
+symbol(0x411127, tramp, '?buf_full@LineWrapper@PrintUsageImplementation@option@@AAE_NXZ').
+symbol(0x41112c, tramp, '_GetCurrentThreadId@0').
+symbol(0x411131, tramp, '__initterm').
+symbol(0x411136, tramp, '_calloc').
+symbol(0x41113b, tramp, '_strtol').
+symbol(0x411140, tramp, '?printError@Arg@@SAXPBDABVOption@option@@0@Z').
+symbol(0x411145, tramp, '_GetCurrentProcess@0').
+symbol(0x41114a, tramp, '?nextTable@LinePartIterator@PrintUsageImplementation@option@@QAE_NXZ').
+symbol(0x41114f, tramp, '__RTC_UninitUse').
+symbol(0x411154, tramp, '?column@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x411159, tramp, '__RTC_Shutdown').
+symbol(0x41115e, tramp, '??_Etype_info@@UAEPAXI@Z').
+symbol(0x411163, tramp, '?instr@Parser@option@@CA_NDPBD@Z').
+symbol(0x411168, tramp, '__FindPESection').
+symbol(0x41116d, tramp, '?index@Option@option@@QBEHXZ').
+symbol(0x411172, tramp, '_LoadLibraryW@4').
+symbol(0x411177, tramp, '_HeapSetInformation@16').
+symbol(0x41117c, tramp, '__configthreadlocale').
+symbol(0x411181, tramp, '__RTC_InitBase').
+symbol(0x411186, tramp, '??0Option@option@@QAE@PBUDescriptor@1@PBD1@Z').
+symbol(0x41118b, tramp, '?_RTC_StackFailure@@YAXPAXPBD@Z').
+symbol(0x411190, tramp, '?restartRow@LinePartIterator@PrintUsageImplementation@option@@QAEXXZ').
+symbol(0x411195, tramp, '_RaiseException@16').
+symbol(0x41119a, tramp, '__crt_debugger_hook').
+symbol(0x41119f, tramp, '?finished@StoreOptionAction@Parser@option@@UAE_NHPAPBD@Z').
+symbol(0x4111a4, tramp, '?data@LinePartIterator@PrintUsageImplementation@option@@QAEPBDXZ').
+symbol(0x4111a9, tramp, '??0StoreOptionAction@Parser@option@@QAE@AAV12@QAVOption@2@1H@Z').
+symbol(0x4111ae, tramp, '__ValidateImageBase').
+symbol(0x4111b3, tramp, '?perform@Action@Parser@option@@UAE_NAAVOption@3@@Z').
+symbol(0x4111b8, tramp, '_InterlockedCompareExchange@12').
+symbol(0x4111bd, tramp, '?Required@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x4111c2, tramp, '??0LineWrapper@PrintUsageImplementation@option@@QAE@HH@Z').
+symbol(0x4111c7, tramp, '?shift@Parser@option@@CAXPAPBDH@Z').
+symbol(0x4111cc, tramp, '??$printUsage@$$A6AIPBXIIPAU_iobuf@@@ZU1@@option@@YAXP6AIPBXIIPAU_iobuf@@@Z1QBUDescriptor@0@HHH@Z').
+symbol(0x4111d1, tramp, '?buf_store@LineWrapper@PrintUsageImplementation@option@@AAEXPBDH@Z').
+symbol(0x4111d6, tramp, '?append@Option@option@@QAEXPAV12@@Z').
+symbol(0x4111db, tramp, '_GetProcessHeap@0').
+symbol(0x4111e0, tramp, '__RTC_SetErrorFuncW').
+symbol(0x4111e5, tramp, '?isFirst@Option@option@@QBE_NXZ').
+symbol(0x4111ea, tramp, '__onexit').
+symbol(0x4111ef, tramp, '_NtCurrentTeb').
+symbol(0x4111f4, tramp, '?Numeric@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x4111f9, tramp, '_HeapFree@12').
+symbol(0x4111fe, tramp, '__RTC_SetErrorFunc').
+symbol(0x411203, tramp, '__invoke_watson_if_error').
+symbol(0x411208, tramp, '??4Option@option@@QAEXABV01@@Z').
+symbol(0x41120d, tramp, '?finished@Action@Parser@option@@UAE_NHPAPBD@Z').
+symbol(0x411212, tramp, '_TerminateProcess@8').
+symbol(0x411217, tramp, '?last@Option@option@@QAEPAV12@XZ').
+symbol(0x41121c, tramp, '_mainCRTStartup').
+symbol(0x411221, tramp, '??0Action@Parser@option@@QAE@XZ').
+symbol(0x411226, tramp, '?isWideChar@PrintUsageImplementation@option@@SA_NI@Z').
+symbol(0x41122b, tramp, '?nonOptions@Parser@option@@QAEPAPBDXZ').
+symbol(0x411230, tramp, '?printUsage@PrintUsageImplementation@option@@SAXAAUIStringWriter@12@QBUDescriptor@2@HHH@Z').
+symbol(0x411235, tramp, '?upmax@PrintUsageImplementation@option@@SAXAAHH@Z').
+symbol(0x41123a, tramp, '??0Stats@option@@QAE@QBUDescriptor@1@HPAPADH_N@Z').
+symbol(0x41123f, tramp, '___iob_func').
+symbol(0x411244, tramp, '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z').
+symbol(0x411249, tramp, '___CxxSetUnhandledExceptionFilter').
+symbol(0x41124e, tramp, '_QueryPerformanceCounter@4').
+symbol(0x411253, tramp, '__unlock').
+symbol(0x411258, tramp, '_GetCurrentProcessId@0').
+symbol(0x41125d, tramp, '@_RTC_CheckStackVars2@12').
+symbol(0x411262, tramp, '??R?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@UAEXPBDH@Z').
+symbol(0x411267, tramp, '___set_app_type').
+symbol(0x41126c, tramp, '?next@LinePartIterator@PrintUsageImplementation@option@@QAE_NXZ').
+symbol(0x411271, tramp, '?length@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x411276, tramp, '__RTC_CheckEsp').
+symbol(0x41127b, tramp, '?buf_next@LineWrapper@PrintUsageImplementation@option@@AAEXXZ').
+symbol(0x411280, tramp, '_main').
+symbol(0x411285, tramp, '_EncodePointer@4').
+symbol(0x41128a, tramp, '__RTC_Initialize').
+symbol(0x41128f, tramp, '__controlfp_s').
+symbol(0x411294, tramp, '_GetSystemTimeAsFileTime@4').
+symbol(0x411299, tramp, '??BOption@option@@QAEPAV01@XZ').
+symbol(0x41129e, tramp, '??RIStringWriter@PrintUsageImplementation@option@@UAEXPBDH@Z').
+symbol(0x4112a3, tramp, '_DecodePointer@4').
+symbol(0x4112a8, tramp, '?NonEmpty@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x4112ad, tramp, '__invoke_watson').
+symbol(0x4112b2, tramp, '?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z').
+symbol(0x4112b7, tramp, '?perform@CountOptionsAction@Stats@option@@UAE_NAAVOption@3@@Z').
+symbol(0x4112bc, tramp, '__CRT_RTC_INITW').
+symbol(0x4112c1, tramp, '_GetTickCount@0').
+symbol(0x4112c6, tramp, '__IsNonwritableInCurrentImage').
+symbol(0x4112cb, tramp, '_HeapAlloc@12').
+symbol(0x4112d0, tramp, '__amsg_exit').
+symbol(0x4112d5, tramp, '?streq@Parser@option@@CA_NPBD0@Z').
+symbol(0x4112da, tramp, '?add@Stats@option@@QAEX_NQBUDescriptor@2@HPAPBDH0@Z').
+symbol(0x4112df, tramp, '__XcptFilter').
+symbol(0x4112e4, tramp, '?Unknown@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x4112e9, tramp, '?write_one_line@LineWrapper@PrintUsageImplementation@option@@AAEXAAUIStringWriter@23@@Z').
+symbol(0x4112ee, tramp, '__CrtSetCheckCount').
+symbol(0x4112f3, tramp, '_InterlockedExchange@8').
+symbol(0x4112f8, tramp, '_UnhandledExceptionFilter@4').
+symbol(0x4112fd, tramp, '?process@LineWrapper@PrintUsageImplementation@option@@QAEXAAUIStringWriter@23@PBDH@Z').
+symbol(0x411302, tramp, '?untag@Option@option@@CAPAV12@PAV12@@Z').
+symbol(0x411307, tramp, '?workhorse@Parser@option@@CA_N_NQBUDescriptor@2@HPAPBDAAUAction@12@00H@Z').
+symbol(0x41130c, tramp, '?optionsCount@Parser@option@@QAEHXZ').
+symbol(0x411311, tramp, '??0type_info@@AAE@ABV0@@Z').
+symbol(0x411316, tramp, '?builtin_clz@MSC_Builtin_CLZ@option@@SAHI@Z').
+symbol(0x41131b, tramp, '_getenv').
+symbol(0x411320, tramp, '__except_handler4_common').
+symbol(0x411325, tramp, '__matherr').
+symbol(0x41132a, tramp, '___getmainargs').
+symbol(0x41132f, tramp, '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z').
+symbol(0x411334, tramp, '_lstrlenA@4').
+symbol(0x411339, tramp, '?_RTC_Failure@@YAXPAXH@Z').
+symbol(0x41133e, tramp, '_atoi').
+symbol(0x411343, tramp, '?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z').
+symbol(0x411348, tramp, '?init@Option@option@@AAEXPBUDescriptor@2@PBD1@Z').
+symbol(0x41134d, tramp, '_exit').
+symbol(0x411352, tramp, '___dllonexit').
+symbol(0x411357, tramp, '_FreeLibrary@4').
+symbol(0x41135c, tramp, '??_M@YGXPAXIHP6EX0@Z@Z').
+symbol(0x411361, tramp, '__initterm_e').
+symbol(0x411366, tramp, '?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z').
+symbol(0x41136b, tramp, '?nextRow@LinePartIterator@PrintUsageImplementation@option@@QAE_NXZ').
+symbol(0x411370, tramp, '?isTagged@Option@option@@CA_NPAV12@@Z').
+symbol(0x4116f0, func, '_main').
+symbol(0x411bd0, method, '?index@Option@option@@QBEHXZ').
+symbol(0x411c40, method, '??BOption@option@@QAEPAV01@XZ').
+symbol(0x411c90, method, '??0Stats@option@@QAE@QBUDescriptor@1@HPAPADH_N@Z').
+symbol(0x411d20, method, '??0Parser@option@@QAE@QBUDescriptor@1@HPAPADQAVOption@1@2H_NH@Z').
+symbol(0x411dd0, method, '?optionsCount@Parser@option@@QAEHXZ').
+symbol(0x411e10, method, '?nonOptionsCount@Parser@option@@QAEHXZ').
+symbol(0x411e50, method, '?nonOption@Parser@option@@QAEPBDH@Z').
+symbol(0x411eb0, method, '?nonOptions@Parser@option@@QAEPAPBDXZ').
+symbol(0x411ef0, method, '?error@Parser@option@@QAE_NXZ').
+symbol(0x411f30, method, '?parse@Parser@option@@QAEX_NQBUDescriptor@2@HPAPBDQAVOption@2@3H0H@Z').
+symbol(0x412020, method, '??0StoreOptionAction@Parser@option@@QAE@AAV12@QAVOption@2@1H@Z').
+symbol(0x412110, method, '??0Action@Parser@option@@QAE@XZ').
+symbol(0x412160, method, '?perform@Action@Parser@option@@UAE_NAAVOption@3@@Z').
+symbol(0x4121a0, method, '?finished@Action@Parser@option@@UAE_NHPAPBD@Z').
+symbol(0x4121e0, method, '?perform@StoreOptionAction@Parser@option@@UAE_NAAVOption@3@@Z').
+symbol(0x412340, method, '?append@Option@option@@QAEXPAV12@@Z').
+symbol(0x4123f0, method, '?first@Option@option@@QAEPAV12@XZ').
+symbol(0x412460, method, '?isFirst@Option@option@@QBE_NXZ').
+symbol(0x4124c0, method, '?last@Option@option@@QAEPAV12@XZ').
+symbol(0x412520, method, '?prevwrap@Option@option@@QAEPAV12@XZ').
+symbol(0x412580, method, '??4Option@option@@QAEXABV01@@Z').
+symbol(0x4125f0, method, '?init@Option@option@@AAEXPBUDescriptor@2@PBD1@Z').
+symbol(0x412710, method, '?tag@Option@option@@CAPAV12@PAV12@@Z').
+symbol(0x412750, method, '?untag@Option@option@@CAPAV12@PAV12@@Z').
+symbol(0x412790, method, '?isTagged@Option@option@@CA_NPAV12@@Z').
+symbol(0x4127d0, method, '?finished@StoreOptionAction@Parser@option@@UAE_NHPAPBD@Z').
+symbol(0x412830, method, '?add@Stats@option@@QAEX_NQBUDescriptor@2@HPAPBDH0@Z').
+symbol(0x412950, method, '??0CountOptionsAction@Stats@option@@QAE@PAI@Z').
+symbol(0x4129c0, method, '?perform@CountOptionsAction@Stats@option@@UAE_NAAVOption@3@@Z').
+symbol(0x412a30, staticmethod, '?workhorse@Parser@option@@CA_N_NQBUDescriptor@2@HPAPBDAAUAction@12@00H@Z').
+symbol(0x4134c0, method, '??0Option@option@@QAE@PBUDescriptor@1@PBD1@Z').
+symbol(0x413530, staticmethod, '?streq@Parser@option@@CA_NPBD0@Z').
+symbol(0x413600, staticmethod, '?streqabbr@Parser@option@@CA_NPBD0_J@Z').
+symbol(0x413700, staticmethod, '?instr@Parser@option@@CA_NDPBD@Z').
+symbol(0x413770, staticmethod, '?shift@Parser@option@@CAXPAPBDH@Z').
+symbol(0x413800, func, '??$printUsage@$$A6AIPBXIIPAU_iobuf@@@ZU1@@option@@YAXP6AIPBXIIPAU_iobuf@@@Z1QBUDescriptor@0@HHH@Z').
+symbol(0x4138b0, staticmethod, '?printUsage@PrintUsageImplementation@option@@SAXAAUIStringWriter@12@QBUDescriptor@2@HHH@Z').
+symbol(0x414130, staticmethod, '?upmax@PrintUsageImplementation@option@@SAXAAHH@Z').
+symbol(0x4141a0, staticmethod, '?indent@PrintUsageImplementation@option@@SAXAAUIStringWriter@12@AAHH@Z').
+symbol(0x4142b0, method, '??0LinePartIterator@PrintUsageImplementation@option@@QAE@QBUDescriptor@2@@Z').
+symbol(0x414370, method, '?nextTable@LinePartIterator@PrintUsageImplementation@option@@QAE_NXZ').
+symbol(0x414440, method, '?restartTable@LinePartIterator@PrintUsageImplementation@option@@QAEXXZ').
+symbol(0x4144a0, method, '?nextRow@LinePartIterator@PrintUsageImplementation@option@@QAE_NXZ').
+symbol(0x4145c0, method, '?restartRow@LinePartIterator@PrintUsageImplementation@option@@QAEXXZ').
+symbol(0x414660, method, '?next@LinePartIterator@PrintUsageImplementation@option@@QAE_NXZ').
+symbol(0x414920, method, '?update_length@LinePartIterator@PrintUsageImplementation@option@@AAEXXZ').
+symbol(0x414b20, staticmethod, '?builtin_clz@MSC_Builtin_CLZ@option@@SAHI@Z').
+symbol(0x414ba0, staticmethod, '?isWideChar@PrintUsageImplementation@option@@SA_NI@Z').
+symbol(0x414cf0, method, '?column@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x414d30, method, '?line@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x414d70, method, '?length@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x414db0, method, '?screenLength@LinePartIterator@PrintUsageImplementation@option@@QAEHXZ').
+symbol(0x414df0, method, '?data@LinePartIterator@PrintUsageImplementation@option@@QAEPBDXZ').
+symbol(0x414e30, method, '?flush@LineWrapper@PrintUsageImplementation@option@@QAEXAAUIStringWriter@23@@Z').
+symbol(0x414f40, method, '?buf_empty@LineWrapper@PrintUsageImplementation@option@@AAE_NXZ').
+symbol(0x414fa0, method, '?write_one_line@LineWrapper@PrintUsageImplementation@option@@AAEXAAUIStringWriter@23@@Z').
+symbol(0x4150f0, method, '?buf_next@LineWrapper@PrintUsageImplementation@option@@AAEXXZ').
+symbol(0x415150, method, '?process@LineWrapper@PrintUsageImplementation@option@@QAEXAAUIStringWriter@23@PBDH@Z').
+symbol(0x415440, method, '?output@LineWrapper@PrintUsageImplementation@option@@AAEXAAUIStringWriter@23@PBDH@Z').
+symbol(0x4154c0, method, '?buf_full@LineWrapper@PrintUsageImplementation@option@@AAE_NXZ').
+symbol(0x415520, method, '?buf_store@LineWrapper@PrintUsageImplementation@option@@AAEXPBDH@Z').
+symbol(0x4155b0, method, '??0LineWrapper@PrintUsageImplementation@option@@QAE@HH@Z').
+symbol(0x415650, method, '??0?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@QAE@P6AIPBXIIPAU_iobuf@@@Z1@Z').
+symbol(0x4156d0, method, '??R?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@UAEXPBDH@Z').
+symbol(0x415750, method, '??0IStringWriter@PrintUsageImplementation@option@@QAE@XZ').
+symbol(0x4157a0, method, '??RIStringWriter@PrintUsageImplementation@option@@UAEXPBDH@Z').
+symbol(0x4157e0, staticmethod, '?None@Arg@option@@SA?AW4ArgStatus@2@ABVOption@2@_N@Z').
+symbol(0x415810, staticmethod, '?Optional@Arg@option@@SA?AW4ArgStatus@2@ABVOption@2@_N@Z').
+symbol(0x415880, staticmethod, '?Unknown@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x4158f0, staticmethod, '?printError@Arg@@SAXPBDABVOption@option@@0@Z').
+symbol(0x4159f0, staticmethod, '?Required@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x415a70, staticmethod, '?NonEmpty@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x415b00, staticmethod, '?Numeric@Arg@@SA?AW4ArgStatus@option@@ABVOption@3@_N@Z').
+symbol(0x415c02, thunk, '_fprintf').
+symbol(0x415c08, thunk, '_fwrite').
+symbol(0x415c0e, thunk, '___iob_func').
+symbol(0x415c14, thunk, '_atoi').
+symbol(0x415c1a, thunk, '_getenv').
+symbol(0x415c20, thunk, '_calloc').
+symbol(0x415c30, func, '__RTC_CheckEsp').
+symbol(0x415c60, func, '@_RTC_CheckStackVars@8').
+symbol(0x415ce0, func, '@_RTC_AllocaHelper@12').
+symbol(0x415d20, func, '@_RTC_CheckStackVars2@12').
+symbol(0x415e30, func, '__RTC_InitBase').
+symbol(0x415e70, func, '__RTC_Shutdown').
+symbol(0x415e90, method, '??0type_info@@AAE@ABV0@@Z').
+symbol(0x415ec0, method, '??_Etype_info@@UAEPAXI@Z').
+symbol(0x415f50, method, '??4type_info@@AAEAAV0@ABV0@@Z').
+symbol(0x415f70, func, '?_RTC_Failure@@YAXPAXH@Z').
+symbol(0x415fe0, func, 'failwithmessage').
+symbol(0x416280, func, 'DebuggerProbe').
+symbol(0x416330, func, 'DebuggerRuntime').
+symbol(0x416400, func, '?_RTC_StackFailure@@YAXPAXPBD@Z').
+symbol(0x416540, func, '?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z').
+symbol(0x4166c0, func, '_getMemBlockDataString').
+symbol(0x416750, func, '__RTC_UninitUse').
+symbol(0x416880, func, '@__security_check_cookie@4').
+symbol(0x416892, thunk, '_strtol').
+symbol(0x4168a0, func, 'pre_c_init').
+symbol(0x416950, func, 'pre_cpp_init').
+symbol(0x4169c0, func, '_mainCRTStartup').
+symbol(0x4169e0, func, '__tmainCRTStartup').
+symbol(0x416ce0, func, '_NtCurrentTeb').
+symbol(0x416cf0, func, 'check_managed_app').
+symbol(0x416d80, func, '__RTC_NumErrors').
+symbol(0x416d90, func, '__RTC_GetErrDesc').
+symbol(0x416db0, func, '__RTC_SetErrorType').
+symbol(0x416de0, func, '__RTC_SetErrorFunc').
+symbol(0x416e10, func, '__RTC_SetErrorFuncW').
+symbol(0x416e40, func, '?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z').
+symbol(0x416e50, func, '?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z').
+symbol(0x416e56, thunk, '__CRT_RTC_INITW').
+symbol(0x416e5c, thunk, '??3@YAXPAX@Z').
+symbol(0x416e70, func, '??_M@YGXPAXIHP6EX0@Z@Z').
+symbol(0x416f50, func, '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z').
+symbol(0x417000, func, 'ArrayUnwindFilter').
+symbol(0x417040, func, '?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z').
+symbol(0x4173b0, func, 'GetPdbDll').
+symbol(0x417620, func, '__except_handler4').
+symbol(0x417660, func, '___report_gsfailure').
+symbol(0x4177c0, func, '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z').
+symbol(0x417840, func, '___CxxSetUnhandledExceptionFilter').
+symbol(0x41785a, thunk, '__configthreadlocale').
+symbol(0x417860, func, '__setdefaultprecision').
+symbol(0x4178b0, func, '__invoke_watson_if_error').
+symbol(0x4178e2, thunk, '___setusermatherr').
+symbol(0x4178f0, func, '__matherr').
+symbol(0x417900, func, '__setargv').
+symbol(0x417910, func, '__RTC_Initialize').
+symbol(0x417940, func, '__RTC_Terminate').
+symbol(0x417970, func, '__onexit').
+symbol(0x417aa0, func, '_atexit').
+symbol(0x417ac4, thunk, '___set_app_type').
+symbol(0x417aca, thunk, '__amsg_exit').
+symbol(0x417ad0, thunk, '___getmainargs').
+symbol(0x417ae0, func, '___security_init_cookie').
+symbol(0x417bf8, thunk, '__exit').
+symbol(0x417bfe, thunk, '__XcptFilter').
+symbol(0x417c04, thunk, '__cexit').
+symbol(0x417c0a, thunk, '_exit').
+symbol(0x417c10, thunk, '__CrtSetCheckCount').
+symbol(0x417c20, func, '__ValidateImageBase').
+symbol(0x417ca0, func, '__FindPESection').
+symbol(0x417d40, func, '__IsNonwritableInCurrentImage').
+symbol(0x417e96, thunk, '__CrtDbgReportW').
+symbol(0x417e9c, thunk, '__initterm').
+symbol(0x417ea2, thunk, '__initterm_e').
+symbol(0x417ea8, thunk, '?terminate@@YAXXZ').
+symbol(0x417eae, thunk, '??1type_info@@UAE@XZ').
+symbol(0x417eae, thunk, '?_type_info_dtor_internal_method@type_info@@QAEXXZ').
+symbol(0x417eb4, thunk, '__except_handler4_common').
+symbol(0x417eba, thunk, '__crt_debugger_hook').
+symbol(0x417ec0, thunk, '__controlfp_s').
+symbol(0x417ec6, thunk, '__invoke_watson').
+symbol(0x417ecc, thunk, '__unlock').
+symbol(0x417ed2, thunk, '___dllonexit').
+symbol(0x417ed8, thunk, '__lock').
+symbol(0x417ede, thunk, '_WideCharToMultiByte@32').
+symbol(0x417ee4, thunk, '_IsDebuggerPresent@0').
+symbol(0x417eea, thunk, '_MultiByteToWideChar@24').
+symbol(0x417ef0, thunk, '_RaiseException@16').
+symbol(0x417ef6, thunk, '_lstrlenA@4').
+symbol(0x417efc, thunk, '_GetProcAddress@8').
+symbol(0x417f02, thunk, '_LoadLibraryW@4').
+symbol(0x417f08, thunk, '_EncodePointer@4').
+symbol(0x417f0e, thunk, '_InterlockedExchange@8').
+symbol(0x417f14, thunk, '_Sleep@4').
+symbol(0x417f1a, thunk, '_InterlockedCompareExchange@12').
+symbol(0x417f20, thunk, '_HeapSetInformation@16').
+symbol(0x417f26, thunk, '_HeapFree@12').
+symbol(0x417f2c, thunk, '_HeapAlloc@12').
+symbol(0x417f32, thunk, '_GetProcessHeap@0').
+symbol(0x417f38, thunk, '_GetModuleFileNameW@12').
+symbol(0x417f3e, thunk, '_VirtualQuery@12').
+symbol(0x417f44, thunk, '_FreeLibrary@4').
+symbol(0x417f4a, thunk, '_TerminateProcess@8').
+symbol(0x417f50, thunk, '_GetCurrentProcess@0').
+symbol(0x417f56, thunk, '_UnhandledExceptionFilter@4').
+symbol(0x417f5c, thunk, '_SetUnhandledExceptionFilter@4').
+symbol(0x417f62, thunk, '_DecodePointer@4').
+symbol(0x417f68, thunk, '_QueryPerformanceCounter@4').
+symbol(0x417f6e, thunk, '_GetTickCount@0').
+symbol(0x417f74, thunk, '_GetCurrentThreadId@0').
+symbol(0x417f7a, thunk, '_GetCurrentProcessId@0').
+symbol(0x417f80, thunk, '_GetSystemTimeAsFileTime@4').
+symbol(0x418e70, func, '`dynamic initializer for \'usage\'\'').
+symbol(0x41b000, name, '___xc_a').
+symbol(0x41b30c, name, '___xc_z').
+symbol(0x41b410, name, '___xi_a').
+symbol(0x41b71c, name, '___xi_z').
+symbol(0x41b83c, name, '?bufmask@LineWrapper@PrintUsageImplementation@option@@0HB').
+symbol(0x41b840, string, '??_C@_0BP@CPGNDFBO@Non?9option?5argument?5?$CD?$CFd?5is?5?$CFs?6?$AA@').
+symbol(0x41b868, string, '??_C@_0BP@HALPIIDA@?9?9nonempty?5with?5argument?5?8?$CFs?8?6?$AA@').
+symbol(0x41b890, string, '??_C@_0BO@KFAOKKBL@?9?9numeric?5with?5argument?5?8?$CFs?8?6?$AA@').
+symbol(0x41b8b4, string, '??_C@_0BP@GMKKBFI@?9?9required?5with?5argument?5?8?$CFs?8?6?$AA@').
+symbol(0x41b8dc, string, '??_C@_0CK@IOOBOFAC@?9?9optional?5without?5the?5optional?5@').
+symbol(0x41b910, string, '??_C@_0CI@MAEEPMJN@?9?9optional?5with?5optional?5argumen@').
+symbol(0x41b940, string, '??_C@_0BB@LINPEBPN@Argument?5?$CD?$CFd?5is?5?$AA@').
+symbol(0x41b954, string, '??_C@_07IFAJEEBJ@COLUMNS?$AA@').
+symbol(0x41b964, table, '??_7StoreOptionAction@Parser@option@@6B@').
+symbol(0x41b974, table, '??_7Action@Parser@option@@6B@').
+symbol(0x41b984, table, '??_7CountOptionsAction@Stats@option@@6B@').
+symbol(0x41b990, string, '??_C@_01EEMJAFIK@?6?$AA@').
+symbol(0x41b998, table, '??_7?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@6B@').
+symbol(0x41b9a4, table, '??_7IStringWriter@PrintUsageImplementation@option@@6B@').
+symbol(0x41b9b0, string, '??_C@_0CHH@ILCHANPO@?6Examples?3?6?5?5example_arg?5?9?9unkno@').
+symbol(0x41bca8, string, '??_C@_0EL@MGHPHCA@?5?5?91?5?$DMarg?$DO?0?5?7?9?9nonempty?$DN?$DMarg?$DO?5?5?7@').
+symbol(0x41bd04, string, '??_C@_08KALELLHC@nonempty?$AA@').
+symbol(0x41bd10, string, '??_C@_01HIHLOKLC@1?$AA@').
+symbol(0x41bd14, string, '??_C@_0DO@CIKEINFP@?5?5?9n?5?$DMnum?$DO?0?5?7?9?9numeric?$DN?$DMnum?$DO?5?5?7R@').
+symbol(0x41bd60, string, '??_C@_07MMLECJPG@numeric?$AA@').
+symbol(0x41bd6c, string, '??_C@_01EFFIKLCJ@n?$AA@').
+symbol(0x41bd70, string, '??_C@_0DH@OKFBBLHN@?5?5?9r?5?$DMarg?$DO?0?5?7?9?9required?$DN?$DMarg?$DO?5?5?7@').
+symbol(0x41bdb4, string, '??_C@_08FEMBDDHD@required?$AA@').
+symbol(0x41bdc0, string, '??_C@_01KDCPPGHE@r?$AA@').
+symbol(0x41bdc8, string, '??_C@_0EP@MOKEEHKP@?5?5?9o?$FL?$DMarg?$DO?$FN?0?5?7?9?9optional?$FL?$DN?$DMarg?$DO?$FN@').
+symbol(0x41be28, string, '??_C@_08EBGGHLAO@optional?$AA@').
+symbol(0x41be34, string, '??_C@_01FMEDJKGI@o?$AA@').
+symbol(0x41be38, string, '??_C@_0CC@DGONLLIO@?5?5?7?9?9help?5?5?7Print?5usage?5and?5exit@').
+symbol(0x41be60, string, '??_C@_04PCJFHION@help?$AA@').
+symbol(0x41be68, string, '??_C@_0CH@MFEANAPE@USAGE?3?5example_arg?5?$FLoptions?$FN?6?6Op@').
+symbol(0x41be96, string, '??_C@_00CNPNBAHC@?$AA@').
+symbol(0x41be98, string, '??_C@_0BB@EEANGEEH@Unknown?5option?5?8?$AA@').
+symbol(0x41beac, string, '??_C@_02MHFDJOAC@?8?6?$AA@').
+symbol(0x41beb0, string, '??_C@_02DKCKIIND@?$CFs?$AA@').
+symbol(0x41beb4, string, '??_C@_08KBECIIJE@Option?5?8?$AA@').
+symbol(0x41bec0, string, '??_C@_0BI@OHFHNKEC@?8?5requires?5an?5argument?6?$AA@').
+symbol(0x41bedc, string, '??_C@_0CB@CLEDHKCN@?8?5requires?5a?5non?9empty?5argument?6@').
+symbol(0x41bf04, string, '??_C@_0BP@MIMOJJAM@?8?5requires?5a?5numeric?5argument?6?$AA@').
+symbol(0x41bf30, table, '??_7type_info@@6B@').
+symbol(0x41bf38, string, '??_C@_0BO@GNIAFIKK@Unknown?5Runtime?5Check?5Error?6?$AN?$AA@').
+symbol(0x41bf5c, string, '??_C@_0CM@NGINOKPC@Stack?5memory?5around?5_alloca?5was?5@').
+symbol(0x41bf90, string, '??_C@_0DG@HKJMLLLP@A?5local?5variable?5was?5used?5before@').
+symbol(0x41bfd0, string, '??_C@_0BN@FFOINMNJ@Stack?5memory?5was?5corrupted?6?$AN?$AA@').
+symbol(0x41bff8, string, '??_C@_0BBN@GPMLNJCF@A?5cast?5to?5a?5smaller?5data?5type?5ha@').
+symbol(0x41c150, string, '??_C@_0NN@NGPKDKPD@The?5value?5of?5ESP?5was?5not?5properl@').
+symbol(0x41c318, string, '??_C@_0CA@IODNCDPG@Run?9Time?5Check?5Failure?5?$CD?$CFd?5?9?5?$CFs?$AA@').
+symbol(0x41c340, string, '??_C@_0BE@GNBOBNCK@Unknown?5Module?5Name?$AA@').
+symbol(0x41c358, string, '??_C@_0BB@PFFGGCJP@Unknown?5Filename?$AA@').
+symbol(0x41c370, string, '??_C@_1EA@NFKNIFJP@?$AAR?$AAu?$AAn?$AA?9?$AAT?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAu?$AAr?$AAe?$AA?5?$AA?$CD?$AA?$CF?$AAd?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAs?$AA?$AA@').
+symbol(0x41c3c0, string, '??_C@_1GM@OLMCBDMB@?$AAR?$AAu?$AAn?$AAt?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?4?$AA?6?$AA?$AN?$AA?5?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo@').
+symbol(0x41c444, string, '??_C@_0CG@IAFNJNEE@Stack?5corrupted?5near?5unknown?5var@').
+symbol(0x41c478, string, '??_C@_0EJ@LJKNEOLN@Stack?5area?5around?5_alloca?5memory@').
+symbol(0x41c4d0, string, '??_C@_08KJEDNCKC@?$CFs?$CFs?$CFs?$CFs?$AA@').
+symbol(0x41c4dc, string, '??_C@_02LLMPMKNF@?$DO?5?$AA@').
+symbol(0x41c4e0, string, '??_C@_0BC@KIBAILCI@?$CFs?$CFs?$CFp?$CFs?$CFld?$CFs?$CFd?$CFs?$AA@').
+symbol(0x41c4f8, string, '??_C@_0EI@CLEPFNGI@Stack?5area?5around?5_alloca?5memory@').
+symbol(0x41c550, string, '??_C@_0N@MHFFIMFG@?6Address?3?50x?$AA@').
+symbol(0x41c560, string, '??_C@_07DFDJCKFN@?6Size?3?5?$AA@').
+symbol(0x41c56c, string, '??_C@_0CK@DKGBICFE@?6Allocation?5number?5within?5this?5f@').
+symbol(0x41c5a0, string, '??_C@_08OMAHNMHJ@?6Data?3?5?$DM?$AA@').
+symbol(0x41c5ac, string, '??_C@_09FOPFMPEJ@wsprintfA?$AA@').
+symbol(0x41c5b8, string, '??_C@_1BG@OILDLIOJ@?$AAu?$AAs?$AAe?$AAr?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@').
+symbol(0x41c5d4, string, '??_C@_05MKKEDADM@?$CF?42X?5?$AA@').
+symbol(0x41c5dc, string, '??_C@_0DE@OHJBPMBP@A?5variable?5is?5being?5used?5without@').
+symbol(0x41c620, string, '??_C@_1GA@EHAKPACL@?$AAf?$AA?3?$AA?2?$AAd?$AAd?$AA?2?$AAv?$AAc?$AAt?$AAo?$AAo?$AAl?$AAs?$AA?2?$AAc?$AAr?$AAt?$AA_?$AAb?$AAl?$AAd?$AA?2?$AAs?$AAe?$AAl?$AAf?$AA_?$AAx?$AA8?$AA6?$AA?2?$AAc@').
+symbol(0x41c698, string, '??_C@_1FA@DALEHHGL@?$AA_?$AA_?$AAn?$AAa?$AAt?$AAi?$AAv?$AAe?$AA_?$AAs?$AAt?$AAa?$AAr?$AAt?$AAu?$AAp?$AA_?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?5?$AA?$DN?$AA?$DN?$AA?5?$AA_?$AA_?$AAi?$AAn?$AAi?$AAt@').
+symbol(0x41c6f8, string, '??_C@_0BP@OGBCLIBO@Stack?5around?5_alloca?5corrupted?$AA@').
+symbol(0x41c720, string, '??_C@_0CK@CNLNOEPB@Local?5variable?5used?5before?5initi@').
+symbol(0x41c754, string, '??_C@_0BI@CIGMDCBH@Stack?5memory?5corruption?$AA@').
+symbol(0x41c770, string, '??_C@_0CK@FEGOIOPB@Cast?5to?5smaller?5type?5causing?5los@').
+symbol(0x41c7a4, string, '??_C@_0BJ@HEGAHDFO@Stack?5pointer?5corruption?$AA@').
+symbol(0x41c7fc, string, '??_C@_0BB@KCIACLNC@PDBOpenValidate5?$AA@').
+symbol(0x41c810, string, '??_C@_1CK@HHHCOJPD@?$AAE?$AAn?$AAv?$AAi?$AAr?$AAo?$AAn?$AAm?$AAe?$AAn?$AAt?$AAD?$AAi?$AAr?$AAe?$AAc?$AAt?$AAo?$AAr?$AAy?$AA?$AA@').
+symbol(0x41c848, string, '??_C@_1FM@DNCABAP@?$AAS?$AAO?$AAF?$AAT?$AAW?$AAA?$AAR?$AAE?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?2?$AAV?$AAi?$AAs?$AAu?$AAa?$AAl?$AAS?$AAt?$AAu?$AAd?$AAi?$AAo?$AA?2@').
+symbol(0x41c8b8, string, '??_C@_0M@HLOHPNFA@RegCloseKey?$AA@').
+symbol(0x41c8c8, string, '??_C@_0BB@GLNAEDBD@RegQueryValueExW?$AA@').
+symbol(0x41c8dc, string, '??_C@_0O@COHOBMLB@RegOpenKeyExW?$AA@').
+symbol(0x41c8ec, string, '??_C@_1BK@GAEMIDIL@?$AAA?$AAD?$AAV?$AAA?$AAP?$AAI?$AA3?$AA2?$AA?4?$AAD?$AAL?$AAL?$AA?$AA@').
+symbol(0x41c918, name, '?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x41c91c, name, '?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x41c920, name, '?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x41c924, name, '?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x41c928, name, '?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x41c930, string, '??_C@_1GE@KOCFNGPB@?$AA_?$AAc?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAf?$AAp?$AA_?$AAs?$AA?$CI?$AA?$CI?$AA?$CI?$AAv?$AAo?$AAi?$AAd?$AA?5?$AA?$CK?$AA?$CJ?$AA0?$AA?$CJ?$AA?0?$AA?5?$AA0?$AAx?$AA0?$AA0?$AA0?$AA1@').
+symbol(0x41c9a8, string, '??_C@_1CK@JMKHCBEI@?$AA_?$AAs?$AAe?$AAt?$AAd?$AAe?$AAf?$AAa?$AAu?$AAl?$AAt?$AAp?$AAr?$AAe?$AAc?$AAi?$AAs?$AAi?$AAo?$AAn?$AA?$AA@').
+symbol(0x41c9e0, string, '??_C@_1GG@PHGJJHBC@?$AAf?$AA?3?$AA?2?$AAd?$AAd?$AA?2?$AAv?$AAc?$AAt?$AAo?$AAo?$AAl?$AAs?$AA?2?$AAc?$AAr?$AAt?$AA_?$AAb?$AAl?$AAd?$AA?2?$AAs?$AAe?$AAl?$AAf?$AA_?$AAx?$AA8?$AA6?$AA?2?$AAc@').
+symbol(0x41cd34, table, '??_R4StoreOptionAction@Parser@option@@6B@').
+symbol(0x41cd4c, name, '??_R3StoreOptionAction@Parser@option@@8').
+symbol(0x41cd60, name, '??_R2StoreOptionAction@Parser@option@@8').
+symbol(0x41cd6c, name, '??_R1A@?0A@EA@StoreOptionAction@Parser@option@@8').
+symbol(0x41cd90, name, '??_R1A@?0A@EA@Action@Parser@option@@8').
+symbol(0x41cdb4, name, '??_R3Action@Parser@option@@8').
+symbol(0x41cdc8, name, '??_R2Action@Parser@option@@8').
+symbol(0x41cdd0, table, '??_R4Action@Parser@option@@6B@').
+symbol(0x41cde8, table, '??_R4CountOptionsAction@Stats@option@@6B@').
+symbol(0x41ce00, name, '??_R3CountOptionsAction@Stats@option@@8').
+symbol(0x41ce14, name, '??_R2CountOptionsAction@Stats@option@@8').
+symbol(0x41ce20, name, '??_R1A@?0A@EA@CountOptionsAction@Stats@option@@8').
+symbol(0x41ce44, table, '??_R4?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@6B@').
+symbol(0x41ce5c, name, '??_R3?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@8').
+symbol(0x41ce70, name, '??_R2?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@8').
+symbol(0x41ce7c, name, '??_R1A@?0A@EA@?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@8').
+symbol(0x41cea0, name, '??_R1A@?0A@EA@IStringWriter@PrintUsageImplementation@option@@8').
+symbol(0x41cec4, name, '??_R3IStringWriter@PrintUsageImplementation@option@@8').
+symbol(0x41ced8, name, '??_R2IStringWriter@PrintUsageImplementation@option@@8').
+symbol(0x41cee0, table, '??_R4IStringWriter@PrintUsageImplementation@option@@6B@').
+symbol(0x41cef8, table, '??_R4type_info@@6B@').
+symbol(0x41cf10, name, '??_R3type_info@@8').
+symbol(0x41cf24, name, '??_R2type_info@@8').
+symbol(0x41cf2c, name, '??_R1A@?0A@EA@type_info@@8').
+symbol(0x41d05c, name, '___rtc_iaa').
+symbol(0x41d264, name, '___rtc_izz').
+symbol(0x41d368, name, '___rtc_taa').
+symbol(0x41d570, name, '___rtc_tzz').
+symbol(0x41e000, name, '??_R0?AVStoreOptionAction@Parser@option@@@8').
+symbol(0x41e038, name, '??_R0?AUAction@Parser@option@@@8').
+symbol(0x41e064, name, '??_R0?AVCountOptionsAction@Stats@option@@@8').
+symbol(0x41e0a0, name, '??_R0?AU?$StreamWriter@$$A6AIPBXIIPAU_iobuf@@@ZU1@@PrintUsageImplementation@option@@@8').
+symbol(0x41e10c, name, '??_R0?AUIStringWriter@PrintUsageImplementation@option@@@8').
+symbol(0x41e154, name, '??_R0?AVtype_info@@@8').
+symbol(0x41e170, name, '?_RTC_ErrorLevels@@3PAHA').
+symbol(0x41e188, name, '___security_cookie').
+symbol(0x41e18c, name, '___security_cookie_complement').
+symbol(0x41e190, name, '___globallocalestatus').
+symbol(0x41e194, name, '___defaultmatherr').
+symbol(0x41e198, name, '___native_dllmain_reason').
+symbol(0x41e19c, name, '___native_vcclrit_reason').
+symbol(0x41e390, name, '?wsprintffp@@3P6AHPADPBDZZA').
+symbol(0x41e794, name, '__commode').
+symbol(0x41e798, name, '__fmode').
+symbol(0x41e79c, name, '__dowildcard').
+symbol(0x41e7a0, name, '__newmode').
+symbol(0x41e7a4, name, '___native_startup_state').
+symbol(0x41e7b4, name, '___native_startup_lock').
+symbol(0x41e7b8, name, '___onexitend').
+symbol(0x41e7c8, name, '___onexitbegin').
+symbol(0x41e7cc, name, '__NoHeapEnableTerminationOnCorruption').
+symbol(0x41e7d0, name, '___dyn_tls_init_callback').
+symbol(0x41f000, name, '__IMPORT_DESCRIPTOR_MSVCR100D').
+symbol(0x41f014, name, '__IMPORT_DESCRIPTOR_KERNEL32').
+symbol(0x41f028, name, '__NULL_IMPORT_DESCRIPTOR').
+symbol(0x41f1c0, name, '__imp__GetCurrentProcessId@0').
+symbol(0x41f1c4, name, '__imp__GetCurrentThreadId@0').
+symbol(0x41f1c8, name, '__imp__GetTickCount@0').
+symbol(0x41f1cc, name, '__imp__QueryPerformanceCounter@4').
+symbol(0x41f1d0, name, '__imp__DecodePointer@4').
+symbol(0x41f1d4, name, '__imp__SetUnhandledExceptionFilter@4').
+symbol(0x41f1d8, name, '__imp__UnhandledExceptionFilter@4').
+symbol(0x41f1dc, name, '__imp__GetCurrentProcess@0').
+symbol(0x41f1e0, name, '__imp__TerminateProcess@8').
+symbol(0x41f1e4, name, '__imp__FreeLibrary@4').
+symbol(0x41f1e8, name, '__imp__VirtualQuery@12').
+symbol(0x41f1ec, name, '__imp__GetModuleFileNameW@12').
+symbol(0x41f1f0, name, '__imp__GetProcessHeap@0').
+symbol(0x41f1f4, name, '__imp__HeapAlloc@12').
+symbol(0x41f1f8, name, '__imp__HeapFree@12').
+symbol(0x41f1fc, name, '__imp__HeapSetInformation@16').
+symbol(0x41f200, name, '__imp__InterlockedCompareExchange@12').
+symbol(0x41f204, name, '__imp__Sleep@4').
+symbol(0x41f208, name, '__imp__InterlockedExchange@8').
+symbol(0x41f20c, name, '__imp__EncodePointer@4').
+symbol(0x41f210, name, '__imp__LoadLibraryW@4').
+symbol(0x41f214, name, '__imp__GetProcAddress@8').
+symbol(0x41f218, name, '__imp__lstrlenA@4').
+symbol(0x41f21c, name, '__imp__RaiseException@16').
+symbol(0x41f220, name, '__imp__MultiByteToWideChar@24').
+symbol(0x41f224, name, '__imp__IsDebuggerPresent@0').
+symbol(0x41f228, name, '__imp__WideCharToMultiByte@32').
+symbol(0x41f22c, name, '__imp__GetSystemTimeAsFileTime@4').
+symbol(0x41f230, name, 'KERNEL32_NULL_THUNK_DATA').
+symbol(0x41f270, name, '__imp___crt_debugger_hook').
+symbol(0x41f274, name, '__imp___controlfp_s').
+symbol(0x41f278, name, '__imp___invoke_watson').
+symbol(0x41f27c, name, '__imp___except_handler4_common').
+symbol(0x41f280, name, '__imp____dllonexit').
+symbol(0x41f284, name, '__imp___lock').
+symbol(0x41f288, name, '__imp___onexit').
+symbol(0x41f28c, method, '__imp_?_type_info_dtor_internal_method@type_info@@QAEXXZ').
+symbol(0x41f290, name, '__imp_?terminate@@YAXXZ').
+symbol(0x41f294, name, '__imp___initterm_e').
+symbol(0x41f298, name, '__imp___initterm').
+symbol(0x41f29c, name, '__imp___CrtDbgReportW').
+symbol(0x41f2a0, name, '__imp___CrtSetCheckCount').
+symbol(0x41f2a4, name, '__imp____initenv').
+symbol(0x41f2a8, name, '__imp__exit').
+symbol(0x41f2ac, name, '__imp___cexit').
+symbol(0x41f2b0, name, '__imp___XcptFilter').
+symbol(0x41f2b4, name, '__imp___exit').
+symbol(0x41f2b8, name, '__imp____getmainargs').
+symbol(0x41f2bc, name, '__imp___amsg_exit').
+symbol(0x41f2c0, name, '__imp____set_app_type').
+symbol(0x41f2c4, name, '__imp___fmode').
+symbol(0x41f2c8, name, '__imp___commode').
+symbol(0x41f2cc, name, '__imp____setusermatherr').
+symbol(0x41f2d0, name, '__imp___configthreadlocale').
+symbol(0x41f2d4, name, '__imp_??3@YAXPAX@Z').
+symbol(0x41f2d8, name, '__imp___CRT_RTC_INITW').
+symbol(0x41f2dc, name, '__imp__strtol').
+symbol(0x41f2e0, name, '__imp__calloc').
+symbol(0x41f2e4, name, '__imp__getenv').
+symbol(0x41f2e8, name, '__imp__atoi').
+symbol(0x41f2ec, name, '__imp____iob_func').
+symbol(0x41f2f0, name, '__imp__fwrite').
+symbol(0x41f2f4, name, '__imp___unlock').
+symbol(0x41f2f8, name, '__imp__fprintf').
+symbol(0x41f2fc, name, 'MSVCR100D_NULL_THUNK_DATA').
+% Gound inheritance relationships.
+inheritanceGround('option::Parser::StoreOptionAction', 'option::Parser::Action', 0).
+inheritanceGround('option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(void const *,unsigned int,unsigned int,_iobuf *),_iobuf>', 'option::PrintUsageImplementation::IStringWriter', 0).
+inheritanceGround('option::Stats::CountOptionsAction', 'option::Parser::Action', 0).
+% Ground inheritance completed successfully.
