@@ -34,6 +34,68 @@ classSizeGTE(Method, Offset + PtrSize) :-
     vfTableWrite(_, Method, Offset, _VFTable),
     pointerSize(PtrSize).
 
+% thisPtrConstructorCommon (rules.pl:3534): a heap allocation of known nonzero
+% size whose this-pointer is passed to a constructor.
+thisPtrConstructorCommon(Function, Constructor, ThisPtr) :-
+    constructor(Constructor),
+    thisPtrUsage(_, Function, ThisPtr, Constructor),
+    thisPtrAllocation(_, Function, ThisPtr, type_Heap, Size),
+    Size != 0.
+
+% Class-wide join for the Prolog disjunction
+% (factDerivedClass(Class, _, 0); factDerivedClass(_, Class, 0)):
+% Constructor's class participates in inheritance at offset 0, on either side.
+ctorClassInheritsAtZero(Constructor) :-
+    thisPtrConstructorCommon(_, Constructor, _),
+    derivedClass(D, _Base, 0),
+    &sameClass(Constructor, D).
+ctorClassInheritsAtZero(Constructor) :-
+    thisPtrConstructorCommon(_, Constructor, _),
+    derivedClass(_Derived, B, 0),
+    &sameClass(Constructor, B).
+
+% Some member of Constructor's class is contained in another object at offset 0
+% (class-wide form of factObjectInObject(_Derived, Class, 0)).
+ctorClassIsInnerAtZero(Constructor) :-
+    thisPtrConstructorCommon(_, Constructor, _),
+    objectInObject(_Outer, W, 0),
+    &sameClass(Constructor, W).
+
+% thisPtrAssociatedWithConstructor clause 1 (rules.pl:3571), Debug=inheritance:
+% inheritance at offset 0, the constructor installs a vftable, but Function has
+% no possible vftable write through ThisPtr at offset 0 — so the allocation is
+% for the constructor's own class, not a derived one with an inlined ctor.
+%!trace_rule {"allocation in % is constructed by % (inheritance at 0, no caller vftable write)", Function, Constructor}
+thisPtrAssociatedWithConstructor(Function, Constructor, ThisPtr) :-
+    thisPtrConstructorCommon(Function, Constructor, ThisPtr),
+    ctorClassInheritsAtZero(Constructor),
+    vfTableWrite(_, Constructor, 0, _VFTable),
+    not possibleVFTableWrite(_, Function, ThisPtr, 0, _).
+
+% thisPtrAssociatedWithConstructor clause 2 (rules.pl:3590), Debug=nobaseorderived:
+% no base, no derived, and not currently embedded in anything at offset 0, so no
+% other class's object can start at the allocation.
+%!trace_rule {"allocation in % is constructed by % (no base or derived)", Function, Constructor}
+thisPtrAssociatedWithConstructor(Function, Constructor, ThisPtr) :-
+    thisPtrConstructorCommon(Function, Constructor, ThisPtr),
+    classHasNoBase(WB),
+    &sameClass(Constructor, WB),
+    classHasNoDerived(WD),
+    &sameClass(Constructor, WD),
+    not ctorClassIsInnerAtZero(Constructor).
+
+% reasonClassSizeGTE_D (3609) / CSize-2 and reasonClassSizeLTE_C (3703) / CSize-2:
+% an allocation site of known size tracked to the constructor bounds the class
+% size in both directions (i.e. fixes the exact size).
+%!trace_rule {"class of % is exactly % bytes (heap allocation in %)", Constructor, Size, Function}
+classSizeGTE(Constructor, Size) :-
+    thisPtrAssociatedWithConstructor(Function, Constructor, ThisPtr),
+    thisPtrAllocation(_, Function, ThisPtr, type_Heap, Size).
+
+classSizeLTE(Constructor, Size) :-
+    thisPtrAssociatedWithConstructor(Function, Constructor, ThisPtr),
+    thisPtrAllocation(_, Function, ThisPtr, type_Heap, Size).
+
 % ============================================================
 % VFTABLE SIZE RULES
 % ============================================================
@@ -116,5 +178,6 @@ vftableSizeTotal(Total) :-
 %!trace {"vftable % is % bytes", V, S} vfTableSize(V, S).
 
 #show classSizeGTE/2.
+#show classSizeLTE/2.
 #show vftableSizeTotal/1.
 #show vfTableSize/2.

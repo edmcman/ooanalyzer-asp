@@ -26,10 +26,12 @@ No in-progress work. Recent sessions completed (in order):
 - `guessLateMergeClasses_G2` (weakMergeCandidate) and `G1` (weakG1Bonus) — merges.lp
 - `reasonNOTDeletingDestructor_F` (667) and `_H` (695) — ctorsdtors.lp
 - `reasonMergeClasses_K` (2939) — merges.lp
+- `reasonClassSizeGTE_B` / `_F` / `_G` — size.lp (`_C` dropped as subsumed by `_B`+`_F`)
+- `reasonClassSizeGTE_D` (3609) + `reasonClassSizeLTE_C` (3703) — size.lp
 
-Since the last rule-porting commit (`784e0cd`), work has been performance tooling only:
-plateau profiling (`--profile-after-first-model`, `--diagnose-vftable-objective`),
-`--results` output, and symbolize script improvements. No outstanding rule ports.
+Class size work is underway in `src/modules/size.lp`: GTE `_B/_D/_F/_G` and LTE `_A/_C`
+are in; `_C`(GTE) dropped as subsumed; `GTE_E` blocked on `validMethodMemberAccess`.
+Queue: `insanityClassSizeInvalid`, `reasonClassSizeLTE_B`, `reasonClassSizeLTE_D`.
 
 The diagnostic fixture (`--const diagnose=1` on `strong_negation_contradiction.lp`)
 is pre-existing-broken: returns `SATISFIABLE` + `violate(...)` instead of `UNSATISFIABLE`.
@@ -43,17 +45,35 @@ All 13 hand-written examples pass:
 
 ## Last completed batch
 
+1. **`reasonClassSizeGTE_D` (3609) + `reasonClassSizeLTE_C` (3703)** — exact class size from a
+   heap allocation tracked to a constructor. Shared helpers in size.lp:
+   `thisPtrConstructorCommon` (3534), `thisPtrAssociatedWithConstructor` clauses 1
+   (inheritance-at-0 + ctor vftable write + no caller possibleVFTableWrite through ThisPtr)
+   and 2 (`classHasNoBase`/`classHasNoDerived` joined via `&sameClass`, plus negated
+   class-wide `ctorClassIsInnerAtZero`). The Prolog derivedClass disjunction became two
+   `ctorClassInheritsAtZero` rules (theory atoms can't appear in cardinality literals).
+   Verified on vs2010 oo.lp: `classSizeLTE(0x411830, 84)` / `classSizeLTE(0x411a40, 12)`
+   matching the heap allocation facts, with equal GTE maxima (exact sizes).
+2. **classes.lp `reasonClassRelatedMethod_B` faithfulness fix** — the two raw-witness
+   `not objectInObject(X, _, 0)` literals were weaker than Prolog's class-wide
+   `not((find(X, C), factObjectInObject(C, _, 0)))`. Replaced with negated
+   `classHasInnerAtZero/1` helper (domain `thisPtrUsageEntity/1`, `&sameClass` join).
+   Per user: class-wide joins wanted in both places, not the raw-witness shortcut.
+
+Next up: `insanityClassSizeInvalid` (LTE < GTE is UNSAT) — one-line constraint, now
+meaningful since `classSizeLTE` exists. Then `reasonClassSizeLTE_B` (0x0fffffff ctor seed)
+and `reasonClassSizeLTE_D` (base ≤ derived).
+
+## Previous completed batch
+
 1. **`reasonMergeClasses_K` (2939)** — deterministic merge for class-related methods when
    both the source class and the method's class have no base. Uses `&sameClass(Class1, NoBase1)`
    and `&sameClass(Method, Class2)` to join witness-based no-base facts, then canonicalizes
    pair order.
-
-## Previous completed batch
-
-1. **`reasonNOTDeletingDestructor_F` (667)** — delete() exists in program but method doesn't
+2. **`reasonNOTDeletingDestructor_F` (667)** — delete() exists in program but method doesn't
    call delete(this). Two rule bodies translate the Prolog disjunction; conservatively skips
    methods with no this-pointer info.
-2. **`reasonNOTDeletingDestructor_H` (695)** — thiscall method with >2 parameters cannot be
+3. **`reasonNOTDeletingDestructor_H` (695)** — thiscall method with >2 parameters cannot be
    a deleting destructor. Uses three distinct `funcParameter` checks to avoid grounding blowup.
 
 ## Older Completed Batch

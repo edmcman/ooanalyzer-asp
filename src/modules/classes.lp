@@ -26,6 +26,13 @@ classCallsMethod(VFTable, Method2) :-
 classRelatedMethod(A, B) :- classCallsMethod(A, B).
 classRelatedMethod(A, B) :- classCallsMethod(B, A).
 
+% Class-wide form of "Class contains some object at offset 0": some member of
+% C's class is the outer of an objectInObject at 0. Domain restricted to the
+% entities reasonClassRelatedMethod_B queries.
+classHasInnerAtZero(C) :- thisPtrUsageEntity(C), objectInObject(W, _, 0), &sameClass(C, W).
+thisPtrUsageEntity(F) :- thisPtrUsage(_, F, _, _).
+thisPtrUsageEntity(M) :- thisPtrUsage(_, _, _, M).
+
 % reasonClassRelatedMethod_B: two distinct methods used with the same this-pointer
 % in the same function are related, but direction is not safe.
 % Counterpart: reasonClassRelatedMethod_B (rules.pl:2372)
@@ -36,8 +43,8 @@ classRelatedMethod(Method1, Method2) :-
     method(Method1),
     method(Method2),
     Method1 != Method2,
-    not objectInObject(Function, _, 0),
-    not objectInObject(Method2, _, 0).                                      % rules.pl:2372
+    not classHasInnerAtZero(Function),
+    not classHasInnerAtZero(Method2).                                       % rules.pl:2372
 
 % knownVirtualMethod: method is known to be virtual.
 % Prolog (rules.pl:780): symbolProperty(Method, virtual) or factMethodInVFTable.
