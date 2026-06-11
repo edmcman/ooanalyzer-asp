@@ -354,7 +354,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Size Upper Bound (rules.pl:3679–3722)
 - [x] `reasonClassSizeLTE_A` (3689) — existing fact (identity rule; covered by input fact architecture)
-- [ ] `reasonClassSizeLTE_B` (3693) — no evidence of members beyond 0
+- [x] `reasonClassSizeLTE_B` (3693) — universal upper bound (0x0fffffff) for every constructor's class; ported but **commented out** in `size.lp` as inert
 - [x] `reasonClassSizeLTE_C` (3703) — from heap allocation size tracked to constructor (`size.lp`; shares `thisPtrAssociatedWithConstructor` with `GTE_D`)
 - [ ] `reasonClassSizeLTE_D` (3716) — from base class in derived layout
 

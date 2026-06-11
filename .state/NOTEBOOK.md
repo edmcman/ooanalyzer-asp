@@ -28,10 +28,18 @@ No in-progress work. Recent sessions completed (in order):
 - `reasonMergeClasses_K` (2939) — merges.lp
 - `reasonClassSizeGTE_B` / `_F` / `_G` — size.lp (`_C` dropped as subsumed by `_B`+`_F`)
 - `reasonClassSizeGTE_D` (3609) + `reasonClassSizeLTE_C` (3703) — size.lp
+- `reasonClassSizeLTE_B` (3693) — size.lp; `classSizeLTE(Ctor, 268435455)` (0x0fffffff)
+  universal upper bound, constructor-gated (faithful to Prolog `factConstructor`).
+  Verified on vs2008 oo.lp: 3 constructors → 3 LTE_B atoms coexisting with tighter
+  LTE_C (84, 12); insanity stays satisfied; all 13 examples pass. **Then commented
+  out** as inert: 0x0fffffff never violates the only consumer (insanity `L < GTE`),
+  and `reasonMaximumPossibleClassSize` (its real purpose) isn't ported. Re-enable
+  with that predicate; until then it was just `#show` noise.
 
 Class size work is underway in `src/modules/size.lp`: GTE `_B/_D/_F/_G` and LTE `_A/_C`
-are in; `_C`(GTE) dropped as subsumed; `GTE_E` blocked on `validMethodMemberAccess`.
-Queue: `insanityClassSizeInvalid`, `reasonClassSizeLTE_B`, `reasonClassSizeLTE_D`.
+are in (LTE `_B` ported-but-commented-out as inert); `_C`(GTE) dropped as subsumed;
+`GTE_E` blocked on `validMethodMemberAccess`.
+Queue: `reasonClassSizeLTE_D` (needs `reasonClassRelationship/2` closure first).
 
 The diagnostic fixture (`--const diagnose=1` on `strong_negation_contradiction.lp`)
 is pre-existing-broken: returns `SATISFIABLE` + `violate(...)` instead of `UNSATISFIABLE`.

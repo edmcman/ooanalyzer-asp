@@ -96,6 +96,23 @@ classSizeLTE(Constructor, Size) :-
     thisPtrAssociatedWithConstructor(Function, Constructor, ThisPtr),
     thisPtrAllocation(_, Function, ThisPtr, type_Heap, Size).
 
+% reasonClassSizeLTE_B (3693) / CSize-0:
+% Every constructor's class gets the universal upper bound (0x0fffffff), so
+% every reportable class has a defined maximum size. Constructor-gated in the
+% Prolog (factConstructor), not all classes; the witness is the constructor
+% itself, so no &sameClass.
+% ejs: Seems weird but Prolog actually checks for a constructor.
+%
+% COMMENTED OUT: inert in this port. 0x0fffffff is effectively infinity, and the
+% only classSizeLTE consumer here is insanityClassSizeInvalid (L < GTE), where
+% this bound can never be the violated one. Its sole purpose in the Prolog is to
+% give reasonMaximumPossibleClassSize (min over LTEs) a value for every reportable
+% class — and that predicate isn't ported yet and has no other consumers. Keeping
+% it only added `...,268435455` noise to #show classSizeLTE. Re-enable when
+% reasonMaximumPossibleClassSize is ported, since it becomes load-bearing then.
+%!trace_rule {"class of constructor % is <= 0x0fffffff bytes (universal bound)", Constructor}
+%classSizeLTE(Constructor, 268435455) :- constructor(Constructor).   % 0x0fffffff
+
 % ============================================================
 % VFTABLE SIZE RULES
 % ============================================================
