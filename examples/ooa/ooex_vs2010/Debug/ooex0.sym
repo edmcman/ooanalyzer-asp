@@ -1,14 +1,14 @@
-18:38:48 Grounding...
-18:38:48 Grounding done (0.03s)
-18:38:48 Solving...
-18:38:48 Model found (0.04s): [-207]
-18:38:48 Model found (0.04s, +0.00s): [-208]
-18:38:48 Model found (0.04s, +0.00s): [-209]
-18:38:48 Model found (0.05s, +0.00s): [-210]
-18:38:48 Model found (0.05s, +0.00s): [-211]
-18:38:48 Model found (0.06s, +0.01s): [-213]
-18:38:48 Model found (0.06s, +0.00s): [-217]
-18:38:48 Solving done: OPTIMUM FOUND (0.03s)
+19:42:38 Grounding...
+19:42:38 Grounding done (0.03s)
+19:42:38 Solving...
+19:42:38 Model found (0.04s): [-207]
+19:42:38 Model found (0.04s, +0.00s): [-208]
+19:42:38 Model found (0.04s, +0.00s): [-209]
+19:42:38 Model found (0.05s, +0.00s): [-210]
+19:42:38 Model found (0.05s, +0.00s): [-211]
+19:42:38 Model found (0.06s, +0.01s): [-213]
+19:42:38 Model found (0.06s, +0.00s): [-217]
+19:42:38 Solving done: OPTIMUM FOUND (0.04s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex0.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Debug/ooex0.results
 OPTIMUM FOUND
 
@@ -16,7 +16,7 @@ Answer: 7
 Optimization: -217
 
 % Equivalence classes (203 classes, 207 entities):
-18:38:48 Writing results to examples/ooa/ooex_vs2010/Debug/ooex0.results
+19:42:38 Writing results to examples/ooa/ooex_vs2010/Debug/ooex0.results
 
 % Stats:
 %   atoms: 5300.0
@@ -24,17 +24,17 @@ Optimization: -217
 %   rules: 5746.0
 %   variables: 691.0
 %   constraints: 0.0
-%   choices: 2247.0
-%   conflicts: 74.0
+%   choices: 2347.0
+%   conflicts: 71.0
 %   models: 7.0
 %   optimal_models: 1.0
 %   final_cost: [-217.0]
 %   lower_bound: [-217.0]
-%   total_time: 0.07098102569580078
-%   ground_time: 0.027821888215839863
-%   time_to_first_model: 0.03849179204553366
-%   max_rss_bytes: 29097984
-%   solve_time: 0.024751901626586914
+%   total_time: 0.07291698455810547
+%   ground_time: 0.027865557931363583
+%   time_to_first_model: 0.03886279696598649
+%   max_rss_bytes: 28311552
+%   solve_time: 0.026455163955688477
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411770,ClassA::~ClassA(void)@0x411650)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411770,ClassA::ClassA(void)@0x4115f0)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411770,ClassA::~ClassA(void)@0x411650)

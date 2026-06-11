@@ -1,54 +1,53 @@
-18:38:48 Grounding...
-18:38:50 Grounding done (1.43s)
-18:38:50 Solving...
-18:38:56 Model found (7.27s): [-344, -717]
-18:38:56 Model found (7.31s, +0.04s): [-344, -718]
-18:38:56 Model found (7.36s, +0.05s): [-344, -719]
-18:38:56 Model found (7.38s, +0.02s): [-344, -720]
-18:38:56 Model found (7.41s, +0.03s): [-344, -721]
-18:38:56 Model found (7.43s, +0.02s): [-344, -722]
-18:38:56 Model found (7.46s, +0.02s): [-344, -723]
-18:38:56 Model found (7.48s, +0.02s): [-344, -724]
-18:38:56 Model found (7.52s, +0.03s): [-344, -725]
-18:38:56 Model found (7.54s, +0.02s): [-344, -726]
-18:38:56 Model found (7.63s, +0.09s): [-344, -727]
-18:38:56 Model found (7.67s, +0.04s): [-344, -728]
-18:38:56 Model found (7.69s, +0.03s): [-344, -729]
-18:38:56 Model found (7.72s, +0.03s): [-344, -730]
-18:38:56 Model found (7.76s, +0.04s): [-344, -731]
-18:38:56 Model found (7.79s, +0.03s): [-344, -732]
-18:38:56 Model found (7.81s, +0.03s): [-344, -733]
-18:38:56 Model found (7.84s, +0.03s): [-344, -734]
-18:38:56 Model found (7.95s, +0.11s): [-344, -735]
-18:38:56 Model found (8.06s, +0.11s): [-344, -736]
-18:43:54 Solving done: TIME LIMIT REACHED (304.35s)
+19:42:38 Grounding...
+19:42:40 Grounding done (1.45s)
+19:42:40 Solving...
+19:42:46 Model found (7.35s): [-344, -717]
+19:42:46 Model found (7.45s, +0.10s): [-344, -718]
+19:42:46 Model found (7.48s, +0.03s): [-344, -720]
+19:42:46 Model found (7.51s, +0.03s): [-344, -721]
+19:42:46 Model found (7.55s, +0.04s): [-344, -722]
+19:42:46 Model found (7.58s, +0.03s): [-344, -723]
+19:42:46 Model found (7.68s, +0.10s): [-344, -724]
+19:42:46 Model found (7.71s, +0.03s): [-344, -725]
+19:42:46 Model found (7.74s, +0.03s): [-344, -726]
+19:42:46 Model found (7.77s, +0.03s): [-344, -727]
+19:42:46 Model found (7.80s, +0.03s): [-344, -728]
+19:42:46 Model found (7.84s, +0.04s): [-344, -729]
+19:42:46 Model found (7.88s, +0.03s): [-344, -730]
+19:42:46 Model found (7.91s, +0.03s): [-344, -731]
+19:42:46 Model found (7.95s, +0.04s): [-344, -732]
+19:42:46 Model found (7.98s, +0.03s): [-344, -733]
+19:42:46 Model found (8.02s, +0.03s): [-344, -734]
+19:42:46 Model found (8.05s, +0.03s): [-344, -735]
+19:42:46 Model found (8.09s, +0.04s): [-344, -736]
+19:47:44 Solving done: TIME LIMIT REACHED (304.34s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/oo.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Lite/oo.results
 % TIME LIMIT REACHED
 
-Answer: 20
+Answer: 19
 Optimization: -344 -736
 Lower bound: -380 -2545
 
 % Equivalence classes (631 classes, 667 entities):
-18:43:54 Writing results to examples/ooa/ooex_vs2010/Lite/oo.results
+19:47:44 Writing results to examples/ooa/ooex_vs2010/Lite/oo.results
 
 % Stats:
 %   atoms: 78805.0
-%   bodies: 190664.0
+%   bodies: 190630.0
 %   rules: 244842.0
-%   variables: 81968.0
-%   constraints: 2837.0
-%   choices: 68893565.0
-%   conflicts: 72239.0
-%   models: 20.0
+%   variables: 81909.0
+%   constraints: 2811.0
+%   choices: 60748166.0
+%   conflicts: 66382.0
+%   models: 19.0
 %   optimal_models: 0.0
 %   final_cost: [-344.0, -736.0]
 %   lower_bound: [-380.0, -2545.0]
-%   total_time: 305.82680106163025
-%   ground_time: 1.4316766592673957
-%   time_to_first_model: 7.267843990121037
-%   max_rss_bytes: 235253760
-%   solve_time: 298.63333797454834
+%   total_time: 305.83871722221375
+%   ground_time: 1.4542174092493951
+%   time_to_first_model: 7.352605897001922
+%   max_rss_bytes: 234586112
+%   solve_time: 298.60862016677856
 classCallsMethod(Cls3::Cls3(void)@0x4014c0,Cls1::Cls1(void)@0x401150)
 classCallsMethod(__iob@0x4174b0,__bufin@0x419400)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x401f33,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x401e46)
@@ -1675,7 +1674,7 @@ constructor(std::locale::_Locimp::_Locimp(bool)@0x403b17)
 constructor(std::logic_error::logic_error(class std::logic_error const &)@0x40360f)
 constructor(std::out_of_range::out_of_range(class std::out_of_range const &)@0x4036a9)
 constructor(std::runtime_error::runtime_error(class std::runtime_error const &)@0x401420)
-constructor(std::system_error::system_error(class std::error_code, char const *)@0x4012c0)
+constructor(std::system_error::system_error(class std::system_error const &)@0x401440)
 constructor(virtual std::locale::facet::~facet(void)@0x4021d2)
 deletingDestructor(virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@0x401d27)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x401c78)
@@ -1732,9 +1731,9 @@ mergeClasses(const std::locale::facet::`vftable'@0x41237c,virtual std::locale::f
 mergeClasses(const std::logic_error::`vftable'@0x412490,std::logic_error::logic_error(class std::logic_error const &)@0x40360f)
 mergeClasses(const std::out_of_range::`vftable'@0x4124a8,std::out_of_range::out_of_range(class std::out_of_range const &)@0x4036a9)
 mergeClasses(const std::runtime_error::`vftable'@0x4121b0,std::runtime_error::runtime_error(class std::runtime_error const &)@0x401420)
-mergeClasses(const std::system_error::`vftable'@0x4121d0,std::system_error::system_error(class std::error_code, char const *)@0x4012c0)
-mergeClasses(std::bad_cast::bad_cast(char const *)@0x404028,const std::exception::`vftable'@0x4124cc)
+mergeClasses(const std::system_error::`vftable'@0x4121d0,std::system_error::system_error(class std::system_error const &)@0x401440)
 mergeClasses(std::exception::exception(char const * const &)@0x403fc1,const std::exception::`vftable'@0x4124cc)
+mergeClasses(std::runtime_error::runtime_error(char const *)@0x401060,const std::exception::`vftable'@0x4124cc)
 mergeClasses(virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@0x40278a,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@0x4123c4)
 mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4040bf,const type_info::`vftable'@0x4124f8)
 mergeClasses(virtual Cls1::func1(void)@0x401aa0,const Cls1::`vftable'@0x4121bc)
@@ -2406,7 +2405,7 @@ realDestructor(std::exception::exception(char const * const &, int)@0x403f39)
 realDestructor(std::exception::exception(class std::exception const &)@0x40406d)
 realDestructor(std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401320)
 realDestructor(std::runtime_error::runtime_error(char const *)@0x401060)
-realDestructor(std::system_error::system_error(class std::system_error const &)@0x401440)
+realDestructor(std::system_error::system_error(class std::error_code, char const *)@0x4012c0)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x401c6d)
 realDestructor(virtual std::bad_exception::~bad_exception(void)@0x40517f)
 realDestructor(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x4035a5)
@@ -2616,7 +2615,7 @@ vftableBelongsToClass(const std::locale::facet::`vftable'@0x41237c,0,virtual std
 vftableBelongsToClass(const std::logic_error::`vftable'@0x412490,0,std::logic_error::logic_error(class std::logic_error const &)@0x40360f)
 vftableBelongsToClass(const std::out_of_range::`vftable'@0x4124a8,0,std::out_of_range::out_of_range(class std::out_of_range const &)@0x4036a9)
 vftableBelongsToClass(const std::runtime_error::`vftable'@0x4121b0,0,std::runtime_error::runtime_error(class std::runtime_error const &)@0x401420)
-vftableBelongsToClass(const std::system_error::`vftable'@0x4121d0,0,std::system_error::system_error(class std::error_code, char const *)@0x4012c0)
+vftableBelongsToClass(const std::system_error::`vftable'@0x4121d0,0,std::system_error::system_error(class std::system_error const &)@0x401440)
 vftableSizeTotal(344)
 %   {$LN10_3@0x406bcc}
 %   {$LN10_5@0x408293}
@@ -3128,6 +3127,7 @@ vftableSizeTotal(344)
 %   {std::_dynamic_initializer_for__initlocks__@0x41156a}
 %   {std::_dynamic_initializer_for__initlocks___0@0x411598}
 %   {std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401d0a, const std::bad_alloc::`vftable'@0x4122e4}
+%   {std::bad_cast::bad_cast(char const *)@0x404028}
 %   {std::bad_cast::bad_cast(class std::bad_cast const &)@0x404092, const std::bad_cast::`vftable'@0x4124ec}
 %   {std::bad_exception::bad_exception(class std::bad_exception const &)@0x405d65, const std::bad_exception::`vftable'@0x412578}
 %   {std::basic_filebuf<char, CHAR_TRAITS>::_Init(struct _iobuf *, enum  std::basic_filebuf<char, CHAR_TRAITS>::_Initfl)@0x402a04}
@@ -3157,7 +3157,6 @@ vftableSizeTotal(344)
 %   {std::error_code::error_code(int, class std::error_category const &)@0x401090}
 %   {std::exception::_Copy_str(char const *)@0x403f63}
 %   {std::exception::_Tidy(void)@0x403fa3}
-%   {std::exception::exception(char const * const &)@0x403fc1, std::bad_cast::bad_cast(char const *)@0x404028, const std::exception::`vftable'@0x4124cc}
 %   {std::exception::exception(char const * const &, int)@0x403f39}
 %   {std::exception::exception(class std::exception const &)@0x40406d}
 %   {std::ios_base::_Callfns(enum  std::ios_base::event)@0x403c49}
@@ -3174,10 +3173,10 @@ vftableSizeTotal(344)
 %   {std::locale::~locale(void)@0x4021f5}
 %   {std::logic_error::logic_error(class std::logic_error const &)@0x40360f, const std::logic_error::`vftable'@0x412490}
 %   {std::out_of_range::out_of_range(class std::out_of_range const &)@0x4036a9, const std::out_of_range::`vftable'@0x4124a8}
-%   {std::runtime_error::runtime_error(char const *)@0x401060}
+%   {std::runtime_error::runtime_error(char const *)@0x401060, std::exception::exception(char const * const &)@0x403fc1, const std::exception::`vftable'@0x4124cc}
 %   {std::runtime_error::runtime_error(class std::runtime_error const &)@0x401420, const std::runtime_error::`vftable'@0x4121b0}
-%   {std::system_error::system_error(class std::error_code, char const *)@0x4012c0, const std::system_error::`vftable'@0x4121d0}
-%   {std::system_error::system_error(class std::system_error const &)@0x401440}
+%   {std::system_error::system_error(class std::error_code, char const *)@0x4012c0}
+%   {std::system_error::system_error(class std::system_error const &)@0x401440, const std::system_error::`vftable'@0x4121d0}
 %   {strtoxl@0x410e89}
 %   {struct _s_TryBlockMapEntry const * __cdecl _GetRangeOfTrysToCheck(struct _s_FuncInfo const *, int, int, unsigned int *, unsigned int *)@0x4043c3}
 %   {thunk:__stdcall RtlUnwind(x, x, x, x)@0x411184}

@@ -1,43 +1,56 @@
-18:38:48 Grounding...
-18:38:48 Grounding done (0.04s)
-18:38:48 Solving...
-18:38:48 Model found (0.08s): [-28, -245]
-18:38:48 Model found (0.09s, +0.01s): [-28, -290]
-18:38:48 Model found (0.09s, +0.00s): [-28, -292]
-18:38:48 Model found (0.10s, +0.01s): [-28, -295]
-18:38:48 Model found (0.11s, +0.01s): [-28, -300]
-18:38:48 Model found (0.11s, +0.00s): [-28, -303]
-18:38:48 Model found (0.11s, +0.00s): [-28, -304]
-18:38:48 Model found (0.12s, +0.00s): [-28, -311]
-18:38:48 Model found (0.12s, +0.01s): [-28, -320]
-18:38:48 Model found (0.13s, +0.01s): [-28, -325]
-18:38:48 Solving done: OPTIMUM FOUND (0.10s)
+19:42:38 Grounding...
+19:42:38 Grounding done (0.04s)
+19:42:38 Solving...
+19:42:38 Model found (0.08s): [-28, -240]
+19:42:38 Model found (0.08s, +0.00s): [-28, -245]
+19:42:38 Model found (0.09s, +0.01s): [-28, -254]
+19:42:38 Model found (0.10s, +0.00s): [-28, -264]
+19:42:38 Model found (0.10s, +0.00s): [-28, -267]
+19:42:38 Model found (0.10s, +0.00s): [-28, -274]
+19:42:38 Model found (0.10s, +0.00s): [-28, -277]
+19:42:38 Model found (0.11s, +0.00s): [-28, -284]
+19:42:38 Model found (0.11s, +0.00s): [-28, -287]
+19:42:38 Model found (0.11s, +0.00s): [-28, -294]
+19:42:38 Model found (0.12s, +0.00s): [-28, -297]
+19:42:38 Model found (0.12s, +0.01s): [-28, -300]
+19:42:38 Model found (0.13s, +0.01s): [-28, -303]
+19:42:38 Model found (0.14s, +0.01s): [-28, -306]
+19:42:38 Model found (0.15s, +0.01s): [-28, -307]
+19:42:38 Model found (0.16s, +0.01s): [-28, -312]
+19:42:38 Model found (0.16s, +0.00s): [-28, -313]
+19:42:38 Model found (0.17s, +0.01s): [-28, -315]
+19:42:38 Model found (0.17s, +0.00s): [-28, -316]
+19:42:38 Model found (0.18s, +0.01s): [-28, -321]
+19:42:38 Model found (0.18s, +0.00s): [-28, -322]
+19:42:38 Model found (0.19s, +0.01s): [-28, -324]
+19:42:38 Model found (0.19s, +0.00s): [-28, -325]
+19:42:38 Solving done: OPTIMUM FOUND (0.16s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex4.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex4.results
 OPTIMUM FOUND
 
-Answer: 10
+Answer: 23
 Optimization: -28 -325
 
 % Equivalence classes (220 classes, 232 entities):
-18:38:48 Writing results to examples/ooa/ooex_vs2008/Debug/ooex4.results
+19:42:38 Writing results to examples/ooa/ooex_vs2008/Debug/ooex4.results
 
 % Stats:
 %   atoms: 7446.0
 %   bodies: 2386.0
 %   rules: 8541.0
-%   variables: 2577.0
-%   constraints: 68.0
-%   choices: 3107.0
-%   conflicts: 53.0
-%   models: 10.0
+%   variables: 2574.0
+%   constraints: 64.0
+%   choices: 5795.0
+%   conflicts: 89.0
+%   models: 23.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -325.0]
 %   lower_bound: [-28.0, -325.0]
-%   total_time: 0.1488790512084961
-%   ground_time: 0.04224079009145498
-%   time_to_first_model: 0.08015051623806357
-%   max_rss_bytes: 32243712
-%   solve_time: 0.060656070709228516
+%   total_time: 0.20787811279296875
+%   ground_time: 0.04189204424619675
+%   time_to_first_model: 0.08104137424379587
+%   max_rss_bytes: 31457280
+%   solve_time: 0.11947011947631836
 classCallsMethod(Derived::Derived(void)@0x411570,Base::Base(void)@0x411620)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func1(void)@0x411690)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func2(void)@0x4116f0)

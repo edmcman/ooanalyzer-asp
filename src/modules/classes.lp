@@ -43,7 +43,8 @@ classRelatedMethod(Method1, Method2) :-
     method(Method1),
     method(Method2),
     Method1 != Method2,
-    not classHasInnerAtZero(Function),
+    % Ed thinks this is not needed: https://github.com/cmu-sei/pharos/issues/328
+    % not classHasInnerAtZero(Function),
     not classHasInnerAtZero(Method2).                                       % rules.pl:2372
 
 % knownVirtualMethod: method is known to be virtual.

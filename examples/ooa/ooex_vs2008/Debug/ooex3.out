@@ -1,11 +1,11 @@
-18:38:48 Grounding...
-18:38:48 Grounding done (0.03s)
-18:38:48 Solving...
-18:38:48 Model found (0.04s): [-210]
-18:38:48 Model found (0.04s, +0.00s): [-211]
-18:38:48 Model found (0.04s, +0.00s): [-213]
-18:38:48 Model found (0.05s, +0.00s): [-214]
-18:38:48 Solving done: OPTIMUM FOUND (0.02s)
+19:42:38 Grounding...
+19:42:38 Grounding done (0.03s)
+19:42:38 Solving...
+19:42:38 Model found (0.04s): [-210]
+19:42:38 Model found (0.04s, +0.00s): [-211]
+19:42:38 Model found (0.04s, +0.00s): [-213]
+19:42:38 Model found (0.04s, +0.00s): [-214]
+19:42:38 Solving done: OPTIMUM FOUND (0.02s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex3.results
 OPTIMUM FOUND
 
@@ -221,7 +221,7 @@ Optimization: -214
 %   {4274210}
 %   {4278144}
 %   {4278158}
-18:38:48 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
+19:42:38 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
 
 % Stats:
 %   atoms: 5305.0
@@ -235,8 +235,8 @@ Optimization: -214
 %   optimal_models: 1.0
 %   final_cost: [-214.0]
 %   lower_bound: [-214.0]
-%   total_time: 0.05663609504699707
-%   ground_time: 0.02745096804574132
-%   time_to_first_model: 0.03799120709300041
-%   max_rss_bytes: 28311552
-%   solve_time: 0.01063394546508789
+%   total_time: 0.054100990295410156
+%   ground_time: 0.02716497890651226
+%   time_to_first_model: 0.03766678273677826
+%   max_rss_bytes: 29097984
+%   solve_time: 0.008477926254272461

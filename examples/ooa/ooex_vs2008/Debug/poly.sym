@@ -1,39 +1,38 @@
-18:38:48 Grounding...
-18:38:48 Grounding done (0.14s)
-18:38:48 Solving...
-18:38:49 Model found (0.38s): [-20, -336]
-18:38:49 Model found (0.39s, +0.01s): [-20, -339]
-18:38:49 Model found (0.41s, +0.02s): [-20, -386]
-18:38:49 Model found (0.42s, +0.01s): [-20, -391]
-18:38:49 Model found (0.46s, +0.04s): [-20, -394]
-18:38:49 Model found (0.51s, +0.05s): [-20, -396]
-18:38:49 Solving done: OPTIMUM FOUND (0.38s)
+19:42:38 Grounding...
+19:42:38 Grounding done (0.14s)
+19:42:38 Solving...
+19:42:39 Model found (0.39s): [-20, -336]
+19:42:39 Model found (0.40s, +0.01s): [-20, -339]
+19:42:39 Model found (0.42s, +0.02s): [-20, -394]
+19:42:39 Model found (0.44s, +0.02s): [-20, -395]
+19:42:39 Model found (0.46s, +0.02s): [-20, -396]
+19:42:39 Solving done: OPTIMUM FOUND (0.33s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/poly.results
 OPTIMUM FOUND
 
-Answer: 6
+Answer: 5
 Optimization: -20 -396
 
 % Equivalence classes (280 classes, 310 entities):
-18:38:49 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
+19:42:39 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
 
 % Stats:
 %   atoms: 27122.0
 %   bodies: 14170.0
 %   rules: 29389.0
-%   variables: 9916.0
+%   variables: 9908.0
 %   constraints: 65.0
-%   choices: 9064.0
-%   conflicts: 35.0
-%   models: 6.0
+%   choices: 3726.0
+%   conflicts: 9.0
+%   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -396.0]
 %   lower_bound: [-20.0, -396.0]
-%   total_time: 0.5308959484100342
-%   ground_time: 0.13809204194694757
-%   time_to_first_model: 0.3840713142417371
-%   max_rss_bytes: 55050240
-%   solve_time: 0.1408989429473877
+%   total_time: 0.4826810359954834
+%   ground_time: 0.13837085710838437
+%   time_to_first_model: 0.38808933226391673
+%   max_rss_bytes: 55836672
+%   solve_time: 0.0888509750366211
 classCallsMethod(Circle::Circle(void)@0x4117e0,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Rectangle::Rectangle(void)@0x411700,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Triangle::Triangle(void)@0x4118c0,Shape::Shape(void)@0x4119a0)
