@@ -25,6 +25,10 @@ SYMBOLIZABLE_LP       := $(foreach lp,$(LP_FILES),\
   $(if $(or $(wildcard $(lp:.lp=.symbols)),$(wildcard $(lp:.lp=.ground))),$(lp)))
 SYM_FILES             := $(SYMBOLIZABLE_LP:%.lp=%.sym) $(GROUND:%.ground=%.sym)
 RESULTS_SYM_FILES     := $(SYMBOLIZABLE_LP:%.lp=%.results.sym)
+# Reference results shipped by OOAnalyzer; symbolize only those with .symbols/.ground
+RESULTS_ORIG          := $(shell find $(OOA_DIR) -name '*.results.orig')
+RESULTS_ORIG_SYM_FILES := $(foreach r,$(RESULTS_ORIG),\
+  $(if $(or $(wildcard $(r:.results.orig=.symbols)),$(wildcard $(r:.results.orig=.ground))),$(r:.results.orig=.results.orig.sym)))
 
 # ----------------------------------------------------------------
 # Default: convert all .facts and run ooanalyzer.py
@@ -121,7 +125,7 @@ $(OOA_DIR)/%.explain.out: $(OOA_DIR)/%.lp ooanalyzer.lp $(SRC_LP)
 SYMBOLIZE    := $(PYTHON) scripts/symbolize.py
 SYM_FILTER   ?= classRep\|constructor\|derivedClass\|embeddedObject\|classHasNoBase
 
-symbolize: $(SYM_FILES) $(RESULTS_SYM_FILES)
+symbolize: $(SYM_FILES) $(RESULTS_SYM_FILES) $(RESULTS_ORIG_SYM_FILES)
 
 $(OOA_DIR)/%.sym: $(OOA_DIR)/%.symbols $(OOA_DIR)/%.out scripts/symbolize.py
 	@echo "=== Symbolizing $* ==="
@@ -139,6 +143,15 @@ $(OOA_DIR)/%.results.sym: $(OOA_DIR)/%.out $(OOA_DIR)/%.ground scripts/symbolize
 	@echo "=== Symbolizing $*.results (ground) ==="
 	$(SYMBOLIZE) $(word 2,$^) $(@:.results.sym=.results) -o $@
 
+# Symbolize OOAnalyzer's shipped reference results (.results.orig → .results.orig.sym)
+$(OOA_DIR)/%.results.orig.sym: $(OOA_DIR)/%.results.orig $(OOA_DIR)/%.symbols scripts/symbolize.py
+	@echo "=== Symbolizing $*.results.orig ==="
+	$(SYMBOLIZE) $(word 2,$^) $< -o $@
+
+$(OOA_DIR)/%.results.orig.sym: $(OOA_DIR)/%.results.orig $(OOA_DIR)/%.ground scripts/symbolize.py
+	@echo "=== Symbolizing $*.results.orig (ground) ==="
+	$(SYMBOLIZE) $(word 2,$^) $< -o $@
+
 # ----------------------------------------------------------------
 # Convenience: single-file pipeline
 # Usage: make single STEM=ooex_vs2010/Debug/ooex0
@@ -153,6 +166,7 @@ clean:
 	find $(OOA_DIR) -name '*.out' -delete
 	find $(OOA_DIR) -name '*.results' -delete
 	find $(OOA_DIR) -name '*.results.sym' -delete
+	find $(OOA_DIR) -name '*.results.orig.sym' -delete
 	find $(OOA_DIR) -name '*.time' -delete
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
