@@ -126,6 +126,38 @@ Class size subsystem now complete except `GTE_E` (blocked on member access).
 7. **`reasonMethod_J`** — `classCallsMethod(_, Method)` proves `method(Method)`.
 8. **Negative merge signals** — `reasonNOTMergeClasses_E`, `K`, `Q` in merges.lp.
 
+## Idea: solve-time size bounds (difference logic / propagator)
+
+The size-grounding problem (recursive rules accumulating `Off + InnerSize`,
+e.g. `classSizeGTE_F`) is currently handled by grounding-time caps
+(`max_class_size`, `relevantOffset` depth bound). Those caps are exact given a
+generous bound — true derivation chains are acyclic, so the infinite recursion
+exists only in the grounder's positive over-approximation, which can't see the
+solver-time `&sameClass`/negation conditions that enforce well-foundedness.
+If the caps ever become a grounding bottleneck on large binaries, the
+principled escape is moving the arithmetic to solve time:
+
+- **Difference logic shape.** The size rules are naturally difference
+  constraints: `size(Class) - size(Inner) >= Off` (GTE_F),
+  `size(Base) <= size(Derived)` (LTE_D), exact-size facts as two-sided bounds;
+  `insanityClassSizeInvalid` becomes mere variable consistency. clingo-dl
+  handles this with no grounding of numeric values, but knows nothing about
+  `&sameClass`, and conditioning one theory's constraints on another theory's
+  atoms doesn't compose out of the box.
+- **Preferred variant: fold bounds into the union-find propagator**
+  (`propagator/sameclass.py`). Size bounds are per-class state: keep a
+  `(maxGTE, minLTE)` interval on each union-find root. Ground facts (member
+  accesses, vftable writes, heap allocations) seed intervals;
+  `objectInObject(Outer, Inner, Off)` edges propagate
+  `GTE(Outer) >= Off + GTE(Inner)` across roots; a union intersects intervals
+  and emits a conflict clause when `maxGTE > minLTE` (subsuming
+  `insanityClassSizeInvalid`). Fixpoint over at most |classes| roots at solve
+  time — same move as offset-labelled union-find in congruence closure. Main
+  cost: careful reason clauses so conflicts stay learnable.
+- Not useful for this: `#edge` acyclicity directives (solve-time only, don't
+  help grounding) and multi-shot iterative deepening of the caps (just
+  automates tuning the constant).
+
 ## Suggested next steps
 
 Ranked by availability of required predicates and incremental impact:
