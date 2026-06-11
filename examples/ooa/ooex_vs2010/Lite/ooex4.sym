@@ -1,78 +1,136 @@
-21:52:41 Grounding...
-21:52:41 Grounding done (0.02s)
-21:52:41 Solving...
-21:52:41 Model found (0.07s): [-44, -195]
-21:52:41 Model found (0.08s, +0.01s): [-44, -196]
-21:52:41 Model found (0.11s, +0.04s): [-44, -197]
-21:52:41 Model found (0.12s, +0.01s): [-44, -198]
-21:52:41 Model found (0.21s, +0.09s): [-44, -235]
-21:52:41 Model found (0.23s, +0.01s): [-44, -258]
-21:52:41 Model found (0.24s, +0.01s): [-44, -268]
-21:52:41 Model found (0.24s, +0.01s): [-44, -269]
-21:52:41 Model found (0.25s, +0.01s): [-44, -271]
-21:52:41 Model found (0.26s, +0.01s): [-44, -281]
-21:52:41 Model found (0.27s, +0.01s): [-44, -282]
-21:52:41 Model found (0.27s, +0.00s): [-44, -284]
-21:52:41 Model found (0.28s, +0.01s): [-44, -294]
-21:52:41 Model found (0.31s, +0.02s): [-44, -297]
-21:52:41 Model found (0.32s, +0.01s): [-44, -304]
-21:52:41 Model found (0.33s, +0.01s): [-44, -314]
-21:52:41 Model found (0.37s, +0.04s): [-44, -317]
-21:52:41 Model found (0.38s, +0.01s): [-44, -320]
-21:52:41 Model found (0.38s, +0.01s): [-44, -321]
-21:52:41 Model found (0.40s, +0.01s): [-44, -325]
-21:52:41 Model found (0.41s, +0.02s): [-44, -326]
-21:52:41 Model found (0.42s, +0.01s): [-44, -329]
-21:52:41 Model found (0.43s, +0.01s): [-44, -330]
-21:52:41 Model found (0.44s, +0.01s): [-44, -333]
-21:52:41 Model found (0.45s, +0.01s): [-44, -336]
-21:52:41 Model found (0.46s, +0.02s): [-44, -337]
-21:52:41 Model found (0.47s, +0.01s): [-44, -350]
-21:52:41 Model found (0.48s, +0.01s): [-44, -356]
-21:52:41 Model found (0.49s, +0.01s): [-44, -359]
-21:52:41 Model found (0.50s, +0.01s): [-44, -360]
-21:52:41 Model found (0.51s, +0.01s): [-44, -361]
-21:52:41 Model found (0.53s, +0.02s): [-44, -366]
-21:52:41 Model found (0.54s, +0.01s): [-44, -367]
-21:52:42 Model found (0.56s, +0.02s): [-44, -402]
-21:52:42 Model found (0.57s, +0.01s): [-44, -403]
-21:52:42 Model found (0.59s, +0.02s): [-44, -405]
-21:52:42 Model found (0.60s, +0.01s): [-44, -415]
-21:52:42 Model found (0.62s, +0.02s): [-44, -416]
-21:52:42 Model found (0.64s, +0.02s): [-44, -420]
-21:52:42 Model found (0.66s, +0.03s): [-44, -424]
-21:52:42 Model found (0.68s, +0.01s): [-44, -426]
-21:52:42 Model found (0.69s, +0.01s): [-44, -430]
-21:52:42 Model found (0.70s, +0.01s): [-44, -431]
-21:52:42 Model found (0.70s, +0.01s): [-44, -435]
-21:52:42 Model found (0.72s, +0.02s): [-44, -438]
-21:52:42 Solving done: OPTIMUM FOUND (0.72s)
+18:38:48 Grounding...
+18:38:48 Grounding done (0.06s)
+18:38:48 Solving...
+18:38:48 Model found (0.12s): [-44, -196]
+18:38:48 Model found (0.13s, +0.01s): [-44, -197]
+18:38:48 Model found (0.14s, +0.00s): [-44, -198]
+18:38:48 Model found (0.15s, +0.01s): [-44, -214]
+18:38:48 Model found (0.15s, +0.00s): [-44, -215]
+18:38:48 Model found (0.15s, +0.00s): [-44, -216]
+18:38:48 Model found (0.16s, +0.00s): [-44, -223]
+18:38:48 Model found (0.16s, +0.00s): [-44, -224]
+18:38:48 Model found (0.17s, +0.00s): [-44, -225]
+18:38:48 Model found (0.18s, +0.01s): [-44, -226]
+18:38:48 Model found (0.18s, +0.01s): [-44, -233]
+18:38:49 Model found (0.19s, +0.00s): [-44, -234]
+18:38:49 Model found (0.19s, +0.01s): [-44, -247]
+18:38:49 Model found (0.19s, +0.00s): [-44, -248]
+18:38:49 Model found (0.20s, +0.01s): [-44, -249]
+18:38:49 Model found (0.21s, +0.00s): [-44, -250]
+18:38:49 Model found (0.22s, +0.01s): [-44, -260]
+18:38:49 Model found (0.22s, +0.00s): [-44, -261]
+18:38:49 Model found (0.23s, +0.00s): [-44, -262]
+18:38:49 Model found (0.23s, +0.01s): [-44, -263]
+18:38:49 Model found (0.25s, +0.01s): [-44, -270]
+18:38:49 Model found (0.25s, +0.00s): [-44, -271]
+18:38:49 Model found (0.26s, +0.01s): [-44, -272]
+18:38:49 Model found (0.26s, +0.00s): [-44, -273]
+18:38:49 Model found (0.27s, +0.00s): [-44, -274]
+18:38:49 Model found (0.27s, +0.01s): [-44, -275]
+18:38:49 Model found (0.28s, +0.00s): [-44, -282]
+18:38:49 Model found (0.28s, +0.00s): [-44, -283]
+18:38:49 Model found (0.28s, +0.00s): [-44, -284]
+18:38:49 Model found (0.29s, +0.00s): [-44, -285]
+18:38:49 Model found (0.29s, +0.00s): [-44, -286]
+18:38:49 Model found (0.30s, +0.01s): [-44, -287]
+18:38:49 Model found (0.30s, +0.00s): [-44, -288]
+18:38:49 Model found (0.31s, +0.00s): [-44, -289]
+18:38:49 Model found (0.31s, +0.00s): [-44, -291]
+18:38:49 Model found (0.32s, +0.00s): [-44, -293]
+18:38:49 Model found (0.32s, +0.00s): [-44, -294]
+18:38:49 Model found (0.32s, +0.00s): [-44, -295]
+18:38:49 Model found (0.33s, +0.00s): [-44, -298]
+18:38:49 Model found (0.33s, +0.00s): [-44, -299]
+18:38:49 Model found (0.34s, +0.01s): [-44, -303]
+18:38:49 Model found (0.35s, +0.00s): [-44, -304]
+18:38:49 Model found (0.36s, +0.01s): [-44, -308]
+18:38:49 Model found (0.36s, +0.01s): [-44, -309]
+18:38:49 Model found (0.37s, +0.00s): [-44, -310]
+18:38:49 Model found (0.40s, +0.04s): [-44, -311]
+18:38:49 Model found (0.41s, +0.01s): [-44, -315]
+18:38:49 Model found (0.42s, +0.01s): [-44, -316]
+18:38:49 Model found (0.43s, +0.02s): [-44, -318]
+18:38:49 Model found (0.44s, +0.01s): [-44, -319]
+18:38:49 Model found (0.45s, +0.01s): [-44, -320]
+18:38:49 Model found (0.46s, +0.01s): [-44, -323]
+18:38:49 Model found (0.47s, +0.01s): [-44, -324]
+18:38:49 Model found (0.47s, +0.01s): [-44, -325]
+18:38:49 Model found (0.48s, +0.01s): [-44, -328]
+18:38:49 Model found (0.48s, +0.01s): [-44, -329]
+18:38:49 Model found (0.49s, +0.01s): [-44, -331]
+18:38:49 Model found (0.50s, +0.01s): [-44, -332]
+18:38:49 Model found (0.51s, +0.02s): [-44, -334]
+18:38:49 Model found (0.52s, +0.01s): [-44, -335]
+18:38:49 Model found (0.54s, +0.02s): [-44, -336]
+18:38:49 Model found (0.55s, +0.01s): [-44, -340]
+18:38:49 Model found (0.56s, +0.01s): [-44, -341]
+18:38:49 Model found (0.56s, +0.01s): [-44, -345]
+18:38:49 Model found (0.57s, +0.01s): [-44, -346]
+18:38:49 Model found (0.58s, +0.01s): [-44, -348]
+18:38:49 Model found (0.59s, +0.01s): [-44, -349]
+18:38:49 Model found (0.60s, +0.01s): [-44, -350]
+18:38:49 Model found (0.61s, +0.01s): [-44, -351]
+18:38:49 Model found (0.62s, +0.01s): [-44, -352]
+18:38:49 Model found (0.63s, +0.01s): [-44, -353]
+18:38:49 Model found (0.64s, +0.02s): [-44, -354]
+18:38:49 Model found (0.65s, +0.01s): [-44, -358]
+18:38:49 Model found (0.66s, +0.01s): [-44, -359]
+18:38:49 Model found (0.67s, +0.01s): [-44, -360]
+18:38:49 Model found (0.68s, +0.01s): [-44, -363]
+18:38:49 Model found (0.69s, +0.01s): [-44, -374]
+18:38:49 Model found (0.70s, +0.01s): [-44, -378]
+18:38:49 Model found (0.70s, +0.01s): [-44, -379]
+18:38:49 Model found (0.71s, +0.01s): [-44, -384]
+18:38:49 Model found (0.72s, +0.01s): [-44, -388]
+18:38:49 Model found (0.73s, +0.01s): [-44, -389]
+18:38:49 Model found (0.74s, +0.01s): [-44, -391]
+18:38:49 Model found (0.75s, +0.01s): [-44, -392]
+18:38:49 Model found (0.76s, +0.01s): [-44, -394]
+18:38:49 Model found (0.77s, +0.01s): [-44, -395]
+18:38:49 Model found (0.78s, +0.01s): [-44, -396]
+18:38:49 Model found (0.78s, +0.01s): [-44, -397]
+18:38:49 Model found (0.79s, +0.01s): [-44, -398]
+18:38:49 Model found (0.80s, +0.01s): [-44, -399]
+18:38:49 Model found (0.81s, +0.01s): [-44, -409]
+18:38:49 Model found (0.82s, +0.01s): [-44, -410]
+18:38:49 Model found (0.83s, +0.01s): [-44, -414]
+18:38:49 Model found (0.84s, +0.01s): [-44, -415]
+18:38:49 Model found (0.85s, +0.01s): [-44, -417]
+18:38:49 Model found (0.85s, +0.01s): [-44, -418]
+18:38:49 Model found (0.86s, +0.01s): [-44, -420]
+18:38:49 Model found (0.88s, +0.02s): [-44, -423]
+18:38:49 Model found (0.89s, +0.01s): [-44, -426]
+18:38:49 Model found (0.90s, +0.01s): [-44, -429]
+18:38:49 Model found (0.93s, +0.03s): [-44, -431]
+18:38:49 Model found (0.94s, +0.01s): [-44, -435]
+18:38:49 Model found (0.95s, +0.01s): [-44, -438]
+18:38:49 Solving done: OPTIMUM FOUND (0.90s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex4.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Lite/ooex4.results
 OPTIMUM FOUND
 
-Answer: 45
+Answer: 103
 Optimization: -44 -438
 
 % Equivalence classes (167 classes, 185 entities):
-21:52:42 Writing results to examples/ooa/ooex_vs2010/Lite/ooex4.results
+18:38:49 Writing results to examples/ooa/ooex_vs2010/Lite/ooex4.results
 
 % Stats:
-%   atoms: 9222.0
-%   bodies: 3643.0
-%   rules: 11149.0
-%   variables: 3432.0
-%   constraints: 300.0
-%   choices: 60162.0
-%   conflicts: 901.0
-%   models: 45.0
+%   atoms: 9648.0
+%   bodies: 3955.0
+%   rules: 11673.0
+%   variables: 3556.0
+%   constraints: 168.0
+%   choices: 23608.0
+%   conflicts: 622.0
+%   models: 103.0
 %   optimal_models: 1.0
 %   final_cost: [-44.0, -438.0]
 %   lower_bound: [-44.0, -438.0]
-%   total_time: 0.7551779747009277
-%   ground_time: 0.024580661207437515
-%   time_to_first_model: 0.06853975402191281
-%   max_rss_bytes: 30670848
-%   solve_time: 0.6785058975219727
+%   total_time: 0.9743590354919434
+%   ground_time: 0.05675665894523263
+%   time_to_first_model: 0.12354453699663281
+%   max_rss_bytes: 34603008
+%   solve_time: 0.8437149524688721
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func1(void)@0x401020)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func2(void)@0x401040)
@@ -141,6 +199,231 @@ classRelatedMethod(virtual int Base::func2(void)@0x401040,virtual int Base::func
 classRelatedMethod(virtual int Derived::func3(void)@0x4010a0,const Derived::`vftable'@0x406150)
 classRelatedMethod(virtual std::exception::~exception(void)@0x401ca4,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x401178)
 classRelatedMethod(virtual type_info::~type_info(void)@0x4010e6,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4010f6)
+classSizeGTE($LN10@0x401437,0)
+classSizeGTE($LN11_0@0x401867,0)
+classSizeGTE($LN12_0@0x402fe5,0)
+classSizeGTE($LN13_1@0x403f5e,0)
+classSizeGTE($LN20@0x401a1d,0)
+classSizeGTE($LN24@0x401a29,0)
+classSizeGTE($LN25_1@0x40432d,0)
+classSizeGTE($LN28@0x40435d,0)
+classSizeGTE($LN37@0x40342b,0)
+classSizeGTE($LN52@0x40220a,0)
+classSizeGTE($LN5@0x401e18,0)
+classSizeGTE($LN9@0x40185e,0)
+classSizeGTE($LN9_0@0x403c94,0)
+classSizeGTE(* __cdecl operator new(unsigned int)@0x4011bc,0)
+classSizeGTE(4211510,0)
+classSizeGTE(Base::Base(void)@0x401000,0)
+classSizeGTE(Base::Base(void)@0x401000,16)
+classSizeGTE(Base::Base(void)@0x401000,4)
+classSizeGTE(Base::Base(void)@0x401000,8)
+classSizeGTE(Base::Base(void)@0x401000,9)
+classSizeGTE(Derived::Derived(void)@0x401060,0)
+classSizeGTE(Derived::Derived(void)@0x401060,20)
+classSizeGTE(Derived::Derived(void)@0x401060,4)
+classSizeGTE(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x4038e0,0)
+classSizeGTE(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x4038e0,12)
+classSizeGTE(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x4038e0,13)
+classSizeGTE(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x4038e0,4)
+classSizeGTE(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x4038e0,8)
+classSizeGTE(__FF_MSGBANNER@0x4016f1,0)
+classSizeGTE(__FindPESection@0x4044d0,0)
+classSizeGTE(__GET_RTERRMSG@0x40151c,0)
+classSizeGTE(__IsNonwritableInCurrentImage@0x404520,0)
+classSizeGTE(__NLG_Notify1@0x40487c,0)
+classSizeGTE(__NMSG_WRITE@0x401542,0)
+classSizeGTE(__RTC_Initialize@0x4029de,0)
+classSizeGTE(__RTC_Terminate@0x402a04,0)
+classSizeGTE(__ValidateImageBase@0x404490,0)
+classSizeGTE(__XcptFilter@0x402287,0)
+classSizeGTE(___CxxSetUnhandledExceptionFilter@0x401f8e,0)
+classSizeGTE(___addlocaleref@0x403967,0)
+classSizeGTE(___ascii_strnicmp@0x405990,0)
+classSizeGTE(___crtCorExitProcess@0x401f9c,0)
+classSizeGTE(___crtExitProcess@0x401fc7,0)
+classSizeGTE(___crtGetEnvironmentStringsA@0x402702,0)
+classSizeGTE(___crtGetStringTypeA@0x40566e,0)
+classSizeGTE(___crtLCMapStringA@0x405541,0)
+classSizeGTE(___crtMessageBoxW@0x403467,0)
+classSizeGTE(___free_lc_time@0x404e7c,0)
+classSizeGTE(___free_lconv_mon@0x40525c,0)
+classSizeGTE(___free_lconv_num@0x4051f3,0)
+classSizeGTE(___freetlocinfo@0x403a8f,0)
+classSizeGTE(___get_sigabrt@0x4032b7,0)
+classSizeGTE(___initmbctable@0x404366,0)
+classSizeGTE(___onexitinit@0x401db1,0)
+classSizeGTE(___removelocaleref@0x4039f6,0)
+classSizeGTE(___report_gsfailure@0x404c11,0)
+classSizeGTE(___security_init_cookie@0x402c3f,0)
+classSizeGTE(___set_flsgetvalue@0x40174b,0)
+classSizeGTE(___sse2_available_init@0x405771,0)
+classSizeGTE(___updatetlocinfo@0x403c27,0)
+classSizeGTE(___updatetmbcinfo@0x403ec3,0)
+classSizeGTE(__abnormal_termination@0x404859,0)
+classSizeGTE(__allmul@0x4058c0,0)
+classSizeGTE(__alloca_probe_16@0x404e50,0)
+classSizeGTE(__alloca_probe_8@0x404e66,0)
+classSizeGTE(__amsg_exit@0x402269,0)
+classSizeGTE(__aulldvrm@0x4046d0,0)
+classSizeGTE(__c_exit@0x40225a,0)
+classSizeGTE(__call_reportfault@0x402ce9,0)
+classSizeGTE(__callnewh@0x401ed8,0)
+classSizeGTE(__calloc_crt@0x403826,0)
+classSizeGTE(__calloc_impl@0x404d17,0)
+classSizeGTE(__cdecl operator delete(*)@0x401162,0)
+classSizeGTE(__cdecl terminate(void)@0x40440c,0)
+classSizeGTE(__cexit@0x40224b,0)
+classSizeGTE(__cinit@0x402048,0)
+classSizeGTE(__crtGetStringTypeA_stat@0x405587,0)
+classSizeGTE(__crtLCMapStringA_stat@0x40535a,0)
+classSizeGTE(__crt_debugger_hook@0x404647,0)
+classSizeGTE(__encoded_null@0x401739,0)
+classSizeGTE(__errno@0x4043c6,0)
+classSizeGTE(__except_handler4@0x402ab0,0)
+classSizeGTE(__exit@0x402235,0)
+classSizeGTE(__fastcall _EH4_CallFilterFunc(x, x)@0x403202,0)
+classSizeGTE(__fastcall _EH4_GlobalUnwind2(x, x)@0x403232,0)
+classSizeGTE(__fastcall _EH4_LocalUnwind(x, x, x, x)@0x40324b,0)
+classSizeGTE(__fastcall _EH4_TransferToHandler(x, x)@0x403219,0)
+classSizeGTE(__fastcall __security_check_cookie(x)@0x4037d2,0)
+classSizeGTE(__fptrap@0x4056ae,0)
+classSizeGTE(__freea@0x4038c0,0)
+classSizeGTE(__get_errno_from_oserr@0x404384,0)
+classSizeGTE(__getptd@0x4018e9,0)
+classSizeGTE(__getptd_noexit@0x401870,0)
+classSizeGTE(__global_unwind2@0x404770,0)
+classSizeGTE(__heap_init@0x402a2a,0)
+classSizeGTE(__init_pointers@0x401ff1,0)
+classSizeGTE(__initp_eh_hooks@0x404445,0)
+classSizeGTE(__initp_heap_handler@0x401ec9,0)
+classSizeGTE(__initp_misc_cfltcvt_tab@0x404465,0)
+classSizeGTE(__initp_misc_invarg@0x402cda,0)
+classSizeGTE(__initp_misc_purevirt@0x40172a,0)
+classSizeGTE(__initp_misc_rand_s@0x404456,0)
+classSizeGTE(__initp_misc_winsig@0x403262,0)
+classSizeGTE(__initptd@0x4017bc,0)
+classSizeGTE(__initterm_e@0x402024,0)
+classSizeGTE(__invalid_parameter@0x402e37,0)
+classSizeGTE(__invalid_parameter_noinfo@0x402e64,0)
+classSizeGTE(__invoke_watson@0x402e12,0)
+classSizeGTE(__ioinit@0x402799,0)
+classSizeGTE(__ismbblead@0x40462f,0)
+classSizeGTE(__local_unwind2@0x4047d5,0)
+classSizeGTE(__local_unwind4@0x403110,0)
+classSizeGTE(__lock@0x402fee,0)
+classSizeGTE(__lockexit@0x401fdf,0)
+classSizeGTE(__malloc_crt@0x4037e1,0)
+classSizeGTE(__msize@0x4043d9,0)
+classSizeGTE(__mtinit@0x401a32,0)
+classSizeGTE(__mtinitlocknum@0x402f2c,0)
+classSizeGTE(__mtinitlocks@0x402e74,0)
+classSizeGTE(__mtterm@0x40177f,0)
+classSizeGTE(__onexit@0x401de2,0)
+classSizeGTE(__purecall@0x401117,0)
+classSizeGTE(__realloc_crt@0x403872,0)
+classSizeGTE(__set_abort_behavior@0x4014fb,0)
+classSizeGTE(__set_error_mode@0x403793,0)
+classSizeGTE(__setargv@0x402647,0)
+classSizeGTE(__setenvp@0x4023d1,0)
+classSizeGTE(__setmbcp@0x4041cc,0)
+classSizeGTE(__setmbcp_nolock@0x403fe3,0)
+classSizeGTE(__stdcall RtlUnwind(x, x, x, x)@0x4059f2,0)
+classSizeGTE(__stdcall _CxxThrowException(x, x)@0x401f00,0)
+classSizeGTE(__stdcall __crtTlsAlloc(x)@0x401742,0)
+classSizeGTE(__stdcall _freefls(x)@0x401903,0)
+classSizeGTE(__stdcall _seh_longjmp_unwind4(x)@0x4031e6,0)
+classSizeGTE(__unlock@0x402f15,0)
+classSizeGTE(__unlockexit@0x401fe8,0)
+classSizeGTE(__unwind_handler@0x404790,0)
+classSizeGTE(__updatetlocinfoEx_nolock@0x403bda,0)
+classSizeGTE(_abort@0x4014c8,0)
+classSizeGTE(_atexit@0x401e1e,0)
+classSizeGTE(_exit@0x40221f,0)
+classSizeGTE(_free@0x401bad,0)
+classSizeGTE(_main@0x4010b0,0)
+classSizeGTE(_mainCRTStartup@0x4013c6,0)
+classSizeGTE(_malloc@0x401e35,0)
+classSizeGTE(_memset@0x404650,0)
+classSizeGTE(_onexit_nolock@0x401cfb,0)
+classSizeGTE(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@0x4059f8,0)
+classSizeGTE(_raise@0x4032c4,0)
+classSizeGTE(_rand@0x401141,0)
+classSizeGTE(_realloc@0x404d99,0)
+classSizeGTE(_strcmp@0x401440,0)
+classSizeGTE(_strcpy_s@0x403021,0)
+classSizeGTE(_strcspn@0x405900,0)
+classSizeGTE(_strlen@0x403080,0)
+classSizeGTE(_strpbrk@0x405950,0)
+classSizeGTE(_unwind_handler4@0x4031a0,0)
+classSizeGTE(_wcscat_s@0x4035d3,0)
+classSizeGTE(_wcscpy_s@0x403730,0)
+classSizeGTE(_wcslen@0x403715,0)
+classSizeGTE(_wcsncpy_s@0x403648,0)
+classSizeGTE(class std::exception & std::exception::operator=(class std::exception const &)@0x401c6f,0)
+classSizeGTE(class std::exception & std::exception::operator=(class std::exception const &)@0x401c6f,8)
+classSizeGTE(const Base::`vftable'@0x406140,0)
+classSizeGTE(const Derived::`vftable'@0x406150,0)
+classSizeGTE(const Derived::`vftable'@0x406150,16)
+classSizeGTE(const Derived::`vftable'@0x406150,20)
+classSizeGTE(const Derived::`vftable'@0x406150,4)
+classSizeGTE(const Derived::`vftable'@0x406150,8)
+classSizeGTE(const Derived::`vftable'@0x406150,9)
+classSizeGTE(const std::bad_alloc::`vftable'@0x406168,0)
+classSizeGTE(const std::bad_alloc::`vftable'@0x406168,4)
+classSizeGTE(const std::bad_alloc::`vftable'@0x406168,8)
+classSizeGTE(const std::bad_alloc::`vftable'@0x406168,9)
+classSizeGTE(const std::exception::`vftable'@0x406bbc,0)
+classSizeGTE(const type_info::`vftable'@0x406160,0)
+classSizeGTE(doexit@0x4020df,0)
+classSizeGTE(fast_error_exit@0x40123c,0)
+classSizeGTE(getSystemCP@0x403f67,0)
+classSizeGTE(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x401f4c,0)
+classSizeGTE(parse_cmdline@0x4024ad,0)
+classSizeGTE(setSBCS@0x403ccf,0)
+classSizeGTE(setSBUpLow@0x403d33,0)
+classSizeGTE(siglookup@0x403280,0)
+classSizeGTE(static __cdecl type_info::_Type_info_dtor(class type_info *)@0x4013d0,0)
+classSizeGTE(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40119f,0)
+classSizeGTE(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40119f,4)
+classSizeGTE(std::exception::_Copy_str(char const *)@0x401c11,0)
+classSizeGTE(std::exception::_Copy_str(char const *)@0x401c11,8)
+classSizeGTE(std::exception::_Copy_str(char const *)@0x401c11,9)
+classSizeGTE(std::exception::_Tidy(void)@0x401c51,0)
+classSizeGTE(std::exception::_Tidy(void)@0x401c51,8)
+classSizeGTE(std::exception::_Tidy(void)@0x401c51,9)
+classSizeGTE(std::exception::exception(char const * const &, int)@0x401be7,0)
+classSizeGTE(std::exception::exception(char const * const &, int)@0x401be7,4)
+classSizeGTE(std::exception::exception(char const * const &, int)@0x401be7,8)
+classSizeGTE(std::exception::exception(char const * const &, int)@0x401be7,9)
+classSizeGTE(std::exception::exception(class std::exception const &)@0x401cd6,0)
+classSizeGTE(std::exception::exception(class std::exception const &)@0x401cd6,4)
+classSizeGTE(std::exception::exception(class std::exception const &)@0x401cd6,8)
+classSizeGTE(std::exception::exception(class std::exception const &)@0x401cd6,9)
+classSizeGTE(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x401178,0)
+classSizeGTE(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x401178,4)
+classSizeGTE(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401caf,0)
+classSizeGTE(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401caf,4)
+classSizeGTE(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4010f6,0)
+classSizeGTE(virtual char const * std::exception::what(void)const@0x401c04,0)
+classSizeGTE(virtual char const * std::exception::what(void)const@0x401c04,8)
+classSizeGTE(virtual int Base::func1(void)@0x401020,0)
+classSizeGTE(virtual int Base::func1(void)@0x401020,16)
+classSizeGTE(virtual int Base::func1(void)@0x401020,8)
+classSizeGTE(virtual int Base::func1(void)@0x401020,9)
+classSizeGTE(virtual int Base::func2(void)@0x401040,0)
+classSizeGTE(virtual int Base::func2(void)@0x401040,16)
+classSizeGTE(virtual int Base::func2(void)@0x401040,8)
+classSizeGTE(virtual int Base::func2(void)@0x401040,9)
+classSizeGTE(virtual int Derived::func3(void)@0x4010a0,0)
+classSizeGTE(virtual int Derived::func3(void)@0x4010a0,20)
+classSizeGTE(virtual std::bad_alloc::~bad_alloc(void)@0x40116d,0)
+classSizeGTE(virtual std::bad_alloc::~bad_alloc(void)@0x40116d,4)
+classSizeGTE(virtual std::exception::~exception(void)@0x401ca4,0)
+classSizeGTE(virtual std::exception::~exception(void)@0x401ca4,4)
+classSizeGTE(virtual type_info::~type_info(void)@0x4010e6,0)
+classSizeGTE(virtual type_info::~type_info(void)@0x4010e6,4)
+classSizeGTE(x_ismbbtype_l@0x4045dc,0)
 constructor(Base::Base(void)@0x401000)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40119f)
 constructor(std::exception::exception(char const * const &, int)@0x401be7)

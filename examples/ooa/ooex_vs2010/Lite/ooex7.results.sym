@@ -1,45 +1,46 @@
-finalClass(std::bad_alloc::bad_alloc(char const *)@0x401000, 0, 0, 0, std::bad_alloc::bad_alloc(char const *)@0x401000, [std::bad_alloc::bad_alloc(char const *)@0x401000]).
-finalClass(virtual std::bad_alloc::~bad_alloc(void)@0x401020, 0, 0, 0, virtual std::bad_alloc::~bad_alloc(void)@0x401020, [virtual std::bad_alloc::~bad_alloc(void)@0x401020]).
-finalClass(std::runtime_error::runtime_error(char const *)@0x4010e0, 0, 0, 0, std::runtime_error::runtime_error(char const *)@0x4010e0, [std::runtime_error::runtime_error(char const *)@0x4010e0]).
-finalClass(virtual std::locale::facet::~facet(void)@0x401200, 0, 0, 0, virtual std::locale::facet::~facet(void)@0x401200, [virtual std::locale::facet::~facet(void)@0x401200]).
-finalClass(std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790, 0, 0, 0, std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790, [std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790]).
-finalClass(std::system_error::system_error(class std::system_error const &)@0x4018b0, 0, 0, 0, std::system_error::system_error(class std::system_error const &)@0x4018b0, [std::system_error::system_error(class std::system_error const &)@0x4018b0]).
-finalClass(virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30, 0, 0, 0, virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30, [virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30]).
-finalClass(virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0, 0, 0, 0, virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0, [virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0]).
-finalClass(virtual std::locale::_Locimp::~_Locimp(void)@0x404714, 0, 0, 0, virtual std::locale::_Locimp::~_Locimp(void)@0x404714, [virtual std::locale::_Locimp::~_Locimp(void)@0x404714]).
-finalClass(virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@0x404a31, 0, 0, 0, virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@0x404a31, [virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@0x404a31]).
-finalClass(std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x404bfa, 0, 0, 0, std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x404bfa, [std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x404bfa]).
-finalClass(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@0x404c6e, 0, 0, 0, virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@0x404c6e, [virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@0x404c6e]).
-finalClass(std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed, 0, 0, 0, std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed, [std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed]).
-finalClass(std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@0x4055c1, 0, 0, 0, 0, [std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@0x4055c1]).
-finalClass(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a, 0, 0, 0, virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a, [virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a]).
-finalClass(std::exception::exception(char const * const &, int)@0x4060af, 0, 0, 0, std::exception::exception(char const * const &, int)@0x4060af, [std::exception::exception(char const * const &, int)@0x4060af]).
-finalClass(std::exception::exception(char const * const &)@0x406137, 0, 0, 0, std::exception::exception(char const * const &)@0x406137, [std::exception::exception(char const * const &)@0x406137]).
-finalClass(virtual std::exception::~exception(void)@0x4061b1, 0, 0, 0, virtual std::exception::~exception(void)@0x4061b1, [virtual std::exception::~exception(void)@0x4061b1]).
-finalClass(virtual type_info::~type_info(void)@0x406225, 0, 0, 0, virtual type_info::~type_info(void)@0x406225, [virtual type_info::~type_info(void)@0x406225]).
-finalClass(const std::bad_alloc::`vftable'@0x4181c0, const std::bad_alloc::`vftable'@0x4181c0, 0, 0, 0, [std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401680]).
-finalClass(const std::runtime_error::`vftable'@0x4181cc, const std::runtime_error::`vftable'@0x4181cc, 0, 0, 0, [std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890]).
-finalClass(const std::locale::facet::`vftable'@0x4181d8, const std::locale::facet::`vftable'@0x4181d8, 0, 0, std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0, [std::locale::facet::facet(unsigned int)@0x401210, std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0]).
-finalClass(const std::system_error::`vftable'@0x418208, const std::system_error::`vftable'@0x418208, 0, 0, 0, [std::system_error::system_error(class std::error_code, char const *)@0x401730]).
-finalClass(const std::ios_base::failure::`vftable'@0x418214, const std::ios_base::failure::`vftable'@0x418214, 0, 0, 0, [std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910]).
-finalClass(const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268, 0, 0, 0, 0, []).
-finalClass(const std::numpunct<char>::`vftable'@0x4182b0, const std::numpunct<char>::`vftable'@0x4182b0, 0, 0, 0, [std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440]).
-finalClass(const std::locale::_Locimp::`vftable'@0x418320, const std::locale::_Locimp::`vftable'@0x418320, 0, 0, 0, [std::locale::_Locimp::_Locimp(bool)@0x4046d5]).
-finalClass(const std::error_category::`vftable'@0x41832c, 0, 0, 0, 0, [virtual bool std::error_category::equivalent(int, class std::error_condition const &)const@0x40484a, virtual bool std::error_category::equivalent(class std::error_code const &, int)const@0x40486b, virtual class std::error_condition std::_System_error_category::default_error_condition(int)const@0x404892]).
-finalClass(const std::logic_error::`vftable'@0x4183d0, const std::logic_error::`vftable'@0x4183d0, 0, 0, 0, [std::logic_error::logic_error(class std::logic_error const &)@0x404904]).
-finalClass(const std::length_error::`vftable'@0x4183dc, const std::length_error::`vftable'@0x4183dc, 0, 0, 0, [std::length_error::length_error(class std::length_error const &)@0x404951]).
-finalClass(const std::out_of_range::`vftable'@0x4183e8, const std::out_of_range::`vftable'@0x4183e8, 0, 0, 0, [std::out_of_range::out_of_range(class std::out_of_range const &)@0x40499e]).
+finalClass(std::bad_alloc::bad_alloc(char const *)@0x401000, 0, 0x4, 0x4, std::bad_alloc::bad_alloc(char const *)@0x401000, [std::bad_alloc::bad_alloc(char const *)@0x401000]).
+finalClass(virtual std::bad_alloc::~bad_alloc(void)@0x401020, 0, 0x4, 0x4, virtual std::bad_alloc::~bad_alloc(void)@0x401020, [virtual std::bad_alloc::~bad_alloc(void)@0x401020]).
+finalClass(virtual std::locale::facet::~facet(void)@0x401200, 0, 0x4, 0x4, virtual std::locale::facet::~facet(void)@0x401200, [virtual std::locale::facet::~facet(void)@0x401200]).
+finalClass(std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890, 0, 0x4, 0x4, std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890, [std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890]).
+finalClass(std::system_error::system_error(class std::system_error const &)@0x4018b0, 0, 0x14, 0x14, std::system_error::system_error(class std::system_error const &)@0x4018b0, [std::system_error::system_error(class std::system_error const &)@0x4018b0]).
+finalClass(std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910, 0, 0x4, 0x4, std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910, [std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910]).
+finalClass(virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30, 0, 0x4, 0x4, virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30, [virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30]).
+finalClass(virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0, 0, 0x4, 0x4, virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0, [virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0]).
+finalClass(virtual std::locale::_Locimp::~_Locimp(void)@0x404714, 0, 0x1c, 0x1c, virtual std::locale::_Locimp::~_Locimp(void)@0x404714, [virtual std::locale::_Locimp::~_Locimp(void)@0x404714]).
+finalClass(virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@0x404a31, 0, 0x4, 0x4, virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@0x404a31, [virtual std::basic_ios<char, CHAR_TRAITS>::~basic_ios<char, CHAR_TRAITS>(void)@0x404a31]).
+finalClass(std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x404bfa, 0, 0xc, 0xc, std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x404bfa, [std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x404bfa]).
+finalClass(virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@0x404c6e, 0, 0x3c, 0x3c, virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@0x404c6e, [virtual std::basic_streambuf<char, CHAR_TRAITS>::~basic_streambuf<char, CHAR_TRAITS>(void)@0x404c6e]).
+finalClass(std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed, 0, 0x3c, 0x3c, std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed, [std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed]).
+finalClass(std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@0x4055c1, 0, 0xc, 0xc, 0, [std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@0x4055c1]).
+finalClass(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a, 0, 0x58, 0x58, virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a, [virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a]).
+finalClass(std::exception::exception(char const * const &)@0x406137, 0, 0x9, 0x9, std::exception::exception(char const * const &)@0x406137, [std::exception::exception(char const * const &)@0x406137]).
+finalClass(std::bad_cast::bad_cast(char const *)@0x406193, 0, 0x4, 0x4, std::bad_cast::bad_cast(char const *)@0x406193, [std::bad_cast::bad_cast(char const *)@0x406193]).
+finalClass(virtual std::exception::~exception(void)@0x4061b1, 0, 0x4, 0x4, virtual std::exception::~exception(void)@0x4061b1, [virtual std::exception::~exception(void)@0x4061b1]).
+finalClass(std::exception::exception(class std::exception const &)@0x4061e3, 0, 0x9, 0x9, std::exception::exception(class std::exception const &)@0x4061e3, [std::exception::exception(class std::exception const &)@0x4061e3]).
+finalClass(virtual type_info::~type_info(void)@0x406225, 0, 0x4, 0x4, virtual type_info::~type_info(void)@0x406225, [virtual type_info::~type_info(void)@0x406225]).
+finalClass(const std::bad_alloc::`vftable'@0x4181c0, const std::bad_alloc::`vftable'@0x4181c0, 0x9, 0x9, 0, [std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401680]).
+finalClass(const std::runtime_error::`vftable'@0x4181cc, const std::runtime_error::`vftable'@0x4181cc, 0x9, 0x9, 0, [std::runtime_error::runtime_error(char const *)@0x4010e0]).
+finalClass(const std::locale::facet::`vftable'@0x4181d8, const std::locale::facet::`vftable'@0x4181d8, 0x8, 0x10, std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440, [std::locale::facet::facet(unsigned int)@0x401210, std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440]).
+finalClass(const std::system_error::`vftable'@0x418208, const std::system_error::`vftable'@0x418208, 0x14, 0x14, 0, [std::system_error::system_error(class std::error_code, char const *)@0x401730]).
+finalClass(const std::ios_base::failure::`vftable'@0x418214, const std::ios_base::failure::`vftable'@0x418214, 0x14, 0x14, 0, [std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790]).
+finalClass(const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268, const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268, 0x10, 0x10, 0, [std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0]).
+finalClass(const std::numpunct<char>::`vftable'@0x4182b0, 0, 0x8, 0x8, 0, []).
+finalClass(const std::locale::_Locimp::`vftable'@0x418320, const std::locale::_Locimp::`vftable'@0x418320, 0x20, 0x20, 0, [std::locale::_Locimp::_Locimp(bool)@0x4046d5]).
+finalClass(const std::error_category::`vftable'@0x41832c, 0, 0x4, 0x4, 0, [virtual bool std::error_category::equivalent(int, class std::error_condition const &)const@0x40484a, virtual bool std::error_category::equivalent(class std::error_code const &, int)const@0x40486b, virtual class std::error_condition std::_System_error_category::default_error_condition(int)const@0x404892]).
+finalClass(const std::logic_error::`vftable'@0x4183d0, const std::logic_error::`vftable'@0x4183d0, 0x9, 0x9, 0, [std::logic_error::logic_error(class std::logic_error const &)@0x404904]).
+finalClass(const std::length_error::`vftable'@0x4183dc, const std::length_error::`vftable'@0x4183dc, 0x9, 0x9, 0, [std::length_error::length_error(class std::length_error const &)@0x404951]).
+finalClass(const std::out_of_range::`vftable'@0x4183e8, const std::out_of_range::`vftable'@0x4183e8, 0x9, 0x9, 0, [std::out_of_range::out_of_range(class std::out_of_range const &)@0x40499e]).
 finalClass(const std::ios_base::`vftable'@0x4183f4, 0, 0, 0, 0, []).
 finalClass(const std::basic_ostream<char, CHAR_TRAITS>::`vftable'@0x4183fc, 0, 0, 0, 0, []).
 finalClass(const std::basic_ios<char, CHAR_TRAITS>::`vftable'@0x418404, 0, 0, 0, 0, []).
-finalClass(const std::ctype<char>::`vftable'@0x41840c, const std::ctype<char>::`vftable'@0x41840c, 0, 0, 0, [std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@0x404a41]).
-finalClass(const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@0x418434, 0, 0, 0, 0, [virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x404c99, virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x404ca1, virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@0x404ca9, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@0x404caf, virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@0x404cb4, virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@0x404cb8, virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@0x404cbd, virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@0x404cc0, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@0x404ce7, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@0x404db0, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@0x404e7b, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@0x404ea3, virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@0x404eef, ___init_collate@0x40e9a9]).
-finalClass(const std::basic_filebuf<char, CHAR_TRAITS>::`vftable'@0x418474, 0, 0, 0, 0, []).
-finalClass(const std::codecvt<char, char, int>::`vftable'@0x4184b4, 0, 0, 0, 0, []).
-finalClass(const std::exception::`vftable'@0x4184ec, const std::exception::`vftable'@0x4184ec, 0, 0, std::bad_cast::bad_cast(class std::bad_cast const &)@0x406208, [std::exception::exception(class std::exception const &)@0x4061e3, std::bad_cast::bad_cast(class std::bad_cast const &)@0x406208]).
-finalClass(const std::bad_cast::`vftable'@0x41850c, const std::bad_cast::`vftable'@0x41850c, 0, 0, 0, [std::bad_cast::bad_cast(char const *)@0x406193]).
+finalClass(const std::ctype<char>::`vftable'@0x41840c, const std::ctype<char>::`vftable'@0x41840c, 0x18, 0x18, 0, [std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@0x404a41]).
+finalClass(const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@0x418434, 0, 0x38, 0x38, 0, [virtual std::basic_streambuf<char, CHAR_TRAITS>::_Lock(void)@0x404c99, virtual std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x404ca1, virtual int std::basic_streambuf<char, CHAR_TRAITS>::overflow(int)@0x404ca9, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@0x404caf, virtual int std::basic_streambuf<char, CHAR_TRAITS>::underflow(void)@0x404cb4, virtual class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_streambuf<char, CHAR_TRAITS>::setbuf(char *, __int64)@0x404cb8, virtual std::basic_streambuf<char, CHAR_TRAITS>::imbue(class std::locale const &)@0x404cbd, virtual int std::basic_streambuf<char, CHAR_TRAITS>::uflow(void)@0x404cc0, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsgetn(char *, __int64)@0x404ce7, virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::xsputn(char const *, __int64)@0x404db0, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekoff(__int64, int, int)@0x404e7b, virtual class std::fpos<int> std::basic_streambuf<char, CHAR_TRAITS>::seekpos(class std::fpos<int>, int)@0x404ea3, virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@0x404eef, ___init_collate@0x40e9a9]).
+finalClass(const std::basic_filebuf<char, CHAR_TRAITS>::`vftable'@0x418474, 0, 0x38, 0x38, 0, []).
+finalClass(const std::codecvt<char, char, int>::`vftable'@0x4184b4, 0, 0x8, 0x8, 0, []).
+finalClass(const std::exception::`vftable'@0x4184ec, const std::exception::`vftable'@0x4184ec, 0x9, 0x9, 0, [std::exception::exception(char const * const &, int)@0x4060af]).
+finalClass(const std::bad_cast::`vftable'@0x41850c, const std::bad_cast::`vftable'@0x41850c, 0x9, 0x9, 0, [std::bad_cast::bad_cast(class std::bad_cast const &)@0x406208]).
 finalClass(const type_info::`vftable'@0x418518, 0, 0, 0, 0, [virtual * type_info::`scalar deleting destructor'(unsigned int)@0x406235]).
-finalClass(const std::bad_exception::`vftable'@0x4186b8, const std::bad_exception::`vftable'@0x4186b8, 0, 0, 0, [std::bad_exception::bad_exception(class std::bad_exception const &)@0x4093c3]).
+finalClass(const std::bad_exception::`vftable'@0x4186b8, const std::bad_exception::`vftable'@0x4186b8, 0x9, 0x9, 0, [std::bad_exception::bad_exception(class std::bad_exception const &)@0x4093c3]).
 finalClass(__iob@0x41d6e0, 0, 0, 0, 0, []).
 finalDemangledName(const std::bad_alloc::`vftable'@0x4181c0, '.?AVbad_alloc@std@@', 'std::bad_alloc', '').
 finalDemangledName(const std::runtime_error::`vftable'@0x4181cc, '.?AVruntime_error@std@@', 'std::runtime_error', '').
@@ -69,8 +70,8 @@ finalInheritance(const std::bad_alloc::`vftable'@0x4181c0, const std::exception:
 finalInheritance(const std::runtime_error::`vftable'@0x4181cc, const std::exception::`vftable'@0x4184ec, 0, const std::runtime_error::`vftable'@0x4181cc, false).
 finalInheritance(const std::system_error::`vftable'@0x418208, const std::runtime_error::`vftable'@0x4181cc, 0, const std::system_error::`vftable'@0x418208, false).
 finalInheritance(const std::ios_base::failure::`vftable'@0x418214, const std::system_error::`vftable'@0x418208, 0, const std::ios_base::failure::`vftable'@0x418214, false).
-finalInheritance(const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268, const std::locale::facet::`vftable'@0x4181d8, 0, 0, false).
-finalInheritance(const std::numpunct<char>::`vftable'@0x4182b0, const std::locale::facet::`vftable'@0x4181d8, 0, const std::numpunct<char>::`vftable'@0x4182b0, false).
+finalInheritance(const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268, const std::locale::facet::`vftable'@0x4181d8, 0, const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268, false).
+finalInheritance(const std::numpunct<char>::`vftable'@0x4182b0, const std::locale::facet::`vftable'@0x4181d8, 0, 0, false).
 finalInheritance(const std::locale::_Locimp::`vftable'@0x418320, const std::locale::facet::`vftable'@0x4181d8, 0, const std::locale::_Locimp::`vftable'@0x418320, false).
 finalInheritance(const std::logic_error::`vftable'@0x4183d0, const std::exception::`vftable'@0x4184ec, 0, const std::logic_error::`vftable'@0x4183d0, false).
 finalInheritance(const std::length_error::`vftable'@0x4183dc, const std::logic_error::`vftable'@0x4183d0, 0, const std::length_error::`vftable'@0x4183dc, false).
@@ -83,18 +84,18 @@ finalInheritance(const std::bad_cast::`vftable'@0x41850c, const std::exception::
 finalInheritance(const std::bad_exception::`vftable'@0x4186b8, const std::exception::`vftable'@0x4184ec, 0, const std::bad_exception::`vftable'@0x4186b8, false).
 finalMethodProperty(std::bad_alloc::bad_alloc(char const *)@0x401000, realDestructor, certain).
 finalMethodProperty(virtual std::bad_alloc::~bad_alloc(void)@0x401020, realDestructor, certain).
-finalMethodProperty(std::runtime_error::runtime_error(char const *)@0x4010e0, realDestructor, certain).
+finalMethodProperty(std::runtime_error::runtime_error(char const *)@0x4010e0, constructor, certain).
 finalMethodProperty(virtual std::locale::facet::~facet(void)@0x401200, realDestructor, certain).
 finalMethodProperty(std::locale::facet::facet(unsigned int)@0x401210, constructor, certain).
 finalMethodProperty(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401680, constructor, certain).
 finalMethodProperty(std::system_error::system_error(class std::error_code, char const *)@0x401730, constructor, certain).
-finalMethodProperty(std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790, realDestructor, certain).
-finalMethodProperty(std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890, constructor, certain).
+finalMethodProperty(std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790, constructor, certain).
+finalMethodProperty(std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890, realDestructor, certain).
 finalMethodProperty(std::system_error::system_error(class std::system_error const &)@0x4018b0, realDestructor, certain).
-finalMethodProperty(std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910, constructor, certain).
-finalMethodProperty(std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0, realDestructor, certain).
+finalMethodProperty(std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910, realDestructor, certain).
+finalMethodProperty(std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0, constructor, certain).
 finalMethodProperty(virtual std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::~num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(void)@0x401b30, realDestructor, certain).
-finalMethodProperty(std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440, constructor, certain).
+finalMethodProperty(std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440, realDestructor, certain).
 finalMethodProperty(virtual std::numpunct<char>::~numpunct<char>(void)@0x4024d0, realDestructor, certain).
 finalMethodProperty(std::locale::_Locimp::_Locimp(bool)@0x4046d5, constructor, certain).
 finalMethodProperty(virtual std::locale::_Locimp::~_Locimp(void)@0x404714, realDestructor, certain).
@@ -125,12 +126,12 @@ finalMethodProperty(virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector d
 finalMethodProperty(std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed, realDestructor, certain).
 finalMethodProperty(std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@0x4055c1, constructor, certain).
 finalMethodProperty(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a, realDestructor, certain).
-finalMethodProperty(std::exception::exception(char const * const &, int)@0x4060af, realDestructor, certain).
+finalMethodProperty(std::exception::exception(char const * const &, int)@0x4060af, constructor, certain).
 finalMethodProperty(std::exception::exception(char const * const &)@0x406137, realDestructor, certain).
-finalMethodProperty(std::bad_cast::bad_cast(char const *)@0x406193, constructor, certain).
+finalMethodProperty(std::bad_cast::bad_cast(char const *)@0x406193, realDestructor, certain).
 finalMethodProperty(virtual std::exception::~exception(void)@0x4061b1, realDestructor, certain).
-finalMethodProperty(std::exception::exception(class std::exception const &)@0x4061e3, constructor, certain).
-finalMethodProperty(std::bad_cast::bad_cast(class std::bad_cast const &)@0x406208, realDestructor, certain).
+finalMethodProperty(std::exception::exception(class std::exception const &)@0x4061e3, realDestructor, certain).
+finalMethodProperty(std::bad_cast::bad_cast(class std::bad_cast const &)@0x406208, constructor, certain).
 finalMethodProperty(virtual type_info::~type_info(void)@0x406225, realDestructor, certain).
 finalMethodProperty(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x406235, deletingDestructor, certain).
 finalMethodProperty(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x406235, virtual, certain).

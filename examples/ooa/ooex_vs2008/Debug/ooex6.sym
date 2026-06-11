@@ -1,59 +1,83 @@
-21:52:41 Grounding...
-21:52:41 Grounding done (0.02s)
-21:52:41 Solving...
-21:52:41 Model found (0.05s): [-32, -245]
-21:52:41 Model found (0.05s, +0.00s): [-32, -248]
-21:52:41 Model found (0.05s, +0.00s): [-32, -253]
-21:52:41 Model found (0.06s, +0.01s): [-32, -274]
-21:52:41 Model found (0.06s, +0.00s): [-32, -294]
-21:52:41 Model found (0.07s, +0.00s): [-32, -314]
-21:52:41 Model found (0.07s, +0.00s): [-32, -317]
-21:52:41 Model found (0.07s, +0.00s): [-32, -334]
-21:52:41 Model found (0.08s, +0.00s): [-32, -337]
-21:52:41 Model found (0.08s, +0.00s): [-32, -354]
-21:52:41 Model found (0.09s, +0.00s): [-32, -357]
-21:52:41 Model found (0.09s, +0.01s): [-32, -360]
-21:52:41 Model found (0.10s, +0.01s): [-32, -364]
-21:52:41 Model found (0.10s, +0.01s): [-32, -367]
-21:52:41 Model found (0.11s, +0.01s): [-32, -370]
-21:52:41 Model found (0.11s, +0.00s): [-32, -373]
-21:52:41 Model found (0.12s, +0.01s): [-32, -376]
-21:52:41 Model found (0.13s, +0.01s): [-32, -379]
-21:52:41 Model found (0.13s, +0.01s): [-32, -382]
-21:52:41 Model found (0.16s, +0.02s): [-32, -383]
-21:52:41 Model found (0.16s, +0.00s): [-32, -386]
-21:52:41 Model found (0.17s, +0.01s): [-32, -389]
-21:52:41 Model found (0.18s, +0.01s): [-32, -391]
-21:52:41 Model found (0.18s, +0.00s): [-32, -392]
-21:52:41 Model found (0.19s, +0.01s): [-32, -394]
-21:52:41 Model found (0.20s, +0.01s): [-32, -397]
-21:52:41 Solving done: OPTIMUM FOUND (0.18s)
+18:38:48 Grounding...
+18:38:48 Grounding done (0.04s)
+18:38:48 Solving...
+18:38:48 Model found (0.09s): [-32, -245]
+18:38:48 Model found (0.09s, +0.00s): [-32, -250]
+18:38:48 Model found (0.09s, +0.00s): [-32, -253]
+18:38:48 Model found (0.10s, +0.01s): [-32, -259]
+18:38:48 Model found (0.10s, +0.00s): [-32, -263]
+18:38:48 Model found (0.10s, +0.00s): [-32, -269]
+18:38:48 Model found (0.11s, +0.00s): [-32, -273]
+18:38:48 Model found (0.11s, +0.00s): [-32, -279]
+18:38:48 Model found (0.12s, +0.00s): [-32, -283]
+18:38:48 Model found (0.12s, +0.00s): [-32, -286]
+18:38:48 Model found (0.12s, +0.00s): [-32, -289]
+18:38:48 Model found (0.12s, +0.00s): [-32, -293]
+18:38:48 Model found (0.13s, +0.00s): [-32, -296]
+18:38:48 Model found (0.14s, +0.01s): [-32, -303]
+18:38:48 Model found (0.14s, +0.00s): [-32, -306]
+18:38:48 Model found (0.15s, +0.01s): [-32, -309]
+18:38:48 Model found (0.16s, +0.01s): [-32, -312]
+18:38:48 Model found (0.16s, +0.00s): [-32, -315]
+18:38:48 Model found (0.17s, +0.01s): [-32, -318]
+18:38:48 Model found (0.18s, +0.01s): [-32, -321]
+18:38:48 Model found (0.18s, +0.01s): [-32, -324]
+18:38:48 Model found (0.19s, +0.01s): [-32, -327]
+18:38:48 Model found (0.20s, +0.01s): [-32, -329]
+18:38:48 Model found (0.21s, +0.01s): [-32, -332]
+18:38:48 Model found (0.21s, +0.01s): [-32, -335]
+18:38:48 Model found (0.22s, +0.00s): [-32, -336]
+18:38:48 Model found (0.23s, +0.01s): [-32, -338]
+18:38:48 Model found (0.23s, +0.01s): [-32, -341]
+18:38:48 Model found (0.24s, +0.01s): [-32, -344]
+18:38:48 Model found (0.24s, +0.00s): [-32, -346]
+18:38:48 Model found (0.25s, +0.01s): [-32, -349]
+18:38:48 Model found (0.26s, +0.01s): [-32, -352]
+18:38:48 Model found (0.26s, +0.01s): [-32, -353]
+18:38:48 Model found (0.27s, +0.00s): [-32, -355]
+18:38:48 Model found (0.27s, +0.01s): [-32, -356]
+18:38:48 Model found (0.28s, +0.01s): [-32, -357]
+18:38:48 Model found (0.30s, +0.02s): [-32, -359]
+18:38:48 Model found (0.31s, +0.01s): [-32, -360]
+18:38:48 Model found (0.33s, +0.01s): [-32, -361]
+18:38:48 Model found (0.33s, +0.01s): [-32, -362]
+18:38:48 Model found (0.34s, +0.01s): [-32, -365]
+18:38:48 Model found (0.35s, +0.01s): [-32, -366]
+18:38:49 Model found (0.36s, +0.01s): [-32, -367]
+18:38:49 Model found (0.37s, +0.01s): [-32, -373]
+18:38:49 Model found (0.38s, +0.01s): [-32, -376]
+18:38:49 Model found (0.39s, +0.01s): [-32, -379]
+18:38:49 Model found (0.40s, +0.01s): [-32, -382]
+18:38:49 Model found (0.41s, +0.01s): [-32, -385]
+18:38:49 Model found (0.42s, +0.01s): [-32, -386]
+18:38:49 Model found (0.42s, +0.01s): [-32, -387]
+18:38:49 Solving done: OPTIMUM FOUND (0.39s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex6.results
 OPTIMUM FOUND
 
-Answer: 26
-Optimization: -32 -397
+Answer: 50
+Optimization: -32 -387
 
 % Equivalence classes (222 classes, 237 entities):
-21:52:41 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
+18:38:49 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
 
 % Stats:
-%   atoms: 7509.0
-%   bodies: 2352.0
-%   rules: 8677.0
-%   variables: 2706.0
-%   constraints: 123.0
-%   choices: 8591.0
-%   conflicts: 210.0
-%   models: 26.0
+%   atoms: 7840.0
+%   bodies: 2620.0
+%   rules: 9024.0
+%   variables: 2741.0
+%   constraints: 105.0
+%   choices: 9847.0
+%   conflicts: 350.0
+%   models: 50.0
 %   optimal_models: 1.0
-%   final_cost: [-32.0, -397.0]
-%   lower_bound: [-32.0, -397.0]
-%   total_time: 0.21059584617614746
-%   ground_time: 0.019491909071803093
-%   time_to_first_model: 0.04694249387830496
-%   max_rss_bytes: 29097984
-%   solve_time: 0.15822601318359375
+%   final_cost: [-32.0, -387.0]
+%   lower_bound: [-32.0, -387.0]
+%   total_time: 0.4510841369628906
+%   ground_time: 0.04402798367664218
+%   time_to_first_model: 0.0850259349681437
+%   max_rss_bytes: 33030144
+%   solve_time: 0.3564291000366211
 classCallsMethod(Derived::Derived(void)@0x411590,Base::Base(void)@0x411640)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func1(void)@0x4116b0)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func2(void)@0x411710)
@@ -67,8 +91,6 @@ classCallsMethod(const type_info::`vftable'@0x41676c,virtual * type_info::`vecto
 classCallsMethod(virtual * Derived::`vector deleting destructor'(unsigned int)@0x4117b0,virtual Derived::~Derived(void)@0x411820)
 classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,type_info::_type_info_dtor_internal_method(void)@0x419260)
 classRelatedMethod(Base::Base(void)@0x411640,Derived::Derived(void)@0x411590)
-classRelatedMethod(Base::Base(void)@0x411640,virtual int Base::func1(void)@0x4116b0)
-classRelatedMethod(Base::Base(void)@0x411640,virtual int Base::func2(void)@0x411710)
 classRelatedMethod(Derived::Derived(void)@0x411590,Base::Base(void)@0x411640)
 classRelatedMethod(Derived::Derived(void)@0x411590,virtual int Base::func1(void)@0x4116b0)
 classRelatedMethod(Derived::Derived(void)@0x411590,virtual int Base::func2(void)@0x411710)
@@ -85,17 +107,271 @@ classRelatedMethod(virtual * Derived::`vector deleting destructor'(unsigned int)
 classRelatedMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,const type_info::`vftable'@0x41676c)
 classRelatedMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,type_info::_type_info_dtor_internal_method(void)@0x419260)
 classRelatedMethod(virtual Derived::~Derived(void)@0x411820,virtual * Derived::`vector deleting destructor'(unsigned int)@0x4117b0)
-classRelatedMethod(virtual int Base::func1(void)@0x4116b0,Base::Base(void)@0x411640)
 classRelatedMethod(virtual int Base::func1(void)@0x4116b0,Derived::Derived(void)@0x411590)
 classRelatedMethod(virtual int Base::func1(void)@0x4116b0,const Base::`vftable'@0x416758)
 classRelatedMethod(virtual int Base::func1(void)@0x4116b0,const Derived::`vftable'@0x416740)
-classRelatedMethod(virtual int Base::func1(void)@0x4116b0,virtual int Base::func2(void)@0x411710)
-classRelatedMethod(virtual int Base::func2(void)@0x411710,Base::Base(void)@0x411640)
 classRelatedMethod(virtual int Base::func2(void)@0x411710,Derived::Derived(void)@0x411590)
 classRelatedMethod(virtual int Base::func2(void)@0x411710,const Base::`vftable'@0x416758)
 classRelatedMethod(virtual int Base::func2(void)@0x411710,const Derived::`vftable'@0x416740)
-classRelatedMethod(virtual int Base::func2(void)@0x411710,virtual int Base::func1(void)@0x4116b0)
 classRelatedMethod(virtual int Derived::func3(void)@0x411770,const Derived::`vftable'@0x416740)
+classSizeGTE($LN6_1@0x4130f5,0)
+classSizeGTE($LN8@0x412cfe,0)
+classSizeGTE(* __cdecl operator new(unsigned int)@0x411872,0)
+classSizeGTE(ArrayUnwindFilter@0x412e10,0)
+classSizeGTE(Base::Base(void)@0x411640,0)
+classSizeGTE(Base::Base(void)@0x411640,16)
+classSizeGTE(Base::Base(void)@0x411640,4)
+classSizeGTE(Base::Base(void)@0x411640,8)
+classSizeGTE(Base::Base(void)@0x411640,9)
+classSizeGTE(DebuggerProbe@0x4122a0,0)
+classSizeGTE(DebuggerRuntime@0x412650,0)
+classSizeGTE(Derived::Derived(void)@0x411590,0)
+classSizeGTE(Derived::Derived(void)@0x411590,20)
+classSizeGTE(Derived::Derived(void)@0x411590,4)
+classSizeGTE(GetPdbDll@0x413910,0)
+classSizeGTE(_DebuggerKnownHandle@0x412270,0)
+classSizeGTE(_NtCurrentTeb@0x412020,0)
+classSizeGTE(__FindPESection@0x413350,0)
+classSizeGTE(__IsNonwritableInCurrentImage@0x4133f0,0)
+classSizeGTE(__RTC_CheckEsp@0x4118a0,0)
+classSizeGTE(__RTC_GetErrDesc@0x412bb0,0)
+classSizeGTE(__RTC_InitBase@0x411aa0,0)
+classSizeGTE(__RTC_Initialize@0x412fa0,0)
+classSizeGTE(__RTC_NumErrors@0x412ba0,0)
+classSizeGTE(__RTC_SetErrorFunc@0x412c00,0)
+classSizeGTE(__RTC_SetErrorFuncW@0x412c30,0)
+classSizeGTE(__RTC_Shutdown@0x411ae0,0)
+classSizeGTE(__RTC_Terminate@0x412fd0,0)
+classSizeGTE(__RTC_UninitUse@0x412a70,0)
+classSizeGTE(__ValidateImageBase@0x4132d0,0)
+classSizeGTE(___CxxSetUnhandledExceptionFilter@0x412ed0,0)
+classSizeGTE(___report_gsfailure@0x412110,0)
+classSizeGTE(___security_init_cookie@0x4131a0,0)
+classSizeGTE(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x412860,0)
+classSizeGTE(__cdecl _RTC_Failure(*, int)@0x412350,0)
+classSizeGTE(__cdecl _RTC_StackFailure(*, char const *)@0x412720,0)
+classSizeGTE(__cdecl operator delete(*)@0x41186c,0)
+classSizeGTE(__cdecl terminate(void)@0x413b5c,0)
+classSizeGTE(__ehhandler$_main@0x414b7e,0)
+classSizeGTE(__except_handler4@0x413560,0)
+classSizeGTE(__fastcall _RTC_AllocaHelper(x, x, x)@0x411950,0)
+classSizeGTE(__fastcall _RTC_CheckStackVars(x, x)@0x4118d0,0)
+classSizeGTE(__fastcall _RTC_CheckStackVars2(x, x, x)@0x411990,0)
+classSizeGTE(__fastcall __security_check_cookie(x)@0x411880,0)
+classSizeGTE(__imp___purecall@0x4192d4,0)
+classSizeGTE(__invoke_watson_if_error@0x412f40,0)
+classSizeGTE(__matherr@0x412f80,0)
+classSizeGTE(__onexit@0x413010,0)
+classSizeGTE(__setargv@0x412f90,0)
+classSizeGTE(__setdefaultprecision@0x412ef0,0)
+classSizeGTE(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x412d60,0)
+classSizeGTE(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x412c80,0)
+classSizeGTE(__tmainCRTStartup@0x411d40,0)
+classSizeGTE(__unwindfunclet$_main$0@0x414b70,0)
+classSizeGTE(_atexit@0x413160,0)
+classSizeGTE(_exit_0@0x4132c4,0)
+classSizeGTE(_getMemBlockDataString@0x4129e0,0)
+classSizeGTE(_main@0x411460,0)
+classSizeGTE(_mainCRTStartup@0x411d20,0)
+classSizeGTE(check_managed_app@0x412030,0)
+classSizeGTE(class type_info & type_info::operator=(class type_info const &)@0x411bc0,0)
+classSizeGTE(const Base::`vftable'@0x416758,0)
+classSizeGTE(const Derived::`vftable'@0x416740,0)
+classSizeGTE(const Derived::`vftable'@0x416740,16)
+classSizeGTE(const Derived::`vftable'@0x416740,8)
+classSizeGTE(const Derived::`vftable'@0x416740,9)
+classSizeGTE(const type_info::`vftable'@0x41676c,0)
+classSizeGTE(failwithmessage@0x4123c0,0)
+classSizeGTE(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x412c60,0)
+classSizeGTE(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x412c70,0)
+classSizeGTE(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4135a0,0)
+classSizeGTE(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412e50,0)
+classSizeGTE(pre_c_init@0x411be0,0)
+classSizeGTE(pre_cpp_init@0x411cb0,0)
+classSizeGTE(start@0x411140,0)
+classSizeGTE(thunk:* __cdecl operator new(unsigned int)@0x4111c7,0)
+classSizeGTE(thunk:Base::Base(void)@0x4110fa,0)
+classSizeGTE(thunk:Derived::Derived(void)@0x41118b,0)
+classSizeGTE(thunk:__CRT_RTC_INITW@0x412c76,0)
+classSizeGTE(thunk:__CrtDbgReportW@0x413546,0)
+classSizeGTE(thunk:__CrtSetCheckCount@0x4132ca,0)
+classSizeGTE(thunk:__XcptFilter@0x4132b8,0)
+classSizeGTE(thunk:___CxxFrameHandler3@0x411878,0)
+classSizeGTE(thunk:___dllonexit@0x413b7a,0)
+classSizeGTE(thunk:___getmainargs@0x413196,0)
+classSizeGTE(thunk:___p__commode@0x413000,0)
+classSizeGTE(thunk:___p__fmode@0x413006,0)
+classSizeGTE(thunk:___set_app_type@0x41318a,0)
+classSizeGTE(thunk:___setusermatherr@0x412f76,0)
+classSizeGTE(thunk:__amsg_exit@0x413190,0)
+classSizeGTE(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x411208,0)
+classSizeGTE(thunk:__cdecl _RTC_Failure(*, int)@0x4111fe,0)
+classSizeGTE(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110eb,0)
+classSizeGTE(thunk:__cdecl operator delete(*)@0x41109b,0)
+classSizeGTE(thunk:__cdecl terminate(void)@0x4110aa,0)
+classSizeGTE(thunk:__cexit@0x4132be,0)
+classSizeGTE(thunk:__configthreadlocale@0x412eea,0)
+classSizeGTE(thunk:__controlfp_s@0x413b68,0)
+classSizeGTE(thunk:__crt_debugger_hook@0x413594,0)
+classSizeGTE(thunk:__decode_pointer@0x413b86,0)
+classSizeGTE(thunk:__encode_pointer@0x413184,0)
+classSizeGTE(thunk:__except_handler4_common@0x413b8c,0)
+classSizeGTE(thunk:__exit@0x4132b2,0)
+classSizeGTE(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x41103c,0)
+classSizeGTE(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x411096,0)
+classSizeGTE(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x41116d,0)
+classSizeGTE(thunk:__fastcall __security_check_cookie(x)@0x41101e,0)
+classSizeGTE(thunk:__initterm@0x41354c,0)
+classSizeGTE(thunk:__initterm_e@0x413552,0)
+classSizeGTE(thunk:__invoke_watson@0x413b6e,0)
+classSizeGTE(thunk:__lock@0x413b80,0)
+classSizeGTE(thunk:__purecall@0x411bd6,0)
+classSizeGTE(thunk:__stdcall DebugBreak()@0x41100f,0)
+classSizeGTE(thunk:__stdcall DebugBreak()@0x413bc8,0)
+classSizeGTE(thunk:__stdcall FreeLibrary(x)@0x41121c,0)
+classSizeGTE(thunk:__stdcall FreeLibrary(x)@0x413c28,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcess()@0x4110be,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcess()@0x413baa,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcessId()@0x411168,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcessId()@0x413bfe,0)
+classSizeGTE(thunk:__stdcall GetCurrentThreadId()@0x4110b4,0)
+classSizeGTE(thunk:__stdcall GetCurrentThreadId()@0x413bf8,0)
+classSizeGTE(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x41105a,0)
+classSizeGTE(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413c1c,0)
+classSizeGTE(thunk:__stdcall GetProcAddress(x, x)@0x411091,0)
+classSizeGTE(thunk:__stdcall GetProcAddress(x, x)@0x413be0,0)
+classSizeGTE(thunk:__stdcall GetProcessHeap()@0x411113,0)
+classSizeGTE(thunk:__stdcall GetProcessHeap()@0x413c16,0)
+classSizeGTE(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411195,0)
+classSizeGTE(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413c04,0)
+classSizeGTE(thunk:__stdcall GetTickCount()@0x4111ae,0)
+classSizeGTE(thunk:__stdcall GetTickCount()@0x413bf2,0)
+classSizeGTE(thunk:__stdcall HeapAlloc(x, x, x)@0x4111bd,0)
+classSizeGTE(thunk:__stdcall HeapAlloc(x, x, x)@0x413c10,0)
+classSizeGTE(thunk:__stdcall HeapFree(x, x, x)@0x411127,0)
+classSizeGTE(thunk:__stdcall HeapFree(x, x, x)@0x413c0a,0)
+classSizeGTE(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x411109,0)
+classSizeGTE(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x413b9e,0)
+classSizeGTE(thunk:__stdcall InterlockedExchange(x, x)@0x4111d6,0)
+classSizeGTE(thunk:__stdcall InterlockedExchange(x, x)@0x413b92,0)
+classSizeGTE(thunk:__stdcall IsDebuggerPresent()@0x411023,0)
+classSizeGTE(thunk:__stdcall IsDebuggerPresent()@0x413bbc,0)
+classSizeGTE(thunk:__stdcall LoadLibraryA(x)@0x4110f0,0)
+classSizeGTE(thunk:__stdcall LoadLibraryA(x)@0x413be6,0)
+classSizeGTE(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x41107d,0)
+classSizeGTE(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x413bd4,0)
+classSizeGTE(thunk:__stdcall QueryPerformanceCounter(x)@0x411159,0)
+classSizeGTE(thunk:__stdcall QueryPerformanceCounter(x)@0x413bec,0)
+classSizeGTE(thunk:__stdcall RaiseException(x, x, x, x)@0x4110f5,0)
+classSizeGTE(thunk:__stdcall RaiseException(x, x, x, x)@0x413bc2,0)
+classSizeGTE(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x411064,0)
+classSizeGTE(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x413bb6,0)
+classSizeGTE(thunk:__stdcall Sleep(x)@0x411050,0)
+classSizeGTE(thunk:__stdcall Sleep(x)@0x413b98,0)
+classSizeGTE(thunk:__stdcall TerminateProcess(x, x)@0x411136,0)
+classSizeGTE(thunk:__stdcall TerminateProcess(x, x)@0x413ba4,0)
+classSizeGTE(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111db,0)
+classSizeGTE(thunk:__stdcall UnhandledExceptionFilter(x)@0x413bb0,0)
+classSizeGTE(thunk:__stdcall VirtualQuery(x, x, x)@0x411073,0)
+classSizeGTE(thunk:__stdcall VirtualQuery(x, x, x)@0x413c22,0)
+classSizeGTE(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x411037,0)
+classSizeGTE(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x413bce,0)
+classSizeGTE(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4111f4,0)
+classSizeGTE(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411221,0)
+classSizeGTE(thunk:__stdcall lstrlenA(x)@0x4111f9,0)
+classSizeGTE(thunk:__stdcall lstrlenA(x)@0x413bda,0)
+classSizeGTE(thunk:__unlock@0x413b74,0)
+classSizeGTE(thunk:_rand@0x411af8,0)
+classSizeGTE(thunk:class type_info & type_info::operator=(class type_info const &)@0x411028,0)
+classSizeGTE(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x41122b,0)
+classSizeGTE(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411041,0)
+classSizeGTE(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4111a4,0)
+classSizeGTE(thunk:j__DebuggerKnownHandle@0x41120d,0)
+classSizeGTE(thunk:j__NtCurrentTeb@0x411122,0)
+classSizeGTE(thunk:j___CRT_RTC_INITW@0x4111a9,0)
+classSizeGTE(thunk:j___CrtDbgReportW@0x41106e,0)
+classSizeGTE(thunk:j___CrtSetCheckCount@0x4111d1,0)
+classSizeGTE(thunk:j___FindPESection@0x4110dc,0)
+classSizeGTE(thunk:j___IsNonwritableInCurrentImage@0x4111b3,0)
+classSizeGTE(thunk:j___RTC_CheckEsp@0x41117c,0)
+classSizeGTE(thunk:j___RTC_GetErrDesc@0x411014,0)
+classSizeGTE(thunk:j___RTC_InitBase@0x4110e6,0)
+classSizeGTE(thunk:j___RTC_Initialize@0x411186,0)
+classSizeGTE(thunk:j___RTC_NumErrors@0x411046,0)
+classSizeGTE(thunk:j___RTC_SetErrorFunc@0x41112c,0)
+classSizeGTE(thunk:j___RTC_SetErrorFuncW@0x411118,0)
+classSizeGTE(thunk:j___RTC_SetErrorType@0x411082,0)
+classSizeGTE(thunk:j___RTC_Shutdown@0x4110d2,0)
+classSizeGTE(thunk:j___RTC_Terminate@0x411032,0)
+classSizeGTE(thunk:j___RTC_UninitUse@0x4110c8,0)
+classSizeGTE(thunk:j___ValidateImageBase@0x411104,0)
+classSizeGTE(thunk:j___XcptFilter@0x4111cc,0)
+classSizeGTE(thunk:j____CxxFrameHandler3@0x4111b8,0)
+classSizeGTE(thunk:j____CxxSetUnhandledExceptionFilter@0x411154,0)
+classSizeGTE(thunk:j____dllonexit@0x411217,0)
+classSizeGTE(thunk:j____getmainargs@0x4111ef,0)
+classSizeGTE(thunk:j____p__commode@0x41115e,0)
+classSizeGTE(thunk:j____p__fmode@0x411019,0)
+classSizeGTE(thunk:j____security_init_cookie@0x41105f,0)
+classSizeGTE(thunk:j____set_app_type@0x411172,0)
+classSizeGTE(thunk:j____setusermatherr@0x41104b,0)
+classSizeGTE(thunk:j___amsg_exit@0x4111c2,0)
+classSizeGTE(thunk:j___cexit@0x411069,0)
+classSizeGTE(thunk:j___configthreadlocale@0x4110e1,0)
+classSizeGTE(thunk:j___controlfp_s@0x411190,0)
+classSizeGTE(thunk:j___crt_debugger_hook@0x4110ff,0)
+classSizeGTE(thunk:j___decode_pointer@0x41119a,0)
+classSizeGTE(thunk:j___encode_pointer@0x4110c3,0)
+classSizeGTE(thunk:j___except_handler4@0x411087,0)
+classSizeGTE(thunk:j___except_handler4_common@0x4111e5,0)
+classSizeGTE(thunk:j___exit@0x4110af,0)
+classSizeGTE(thunk:j___initterm@0x4110b9,0)
+classSizeGTE(thunk:j___initterm_e@0x411226,0)
+classSizeGTE(thunk:j___invoke_watson@0x41119f,0)
+classSizeGTE(thunk:j___invoke_watson_if_error@0x411131,0)
+classSizeGTE(thunk:j___lock@0x41108c,0)
+classSizeGTE(thunk:j___matherr@0x4111ea,0)
+classSizeGTE(thunk:j___onexit@0x41111d,0)
+classSizeGTE(thunk:j___purecall@0x411177,0)
+classSizeGTE(thunk:j___setargv@0x41100a,0)
+classSizeGTE(thunk:j___setdefaultprecision@0x411005,0)
+classSizeGTE(thunk:j___unlock@0x411163,0)
+classSizeGTE(thunk:j__atexit@0x411078,0)
+classSizeGTE(thunk:j__exit_0@0x411212,0)
+classSizeGTE(thunk:j__main@0x411181,0)
+classSizeGTE(thunk:j__rand@0x41113b,0)
+classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41114f,0)
+classSizeGTE(thunk:type_info::type_info(class type_info const &)@0x4111e0,0)
+classSizeGTE(thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x41102d,0)
+classSizeGTE(thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110cd,0)
+classSizeGTE(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110d7,0)
+classSizeGTE(thunk:virtual Derived::~Derived(void)@0x411145,0)
+classSizeGTE(thunk:virtual int Base::func1(void)@0x411203,0)
+classSizeGTE(thunk:virtual int Base::func2(void)@0x41110e,0)
+classSizeGTE(thunk:virtual int Derived::func3(void)@0x41114a,0)
+classSizeGTE(thunk:virtual type_info::~type_info(void)@0x411055,0)
+classSizeGTE(thunk:virtual type_info::~type_info(void)@0x4110a0,0)
+classSizeGTE(type_info::_type_info_dtor_internal_method(void)@0x419260,0)
+classSizeGTE(type_info::type_info(class type_info const &)@0x411b00,0)
+classSizeGTE(type_info::type_info(class type_info const &)@0x411b00,4)
+classSizeGTE(virtual * Derived::`vector deleting destructor'(unsigned int)@0x4117b0,0)
+classSizeGTE(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,0)
+classSizeGTE(virtual Derived::~Derived(void)@0x411820,0)
+classSizeGTE(virtual Derived::~Derived(void)@0x411820,20)
+classSizeGTE(virtual Derived::~Derived(void)@0x411820,4)
+classSizeGTE(virtual int Base::func1(void)@0x4116b0,0)
+classSizeGTE(virtual int Base::func1(void)@0x4116b0,16)
+classSizeGTE(virtual int Base::func1(void)@0x4116b0,8)
+classSizeGTE(virtual int Base::func1(void)@0x4116b0,9)
+classSizeGTE(virtual int Base::func2(void)@0x411710,0)
+classSizeGTE(virtual int Base::func2(void)@0x411710,16)
+classSizeGTE(virtual int Base::func2(void)@0x411710,8)
+classSizeGTE(virtual int Base::func2(void)@0x411710,9)
+classSizeGTE(virtual int Derived::func3(void)@0x411770,0)
+classSizeGTE(virtual int Derived::func3(void)@0x411770,20)
+classSizeGTE(virtual type_info::~type_info(void)@0x413b62,0)
+classSizeLTE(Derived::Derived(void)@0x411590,20)
+classSizeLTE(const Base::`vftable'@0x416758,20)
 constructor(Derived::Derived(void)@0x411590)
 constructor(type_info::type_info(class type_info const &)@0x411b00)
 constructor(virtual Derived::~Derived(void)@0x411820)
@@ -109,11 +385,7 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(Base::Base(void)@0x411640,virtual int Base::func1(void)@0x4116b0)
-mergeClasses(Base::Base(void)@0x411640,virtual int Base::func2(void)@0x411710)
 mergeClasses(Derived::Derived(void)@0x411590,virtual Derived::~Derived(void)@0x411820)
-mergeClasses(Derived::Derived(void)@0x411590,virtual int Base::func1(void)@0x4116b0)
-mergeClasses(Derived::Derived(void)@0x411590,virtual int Base::func2(void)@0x411710)
 mergeClasses(const Derived::`vftable'@0x416740,Derived::Derived(void)@0x411590)
 mergeClasses(const Derived::`vftable'@0x416740,virtual Derived::~Derived(void)@0x411820)
 mergeClasses(const type_info::`vftable'@0x41676c,type_info::_type_info_dtor_internal_method(void)@0x419260)
@@ -133,6 +405,8 @@ mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@0x411
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@0x4117b0,virtual Derived::~Derived(void)@0x411820)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,const type_info::`vftable'@0x41676c)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,type_info::_type_info_dtor_internal_method(void)@0x419260)
+mergeClasses(virtual int Base::func1(void)@0x4116b0,const Base::`vftable'@0x416758)
+mergeClasses(virtual int Base::func2(void)@0x411710,const Base::`vftable'@0x416758)
 mergeClasses(virtual int Derived::func3(void)@0x411770,const Derived::`vftable'@0x416740)
 method($LN6_1@0x4130f5)
 method($LN8@0x412cfe)
@@ -445,7 +719,6 @@ vftableSizeTotal(32)
 %   {_mainCRTStartup@0x411d20}
 %   {check_managed_app@0x412030}
 %   {class type_info & type_info::operator=(class type_info const &)@0x411bc0}
-%   {const Base::`vftable'@0x416758}
 %   {failwithmessage@0x4123c0}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x412c60}
 %   {int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x412c70}
@@ -608,9 +881,10 @@ vftableSizeTotal(32)
 %   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41114f}
 %   {thunk:type_info::type_info(class type_info const &)@0x4111e0}
 %   {thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x41102d}
-%   {thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110cd, thunk:virtual int Base::func2(void)@0x41110e, thunk:virtual int Derived::func3(void)@0x41114a, thunk:virtual int Base::func1(void)@0x411203, Derived::Derived(void)@0x411590, Base::Base(void)@0x411640, virtual int Base::func1(void)@0x4116b0, virtual int Base::func2(void)@0x411710, virtual int Derived::func3(void)@0x411770, virtual * Derived::`vector deleting destructor'(unsigned int)@0x4117b0, virtual Derived::~Derived(void)@0x411820, const Derived::`vftable'@0x416740}
+%   {thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110cd, thunk:virtual int Base::func2(void)@0x41110e, thunk:virtual int Derived::func3(void)@0x41114a, thunk:virtual int Base::func1(void)@0x411203, Derived::Derived(void)@0x411590, Base::Base(void)@0x411640, virtual int Derived::func3(void)@0x411770, virtual * Derived::`vector deleting destructor'(unsigned int)@0x4117b0, virtual Derived::~Derived(void)@0x411820, const Derived::`vftable'@0x416740}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110d7, type_info::type_info(class type_info const &)@0x411b00, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30, const type_info::`vftable'@0x41676c, type_info::_type_info_dtor_internal_method(void)@0x419260}
 %   {thunk:virtual Derived::~Derived(void)@0x411145}
 %   {thunk:virtual type_info::~type_info(void)@0x411055}
 %   {thunk:virtual type_info::~type_info(void)@0x4110a0}
+%   {virtual int Base::func1(void)@0x4116b0, virtual int Base::func2(void)@0x411710, const Base::`vftable'@0x416758}
 %   {virtual type_info::~type_info(void)@0x413b62}

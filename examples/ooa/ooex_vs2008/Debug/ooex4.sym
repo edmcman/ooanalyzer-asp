@@ -1,48 +1,43 @@
-21:52:41 Grounding...
-21:52:41 Grounding done (0.02s)
-21:52:41 Solving...
-21:52:41 Model found (0.04s): [-28, -240]
-21:52:41 Model found (0.05s, +0.00s): [-28, -245]
-21:52:41 Model found (0.05s, +0.01s): [-28, -260]
-21:52:41 Model found (0.06s, +0.00s): [-28, -264]
-21:52:41 Model found (0.06s, +0.00s): [-28, -270]
-21:52:41 Model found (0.06s, +0.00s): [-28, -273]
-21:52:41 Model found (0.06s, +0.00s): [-28, -274]
-21:52:41 Model found (0.07s, +0.00s): [-28, -280]
-21:52:41 Model found (0.07s, +0.00s): [-28, -283]
-21:52:41 Model found (0.07s, +0.00s): [-28, -290]
-21:52:41 Model found (0.08s, +0.00s): [-28, -293]
-21:52:41 Model found (0.08s, +0.01s): [-28, -300]
-21:52:41 Model found (0.09s, +0.00s): [-28, -303]
-21:52:41 Model found (0.09s, +0.01s): [-28, -306]
-21:52:41 Model found (0.12s, +0.03s): [-28, -325]
-21:52:41 Solving done: OPTIMUM FOUND (0.11s)
+18:38:48 Grounding...
+18:38:48 Grounding done (0.04s)
+18:38:48 Solving...
+18:38:48 Model found (0.08s): [-28, -245]
+18:38:48 Model found (0.09s, +0.01s): [-28, -290]
+18:38:48 Model found (0.09s, +0.00s): [-28, -292]
+18:38:48 Model found (0.10s, +0.01s): [-28, -295]
+18:38:48 Model found (0.11s, +0.01s): [-28, -300]
+18:38:48 Model found (0.11s, +0.00s): [-28, -303]
+18:38:48 Model found (0.11s, +0.00s): [-28, -304]
+18:38:48 Model found (0.12s, +0.00s): [-28, -311]
+18:38:48 Model found (0.12s, +0.01s): [-28, -320]
+18:38:48 Model found (0.13s, +0.01s): [-28, -325]
+18:38:48 Solving done: OPTIMUM FOUND (0.10s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex4.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex4.results
 OPTIMUM FOUND
 
-Answer: 15
+Answer: 10
 Optimization: -28 -325
 
 % Equivalence classes (220 classes, 232 entities):
-21:52:41 Writing results to examples/ooa/ooex_vs2008/Debug/ooex4.results
+18:38:48 Writing results to examples/ooa/ooex_vs2008/Debug/ooex4.results
 
 % Stats:
-%   atoms: 7132.0
-%   bodies: 2124.0
-%   rules: 8213.0
-%   variables: 2542.0
-%   constraints: 80.0
-%   choices: 6533.0
-%   conflicts: 89.0
-%   models: 15.0
+%   atoms: 7446.0
+%   bodies: 2386.0
+%   rules: 8541.0
+%   variables: 2577.0
+%   constraints: 68.0
+%   choices: 3107.0
+%   conflicts: 53.0
+%   models: 10.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -325.0]
 %   lower_bound: [-28.0, -325.0]
-%   total_time: 0.13803791999816895
-%   ground_time: 0.018953260965645313
-%   time_to_first_model: 0.04395119193941355
-%   max_rss_bytes: 27525120
-%   solve_time: 0.08794403076171875
+%   total_time: 0.1488790512084961
+%   ground_time: 0.04224079009145498
+%   time_to_first_model: 0.08015051623806357
+%   max_rss_bytes: 32243712
+%   solve_time: 0.060656070709228516
 classCallsMethod(Derived::Derived(void)@0x411570,Base::Base(void)@0x411620)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func1(void)@0x411690)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func2(void)@0x4116f0)
@@ -79,6 +74,257 @@ classRelatedMethod(virtual int Base::func2(void)@0x4116f0,const Base::`vftable'@
 classRelatedMethod(virtual int Base::func2(void)@0x4116f0,const Derived::`vftable'@0x416740)
 classRelatedMethod(virtual int Base::func2(void)@0x4116f0,virtual int Base::func1(void)@0x411690)
 classRelatedMethod(virtual int Derived::func3(void)@0x411750,const Derived::`vftable'@0x416740)
+classSizeGTE($LN6_1@0x413025,0)
+classSizeGTE($LN8@0x412c2e,0)
+classSizeGTE(* __cdecl operator new(unsigned int)@0x411796,0)
+classSizeGTE(ArrayUnwindFilter@0x412d40,0)
+classSizeGTE(Base::Base(void)@0x411620,0)
+classSizeGTE(Base::Base(void)@0x411620,16)
+classSizeGTE(Base::Base(void)@0x411620,4)
+classSizeGTE(Base::Base(void)@0x411620,8)
+classSizeGTE(Base::Base(void)@0x411620,9)
+classSizeGTE(DebuggerProbe@0x4121d0,0)
+classSizeGTE(DebuggerRuntime@0x412580,0)
+classSizeGTE(Derived::Derived(void)@0x411570,0)
+classSizeGTE(Derived::Derived(void)@0x411570,20)
+classSizeGTE(Derived::Derived(void)@0x411570,4)
+classSizeGTE(GetPdbDll@0x413840,0)
+classSizeGTE(_DebuggerKnownHandle@0x4121a0,0)
+classSizeGTE(_NtCurrentTeb@0x411f50,0)
+classSizeGTE(__FindPESection@0x413280,0)
+classSizeGTE(__IsNonwritableInCurrentImage@0x413320,0)
+classSizeGTE(__RTC_CheckEsp@0x4117d0,0)
+classSizeGTE(__RTC_GetErrDesc@0x412ae0,0)
+classSizeGTE(__RTC_InitBase@0x4119d0,0)
+classSizeGTE(__RTC_Initialize@0x412ed0,0)
+classSizeGTE(__RTC_NumErrors@0x412ad0,0)
+classSizeGTE(__RTC_SetErrorFunc@0x412b30,0)
+classSizeGTE(__RTC_SetErrorFuncW@0x412b60,0)
+classSizeGTE(__RTC_Shutdown@0x411a10,0)
+classSizeGTE(__RTC_Terminate@0x412f00,0)
+classSizeGTE(__RTC_UninitUse@0x4129a0,0)
+classSizeGTE(__ValidateImageBase@0x413200,0)
+classSizeGTE(___CxxSetUnhandledExceptionFilter@0x412e00,0)
+classSizeGTE(___report_gsfailure@0x412040,0)
+classSizeGTE(___security_init_cookie@0x4130d0,0)
+classSizeGTE(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x412790,0)
+classSizeGTE(__cdecl _RTC_Failure(*, int)@0x412280,0)
+classSizeGTE(__cdecl _RTC_StackFailure(*, char const *)@0x412650,0)
+classSizeGTE(__cdecl operator delete(*)@0x411790,0)
+classSizeGTE(__cdecl terminate(void)@0x413a8c,0)
+classSizeGTE(__ehhandler$_main@0x414abe,0)
+classSizeGTE(__except_handler4@0x413490,0)
+classSizeGTE(__fastcall _RTC_AllocaHelper(x, x, x)@0x411880,0)
+classSizeGTE(__fastcall _RTC_CheckStackVars(x, x)@0x411800,0)
+classSizeGTE(__fastcall _RTC_CheckStackVars2(x, x, x)@0x4118c0,0)
+classSizeGTE(__fastcall __security_check_cookie(x)@0x4117b0,0)
+classSizeGTE(__imp___purecall@0x4192d4,0)
+classSizeGTE(__invoke_watson_if_error@0x412e70,0)
+classSizeGTE(__matherr@0x412eb0,0)
+classSizeGTE(__onexit@0x412f40,0)
+classSizeGTE(__setargv@0x412ec0,0)
+classSizeGTE(__setdefaultprecision@0x412e20,0)
+classSizeGTE(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x412c90,0)
+classSizeGTE(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x412bb0,0)
+classSizeGTE(__tmainCRTStartup@0x411c70,0)
+classSizeGTE(__unwindfunclet$_main$0@0x414ab0,0)
+classSizeGTE(_atexit@0x413090,0)
+classSizeGTE(_exit_0@0x4131f4,0)
+classSizeGTE(_getMemBlockDataString@0x412910,0)
+classSizeGTE(_main@0x411440,0)
+classSizeGTE(_mainCRTStartup@0x411c50,0)
+classSizeGTE(check_managed_app@0x411f60,0)
+classSizeGTE(class type_info & type_info::operator=(class type_info const &)@0x411af0,0)
+classSizeGTE(const Base::`vftable'@0x416754,0)
+classSizeGTE(const Derived::`vftable'@0x416740,0)
+classSizeGTE(const Derived::`vftable'@0x416740,16)
+classSizeGTE(const Derived::`vftable'@0x416740,20)
+classSizeGTE(const Derived::`vftable'@0x416740,4)
+classSizeGTE(const Derived::`vftable'@0x416740,8)
+classSizeGTE(const Derived::`vftable'@0x416740,9)
+classSizeGTE(const type_info::`vftable'@0x416768,0)
+classSizeGTE(failwithmessage@0x4122f0,0)
+classSizeGTE(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x412b90,0)
+classSizeGTE(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x412ba0,0)
+classSizeGTE(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x4134d0,0)
+classSizeGTE(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412d80,0)
+classSizeGTE(pre_c_init@0x411b10,0)
+classSizeGTE(pre_cpp_init@0x411be0,0)
+classSizeGTE(start@0x411136,0)
+classSizeGTE(thunk:* __cdecl operator new(unsigned int)@0x4111b8,0)
+classSizeGTE(thunk:Base::Base(void)@0x4110f0,0)
+classSizeGTE(thunk:Derived::Derived(void)@0x41117c,0)
+classSizeGTE(thunk:__CRT_RTC_INITW@0x412ba6,0)
+classSizeGTE(thunk:__CrtDbgReportW@0x413476,0)
+classSizeGTE(thunk:__CrtSetCheckCount@0x4131fa,0)
+classSizeGTE(thunk:__XcptFilter@0x4131e8,0)
+classSizeGTE(thunk:___CxxFrameHandler3@0x41179c,0)
+classSizeGTE(thunk:___dllonexit@0x413aaa,0)
+classSizeGTE(thunk:___getmainargs@0x4130c6,0)
+classSizeGTE(thunk:___p__commode@0x412f30,0)
+classSizeGTE(thunk:___p__fmode@0x412f36,0)
+classSizeGTE(thunk:___set_app_type@0x4130ba,0)
+classSizeGTE(thunk:___setusermatherr@0x412ea6,0)
+classSizeGTE(thunk:__amsg_exit@0x4130c0,0)
+classSizeGTE(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111f9,0)
+classSizeGTE(thunk:__cdecl _RTC_Failure(*, int)@0x4111ef,0)
+classSizeGTE(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110e1,0)
+classSizeGTE(thunk:__cdecl operator delete(*)@0x411096,0)
+classSizeGTE(thunk:__cdecl terminate(void)@0x4110a5,0)
+classSizeGTE(thunk:__cexit@0x4131ee,0)
+classSizeGTE(thunk:__configthreadlocale@0x412e1a,0)
+classSizeGTE(thunk:__controlfp_s@0x413a98,0)
+classSizeGTE(thunk:__crt_debugger_hook@0x4134c4,0)
+classSizeGTE(thunk:__decode_pointer@0x413ab6,0)
+classSizeGTE(thunk:__encode_pointer@0x4130b4,0)
+classSizeGTE(thunk:__except_handler4_common@0x413abc,0)
+classSizeGTE(thunk:__exit@0x4131e2,0)
+classSizeGTE(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411037,0)
+classSizeGTE(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x411091,0)
+classSizeGTE(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x41115e,0)
+classSizeGTE(thunk:__fastcall __security_check_cookie(x)@0x41101e,0)
+classSizeGTE(thunk:__initterm@0x41347c,0)
+classSizeGTE(thunk:__initterm_e@0x413482,0)
+classSizeGTE(thunk:__invoke_watson@0x413a9e,0)
+classSizeGTE(thunk:__lock@0x413ab0,0)
+classSizeGTE(thunk:__purecall@0x411b06,0)
+classSizeGTE(thunk:__stdcall DebugBreak()@0x41100f,0)
+classSizeGTE(thunk:__stdcall DebugBreak()@0x413af8,0)
+classSizeGTE(thunk:__stdcall FreeLibrary(x)@0x41120d,0)
+classSizeGTE(thunk:__stdcall FreeLibrary(x)@0x413b58,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcess()@0x4110b9,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcess()@0x413ada,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcessId()@0x411159,0)
+classSizeGTE(thunk:__stdcall GetCurrentProcessId()@0x413b2e,0)
+classSizeGTE(thunk:__stdcall GetCurrentThreadId()@0x4110af,0)
+classSizeGTE(thunk:__stdcall GetCurrentThreadId()@0x413b28,0)
+classSizeGTE(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411055,0)
+classSizeGTE(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413b4c,0)
+classSizeGTE(thunk:__stdcall GetProcAddress(x, x)@0x41108c,0)
+classSizeGTE(thunk:__stdcall GetProcAddress(x, x)@0x413b10,0)
+classSizeGTE(thunk:__stdcall GetProcessHeap()@0x411109,0)
+classSizeGTE(thunk:__stdcall GetProcessHeap()@0x413b46,0)
+classSizeGTE(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411186,0)
+classSizeGTE(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413b34,0)
+classSizeGTE(thunk:__stdcall GetTickCount()@0x41119f,0)
+classSizeGTE(thunk:__stdcall GetTickCount()@0x413b22,0)
+classSizeGTE(thunk:__stdcall HeapAlloc(x, x, x)@0x4111ae,0)
+classSizeGTE(thunk:__stdcall HeapAlloc(x, x, x)@0x413b40,0)
+classSizeGTE(thunk:__stdcall HeapFree(x, x, x)@0x41111d,0)
+classSizeGTE(thunk:__stdcall HeapFree(x, x, x)@0x413b3a,0)
+classSizeGTE(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x4110ff,0)
+classSizeGTE(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x413ace,0)
+classSizeGTE(thunk:__stdcall InterlockedExchange(x, x)@0x4111c7,0)
+classSizeGTE(thunk:__stdcall InterlockedExchange(x, x)@0x413ac2,0)
+classSizeGTE(thunk:__stdcall IsDebuggerPresent()@0x411023,0)
+classSizeGTE(thunk:__stdcall IsDebuggerPresent()@0x413aec,0)
+classSizeGTE(thunk:__stdcall LoadLibraryA(x)@0x4110e6,0)
+classSizeGTE(thunk:__stdcall LoadLibraryA(x)@0x413b16,0)
+classSizeGTE(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x411078,0)
+classSizeGTE(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x413b04,0)
+classSizeGTE(thunk:__stdcall QueryPerformanceCounter(x)@0x41114a,0)
+classSizeGTE(thunk:__stdcall QueryPerformanceCounter(x)@0x413b1c,0)
+classSizeGTE(thunk:__stdcall RaiseException(x, x, x, x)@0x4110eb,0)
+classSizeGTE(thunk:__stdcall RaiseException(x, x, x, x)@0x413af2,0)
+classSizeGTE(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41105f,0)
+classSizeGTE(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x413ae6,0)
+classSizeGTE(thunk:__stdcall Sleep(x)@0x41104b,0)
+classSizeGTE(thunk:__stdcall Sleep(x)@0x413ac8,0)
+classSizeGTE(thunk:__stdcall TerminateProcess(x, x)@0x41112c,0)
+classSizeGTE(thunk:__stdcall TerminateProcess(x, x)@0x413ad4,0)
+classSizeGTE(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111cc,0)
+classSizeGTE(thunk:__stdcall UnhandledExceptionFilter(x)@0x413ae0,0)
+classSizeGTE(thunk:__stdcall VirtualQuery(x, x, x)@0x41106e,0)
+classSizeGTE(thunk:__stdcall VirtualQuery(x, x, x)@0x413b52,0)
+classSizeGTE(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x411032,0)
+classSizeGTE(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x413afe,0)
+classSizeGTE(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4111e5,0)
+classSizeGTE(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411212,0)
+classSizeGTE(thunk:__stdcall lstrlenA(x)@0x4111ea,0)
+classSizeGTE(thunk:__stdcall lstrlenA(x)@0x413b0a,0)
+classSizeGTE(thunk:__unlock@0x413aa4,0)
+classSizeGTE(thunk:_rand@0x411a28,0)
+classSizeGTE(thunk:class type_info & type_info::operator=(class type_info const &)@0x411028,0)
+classSizeGTE(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x41121c,0)
+classSizeGTE(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x41103c,0)
+classSizeGTE(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411195,0)
+classSizeGTE(thunk:j__DebuggerKnownHandle@0x4111fe,0)
+classSizeGTE(thunk:j__NtCurrentTeb@0x411118,0)
+classSizeGTE(thunk:j___CRT_RTC_INITW@0x41119a,0)
+classSizeGTE(thunk:j___CrtDbgReportW@0x411069,0)
+classSizeGTE(thunk:j___CrtSetCheckCount@0x4111c2,0)
+classSizeGTE(thunk:j___FindPESection@0x4110d2,0)
+classSizeGTE(thunk:j___IsNonwritableInCurrentImage@0x4111a4,0)
+classSizeGTE(thunk:j___RTC_CheckEsp@0x41116d,0)
+classSizeGTE(thunk:j___RTC_GetErrDesc@0x411014,0)
+classSizeGTE(thunk:j___RTC_InitBase@0x4110dc,0)
+classSizeGTE(thunk:j___RTC_Initialize@0x411177,0)
+classSizeGTE(thunk:j___RTC_NumErrors@0x411041,0)
+classSizeGTE(thunk:j___RTC_SetErrorFunc@0x411122,0)
+classSizeGTE(thunk:j___RTC_SetErrorFuncW@0x41110e,0)
+classSizeGTE(thunk:j___RTC_SetErrorType@0x41107d,0)
+classSizeGTE(thunk:j___RTC_Shutdown@0x4110c8,0)
+classSizeGTE(thunk:j___RTC_Terminate@0x41102d,0)
+classSizeGTE(thunk:j___RTC_UninitUse@0x4110c3,0)
+classSizeGTE(thunk:j___ValidateImageBase@0x4110fa,0)
+classSizeGTE(thunk:j___XcptFilter@0x4111bd,0)
+classSizeGTE(thunk:j____CxxFrameHandler3@0x4111a9,0)
+classSizeGTE(thunk:j____CxxSetUnhandledExceptionFilter@0x411145,0)
+classSizeGTE(thunk:j____dllonexit@0x411208,0)
+classSizeGTE(thunk:j____getmainargs@0x4111e0,0)
+classSizeGTE(thunk:j____p__commode@0x41114f,0)
+classSizeGTE(thunk:j____p__fmode@0x411019,0)
+classSizeGTE(thunk:j____security_init_cookie@0x41105a,0)
+classSizeGTE(thunk:j____set_app_type@0x411163,0)
+classSizeGTE(thunk:j____setusermatherr@0x411046,0)
+classSizeGTE(thunk:j___amsg_exit@0x4111b3,0)
+classSizeGTE(thunk:j___cexit@0x411064,0)
+classSizeGTE(thunk:j___configthreadlocale@0x4110d7,0)
+classSizeGTE(thunk:j___controlfp_s@0x411181,0)
+classSizeGTE(thunk:j___crt_debugger_hook@0x4110f5,0)
+classSizeGTE(thunk:j___decode_pointer@0x41118b,0)
+classSizeGTE(thunk:j___encode_pointer@0x4110be,0)
+classSizeGTE(thunk:j___except_handler4@0x411082,0)
+classSizeGTE(thunk:j___except_handler4_common@0x4111d6,0)
+classSizeGTE(thunk:j___exit@0x4110aa,0)
+classSizeGTE(thunk:j___initterm@0x4110b4,0)
+classSizeGTE(thunk:j___initterm_e@0x411217,0)
+classSizeGTE(thunk:j___invoke_watson@0x411190,0)
+classSizeGTE(thunk:j___invoke_watson_if_error@0x411127,0)
+classSizeGTE(thunk:j___lock@0x411087,0)
+classSizeGTE(thunk:j___matherr@0x4111db,0)
+classSizeGTE(thunk:j___onexit@0x411113,0)
+classSizeGTE(thunk:j___purecall@0x411168,0)
+classSizeGTE(thunk:j___setargv@0x41100a,0)
+classSizeGTE(thunk:j___setdefaultprecision@0x411005,0)
+classSizeGTE(thunk:j___unlock@0x411154,0)
+classSizeGTE(thunk:j__atexit@0x411073,0)
+classSizeGTE(thunk:j__exit_0@0x411203,0)
+classSizeGTE(thunk:j__main@0x411172,0)
+classSizeGTE(thunk:j__rand@0x411131,0)
+classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411140,0)
+classSizeGTE(thunk:type_info::type_info(class type_info const &)@0x4111d1,0)
+classSizeGTE(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110cd,0)
+classSizeGTE(thunk:virtual int Base::func1(void)@0x4111f4,0)
+classSizeGTE(thunk:virtual int Base::func2(void)@0x411104,0)
+classSizeGTE(thunk:virtual int Derived::func3(void)@0x41113b,0)
+classSizeGTE(thunk:virtual type_info::~type_info(void)@0x411050,0)
+classSizeGTE(thunk:virtual type_info::~type_info(void)@0x41109b,0)
+classSizeGTE(type_info::_type_info_dtor_internal_method(void)@0x419260,0)
+classSizeGTE(type_info::type_info(class type_info const &)@0x411a30,0)
+classSizeGTE(type_info::type_info(class type_info const &)@0x411a30,4)
+classSizeGTE(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411a60,0)
+classSizeGTE(virtual int Base::func1(void)@0x411690,0)
+classSizeGTE(virtual int Base::func1(void)@0x411690,16)
+classSizeGTE(virtual int Base::func1(void)@0x411690,8)
+classSizeGTE(virtual int Base::func1(void)@0x411690,9)
+classSizeGTE(virtual int Base::func2(void)@0x4116f0,0)
+classSizeGTE(virtual int Base::func2(void)@0x4116f0,16)
+classSizeGTE(virtual int Base::func2(void)@0x4116f0,8)
+classSizeGTE(virtual int Base::func2(void)@0x4116f0,9)
+classSizeGTE(virtual int Derived::func3(void)@0x411750,0)
+classSizeGTE(virtual int Derived::func3(void)@0x411750,20)
+classSizeGTE(virtual type_info::~type_info(void)@0x413a92,0)
 constructor(Base::Base(void)@0x411620)
 constructor(type_info::type_info(class type_info const &)@0x411a30)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411a60)
