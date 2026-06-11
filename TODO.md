@@ -345,12 +345,12 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Size Lower Bound (rules.pl:3487–3661)
 - [x] `reasonClassSizeGTE_A` (3500) — existing fact (identity rule; covered by input fact architecture)
-- [ ] `reasonClassSizeGTE_B` (3505) — from member access offset
-- [ ] `reasonClassSizeGTE_C` (3519) — from embedded/derived object size
-- [ ] `reasonClassSizeGTE_D` (3609) — from VFTable entry count
-- [ ] `reasonClassSizeGTE_E` (3624) — from VBTable write offset
-- [ ] `reasonClassSizeGTE_F` (3637) — from base class size
-- [ ] `reasonClassSizeGTE_G` (3653) — from `callAtOffset` arguments
+- [x] `reasonClassSizeGTE_B` (3505) — all proven methods/vftables give size ≥ 0 (`size.lp`)
+- [ ] `reasonClassSizeGTE_C` (3519) — derived class inherits base class lower bound — REMOVED from `size.lp`; subsumed by `_F` once `_B` lands (re-add only if `_B` is dropped)
+- [ ] `reasonClassSizeGTE_D` (3609) — from heap allocation size tracked to constructor
+- [ ] `reasonClassSizeGTE_E` (3624) — from member access offset + member size
+- [x] `reasonClassSizeGTE_F` (3637) — from embedded object: outer offset + inner size (`size.lp`)
+- [x] `reasonClassSizeGTE_G` (3653) — from vftable write at ObjectOffset + PtrSize (`size.lp`)
 
 ### Size Upper Bound (rules.pl:3679–3722)
 - [x] `reasonClassSizeLTE_A` (3689) — existing fact (identity rule; covered by input fact architecture)

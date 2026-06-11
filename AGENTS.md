@@ -40,16 +40,20 @@ original module set.
 
 ## Running
 
+Dependencies (notably `clingo`) live in the uv-managed `.venv`, so all commands
+must be run through `uv run`. Bare `python`/`python3` will fail with
+`ModuleNotFoundError: No module named 'clingo'`.
+
 ```sh
-python ooanalyzer.py examples/example.lp              # find optimal model
-python ooanalyzer.py examples/example.lp -n 0         # enumerate all models
-python ooanalyzer.py examples/invalid_example.lp      # should print UNSATISFIABLE
-python ooanalyzer.py examples/inherit_example.lp      # derivedClass(2300, 2100, 0)
-python ooanalyzer.py examples/rtti_example.lp         # same but RTTI-driven, fewer models
-python ooanalyzer.py examples/multi_inherit_example.lp  # C : A(0), B(8)
-python ooanalyzer.py examples/inherited_entry_example.lp  # derived inherits an un-overridden entry
-python ooanalyzer.py examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
-python tests/test_propagator.py                       # focused &sameClass regression test
+uv run python ooanalyzer.py examples/example.lp              # find optimal model
+uv run python ooanalyzer.py examples/example.lp -n 0         # enumerate all models
+uv run python ooanalyzer.py examples/invalid_example.lp      # should print UNSATISFIABLE
+uv run python ooanalyzer.py examples/inherit_example.lp      # derivedClass(2300, 2100, 0)
+uv run python ooanalyzer.py examples/rtti_example.lp         # same but RTTI-driven, fewer models
+uv run python ooanalyzer.py examples/multi_inherit_example.lp  # C : A(0), B(8)
+uv run python ooanalyzer.py examples/inherited_entry_example.lp  # derived inherits an un-overridden entry
+uv run python ooanalyzer.py examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
+uv run python tests/test_propagator.py                # focused &sameClass regression test
 ```
 
 `ooanalyzer.lp` contains the `#theory` declaration, but solving must use
@@ -61,13 +65,13 @@ Tune solver constants on the command line (see `src/util/config.lp` for the list
 
 ```sh
 # Tighter offset bounds — useful for very small classes.
-python ooanalyzer.py --const max_class_size=128 examples/ooa/ooex_vs2008/Debug/oo.lp
+uv run python ooanalyzer.py --const max_class_size=128 examples/ooa/ooex_vs2008/Debug/oo.lp
 
 # Allow deeper transitive inheritance chains.
-python ooanalyzer.py --const max_offset_depth=6 examples/ooa/ooex_vs2008/Debug/oo.lp
+uv run python ooanalyzer.py --const max_offset_depth=6 examples/ooa/ooex_vs2008/Debug/oo.lp
 
 # Disable dynamic guess gates for comparison/profiling.
-python ooanalyzer.py --const enable_dynamic_guess_gates=0 mysql.exe.lp
+uv run python ooanalyzer.py --const enable_dynamic_guess_gates=0 mysql.exe.lp
 ```
 
 ### Solver configuration constants
@@ -108,8 +112,8 @@ make clean                                   # remove generated .lp/.out files
 ### From OOAnalyzer .facts files
 
 ```sh
-python scripts/facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
-python ooanalyzer.py /tmp/oo.lp
+uv run python scripts/facts2clingo.py examples/ooa/ooex_vs2008/Debug/oo.facts > /tmp/oo.lp
+uv run python ooanalyzer.py /tmp/oo.lp
 ```
 
 `oo.facts` is the complete export with vftable writes, RTTI, symbols, and
@@ -280,7 +284,7 @@ in the body. The two caps trade off differently:
   depthᴾ explodes faster than `S/g`).
 
 Intersecting both gives the tighter of the two for any given input. Tune via
-`python ooanalyzer.py --const max_class_size=512 ...` when you encounter a
+`uv run python ooanalyzer.py --const max_class_size=512 ...` when you encounter a
 binary that needs more headroom; both constants live in `src/util/config.lp`.
 
 **Anti-patterns to avoid:**
