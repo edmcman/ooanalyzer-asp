@@ -93,7 +93,7 @@ def print_guess_summary(atoms):
     def emit(header, items):
         print(header)
         if items:
-            for line in textwrap.wrap(" ".join(items), width=100,
+            for line in textwrap.wrap(" ".join(items), width=80,
                                       initial_indent="%       ",
                                       subsequent_indent="%       "):
                 print(line)

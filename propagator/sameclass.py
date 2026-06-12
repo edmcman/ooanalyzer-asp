@@ -30,8 +30,10 @@ Foundedness check (optional, gated by foundedness_check=True):
   Unfounded atoms are rejected via add_clause.  Enable with --foundedness-check.
 """
 
-import clingo
 from dataclasses import dataclass, field
+from collections import deque
+
+import clingo
 
 DEBUG = False
 
@@ -315,14 +317,23 @@ class SameClassPropagator:
         #
         # The reverse implication is not globally sound: A and B can be in the
         # same class via a transitive path while the direct mergeClasses(A,B)
-        # atom is false.  False sameClass explanations are generated lazily by
-        # _assert_not_same() from the current component cut.
+        # atom is false.  It is sound for bridge edges, though, and those clauses
+        # recover important pruning without losing transitive sameClass models.
+        reverse_safe_cache = {}
         for merge_slit, pairs in self._merge_lit_to_pairs.items():
             for a, b in pairs:
+                cache_key = (a, b, merge_slit)
+                reverse_is_safe = reverse_safe_cache.get(cache_key)
+                if reverse_is_safe is None:
+                    reverse_is_safe = not self._potential_connected_without_lit(a, b, merge_slit)
+                    reverse_safe_cache[cache_key] = reverse_is_safe
+                    reverse_safe_cache[(b, a, merge_slit)] = reverse_is_safe
                 for pair in [(a, b), (b, a)]:
                     if pair in self._sc_to_lit:
                         sc_slit = self._sc_to_lit[pair]
                         init.add_clause([-merge_slit, sc_slit])   # merge → same
+                        if reverse_is_safe:
+                            init.add_clause([merge_slit, -sc_slit])   # same → merge
 
         # nonOverwritingWrite(Method, Offset, VFTable) ground atoms.
         # abs(slit) → (method_key, vftable_key); vftable_key → {(method_key, abs_slit)}
@@ -444,6 +455,24 @@ class SameClassPropagator:
                     if pl in merge_proglits:
                         a, b = self._merge_proglit_to_pair[pl]
                         self._potential_uf.union(a, b, self._merge_proglit_to_slit[pl])
+
+    def _potential_connected_without_lit(self, a, b, excluded_slit):
+        """Whether a and b have a potential path without `excluded_slit` edges."""
+        if a == b:
+            return True
+        visited = {a}
+        queue = deque([a])
+        while queue:
+            node = queue.popleft()
+            for other, slit in self._potential_uf._adj.get(node, ()):
+                if slit == excluded_slit:
+                    continue
+                if other == b:
+                    return True
+                if other not in visited:
+                    visited.add(other)
+                    queue.append(other)
+        return False
 
     def _state(self, thread_id):
         return self._states[thread_id]
