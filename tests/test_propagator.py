@@ -17,6 +17,7 @@ Tests:
  15. mutually-founded K merges: foundedness rejects two circular merge heads
  16. fixed merge facts: solver literal 1 can represent many mergeClasses atoms
  17. fixed merge facts seed UF: transitive sameClass works without watched changes
+ 18. direct merge false does not block transitive sameClass
 """
 
 import sys
@@ -377,6 +378,24 @@ def main():
          """,
          1,
          frozenset(["ac"])),
+
+        # ── 18. Direct false merge with transitive sameClass ─────────────────
+        # sameClass is the equivalence closure over true mergeClasses atoms.
+        # A false direct mergeClasses(a,c) atom must not prohibit a and c from
+        # being same-class via a-b-c.
+        ("direct merge false: transitive sameClass still allowed",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         mergeClasses(a,b).
+         mergeClasses(b,c).
+         1 { mergeClasses(a,c) ; -mergeClasses(a,c) } 1.
+         :- mergeClasses(a,c).
+         ac :- &sameClass(a,c).
+         :- not ac.
+         #show -mergeClasses/2. #show ac/0.
+         """,
+         1,
+         frozenset(["-mergeClasses(a,c)", "ac"])),
     ]
 
     # Tests that require foundedness_check=True (run once, not per control mode).

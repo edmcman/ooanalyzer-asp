@@ -311,16 +311,18 @@ class SameClassPropagator:
             elif not self._potential_uf.same(x, y):
                 init.add_clause([-slit])
 
-        # Biconditional wiring for DIRECT pairs: sameClass(A,B) ↔ mergeClasses(A,B).
-        # Both directions as permanent clauses so BCP fires in either direction.
-        # Transitive pairs are handled lazily during propagation.
+        # Direct wiring: mergeClasses(A,B) → sameClass(A,B).
+        #
+        # The reverse implication is not globally sound: A and B can be in the
+        # same class via a transitive path while the direct mergeClasses(A,B)
+        # atom is false.  False sameClass explanations are generated lazily by
+        # _assert_not_same() from the current component cut.
         for merge_slit, pairs in self._merge_lit_to_pairs.items():
             for a, b in pairs:
                 for pair in [(a, b), (b, a)]:
                     if pair in self._sc_to_lit:
                         sc_slit = self._sc_to_lit[pair]
                         init.add_clause([-merge_slit, sc_slit])   # merge → same
-                        init.add_clause([merge_slit, -sc_slit])   # ¬merge → ¬same
 
         # nonOverwritingWrite(Method, Offset, VFTable) ground atoms.
         # abs(slit) → (method_key, vftable_key); vftable_key → {(method_key, abs_slit)}
