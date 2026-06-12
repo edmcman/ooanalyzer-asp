@@ -1,35 +1,35 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.04s)
-20:12:15 Solving...
-20:12:15 Model found (0.08s): [-220]
-20:12:15 Model found (0.08s, +0.00s): [-221]
-20:12:15 Solving done: OPTIMUM FOUND (0.04s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.04s)
+21:26:07 Solving...
+21:26:07 Model found (0.08s): [-224]
+21:26:07 Model found (0.08s, +0.00s): [-227]
+21:26:07 Solving done: OPTIMUM FOUND (0.04s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex7.results
 OPTIMUM FOUND
 
 Answer: 2
-Optimization: -221
+Optimization: -227
 
 % Equivalence classes (217 classes, 220 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
+21:26:07 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
 
 % Stats:
-%   atoms: 7894.0
-%   bodies: 2835.0
-%   rules: 8339.0
-%   variables: 1523.0
-%   constraints: 0.0
-%   choices: 434.0
-%   conflicts: 0.0
+%   atoms: 7916.0
+%   bodies: 2849.0
+%   rules: 8369.0
+%   variables: 1531.0
+%   constraints: 2.0
+%   choices: 869.0
+%   conflicts: 2.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   final_cost: [-221.0]
-%   lower_bound: [-221.0]
-%   total_time: 0.0926060676574707
-%   ground_time: 0.04125568736344576
-%   time_to_first_model: 0.07846042513847351
+%   final_cost: [-227.0]
+%   lower_bound: [-227.0]
+%   total_time: 0.08966398239135742
+%   ground_time: 0.03918723436072469
+%   time_to_first_model: 0.07632415136322379
 %   max_rss_bytes: 32243712
-%   solve_time: 0.005589008331298828
+%   solve_time: 0.0054781436920166016
 classRelatedMethod(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
 classRelatedMethod(int ObjectTest::add(void)@0x411740,ObjectTest::ObjectTest(int, int)@0x4116f0)
 classSizeGTE($LN6_1@0x412df5,0)
@@ -258,6 +258,7 @@ classSizeGTE(thunk:j__main@0x411163,0)
 classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41112c,0)
 classSizeGTE(thunk:std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4111c7,0)
 classSizeGTE(thunk:std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411140,0)
+constructor(ObjectTest::ObjectTest(int, int)@0x4116f0)
 constructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x4192b4)
 guessEnabled(constructor)
 guessEnabled(derived_class)

@@ -4,3 +4,7 @@ finalClass(A::A(void)@0x411640, 0, 0x7, 0x7, 0, [A::A(void)@0x411640]).
 finalClass(C::C(void)@0x411720, 0, 0x8, 0x8, 0, [C::C(void)@0x411720]).
 finalClass(D::D(void)@0x411590, 0, 0x14, 0x14, 0, [D::D(void)@0x411590, B::B(void)@0x4116a0]).
 finalFileInfo('0F94BB87C561B21083F7646B2FB9B0B5', 'ooex8.exe').
+finalMethodProperty(A::A(void)@0x411640, constructor, certain).
+finalMethodProperty(B::B(void)@0x4116a0, constructor, certain).
+finalMethodProperty(C::C(void)@0x411720, constructor, certain).
+finalMethodProperty(D::D(void)@0x411590, constructor, certain).

@@ -14,6 +14,8 @@ finalDemangledName(const type_info::`vftable'@0x408268, '.?AVtype_info@@', type_
 finalFileInfo('4D67D16A6890A6F353A22530DB995336', 'ooex0.exe').
 finalInheritance(const std::bad_alloc::`vftable'@0x408170, const std::exception::`vftable'@0x408248, 0, const std::bad_alloc::`vftable'@0x408170, false).
 finalMethodProperty(* ClassA::`scalar deleting destructor'(unsigned int)@0x401050, deletingDestructor, certain).
+finalMethodProperty(ClassA::ClassA(void)@0x401000, constructor, certain).
+finalMethodProperty(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x4016b1, constructor, certain).
 finalMethodProperty(__bufin@0x40cc20, virtual, certain).
 finalMethodProperty(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011fb, constructor, certain).
 finalMethodProperty(std::exception::exception(char const * const &, int)@0x402c2d, constructor, certain).

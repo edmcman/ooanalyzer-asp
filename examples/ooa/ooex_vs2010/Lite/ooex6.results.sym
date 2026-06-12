@@ -16,6 +16,7 @@ finalInheritance(const Derived::`vftable'@0x406150, const Base::`vftable'@0x4061
 finalInheritance(const std::bad_alloc::`vftable'@0x40616c, const std::exception::`vftable'@0x406bc4, 0, const std::bad_alloc::`vftable'@0x40616c, false).
 finalMethodProperty(Base::Base(void)@0x401000, realDestructor, certain).
 finalMethodProperty(Derived::Derived(void)@0x401060, constructor, certain).
+finalMethodProperty(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403920, constructor, certain).
 finalMethodProperty(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011df, constructor, certain).
 finalMethodProperty(std::exception::exception(char const * const &, int)@0x401c27, constructor, certain).
 finalMethodProperty(std::exception::exception(class std::exception const &)@0x401d16, constructor, certain).

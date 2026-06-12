@@ -1,57 +1,59 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.22s)
-20:12:15 Solving...
-20:12:15 Model found (0.56s): [-12, -449]
-20:12:15 Model found (0.59s, +0.02s): [-12, -451]
-20:12:15 Model found (0.60s, +0.02s): [-12, -546]
-20:12:15 Model found (0.62s, +0.01s): [-12, -556]
-20:12:15 Model found (0.63s, +0.02s): [-12, -557]
-20:12:15 Model found (0.66s, +0.02s): [-12, -558]
-20:12:15 Model found (0.67s, +0.02s): [-12, -559]
-20:12:15 Model found (0.71s, +0.03s): [-12, -560]
-20:12:15 Model found (0.74s, +0.03s): [-12, -567]
-20:12:15 Model found (0.76s, +0.02s): [-12, -568]
-20:12:15 Model found (0.78s, +0.03s): [-12, -569]
-20:12:15 Model found (0.81s, +0.03s): [-12, -570]
-20:12:16 Model found (0.84s, +0.03s): [-12, -571]
-20:12:16 Model found (0.85s, +0.01s): [-12, -604]
-20:12:16 Model found (0.86s, +0.01s): [-12, -609]
-20:12:16 Model found (0.89s, +0.03s): [-12, -617]
-20:12:16 Model found (0.94s, +0.05s): [-12, -622]
-20:12:16 Model found (0.96s, +0.02s): [-12, -623]
-20:12:16 Model found (1.01s, +0.05s): [-12, -625]
-20:12:16 Model found (1.05s, +0.04s): [-12, -626]
-20:12:16 Model found (1.08s, +0.03s): [-12, -627]
-20:12:16 Model found (1.30s, +0.23s): [-12, -628]
-20:12:16 Model found (1.38s, +0.07s): [-12, -629]
-20:12:16 Model found (1.46s, +0.08s): [-12, -630]
-20:12:19 Solving done: OPTIMUM FOUND (4.17s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.22s)
+21:26:07 Solving...
+21:26:08 Model found (0.60s): [-12, -485]
+21:26:08 Model found (0.62s, +0.02s): [-12, -585]
+21:26:08 Model found (0.83s, +0.21s): [-12, -586]
+21:26:08 Model found (0.93s, +0.11s): [-12, -587]
+21:26:08 Model found (1.23s, +0.30s): [-12, -588]
+21:26:09 Model found (1.25s, +0.02s): [-12, -589]
+21:26:09 Model found (1.27s, +0.02s): [-12, -590]
+21:26:09 Model found (1.52s, +0.25s): [-12, -592]
+21:26:09 Model found (1.54s, +0.02s): [-12, -594]
+21:26:09 Model found (1.55s, +0.01s): [-12, -595]
+21:26:09 Model found (1.56s, +0.01s): [-12, -597]
+21:26:09 Model found (1.59s, +0.02s): [-12, -598]
+21:26:09 Model found (1.61s, +0.02s): [-12, -599]
+21:26:09 Model found (1.62s, +0.01s): [-12, -600]
+21:26:11 Model found (3.35s, +1.73s): [-12, -651]
+21:26:11 Model found (3.67s, +0.32s): [-12, -654]
+21:26:11 Model found (3.79s, +0.12s): [-12, -657]
+21:26:11 Model found (4.05s, +0.25s): [-12, -662]
+21:26:11 Model found (4.16s, +0.11s): [-12, -665]
+21:26:12 Model found (4.39s, +0.24s): [-12, -770]
+21:26:12 Model found (4.45s, +0.05s): [-12, -773]
+21:26:12 Model found (4.48s, +0.03s): [-12, -774]
+21:26:12 Model found (4.50s, +0.02s): [-12, -776]
+21:26:12 Model found (4.53s, +0.03s): [-12, -777]
+21:26:12 Model found (4.55s, +0.02s): [-12, -782]
+21:26:12 Model found (4.58s, +0.03s): [-12, -783]
+21:26:12 Solving done: OPTIMUM FOUND (4.37s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Debug/ooex7.results
 OPTIMUM FOUND
 
-Answer: 24
-Optimization: -12 -630
+Answer: 26
+Optimization: -12 -783
 
 % Equivalence classes (380 classes, 431 entities):
-20:12:19 Writing results to examples/ooa/ooex_vs2010/Debug/ooex7.results
+21:26:12 Writing results to examples/ooa/ooex_vs2010/Debug/ooex7.results
 
 % Stats:
-%   atoms: 41764.0
-%   bodies: 22411.0
-%   rules: 44372.0
-%   variables: 13703.0
-%   constraints: 126.0
-%   choices: 382701.0
-%   conflicts: 6910.0
-%   models: 24.0
+%   atoms: 42472.0
+%   bodies: 24458.0
+%   rules: 46593.0
+%   variables: 15918.0
+%   constraints: 535.0
+%   choices: 74554.0
+%   conflicts: 8770.0
+%   models: 26.0
 %   optimal_models: 1.0
-%   final_cost: [-12.0, -630.0]
-%   lower_bound: [-12.0, -630.0]
-%   total_time: 4.421298027038574
-%   ground_time: 0.21813661698251963
-%   time_to_first_model: 0.5646654646843672
-%   max_rss_bytes: 70012928
-%   solve_time: 3.8359639644622803
+%   final_cost: [-12.0, -783.0]
+%   lower_bound: [-12.0, -783.0]
+%   total_time: 4.608083009719849
+%   ground_time: 0.22403451474383473
+%   time_to_first_model: 0.5986174140125513
+%   max_rss_bytes: 73629696
+%   solve_time: 4.000683784484863
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
@@ -92,6 +94,7 @@ classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, u
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@0x411cf0)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
+classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0)
 classCallsMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
 classCallsMethod(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x413c40,virtual std::bad_alloc::~bad_alloc(void)@0x413bd0)
 classCallsMethod(virtual * type_info::`vector deleting destructor'(unsigned int)@0x414390,type_info::_type_info_dtor_internal_method(void)@0x41d3c8)
@@ -191,6 +194,8 @@ classRelatedMethod(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_AL
 classRelatedMethod(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70)
 classRelatedMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,std::_Container_base12::_Orphan_all(void)@0x41d368)
 classRelatedMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,std::_Container_base12::~_Container_base12(void)@0x41d374)
+classRelatedMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
+classRelatedMethod(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40)
 classRelatedMethod(std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(CHAR_ALLOC const &)@0x4139b0,std::allocator<struct std::_Container_proxy>::deallocate(struct std::_Container_proxy *, unsigned int)@0x4124f0)
 classRelatedMethod(std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(CHAR_ALLOC const &)@0x4139b0,struct std::_Container_proxy * std::allocator<struct std::_Container_proxy>::allocate(unsigned int)@0x412550)
 classRelatedMethod(std::allocator<struct std::_Container_proxy>::deallocate(struct std::_Container_proxy *, unsigned int)@0x4124f0,std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(CHAR_ALLOC const &)@0x4139b0)
@@ -232,6 +237,7 @@ classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool,
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@0x412420)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@0x411cf0)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
+classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@0x412960)
@@ -251,6 +257,7 @@ classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@0x411cf0)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
+classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0)
 classRelatedMethod(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
 classRelatedMethod(std::exception::exception(char const * const &)@0x41d430,std::bad_alloc::bad_alloc(char const *)@0x413b50)
 classRelatedMethod(std::exception::exception(class std::exception const &)@0x41d434,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x413d60)
@@ -433,6 +440,8 @@ classSizeGTE(std::_Container_proxy::_Container_proxy(void)@0x412050,4)
 classSizeGTE(std::_Container_proxy::_Container_proxy(void)@0x412050,8)
 classSizeGTE(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00,0)
 classSizeGTE(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00,4)
+classSizeGTE(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,0)
+classSizeGTE(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,4)
 classSizeGTE(std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@0x412220,0)
 classSizeGTE(std::allocator<char>::allocator<char>(void)@0x4121e0,0)
 classSizeGTE(std::allocator<char>::deallocate(char *, unsigned int)@0x412490,0)
@@ -469,6 +478,7 @@ classSizeGTE(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsig
 classSizeGTE(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@0x412960,0)
 classSizeGTE(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@0x412780,0)
 classSizeGTE(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,0)
+classSizeGTE(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,0)
 classSizeGTE(std::exception::exception(char const * const &)@0x41443c,0)
 classSizeGTE(std::exception::exception(char const * const &)@0x41d430,0)
 classSizeGTE(std::exception::exception(class std::exception const &)@0x414436,0)
@@ -731,9 +741,20 @@ classSizeGTE(virtual std::bad_alloc::~bad_alloc(void)@0x413bd0,4)
 classSizeGTE(virtual std::exception::~exception(void)@0x414448,0)
 classSizeGTE(virtual std::exception::~exception(void)@0x41d428,0)
 classSizeGTE(virtual type_info::~type_info(void)@0x416362,0)
+constructor(ObjectTest::ObjectTest(int, int)@0x411a30)
+constructor(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@0x412260)
+constructor(class type_info & type_info::operator=(class type_info const &)@0x414420)
 constructor(std::_Container_base12::_Container_base12(void)@0x41d370)
+constructor(std::_Container_proxy::_Container_proxy(void)@0x412050)
+constructor(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
+constructor(std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@0x412220)
+constructor(std::allocator<char>::allocator<char>(void)@0x4121e0)
+constructor(std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(CHAR_ALLOC const &)@0x4139b0)
 constructor(std::bad_alloc::bad_alloc(char const *)@0x413b50)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x413d60)
+constructor(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4137b0)
+constructor(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x413530)
+constructor(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70)
 constructor(std::exception::exception(char const * const &)@0x41d430)
 constructor(std::exception::exception(class std::exception const &)@0x41d434)
 constructor(type_info::type_info(class type_info const &)@0x414360)
@@ -797,8 +818,6 @@ mergeClasses(int std::ios_base::flags(void)const@0x41d344,__int64 std::ios_base:
 mergeClasses(std::_Container_base12::_Container_base12(void)@0x41d370,std::_Container_base12::~_Container_base12(void)@0x41d374)
 mergeClasses(std::_Container_base12::_Orphan_all(void)@0x41d368,std::_Container_base12::_Container_base12(void)@0x41d370)
 mergeClasses(std::_Container_base12::_Orphan_all(void)@0x41d368,std::_Container_base12::~_Container_base12(void)@0x41d374)
-mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,std::_Container_base12::_Orphan_all(void)@0x41d368)
-mergeClasses(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0,std::_Container_base12::~_Container_base12(void)@0x41d374)
 mergeClasses(std::allocator<struct std::_Container_proxy>::deallocate(struct std::_Container_proxy *, unsigned int)@0x4124f0,std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(CHAR_ALLOC const &)@0x4139b0)
 mergeClasses(std::bad_alloc::bad_alloc(char const *)@0x413b50,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x413d60)
 mergeClasses(std::bad_alloc::bad_alloc(char const *)@0x413b50,virtual std::bad_alloc::~bad_alloc(void)@0x413bd0)
@@ -822,6 +841,7 @@ mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@0x412420)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
+mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@0x412960)
@@ -833,6 +853,7 @@ mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@0x411cf0)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
+mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0)
 mergeClasses(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)
 mergeClasses(std::exception::exception(char const * const &)@0x41d430,std::exception::exception(class std::exception const &)@0x41d434)
 mergeClasses(struct std::_Container_proxy * std::allocator<struct std::_Container_proxy>::allocate(unsigned int)@0x412550,std::allocator<struct std::_Container_proxy>::allocator<struct std::_Container_proxy>(CHAR_ALLOC const &)@0x4139b0)
@@ -998,6 +1019,7 @@ method(std::_Container_base12::~_Container_base12(void)@0x414040)
 method(std::_Container_base12::~_Container_base12(void)@0x41d374)
 method(std::_Container_proxy::_Container_proxy(void)@0x412050)
 method(std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00)
+method(std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0)
 method(std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@0x412220)
 method(std::allocator<char>::allocator<char>(void)@0x4121e0)
 method(std::allocator<char>::deallocate(char *, unsigned int)@0x412490)
@@ -1022,6 +1044,7 @@ method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned in
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@0x412960)
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@0x412780)
 method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70)
+method(std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40)
 method(std::exception::exception(char const * const &)@0x41443c)
 method(std::exception::exception(char const * const &)@0x41d430)
 method(std::exception::exception(class std::exception const &)@0x414436)
@@ -1417,9 +1440,9 @@ vftableSizeTotal(12)
 %   {static unsigned int __cdecl std::char_traits<char>::length(char const *)@0x411d80}
 %   {std::_Container_base12::_Container_base12(void)@0x414046}
 %   {std::_Container_base12::_Orphan_all(void)@0x41404c}
+%   {std::_Container_base12::_Orphan_all(void)@0x41d368, std::_Container_base12::_Container_base12(void)@0x41d370, std::_Container_base12::~_Container_base12(void)@0x41d374}
 %   {std::_Container_base12::~_Container_base12(void)@0x414040}
 %   {std::_Container_proxy::_Container_proxy(void)@0x412050}
-%   {std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0, std::_Container_base12::_Orphan_all(void)@0x41d368, std::_Container_base12::_Container_base12(void)@0x41d370, std::_Container_base12::~_Container_base12(void)@0x41d374}
 %   {std::allocator<char>::allocator<char>(CHAR_ALLOC const &)@0x412220}
 %   {std::allocator<char>::allocator<char>(void)@0x4121e0}
 %   {std::allocator<char>::deallocate(char *, unsigned int)@0x412490}
@@ -1430,7 +1453,7 @@ vftableSizeTotal(12)
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x4140a0}
 %   {std::basic_ostream<char, CHAR_TRAITS>::_Osfx(void)@0x41d330, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::flush(void)@0x41d33c, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(class std::basic_ostream<char, CHAR_TRAITS> & (__cdecl *)(class std::basic_ostream<char, CHAR_TRAITS> &))@0x41d36c, class std::basic_ostream<char, CHAR_TRAITS> & std::basic_ostream<char, CHAR_TRAITS>::operator<<(int)@0x41d378}
 %   {std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x413530, std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x413690, std::basic_ostream<char, CHAR_TRAITS>::sentry::operator int std::_Bool_struct::*(void)const@0x413760, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4137b0, std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::~_Sentry_base(void)@0x413880}
-%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@0x411cf0, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0, std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@0x412260, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360, char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@0x412420, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@0x4125b0, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@0x412780, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@0x4128e0, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@0x412960, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@0x4129c0, unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@0x412b20, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0}
+%   {std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(char const *)@0x411b70, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::~basic_string<char, CHAR_TRAITS, CHAR_ALLOC>(void)@0x411c40, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *)@0x411cf0, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0, std::_String_val<char, CHAR_ALLOC>::_String_val<char, CHAR_ALLOC>(CHAR_ALLOC)@0x411f00, std::_String_val<char, CHAR_ALLOC>::~_String_val<char, CHAR_ALLOC>(void)@0x4120a0, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(char const *, unsigned int)@0x412260, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360, char * std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Myptr(void)@0x412420, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::assign(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> const &, unsigned int, unsigned int)@0x4125b0, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xran(void)const@0x412780, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0, bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Inside(char const *)@0x4128e0, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Xlen(void)const@0x412960, class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC> & std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::erase(unsigned int, unsigned int)@0x4129c0, unsigned int std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::max_size(void)const@0x412b20, std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0}
 %   {std::exception::exception(char const * const &)@0x41443c}
 %   {std::exception::exception(class std::exception const &)@0x414436}
 %   {struct std::_Container_proxy && __cdecl std::forward<struct std::_Container_proxy>(struct std::_Container_proxy &)@0x413fc0}

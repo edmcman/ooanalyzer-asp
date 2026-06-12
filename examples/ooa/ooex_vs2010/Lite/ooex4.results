@@ -30,6 +30,7 @@ finalMethodProperty(0x401ca4, realDestructor, certain).
 finalMethodProperty(0x401caf, deletingDestructor, certain).
 finalMethodProperty(0x401caf, virtual, certain).
 finalMethodProperty(0x401cd6, constructor, certain).
+finalMethodProperty(0x4038e0, constructor, certain).
 finalVFTable(0x406140, 0xc, 0xc, 0x40613c, '.?AVBase@@').
 finalVFTable(0x406150, 0xc, 0xc, 0x40614c, '.?AVDerived@@').
 finalVFTable(0x406160, 0x4, 0x4, 0x40615c, '.?AVtype_info@@').

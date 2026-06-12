@@ -1,60 +1,66 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.11s)
-20:12:15 Solving...
-20:12:15 Model found (0.36s): [-40, -276]
-20:12:15 Model found (0.37s, +0.01s): [-40, -277]
-20:12:15 Model found (0.37s, +0.00s): [-40, -279]
-20:12:15 Model found (0.38s, +0.01s): [-40, -288]
-20:12:15 Model found (0.38s, +0.00s): [-40, -289]
-20:12:15 Model found (0.39s, +0.01s): [-40, -292]
-20:12:15 Model found (0.39s, +0.01s): [-40, -299]
-20:12:15 Model found (0.40s, +0.00s): [-40, -302]
-20:12:15 Model found (0.40s, +0.01s): [-40, -309]
-20:12:15 Model found (0.41s, +0.00s): [-40, -312]
-20:12:15 Model found (0.42s, +0.01s): [-40, -319]
-20:12:15 Model found (0.42s, +0.00s): [-40, -322]
-20:12:15 Model found (0.43s, +0.01s): [-40, -329]
-20:12:15 Model found (0.43s, +0.00s): [-40, -332]
-20:12:15 Model found (0.44s, +0.01s): [-40, -335]
-20:12:15 Model found (0.46s, +0.01s): [-40, -338]
-20:12:15 Model found (0.47s, +0.02s): [-40, -341]
-20:12:15 Model found (0.50s, +0.03s): [-40, -343]
-20:12:15 Model found (0.51s, +0.01s): [-40, -344]
-20:12:15 Model found (0.54s, +0.03s): [-40, -347]
-20:12:15 Model found (0.55s, +0.01s): [-40, -350]
-20:12:15 Model found (0.56s, +0.01s): [-40, -353]
-20:12:15 Model found (0.56s, +0.01s): [-40, -354]
-20:12:15 Model found (0.58s, +0.01s): [-40, -355]
-20:12:15 Model found (0.61s, +0.03s): [-40, -369]
-20:12:15 Model found (0.62s, +0.01s): [-40, -370]
-20:12:15 Model found (0.64s, +0.02s): [-40, -375]
-20:12:15 Solving done: OPTIMUM FOUND (0.56s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.12s)
+21:26:07 Solving...
+21:26:08 Model found (0.36s): [-40, -293]
+21:26:08 Model found (0.37s, +0.01s): [-40, -294]
+21:26:08 Model found (0.37s, +0.01s): [-40, -295]
+21:26:08 Model found (0.38s, +0.00s): [-40, -296]
+21:26:08 Model found (0.38s, +0.01s): [-40, -300]
+21:26:08 Model found (0.39s, +0.01s): [-40, -306]
+21:26:08 Model found (0.39s, +0.01s): [-40, -309]
+21:26:08 Model found (0.40s, +0.01s): [-40, -310]
+21:26:08 Model found (0.40s, +0.01s): [-40, -319]
+21:26:08 Model found (0.41s, +0.01s): [-40, -320]
+21:26:08 Model found (0.42s, +0.00s): [-40, -329]
+21:26:08 Model found (0.42s, +0.01s): [-40, -330]
+21:26:08 Model found (0.43s, +0.01s): [-40, -339]
+21:26:08 Model found (0.44s, +0.01s): [-40, -340]
+21:26:08 Model found (0.44s, +0.01s): [-40, -343]
+21:26:08 Model found (0.45s, +0.01s): [-40, -349]
+21:26:08 Model found (0.46s, +0.02s): [-40, -352]
+21:26:08 Model found (0.47s, +0.01s): [-40, -355]
+21:26:08 Model found (0.49s, +0.01s): [-40, -358]
+21:26:08 Model found (0.53s, +0.04s): [-40, -359]
+21:26:08 Model found (0.56s, +0.04s): [-40, -361]
+21:26:08 Model found (0.57s, +0.01s): [-40, -364]
+21:26:08 Model found (0.58s, +0.01s): [-40, -367]
+21:26:08 Model found (0.59s, +0.01s): [-40, -368]
+21:26:08 Model found (0.60s, +0.02s): [-40, -369]
+21:26:08 Model found (0.63s, +0.03s): [-40, -371]
+21:26:08 Model found (0.65s, +0.02s): [-40, -372]
+21:26:08 Model found (0.67s, +0.02s): [-40, -378]
+21:26:08 Model found (0.68s, +0.01s): [-40, -379]
+21:26:08 Model found (0.69s, +0.01s): [-40, -380]
+21:26:08 Model found (0.71s, +0.01s): [-40, -381]
+21:26:08 Model found (0.72s, +0.01s): [-40, -382]
+21:26:08 Model found (0.73s, +0.01s): [-40, -383]
+21:26:08 Solving done: OPTIMUM FOUND (0.63s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex9.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex9.results
 OPTIMUM FOUND
 
-Answer: 27
-Optimization: -40 -375
+Answer: 33
+Optimization: -40 -383
 
 % Equivalence classes (218 classes, 239 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex9.results
+21:26:08 Writing results to examples/ooa/ooex_vs2008/Debug/ooex9.results
 
 % Stats:
-%   atoms: 10531.0
-%   bodies: 9899.0
-%   rules: 22393.0
-%   variables: 8725.0
+%   atoms: 10565.0
+%   bodies: 9949.0
+%   rules: 22469.0
+%   variables: 8758.0
 %   constraints: 411.0
-%   choices: 22606.0
-%   conflicts: 403.0
-%   models: 27.0
+%   choices: 26960.0
+%   conflicts: 450.0
+%   models: 33.0
 %   optimal_models: 1.0
-%   final_cost: [-40.0, -375.0]
-%   lower_bound: [-40.0, -375.0]
-%   total_time: 0.683128833770752
-%   ground_time: 0.11477959016337991
-%   time_to_first_model: 0.36029449477791786
+%   final_cost: [-40.0, -383.0]
+%   lower_bound: [-40.0, -383.0]
+%   total_time: 0.7599420547485352
+%   ground_time: 0.11575117893517017
+%   time_to_first_model: 0.36002797819674015
 %   max_rss_bytes: 44826624
-%   solve_time: 0.3191859722137451
+%   solve_time: 0.39602112770080566
 classCallsMethod(D::D(void)@0x411610,B::B(void)@0x411780)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411740)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411740)
@@ -373,6 +379,7 @@ classSizeLTE(const B::`vftable'{for `B'}@0x416798,36)
 classSizeLTE(const C::`vftable'{for `A'}@0x4167b0,36)
 classSizeLTE(const C::`vftable'{for `C'}@0x4167bc,36)
 constructor(D::D(void)@0x411610)
+constructor(class type_info & type_info::operator=(class type_info const &)@0x411cd0)
 constructor(type_info::type_info(class type_info const &)@0x411c10)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c40)
 derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)

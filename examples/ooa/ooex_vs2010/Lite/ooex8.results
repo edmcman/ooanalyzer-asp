@@ -11,6 +11,10 @@ finalDemangledName(0x406174, '.?AVexception@std@@', 'std::exception', '').
 finalDemangledName(0x406194, '.?AVtype_info@@', type_info, '').
 finalFileInfo('2CA8BE0C325377DEEDEE792A6F34B2A6', 'ooex8.exe').
 finalInheritance(0x406158, 0x406174, 0, 0x406158, false).
+finalMethodProperty(0x401000, constructor, certain).
+finalMethodProperty(0x401020, constructor, certain).
+finalMethodProperty(0x401050, constructor, certain).
+finalMethodProperty(0x401080, constructor, certain).
 finalMethodProperty(0x401134, realDestructor, certain).
 finalMethodProperty(0x40113f, deletingDestructor, certain).
 finalMethodProperty(0x40113f, virtual, certain).
@@ -24,6 +28,7 @@ finalMethodProperty(0x401486, constructor, certain).
 finalMethodProperty(0x4014ab, constructor, certain).
 finalMethodProperty(0x4014bb, deletingDestructor, certain).
 finalMethodProperty(0x4014bb, virtual, certain).
+finalMethodProperty(0x403c4d, constructor, certain).
 finalVFTable(0x406158, 0x8, 0x8, 0x406154, '.?AVbad_alloc@std@@').
 finalVFTable(0x406174, 0x8, 0x8, 0x406170, '.?AVexception@std@@').
 finalVFTable(0x406194, 0x4, 0x4, 0x406190, '.?AVtype_info@@').

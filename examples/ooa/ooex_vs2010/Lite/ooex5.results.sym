@@ -20,6 +20,7 @@ finalInheritance(const std::bad_alloc::`vftable'@0x406188, const std::exception:
 finalMethodProperty(Base2::Base2(void)@0x401060, constructor, certain).
 finalMethodProperty(Base::Base(void)@0x401000, realDestructor, certain).
 finalMethodProperty(Derived::Derived(void)@0x4010c0, realDestructor, certain).
+finalMethodProperty(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403970, constructor, certain).
 finalMethodProperty(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40122f, constructor, certain).
 finalMethodProperty(std::exception::exception(char const * const &, int)@0x401c77, constructor, certain).
 finalMethodProperty(std::exception::exception(class std::exception const &)@0x401d66, constructor, certain).

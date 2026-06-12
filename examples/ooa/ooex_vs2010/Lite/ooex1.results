@@ -12,6 +12,8 @@ finalDemangledName(0x4071f0, '.?AVbad_exception@std@@', 'std::bad_exception', ''
 finalFileInfo('1C0ED38374144580F3186B2379D49F3A', 'ooex1.exe').
 finalInheritance(0x407140, 0x40715c, 0, 0x407140, false).
 finalInheritance(0x4071f0, 0x40715c, 0, 0x4071f0, false).
+finalMethodProperty(0x401000, constructor, certain).
+finalMethodProperty(0x401020, constructor, certain).
 finalMethodProperty(0x4010e7, realDestructor, certain).
 finalMethodProperty(0x4010f2, deletingDestructor, certain).
 finalMethodProperty(0x4010f2, virtual, certain).
@@ -30,6 +32,7 @@ finalMethodProperty(0x401ff4, realDestructor, certain).
 finalMethodProperty(0x401fff, deletingDestructor, certain).
 finalMethodProperty(0x401fff, virtual, certain).
 finalMethodProperty(0x402bc9, constructor, certain).
+finalMethodProperty(0x40495c, constructor, certain).
 finalVFTable(0x407140, 0x8, 0x8, 0x40713c, '.?AVbad_alloc@std@@').
 finalVFTable(0x40715c, 0x8, 0x8, 0x407158, '.?AVexception@std@@').
 finalVFTable(0x40717c, 0x4, 0x4, 0x407178, '.?AVtype_info@@').

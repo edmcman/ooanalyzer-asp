@@ -1,38 +1,38 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.03s)
-20:12:15 Solving...
-20:12:15 Model found (0.04s): [-212]
-20:12:15 Model found (0.04s, +0.00s): [-213]
-20:12:15 Model found (0.04s, +0.00s): [-214]
-20:12:15 Model found (0.05s, +0.00s): [-215]
-20:12:15 Model found (0.05s, +0.00s): [-216]
-20:12:15 Solving done: OPTIMUM FOUND (0.02s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.03s)
+21:26:07 Solving...
+21:26:07 Model found (0.04s): [-216]
+21:26:07 Model found (0.04s, +0.00s): [-217]
+21:26:07 Model found (0.04s, +0.00s): [-219]
+21:26:07 Model found (0.05s, +0.00s): [-225]
+21:26:07 Model found (0.05s, +0.00s): [-228]
+21:26:07 Solving done: OPTIMUM FOUND (0.02s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex1.results
 OPTIMUM FOUND
 
 Answer: 5
-Optimization: -216
+Optimization: -228
 
 % Equivalence classes (209 classes, 212 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex1.results
+21:26:07 Writing results to examples/ooa/ooex_vs2008/Debug/ooex1.results
 
 % Stats:
-%   atoms: 5371.0
-%   bodies: 1129.0
-%   rules: 5810.0
-%   variables: 665.0
-%   constraints: 0.0
-%   choices: 1701.0
-%   conflicts: 6.0
+%   atoms: 5413.0
+%   bodies: 1169.0
+%   rules: 5864.0
+%   variables: 703.0
+%   constraints: 8.0
+%   choices: 1720.0
+%   conflicts: 13.0
 %   models: 5.0
 %   optimal_models: 1.0
-%   final_cost: [-216.0]
-%   lower_bound: [-216.0]
-%   total_time: 0.05858182907104492
-%   ground_time: 0.02769473474472761
-%   time_to_first_model: 0.038480622693896294
-%   max_rss_bytes: 29097984
-%   solve_time: 0.012130975723266602
+%   final_cost: [-228.0]
+%   lower_bound: [-228.0]
+%   total_time: 0.06087207794189453
+%   ground_time: 0.028669089078903198
+%   time_to_first_model: 0.040152691304683685
+%   max_rss_bytes: 29884416
+%   solve_time: 0.012708902359008789
 classRelatedMethod(Composite::Composite(void)@0x411570,int Composite::func3(void)@0x4115c0)
 classRelatedMethod(Derived::Derived(void)@0x411610,int Derived::func4(void)@0x411750)
 classRelatedMethod(Derived::Derived(void)@0x411610,int Derived::func5(class Composite, int)@0x4117c0)
@@ -261,6 +261,8 @@ classSizeGTE(thunk:j__exit_0@0x4111e0,0)
 classSizeGTE(thunk:j__main@0x411159,0)
 classSizeGTE(thunk:j__rand@0x41111d,0)
 classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41112c,0)
+constructor(Composite::Composite(void)@0x411570)
+constructor(Derived::Derived(void)@0x411610)
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(merge)

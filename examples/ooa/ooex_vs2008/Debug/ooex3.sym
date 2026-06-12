@@ -1,37 +1,38 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.03s)
-20:12:15 Solving...
-20:12:15 Model found (0.04s): [-210]
-20:12:15 Model found (0.04s, +0.00s): [-211]
-20:12:15 Model found (0.04s, +0.00s): [-213]
-20:12:15 Model found (0.04s, +0.00s): [-214]
-20:12:15 Solving done: OPTIMUM FOUND (0.02s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.03s)
+21:26:07 Solving...
+21:26:07 Model found (0.04s): [-216]
+21:26:07 Model found (0.04s, +0.00s): [-219]
+21:26:07 Model found (0.04s, +0.00s): [-222]
+21:26:07 Model found (0.05s, +0.00s): [-225]
+21:26:07 Model found (0.05s, +0.00s): [-228]
+21:26:07 Solving done: OPTIMUM FOUND (0.02s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex3.results
 OPTIMUM FOUND
 
-Answer: 4
-Optimization: -214
+Answer: 5
+Optimization: -228
 
 % Equivalence classes (207 classes, 210 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
+21:26:07 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
 
 % Stats:
-%   atoms: 5305.0
-%   bodies: 1124.0
-%   rules: 5744.0
-%   variables: 661.0
-%   constraints: 0.0
-%   choices: 849.0
-%   conflicts: 6.0
-%   models: 4.0
+%   atoms: 5359.0
+%   bodies: 1182.0
+%   rules: 5821.0
+%   variables: 713.0
+%   constraints: 17.0
+%   choices: 2133.0
+%   conflicts: 19.0
+%   models: 5.0
 %   optimal_models: 1.0
-%   final_cost: [-214.0]
-%   lower_bound: [-214.0]
-%   total_time: 0.053922176361083984
-%   ground_time: 0.027423853985965252
-%   time_to_first_model: 0.03790606604889035
-%   max_rss_bytes: 29884416
-%   solve_time: 0.00820612907409668
+%   final_cost: [-228.0]
+%   lower_bound: [-228.0]
+%   total_time: 0.05820488929748535
+%   ground_time: 0.027897176798433065
+%   time_to_first_model: 0.039197116158902645
+%   max_rss_bytes: 29097984
+%   solve_time: 0.011255979537963867
 classCallsMethod(Derived::Derived(void)@0x411560,Base::Base(void)@0x411610)
 classCallsMethod(Derived::Derived(void)@0x411560,int Base::func3(void)@0x411510)
 classRelatedMethod(Base2::Base2(void)@0x411670,int Base2::func3(void)@0x4116d0)
@@ -263,6 +264,9 @@ classSizeGTE(thunk:j__exit_0@0x4111e0,0)
 classSizeGTE(thunk:j__main@0x41115e,0)
 classSizeGTE(thunk:j__rand@0x411127,0)
 classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411131,0)
+constructor(Base2::Base2(void)@0x411670)
+constructor(Base::Base(void)@0x411610)
+constructor(Derived::Derived(void)@0x411560)
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(merge)

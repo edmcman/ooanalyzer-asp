@@ -1,40 +1,42 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.03s)
-20:12:15 Solving...
-20:12:15 Model found (0.04s): [-213]
-20:12:15 Model found (0.04s, +0.00s): [-214]
-20:12:15 Model found (0.04s, +0.00s): [-215]
-20:12:15 Model found (0.05s, +0.00s): [-216]
-20:12:15 Model found (0.05s, +0.00s): [-217]
-20:12:15 Model found (0.05s, +0.00s): [-219]
-20:12:15 Model found (0.06s, +0.00s): [-223]
-20:12:15 Solving done: OPTIMUM FOUND (0.03s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.03s)
+21:26:07 Solving...
+21:26:07 Model found (0.04s): [-215]
+21:26:07 Model found (0.04s, +0.00s): [-216]
+21:26:07 Model found (0.05s, +0.00s): [-217]
+21:26:07 Model found (0.05s, +0.00s): [-218]
+21:26:07 Model found (0.06s, +0.01s): [-221]
+21:26:07 Model found (0.07s, +0.01s): [-224]
+21:26:07 Model found (0.07s, +0.00s): [-225]
+21:26:07 Model found (0.07s, +0.01s): [-233]
+21:26:07 Model found (0.08s, +0.00s): [-245]
+21:26:07 Solving done: OPTIMUM FOUND (0.05s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex0.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex0.results
 OPTIMUM FOUND
 
-Answer: 7
-Optimization: -223
+Answer: 9
+Optimization: -245
 
 % Equivalence classes (209 classes, 213 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
+21:26:07 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
 
 % Stats:
-%   atoms: 5432.0
-%   bodies: 1213.0
-%   rules: 5890.0
-%   variables: 709.0
-%   constraints: 0.0
-%   choices: 1975.0
-%   conflicts: 60.0
-%   models: 7.0
+%   atoms: 5461.0
+%   bodies: 1245.0
+%   rules: 5929.0
+%   variables: 748.0
+%   constraints: 20.0
+%   choices: 2678.0
+%   conflicts: 108.0
+%   models: 9.0
 %   optimal_models: 1.0
-%   final_cost: [-223.0]
-%   lower_bound: [-223.0]
-%   total_time: 0.06777405738830566
-%   ground_time: 0.028565685264766216
-%   time_to_first_model: 0.039721261244267225
+%   final_cost: [-245.0]
+%   lower_bound: [-245.0]
+%   total_time: 0.08843994140625
+%   ground_time: 0.028874858748167753
+%   time_to_first_model: 0.04052800266072154
 %   max_rss_bytes: 29097984
-%   solve_time: 0.020219087600708008
+%   solve_time: 0.04013800621032715
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::ClassA(void)@0x411610)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)
@@ -274,6 +276,7 @@ classSizeGTE(thunk:j__main@0x41115e,0)
 classSizeGTE(thunk:j__printf@0x4111bd,0)
 classSizeGTE(thunk:j__rand@0x411127,0)
 classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411131,0)
+constructor(ClassA::ClassA(void)@0x411610)
 deletingDestructor(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790)
 guessEnabled(constructor)
 guessEnabled(derived_class)

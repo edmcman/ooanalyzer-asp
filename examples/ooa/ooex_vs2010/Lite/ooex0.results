@@ -11,11 +11,13 @@ finalDemangledName(0x408248, '.?AVexception@std@@', 'std::exception', '').
 finalDemangledName(0x408268, '.?AVtype_info@@', type_info, '').
 finalFileInfo('4D67D16A6890A6F353A22530DB995336', 'ooex0.exe').
 finalInheritance(0x408170, 0x408248, 0, 0x408170, false).
+finalMethodProperty(0x401000, constructor, certain).
 finalMethodProperty(0x401050, deletingDestructor, certain).
 finalMethodProperty(0x4011c9, realDestructor, certain).
 finalMethodProperty(0x4011d4, deletingDestructor, certain).
 finalMethodProperty(0x4011d4, virtual, certain).
 finalMethodProperty(0x4011fb, constructor, certain).
+finalMethodProperty(0x4016b1, constructor, certain).
 finalMethodProperty(0x402c2d, constructor, certain).
 finalMethodProperty(0x402c4a, virtual, certain).
 finalMethodProperty(0x402cea, realDestructor, certain).

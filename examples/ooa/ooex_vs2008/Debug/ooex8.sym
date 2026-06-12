@@ -1,35 +1,35 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.03s)
-20:12:15 Solving...
-20:12:15 Model found (0.04s): [-206]
-20:12:15 Model found (0.04s, +0.00s): [-207]
-20:12:15 Solving done: OPTIMUM FOUND (0.01s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.03s)
+21:26:07 Solving...
+21:26:07 Model found (0.04s): [-214]
+21:26:07 Model found (0.04s, +0.00s): [-217]
+21:26:07 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex8.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex8.results
 OPTIMUM FOUND
 
 Answer: 2
-Optimization: -207
+Optimization: -217
 
 % Equivalence classes (205 classes, 206 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex8.results
+21:26:07 Writing results to examples/ooa/ooex_vs2008/Debug/ooex8.results
 
 % Stats:
-%   atoms: 5240.0
-%   bodies: 1060.0
-%   rules: 5659.0
-%   variables: 625.0
-%   constraints: 0.0
-%   choices: 414.0
-%   conflicts: 0.0
+%   atoms: 5298.0
+%   bodies: 1113.0
+%   rules: 5737.0
+%   variables: 657.0
+%   constraints: 5.0
+%   choices: 843.0
+%   conflicts: 2.0
 %   models: 2.0
 %   optimal_models: 1.0
-%   final_cost: [-207.0]
-%   lower_bound: [-207.0]
-%   total_time: 0.0504150390625
-%   ground_time: 0.027962127700448036
-%   time_to_first_model: 0.03820207668468356
-%   max_rss_bytes: 28311552
-%   solve_time: 0.00421595573425293
+%   final_cost: [-217.0]
+%   lower_bound: [-217.0]
+%   total_time: 0.05124807357788086
+%   ground_time: 0.028003377839922905
+%   time_to_first_model: 0.03877405496314168
+%   max_rss_bytes: 29097984
+%   solve_time: 0.004592180252075195
 classCallsMethod(D::D(void)@0x4115b0,B::B(void)@0x4116c0)
 classRelatedMethod(B::B(void)@0x4116c0,D::D(void)@0x4115b0)
 classRelatedMethod(D::D(void)@0x4115b0,B::B(void)@0x4116c0)
@@ -249,6 +249,10 @@ classSizeGTE(thunk:j__atexit@0x411069,0)
 classSizeGTE(thunk:j__exit_0@0x4111d6,0)
 classSizeGTE(thunk:j__main@0x411159,0)
 classSizeGTE(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x41112c,0)
+constructor(A::A(void)@0x411660)
+constructor(B::B(void)@0x4116c0)
+constructor(C::C(void)@0x411740)
+constructor(D::D(void)@0x4115b0)
 guessEnabled(constructor)
 guessEnabled(derived_class)
 guessEnabled(merge)

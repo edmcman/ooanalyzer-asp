@@ -3,6 +3,7 @@
 finalClass(Shape::Shape(void)@0x4119a0, 0, 0x4, 0x4, Shape::Shape(void)@0x4119a0, [Shape::Shape(void)@0x4119a0]).
 finalClass(bool std::ios_base::good(void)const@0x41b30c, 0, 0, 0, 0, [bool std::ios_base::good(void)const@0x41b30c, int std::ios_base::width(int)@0x41b328, int std::ios_base::flags(void)const@0x41b344, int std::ios_base::width(void)const@0x41b348]).
 finalClass(class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310, 0, 0, 0, 0, [class std::basic_ostream<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::tie(void)const@0x41b310, std::basic_ios<char, CHAR_TRAITS>::setstate(int, bool)@0x41b324, class std::basic_streambuf<char, CHAR_TRAITS> * std::basic_ios<char, CHAR_TRAITS>::rdbuf(void)const@0x41b33c, char std::basic_ios<char, CHAR_TRAITS>::fill(void)const@0x41b340]).
+finalClass(class type_info & type_info::operator=(class type_info const &)@0x412670, 0, 0, 0, 0, [class type_info & type_info::operator=(class type_info const &)@0x412670]).
 finalClass(const Circle::`vftable'@0x417828, const Circle::`vftable'@0x417828, 0x4, 0x4, 0, [Circle::Circle(void)@0x4117e0, virtual Circle::draw(void)@0x411840]).
 finalClass(const Rectangle::`vftable'@0x417804, const Rectangle::`vftable'@0x417804, 0x4, 0x4, 0, [Rectangle::Rectangle(void)@0x411700, virtual Rectangle::draw(void)@0x411760]).
 finalClass(const Shape::`vftable'@0x417868, 0, 0, 0x4, 0, []).
@@ -44,6 +45,9 @@ finalMethodProperty(Circle::Circle(void)@0x4117e0, constructor, certain).
 finalMethodProperty(Rectangle::Rectangle(void)@0x411700, constructor, certain).
 finalMethodProperty(Shape::Shape(void)@0x4119a0, realDestructor, certain).
 finalMethodProperty(Triangle::Triangle(void)@0x4118c0, constructor, certain).
+finalMethodProperty(class type_info & type_info::operator=(class type_info const &)@0x412670, constructor, certain).
+finalMethodProperty(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4121e0, constructor, certain).
+finalMethodProperty(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x411f70, constructor, certain).
 finalMethodProperty(type_info::type_info(class type_info const &)@0x4125b0, constructor, certain).
 finalMethodProperty(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0, deletingDestructor, certain).
 finalMethodProperty(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4125e0, virtual, certain).

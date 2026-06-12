@@ -1,43 +1,38 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.12s)
-20:12:15 Solving...
-20:12:15 Model found (0.31s): [-20, -326]
-20:12:15 Model found (0.32s, +0.01s): [-20, -334]
-20:12:15 Model found (0.33s, +0.01s): [-20, -373]
-20:12:15 Model found (0.34s, +0.01s): [-20, -374]
-20:12:15 Model found (0.35s, +0.01s): [-20, -378]
-20:12:15 Model found (0.36s, +0.01s): [-20, -379]
-20:12:15 Model found (0.37s, +0.01s): [-20, -380]
-20:12:15 Model found (0.39s, +0.02s): [-20, -381]
-20:12:15 Model found (0.40s, +0.01s): [-20, -382]
-20:12:15 Model found (0.41s, +0.01s): [-20, -383]
-20:12:15 Solving done: OPTIMUM FOUND (0.30s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.12s)
+21:26:07 Solving...
+21:26:08 Model found (0.31s): [-20, -341]
+21:26:08 Model found (0.32s, +0.01s): [-20, -344]
+21:26:08 Model found (0.33s, +0.01s): [-20, -391]
+21:26:08 Model found (0.33s, +0.01s): [-20, -409]
+21:26:08 Model found (0.37s, +0.04s): [-20, -411]
+21:26:08 Solving done: OPTIMUM FOUND (0.26s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/poly.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Debug/poly.results
 OPTIMUM FOUND
 
-Answer: 10
-Optimization: -20 -383
+Answer: 5
+Optimization: -20 -411
 
 % Equivalence classes (271 classes, 297 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2010/Debug/poly.results
+21:26:08 Writing results to examples/ooa/ooex_vs2010/Debug/poly.results
 
 % Stats:
-%   atoms: 21879.0
-%   bodies: 11086.0
-%   rules: 24090.0
-%   variables: 8279.0
-%   constraints: 65.0
-%   choices: 6064.0
-%   conflicts: 31.0
-%   models: 10.0
+%   atoms: 21992.0
+%   bodies: 11308.0
+%   rules: 24350.0
+%   variables: 8449.0
+%   constraints: 90.0
+%   choices: 6636.0
+%   conflicts: 29.0
+%   models: 5.0
 %   optimal_models: 1.0
-%   final_cost: [-20.0, -383.0]
-%   lower_bound: [-20.0, -383.0]
-%   total_time: 0.4279019832611084
-%   ground_time: 0.11996776517480612
-%   time_to_first_model: 0.313332537189126
-%   max_rss_bytes: 50946048
-%   solve_time: 0.10798907279968262
+%   final_cost: [-20.0, -411.0]
+%   lower_bound: [-20.0, -411.0]
+%   total_time: 0.3900010585784912
+%   ground_time: 0.11671129334717989
+%   time_to_first_model: 0.3125514700077474
+%   max_rss_bytes: 51118080
+%   solve_time: 0.07011699676513672
 classCallsMethod(Circle::Circle(void)@0x4117c0,Shape::Shape(void)@0x411980)
 classCallsMethod(Rectangle::Rectangle(void)@0x4116e0,Shape::Shape(void)@0x411980)
 classCallsMethod(Triangle::Triangle(void)@0x4118a0,Shape::Shape(void)@0x411980)
@@ -420,6 +415,9 @@ classSizeLTE(const Shape::`vftable'@0x417898,4)
 constructor(Circle::Circle(void)@0x4117c0)
 constructor(Rectangle::Rectangle(void)@0x4116e0)
 constructor(Triangle::Triangle(void)@0x4118a0)
+constructor(class type_info & type_info::operator=(class type_info const &)@0x412840)
+constructor(std::basic_ostream<char, CHAR_TRAITS>::_Sentry_base::_Sentry_base(class std::basic_ostream<char, CHAR_TRAITS> &)@0x412330)
+constructor(std::basic_ostream<char, CHAR_TRAITS>::sentry::sentry(class std::basic_ostream<char, CHAR_TRAITS> &)@0x4120b0)
 constructor(type_info::type_info(class type_info const &)@0x412780)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4127b0)
 derivedClass(const Circle::`vftable'@0x417858,const Shape::`vftable'@0x417898,0)

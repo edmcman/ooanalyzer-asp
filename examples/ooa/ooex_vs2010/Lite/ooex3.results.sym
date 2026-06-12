@@ -11,6 +11,10 @@ finalDemangledName(const std::exception::`vftable'@0x4061a4, '.?AVexception@std@
 finalDemangledName(const type_info::`vftable'@0x4061c4, '.?AVtype_info@@', type_info, '').
 finalFileInfo('87892ACF5857728BECE0059D3AED0A00', 'ooex3.exe').
 finalInheritance(const std::bad_alloc::`vftable'@0x406140, const std::exception::`vftable'@0x4061a4, 0, const std::bad_alloc::`vftable'@0x406140, false).
+finalMethodProperty(Base2::Base2(void)@0x401030, constructor, certain).
+finalMethodProperty(Base::Base(void)@0x401000, constructor, certain).
+finalMethodProperty(Derived::Derived(void)@0x401060, constructor, certain).
+finalMethodProperty(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403307, constructor, certain).
 finalMethodProperty(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142, constructor, certain).
 finalMethodProperty(std::exception::exception(char const * const &, int)@0x401821, constructor, certain).
 finalMethodProperty(std::exception::exception(class std::exception const &)@0x401910, constructor, certain).

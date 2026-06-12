@@ -1,56 +1,56 @@
-20:12:15 Grounding...
-20:12:15 Grounding done (0.04s)
-20:12:15 Solving...
-20:12:15 Model found (0.09s): [-32, -239]
-20:12:15 Model found (0.09s, +0.00s): [-32, -244]
-20:12:15 Model found (0.09s, +0.00s): [-32, -247]
-20:12:15 Model found (0.10s, +0.01s): [-32, -268]
-20:12:15 Model found (0.10s, +0.00s): [-32, -288]
-20:12:15 Model found (0.11s, +0.00s): [-32, -308]
-20:12:15 Model found (0.11s, +0.00s): [-32, -311]
-20:12:15 Model found (0.12s, +0.00s): [-32, -318]
-20:12:15 Model found (0.12s, +0.00s): [-32, -328]
-20:12:15 Model found (0.12s, +0.00s): [-32, -331]
-20:12:15 Model found (0.13s, +0.01s): [-32, -348]
-20:12:15 Model found (0.14s, +0.01s): [-32, -351]
-20:12:15 Model found (0.14s, +0.01s): [-32, -358]
-20:12:15 Model found (0.15s, +0.01s): [-32, -361]
-20:12:15 Model found (0.16s, +0.01s): [-32, -364]
-20:12:15 Model found (0.17s, +0.00s): [-32, -367]
-20:12:15 Model found (0.17s, +0.01s): [-32, -370]
-20:12:15 Model found (0.18s, +0.01s): [-32, -373]
-20:12:15 Model found (0.19s, +0.01s): [-32, -376]
-20:12:15 Model found (0.21s, +0.02s): [-32, -377]
-20:12:15 Model found (0.22s, +0.01s): [-32, -379]
-20:12:15 Model found (0.23s, +0.01s): [-32, -380]
-20:12:15 Model found (0.23s, +0.01s): [-32, -381]
-20:12:15 Solving done: OPTIMUM FOUND (0.21s)
+21:26:07 Grounding...
+21:26:07 Grounding done (0.04s)
+21:26:07 Solving...
+21:26:07 Model found (0.09s): [-32, -247]
+21:26:07 Model found (0.09s, +0.00s): [-32, -252]
+21:26:07 Model found (0.10s, +0.00s): [-32, -258]
+21:26:07 Model found (0.10s, +0.00s): [-32, -282]
+21:26:07 Model found (0.10s, +0.00s): [-32, -302]
+21:26:07 Model found (0.11s, +0.00s): [-32, -322]
+21:26:07 Model found (0.11s, +0.00s): [-32, -325]
+21:26:07 Model found (0.12s, +0.01s): [-32, -332]
+21:26:07 Model found (0.12s, +0.00s): [-32, -342]
+21:26:07 Model found (0.12s, +0.00s): [-32, -345]
+21:26:07 Model found (0.13s, +0.00s): [-32, -348]
+21:26:07 Model found (0.13s, +0.00s): [-32, -362]
+21:26:07 Model found (0.14s, +0.00s): [-32, -365]
+21:26:07 Model found (0.15s, +0.01s): [-32, -368]
+21:26:07 Model found (0.15s, +0.00s): [-32, -372]
+21:26:07 Model found (0.15s, +0.00s): [-32, -375]
+21:26:07 Model found (0.16s, +0.01s): [-32, -378]
+21:26:07 Model found (0.16s, +0.00s): [-32, -381]
+21:26:07 Model found (0.17s, +0.00s): [-32, -384]
+21:26:07 Model found (0.17s, +0.01s): [-32, -387]
+21:26:07 Model found (0.18s, +0.01s): [-32, -390]
+21:26:07 Model found (0.19s, +0.01s): [-32, -391]
+21:26:07 Model found (0.20s, +0.01s): [-32, -392]
+21:26:07 Solving done: OPTIMUM FOUND (0.17s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Debug/ooex6.results
 OPTIMUM FOUND
 
 Answer: 23
-Optimization: -32 -381
+Optimization: -32 -392
 
 % Equivalence classes (216 classes, 231 entities):
-20:12:15 Writing results to examples/ooa/ooex_vs2010/Debug/ooex6.results
+21:26:07 Writing results to examples/ooa/ooex_vs2010/Debug/ooex6.results
 
 % Stats:
-%   atoms: 7682.0
-%   bodies: 2572.0
-%   rules: 8842.0
-%   variables: 2678.0
+%   atoms: 7714.0
+%   bodies: 2625.0
+%   rules: 8917.0
+%   variables: 2716.0
 %   constraints: 101.0
-%   choices: 8997.0
-%   conflicts: 183.0
+%   choices: 6273.0
+%   conflicts: 154.0
 %   models: 23.0
 %   optimal_models: 1.0
-%   final_cost: [-32.0, -381.0]
-%   lower_bound: [-32.0, -381.0]
-%   total_time: 0.2632260322570801
-%   ground_time: 0.043496156577020884
-%   time_to_first_model: 0.08606817666441202
+%   final_cost: [-32.0, -392.0]
+%   lower_bound: [-32.0, -392.0]
+%   total_time: 0.22505712509155273
+%   ground_time: 0.04494556598365307
+%   time_to_first_model: 0.08767662802711129
 %   max_rss_bytes: 32243712
-%   solve_time: 0.1722879409790039
+%   solve_time: 0.13151907920837402
 classCallsMethod(Derived::Derived(void)@0x411570,Base::Base(void)@0x411620)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func1(void)@0x411690)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func2(void)@0x4116f0)
@@ -344,6 +344,7 @@ classSizeGTE(virtual type_info::~type_info(void)@0x413acc,0)
 classSizeLTE(Derived::Derived(void)@0x411570,20)
 classSizeLTE(const Base::`vftable'@0x416758,20)
 constructor(Derived::Derived(void)@0x411570)
+constructor(class type_info & type_info::operator=(class type_info const &)@0x411ba0)
 constructor(type_info::type_info(class type_info const &)@0x411ae0)
 constructor(virtual Derived::~Derived(void)@0x411800)
 deletingDestructor(virtual * Derived::`vector deleting destructor'(unsigned int)@0x411790)
