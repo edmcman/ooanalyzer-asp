@@ -182,6 +182,7 @@ class _UF:
 class _ThreadState:
     uf: _UF = field(default_factory=_UF)
     merge_trail: list = field(default_factory=list)
+    initialized: bool = False
 
 
 class SameClassPropagator:
@@ -233,8 +234,11 @@ class SameClassPropagator:
     # ── PropagateInit ────────────────────────────────────────────────────────
 
     def init(self, init):
-        # solver_lit → (a_key, b_key)
-        self._merge_to_pair = {}
+        # solver_lit → [(a_key, b_key)]
+        #
+        # Multiple ground atoms can share one solver literal. In particular,
+        # facts are mapped to solver literal 1. Do not collapse these pairs.
+        self._merge_lit_to_pairs = {}
         # (x_key, y_key) → solver_lit
         self._sc_to_lit = {}
         # solver_lit → (x_key, y_key) — for watching positive theory atoms
@@ -259,13 +263,14 @@ class SameClassPropagator:
             a, b = _sym_key(args[0]), _sym_key(args[1])
             prog_lit = sym_atom.literal
             slit = init.solver_literal(prog_lit)
-            self._merge_to_pair[slit] = (a, b)
+            self._merge_lit_to_pairs.setdefault(slit, []).append((a, b))
             self._merge_proglit_to_pair[prog_lit] = (a, b)
             self._merge_proglit_to_slit[prog_lit] = slit
             self._merge_by_entity.setdefault(a, []).append((b, slit))
             self._merge_by_entity.setdefault(b, []).append((a, slit))
             self._entities.update((a, b))
-            init.add_watch(slit)
+            if abs(slit) != 1:
+                init.add_watch(slit)
 
         for tatom in init.theory_atoms:
             if tatom.term.name == "sameClass" and len(tatom.term.arguments) == 2:
@@ -309,12 +314,13 @@ class SameClassPropagator:
         # Biconditional wiring for DIRECT pairs: sameClass(A,B) ↔ mergeClasses(A,B).
         # Both directions as permanent clauses so BCP fires in either direction.
         # Transitive pairs are handled lazily during propagation.
-        for merge_slit, (a, b) in self._merge_to_pair.items():
-            for pair in [(a, b), (b, a)]:
-                if pair in self._sc_to_lit:
-                    sc_slit = self._sc_to_lit[pair]
-                    init.add_clause([-merge_slit, sc_slit])   # merge → same
-                    init.add_clause([merge_slit, -sc_slit])   # ¬merge → ¬same
+        for merge_slit, pairs in self._merge_lit_to_pairs.items():
+            for a, b in pairs:
+                for pair in [(a, b), (b, a)]:
+                    if pair in self._sc_to_lit:
+                        sc_slit = self._sc_to_lit[pair]
+                        init.add_clause([-merge_slit, sc_slit])   # merge → same
+                        init.add_clause([merge_slit, -sc_slit])   # ¬merge → ¬same
 
         # nonOverwritingWrite(Method, Offset, VFTable) ground atoms.
         # abs(slit) → (method_key, vftable_key); vftable_key → {(method_key, abs_slit)}
@@ -374,7 +380,8 @@ class SameClassPropagator:
         self._obs_unconditional = set()
 
         self._states = [_ThreadState() for _ in range(init.number_of_threads)]
-        _dprint(f"[init] {len(self._merge_to_pair)} mergeClasses, "
+        merge_count = sum(len(pairs) for pairs in self._merge_lit_to_pairs.values())
+        _dprint(f"[init] {merge_count} mergeClasses, "
                 f"{len(self._sc_to_lit)} &sameClass atoms, "
                 f"{len(self._now_slit_to_key)} nonOverwritingWrite atoms, "
                 f"{len(self._awc_to_slit)} &allWritersInClass atoms")
@@ -399,8 +406,9 @@ class SameClassPropagator:
 
         if not self._obs_rules and not self._obs_unconditional:
             # Observer not registered: use old behavior (union all merge atoms).
-            for slit, (a, b) in self._merge_to_pair.items():
-                self._potential_uf.union(a, b, slit)
+            for slit, pairs in self._merge_lit_to_pairs.items():
+                for a, b in pairs:
+                    self._potential_uf.union(a, b, slit)
             return
 
         derivable = set(self._obs_unconditional)
@@ -440,9 +448,16 @@ class SameClassPropagator:
 
     def _rebuild(self, state, assignment):
         state.uf = _UF()
-        for slit, (a, b) in self._merge_to_pair.items():
+        for slit, pairs in self._merge_lit_to_pairs.items():
             if assignment.is_true(slit):
-                state.uf.union(a, b, slit)
+                for a, b in pairs:
+                    state.uf.union(a, b, slit)
+
+    def _ensure_initialized(self, state, assignment):
+        if not state.initialized:
+            self._rebuild(state, assignment)
+            state.merge_trail = []
+            state.initialized = True
 
     def _assert_same(self, state, ctl, x, y, slit):
         """Add permanent reason clause: reason_lits → sameClass(x,y)."""
@@ -499,24 +514,25 @@ class SameClassPropagator:
     def propagate(self, ctl, changes):
         asgn = ctl.assignment
         state = self._state(ctl.thread_id)
+        self._ensure_initialized(state, asgn)
         for lit in changes:
-            if lit in self._merge_to_pair:
-                a, b = self._merge_to_pair[lit]
-                if state.uf.same(a, b):
-                    continue
-                comp_a = state.uf.component(a, self._entities)
-                comp_b = state.uf.component(b, self._entities)
-                snapshot = state.uf.snapshot()
-                if state.uf.union(a, b, lit):
-                    state.merge_trail.append((lit, snapshot))
-                    _dprint(f"[propagate] union({a},{b})")
-                    if len(comp_a) > len(comp_b):
-                        comp_a, comp_b = comp_b, comp_a
-                    for x in comp_a:
-                        for y, sc_lit in self._sc_by_entity.get(x, ()):
-                            if y in comp_b and not asgn.is_fixed(sc_lit):
-                                if not self._assert_same(state, ctl, x, y, sc_lit):
-                                    return
+            if lit in self._merge_lit_to_pairs:
+                for a, b in self._merge_lit_to_pairs[lit]:
+                    if state.uf.same(a, b):
+                        continue
+                    comp_a = state.uf.component(a, self._entities)
+                    comp_b = state.uf.component(b, self._entities)
+                    snapshot = state.uf.snapshot()
+                    if state.uf.union(a, b, lit):
+                        state.merge_trail.append((lit, snapshot))
+                        _dprint(f"[propagate] union({a},{b})")
+                        if len(comp_a) > len(comp_b):
+                            comp_a, comp_b = comp_b, comp_a
+                        for x in comp_a:
+                            for y, sc_lit in self._sc_by_entity.get(x, ()):
+                                if y in comp_b and not asgn.is_fixed(sc_lit):
+                                    if not self._assert_same(state, ctl, x, y, sc_lit):
+                                        return
             elif lit in self._sc_lit_to_pair:
                 # Solver guessed this theory atom true — validate immediately.
                 x, y = self._sc_lit_to_pair[lit]
@@ -555,21 +571,24 @@ class SameClassPropagator:
         _dprint(f"[undo] restore at level {assignment.decision_level}")
         state = self._state(thread_id)
         for lit in changes:
-            if lit not in self._merge_to_pair:
+            if lit not in self._merge_lit_to_pairs:
                 continue
             if state.merge_trail and state.merge_trail[-1][0] == lit:
-                _lit, snapshot = state.merge_trail.pop()
-                state.uf.restore(snapshot)
+                while state.merge_trail and state.merge_trail[-1][0] == lit:
+                    _lit, snapshot = state.merge_trail.pop()
+                    state.uf.restore(snapshot)
             else:
                 # Fallback for any non-LIFO undo ordering from clingo.
                 self._rebuild(state, assignment)
                 state.merge_trail = []
+                state.initialized = True
                 return
 
     def check(self, ctl):
         """Validate assigned &sameClass atoms without eagerly deciding negatives."""
         asgn = ctl.assignment
         state = self._state(ctl.thread_id)
+        self._ensure_initialized(state, asgn)
         for x, y, slit in self._check_atoms:
             is_same, _ = state.uf.same_with_reason(x, y)
             if is_same:
@@ -677,22 +696,58 @@ class SameClassPropagator:
                         changed = True
                         break
 
-        for pl, (a, b, slit) in true_merges.items():
-            if pl not in founded:
-                _dprint(f"[foundedness] unfounded mergeClasses({a},{b})")
-                # Build a permanent clause: ¬mc(a,b) ∨ ⋁{frontier edges from
-                # a's founded component in potential_uf, excluding mc(a,b)'s own edge}.
-                #
-                # This is sound: if mc(a,b) is true and ALL frontier edges are
-                # false, then a's founded component has no indirect path to b,
-                # so mc(a,b) is circularly unfounded.  The clause fires only in
-                # that specific context; once some frontier edge becomes true the
-                # clause is satisfied and a later check() decides founding afresh.
-                comp_a = _founded_component(founded_uf, a)
-                frontier = _frontier_slits(self._potential_uf, comp_a, slit)
-                clause = [-slit] + frontier
-                if not ctl.add_clause(clause, tag=False):
-                    return
+        unfounded_merges = [
+            (pl, a, b, slit)
+            for pl, (a, b, slit) in true_merges.items()
+            if pl not in founded
+        ]
+        if not unfounded_merges:
+            return
+
+        for _pl, a, b, _slit in unfounded_merges:
+            _dprint(f"[foundedness] unfounded mergeClasses({a},{b})")
+
+        # The older per-edge "frontier" clause was too local:
+        #
+        #   ¬mc1 ∨ mc2
+        #   ¬mc2 ∨ mc1
+        #
+        # lets two unfounded frontier edges justify each other forever.  Instead,
+        # block the complete truth assignment observed by this foundedness pass.
+        # If any relevant rule-body atom, merge edge, or sameClass atom changes,
+        # this clause is satisfied and a later check recomputes founded support.
+        clause = self._foundedness_assignment_blocker(asgn)
+        if not ctl.add_clause(clause, tag=False):
+            return
+
+    def _foundedness_assignment_blocker(self, asgn):
+        """Return a clause that blocks the current foundedness-observed assignment."""
+        clause = []
+        seen = set()
+
+        def add_current_truth(slit):
+            if slit is None or slit in seen:
+                return
+            seen.add(slit)
+            if asgn.is_true(slit):
+                clause.append(-slit)
+            elif asgn.is_false(slit):
+                clause.append(slit)
+
+        for pl in self._observed_proglits:
+            if pl in self._merge_proglit_to_slit:
+                add_current_truth(self._merge_proglit_to_slit[pl])
+            elif pl in self._sc_proglit_to_pair:
+                add_current_truth(self._proglit_to_slit.get(pl))
+            else:
+                add_current_truth(self._proglit_to_slit.get(pl))
+
+        for slit in self._merge_proglit_to_slit.values():
+            add_current_truth(slit)
+        for slit in self._sc_to_lit.values():
+            add_current_truth(slit)
+
+        return clause
 
     def partition(self, merge_pairs=None):
         """Return class groups.
@@ -708,36 +763,6 @@ class SameClassPropagator:
         for a, b in merge_pairs:
             uf.union(_sym_key(a), _sym_key(b), 0)
         return uf.groups(self._entities)
-
-
-def _founded_component(founded_uf, x):
-    """BFS in founded_uf._adj; returns the set of entities reachable from x."""
-    visited = {x}
-    queue = [x]
-    while queue:
-        node = queue.pop()
-        for other, _ in founded_uf._adj.get(node, ()):
-            if other not in visited:
-                visited.add(other)
-                queue.append(other)
-    return visited
-
-
-def _frontier_slits(potential_uf, founded_comp, excl_slit):
-    """Solver literals of potential_uf edges that cross from founded_comp to outside.
-
-    Excludes the edge whose slit == excl_slit (the unfounded merge atom itself).
-    Returns a deduplicated list.  An empty list means mc(X,Y) is the only potential
-    connection — the caller should add a permanent unit clause ¬mc(X,Y).
-    """
-    seen = set()
-    result = []
-    for node in founded_comp:
-        for other, slit in potential_uf._adj.get(node, ()):
-            if other not in founded_comp and slit != excl_slit and slit not in seen:
-                seen.add(slit)
-                result.append(slit)
-    return result
 
 
 def sc_pairs_from_merges(merge_pairs):

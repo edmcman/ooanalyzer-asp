@@ -135,7 +135,7 @@ def main():
     print(
         "prop.init: "
         f"{prop.t_init:.3f}s "
-        f"merge={len(prop._merge_to_pair)} "
+        f"merge={sum(len(pairs) for pairs in prop._merge_lit_to_pairs.values())} "
         f"sameClass={len(prop._sc_to_lit)} "
         f"check_atoms={len(prop._check_atoms)} "
         f"entities={len(prop._entities)}"

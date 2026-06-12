@@ -12,8 +12,11 @@ Tests:
  10. helper-circular-cross: helper-mediated K-rule merge is also blocked
  11. legitimate-bridge: K-rule merge allowed when sc precondition has seed support
  12. legitimate-helper-bridge: helper-mediated K-rule merge allowed with seed support
- 13. within-component circular: foundedness check rejects self-justifying K-merge
- 14. helper within-component circular: foundedness follows helper deps
+  13. within-component circular: foundedness check rejects self-justifying K-merge
+  14. helper within-component circular: foundedness follows helper deps
+ 15. mutually-founded K merges: foundedness rejects two circular merge heads
+ 16. fixed merge facts: solver literal 1 can represent many mergeClasses atoms
+ 17. fixed merge facts seed UF: transitive sameClass works without watched changes
 """
 
 import sys
@@ -340,6 +343,40 @@ def main():
          """,
          2,
          frozenset(["mergeClasses(a,b)", "bridge"])),
+
+        # ── 16. Multiple fixed merge facts share solver literal 1 ────────────
+        # clingo maps true facts to solver literal 1. The propagator must keep
+        # every mergeClasses pair for that literal, not just whichever fact was
+        # seen last.
+        ("fixed merge facts: literal-1 merge facts all force direct sameClass",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c). mergeEntity(d).
+         mergeClasses(a,b).
+         mergeClasses(c,d).
+         ab :- &sameClass(a,b).
+         cd :- &sameClass(c,d).
+         :- not ab.
+         :- not cd.
+         #show ab/0. #show cd/0.
+         """,
+         1,
+         frozenset(["ab", "cd"])),
+
+        # ── 17. Fixed true merge facts seed the live union-find ──────────────
+        # Fixed atoms do not arrive through propagate(changes). They still have
+        # to be present in the thread-local UF before check() validates a
+        # transitive sameClass query.
+        ("fixed merge facts: fixed true merges seed transitive sameClass",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         mergeClasses(a,b).
+         mergeClasses(b,c).
+         ac :- &sameClass(a,c).
+         :- not ac.
+         #show ac/0.
+         """,
+         1,
+         frozenset(["ac"])),
     ]
 
     # Tests that require foundedness_check=True (run once, not per control mode).
@@ -377,6 +414,30 @@ def main():
          #show mergeClasses/2. #show circular/0.
          """,
          4),   # 4 founded models; no model may contain "circular"
+
+        # ── 15. Mutually-founded K merges ────────────────────────────────────
+        # The circular heads are deterministic, but separate guess edges make
+        # the queried sameClass pairs live in potential-UF.  With those guesses
+        # forced false, mergeClasses(a,c) and mergeClasses(b,d) can only support
+        # each other through &sameClass.
+        ("mutually-founded K merges: foundedness blocks two-edge support loop",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c). mergeEntity(d).
+         mergeEntity(x). mergeEntity(y).
+         1 { mergeClasses(a,x) ; -mergeClasses(a,x) } 1.
+         1 { mergeClasses(x,c) ; -mergeClasses(x,c) } 1.
+         1 { mergeClasses(b,y) ; -mergeClasses(b,y) } 1.
+         1 { mergeClasses(y,d) ; -mergeClasses(y,d) } 1.
+         :- mergeClasses(a,x).
+         :- mergeClasses(x,c).
+         :- mergeClasses(b,y).
+         :- mergeClasses(y,d).
+         mergeClasses(a,c) :- &sameClass(b,d).
+         mergeClasses(b,d) :- &sameClass(a,c).
+         circular :- mergeClasses(a,c), mergeClasses(b,d).
+         #show mergeClasses/2. #show -mergeClasses/2. #show circular/0.
+         """,
+         1),   # only the model with both deterministic circular merges absent
     ]
 
     for mode, ctl_args in CONTROL_MODES:
