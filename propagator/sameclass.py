@@ -497,9 +497,14 @@ class SameClassPropagator:
         return self._states[thread_id]
 
     def _rebuild(self, state, assignment):
+        # Seed only level-0 fixed-true merges: these can never be undone, so they
+        # need no trail entries. Non-fixed true merges are watched (abs(slit)!=1)
+        # and arrive through propagate's `changes` with trail entries, which keeps
+        # merge_trail level-monotone so the incremental undo can restore by suffix.
+        # Seeding non-fixed merges here (in dict order) would break that order.
         state.uf = _UF()
         for slit, pairs in self._merge_lit_to_pairs.items():
-            if assignment.is_true(slit):
+            if assignment.is_true(slit) and assignment.is_fixed(slit):
                 for a, b in pairs:
                     state.uf.union(a, b, slit)
 
@@ -620,19 +625,19 @@ class SameClassPropagator:
     def undo(self, thread_id, assignment, changes):
         _dprint(f"[undo] restore at level {assignment.decision_level}")
         state = self._state(thread_id)
-        for lit in changes:
-            if lit not in self._merge_lit_to_pairs:
-                continue
-            if state.merge_trail and state.merge_trail[-1][0] == lit:
-                while state.merge_trail and state.merge_trail[-1][0] == lit:
-                    _lit, snapshot = state.merge_trail.pop()
-                    state.uf.restore(snapshot)
-            else:
-                # Fallback for any non-LIFO undo ordering from clingo.
-                self._rebuild(state, assignment)
-                state.merge_trail = []
-                state.initialized = True
-                return
+        if not state.merge_trail:
+            return
+        # The merge edges added at the level(s) being undone form a contiguous
+        # suffix at the top of merge_trail: deeper levels were already restored,
+        # and edges are appended in assignment order, so trail order matches
+        # level order. `changes` lists the unassigned literals but NOT in trail
+        # order, so match the trail top by membership in `changes`, not by
+        # position. The old `== lit` check missed most edges and fell back to an
+        # O(all-merges) _rebuild on ~72% of undos.
+        changes_set = set(changes)
+        while state.merge_trail and state.merge_trail[-1][0] in changes_set:
+            _lit, snapshot = state.merge_trail.pop()
+            state.uf.restore(snapshot)
 
     def check(self, ctl):
         """Validate assigned &sameClass atoms without eagerly deciding negatives."""
