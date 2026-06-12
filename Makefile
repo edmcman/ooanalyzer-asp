@@ -34,7 +34,7 @@ RESULTS_ORIG_SYM_FILES := $(foreach r,$(RESULTS_ORIG),\
 # Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
 .PHONY: all convert run verify verify-core verify-real propagator-run \
-        explain-all symbolize clean help single
+        explain-all symbolize diff clean help single
 
 all: symbolize
 
@@ -52,6 +52,7 @@ help:
 	@echo "  make symbolize     — symbolize all .out → .sym"
 	@echo "  make verify        — run marker checks for core fixtures"
 	@echo "  make propagator-run — alias for run"
+	@echo "  make diff          — diff .results.sym vs .results.orig.sym for all available pairs"
 	@echo "  make clean         — remove generated .lp/.out/.sym files"
 	@echo ""
 	@echo "Single-file pipeline:"
@@ -153,6 +154,18 @@ $(OOA_DIR)/%.results.orig.sym: $(OOA_DIR)/%.results.orig $(OOA_DIR)/%.ground scr
 	$(SYMBOLIZE) $(word 2,$^) $< | sort -o $@
 
 # ----------------------------------------------------------------
+# Diff: .results.orig.sym vs .results.sym → .diff
+# Only built for stems that have a .results.orig file.
+# ----------------------------------------------------------------
+DIFF_FILES := $(foreach lp,$(SYMBOLIZABLE_LP),\
+  $(if $(wildcard $(lp:.lp=.results.orig)),$(lp:.lp=.results.sym.diff)))
+
+diff: $(DIFF_FILES)
+
+$(OOA_DIR)/%.results.sym.diff: $(OOA_DIR)/%.results.orig.sym $(OOA_DIR)/%.results.sym
+	diff $^ > $@ || true
+
+# ----------------------------------------------------------------
 # Convenience: single-file pipeline
 # Usage: make single STEM=ooex_vs2010/Debug/ooex0
 # ----------------------------------------------------------------
@@ -167,6 +180,7 @@ clean:
 	find $(OOA_DIR) -name '*.results' -delete
 	find $(OOA_DIR) -name '*.results.sym' -delete
 	find $(OOA_DIR) -name '*.results.orig.sym' -delete
+	find $(OOA_DIR) -name '*.results.sym.diff' -delete
 	find $(OOA_DIR) -name '*.time' -delete
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
