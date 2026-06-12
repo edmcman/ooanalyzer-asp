@@ -128,17 +128,24 @@ class _UF:
             return []
         if x not in self._adj:
             return None
-        visited = {x}
-        # Each queue entry: (node, list_of_slits_so_far)
-        queue = [(x, [])]
+        parent = {x: None}       # node → (prev_node, slit_from_prev)
+        queue = deque([x])
         while queue:
-            node, path = queue.pop(0)
+            node = queue.popleft()
             for other, slit in self._adj.get(node, ()):
+                if other in parent:
+                    continue
+                parent[other] = (node, slit)
                 if other == y:
-                    return path + [slit]
-                if other not in visited:
-                    visited.add(other)
-                    queue.append((other, path + [slit]))
+                    path = []
+                    cur = y
+                    while parent[cur] is not None:
+                        prev, s = parent[cur]
+                        path.append(s)
+                        cur = prev
+                    path.reverse()
+                    return path
+                queue.append(other)
         return None
 
     def same_with_reason(self, a, b):
@@ -158,9 +165,21 @@ class _UF:
     def same(self, a, b):
         return self.same_with_reason(a, b)[0]
 
-    def component(self, x, universe):
-        rx = self._root(x)
-        return {n for n in universe if self._root(n) == rx}
+    def component(self, x, universe=None):
+        # The mc-adjacency graph already captures every non-singleton component,
+        # so BFS over it touches only the connected members instead of scanning
+        # the whole universe. A node with no adjacency is its own singleton.
+        if x not in self._adj:
+            return {x}
+        members = {x}
+        queue = deque([x])
+        while queue:
+            node = queue.popleft()
+            for other, _slit in self._adj.get(node, ()):
+                if other not in members:
+                    members.add(other)
+                    queue.append(other)
+        return members
 
     def component_reasons(self, members):
         """All true mc edges with both endpoints inside `members`."""
@@ -501,7 +520,7 @@ class SameClassPropagator:
         root = state.uf._root(x)
         if root in cache:
             return cache[root]
-        component = state.uf.component(x, self._entities)
+        component = state.uf.component(x)
         reason = state.uf.component_reasons(component)
         cut = set()
         for member in component:
@@ -551,8 +570,8 @@ class SameClassPropagator:
                 for a, b in self._merge_lit_to_pairs[lit]:
                     if state.uf.same(a, b):
                         continue
-                    comp_a = state.uf.component(a, self._entities)
-                    comp_b = state.uf.component(b, self._entities)
+                    comp_a = state.uf.component(a)
+                    comp_b = state.uf.component(b)
                     snapshot = state.uf.snapshot()
                     if state.uf.union(a, b, lit):
                         state.merge_trail.append((lit, snapshot))
