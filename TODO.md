@@ -66,8 +66,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Guess (guess.pl)
 - [x] `guessConstructor1` (guess.pl:574) — writes vftable, not possibly virtual, no uninitialized reads
 - [x] `guessConstructor2` (guess.pl:592) — writes vftable, not possibly virtual, uninitialized reads ok
-- [ ] `guessConstructor3` (guess.pl:612)
-- [ ] `guessConstructor4` (guess.pl:631)
+- [x] `guessConstructor3` (guess.pl:612) — not possibly virtual, no uninitialized reads (vftable not required)
+- [x] `guessConstructor4` (guess.pl:631) — unlikely non-virtual case (vftable not required, uninitialized reads ok)
 - [ ] `guessNOTConstructor`
 - [ ] `guessUnlikelyConstructor`
 
