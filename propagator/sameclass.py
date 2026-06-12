@@ -163,7 +163,14 @@ class _UF:
         return True, path
 
     def same(self, a, b):
-        return self.same_with_reason(a, b)[0]
+        # Connectivity is a pure root comparison; the BFS reason path in
+        # same_with_reason is only needed when building a clause. Avoid touching
+        # _parent (no setdefault) for absent nodes so this stays side-effect free.
+        if a == b:
+            return True
+        if a not in self._parent or b not in self._parent:
+            return False
+        return self._root(a) == self._root(b)
 
     def component(self, x, universe=None):
         # The mc-adjacency graph already captures every non-singleton component,
@@ -645,7 +652,7 @@ class SameClassPropagator:
         state = self._state(ctl.thread_id)
         self._ensure_initialized(state, asgn)
         for x, y, slit in self._check_atoms:
-            is_same, _ = state.uf.same_with_reason(x, y)
+            is_same = state.uf.same(x, y)  # root-only; reason built lazily on assert
             if is_same:
                 if not asgn.is_fixed(slit):
                     if not self._assert_same(state, ctl, x, y, slit):
