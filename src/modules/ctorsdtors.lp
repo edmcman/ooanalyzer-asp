@@ -165,20 +165,26 @@ guessConstructor2Domain(Method) :-
     method(Method),
     possibleConstructor(Method),
     not possiblyVirtual(Method),
-    possibleVFTableWrite(_, Method, _, _, _).
+    possibleVFTableWrite(_, Method, _, _, _),
+    not guessConstructor1Domain(Method).
 
 % Non-virtual, no uninitialized reads (vftable not required).
 guessConstructor3Domain(Method) :-
     method(Method),
     possibleConstructor(Method),
     not possiblyVirtual(Method),
-    not uninitializedReads(Method).
+    not uninitializedReads(Method),
+    not guessConstructor1Domain(Method),
+    not guessConstructor2Domain(Method).
 
 % Unlikely non-virtual case (no vftable required, uninitialized reads allowed).
 guessConstructor4Domain(Method) :-
     method(Method),
     possibleConstructor(Method),
-    not possiblyVirtual(Method).
+    not possiblyVirtual(Method),
+    not guessConstructor1Domain(Method),
+    not guessConstructor2Domain(Method),
+    not guessConstructor3Domain(Method).
 
 % Unified domain for choice generation.
 guessConstructorDomain(Method) :- guessConstructor1Domain(Method).
@@ -210,14 +216,14 @@ guessConstructorDomain(Method) :- guessConstructor4Domain(Method).
 
 % Optimization rewards: perfect case gets more than likely case.
 guessConstructor1Reward(Method) :- constructor(Method), guessConstructor1Domain(Method).
-guessConstructor2OnlyReward(Method) :- constructor(Method), guessConstructor2Domain(Method), not guessConstructor1Domain(Method).
-guessConstructor3OnlyReward(Method) :- constructor(Method), guessConstructor3Domain(Method), not guessConstructor1Domain(Method).
-guessConstructor4OnlyReward(Method) :- constructor(Method), guessConstructor4Domain(Method), not guessConstructor2Domain(Method), not guessConstructor3Domain(Method).
+guessConstructor2Reward(Method) :- constructor(Method), guessConstructor2Domain(Method).
+guessConstructor3Reward(Method) :- constructor(Method), guessConstructor3Domain(Method).
+guessConstructor4Reward(Method) :- constructor(Method), guessConstructor4Domain(Method).
 
 #maximize { 10@0, ctor1, M : guessConstructor1Reward(M) }.
-#maximize { 9@0, ctor2, M : guessConstructor2OnlyReward(M) }.
-#maximize { 8@0, ctor3, M : guessConstructor3OnlyReward(M) }.
-#maximize { 7@0, ctor4, M : guessConstructor4OnlyReward(M) }.
+#maximize { 9@0, ctor2, M : guessConstructor2Reward(M) }.
+#maximize { 8@0, ctor3, M : guessConstructor3Reward(M) }.
+#maximize { 7@0, ctor4, M : guessConstructor4Reward(M) }.
 
 % ============================================================
 % CONSTRAINTS

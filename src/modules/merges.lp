@@ -189,8 +189,8 @@ weakMergeCandidateUnsorted(X, Y) :-
     not purecall(Y),
     not knownVirtualMethod(Y).
 
-weakMergeCandidate(A, B) :- weakMergeCandidateUnsorted(A, B), A < B.
-weakMergeCandidate(A, B) :- weakMergeCandidateUnsorted(B, A), A < B.
+weakMergeCandidate(A, B) :- weakMergeCandidateUnsorted(A, B), A < B, not strongMergeCandidate(A, B).
+weakMergeCandidate(A, B) :- weakMergeCandidateUnsorted(B, A), A < B, not strongMergeCandidate(A, B).
 
 mergeCandidate(A, B) :- weakMergeCandidate(A, B).
 

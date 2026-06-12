@@ -12,6 +12,7 @@ import logging
 import os
 import resource
 import sys
+import textwrap
 import time
 import clingo
 
@@ -50,55 +51,69 @@ _DEFAULT_PROFILE_PREDS = (
     "knownVirtualMethod",
 )
 
+# Each family: (label, [candidate_preds], [(selected_pred, denominator_pred)])
+# denominator_pred=None falls back to sum of candidate_preds for the family.
 _GUESS_FAMILIES = [
     ("method",
      ["guessMethodDomain"],
-     ["method", "-method"]),
+     [("guessMethodReward",          "guessMethodDomain")]),
     ("constructor",
      ["guessConstructor1Domain", "guessConstructor2Domain",
       "guessConstructor3Domain", "guessConstructor4Domain"],
-     ["constructor", "-constructor"]),
-    ("destructor",
-     ["possibleDestructor"],
-     ["realDestructor", "deletingDestructor"]),
-    ("vftable",
-     ["possibleVFTable"],
-     ["vfTable", "-vfTable"]),
-    ("vftable_size",
-     ["candidateVFTableSize"],
-     ["vfTableSize"]),
+     [("guessConstructor1Reward",    "guessConstructor1Domain"),
+      ("guessConstructor2Reward",    "guessConstructor2Domain"),
+      ("guessConstructor3Reward",    "guessConstructor3Domain"),
+      ("guessConstructor4Reward",    "guessConstructor4Domain")]),
+
     ("merge",
      ["strongMergeCandidate", "weakMergeCandidate"],
-     ["mergeClasses", "-mergeClasses"]),
+     [("strongMergeReward",         "strongMergeCandidate"),
+      ("weakMergeReward",           "weakMergeCandidate"),
+      ("weakG1Bonus",               "weakMergeCandidate")]),
     ("composition",
      ["objectInObject"],
-     ["derivedClass", "embeddedObject"]),
+     [("guessDerivedClassReward",       "objectInObject"),
+      ("purecallNotMostDerivedReward",   "objectInObject"),
+      ("embeddedObject",                 "objectInObject")]),
 ]
 
 
 def print_guess_summary(atoms):
-    by_pred = {}
+    by_pred: dict[str, list] = {}
     for a in atoms:
         key = ("-" if a.negative else "") + a.name
         by_pred.setdefault(key, []).append(a)
 
+    def args_of(a):
+        return tuple(str(x) for x in a.arguments)
+
     def group(pred):
         return sorted(str(a) for a in by_pred.get(pred, []))
 
-    print("\n% Guess candidates:")
-    for label, cands, _ in _GUESS_FAMILIES:
-        print(f"%   [{label}]")
-        for pred in cands:
-            g = group(pred)
-            print(f"%     {pred}: {len(g)}  [{' '.join(g)}]")
+    def emit(header, items):
+        print(header)
+        if items:
+            for line in textwrap.wrap(" ".join(items), width=100,
+                                      initial_indent="%       ",
+                                      subsequent_indent="%       "):
+                print(line)
 
-    print("% Selected guesses:")
+    print("\n% Selected guesses:")
     for label, cands, sels in _GUESS_FAMILIES:
-        n_cand = sum(len(group(p)) for p in cands)
-        print(f"%   [{label}]  ({n_cand} candidate(s))")
-        for pred in sels:
+        n_family = sum(len(group(p)) for p in cands)
+        print(f"%   [{label}]")
+        for pred, denom_pred in sels:
             g = group(pred)
-            print(f"%     {pred}: {len(g)}  [{' '.join(g)}]")
+            n_denom = len(group(denom_pred)) if denom_pred else n_family
+            emit(f"%     {pred}: {len(g)}/{n_denom}", g)
+            # Not-selected: denom items whose args don't appear in selected set.
+            if denom_pred:
+                sel_args = {args_of(a) for a in by_pred.get(pred, [])}
+                not_sel = sorted(
+                    str(a) for a in by_pred.get(denom_pred, [])
+                    if args_of(a) not in sel_args
+                )
+                emit(f"%     ~{pred}: {len(not_sel)}/{n_denom}", not_sel)
     sys.stdout.flush()
 
 
