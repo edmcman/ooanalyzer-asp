@@ -56,6 +56,15 @@ deletingDestructor(Method) :-
     vfTableEntry(_VFTable, _Offset, Entry),
     dethunk(Entry, Method).
 
+% reasonNOTConstructor_F: a method called by a confirmed non-constructor on the
+% same object cannot itself be a constructor.
+
+% Counterpart: reasonNOTConstructor_F (rules.pl:316)
+%!trace_rule {"% is not a constructor because non-constructor % calls it on the same object", Method, OtherMethod}
+-constructor(Method) :-
+    not constructor(OtherMethod),
+    validMethodCallAtOffset(_Insn, OtherMethod, Method, _Offset).
+
 % reasonNOTConstructor_H: if a method's class has a confirmed vftable that the
 % method doesn't install, the method is not a constructor.
 % Imported methods (with symbolClass evidence) are exempt since we may lack

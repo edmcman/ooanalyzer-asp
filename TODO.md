@@ -57,7 +57,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTConstructor_B` (281) — is real destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTConstructor_C` (288) — is deleting destructor (covered by `insanityMultipleConstructorDestructorKinds` + choice rule)
 - [x] `reasonNOTConstructor_D` (297) — appears in vftable (strong negation; replaces `insanityConstructorInVFTable`)
-- [ ] `reasonNOTConstructor_F` (316) — called by non-constructor
+- [x] `reasonNOTConstructor_F` (316) — called by non-constructor
 - [ ] `reasonNOTConstructor_G` (327) — vftable entry requirement
 - [x] `reasonNOTConstructor_H` (345) — vftable not installed by method on same class
 - [ ] `reasonNOTConstructor_I` (359) — negative offset call
