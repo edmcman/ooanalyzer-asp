@@ -1,41 +1,38 @@
-19:42:38 Grounding...
-19:42:38 Grounding done (0.04s)
-19:42:38 Solving...
-19:42:38 Model found (0.09s): [-32, -245]
-19:42:38 Model found (0.09s, +0.00s): [-32, -250]
-19:42:38 Model found (0.09s, +0.00s): [-32, -253]
-19:42:38 Model found (0.10s, +0.01s): [-32, -274]
-19:42:38 Model found (0.10s, +0.00s): [-32, -294]
-19:42:38 Model found (0.10s, +0.00s): [-32, -314]
-19:42:38 Model found (0.11s, +0.00s): [-32, -317]
-19:42:38 Model found (0.11s, +0.00s): [-32, -324]
-19:42:38 Model found (0.12s, +0.00s): [-32, -327]
-19:42:38 Model found (0.12s, +0.00s): [-32, -334]
-19:42:38 Model found (0.12s, +0.00s): [-32, -337]
-19:42:38 Model found (0.13s, +0.00s): [-32, -344]
-19:42:38 Model found (0.13s, +0.00s): [-32, -347]
-19:42:38 Model found (0.14s, +0.01s): [-32, -354]
-19:42:38 Model found (0.14s, +0.00s): [-32, -357]
-19:42:38 Model found (0.14s, +0.00s): [-32, -364]
-19:42:38 Model found (0.15s, +0.00s): [-32, -367]
-19:42:38 Model found (0.15s, +0.00s): [-32, -370]
-19:42:38 Model found (0.15s, +0.00s): [-32, -373]
-19:42:38 Model found (0.16s, +0.00s): [-32, -376]
-19:42:38 Model found (0.16s, +0.01s): [-32, -379]
-19:42:38 Model found (0.17s, +0.01s): [-32, -382]
-19:42:38 Model found (0.18s, +0.01s): [-32, -383]
-19:42:38 Model found (0.18s, +0.01s): [-32, -385]
-19:42:38 Model found (0.19s, +0.00s): [-32, -386]
-19:42:38 Model found (0.19s, +0.01s): [-32, -387]
-19:42:38 Solving done: OPTIMUM FOUND (0.18s)
+20:12:15 Grounding...
+20:12:15 Grounding done (0.05s)
+20:12:15 Solving...
+20:12:15 Model found (0.09s): [-32, -245]
+20:12:15 Model found (0.09s, +0.00s): [-32, -250]
+20:12:15 Model found (0.10s, +0.00s): [-32, -253]
+20:12:15 Model found (0.10s, +0.01s): [-32, -274]
+20:12:15 Model found (0.11s, +0.00s): [-32, -294]
+20:12:15 Model found (0.11s, +0.00s): [-32, -314]
+20:12:15 Model found (0.12s, +0.01s): [-32, -317]
+20:12:15 Model found (0.12s, +0.01s): [-32, -324]
+20:12:15 Model found (0.12s, +0.00s): [-32, -334]
+20:12:15 Model found (0.13s, +0.00s): [-32, -337]
+20:12:15 Model found (0.14s, +0.01s): [-32, -344]
+20:12:15 Model found (0.14s, +0.00s): [-32, -354]
+20:12:15 Model found (0.15s, +0.01s): [-32, -357]
+20:12:15 Model found (0.16s, +0.01s): [-32, -364]
+20:12:15 Model found (0.16s, +0.01s): [-32, -367]
+20:12:15 Model found (0.17s, +0.01s): [-32, -370]
+20:12:15 Model found (0.18s, +0.01s): [-32, -373]
+20:12:15 Model found (0.18s, +0.01s): [-32, -376]
+20:12:15 Model found (0.19s, +0.01s): [-32, -379]
+20:12:15 Model found (0.20s, +0.01s): [-32, -382]
+20:12:15 Model found (0.22s, +0.02s): [-32, -383]
+20:12:15 Model found (0.23s, +0.01s): [-32, -386]
+20:12:15 Model found (0.24s, +0.01s): [-32, -387]
+20:12:15 Solving done: OPTIMUM FOUND (0.23s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2008/Debug/ooex6.results
 OPTIMUM FOUND
 
-Answer: 26
+Answer: 23
 Optimization: -32 -387
 
 % Equivalence classes (222 classes, 237 entities):
-19:42:38 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
+20:12:15 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
 
 % Stats:
 %   atoms: 7840.0
@@ -43,17 +40,17 @@ Optimization: -32 -387
 %   rules: 9024.0
 %   variables: 2738.0
 %   constraints: 101.0
-%   choices: 8239.0
-%   conflicts: 179.0
-%   models: 26.0
+%   choices: 8682.0
+%   conflicts: 180.0
+%   models: 23.0
 %   optimal_models: 1.0
 %   final_cost: [-32.0, -387.0]
 %   lower_bound: [-32.0, -387.0]
-%   total_time: 0.22855210304260254
-%   ground_time: 0.04332939721643925
-%   time_to_first_model: 0.08565408317372203
-%   max_rss_bytes: 31457280
-%   solve_time: 0.13709497451782227
+%   total_time: 0.2869260311126709
+%   ground_time: 0.04536498012021184
+%   time_to_first_model: 0.08923566108569503
+%   max_rss_bytes: 33030144
+%   solve_time: 0.19248104095458984
 classCallsMethod(Derived::Derived(void)@0x411590,Base::Base(void)@0x411640)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func1(void)@0x4116b0)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func2(void)@0x411710)

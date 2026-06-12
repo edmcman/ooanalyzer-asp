@@ -1,34 +1,32 @@
-19:42:38 Grounding...
-19:42:40 Grounding done (1.42s)
-19:42:40 Solving...
-19:42:46 Model found (7.93s): [-380, -884]
-19:42:46 Model found (8.01s, +0.09s): [-380, -885]
-19:42:46 Model found (8.05s, +0.04s): [-380, -886]
-19:42:46 Model found (8.10s, +0.05s): [-380, -888]
-19:42:47 Model found (8.15s, +0.05s): [-380, -889]
-19:42:47 Model found (8.18s, +0.03s): [-380, -890]
-19:42:47 Model found (8.25s, +0.07s): [-380, -891]
-19:42:47 Model found (8.34s, +0.09s): [-380, -892]
-19:42:47 Model found (8.37s, +0.03s): [-380, -893]
-19:42:47 Model found (8.41s, +0.04s): [-380, -894]
-19:42:47 Model found (8.44s, +0.03s): [-380, -895]
-19:42:47 Model found (8.48s, +0.03s): [-380, -896]
-19:42:47 Model found (8.52s, +0.04s): [-380, -897]
-19:42:47 Model found (8.55s, +0.03s): [-380, -898]
-19:42:47 Model found (8.60s, +0.04s): [-380, -899]
-19:42:47 Model found (8.63s, +0.04s): [-380, -900]
-19:42:47 Model found (8.67s, +0.03s): [-380, -901]
-19:42:47 Model found (8.74s, +0.07s): [-380, -902]
-19:47:45 Solving done: TIME LIMIT REACHED (304.94s)
+20:12:15 Grounding...
+20:12:16 Grounding done (1.43s)
+20:12:16 Solving...
+20:12:23 Model found (7.89s): [-380, -884]
+20:12:23 Model found (8.00s, +0.12s): [-380, -888]
+20:12:23 Model found (8.08s, +0.07s): [-380, -889]
+20:12:23 Model found (8.14s, +0.06s): [-380, -890]
+20:12:23 Model found (8.20s, +0.06s): [-380, -891]
+20:12:23 Model found (8.24s, +0.04s): [-380, -892]
+20:12:23 Model found (8.29s, +0.05s): [-380, -893]
+20:12:23 Model found (8.32s, +0.03s): [-380, -894]
+20:12:23 Model found (8.36s, +0.04s): [-380, -895]
+20:12:23 Model found (8.40s, +0.04s): [-380, -896]
+20:12:23 Model found (8.51s, +0.10s): [-380, -897]
+20:12:23 Model found (8.57s, +0.07s): [-380, -898]
+20:12:23 Model found (8.63s, +0.06s): [-380, -899]
+20:12:23 Model found (8.66s, +0.03s): [-380, -900]
+20:12:24 Model found (8.73s, +0.07s): [-380, -901]
+20:12:24 Model found (8.77s, +0.04s): [-380, -902]
+20:17:21 Solving done: TIME LIMIT REACHED (304.84s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Lite/ooex7.results
 % TIME LIMIT REACHED
 
-Answer: 18
+Answer: 16
 Optimization: -380 -902
 Lower bound: -420 -3193
 
 % Equivalence classes (799 classes, 833 entities):
-19:47:45 Writing results to examples/ooa/ooex_vs2010/Lite/ooex7.results
+20:17:21 Writing results to examples/ooa/ooex_vs2010/Lite/ooex7.results
 
 % Stats:
 %   atoms: 94457.0
@@ -36,17 +34,17 @@ Lower bound: -420 -3193
 %   rules: 228762.0
 %   variables: 101447.0
 %   constraints: 3647.0
-%   choices: 77620761.0
-%   conflicts: 62150.0
-%   models: 18.0
+%   choices: 79924409.0
+%   conflicts: 58054.0
+%   models: 16.0
 %   optimal_models: 0.0
 %   final_cost: [-380.0, -902.0]
 %   lower_bound: [-420.0, -3193.0]
-%   total_time: 306.42046785354614
-%   ground_time: 1.4202115647494793
-%   time_to_first_model: 7.926458182744682
-%   max_rss_bytes: 260292608
-%   solve_time: 298.64045906066895
+%   total_time: 306.32101106643677
+%   ground_time: 1.426940375007689
+%   time_to_first_model: 7.886313931085169
+%   max_rss_bytes: 256036864
+%   solve_time: 298.63610911369324
 classCallsMethod(__iob@0x41d6e0,__bufin@0x41f880)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4026f0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x402290)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4026f0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x4019d0)
@@ -2090,14 +2088,14 @@ constructor(std::bad_exception::bad_exception(class std::bad_exception const &)@
 constructor(std::basic_ostream<char, CHAR_TRAITS>::basic_ostream<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *, bool)@0x4055c1)
 constructor(std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@0x404a41)
 constructor(std::exception::exception(char const * const &)@0x406137)
-constructor(std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790)
+constructor(std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910)
 constructor(std::length_error::length_error(class std::length_error const &)@0x404951)
 constructor(std::locale::_Locimp::_Locimp(bool)@0x4046d5)
 constructor(std::locale::facet::facet(unsigned int)@0x401210)
 constructor(std::logic_error::logic_error(class std::logic_error const &)@0x404904)
 constructor(std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0)
 constructor(std::out_of_range::out_of_range(class std::out_of_range const &)@0x40499e)
-constructor(std::runtime_error::runtime_error(char const *)@0x4010e0)
+constructor(std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890)
 constructor(std::system_error::system_error(class std::system_error const &)@0x4018b0)
 deletingDestructor(virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@0x404807)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x401030)
@@ -2145,19 +2143,19 @@ mergeClasses(const std::bad_cast::`vftable'@0x41850c,std::bad_cast::bad_cast(cla
 mergeClasses(const std::bad_exception::`vftable'@0x4186b8,std::bad_exception::bad_exception(class std::bad_exception const &)@0x4093c3)
 mergeClasses(const std::ctype<char>::`vftable'@0x41840c,std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@0x404a41)
 mergeClasses(const std::exception::`vftable'@0x4184ec,std::exception::exception(char const * const &)@0x406137)
-mergeClasses(const std::ios_base::failure::`vftable'@0x418214,std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790)
+mergeClasses(const std::ios_base::failure::`vftable'@0x418214,std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910)
 mergeClasses(const std::length_error::`vftable'@0x4183dc,std::length_error::length_error(class std::length_error const &)@0x404951)
 mergeClasses(const std::locale::_Locimp::`vftable'@0x418320,std::locale::_Locimp::_Locimp(bool)@0x4046d5)
 mergeClasses(const std::locale::facet::`vftable'@0x4181d8,std::locale::facet::facet(unsigned int)@0x401210)
 mergeClasses(const std::logic_error::`vftable'@0x4183d0,std::logic_error::logic_error(class std::logic_error const &)@0x404904)
 mergeClasses(const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268,std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0)
 mergeClasses(const std::out_of_range::`vftable'@0x4183e8,std::out_of_range::out_of_range(class std::out_of_range const &)@0x40499e)
-mergeClasses(const std::runtime_error::`vftable'@0x4181cc,std::runtime_error::runtime_error(char const *)@0x4010e0)
+mergeClasses(const std::runtime_error::`vftable'@0x4181cc,std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890)
 mergeClasses(const std::system_error::`vftable'@0x418208,std::system_error::system_error(class std::system_error const &)@0x4018b0)
-mergeClasses(std::bad_cast::bad_cast(char const *)@0x406193,const std::exception::`vftable'@0x4184ec)
 mergeClasses(std::exception::exception(char const * const &)@0x406137,const std::exception::`vftable'@0x4184ec)
 mergeClasses(std::locale::facet::facet(unsigned int)@0x401210,const std::locale::facet::`vftable'@0x4181d8)
 mergeClasses(std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440,const std::locale::facet::`vftable'@0x4181d8)
+mergeClasses(std::runtime_error::runtime_error(char const *)@0x4010e0,const std::exception::`vftable'@0x4184ec)
 mergeClasses(virtual * std::basic_streambuf<char, CHAR_TRAITS>::`vector deleting destructor'(unsigned int)@0x404eef,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@0x418434)
 mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x406235,const type_info::`vftable'@0x418518)
 mergeClasses(virtual __int64 std::basic_streambuf<char, CHAR_TRAITS>::showmanyc(void)@0x404caf,const std::basic_streambuf<char, CHAR_TRAITS>::`vftable'@0x418434)
@@ -2993,9 +2991,9 @@ realDestructor(std::basic_ostream<char, CHAR_TRAITS>::`vbase destructor(void)@0x
 realDestructor(std::basic_streambuf<char, CHAR_TRAITS>::basic_streambuf<char, CHAR_TRAITS>(void)@0x404fed)
 realDestructor(std::exception::exception(char const * const &, int)@0x4060af)
 realDestructor(std::exception::exception(class std::exception const &)@0x4061e3)
-realDestructor(std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910)
+realDestructor(std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790)
 realDestructor(std::numpunct<char>::numpunct<char>(class std::_Locinfo const &, unsigned int, bool)@0x402440)
-realDestructor(std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890)
+realDestructor(std::runtime_error::runtime_error(char const *)@0x4010e0)
 realDestructor(std::system_error::system_error(class std::error_code, char const *)@0x401730)
 realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x401020)
 realDestructor(virtual std::basic_filebuf<char, CHAR_TRAITS>::~basic_filebuf<char, CHAR_TRAITS>(void)@0x405b9a)
@@ -3204,14 +3202,14 @@ vftableBelongsToClass(const std::bad_cast::`vftable'@0x41850c,0,std::bad_cast::b
 vftableBelongsToClass(const std::bad_exception::`vftable'@0x4186b8,0,std::bad_exception::bad_exception(class std::bad_exception const &)@0x4093c3)
 vftableBelongsToClass(const std::ctype<char>::`vftable'@0x41840c,0,std::ctype<char>::ctype<char>(class std::_Locinfo const &, unsigned int)@0x404a41)
 vftableBelongsToClass(const std::exception::`vftable'@0x4184ec,0,std::exception::exception(char const * const &)@0x406137)
-vftableBelongsToClass(const std::ios_base::failure::`vftable'@0x418214,0,std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790)
+vftableBelongsToClass(const std::ios_base::failure::`vftable'@0x418214,0,std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910)
 vftableBelongsToClass(const std::length_error::`vftable'@0x4183dc,0,std::length_error::length_error(class std::length_error const &)@0x404951)
 vftableBelongsToClass(const std::locale::_Locimp::`vftable'@0x418320,0,std::locale::_Locimp::_Locimp(bool)@0x4046d5)
 vftableBelongsToClass(const std::locale::facet::`vftable'@0x4181d8,0,std::locale::facet::facet(unsigned int)@0x401210)
 vftableBelongsToClass(const std::logic_error::`vftable'@0x4183d0,0,std::logic_error::logic_error(class std::logic_error const &)@0x404904)
 vftableBelongsToClass(const std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::`vftable'@0x418268,0,std::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>::num_put<char, class std::ostreambuf_iterator<char, CHAR_TRAITS>>(class std::_Locinfo const &, unsigned int)@0x401aa0)
 vftableBelongsToClass(const std::out_of_range::`vftable'@0x4183e8,0,std::out_of_range::out_of_range(class std::out_of_range const &)@0x40499e)
-vftableBelongsToClass(const std::runtime_error::`vftable'@0x4181cc,0,std::runtime_error::runtime_error(char const *)@0x4010e0)
+vftableBelongsToClass(const std::runtime_error::`vftable'@0x4181cc,0,std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890)
 vftableBelongsToClass(const std::system_error::`vftable'@0x418208,0,std::system_error::system_error(class std::system_error const &)@0x4018b0)
 vftableSizeTotal(380)
 %   {$LN10_5@0x40a163}
@@ -3859,6 +3857,7 @@ vftableSizeTotal(380)
 %   {std::allocator<char>::deallocate(char *, unsigned int)@0x401530}
 %   {std::bad_alloc::bad_alloc(char const *)@0x401000, const std::bad_alloc::`vftable'@0x4181c0}
 %   {std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401680}
+%   {std::bad_cast::bad_cast(char const *)@0x406193}
 %   {std::bad_cast::bad_cast(class std::bad_cast const &)@0x406208, const std::bad_cast::`vftable'@0x41850c}
 %   {std::bad_exception::bad_exception(class std::bad_exception const &)@0x4093c3, const std::bad_exception::`vftable'@0x4186b8}
 %   {std::basic_filebuf<char, CHAR_TRAITS>::_Init(struct _iobuf *, enum  std::basic_filebuf<char, CHAR_TRAITS>::_Initfl)@0x405039}
@@ -3892,15 +3891,14 @@ vftableSizeTotal(380)
 %   {std::error_code::error_code(int, class std::error_category const &)@0x4013b0}
 %   {std::exception::_Copy_str(char const *)@0x4060d9}
 %   {std::exception::_Tidy(void)@0x406119}
-%   {std::exception::exception(char const * const &)@0x406137, std::bad_cast::bad_cast(char const *)@0x406193, const std::exception::`vftable'@0x4184ec}
 %   {std::exception::exception(char const * const &, int)@0x4060af}
 %   {std::exception::exception(class std::exception const &)@0x4061e3}
 %   {std::ios_base::_Callfns(enum  std::ios_base::event)@0x405e5c}
 %   {std::ios_base::_Init(void)@0x404ba8}
 %   {std::ios_base::_Tidy(void)@0x405e83}
 %   {std::ios_base::clear(int, bool)@0x4017d0}
-%   {std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790, const std::ios_base::failure::`vftable'@0x418214}
-%   {std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910}
+%   {std::ios_base::failure::failure(char const *, class std::error_code const &)@0x401790}
+%   {std::ios_base::failure::failure(class std::ios_base::failure const &)@0x401910, const std::ios_base::failure::`vftable'@0x418214}
 %   {std::length_error::length_error(class std::length_error const &)@0x404951, const std::length_error::`vftable'@0x4183dc}
 %   {std::locale::_Locimp::_Locimp(bool)@0x4046d5, const std::locale::_Locimp::`vftable'@0x418320}
 %   {std::locale::facet::_Incref(void)@0x401180}
@@ -3918,8 +3916,8 @@ vftableSizeTotal(380)
 %   {std::numpunct<char>::_Tidy(void)@0x401d00}
 %   {std::ostreambuf_iterator<char, CHAR_TRAITS>::ostreambuf_iterator<char, CHAR_TRAITS>(class std::basic_streambuf<char, CHAR_TRAITS> *)@0x4014f0}
 %   {std::out_of_range::out_of_range(class std::out_of_range const &)@0x40499e, const std::out_of_range::`vftable'@0x4183e8}
-%   {std::runtime_error::runtime_error(char const *)@0x4010e0, const std::runtime_error::`vftable'@0x4181cc}
-%   {std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890}
+%   {std::runtime_error::runtime_error(char const *)@0x4010e0, std::exception::exception(char const * const &)@0x406137, const std::exception::`vftable'@0x4184ec}
+%   {std::runtime_error::runtime_error(class std::runtime_error const &)@0x401890, const std::runtime_error::`vftable'@0x4181cc}
 %   {std::system_error::system_error(class std::error_code, char const *)@0x401730}
 %   {std::system_error::system_error(class std::system_error const &)@0x4018b0, const std::system_error::`vftable'@0x418208}
 %   {strtoxl@0x4151d0}

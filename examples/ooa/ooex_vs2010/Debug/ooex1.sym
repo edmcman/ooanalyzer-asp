@@ -1,12 +1,12 @@
-19:42:38 Grounding...
-19:42:38 Grounding done (0.03s)
-19:42:38 Solving...
-19:42:38 Model found (0.04s): [-206]
-19:42:38 Model found (0.04s, +0.00s): [-207]
-19:42:38 Model found (0.04s, +0.00s): [-208]
-19:42:38 Model found (0.04s, +0.00s): [-209]
-19:42:38 Model found (0.05s, +0.00s): [-210]
-19:42:38 Solving done: OPTIMUM FOUND (0.02s)
+20:12:15 Grounding...
+20:12:15 Grounding done (0.03s)
+20:12:15 Solving...
+20:12:15 Model found (0.04s): [-206]
+20:12:15 Model found (0.04s, +0.00s): [-207]
+20:12:15 Model found (0.04s, +0.00s): [-208]
+20:12:15 Model found (0.05s, +0.00s): [-209]
+20:12:15 Model found (0.05s, +0.00s): [-210]
+20:12:15 Solving done: OPTIMUM FOUND (0.02s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --results examples/ooa/ooex_vs2010/Debug/ooex1.results
 OPTIMUM FOUND
 
@@ -14,7 +14,7 @@ Answer: 5
 Optimization: -210
 
 % Equivalence classes (203 classes, 206 entities):
-19:42:38 Writing results to examples/ooa/ooex_vs2010/Debug/ooex1.results
+20:12:15 Writing results to examples/ooa/ooex_vs2010/Debug/ooex1.results
 
 % Stats:
 %   atoms: 5237.0
@@ -28,11 +28,11 @@ Optimization: -210
 %   optimal_models: 1.0
 %   final_cost: [-210.0]
 %   lower_bound: [-210.0]
-%   total_time: 0.0553281307220459
-%   ground_time: 0.0277240420691669
-%   time_to_first_model: 0.03827315801754594
-%   max_rss_bytes: 29097984
-%   solve_time: 0.009256124496459961
+%   total_time: 0.058244943618774414
+%   ground_time: 0.029883020091801882
+%   time_to_first_model: 0.04030183609575033
+%   max_rss_bytes: 28311552
+%   solve_time: 0.009079933166503906
 classRelatedMethod(Composite::Composite(void)@0x411550,int Composite::func3(void)@0x4115a0)
 classRelatedMethod(Derived::Derived(void)@0x4115f0,int Derived::func4(void)@0x411730)
 classRelatedMethod(Derived::Derived(void)@0x4115f0,int Derived::func5(class Composite, int)@0x4117a0)

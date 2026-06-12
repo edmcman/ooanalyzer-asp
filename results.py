@@ -189,16 +189,20 @@ def write_results(ctl, all_atoms, merge_pairs, output_path):
     derived_witnesses  = {w for t in derived_classes  for w in (t[0], t[1])}
     embedded_witnesses = {w for t in embedded_objects for w in (t[0], t[1])}
 
-    class_id_map = {}
-    useful_reps  = set()
+    class_id_map    = {}
+    min_size_by_rep = {}
+    useful_reps     = set()
     for rep, mset in parts.items():
         cmethods = methods & mset
         cvfts    = rep_vftables[rep]
         cctors   = constructors & mset
         crdtors  = real_destructors & mset
         in_rel   = (derived_witnesses | embedded_witnesses) & mset
+        gte      = [s for w in mset for s in gte_by_witness.get(w, [])]
+        min_size = max(gte) if gte else 0
+        min_size_by_rep[rep] = min_size
         class_id_map[rep] = _class_id(mset, vftables_at_zero, cvfts, crdtors, cctors, cmethods)
-        if cvfts or cctors or crdtors or len(cmethods) > 1 or in_rel:
+        if cvfts or cctors or crdtors or len(cmethods) > 1 or in_rel or min_size > 0:
             useful_reps.add(rep)
 
     def to_class_id(witness):
@@ -220,9 +224,8 @@ def write_results(ctl, all_atoms, merge_pairs, output_path):
         cid      = class_id_map[rep]
         pvft     = min(vftables_at_zero & mset) if vftables_at_zero & mset else 0
         rdtor    = min(crdtors) if crdtors else 0
-        gte      = [s for w in mset for s in gte_by_witness.get(w, [])]
         lte      = [s for w in mset for s in lte_by_witness.get(w, [])]
-        min_size = max(gte) if gte else 0
+        min_size = min_size_by_rep[rep]
         max_size = min(lte) if lte else min_size
         facts["finalClass"].append((cid, pvft, min_size, max_size, rdtor, cmethods))
 
