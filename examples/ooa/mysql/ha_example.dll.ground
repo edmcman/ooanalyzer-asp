@@ -1,0 +1,1597 @@
+demangledName(0x10001005, tramp, 'public: near __thiscall ha_example::ha_example(near struct handlerton *, near struct TABLE_SHARE *)').
+demangledName(0x1000100a, tramp, 'public: virtual near void __thiscall handler::cond_pop(void)').
+demangledName(0x1000100f, tramp, 'public: virtual near double __thiscall handler::read_time(unsigned int, unsigned int, unsigned __int64)').
+demangledName(0x10001014, tramp, 'public: static near void __cdecl Sql_alloc::operator delete(near void *, near struct st_mem_root *)').
+demangledName(0x10001019, tramp, 'public: near bool __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Inside(near char const *)').
+demangledName(0x1000101e, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign(near char const *)').
+demangledName(0x10001023, tramp, 'public: virtual near int __thiscall ha_example::index_read_map(near unsigned char *, near unsigned char const *, unsigned long, enum ha_rkey_function)').
+demangledName(0x10001028, tramp, 'protected: virtual near bool __thiscall handler::prepare_inplace_alter_table(near struct TABLE *, near class Alter_inplace_info *)').
+demangledName(0x1000102d, tramp, 'public: virtual near void __thiscall handler::unlock_row(void)').
+demangledName(0x10001032, tramp, 'public: virtual near unsigned __int64 __thiscall handler::end_read_removal(void)').
+demangledName(0x10001037, tramp, 'public: virtual near unsigned long __thiscall ha_example::index_flags(unsigned int, unsigned int, bool) const').
+demangledName(0x1000103c, tramp, 'public: virtual near unsigned int __thiscall handler::calculate_key_hash_value(near class Field *near  *)').
+demangledName(0x10001041, tramp, 'public: virtual near near void * __thiscall std::_Generic_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001046, tramp, 'public: virtual near void __thiscall handler::init_table_handle_for_HANDLER(void)').
+demangledName(0x1000104b, tramp, 'public: virtual near near char const * __thiscall ha_example::table_type(void) const').
+demangledName(0x10001050, tramp, 'public: virtual near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > __thiscall std::_Iostream_error_category::message(int) const').
+demangledName(0x10001055, tramp, 'public: near void __thiscall std::allocator<char>::construct<near char *, near char *near  &>(near char *near  *, near char *near  &)').
+demangledName(0x1000105a, tramp, 'public: near __thiscall ha_statistics::ha_statistics(void)').
+demangledName(0x1000105f, tramp, 'public: virtual near void __thiscall handler::change_table_ptr(near struct TABLE *, near struct TABLE_SHARE *)').
+demangledName(0x10001064, tramp, 'near near void * __cdecl operator new(unsigned int, near void *)').
+demangledName(0x10001069, tramp, 'public: virtual near void __thiscall handler::end_bulk_update(void)').
+demangledName(0x1000106e, tramp, 'public: virtual near int __thiscall ha_example::close(void)').
+demangledName(0x10001073, tramp, 'public: near __thiscall handler::handler(near struct handlerton *, near struct TABLE_SHARE *)').
+demangledName(0x10001078, tramp, 'public: virtual near bool __thiscall handler::is_crashed(void) const').
+demangledName(0x1000107d, tramp, 'protected: virtual near int __thiscall handler::index_read_last_map(near unsigned char *, near unsigned char const *, unsigned long)').
+demangledName(0x10001082, tramp, 'public: virtual near double __thiscall ha_example::read_time(unsigned int, unsigned int, unsigned __int64)').
+demangledName(0x10001087, tramp, 'protected: virtual near bool __thiscall handler::inplace_alter_table(near struct TABLE *, near class Alter_inplace_info *)').
+demangledName(0x1000108c, tramp, 'public: virtual near int __thiscall handler::preload_keys(near class THD *, near struct st_ha_check_opt *)').
+demangledName(0x10001091, tramp, 'public: near __thiscall std::_System_error_category::_System_error_category(void)').
+demangledName(0x10001096, tramp, 'public: virtual near int __thiscall ha_example::extra(enum ha_extra_function)').
+demangledName(0x1000109b, tramp, 'public: virtual near int __thiscall handler::get_foreign_key_list(near class THD *, near class List<struct st_foreign_key_info> *)').
+demangledName(0x100010a0, tramp, 'public: virtual near int __thiscall ha_example::index_first(near unsigned char *)').
+demangledName(0x100010a5, tramp, 'public: virtual near bool __thiscall handler::get_foreign_dup_key(near char *, unsigned int, near char *, unsigned int)').
+demangledName(0x100010aa, tramp, 'public: virtual near int __thiscall ha_example::info(unsigned int)').
+demangledName(0x100010af, tramp, 'public: virtual near near char const * __thiscall std::_Generic_error_category::name(void) const').
+demangledName(0x100010b4, tramp, 'public: virtual near unsigned int __thiscall handler::min_record_length(unsigned int) const').
+demangledName(0x100010b9, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Copy(unsigned int, unsigned int)').
+demangledName(0x100010be, tramp, 'public: near __thiscall Handler_share::Handler_share(void)').
+demangledName(0x100010c3, tramp, 'public: near near char * __thiscall std::_String_val<struct std::_Simple_types<char> >::_Myptr(void)').
+demangledName(0x100010c8, tramp, 'public: virtual near __thiscall ha_example::~ha_example(void)').
+demangledName(0x100010cd, tramp, 'public: virtual near int __thiscall handler::ft_read(near unsigned char *)').
+demangledName(0x100010d2, tramp, 'public: virtual near unsigned __int64 __thiscall handler::estimate_rows_upper_bound(void)').
+demangledName(0x100010d7, tramp, 'public: virtual near int __thiscall ha_example::rnd_end(void)').
+demangledName(0x100010dc, tramp, 'public: near near char * __thiscall std::allocator<char>::allocate(unsigned int)').
+demangledName(0x100010e1, tramp, 'public: virtual near int __thiscall ha_example::rnd_init(bool)').
+demangledName(0x100010e6, tramp, 'public: virtual near char __thiscall handler::register_query_cache_table(near class THD *, near char *, unsigned int, char (__cdecl*near )(near class THD *, near char *, unsigned int, near unsigned __int64 *)  *, near unsigned __int64 *)').
+demangledName(0x100010eb, tramp, 'public: virtual near int __thiscall handler::extra_opt(enum ha_extra_function, unsigned long)').
+demangledName(0x100010f0, tramp, 'public: near bool __thiscall std::error_category::operator==(near class std::error_category const &) const').
+demangledName(0x100010f5, tramp, 'private: virtual near void __thiscall handler::start_bulk_insert(unsigned __int64)').
+demangledName(0x100010fa, tramp, 'private: virtual near int __thiscall handler::end_bulk_insert(void)').
+demangledName(0x100010ff, tramp, 'public: virtual near int __thiscall handler::end_bulk_delete(void)').
+demangledName(0x10001104, tramp, 'near near class std::error_category const & __cdecl std::generic_category(void)').
+demangledName(0x10001109, tramp, 'public: virtual near void __thiscall handler::update_create_info(near struct st_ha_create_information *)').
+demangledName(0x1000110e, tramp, 'public: virtual near int __thiscall ha_example::truncate(void)').
+demangledName(0x10001113, tramp, 'protected: virtual near int __thiscall handler::records(near unsigned __int64 *)').
+demangledName(0x10001118, tramp, 'public: virtual near near char const *near  * __thiscall ha_example::bas_ext(void) const').
+demangledName(0x1000111d, tramp, 'near near class std::error_category const & __cdecl std::system_category(void)').
+demangledName(0x10001122, tramp, 'public: virtual near int __thiscall ha_example::index_prev(near unsigned char *)').
+demangledName(0x10001127, tramp, 'public: near unsigned int __thiscall Ft_hints::get_flags(void)').
+demangledName(0x1000112c, tramp, 'public: virtual near int __thiscall handler::extra(enum ha_extra_function)').
+demangledName(0x10001131, tramp, 'public: virtual near near void * __thiscall handler::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001136, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Xlen(void) const').
+demangledName(0x1000113b, tramp, 'private: virtual near int __thiscall handler::write_row(near unsigned char *)').
+demangledName(0x10001140, tramp, 'public: near __thiscall std::_Iostream_error_category::_Iostream_error_category(void)').
+demangledName(0x10001145, tramp, 'private: virtual near void __thiscall handler::release_auto_increment(void)').
+demangledName(0x1000114a, tramp, 'public: virtual near unsigned int __thiscall handler::max_supported_keys(void) const').
+demangledName(0x1000114f, tramp, 'public: virtual near int __thiscall handler::exec_bulk_update(near unsigned int *)').
+demangledName(0x10001154, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign(near char const *, unsigned int)').
+demangledName(0x10001159, tramp, 'public: virtual near unsigned char __thiscall handler::table_cache_type(void)').
+demangledName(0x1000115e, tramp, 'public: near near class std::error_category const & __thiscall std::error_code::category(void) const').
+demangledName(0x10001163, tramp, 'public: virtual near int __thiscall handler::ft_init(void)').
+demangledName(0x10001168, tramp, 'public: virtual near int __thiscall ha_example::delete_table(near char const *)').
+demangledName(0x1000116d, tramp, 'public: virtual near void __thiscall handler::append_create_info(near class String *)').
+demangledName(0x10001172, tramp, 'public: virtual near int __thiscall handler::rnd_pos_by_record(near unsigned char *)').
+demangledName(0x10001177, tramp, 'public: static near void __cdecl std::char_traits<char>::assign(near char &, near char const &)').
+demangledName(0x1000117c, tramp, 'near double __cdecl my_ulonglong2double(unsigned __int64)').
+demangledName(0x10001181, tramp, 'public: static near unsigned int __cdecl std::char_traits<char>::length(near char const *)').
+demangledName(0x10001186, tramp, 'public: static near void __cdecl Sql_alloc::operator delete(near void *, unsigned int)').
+demangledName(0x1000118b, tramp, 'public: virtual near bool __thiscall std::error_category::equivalent(int, near class std::error_condition const &) const').
+demangledName(0x10001190, tramp, 'public: virtual near int __thiscall ha_example::open(near char const *, int, unsigned int)').
+demangledName(0x10001195, tramp, 'public: virtual near int __thiscall handler::optimize(near class THD *, near struct st_ha_check_opt *)').
+demangledName(0x1000119a, tramp, 'public: virtual near int __thiscall handler::delete_all_rows(void)').
+demangledName(0x1000119f, tramp, 'public: near __thiscall std::_Ignore::_Ignore(void)').
+demangledName(0x100011a4, tramp, 'public: virtual near int __thiscall handler::enable_indexes(unsigned int)').
+demangledName(0x100011a9, tramp, 'near near char * __cdecl std::addressof<char>(near char &)').
+demangledName(0x100011ae, tramp, 'public: near __thiscall Sql_alloc::~Sql_alloc(void)').
+demangledName(0x100011b3, tramp, 'public: virtual near near struct st_thr_lock_data *near  * __thiscall ha_example::store_lock(near class THD *, near struct st_thr_lock_data *near  *, enum thr_lock_type)').
+demangledName(0x100011b8, tramp, 'public: virtual near near class Item * __thiscall handler::idx_cond_push(unsigned int, near class Item *)').
+demangledName(0x100011c2, tramp, 'public: virtual near near class Partition_handler * __thiscall handler::get_partition_handler(void)').
+demangledName(0x100011c7, tramp, 'public: near near char const * __thiscall std::_String_val<struct std::_Simple_types<char> >::_Myptr(void) const').
+demangledName(0x100011cc, tramp, 'public: virtual near int __thiscall handler::get_cascade_foreign_key_table_list(near class THD *, near class List<struct st_handler_tablename> *)').
+demangledName(0x100011d1, tramp, 'public: virtual near near char const * __thiscall std::_System_error_category::name(void) const').
+demangledName(0x100011d6, tramp, 'public: virtual near near void * __thiscall Handler_share::`vector deleting destructor\'(unsigned int)').
+demangledName(0x100011db, tramp, 'public: virtual near bool __thiscall handler::was_semi_consistent_read(void)').
+demangledName(0x100011e0, tramp, 'public: virtual near __thiscall Handler_share::~Handler_share(void)').
+demangledName(0x100011e5, tramp, 'public: virtual near near class Item const * __thiscall handler::cond_push(near class Item const *)').
+demangledName(0x100011ea, tramp, 'public: virtual near near void * __thiscall std::_Iostream_error_category::`vector deleting destructor\'(unsigned int)').
+demangledName(0x100011ef, tramp, 'public: virtual near bool __thiscall handler::start_bulk_delete(void)').
+demangledName(0x100011f4, tramp, 'public: virtual near __thiscall std::_System_error_category::~_System_error_category(void)').
+demangledName(0x100011f9, tramp, 'public: virtual near bool __thiscall std::error_category::equivalent(near class std::error_code const &, int) const').
+demangledName(0x100011fe, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::erase(unsigned int, unsigned int)').
+demangledName(0x10001203, tramp, 'public: virtual near int __thiscall ha_example::delete_all_rows(void)').
+demangledName(0x10001208, tramp, 'public: near int __thiscall std::error_condition::value(void) const').
+demangledName(0x1000120d, tramp, 'public: virtual near unsigned int __thiscall ha_example::max_supported_key_length(void) const').
+demangledName(0x10001212, tramp, 'public: virtual near near class Bitmap<64> const * __thiscall handler::keys_to_use_for_scanning(void)').
+demangledName(0x10001217, tramp, 'public: near __thiscall std::error_condition::error_condition(int, near class std::error_category const &)').
+demangledName(0x1000121c, tramp, 'public: near __thiscall std::_Wrap_alloc<class std::allocator<char> >::_Wrap_alloc(void)').
+demangledName(0x10001221, tramp, 'near near char *near  & __cdecl std::forward<near char *near  &>(near char *near  &)').
+demangledName(0x10001226, tramp, 'protected: virtual near int __thiscall handler::index_first(near unsigned char *)').
+demangledName(0x1000122b, tramp, 'private: virtual near int __thiscall handler::delete_row(near unsigned char const *)').
+demangledName(0x10001230, tramp, 'public: virtual near near struct TABLE const * __thiscall handler::root_of_pushed_join(void) const').
+demangledName(0x10001235, tramp, 'public: near void __thiscall std::_Wrap_alloc<class std::allocator<char> >::construct<near char *, near char *near  &>(near char *near  *, near char *near  &)').
+demangledName(0x1000123a, tramp, 'public: virtual near near char const * __thiscall ha_example::index_type(unsigned int)').
+demangledName(0x1000123f, tramp, 'public: virtual near near void * __thiscall Handler_share::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001244, tramp, 'public: virtual near int __thiscall handler::create_handler_files(near char const *, near char const *, int, near struct st_ha_create_information *)').
+demangledName(0x10001249, tramp, 'public: virtual near near void * __thiscall std::_Iostream_error_category::`vector deleting destructor\'(unsigned int)').
+demangledName(0x1000124e, tramp, 'public: near near char * __thiscall std::_Wrap_alloc<class std::allocator<char> >::allocate(unsigned int)').
+demangledName(0x10001253, tramp, 'public: near __thiscall std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_String_alloc(near class std::allocator<char> const &)').
+demangledName(0x10001258, tramp, 'public: virtual near bool __thiscall handler::check_and_repair(near class THD *)').
+demangledName(0x1000125d, tramp, 'public: virtual near near struct st_ft_info * __thiscall handler::ft_init_ext(unsigned int, unsigned int, near class String *)').
+demangledName(0x10001262, tramp, 'public: virtual near near void * __thiscall ha_example::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001267, tramp, 'public: virtual near int __thiscall handler::indexes_are_disabled(void)').
+demangledName(0x1000126c, tramp, 'public: static near void __cdecl std::allocator_traits<class std::allocator<char> >::construct<near char *, near char *near  &>(near class std::allocator<char> &, near char *near  *, near char *near  &)').
+demangledName(0x10001271, tramp, 'public: virtual near unsigned int __thiscall handler::max_supported_record_length(void) const').
+demangledName(0x10001276, tramp, 'private: virtual near int __thiscall handler::reset(void)').
+demangledName(0x1000127b, tramp, 'protected: virtual near bool __thiscall handler::commit_inplace_alter_table(near struct TABLE *, near class Alter_inplace_info *, bool)').
+demangledName(0x10001280, tramp, 'public: virtual near unsigned int __thiscall handler::number_of_pushed_joins(void) const').
+demangledName(0x10001285, tramp, 'private: virtual near int __thiscall handler::repair(near class THD *, near struct st_ha_check_opt *)').
+demangledName(0x1000128a, tramp, 'public: static near near char * __cdecl std::char_traits<char>::copy(near char *, near char const *, unsigned int)').
+demangledName(0x1000128f, tramp, 'public: virtual near void __thiscall ha_example::position(near unsigned char const *)').
+demangledName(0x10001294, tramp, 'public: virtual near int __thiscall ha_example::external_lock(near class THD *, int)').
+demangledName(0x10001299, tramp, 'public: virtual near int __thiscall ha_example::index_next(near unsigned char *)').
+demangledName(0x1000129e, tramp, 'public: near bool __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Grow(unsigned int, bool)').
+demangledName(0x100012a3, tramp, 'public: near bool __thiscall std::error_condition::operator==(near class std::error_condition const &) const').
+demangledName(0x100012a8, tramp, 'public: virtual near enum row_type __thiscall handler::get_row_type(void) const').
+demangledName(0x100012ad, tramp, 'public: virtual near int __thiscall handler::assign_to_keycache(near class THD *, near struct st_ha_check_opt *)').
+demangledName(0x100012b2, tramp, 'public: virtual near double __thiscall ha_example::scan_time(void)').
+demangledName(0x100012b7, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Xran(void) const').
+demangledName(0x100012bc, tramp, 'public: virtual near int __thiscall handler::bulk_update_row(near unsigned char const *, near unsigned char *, near unsigned int *)').
+demangledName(0x100012c1, tramp, 'public: near __thiscall Sql_alloc::Sql_alloc(void)').
+demangledName(0x100012c6, tramp, 'public: virtual near void __thiscall handler::cancel_pushed_idx_cond(void)').
+demangledName(0x100012cb, tramp, 'public: virtual near __int64 __thiscall handler::get_memory_buffer_size(void) const').
+demangledName(0x100012d0, tramp, 'public: near __thiscall std::error_category::error_category(void)').
+demangledName(0x100012d5, tramp, 'public: virtual near unsigned int __thiscall handler::max_supported_key_part_length(void) const').
+demangledName(0x100012da, tramp, 'public: virtual near class std::error_condition __thiscall std::_System_error_category::default_error_condition(int) const').
+demangledName(0x100012df, tramp, 'public: virtual near void __thiscall handler::try_semi_consistent_read(bool)').
+demangledName(0x100012e4, tramp, 'public: virtual near void __thiscall handler::free_foreign_key_create_info(near char *)').
+demangledName(0x100012e9, tramp, 'public: virtual near unsigned int __thiscall handler::max_supported_key_parts(void) const').
+demangledName(0x100012ee, tramp, 'public: near void __thiscall std::allocator<char>::destroy<near char *>(near char *near  *)').
+demangledName(0x100012f3, tramp, 'public: virtual near int __thiscall handler::disable_indexes(unsigned int)').
+demangledName(0x100012f8, tramp, 'public: virtual near near void * __thiscall std::error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100012fd, tramp, 'public: virtual near near void * __thiscall ha_example::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001302, tramp, 'near void __cdecl operator delete(near void *, near void *)').
+demangledName(0x10001307, tramp, 'public: static near near char * __cdecl std::char_traits<char>::move(near char *, near char const *, unsigned int)').
+demangledName(0x1000130c, tramp, 'public: virtual near __thiscall std::_Generic_error_category::~_Generic_error_category(void)').
+demangledName(0x10001311, tramp, 'public: virtual near near char const * __thiscall handler::index_type(unsigned int)').
+demangledName(0x10001316, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Eos(unsigned int)').
+demangledName(0x1000131b, tramp, 'public: virtual near bool __thiscall handler::is_fk_defined_on_table_or_index(unsigned int)').
+demangledName(0x10001320, tramp, 'public: virtual near int __thiscall handler::get_parent_foreign_key_list(near class THD *, near class List<struct st_foreign_key_info> *)').
+demangledName(0x10001325, tramp, 'public: virtual near __thiscall handler::~handler(void)').
+demangledName(0x1000132a, tramp, 'public: virtual near near void * __thiscall std::error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x1000132f, tramp, 'public: virtual near int __thiscall ha_example::index_last(near unsigned char *)').
+demangledName(0x10001334, tramp, 'public: virtual near int __thiscall handler::truncate(void)').
+demangledName(0x10001339, tramp, 'public: near near class std::error_category const & __thiscall std::error_condition::category(void) const').
+demangledName(0x1000133e, tramp, 'public: virtual near int __thiscall ha_example::rnd_next(near unsigned char *)').
+demangledName(0x10001343, tramp, 'public: virtual near unsigned int __thiscall ha_example::max_supported_keys(void) const').
+demangledName(0x10001348, tramp, 'public: virtual near near void * __thiscall std::_System_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x1000134d, tramp, 'public: virtual near bool __thiscall handler::start_read_removal(void)').
+demangledName(0x10001352, tramp, 'near near char * __cdecl std::_Allocate<char>(unsigned int, near char *)').
+demangledName(0x10001357, tramp, 'private: virtual near int __thiscall handler::rnd_end(void)').
+demangledName(0x1000135c, tramp, 'public: virtual near near void * __thiscall handler::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001361, tramp, 'public: virtual near int __thiscall handler::analyze(near class THD *, near struct st_ha_check_opt *)').
+demangledName(0x10001366, tramp, 'public: virtual near near char const * __thiscall std::_Iostream_error_category::name(void) const').
+demangledName(0x1000136b, tramp, 'public: near __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::~basic_string(void)').
+demangledName(0x10001370, tramp, 'public: virtual near bool __thiscall handler::set_ha_share_ref(near class Handler_share *near  *)').
+demangledName(0x10001375, tramp, 'public: virtual near unsigned int __thiscall ha_example::max_supported_key_parts(void) const').
+demangledName(0x1000137a, tramp, 'public: near void __thiscall Discrete_interval::replace(unsigned __int64, unsigned __int64, unsigned __int64)').
+demangledName(0x1000137f, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &, unsigned int, unsigned int)').
+demangledName(0x10001384, tramp, 'public: virtual near class std::error_condition __thiscall std::error_category::default_error_condition(int) const').
+demangledName(0x10001389, tramp, 'public: virtual near unsigned int __thiscall handler::referenced_by_foreign_key(void)').
+demangledName(0x1000138e, tramp, 'public: near int __thiscall std::error_code::value(void) const').
+demangledName(0x10001393, tramp, 'public: virtual near near struct TABLE const * __thiscall handler::parent_of_pushed_join(void) const').
+demangledName(0x10001398, tramp, 'public: static near near void * __cdecl Sql_alloc::operator new(unsigned int, near struct st_mem_root *)').
+demangledName(0x1000139d, tramp, 'private: virtual near int __thiscall handler::index_init(unsigned int, bool)').
+demangledName(0x100013a2, tramp, 'public: virtual near bool __thiscall handler::start_bulk_update(void)').
+demangledName(0x100013a7, tramp, 'public: virtual near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > __thiscall std::_System_error_category::message(int) const').
+demangledName(0x100013ac, tramp, 'private: near near class Example_share * __thiscall ha_example::get_share(void)').
+demangledName(0x100013b1, tramp, 'public: virtual near bool __thiscall handler::primary_key_is_clustered(void) const').
+demangledName(0x100013b6, tramp, 'public: virtual near int __thiscall handler::discard_or_import_tablespace(char)').
+demangledName(0x100013bb, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Tidy(bool, unsigned int)').
+demangledName(0x100013c0, tramp, 'public: virtual near bool __thiscall handler::can_switch_engines(void)').
+demangledName(0x100013c5, tramp, 'private: virtual near int __thiscall handler::check(near class THD *, near struct st_ha_check_opt *)').
+demangledName(0x100013ca, tramp, 'public: virtual near double __thiscall handler::scan_time(void)').
+demangledName(0x100013cf, tramp, 'private: virtual near int __thiscall handler::index_end(void)').
+demangledName(0x100013d4, tramp, 'public: static near void __cdecl std::allocator_traits<class std::allocator<char> >::destroy<near char *>(near class std::allocator<char> &, near char *near  *)').
+demangledName(0x100013d9, tramp, 'public: near unsigned int __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::max_size(void) const').
+demangledName(0x100013de, tramp, 'public: near void __thiscall std::_Wrap_alloc<class std::allocator<char> >::destroy<near char *>(near char *near  *)').
+demangledName(0x100013e3, tramp, 'private: virtual near int __thiscall handler::update_row(near unsigned char const *, near unsigned char *)').
+demangledName(0x100013e8, tramp, 'public: near unsigned int __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::size(void) const').
+demangledName(0x100013ed, tramp, 'protected: virtual near int __thiscall handler::index_last(near unsigned char *)').
+demangledName(0x100013f2, tramp, 'public: virtual near near void * __thiscall std::_System_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100013f7, tramp, 'public: virtual near near void * __thiscall Example_share::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100013fc, tramp, 'public: virtual near unsigned int __thiscall handler::extra_rec_buf_length(void) const').
+demangledName(0x10001401, tramp, 'public: virtual near int __thiscall handler::index_next_pushed(near unsigned char *)').
+demangledName(0x10001406, tramp, 'public: virtual near __thiscall Example_share::~Example_share(void)').
+demangledName(0x1000140b, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::erase(unsigned int)').
+demangledName(0x10001410, tramp, 'public: virtual near unsigned int __thiscall handler::checksum(void) const').
+demangledName(0x10001415, tramp, 'public: virtual near int __thiscall ha_example::rnd_pos(near unsigned char *, near unsigned char *)').
+demangledName(0x1000141a, tramp, 'public: virtual near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > __thiscall std::_Generic_error_category::message(int) const').
+demangledName(0x1000141f, tramp, 'public: virtual near int __thiscall ha_example::update_row(near unsigned char const *, near unsigned char *)').
+demangledName(0x10001424, tramp, 'public: near struct std::_Wrap_alloc<class std::allocator<char> > __thiscall std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_Getal(void) const').
+demangledName(0x10001429, tramp, 'private: virtual near int __thiscall handler::external_lock(near class THD *, int)').
+demangledName(0x1000142e, tramp, 'public: near __thiscall std::_String_val<struct std::_Simple_types<char> >::_String_val(void)').
+demangledName(0x10001433, tramp, 'public: virtual near int __thiscall ha_example::write_row(near unsigned char *)').
+demangledName(0x10001438, tramp, 'public: near void __thiscall std::_Wrap_alloc<class std::allocator<char> >::deallocate(near char *, unsigned int)').
+demangledName(0x1000143d, tramp, 'public: virtual near near struct st_ft_info * __thiscall handler::ft_init_ext_with_hints(unsigned int, near class String *, near class Ft_hints *)').
+demangledName(0x10001442, tramp, 'public: virtual near int __thiscall ha_example::create(near char const *, near struct TABLE *, near struct st_ha_create_information *)').
+demangledName(0x10001447, tramp, 'public: virtual near int __thiscall ha_example::delete_row(near unsigned char const *)').
+demangledName(0x1000144c, tramp, 'public: near __thiscall Discrete_interval::Discrete_interval(void)').
+demangledName(0x10001451, tramp, 'public: virtual near __thiscall std::error_category::~error_category(void)').
+demangledName(0x10001456, tramp, 'public: virtual near bool __thiscall handler::auto_repair(void) const').
+demangledName(0x1000145b, tramp, 'public: near unsigned int __thiscall std::allocator<char>::max_size(void) const').
+demangledName(0x10001460, tramp, 'protected: virtual near int __thiscall handler::index_next(near unsigned char *)').
+demangledName(0x10001465, tramp, 'public: virtual near int __thiscall handler::index_read_pushed(near unsigned char *, near unsigned char const *, unsigned long)').
+demangledName(0x1000146a, tramp, 'public: virtual near unsigned __int64 __thiscall handler::records_in_range(unsigned int, near struct st_key_range *, near struct st_key_range *)').
+demangledName(0x1000146f, tramp, 'public: near __thiscall std::_Generic_error_category::_Generic_error_category(void)').
+demangledName(0x10001474, tramp, 'public: virtual near near void * __thiscall std::_Generic_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001479, tramp, 'protected: virtual near int __thiscall handler::index_prev(near unsigned char *)').
+demangledName(0x1000147e, tramp, 'protected: virtual near int __thiscall handler::index_read_last(near unsigned char *, near unsigned char const *, unsigned int)').
+demangledName(0x10001483, tramp, 'public: virtual near unsigned int __thiscall ha_example::max_supported_record_length(void) const').
+demangledName(0x10001488, tramp, 'public: near __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::basic_string(near char const *)').
+demangledName(0x1000148d, tramp, 'private: virtual near int __thiscall handler::check_for_upgrade(near struct st_ha_check_opt *)').
+demangledName(0x10001492, tramp, 'public: virtual near unsigned int __thiscall handler::lock_count(void) const').
+demangledName(0x10001497, tramp, 'public: virtual near near void * __thiscall Example_share::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x1000149c, tramp, 'public: virtual near near char * __thiscall handler::get_foreign_key_create_info(void)').
+demangledName(0x100014a1, tramp, 'public: virtual near int __thiscall handler::start_stmt(near class THD *, enum thr_lock_type)').
+demangledName(0x100014a6, tramp, 'public: virtual near int __thiscall handler::cmp_ref(near unsigned char const *, near unsigned char const *)').
+demangledName(0x100014ab, tramp, 'public: virtual near unsigned __int64 __thiscall ha_example::table_flags(void) const').
+demangledName(0x100014b0, tramp, 'public: static near unsigned int __cdecl std::allocator_traits<class std::allocator<char> >::max_size(near class std::allocator<char> const &)').
+demangledName(0x100014b5, tramp, 'public: virtual near unsigned int __thiscall handler::max_supported_key_length(void) const').
+demangledName(0x100014ba, tramp, 'public: virtual near unsigned __int64 __thiscall ha_example::records_in_range(unsigned int, near struct st_key_range *, near struct st_key_range *)').
+demangledName(0x100014bf, tramp, 'public: virtual near bool __thiscall handler::low_byte_first(void) const').
+demangledName(0x100014c4, tramp, 'public: virtual near __thiscall std::_Iostream_error_category::~_Iostream_error_category(void)').
+demangledName(0x100014c9, tramp, 'public: near __thiscall std::allocator<char>::allocator(void)').
+demangledName(0x100014ce, tramp, 'public: near unsigned int __thiscall std::_Wrap_alloc<class std::allocator<char> >::max_size(void) const').
+demangledName(0x100014d3, tramp, 'public: virtual near int __thiscall ha_example::rename_table(near char const *, near char const *)').
+demangledName(0x100014d8, tramp, 'protected: virtual near int __thiscall handler::index_read_map(near unsigned char *, near unsigned char const *, unsigned long, enum ha_rkey_function)').
+demangledName(0x100014dd, tramp, 'public: near void __thiscall std::allocator<char>::deallocate(near char *, unsigned int)').
+demangledName(0x100014e2, tramp, 'public: virtual near bool __thiscall handler::check_if_incompatible_data(near struct st_ha_create_information *, unsigned int)').
+demangledName(0x100014e7, tramp, 'protected: virtual near int __thiscall handler::index_read(near unsigned char *, near unsigned char const *, unsigned int, enum ha_rkey_function)').
+demangledName(0x100014ec, tramp, 'public: near __thiscall Example_share::Example_share(void)').
+demangledName(0x10002730, func, 'near near char * __cdecl std::_Allocate<char>(unsigned int, near char *)').
+demangledName(0x10002770, func, 'near near char * __cdecl std::addressof<char>(near char &)').
+demangledName(0x100027c0, staticmethod, 'public: static near void __cdecl std::allocator_traits<class std::allocator<char> >::construct<near char *, near char *near  &>(near class std::allocator<char> &, near char *near  *, near char *near  &)').
+demangledName(0x10002800, staticmethod, 'public: static near void __cdecl std::allocator_traits<class std::allocator<char> >::destroy<near char *>(near class std::allocator<char> &, near char *near  *)').
+demangledName(0x10002810, func, 'near near char *near  & __cdecl std::forward<near char *near  &>(near char *near  &)').
+demangledName(0x10002da0, func, 'near near void * __cdecl operator new(unsigned int, near void *)').
+demangledName(0x10002db0, staticmethod, 'public: static near near void * __cdecl Sql_alloc::operator new(unsigned int, near struct st_mem_root *)').
+demangledName(0x10002dd0, func, 'near void __cdecl operator delete(near void *, near void *)').
+demangledName(0x10002de0, staticmethod, 'public: static near void __cdecl Sql_alloc::operator delete(near void *, unsigned int)').
+demangledName(0x10002df0, staticmethod, 'public: static near void __cdecl Sql_alloc::operator delete(near void *, near struct st_mem_root *)').
+demangledName(0x10003700, staticmethod, 'public: static near void __cdecl std::char_traits<char>::assign(near char &, near char const &)').
+demangledName(0x10003920, staticmethod, 'public: static near near char * __cdecl std::char_traits<char>::copy(near char *, near char const *, unsigned int)').
+demangledName(0x10003e40, func, 'near near class std::error_category const & __cdecl std::generic_category(void)').
+demangledName(0x10004180, staticmethod, 'public: static near unsigned int __cdecl std::char_traits<char>::length(near char const *)').
+demangledName(0x100041f0, staticmethod, 'public: static near unsigned int __cdecl std::allocator_traits<class std::allocator<char> >::max_size(near class std::allocator<char> const &)').
+demangledName(0x10004440, staticmethod, 'public: static near near char * __cdecl std::char_traits<char>::move(near char *, near char const *, unsigned int)').
+demangledName(0x10004460, func, 'near double __cdecl my_ulonglong2double(unsigned __int64)').
+demangledName(0x10004960, func, 'near near class std::error_category const & __cdecl std::system_category(void)').
+demangledName(0x10004aae, thunk, 'near unsigned int __cdecl calculate_key_len(near struct TABLE *, unsigned int, unsigned long)').
+demangledName(0x10004ab4, thunk, 'public: virtual near void __thiscall handler::unbind_psi(void)').
+demangledName(0x10004aba, thunk, 'public: virtual near void __thiscall handler::rebind_psi(void)').
+demangledName(0x10004ac0, thunk, 'public: virtual near near class handler * __thiscall handler::clone(near char const *, near struct st_mem_root *)').
+demangledName(0x10004ac6, thunk, 'public: near int __thiscall handler::ha_rnd_pos(near unsigned char *, near unsigned char *)').
+demangledName(0x10004acc, thunk, 'public: virtual near void __thiscall handler::print_error(int, int)').
+demangledName(0x10004ad2, thunk, 'public: virtual near bool __thiscall handler::get_error_message(int, near class String *)').
+demangledName(0x10004ad8, thunk, 'public: virtual near double __thiscall handler::index_only_read_time(unsigned int, double)').
+demangledName(0x10004ade, thunk, 'public: virtual near class Cost_estimate __thiscall handler::table_scan_cost(void)').
+demangledName(0x10004ae4, thunk, 'public: virtual near class Cost_estimate __thiscall handler::index_scan_cost(unsigned int, double, double)').
+demangledName(0x10004aea, thunk, 'public: virtual near class Cost_estimate __thiscall handler::read_cost(unsigned int, double, double)').
+demangledName(0x10004af0, thunk, 'public: virtual near unsigned __int64 __thiscall handler::multi_range_read_info_const(unsigned int, near struct st_range_seq_if *, near void *, unsigned int, near unsigned int *, near unsigned int *, near class Cost_estimate *)').
+demangledName(0x10004af6, thunk, 'public: virtual near unsigned __int64 __thiscall handler::multi_range_read_info(unsigned int, unsigned int, unsigned int, near unsigned int *, near unsigned int *, near class Cost_estimate *)').
+demangledName(0x10004afc, thunk, 'public: virtual near int __thiscall handler::multi_range_read_init(near struct st_range_seq_if *, near void *, unsigned int, unsigned int, near struct st_handler_buffer *)').
+demangledName(0x10004b02, thunk, 'public: virtual near int __thiscall handler::multi_range_read_next(near char *near  *)').
+demangledName(0x10004b08, thunk, 'public: virtual near bool __thiscall handler::is_ignorable_error(int)').
+demangledName(0x10004b0e, thunk, 'public: virtual near bool __thiscall handler::is_fatal_error(int)').
+demangledName(0x10004b14, thunk, 'public: virtual near void __thiscall handler::column_bitmaps_signal(void)').
+demangledName(0x10004b1a, thunk, 'protected: virtual near int __thiscall handler::index_read_idx_map(near unsigned char *, unsigned int, near unsigned char const *, unsigned long, enum ha_rkey_function)').
+demangledName(0x10004b20, thunk, 'protected: virtual near int __thiscall handler::index_next_same(near unsigned char *, near unsigned char const *, unsigned int)').
+demangledName(0x10004b26, thunk, 'public: virtual near int __thiscall handler::read_range_first(near struct st_key_range const *, near struct st_key_range const *, bool, bool)').
+demangledName(0x10004b2c, thunk, 'public: virtual near int __thiscall handler::read_range_next(void)').
+demangledName(0x10004b32, thunk, 'public: virtual near int __thiscall handler::read_first_row(near unsigned char *, unsigned int)').
+demangledName(0x10004b38, thunk, 'public: virtual near void __thiscall handler::get_auto_increment(unsigned __int64, unsigned __int64, unsigned __int64, near unsigned __int64 *, near unsigned __int64 *)').
+demangledName(0x10004b3e, thunk, 'public: virtual near enum enum_alter_inplace_result __thiscall handler::check_if_supported_inplace_alter(near struct TABLE *, near class Alter_inplace_info *)').
+demangledName(0x10004b44, thunk, 'protected: virtual near void __thiscall handler::notify_table_changed(void)').
+demangledName(0x10004b4a, thunk, 'public: virtual near void __thiscall handler::use_hidden_primary_key(void)').
+demangledName(0x10004b50, thunk, 'protected: virtual near int __thiscall handler::rename_table(near char const *, near char const *)').
+demangledName(0x10004b56, thunk, 'protected: virtual near int __thiscall handler::delete_table(near char const *)').
+demangledName(0x10004b5c, thunk, 'public: virtual near void __thiscall handler::drop_table(near char const *)').
+demangledName(0x10004b62, thunk, 'protected: near near class Handler_share * __thiscall handler::get_ha_share_ptr(void)').
+demangledName(0x10004b68, thunk, 'protected: near void __thiscall handler::set_ha_share_ptr(near class Handler_share *)').
+demangledName(0x10004b6e, thunk, 'protected: near void __thiscall handler::lock_shared_ha_data(void)').
+demangledName(0x10004b74, thunk, 'protected: near void __thiscall handler::unlock_shared_ha_data(void)').
+demangledName(0x10004b7a, thunk, 'near void __cdecl std::_Xbad_alloc(void)').
+demangledName(0x10004b80, thunk, 'near void __cdecl std::_Xlength_error(near char const *)').
+demangledName(0x10004b86, thunk, 'near void __cdecl std::_Xout_of_range(near char const *)').
+demangledName(0x10004b8c, thunk, 'near near char const * __cdecl std::_Syserror_map(int)').
+demangledName(0x10004b92, thunk, 'near near char const * __cdecl std::_Winerror_map(int)').
+demangledName(0x10004b9e, thunk, 'near near void * __cdecl operator new(unsigned int)').
+demangledName(0x10004ba4, thunk, 'near void __cdecl operator delete(near void *)').
+demangledName(0x100058ac, func, 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x10005934, func, 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x10005992, thunk, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x10005c2c, thunk, 'near void __cdecl terminate(void)').
+demangledName(0x1000a768, string, 'char[8] = "EXAMPLE"').
+demangledName(0x1000a774, string, 'char[3] = "e1"').
+demangledName(0x1000a778, string, 'char[3] = "e2"').
+demangledName(0x1000a77c, string, 'char[17] = "enum_var_typelib"').
+demangledName(0x1000a790, string, 'char[9] = "enum_var"').
+demangledName(0x1000a79c, string, 'char[29] = "Sample ENUM system variable."').
+demangledName(0x1000a7c0, string, 'char[10] = "ulong_var"').
+demangledName(0x1000a7cc, string, 'char[8] = "0..1000"').
+demangledName(0x1000a7d8, string, 'char[11] = "double_var"').
+demangledName(0x1000a7e8, string, 'char[22] = "0.500000..1000.500000"').
+demangledName(0x1000a804, string, 'char[14] = "double_thdvar"').
+demangledName(0x1000a814, string, 'char[5] = "var1"').
+demangledName(0x1000a81c, string, 'char[5] = "var2"').
+demangledName(0x1000a824, string, 'char[6] = "array"').
+demangledName(0x1000a82c, string, 'char[5] = "var3"').
+demangledName(0x1000a834, string, 'char[5] = "var4"').
+demangledName(0x1000a83c, string, 'char[21] = "example_func_example"').
+demangledName(0x1000a858, string, 'char[20] = "example_status_var5"').
+demangledName(0x1000a870, string, 'char[20] = "example_status_var6"').
+demangledName(0x1000a888, string, 'char[15] = "example_status"').
+demangledName(0x1000a89c, string, 'char[21] = "Brian Aker, MySQL AB"').
+demangledName(0x1000a8b8, string, 'char[23] = "Example storage engine"').
+demangledName(0x1000a8d3, string, 'char[1] = ""').
+demangledName(0x1000a91c, string, 'char[8] = "generic"').
+demangledName(0x1000a928, string, 'char[14] = "unknown error"').
+demangledName(0x1000a95c, string, 'char[9] = "iostream"').
+demangledName(0x1000a968, string, 'char[22] = "iostream stream error"').
+demangledName(0x1000a9a8, string, 'char[7] = "system"').
+demangledName(0x1000af68, string, 'char[5] = "HASH"').
+demangledName(0x1000af70, string, 'char[7] = "really"').
+demangledName(0x1000af78, string, 'char[58] = "enum_var is %lu, ulong_var is %l"...').
+demangledName(0x1000afc0, string, 'char[16] = "string too long"').
+demangledName(0x1000afd4, string, 'char[24] = "invalid string position"').
+demangledName(0x1000b0e2, name, 'public: static near bool const std::integral_constant<bool, 0>::value').
+demangledName(0x1000b0e3, name, 'public: static near bool const std::integral_constant<bool, 1>::value').
+demangledName(0x1000b0f8, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessDetach').
+demangledName(0x1000b0fc, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessAttach').
+demangledName(0x1000b100, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadAttach').
+demangledName(0x1000b104, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadDetach').
+demangledName(0x1000b108, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessVerifier').
+demangledName(0x1000b468, name, 'Sql_alloc::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b47c, name, 'Sql_alloc::`RTTI Base Class Array\'').
+demangledName(0x1000b484, name, 'Sql_alloc::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b4c0, name, 'std::error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b4d4, name, 'std::error_category::`RTTI Base Class Array\'').
+demangledName(0x1000b4dc, name, 'std::error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b518, name, 'std::_Generic_error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b52c, name, 'std::_Generic_error_category::`RTTI Base Class Array\'').
+demangledName(0x1000b538, name, 'std::_Generic_error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b574, name, 'std::_Iostream_error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b588, name, 'std::_Iostream_error_category::`RTTI Base Class Array\'').
+demangledName(0x1000b598, name, 'std::_Iostream_error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b5d4, name, 'std::_System_error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b5e8, name, 'std::_System_error_category::`RTTI Base Class Array\'').
+demangledName(0x1000b5f8, name, 'std::_System_error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b634, name, 'handler::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b648, name, 'handler::`RTTI Base Class Array\'').
+demangledName(0x1000b654, name, 'handler::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b678, name, 'Sql_alloc::`RTTI Base Class Descriptor at (8, -1, 0, 64)\'').
+demangledName(0x1000b6b4, name, 'Handler_share::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b6c8, name, 'Handler_share::`RTTI Base Class Array\'').
+demangledName(0x1000b6d0, name, 'Handler_share::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b70c, name, 'Example_share::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b720, name, 'Example_share::`RTTI Base Class Array\'').
+demangledName(0x1000b72c, name, 'Example_share::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b768, name, 'ha_example::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b77c, name, 'ha_example::`RTTI Base Class Array\'').
+demangledName(0x1000b78c, name, 'ha_example::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000b7c4, name, 'type_info::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1000b7d4, name, 'type_info::`RTTI Base Class Array\'').
+demangledName(0x1000b7dc, name, 'type_info::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1000d000, name, 'near struct st_mysql_storage_engine example_storage_engine').
+demangledName(0x1000d004, name, 'near char const *near  *near  enum_var_names').
+demangledName(0x1000d010, name, 'near struct st_typelib enum_var_typelib').
+demangledName(0x1000d0f8, name, 'near struct example_vars_t example_vars').
+demangledName(0x1000d300, name, 'public: static near class std::_Generic_error_category std::_Error_objects<int>::_Generic_object').
+demangledName(0x1000d304, name, 'public: static near class std::_Iostream_error_category std::_Error_objects<int>::_Iostream_object').
+demangledName(0x1000d308, name, 'public: static near class std::_System_error_category std::_Error_objects<int>::_System_object').
+demangledName(0x1000d42c, name, 'class `RTTI Type Descriptor\'::Sql_alloc').
+demangledName(0x1000d448, name, 'class `RTTI Type Descriptor\'::std::error_category').
+demangledName(0x1000d470, name, 'class `RTTI Type Descriptor\'::std::_Generic_error_category').
+demangledName(0x1000d4a4, name, 'class `RTTI Type Descriptor\'::std::_Iostream_error_category').
+demangledName(0x1000d4d8, name, 'class `RTTI Type Descriptor\'::std::_System_error_category').
+demangledName(0x1000d50c, name, 'class `RTTI Type Descriptor\'::handler').
+demangledName(0x1000d528, name, 'class `RTTI Type Descriptor\'::Handler_share').
+demangledName(0x1000d54c, name, 'class `RTTI Type Descriptor\'::Example_share').
+demangledName(0x1000d570, name, 'class `RTTI Type Descriptor\'::ha_example').
+demangledName(0x1000d590, name, 'class `RTTI Type Descriptor\'::type_info').
+demangledName(0x1000d6b8, name, 'near struct handlerton *near  example_hton').
+demangledName(0x1000d6c0, name, 'near char const *near  const ha_example_system_database').
+demangledName(0x1000d6ec, name, 'public: static near class std::locale::id std::num_put<char, class std::back_insert_iterator<class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > > >::id').
+demangledName(0x1000d6f0, name, 'public: static near class std::locale::id std::num_put<wchar_t, class std::back_insert_iterator<class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> > > >::id').
+demangledName(0x1000da18, name, 'near struct __type_info_node __type_info_root_node').
+demangledName(0x1000e054, name, 'near near char const * __cdecl std::_Winerror_map(int)').
+demangledName(0x1000e058, name, 'near near char const * __cdecl std::_Syserror_map(int)').
+demangledName(0x1000e05c, name, 'near void __cdecl std::_Xout_of_range(near char const *)').
+demangledName(0x1000e060, name, 'near void __cdecl std::_Xlength_error(near char const *)').
+demangledName(0x1000e064, name, 'near void __cdecl std::_Xbad_alloc(void)').
+demangledName(0x1000e09c, name, 'near void __cdecl terminate(void)').
+demangledName(0x1000e0f4, name, 'near void __cdecl operator delete(near void *)').
+demangledName(0x1000e0f8, name, 'near near void * __cdecl operator new(unsigned int)').
+demangledName(0x1000e15c, name, 'near class Bitmap<64> const key_map_empty').
+demangledName(0x1000e1cc, name, 'near unsigned int __cdecl calculate_key_len(near struct TABLE *, unsigned int, unsigned long)').
+groundTruth(0x10002780, 'std::_Wrap_alloc<class std::allocator<char> >', 'construct', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100027a0, 'std::allocator<char>', 'construct', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100027e0, 'std::_Wrap_alloc<class std::allocator<char> >', 'destroy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100027f0, 'std::allocator<char>', 'destroy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002820, 'std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >', '_String_alloc', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002840, 'std::_String_val<struct std::_Simple_types<char> >', '_String_val', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002860, 'std::_Wrap_alloc<class std::allocator<char> >', '_Wrap_alloc', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002870, 'std::allocator<char>', 'allocator', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002880, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'basic_string', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100028f0, 'Discrete_interval', 'Discrete_interval', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002930, 'Example_share', 'Example_share', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002950, 'Handler_share', 'Handler_share', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002960, 'Sql_alloc', 'Sql_alloc', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002970, 'std::_Generic_error_category', '_Generic_error_category', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002980, 'std::_Ignore', '_Ignore', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002990, 'std::_Iostream_error_category', '_Iostream_error_category', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100029a0, 'std::_System_error_category', '_System_error_category', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100029b0, 'std::error_category', 'error_category', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100029c0, 'std::error_condition', 'error_condition', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100029e0, 'ha_example', 'ha_example', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002a10, 'ha_statistics', 'ha_statistics', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002ae0, 'handler', 'handler', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002cc0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '~basic_string', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002cf0, 'Example_share', '~Example_share', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d20, 'Handler_share', '~Handler_share', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d30, 'Sql_alloc', '~Sql_alloc', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002d40, 'std::_Generic_error_category', '~_Generic_error_category', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d50, 'std::_Iostream_error_category', '~_Iostream_error_category', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d60, 'std::_System_error_category', '~_System_error_category', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d70, 'std::error_category', '~error_category', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d80, 'ha_example', '~ha_example', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002d90, 'handler', '~handler', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002e00, 'std::error_category', 'operator==', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002e20, 'std::error_condition', 'operator==', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002e50, 'Example_share', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002e50, 'Example_share', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002ea0, 'Handler_share', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002ea0, 'Handler_share', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002ed0, 'std::_Generic_error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002ed0, 'std::_Generic_error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f00, 'std::_Iostream_error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f00, 'std::_Iostream_error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f30, 'std::_System_error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f30, 'std::_System_error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f60, 'std::error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f60, 'std::error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f90, 'ha_example', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002f90, 'ha_example', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002fa0, 'handler', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002fa0, 'handler', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10002fb0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Copy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003160, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Eos', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003190, 'std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >', '_Getal', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100031a0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Grow', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003280, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Inside', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100032d0, 'std::_String_val<struct std::_Simple_types<char> >', '_Myptr', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100032e0, 'std::_String_val<struct std::_Simple_types<char> >', '_Myptr', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100032f0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Tidy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003350, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Xlen', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003360, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Xran', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003370, 'std::_Wrap_alloc<class std::allocator<char> >', 'allocate', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100033b0, 'std::allocator<char>', 'allocate', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100033f0, 'handler', 'analyze', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003400, 'handler', 'append_create_info', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003410, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'assign', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003570, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'assign', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100035c0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'assign', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003720, 'handler', 'assign_to_keycache', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003730, 'handler', 'auto_repair', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003740, 'ha_example', 'bas_ext', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003750, 'handler', 'bulk_update_row', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003760, 'handler', 'calculate_key_hash_value', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003770, 'handler', 'can_switch_engines', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003780, 'handler', 'cancel_pushed_idx_cond', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100037b0, 'std::error_code', 'category', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100037c0, 'std::error_condition', 'category', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100037d0, 'handler', 'change_table_ptr', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100037f0, 'handler', 'check', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003800, 'handler', 'check_and_repair', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003810, 'handler', 'check_for_upgrade', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003820, 'handler', 'check_if_incompatible_data', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003830, 'handler', 'checksum', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003840, 'ha_example', 'close', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003850, 'handler', 'cmp_ref', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100038e0, 'handler', 'commit_inplace_alter_table', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10003900, 'handler', 'cond_pop', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003910, 'handler', 'cond_push', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003940, 'ha_example', 'create', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003950, 'handler', 'create_handler_files', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003960, 'std::_Wrap_alloc<class std::allocator<char> >', 'deallocate', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003980, 'std::allocator<char>', 'deallocate', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100039a0, 'std::_System_error_category', 'default_error_condition', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100039e0, 'std::error_category', 'default_error_condition', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a00, 'ha_example', 'delete_all_rows', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a10, 'handler', 'delete_all_rows', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a30, 'ha_example', 'delete_row', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a40, 'handler', 'delete_row', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003a50, 'ha_example', 'delete_table', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a60, 'handler', 'disable_indexes', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a70, 'handler', 'discard_or_import_tablespace', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a90, 'handler', 'enable_indexes', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003aa0, 'handler', 'end_bulk_delete', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ab0, 'handler', 'end_bulk_insert', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003ac0, 'handler', 'end_bulk_update', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ad0, 'handler', 'end_read_removal', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ae0, 'std::error_category', 'equivalent', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003b10, 'std::error_category', 'equivalent', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003b50, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'erase', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003ba0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'erase', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003c70, 'handler', 'estimate_rows_upper_bound', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003d60, 'handler', 'exec_bulk_update', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003d70, 'ha_example', 'external_lock', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003d80, 'handler', 'external_lock', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003d90, 'ha_example', 'extra', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003da0, 'handler', 'extra', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003db0, 'handler', 'extra_opt', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003dd0, 'handler', 'extra_rec_buf_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003de0, 'handler', 'free_foreign_key_create_info', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003df0, 'handler', 'ft_init', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e00, 'handler', 'ft_init_ext', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e10, 'handler', 'ft_init_ext_with_hints', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e30, 'handler', 'ft_read', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e50, 'handler', 'get_cascade_foreign_key_table_list', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e60, 'Ft_hints', 'get_flags', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003e70, 'handler', 'get_foreign_dup_key', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e80, 'handler', 'get_foreign_key_create_info', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003e90, 'handler', 'get_foreign_key_list', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ea0, 'handler', 'get_memory_buffer_size', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003eb0, 'handler', 'get_parent_foreign_key_list', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ec0, 'handler', 'get_partition_handler', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ed0, 'handler', 'get_row_type', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ee0, 'ha_example', 'get_share', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x10003f40, 'handler', 'idx_cond_push', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003f50, 'handler', 'index_end', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003f60, 'ha_example', 'index_first', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003f70, 'handler', 'index_first', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10003f80, 'ha_example', 'index_flags', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003f90, 'handler', 'index_init', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10003fb0, 'ha_example', 'index_last', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003fc0, 'handler', 'index_last', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10003fd0, 'ha_example', 'index_next', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003fe0, 'handler', 'index_next', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10003ff0, 'handler', 'index_next_pushed', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004000, 'ha_example', 'index_prev', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004010, 'handler', 'index_prev', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004020, 'handler', 'index_read', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004030, 'handler', 'index_read_last', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004050, 'handler', 'index_read_last_map', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004090, 'ha_example', 'index_read_map', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100040a0, 'handler', 'index_read_map', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x100040e0, 'handler', 'index_read_pushed', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100040f0, 'ha_example', 'index_type', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004100, 'handler', 'index_type', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004110, 'handler', 'indexes_are_disabled', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004120, 'ha_example', 'info', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004130, 'handler', 'init_table_handle_for_HANDLER', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004140, 'handler', 'inplace_alter_table', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004150, 'handler', 'is_crashed', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004160, 'handler', 'is_fk_defined_on_table_or_index', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004170, 'handler', 'keys_to_use_for_scanning', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100041b0, 'handler', 'lock_count', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100041c0, 'handler', 'low_byte_first', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100041d0, 'std::_Wrap_alloc<class std::allocator<char> >', 'max_size', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100041e0, 'std::allocator<char>', 'max_size', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004200, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'max_size', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004210, 'ha_example', 'max_supported_key_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004220, 'handler', 'max_supported_key_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004230, 'handler', 'max_supported_key_part_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004240, 'ha_example', 'max_supported_key_parts', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004250, 'handler', 'max_supported_key_parts', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004260, 'ha_example', 'max_supported_keys', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004270, 'handler', 'max_supported_keys', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004280, 'ha_example', 'max_supported_record_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004290, 'handler', 'max_supported_record_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100042a0, 'std::_Generic_error_category', 'message', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004330, 'std::_Iostream_error_category', 'message', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100043a0, 'std::_System_error_category', 'message', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004430, 'handler', 'min_record_length', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100044b0, 'std::_Generic_error_category', 'name', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100044c0, 'std::_Iostream_error_category', 'name', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100044d0, 'std::_System_error_category', 'name', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100044e0, 'handler', 'number_of_pushed_joins', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100044f0, 'ha_example', 'open', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004540, 'handler', 'optimize', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004550, 'handler', 'parent_of_pushed_join', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004560, 'ha_example', 'position', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004570, 'handler', 'preload_keys', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004580, 'handler', 'prepare_inplace_alter_table', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004590, 'handler', 'primary_key_is_clustered', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100045a0, 'ha_example', 'read_time', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100045e0, 'handler', 'read_time', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004630, 'handler', 'records', method, none, linked, protected, virtual, '__thiscall').
+groundTruth(0x10004650, 'ha_example', 'records_in_range', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004660, 'handler', 'records_in_range', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004670, 'handler', 'referenced_by_foreign_key', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004680, 'handler', 'register_query_cache_table', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100046a0, 'handler', 'release_auto_increment', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x100046b0, 'ha_example', 'rename_table', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100046c0, 'handler', 'repair', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x100046d0, 'Discrete_interval', 'replace', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004740, 'handler', 'reset', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10004750, 'ha_example', 'rnd_end', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004760, 'handler', 'rnd_end', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10004770, 'ha_example', 'rnd_init', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004780, 'ha_example', 'rnd_next', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004790, 'ha_example', 'rnd_pos', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100047a0, 'handler', 'rnd_pos_by_record', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100047d0, 'handler', 'root_of_pushed_join', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100047e0, 'ha_example', 'scan_time', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004830, 'handler', 'scan_time', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004890, 'handler', 'set_ha_share_ref', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100048c0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'size', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100048d0, 'handler', 'start_bulk_delete', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100048e0, 'handler', 'start_bulk_insert', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x100048f0, 'handler', 'start_bulk_update', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004900, 'handler', 'start_read_removal', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004910, 'handler', 'start_stmt', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004920, 'ha_example', 'store_lock', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004970, 'handler', 'table_cache_type', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004980, 'ha_example', 'table_flags', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004990, 'ha_example', 'table_type', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100049a0, 'ha_example', 'truncate', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100049b0, 'handler', 'truncate', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100049c0, 'handler', 'try_semi_consistent_read', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100049d0, 'handler', 'unlock_row', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100049e0, 'handler', 'update_create_info', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100049f0, 'ha_example', 'update_row', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004a00, 'handler', 'update_row', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x10004a10, 'std::error_code', 'value', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004a20, 'std::error_condition', 'value', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004a30, 'handler', 'was_semi_consistent_read', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004a40, 'ha_example', 'write_row', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10004a50, 'handler', 'write_row', method, none, linked, private, virtual, '__thiscall').
+groundTruth(0x100050e4, 'type_info', 'type_info', method, constructor, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x100050ef, 'type_info', 'operator=', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x100050f4, 'type_info', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000a8d8, 'std::error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000a8fc, 'std::_Generic_error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000a93c, 'std::_Iostream_error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000a988, 'std::_System_error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000a9b4, 'Handler_share', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000a9c0, 'handler', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000ac90, 'Example_share', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000ac9c, 'ha_example', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000b0e8, 'type_info', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1000b4a8, 'std::error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b500, 'std::_Generic_error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b55c, 'std::_Iostream_error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b5bc, 'std::_System_error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b61c, 'handler', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b69c, 'Handler_share', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b6f4, 'Example_share', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b750, 'ha_example', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000b7b0, 'type_info', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1000e0c8, 'type_info', '~type_info', method, realDestructor, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e144, 'handler', 'index_only_read_time', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e148, 'handler', 'table_scan_cost', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e14c, 'handler', 'print_error', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e150, 'handler', 'index_scan_cost', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e154, 'handler', 'read_cost', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e158, 'handler', 'multi_range_read_info_const', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e160, 'handler', 'unlock_shared_ha_data', method, none, imported, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e164, 'handler', 'lock_shared_ha_data', method, none, imported, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e168, 'handler', 'set_ha_share_ptr', method, none, imported, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e16c, 'handler', 'get_ha_share_ptr', method, none, imported, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e170, 'handler', 'drop_table', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e174, 'handler', 'delete_table', method, none, imported, protected, virtual, '__thiscall').
+groundTruth(0x1000e178, 'handler', 'rename_table', method, none, imported, protected, virtual, '__thiscall').
+groundTruth(0x1000e17c, 'handler', 'use_hidden_primary_key', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e180, 'handler', 'notify_table_changed', method, none, imported, protected, virtual, '__thiscall').
+groundTruth(0x1000e184, 'handler', 'check_if_supported_inplace_alter', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e188, 'handler', 'get_auto_increment', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e18c, 'handler', 'read_first_row', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e190, 'handler', 'read_range_next', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e194, 'handler', 'read_range_first', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e198, 'handler', 'index_next_same', method, none, imported, protected, virtual, '__thiscall').
+groundTruth(0x1000e19c, 'handler', 'index_read_idx_map', method, none, imported, protected, virtual, '__thiscall').
+groundTruth(0x1000e1a0, 'handler', 'column_bitmaps_signal', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1a4, 'handler', 'is_fatal_error', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1a8, 'handler', 'is_ignorable_error', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1ac, 'handler', 'multi_range_read_next', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1b0, 'handler', 'multi_range_read_init', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1b4, 'handler', 'multi_range_read_info', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1b8, 'handler', 'get_error_message', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1bc, 'handler', 'ha_rnd_pos', method, none, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x1000e1c0, 'handler', 'clone', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1c4, 'handler', 'rebind_psi', method, none, imported, public, virtual, '__thiscall').
+groundTruth(0x1000e1c8, 'handler', 'unbind_psi', method, none, imported, public, virtual, '__thiscall').
+% Ground truth generation was completed successfully.
+symbol(0x10000000, name, '__except_list').
+symbol(0x10000002, name, '___safe_se_handler_count').
+symbol(0x10001005, tramp, '??0ha_example@@QAE@PAUhandlerton@@PAUTABLE_SHARE@@@Z').
+symbol(0x1000100a, tramp, '?cond_pop@handler@@UAEXXZ').
+symbol(0x1000100f, tramp, '?read_time@handler@@UAENII_K@Z').
+symbol(0x10001014, tramp, '??3Sql_alloc@@SAXPAXPAUst_mem_root@@@Z').
+symbol(0x10001019, tramp, '?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NPBD@Z').
+symbol(0x1000101e, tramp, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z').
+symbol(0x10001023, tramp, '?index_read_map@ha_example@@UAEHPAEPBEKW4ha_rkey_function@@@Z').
+symbol(0x10001028, tramp, '?prepare_inplace_alter_table@handler@@MAE_NPAUTABLE@@PAVAlter_inplace_info@@@Z').
+symbol(0x1000102d, tramp, '?unlock_row@handler@@UAEXXZ').
+symbol(0x10001032, tramp, '?end_read_removal@handler@@UAE_KXZ').
+symbol(0x10001037, tramp, '?index_flags@ha_example@@UBEKII_N@Z').
+symbol(0x1000103c, tramp, '?calculate_key_hash_value@handler@@UAEIPAPAVField@@@Z').
+symbol(0x10001041, tramp, '??_G_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x10001046, tramp, '?init_table_handle_for_HANDLER@handler@@UAEXXZ').
+symbol(0x1000104b, tramp, '?table_type@ha_example@@UBEPBDXZ').
+symbol(0x10001050, tramp, '?message@_Iostream_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x10001055, tramp, '??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z').
+symbol(0x1000105a, tramp, '??0ha_statistics@@QAE@XZ').
+symbol(0x1000105f, tramp, '?change_table_ptr@handler@@UAEXPAUTABLE@@PAUTABLE_SHARE@@@Z').
+symbol(0x10001064, tramp, '??2@YAPAXIPAX@Z').
+symbol(0x10001069, tramp, '?end_bulk_update@handler@@UAEXXZ').
+symbol(0x1000106e, tramp, '?close@ha_example@@UAEHXZ').
+symbol(0x10001073, tramp, '??0handler@@QAE@PAUhandlerton@@PAUTABLE_SHARE@@@Z').
+symbol(0x10001078, tramp, '?is_crashed@handler@@UBE_NXZ').
+symbol(0x1000107d, tramp, '?index_read_last_map@handler@@MAEHPAEPBEK@Z').
+symbol(0x10001082, tramp, '?read_time@ha_example@@UAENII_K@Z').
+symbol(0x10001087, tramp, '?inplace_alter_table@handler@@MAE_NPAUTABLE@@PAVAlter_inplace_info@@@Z').
+symbol(0x1000108c, tramp, '?preload_keys@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10001091, tramp, '??0_System_error_category@std@@QAE@XZ').
+symbol(0x10001096, tramp, '?extra@ha_example@@UAEHW4ha_extra_function@@@Z').
+symbol(0x1000109b, tramp, '?get_foreign_key_list@handler@@UAEHPAVTHD@@PAV?$List@Ust_foreign_key_info@@@@@Z').
+symbol(0x100010a0, tramp, '?index_first@ha_example@@UAEHPAE@Z').
+symbol(0x100010a5, tramp, '?get_foreign_dup_key@handler@@UAE_NPADI0I@Z').
+symbol(0x100010aa, tramp, '?info@ha_example@@UAEHI@Z').
+symbol(0x100010af, tramp, '?name@_Generic_error_category@std@@UBEPBDXZ').
+symbol(0x100010b4, tramp, '?min_record_length@handler@@UBEII@Z').
+symbol(0x100010b9, tramp, '?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z').
+symbol(0x100010be, tramp, '??0Handler_share@@QAE@XZ').
+symbol(0x100010c3, tramp, '?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QAEPADXZ').
+symbol(0x100010c8, tramp, '??1ha_example@@UAE@XZ').
+symbol(0x100010cd, tramp, '?ft_read@handler@@UAEHPAE@Z').
+symbol(0x100010d2, tramp, '?estimate_rows_upper_bound@handler@@UAE_KXZ').
+symbol(0x100010d7, tramp, '?rnd_end@ha_example@@UAEHXZ').
+symbol(0x100010dc, tramp, '?allocate@?$allocator@D@std@@QAEPADI@Z').
+symbol(0x100010e1, tramp, '?rnd_init@ha_example@@UAEH_N@Z').
+symbol(0x100010e6, tramp, '?register_query_cache_table@handler@@UAEDPAVTHD@@PADIPAP6AD01IPA_K@Z2@Z').
+symbol(0x100010eb, tramp, '?extra_opt@handler@@UAEHW4ha_extra_function@@K@Z').
+symbol(0x100010f0, tramp, '??8error_category@std@@QBE_NABV01@@Z').
+symbol(0x100010f5, tramp, '?start_bulk_insert@handler@@EAEX_K@Z').
+symbol(0x100010fa, tramp, '?end_bulk_insert@handler@@EAEHXZ').
+symbol(0x100010ff, tramp, '?end_bulk_delete@handler@@UAEHXZ').
+symbol(0x10001104, tramp, '?generic_category@std@@YAABVerror_category@1@XZ').
+symbol(0x10001109, tramp, '?update_create_info@handler@@UAEXPAUst_ha_create_information@@@Z').
+symbol(0x1000110e, tramp, '?truncate@ha_example@@UAEHXZ').
+symbol(0x10001113, tramp, '?records@handler@@MAEHPA_K@Z').
+symbol(0x10001118, tramp, '?bas_ext@ha_example@@UBEPAPBDXZ').
+symbol(0x1000111d, tramp, '?system_category@std@@YAABVerror_category@1@XZ').
+symbol(0x10001122, tramp, '?index_prev@ha_example@@UAEHPAE@Z').
+symbol(0x10001127, tramp, '?get_flags@Ft_hints@@QAEIXZ').
+symbol(0x1000112c, tramp, '?extra@handler@@UAEHW4ha_extra_function@@@Z').
+symbol(0x10001131, tramp, '??_Ehandler@@UAEPAXI@Z').
+symbol(0x10001136, tramp, '?_Xlen@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ').
+symbol(0x1000113b, tramp, '?write_row@handler@@EAEHPAE@Z').
+symbol(0x10001140, tramp, '??0_Iostream_error_category@std@@QAE@XZ').
+symbol(0x10001145, tramp, '?release_auto_increment@handler@@EAEXXZ').
+symbol(0x1000114a, tramp, '?max_supported_keys@handler@@UBEIXZ').
+symbol(0x1000114f, tramp, '?exec_bulk_update@handler@@UAEHPAI@Z').
+symbol(0x10001154, tramp, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z').
+symbol(0x10001159, tramp, '?table_cache_type@handler@@UAEEXZ').
+symbol(0x1000115e, tramp, '?category@error_code@std@@QBEABVerror_category@2@XZ').
+symbol(0x10001163, tramp, '?ft_init@handler@@UAEHXZ').
+symbol(0x10001168, tramp, '?delete_table@ha_example@@UAEHPBD@Z').
+symbol(0x1000116d, tramp, '?append_create_info@handler@@UAEXPAVString@@@Z').
+symbol(0x10001172, tramp, '?rnd_pos_by_record@handler@@UAEHPAE@Z').
+symbol(0x10001177, tramp, '?assign@?$char_traits@D@std@@SAXAADABD@Z').
+symbol(0x1000117c, tramp, '?my_ulonglong2double@@YAN_K@Z').
+symbol(0x10001181, tramp, '?length@?$char_traits@D@std@@SAIPBD@Z').
+symbol(0x10001186, tramp, '??3Sql_alloc@@SAXPAXI@Z').
+symbol(0x1000118b, tramp, '?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z').
+symbol(0x10001190, tramp, '?open@ha_example@@UAEHPBDHI@Z').
+symbol(0x10001195, tramp, '?optimize@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x1000119a, tramp, '?delete_all_rows@handler@@UAEHXZ').
+symbol(0x1000119f, tramp, '??0_Ignore@std@@QAE@XZ').
+symbol(0x100011a4, tramp, '?enable_indexes@handler@@UAEHI@Z').
+symbol(0x100011a9, tramp, '??$addressof@D@std@@YAPADAAD@Z').
+symbol(0x100011ae, tramp, '??1Sql_alloc@@QAE@XZ').
+symbol(0x100011b3, tramp, '?store_lock@ha_example@@UAEPAPAUst_thr_lock_data@@PAVTHD@@PAPAU2@W4thr_lock_type@@@Z').
+symbol(0x100011b8, tramp, '?idx_cond_push@handler@@UAEPAVItem@@IPAV2@@Z').
+symbol(0x100011bd, tramp, '_hypot').
+symbol(0x100011c2, tramp, '?get_partition_handler@handler@@UAEPAVPartition_handler@@XZ').
+symbol(0x100011c7, tramp, '?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ').
+symbol(0x100011cc, tramp, '?get_cascade_foreign_key_table_list@handler@@UAEHPAVTHD@@PAV?$List@Ust_handler_tablename@@@@@Z').
+symbol(0x100011d1, tramp, '?name@_System_error_category@std@@UBEPBDXZ').
+symbol(0x100011d6, tramp, '??_EHandler_share@@UAEPAXI@Z').
+symbol(0x100011db, tramp, '?was_semi_consistent_read@handler@@UAE_NXZ').
+symbol(0x100011e0, tramp, '??1Handler_share@@UAE@XZ').
+symbol(0x100011e5, tramp, '?cond_push@handler@@UAEPBVItem@@PBV2@@Z').
+symbol(0x100011ea, tramp, '??_E_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x100011ef, tramp, '?start_bulk_delete@handler@@UAE_NXZ').
+symbol(0x100011f4, tramp, '??1_System_error_category@std@@UAE@XZ').
+symbol(0x100011f9, tramp, '?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z').
+symbol(0x100011fe, tramp, '?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z').
+symbol(0x10001203, tramp, '?delete_all_rows@ha_example@@UAEHXZ').
+symbol(0x10001208, tramp, '?value@error_condition@std@@QBEHXZ').
+symbol(0x1000120d, tramp, '?max_supported_key_length@ha_example@@UBEIXZ').
+symbol(0x10001212, tramp, '?keys_to_use_for_scanning@handler@@UAEPBV?$Bitmap@$0EA@@@XZ').
+symbol(0x10001217, tramp, '??0error_condition@std@@QAE@HABVerror_category@1@@Z').
+symbol(0x1000121c, tramp, '??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ').
+symbol(0x10001221, tramp, '??$forward@AAPAD@std@@YAAAPADAAPAD@Z').
+symbol(0x10001226, tramp, '?index_first@handler@@MAEHPAE@Z').
+symbol(0x1000122b, tramp, '?delete_row@handler@@EAEHPBE@Z').
+symbol(0x10001230, tramp, '?root_of_pushed_join@handler@@UBEPBUTABLE@@XZ').
+symbol(0x10001235, tramp, '??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z').
+symbol(0x1000123a, tramp, '?index_type@ha_example@@UAEPBDI@Z').
+symbol(0x1000123f, tramp, '??_EHandler_share@@UAEPAXI@Z').
+symbol(0x10001244, tramp, '?create_handler_files@handler@@UAEHPBD0HPAUst_ha_create_information@@@Z').
+symbol(0x10001249, tramp, '??_E_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x1000124e, tramp, '?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z').
+symbol(0x10001253, tramp, '??0?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@ABV?$allocator@D@1@@Z').
+symbol(0x10001258, tramp, '?check_and_repair@handler@@UAE_NPAVTHD@@@Z').
+symbol(0x1000125d, tramp, '?ft_init_ext@handler@@UAEPAUst_ft_info@@IIPAVString@@@Z').
+symbol(0x10001262, tramp, '??_Eha_example@@UAEPAXI@Z').
+symbol(0x10001267, tramp, '?indexes_are_disabled@handler@@UAEHXZ').
+symbol(0x1000126c, tramp, '??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z').
+symbol(0x10001271, tramp, '?max_supported_record_length@handler@@UBEIXZ').
+symbol(0x10001276, tramp, '?reset@handler@@EAEHXZ').
+symbol(0x1000127b, tramp, '?commit_inplace_alter_table@handler@@MAE_NPAUTABLE@@PAVAlter_inplace_info@@_N@Z').
+symbol(0x10001280, tramp, '?number_of_pushed_joins@handler@@UBEIXZ').
+symbol(0x10001285, tramp, '?repair@handler@@EAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x1000128a, tramp, '?copy@?$char_traits@D@std@@SAPADPADPBDI@Z').
+symbol(0x1000128f, tramp, '?position@ha_example@@UAEXPBE@Z').
+symbol(0x10001294, tramp, '?external_lock@ha_example@@UAEHPAVTHD@@H@Z').
+symbol(0x10001299, tramp, '?index_next@ha_example@@UAEHPAE@Z').
+symbol(0x1000129e, tramp, '?_Grow@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NI_N@Z').
+symbol(0x100012a3, tramp, '??8error_condition@std@@QBE_NABV01@@Z').
+symbol(0x100012a8, tramp, '?get_row_type@handler@@UBE?AW4row_type@@XZ').
+symbol(0x100012ad, tramp, '?assign_to_keycache@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x100012b2, tramp, '?scan_time@ha_example@@UAENXZ').
+symbol(0x100012b7, tramp, '?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ').
+symbol(0x100012bc, tramp, '?bulk_update_row@handler@@UAEHPBEPAEPAI@Z').
+symbol(0x100012c1, tramp, '??0Sql_alloc@@QAE@XZ').
+symbol(0x100012c6, tramp, '?cancel_pushed_idx_cond@handler@@UAEXXZ').
+symbol(0x100012cb, tramp, '?get_memory_buffer_size@handler@@UBE_JXZ').
+symbol(0x100012d0, tramp, '??0error_category@std@@QAE@XZ').
+symbol(0x100012d5, tramp, '?max_supported_key_part_length@handler@@UBEIXZ').
+symbol(0x100012da, tramp, '?default_error_condition@_System_error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x100012df, tramp, '?try_semi_consistent_read@handler@@UAEX_N@Z').
+symbol(0x100012e4, tramp, '?free_foreign_key_create_info@handler@@UAEXPAD@Z').
+symbol(0x100012e9, tramp, '?max_supported_key_parts@handler@@UBEIXZ').
+symbol(0x100012ee, tramp, '??$destroy@PAD@?$allocator@D@std@@QAEXPAPAD@Z').
+symbol(0x100012f3, tramp, '?disable_indexes@handler@@UAEHI@Z').
+symbol(0x100012f8, tramp, '??_Gerror_category@std@@UAEPAXI@Z').
+symbol(0x100012fd, tramp, '??_Eha_example@@UAEPAXI@Z').
+symbol(0x10001302, tramp, '??3@YAXPAX0@Z').
+symbol(0x10001307, tramp, '?move@?$char_traits@D@std@@SAPADPADPBDI@Z').
+symbol(0x1000130c, tramp, '??1_Generic_error_category@std@@UAE@XZ').
+symbol(0x10001311, tramp, '?index_type@handler@@UAEPBDI@Z').
+symbol(0x10001316, tramp, '?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z').
+symbol(0x1000131b, tramp, '?is_fk_defined_on_table_or_index@handler@@UAE_NI@Z').
+symbol(0x10001320, tramp, '?get_parent_foreign_key_list@handler@@UAEHPAVTHD@@PAV?$List@Ust_foreign_key_info@@@@@Z').
+symbol(0x10001325, tramp, '??1handler@@UAE@XZ').
+symbol(0x1000132a, tramp, '??_Gerror_category@std@@UAEPAXI@Z').
+symbol(0x1000132f, tramp, '?index_last@ha_example@@UAEHPAE@Z').
+symbol(0x10001334, tramp, '?truncate@handler@@UAEHXZ').
+symbol(0x10001339, tramp, '?category@error_condition@std@@QBEABVerror_category@2@XZ').
+symbol(0x1000133e, tramp, '?rnd_next@ha_example@@UAEHPAE@Z').
+symbol(0x10001343, tramp, '?max_supported_keys@ha_example@@UBEIXZ').
+symbol(0x10001348, tramp, '??_G_System_error_category@std@@UAEPAXI@Z').
+symbol(0x1000134d, tramp, '?start_read_removal@handler@@UAE_NXZ').
+symbol(0x10001352, tramp, '??$_Allocate@D@std@@YAPADIPAD@Z').
+symbol(0x10001357, tramp, '?rnd_end@handler@@EAEHXZ').
+symbol(0x1000135c, tramp, '??_Ehandler@@UAEPAXI@Z').
+symbol(0x10001361, tramp, '?analyze@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10001366, tramp, '?name@_Iostream_error_category@std@@UBEPBDXZ').
+symbol(0x1000136b, tramp, '??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ').
+symbol(0x10001370, tramp, '?set_ha_share_ref@handler@@UAE_NPAPAVHandler_share@@@Z').
+symbol(0x10001375, tramp, '?max_supported_key_parts@ha_example@@UBEIXZ').
+symbol(0x1000137a, tramp, '?replace@Discrete_interval@@QAEX_K00@Z').
+symbol(0x1000137f, tramp, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z').
+symbol(0x10001384, tramp, '?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x10001389, tramp, '?referenced_by_foreign_key@handler@@UAEIXZ').
+symbol(0x1000138e, tramp, '?value@error_code@std@@QBEHXZ').
+symbol(0x10001393, tramp, '?parent_of_pushed_join@handler@@UBEPBUTABLE@@XZ').
+symbol(0x10001398, tramp, '??2Sql_alloc@@SAPAXIPAUst_mem_root@@@Z').
+symbol(0x1000139d, tramp, '?index_init@handler@@EAEHI_N@Z').
+symbol(0x100013a2, tramp, '?start_bulk_update@handler@@UAE_NXZ').
+symbol(0x100013a7, tramp, '?message@_System_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x100013ac, tramp, '?get_share@ha_example@@AAEPAVExample_share@@XZ').
+symbol(0x100013b1, tramp, '?primary_key_is_clustered@handler@@UBE_NXZ').
+symbol(0x100013b6, tramp, '?discard_or_import_tablespace@handler@@UAEHD@Z').
+symbol(0x100013bb, tramp, '?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z').
+symbol(0x100013c0, tramp, '?can_switch_engines@handler@@UAE_NXZ').
+symbol(0x100013c5, tramp, '?check@handler@@EAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x100013ca, tramp, '?scan_time@handler@@UAENXZ').
+symbol(0x100013cf, tramp, '?index_end@handler@@EAEHXZ').
+symbol(0x100013d4, tramp, '??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z').
+symbol(0x100013d9, tramp, '?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ').
+symbol(0x100013de, tramp, '??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z').
+symbol(0x100013e3, tramp, '?update_row@handler@@EAEHPBEPAE@Z').
+symbol(0x100013e8, tramp, '?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ').
+symbol(0x100013ed, tramp, '?index_last@handler@@MAEHPAE@Z').
+symbol(0x100013f2, tramp, '??_G_System_error_category@std@@UAEPAXI@Z').
+symbol(0x100013f7, tramp, '??_GExample_share@@UAEPAXI@Z').
+symbol(0x100013fc, tramp, '?extra_rec_buf_length@handler@@UBEIXZ').
+symbol(0x10001401, tramp, '?index_next_pushed@handler@@UAEHPAE@Z').
+symbol(0x10001406, tramp, '??1Example_share@@UAE@XZ').
+symbol(0x1000140b, tramp, '?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@I@Z').
+symbol(0x10001410, tramp, '?checksum@handler@@UBEIXZ').
+symbol(0x10001415, tramp, '?rnd_pos@ha_example@@UAEHPAE0@Z').
+symbol(0x1000141a, tramp, '?message@_Generic_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x1000141f, tramp, '?update_row@ha_example@@UAEHPBEPAE@Z').
+symbol(0x10001424, tramp, '?_Getal@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QBE?AU?$_Wrap_alloc@V?$allocator@D@std@@@2@XZ').
+symbol(0x10001429, tramp, '?external_lock@handler@@EAEHPAVTHD@@H@Z').
+symbol(0x1000142e, tramp, '??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ').
+symbol(0x10001433, tramp, '?write_row@ha_example@@UAEHPAE@Z').
+symbol(0x10001438, tramp, '?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z').
+symbol(0x1000143d, tramp, '?ft_init_ext_with_hints@handler@@UAEPAUst_ft_info@@IPAVString@@PAVFt_hints@@@Z').
+symbol(0x10001442, tramp, '?create@ha_example@@UAEHPBDPAUTABLE@@PAUst_ha_create_information@@@Z').
+symbol(0x10001447, tramp, '?delete_row@ha_example@@UAEHPBE@Z').
+symbol(0x1000144c, tramp, '??0Discrete_interval@@QAE@XZ').
+symbol(0x10001451, tramp, '??1error_category@std@@UAE@XZ').
+symbol(0x10001456, tramp, '?auto_repair@handler@@UBE_NXZ').
+symbol(0x1000145b, tramp, '?max_size@?$allocator@D@std@@QBEIXZ').
+symbol(0x10001460, tramp, '?index_next@handler@@MAEHPAE@Z').
+symbol(0x10001465, tramp, '?index_read_pushed@handler@@UAEHPAEPBEK@Z').
+symbol(0x1000146a, tramp, '?records_in_range@handler@@UAE_KIPAUst_key_range@@0@Z').
+symbol(0x1000146f, tramp, '??0_Generic_error_category@std@@QAE@XZ').
+symbol(0x10001474, tramp, '??_G_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x10001479, tramp, '?index_prev@handler@@MAEHPAE@Z').
+symbol(0x1000147e, tramp, '?index_read_last@handler@@MAEHPAEPBEI@Z').
+symbol(0x10001483, tramp, '?max_supported_record_length@ha_example@@UBEIXZ').
+symbol(0x10001488, tramp, '??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z').
+symbol(0x1000148d, tramp, '?check_for_upgrade@handler@@EAEHPAUst_ha_check_opt@@@Z').
+symbol(0x10001492, tramp, '?lock_count@handler@@UBEIXZ').
+symbol(0x10001497, tramp, '??_GExample_share@@UAEPAXI@Z').
+symbol(0x1000149c, tramp, '?get_foreign_key_create_info@handler@@UAEPADXZ').
+symbol(0x100014a1, tramp, '?start_stmt@handler@@UAEHPAVTHD@@W4thr_lock_type@@@Z').
+symbol(0x100014a6, tramp, '?cmp_ref@handler@@UAEHPBE0@Z').
+symbol(0x100014ab, tramp, '?table_flags@ha_example@@UBE_KXZ').
+symbol(0x100014b0, tramp, '?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z').
+symbol(0x100014b5, tramp, '?max_supported_key_length@handler@@UBEIXZ').
+symbol(0x100014ba, tramp, '?records_in_range@ha_example@@UAE_KIPAUst_key_range@@0@Z').
+symbol(0x100014bf, tramp, '?low_byte_first@handler@@UBE_NXZ').
+symbol(0x100014c4, tramp, '??1_Iostream_error_category@std@@UAE@XZ').
+symbol(0x100014c9, tramp, '??0?$allocator@D@std@@QAE@XZ').
+symbol(0x100014ce, tramp, '?max_size@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBEIXZ').
+symbol(0x100014d3, tramp, '?rename_table@ha_example@@UAEHPBD0@Z').
+symbol(0x100014d8, tramp, '?index_read_map@handler@@MAEHPAEPBEKW4ha_rkey_function@@@Z').
+symbol(0x100014dd, tramp, '?deallocate@?$allocator@D@std@@QAEXPADI@Z').
+symbol(0x100014e2, tramp, '?check_if_incompatible_data@handler@@UAE_NPAUst_ha_create_information@@I@Z').
+symbol(0x100014e7, tramp, '?index_read@handler@@MAEHPAEPBEIW4ha_rkey_function@@@Z').
+symbol(0x100014ec, tramp, '??0Example_share@@QAE@XZ').
+symbol(0x100019e0, func, '`dynamic initializer for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x100019f0, func, '`dynamic initializer for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10001a00, func, '`dynamic initializer for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10002660, func, 'example_init_func').
+symbol(0x100026c0, func, 'show_func_example').
+symbol(0x10002730, func, '??$_Allocate@D@std@@YAPADIPAD@Z').
+symbol(0x10002770, func, '??$addressof@D@std@@YAPADAAD@Z').
+symbol(0x10002780, method, '??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z').
+symbol(0x100027a0, method, '??$construct@PADAAPAD@?$allocator@D@std@@QAEXPAPADAAPAD@Z').
+symbol(0x100027c0, staticmethod, '??$construct@PADAAPAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPADAAPAD@Z').
+symbol(0x100027e0, method, '??$destroy@PAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPAD@Z').
+symbol(0x100027f0, method, '??$destroy@PAD@?$allocator@D@std@@QAEXPAPAD@Z').
+symbol(0x10002800, staticmethod, '??$destroy@PAD@?$allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@PAPAD@Z').
+symbol(0x10002810, func, '??$forward@AAPAD@std@@YAAAPADAAPAD@Z').
+symbol(0x10002820, method, '??0?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@ABV?$allocator@D@1@@Z').
+symbol(0x10002840, method, '??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ').
+symbol(0x10002860, method, '??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ').
+symbol(0x10002870, method, '??0?$allocator@D@std@@QAE@XZ').
+symbol(0x10002880, method, '??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z').
+symbol(0x100028f0, method, '??0Discrete_interval@@QAE@XZ').
+symbol(0x10002930, method, '??0Example_share@@QAE@XZ').
+symbol(0x10002950, method, '??0Handler_share@@QAE@XZ').
+symbol(0x10002960, method, '??0Sql_alloc@@QAE@XZ').
+symbol(0x10002970, method, '??0_Generic_error_category@std@@QAE@XZ').
+symbol(0x10002980, method, '??0_Ignore@std@@QAE@XZ').
+symbol(0x10002990, method, '??0_Iostream_error_category@std@@QAE@XZ').
+symbol(0x100029a0, method, '??0_System_error_category@std@@QAE@XZ').
+symbol(0x100029b0, method, '??0error_category@std@@QAE@XZ').
+symbol(0x100029c0, method, '??0error_condition@std@@QAE@HABVerror_category@1@@Z').
+symbol(0x100029e0, method, '??0ha_example@@QAE@PAUhandlerton@@PAUTABLE_SHARE@@@Z').
+symbol(0x10002a10, method, '??0ha_statistics@@QAE@XZ').
+symbol(0x10002ae0, method, '??0handler@@QAE@PAUhandlerton@@PAUTABLE_SHARE@@@Z').
+symbol(0x10002cc0, method, '??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ').
+symbol(0x10002cf0, method, '??1Example_share@@UAE@XZ').
+symbol(0x10002d20, method, '??1Handler_share@@UAE@XZ').
+symbol(0x10002d30, method, '??1Sql_alloc@@QAE@XZ').
+symbol(0x10002d40, method, '??1_Generic_error_category@std@@UAE@XZ').
+symbol(0x10002d50, method, '??1_Iostream_error_category@std@@UAE@XZ').
+symbol(0x10002d60, method, '??1_System_error_category@std@@UAE@XZ').
+symbol(0x10002d70, method, '??1error_category@std@@UAE@XZ').
+symbol(0x10002d80, method, '??1ha_example@@UAE@XZ').
+symbol(0x10002d90, method, '??1handler@@UAE@XZ').
+symbol(0x10002da0, func, '??2@YAPAXIPAX@Z').
+symbol(0x10002db0, staticmethod, '??2Sql_alloc@@SAPAXIPAUst_mem_root@@@Z').
+symbol(0x10002dd0, func, '??3@YAXPAX0@Z').
+symbol(0x10002de0, staticmethod, '??3Sql_alloc@@SAXPAXI@Z').
+symbol(0x10002df0, staticmethod, '??3Sql_alloc@@SAXPAXPAUst_mem_root@@@Z').
+symbol(0x10002e00, method, '??8error_category@std@@QBE_NABV01@@Z').
+symbol(0x10002e20, method, '??8error_condition@std@@QBE_NABV01@@Z').
+symbol(0x10002e50, method, '??_EExample_share@@UAEPAXI@Z').
+symbol(0x10002e50, method, '??_GExample_share@@UAEPAXI@Z').
+symbol(0x10002ea0, method, '??_EHandler_share@@UAEPAXI@Z').
+symbol(0x10002ea0, method, '??_GHandler_share@@UAEPAXI@Z').
+symbol(0x10002ed0, method, '??_E_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x10002ed0, method, '??_G_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x10002f00, method, '??_E_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x10002f00, method, '??_G_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x10002f30, method, '??_E_System_error_category@std@@UAEPAXI@Z').
+symbol(0x10002f30, method, '??_G_System_error_category@std@@UAEPAXI@Z').
+symbol(0x10002f60, method, '??_Eerror_category@std@@UAEPAXI@Z').
+symbol(0x10002f60, method, '??_Gerror_category@std@@UAEPAXI@Z').
+symbol(0x10002f90, method, '??_Eha_example@@UAEPAXI@Z').
+symbol(0x10002f90, method, '??_Gha_example@@UAEPAXI@Z').
+symbol(0x10002fa0, method, '??_Ehandler@@UAEPAXI@Z').
+symbol(0x10002fa0, method, '??_Ghandler@@UAEPAXI@Z').
+symbol(0x10002fb0, method, '?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z').
+symbol(0x10003160, method, '?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z').
+symbol(0x10003190, method, '?_Getal@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QBE?AU?$_Wrap_alloc@V?$allocator@D@std@@@2@XZ').
+symbol(0x100031a0, method, '?_Grow@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NI_N@Z').
+symbol(0x10003280, method, '?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NPBD@Z').
+symbol(0x100032d0, method, '?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QAEPADXZ').
+symbol(0x100032e0, method, '?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ').
+symbol(0x100032f0, method, '?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z').
+symbol(0x10003350, method, '?_Xlen@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ').
+symbol(0x10003360, method, '?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ').
+symbol(0x10003370, method, '?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z').
+symbol(0x100033b0, method, '?allocate@?$allocator@D@std@@QAEPADI@Z').
+symbol(0x100033f0, method, '?analyze@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10003400, method, '?append_create_info@handler@@UAEXPAVString@@@Z').
+symbol(0x10003410, method, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z').
+symbol(0x10003570, method, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z').
+symbol(0x100035c0, method, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z').
+symbol(0x10003700, staticmethod, '?assign@?$char_traits@D@std@@SAXAADABD@Z').
+symbol(0x10003720, method, '?assign_to_keycache@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10003730, method, '?auto_repair@handler@@UBE_NXZ').
+symbol(0x10003740, method, '?bas_ext@ha_example@@UBEPAPBDXZ').
+symbol(0x10003750, method, '?bulk_update_row@handler@@UAEHPBEPAEPAI@Z').
+symbol(0x10003760, method, '?calculate_key_hash_value@handler@@UAEIPAPAVField@@@Z').
+symbol(0x10003770, method, '?can_switch_engines@handler@@UAE_NXZ').
+symbol(0x10003780, method, '?cancel_pushed_idx_cond@handler@@UAEXXZ').
+symbol(0x100037b0, method, '?category@error_code@std@@QBEABVerror_category@2@XZ').
+symbol(0x100037c0, method, '?category@error_condition@std@@QBEABVerror_category@2@XZ').
+symbol(0x100037d0, method, '?change_table_ptr@handler@@UAEXPAUTABLE@@PAUTABLE_SHARE@@@Z').
+symbol(0x100037f0, method, '?check@handler@@EAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10003800, method, '?check_and_repair@handler@@UAE_NPAVTHD@@@Z').
+symbol(0x10003810, method, '?check_for_upgrade@handler@@EAEHPAUst_ha_check_opt@@@Z').
+symbol(0x10003820, method, '?check_if_incompatible_data@handler@@UAE_NPAUst_ha_create_information@@I@Z').
+symbol(0x10003830, method, '?checksum@handler@@UBEIXZ').
+symbol(0x10003840, method, '?close@ha_example@@UAEHXZ').
+symbol(0x10003850, method, '?cmp_ref@handler@@UAEHPBE0@Z').
+symbol(0x100038e0, method, '?commit_inplace_alter_table@handler@@MAE_NPAUTABLE@@PAVAlter_inplace_info@@_N@Z').
+symbol(0x10003900, method, '?cond_pop@handler@@UAEXXZ').
+symbol(0x10003910, method, '?cond_push@handler@@UAEPBVItem@@PBV2@@Z').
+symbol(0x10003920, staticmethod, '?copy@?$char_traits@D@std@@SAPADPADPBDI@Z').
+symbol(0x10003940, method, '?create@ha_example@@UAEHPBDPAUTABLE@@PAUst_ha_create_information@@@Z').
+symbol(0x10003950, method, '?create_handler_files@handler@@UAEHPBD0HPAUst_ha_create_information@@@Z').
+symbol(0x10003960, method, '?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z').
+symbol(0x10003980, method, '?deallocate@?$allocator@D@std@@QAEXPADI@Z').
+symbol(0x100039a0, method, '?default_error_condition@_System_error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x100039e0, method, '?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x10003a00, method, '?delete_all_rows@ha_example@@UAEHXZ').
+symbol(0x10003a10, method, '?delete_all_rows@handler@@UAEHXZ').
+symbol(0x10003a30, method, '?delete_row@ha_example@@UAEHPBE@Z').
+symbol(0x10003a40, method, '?delete_row@handler@@EAEHPBE@Z').
+symbol(0x10003a50, method, '?delete_table@ha_example@@UAEHPBD@Z').
+symbol(0x10003a60, method, '?disable_indexes@handler@@UAEHI@Z').
+symbol(0x10003a70, method, '?discard_or_import_tablespace@handler@@UAEHD@Z').
+symbol(0x10003a90, method, '?enable_indexes@handler@@UAEHI@Z').
+symbol(0x10003aa0, method, '?end_bulk_delete@handler@@UAEHXZ').
+symbol(0x10003ab0, method, '?end_bulk_insert@handler@@EAEHXZ').
+symbol(0x10003ac0, method, '?end_bulk_update@handler@@UAEXXZ').
+symbol(0x10003ad0, method, '?end_read_removal@handler@@UAE_KXZ').
+symbol(0x10003ae0, method, '?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z').
+symbol(0x10003b10, method, '?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z').
+symbol(0x10003b50, method, '?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@I@Z').
+symbol(0x10003ba0, method, '?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z').
+symbol(0x10003c70, method, '?estimate_rows_upper_bound@handler@@UAE_KXZ').
+symbol(0x10003c80, func, 'example_create_handler').
+symbol(0x10003cc0, func, 'example_is_supported_system_table').
+symbol(0x10003d50, func, 'example_system_database').
+symbol(0x10003d60, method, '?exec_bulk_update@handler@@UAEHPAI@Z').
+symbol(0x10003d70, method, '?external_lock@ha_example@@UAEHPAVTHD@@H@Z').
+symbol(0x10003d80, method, '?external_lock@handler@@EAEHPAVTHD@@H@Z').
+symbol(0x10003d90, method, '?extra@ha_example@@UAEHW4ha_extra_function@@@Z').
+symbol(0x10003da0, method, '?extra@handler@@UAEHW4ha_extra_function@@@Z').
+symbol(0x10003db0, method, '?extra_opt@handler@@UAEHW4ha_extra_function@@K@Z').
+symbol(0x10003dd0, method, '?extra_rec_buf_length@handler@@UBEIXZ').
+symbol(0x10003de0, method, '?free_foreign_key_create_info@handler@@UAEXPAD@Z').
+symbol(0x10003df0, method, '?ft_init@handler@@UAEHXZ').
+symbol(0x10003e00, method, '?ft_init_ext@handler@@UAEPAUst_ft_info@@IIPAVString@@@Z').
+symbol(0x10003e10, method, '?ft_init_ext_with_hints@handler@@UAEPAUst_ft_info@@IPAVString@@PAVFt_hints@@@Z').
+symbol(0x10003e30, method, '?ft_read@handler@@UAEHPAE@Z').
+symbol(0x10003e40, func, '?generic_category@std@@YAABVerror_category@1@XZ').
+symbol(0x10003e50, method, '?get_cascade_foreign_key_table_list@handler@@UAEHPAVTHD@@PAV?$List@Ust_handler_tablename@@@@@Z').
+symbol(0x10003e60, method, '?get_flags@Ft_hints@@QAEIXZ').
+symbol(0x10003e70, method, '?get_foreign_dup_key@handler@@UAE_NPADI0I@Z').
+symbol(0x10003e80, method, '?get_foreign_key_create_info@handler@@UAEPADXZ').
+symbol(0x10003e90, method, '?get_foreign_key_list@handler@@UAEHPAVTHD@@PAV?$List@Ust_foreign_key_info@@@@@Z').
+symbol(0x10003ea0, method, '?get_memory_buffer_size@handler@@UBE_JXZ').
+symbol(0x10003eb0, method, '?get_parent_foreign_key_list@handler@@UAEHPAVTHD@@PAV?$List@Ust_foreign_key_info@@@@@Z').
+symbol(0x10003ec0, method, '?get_partition_handler@handler@@UAEPAVPartition_handler@@XZ').
+symbol(0x10003ed0, method, '?get_row_type@handler@@UBE?AW4row_type@@XZ').
+symbol(0x10003ee0, method, '?get_share@ha_example@@AAEPAVExample_share@@XZ').
+symbol(0x10003f40, method, '?idx_cond_push@handler@@UAEPAVItem@@IPAV2@@Z').
+symbol(0x10003f50, method, '?index_end@handler@@EAEHXZ').
+symbol(0x10003f60, method, '?index_first@ha_example@@UAEHPAE@Z').
+symbol(0x10003f70, method, '?index_first@handler@@MAEHPAE@Z').
+symbol(0x10003f80, method, '?index_flags@ha_example@@UBEKII_N@Z').
+symbol(0x10003f90, method, '?index_init@handler@@EAEHI_N@Z').
+symbol(0x10003fb0, method, '?index_last@ha_example@@UAEHPAE@Z').
+symbol(0x10003fc0, method, '?index_last@handler@@MAEHPAE@Z').
+symbol(0x10003fd0, method, '?index_next@ha_example@@UAEHPAE@Z').
+symbol(0x10003fe0, method, '?index_next@handler@@MAEHPAE@Z').
+symbol(0x10003ff0, method, '?index_next_pushed@handler@@UAEHPAE@Z').
+symbol(0x10004000, method, '?index_prev@ha_example@@UAEHPAE@Z').
+symbol(0x10004010, method, '?index_prev@handler@@MAEHPAE@Z').
+symbol(0x10004020, method, '?index_read@handler@@MAEHPAEPBEIW4ha_rkey_function@@@Z').
+symbol(0x10004030, method, '?index_read_last@handler@@MAEHPAEPBEI@Z').
+symbol(0x10004050, method, '?index_read_last_map@handler@@MAEHPAEPBEK@Z').
+symbol(0x10004090, method, '?index_read_map@ha_example@@UAEHPAEPBEKW4ha_rkey_function@@@Z').
+symbol(0x100040a0, method, '?index_read_map@handler@@MAEHPAEPBEKW4ha_rkey_function@@@Z').
+symbol(0x100040e0, method, '?index_read_pushed@handler@@UAEHPAEPBEK@Z').
+symbol(0x100040f0, method, '?index_type@ha_example@@UAEPBDI@Z').
+symbol(0x10004100, method, '?index_type@handler@@UAEPBDI@Z').
+symbol(0x10004110, method, '?indexes_are_disabled@handler@@UAEHXZ').
+symbol(0x10004120, method, '?info@ha_example@@UAEHI@Z').
+symbol(0x10004130, method, '?init_table_handle_for_HANDLER@handler@@UAEXXZ').
+symbol(0x10004140, method, '?inplace_alter_table@handler@@MAE_NPAUTABLE@@PAVAlter_inplace_info@@@Z').
+symbol(0x10004150, method, '?is_crashed@handler@@UBE_NXZ').
+symbol(0x10004160, method, '?is_fk_defined_on_table_or_index@handler@@UAE_NI@Z').
+symbol(0x10004170, method, '?keys_to_use_for_scanning@handler@@UAEPBV?$Bitmap@$0EA@@@XZ').
+symbol(0x10004180, staticmethod, '?length@?$char_traits@D@std@@SAIPBD@Z').
+symbol(0x100041b0, method, '?lock_count@handler@@UBEIXZ').
+symbol(0x100041c0, method, '?low_byte_first@handler@@UBE_NXZ').
+symbol(0x100041d0, method, '?max_size@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBEIXZ').
+symbol(0x100041e0, method, '?max_size@?$allocator@D@std@@QBEIXZ').
+symbol(0x100041f0, staticmethod, '?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z').
+symbol(0x10004200, method, '?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ').
+symbol(0x10004210, method, '?max_supported_key_length@ha_example@@UBEIXZ').
+symbol(0x10004220, method, '?max_supported_key_length@handler@@UBEIXZ').
+symbol(0x10004230, method, '?max_supported_key_part_length@handler@@UBEIXZ').
+symbol(0x10004240, method, '?max_supported_key_parts@ha_example@@UBEIXZ').
+symbol(0x10004250, method, '?max_supported_key_parts@handler@@UBEIXZ').
+symbol(0x10004260, method, '?max_supported_keys@ha_example@@UBEIXZ').
+symbol(0x10004270, method, '?max_supported_keys@handler@@UBEIXZ').
+symbol(0x10004280, method, '?max_supported_record_length@ha_example@@UBEIXZ').
+symbol(0x10004290, method, '?max_supported_record_length@handler@@UBEIXZ').
+symbol(0x100042a0, method, '?message@_Generic_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x10004330, method, '?message@_Iostream_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x100043a0, method, '?message@_System_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x10004430, method, '?min_record_length@handler@@UBEII@Z').
+symbol(0x10004440, staticmethod, '?move@?$char_traits@D@std@@SAPADPADPBDI@Z').
+symbol(0x10004460, func, '?my_ulonglong2double@@YAN_K@Z').
+symbol(0x100044b0, method, '?name@_Generic_error_category@std@@UBEPBDXZ').
+symbol(0x100044c0, method, '?name@_Iostream_error_category@std@@UBEPBDXZ').
+symbol(0x100044d0, method, '?name@_System_error_category@std@@UBEPBDXZ').
+symbol(0x100044e0, method, '?number_of_pushed_joins@handler@@UBEIXZ').
+symbol(0x100044f0, method, '?open@ha_example@@UAEHPBDHI@Z').
+symbol(0x10004540, method, '?optimize@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10004550, method, '?parent_of_pushed_join@handler@@UBEPBUTABLE@@XZ').
+symbol(0x10004560, method, '?position@ha_example@@UAEXPBE@Z').
+symbol(0x10004570, method, '?preload_keys@handler@@UAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x10004580, method, '?prepare_inplace_alter_table@handler@@MAE_NPAUTABLE@@PAVAlter_inplace_info@@@Z').
+symbol(0x10004590, method, '?primary_key_is_clustered@handler@@UBE_NXZ').
+symbol(0x100045a0, method, '?read_time@ha_example@@UAENII_K@Z').
+symbol(0x100045e0, method, '?read_time@handler@@UAENII_K@Z').
+symbol(0x10004630, method, '?records@handler@@MAEHPA_K@Z').
+symbol(0x10004650, method, '?records_in_range@ha_example@@UAE_KIPAUst_key_range@@0@Z').
+symbol(0x10004660, method, '?records_in_range@handler@@UAE_KIPAUst_key_range@@0@Z').
+symbol(0x10004670, method, '?referenced_by_foreign_key@handler@@UAEIXZ').
+symbol(0x10004680, method, '?register_query_cache_table@handler@@UAEDPAVTHD@@PADIPAP6AD01IPA_K@Z2@Z').
+symbol(0x100046a0, method, '?release_auto_increment@handler@@EAEXXZ').
+symbol(0x100046b0, method, '?rename_table@ha_example@@UAEHPBD0@Z').
+symbol(0x100046c0, method, '?repair@handler@@EAEHPAVTHD@@PAUst_ha_check_opt@@@Z').
+symbol(0x100046d0, method, '?replace@Discrete_interval@@QAEX_K00@Z').
+symbol(0x10004740, method, '?reset@handler@@EAEHXZ').
+symbol(0x10004750, method, '?rnd_end@ha_example@@UAEHXZ').
+symbol(0x10004760, method, '?rnd_end@handler@@EAEHXZ').
+symbol(0x10004770, method, '?rnd_init@ha_example@@UAEH_N@Z').
+symbol(0x10004780, method, '?rnd_next@ha_example@@UAEHPAE@Z').
+symbol(0x10004790, method, '?rnd_pos@ha_example@@UAEHPAE0@Z').
+symbol(0x100047a0, method, '?rnd_pos_by_record@handler@@UAEHPAE@Z').
+symbol(0x100047d0, method, '?root_of_pushed_join@handler@@UBEPBUTABLE@@XZ').
+symbol(0x100047e0, method, '?scan_time@ha_example@@UAENXZ').
+symbol(0x10004830, method, '?scan_time@handler@@UAENXZ').
+symbol(0x10004890, method, '?set_ha_share_ref@handler@@UAE_NPAPAVHandler_share@@@Z').
+symbol(0x100048c0, method, '?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ').
+symbol(0x100048d0, method, '?start_bulk_delete@handler@@UAE_NXZ').
+symbol(0x100048e0, method, '?start_bulk_insert@handler@@EAEX_K@Z').
+symbol(0x100048f0, method, '?start_bulk_update@handler@@UAE_NXZ').
+symbol(0x10004900, method, '?start_read_removal@handler@@UAE_NXZ').
+symbol(0x10004910, method, '?start_stmt@handler@@UAEHPAVTHD@@W4thr_lock_type@@@Z').
+symbol(0x10004920, method, '?store_lock@ha_example@@UAEPAPAUst_thr_lock_data@@PAVTHD@@PAPAU2@W4thr_lock_type@@@Z').
+symbol(0x10004960, func, '?system_category@std@@YAABVerror_category@1@XZ').
+symbol(0x10004970, method, '?table_cache_type@handler@@UAEEXZ').
+symbol(0x10004980, method, '?table_flags@ha_example@@UBE_KXZ').
+symbol(0x10004990, method, '?table_type@ha_example@@UBEPBDXZ').
+symbol(0x100049a0, method, '?truncate@ha_example@@UAEHXZ').
+symbol(0x100049b0, method, '?truncate@handler@@UAEHXZ').
+symbol(0x100049c0, method, '?try_semi_consistent_read@handler@@UAEX_N@Z').
+symbol(0x100049d0, method, '?unlock_row@handler@@UAEXXZ').
+symbol(0x100049e0, method, '?update_create_info@handler@@UAEXPAUst_ha_create_information@@@Z').
+symbol(0x100049f0, method, '?update_row@ha_example@@UAEHPBEPAE@Z').
+symbol(0x10004a00, method, '?update_row@handler@@EAEHPBEPAE@Z').
+symbol(0x10004a10, method, '?value@error_code@std@@QBEHXZ').
+symbol(0x10004a20, method, '?value@error_condition@std@@QBEHXZ').
+symbol(0x10004a30, method, '?was_semi_consistent_read@handler@@UAE_NXZ').
+symbol(0x10004a40, method, '?write_row@ha_example@@UAEHPAE@Z').
+symbol(0x10004a50, method, '?write_row@handler@@EAEHPAE@Z').
+symbol(0x10004a60, func, '_hypot').
+symbol(0x10004a90, thunk, '_set_my_errno').
+symbol(0x10004a96, thunk, '_alloc_root').
+symbol(0x10004a9c, thunk, '_thr_lock_init').
+symbol(0x10004aa2, thunk, '_thr_lock_delete').
+symbol(0x10004aa8, thunk, '_thr_lock_data_init').
+symbol(0x10004aae, thunk, '?calculate_key_len@@YAIPAUTABLE@@IK@Z').
+symbol(0x10004ab4, thunk, '?unbind_psi@handler@@UAEXXZ').
+symbol(0x10004aba, thunk, '?rebind_psi@handler@@UAEXXZ').
+symbol(0x10004ac0, thunk, '?clone@handler@@UAEPAV1@PBDPAUst_mem_root@@@Z').
+symbol(0x10004ac6, thunk, '?ha_rnd_pos@handler@@QAEHPAE0@Z').
+symbol(0x10004acc, thunk, '?print_error@handler@@UAEXHH@Z').
+symbol(0x10004ad2, thunk, '?get_error_message@handler@@UAE_NHPAVString@@@Z').
+symbol(0x10004ad8, thunk, '?index_only_read_time@handler@@UAENIN@Z').
+symbol(0x10004ade, thunk, '?table_scan_cost@handler@@UAE?AVCost_estimate@@XZ').
+symbol(0x10004ae4, thunk, '?index_scan_cost@handler@@UAE?AVCost_estimate@@INN@Z').
+symbol(0x10004aea, thunk, '?read_cost@handler@@UAE?AVCost_estimate@@INN@Z').
+symbol(0x10004af0, thunk, '?multi_range_read_info_const@handler@@UAE_KIPAUst_range_seq_if@@PAXIPAI2PAVCost_estimate@@@Z').
+symbol(0x10004af6, thunk, '?multi_range_read_info@handler@@UAE_KIIIPAI0PAVCost_estimate@@@Z').
+symbol(0x10004afc, thunk, '?multi_range_read_init@handler@@UAEHPAUst_range_seq_if@@PAXIIPAUst_handler_buffer@@@Z').
+symbol(0x10004b02, thunk, '?multi_range_read_next@handler@@UAEHPAPAD@Z').
+symbol(0x10004b08, thunk, '?is_ignorable_error@handler@@UAE_NH@Z').
+symbol(0x10004b0e, thunk, '?is_fatal_error@handler@@UAE_NH@Z').
+symbol(0x10004b14, thunk, '?column_bitmaps_signal@handler@@UAEXXZ').
+symbol(0x10004b1a, thunk, '?index_read_idx_map@handler@@MAEHPAEIPBEKW4ha_rkey_function@@@Z').
+symbol(0x10004b20, thunk, '?index_next_same@handler@@MAEHPAEPBEI@Z').
+symbol(0x10004b26, thunk, '?read_range_first@handler@@UAEHPBUst_key_range@@0_N1@Z').
+symbol(0x10004b2c, thunk, '?read_range_next@handler@@UAEHXZ').
+symbol(0x10004b32, thunk, '?read_first_row@handler@@UAEHPAEI@Z').
+symbol(0x10004b38, thunk, '?get_auto_increment@handler@@UAEX_K00PA_K1@Z').
+symbol(0x10004b3e, thunk, '?check_if_supported_inplace_alter@handler@@UAE?AW4enum_alter_inplace_result@@PAUTABLE@@PAVAlter_inplace_info@@@Z').
+symbol(0x10004b44, thunk, '?notify_table_changed@handler@@MAEXXZ').
+symbol(0x10004b4a, thunk, '?use_hidden_primary_key@handler@@UAEXXZ').
+symbol(0x10004b50, thunk, '?rename_table@handler@@MAEHPBD0@Z').
+symbol(0x10004b56, thunk, '?delete_table@handler@@MAEHPBD@Z').
+symbol(0x10004b5c, thunk, '?drop_table@handler@@UAEXPBD@Z').
+symbol(0x10004b62, thunk, '?get_ha_share_ptr@handler@@IAEPAVHandler_share@@XZ').
+symbol(0x10004b68, thunk, '?set_ha_share_ptr@handler@@IAEXPAVHandler_share@@@Z').
+symbol(0x10004b6e, thunk, '?lock_shared_ha_data@handler@@IAEXXZ').
+symbol(0x10004b74, thunk, '?unlock_shared_ha_data@handler@@IAEXXZ').
+symbol(0x10004b7a, thunk, '?_Xbad_alloc@std@@YAXXZ').
+symbol(0x10004b80, thunk, '?_Xlength_error@std@@YAXPBD@Z').
+symbol(0x10004b86, thunk, '?_Xout_of_range@std@@YAXPBD@Z').
+symbol(0x10004b8c, thunk, '?_Syserror_map@std@@YAPBDH@Z').
+symbol(0x10004b92, thunk, '?_Winerror_map@std@@YAPBDH@Z').
+symbol(0x10004b98, thunk, '__purecall').
+symbol(0x10004b9e, thunk, '??2@YAPAXI@Z').
+symbol(0x10004ba4, thunk, '??3@YAXPAX@Z').
+symbol(0x10004baa, func, '___atonexitinit').
+symbol(0x10004be6, func, '__onexit').
+symbol(0x10004c8f, func, '_atexit').
+symbol(0x10004ca4, thunk, '_memmove').
+symbol(0x10004caa, thunk, '__hypot').
+symbol(0x10004cb0, func, '@__security_check_cookie@4').
+symbol(0x10004cc0, thunk, '__CxxThrowException@8').
+symbol(0x10004cc6, thunk, '___CxxFrameHandler3').
+symbol(0x10004cd0, func, '__allmul').
+symbol(0x10004d10, func, '__ftoui3').
+symbol(0x10004d1f, func, '__ftoul3').
+symbol(0x10004d2e, func, '__ftol3').
+symbol(0x10004d3b, func, '__ftol3_NaN').
+symbol(0x10004d53, func, '__ftol3_work').
+symbol(0x10004dd9, func, '__ftol3_common').
+symbol(0x10004e9b, func, '__ftol3_arg_error').
+symbol(0x10004ead, func, '__ftol3_except').
+symbol(0x10004ef1, func, '__dtoui3').
+symbol(0x10004f00, func, '__dtoul3').
+symbol(0x10004f0f, func, '__dtol3').
+symbol(0x10004f1c, func, '__dtol3_NaN').
+symbol(0x10004f39, func, '__dtol3_work').
+symbol(0x1000501e, func, '__ultod3').
+symbol(0x100050af, func, '__ltod3').
+symbol(0x100050de, thunk, '_memcpy').
+symbol(0x100050e4, method, '??0type_info@@AAE@ABV0@@Z').
+symbol(0x100050ef, method, '??4type_info@@AAEAAV0@ABV0@@Z').
+symbol(0x100050f4, method, '??_Etype_info@@UAEPAXI@Z').
+symbol(0x10005140, func, 'pre_c_init').
+symbol(0x1000518c, func, '_NtCurrentTeb').
+symbol(0x10005193, func, '__CRT_INIT@12').
+symbol(0x1000538a, func, '__DllMainCRTStartup@12').
+symbol(0x100053ad, func, '__DllMainCRTStartup').
+symbol(0x100054e0, thunk, '__lock').
+symbol(0x100054e6, thunk, '__unlock').
+symbol(0x100054ec, thunk, '__calloc_crt').
+symbol(0x100054f2, thunk, '___dllonexit').
+symbol(0x10005500, func, '__SEH_prolog4').
+symbol(0x10005545, func, '__SEH_epilog4').
+symbol(0x10005559, func, '__except_handler4').
+symbol(0x1000557c, func, '___raise_securityfailure').
+symbol(0x100055b9, func, '___report_gsfailure').
+symbol(0x100056b4, func, '___report_rangecheckfailure').
+symbol(0x100056c0, func, '___report_securityfailure').
+symbol(0x10005790, func, '___report_securityfailureEx').
+symbol(0x100058a6, thunk, '__except1').
+symbol(0x100058ac, func, '??_M@YGXPAXIHP6EX0@Z@Z').
+symbol(0x1000591b, func, 'ArrayUnwindFilter').
+symbol(0x10005934, func, '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z').
+symbol(0x10005992, thunk, '??1type_info@@UAE@XZ').
+symbol(0x10005998, thunk, '___CppXcptFilter').
+symbol(0x1000599e, thunk, '__amsg_exit').
+symbol(0x100059b0, func, '__FindPESection').
+symbol(0x10005a00, func, '__IsNonwritableInCurrentImage').
+symbol(0x10005ac0, func, '__ValidateImageBase').
+symbol(0x10005af2, thunk, '_free').
+symbol(0x10005af8, func, '___security_init_cookie').
+symbol(0x10005b94, func, '_DllMain@12').
+symbol(0x10005bb6, thunk, '__malloc_crt').
+symbol(0x10005bbc, func, '__RTC_Initialize').
+symbol(0x10005bdc, func, '__RTC_Terminate').
+symbol(0x10005bfc, thunk, '__initterm').
+symbol(0x10005c02, thunk, '__initterm_e').
+symbol(0x10005c08, func, '___clean_type_info_names').
+symbol(0x10005c14, thunk, '__except_handler4_common').
+symbol(0x10005c1a, thunk, '__crt_debugger_hook').
+symbol(0x10005c20, thunk, '___crtUnhandledException').
+symbol(0x10005c26, thunk, '___crtTerminateProcess').
+symbol(0x10005c2c, thunk, '?terminate@@YAXXZ').
+symbol(0x10005c32, thunk, '___clean_type_info_names_internal').
+symbol(0x10005c38, thunk, '_EncodePointer@4').
+symbol(0x10005c3e, thunk, '_DecodePointer@4').
+symbol(0x10005c44, thunk, '_IsDebuggerPresent@0').
+symbol(0x10005c4a, thunk, '_IsProcessorFeaturePresent@4').
+symbol(0x10005c50, thunk, '_QueryPerformanceCounter@4').
+symbol(0x10005c56, thunk, '_GetCurrentProcessId@0').
+symbol(0x10005c5c, thunk, '_GetCurrentThreadId@0').
+symbol(0x10005c62, thunk, '_GetSystemTimeAsFileTime@4').
+symbol(0x10005c68, thunk, '_DisableThreadLibraryCalls@4').
+symbol(0x10008400, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10008410, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10008420, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10009876, name, '__fltused').
+symbol(0x10009876, name, '__ldused').
+symbol(0x1000a000, name, '___xc_a').
+symbol(0x1000a214, name, '___xc_z').
+symbol(0x1000a318, name, '___xi_a').
+symbol(0x1000a624, name, '___xi_z').
+symbol(0x1000a768, string, '??_C@_07LAHOMOLI@EXAMPLE?$AA@').
+symbol(0x1000a774, string, '??_C@_02IIPPCIJE@e1?$AA@').
+symbol(0x1000a778, string, '??_C@_02KDNCHLFH@e2?$AA@').
+symbol(0x1000a77c, string, '??_C@_0BB@OHMDEPEM@enum_var_typelib?$AA@').
+symbol(0x1000a790, string, '??_C@_08GAFCGDAC@enum_var?$AA@').
+symbol(0x1000a79c, string, '??_C@_0BN@POHPDJOA@Sample?5ENUM?5system?5variable?4?$AA@').
+symbol(0x1000a7c0, string, '??_C@_09NBPKAMJB@ulong_var?$AA@').
+symbol(0x1000a7cc, string, '??_C@_07CKHDOPJI@0?4?41000?$AA@').
+symbol(0x1000a7d8, string, '??_C@_0L@MIEHHAEJ@double_var?$AA@').
+symbol(0x1000a7e8, string, '??_C@_0BG@LHNOAFLP@0?4500000?4?41000?4500000?$AA@').
+symbol(0x1000a804, string, '??_C@_0O@PNLEHMKC@double_thdvar?$AA@').
+symbol(0x1000a814, string, '??_C@_04FNPNDGGH@var1?$AA@').
+symbol(0x1000a81c, string, '??_C@_04HGNAGFKE@var2?$AA@').
+symbol(0x1000a824, string, '??_C@_05HIFJDKLD@array?$AA@').
+symbol(0x1000a82c, string, '??_C@_04GPMLFEOF@var3?$AA@').
+symbol(0x1000a834, string, '??_C@_04CAIKMCCC@var4?$AA@').
+symbol(0x1000a83c, string, '??_C@_0BF@IPHMDF@example_func_example?$AA@').
+symbol(0x1000a858, string, '??_C@_0BE@FIMBLFHD@example_status_var5?$AA@').
+symbol(0x1000a870, string, '??_C@_0BE@HDOMOGLA@example_status_var6?$AA@').
+symbol(0x1000a888, string, '??_C@_0P@BBCEDLGL@example_status?$AA@').
+symbol(0x1000a89c, string, '??_C@_0BF@FMOCBMNL@Brian?5Aker?0?5MySQL?5AB?$AA@').
+symbol(0x1000a8b8, string, '??_C@_0BH@KDINJCKO@Example?5storage?5engine?$AA@').
+symbol(0x1000a8d3, string, '??_C@_00CNPNBAHC@?$AA@').
+symbol(0x1000a8d8, table, '??_7error_category@std@@6B@').
+symbol(0x1000a8fc, table, '??_7_Generic_error_category@std@@6B@').
+symbol(0x1000a91c, string, '??_C@_07DCLBNMLN@generic?$AA@').
+symbol(0x1000a928, string, '??_C@_0O@BFJCFAAK@unknown?5error?$AA@').
+symbol(0x1000a93c, table, '??_7_Iostream_error_category@std@@6B@').
+symbol(0x1000a95c, string, '??_C@_08LLGCOLLL@iostream?$AA@').
+symbol(0x1000a968, string, '??_C@_0BG@PADBLCHM@iostream?5stream?5error?$AA@').
+symbol(0x1000a988, table, '??_7_System_error_category@std@@6B@').
+symbol(0x1000a9a8, string, '??_C@_06FHFOAHML@system?$AA@').
+symbol(0x1000a9b4, table, '??_7Handler_share@@6B@').
+symbol(0x1000a9c0, table, '??_7handler@@6B@').
+symbol(0x1000ac90, table, '??_7Example_share@@6B@').
+symbol(0x1000ac9c, table, '??_7ha_example@@6B@').
+symbol(0x1000af68, string, '??_C@_04CEKMHBNG@HASH?$AA@').
+symbol(0x1000af70, string, '??_C@_06CLMPJJNH@really?$AA@').
+symbol(0x1000af78, string, '??_C@_0DK@KLGFHLO@enum_var?5is?5?$CFlu?0?5ulong_var?5is?5?$CFl@').
+symbol(0x1000afc0, string, '??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@').
+symbol(0x1000afd4, string, '??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@').
+symbol(0x1000aff0, name, '__real@3f30000000000000').
+symbol(0x1000b000, name, '__real@3ff0000000000000').
+symbol(0x1000b010, name, '__real@4000000000000000').
+symbol(0x1000b020, name, '__real@4024000000000000').
+symbol(0x1000b030, name, '__real@4034000000000000').
+symbol(0x1000b040, name, '__real@43f0000000000000').
+symbol(0x1000b050, name, '__real@bff0000000000000').
+symbol(0x1000b0e2, name, '?value@?$integral_constant@_N$0A@@std@@2_NB').
+symbol(0x1000b0e3, name, '?value@?$integral_constant@_N$00@std@@2_NB').
+symbol(0x1000b0e8, table, '??_7type_info@@6B@').
+symbol(0x1000b0ec, name, '__pDefaultRawDllMain').
+symbol(0x1000b0ec, name, '__pRawDllMain').
+symbol(0x1000b0f8, name, '?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1000b0fc, name, '?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1000b100, name, '?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1000b104, name, '?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1000b108, name, '?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1000b110, name, '__load_config_used').
+symbol(0x1000b468, name, '??_R3Sql_alloc@@8').
+symbol(0x1000b47c, name, '??_R2Sql_alloc@@8').
+symbol(0x1000b484, name, '??_R1A@?0A@EA@Sql_alloc@@8').
+symbol(0x1000b4a8, table, '??_R4error_category@std@@6B@').
+symbol(0x1000b4c0, name, '??_R3error_category@std@@8').
+symbol(0x1000b4d4, name, '??_R2error_category@std@@8').
+symbol(0x1000b4dc, name, '??_R1A@?0A@EA@error_category@std@@8').
+symbol(0x1000b500, table, '??_R4_Generic_error_category@std@@6B@').
+symbol(0x1000b518, name, '??_R3_Generic_error_category@std@@8').
+symbol(0x1000b52c, name, '??_R2_Generic_error_category@std@@8').
+symbol(0x1000b538, name, '??_R1A@?0A@EA@_Generic_error_category@std@@8').
+symbol(0x1000b55c, table, '??_R4_Iostream_error_category@std@@6B@').
+symbol(0x1000b574, name, '??_R3_Iostream_error_category@std@@8').
+symbol(0x1000b588, name, '??_R2_Iostream_error_category@std@@8').
+symbol(0x1000b598, name, '??_R1A@?0A@EA@_Iostream_error_category@std@@8').
+symbol(0x1000b5bc, table, '??_R4_System_error_category@std@@6B@').
+symbol(0x1000b5d4, name, '??_R3_System_error_category@std@@8').
+symbol(0x1000b5e8, name, '??_R2_System_error_category@std@@8').
+symbol(0x1000b5f8, name, '??_R1A@?0A@EA@_System_error_category@std@@8').
+symbol(0x1000b61c, table, '??_R4handler@@6B@').
+symbol(0x1000b634, name, '??_R3handler@@8').
+symbol(0x1000b648, name, '??_R2handler@@8').
+symbol(0x1000b654, name, '??_R1A@?0A@EA@handler@@8').
+symbol(0x1000b678, name, '??_R17?0A@EA@Sql_alloc@@8').
+symbol(0x1000b69c, table, '??_R4Handler_share@@6B@').
+symbol(0x1000b6b4, name, '??_R3Handler_share@@8').
+symbol(0x1000b6c8, name, '??_R2Handler_share@@8').
+symbol(0x1000b6d0, name, '??_R1A@?0A@EA@Handler_share@@8').
+symbol(0x1000b6f4, table, '??_R4Example_share@@6B@').
+symbol(0x1000b70c, name, '??_R3Example_share@@8').
+symbol(0x1000b720, name, '??_R2Example_share@@8').
+symbol(0x1000b72c, name, '??_R1A@?0A@EA@Example_share@@8').
+symbol(0x1000b750, table, '??_R4ha_example@@6B@').
+symbol(0x1000b768, name, '??_R3ha_example@@8').
+symbol(0x1000b77c, name, '??_R2ha_example@@8').
+symbol(0x1000b78c, name, '??_R1A@?0A@EA@ha_example@@8').
+symbol(0x1000b7b0, table, '??_R4type_info@@6B@').
+symbol(0x1000b7c4, name, '??_R3type_info@@8').
+symbol(0x1000b7d4, name, '??_R2type_info@@8').
+symbol(0x1000b7dc, name, '??_R1A@?0A@EA@type_info@@8').
+symbol(0x1000b920, name, '___safe_se_handler_table').
+symbol(0x1000ba2c, name, '___rtc_iaa').
+symbol(0x1000bb30, name, '___rtc_izz').
+symbol(0x1000bc34, name, '___rtc_taa').
+symbol(0x1000bd38, name, '___rtc_tzz').
+symbol(0x1000d000, name, '?example_storage_engine@@3Ust_mysql_storage_engine@@A').
+symbol(0x1000d004, name, '?enum_var_names@@3PAPBDA').
+symbol(0x1000d010, name, '?enum_var_typelib@@3Ust_typelib@@A').
+symbol(0x1000d0f4, name, '__mysql_plugin_interface_version_').
+symbol(0x1000d0f8, name, '?example_vars@@3Uexample_vars_t@@A').
+symbol(0x1000d210, name, '__mysql_sizeof_struct_st_plugin_').
+symbol(0x1000d218, name, '__mysql_plugin_declarations_').
+symbol(0x1000d300, name, '?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A').
+symbol(0x1000d304, name, '?_Iostream_object@?$_Error_objects@H@std@@2V_Iostream_error_category@2@A').
+symbol(0x1000d308, name, '?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A').
+symbol(0x1000d30c, name, '_my_snprintf_service').
+symbol(0x1000d310, name, '___security_cookie').
+symbol(0x1000d314, name, '___security_cookie_complement').
+symbol(0x1000d320, name, '___native_dllmain_reason').
+symbol(0x1000d42c, name, '??_R0?AVSql_alloc@@@8').
+symbol(0x1000d448, name, '??_R0?AVerror_category@std@@@8').
+symbol(0x1000d470, name, '??_R0?AV_Generic_error_category@std@@@8').
+symbol(0x1000d4a4, name, '??_R0?AV_Iostream_error_category@std@@@8').
+symbol(0x1000d4d8, name, '??_R0?AV_System_error_category@std@@@8').
+symbol(0x1000d50c, name, '??_R0?AVhandler@@@8').
+symbol(0x1000d528, name, '??_R0?AVHandler_share@@@8').
+symbol(0x1000d54c, name, '??_R0?AVExample_share@@@8').
+symbol(0x1000d570, name, '??_R0?AVha_example@@@8').
+symbol(0x1000d590, name, '??_R0?AVtype_info@@@8').
+symbol(0x1000d6b8, name, '?example_hton@@3PAUhandlerton@@A').
+symbol(0x1000d6c0, name, '?ha_example_system_database@@3PBDB').
+symbol(0x1000d6ec, name, '?id@?$num_put@DV?$back_insert_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@2V0locale@2@A').
+symbol(0x1000d6f0, name, '?id@?$num_put@_WV?$back_insert_iterator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@@std@@2V0locale@2@A').
+symbol(0x1000da18, name, '?__type_info_root_node@@3U__type_info_node@@A').
+symbol(0x1000da20, name, '___native_startup_lock').
+symbol(0x1000da30, name, '___native_startup_state').
+symbol(0x1000da34, name, '___dyn_tls_init_callback').
+symbol(0x1000da40, name, '___onexitend').
+symbol(0x1000da50, name, '___onexitbegin').
+symbol(0x1000e000, name, '__imp__DisableThreadLibraryCalls@4').
+symbol(0x1000e004, name, '__imp__GetSystemTimeAsFileTime@4').
+symbol(0x1000e008, name, '__imp__GetCurrentThreadId@0').
+symbol(0x1000e00c, name, '__imp__GetCurrentProcessId@0').
+symbol(0x1000e010, name, '__imp__QueryPerformanceCounter@4').
+symbol(0x1000e014, name, '__imp__IsProcessorFeaturePresent@4').
+symbol(0x1000e018, name, '__imp__IsDebuggerPresent@0').
+symbol(0x1000e01c, name, '__imp__DecodePointer@4').
+symbol(0x1000e020, name, '__imp__EncodePointer@4').
+symbol(0x1000e024, name, 'KERNEL32_NULL_THUNK_DATA').
+symbol(0x1000e054, name, '__imp_?_Winerror_map@std@@YAPBDH@Z').
+symbol(0x1000e058, name, '__imp_?_Syserror_map@std@@YAPBDH@Z').
+symbol(0x1000e05c, name, '__imp_?_Xout_of_range@std@@YAXPBD@Z').
+symbol(0x1000e060, name, '__imp_?_Xlength_error@std@@YAXPBD@Z').
+symbol(0x1000e064, name, '__imp_?_Xbad_alloc@std@@YAXXZ').
+symbol(0x1000e068, name, 'MSVCP120_NULL_THUNK_DATA').
+symbol(0x1000e098, name, '__imp__memmove').
+symbol(0x1000e09c, name, '__imp_?terminate@@YAXXZ').
+symbol(0x1000e0a0, name, '__imp____crtTerminateProcess').
+symbol(0x1000e0a4, name, '__imp____crtUnhandledException').
+symbol(0x1000e0a8, name, '__imp___crt_debugger_hook').
+symbol(0x1000e0ac, name, '__imp___except_handler4_common').
+symbol(0x1000e0b0, name, '__imp___initterm_e').
+symbol(0x1000e0b4, name, '__imp___initterm').
+symbol(0x1000e0b8, name, '__imp___malloc_crt').
+symbol(0x1000e0bc, name, '__imp__free').
+symbol(0x1000e0c0, name, '__imp___amsg_exit').
+symbol(0x1000e0c4, name, '__imp____CppXcptFilter').
+symbol(0x1000e0c8, method, '__imp_??1type_info@@UAE@XZ').
+symbol(0x1000e0cc, name, '__imp___except1').
+symbol(0x1000e0d0, name, '__imp___onexit').
+symbol(0x1000e0d4, name, '__imp____dllonexit').
+symbol(0x1000e0d8, name, '__imp___calloc_crt').
+symbol(0x1000e0dc, name, '__imp___unlock').
+symbol(0x1000e0e0, name, '__imp___lock').
+symbol(0x1000e0e4, name, '__imp__memcpy').
+symbol(0x1000e0e8, name, '__imp____CxxFrameHandler3').
+symbol(0x1000e0ec, name, '__imp___CxxThrowException@8').
+symbol(0x1000e0f0, name, '__imp___hypot').
+symbol(0x1000e0f4, name, '__imp_??3@YAXPAX@Z').
+symbol(0x1000e0f8, name, '__imp_??2@YAPAXI@Z').
+symbol(0x1000e0fc, name, '__imp___purecall').
+symbol(0x1000e100, name, '__imp____clean_type_info_names_internal').
+symbol(0x1000e104, name, 'MSVCR120_NULL_THUNK_DATA').
+symbol(0x1000e144, method, '__imp_?index_only_read_time@handler@@UAENIN@Z').
+symbol(0x1000e148, method, '__imp_?table_scan_cost@handler@@UAE?AVCost_estimate@@XZ').
+symbol(0x1000e14c, method, '__imp_?print_error@handler@@UAEXHH@Z').
+symbol(0x1000e150, method, '__imp_?index_scan_cost@handler@@UAE?AVCost_estimate@@INN@Z').
+symbol(0x1000e154, method, '__imp_?read_cost@handler@@UAE?AVCost_estimate@@INN@Z').
+symbol(0x1000e158, method, '__imp_?multi_range_read_info_const@handler@@UAE_KIPAUst_range_seq_if@@PAXIPAI2PAVCost_estimate@@@Z').
+symbol(0x1000e15c, name, '__imp_?key_map_empty@@3V?$Bitmap@$0EA@@@B').
+symbol(0x1000e160, method, '__imp_?unlock_shared_ha_data@handler@@IAEXXZ').
+symbol(0x1000e164, method, '__imp_?lock_shared_ha_data@handler@@IAEXXZ').
+symbol(0x1000e168, method, '__imp_?set_ha_share_ptr@handler@@IAEXPAVHandler_share@@@Z').
+symbol(0x1000e16c, method, '__imp_?get_ha_share_ptr@handler@@IAEPAVHandler_share@@XZ').
+symbol(0x1000e170, method, '__imp_?drop_table@handler@@UAEXPBD@Z').
+symbol(0x1000e174, method, '__imp_?delete_table@handler@@MAEHPBD@Z').
+symbol(0x1000e178, method, '__imp_?rename_table@handler@@MAEHPBD0@Z').
+symbol(0x1000e17c, method, '__imp_?use_hidden_primary_key@handler@@UAEXXZ').
+symbol(0x1000e180, method, '__imp_?notify_table_changed@handler@@MAEXXZ').
+symbol(0x1000e184, method, '__imp_?check_if_supported_inplace_alter@handler@@UAE?AW4enum_alter_inplace_result@@PAUTABLE@@PAVAlter_inplace_info@@@Z').
+symbol(0x1000e188, method, '__imp_?get_auto_increment@handler@@UAEX_K00PA_K1@Z').
+symbol(0x1000e18c, method, '__imp_?read_first_row@handler@@UAEHPAEI@Z').
+symbol(0x1000e190, method, '__imp_?read_range_next@handler@@UAEHXZ').
+symbol(0x1000e194, method, '__imp_?read_range_first@handler@@UAEHPBUst_key_range@@0_N1@Z').
+symbol(0x1000e198, method, '__imp_?index_next_same@handler@@MAEHPAEPBEI@Z').
+symbol(0x1000e19c, method, '__imp_?index_read_idx_map@handler@@MAEHPAEIPBEKW4ha_rkey_function@@@Z').
+symbol(0x1000e1a0, method, '__imp_?column_bitmaps_signal@handler@@UAEXXZ').
+symbol(0x1000e1a4, method, '__imp_?is_fatal_error@handler@@UAE_NH@Z').
+symbol(0x1000e1a8, method, '__imp_?is_ignorable_error@handler@@UAE_NH@Z').
+symbol(0x1000e1ac, method, '__imp_?multi_range_read_next@handler@@UAEHPAPAD@Z').
+symbol(0x1000e1b0, method, '__imp_?multi_range_read_init@handler@@UAEHPAUst_range_seq_if@@PAXIIPAUst_handler_buffer@@@Z').
+symbol(0x1000e1b4, method, '__imp_?multi_range_read_info@handler@@UAE_KIIIPAI0PAVCost_estimate@@@Z').
+symbol(0x1000e1b8, method, '__imp_?get_error_message@handler@@UAE_NHPAVString@@@Z').
+symbol(0x1000e1bc, method, '__imp_?ha_rnd_pos@handler@@QAEHPAE0@Z').
+symbol(0x1000e1c0, method, '__imp_?clone@handler@@UAEPAV1@PBDPAUst_mem_root@@@Z').
+symbol(0x1000e1c4, method, '__imp_?rebind_psi@handler@@UAEXXZ').
+symbol(0x1000e1c8, method, '__imp_?unbind_psi@handler@@UAEXXZ').
+symbol(0x1000e1cc, name, '__imp_?calculate_key_len@@YAIPAUTABLE@@IK@Z').
+symbol(0x1000e1d0, name, '__imp__thr_lock_data_init').
+symbol(0x1000e1d4, name, '__imp__thr_lock_delete').
+symbol(0x1000e1d8, name, '__imp__thr_lock_init').
+symbol(0x1000e1dc, name, '__imp__alloc_root').
+symbol(0x1000e1e0, name, '__imp__set_my_errno').
+symbol(0x1000e1e4, name, 'mysqld_NULL_THUNK_DATA').
+symbol(0x1000e230, name, '__IMPORT_DESCRIPTOR_mysqld').
+symbol(0x1000e244, name, '__IMPORT_DESCRIPTOR_MSVCP120').
+symbol(0x1000e258, name, '__IMPORT_DESCRIPTOR_MSVCR120').
+symbol(0x1000e26c, name, '__IMPORT_DESCRIPTOR_KERNEL32').
+symbol(0x1000e280, name, '__NULL_IMPORT_DESCRIPTOR').
+% Gound inheritance relationships.
+inheritanceGround('Example_share', 'Handler_share', 0).
+inheritanceGround('Ft_hints', 'Sql_alloc', 0).
+inheritanceGround('ha_example', 'handler', 0).
+embeddedGround('handler', 'Discrete_interval', 320).
+inheritanceGround('handler', 'Sql_alloc', 8).
+embeddedGround('handler', 'ha_statistics', 48).
+inheritanceGround('std::_Generic_error_category', 'std::error_category', 0).
+inheritanceGround('std::_Iostream_error_category', 'std::_Generic_error_category', 0).
+inheritanceGround('std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >', 'std::_String_val<std::_Simple_types<char> >', 0).
+inheritanceGround('std::_System_error_category', 'std::_Generic_error_category', 0).
+inheritanceGround('std::_Wrap_alloc<std::allocator<char> >', 'std::allocator<char>', 0).
+inheritanceGround('std::basic_string<char,std::char_traits<char>,std::allocator<char> >', 'std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >', 0).
+% Ground inheritance completed successfully.

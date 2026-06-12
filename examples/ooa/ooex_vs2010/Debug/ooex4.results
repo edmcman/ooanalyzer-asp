@@ -1,14 +1,14 @@
 finalClass(0x411ad0, 0, 0, 0, 0, [0x411ad0]).
-finalClass(0x416740, 0, 0x14, 0x14, 0, [0x411730]).
-finalClass(0x416754, 0x416754, 0x14, 0x14, 0x411550, [0x411550, 0x411600, 0x411670, 0x4116d0]).
+finalClass(0x416740, 0x416740, 0x14, 0x14, 0, [0x411550, 0x411730]).
+finalClass(0x416754, 0x416754, 0x10, 0x14, 0, [0x411600, 0x411670, 0x4116d0]).
 finalClass(0x416768, 0x416768, 0x4, 0x4, 0, [0x411a10, 0x411a40, 0x419278]).
 finalDemangledName(0x416740, '.?AVDerived@@', 'Derived', '').
 finalDemangledName(0x416754, '.?AVBase@@', 'Base', '').
 finalDemangledName(0x416768, '.?AVtype_info@@', type_info, '').
 finalDemangledName(0x419278, '?_type_info_dtor_internal_method@type_info@@QAEXXZ', type_info, '_type_info_dtor_internal_method').
 finalFileInfo('86692C314D0DDC9337A34D05E4742C33', 'ooex4.exe').
-finalInheritance(0x416740, 0x416754, 0, 0, false).
-finalMethodProperty(0x411550, realDestructor, certain).
+finalInheritance(0x416740, 0x416754, 0, 0x416740, false).
+finalMethodProperty(0x411550, constructor, certain).
 finalMethodProperty(0x411600, constructor, certain).
 finalMethodProperty(0x411670, virtual, certain).
 finalMethodProperty(0x4116d0, virtual, certain).

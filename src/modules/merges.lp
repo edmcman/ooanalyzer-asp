@@ -209,11 +209,11 @@ mergeCandidate(A, B) :- weakMergeCandidate(A, B).
 % Optimization reward for confirmed strong merges (priority @2).
 strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 
-#maximize { 4@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
+#maximize { 10@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
 % Base G2 reward: prefer weak merges when chosen.
 weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).
-#maximize { 1@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
+#maximize { 8@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
 
 % G1 constructor bonus: extra reward when either side's class has a constructor.
 % Uses &sameClass to check class membership at solver time.
@@ -226,7 +226,7 @@ weakG1Bonus(M1, M2) :-
     guessEnabled(weak_g1_bonus),
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
     constructor(Ctor), &sameClass(M2, Ctor).
-#maximize { 2@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
+#maximize { 9@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
 
 % Disabled for now: this non-Prolog adjacency reward grounds a quadratic
 % aggregate over large method domains (for example mysql.exe.lp).

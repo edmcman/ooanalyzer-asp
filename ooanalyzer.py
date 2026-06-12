@@ -50,6 +50,57 @@ _DEFAULT_PROFILE_PREDS = (
     "knownVirtualMethod",
 )
 
+_GUESS_FAMILIES = [
+    ("method",
+     ["guessMethodDomain"],
+     ["method", "-method"]),
+    ("constructor",
+     ["guessConstructor1Domain", "guessConstructor2Domain",
+      "guessConstructor3Domain", "guessConstructor4Domain"],
+     ["constructor", "-constructor"]),
+    ("destructor",
+     ["possibleDestructor"],
+     ["realDestructor", "deletingDestructor"]),
+    ("vftable",
+     ["possibleVFTable"],
+     ["vfTable", "-vfTable"]),
+    ("vftable_size",
+     ["candidateVFTableSize"],
+     ["vfTableSize"]),
+    ("merge",
+     ["strongMergeCandidate", "weakMergeCandidate"],
+     ["mergeClasses", "-mergeClasses"]),
+    ("composition",
+     ["objectInObject"],
+     ["derivedClass", "embeddedObject"]),
+]
+
+
+def print_guess_summary(atoms):
+    by_pred = {}
+    for a in atoms:
+        key = ("-" if a.negative else "") + a.name
+        by_pred.setdefault(key, []).append(a)
+
+    def group(pred):
+        return sorted(str(a) for a in by_pred.get(pred, []))
+
+    print("\n% Guess candidates:")
+    for label, cands, _ in _GUESS_FAMILIES:
+        print(f"%   [{label}]")
+        for pred in cands:
+            g = group(pred)
+            print(f"%     {pred}: {len(g)}  [{' '.join(g)}]")
+
+    print("% Selected guesses:")
+    for label, cands, sels in _GUESS_FAMILIES:
+        n_cand = sum(len(group(p)) for p in cands)
+        print(f"%   [{label}]  ({n_cand} candidate(s))")
+        for pred in sels:
+            g = group(pred)
+            print(f"%     {pred}: {len(g)}  [{' '.join(g)}]")
+    sys.stdout.flush()
+
 
 def parse_args():
     p = argparse.ArgumentParser(description="OOAnalyzer with &sameClass propagator")
@@ -104,6 +155,8 @@ def parse_args():
                          "vftable candidates for each model"))
     p.add_argument("--diagnose-vftable-limit", type=int, default=25,
                    help="maximum rows per vftable objective diagnostic section (default: 25)")
+    p.add_argument("--show-guesses", action="store_true",
+                   help="print guess candidates (by tier) and selected guesses from the final model")
     args, extra = p.parse_known_args()
     args.clingo_extra = extra
     return args
@@ -332,7 +385,7 @@ def main():
             sys.stdout.flush()
         if not args.benchmark:
             last_shown = shown
-            if args.results is not None:
+            if args.results is not None or args.show_guesses:
                 last_all_atoms = list(model.symbols(atoms=True))
         last_cost = cost
         if args.diagnose_vftable_objective:
@@ -431,6 +484,9 @@ def main():
                   f"{sum(len(g) for g in parts.values())} entities):")
             for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
                 print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
+
+        if args.show_guesses and last_all_atoms:
+            print_guess_summary(last_all_atoms)
 
         if args.results is not None and last_all_atoms:
             from results import write_results

@@ -1,0 +1,127 @@
+finalClass(0x43ffa0, 0, 0, 0, 0, [0x43ffa0, 0x442810]).
+finalClass(0x442de0, 0, 0, 0, 0, [0x442de0, 0x449840]).
+finalClass(0x44a370, 0, 0, 0, 0, [0x44a370, 0x44a480]).
+finalClass(0x44a4e0, 0, 0, 0, 0, [0x44a4e0, 0x44c3a0]).
+finalClass(0x451c00, 0, 0, 0, 0x451c00, [0x451c00]).
+finalClass(0x452220, 0, 0, 0, 0x452220, [0x452220]).
+finalClass(0x469670, 0, 0, 0, 0x469670, [0x469600, 0x469670]).
+finalClass(0x469740, 0, 0, 0, 0x469740, [0x469740]).
+finalClass(0x483560, 0, 0, 0, 0, [0x483560, 0x48d030, 0x48d140, 0x48d3e0, 0x48d490, 0x48deb0]).
+finalClass(0x48c2f0, 0, 0, 0, 0, [0x48c2f0, 0x48dae0, 0x48dbf0]).
+finalClass(0x48ced0, 0, 0, 0, 0, [0x48ced0, 0x48d7d0]).
+finalClass(0x48d060, 0, 0, 0, 0, [0x48d060, 0x48d330, 0x48d620, 0x48d720, 0x48d910]).
+finalClass(0x48d0f0, 0, 0, 0, 0, [0x48d0f0, 0x48d220]).
+finalClass(0x48d4e0, 0, 0, 0, 0, [0x48d4e0, 0x48dd00]).
+finalClass(0x48d9f0, 0, 0, 0, 0, [0x48d9f0, 0x48dd30]).
+finalClass(0x4b38bc, 0x4b38bc, 0, 0, 0, [0x451c70]).
+finalClass(0x4b3908, 0x4b3908, 0, 0, 0x45af70, [0x43eff0, 0x43f0f0, 0x43f650, 0x43f6a0, 0x43f700, 0x43f9f0, 0x43fc20, 0x43fcc0, 0x43fef0, 0x440500, 0x440b50, 0x440e60, 0x441120, 0x4430b0, 0x443970, 0x445a80, 0x446150, 0x446c10, 0x449f60, 0x44a260, 0x44e580, 0x4523c0, 0x45af70, 0x469310, 0x469490, 0x48c4f0, 0x48d0a0, 0x48d200, 0x48d290, 0x48d310, 0x48d580, 0x48e180, 0x48e270]).
+finalClass(0x4b46b0, 0x4b46b0, 0, 0, 0, [0x45af40, 0x45afe0]).
+finalClass(0x4b5978, 0, 0, 0, 0, []).
+finalClass(0x4b7348, 0x4b7348, 0, 0, 0x451bc0, [0x451bc0, 0x4692d0, 0x469350, 0x4693a0, 0x4693e0, 0x469430, 0x4694c0, 0x469500]).
+finalClass(0x4b7370, 0x4b7370, 0, 0, 0, [0x4695d0, 0x469640]).
+finalClass(0x4b7380, 0x4b7380, 0, 0, 0, [0x4696a0, 0x469710]).
+finalClass(0x4b7390, 0x4b7390, 0, 0, 0, [0x469770, 0x4697e0, 0x469810]).
+finalClass(0x4bfc34, 0x4bfc34, 0, 0, 0, [0x48e2f0]).
+finalClass(0x4bfc44, 0x4bfc44, 0, 0, 0, [0x48e310]).
+finalClass(0x4bfc54, 0x4bfc54, 0, 0, 0, [0x48e3d0]).
+finalClass(0x4bfc64, 0x4bfc64, 0, 0, 0, [0x48e590]).
+finalClass(0x4bfc74, 0x4bfc74, 0, 0, 0, [0x48e6e0]).
+finalClass(0x4bfc8c, 0x4bfc8c, 0, 0, 0, [0x48e8c0]).
+finalClass(0x4c60a8, 0, 0, 0, 0, []).
+finalDemangledName(0x4b38bc, '.?AVbad_alloc@std@@', 'std::bad_alloc', '').
+finalDemangledName(0x4b3908, '.?AVtype_info@@', type_info, '').
+finalDemangledName(0x4b46b0, '.?AVbad_exception@std@@', 'std::bad_exception', '').
+finalDemangledName(0x4b7348, '.?AVexception@std@@', 'std::exception', '').
+finalDemangledName(0x4b7370, '.?AVbad_cast@std@@', 'std::bad_cast', '').
+finalDemangledName(0x4b7380, '.?AVbad_typeid@std@@', 'std::bad_typeid', '').
+finalDemangledName(0x4b7390, '.?AV__non_rtti_object@std@@', 'std::__non_rtti_object', '').
+finalFileInfo('6EE20A24222FAE46CC7EFDBA3AEAA54E', 'tetris.exe').
+finalInheritance(0x4b38bc, 0x4b7348, 0, 0x4b38bc, false).
+finalInheritance(0x4b46b0, 0x4b7348, 0, 0x4b46b0, false).
+finalInheritance(0x4b7370, 0x4b7348, 0, 0x4b7370, false).
+finalInheritance(0x4b7380, 0x4b7348, 0, 0x4b7380, false).
+finalInheritance(0x4b7390, 0x4b7380, 0, 0x4b7390, false).
+finalMethodProperty(0x451bc0, realDestructor, certain).
+finalMethodProperty(0x451c00, realDestructor, certain).
+finalMethodProperty(0x451c70, constructor, certain).
+finalMethodProperty(0x452220, realDestructor, certain).
+finalMethodProperty(0x4523c0, constructor, certain).
+finalMethodProperty(0x45af40, constructor, certain).
+finalMethodProperty(0x45af70, realDestructor, certain).
+finalMethodProperty(0x45afe0, constructor, certain).
+finalMethodProperty(0x4692d0, constructor, certain).
+finalMethodProperty(0x469310, virtual, certain).
+finalMethodProperty(0x469350, constructor, certain).
+finalMethodProperty(0x4693a0, constructor, certain).
+finalMethodProperty(0x4693e0, constructor, certain).
+finalMethodProperty(0x469490, realDestructor, certain).
+finalMethodProperty(0x4694c0, virtual, certain).
+finalMethodProperty(0x4695d0, constructor, certain).
+finalMethodProperty(0x469600, virtual, certain).
+finalMethodProperty(0x469640, constructor, certain).
+finalMethodProperty(0x469670, realDestructor, certain).
+finalMethodProperty(0x4696a0, constructor, certain).
+finalMethodProperty(0x469710, constructor, certain).
+finalMethodProperty(0x469740, realDestructor, certain).
+finalMethodProperty(0x469770, constructor, certain).
+finalMethodProperty(0x4697e0, constructor, certain).
+finalMethodProperty(0x469810, constructor, certain).
+finalMethodProperty(0x48e2f0, constructor, certain).
+finalMethodProperty(0x48e310, constructor, certain).
+finalMethodProperty(0x48e3d0, constructor, certain).
+finalMethodProperty(0x48e590, constructor, certain).
+finalMethodProperty(0x48e6e0, constructor, certain).
+finalMethodProperty(0x48e8c0, constructor, certain).
+finalThunk(0x439b54, 0x469600).
+finalThunk(0x439d3e, 0x469310).
+finalThunk(0x43a72a, 0x4694c0).
+finalVFTable(0x4b38bc, 0x8, 0x8, 0x4b38b8, '.?AVbad_alloc@std@@').
+finalVFTable(0x4b3908, 0x4, 0x4, 0x4b3904, '.?AVtype_info@@').
+finalVFTable(0x4b46b0, 0x8, 0x8, 0x4b46ac, '.?AVbad_exception@std@@').
+finalVFTable(0x4b5978, 0x4, 0x4, 0, '').
+finalVFTable(0x4b7348, 0x8, 0x8, 0x4b7344, '.?AVexception@std@@').
+finalVFTable(0x4b7370, 0x8, 0x8, 0x4b736c, '.?AVbad_cast@std@@').
+finalVFTable(0x4b7380, 0x8, 0x8, 0x4b737c, '.?AVbad_typeid@std@@').
+finalVFTable(0x4b7390, 0x8, 0x8, 0x4b738c, '.?AV__non_rtti_object@std@@').
+finalVFTable(0x4bfc34, 0xc, 0xc, 0, '').
+finalVFTable(0x4bfc44, 0xc, 0xc, 0, '').
+finalVFTable(0x4bfc54, 0xc, 0xc, 0, '').
+finalVFTable(0x4bfc64, 0xc, 0xc, 0, '').
+finalVFTable(0x4bfc74, 0xc, 0xc, 0, '').
+finalVFTable(0x4bfc8c, 0xc, 0xc, 0, '').
+finalVFTable(0x4c60a8, 0x4, 0x4, 0, '').
+finalVFTableEntry(0x4b38bc, 0, 0x439483).
+finalVFTableEntry(0x4b38bc, 0x4, 0x43a72a).
+finalVFTableEntry(0x4b3908, 0, 0x43995b).
+finalVFTableEntry(0x4b46b0, 0, 0x439c44).
+finalVFTableEntry(0x4b46b0, 0x4, 0x43a72a).
+finalVFTableEntry(0x4b5978, 0, 0x43005f).
+finalVFTableEntry(0x4b7348, 0, 0x439d3e).
+finalVFTableEntry(0x4b7348, 0x4, 0x43a72a).
+finalVFTableEntry(0x4b7370, 0, 0x439b54).
+finalVFTableEntry(0x4b7370, 0x4, 0x43a72a).
+finalVFTableEntry(0x4b7380, 0, 0x4393ca).
+finalVFTableEntry(0x4b7380, 0x4, 0x43a72a).
+finalVFTableEntry(0x4b7390, 0, 0x43938e).
+finalVFTableEntry(0x4b7390, 0x4, 0x43a72a).
+finalVFTableEntry(0x4bfc34, 0, 0x43a0c2).
+finalVFTableEntry(0x4bfc34, 0x4, 0x43a0c2).
+finalVFTableEntry(0x4bfc34, 0x8, 0x43a0c2).
+finalVFTableEntry(0x4bfc44, 0, 0x43a671).
+finalVFTableEntry(0x4bfc44, 0x4, 0x4390b4).
+finalVFTableEntry(0x4bfc44, 0x8, 0x43a1bc).
+finalVFTableEntry(0x4bfc54, 0, 0x43a71b).
+finalVFTableEntry(0x4bfc54, 0x4, 0x43912c).
+finalVFTableEntry(0x4bfc54, 0x8, 0x43a7e8).
+finalVFTableEntry(0x4bfc64, 0, 0x439d11).
+finalVFTableEntry(0x4bfc64, 0x4, 0x43a6f8).
+finalVFTableEntry(0x4bfc64, 0x8, 0x43a66c).
+finalVFTableEntry(0x4bfc74, 0, 0x439de3).
+finalVFTableEntry(0x4bfc74, 0x4, 0x439749).
+finalVFTableEntry(0x4bfc74, 0x8, 0x4396cc).
+finalVFTableEntry(0x4bfc8c, 0, 0x439ed8).
+finalVFTableEntry(0x4bfc8c, 0x4, 0x4397f8).
+finalVFTableEntry(0x4bfc8c, 0x8, 0x43a658).
+finalVFTableEntry(0x4c60a8, 0, 0x4c9040).
+% Object detection reporting complete.
+% Prolog results autogenerated by OOAnalyzer.

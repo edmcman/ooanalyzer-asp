@@ -1,0 +1,244 @@
+finalClass(0x401060, 0, 0, 0, 0x401060, [0x401060]).
+finalClass(0x401150, 0, 0, 0, 0x401150, [0x401150]).
+finalClass(0x401c6d, 0, 0, 0, 0x401c6d, [0x401c6d]).
+finalClass(0x4021d2, 0, 0, 0, 0x4021d2, [0x4021d2]).
+finalClass(0x40228c, 0, 0, 0, 0x40228c, [0x40228c]).
+finalClass(0x40247e, 0, 0, 0, 0x40247e, [0x40247e]).
+finalClass(0x402509, 0, 0, 0, 0x402509, [0x402509]).
+finalClass(0x4029b8, 0, 0, 0, 0x4029b8, [0x4029b8]).
+finalClass(0x402fcc, 0, 0, 0, 0, [0x402fcc]).
+finalClass(0x4035a5, 0, 0, 0, 0x4035a5, [0x4035a5]).
+finalClass(0x403b56, 0, 0, 0, 0x403b56, [0x403b56]).
+finalClass(0x40401d, 0, 0, 0, 0x40401d, [0x40401d]).
+finalClass(0x40406d, 0, 0, 0, 0x40406d, [0x40406d]).
+finalClass(0x4040af, 0, 0, 0, 0x4040af, [0x4040af]).
+finalClass(0x40517f, 0, 0, 0, 0x40517f, [0x40517f]).
+finalClass(0x4121b0, 0x4121b0, 0, 0, 0, [0x401420]).
+finalClass(0x4121bc, 0, 0, 0, 0, []).
+finalClass(0x4121c4, 0x4121c4, 0, 0, 0, [0x401160]).
+finalClass(0x4121d0, 0x4121d0, 0, 0, 0, [0x401440]).
+finalClass(0x4121dc, 0x4121dc, 0, 0, 0, [0x4014a0]).
+finalClass(0x41223c, 0x41223c, 0, 0, 0, [0x4014c0]).
+finalClass(0x4122a4, 0x4122a4, 0, 0, 0x403fc1, [0x401d27, 0x403fc1, 0x404028]).
+finalClass(0x4122e4, 0x4122e4, 0, 0, 0, [0x401d0a]).
+finalClass(0x412384, 0, 0, 0, 0, []).
+finalClass(0x41238c, 0, 0, 0, 0, []).
+finalClass(0x412394, 0, 0, 0, 0, []).
+finalClass(0x41239c, 0x41239c, 0, 0, 0, [0x4022c5]).
+finalClass(0x4123c4, 0, 0, 0, 0, [0x402534, 0x40253c, 0x402544, 0x40254a, 0x40254f, 0x402553, 0x402558, 0x40255b, 0x402582, 0x40264b, 0x402716, 0x40273e, 0x4074c7]).
+finalClass(0x412424, 0, 0, 0, 0, []).
+finalClass(0x412464, 0, 0, 0, 0, []).
+finalClass(0x412490, 0x412490, 0, 0, 0, [0x40360f]).
+finalClass(0x41249c, 0x41249c, 0, 0, 0, [0x40365c]).
+finalClass(0x4124a8, 0x4124a8, 0, 0, 0, [0x4036a9]).
+finalClass(0x4124b8, 0x4124b8, 0, 0, 0, [0x403b17]).
+finalClass(0x4124cc, 0x4124cc, 0, 0, 0x4012c0, [0x4012c0, 0x401320, 0x403f39]).
+finalClass(0x4124ec, 0x4124ec, 0, 0, 0, [0x404092]).
+finalClass(0x4124f8, 0, 0, 0, 0, [0x4040bf]).
+finalClass(0x412578, 0x412578, 0, 0, 0, [0x405d65]).
+finalClass(0x4174b0, 0, 0, 0, 0, []).
+finalDemangledName(0x4121b0, '.?AVruntime_error@std@@', 'std::runtime_error', '').
+finalDemangledName(0x4121bc, '.?AVCls1@@', 'Cls1', '').
+finalDemangledName(0x4121c4, '.?AVCls2@@', 'Cls2', '').
+finalDemangledName(0x4121d0, '.?AVsystem_error@std@@', 'std::system_error', '').
+finalDemangledName(0x4121dc, '.?AVfailure@ios_base@std@@', 'std::ios_base::failure', '').
+finalDemangledName(0x41223c, '.?AVCls3@@', 'Cls3', '').
+finalDemangledName(0x4122a4, '.?AVerror_category@std@@', 'std::error_category', '').
+finalDemangledName(0x4122a4, '.?AVfacet@locale@std@@', 'std::locale::facet', '').
+finalDemangledName(0x4122e4, '.?AVbad_alloc@std@@', 'std::bad_alloc', '').
+finalDemangledName(0x412384, '.?AVios_base@std@@', 'std::ios_base', '').
+finalDemangledName(0x41238c, '.?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@', 'std::basic_ostream<char, struct std::char_traits<char> >', '').
+finalDemangledName(0x412394, '.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@', 'std::basic_ios<char, struct std::char_traits<char> >', '').
+finalDemangledName(0x41239c, '.?AV?$ctype@D@std@@', 'std::ctype<char>', '').
+finalDemangledName(0x4123c4, '.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@', 'std::basic_streambuf<char, struct std::char_traits<char> >', '').
+finalDemangledName(0x412424, '.?AV?$basic_filebuf@DU?$char_traits@D@std@@@std@@', 'std::basic_filebuf<char, struct std::char_traits<char> >', '').
+finalDemangledName(0x412464, '.?AV?$codecvt@DDH@std@@', 'std::codecvt<char, char, int>', '').
+finalDemangledName(0x412490, '.?AVlogic_error@std@@', 'std::logic_error', '').
+finalDemangledName(0x41249c, '.?AVlength_error@std@@', 'std::length_error', '').
+finalDemangledName(0x4124a8, '.?AVout_of_range@std@@', 'std::out_of_range', '').
+finalDemangledName(0x4124b8, '.?AV_Locimp@locale@std@@', 'std::locale::_Locimp', '').
+finalDemangledName(0x4124cc, '.?AVexception@std@@', 'std::exception', '').
+finalDemangledName(0x4124ec, '.?AVbad_cast@std@@', 'std::bad_cast', '').
+finalDemangledName(0x4124f8, '.?AVtype_info@@', type_info, '').
+finalDemangledName(0x412578, '.?AVbad_exception@std@@', 'std::bad_exception', '').
+finalFileInfo('D3ABCCEDC43A1CE0768AA2C269A89A37', 'oo.exe').
+finalInheritance(0x4121b0, 0x4124cc, 0, 0x4121b0, false).
+finalInheritance(0x4121d0, 0x4121b0, 0, 0x4121d0, false).
+finalInheritance(0x4121dc, 0x4121d0, 0, 0x4121dc, false).
+finalInheritance(0x41223c, 0x4121bc, 0, 0x41223c, false).
+finalInheritance(0x41223c, 0x4121c4, 0xc, 0, false).
+finalInheritance(0x4122e4, 0x4124cc, 0, 0x4122e4, false).
+finalInheritance(0x412394, 0x412384, 0, 0, false).
+finalInheritance(0x41239c, 0x4122a4, 0, 0x41239c, false).
+finalInheritance(0x412424, 0x4123c4, 0, 0, false).
+finalInheritance(0x412464, 0x4122a4, 0, 0, false).
+finalInheritance(0x412490, 0x4124cc, 0, 0x412490, false).
+finalInheritance(0x41249c, 0x412490, 0, 0x41249c, false).
+finalInheritance(0x4124a8, 0x412490, 0, 0x4124a8, false).
+finalInheritance(0x4124b8, 0x4122a4, 0, 0x4124b8, false).
+finalInheritance(0x4124ec, 0x4124cc, 0, 0x4124ec, false).
+finalInheritance(0x412578, 0x4124cc, 0, 0x412578, false).
+finalMethodProperty(0x401060, realDestructor, certain).
+finalMethodProperty(0x401150, realDestructor, certain).
+finalMethodProperty(0x401160, constructor, certain).
+finalMethodProperty(0x4012c0, realDestructor, certain).
+finalMethodProperty(0x401320, realDestructor, certain).
+finalMethodProperty(0x401420, constructor, certain).
+finalMethodProperty(0x401440, constructor, certain).
+finalMethodProperty(0x4014a0, constructor, certain).
+finalMethodProperty(0x4014c0, constructor, certain).
+finalMethodProperty(0x401c6d, realDestructor, certain).
+finalMethodProperty(0x401d0a, constructor, certain).
+finalMethodProperty(0x401d27, deletingDestructor, certain).
+finalMethodProperty(0x401d27, virtual, certain).
+finalMethodProperty(0x4021d2, realDestructor, certain).
+finalMethodProperty(0x40228c, realDestructor, certain).
+finalMethodProperty(0x4022c5, constructor, certain).
+finalMethodProperty(0x40247e, realDestructor, certain).
+finalMethodProperty(0x402509, realDestructor, certain).
+finalMethodProperty(0x402534, virtual, certain).
+finalMethodProperty(0x40253c, virtual, certain).
+finalMethodProperty(0x402544, virtual, certain).
+finalMethodProperty(0x40254a, virtual, certain).
+finalMethodProperty(0x40254f, virtual, certain).
+finalMethodProperty(0x402553, virtual, certain).
+finalMethodProperty(0x402558, virtual, certain).
+finalMethodProperty(0x40255b, virtual, certain).
+finalMethodProperty(0x402582, virtual, certain).
+finalMethodProperty(0x40264b, virtual, certain).
+finalMethodProperty(0x402716, virtual, certain).
+finalMethodProperty(0x40273e, virtual, certain).
+finalMethodProperty(0x4029b8, realDestructor, certain).
+finalMethodProperty(0x402fcc, constructor, certain).
+finalMethodProperty(0x4035a5, realDestructor, certain).
+finalMethodProperty(0x40360f, constructor, certain).
+finalMethodProperty(0x40365c, constructor, certain).
+finalMethodProperty(0x4036a9, constructor, certain).
+finalMethodProperty(0x403b17, constructor, certain).
+finalMethodProperty(0x403b56, realDestructor, certain).
+finalMethodProperty(0x403f39, constructor, certain).
+finalMethodProperty(0x403fc1, realDestructor, certain).
+finalMethodProperty(0x40401d, realDestructor, certain).
+finalMethodProperty(0x404028, realDestructor, certain).
+finalMethodProperty(0x40406d, realDestructor, certain).
+finalMethodProperty(0x404092, constructor, certain).
+finalMethodProperty(0x4040af, realDestructor, certain).
+finalMethodProperty(0x4040bf, deletingDestructor, certain).
+finalMethodProperty(0x4040bf, virtual, certain).
+finalMethodProperty(0x40517f, realDestructor, certain).
+finalMethodProperty(0x405d65, constructor, certain).
+finalMethodProperty(0x4074c7, virtual, certain).
+finalVFTable(0x4121b0, 0x8, 0x8, 0x4121ac, '.?AVruntime_error@std@@').
+finalVFTable(0x4121bc, 0x4, 0x4, 0x4121b8, '.?AVCls1@@').
+finalVFTable(0x4121c4, 0x8, 0x8, 0x4121c0, '.?AVCls2@@').
+finalVFTable(0x4121d0, 0x8, 0x8, 0x4121cc, '.?AVsystem_error@std@@').
+finalVFTable(0x4121dc, 0x8, 0x8, 0x4121d8, '.?AVfailure@ios_base@std@@').
+finalVFTable(0x412230, 0x8, 0x8, 0x41222c, '.?AVCls3@@').
+finalVFTable(0x41223c, 0x4, 0x4, 0x412238, '.?AVCls3@@').
+finalVFTable(0x4122a4, 0x18, 0x18, 0x4122a0, '.?AVerror_category@std@@').
+finalVFTable(0x4122e4, 0x8, 0x8, 0x4122e0, '.?AVbad_alloc@std@@').
+finalVFTable(0x41237c, 0x4, 0x4, 0x412378, '.?AVfacet@locale@std@@').
+finalVFTable(0x412384, 0x4, 0x4, 0x412380, '.?AVios_base@std@@').
+finalVFTable(0x41238c, 0x4, 0x4, 0x412388, '.?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@').
+finalVFTable(0x412394, 0x4, 0x4, 0x412390, '.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@').
+finalVFTable(0x41239c, 0x24, 0x24, 0x412398, '.?AV?$ctype@D@std@@').
+finalVFTable(0x4123c4, 0x3c, 0x3c, 0x4123c0, '.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@').
+finalVFTable(0x412424, 0x3c, 0x3c, 0x412420, '.?AV?$basic_filebuf@DU?$char_traits@D@std@@@std@@').
+finalVFTable(0x412464, 0x20, 0x20, 0x412460, '.?AV?$codecvt@DDH@std@@').
+finalVFTable(0x412490, 0x8, 0x8, 0x41248c, '.?AVlogic_error@std@@').
+finalVFTable(0x41249c, 0x8, 0x8, 0x412498, '.?AVlength_error@std@@').
+finalVFTable(0x4124a8, 0x8, 0x8, 0x4124a4, '.?AVout_of_range@std@@').
+finalVFTable(0x4124b8, 0x4, 0x4, 0x4124b4, '.?AV_Locimp@locale@std@@').
+finalVFTable(0x4124cc, 0x8, 0x8, 0x4124c8, '.?AVexception@std@@').
+finalVFTable(0x4124ec, 0x8, 0x8, 0x4124e8, '.?AVbad_cast@std@@').
+finalVFTable(0x4124f8, 0x4, 0x4, 0x4124f4, '.?AVtype_info@@').
+finalVFTable(0x412578, 0x8, 0x8, 0x412574, '.?AVbad_exception@std@@').
+finalVFTable(0x4174b0, 0x4, 0x4, 0, '').
+finalVFTableEntry(0x4121b0, 0, 0x401290).
+finalVFTableEntry(0x4121b0, 0x4, 0x403f56).
+finalVFTableEntry(0x4121bc, 0, 0x401aa0).
+finalVFTableEntry(0x4121c4, 0, 0x401ae0).
+finalVFTableEntry(0x4121c4, 0x4, 0x401b00).
+finalVFTableEntry(0x4121d0, 0, 0x4012f0).
+finalVFTableEntry(0x4121d0, 0x4, 0x403f56).
+finalVFTableEntry(0x4121dc, 0, 0x401470).
+finalVFTableEntry(0x4121dc, 0x4, 0x403f56).
+finalVFTableEntry(0x412230, 0, 0x401b40).
+finalVFTableEntry(0x412230, 0x4, 0x401b00).
+finalVFTableEntry(0x41223c, 0, 0x401b20).
+finalVFTableEntry(0x4122a4, 0, 0x401d27).
+finalVFTableEntry(0x4122a4, 0x4, 0x40475e).
+finalVFTableEntry(0x4122a4, 0x8, 0x40475e).
+finalVFTableEntry(0x4122a4, 0xc, 0x401ca7).
+finalVFTableEntry(0x4122a4, 0x10, 0x401c4e).
+finalVFTableEntry(0x4122a4, 0x14, 0x401c2d).
+finalVFTableEntry(0x4122e4, 0, 0x401c78).
+finalVFTableEntry(0x4122e4, 0x4, 0x403f56).
+finalVFTableEntry(0x41237c, 0, 0x402249).
+finalVFTableEntry(0x412384, 0, 0x40229c).
+finalVFTableEntry(0x41238c, 0, 0x402766).
+finalVFTableEntry(0x412394, 0, 0x40229c).
+finalVFTableEntry(0x41239c, 0, 0x4023ff).
+finalVFTableEntry(0x41239c, 0x4, 0x402330).
+finalVFTableEntry(0x41239c, 0x8, 0x402317).
+finalVFTableEntry(0x41239c, 0xc, 0x402377).
+finalVFTableEntry(0x41239c, 0x10, 0x40235e).
+finalVFTableEntry(0x41239c, 0x14, 0x4023b1).
+finalVFTableEntry(0x41239c, 0x18, 0x4023a5).
+finalVFTableEntry(0x41239c, 0x1c, 0x4023de).
+finalVFTableEntry(0x41239c, 0x20, 0x4023d2).
+finalVFTableEntry(0x4123c4, 0, 0x40278a).
+finalVFTableEntry(0x4123c4, 0x4, 0x402534).
+finalVFTableEntry(0x4123c4, 0x8, 0x40253c).
+finalVFTableEntry(0x4123c4, 0xc, 0x402544).
+finalVFTableEntry(0x4123c4, 0x10, 0x402544).
+finalVFTableEntry(0x4123c4, 0x14, 0x40254a).
+finalVFTableEntry(0x4123c4, 0x18, 0x40254f).
+finalVFTableEntry(0x4123c4, 0x1c, 0x40255b).
+finalVFTableEntry(0x4123c4, 0x20, 0x402582).
+finalVFTableEntry(0x4123c4, 0x24, 0x40264b).
+finalVFTableEntry(0x4123c4, 0x28, 0x402716).
+finalVFTableEntry(0x4123c4, 0x2c, 0x40273e).
+finalVFTableEntry(0x4123c4, 0x30, 0x402553).
+finalVFTableEntry(0x4123c4, 0x34, 0x4074c7).
+finalVFTableEntry(0x4123c4, 0x38, 0x402558).
+finalVFTableEntry(0x412424, 0, 0x4035e9).
+finalVFTableEntry(0x412424, 0x4, 0x402b54).
+finalVFTableEntry(0x412424, 0x8, 0x402b63).
+finalVFTableEntry(0x412424, 0xc, 0x40328f).
+finalVFTableEntry(0x412424, 0x10, 0x402c58).
+finalVFTableEntry(0x412424, 0x14, 0x40254a).
+finalVFTableEntry(0x412424, 0x18, 0x402b9f).
+finalVFTableEntry(0x412424, 0x1c, 0x403026).
+finalVFTableEntry(0x412424, 0x20, 0x402582).
+finalVFTableEntry(0x412424, 0x24, 0x40264b).
+finalVFTableEntry(0x412424, 0x28, 0x4033ea).
+finalVFTableEntry(0x412424, 0x2c, 0x4034a2).
+finalVFTableEntry(0x412424, 0x30, 0x402d89).
+finalVFTableEntry(0x412424, 0x34, 0x402b72).
+finalVFTableEntry(0x412424, 0x38, 0x402eb2).
+finalVFTableEntry(0x412464, 0, 0x402249).
+finalVFTableEntry(0x412464, 0x4, 0x402aef).
+finalVFTableEntry(0x412464, 0x8, 0x402af2).
+finalVFTableEntry(0x412464, 0xc, 0x402af2).
+finalVFTableEntry(0x412464, 0x10, 0x402c11).
+finalVFTableEntry(0x412464, 0x14, 0x402c11).
+finalVFTableEntry(0x412464, 0x18, 0x402c2d).
+finalVFTableEntry(0x412464, 0x1c, 0x402c41).
+finalVFTableEntry(0x412490, 0, 0x4036c6).
+finalVFTableEntry(0x412490, 0x4, 0x403f56).
+finalVFTableEntry(0x41249c, 0, 0x4036c6).
+finalVFTableEntry(0x41249c, 0x4, 0x403f56).
+finalVFTableEntry(0x4124a8, 0, 0x4036c6).
+finalVFTableEntry(0x4124a8, 0x4, 0x403f56).
+finalVFTableEntry(0x4124b8, 0, 0x403b99).
+finalVFTableEntry(0x4124cc, 0, 0x404046).
+finalVFTableEntry(0x4124cc, 0x4, 0x403f56).
+finalVFTableEntry(0x4124ec, 0, 0x404046).
+finalVFTableEntry(0x4124ec, 0x4, 0x403f56).
+finalVFTableEntry(0x4124f8, 0, 0x4040bf).
+finalVFTableEntry(0x412578, 0, 0x40518a).
+finalVFTableEntry(0x412578, 0x4, 0x403f56).
+finalVFTableEntry(0x4174b0, 0, 0x419400).
+% Object detection reporting complete.
+% Prolog results autogenerated by OOAnalyzer.

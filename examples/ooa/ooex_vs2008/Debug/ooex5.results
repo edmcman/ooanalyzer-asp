@@ -1,21 +1,21 @@
-finalClass(0x411900, 0, 0x24, 0x24, 0, [0x411900, 0x411940]).
 finalClass(0x411ce0, 0, 0, 0, 0, [0x411ce0]).
-finalClass(0x416768, 0x416768, 0x24, 0x24, 0x4115d0, [0x4115d0, 0x4116a0, 0x411710, 0x411770, 0x4117d0, 0x411840]).
-finalClass(0x41677c, 0, 0x10, 0x10, 0, [0x4118a0]).
+finalClass(0x416754, 0x416754, 0x24, 0x24, 0, [0x4115d0, 0x411900, 0x411940]).
+finalClass(0x416768, 0x416768, 0x10, 0x24, 0, [0x4116a0, 0x411710, 0x411770]).
+finalClass(0x41677c, 0x41677c, 0x10, 0x24, 0, [0x4117d0, 0x411840, 0x4118a0]).
 finalClass(0x416790, 0x416790, 0x4, 0x4, 0, [0x411c20, 0x411c50, 0x419260]).
-finalDemangledName(0x411900, '.?AVDerived@@', 'Derived', '').
+finalDemangledName(0x416754, '.?AVDerived@@', 'Derived', '').
 finalDemangledName(0x416768, '.?AVBase@@', 'Base', '').
 finalDemangledName(0x41677c, '.?AVBase2@@', 'Base2', '').
 finalDemangledName(0x416790, '.?AVtype_info@@', type_info, '').
 finalDemangledName(0x419260, '?_type_info_dtor_internal_method@type_info@@QAEXXZ', type_info, '_type_info_dtor_internal_method').
 finalFileInfo('DF287ACA193FF3BE90BD344E09756B16', 'ooex5.exe').
-finalInheritance(0x411900, 0x416768, 0, 0, false).
-finalInheritance(0x411900, 0x41677c, 0x10, 0, false).
-finalMethodProperty(0x4115d0, realDestructor, certain).
+finalInheritance(0x416754, 0x416768, 0, 0x416754, false).
+finalInheritance(0x416754, 0x41677c, 0x10, 0, false).
+finalMethodProperty(0x4115d0, constructor, certain).
 finalMethodProperty(0x4116a0, constructor, certain).
 finalMethodProperty(0x411710, virtual, certain).
 finalMethodProperty(0x411770, virtual, certain).
-finalMethodProperty(0x4117d0, realDestructor, certain).
+finalMethodProperty(0x4117d0, constructor, certain).
 finalMethodProperty(0x411840, virtual, certain).
 finalMethodProperty(0x4118a0, virtual, certain).
 finalMethodProperty(0x411900, virtual, certain).

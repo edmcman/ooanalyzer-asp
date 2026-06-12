@@ -1,0 +1,1546 @@
+demangledName(0x10001005, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_delay_action::`vector deleting destructor\'(unsigned int)').
+demangledName(0x1000100a, tramp, 'public: virtual near __thiscall connection_control::Connection_delay_event::~Connection_delay_event(void)').
+demangledName(0x1000100f, tramp, 'public: near near enum stats_connection_control const & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::operator*(void) const').
+demangledName(0x10001014, tramp, 'protected: near void __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Orphan_range(near enum stats_connection_control *, near enum stats_connection_control *) const').
+demangledName(0x10001019, tramp, 'near void __stdcall `vector constructor iterator\'(near void *, unsigned int, int, near void * (__thiscall*)(near void *) )').
+demangledName(0x1000101e, tramp, 'public: near near struct std::_Iterator_base12 & __thiscall std::_Iterator_base12::operator=(near struct std::_Iterator_base12 const &)').
+demangledName(0x10001023, tramp, 'public: near bool __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Inside(near char const *)').
+demangledName(0x10001028, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign(near char const *)').
+demangledName(0x1000102d, tramp, 'public: near void __thiscall String::mem_free(void)').
+demangledName(0x10001032, tramp, 'public: near bool __thiscall connection_control::Security_context_wrapper::is_super_user(void)').
+demangledName(0x10001037, tramp, 'public: virtual near near void * __thiscall std::_Generic_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x1000103c, tramp, 'public: virtual near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > __thiscall std::_Iostream_error_category::message(int) const').
+demangledName(0x10001041, tramp, 'public: virtual near __thiscall connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services(void)').
+demangledName(0x10001046, tramp, 'public: near __thiscall connection_control::Connection_event_coordinator::Connection_event_coordinator(void)').
+demangledName(0x1000104b, tramp, 'protected: near void __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Tidy(void)').
+demangledName(0x10001050, tramp, 'public: near near char const * __thiscall connection_control::Security_context_wrapper::get_user(void)').
+demangledName(0x10001055, tramp, 'public: near void __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::clear(void)').
+demangledName(0x1000105a, tramp, 'private: near void __thiscall connection_control::Connection_delay_action::conditional_wait(near class THD *, unsigned __int64)').
+demangledName(0x1000105f, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_records::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001064, tramp, 'public: near near struct std::_Iterator012<struct std::random_access_iterator_tag, enum opt_connection_control, int, near enum opt_connection_control const *, near enum opt_connection_control const &, struct std::_Iterator_base12> & __thiscall std::_Iterator012<struct std::random_access_iterator_tag, enum opt_connection_control, int, near enum opt_connection_control const *, near enum opt_connection_control const &, struct std::_Iterator_base12>::operator=(near struct std::_Iterator012<struct std::random_access_iterator_tag, enum opt_connection_control, int, near enum opt_connection_control const *, near enum opt_connection_control const &, struct std::_Iterator_base12> const &)').
+demangledName(0x10001069, tramp, 'public: near void __thiscall std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >::_Alloc_proxy(void)').
+demangledName(0x1000106e, tramp, 'public: virtual near near char const * __thiscall std::_Generic_error_category::name(void) const').
+demangledName(0x10001073, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_coordinator_services::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001078, tramp, 'public: near class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > > __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::end(void)').
+demangledName(0x1000107d, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Copy(unsigned int, unsigned int)').
+demangledName(0x10001082, tramp, 'public: near __thiscall connection_control::Connection_delay_event::Connection_delay_event(void)').
+demangledName(0x10001087, tramp, 'public: near __thiscall std::_String_val<struct std::_Simple_types<char> >::~_String_val(void)').
+demangledName(0x1000108c, tramp, 'near near class connection_control::Connection_event_coordinator::Connection_event_subscriber * __cdecl std::_Uninit_move<near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber>, class connection_control::Connection_event_coordinator::Connection_event_subscriber>(near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, near struct std::_Wrap_alloc<class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > &, near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, struct std::_Nonscalar_ptr_iterator_tag)').
+demangledName(0x10001091, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_records::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001096, tramp, 'private: near bool __thiscall connection_control::Security_context_wrapper::get_property(near char const *, near struct st_mysql_const_lex_string *)').
+demangledName(0x1000109b, tramp, 'near int __cdecl connection_control::match_all_entries(near unsigned char const *)').
+demangledName(0x100010a0, tramp, 'public: near __thiscall String::~String(void)').
+demangledName(0x100010a5, tramp, 'public: near __thiscall connection_control::WR_lock::~WR_lock(void)').
+demangledName(0x100010aa, tramp, 'near int __cdecl connection_control::connection_delay_IS_table_writer(near unsigned char const *)').
+demangledName(0x100010af, tramp, 'public: near near char * __thiscall String::c_ptr_safe(void)').
+demangledName(0x100010b4, tramp, 'public: near class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > > __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::end(void)').
+demangledName(0x100010b9, tramp, 'protected: near void __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve(unsigned int)').
+demangledName(0x100010be, tramp, 'near bool __cdecl connection_control::init_connection_delay_event(near class connection_control::Connection_event_coordinator_services *, near class connection_control::Error_handler *)').
+demangledName(0x100010c3, tramp, 'private: near void __thiscall connection_control::Connection_delay_action::make_hash_key(near class THD *, near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > &)').
+demangledName(0x100010c8, tramp, 'public: near near char const * __thiscall connection_control::Security_context_wrapper::get_ip(void)').
+demangledName(0x100010cd, tramp, 'public: near void __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::_Compat(near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > > const &) const').
+demangledName(0x100010d2, tramp, 'public: near __thiscall std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::~_String_alloc(void)').
+demangledName(0x100010d7, tramp, 'near void __cdecl connection_control::deinit_connection_delay_event(void)').
+demangledName(0x100010dc, tramp, 'public: near void __thiscall std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_Alloc_proxy(void)').
+demangledName(0x100010e1, tramp, 'public: near void __thiscall connection_control::Connection_delay_action::fill_IS_table(near class THD *, near struct TABLE_LIST *, near class Item *)').
+demangledName(0x100010e6, tramp, 'public: virtual near near void * __thiscall connection_control::Error_handler::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100010eb, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign(near char const *, unsigned int)').
+demangledName(0x100010f0, tramp, 'public: near class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > > __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::begin(void)').
+demangledName(0x100010f5, tramp, 'public: near __thiscall connection_control::Security_context_wrapper::~Security_context_wrapper(void)').
+demangledName(0x100010fa, tramp, 'public: virtual near bool __thiscall std::error_category::equivalent(int, near class std::error_condition const &) const').
+demangledName(0x100010ff, tramp, 'near near void * __cdecl connection_control::Connection_control_malloc<near void *>(unsigned int)').
+demangledName(0x10001104, tramp, 'public: near near char const * __thiscall connection_control::Security_context_wrapper::get_host(void)').
+demangledName(0x1000110e, tramp, 'public: near void __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::push_back(near enum stats_connection_control const &)').
+demangledName(0x10001113, tramp, 'public: virtual near near char const * __thiscall std::_System_error_category::name(void) const').
+demangledName(0x10001118, tramp, 'public: near void __thiscall std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >::_Free_proxy(void)').
+demangledName(0x1000111d, tramp, 'public: near near char const * __thiscall connection_control::Security_context_wrapper::get_priv_user(void)').
+demangledName(0x10001122, tramp, 'public: virtual near near void * __thiscall std::_Iostream_error_category::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001127, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_delay_action::`vector deleting destructor\'(unsigned int)').
+demangledName(0x1000112c, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_delay_event::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001131, tramp, 'protected: near void __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Orphan_range(near class connection_control::Connection_event_coordinator::Connection_event_subscriber *, near class connection_control::Connection_event_coordinator::Connection_event_subscriber *) const').
+demangledName(0x10001136, tramp, 'public: virtual near bool __thiscall connection_control::Connection_delay_event::match_entry(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &, near void *)').
+demangledName(0x1000113b, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_control_error_handler::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001140, tramp, 'public: virtual near bool __thiscall std::error_category::equivalent(near class std::error_code const &, int) const').
+demangledName(0x10001145, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::erase(unsigned int, unsigned int)').
+demangledName(0x1000114a, tramp, 'public: near __thiscall std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> >::~_Vector_val(void)').
+demangledName(0x1000114f, tramp, 'public: near void __thiscall std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >::_Alloc_proxy(void)').
+demangledName(0x10001154, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_delay_event::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001159, tramp, 'public: near void __thiscall connection_control::Connection_delay_action::init(near class connection_control::Connection_event_coordinator_services *)').
+demangledName(0x1000115e, tramp, 'public: near class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > > __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::end(void)').
+demangledName(0x10001163, tramp, 'public: near __thiscall connection_control::Connection_event_record::Connection_event_record(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &)').
+demangledName(0x10001168, tramp, 'public: near near char const * __thiscall connection_control::Security_context_wrapper::get_priv_host(void)').
+demangledName(0x1000116d, tramp, 'public: virtual near near void * __thiscall std::_Iostream_error_category::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001172, tramp, 'private: near void __thiscall connection_control::Connection_event_coordinator::reset(void)').
+demangledName(0x10001177, tramp, 'protected: near void __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reallocate(unsigned int)').
+demangledName(0x1000117c, tramp, 'public: virtual near __thiscall connection_control::Connection_event_coordinator::~Connection_event_coordinator(void)').
+demangledName(0x10001181, tramp, 'public: virtual near __thiscall connection_control::Connection_event_observer::~Connection_event_observer(void)').
+demangledName(0x10001186, tramp, 'public: static near void __cdecl connection_control::Connection_control_alloc::operator delete(near void *, unsigned int)').
+demangledName(0x1000118b, tramp, 'public: near __thiscall connection_control::Connection_delay_action::Connection_delay_action(__int64, __int64, __int64, near enum opt_connection_control *, unsigned int, near enum stats_connection_control *, unsigned int, near struct st_mysql_rwlock *)').
+demangledName(0x10001190, tramp, 'public: near near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > > & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::operator++(void)').
+demangledName(0x10001195, tramp, 'public: virtual near __thiscall connection_control::Connection_control_error_handler::~Connection_control_error_handler(void)').
+demangledName(0x1000119a, tramp, 'public: near __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::_Vector_const_iterator(void)').
+demangledName(0x1000119f, tramp, 'public: virtual near void __thiscall connection_control::Connection_control_error_handler::handle_error(near char const *)').
+demangledName(0x100011a4, tramp, 'public: near bool __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Grow(unsigned int, bool)').
+demangledName(0x100011a9, tramp, 'public: near bool __thiscall std::error_condition::operator==(near class std::error_condition const &) const').
+demangledName(0x100011ae, tramp, 'public: virtual near bool __thiscall connection_control::Connection_delay_event::create_or_update_entry(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &)').
+demangledName(0x100011b3, tramp, 'public: near __thiscall std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> >::~_Vector_val(void)').
+demangledName(0x100011b8, tramp, 'public: near void __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back(near enum opt_connection_control const &)').
+demangledName(0x100011bd, tramp, 'public: virtual near class std::error_condition __thiscall std::_System_error_category::default_error_condition(int) const').
+demangledName(0x100011c2, tramp, 'public: near void __thiscall connection_control::Connection_event_coordinator::notify_event(near class THD *, near class connection_control::Error_handler *, near struct mysql_event_connection const *)').
+demangledName(0x100011c7, tramp, 'public: near near char const * __thiscall connection_control::Security_context_wrapper::get_proxy_user(void)').
+demangledName(0x100011cc, tramp, 'public: virtual near __thiscall connection_control::Connection_delay_action::~Connection_delay_action(void)').
+demangledName(0x100011d1, tramp, 'public: virtual near near void * __thiscall std::error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100011d6, tramp, 'public: near void __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::_Compat(near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > > const &) const').
+demangledName(0x100011db, tramp, 'public: virtual near void __thiscall connection_control::Connection_delay_event::reset_all(void)').
+demangledName(0x100011e0, tramp, 'public: near near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > > & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::operator++(void)').
+demangledName(0x100011e5, tramp, 'public: near void __thiscall std::_Vector_alloc<0, struct std::_Vec_base_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::_Alloc_proxy(void)').
+demangledName(0x100011ea, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Eos(unsigned int)').
+demangledName(0x100011ef, tramp, 'public: near __thiscall connection_control::Security_context_wrapper::Security_context_wrapper(near class THD *)').
+demangledName(0x100011f4, tramp, 'public: near void __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::_Compat(near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > > const &) const').
+demangledName(0x100011f9, tramp, 'public: near __thiscall std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::~_Vector_iterator(void)').
+demangledName(0x100011fe, tramp, 'protected: near void __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reallocate(unsigned int)').
+demangledName(0x10001203, tramp, 'public: near __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::~vector(void)').
+demangledName(0x10001208, tramp, 'public: near __thiscall std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::~_Vector_val(void)').
+demangledName(0x1000120d, tramp, 'public: virtual near near void * __thiscall std::error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001212, tramp, 'public: near __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::_Vector_const_iterator(void)').
+demangledName(0x10001217, tramp, 'public: virtual near bool __thiscall connection_control::Connection_delay_action::notify_event(near class THD *, near class connection_control::Connection_event_coordinator_services *, near struct mysql_event_connection const *, near class connection_control::Error_handler *)').
+demangledName(0x1000121c, tramp, 'near void __cdecl connection_control::set_connection_delay_IS_table(near struct TABLE *)').
+demangledName(0x10001221, tramp, 'protected: near void __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Orphan_range(near enum opt_connection_control *, near enum opt_connection_control *) const').
+demangledName(0x10001226, tramp, 'near int __cdecl connection_control_failed_attempts_view_init(near void *)').
+demangledName(0x1000122b, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_coordinator::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001230, tramp, 'near near enum stats_connection_control * __cdecl std::_Uninit_move<enum stats_connection_control, enum stats_connection_control, enum stats_connection_control>(near enum stats_connection_control *, near enum stats_connection_control *, near enum stats_connection_control *, near struct std::_Wrap_alloc<class std::allocator<enum stats_connection_control> > &, near enum stats_connection_control *, struct std::_Scalar_ptr_iterator_tag)').
+demangledName(0x10001235, tramp, 'public: near bool __thiscall connection_control::Connection_delay_action::set_delay(__int64, bool)').
+demangledName(0x1000123a, tramp, 'public: virtual near near void * __thiscall std::_System_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x1000123f, tramp, 'private: near void __thiscall connection_control::Connection_delay_action::deinit(void)').
+demangledName(0x10001244, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &, unsigned int, unsigned int)').
+demangledName(0x10001249, tramp, 'near int __cdecl fill_failed_attempts_view(near class THD *, near struct TABLE_LIST *, near class Item *)').
+demangledName(0x1000124e, tramp, 'public: near void __thiscall std::_Vector_alloc<0, struct std::_Vec_base_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::_Free_proxy(void)').
+demangledName(0x10001253, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_coordinator::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001258, tramp, 'public: near __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::~basic_string(void)').
+demangledName(0x1000125d, tramp, 'public: virtual near near char const * __thiscall std::_Iostream_error_category::name(void) const').
+demangledName(0x10001262, tramp, 'public: near void __thiscall std::_Iterator_base12::_Adopt(near struct std::_Container_base12 const *)').
+demangledName(0x10001267, tramp, 'public: near __thiscall std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::~_Vector_iterator(void)').
+demangledName(0x1000126c, tramp, 'public: near near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > > & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::operator=(near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > > const &)').
+demangledName(0x10001271, tramp, 'protected: near void __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Reserve(unsigned int)').
+demangledName(0x10001276, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &, unsigned int, unsigned int)').
+demangledName(0x1000127b, tramp, 'public: virtual near class std::error_condition __thiscall std::error_category::default_error_condition(int) const').
+demangledName(0x10001280, tramp, 'protected: near void __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Reallocate(unsigned int)').
+demangledName(0x10001285, tramp, 'public: near class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > > __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::begin(void)').
+demangledName(0x1000128a, tramp, 'private: near unsigned __int64 __thiscall connection_control::Connection_delay_action::get_wait_time(__int64)').
+demangledName(0x1000128f, tramp, 'public: virtual near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > __thiscall std::_System_error_category::message(int) const').
+demangledName(0x10001294, tramp, 'public: near void __thiscall connection_control::Connection_delay_action::set_threshold(__int64)').
+demangledName(0x10001299, tramp, 'public: near near enum opt_connection_control const & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::operator*(void) const').
+demangledName(0x1000129e, tramp, 'public: near void __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Tidy(bool, unsigned int)').
+demangledName(0x100012a3, tramp, 'protected: near void __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reserve(unsigned int)').
+demangledName(0x100012a8, tramp, 'public: near class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > > __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::begin(void)').
+demangledName(0x100012ad, tramp, 'public: near near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > > & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::operator++(void)').
+demangledName(0x100012b2, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append(near char const *)').
+demangledName(0x100012b7, tramp, 'protected: near void __thiscall std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Tidy(void)').
+demangledName(0x100012bc, tramp, 'public: near void __thiscall connection_control::Connection_event_coordinator::notify_sys_var(near class connection_control::Error_handler *, enum opt_connection_control, near void *)').
+demangledName(0x100012c1, tramp, 'protected: near void __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Tidy(void)').
+demangledName(0x100012c6, tramp, 'public: virtual near near void * __thiscall std::_System_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100012cb, tramp, 'public: near __thiscall std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector(void)').
+demangledName(0x100012d0, tramp, 'public: virtual near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > __thiscall std::_Generic_error_category::message(int) const').
+demangledName(0x100012d5, tramp, 'public: near __thiscall std::_String_val<struct std::_Simple_types<char> >::_String_val(void)').
+demangledName(0x100012da, tramp, 'near near enum opt_connection_control * __cdecl std::_Uninit_move<enum opt_connection_control, enum opt_connection_control, enum opt_connection_control>(near enum opt_connection_control *, near enum opt_connection_control *, near enum opt_connection_control *, near struct std::_Wrap_alloc<class std::allocator<enum opt_connection_control> > &, near enum opt_connection_control *, struct std::_Scalar_ptr_iterator_tag)').
+demangledName(0x100012df, tramp, 'public: near void __thiscall std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >::_Free_proxy(void)').
+demangledName(0x100012e4, tramp, 'public: virtual near bool __thiscall connection_control::Connection_delay_event::remove_entry(near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > const &)').
+demangledName(0x100012e9, tramp, 'public: near __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::~vector(void)').
+demangledName(0x100012ee, tramp, 'public: near near struct std::_Iterator012<struct std::random_access_iterator_tag, enum stats_connection_control, int, near enum stats_connection_control const *, near enum stats_connection_control const &, struct std::_Iterator_base12> & __thiscall std::_Iterator012<struct std::random_access_iterator_tag, enum stats_connection_control, int, near enum stats_connection_control const *, near enum stats_connection_control const &, struct std::_Iterator_base12>::operator=(near struct std::_Iterator012<struct std::random_access_iterator_tag, enum stats_connection_control, int, near enum stats_connection_control const *, near enum stats_connection_control const &, struct std::_Iterator_base12> const &)').
+demangledName(0x100012f3, tramp, 'public: virtual near near void * __thiscall std::_Generic_error_category::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x100012f8, tramp, 'public: near near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > & __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append(near char const *, unsigned int)').
+demangledName(0x100012fd, tramp, 'public: near __thiscall std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::basic_string(near char const *)').
+demangledName(0x10001302, tramp, 'public: near near class connection_control::Connection_event_coordinator::Connection_event_subscriber const & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::operator*(void) const').
+demangledName(0x10001307, tramp, 'near near unsigned char * __cdecl connection_control::connection_delay_event_hash_key(near unsigned char const *, near unsigned int *, char)').
+demangledName(0x1000130c, tramp, 'public: near __thiscall connection_control::RD_lock::~RD_lock(void)').
+demangledName(0x10001311, tramp, 'public: virtual near near void * __thiscall connection_control::Error_handler::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001316, tramp, 'public: virtual near bool __thiscall connection_control::Connection_delay_action::notify_sys_var(near class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, near void *, near class connection_control::Error_handler *)').
+demangledName(0x1000131b, tramp, 'public: near __thiscall std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::~_Vector_iterator(void)').
+demangledName(0x10001320, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_control_error_handler::`vector deleting destructor\'(unsigned int)').
+demangledName(0x10001325, tramp, 'public: virtual near bool __thiscall connection_control::Connection_event_coordinator::register_event_subscriber(near class connection_control::Connection_event_observer *near  *, near class std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> > *, near class std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> > *)').
+demangledName(0x1000132a, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_observer::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x1000132f, tramp, 'public: near near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > > & __thiscall std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::operator=(near class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > > const &)').
+demangledName(0x10001334, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_observer::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001339, tramp, 'public: near void __thiscall std::_Iterator_base12::_Orphan_me(void)').
+demangledName(0x1000133e, tramp, 'public: virtual near __thiscall connection_control::Connection_event_records::~Connection_event_records(void)').
+demangledName(0x10001343, tramp, 'public: virtual near near void * __thiscall connection_control::Connection_event_coordinator_services::`scalar deleting destructor\'(unsigned int)').
+demangledName(0x10001348, tramp, 'public: near void __thiscall std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::push_back(near class connection_control::Connection_event_coordinator::Connection_event_subscriber const &)').
+demangledName(0x1000134d, tramp, 'public: near bool __thiscall connection_control::Security_context_wrapper::security_context_exists(void)').
+demangledName(0x10001352, tramp, 'public: virtual near bool __thiscall connection_control::Connection_event_coordinator::notify_status_var(near class connection_control::Connection_event_observer *near  *, enum stats_connection_control, enum connection_control::status_var_action)').
+demangledName(0x10001357, tramp, 'public: near void __thiscall connection_control::Connection_delay_event::fill_IS_table(near class THD *, near struct TABLE_LIST *)').
+demangledName(0x100083b0, func, 'near near void * __cdecl connection_control::Connection_control_malloc<near void *>(unsigned int)').
+demangledName(0x10008700, staticmethod, 'public: static near void __cdecl connection_control::Connection_control_alloc::operator delete(near void *, unsigned int)').
+demangledName(0x10009220, func, 'near void __stdcall `vector constructor iterator\'(near void *, unsigned int, int, near void * (__thiscall*)(near void *) )').
+demangledName(0x100098a0, func, 'near int __cdecl connection_control_failed_attempts_view_init(near void *)').
+demangledName(0x10009a40, func, 'near void __cdecl connection_control::deinit_connection_delay_event(void)').
+demangledName(0x1000bde0, func, 'near int __cdecl connection_control::match_all_entries(near unsigned char const *)').
+demangledName(0x1000bdf0, func, 'near near unsigned char * __cdecl connection_control::connection_delay_event_hash_key(near unsigned char const *, near unsigned int *, char)').
+demangledName(0x1000be70, func, 'near void __cdecl connection_control::set_connection_delay_IS_table(near struct TABLE *)').
+demangledName(0x1000be80, func, 'near int __cdecl connection_control::connection_delay_IS_table_writer(near unsigned char const *)').
+demangledName(0x1000d030, func, 'near near enum opt_connection_control * __cdecl std::_Uninit_move<enum opt_connection_control, enum opt_connection_control, enum opt_connection_control>(near enum opt_connection_control *, near enum opt_connection_control *, near enum opt_connection_control *, near struct std::_Wrap_alloc<class std::allocator<enum opt_connection_control> > &, near enum opt_connection_control *, struct std::_Scalar_ptr_iterator_tag)').
+demangledName(0x1000d1e0, func, 'near near enum stats_connection_control * __cdecl std::_Uninit_move<enum stats_connection_control, enum stats_connection_control, enum stats_connection_control>(near enum stats_connection_control *, near enum stats_connection_control *, near enum stats_connection_control *, near struct std::_Wrap_alloc<class std::allocator<enum stats_connection_control> > &, near enum stats_connection_control *, struct std::_Scalar_ptr_iterator_tag)').
+demangledName(0x1000f8a8, thunk, 'public: near bool __thiscall String::mem_realloc(unsigned int, bool)').
+demangledName(0x1000f8b4, thunk, 'near bool __cdecl schema_table_store_record(near class THD *, near struct TABLE *)').
+demangledName(0x1000f8f6, thunk, 'public: near __thiscall std::_Lockit::_Lockit(int)').
+demangledName(0x1000f8fc, thunk, 'public: near __thiscall std::_Lockit::~_Lockit(void)').
+demangledName(0x1000f902, thunk, 'near void __cdecl std::_Debug_message(near wchar_t const *, near wchar_t const *, unsigned int)').
+demangledName(0x1000f908, thunk, 'public: near __thiscall std::_Container_base12::_Container_base12(void)').
+demangledName(0x1000f90e, thunk, 'public: near __thiscall std::_Container_base12::~_Container_base12(void)').
+demangledName(0x1000f914, thunk, 'public: near near struct std::_Iterator_base12 *near  * __thiscall std::_Container_base12::_Getpfirst(void) const').
+demangledName(0x1000f91a, thunk, 'public: near void __thiscall std::_Container_base12::_Orphan_all(void)').
+demangledName(0x1000f920, thunk, 'near void __cdecl std::_Xbad_alloc(void)').
+demangledName(0x1000f926, thunk, 'near void __cdecl std::_Xlength_error(near char const *)').
+demangledName(0x1000f92c, thunk, 'near void __cdecl std::_Xout_of_range(near char const *)').
+demangledName(0x1000f932, thunk, 'public: near __thiscall std::locale::id::id(unsigned int)').
+demangledName(0x1000f938, thunk, 'near near char const * __cdecl std::_Syserror_map(int)').
+demangledName(0x1000f93e, thunk, 'near near char const * __cdecl std::_Winerror_map(int)').
+demangledName(0x1000f94a, thunk, 'near near void * __cdecl operator new(unsigned int)').
+demangledName(0x1000f950, thunk, 'near void __cdecl operator delete(near void *)').
+demangledName(0x100105f0, func, 'near void __cdecl _RTC_AllocaFailure(near void *, near struct _RTC_ALLOCA_NODE *, int)').
+demangledName(0x10010770, func, 'near void __cdecl _RTC_Failure(near void *, int)').
+demangledName(0x100107c0, func, 'near void __cdecl _RTC_StackFailure(near void *, near char const *)').
+demangledName(0x10010fb0, func, 'near int (__cdecl*__cdecl _RTC_GetErrorFunc(near void const *) )(int, near char const *, int, near char const *, near char const *, ...)').
+demangledName(0x10010fc0, func, 'near int (__cdecl*__cdecl _RTC_GetErrorFuncW(near void const *) )(int, near wchar_t const *, int, near wchar_t const *, near wchar_t const *, ...)').
+demangledName(0x10011070, func, 'near void __stdcall `eh vector destructor iterator\'(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x10011150, func, 'near void __stdcall __ArrayUnwind(near void *, unsigned int, int, void (__thiscall*)(near void *) )').
+demangledName(0x100111da, thunk, 'public: virtual near __thiscall type_info::~type_info(void)').
+demangledName(0x100119f0, func, 'near int __cdecl _RTC_GetSrcLine(near unsigned char *, near wchar_t *, unsigned long, near int *, near wchar_t *, unsigned long)').
+demangledName(0x10011cb0, thunk, 'near void __cdecl terminate(void)').
+demangledName(0x100182e0, string, 'char16_t[72] = "C:\\Program Files (x86)\\Microsoft"...').
+demangledName(0x1001838c, string, 'char16_t[25] = "ITERATOR LIST CORRUPTED!"').
+demangledName(0x10018410, string, 'char[8] = "generic"').
+demangledName(0x1001841c, string, 'char[14] = "unknown error"').
+demangledName(0x10018450, string, 'char[9] = "iostream"').
+demangledName(0x1001845c, string, 'char[22] = "iostream stream error"').
+demangledName(0x1001849c, string, 'char[7] = "system"').
+demangledName(0x100184a8, string, 'char16_t[71] = "C:\\Program Files (x86)\\Microsoft"...').
+demangledName(0x10018558, string, 'char16_t[70] = "C:\\Program Files (x86)\\Microsoft"...').
+demangledName(0x10018600, string, 'char16_t[35] = "vector iterator not dereferencab"...').
+demangledName(0x10018654, string, 'char[36] = "Standard C++ Libraries Out of Ra"...').
+demangledName(0x10018680, string, 'char16_t[43] = "\"Standard C++ Libraries Out of R"...').
+demangledName(0x100186e8, string, 'char16_t[3] = "%s"').
+demangledName(0x100186f0, string, 'char16_t[122] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x10018814, string, 'char16_t[15] = "\"out of range\""').
+demangledName(0x10018838, string, 'char16_t[34] = "vector iterator not incrementabl"...').
+demangledName(0x10018890, string, 'char16_t[123] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x100189b8, string, 'char16_t[124] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x10018ae8, string, 'char16_t[125] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x10018c18, string, 'char16_t[178] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x10018dc8, string, 'char16_t[179] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x10018f78, string, 'char[16] = "string too long"').
+demangledName(0x10018f8c, string, 'char[24] = "invalid string position"').
+demangledName(0x10018fa8, string, 'char[19] = "vector<T> too long"').
+demangledName(0x10018fc0, string, 'char16_t[30] = "vector iterators incompatible"').
+demangledName(0x10019008, string, 'char[40] = "Standard C++ Libraries Invalid A"...').
+demangledName(0x10019038, string, 'char16_t[47] = "\"Standard C++ Libraries Invalid "...').
+demangledName(0x100190a8, string, 'char16_t[119] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x100191c8, string, 'char16_t[19] = "\"invalid argument\""').
+demangledName(0x100191f8, string, 'char16_t[121] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x10019320, string, 'char16_t[175] = "std::_Vector_const_iterator<clas"...').
+demangledName(0x100194c4, string, 'char16_t[21] = "invalid null pointer"').
+demangledName(0x100194f8, string, 'char16_t[23] = "invalid iterator range"').
+demangledName(0x10019530, string, 'char16_t[71] = "C:\\Program Files (x86)\\Microsoft"...').
+demangledName(0x1001d22c, name, 'public: static near unsigned int const std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::npos').
+demangledName(0x1001d230, string, 'char16_t[70] = "g:\\ade\\build\\sb_0-23948522-14981"...').
+demangledName(0x1001d2d8, string, 'char16_t[21] = "argument_count() > 0"').
+demangledName(0x1001d370, string, 'char[101] = "g:\\ade\\build\\sb_0-23948522-14981"...').
+demangledName(0x1001d3f0, string, 'char16_t[97] = "(__onexitbegin != NULL && __onex"...').
+demangledName(0x1001d4b8, string, 'char16_t[45] = "f:\\dd\\vctools\\crt\\crtw32\\dllstuf"...').
+demangledName(0x1001d514, string, 'char[45] = "f:\\dd\\vctools\\crt\\crtw32\\dllstuf"...').
+demangledName(0x1001d541, name, 'public: static near bool const std::integral_constant<bool, 0>::value').
+demangledName(0x1001d542, name, 'public: static near bool const std::integral_constant<bool, 1>::value').
+demangledName(0x1001d550, string, 'char[43] = "f:\\dd\\vctools\\crt\\crtw32\\dllstuf"...').
+demangledName(0x1001d618, string, 'char[221] = "The value of ESP was not properl"...').
+demangledName(0x1001d6f8, string, 'char[285] = "A cast to a smaller data type ha"...').
+demangledName(0x1001d818, string, 'char[29] = "Stack memory was corrupted\v\r"').
+demangledName(0x1001d838, string, 'char[54] = "A local variable was used before"...').
+demangledName(0x1001d870, string, 'char[44] = "Stack memory around _alloca was "...').
+demangledName(0x1001d89c, string, 'char[30] = "Unknown Runtime Check Error\v\r"').
+demangledName(0x1001d8c0, string, 'char16_t[54] = "Runtime Check Error.\v\r Unable to"...').
+demangledName(0x1001d930, string, 'char16_t[32] = "Run-Time Check Failure #%d - %s"').
+demangledName(0x1001d970, string, 'char[17] = "Unknown Filename"').
+demangledName(0x1001d984, string, 'char[20] = "Unknown Module Name"').
+demangledName(0x1001d998, string, 'char[32] = "Run-Time Check Failure #%d - %s"').
+demangledName(0x1001d9b8, string, 'char[38] = "Stack corrupted near unknown var"...').
+demangledName(0x1001d9e0, string, 'char[6] = "%.2X "').
+demangledName(0x1001d9e8, string, 'char16_t[11] = "user32.dll"').
+demangledName(0x1001da00, string, 'char[10] = "wsprintfA"').
+demangledName(0x1001da10, string, 'char[73] = "Stack area around _alloca memory"...').
+demangledName(0x1001da5c, string, 'char[9] = "\vData: <"').
+demangledName(0x1001da68, string, 'char[42] = "\vAllocation number within this f"...').
+demangledName(0x1001da94, string, 'char[8] = "\vSize: "').
+demangledName(0x1001da9c, string, 'char[13] = "\vAddress: 0x"').
+demangledName(0x1001dab0, string, 'char[72] = "Stack area around _alloca memory"...').
+demangledName(0x1001daf8, string, 'char[18] = "%s%s%p%s%ld%s%d%s"').
+demangledName(0x1001db0c, string, 'char[2] = "\v"').
+demangledName(0x1001db10, string, 'char[3] = "> "').
+demangledName(0x1001db14, string, 'char[9] = "%s%s%s%s"').
+demangledName(0x1001db20, string, 'char[52] = "A variable is being used without"...').
+demangledName(0x1001db70, string, 'char[25] = "Stack pointer corruption"').
+demangledName(0x1001db8c, string, 'char[42] = "Cast to smaller type causing los"...').
+demangledName(0x1001dbb8, string, 'char[24] = "Stack memory corruption"').
+demangledName(0x1001dbd0, string, 'char[42] = "Local variable used before initi"...').
+demangledName(0x1001dbfc, string, 'char[31] = "Stack around _alloca corrupted"').
+demangledName(0x1001dc1c, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessDetach').
+demangledName(0x1001dc20, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessAttach').
+demangledName(0x1001dc24, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadAttach').
+demangledName(0x1001dc28, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ThreadDetach').
+demangledName(0x1001dc2c, name, 'private: static near unsigned int const <CrtImplementationDetails>::NativeDll::ProcessVerifier').
+demangledName(0x1001dc70, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::LocalIdBitWidth').
+demangledName(0x1001dc74, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::IdScopeBitWidth').
+demangledName(0x1001dc78, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::StartCrossScopeId').
+demangledName(0x1001dc7c, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::LocalIdMask').
+demangledName(0x1001dc80, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::ScopeIdMask').
+demangledName(0x1001dc84, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::MaxLocalId').
+demangledName(0x1001dc88, name, 'public: static near unsigned int const CodeViewInfo::CrossScopeId::MaxScopeId').
+demangledName(0x1001dc8c, string, 'char16_t[13] = "ADVAPI32.DLL"').
+demangledName(0x1001dca8, string, 'char[14] = "RegOpenKeyExW"').
+demangledName(0x1001dcb8, string, 'char[17] = "RegQueryValueExW"').
+demangledName(0x1001dccc, string, 'char[12] = "RegCloseKey"').
+demangledName(0x1001dcd8, string, 'char16_t[46] = "SOFTWARE\\Microsoft\\VisualStudio\\"...').
+demangledName(0x1001dd34, string, 'char16_t[11] = "ProductDir"').
+demangledName(0x1001dd68, string, 'char16_t[9] = "MSPDB120"').
+demangledName(0x1001dd7c, string, 'char[17] = "PDBOpenValidate5"').
+demangledName(0x1001dd90, string, 'char[2] = "r"').
+demangledName(0x1001e2e0, name, 'std::error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e2f4, name, 'std::error_category::`RTTI Base Class Array\'').
+demangledName(0x1001e2fc, name, 'std::error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e338, name, 'std::_Generic_error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e34c, name, 'std::_Generic_error_category::`RTTI Base Class Array\'').
+demangledName(0x1001e358, name, 'std::_Generic_error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e394, name, 'std::_Iostream_error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e3a8, name, 'std::_Iostream_error_category::`RTTI Base Class Array\'').
+demangledName(0x1001e3b8, name, 'std::_Iostream_error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e3f4, name, 'std::_System_error_category::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e408, name, 'std::_System_error_category::`RTTI Base Class Array\'').
+demangledName(0x1001e418, name, 'std::_System_error_category::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e454, name, 'connection_control::Connection_event_coordinator_services::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e468, name, 'connection_control::Connection_event_coordinator_services::`RTTI Base Class Array\'').
+demangledName(0x1001e470, name, 'connection_control::Connection_event_coordinator_services::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e4ac, name, 'connection_control::Error_handler::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e4c0, name, 'connection_control::Error_handler::`RTTI Base Class Array\'').
+demangledName(0x1001e4c8, name, 'connection_control::Error_handler::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e504, name, 'connection_control::Connection_event_coordinator::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e518, name, 'connection_control::Connection_event_coordinator::`RTTI Base Class Array\'').
+demangledName(0x1001e528, name, 'connection_control::Connection_event_coordinator::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e54c, name, 'connection_control::Connection_control_alloc::`RTTI Base Class Descriptor at (4, -1, 0, 64)\'').
+demangledName(0x1001e570, name, 'connection_control::Connection_control_alloc::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e584, name, 'connection_control::Connection_control_alloc::`RTTI Base Class Array\'').
+demangledName(0x1001e58c, name, 'connection_control::Connection_control_alloc::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e5c8, name, 'connection_control::Connection_control_error_handler::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e5dc, name, 'connection_control::Connection_control_error_handler::`RTTI Base Class Array\'').
+demangledName(0x1001e5e8, name, 'connection_control::Connection_control_error_handler::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e624, name, 'connection_control::Connection_event_records::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e638, name, 'connection_control::Connection_event_records::`RTTI Base Class Array\'').
+demangledName(0x1001e640, name, 'connection_control::Connection_event_records::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e67c, name, 'connection_control::Connection_event_observer::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e690, name, 'connection_control::Connection_event_observer::`RTTI Base Class Array\'').
+demangledName(0x1001e698, name, 'connection_control::Connection_event_observer::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e6d4, name, 'connection_control::Connection_delay_event::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e6e8, name, 'connection_control::Connection_delay_event::`RTTI Base Class Array\'').
+demangledName(0x1001e6f4, name, 'connection_control::Connection_delay_event::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e730, name, 'connection_control::Connection_delay_action::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e744, name, 'connection_control::Connection_delay_action::`RTTI Base Class Array\'').
+demangledName(0x1001e754, name, 'connection_control::Connection_delay_action::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x1001e78c, name, 'type_info::`RTTI Class Hierarchy Descriptor\'').
+demangledName(0x1001e79c, name, 'type_info::`RTTI Base Class Array\'').
+demangledName(0x1001e7a4, name, 'type_info::`RTTI Base Class Descriptor at (0, -1, 0, 64)\'').
+demangledName(0x10020038, name, 'near struct st_mysql_sys_var *near  *near  connection_control_system_variables').
+demangledName(0x10020048, name, 'near struct st_mysql_show_var *near  connection_control_status_variables').
+demangledName(0x1002027c, name, 'near unsigned int connection_control::opt_enums_size').
+demangledName(0x10020280, name, 'near unsigned int connection_control::status_vars_enums_size').
+demangledName(0x10020284, name, 'near struct st_mysql_information_schema connection_control_failed_attempts_view').
+demangledName(0x10020288, name, 'near __int64 connection_control::DEFAULT_THRESHOLD').
+demangledName(0x10020290, name, 'near __int64 connection_control::MAX_THRESHOLD').
+demangledName(0x10020298, name, 'near __int64 connection_control::DEFAULT_MAX_DELAY').
+demangledName(0x100202a0, name, 'near __int64 connection_control::DEFAULT_MIN_DELAY').
+demangledName(0x100202a8, name, 'near __int64 connection_control::MIN_DELAY').
+demangledName(0x100202b0, name, 'near __int64 connection_control::MAX_DELAY').
+demangledName(0x10020300, name, 'near int *near  _RTC_ErrorLevels').
+demangledName(0x10020428, name, 'class `RTTI Type Descriptor\'::std::error_category').
+demangledName(0x10020450, name, 'class `RTTI Type Descriptor\'::std::_Generic_error_category').
+demangledName(0x10020484, name, 'class `RTTI Type Descriptor\'::std::_Iostream_error_category').
+demangledName(0x100204b8, name, 'class `RTTI Type Descriptor\'::std::_System_error_category').
+demangledName(0x100204f0, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_event_coordinator_services').
+demangledName(0x10020548, name, 'class `RTTI Type Descriptor\'::connection_control::Error_handler').
+demangledName(0x10020580, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_event_coordinator').
+demangledName(0x100205cc, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_control_alloc').
+demangledName(0x10020618, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_control_error_handler').
+demangledName(0x10020668, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_event_records').
+demangledName(0x100206b0, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_event_observer').
+demangledName(0x100206f8, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_delay_event').
+demangledName(0x1002073c, name, 'class `RTTI Type Descriptor\'::connection_control::Connection_delay_action').
+demangledName(0x10020780, name, 'class `RTTI Type Descriptor\'::type_info').
+demangledName(0x100208ac, name, 'public: static near class std::_Generic_error_category std::_Error_objects<int>::_Generic_object').
+demangledName(0x100208b0, name, 'public: static near class std::_Iostream_error_category std::_Error_objects<int>::_Iostream_object').
+demangledName(0x100208b4, name, 'public: static near class std::_System_error_category std::_Error_objects<int>::_System_object').
+demangledName(0x100208b8, name, 'public: static near class std::locale::id std::num_put<char, class std::back_insert_iterator<class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > > >::id').
+demangledName(0x100208bc, name, 'public: static near class std::locale::id std::num_put<wchar_t, class std::back_insert_iterator<class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> > > >::id').
+demangledName(0x100208c0, name, 'near class connection_control::Connection_control_variables g_variables').
+demangledName(0x100208d8, name, 'near class connection_control::Connection_event_coordinator *near  g_connection_event_coordinator').
+demangledName(0x100208dc, name, 'near void *near  connection_control_plugin_info').
+demangledName(0x100208e8, name, 'near class connection_control::Connection_control_statistics g_statistics').
+demangledName(0x10020910, name, 'near __int64 connection_control::MIN_THRESHOLD').
+demangledName(0x10020918, name, 'near __int64 connection_control::DISABLE_THRESHOLD').
+demangledName(0x10020924, name, 'near class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> > connection_control::I_S_CONNECTION_CONTROL_FAILED_ATTEMPTS_USERHOST').
+demangledName(0x10020968, name, 'int (__cdecl*near  wsprintffp)(near char *, near char const *, ...)').
+demangledName(0x10020c98, name, 'near struct __type_info_node __type_info_root_node').
+demangledName(0x100210b4, name, 'near near char const * __cdecl std::_Winerror_map(int)').
+demangledName(0x100210b8, name, 'near near char const * __cdecl std::_Syserror_map(int)').
+demangledName(0x100210c0, name, 'near void __cdecl std::_Xout_of_range(near char const *)').
+demangledName(0x100210c4, name, 'near void __cdecl std::_Xlength_error(near char const *)').
+demangledName(0x100210c8, name, 'near void __cdecl std::_Xbad_alloc(void)').
+demangledName(0x100210d4, name, 'near void __cdecl std::_Debug_message(near wchar_t const *, near wchar_t const *, unsigned int)').
+demangledName(0x10021118, name, 'near void __cdecl terminate(void)').
+demangledName(0x10021138, name, 'near near void * __cdecl operator new(unsigned int)').
+demangledName(0x1002113c, name, 'near void __cdecl operator delete(near void *)').
+demangledName(0x10021224, name, 'near bool __cdecl schema_table_store_record(near class THD *, near struct TABLE *)').
+groundTruth(0x10002cf0, 'connection_control::Connection_event_coordinator', 'notify_event', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10002f20, 'connection_control::Connection_event_coordinator', 'notify_sys_var', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10003160, 'connection_control::Connection_event_coordinator', 'register_event_subscriber', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003a00, 'connection_control::Connection_event_coordinator', 'notify_status_var', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10003ba0, 'connection_control::Connection_event_coordinator', 'reset', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruthException(0x10003fc0, 'connection_control::Connection_event_coordinator::Connection_event_subscriber', '_Uninit_move', method, none, linked, fake, nonvirtual, '__cdecl').
+groundTruth(0x10004230, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >', '_Vector_const_iterator', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004270, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >', '_Vector_const_iterator', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100042b0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'basic_string', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100043a0, 'std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >', '~_String_alloc', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004470, 'std::_String_val<struct std::_Simple_types<char> >', '~_String_val', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100044b0, 'std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', '~_Vector_iterator', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004560, 'std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >', '~_Vector_iterator', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004610, 'std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >', '~_Vector_iterator', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100046c0, 'std::_Iterator012<struct std::random_access_iterator_tag, enum opt_connection_control, int, near enum opt_connection_control const *, near enum opt_connection_control const &, struct std::_Iterator_base12>', 'operator=', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004700, 'std::_Iterator012<struct std::random_access_iterator_tag, enum stats_connection_control, int, near enum stats_connection_control const *, near enum stats_connection_control const &, struct std::_Iterator_base12>', 'operator=', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004740, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >', 'operator=', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004790, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >', 'operator=', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100047e0, 'std::_Iterator_base12', 'operator=', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004910, 'std::error_condition', 'operator==', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100049c0, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', 'operator*', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004b40, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >', 'operator*', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004cc0, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >', 'operator*', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004e40, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', 'operator++', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10004fa0, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >', 'operator++', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005100, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >', 'operator++', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005260, 'std::_Generic_error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10005260, 'std::_Generic_error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100052b0, 'std::_Iostream_error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100052b0, 'std::_Iostream_error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10005300, 'std::_System_error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10005300, 'std::_System_error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10005350, 'std::error_category', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10005350, 'std::error_category', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100053a0, 'std::_Iterator_base12', '_Adopt', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005550, 'std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >', '_Alloc_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005690, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', '_Compat', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100057f0, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >', '_Compat', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005950, 'std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >', '_Compat', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005ab0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Copy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005eb0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Eos', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10005f30, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Grow', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006070, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Inside', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006120, 'std::_Iterator_base12', '_Orphan_me', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100061e0, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', '_Orphan_range', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x10006350, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', '_Reallocate', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x10006620, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', '_Reserve', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x10006750, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '_Tidy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006830, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'assign', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100069e0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'assign', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006a90, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'assign', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006bf0, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 'begin', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006c70, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', 'begin', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006cf0, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', 'begin', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006d70, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 'clear', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006e60, 'std::_System_error_category', 'default_error_condition', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10006ef0, 'std::error_category', 'default_error_condition', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10006f30, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 'end', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10006fb0, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', 'end', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10007030, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', 'end', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100070b0, 'std::error_category', 'equivalent', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10007140, 'std::error_category', 'equivalent', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100071c0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'erase', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10007300, 'std::_Generic_error_category', 'message', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100073a0, 'std::_Iostream_error_category', 'message', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10007430, 'std::_System_error_category', 'message', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100074d0, 'std::_Generic_error_category', 'name', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x100074f0, 'std::_Iostream_error_category', 'name', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10007510, 'std::_System_error_category', 'name', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10007530, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 'push_back', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008430, 'connection_control::Connection_event_coordinator', 'Connection_event_coordinator', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008530, 'std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', '~_Vector_val', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008570, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', '~vector', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100085c0, 'connection_control::Connection_control_error_handler', '~Connection_control_error_handler', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100085f0, 'connection_control::Connection_event_coordinator', '~Connection_event_coordinator', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100086d0, 'connection_control::Connection_event_coordinator_services', '~Connection_event_coordinator_services', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008740, 'connection_control::Connection_control_error_handler', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008740, 'connection_control::Connection_control_error_handler', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008790, 'connection_control::Connection_event_coordinator', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008790, 'connection_control::Connection_event_coordinator', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008800, 'connection_control::Connection_event_coordinator_services', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008800, 'connection_control::Connection_event_coordinator_services', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008850, 'connection_control::Error_handler', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x10008850, 'connection_control::Error_handler', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100088a0, 'std::_Vector_alloc<0, struct std::_Vec_base_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', '_Alloc_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x100089e0, 'std::_Vector_alloc<0, struct std::_Vec_base_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', '_Free_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008a90, 'std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >', '_Tidy', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x10008bc0, 'connection_control::Connection_control_error_handler', 'handle_error', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10008c20, 'connection_control::Security_context_wrapper', 'Security_context_wrapper', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008c90, 'connection_control::Security_context_wrapper', 'get_proxy_user', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008d10, 'connection_control::Security_context_wrapper', 'get_priv_user', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008d90, 'connection_control::Security_context_wrapper', 'get_priv_host', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008e10, 'connection_control::Security_context_wrapper', 'get_user', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008e90, 'connection_control::Security_context_wrapper', 'get_host', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008f10, 'connection_control::Security_context_wrapper', 'get_ip', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008f90, 'connection_control::Security_context_wrapper', 'security_context_exists', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10008fb0, 'connection_control::Security_context_wrapper', 'is_super_user', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10009060, 'connection_control::Security_context_wrapper', 'get_property', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruthException(0x100098e0, 'connection_control::Connection_event_coordinator_services', 'init_connection_delay_event', method, none, linked, fake, nonvirtual, '__cdecl').
+groundTruth(0x10009af0, 'connection_control::Connection_delay_event', 'Connection_delay_event', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10009b50, 'connection_control::Connection_delay_event', 'fill_IS_table', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x10009c60, 'connection_control::Connection_delay_event', 'create_or_update_entry', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x10009fe0, 'connection_control::Connection_delay_event', 'remove_entry', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x1000a240, 'connection_control::Connection_delay_event', 'match_entry', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x1000a3d0, 'connection_control::Connection_delay_event', 'reset_all', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x1000a590, 'connection_control::Connection_delay_action', 'Connection_delay_action', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000a770, 'connection_control::Connection_delay_action', 'init', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000a940, 'connection_control::Connection_delay_action', 'fill_IS_table', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000acd0, 'connection_control::Connection_delay_action', 'notify_event', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x1000b2a0, 'connection_control::Connection_delay_action', 'notify_sys_var', method, none, linked, public, virtual, '__thiscall').
+groundTruth(0x1000b600, 'connection_control::Connection_delay_action', 'deinit', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x1000b750, 'connection_control::Connection_delay_action', 'make_hash_key', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x1000b950, 'connection_control::Connection_delay_action', 'conditional_wait', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruthException(0x1000c3a0, 'THD', 'fill_failed_attempts_view', method, none, linked, fake, nonvirtual, '__cdecl').
+groundTruth(0x1000d390, 'std::_String_val<struct std::_Simple_types<char> >', '_String_val', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d3f0, 'connection_control::Connection_event_record', 'Connection_event_record', method, constructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d4f0, 'std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> >', '~_Vector_val', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d530, 'std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> >', '~_Vector_val', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d570, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', '~basic_string', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d5c0, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', '~vector', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d610, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', '~vector', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d660, 'connection_control::Connection_delay_action', '~Connection_delay_action', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000d7d0, 'connection_control::Connection_delay_event', '~Connection_delay_event', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000d870, 'connection_control::Connection_event_observer', '~Connection_event_observer', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000d8a0, 'connection_control::Connection_event_records', '~Connection_event_records', method, realDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000d8d0, 'connection_control::RD_lock', '~RD_lock', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d910, 'connection_control::Security_context_wrapper', '~Security_context_wrapper', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d930, 'String', '~String', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d960, 'connection_control::WR_lock', '~WR_lock', method, realDestructor, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000d9a0, 'connection_control::Connection_delay_action', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000d9a0, 'connection_control::Connection_delay_action', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000da10, 'connection_control::Connection_delay_event', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000da10, 'connection_control::Connection_delay_event', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000dad0, 'connection_control::Connection_event_observer', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000dad0, 'connection_control::Connection_event_observer', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000db20, 'connection_control::Connection_event_records', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000db20, 'connection_control::Connection_event_records', 'scalar_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x1000db70, 'std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >', '_Alloc_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000dcb0, 'std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >', '_Alloc_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000ddf0, 'std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >', '_Free_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000dea0, 'std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >', '_Free_proxy', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000df50, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', '_Orphan_range', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e0c0, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', '_Orphan_range', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e230, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', '_Reallocate', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e4d0, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', '_Reallocate', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e770, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', '_Reserve', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e8a0, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', '_Reserve', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000e9d0, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', '_Tidy', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000eae0, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', '_Tidy', method, none, linked, protected, nonvirtual, '__thiscall').
+groundTruth(0x1000ebf0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'append', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000eda0, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'append', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000ee50, 'std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >', 'append', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000f010, 'String', 'c_ptr_safe', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000f080, 'connection_control::Connection_delay_action', 'get_wait_time', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x1000f1d0, 'String', 'mem_free', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000f260, 'std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >', 'push_back', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000f410, 'std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >', 'push_back', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000f5c0, 'connection_control::Connection_delay_action', 'set_delay', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000f790, 'connection_control::Connection_delay_action', 'set_threshold', method, none, linked, public, nonvirtual, '__thiscall').
+groundTruth(0x1000fd90, 'type_info', 'type_info', method, constructor, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x1000fdb0, 'type_info', 'operator=', method, none, linked, private, nonvirtual, '__thiscall').
+groundTruth(0x1000fdc0, 'type_info', 'vector_deleting_destructor', method, deletingDestructor, linked, public, virtual, '__thiscall').
+groundTruth(0x100183cc, 'std::error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x100183f0, 'std::_Generic_error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x10018430, 'std::_Iostream_error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001847c, 'std::_System_error_category', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x10019e88, 'connection_control::Error_handler', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x10019e98, 'connection_control::Connection_event_coordinator_services', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x10019eac, 'connection_control::Connection_event_coordinator', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x10019ec0, 'connection_control::Connection_control_error_handler', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001d310, 'connection_control::Connection_event_records', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001d32c, 'connection_control::Connection_event_observer', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001d340, 'connection_control::Connection_delay_event', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001d35c, 'connection_control::Connection_delay_action', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001d548, 'type_info', 'vftable', table, vftable, linked, none, none, 'none').
+groundTruth(0x1001e2c8, 'std::error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e320, 'std::_Generic_error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e37c, 'std::_Iostream_error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e3dc, 'std::_System_error_category', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e43c, 'connection_control::Connection_event_coordinator_services', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e494, 'connection_control::Error_handler', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e4ec, 'connection_control::Connection_event_coordinator', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e5b0, 'connection_control::Connection_control_error_handler', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e60c, 'connection_control::Connection_event_records', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e664, 'connection_control::Connection_event_observer', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e6bc, 'connection_control::Connection_delay_event', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e718, 'connection_control::Connection_delay_action', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x1001e778, 'type_info', 'rtti', table, rtti, linked, none, none, 'none').
+groundTruth(0x100210b0, 'std::_Container_base12', '_Container_base12', method, constructor, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x100210bc, 'std::locale::id', 'id', method, constructor, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x100210cc, 'std::_Lockit', '_Lockit', method, constructor, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x100210d0, 'std::_Lockit', '~_Lockit', method, realDestructor, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x100210d8, 'std::_Container_base12', '~_Container_base12', method, realDestructor, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x100210dc, 'std::_Container_base12', '_Getpfirst', method, none, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x100210e0, 'std::_Container_base12', '_Orphan_all', method, none, imported, public, nonvirtual, '__thiscall').
+groundTruth(0x10021180, 'type_info', '~type_info', method, realDestructor, imported, public, virtual, '__thiscall').
+groundTruth(0x1002122c, 'String', 'mem_realloc', method, none, imported, public, nonvirtual, '__thiscall').
+% Ground truth generation was completed successfully.
+symbol(0x10000000, name, '__except_list').
+symbol(0x10000022, name, '___safe_se_handler_count').
+symbol(0x10001005, tramp, '??_EConnection_delay_action@connection_control@@UAEPAXI@Z').
+symbol(0x1000100a, tramp, '??1Connection_delay_event@connection_control@@UAE@XZ').
+symbol(0x1000100f, tramp, '??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QBEABW4stats_connection_control@@XZ').
+symbol(0x10001014, tramp, '?_Orphan_range@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IBEXPAW4stats_connection_control@@0@Z').
+symbol(0x10001019, tramp, '??_H@YGXPAXIHP6EPAX0@Z@Z').
+symbol(0x1000101e, tramp, '??4_Iterator_base12@std@@QAEAAU01@ABU01@@Z').
+symbol(0x10001023, tramp, '?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NPBD@Z').
+symbol(0x10001028, tramp, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z').
+symbol(0x1000102d, tramp, '?mem_free@String@@QAEXXZ').
+symbol(0x10001032, tramp, '?is_super_user@Security_context_wrapper@connection_control@@QAE_NXZ').
+symbol(0x10001037, tramp, '??_G_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x1000103c, tramp, '?message@_Iostream_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x10001041, tramp, '??1Connection_event_coordinator_services@connection_control@@UAE@XZ').
+symbol(0x10001046, tramp, '??0Connection_event_coordinator@connection_control@@QAE@XZ').
+symbol(0x1000104b, tramp, '?_Tidy@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IAEXXZ').
+symbol(0x10001050, tramp, '?get_user@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10001055, tramp, '?clear@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAEXXZ').
+symbol(0x1000105a, tramp, '?conditional_wait@Connection_delay_action@connection_control@@AAEXPAVTHD@@_K@Z').
+symbol(0x1000105f, tramp, '??_GConnection_event_records@connection_control@@UAEPAXI@Z').
+symbol(0x10001064, tramp, '??4?$_Iterator012@Urandom_access_iterator_tag@std@@W4opt_connection_control@@HPBW43@ABW43@U_Iterator_base12@2@@std@@QAEAAU01@ABU01@@Z').
+symbol(0x10001069, tramp, '?_Alloc_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x1000106e, tramp, '?name@_Generic_error_category@std@@UBEPBDXZ').
+symbol(0x10001073, tramp, '??_GConnection_event_coordinator_services@connection_control@@UAEPAXI@Z').
+symbol(0x10001078, tramp, '?end@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x1000107d, tramp, '?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z').
+symbol(0x10001082, tramp, '??0Connection_delay_event@connection_control@@QAE@XZ').
+symbol(0x10001087, tramp, '??1?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ').
+symbol(0x1000108c, tramp, '??$_Uninit_move@PAVConnection_event_subscriber@Connection_event_coordinator@connection_control@@PAV123@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@V123@@std@@YAPAVConnection_event_subscriber@Connection_event_coordinator@connection_control@@PAV123@00AAU?$_Wrap_alloc@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@0@0U_Nonscalar_ptr_iterator_tag@0@@Z').
+symbol(0x10001091, tramp, '??_GConnection_event_records@connection_control@@UAEPAXI@Z').
+symbol(0x10001096, tramp, '?get_property@Security_context_wrapper@connection_control@@AAE_NPBDPAUst_mysql_const_lex_string@@@Z').
+symbol(0x1000109b, tramp, '?match_all_entries@connection_control@@YAHPBE@Z').
+symbol(0x100010a0, tramp, '??1String@@QAE@XZ').
+symbol(0x100010a5, tramp, '??1WR_lock@connection_control@@QAE@XZ').
+symbol(0x100010aa, tramp, '?connection_delay_IS_table_writer@connection_control@@YAHPBE@Z').
+symbol(0x100010af, tramp, '?c_ptr_safe@String@@QAEPADXZ').
+symbol(0x100010b4, tramp, '?end@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@2@XZ').
+symbol(0x100010b9, tramp, '?_Reserve@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x100010be, tramp, '?init_connection_delay_event@connection_control@@YA_NPAVConnection_event_coordinator_services@1@PAVError_handler@1@@Z').
+symbol(0x100010c3, tramp, '?make_hash_key@Connection_delay_action@connection_control@@AAEXPAVTHD@@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x100010c8, tramp, '?get_ip@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x100010cd, tramp, '?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QBEXABV12@@Z').
+symbol(0x100010d2, tramp, '??1?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@XZ').
+symbol(0x100010d7, tramp, '?deinit_connection_delay_event@connection_control@@YAXXZ').
+symbol(0x100010dc, tramp, '?_Alloc_proxy@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAEXXZ').
+symbol(0x100010e1, tramp, '?fill_IS_table@Connection_delay_action@connection_control@@QAEXPAVTHD@@PAUTABLE_LIST@@PAVItem@@@Z').
+symbol(0x100010e6, tramp, '??_GError_handler@connection_control@@UAEPAXI@Z').
+symbol(0x100010eb, tramp, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z').
+symbol(0x100010f0, tramp, '?begin@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@2@XZ').
+symbol(0x100010f5, tramp, '??1Security_context_wrapper@connection_control@@QAE@XZ').
+symbol(0x100010fa, tramp, '?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z').
+symbol(0x100010ff, tramp, '??$Connection_control_malloc@PAX@connection_control@@YAPAXI@Z').
+symbol(0x10001104, tramp, '?get_host@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10001109, tramp, '_hypot').
+symbol(0x1000110e, tramp, '?push_back@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAEXABW4stats_connection_control@@@Z').
+symbol(0x10001113, tramp, '?name@_System_error_category@std@@UBEPBDXZ').
+symbol(0x10001118, tramp, '?_Free_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x1000111d, tramp, '?get_priv_user@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10001122, tramp, '??_E_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x10001127, tramp, '??_EConnection_delay_action@connection_control@@UAEPAXI@Z').
+symbol(0x1000112c, tramp, '??_GConnection_delay_event@connection_control@@UAEPAXI@Z').
+symbol(0x10001131, tramp, '?_Orphan_range@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IBEXPAVConnection_event_subscriber@Connection_event_coordinator@connection_control@@0@Z').
+symbol(0x10001136, tramp, '?match_entry@Connection_delay_event@connection_control@@UAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAX@Z').
+symbol(0x1000113b, tramp, '??_EConnection_control_error_handler@connection_control@@UAEPAXI@Z').
+symbol(0x10001140, tramp, '?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z').
+symbol(0x10001145, tramp, '?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z').
+symbol(0x1000114a, tramp, '??1?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x1000114f, tramp, '?_Alloc_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x10001154, tramp, '??_GConnection_delay_event@connection_control@@UAEPAXI@Z').
+symbol(0x10001159, tramp, '?init@Connection_delay_action@connection_control@@QAEXPAVConnection_event_coordinator_services@2@@Z').
+symbol(0x1000115e, tramp, '?end@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x10001163, tramp, '??0Connection_event_record@connection_control@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x10001168, tramp, '?get_priv_host@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x1000116d, tramp, '??_E_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x10001172, tramp, '?reset@Connection_event_coordinator@connection_control@@AAEXXZ').
+symbol(0x10001177, tramp, '?_Reallocate@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x1000117c, tramp, '??1Connection_event_coordinator@connection_control@@UAE@XZ').
+symbol(0x10001181, tramp, '??1Connection_event_observer@connection_control@@UAE@XZ').
+symbol(0x10001186, tramp, '??3Connection_control_alloc@connection_control@@SAXPAXI@Z').
+symbol(0x1000118b, tramp, '??0Connection_delay_action@connection_control@@QAE@_J00PAW4opt_connection_control@@IPAW4stats_connection_control@@IPAUst_mysql_rwlock@@@Z').
+symbol(0x10001190, tramp, '??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAEAAV01@XZ').
+symbol(0x10001195, tramp, '??1Connection_control_error_handler@connection_control@@UAE@XZ').
+symbol(0x1000119a, tramp, '??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x1000119f, tramp, '?handle_error@Connection_control_error_handler@connection_control@@UAEXPBD@Z').
+symbol(0x100011a4, tramp, '?_Grow@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NI_N@Z').
+symbol(0x100011a9, tramp, '??8error_condition@std@@QBE_NABV01@@Z').
+symbol(0x100011ae, tramp, '?create_or_update_entry@Connection_delay_event@connection_control@@UAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x100011b3, tramp, '??1?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x100011b8, tramp, '?push_back@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAEXABW4opt_connection_control@@@Z').
+symbol(0x100011bd, tramp, '?default_error_condition@_System_error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x100011c2, tramp, '?notify_event@Connection_event_coordinator@connection_control@@QAEXPAVTHD@@PAVError_handler@2@PBUmysql_event_connection@@@Z').
+symbol(0x100011c7, tramp, '?get_proxy_user@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x100011cc, tramp, '??1Connection_delay_action@connection_control@@UAE@XZ').
+symbol(0x100011d1, tramp, '??_Gerror_category@std@@UAEPAXI@Z').
+symbol(0x100011d6, tramp, '?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QBEXABV12@@Z').
+symbol(0x100011db, tramp, '?reset_all@Connection_delay_event@connection_control@@UAEXXZ').
+symbol(0x100011e0, tramp, '??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAEAAV01@XZ').
+symbol(0x100011e5, tramp, '?_Alloc_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x100011ea, tramp, '?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z').
+symbol(0x100011ef, tramp, '??0Security_context_wrapper@connection_control@@QAE@PAVTHD@@@Z').
+symbol(0x100011f4, tramp, '?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QBEXABV12@@Z').
+symbol(0x100011f9, tramp, '??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x100011fe, tramp, '?_Reallocate@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x10001203, tramp, '??1?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x10001208, tramp, '??1?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x1000120d, tramp, '??_Gerror_category@std@@UAEPAXI@Z').
+symbol(0x10001212, tramp, '??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x10001217, tramp, '?notify_event@Connection_delay_action@connection_control@@UAE_NPAVTHD@@PAVConnection_event_coordinator_services@2@PBUmysql_event_connection@@PAVError_handler@2@@Z').
+symbol(0x1000121c, tramp, '?set_connection_delay_IS_table@connection_control@@YAXPAUTABLE@@@Z').
+symbol(0x10001221, tramp, '?_Orphan_range@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IBEXPAW4opt_connection_control@@0@Z').
+symbol(0x10001226, tramp, '?connection_control_failed_attempts_view_init@@YAHPAX@Z').
+symbol(0x1000122b, tramp, '??_GConnection_event_coordinator@connection_control@@UAEPAXI@Z').
+symbol(0x10001230, tramp, '??$_Uninit_move@W4stats_connection_control@@W41@W41@@std@@YAPAW4stats_connection_control@@PAW41@00AAU?$_Wrap_alloc@V?$allocator@W4stats_connection_control@@@std@@@0@0U_Scalar_ptr_iterator_tag@0@@Z').
+symbol(0x10001235, tramp, '?set_delay@Connection_delay_action@connection_control@@QAE_N_J_N@Z').
+symbol(0x1000123a, tramp, '??_G_System_error_category@std@@UAEPAXI@Z').
+symbol(0x1000123f, tramp, '?deinit@Connection_delay_action@connection_control@@AAEXXZ').
+symbol(0x10001244, tramp, '?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z').
+symbol(0x10001249, tramp, '?fill_failed_attempts_view@@YAHPAVTHD@@PAUTABLE_LIST@@PAVItem@@@Z').
+symbol(0x1000124e, tramp, '?_Free_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x10001253, tramp, '??_GConnection_event_coordinator@connection_control@@UAEPAXI@Z').
+symbol(0x10001258, tramp, '??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ').
+symbol(0x1000125d, tramp, '?name@_Iostream_error_category@std@@UBEPBDXZ').
+symbol(0x10001262, tramp, '?_Adopt@_Iterator_base12@std@@QAEXPBU_Container_base12@2@@Z').
+symbol(0x10001267, tramp, '??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x1000126c, tramp, '??4?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAEAAV01@ABV01@@Z').
+symbol(0x10001271, tramp, '?_Reserve@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x10001276, tramp, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z').
+symbol(0x1000127b, tramp, '?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x10001280, tramp, '?_Reallocate@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x10001285, tramp, '?begin@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x1000128a, tramp, '?get_wait_time@Connection_delay_action@connection_control@@AAE_K_J@Z').
+symbol(0x1000128f, tramp, '?message@_System_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x10001294, tramp, '?set_threshold@Connection_delay_action@connection_control@@QAEX_J@Z').
+symbol(0x10001299, tramp, '??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QBEABW4opt_connection_control@@XZ').
+symbol(0x1000129e, tramp, '?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z').
+symbol(0x100012a3, tramp, '?_Reserve@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x100012a8, tramp, '?begin@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x100012ad, tramp, '??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAEAAV01@XZ').
+symbol(0x100012b2, tramp, '?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z').
+symbol(0x100012b7, tramp, '?_Tidy@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IAEXXZ').
+symbol(0x100012bc, tramp, '?notify_sys_var@Connection_event_coordinator@connection_control@@QAEXPAVError_handler@2@W4opt_connection_control@@PAX@Z').
+symbol(0x100012c1, tramp, '?_Tidy@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IAEXXZ').
+symbol(0x100012c6, tramp, '??_G_System_error_category@std@@UAEPAXI@Z').
+symbol(0x100012cb, tramp, '??1?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x100012d0, tramp, '?message@_Generic_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x100012d5, tramp, '??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ').
+symbol(0x100012da, tramp, '??$_Uninit_move@W4opt_connection_control@@W41@W41@@std@@YAPAW4opt_connection_control@@PAW41@00AAU?$_Wrap_alloc@V?$allocator@W4opt_connection_control@@@std@@@0@0U_Scalar_ptr_iterator_tag@0@@Z').
+symbol(0x100012df, tramp, '?_Free_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x100012e4, tramp, '?remove_entry@Connection_delay_event@connection_control@@UAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x100012e9, tramp, '??1?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x100012ee, tramp, '??4?$_Iterator012@Urandom_access_iterator_tag@std@@W4stats_connection_control@@HPBW43@ABW43@U_Iterator_base12@2@@std@@QAEAAU01@ABU01@@Z').
+symbol(0x100012f3, tramp, '??_G_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x100012f8, tramp, '?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z').
+symbol(0x100012fd, tramp, '??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z').
+symbol(0x10001302, tramp, '??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QBEABVConnection_event_subscriber@Connection_event_coordinator@connection_control@@XZ').
+symbol(0x10001307, tramp, '?connection_delay_event_hash_key@connection_control@@YAPAEPBEPAID@Z').
+symbol(0x1000130c, tramp, '??1RD_lock@connection_control@@QAE@XZ').
+symbol(0x10001311, tramp, '??_GError_handler@connection_control@@UAEPAXI@Z').
+symbol(0x10001316, tramp, '?notify_sys_var@Connection_delay_action@connection_control@@UAE_NPAVConnection_event_coordinator_services@2@W4opt_connection_control@@PAXPAVError_handler@2@@Z').
+symbol(0x1000131b, tramp, '??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x10001320, tramp, '??_EConnection_control_error_handler@connection_control@@UAEPAXI@Z').
+symbol(0x10001325, tramp, '?register_event_subscriber@Connection_event_coordinator@connection_control@@UAE_NPAPAVConnection_event_observer@2@PAV?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@PAV?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@5@@Z').
+symbol(0x1000132a, tramp, '??_GConnection_event_observer@connection_control@@UAEPAXI@Z').
+symbol(0x1000132f, tramp, '??4?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAEAAV01@ABV01@@Z').
+symbol(0x10001334, tramp, '??_GConnection_event_observer@connection_control@@UAEPAXI@Z').
+symbol(0x10001339, tramp, '?_Orphan_me@_Iterator_base12@std@@QAEXXZ').
+symbol(0x1000133e, tramp, '??1Connection_event_records@connection_control@@UAE@XZ').
+symbol(0x10001343, tramp, '??_GConnection_event_coordinator_services@connection_control@@UAEPAXI@Z').
+symbol(0x10001348, tramp, '?push_back@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAEXABVConnection_event_subscriber@Connection_event_coordinator@connection_control@@@Z').
+symbol(0x1000134d, tramp, '?security_context_exists@Security_context_wrapper@connection_control@@QAE_NXZ').
+symbol(0x10001352, tramp, '?notify_status_var@Connection_event_coordinator@connection_control@@UAE_NPAPAVConnection_event_observer@2@W4stats_connection_control@@W4status_var_action@2@@Z').
+symbol(0x10001357, tramp, '?fill_IS_table@Connection_delay_event@connection_control@@QAEXPAVTHD@@PAUTABLE_LIST@@@Z').
+symbol(0x100016c0, func, '`dynamic initializer for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10001700, func, '`dynamic initializer for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10001750, func, '`dynamic initializer for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x100017a0, func, '`dynamic initializer for \'std::num_put<char,std::back_insert_iterator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::id\'\'').
+symbol(0x100017d0, func, '`dynamic initializer for \'std::num_put<wchar_t,std::back_insert_iterator<std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > > >::id\'\'').
+symbol(0x10001800, func, 'std::`dynamic initializer for \'allocator_arg\'\'').
+symbol(0x10001820, func, 'std::`dynamic initializer for \'piecewise_construct\'\'').
+symbol(0x10001840, func, '`dynamic initializer for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10001880, func, '`dynamic initializer for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x100018d0, func, '`dynamic initializer for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10001920, func, '`dynamic initializer for \'std::num_put<char,std::back_insert_iterator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::id\'\'').
+symbol(0x10001950, func, '`dynamic initializer for \'std::num_put<wchar_t,std::back_insert_iterator<std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > > >::id\'\'').
+symbol(0x10001980, func, 'std::`dynamic initializer for \'allocator_arg\'\'').
+symbol(0x100019a0, func, '`dynamic initializer for \'g_statistics\'\'').
+symbol(0x100019b0, func, '`dynamic initializer for \'mysql_sysvar_failed_connections_threshold\'\'').
+symbol(0x10001a30, func, '`dynamic initializer for \'mysql_sysvar_max_connection_delay\'\'').
+symbol(0x10001ab0, func, '`dynamic initializer for \'mysql_sysvar_min_connection_delay\'\'').
+symbol(0x10001b30, func, 'std::`dynamic initializer for \'piecewise_construct\'\'').
+symbol(0x10001b50, func, '`dynamic initializer for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10001b90, func, '`dynamic initializer for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10001be0, func, '`dynamic initializer for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10001c30, func, '`dynamic initializer for \'std::num_put<char,std::back_insert_iterator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::id\'\'').
+symbol(0x10001c60, func, '`dynamic initializer for \'std::num_put<wchar_t,std::back_insert_iterator<std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > > >::id\'\'').
+symbol(0x10001c90, func, 'std::`dynamic initializer for \'_Tuple_alloc\'\'').
+symbol(0x10001cb0, func, 'std::`dynamic initializer for \'allocator_arg\'\'').
+symbol(0x10001cd0, func, 'std::`dynamic initializer for \'ignore\'\'').
+symbol(0x10001ce0, func, 'std::`dynamic initializer for \'piecewise_construct\'\'').
+symbol(0x10001d00, func, '`dynamic initializer for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10001d40, func, '`dynamic initializer for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10001d90, func, '`dynamic initializer for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10001de0, func, '`dynamic initializer for \'std::num_put<char,std::back_insert_iterator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::id\'\'').
+symbol(0x10001e10, func, '`dynamic initializer for \'std::num_put<wchar_t,std::back_insert_iterator<std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > > >::id\'\'').
+symbol(0x10001e40, func, 'connection_control::`dynamic initializer for \'I_S_CONNECTION_CONTROL_FAILED_ATTEMPTS_USERHOST\'\'').
+symbol(0x10001ea0, func, 'std::`dynamic initializer for \'_Tuple_alloc\'\'').
+symbol(0x10001ec0, func, 'std::`dynamic initializer for \'allocator_arg\'\'').
+symbol(0x10001ee0, func, 'std::`dynamic initializer for \'ignore\'\'').
+symbol(0x10001ef0, func, 'std::`dynamic initializer for \'piecewise_construct\'\'').
+symbol(0x10002cf0, method, '?notify_event@Connection_event_coordinator@connection_control@@QAEXPAVTHD@@PAVError_handler@2@PBUmysql_event_connection@@@Z').
+symbol(0x10002f20, method, '?notify_sys_var@Connection_event_coordinator@connection_control@@QAEXPAVError_handler@2@W4opt_connection_control@@PAX@Z').
+symbol(0x10003160, method, '?register_event_subscriber@Connection_event_coordinator@connection_control@@UAE_NPAPAVConnection_event_observer@2@PAV?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@PAV?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@5@@Z').
+symbol(0x10003a00, method, '?notify_status_var@Connection_event_coordinator@connection_control@@UAE_NPAPAVConnection_event_observer@2@W4stats_connection_control@@W4status_var_action@2@@Z').
+symbol(0x10003ba0, method, '?reset@Connection_event_coordinator@connection_control@@AAEXXZ').
+symbol(0x10003fc0, method, '??$_Uninit_move@PAVConnection_event_subscriber@Connection_event_coordinator@connection_control@@PAV123@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@V123@@std@@YAPAVConnection_event_subscriber@Connection_event_coordinator@connection_control@@PAV123@00AAU?$_Wrap_alloc@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@0@0U_Nonscalar_ptr_iterator_tag@0@@Z').
+symbol(0x10004230, method, '??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x10004270, method, '??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x100042b0, method, '??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z').
+symbol(0x100043a0, method, '??1?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@XZ').
+symbol(0x10004470, method, '??1?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ').
+symbol(0x100044b0, method, '??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x10004560, method, '??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x10004610, method, '??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAE@XZ').
+symbol(0x100046c0, method, '??4?$_Iterator012@Urandom_access_iterator_tag@std@@W4opt_connection_control@@HPBW43@ABW43@U_Iterator_base12@2@@std@@QAEAAU01@ABU01@@Z').
+symbol(0x10004700, method, '??4?$_Iterator012@Urandom_access_iterator_tag@std@@W4stats_connection_control@@HPBW43@ABW43@U_Iterator_base12@2@@std@@QAEAAU01@ABU01@@Z').
+symbol(0x10004740, method, '??4?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAEAAV01@ABV01@@Z').
+symbol(0x10004790, method, '??4?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAEAAV01@ABV01@@Z').
+symbol(0x100047e0, method, '??4_Iterator_base12@std@@QAEAAU01@ABU01@@Z').
+symbol(0x10004910, method, '??8error_condition@std@@QBE_NABV01@@Z').
+symbol(0x100049c0, method, '??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QBEABVConnection_event_subscriber@Connection_event_coordinator@connection_control@@XZ').
+symbol(0x10004b40, method, '??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QBEABW4opt_connection_control@@XZ').
+symbol(0x10004cc0, method, '??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QBEABW4stats_connection_control@@XZ').
+symbol(0x10004e40, method, '??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAEAAV01@XZ').
+symbol(0x10004fa0, method, '??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QAEAAV01@XZ').
+symbol(0x10005100, method, '??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QAEAAV01@XZ').
+symbol(0x10005260, method, '??_E_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x10005260, method, '??_G_Generic_error_category@std@@UAEPAXI@Z').
+symbol(0x100052b0, method, '??_E_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x100052b0, method, '??_G_Iostream_error_category@std@@UAEPAXI@Z').
+symbol(0x10005300, method, '??_E_System_error_category@std@@UAEPAXI@Z').
+symbol(0x10005300, method, '??_G_System_error_category@std@@UAEPAXI@Z').
+symbol(0x10005350, method, '??_Eerror_category@std@@UAEPAXI@Z').
+symbol(0x10005350, method, '??_Gerror_category@std@@UAEPAXI@Z').
+symbol(0x100053a0, method, '?_Adopt@_Iterator_base12@std@@QAEXPBU_Container_base12@2@@Z').
+symbol(0x10005550, method, '?_Alloc_proxy@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAEXXZ').
+symbol(0x10005690, method, '?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QBEXABV12@@Z').
+symbol(0x100057f0, method, '?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@std@@QBEXABV12@@Z').
+symbol(0x10005950, method, '?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@std@@QBEXABV12@@Z').
+symbol(0x10005ab0, method, '?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z').
+symbol(0x10005eb0, method, '?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z').
+symbol(0x10005f30, method, '?_Grow@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NI_N@Z').
+symbol(0x10006070, method, '?_Inside@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NPBD@Z').
+symbol(0x10006120, method, '?_Orphan_me@_Iterator_base12@std@@QAEXXZ').
+symbol(0x100061e0, method, '?_Orphan_range@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IBEXPAVConnection_event_subscriber@Connection_event_coordinator@connection_control@@0@Z').
+symbol(0x10006350, method, '?_Reallocate@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x10006620, method, '?_Reserve@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x10006750, method, '?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z').
+symbol(0x10006830, method, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z').
+symbol(0x100069e0, method, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z').
+symbol(0x10006a90, method, '?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z').
+symbol(0x10006bf0, method, '?begin@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@2@XZ').
+symbol(0x10006c70, method, '?begin@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x10006cf0, method, '?begin@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x10006d70, method, '?clear@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAEXXZ').
+symbol(0x10006e60, method, '?default_error_condition@_System_error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x10006ef0, method, '?default_error_condition@error_category@std@@UBE?AVerror_condition@2@H@Z').
+symbol(0x10006f30, method, '?end@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@2@XZ').
+symbol(0x10006fb0, method, '?end@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x10007030, method, '?end@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@@2@XZ').
+symbol(0x100070b0, method, '?equivalent@error_category@std@@UBE_NABVerror_code@2@H@Z').
+symbol(0x10007140, method, '?equivalent@error_category@std@@UBE_NHABVerror_condition@2@@Z').
+symbol(0x100071c0, method, '?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z').
+symbol(0x10007300, method, '?message@_Generic_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x100073a0, method, '?message@_Iostream_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x10007430, method, '?message@_System_error_category@std@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@H@Z').
+symbol(0x100074d0, method, '?name@_Generic_error_category@std@@UBEPBDXZ').
+symbol(0x100074f0, method, '?name@_Iostream_error_category@std@@UBEPBDXZ').
+symbol(0x10007510, method, '?name@_System_error_category@std@@UBEPBDXZ').
+symbol(0x10007530, method, '?push_back@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAEXABVConnection_event_subscriber@Connection_event_coordinator@connection_control@@@Z').
+symbol(0x100076f0, func, '_hypot').
+symbol(0x10007740, func, 'connection_control_notify').
+symbol(0x10007890, func, 'connection_control_init').
+symbol(0x10007a50, func, 'connection_control_deinit').
+symbol(0x10007ad0, func, 'check_failed_connections_threshold').
+symbol(0x10007ba0, func, 'update_failed_connections_threshold').
+symbol(0x10007ca0, func, 'check_min_connection_delay').
+symbol(0x10007d90, func, 'update_min_connection_delay').
+symbol(0x10007e90, func, 'check_max_connection_delay').
+symbol(0x10007f90, func, 'update_max_connection_delay').
+symbol(0x100080c0, func, 'show_delay_generated').
+symbol(0x100083b0, func, '??$Connection_control_malloc@PAX@connection_control@@YAPAXI@Z').
+symbol(0x10008430, method, '??0Connection_event_coordinator@connection_control@@QAE@XZ').
+symbol(0x10008530, method, '??1?$_Vector_val@U?$_Simple_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x10008570, method, '??1?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x100085c0, method, '??1Connection_control_error_handler@connection_control@@UAE@XZ').
+symbol(0x100085f0, method, '??1Connection_event_coordinator@connection_control@@UAE@XZ').
+symbol(0x100086d0, method, '??1Connection_event_coordinator_services@connection_control@@UAE@XZ').
+symbol(0x10008700, staticmethod, '??3Connection_control_alloc@connection_control@@SAXPAXI@Z').
+symbol(0x10008740, method, '??_EConnection_control_error_handler@connection_control@@UAEPAXI@Z').
+symbol(0x10008740, method, '??_GConnection_control_error_handler@connection_control@@UAEPAXI@Z').
+symbol(0x10008790, method, '??_EConnection_event_coordinator@connection_control@@UAEPAXI@Z').
+symbol(0x10008790, method, '??_GConnection_event_coordinator@connection_control@@UAEPAXI@Z').
+symbol(0x10008800, method, '??_EConnection_event_coordinator_services@connection_control@@UAEPAXI@Z').
+symbol(0x10008800, method, '??_GConnection_event_coordinator_services@connection_control@@UAEPAXI@Z').
+symbol(0x10008850, method, '??_EError_handler@connection_control@@UAEPAXI@Z').
+symbol(0x10008850, method, '??_GError_handler@connection_control@@UAEPAXI@Z').
+symbol(0x100088a0, method, '?_Alloc_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x100089e0, method, '?_Free_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x10008a90, method, '?_Tidy@?$vector@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@V?$allocator@VConnection_event_subscriber@Connection_event_coordinator@connection_control@@@std@@@std@@IAEXXZ').
+symbol(0x10008bc0, method, '?handle_error@Connection_control_error_handler@connection_control@@UAEXPBD@Z').
+symbol(0x10008c20, method, '??0Security_context_wrapper@connection_control@@QAE@PAVTHD@@@Z').
+symbol(0x10008c90, method, '?get_proxy_user@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10008d10, method, '?get_priv_user@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10008d90, method, '?get_priv_host@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10008e10, method, '?get_user@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10008e90, method, '?get_host@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10008f10, method, '?get_ip@Security_context_wrapper@connection_control@@QAEPBDXZ').
+symbol(0x10008f90, method, '?security_context_exists@Security_context_wrapper@connection_control@@QAE_NXZ').
+symbol(0x10008fb0, method, '?is_super_user@Security_context_wrapper@connection_control@@QAE_NXZ').
+symbol(0x10009060, method, '?get_property@Security_context_wrapper@connection_control@@AAE_NPBDPAUst_mysql_const_lex_string@@@Z').
+symbol(0x10009220, func, '??_H@YGXPAXIHP6EPAX0@Z@Z').
+symbol(0x10009270, func, 'set_timespec_nsec').
+symbol(0x10009360, func, 'inline_mysql_mutex_lock').
+symbol(0x10009460, func, 'inline_mysql_rwlock_init').
+symbol(0x100094d0, func, 'inline_mysql_rwlock_rdlock').
+symbol(0x100095d0, func, 'inline_mysql_rwlock_wrlock').
+symbol(0x100096f0, func, 'inline_mysql_rwlock_unlock').
+symbol(0x10009790, func, 'inline_mysql_cond_timedwait').
+symbol(0x10009876, name, '__fltused').
+symbol(0x10009876, name, '__ldused').
+symbol(0x100098a0, func, '?connection_control_failed_attempts_view_init@@YAHPAX@Z').
+symbol(0x100098e0, method, '?init_connection_delay_event@connection_control@@YA_NPAVConnection_event_coordinator_services@1@PAVError_handler@1@@Z').
+symbol(0x10009a40, func, '?deinit_connection_delay_event@connection_control@@YAXXZ').
+symbol(0x10009af0, method, '??0Connection_delay_event@connection_control@@QAE@XZ').
+symbol(0x10009b50, method, '?fill_IS_table@Connection_delay_event@connection_control@@QAEXPAVTHD@@PAUTABLE_LIST@@@Z').
+symbol(0x10009c60, method, '?create_or_update_entry@Connection_delay_event@connection_control@@UAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x10009fe0, method, '?remove_entry@Connection_delay_event@connection_control@@UAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x1000a240, method, '?match_entry@Connection_delay_event@connection_control@@UAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAX@Z').
+symbol(0x1000a3d0, method, '?reset_all@Connection_delay_event@connection_control@@UAEXXZ').
+symbol(0x1000a590, method, '??0Connection_delay_action@connection_control@@QAE@_J00PAW4opt_connection_control@@IPAW4stats_connection_control@@IPAUst_mysql_rwlock@@@Z').
+symbol(0x1000a770, method, '?init@Connection_delay_action@connection_control@@QAEXPAVConnection_event_coordinator_services@2@@Z').
+symbol(0x1000a940, method, '?fill_IS_table@Connection_delay_action@connection_control@@QAEXPAVTHD@@PAUTABLE_LIST@@PAVItem@@@Z').
+symbol(0x1000acd0, method, '?notify_event@Connection_delay_action@connection_control@@UAE_NPAVTHD@@PAVConnection_event_coordinator_services@2@PBUmysql_event_connection@@PAVError_handler@2@@Z').
+symbol(0x1000b2a0, method, '?notify_sys_var@Connection_delay_action@connection_control@@UAE_NPAVConnection_event_coordinator_services@2@W4opt_connection_control@@PAXPAVError_handler@2@@Z').
+symbol(0x1000b600, method, '?deinit@Connection_delay_action@connection_control@@AAEXXZ').
+symbol(0x1000b750, method, '?make_hash_key@Connection_delay_action@connection_control@@AAEXPAVTHD@@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x1000b950, method, '?conditional_wait@Connection_delay_action@connection_control@@AAEXPAVTHD@@_K@Z').
+symbol(0x1000bde0, func, '?match_all_entries@connection_control@@YAHPBE@Z').
+symbol(0x1000bdf0, func, '?connection_delay_event_hash_key@connection_control@@YAPAEPBEPAID@Z').
+symbol(0x1000be70, func, '?set_connection_delay_IS_table@connection_control@@YAXPAUTABLE@@@Z').
+symbol(0x1000be80, func, '?connection_delay_IS_table_writer@connection_control@@YAHPBE@Z').
+symbol(0x1000bfa0, func, 'connection_control::get_equal_condition_argument').
+symbol(0x1000c3a0, method, '?fill_failed_attempts_view@@YAHPAVTHD@@PAUTABLE_LIST@@PAVItem@@@Z').
+symbol(0x1000d030, func, '??$_Uninit_move@W4opt_connection_control@@W41@W41@@std@@YAPAW4opt_connection_control@@PAW41@00AAU?$_Wrap_alloc@V?$allocator@W4opt_connection_control@@@std@@@0@0U_Scalar_ptr_iterator_tag@0@@Z').
+symbol(0x1000d1e0, func, '??$_Uninit_move@W4stats_connection_control@@W41@W41@@std@@YAPAW4stats_connection_control@@PAW41@00AAU?$_Wrap_alloc@V?$allocator@W4stats_connection_control@@@std@@@0@0U_Scalar_ptr_iterator_tag@0@@Z').
+symbol(0x1000d390, method, '??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ').
+symbol(0x1000d3f0, method, '??0Connection_event_record@connection_control@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z').
+symbol(0x1000d4f0, method, '??1?$_Vector_val@U?$_Simple_types@W4opt_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x1000d530, method, '??1?$_Vector_val@U?$_Simple_types@W4stats_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x1000d570, method, '??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ').
+symbol(0x1000d5c0, method, '??1?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x1000d610, method, '??1?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAE@XZ').
+symbol(0x1000d660, method, '??1Connection_delay_action@connection_control@@UAE@XZ').
+symbol(0x1000d7d0, method, '??1Connection_delay_event@connection_control@@UAE@XZ').
+symbol(0x1000d870, method, '??1Connection_event_observer@connection_control@@UAE@XZ').
+symbol(0x1000d8a0, method, '??1Connection_event_records@connection_control@@UAE@XZ').
+symbol(0x1000d8d0, method, '??1RD_lock@connection_control@@QAE@XZ').
+symbol(0x1000d910, method, '??1Security_context_wrapper@connection_control@@QAE@XZ').
+symbol(0x1000d930, method, '??1String@@QAE@XZ').
+symbol(0x1000d960, method, '??1WR_lock@connection_control@@QAE@XZ').
+symbol(0x1000d9a0, method, '??_EConnection_delay_action@connection_control@@UAEPAXI@Z').
+symbol(0x1000d9a0, method, '??_GConnection_delay_action@connection_control@@UAEPAXI@Z').
+symbol(0x1000da10, method, '??_EConnection_delay_event@connection_control@@UAEPAXI@Z').
+symbol(0x1000da10, method, '??_GConnection_delay_event@connection_control@@UAEPAXI@Z').
+symbol(0x1000dad0, method, '??_EConnection_event_observer@connection_control@@UAEPAXI@Z').
+symbol(0x1000dad0, method, '??_GConnection_event_observer@connection_control@@UAEPAXI@Z').
+symbol(0x1000db20, method, '??_EConnection_event_records@connection_control@@UAEPAXI@Z').
+symbol(0x1000db20, method, '??_GConnection_event_records@connection_control@@UAEPAXI@Z').
+symbol(0x1000db70, method, '?_Alloc_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x1000dcb0, method, '?_Alloc_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x1000ddf0, method, '?_Free_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x1000dea0, method, '?_Free_proxy@?$_Vector_alloc@$0A@U?$_Vec_base_types@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@@std@@QAEXXZ').
+symbol(0x1000df50, method, '?_Orphan_range@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IBEXPAW4opt_connection_control@@0@Z').
+symbol(0x1000e0c0, method, '?_Orphan_range@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IBEXPAW4stats_connection_control@@0@Z').
+symbol(0x1000e230, method, '?_Reallocate@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x1000e4d0, method, '?_Reallocate@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x1000e770, method, '?_Reserve@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x1000e8a0, method, '?_Reserve@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IAEXI@Z').
+symbol(0x1000e9d0, method, '?_Tidy@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@IAEXXZ').
+symbol(0x1000eae0, method, '?_Tidy@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@IAEXXZ').
+symbol(0x1000ebf0, method, '?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z').
+symbol(0x1000eda0, method, '?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z').
+symbol(0x1000ee50, method, '?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z').
+symbol(0x1000f010, method, '?c_ptr_safe@String@@QAEPADXZ').
+symbol(0x1000f080, method, '?get_wait_time@Connection_delay_action@connection_control@@AAE_K_J@Z').
+symbol(0x1000f1d0, method, '?mem_free@String@@QAEXXZ').
+symbol(0x1000f260, method, '?push_back@?$vector@W4opt_connection_control@@V?$allocator@W4opt_connection_control@@@std@@@std@@QAEXABW4opt_connection_control@@@Z').
+symbol(0x1000f410, method, '?push_back@?$vector@W4stats_connection_control@@V?$allocator@W4stats_connection_control@@@std@@@std@@QAEXABW4stats_connection_control@@@Z').
+symbol(0x1000f5c0, method, '?set_delay@Connection_delay_action@connection_control@@QAE_N_J_N@Z').
+symbol(0x1000f790, method, '?set_threshold@Connection_delay_action@connection_control@@QAEX_J@Z').
+symbol(0x1000f842, thunk, '_InitializeSRWLock@4').
+symbol(0x1000f848, thunk, '_ReleaseSRWLockExclusive@4').
+symbol(0x1000f84e, thunk, '_ReleaseSRWLockShared@4').
+symbol(0x1000f854, thunk, '_AcquireSRWLockExclusive@4').
+symbol(0x1000f85a, thunk, '_AcquireSRWLockShared@4').
+symbol(0x1000f860, thunk, '_InitializeConditionVariable@4').
+symbol(0x1000f866, thunk, '_GetSystemTimeAsFileTime@4').
+symbol(0x1000f86c, thunk, '__db_enter_').
+symbol(0x1000f872, thunk, '__db_return_').
+symbol(0x1000f878, thunk, '__db_pargs_').
+symbol(0x1000f87e, thunk, '__db_enabled_').
+symbol(0x1000f884, thunk, '__db_doprnt_').
+symbol(0x1000f88a, thunk, '_safe_mutex_init').
+symbol(0x1000f890, thunk, '_safe_mutex_lock').
+symbol(0x1000f896, thunk, '_safe_mutex_unlock').
+symbol(0x1000f89c, thunk, '_safe_mutex_destroy').
+symbol(0x1000f8a2, thunk, '_safe_cond_timedwait').
+symbol(0x1000f8a8, thunk, '?mem_realloc@String@@QAE_NI_N@Z').
+symbol(0x1000f8ae, thunk, '__current_thd_noinline').
+symbol(0x1000f8b4, thunk, '?schema_table_store_record@@YA_NPAVTHD@@PAUTABLE@@@Z').
+symbol(0x1000f8ba, thunk, '_thd_enter_cond').
+symbol(0x1000f8c0, thunk, '_thd_exit_cond').
+symbol(0x1000f8c6, thunk, '_lf_pinbox_get_pins').
+symbol(0x1000f8cc, thunk, '_lf_pinbox_put_pins').
+symbol(0x1000f8d2, thunk, '_lf_hash_init2').
+symbol(0x1000f8d8, thunk, '_lf_hash_destroy').
+symbol(0x1000f8de, thunk, '_lf_hash_insert').
+symbol(0x1000f8e4, thunk, '_lf_hash_search').
+symbol(0x1000f8ea, thunk, '_lf_hash_delete').
+symbol(0x1000f8f0, thunk, '_lf_hash_random_match').
+symbol(0x1000f8f6, thunk, '??0_Lockit@std@@QAE@H@Z').
+symbol(0x1000f8fc, thunk, '??1_Lockit@std@@QAE@XZ').
+symbol(0x1000f902, thunk, '?_Debug_message@std@@YAXPB_W0I@Z').
+symbol(0x1000f908, thunk, '??0_Container_base12@std@@QAE@XZ').
+symbol(0x1000f90e, thunk, '??1_Container_base12@std@@QAE@XZ').
+symbol(0x1000f914, thunk, '?_Getpfirst@_Container_base12@std@@QBEPAPAU_Iterator_base12@2@XZ').
+symbol(0x1000f91a, thunk, '?_Orphan_all@_Container_base12@std@@QAEXXZ').
+symbol(0x1000f920, thunk, '?_Xbad_alloc@std@@YAXXZ').
+symbol(0x1000f926, thunk, '?_Xlength_error@std@@YAXPBD@Z').
+symbol(0x1000f92c, thunk, '?_Xout_of_range@std@@YAXPBD@Z').
+symbol(0x1000f932, thunk, '??0id@locale@std@@QAE@I@Z').
+symbol(0x1000f938, thunk, '?_Syserror_map@std@@YAPBDH@Z').
+symbol(0x1000f93e, thunk, '?_Winerror_map@std@@YAPBDH@Z').
+symbol(0x1000f944, thunk, '__purecall').
+symbol(0x1000f94a, thunk, '??2@YAPAXI@Z').
+symbol(0x1000f950, thunk, '??3@YAXPAX@Z').
+symbol(0x1000f960, func, '___atonexitinit').
+symbol(0x1000fa10, func, '__onexit').
+symbol(0x1000fb10, func, '_atexit').
+symbol(0x1000fb3c, thunk, '__invalid_parameter').
+symbol(0x1000fb42, thunk, '_memcpy').
+symbol(0x1000fb48, thunk, '_strlen').
+symbol(0x1000fb4e, thunk, '_memmove').
+symbol(0x1000fb54, thunk, '__hypot').
+symbol(0x1000fb5a, thunk, '__wassert').
+symbol(0x1000fb60, thunk, '__CrtDbgReportW').
+symbol(0x1000fb70, func, '@_RTC_AllocaHelper@12').
+symbol(0x1000fbb0, func, '@_RTC_CheckStackVars2@12').
+symbol(0x1000fc90, func, '@_RTC_CheckStackVars@8').
+symbol(0x1000fcf0, func, '__RTC_CheckEsp').
+symbol(0x1000fd20, func, '@__security_check_cookie@4').
+symbol(0x1000fd30, thunk, '__CxxThrowException@8').
+symbol(0x1000fd40, func, '__RTC_InitBase').
+symbol(0x1000fd70, func, '__RTC_Shutdown').
+symbol(0x1000fd84, thunk, '___CxxFrameHandler3').
+symbol(0x1000fd90, method, '??0type_info@@AAE@ABV0@@Z').
+symbol(0x1000fdb0, method, '??4type_info@@AAEAAV0@ABV0@@Z').
+symbol(0x1000fdc0, method, '??_Etype_info@@UAEPAXI@Z').
+symbol(0x1000fe30, thunk, '_memset').
+symbol(0x1000fe40, func, '__allmul').
+symbol(0x1000fe80, func, '__aulldiv').
+symbol(0x1000fef0, func, 'pre_c_init').
+symbol(0x1000ff70, func, '_NtCurrentTeb').
+symbol(0x1000ff80, func, '__CRT_INIT@12').
+symbol(0x10010260, func, '__DllMainCRTStartup@12').
+symbol(0x10010290, func, '__DllMainCRTStartup').
+symbol(0x10010450, thunk, '__lock').
+symbol(0x10010456, thunk, '__unlock').
+symbol(0x1001045c, thunk, '__calloc_dbg').
+symbol(0x10010462, thunk, '___dllonexit').
+symbol(0x10010470, func, '__except_handler4').
+symbol(0x100104a0, func, 'DebuggerProbe').
+symbol(0x10010540, func, 'DebuggerRuntime').
+symbol(0x100105f0, func, '?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z').
+symbol(0x10010770, func, '?_RTC_Failure@@YAXPAXH@Z').
+symbol(0x100107c0, func, '?_RTC_StackFailure@@YAXPAXPBD@Z').
+symbol(0x100108c0, func, '_getMemBlockDataString').
+symbol(0x10010930, func, '_strlen_priv').
+symbol(0x10010950, func, 'failwithmessage').
+symbol(0x10010b40, func, '__RTC_UninitUse').
+symbol(0x10010c30, func, '___raise_securityfailure').
+symbol(0x10010c80, func, '___report_gsfailure').
+symbol(0x10010d90, func, '___report_rangecheckfailure').
+symbol(0x10010da0, func, '___report_securityfailure').
+symbol(0x10010e80, func, '___report_securityfailureEx').
+symbol(0x10010fb0, func, '?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z').
+symbol(0x10010fc0, func, '?_RTC_GetErrorFuncW@@YAP6AHHPB_WH00ZZPBX@Z').
+symbol(0x10010fd0, func, '__RTC_GetErrDesc').
+symbol(0x10010ff0, func, '__RTC_NumErrors').
+symbol(0x10011000, func, '__RTC_SetErrorFunc').
+symbol(0x10011020, func, '__RTC_SetErrorFuncW').
+symbol(0x10011040, func, '__RTC_SetErrorType').
+symbol(0x10011064, thunk, '__CRT_RTC_INITW').
+symbol(0x10011070, func, '??_M@YGXPAXIHP6EX0@Z@Z').
+symbol(0x10011120, func, 'ArrayUnwindFilter').
+symbol(0x10011150, func, '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z').
+symbol(0x100111da, thunk, '??1type_info@@UAE@XZ').
+symbol(0x100111e0, thunk, '___CppXcptFilter').
+symbol(0x100111e6, thunk, '__amsg_exit').
+symbol(0x100111ec, thunk, '__malloc_dbg').
+symbol(0x100111f2, thunk, '__free_dbg').
+symbol(0x100111f8, thunk, '__CrtSetCheckCount').
+symbol(0x10011200, func, '__FindPESection').
+symbol(0x10011280, func, '__IsNonwritableInCurrentImage').
+symbol(0x100113b0, func, '__ValidateImageBase').
+symbol(0x10011410, func, '___security_init_cookie').
+symbol(0x100114f0, func, '_DllMain@12').
+symbol(0x10011520, func, '__RTC_Initialize').
+symbol(0x10011550, func, '__RTC_Terminate').
+symbol(0x10011576, thunk, '__initterm').
+symbol(0x1001157c, thunk, '__initterm_e').
+symbol(0x10011590, func, '___clean_type_info_names').
+symbol(0x100115a2, thunk, '__except_handler4_common').
+symbol(0x100115b0, func, 'GetPdbDll').
+symbol(0x100116f0, func, 'GetPdbDllFromInstallPath').
+symbol(0x10011920, func, 'GetPdbDllPathFromFilePath').
+symbol(0x100119f0, func, '?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z').
+symbol(0x10011c9e, thunk, '__crt_debugger_hook').
+symbol(0x10011ca4, thunk, '___crtUnhandledException').
+symbol(0x10011caa, thunk, '___crtTerminateProcess').
+symbol(0x10011cb0, thunk, '?terminate@@YAXXZ').
+symbol(0x10011cb6, thunk, '___clean_type_info_names_internal').
+symbol(0x10011cbc, thunk, '_wcscpy_s').
+symbol(0x10011cc2, thunk, '__wmakepath_s').
+symbol(0x10011cc8, thunk, '__wsplitpath_s').
+symbol(0x10011cce, thunk, '_EncodePointer@4').
+symbol(0x10011cd4, thunk, '_DecodePointer@4').
+symbol(0x10011cda, thunk, '_IsDebuggerPresent@0').
+symbol(0x10011ce0, thunk, '_RaiseException@16').
+symbol(0x10011ce6, thunk, '_GetLastError@0').
+symbol(0x10011cec, thunk, '_GetProcAddress@8').
+symbol(0x10011cf2, thunk, '_LoadLibraryExW@12').
+symbol(0x10011cf8, thunk, '_MultiByteToWideChar@24').
+symbol(0x10011cfe, thunk, '_WideCharToMultiByte@32').
+symbol(0x10011d04, thunk, '_IsProcessorFeaturePresent@4').
+symbol(0x10011d0a, thunk, '_QueryPerformanceCounter@4').
+symbol(0x10011d10, thunk, '_GetCurrentProcessId@0').
+symbol(0x10011d16, thunk, '_GetCurrentThreadId@0').
+symbol(0x10011d1c, thunk, '_DisableThreadLibraryCalls@4').
+symbol(0x10011d22, thunk, '_HeapAlloc@12').
+symbol(0x10011d28, thunk, '_HeapFree@12').
+symbol(0x10011d2e, thunk, '_GetProcessHeap@0').
+symbol(0x10011d34, thunk, '_VirtualQuery@12').
+symbol(0x10011d3a, thunk, '_FreeLibrary@4').
+symbol(0x10011d40, thunk, '_GetModuleFileNameW@12').
+symbol(0x10011d46, thunk, '_GetModuleHandleW@4').
+symbol(0x10015050, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10015070, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10015090, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x100150b0, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x100150d0, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x100150f0, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10015110, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10015130, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x10015150, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x10015170, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Generic_object\'\'').
+symbol(0x10015190, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_Iostream_object\'\'').
+symbol(0x100151b0, func, '`dynamic atexit destructor for \'std::_Error_objects<int>::_System_object\'\'').
+symbol(0x100151d0, func, 'connection_control::`dynamic atexit destructor for \'I_S_CONNECTION_CONTROL_FAILED_ATTEMPTS_USERHOST\'\'').
+symbol(0x10017000, name, '___xc_a').
+symbol(0x10017274, name, '___xc_z').
+symbol(0x10017378, name, '___xi_a').
+symbol(0x10017684, name, '___xi_z').
+symbol(0x100182e0, string, '??_C@_1JA@EADLBAJ@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@').
+symbol(0x1001838c, string, '??_C@_1DC@POOIKBAO@?$AAI?$AAT?$AAE?$AAR?$AAA?$AAT?$AAO?$AAR?$AA?5?$AAL?$AAI?$AAS?$AAT?$AA?5?$AAC?$AAO?$AAR?$AAR?$AAU?$AAP?$AAT?$AAE?$AAD?$AA?$CB?$AA?$AA@').
+symbol(0x100183cc, table, '??_7error_category@std@@6B@').
+symbol(0x100183f0, table, '??_7_Generic_error_category@std@@6B@').
+symbol(0x10018410, string, '??_C@_07DCLBNMLN@generic?$AA@').
+symbol(0x1001841c, string, '??_C@_0O@BFJCFAAK@unknown?5error?$AA@').
+symbol(0x10018430, table, '??_7_Iostream_error_category@std@@6B@').
+symbol(0x10018450, string, '??_C@_08LLGCOLLL@iostream?$AA@').
+symbol(0x1001845c, string, '??_C@_0BG@PADBLCHM@iostream?5stream?5error?$AA@').
+symbol(0x1001847c, table, '??_7_System_error_category@std@@6B@').
+symbol(0x1001849c, string, '??_C@_06FHFOAHML@system?$AA@').
+symbol(0x100184a8, string, '??_C@_1IO@FEAPGJBD@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@').
+symbol(0x10018558, string, '??_C@_1IM@EINEHPHE@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@').
+symbol(0x10018600, string, '??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@').
+symbol(0x10018654, string, '??_C@_0CE@OFMIGAMM@Standard?5C?$CL?$CL?5Libraries?5Out?5of?5Ra@').
+symbol(0x10018680, string, '??_C@_1FG@IBPIFFN@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAO?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAR@').
+symbol(0x100186e8, string, '??_C@_15GANGMFKL@?$AA?$CF?$AAs?$AA?$AA@').
+symbol(0x100186f0, string, '??_C@_1PE@CDHONILO@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x10018814, string, '??_C@_1BO@MEPPHOO@?$AA?$CC?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$CC?$AA?$AA@').
+symbol(0x10018838, string, '??_C@_1EE@EJDKCLKB@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl@').
+symbol(0x10018890, string, '??_C@_1PG@EOCBABDE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x100189b8, string, '??_C@_1PI@BHNGKNEO@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x10018ae8, string, '??_C@_1PK@HKPCFBJC@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x10018c18, string, '??_C@_1BGE@JEGKCALA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x10018dc8, string, '??_C@_1BGG@GDMEOBIA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x10018f78, string, '??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@').
+symbol(0x10018f8c, string, '??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@').
+symbol(0x10018fa8, string, '??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@').
+symbol(0x10018fc0, string, '??_C@_1DM@HINDPMBP@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@').
+symbol(0x10019008, string, '??_C@_0CI@FNPHFCCM@Standard?5C?$CL?$CL?5Libraries?5Invalid?5A@').
+symbol(0x10019038, string, '??_C@_1FO@GJIHNDLM@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5@').
+symbol(0x100190a8, string, '??_C@_1OO@GNENCOAI@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x100191c8, string, '??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@').
+symbol(0x100191f8, string, '??_C@_1PC@HCAEDKJK@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x10019320, string, '??_C@_1BFO@ENLBAPBF@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@').
+symbol(0x100194c4, string, '??_C@_1CK@EOPGIILJ@?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAn?$AAu?$AAl?$AAl?$AA?5?$AAp?$AAo?$AAi?$AAn?$AAt?$AAe?$AAr?$AA?$AA@').
+symbol(0x100194f8, string, '??_C@_1CO@DGLIKNHI@?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@').
+symbol(0x10019530, string, '??_C@_1IO@LKIDJAMC@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@').
+symbol(0x10019e88, table, '??_7Error_handler@connection_control@@6B@').
+symbol(0x10019e98, table, '??_7Connection_event_coordinator_services@connection_control@@6B@').
+symbol(0x10019eac, table, '??_7Connection_event_coordinator@connection_control@@6B@').
+symbol(0x10019ec0, table, '??_7Connection_control_error_handler@connection_control@@6B@').
+symbol(0x1001d22c, name, '?npos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2IB').
+symbol(0x1001d230, string, '??_C@_1IM@FHJLKDML@?$AAg?$AA?3?$AA?2?$AAa?$AAd?$AAe?$AA?2?$AAb?$AAu?$AAi?$AAl?$AAd?$AA?2?$AAs?$AAb?$AA_?$AA0?$AA?9?$AA2?$AA3?$AA9?$AA4?$AA8?$AA5?$AA2?$AA2?$AA?9?$AA1?$AA4?$AA9?$AA8?$AA1@').
+symbol(0x1001d2d8, string, '??_C@_1CK@GHOBCBHL@?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA_?$AAc?$AAo?$AAu?$AAn?$AAt?$AA?$CI?$AA?$CJ?$AA?5?$AA?$DO?$AA?5?$AA0?$AA?$AA@').
+symbol(0x1001d310, table, '??_7Connection_event_records@connection_control@@6B@').
+symbol(0x1001d32c, table, '??_7Connection_event_observer@connection_control@@6B@').
+symbol(0x1001d340, table, '??_7Connection_delay_event@connection_control@@6B@').
+symbol(0x1001d35c, table, '??_7Connection_delay_action@connection_control@@6B@').
+symbol(0x1001d370, string, '??_C@_0GF@GCIEDGPA@g?3?2ade?2build?2sb_0?923948522?914981@').
+symbol(0x1001d3f0, string, '??_C@_1MC@KPMPFEII@?$AA?$CI?$AA_?$AA_?$AAo?$AAn?$AAe?$AAx?$AAi?$AAt?$AAb?$AAe?$AAg?$AAi?$AAn?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAN?$AAU?$AAL?$AAL?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AA_?$AA_?$AAo?$AAn?$AAe?$AAx@').
+symbol(0x1001d4b8, string, '??_C@_1FK@IGIDCAPD@?$AAf?$AA?3?$AA?2?$AAd?$AAd?$AA?2?$AAv?$AAc?$AAt?$AAo?$AAo?$AAl?$AAs?$AA?2?$AAc?$AAr?$AAt?$AA?2?$AAc?$AAr?$AAt?$AAw?$AA3?$AA2?$AA?2?$AAd?$AAl?$AAl?$AAs?$AAt?$AAu?$AAf@').
+symbol(0x1001d514, string, '??_C@_0CN@LMJJPMEG@f?3?2dd?2vctools?2crt?2crtw32?2dllstuf@').
+symbol(0x1001d541, name, '?value@?$integral_constant@_N$0A@@std@@2_NB').
+symbol(0x1001d542, name, '?value@?$integral_constant@_N$00@std@@2_NB').
+symbol(0x1001d548, table, '??_7type_info@@6B@').
+symbol(0x1001d54c, name, '__pDefaultRawDllMain').
+symbol(0x1001d54c, name, '__pRawDllMain').
+symbol(0x1001d550, string, '??_C@_0CL@CCAGLLEM@f?3?2dd?2vctools?2crt?2crtw32?2dllstuf@').
+symbol(0x1001d618, string, '??_C@_0NN@NGPKDKPD@The?5value?5of?5ESP?5was?5not?5properl@').
+symbol(0x1001d6f8, string, '??_C@_0BBN@GPMLNJCF@A?5cast?5to?5a?5smaller?5data?5type?5ha@').
+symbol(0x1001d818, string, '??_C@_0BN@FFOINMNJ@Stack?5memory?5was?5corrupted?6?$AN?$AA@').
+symbol(0x1001d838, string, '??_C@_0DG@HKJMLLLP@A?5local?5variable?5was?5used?5before@').
+symbol(0x1001d870, string, '??_C@_0CM@NGINOKPC@Stack?5memory?5around?5_alloca?5was?5@').
+symbol(0x1001d89c, string, '??_C@_0BO@GNIAFIKK@Unknown?5Runtime?5Check?5Error?6?$AN?$AA@').
+symbol(0x1001d8c0, string, '??_C@_1GM@OLMCBDMB@?$AAR?$AAu?$AAn?$AAt?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?4?$AA?6?$AA?$AN?$AA?5?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo@').
+symbol(0x1001d930, string, '??_C@_1EA@NFKNIFJP@?$AAR?$AAu?$AAn?$AA?9?$AAT?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAu?$AAr?$AAe?$AA?5?$AA?$CD?$AA?$CF?$AAd?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAs?$AA?$AA@').
+symbol(0x1001d970, string, '??_C@_0BB@PFFGGCJP@Unknown?5Filename?$AA@').
+symbol(0x1001d984, string, '??_C@_0BE@GNBOBNCK@Unknown?5Module?5Name?$AA@').
+symbol(0x1001d998, string, '??_C@_0CA@IODNCDPG@Run?9Time?5Check?5Failure?5?$CD?$CFd?5?9?5?$CFs?$AA@').
+symbol(0x1001d9b8, string, '??_C@_0CG@IAFNJNEE@Stack?5corrupted?5near?5unknown?5var@').
+symbol(0x1001d9e0, string, '??_C@_05MKKEDADM@?$CF?42X?5?$AA@').
+symbol(0x1001d9e8, string, '??_C@_1BG@OILDLIOJ@?$AAu?$AAs?$AAe?$AAr?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@').
+symbol(0x1001da00, string, '??_C@_09FOPFMPEJ@wsprintfA?$AA@').
+symbol(0x1001da10, string, '??_C@_0EJ@LJKNEOLN@Stack?5area?5around?5_alloca?5memory@').
+symbol(0x1001da5c, string, '??_C@_08OMAHNMHJ@?6Data?3?5?$DM?$AA@').
+symbol(0x1001da68, string, '??_C@_0CK@DKGBICFE@?6Allocation?5number?5within?5this?5f@').
+symbol(0x1001da94, string, '??_C@_07DFDJCKFN@?6Size?3?5?$AA@').
+symbol(0x1001da9c, string, '??_C@_0N@MHFFIMFG@?6Address?3?50x?$AA@').
+symbol(0x1001dab0, string, '??_C@_0EI@CLEPFNGI@Stack?5area?5around?5_alloca?5memory@').
+symbol(0x1001daf8, string, '??_C@_0BC@KIBAILCI@?$CFs?$CFs?$CFp?$CFs?$CFld?$CFs?$CFd?$CFs?$AA@').
+symbol(0x1001db0c, string, '??_C@_01EEMJAFIK@?6?$AA@').
+symbol(0x1001db10, string, '??_C@_02LLMPMKNF@?$DO?5?$AA@').
+symbol(0x1001db14, string, '??_C@_08KJEDNCKC@?$CFs?$CFs?$CFs?$CFs?$AA@').
+symbol(0x1001db20, string, '??_C@_0DE@OHJBPMBP@A?5variable?5is?5being?5used?5without@').
+symbol(0x1001db70, string, '??_C@_0BJ@HEGAHDFO@Stack?5pointer?5corruption?$AA@').
+symbol(0x1001db8c, string, '??_C@_0CK@FEGOIOPB@Cast?5to?5smaller?5type?5causing?5los@').
+symbol(0x1001dbb8, string, '??_C@_0BI@CIGMDCBH@Stack?5memory?5corruption?$AA@').
+symbol(0x1001dbd0, string, '??_C@_0CK@CNLNOEPB@Local?5variable?5used?5before?5initi@').
+symbol(0x1001dbfc, string, '??_C@_0BP@OGBCLIBO@Stack?5around?5_alloca?5corrupted?$AA@').
+symbol(0x1001dc1c, name, '?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1001dc20, name, '?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1001dc24, name, '?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1001dc28, name, '?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1001dc2c, name, '?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB').
+symbol(0x1001dc70, name, '?LocalIdBitWidth@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc74, name, '?IdScopeBitWidth@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc78, name, '?StartCrossScopeId@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc7c, name, '?LocalIdMask@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc80, name, '?ScopeIdMask@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc84, name, '?MaxLocalId@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc88, name, '?MaxScopeId@CrossScopeId@CodeViewInfo@@2IB').
+symbol(0x1001dc8c, string, '??_C@_1BK@GAEMIDIL@?$AAA?$AAD?$AAV?$AAA?$AAP?$AAI?$AA3?$AA2?$AA?4?$AAD?$AAL?$AAL?$AA?$AA@').
+symbol(0x1001dca8, string, '??_C@_0O@COHOBMLB@RegOpenKeyExW?$AA@').
+symbol(0x1001dcb8, string, '??_C@_0BB@GLNAEDBD@RegQueryValueExW?$AA@').
+symbol(0x1001dccc, string, '??_C@_0M@HLOHPNFA@RegCloseKey?$AA@').
+symbol(0x1001dcd8, string, '??_C@_1FM@EGIBBNPP@?$AAS?$AAO?$AAF?$AAT?$AAW?$AAA?$AAR?$AAE?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?2?$AAV?$AAi?$AAs?$AAu?$AAa?$AAl?$AAS?$AAt?$AAu?$AAd?$AAi?$AAo?$AA?2@').
+symbol(0x1001dd34, string, '??_C@_1BG@EABPBLLF@?$AAP?$AAr?$AAo?$AAd?$AAu?$AAc?$AAt?$AAD?$AAi?$AAr?$AA?$AA@').
+symbol(0x1001dd68, string, '??_C@_1BC@EOIMGOME@?$AAM?$AAS?$AAP?$AAD?$AAB?$AA1?$AA2?$AA0?$AA?$AA@').
+symbol(0x1001dd7c, string, '??_C@_0BB@KCIACLNC@PDBOpenValidate5?$AA@').
+symbol(0x1001dd90, string, '??_C@_01KDCPPGHE@r?$AA@').
+symbol(0x1001dd98, name, '__load_config_used').
+symbol(0x1001e2c8, table, '??_R4error_category@std@@6B@').
+symbol(0x1001e2e0, name, '??_R3error_category@std@@8').
+symbol(0x1001e2f4, name, '??_R2error_category@std@@8').
+symbol(0x1001e2fc, name, '??_R1A@?0A@EA@error_category@std@@8').
+symbol(0x1001e320, table, '??_R4_Generic_error_category@std@@6B@').
+symbol(0x1001e338, name, '??_R3_Generic_error_category@std@@8').
+symbol(0x1001e34c, name, '??_R2_Generic_error_category@std@@8').
+symbol(0x1001e358, name, '??_R1A@?0A@EA@_Generic_error_category@std@@8').
+symbol(0x1001e37c, table, '??_R4_Iostream_error_category@std@@6B@').
+symbol(0x1001e394, name, '??_R3_Iostream_error_category@std@@8').
+symbol(0x1001e3a8, name, '??_R2_Iostream_error_category@std@@8').
+symbol(0x1001e3b8, name, '??_R1A@?0A@EA@_Iostream_error_category@std@@8').
+symbol(0x1001e3dc, table, '??_R4_System_error_category@std@@6B@').
+symbol(0x1001e3f4, name, '??_R3_System_error_category@std@@8').
+symbol(0x1001e408, name, '??_R2_System_error_category@std@@8').
+symbol(0x1001e418, name, '??_R1A@?0A@EA@_System_error_category@std@@8').
+symbol(0x1001e43c, table, '??_R4Connection_event_coordinator_services@connection_control@@6B@').
+symbol(0x1001e454, name, '??_R3Connection_event_coordinator_services@connection_control@@8').
+symbol(0x1001e468, name, '??_R2Connection_event_coordinator_services@connection_control@@8').
+symbol(0x1001e470, name, '??_R1A@?0A@EA@Connection_event_coordinator_services@connection_control@@8').
+symbol(0x1001e494, table, '??_R4Error_handler@connection_control@@6B@').
+symbol(0x1001e4ac, name, '??_R3Error_handler@connection_control@@8').
+symbol(0x1001e4c0, name, '??_R2Error_handler@connection_control@@8').
+symbol(0x1001e4c8, name, '??_R1A@?0A@EA@Error_handler@connection_control@@8').
+symbol(0x1001e4ec, table, '??_R4Connection_event_coordinator@connection_control@@6B@').
+symbol(0x1001e504, name, '??_R3Connection_event_coordinator@connection_control@@8').
+symbol(0x1001e518, name, '??_R2Connection_event_coordinator@connection_control@@8').
+symbol(0x1001e528, name, '??_R1A@?0A@EA@Connection_event_coordinator@connection_control@@8').
+symbol(0x1001e54c, name, '??_R13?0A@EA@Connection_control_alloc@connection_control@@8').
+symbol(0x1001e570, name, '??_R3Connection_control_alloc@connection_control@@8').
+symbol(0x1001e584, name, '??_R2Connection_control_alloc@connection_control@@8').
+symbol(0x1001e58c, name, '??_R1A@?0A@EA@Connection_control_alloc@connection_control@@8').
+symbol(0x1001e5b0, table, '??_R4Connection_control_error_handler@connection_control@@6B@').
+symbol(0x1001e5c8, name, '??_R3Connection_control_error_handler@connection_control@@8').
+symbol(0x1001e5dc, name, '??_R2Connection_control_error_handler@connection_control@@8').
+symbol(0x1001e5e8, name, '??_R1A@?0A@EA@Connection_control_error_handler@connection_control@@8').
+symbol(0x1001e60c, table, '??_R4Connection_event_records@connection_control@@6B@').
+symbol(0x1001e624, name, '??_R3Connection_event_records@connection_control@@8').
+symbol(0x1001e638, name, '??_R2Connection_event_records@connection_control@@8').
+symbol(0x1001e640, name, '??_R1A@?0A@EA@Connection_event_records@connection_control@@8').
+symbol(0x1001e664, table, '??_R4Connection_event_observer@connection_control@@6B@').
+symbol(0x1001e67c, name, '??_R3Connection_event_observer@connection_control@@8').
+symbol(0x1001e690, name, '??_R2Connection_event_observer@connection_control@@8').
+symbol(0x1001e698, name, '??_R1A@?0A@EA@Connection_event_observer@connection_control@@8').
+symbol(0x1001e6bc, table, '??_R4Connection_delay_event@connection_control@@6B@').
+symbol(0x1001e6d4, name, '??_R3Connection_delay_event@connection_control@@8').
+symbol(0x1001e6e8, name, '??_R2Connection_delay_event@connection_control@@8').
+symbol(0x1001e6f4, name, '??_R1A@?0A@EA@Connection_delay_event@connection_control@@8').
+symbol(0x1001e718, table, '??_R4Connection_delay_action@connection_control@@6B@').
+symbol(0x1001e730, name, '??_R3Connection_delay_action@connection_control@@8').
+symbol(0x1001e744, name, '??_R2Connection_delay_action@connection_control@@8').
+symbol(0x1001e754, name, '??_R1A@?0A@EA@Connection_delay_action@connection_control@@8').
+symbol(0x1001e778, table, '??_R4type_info@@6B@').
+symbol(0x1001e78c, name, '??_R3type_info@@8').
+symbol(0x1001e79c, name, '??_R2type_info@@8').
+symbol(0x1001e7a4, name, '??_R1A@?0A@EA@type_info@@8').
+symbol(0x1001e8f0, name, '___safe_se_handler_table').
+symbol(0x1001ea94, name, '___rtc_iaa').
+symbol(0x1001ecac, name, '___rtc_izz').
+symbol(0x1001edb0, name, '___rtc_taa').
+symbol(0x1001efc8, name, '___rtc_tzz').
+symbol(0x10020038, name, '?connection_control_system_variables@@3PAPAUst_mysql_sys_var@@A').
+symbol(0x10020048, name, '?connection_control_status_variables@@3PAUst_mysql_show_var@@A').
+symbol(0x10020068, name, '__mysql_plugin_interface_version_').
+symbol(0x1002006c, name, '__mysql_sizeof_struct_st_plugin_').
+symbol(0x10020070, name, '__mysql_plugin_declarations_').
+symbol(0x1002027c, name, '?opt_enums_size@connection_control@@3IA').
+symbol(0x10020280, name, '?status_vars_enums_size@connection_control@@3IA').
+symbol(0x10020284, name, '?connection_control_failed_attempts_view@@3Ust_mysql_information_schema@@A').
+symbol(0x10020288, name, '?DEFAULT_THRESHOLD@connection_control@@3_JA').
+symbol(0x10020290, name, '?MAX_THRESHOLD@connection_control@@3_JA').
+symbol(0x10020298, name, '?DEFAULT_MAX_DELAY@connection_control@@3_JA').
+symbol(0x100202a0, name, '?DEFAULT_MIN_DELAY@connection_control@@3_JA').
+symbol(0x100202a8, name, '?MIN_DELAY@connection_control@@3_JA').
+symbol(0x100202b0, name, '?MAX_DELAY@connection_control@@3_JA').
+symbol(0x100202dc, name, '_mysql_malloc_service').
+symbol(0x100202e0, name, '_my_plugin_log_service').
+symbol(0x100202e4, name, '_security_context_service').
+symbol(0x100202e8, name, '_my_snprintf_service').
+symbol(0x100202ec, name, '___security_cookie').
+symbol(0x100202f0, name, '___security_cookie_complement').
+symbol(0x10020300, name, '?_RTC_ErrorLevels@@3PAHA').
+symbol(0x10020314, name, '___native_dllmain_reason').
+symbol(0x10020428, name, '??_R0?AVerror_category@std@@@8').
+symbol(0x10020450, name, '??_R0?AV_Generic_error_category@std@@@8').
+symbol(0x10020484, name, '??_R0?AV_Iostream_error_category@std@@@8').
+symbol(0x100204b8, name, '??_R0?AV_System_error_category@std@@@8').
+symbol(0x100204f0, name, '??_R0?AVConnection_event_coordinator_services@connection_control@@@8').
+symbol(0x10020548, name, '??_R0?AVError_handler@connection_control@@@8').
+symbol(0x10020580, name, '??_R0?AVConnection_event_coordinator@connection_control@@@8').
+symbol(0x100205cc, name, '??_R0?AVConnection_control_alloc@connection_control@@@8').
+symbol(0x10020618, name, '??_R0?AVConnection_control_error_handler@connection_control@@@8').
+symbol(0x10020668, name, '??_R0?AVConnection_event_records@connection_control@@@8').
+symbol(0x100206b0, name, '??_R0?AVConnection_event_observer@connection_control@@@8').
+symbol(0x100206f8, name, '??_R0?AVConnection_delay_event@connection_control@@@8').
+symbol(0x1002073c, name, '??_R0?AVConnection_delay_action@connection_control@@@8').
+symbol(0x10020780, name, '??_R0?AVtype_info@@@8').
+symbol(0x100208ac, name, '?_Generic_object@?$_Error_objects@H@std@@2V_Generic_error_category@2@A').
+symbol(0x100208b0, name, '?_Iostream_object@?$_Error_objects@H@std@@2V_Iostream_error_category@2@A').
+symbol(0x100208b4, name, '?_System_object@?$_Error_objects@H@std@@2V_System_error_category@2@A').
+symbol(0x100208b8, name, '?id@?$num_put@DV?$back_insert_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@2V0locale@2@A').
+symbol(0x100208bc, name, '?id@?$num_put@_WV?$back_insert_iterator@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@@std@@2V0locale@2@A').
+symbol(0x100208c0, name, '?g_variables@@3VConnection_control_variables@connection_control@@A').
+symbol(0x100208d8, name, '?g_connection_event_coordinator@@3PAVConnection_event_coordinator@connection_control@@A').
+symbol(0x100208dc, name, '?connection_control_plugin_info@@3PAXA').
+symbol(0x100208e8, name, '?g_statistics@@3VConnection_control_statistics@connection_control@@A').
+symbol(0x10020910, name, '?MIN_THRESHOLD@connection_control@@3_JA').
+symbol(0x10020918, name, '?DISABLE_THRESHOLD@connection_control@@3_JA').
+symbol(0x10020924, name, '?I_S_CONNECTION_CONTROL_FAILED_ATTEMPTS_USERHOST@connection_control@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A').
+symbol(0x10020968, name, '?wsprintffp@@3P6AHPADPBDZZA').
+symbol(0x10020c98, name, '?__type_info_root_node@@3U__type_info_node@@A').
+symbol(0x10020ca8, name, '___native_startup_lock').
+symbol(0x10020cb8, name, '___native_startup_state').
+symbol(0x10020cbc, name, '___dyn_tls_init_callback').
+symbol(0x10020cc8, name, '___onexitend').
+symbol(0x10020cd8, name, '___onexitbegin').
+symbol(0x10021000, name, '__imp__InitializeSRWLock@4').
+symbol(0x10021004, name, '__imp__ReleaseSRWLockExclusive@4').
+symbol(0x10021008, name, '__imp__ReleaseSRWLockShared@4').
+symbol(0x1002100c, name, '__imp__AcquireSRWLockExclusive@4').
+symbol(0x10021010, name, '__imp__AcquireSRWLockShared@4').
+symbol(0x10021014, name, '__imp__InitializeConditionVariable@4').
+symbol(0x10021018, name, '__imp__GetSystemTimeAsFileTime@4').
+symbol(0x1002101c, name, '__imp__GetModuleFileNameW@12').
+symbol(0x10021020, name, '__imp__FreeLibrary@4').
+symbol(0x10021024, name, '__imp__VirtualQuery@12').
+symbol(0x10021028, name, '__imp__GetProcessHeap@0').
+symbol(0x1002102c, name, '__imp__HeapFree@12').
+symbol(0x10021030, name, '__imp__HeapAlloc@12').
+symbol(0x10021034, name, '__imp__DisableThreadLibraryCalls@4').
+symbol(0x10021038, name, '__imp__GetCurrentThreadId@0').
+symbol(0x1002103c, name, '__imp__GetCurrentProcessId@0').
+symbol(0x10021040, name, '__imp__QueryPerformanceCounter@4').
+symbol(0x10021044, name, '__imp__IsProcessorFeaturePresent@4').
+symbol(0x10021048, name, '__imp__WideCharToMultiByte@32').
+symbol(0x1002104c, name, '__imp__MultiByteToWideChar@24').
+symbol(0x10021050, name, '__imp__LoadLibraryExW@12').
+symbol(0x10021054, name, '__imp__GetProcAddress@8').
+symbol(0x10021058, name, '__imp__GetLastError@0').
+symbol(0x1002105c, name, '__imp__RaiseException@16').
+symbol(0x10021060, name, '__imp__IsDebuggerPresent@0').
+symbol(0x10021064, name, '__imp__DecodePointer@4').
+symbol(0x10021068, name, '__imp__EncodePointer@4').
+symbol(0x1002106c, name, '__imp__GetModuleHandleW@4').
+symbol(0x10021070, name, 'KERNEL32_NULL_THUNK_DATA').
+symbol(0x100210b0, method, '__imp_??0_Container_base12@std@@QAE@XZ').
+symbol(0x100210b4, name, '__imp_?_Winerror_map@std@@YAPBDH@Z').
+symbol(0x100210b8, name, '__imp_?_Syserror_map@std@@YAPBDH@Z').
+symbol(0x100210bc, method, '__imp_??0id@locale@std@@QAE@I@Z').
+symbol(0x100210c0, name, '__imp_?_Xout_of_range@std@@YAXPBD@Z').
+symbol(0x100210c4, name, '__imp_?_Xlength_error@std@@YAXPBD@Z').
+symbol(0x100210c8, name, '__imp_?_Xbad_alloc@std@@YAXXZ').
+symbol(0x100210cc, method, '__imp_??0_Lockit@std@@QAE@H@Z').
+symbol(0x100210d0, method, '__imp_??1_Lockit@std@@QAE@XZ').
+symbol(0x100210d4, name, '__imp_?_Debug_message@std@@YAXPB_W0I@Z').
+symbol(0x100210d8, method, '__imp_??1_Container_base12@std@@QAE@XZ').
+symbol(0x100210dc, method, '__imp_?_Getpfirst@_Container_base12@std@@QBEPAPAU_Iterator_base12@2@XZ').
+symbol(0x100210e0, method, '__imp_?_Orphan_all@_Container_base12@std@@QAEXXZ').
+symbol(0x100210e4, name, 'MSVCP120D_NULL_THUNK_DATA').
+symbol(0x10021118, name, '__imp_?terminate@@YAXXZ').
+symbol(0x1002111c, name, '__imp____clean_type_info_names_internal').
+symbol(0x10021120, name, '__imp__wcscpy_s').
+symbol(0x10021124, name, '__imp___wmakepath_s').
+symbol(0x10021128, name, '__imp___wsplitpath_s').
+symbol(0x1002112c, name, '__imp___CRT_RTC_INITW').
+symbol(0x10021130, name, '__imp____crtTerminateProcess').
+symbol(0x10021134, name, '__imp___purecall').
+symbol(0x10021138, name, '__imp_??2@YAPAXI@Z').
+symbol(0x1002113c, name, '__imp_??3@YAXPAX@Z').
+symbol(0x10021140, name, '__imp___invalid_parameter').
+symbol(0x10021144, name, '__imp____crtUnhandledException').
+symbol(0x10021148, name, '__imp__strlen').
+symbol(0x1002114c, name, '__imp__memmove').
+symbol(0x10021150, name, '__imp___hypot').
+symbol(0x10021154, name, '__imp___wassert').
+symbol(0x10021158, name, '__imp___CrtDbgReportW').
+symbol(0x1002115c, name, '__imp___CxxThrowException@8').
+symbol(0x10021160, name, '__imp____CxxFrameHandler3').
+symbol(0x10021164, name, '__imp__memset').
+symbol(0x10021168, name, '__imp___lock').
+symbol(0x1002116c, name, '__imp___unlock').
+symbol(0x10021170, name, '__imp___calloc_dbg').
+symbol(0x10021174, name, '__imp____dllonexit').
+symbol(0x10021178, name, '__imp___onexit').
+symbol(0x1002117c, name, '__imp__memcpy').
+symbol(0x10021180, method, '__imp_??1type_info@@UAE@XZ').
+symbol(0x10021184, name, '__imp____CppXcptFilter').
+symbol(0x10021188, name, '__imp___amsg_exit').
+symbol(0x1002118c, name, '__imp___malloc_dbg').
+symbol(0x10021190, name, '__imp___free_dbg').
+symbol(0x10021194, name, '__imp___CrtSetCheckCount').
+symbol(0x10021198, name, '__imp___initterm').
+symbol(0x1002119c, name, '__imp___initterm_e').
+symbol(0x100211a0, name, '__imp___except_handler4_common').
+symbol(0x100211a4, name, '__imp___crt_debugger_hook').
+symbol(0x100211a8, name, 'MSVCR120D_NULL_THUNK_DATA').
+symbol(0x100211f0, name, '__imp__lf_hash_search').
+symbol(0x100211f4, name, '__imp__system_charset_info').
+symbol(0x100211f8, name, '__imp__PSI_server').
+symbol(0x100211fc, name, '__imp__my_charset_bin').
+symbol(0x10021200, name, '__imp___dbug_on_').
+symbol(0x10021204, name, '__imp__lf_hash_random_match').
+symbol(0x10021208, name, '__imp__lf_hash_insert').
+symbol(0x1002120c, name, '__imp__lf_hash_destroy').
+symbol(0x10021210, name, '__imp__lf_hash_init2').
+symbol(0x10021214, name, '__imp__lf_pinbox_put_pins').
+symbol(0x10021218, name, '__imp__lf_pinbox_get_pins').
+symbol(0x1002121c, name, '__imp__thd_exit_cond').
+symbol(0x10021220, name, '__imp__thd_enter_cond').
+symbol(0x10021224, name, '__imp_?schema_table_store_record@@YA_NPAVTHD@@PAUTABLE@@@Z').
+symbol(0x10021228, name, '__imp___current_thd_noinline').
+symbol(0x1002122c, method, '__imp_?mem_realloc@String@@QAE_NI_N@Z').
+symbol(0x10021230, name, '__imp__safe_cond_timedwait').
+symbol(0x10021234, name, '__imp__safe_mutex_destroy').
+symbol(0x10021238, name, '__imp__safe_mutex_unlock').
+symbol(0x1002123c, name, '__imp__safe_mutex_lock').
+symbol(0x10021240, name, '__imp__safe_mutex_init').
+symbol(0x10021244, name, '__imp___db_doprnt_').
+symbol(0x10021248, name, '__imp___db_enabled_').
+symbol(0x1002124c, name, '__imp___db_pargs_').
+symbol(0x10021250, name, '__imp___db_return_').
+symbol(0x10021254, name, '__imp___db_enter_').
+symbol(0x10021258, name, '__imp__lf_hash_delete').
+symbol(0x1002125c, name, 'mysqld-debug_NULL_THUNK_DATA').
+symbol(0x1002129c, name, '__IMPORT_DESCRIPTOR_KERNEL32').
+symbol(0x100212b0, name, '__IMPORT_DESCRIPTOR_mysqld-debug').
+symbol(0x100212c4, name, '__IMPORT_DESCRIPTOR_MSVCP120D').
+symbol(0x100212d8, name, '__IMPORT_DESCRIPTOR_MSVCR120D').
+symbol(0x100212ec, name, '__NULL_IMPORT_DESCRIPTOR').
+% Gound inheritance relationships.
+embeddedGround('THD', 'String', 284).
+embeddedGround('THD', 'String', 320).
+embeddedGround('THD', 'String', 428).
+embeddedGround('THD', 'String', 4516).
+inheritanceGround('connection_control::Connection_control_error_handler', 'connection_control::Error_handler', 0).
+embeddedGround('connection_control::Connection_delay_action', 'connection_control::Connection_delay_event', 64).
+inheritanceGround('connection_control::Connection_delay_action', 'connection_control::Connection_event_observer', 0).
+embeddedGround('connection_control::Connection_delay_action', 'std::vector<enum opt_connection_control,std::allocator<enum opt_connection_control> >', 32).
+embeddedGround('connection_control::Connection_delay_action', 'std::vector<enum stats_connection_control,std::allocator<enum stats_connection_control> >', 48).
+inheritanceGround('connection_control::Connection_delay_event', 'connection_control::Connection_event_records', 0).
+inheritanceGround('connection_control::Connection_event_coordinator', 'connection_control::Connection_event_coordinator_services', 0).
+embeddedGround('connection_control::Connection_event_coordinator', 'std::vector<connection_control::Connection_event_coordinator::Connection_event_subscriber,std::allocator<connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 4).
+inheritanceGround('std::_Generic_error_category', 'std::error_category', 0).
+inheritanceGround('std::_Iostream_error_category', 'std::_Generic_error_category', 0).
+inheritanceGround('std::_Iterator012<std::random_access_iterator_tag,enum opt_connection_control,int,enum opt_connection_control const *,enum opt_connection_control const &,std::_Iterator_base12>', 'std::_Iterator_base12', 0).
+inheritanceGround('std::_Iterator012<std::random_access_iterator_tag,enum stats_connection_control,int,enum stats_connection_control const *,enum stats_connection_control const &,std::_Iterator_base12>', 'std::_Iterator_base12', 0).
+inheritanceGround('std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >', 'std::_String_val<std::_Simple_types<char> >', 0).
+inheritanceGround('std::_String_val<std::_Simple_types<char> >', 'std::_Container_base12', 0).
+inheritanceGround('std::_System_error_category', 'std::_Generic_error_category', 0).
+inheritanceGround('std::_Vector_alloc<0,std::_Vec_base_types<connection_control::Connection_event_coordinator::Connection_event_subscriber,std::allocator<connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', 'std::_Vector_val<std::_Simple_types<connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 0).
+inheritanceGround('std::_Vector_alloc<0,std::_Vec_base_types<enum opt_connection_control,std::allocator<enum opt_connection_control> > >', 'std::_Vector_val<std::_Simple_types<enum opt_connection_control> >', 0).
+inheritanceGround('std::_Vector_alloc<0,std::_Vec_base_types<enum stats_connection_control,std::allocator<enum stats_connection_control> > >', 'std::_Vector_val<std::_Simple_types<enum stats_connection_control> >', 0).
+inheritanceGround('std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<enum opt_connection_control> > >', 'std::_Iterator012<std::random_access_iterator_tag,enum opt_connection_control,int,enum opt_connection_control const *,enum opt_connection_control const &,std::_Iterator_base12>', 0).
+inheritanceGround('std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<enum stats_connection_control> > >', 'std::_Iterator012<std::random_access_iterator_tag,enum stats_connection_control,int,enum stats_connection_control const *,enum stats_connection_control const &,std::_Iterator_base12>', 0).
+inheritanceGround('std::_Vector_iterator<std::_Vector_val<std::_Simple_types<connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', 0).
+inheritanceGround('std::_Vector_iterator<std::_Vector_val<std::_Simple_types<enum opt_connection_control> > >', 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<enum opt_connection_control> > >', 0).
+inheritanceGround('std::_Vector_iterator<std::_Vector_val<std::_Simple_types<enum stats_connection_control> > >', 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<enum stats_connection_control> > >', 0).
+inheritanceGround('std::_Vector_val<std::_Simple_types<connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 'std::_Container_base12', 0).
+inheritanceGround('std::_Vector_val<std::_Simple_types<enum opt_connection_control> >', 'std::_Container_base12', 0).
+inheritanceGround('std::_Vector_val<std::_Simple_types<enum stats_connection_control> >', 'std::_Container_base12', 0).
+inheritanceGround('std::basic_string<char,std::char_traits<char>,std::allocator<char> >', 'std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >', 0).
+inheritanceGround('std::vector<connection_control::Connection_event_coordinator::Connection_event_subscriber,std::allocator<connection_control::Connection_event_coordinator::Connection_event_subscriber> >', 'std::_Vector_alloc<0,std::_Vec_base_types<connection_control::Connection_event_coordinator::Connection_event_subscriber,std::allocator<connection_control::Connection_event_coordinator::Connection_event_subscriber> > >', 0).
+inheritanceGround('std::vector<enum opt_connection_control,std::allocator<enum opt_connection_control> >', 'std::_Vector_alloc<0,std::_Vec_base_types<enum opt_connection_control,std::allocator<enum opt_connection_control> > >', 0).
+inheritanceGround('std::vector<enum stats_connection_control,std::allocator<enum stats_connection_control> >', 'std::_Vector_alloc<0,std::_Vec_base_types<enum stats_connection_control,std::allocator<enum stats_connection_control> > >', 0).
+% Ground inheritance completed successfully.

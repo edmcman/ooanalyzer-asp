@@ -214,10 +214,10 @@ guessConstructor2OnlyReward(Method) :- constructor(Method), guessConstructor2Dom
 guessConstructor3OnlyReward(Method) :- constructor(Method), guessConstructor3Domain(Method), not guessConstructor1Domain(Method).
 guessConstructor4OnlyReward(Method) :- constructor(Method), guessConstructor4Domain(Method), not guessConstructor2Domain(Method), not guessConstructor3Domain(Method).
 
-#maximize { 4@0, ctor1, M : guessConstructor1Reward(M) }.
-#maximize { 3@0, ctor2, M : guessConstructor2OnlyReward(M) }.
-#maximize { 2@0, ctor3, M : guessConstructor3OnlyReward(M) }.
-#maximize { 1@0, ctor4, M : guessConstructor4OnlyReward(M) }.
+#maximize { 10@0, ctor1, M : guessConstructor1Reward(M) }.
+#maximize { 9@0, ctor2, M : guessConstructor2OnlyReward(M) }.
+#maximize { 8@0, ctor3, M : guessConstructor3OnlyReward(M) }.
+#maximize { 7@0, ctor4, M : guessConstructor4OnlyReward(M) }.
 
 % ============================================================
 % CONSTRAINTS
