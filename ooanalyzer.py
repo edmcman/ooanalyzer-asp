@@ -15,6 +15,8 @@ import sys
 import time
 import clingo
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
+
 log = logging.getLogger("ooanalyzer")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
