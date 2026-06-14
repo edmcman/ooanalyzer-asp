@@ -1,91 +1,246 @@
-15:21:49 Grounding...
-15:21:49 Grounding done (0.12s)
-15:21:49 Solving...
-15:21:50 Model found (0.36s): [-40, -2482]
-15:21:50 Model found (0.37s, +0.01s): [-40, -2492]
-15:21:50 Model found (0.37s, +0.01s): [-40, -2502]
-15:21:50 Model found (0.38s, +0.01s): [-40, -2512]
-15:21:50 Model found (0.39s, +0.01s): [-40, -2522]
-15:21:50 Model found (0.39s, +0.01s): [-40, -2539]
-15:21:50 Model found (0.40s, +0.01s): [-40, -2549]
-15:21:50 Model found (0.41s, +0.01s): [-40, -2559]
-15:21:50 Model found (0.42s, +0.01s): [-40, -2569]
-15:21:50 Model found (0.43s, +0.01s): [-40, -2579]
-15:21:50 Model found (0.44s, +0.01s): [-40, -2586]
-15:21:50 Model found (0.45s, +0.01s): [-40, -2596]
-15:21:50 Model found (0.46s, +0.01s): [-40, -2603]
-15:21:50 Model found (0.47s, +0.01s): [-40, -2613]
-15:21:50 Model found (0.48s, +0.01s): [-40, -2620]
-15:21:50 Model found (0.49s, +0.01s): [-40, -2630]
-15:21:50 Model found (0.57s, +0.09s): [-40, -2632]
-15:21:50 Solving done: OPTIMUM FOUND (0.46s)
+08:02:01 Grounding...
+08:02:01 Grounding done (0.11s)
+08:02:01 Solving...
+08:02:01 Model found (0.25s): [-40, -2492]
+08:02:01 Model found (0.26s, +0.01s): [-40, -2502]
+08:02:01 Model found (0.26s, +0.01s): [-40, -2512]
+08:02:01 Model found (0.27s, +0.01s): [-40, -2522]
+08:02:01 Model found (0.28s, +0.01s): [-40, -2532]
+08:02:01 Model found (0.29s, +0.01s): [-40, -2542]
+08:02:01 Model found (0.29s, +0.01s): [-40, -2549]
+08:02:01 Model found (0.30s, +0.00s): [-40, -2559]
+08:02:01 Model found (0.30s, +0.01s): [-40, -2576]
+08:02:01 Model found (0.31s, +0.01s): [-40, -2593]
+08:02:01 Model found (0.31s, +0.01s): [-40, -2610]
+08:02:02 Model found (0.91s, +0.60s): [-40, -2624]
+08:02:02 Solving done: OPTIMUM FOUND (0.80s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
 OPTIMUM FOUND
 
-Answer: 17
-Optimization: -40 -2632
+Answer: 12
+Optimization: -40 -2624
 
-% Equivalence classes (213 classes, 233 entities):
+% Equivalence classes (212 classes, 233 entities):
 
-% Guess candidates:
-%   [method]
-%     guessMethodDomain: 224  [guessMethodDomain(thunk:j___setdefaultprecision@0x411005) guessMethodDomain(thunk:j___setargv@0x41100a) guessMethodDomain(thunk:j___RTC_GetErrDesc@0x41100f) guessMethodDomain(thunk:virtual int A::get_a(void)@0x411014) guessMethodDomain(thunk:__fastcall __security_check_cookie(x)@0x411019) guessMethodDomain(thunk:__stdcall IsDebuggerPresent()@0x41101e) guessMethodDomain(thunk:class type_info & type_info::operator=(class type_info const &)@0x411023) guessMethodDomain(thunk:j___RTC_Terminate@0x411028) guessMethodDomain(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41102d) guessMethodDomain(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411032) guessMethodDomain(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411037) guessMethodDomain(thunk:j___RTC_NumErrors@0x41103c) guessMethodDomain(thunk:j____setusermatherr@0x411041) guessMethodDomain(thunk:__stdcall Sleep(x)@0x411046) guessMethodDomain(thunk:virtual type_info::~type_info(void)@0x41104b) guessMethodDomain(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411050) guessMethodDomain(thunk:j____security_init_cookie@0x411055) guessMethodDomain(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41105a) guessMethodDomain(thunk:j___cexit@0x41105f) guessMethodDomain(thunk:j___CrtDbgReportW@0x411064) guessMethodDomain(thunk:__stdcall VirtualQuery(x, x, x)@0x411069) guessMethodDomain(thunk:j__atexit@0x41106e) guessMethodDomain(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x411073) guessMethodDomain(thunk:j___RTC_SetErrorType@0x411078) guessMethodDomain(thunk:j___except_handler4@0x41107d) guessMethodDomain(thunk:j___lock@0x411082) guessMethodDomain(thunk:__stdcall GetProcAddress(x, x)@0x411087) guessMethodDomain(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x41108c) guessMethodDomain(thunk:__cdecl operator delete(*)@0x411091) guessMethodDomain(thunk:virtual type_info::~type_info(void)@0x411096) guessMethodDomain(thunk:__cdecl terminate(void)@0x4110a0) guessMethodDomain(thunk:j___exit@0x4110a5) guessMethodDomain(thunk:__stdcall GetCurrentThreadId()@0x4110aa) guessMethodDomain(thunk:virtual int C::get_c(void)@0x4110af) guessMethodDomain(thunk:j___initterm@0x4110b4) guessMethodDomain(thunk:__stdcall GetCurrentProcess()@0x4110b9) guessMethodDomain(thunk:j___RTC_UninitUse@0x4110be) guessMethodDomain(thunk:j___RTC_Shutdown@0x4110c3) guessMethodDomain(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8) guessMethodDomain(thunk:j___FindPESection@0x4110cd) guessMethodDomain(thunk:__stdcall LoadLibraryW(x)@0x4110d2) guessMethodDomain(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x4110d7) guessMethodDomain(thunk:j___configthreadlocale@0x4110dc) guessMethodDomain(thunk:j___RTC_InitBase@0x4110e1) guessMethodDomain(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110e6) guessMethodDomain(thunk:__stdcall RaiseException(x, x, x, x)@0x4110eb) guessMethodDomain(thunk:j___crt_debugger_hook@0x4110f0) guessMethodDomain(thunk:B::B(void)@0x4110f5) guessMethodDomain(thunk:C::C(void)@0x4110fa) guessMethodDomain(thunk:D::D(void)@0x4110ff) guessMethodDomain(thunk:A::A(void)@0x411104) guessMethodDomain(thunk:j___ValidateImageBase@0x411109) guessMethodDomain(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41110e) guessMethodDomain(thunk:__stdcall GetProcessHeap()@0x411113) guessMethodDomain(thunk:j___RTC_SetErrorFuncW@0x411118) guessMethodDomain(thunk:j___onexit@0x41111d) guessMethodDomain(thunk:j__NtCurrentTeb@0x411122) guessMethodDomain(thunk:__stdcall HeapFree(x, x, x)@0x411127) guessMethodDomain(thunk:j___RTC_SetErrorFunc@0x41112c) guessMethodDomain(thunk:virtual int B::get_b(void)@0x411131) guessMethodDomain(thunk:j___invoke_watson_if_error@0x411136) guessMethodDomain(thunk:__stdcall TerminateProcess(x, x)@0x41113b) guessMethodDomain(start@0x411140) guessMethodDomain(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145) guessMethodDomain(thunk:j____CxxSetUnhandledExceptionFilter@0x41114a) guessMethodDomain(thunk:__stdcall QueryPerformanceCounter(x)@0x41114f) guessMethodDomain(thunk:j___unlock@0x411154) guessMethodDomain(thunk:__stdcall GetCurrentProcessId()@0x411159) guessMethodDomain(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x41115e) guessMethodDomain(thunk:j____set_app_type@0x411163) guessMethodDomain(thunk:j___RTC_CheckEsp@0x411168) guessMethodDomain(thunk:j__main@0x41116d) guessMethodDomain(thunk:__stdcall EncodePointer(x)@0x411172) guessMethodDomain(thunk:j___RTC_Initialize@0x411177) guessMethodDomain(thunk:j___controlfp_s@0x41117c) guessMethodDomain(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411181) guessMethodDomain(thunk:__stdcall DecodePointer(x)@0x411186) guessMethodDomain(thunk:j___invoke_watson@0x41118b) guessMethodDomain(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411190) guessMethodDomain(thunk:j___CRT_RTC_INITW@0x411195) guessMethodDomain(thunk:__stdcall GetTickCount()@0x41119a) guessMethodDomain(thunk:j___IsNonwritableInCurrentImage@0x41119f) guessMethodDomain(thunk:j____CxxFrameHandler3@0x4111a4) guessMethodDomain(thunk:__stdcall HeapAlloc(x, x, x)@0x4111a9) guessMethodDomain(thunk:j___amsg_exit@0x4111ae) guessMethodDomain(thunk:* __cdecl operator new(unsigned int)@0x4111b3) guessMethodDomain(thunk:j___XcptFilter@0x4111b8) guessMethodDomain(thunk:j___CrtSetCheckCount@0x4111bd) guessMethodDomain(thunk:__stdcall InterlockedExchange(x, x)@0x4111c2) guessMethodDomain(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111c7) guessMethodDomain(thunk:virtual int D::get_d(void)@0x4111cc) guessMethodDomain(thunk:type_info::type_info(class type_info const &)@0x4111d1) guessMethodDomain(thunk:j___except_handler4_common@0x4111d6) guessMethodDomain(thunk:j___matherr@0x4111db) guessMethodDomain(thunk:j____getmainargs@0x4111e0) guessMethodDomain(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4111e5) guessMethodDomain(thunk:__stdcall lstrlenA(x)@0x4111ea) guessMethodDomain(thunk:__cdecl _RTC_Failure(*, int)@0x4111ef) guessMethodDomain(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111f4) guessMethodDomain(thunk:j__exit_0@0x4111f9) guessMethodDomain(thunk:j____dllonexit@0x4111fe) guessMethodDomain(thunk:__stdcall FreeLibrary(x)@0x411203) guessMethodDomain(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411208) guessMethodDomain(thunk:j___initterm_e@0x41120d) guessMethodDomain(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x411212) guessMethodDomain(_main@0x411430) guessMethodDomain(D::D(void)@0x4115f0) guessMethodDomain(A::A(void)@0x4116d0) guessMethodDomain(virtual int A::get_a(void)@0x411720) guessMethodDomain(B::B(void)@0x411760) guessMethodDomain(virtual int B::get_b(void)@0x411800) guessMethodDomain(C::C(void)@0x411840) guessMethodDomain(virtual int C::get_c(void)@0x4118e0) guessMethodDomain(virtual int D::get_d(void)@0x411920) guessMethodDomain(__cdecl operator delete(*)@0x41195c) guessMethodDomain(* __cdecl operator new(unsigned int)@0x411962) guessMethodDomain(thunk:___CxxFrameHandler3@0x411968) guessMethodDomain(__fastcall __security_check_cookie(x)@0x411970) guessMethodDomain(__RTC_CheckEsp@0x411990) guessMethodDomain(__fastcall _RTC_CheckStackVars(x, x)@0x4119c0) guessMethodDomain(__fastcall _RTC_AllocaHelper(x, x, x)@0x411a40) guessMethodDomain(__fastcall _RTC_CheckStackVars2(x, x, x)@0x411a80) guessMethodDomain(__RTC_InitBase@0x411b90) guessMethodDomain(__RTC_Shutdown@0x411bd0) guessMethodDomain(type_info::type_info(class type_info const &)@0x411bf0) guessMethodDomain(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20) guessMethodDomain(class type_info & type_info::operator=(class type_info const &)@0x411cb0) guessMethodDomain(pre_c_init@0x411cd0) guessMethodDomain(pre_cpp_init@0x411d80) guessMethodDomain(_mainCRTStartup@0x411df0) guessMethodDomain(__tmainCRTStartup@0x411e10) guessMethodDomain(_NtCurrentTeb@0x412110) guessMethodDomain(check_managed_app@0x412120) guessMethodDomain(___report_gsfailure@0x4121b0) guessMethodDomain(__cdecl _RTC_Failure(*, int)@0x412310) guessMethodDomain(failwithmessage@0x412380) guessMethodDomain(DebuggerProbe@0x412620) guessMethodDomain(DebuggerRuntime@0x4126d0) guessMethodDomain(__cdecl _RTC_StackFailure(*, char const *)@0x4127a0) guessMethodDomain(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4128e0) guessMethodDomain(_getMemBlockDataString@0x412a60) guessMethodDomain(__RTC_UninitUse@0x412af0) guessMethodDomain(__RTC_NumErrors@0x412c20) guessMethodDomain(__RTC_GetErrDesc@0x412c30) guessMethodDomain(__RTC_SetErrorFunc@0x412c80) guessMethodDomain(__RTC_SetErrorFuncW@0x412cb0) guessMethodDomain(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x412ce0) guessMethodDomain(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x412cf0) guessMethodDomain(thunk:__CRT_RTC_INITW@0x412cf6) guessMethodDomain(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x412d00) guessMethodDomain($LN11@0x412d82) guessMethodDomain(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x412de0) guessMethodDomain(ArrayUnwindFilter@0x412e90) guessMethodDomain(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412ed0) guessMethodDomain(___CxxSetUnhandledExceptionFilter@0x412f50) guessMethodDomain(thunk:__configthreadlocale@0x412f6a) guessMethodDomain(__setdefaultprecision@0x412f70) guessMethodDomain(__invoke_watson_if_error@0x412fc0) guessMethodDomain(thunk:___setusermatherr@0x412ff2) guessMethodDomain(__matherr@0x413000) guessMethodDomain(__setargv@0x413010) guessMethodDomain(__RTC_Initialize@0x413020) guessMethodDomain(__RTC_Terminate@0x413050) guessMethodDomain(__onexit@0x413080) guessMethodDomain($LN6_1@0x413153) guessMethodDomain(_atexit@0x4131b0) guessMethodDomain(thunk:___set_app_type@0x4131d4) guessMethodDomain(thunk:__amsg_exit@0x4131da) guessMethodDomain(thunk:___getmainargs@0x4131e0) guessMethodDomain(___security_init_cookie@0x4131f0) guessMethodDomain(thunk:__exit@0x413308) guessMethodDomain(thunk:__XcptFilter@0x41330e) guessMethodDomain(thunk:__cexit@0x413314) guessMethodDomain(_exit_0@0x41331a) guessMethodDomain(thunk:__CrtSetCheckCount@0x413320) guessMethodDomain(__ValidateImageBase@0x413330) guessMethodDomain(__FindPESection@0x4133b0) guessMethodDomain(__IsNonwritableInCurrentImage@0x413450) guessMethodDomain(thunk:__CrtDbgReportW@0x4135a6) guessMethodDomain(thunk:__initterm@0x4135ac) guessMethodDomain(thunk:__initterm_e@0x4135b2) guessMethodDomain(__except_handler4@0x4135c0) guessMethodDomain(thunk:__crt_debugger_hook@0x4135f4) guessMethodDomain(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x413600) guessMethodDomain(GetPdbDll@0x413970) guessMethodDomain(__cdecl terminate(void)@0x413bd6) guessMethodDomain(virtual type_info::~type_info(void)@0x413bdc) guessMethodDomain(thunk:__controlfp_s@0x413be2) guessMethodDomain(thunk:__invoke_watson@0x413be8) guessMethodDomain(thunk:__unlock@0x413bee) guessMethodDomain(thunk:___dllonexit@0x413bf4) guessMethodDomain(thunk:__lock@0x413bfa) guessMethodDomain(thunk:__except_handler4_common@0x413c00) guessMethodDomain(thunk:__stdcall EncodePointer(x)@0x413c06) guessMethodDomain(thunk:__stdcall InterlockedExchange(x, x)@0x413c0c) guessMethodDomain(thunk:__stdcall Sleep(x)@0x413c12) guessMethodDomain(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x413c18) guessMethodDomain(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x413c1e) guessMethodDomain(thunk:__stdcall TerminateProcess(x, x)@0x413c24) guessMethodDomain(thunk:__stdcall GetCurrentProcess()@0x413c2a) guessMethodDomain(thunk:__stdcall UnhandledExceptionFilter(x)@0x413c30) guessMethodDomain(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x413c36) guessMethodDomain(thunk:__stdcall IsDebuggerPresent()@0x413c3c) guessMethodDomain(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x413c42) guessMethodDomain(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x413c48) guessMethodDomain(thunk:__stdcall RaiseException(x, x, x, x)@0x413c4e) guessMethodDomain(thunk:__stdcall lstrlenA(x)@0x413c54) guessMethodDomain(thunk:__stdcall GetProcAddress(x, x)@0x413c5a) guessMethodDomain(thunk:__stdcall LoadLibraryW(x)@0x413c60) guessMethodDomain(thunk:__stdcall DecodePointer(x)@0x413c66) guessMethodDomain(thunk:__stdcall QueryPerformanceCounter(x)@0x413c6c) guessMethodDomain(thunk:__stdcall GetTickCount()@0x413c72) guessMethodDomain(thunk:__stdcall GetCurrentThreadId()@0x413c78) guessMethodDomain(thunk:__stdcall GetCurrentProcessId()@0x413c7e) guessMethodDomain(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413c84) guessMethodDomain(thunk:__stdcall HeapFree(x, x, x)@0x413c8a) guessMethodDomain(thunk:__stdcall HeapAlloc(x, x, x)@0x413c90) guessMethodDomain(thunk:__stdcall GetProcessHeap()@0x413c96) guessMethodDomain(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413c9c) guessMethodDomain(thunk:__stdcall VirtualQuery(x, x, x)@0x413ca2) guessMethodDomain(thunk:__stdcall FreeLibrary(x)@0x413ca8) guessMethodDomain(__unwindfunclet$_main$0@0x414c00) guessMethodDomain(__ehhandler$_main@0x414c0e) guessMethodDomain(type_info::_type_info_dtor_internal_method(void)@0x41a270)]
-%   [constructor]
-%     guessConstructor1Domain: 5  [guessConstructor1Domain(D::D(void)@0x4115f0) guessConstructor1Domain(A::A(void)@0x4116d0) guessConstructor1Domain(B::B(void)@0x411760) guessConstructor1Domain(C::C(void)@0x411840) guessConstructor1Domain(type_info::type_info(class type_info const &)@0x411bf0)]
-%     guessConstructor2Domain: 5  [guessConstructor2Domain(D::D(void)@0x4115f0) guessConstructor2Domain(A::A(void)@0x4116d0) guessConstructor2Domain(B::B(void)@0x411760) guessConstructor2Domain(C::C(void)@0x411840) guessConstructor2Domain(type_info::type_info(class type_info const &)@0x411bf0)]
-%     guessConstructor3Domain: 6  [guessConstructor3Domain(D::D(void)@0x4115f0) guessConstructor3Domain(A::A(void)@0x4116d0) guessConstructor3Domain(B::B(void)@0x411760) guessConstructor3Domain(C::C(void)@0x411840) guessConstructor3Domain(type_info::type_info(class type_info const &)@0x411bf0) guessConstructor3Domain(class type_info & type_info::operator=(class type_info const &)@0x411cb0)]
-%     guessConstructor4Domain: 6  [guessConstructor4Domain(D::D(void)@0x4115f0) guessConstructor4Domain(A::A(void)@0x4116d0) guessConstructor4Domain(B::B(void)@0x411760) guessConstructor4Domain(C::C(void)@0x411840) guessConstructor4Domain(type_info::type_info(class type_info const &)@0x411bf0) guessConstructor4Domain(class type_info & type_info::operator=(class type_info const &)@0x411cb0)]
-%   [destructor]
-%     possibleDestructor: 171  [possibleDestructor(thunk:j___setdefaultprecision@0x411005) possibleDestructor(thunk:j___setargv@0x41100a) possibleDestructor(thunk:j___RTC_GetErrDesc@0x41100f) possibleDestructor(thunk:virtual int A::get_a(void)@0x411014) possibleDestructor(thunk:__fastcall __security_check_cookie(x)@0x411019) possibleDestructor(thunk:__stdcall IsDebuggerPresent()@0x41101e) possibleDestructor(thunk:class type_info & type_info::operator=(class type_info const &)@0x411023) possibleDestructor(thunk:j___RTC_Terminate@0x411028) possibleDestructor(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41102d) possibleDestructor(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411032) possibleDestructor(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411037) possibleDestructor(thunk:j___RTC_NumErrors@0x41103c) possibleDestructor(thunk:j____setusermatherr@0x411041) possibleDestructor(thunk:__stdcall Sleep(x)@0x411046) possibleDestructor(thunk:virtual type_info::~type_info(void)@0x41104b) possibleDestructor(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411050) possibleDestructor(thunk:j____security_init_cookie@0x411055) possibleDestructor(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41105a) possibleDestructor(thunk:j___cexit@0x41105f) possibleDestructor(thunk:j___CrtDbgReportW@0x411064) possibleDestructor(thunk:__stdcall VirtualQuery(x, x, x)@0x411069) possibleDestructor(thunk:j__atexit@0x41106e) possibleDestructor(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x411073) possibleDestructor(thunk:j___RTC_SetErrorType@0x411078) possibleDestructor(thunk:j___except_handler4@0x41107d) possibleDestructor(thunk:j___lock@0x411082) possibleDestructor(thunk:__stdcall GetProcAddress(x, x)@0x411087) possibleDestructor(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x41108c) possibleDestructor(thunk:__cdecl operator delete(*)@0x411091) possibleDestructor(thunk:virtual type_info::~type_info(void)@0x411096) possibleDestructor(thunk:__cdecl terminate(void)@0x4110a0) possibleDestructor(thunk:j___exit@0x4110a5) possibleDestructor(thunk:__stdcall GetCurrentThreadId()@0x4110aa) possibleDestructor(thunk:virtual int C::get_c(void)@0x4110af) possibleDestructor(thunk:j___initterm@0x4110b4) possibleDestructor(thunk:__stdcall GetCurrentProcess()@0x4110b9) possibleDestructor(thunk:j___RTC_UninitUse@0x4110be) possibleDestructor(thunk:j___RTC_Shutdown@0x4110c3) possibleDestructor(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8) possibleDestructor(thunk:j___FindPESection@0x4110cd) possibleDestructor(thunk:__stdcall LoadLibraryW(x)@0x4110d2) possibleDestructor(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x4110d7) possibleDestructor(thunk:j___configthreadlocale@0x4110dc) possibleDestructor(thunk:j___RTC_InitBase@0x4110e1) possibleDestructor(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110e6) possibleDestructor(thunk:__stdcall RaiseException(x, x, x, x)@0x4110eb) possibleDestructor(thunk:j___crt_debugger_hook@0x4110f0) possibleDestructor(thunk:B::B(void)@0x4110f5) possibleDestructor(thunk:C::C(void)@0x4110fa) possibleDestructor(thunk:D::D(void)@0x4110ff) possibleDestructor(thunk:A::A(void)@0x411104) possibleDestructor(thunk:j___ValidateImageBase@0x411109) possibleDestructor(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41110e) possibleDestructor(thunk:__stdcall GetProcessHeap()@0x411113) possibleDestructor(thunk:j___RTC_SetErrorFuncW@0x411118) possibleDestructor(thunk:j___onexit@0x41111d) possibleDestructor(thunk:j__NtCurrentTeb@0x411122) possibleDestructor(thunk:__stdcall HeapFree(x, x, x)@0x411127) possibleDestructor(thunk:j___RTC_SetErrorFunc@0x41112c) possibleDestructor(thunk:virtual int B::get_b(void)@0x411131) possibleDestructor(thunk:j___invoke_watson_if_error@0x411136) possibleDestructor(thunk:__stdcall TerminateProcess(x, x)@0x41113b) possibleDestructor(start@0x411140) possibleDestructor(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145) possibleDestructor(thunk:j____CxxSetUnhandledExceptionFilter@0x41114a) possibleDestructor(thunk:__stdcall QueryPerformanceCounter(x)@0x41114f) possibleDestructor(thunk:j___unlock@0x411154) possibleDestructor(thunk:__stdcall GetCurrentProcessId()@0x411159) possibleDestructor(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x41115e) possibleDestructor(thunk:j____set_app_type@0x411163) possibleDestructor(thunk:j___RTC_CheckEsp@0x411168) possibleDestructor(thunk:j__main@0x41116d) possibleDestructor(thunk:__stdcall EncodePointer(x)@0x411172) possibleDestructor(thunk:j___RTC_Initialize@0x411177) possibleDestructor(thunk:j___controlfp_s@0x41117c) possibleDestructor(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411181) possibleDestructor(thunk:__stdcall DecodePointer(x)@0x411186) possibleDestructor(thunk:j___invoke_watson@0x41118b) possibleDestructor(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411190) possibleDestructor(thunk:j___CRT_RTC_INITW@0x411195) possibleDestructor(thunk:__stdcall GetTickCount()@0x41119a) possibleDestructor(thunk:j___IsNonwritableInCurrentImage@0x41119f) possibleDestructor(thunk:j____CxxFrameHandler3@0x4111a4) possibleDestructor(thunk:__stdcall HeapAlloc(x, x, x)@0x4111a9) possibleDestructor(thunk:j___amsg_exit@0x4111ae) possibleDestructor(thunk:* __cdecl operator new(unsigned int)@0x4111b3) possibleDestructor(thunk:j___XcptFilter@0x4111b8) possibleDestructor(thunk:j___CrtSetCheckCount@0x4111bd) possibleDestructor(thunk:__stdcall InterlockedExchange(x, x)@0x4111c2) possibleDestructor(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111c7) possibleDestructor(thunk:virtual int D::get_d(void)@0x4111cc) possibleDestructor(thunk:type_info::type_info(class type_info const &)@0x4111d1) possibleDestructor(thunk:j___except_handler4_common@0x4111d6) possibleDestructor(thunk:j___matherr@0x4111db) possibleDestructor(thunk:j____getmainargs@0x4111e0) possibleDestructor(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4111e5) possibleDestructor(thunk:__stdcall lstrlenA(x)@0x4111ea) possibleDestructor(thunk:__cdecl _RTC_Failure(*, int)@0x4111ef) possibleDestructor(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111f4) possibleDestructor(thunk:j__exit_0@0x4111f9) possibleDestructor(thunk:j____dllonexit@0x4111fe) possibleDestructor(thunk:__stdcall FreeLibrary(x)@0x411203) possibleDestructor(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411208) possibleDestructor(thunk:j___initterm_e@0x41120d) possibleDestructor(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x411212) possibleDestructor(D::D(void)@0x4115f0) possibleDestructor(A::A(void)@0x4116d0) possibleDestructor(virtual int A::get_a(void)@0x411720) possibleDestructor(B::B(void)@0x411760) possibleDestructor(virtual int B::get_b(void)@0x411800) possibleDestructor(C::C(void)@0x411840) possibleDestructor(virtual int C::get_c(void)@0x4118e0) possibleDestructor(virtual int D::get_d(void)@0x411920) possibleDestructor(__cdecl operator delete(*)@0x41195c) possibleDestructor(* __cdecl operator new(unsigned int)@0x411962) possibleDestructor(thunk:___CxxFrameHandler3@0x411968) possibleDestructor(__fastcall __security_check_cookie(x)@0x411970) possibleDestructor(type_info::type_info(class type_info const &)@0x411bf0) possibleDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20) possibleDestructor(class type_info & type_info::operator=(class type_info const &)@0x411cb0) possibleDestructor(thunk:__CRT_RTC_INITW@0x412cf6) possibleDestructor(thunk:__configthreadlocale@0x412f6a) possibleDestructor(thunk:___setusermatherr@0x412ff2) possibleDestructor(thunk:___set_app_type@0x4131d4) possibleDestructor(thunk:__amsg_exit@0x4131da) possibleDestructor(thunk:___getmainargs@0x4131e0) possibleDestructor(thunk:__exit@0x413308) possibleDestructor(thunk:__XcptFilter@0x41330e) possibleDestructor(thunk:__cexit@0x413314) possibleDestructor(_exit_0@0x41331a) possibleDestructor(thunk:__CrtSetCheckCount@0x413320) possibleDestructor(thunk:__CrtDbgReportW@0x4135a6) possibleDestructor(thunk:__initterm@0x4135ac) possibleDestructor(thunk:__initterm_e@0x4135b2) possibleDestructor(thunk:__crt_debugger_hook@0x4135f4) possibleDestructor(__cdecl terminate(void)@0x413bd6) possibleDestructor(virtual type_info::~type_info(void)@0x413bdc) possibleDestructor(thunk:__controlfp_s@0x413be2) possibleDestructor(thunk:__invoke_watson@0x413be8) possibleDestructor(thunk:__unlock@0x413bee) possibleDestructor(thunk:___dllonexit@0x413bf4) possibleDestructor(thunk:__lock@0x413bfa) possibleDestructor(thunk:__except_handler4_common@0x413c00) possibleDestructor(thunk:__stdcall EncodePointer(x)@0x413c06) possibleDestructor(thunk:__stdcall InterlockedExchange(x, x)@0x413c0c) possibleDestructor(thunk:__stdcall Sleep(x)@0x413c12) possibleDestructor(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x413c18) possibleDestructor(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x413c1e) possibleDestructor(thunk:__stdcall TerminateProcess(x, x)@0x413c24) possibleDestructor(thunk:__stdcall GetCurrentProcess()@0x413c2a) possibleDestructor(thunk:__stdcall UnhandledExceptionFilter(x)@0x413c30) possibleDestructor(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x413c36) possibleDestructor(thunk:__stdcall IsDebuggerPresent()@0x413c3c) possibleDestructor(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x413c42) possibleDestructor(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x413c48) possibleDestructor(thunk:__stdcall RaiseException(x, x, x, x)@0x413c4e) possibleDestructor(thunk:__stdcall lstrlenA(x)@0x413c54) possibleDestructor(thunk:__stdcall GetProcAddress(x, x)@0x413c5a) possibleDestructor(thunk:__stdcall LoadLibraryW(x)@0x413c60) possibleDestructor(thunk:__stdcall DecodePointer(x)@0x413c66) possibleDestructor(thunk:__stdcall QueryPerformanceCounter(x)@0x413c6c) possibleDestructor(thunk:__stdcall GetTickCount()@0x413c72) possibleDestructor(thunk:__stdcall GetCurrentThreadId()@0x413c78) possibleDestructor(thunk:__stdcall GetCurrentProcessId()@0x413c7e) possibleDestructor(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413c84) possibleDestructor(thunk:__stdcall HeapFree(x, x, x)@0x413c8a) possibleDestructor(thunk:__stdcall HeapAlloc(x, x, x)@0x413c90) possibleDestructor(thunk:__stdcall GetProcessHeap()@0x413c96) possibleDestructor(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413c9c) possibleDestructor(thunk:__stdcall VirtualQuery(x, x, x)@0x413ca2) possibleDestructor(thunk:__stdcall FreeLibrary(x)@0x413ca8)]
-%   [vftable]
-%     possibleVFTable: 9  [possibleVFTable(const D::`vftable'{for `A'}@0x416740) possibleVFTable(const D::`vftable'{for `C'}@0x41674c) possibleVFTable(const D::`vftable'{for `B'}@0x416758) possibleVFTable(const A::`vftable'@0x416780) possibleVFTable(const B::`vftable'{for `A'}@0x41678c) possibleVFTable(const B::`vftable'{for `B'}@0x416798) possibleVFTable(const C::`vftable'{for `A'}@0x4167b0) possibleVFTable(const C::`vftable'{for `C'}@0x4167bc) possibleVFTable(const type_info::`vftable'@0x4167d4)]
-%   [vftable_size]
-%     candidateVFTableSize: 10  [candidateVFTableSize(const D::`vftable'{for `A'}@0x416740,4) candidateVFTableSize(const D::`vftable'{for `C'}@0x41674c,4) candidateVFTableSize(const D::`vftable'{for `B'}@0x416758,4) candidateVFTableSize(const D::`vftable'{for `B'}@0x416758,8) candidateVFTableSize(const A::`vftable'@0x416780,4) candidateVFTableSize(const B::`vftable'{for `A'}@0x41678c,4) candidateVFTableSize(const B::`vftable'{for `B'}@0x416798,4) candidateVFTableSize(const C::`vftable'{for `A'}@0x4167b0,4) candidateVFTableSize(const C::`vftable'{for `C'}@0x4167bc,4) candidateVFTableSize(const type_info::`vftable'@0x4167d4,4)]
-%   [merge]
-%     strongMergeCandidate: 10  [strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0) strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0) strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760) strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840) strongMergeCandidate(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0) strongMergeCandidate(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840) strongMergeCandidate(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) strongMergeCandidate(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0) strongMergeCandidate(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760) strongMergeCandidate(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)]
-%     weakMergeCandidate: 12  [weakMergeCandidate(D::D(void)@0x4115f0,B::B(void)@0x411760) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const D::`vftable'{for `A'}@0x416740) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0) weakMergeCandidate(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758) weakMergeCandidate(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakMergeCandidate(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758) weakMergeCandidate(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4) weakMergeCandidate(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270)]
-%   [composition]
-%     objectInObject: 18  [objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0) objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12) objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0) objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12) objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)]
 % Selected guesses:
-%   [method]  (224 candidate(s))
-%     method: 224  [method(thunk:j___setdefaultprecision@0x411005) method(thunk:j___setargv@0x41100a) method(thunk:j___RTC_GetErrDesc@0x41100f) method(thunk:virtual int A::get_a(void)@0x411014) method(thunk:__fastcall __security_check_cookie(x)@0x411019) method(thunk:__stdcall IsDebuggerPresent()@0x41101e) method(thunk:class type_info & type_info::operator=(class type_info const &)@0x411023) method(thunk:j___RTC_Terminate@0x411028) method(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41102d) method(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411032) method(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411037) method(thunk:j___RTC_NumErrors@0x41103c) method(thunk:j____setusermatherr@0x411041) method(thunk:__stdcall Sleep(x)@0x411046) method(thunk:virtual type_info::~type_info(void)@0x41104b) method(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411050) method(thunk:j____security_init_cookie@0x411055) method(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41105a) method(thunk:j___cexit@0x41105f) method(thunk:j___CrtDbgReportW@0x411064) method(thunk:__stdcall VirtualQuery(x, x, x)@0x411069) method(thunk:j__atexit@0x41106e) method(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x411073) method(thunk:j___RTC_SetErrorType@0x411078) method(thunk:j___except_handler4@0x41107d) method(thunk:j___lock@0x411082) method(thunk:__stdcall GetProcAddress(x, x)@0x411087) method(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x41108c) method(thunk:__cdecl operator delete(*)@0x411091) method(thunk:virtual type_info::~type_info(void)@0x411096) method(thunk:__cdecl terminate(void)@0x4110a0) method(thunk:j___exit@0x4110a5) method(thunk:__stdcall GetCurrentThreadId()@0x4110aa) method(thunk:virtual int C::get_c(void)@0x4110af) method(thunk:j___initterm@0x4110b4) method(thunk:__stdcall GetCurrentProcess()@0x4110b9) method(thunk:j___RTC_UninitUse@0x4110be) method(thunk:j___RTC_Shutdown@0x4110c3) method(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8) method(thunk:j___FindPESection@0x4110cd) method(thunk:__stdcall LoadLibraryW(x)@0x4110d2) method(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x4110d7) method(thunk:j___configthreadlocale@0x4110dc) method(thunk:j___RTC_InitBase@0x4110e1) method(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110e6) method(thunk:__stdcall RaiseException(x, x, x, x)@0x4110eb) method(thunk:j___crt_debugger_hook@0x4110f0) method(thunk:B::B(void)@0x4110f5) method(thunk:C::C(void)@0x4110fa) method(thunk:D::D(void)@0x4110ff) method(thunk:A::A(void)@0x411104) method(thunk:j___ValidateImageBase@0x411109) method(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41110e) method(thunk:__stdcall GetProcessHeap()@0x411113) method(thunk:j___RTC_SetErrorFuncW@0x411118) method(thunk:j___onexit@0x41111d) method(thunk:j__NtCurrentTeb@0x411122) method(thunk:__stdcall HeapFree(x, x, x)@0x411127) method(thunk:j___RTC_SetErrorFunc@0x41112c) method(thunk:virtual int B::get_b(void)@0x411131) method(thunk:j___invoke_watson_if_error@0x411136) method(thunk:__stdcall TerminateProcess(x, x)@0x41113b) method(start@0x411140) method(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145) method(thunk:j____CxxSetUnhandledExceptionFilter@0x41114a) method(thunk:__stdcall QueryPerformanceCounter(x)@0x41114f) method(thunk:j___unlock@0x411154) method(thunk:__stdcall GetCurrentProcessId()@0x411159) method(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x41115e) method(thunk:j____set_app_type@0x411163) method(thunk:j___RTC_CheckEsp@0x411168) method(thunk:j__main@0x41116d) method(thunk:__stdcall EncodePointer(x)@0x411172) method(thunk:j___RTC_Initialize@0x411177) method(thunk:j___controlfp_s@0x41117c) method(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411181) method(thunk:__stdcall DecodePointer(x)@0x411186) method(thunk:j___invoke_watson@0x41118b) method(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411190) method(thunk:j___CRT_RTC_INITW@0x411195) method(thunk:__stdcall GetTickCount()@0x41119a) method(thunk:j___IsNonwritableInCurrentImage@0x41119f) method(thunk:j____CxxFrameHandler3@0x4111a4) method(thunk:__stdcall HeapAlloc(x, x, x)@0x4111a9) method(thunk:j___amsg_exit@0x4111ae) method(thunk:* __cdecl operator new(unsigned int)@0x4111b3) method(thunk:j___XcptFilter@0x4111b8) method(thunk:j___CrtSetCheckCount@0x4111bd) method(thunk:__stdcall InterlockedExchange(x, x)@0x4111c2) method(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111c7) method(thunk:virtual int D::get_d(void)@0x4111cc) method(thunk:type_info::type_info(class type_info const &)@0x4111d1) method(thunk:j___except_handler4_common@0x4111d6) method(thunk:j___matherr@0x4111db) method(thunk:j____getmainargs@0x4111e0) method(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4111e5) method(thunk:__stdcall lstrlenA(x)@0x4111ea) method(thunk:__cdecl _RTC_Failure(*, int)@0x4111ef) method(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111f4) method(thunk:j__exit_0@0x4111f9) method(thunk:j____dllonexit@0x4111fe) method(thunk:__stdcall FreeLibrary(x)@0x411203) method(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411208) method(thunk:j___initterm_e@0x41120d) method(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x411212) method(_main@0x411430) method(D::D(void)@0x4115f0) method(A::A(void)@0x4116d0) method(virtual int A::get_a(void)@0x411720) method(B::B(void)@0x411760) method(virtual int B::get_b(void)@0x411800) method(C::C(void)@0x411840) method(virtual int C::get_c(void)@0x4118e0) method(virtual int D::get_d(void)@0x411920) method(__cdecl operator delete(*)@0x41195c) method(* __cdecl operator new(unsigned int)@0x411962) method(thunk:___CxxFrameHandler3@0x411968) method(__fastcall __security_check_cookie(x)@0x411970) method(__RTC_CheckEsp@0x411990) method(__fastcall _RTC_CheckStackVars(x, x)@0x4119c0) method(__fastcall _RTC_AllocaHelper(x, x, x)@0x411a40) method(__fastcall _RTC_CheckStackVars2(x, x, x)@0x411a80) method(__RTC_InitBase@0x411b90) method(__RTC_Shutdown@0x411bd0) method(type_info::type_info(class type_info const &)@0x411bf0) method(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20) method(class type_info & type_info::operator=(class type_info const &)@0x411cb0) method(pre_c_init@0x411cd0) method(pre_cpp_init@0x411d80) method(_mainCRTStartup@0x411df0) method(__tmainCRTStartup@0x411e10) method(_NtCurrentTeb@0x412110) method(check_managed_app@0x412120) method(___report_gsfailure@0x4121b0) method(__cdecl _RTC_Failure(*, int)@0x412310) method(failwithmessage@0x412380) method(DebuggerProbe@0x412620) method(DebuggerRuntime@0x4126d0) method(__cdecl _RTC_StackFailure(*, char const *)@0x4127a0) method(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4128e0) method(_getMemBlockDataString@0x412a60) method(__RTC_UninitUse@0x412af0) method(__RTC_NumErrors@0x412c20) method(__RTC_GetErrDesc@0x412c30) method(__RTC_SetErrorFunc@0x412c80) method(__RTC_SetErrorFuncW@0x412cb0) method(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x412ce0) method(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x412cf0) method(thunk:__CRT_RTC_INITW@0x412cf6) method(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x412d00) method($LN11@0x412d82) method(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x412de0) method(ArrayUnwindFilter@0x412e90) method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412ed0) method(___CxxSetUnhandledExceptionFilter@0x412f50) method(thunk:__configthreadlocale@0x412f6a) method(__setdefaultprecision@0x412f70) method(__invoke_watson_if_error@0x412fc0) method(thunk:___setusermatherr@0x412ff2) method(__matherr@0x413000) method(__setargv@0x413010) method(__RTC_Initialize@0x413020) method(__RTC_Terminate@0x413050) method(__onexit@0x413080) method($LN6_1@0x413153) method(_atexit@0x4131b0) method(thunk:___set_app_type@0x4131d4) method(thunk:__amsg_exit@0x4131da) method(thunk:___getmainargs@0x4131e0) method(___security_init_cookie@0x4131f0) method(thunk:__exit@0x413308) method(thunk:__XcptFilter@0x41330e) method(thunk:__cexit@0x413314) method(_exit_0@0x41331a) method(thunk:__CrtSetCheckCount@0x413320) method(__ValidateImageBase@0x413330) method(__FindPESection@0x4133b0) method(__IsNonwritableInCurrentImage@0x413450) method(thunk:__CrtDbgReportW@0x4135a6) method(thunk:__initterm@0x4135ac) method(thunk:__initterm_e@0x4135b2) method(__except_handler4@0x4135c0) method(thunk:__crt_debugger_hook@0x4135f4) method(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x413600) method(GetPdbDll@0x413970) method(__cdecl terminate(void)@0x413bd6) method(virtual type_info::~type_info(void)@0x413bdc) method(thunk:__controlfp_s@0x413be2) method(thunk:__invoke_watson@0x413be8) method(thunk:__unlock@0x413bee) method(thunk:___dllonexit@0x413bf4) method(thunk:__lock@0x413bfa) method(thunk:__except_handler4_common@0x413c00) method(thunk:__stdcall EncodePointer(x)@0x413c06) method(thunk:__stdcall InterlockedExchange(x, x)@0x413c0c) method(thunk:__stdcall Sleep(x)@0x413c12) method(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x413c18) method(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x413c1e) method(thunk:__stdcall TerminateProcess(x, x)@0x413c24) method(thunk:__stdcall GetCurrentProcess()@0x413c2a) method(thunk:__stdcall UnhandledExceptionFilter(x)@0x413c30) method(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x413c36) method(thunk:__stdcall IsDebuggerPresent()@0x413c3c) method(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x413c42) method(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x413c48) method(thunk:__stdcall RaiseException(x, x, x, x)@0x413c4e) method(thunk:__stdcall lstrlenA(x)@0x413c54) method(thunk:__stdcall GetProcAddress(x, x)@0x413c5a) method(thunk:__stdcall LoadLibraryW(x)@0x413c60) method(thunk:__stdcall DecodePointer(x)@0x413c66) method(thunk:__stdcall QueryPerformanceCounter(x)@0x413c6c) method(thunk:__stdcall GetTickCount()@0x413c72) method(thunk:__stdcall GetCurrentThreadId()@0x413c78) method(thunk:__stdcall GetCurrentProcessId()@0x413c7e) method(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413c84) method(thunk:__stdcall HeapFree(x, x, x)@0x413c8a) method(thunk:__stdcall HeapAlloc(x, x, x)@0x413c90) method(thunk:__stdcall GetProcessHeap()@0x413c96) method(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413c9c) method(thunk:__stdcall VirtualQuery(x, x, x)@0x413ca2) method(thunk:__stdcall FreeLibrary(x)@0x413ca8) method(__unwindfunclet$_main$0@0x414c00) method(__ehhandler$_main@0x414c0e) method(type_info::_type_info_dtor_internal_method(void)@0x41a270)]
-%     -method: 0  []
-%   [constructor]  (22 candidate(s))
-%     constructor: 3  [constructor(D::D(void)@0x4115f0) constructor(type_info::type_info(class type_info const &)@0x411bf0) constructor(class type_info & type_info::operator=(class type_info const &)@0x411cb0)]
-%     -constructor: 14  [-constructor(thunk:virtual int A::get_a(void)@0x411014) -constructor(thunk:virtual int C::get_c(void)@0x4110af) -constructor(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8) -constructor(thunk:virtual int B::get_b(void)@0x411131) -constructor(thunk:virtual int D::get_d(void)@0x4111cc) -constructor(A::A(void)@0x4116d0) -constructor(virtual int A::get_a(void)@0x411720) -constructor(B::B(void)@0x411760) -constructor(virtual int B::get_b(void)@0x411800) -constructor(C::C(void)@0x411840) -constructor(virtual int C::get_c(void)@0x4118e0) -constructor(virtual int D::get_d(void)@0x411920) -constructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20) -constructor(type_info::_type_info_dtor_internal_method(void)@0x41a270)]
-%   [destructor]  (171 candidate(s))
-%     realDestructor: 3  [realDestructor(A::A(void)@0x4116d0) realDestructor(B::B(void)@0x411760) realDestructor(C::C(void)@0x411840)]
-%     deletingDestructor: 1  [deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20)]
-%   [vftable]  (9 candidate(s))
-%     vfTable: 9  [vfTable(const D::`vftable'{for `A'}@0x416740) vfTable(const D::`vftable'{for `C'}@0x41674c) vfTable(const D::`vftable'{for `B'}@0x416758) vfTable(const A::`vftable'@0x416780) vfTable(const B::`vftable'{for `A'}@0x41678c) vfTable(const B::`vftable'{for `B'}@0x416798) vfTable(const C::`vftable'{for `A'}@0x4167b0) vfTable(const C::`vftable'{for `C'}@0x4167bc) vfTable(const type_info::`vftable'@0x4167d4)]
-%     -vfTable: 0  []
-%   [vftable_size]  (10 candidate(s))
-%     vfTableSize: 9  [vfTableSize(const D::`vftable'{for `A'}@0x416740,4) vfTableSize(const D::`vftable'{for `C'}@0x41674c,4) vfTableSize(const D::`vftable'{for `B'}@0x416758,8) vfTableSize(const A::`vftable'@0x416780,4) vfTableSize(const B::`vftable'{for `A'}@0x41678c,4) vfTableSize(const B::`vftable'{for `B'}@0x416798,4) vfTableSize(const C::`vftable'{for `A'}@0x4167b0,4) vfTableSize(const C::`vftable'{for `C'}@0x4167bc,4) vfTableSize(const type_info::`vftable'@0x4167d4,4)]
-%   [merge]  (22 candidate(s))
-%     mergeClasses: 24  [mergeClasses(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0) mergeClasses(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0) mergeClasses(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760) mergeClasses(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840) mergeClasses(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0) mergeClasses(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840) mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) mergeClasses(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0) mergeClasses(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760) mergeClasses(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0) mergeClasses(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) mergeClasses(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798) mergeClasses(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) mergeClasses(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758) mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4) mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270) mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `C'}@0x41674c) mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `B'}@0x416758) mergeClasses(const D::`vftable'{for `C'}@0x41674c,const D::`vftable'{for `B'}@0x416758) mergeClasses(const D::`vftable'{for `B'}@0x416758,D::D(void)@0x4115f0) mergeClasses(const B::`vftable'{for `A'}@0x41678c,const B::`vftable'{for `B'}@0x416798) mergeClasses(const C::`vftable'{for `A'}@0x4167b0,const C::`vftable'{for `C'}@0x4167bc) mergeClasses(const type_info::`vftable'@0x4167d4,type_info::type_info(class type_info const &)@0x411bf0) mergeClasses(const type_info::`vftable'@0x4167d4,type_info::_type_info_dtor_internal_method(void)@0x41a270)]
-%     -mergeClasses: 47  [-mergeClasses(D::D(void)@0x4115f0,A::A(void)@0x4116d0) -mergeClasses(D::D(void)@0x4115f0,B::B(void)@0x411760) -mergeClasses(D::D(void)@0x4115f0,C::C(void)@0x411840) -mergeClasses(D::D(void)@0x4115f0,type_info::type_info(class type_info const &)@0x411bf0) -mergeClasses(A::A(void)@0x4116d0,B::B(void)@0x411760) -mergeClasses(A::A(void)@0x4116d0,C::C(void)@0x411840) -mergeClasses(A::A(void)@0x4116d0,type_info::type_info(class type_info const &)@0x411bf0) -mergeClasses(virtual int A::get_a(void)@0x411720,const D::`vftable'{for `A'}@0x416740) -mergeClasses(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c) -mergeClasses(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(B::B(void)@0x411760,C::C(void)@0x411840) -mergeClasses(B::B(void)@0x411760,type_info::type_info(class type_info const &)@0x411bf0) -mergeClasses(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758) -mergeClasses(C::C(void)@0x411840,type_info::type_info(class type_info const &)@0x411bf0) -mergeClasses(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c) -mergeClasses(const D::`vftable'{for `A'}@0x416740,const A::`vftable'@0x416780) -mergeClasses(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c) -mergeClasses(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798) -mergeClasses(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(const D::`vftable'{for `A'}@0x416740,const type_info::`vftable'@0x4167d4) -mergeClasses(const D::`vftable'{for `C'}@0x41674c,const A::`vftable'@0x416780) -mergeClasses(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c) -mergeClasses(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798) -mergeClasses(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(const D::`vftable'{for `C'}@0x41674c,const type_info::`vftable'@0x4167d4) -mergeClasses(const D::`vftable'{for `B'}@0x416758,const A::`vftable'@0x416780) -mergeClasses(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c) -mergeClasses(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798) -mergeClasses(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(const D::`vftable'{for `B'}@0x416758,const type_info::`vftable'@0x4167d4) -mergeClasses(const A::`vftable'@0x416780,const B::`vftable'{for `A'}@0x41678c) -mergeClasses(const A::`vftable'@0x416780,const B::`vftable'{for `B'}@0x416798) -mergeClasses(const A::`vftable'@0x416780,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(const A::`vftable'@0x416780,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(const A::`vftable'@0x416780,const type_info::`vftable'@0x4167d4) -mergeClasses(const B::`vftable'{for `A'}@0x41678c,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(const B::`vftable'{for `A'}@0x41678c,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(const B::`vftable'{for `A'}@0x41678c,const type_info::`vftable'@0x4167d4) -mergeClasses(const B::`vftable'{for `B'}@0x416798,const C::`vftable'{for `A'}@0x4167b0) -mergeClasses(const B::`vftable'{for `B'}@0x416798,const C::`vftable'{for `C'}@0x4167bc) -mergeClasses(const B::`vftable'{for `B'}@0x416798,const type_info::`vftable'@0x4167d4) -mergeClasses(const C::`vftable'{for `A'}@0x4167b0,const type_info::`vftable'@0x4167d4) -mergeClasses(const C::`vftable'{for `C'}@0x4167bc,const type_info::`vftable'@0x4167d4)]
-%   [composition]  (18 candidate(s))
-%     derivedClass: 18  [derivedClass(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0) derivedClass(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0) derivedClass(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12) derivedClass(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12) derivedClass(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0) derivedClass(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0) derivedClass(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12) derivedClass(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12) derivedClass(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0) derivedClass(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0) derivedClass(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) derivedClass(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12) derivedClass(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) derivedClass(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28) derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28) derivedClass(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) derivedClass(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)]
-%     embeddedObject: 0  []
-15:21:50 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+%   [method]
+%     guessMethodReward: 224/224
+%       guessMethodReward(thunk:j___setdefaultprecision@0x411005) guessMethodReward(thunk:j___setargv@0x41100a)
+%       guessMethodReward(thunk:j___RTC_GetErrDesc@0x41100f) guessMethodReward(thunk:virtual int A::get_a(void)@0x411014)
+%       guessMethodReward(thunk:__fastcall __security_check_cookie(x)@0x411019) guessMethodReward(thunk:__stdcall IsDebuggerPresent()@0x41101e)
+%       guessMethodReward(thunk:class type_info & type_info::operator=(class type_info const &)@0x411023) guessMethodReward(thunk:j___RTC_Terminate@0x411028)
+%       guessMethodReward(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x41102d) guessMethodReward(thunk:__fastcall _RTC_AllocaHelper(x, x, x)@0x411032)
+%       guessMethodReward(thunk:int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x411037) guessMethodReward(thunk:j___RTC_NumErrors@0x41103c)
+%       guessMethodReward(thunk:j____setusermatherr@0x411041) guessMethodReward(thunk:__stdcall Sleep(x)@0x411046)
+%       guessMethodReward(thunk:virtual type_info::~type_info(void)@0x41104b) guessMethodReward(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x411050)
+%       guessMethodReward(thunk:j____security_init_cookie@0x411055) guessMethodReward(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x41105a)
+%       guessMethodReward(thunk:j___cexit@0x41105f) guessMethodReward(thunk:j___CrtDbgReportW@0x411064)
+%       guessMethodReward(thunk:__stdcall VirtualQuery(x, x, x)@0x411069) guessMethodReward(thunk:j__atexit@0x41106e)
+%       guessMethodReward(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x411073) guessMethodReward(thunk:j___RTC_SetErrorType@0x411078)
+%       guessMethodReward(thunk:j___except_handler4@0x41107d) guessMethodReward(thunk:j___lock@0x411082)
+%       guessMethodReward(thunk:__stdcall GetProcAddress(x, x)@0x411087) guessMethodReward(thunk:__fastcall _RTC_CheckStackVars(x, x)@0x41108c)
+%       guessMethodReward(thunk:__cdecl operator delete(*)@0x411091) guessMethodReward(thunk:virtual type_info::~type_info(void)@0x411096)
+%       guessMethodReward(thunk:__cdecl terminate(void)@0x4110a0) guessMethodReward(thunk:j___exit@0x4110a5)
+%       guessMethodReward(thunk:__stdcall GetCurrentThreadId()@0x4110aa) guessMethodReward(thunk:virtual int C::get_c(void)@0x4110af)
+%       guessMethodReward(thunk:j___initterm@0x4110b4) guessMethodReward(thunk:__stdcall GetCurrentProcess()@0x4110b9)
+%       guessMethodReward(thunk:j___RTC_UninitUse@0x4110be) guessMethodReward(thunk:j___RTC_Shutdown@0x4110c3)
+%       guessMethodReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8) guessMethodReward(thunk:j___FindPESection@0x4110cd)
+%       guessMethodReward(thunk:__stdcall LoadLibraryW(x)@0x4110d2) guessMethodReward(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x4110d7)
+%       guessMethodReward(thunk:j___configthreadlocale@0x4110dc) guessMethodReward(thunk:j___RTC_InitBase@0x4110e1)
+%       guessMethodReward(thunk:__cdecl _RTC_StackFailure(*, char const *)@0x4110e6) guessMethodReward(thunk:__stdcall RaiseException(x, x, x, x)@0x4110eb)
+%       guessMethodReward(thunk:j___crt_debugger_hook@0x4110f0) guessMethodReward(thunk:B::B(void)@0x4110f5)
+%       guessMethodReward(thunk:C::C(void)@0x4110fa) guessMethodReward(thunk:D::D(void)@0x4110ff)
+%       guessMethodReward(thunk:A::A(void)@0x411104) guessMethodReward(thunk:j___ValidateImageBase@0x411109)
+%       guessMethodReward(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x41110e) guessMethodReward(thunk:__stdcall GetProcessHeap()@0x411113)
+%       guessMethodReward(thunk:j___RTC_SetErrorFuncW@0x411118) guessMethodReward(thunk:j___onexit@0x41111d)
+%       guessMethodReward(thunk:j__NtCurrentTeb@0x411122) guessMethodReward(thunk:__stdcall HeapFree(x, x, x)@0x411127)
+%       guessMethodReward(thunk:j___RTC_SetErrorFunc@0x41112c) guessMethodReward(thunk:virtual int B::get_b(void)@0x411131)
+%       guessMethodReward(thunk:j___invoke_watson_if_error@0x411136) guessMethodReward(thunk:__stdcall TerminateProcess(x, x)@0x41113b)
+%       guessMethodReward(start@0x411140) guessMethodReward(thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145)
+%       guessMethodReward(thunk:j____CxxSetUnhandledExceptionFilter@0x41114a) guessMethodReward(thunk:__stdcall QueryPerformanceCounter(x)@0x41114f)
+%       guessMethodReward(thunk:j___unlock@0x411154) guessMethodReward(thunk:__stdcall GetCurrentProcessId()@0x411159)
+%       guessMethodReward(thunk:__fastcall _RTC_CheckStackVars2(x, x, x)@0x41115e) guessMethodReward(thunk:j____set_app_type@0x411163)
+%       guessMethodReward(thunk:j___RTC_CheckEsp@0x411168) guessMethodReward(thunk:j__main@0x41116d)
+%       guessMethodReward(thunk:__stdcall EncodePointer(x)@0x411172) guessMethodReward(thunk:j___RTC_Initialize@0x411177)
+%       guessMethodReward(thunk:j___controlfp_s@0x41117c) guessMethodReward(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x411181)
+%       guessMethodReward(thunk:__stdcall DecodePointer(x)@0x411186) guessMethodReward(thunk:j___invoke_watson@0x41118b)
+%       guessMethodReward(thunk:int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x411190) guessMethodReward(thunk:j___CRT_RTC_INITW@0x411195)
+%       guessMethodReward(thunk:__stdcall GetTickCount()@0x41119a) guessMethodReward(thunk:j___IsNonwritableInCurrentImage@0x41119f)
+%       guessMethodReward(thunk:j____CxxFrameHandler3@0x4111a4) guessMethodReward(thunk:__stdcall HeapAlloc(x, x, x)@0x4111a9)
+%       guessMethodReward(thunk:j___amsg_exit@0x4111ae) guessMethodReward(thunk:* __cdecl operator new(unsigned int)@0x4111b3)
+%       guessMethodReward(thunk:j___XcptFilter@0x4111b8) guessMethodReward(thunk:j___CrtSetCheckCount@0x4111bd)
+%       guessMethodReward(thunk:__stdcall InterlockedExchange(x, x)@0x4111c2) guessMethodReward(thunk:__stdcall UnhandledExceptionFilter(x)@0x4111c7)
+%       guessMethodReward(thunk:virtual int D::get_d(void)@0x4111cc) guessMethodReward(thunk:type_info::type_info(class type_info const &)@0x4111d1)
+%       guessMethodReward(thunk:j___except_handler4_common@0x4111d6) guessMethodReward(thunk:j___matherr@0x4111db)
+%       guessMethodReward(thunk:j____getmainargs@0x4111e0) guessMethodReward(thunk:__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x4111e5)
+%       guessMethodReward(thunk:__stdcall lstrlenA(x)@0x4111ea) guessMethodReward(thunk:__cdecl _RTC_Failure(*, int)@0x4111ef)
+%       guessMethodReward(thunk:__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4111f4) guessMethodReward(thunk:j__exit_0@0x4111f9)
+%       guessMethodReward(thunk:j____dllonexit@0x4111fe) guessMethodReward(thunk:__stdcall FreeLibrary(x)@0x411203)
+%       guessMethodReward(thunk:__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x411208) guessMethodReward(thunk:j___initterm_e@0x41120d)
+%       guessMethodReward(thunk:int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x411212) guessMethodReward(_main@0x411430)
+%       guessMethodReward(D::D(void)@0x4115f0) guessMethodReward(A::A(void)@0x4116d0)
+%       guessMethodReward(virtual int A::get_a(void)@0x411720) guessMethodReward(B::B(void)@0x411760)
+%       guessMethodReward(virtual int B::get_b(void)@0x411800) guessMethodReward(C::C(void)@0x411840)
+%       guessMethodReward(virtual int C::get_c(void)@0x4118e0) guessMethodReward(virtual int D::get_d(void)@0x411920)
+%       guessMethodReward(__cdecl operator delete(*)@0x41195c) guessMethodReward(* __cdecl operator new(unsigned int)@0x411962)
+%       guessMethodReward(thunk:___CxxFrameHandler3@0x411968) guessMethodReward(__fastcall __security_check_cookie(x)@0x411970)
+%       guessMethodReward(__RTC_CheckEsp@0x411990) guessMethodReward(__fastcall _RTC_CheckStackVars(x, x)@0x4119c0)
+%       guessMethodReward(__fastcall _RTC_AllocaHelper(x, x, x)@0x411a40) guessMethodReward(__fastcall _RTC_CheckStackVars2(x, x, x)@0x411a80)
+%       guessMethodReward(__RTC_InitBase@0x411b90) guessMethodReward(__RTC_Shutdown@0x411bd0)
+%       guessMethodReward(type_info::type_info(class type_info const &)@0x411bf0) guessMethodReward(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20)
+%       guessMethodReward(class type_info & type_info::operator=(class type_info const &)@0x411cb0) guessMethodReward(pre_c_init@0x411cd0)
+%       guessMethodReward(pre_cpp_init@0x411d80) guessMethodReward(_mainCRTStartup@0x411df0)
+%       guessMethodReward(__tmainCRTStartup@0x411e10) guessMethodReward(_NtCurrentTeb@0x412110)
+%       guessMethodReward(check_managed_app@0x412120) guessMethodReward(___report_gsfailure@0x4121b0)
+%       guessMethodReward(__cdecl _RTC_Failure(*, int)@0x412310) guessMethodReward(failwithmessage@0x412380)
+%       guessMethodReward(DebuggerProbe@0x412620) guessMethodReward(DebuggerRuntime@0x4126d0)
+%       guessMethodReward(__cdecl _RTC_StackFailure(*, char const *)@0x4127a0) guessMethodReward(__cdecl _RTC_AllocaFailure(*, struct _RTC_ALLOCA_NODE *, int)@0x4128e0)
+%       guessMethodReward(_getMemBlockDataString@0x412a60) guessMethodReward(__RTC_UninitUse@0x412af0)
+%       guessMethodReward(__RTC_NumErrors@0x412c20) guessMethodReward(__RTC_GetErrDesc@0x412c30)
+%       guessMethodReward(__RTC_SetErrorFunc@0x412c80) guessMethodReward(__RTC_SetErrorFuncW@0x412cb0)
+%       guessMethodReward(int (__cdecl *__cdecl _RTC_GetErrorFunc(const *))(int, char const *, int, char const *, char const *, ...)@0x412ce0) guessMethodReward(int (__cdecl *__cdecl _RTC_GetErrorFuncW(const *))(int, wchar_t const *, int, wchar_t const *, wchar_t const *, ...)@0x412cf0)
+%       guessMethodReward(thunk:__CRT_RTC_INITW@0x412cf6) guessMethodReward(__stdcall `eh vector destructor iterator'(*, unsigned int, int, (*)(*))@0x412d00)
+%       guessMethodReward($LN11@0x412d82) guessMethodReward(__stdcall __ArrayUnwind(*, unsigned int, int, (*)(*))@0x412de0)
+%       guessMethodReward(ArrayUnwindFilter@0x412e90) guessMethodReward(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x412ed0)
+%       guessMethodReward(___CxxSetUnhandledExceptionFilter@0x412f50) guessMethodReward(thunk:__configthreadlocale@0x412f6a)
+%       guessMethodReward(__setdefaultprecision@0x412f70) guessMethodReward(__invoke_watson_if_error@0x412fc0)
+%       guessMethodReward(thunk:___setusermatherr@0x412ff2) guessMethodReward(__matherr@0x413000)
+%       guessMethodReward(__setargv@0x413010) guessMethodReward(__RTC_Initialize@0x413020)
+%       guessMethodReward(__RTC_Terminate@0x413050) guessMethodReward(__onexit@0x413080)
+%       guessMethodReward($LN6_1@0x413153) guessMethodReward(_atexit@0x4131b0)
+%       guessMethodReward(thunk:___set_app_type@0x4131d4) guessMethodReward(thunk:__amsg_exit@0x4131da)
+%       guessMethodReward(thunk:___getmainargs@0x4131e0) guessMethodReward(___security_init_cookie@0x4131f0)
+%       guessMethodReward(thunk:__exit@0x413308) guessMethodReward(thunk:__XcptFilter@0x41330e)
+%       guessMethodReward(thunk:__cexit@0x413314) guessMethodReward(_exit_0@0x41331a)
+%       guessMethodReward(thunk:__CrtSetCheckCount@0x413320) guessMethodReward(__ValidateImageBase@0x413330)
+%       guessMethodReward(__FindPESection@0x4133b0) guessMethodReward(__IsNonwritableInCurrentImage@0x413450)
+%       guessMethodReward(thunk:__CrtDbgReportW@0x4135a6) guessMethodReward(thunk:__initterm@0x4135ac)
+%       guessMethodReward(thunk:__initterm_e@0x4135b2) guessMethodReward(__except_handler4@0x4135c0)
+%       guessMethodReward(thunk:__crt_debugger_hook@0x4135f4) guessMethodReward(int __cdecl _RTC_GetSrcLine(unsigned char *, wchar_t *, unsigned long, int *, wchar_t *, unsigned long)@0x413600)
+%       guessMethodReward(GetPdbDll@0x413970) guessMethodReward(__cdecl terminate(void)@0x413bd6)
+%       guessMethodReward(virtual type_info::~type_info(void)@0x413bdc) guessMethodReward(thunk:__controlfp_s@0x413be2)
+%       guessMethodReward(thunk:__invoke_watson@0x413be8) guessMethodReward(thunk:__unlock@0x413bee)
+%       guessMethodReward(thunk:___dllonexit@0x413bf4) guessMethodReward(thunk:__lock@0x413bfa)
+%       guessMethodReward(thunk:__except_handler4_common@0x413c00) guessMethodReward(thunk:__stdcall EncodePointer(x)@0x413c06)
+%       guessMethodReward(thunk:__stdcall InterlockedExchange(x, x)@0x413c0c) guessMethodReward(thunk:__stdcall Sleep(x)@0x413c12)
+%       guessMethodReward(thunk:__stdcall InterlockedCompareExchange(x, x, x)@0x413c18) guessMethodReward(thunk:__stdcall HeapSetInformation(x, x, x, x)@0x413c1e)
+%       guessMethodReward(thunk:__stdcall TerminateProcess(x, x)@0x413c24) guessMethodReward(thunk:__stdcall GetCurrentProcess()@0x413c2a)
+%       guessMethodReward(thunk:__stdcall UnhandledExceptionFilter(x)@0x413c30) guessMethodReward(thunk:__stdcall SetUnhandledExceptionFilter(x)@0x413c36)
+%       guessMethodReward(thunk:__stdcall IsDebuggerPresent()@0x413c3c) guessMethodReward(thunk:__stdcall WideCharToMultiByte(x, x, x, x, x, x, x, x)@0x413c42)
+%       guessMethodReward(thunk:__stdcall MultiByteToWideChar(x, x, x, x, x, x)@0x413c48) guessMethodReward(thunk:__stdcall RaiseException(x, x, x, x)@0x413c4e)
+%       guessMethodReward(thunk:__stdcall lstrlenA(x)@0x413c54) guessMethodReward(thunk:__stdcall GetProcAddress(x, x)@0x413c5a)
+%       guessMethodReward(thunk:__stdcall LoadLibraryW(x)@0x413c60) guessMethodReward(thunk:__stdcall DecodePointer(x)@0x413c66)
+%       guessMethodReward(thunk:__stdcall QueryPerformanceCounter(x)@0x413c6c) guessMethodReward(thunk:__stdcall GetTickCount()@0x413c72)
+%       guessMethodReward(thunk:__stdcall GetCurrentThreadId()@0x413c78) guessMethodReward(thunk:__stdcall GetCurrentProcessId()@0x413c7e)
+%       guessMethodReward(thunk:__stdcall GetSystemTimeAsFileTime(x)@0x413c84) guessMethodReward(thunk:__stdcall HeapFree(x, x, x)@0x413c8a)
+%       guessMethodReward(thunk:__stdcall HeapAlloc(x, x, x)@0x413c90) guessMethodReward(thunk:__stdcall GetProcessHeap()@0x413c96)
+%       guessMethodReward(thunk:__stdcall GetModuleFileNameW(x, x, x)@0x413c9c) guessMethodReward(thunk:__stdcall VirtualQuery(x, x, x)@0x413ca2)
+%       guessMethodReward(thunk:__stdcall FreeLibrary(x)@0x413ca8) guessMethodReward(__unwindfunclet$_main$0@0x414c00)
+%       guessMethodReward(__ehhandler$_main@0x414c0e) guessMethodReward(type_info::_type_info_dtor_internal_method(void)@0x41a270)
+%     ~guessMethodReward: 0/224
+%   [constructor]
+%     guessConstructor1Reward: 1/5
+%       guessConstructor1Reward(type_info::type_info(class type_info const &)@0x411bf0)
+%     ~guessConstructor1Reward: 4/5
+%       guessConstructor1Domain(D::D(void)@0x4115f0) guessConstructor1Domain(A::A(void)@0x4116d0)
+%       guessConstructor1Domain(B::B(void)@0x411760) guessConstructor1Domain(C::C(void)@0x411840)
+%     guessConstructor2Reward: 0/0
+%     ~guessConstructor2Reward: 0/0
+%     guessConstructor3Reward: 1/1
+%       guessConstructor3Reward(class type_info & type_info::operator=(class type_info const &)@0x411cb0)
+%     ~guessConstructor3Reward: 0/1
+%     guessConstructor4Reward: 0/0
+%     ~guessConstructor4Reward: 0/0
+%   [merge]
+%     strongMergeReward: 10/10
+%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0) strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0)
+%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760) strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840)
+%       strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0) strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
+%       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
+%       strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760) strongMergeReward(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)
+%     ~strongMergeReward: 0/10
+%     weakMergeReward: 6/12
+%       weakMergeReward(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakMergeReward(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798)
+%       weakMergeReward(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakMergeReward(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758)
+%       weakMergeReward(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4) weakMergeReward(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270)
+%     ~weakMergeReward: 6/12
+%       weakMergeCandidate(D::D(void)@0x4115f0,B::B(void)@0x411760) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const D::`vftable'{for `A'}@0x416740)
+%       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0)
+%       weakMergeCandidate(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c)
+%     weakG1Bonus: 2/12
+%       weakG1Bonus(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4) weakG1Bonus(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270)
+%     ~weakG1Bonus: 10/12
+%       weakMergeCandidate(D::D(void)@0x4115f0,B::B(void)@0x411760) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const D::`vftable'{for `A'}@0x416740)
+%       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c)
+%       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0) weakMergeCandidate(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758)
+%       weakMergeCandidate(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c)
+%       weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakMergeCandidate(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758)
+%   [composition]
+%     guessDerivedClassReward: 20/20
+%       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0)
+%       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
+%       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12)
+%       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12)
+%       guessDerivedClassReward(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0)
+%       guessDerivedClassReward(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0)
+%       guessDerivedClassReward(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12)
+%       guessDerivedClassReward(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12)
+%       guessDerivedClassReward(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0)
+%       guessDerivedClassReward(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0)
+%       guessDerivedClassReward(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12)
+%       guessDerivedClassReward(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
+%       guessDerivedClassReward(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12)
+%       guessDerivedClassReward(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
+%       guessDerivedClassReward(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
+%       guessDerivedClassReward(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
+%       guessDerivedClassReward(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12)
+%       guessDerivedClassReward(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
+%       guessDerivedClassReward(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
+%       guessDerivedClassReward(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
+%     ~guessDerivedClassReward: 0/20
+%     purecallNotMostDerivedReward: 0/20
+%     ~purecallNotMostDerivedReward: 20/20
+%       objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
+%       objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12)
+%       objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0)
+%       objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12)
+%       objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0)
+%       objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
+%       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
+%       objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
+%       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
+%       objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
+%     embeddedObject: 0/20
+%     ~embeddedObject: 20/20
+%       objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
+%       objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12)
+%       objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0)
+%       objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12)
+%       objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0)
+%       objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
+%       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
+%       objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
+%       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
+%       objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
+08:02:02 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
 
 % Stats:
-%   atoms: 10372.0
-%   bodies: 9810.0
-%   rules: 22137.0
+%   atoms: 10384.0
+%   bodies: 9836.0
+%   rules: 22147.0
 %   variables: 8578.0
-%   constraints: 411.0
-%   choices: 14273.0
-%   conflicts: 278.0
-%   models: 17.0
+%   constraints: 395.0
+%   choices: 54845.0
+%   conflicts: 1091.0
+%   models: 12.0
 %   optimal_models: 1.0
-%   final_cost: [-40.0, -2632.0]
-%   lower_bound: [-40.0, -2632.0]
-%   total_time: 0.5900821685791016
-%   ground_time: 0.11541048809885979
-%   time_to_first_model: 0.35878484696149826
+%   final_cost: [-40.0, -2624.0]
+%   lower_bound: [-40.0, -2624.0]
+%   total_time: 0.9698870182037354
+%   ground_time: 0.1143747660007648
+%   time_to_first_model: 0.2510343810008635
 %   max_rss_bytes: 44826624
-%   solve_time: 0.22688913345336914
+%   solve_time: 0.6699860095977783
 classCallsMethod(D::D(void)@0x4115f0,B::B(void)@0x411760)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411720)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411720)
@@ -141,7 +296,6 @@ classSizeGTE(D::D(void)@0x4115f0,0)
 classSizeGTE(D::D(void)@0x4115f0,16)
 classSizeGTE(D::D(void)@0x4115f0,20)
 classSizeGTE(D::D(void)@0x4115f0,28)
-classSizeGTE(D::D(void)@0x4115f0,36)
 classSizeGTE(D::D(void)@0x4115f0,4)
 classSizeGTE(D::D(void)@0x4115f0,8)
 classSizeGTE(DebuggerProbe@0x412620,0)
@@ -205,32 +359,48 @@ classSizeGTE(const B::`vftable'{for `B'}@0x416798,36)
 classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,0)
 classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,12)
 classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,20)
+classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,28)
+classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,36)
 classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,0)
 classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,12)
 classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,20)
+classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,28)
+classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,36)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,0)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,12)
+classSizeGTE(const D::`vftable'{for `A'}@0x416740,16)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,20)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,24)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,28)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,32)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,36)
+classSizeGTE(const D::`vftable'{for `A'}@0x416740,4)
+classSizeGTE(const D::`vftable'{for `A'}@0x416740,40)
+classSizeGTE(const D::`vftable'{for `A'}@0x416740,48)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,8)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,0)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,12)
+classSizeGTE(const D::`vftable'{for `B'}@0x416758,16)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,20)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,24)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,28)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,32)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,36)
+classSizeGTE(const D::`vftable'{for `B'}@0x416758,4)
+classSizeGTE(const D::`vftable'{for `B'}@0x416758,40)
+classSizeGTE(const D::`vftable'{for `B'}@0x416758,48)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,8)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,0)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,12)
+classSizeGTE(const D::`vftable'{for `C'}@0x41674c,16)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,20)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,24)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,28)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,32)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,36)
+classSizeGTE(const D::`vftable'{for `C'}@0x41674c,4)
+classSizeGTE(const D::`vftable'{for `C'}@0x41674c,40)
+classSizeGTE(const D::`vftable'{for `C'}@0x41674c,48)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,8)
 classSizeGTE(const type_info::`vftable'@0x4167d4,0)
 classSizeGTE(failwithmessage@0x412380,0)
@@ -407,13 +577,6 @@ classSizeGTE(virtual int C::get_c(void)@0x4118e0,12)
 classSizeGTE(virtual int D::get_d(void)@0x411920,0)
 classSizeGTE(virtual int D::get_d(void)@0x411920,28)
 classSizeGTE(virtual type_info::~type_info(void)@0x413bdc,0)
-classSizeLTE(D::D(void)@0x4115f0,36)
-classSizeLTE(const A::`vftable'@0x416780,36)
-classSizeLTE(const B::`vftable'{for `A'}@0x41678c,36)
-classSizeLTE(const B::`vftable'{for `B'}@0x416798,36)
-classSizeLTE(const C::`vftable'{for `A'}@0x4167b0,36)
-classSizeLTE(const C::`vftable'{for `C'}@0x4167bc,36)
-constructor(D::D(void)@0x4115f0)
 constructor(class type_info & type_info::operator=(class type_info const &)@0x411cb0)
 constructor(type_info::type_info(class type_info const &)@0x411bf0)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20)
@@ -422,7 +585,9 @@ derivedClass(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28
 derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
 derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 derivedClass(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12)
+derivedClass(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 derivedClass(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
+derivedClass(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
 derivedClass(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0)
 derivedClass(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 derivedClass(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12)
@@ -443,10 +608,11 @@ guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
 mergeClasses(const B::`vftable'{for `A'}@0x41678c,const B::`vftable'{for `B'}@0x416798)
+mergeClasses(const B::`vftable'{for `B'}@0x416798,B::B(void)@0x411760)
 mergeClasses(const C::`vftable'{for `A'}@0x4167b0,const C::`vftable'{for `C'}@0x4167bc)
+mergeClasses(const C::`vftable'{for `C'}@0x4167bc,C::C(void)@0x411840)
 mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `B'}@0x416758)
 mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `C'}@0x41674c)
-mergeClasses(const D::`vftable'{for `B'}@0x416758,D::D(void)@0x4115f0)
 mergeClasses(const D::`vftable'{for `C'}@0x41674c,const D::`vftable'{for `B'}@0x416758)
 mergeClasses(const type_info::`vftable'@0x4167d4,type_info::_type_info_dtor_internal_method(void)@0x41a270)
 mergeClasses(const type_info::`vftable'@0x4167d4,type_info::type_info(class type_info const &)@0x411bf0)
@@ -695,7 +861,9 @@ objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,
 objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
 objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12)
+objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
+objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
 objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0)
 objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12)
@@ -711,6 +879,7 @@ objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@
 realDestructor(A::A(void)@0x4116d0)
 realDestructor(B::B(void)@0x411760)
 realDestructor(C::C(void)@0x411840)
+realDestructor(D::D(void)@0x4115f0)
 vfTable(const A::`vftable'@0x416780)
 vfTable(const B::`vftable'{for `A'}@0x41678c)
 vfTable(const B::`vftable'{for `B'}@0x416798)
@@ -748,7 +917,8 @@ vfTableWrite(4265907,B::B(void)@0x411760,4,const B::`vftable'{for `A'}@0x41678c)
 vfTableWrite(4266113,C::C(void)@0x411840,0,const C::`vftable'{for `C'}@0x4167bc)
 vfTableWrite(4266131,C::C(void)@0x411840,4,const C::`vftable'{for `A'}@0x4167b0)
 vfTableWrite(4267004,type_info::type_info(class type_info const &)@0x411bf0,0,const type_info::`vftable'@0x4167d4)
-vftableBelongsToClass(const D::`vftable'{for `B'}@0x416758,0,D::D(void)@0x4115f0)
+vftableBelongsToClass(const B::`vftable'{for `B'}@0x416798,0,B::B(void)@0x411760)
+vftableBelongsToClass(const C::`vftable'{for `C'}@0x4167bc,0,C::C(void)@0x411840)
 vftableBelongsToClass(const type_info::`vftable'@0x4167d4,0,type_info::type_info(class type_info const &)@0x411bf0)
 vftableSizeTotal(40)
 %   {$LN11@0x412d82}
@@ -957,10 +1127,9 @@ vftableSizeTotal(40)
 %   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145}
 %   {thunk:type_info::type_info(class type_info const &)@0x4111d1}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8, type_info::type_info(class type_info const &)@0x411bf0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20, const type_info::`vftable'@0x4167d4, type_info::_type_info_dtor_internal_method(void)@0x41a270}
-%   {thunk:virtual int A::get_a(void)@0x411014, thunk:virtual int C::get_c(void)@0x4110af, thunk:virtual int B::get_b(void)@0x411131, thunk:virtual int D::get_d(void)@0x4111cc, D::D(void)@0x4115f0, A::A(void)@0x4116d0, B::B(void)@0x411760, C::C(void)@0x411840, virtual int D::get_d(void)@0x411920, const D::`vftable'{for `A'}@0x416740, const D::`vftable'{for `C'}@0x41674c, const D::`vftable'{for `B'}@0x416758}
+%   {thunk:virtual int A::get_a(void)@0x411014, thunk:virtual int C::get_c(void)@0x4110af, thunk:virtual int B::get_b(void)@0x411131, thunk:virtual int D::get_d(void)@0x4111cc, D::D(void)@0x4115f0, A::A(void)@0x4116d0, B::B(void)@0x411760, virtual int B::get_b(void)@0x411800, C::C(void)@0x411840, virtual int C::get_c(void)@0x4118e0, const B::`vftable'{for `A'}@0x41678c, const B::`vftable'{for `B'}@0x416798, const C::`vftable'{for `A'}@0x4167b0, const C::`vftable'{for `C'}@0x4167bc}
 %   {thunk:virtual type_info::~type_info(void)@0x41104b}
 %   {thunk:virtual type_info::~type_info(void)@0x411096}
 %   {virtual int A::get_a(void)@0x411720, const A::`vftable'@0x416780}
-%   {virtual int B::get_b(void)@0x411800, const B::`vftable'{for `A'}@0x41678c, const B::`vftable'{for `B'}@0x416798}
-%   {virtual int C::get_c(void)@0x4118e0, const C::`vftable'{for `A'}@0x4167b0, const C::`vftable'{for `C'}@0x4167bc}
+%   {virtual int D::get_d(void)@0x411920, const D::`vftable'{for `A'}@0x416740, const D::`vftable'{for `C'}@0x41674c, const D::`vftable'{for `B'}@0x416758}
 %   {virtual type_info::~type_info(void)@0x413bdc}

@@ -1,107 +1,219 @@
-15:21:49 Grounding...
-15:21:49 Grounding done (0.05s)
-15:21:49 Solving...
-15:21:50 Model found (0.09s): [-20, -1800]
-15:21:50 Model found (0.09s, +0.00s): [-20, -1808]
-15:21:50 Model found (0.10s, +0.01s): [-20, -1845]
-15:21:50 Model found (0.11s, +0.01s): [-20, -1855]
-15:21:50 Model found (0.11s, +0.00s): [-20, -1863]
-15:21:50 Model found (0.12s, +0.00s): [-20, -1882]
-15:21:50 Model found (0.12s, +0.01s): [-20, -1890]
-15:21:50 Model found (0.13s, +0.01s): [-20, -1892]
-15:21:50 Model found (0.14s, +0.01s): [-20, -1900]
-15:21:50 Model found (0.14s, +0.01s): [-20, -1907]
-15:21:50 Model found (0.15s, +0.01s): [-20, -1909]
-15:21:50 Model found (0.16s, +0.01s): [-20, -1917]
-15:21:50 Model found (0.17s, +0.01s): [-20, -1927]
-15:21:50 Model found (0.18s, +0.01s): [-20, -1930]
-15:21:50 Model found (0.19s, +0.01s): [-20, -1947]
-15:21:50 Model found (0.20s, +0.01s): [-20, -1955]
-15:21:50 Model found (0.20s, +0.01s): [-20, -1957]
-15:21:50 Model found (0.21s, +0.01s): [-20, -1965]
-15:21:50 Model found (0.22s, +0.01s): [-20, -1972]
-15:21:50 Model found (0.23s, +0.01s): [-20, -1975]
-15:21:50 Model found (0.24s, +0.01s): [-20, -1977]
-15:21:50 Model found (0.24s, +0.01s): [-20, -1985]
-15:21:50 Model found (0.26s, +0.01s): [-20, -1994]
-15:21:50 Model found (0.26s, +0.01s): [-20, -2002]
-15:21:50 Model found (0.27s, +0.01s): [-20, -2011]
-15:21:50 Model found (0.29s, +0.02s): [-20, -2028]
-15:21:50 Model found (0.30s, +0.01s): [-20, -2045]
-15:21:50 Model found (0.31s, +0.01s): [-20, -2051]
-15:21:50 Model found (0.32s, +0.01s): [-20, -2062]
-15:21:50 Model found (0.34s, +0.01s): [-20, -2068]
-15:21:50 Model found (0.34s, +0.01s): [-20, -2085]
-15:21:50 Model found (0.35s, +0.01s): [-20, -2102]
-15:21:50 Model found (0.36s, +0.01s): [-20, -2119]
-15:21:50 Solving done: OPTIMUM FOUND (0.32s)
+08:02:01 Grounding...
+08:02:01 Grounding done (0.05s)
+08:02:01 Solving...
+08:02:01 Model found (0.08s): [-20, -1818]
+08:02:01 Model found (0.09s, +0.00s): [-20, -1835]
+08:02:01 Model found (0.09s, +0.00s): [-20, -1843]
+08:02:01 Model found (0.09s, +0.00s): [-20, -1860]
+08:02:01 Model found (0.10s, +0.01s): [-20, -1864]
+08:02:01 Model found (0.11s, +0.01s): [-20, -1912]
+08:02:01 Model found (0.11s, +0.01s): [-20, -1920]
+08:02:01 Model found (0.12s, +0.01s): [-20, -1928]
+08:02:01 Model found (0.13s, +0.01s): [-20, -1945]
+08:02:01 Model found (0.13s, +0.00s): [-20, -1955]
+08:02:01 Model found (0.13s, +0.00s): [-20, -1956]
+08:02:01 Model found (0.15s, +0.01s): [-20, -1965]
+08:02:01 Model found (0.15s, +0.00s): [-20, -1976]
+08:02:01 Model found (0.15s, +0.01s): [-20, -1978]
+08:02:01 Model found (0.16s, +0.00s): [-20, -1985]
+08:02:01 Model found (0.16s, +0.00s): [-20, -1995]
+08:02:01 Model found (0.17s, +0.00s): [-20, -2005]
+08:02:01 Model found (0.17s, +0.00s): [-20, -2007]
+08:02:01 Model found (0.18s, +0.01s): [-20, -2009]
+08:02:01 Model found (0.18s, +0.00s): [-20, -2014]
+08:02:01 Model found (0.18s, +0.00s): [-20, -2017]
+08:02:01 Model found (0.19s, +0.00s): [-20, -2021]
+08:02:01 Model found (0.19s, +0.00s): [-20, -2024]
+08:02:01 Model found (0.20s, +0.00s): [-20, -2028]
+08:02:01 Model found (0.20s, +0.00s): [-20, -2034]
+08:02:01 Model found (0.20s, +0.01s): [-20, -2038]
+08:02:01 Model found (0.21s, +0.00s): [-20, -2048]
+08:02:01 Model found (0.21s, +0.00s): [-20, -2058]
+08:02:01 Model found (0.22s, +0.01s): [-20, -2065]
+08:02:01 Model found (0.22s, +0.01s): [-20, -2067]
+08:02:01 Model found (0.24s, +0.01s): [-20, -2075]
+08:02:01 Model found (0.24s, +0.01s): [-20, -2077]
+08:02:01 Model found (0.25s, +0.01s): [-20, -2085]
+08:02:01 Model found (0.26s, +0.01s): [-20, -2086]
+08:02:01 Model found (0.27s, +0.01s): [-20, -2091]
+08:02:01 Model found (0.27s, +0.00s): [-20, -2094]
+08:02:01 Model found (0.28s, +0.01s): [-20, -2101]
+08:02:01 Model found (0.29s, +0.01s): [-20, -2111]
+08:02:01 Solving done: OPTIMUM FOUND (0.24s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex8.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex8.results
 OPTIMUM FOUND
 
-Answer: 33
-Optimization: -20 -2119
+Answer: 38
+Optimization: -20 -2111
 
 % Equivalence classes (162 classes, 176 entities):
 
-% Guess candidates:
-%   [method]
-%     guessMethodDomain: 173  [guessMethodDomain(A::A(void)@0x401000) guessMethodDomain(B::B(void)@0x401020) guessMethodDomain(C::C(void)@0x401050) guessMethodDomain(D::D(void)@0x401080) guessMethodDomain(_main@0x4010d0) guessMethodDomain(virtual std::bad_alloc::~bad_alloc(void)@0x401134) guessMethodDomain(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) guessMethodDomain(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) guessMethodDomain(* __cdecl operator new(unsigned int)@0x401183) guessMethodDomain(fast_error_exit@0x401203) guessMethodDomain(_mainCRTStartup@0x40138d) guessMethodDomain(std::exception::exception(char const * const &, int)@0x401397) guessMethodDomain(virtual char const * std::exception::what(void)const@0x4013b4) guessMethodDomain(std::exception::_Copy_str(char const *)@0x4013c1) guessMethodDomain(std::exception::_Tidy(void)@0x401401) guessMethodDomain(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) guessMethodDomain(virtual std::exception::~exception(void)@0x401454) guessMethodDomain(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) guessMethodDomain(std::exception::exception(class std::exception const &)@0x401486) guessMethodDomain(virtual type_info::~type_info(void)@0x4014ab) guessMethodDomain(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb) guessMethodDomain(__cdecl operator delete(*)@0x4014dc) guessMethodDomain(_onexit_nolock@0x4014e7) guessMethodDomain(___onexitinit@0x40159d) guessMethodDomain(__onexit@0x4015ce) guessMethodDomain($LN5@0x401604) guessMethodDomain(_atexit@0x40160a) guessMethodDomain(_malloc@0x401621) guessMethodDomain(__initp_heap_handler@0x4016b5) guessMethodDomain(__callnewh@0x4016c4) guessMethodDomain(__stdcall _CxxThrowException(x, x)@0x4016ec) guessMethodDomain(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x401738) guessMethodDomain(___CxxSetUnhandledExceptionFilter@0x40177a) guessMethodDomain(___crtCorExitProcess@0x401788) guessMethodDomain(___crtExitProcess@0x4017b3) guessMethodDomain(__lockexit@0x4017cb) guessMethodDomain(__unlockexit@0x4017d4) guessMethodDomain(__init_pointers@0x4017dd) guessMethodDomain(__initterm_e@0x401810) guessMethodDomain(__cinit@0x401834) guessMethodDomain(doexit@0x4018cb) guessMethodDomain($LN52@0x4019f6) guessMethodDomain(_exit@0x401a0b) guessMethodDomain(__exit@0x401a21) guessMethodDomain(__cexit@0x401a37) guessMethodDomain(__c_exit@0x401a46) guessMethodDomain(__amsg_exit@0x401a55) guessMethodDomain(__GET_RTERRMSG@0x401a73) guessMethodDomain(__NMSG_WRITE@0x401a99) guessMethodDomain(__FF_MSGBANNER@0x401c48) guessMethodDomain(__XcptFilter@0x401c81) guessMethodDomain(__setenvp@0x401dcb) guessMethodDomain(parse_cmdline@0x401ea7) guessMethodDomain(__setargv@0x402041) guessMethodDomain(___crtGetEnvironmentStringsA@0x4020fc) guessMethodDomain(__ioinit@0x402193) guessMethodDomain(__RTC_Initialize@0x4023d8) guessMethodDomain(__RTC_Terminate@0x4023fe) guessMethodDomain(__encoded_null@0x402424) guessMethodDomain(__stdcall __crtTlsAlloc(x)@0x40242d) guessMethodDomain(___set_flsgetvalue@0x402436) guessMethodDomain(__mtterm@0x40246a) guessMethodDomain(__initptd@0x4024a7) guessMethodDomain($LN9@0x402549) guessMethodDomain($LN11@0x402552) guessMethodDomain(__getptd_noexit@0x40255b) guessMethodDomain(__getptd@0x4025d4) guessMethodDomain(__stdcall _freefls(x)@0x4025ee) guessMethodDomain($LN20_0@0x402708) guessMethodDomain($LN24@0x402714) guessMethodDomain(__mtinit@0x40271d) guessMethodDomain(__heap_init@0x402898) guessMethodDomain(__except_handler4@0x402920) guessMethodDomain(___security_init_cookie@0x402aaf) guessMethodDomain(_strcpy_s@0x402b4a) guessMethodDomain(_strlen@0x402bb0) guessMethodDomain(_free@0x402c3b) guessMethodDomain(static __cdecl type_info::_Type_info_dtor(class type_info *)@0x402c75) guessMethodDomain($LN10_0@0x402cdc) guessMethodDomain(_strcmp@0x402cf0) guessMethodDomain(__malloc_crt@0x402d78) guessMethodDomain(__calloc_crt@0x402dbd) guessMethodDomain(__realloc_crt@0x402e09) guessMethodDomain(__msize@0x402e57) guessMethodDomain(__get_errno_from_oserr@0x402e8a) guessMethodDomain(__errno@0x402ecc) guessMethodDomain(__mtinitlocks@0x402edf) guessMethodDomain(__unlock@0x402f80) guessMethodDomain(__mtinitlocknum@0x402f97) guessMethodDomain($LN12_0@0x403050) guessMethodDomain(__lock@0x403059) guessMethodDomain(__cdecl terminate(void)@0x40308c) guessMethodDomain(__initp_eh_hooks@0x4030c5) guessMethodDomain(__initp_misc_winsig@0x4030d6) guessMethodDomain(siglookup@0x4030f4) guessMethodDomain(___get_sigabrt@0x40312b) guessMethodDomain(_raise@0x403138) guessMethodDomain($LN37@0x40329f) guessMethodDomain(__initp_misc_rand_s@0x4032db) guessMethodDomain(__initp_misc_purevirt@0x4032ea) guessMethodDomain(__initp_misc_invarg@0x4032f9) guessMethodDomain(__call_reportfault@0x403308) guessMethodDomain(__invoke_watson@0x403431) guessMethodDomain(__invalid_parameter@0x403456) guessMethodDomain(__invalid_parameter_noinfo@0x403483) guessMethodDomain(__initp_misc_cfltcvt_tab@0x403493) guessMethodDomain(__ValidateImageBase@0x4034c0) guessMethodDomain(__FindPESection@0x403500) guessMethodDomain(__IsNonwritableInCurrentImage@0x403550) guessMethodDomain(___crtMessageBoxW@0x40360c) guessMethodDomain(_wcscat_s@0x403778) guessMethodDomain(_wcsncpy_s@0x4037ed) guessMethodDomain(_wcslen@0x4038ba) guessMethodDomain(_wcscpy_s@0x4038d5) guessMethodDomain(__set_error_mode@0x403938) guessMethodDomain(__fastcall __security_check_cookie(x)@0x403977) guessMethodDomain(setSBCS@0x4039b5) guessMethodDomain(setSBUpLow@0x403a19) guessMethodDomain(___updatetmbcinfo@0x403ba9) guessMethodDomain($LN13_1@0x403c44) guessMethodDomain(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d) guessMethodDomain(getSystemCP@0x403cd4) guessMethodDomain(__setmbcp_nolock@0x403d50) guessMethodDomain(__setmbcp@0x403f3c) guessMethodDomain($LN25_1@0x40409d) guessMethodDomain(4210854) guessMethodDomain($LN28@0x4040cd) guessMethodDomain(___initmbctable@0x4040d6) guessMethodDomain(x_ismbbtype_l@0x4040f4) guessMethodDomain(__ismbblead@0x404147) guessMethodDomain(___addlocaleref@0x40415f) guessMethodDomain(___removelocaleref@0x4041ee) guessMethodDomain(___freetlocinfo@0x404287) guessMethodDomain(__updatetlocinfoEx_nolock@0x4043d2) guessMethodDomain(___updatetlocinfo@0x40441f) guessMethodDomain($LN9_0@0x40448c) guessMethodDomain(__local_unwind4@0x4044a0) guessMethodDomain(_unwind_handler4@0x404530) guessMethodDomain(__stdcall _seh_longjmp_unwind4(x)@0x404576) guessMethodDomain(__fastcall _EH4_CallFilterFunc(x, x)@0x404592) guessMethodDomain(__fastcall _EH4_TransferToHandler(x, x)@0x4045a9) guessMethodDomain(__fastcall _EH4_GlobalUnwind2(x, x)@0x4045c2) guessMethodDomain(__fastcall _EH4_LocalUnwind(x, x, x, x)@0x4045db) guessMethodDomain(__calloc_impl@0x4045f2) guessMethodDomain(_realloc@0x404674) guessMethodDomain(_abort@0x404721) guessMethodDomain(__freea@0x404ac1) guessMethodDomain(__crt_debugger_hook@0x404ae1) guessMethodDomain(_memset@0x404af0) guessMethodDomain(__fptrap@0x404b6a) guessMethodDomain(___report_gsfailure@0x404b73) guessMethodDomain(__crtLCMapStringA_stat@0x404c79) guessMethodDomain(___crtLCMapStringA@0x404e60) guessMethodDomain(__crtGetStringTypeA_stat@0x404ea6) guessMethodDomain(___crtGetStringTypeA@0x404f8d) guessMethodDomain(___free_lc_time@0x404fcd) guessMethodDomain(___free_lconv_num@0x405344) guessMethodDomain(___free_lconv_mon@0x4053ad) guessMethodDomain(__global_unwind2@0x4054b0) guessMethodDomain(__unwind_handler@0x4054d0) guessMethodDomain(__local_unwind2@0x405515) guessMethodDomain(__abnormal_termination@0x405599) guessMethodDomain(__NLG_Notify1@0x4055bc) guessMethodDomain(__aulldvrm@0x4055f0) guessMethodDomain(___sse2_available_init@0x405788) guessMethodDomain(__alloca_probe_16@0x4057a0) guessMethodDomain(__alloca_probe_8@0x4057b6) guessMethodDomain(__allmul@0x4058c0) guessMethodDomain(_strcspn@0x405900) guessMethodDomain(_strpbrk@0x405950) guessMethodDomain(___ascii_strnicmp@0x405990) guessMethodDomain(__stdcall RtlUnwind(x, x, x, x)@0x4059f2) guessMethodDomain(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@0x4059f8)]
-%   [constructor]
-%     guessConstructor1Domain: 3  [guessConstructor1Domain(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) guessConstructor1Domain(std::exception::exception(char const * const &, int)@0x401397) guessConstructor1Domain(std::exception::exception(class std::exception const &)@0x401486)]
-%     guessConstructor2Domain: 3  [guessConstructor2Domain(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) guessConstructor2Domain(std::exception::exception(char const * const &, int)@0x401397) guessConstructor2Domain(std::exception::exception(class std::exception const &)@0x401486)]
-%     guessConstructor3Domain: 9  [guessConstructor3Domain(A::A(void)@0x401000) guessConstructor3Domain(B::B(void)@0x401020) guessConstructor3Domain(C::C(void)@0x401050) guessConstructor3Domain(D::D(void)@0x401080) guessConstructor3Domain(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) guessConstructor3Domain(std::exception::exception(char const * const &, int)@0x401397) guessConstructor3Domain(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) guessConstructor3Domain(std::exception::exception(class std::exception const &)@0x401486) guessConstructor3Domain(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d)]
-%     guessConstructor4Domain: 9  [guessConstructor4Domain(A::A(void)@0x401000) guessConstructor4Domain(B::B(void)@0x401020) guessConstructor4Domain(C::C(void)@0x401050) guessConstructor4Domain(D::D(void)@0x401080) guessConstructor4Domain(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) guessConstructor4Domain(std::exception::exception(char const * const &, int)@0x401397) guessConstructor4Domain(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) guessConstructor4Domain(std::exception::exception(class std::exception const &)@0x401486) guessConstructor4Domain(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d)]
-%   [destructor]
-%     possibleDestructor: 24  [possibleDestructor(A::A(void)@0x401000) possibleDestructor(B::B(void)@0x401020) possibleDestructor(C::C(void)@0x401050) possibleDestructor(D::D(void)@0x401080) possibleDestructor(_main@0x4010d0) possibleDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x401134) possibleDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) possibleDestructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) possibleDestructor(std::exception::exception(char const * const &, int)@0x401397) possibleDestructor(virtual char const * std::exception::what(void)const@0x4013b4) possibleDestructor(std::exception::_Copy_str(char const *)@0x4013c1) possibleDestructor(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) possibleDestructor(virtual std::exception::~exception(void)@0x401454) possibleDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) possibleDestructor(std::exception::exception(class std::exception const &)@0x401486) possibleDestructor(virtual type_info::~type_info(void)@0x4014ab) possibleDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb) possibleDestructor(__fastcall __security_check_cookie(x)@0x403977) possibleDestructor(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d) possibleDestructor(4210854) possibleDestructor(__NLG_Notify1@0x4055bc) possibleDestructor(__alloca_probe_16@0x4057a0) possibleDestructor(__alloca_probe_8@0x4057b6) possibleDestructor(__stdcall RtlUnwind(x, x, x, x)@0x4059f2)]
-%   [vftable]
-%     possibleVFTable: 3  [possibleVFTable(const std::bad_alloc::`vftable'@0x406158) possibleVFTable(const std::exception::`vftable'@0x406174) possibleVFTable(const type_info::`vftable'@0x406194)]
-%   [vftable_size]
-%     candidateVFTableSize: 5  [candidateVFTableSize(const std::bad_alloc::`vftable'@0x406158,4) candidateVFTableSize(const std::bad_alloc::`vftable'@0x406158,8) candidateVFTableSize(const std::exception::`vftable'@0x406174,4) candidateVFTableSize(const std::exception::`vftable'@0x406174,8) candidateVFTableSize(const type_info::`vftable'@0x406194,4)]
-%   [merge]
-%     strongMergeCandidate: 17  [strongMergeCandidate(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) strongMergeCandidate(virtual std::bad_alloc::~bad_alloc(void)@0x401134,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) strongMergeCandidate(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual char const * std::exception::what(void)const@0x4013b4) strongMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) strongMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual char const * std::exception::what(void)const@0x4013b4) strongMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,virtual char const * std::exception::what(void)const@0x4013b4) strongMergeCandidate(std::exception::exception(char const * const &, int)@0x401397,virtual char const * std::exception::what(void)const@0x4013b4) strongMergeCandidate(std::exception::exception(char const * const &, int)@0x401397,virtual std::exception::~exception(void)@0x401454) strongMergeCandidate(std::exception::exception(char const * const &, int)@0x401397,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) strongMergeCandidate(std::exception::exception(char const * const &, int)@0x401397,std::exception::exception(class std::exception const &)@0x401486) strongMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,virtual std::exception::~exception(void)@0x401454) strongMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) strongMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,std::exception::exception(class std::exception const &)@0x401486) strongMergeCandidate(virtual std::exception::~exception(void)@0x401454,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) strongMergeCandidate(virtual std::exception::~exception(void)@0x401454,std::exception::exception(class std::exception const &)@0x401486) strongMergeCandidate(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,std::exception::exception(class std::exception const &)@0x401486) strongMergeCandidate(virtual type_info::~type_info(void)@0x4014ab,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb)]
-%     weakMergeCandidate: 14  [weakMergeCandidate(B::B(void)@0x401020,D::D(void)@0x401080) weakMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual std::exception::~exception(void)@0x401454) weakMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,const std::bad_alloc::`vftable'@0x406158) weakMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,std::exception::exception(class std::exception const &)@0x401486) weakMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,const std::bad_alloc::`vftable'@0x406158) weakMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,const std::exception::`vftable'@0x406174) weakMergeCandidate(std::exception::_Copy_str(char const *)@0x4013c1,std::exception::_Tidy(void)@0x401401) weakMergeCandidate(std::exception::_Copy_str(char const *)@0x4013c1,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) weakMergeCandidate(std::exception::_Tidy(void)@0x401401,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) weakMergeCandidate(std::exception::_Tidy(void)@0x401401,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) weakMergeCandidate(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::exception(class std::exception const &)@0x401486) weakMergeCandidate(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,const std::exception::`vftable'@0x406174) weakMergeCandidate(virtual type_info::~type_info(void)@0x4014ab,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb) weakMergeCandidate(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb,const type_info::`vftable'@0x406194)]
-%   [composition]
-%     objectInObject: 1  [objectInObject(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174,0)]
 % Selected guesses:
-%   [method]  (173 candidate(s))
-%     method: 173  [method(A::A(void)@0x401000) method(B::B(void)@0x401020) method(C::C(void)@0x401050) method(D::D(void)@0x401080) method(_main@0x4010d0) method(virtual std::bad_alloc::~bad_alloc(void)@0x401134) method(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) method(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) method(* __cdecl operator new(unsigned int)@0x401183) method(fast_error_exit@0x401203) method(_mainCRTStartup@0x40138d) method(std::exception::exception(char const * const &, int)@0x401397) method(virtual char const * std::exception::what(void)const@0x4013b4) method(std::exception::_Copy_str(char const *)@0x4013c1) method(std::exception::_Tidy(void)@0x401401) method(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) method(virtual std::exception::~exception(void)@0x401454) method(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) method(std::exception::exception(class std::exception const &)@0x401486) method(virtual type_info::~type_info(void)@0x4014ab) method(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb) method(__cdecl operator delete(*)@0x4014dc) method(_onexit_nolock@0x4014e7) method(___onexitinit@0x40159d) method(__onexit@0x4015ce) method($LN5@0x401604) method(_atexit@0x40160a) method(_malloc@0x401621) method(__initp_heap_handler@0x4016b5) method(__callnewh@0x4016c4) method(__stdcall _CxxThrowException(x, x)@0x4016ec) method(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x401738) method(___CxxSetUnhandledExceptionFilter@0x40177a) method(___crtCorExitProcess@0x401788) method(___crtExitProcess@0x4017b3) method(__lockexit@0x4017cb) method(__unlockexit@0x4017d4) method(__init_pointers@0x4017dd) method(__initterm_e@0x401810) method(__cinit@0x401834) method(doexit@0x4018cb) method($LN52@0x4019f6) method(_exit@0x401a0b) method(__exit@0x401a21) method(__cexit@0x401a37) method(__c_exit@0x401a46) method(__amsg_exit@0x401a55) method(__GET_RTERRMSG@0x401a73) method(__NMSG_WRITE@0x401a99) method(__FF_MSGBANNER@0x401c48) method(__XcptFilter@0x401c81) method(__setenvp@0x401dcb) method(parse_cmdline@0x401ea7) method(__setargv@0x402041) method(___crtGetEnvironmentStringsA@0x4020fc) method(__ioinit@0x402193) method(__RTC_Initialize@0x4023d8) method(__RTC_Terminate@0x4023fe) method(__encoded_null@0x402424) method(__stdcall __crtTlsAlloc(x)@0x40242d) method(___set_flsgetvalue@0x402436) method(__mtterm@0x40246a) method(__initptd@0x4024a7) method($LN9@0x402549) method($LN11@0x402552) method(__getptd_noexit@0x40255b) method(__getptd@0x4025d4) method(__stdcall _freefls(x)@0x4025ee) method($LN20_0@0x402708) method($LN24@0x402714) method(__mtinit@0x40271d) method(__heap_init@0x402898) method(__except_handler4@0x402920) method(___security_init_cookie@0x402aaf) method(_strcpy_s@0x402b4a) method(_strlen@0x402bb0) method(_free@0x402c3b) method(static __cdecl type_info::_Type_info_dtor(class type_info *)@0x402c75) method($LN10_0@0x402cdc) method(_strcmp@0x402cf0) method(__malloc_crt@0x402d78) method(__calloc_crt@0x402dbd) method(__realloc_crt@0x402e09) method(__msize@0x402e57) method(__get_errno_from_oserr@0x402e8a) method(__errno@0x402ecc) method(__mtinitlocks@0x402edf) method(__unlock@0x402f80) method(__mtinitlocknum@0x402f97) method($LN12_0@0x403050) method(__lock@0x403059) method(__cdecl terminate(void)@0x40308c) method(__initp_eh_hooks@0x4030c5) method(__initp_misc_winsig@0x4030d6) method(siglookup@0x4030f4) method(___get_sigabrt@0x40312b) method(_raise@0x403138) method($LN37@0x40329f) method(__initp_misc_rand_s@0x4032db) method(__initp_misc_purevirt@0x4032ea) method(__initp_misc_invarg@0x4032f9) method(__call_reportfault@0x403308) method(__invoke_watson@0x403431) method(__invalid_parameter@0x403456) method(__invalid_parameter_noinfo@0x403483) method(__initp_misc_cfltcvt_tab@0x403493) method(__ValidateImageBase@0x4034c0) method(__FindPESection@0x403500) method(__IsNonwritableInCurrentImage@0x403550) method(___crtMessageBoxW@0x40360c) method(_wcscat_s@0x403778) method(_wcsncpy_s@0x4037ed) method(_wcslen@0x4038ba) method(_wcscpy_s@0x4038d5) method(__set_error_mode@0x403938) method(__fastcall __security_check_cookie(x)@0x403977) method(setSBCS@0x4039b5) method(setSBUpLow@0x403a19) method(___updatetmbcinfo@0x403ba9) method($LN13_1@0x403c44) method(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d) method(getSystemCP@0x403cd4) method(__setmbcp_nolock@0x403d50) method(__setmbcp@0x403f3c) method($LN25_1@0x40409d) method(4210854) method($LN28@0x4040cd) method(___initmbctable@0x4040d6) method(x_ismbbtype_l@0x4040f4) method(__ismbblead@0x404147) method(___addlocaleref@0x40415f) method(___removelocaleref@0x4041ee) method(___freetlocinfo@0x404287) method(__updatetlocinfoEx_nolock@0x4043d2) method(___updatetlocinfo@0x40441f) method($LN9_0@0x40448c) method(__local_unwind4@0x4044a0) method(_unwind_handler4@0x404530) method(__stdcall _seh_longjmp_unwind4(x)@0x404576) method(__fastcall _EH4_CallFilterFunc(x, x)@0x404592) method(__fastcall _EH4_TransferToHandler(x, x)@0x4045a9) method(__fastcall _EH4_GlobalUnwind2(x, x)@0x4045c2) method(__fastcall _EH4_LocalUnwind(x, x, x, x)@0x4045db) method(__calloc_impl@0x4045f2) method(_realloc@0x404674) method(_abort@0x404721) method(__freea@0x404ac1) method(__crt_debugger_hook@0x404ae1) method(_memset@0x404af0) method(__fptrap@0x404b6a) method(___report_gsfailure@0x404b73) method(__crtLCMapStringA_stat@0x404c79) method(___crtLCMapStringA@0x404e60) method(__crtGetStringTypeA_stat@0x404ea6) method(___crtGetStringTypeA@0x404f8d) method(___free_lc_time@0x404fcd) method(___free_lconv_num@0x405344) method(___free_lconv_mon@0x4053ad) method(__global_unwind2@0x4054b0) method(__unwind_handler@0x4054d0) method(__local_unwind2@0x405515) method(__abnormal_termination@0x405599) method(__NLG_Notify1@0x4055bc) method(__aulldvrm@0x4055f0) method(___sse2_available_init@0x405788) method(__alloca_probe_16@0x4057a0) method(__alloca_probe_8@0x4057b6) method(__allmul@0x4058c0) method(_strcspn@0x405900) method(_strpbrk@0x405950) method(___ascii_strnicmp@0x405990) method(__stdcall RtlUnwind(x, x, x, x)@0x4059f2) method(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@0x4059f8)]
-%     -method: 0  []
-%   [constructor]  (24 candidate(s))
-%     constructor: 8  [constructor(A::A(void)@0x401000) constructor(B::B(void)@0x401020) constructor(C::C(void)@0x401050) constructor(D::D(void)@0x401080) constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) constructor(std::exception::exception(char const * const &, int)@0x401397) constructor(std::exception::exception(class std::exception const &)@0x401486) constructor(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d)]
-%     -constructor: 9  [-constructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) -constructor(virtual char const * std::exception::what(void)const@0x4013b4) -constructor(std::exception::_Copy_str(char const *)@0x4013c1) -constructor(std::exception::_Tidy(void)@0x401401) -constructor(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) -constructor(virtual std::exception::~exception(void)@0x401454) -constructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) -constructor(virtual type_info::~type_info(void)@0x4014ab) -constructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb)]
-%   [destructor]  (24 candidate(s))
-%     realDestructor: 3  [realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x401134) realDestructor(virtual std::exception::~exception(void)@0x401454) realDestructor(virtual type_info::~type_info(void)@0x4014ab)]
-%     deletingDestructor: 3  [deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb)]
-%   [vftable]  (3 candidate(s))
-%     vfTable: 3  [vfTable(const std::bad_alloc::`vftable'@0x406158) vfTable(const std::exception::`vftable'@0x406174) vfTable(const type_info::`vftable'@0x406194)]
-%     -vfTable: 0  []
-%   [vftable_size]  (5 candidate(s))
-%     vfTableSize: 3  [vfTableSize(const std::bad_alloc::`vftable'@0x406158,8) vfTableSize(const std::exception::`vftable'@0x406174,8) vfTableSize(const type_info::`vftable'@0x406194,4)]
-%   [merge]  (31 candidate(s))
-%     mergeClasses: 36  [mergeClasses(B::B(void)@0x401020,D::D(void)@0x401080) mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,const std::bad_alloc::`vftable'@0x406158) mergeClasses(std::exception::exception(char const * const &, int)@0x401397,virtual char const * std::exception::what(void)const@0x4013b4) mergeClasses(std::exception::exception(char const * const &, int)@0x401397,virtual std::exception::~exception(void)@0x401454) mergeClasses(std::exception::exception(char const * const &, int)@0x401397,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) mergeClasses(std::exception::exception(char const * const &, int)@0x401397,std::exception::exception(class std::exception const &)@0x401486) mergeClasses(virtual char const * std::exception::what(void)const@0x4013b4,virtual std::exception::~exception(void)@0x401454) mergeClasses(virtual char const * std::exception::what(void)const@0x4013b4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) mergeClasses(virtual char const * std::exception::what(void)const@0x4013b4,std::exception::exception(class std::exception const &)@0x401486) mergeClasses(virtual char const * std::exception::what(void)const@0x4013b4,const std::exception::`vftable'@0x406174) mergeClasses(std::exception::_Copy_str(char const *)@0x4013c1,std::exception::_Tidy(void)@0x401401) mergeClasses(std::exception::_Copy_str(char const *)@0x4013c1,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) mergeClasses(std::exception::_Copy_str(char const *)@0x4013c1,const std::exception::`vftable'@0x406174) mergeClasses(std::exception::_Tidy(void)@0x401401,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) mergeClasses(std::exception::_Tidy(void)@0x401401,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) mergeClasses(std::exception::_Tidy(void)@0x401401,const std::exception::`vftable'@0x406174) mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::exception(class std::exception const &)@0x401486) mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,const std::exception::`vftable'@0x406174) mergeClasses(virtual std::exception::~exception(void)@0x401454,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) mergeClasses(virtual std::exception::~exception(void)@0x401454,std::exception::exception(class std::exception const &)@0x401486) mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,std::exception::exception(class std::exception const &)@0x401486) mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,const std::exception::`vftable'@0x406174) mergeClasses(std::exception::exception(class std::exception const &)@0x401486,const std::exception::`vftable'@0x406174) mergeClasses(virtual type_info::~type_info(void)@0x4014ab,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb) mergeClasses(virtual type_info::~type_info(void)@0x4014ab,const type_info::`vftable'@0x406194) mergeClasses(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb,const type_info::`vftable'@0x406194) mergeClasses(const std::bad_alloc::`vftable'@0x406158,virtual std::bad_alloc::~bad_alloc(void)@0x401134) mergeClasses(const std::bad_alloc::`vftable'@0x406158,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) mergeClasses(const std::bad_alloc::`vftable'@0x406158,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) mergeClasses(const std::exception::`vftable'@0x406174,std::exception::exception(char const * const &, int)@0x401397) mergeClasses(const std::exception::`vftable'@0x406174,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) mergeClasses(const std::exception::`vftable'@0x406174,std::exception::exception(class std::exception const &)@0x401486) mergeClasses(const type_info::`vftable'@0x406194,virtual type_info::~type_info(void)@0x4014ab)]
-%     -mergeClasses: 27  [-mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,std::exception::exception(char const * const &, int)@0x401397) -mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual char const * std::exception::what(void)const@0x4013b4) -mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual std::exception::~exception(void)@0x401454) -mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) -mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,std::exception::exception(class std::exception const &)@0x401486) -mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,std::exception::exception(char const * const &, int)@0x401397) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual char const * std::exception::what(void)const@0x4013b4) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual std::exception::~exception(void)@0x401454) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,std::exception::exception(class std::exception const &)@0x401486) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,const std::exception::`vftable'@0x406174) -mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,std::exception::exception(char const * const &, int)@0x401397) -mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,virtual char const * std::exception::what(void)const@0x4013b4) -mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,virtual std::exception::~exception(void)@0x401454) -mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) -mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,std::exception::exception(class std::exception const &)@0x401486) -mergeClasses(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(std::exception::exception(char const * const &, int)@0x401397,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(virtual char const * std::exception::what(void)const@0x4013b4,const std::bad_alloc::`vftable'@0x406158) -mergeClasses(virtual std::exception::~exception(void)@0x401454,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(std::exception::exception(class std::exception const &)@0x401486,virtual type_info::~type_info(void)@0x4014ab) -mergeClasses(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174) -mergeClasses(const std::bad_alloc::`vftable'@0x406158,const type_info::`vftable'@0x406194) -mergeClasses(const std::exception::`vftable'@0x406174,const type_info::`vftable'@0x406194)]
-%   [composition]  (1 candidate(s))
-%     derivedClass: 1  [derivedClass(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174,0)]
-%     embeddedObject: 0  []
-15:21:50 Writing results to examples/ooa/ooex_vs2010/Lite/ooex8.results
+%   [method]
+%     guessMethodReward: 173/173
+%       guessMethodReward(A::A(void)@0x401000) guessMethodReward(B::B(void)@0x401020)
+%       guessMethodReward(C::C(void)@0x401050) guessMethodReward(D::D(void)@0x401080)
+%       guessMethodReward(_main@0x4010d0) guessMethodReward(virtual std::bad_alloc::~bad_alloc(void)@0x401134)
+%       guessMethodReward(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) guessMethodReward(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166)
+%       guessMethodReward(* __cdecl operator new(unsigned int)@0x401183) guessMethodReward(fast_error_exit@0x401203)
+%       guessMethodReward(_mainCRTStartup@0x40138d) guessMethodReward(std::exception::exception(char const * const &, int)@0x401397)
+%       guessMethodReward(virtual char const * std::exception::what(void)const@0x4013b4) guessMethodReward(std::exception::_Copy_str(char const *)@0x4013c1)
+%       guessMethodReward(std::exception::_Tidy(void)@0x401401) guessMethodReward(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f)
+%       guessMethodReward(virtual std::exception::~exception(void)@0x401454) guessMethodReward(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f)
+%       guessMethodReward(std::exception::exception(class std::exception const &)@0x401486) guessMethodReward(virtual type_info::~type_info(void)@0x4014ab)
+%       guessMethodReward(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb) guessMethodReward(__cdecl operator delete(*)@0x4014dc)
+%       guessMethodReward(_onexit_nolock@0x4014e7) guessMethodReward(___onexitinit@0x40159d)
+%       guessMethodReward(__onexit@0x4015ce) guessMethodReward($LN5@0x401604)
+%       guessMethodReward(_atexit@0x40160a) guessMethodReward(_malloc@0x401621)
+%       guessMethodReward(__initp_heap_handler@0x4016b5) guessMethodReward(__callnewh@0x4016c4)
+%       guessMethodReward(__stdcall _CxxThrowException(x, x)@0x4016ec) guessMethodReward(long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x401738)
+%       guessMethodReward(___CxxSetUnhandledExceptionFilter@0x40177a) guessMethodReward(___crtCorExitProcess@0x401788)
+%       guessMethodReward(___crtExitProcess@0x4017b3) guessMethodReward(__lockexit@0x4017cb)
+%       guessMethodReward(__unlockexit@0x4017d4) guessMethodReward(__init_pointers@0x4017dd)
+%       guessMethodReward(__initterm_e@0x401810) guessMethodReward(__cinit@0x401834)
+%       guessMethodReward(doexit@0x4018cb) guessMethodReward($LN52@0x4019f6)
+%       guessMethodReward(_exit@0x401a0b) guessMethodReward(__exit@0x401a21)
+%       guessMethodReward(__cexit@0x401a37) guessMethodReward(__c_exit@0x401a46)
+%       guessMethodReward(__amsg_exit@0x401a55) guessMethodReward(__GET_RTERRMSG@0x401a73)
+%       guessMethodReward(__NMSG_WRITE@0x401a99) guessMethodReward(__FF_MSGBANNER@0x401c48)
+%       guessMethodReward(__XcptFilter@0x401c81) guessMethodReward(__setenvp@0x401dcb)
+%       guessMethodReward(parse_cmdline@0x401ea7) guessMethodReward(__setargv@0x402041)
+%       guessMethodReward(___crtGetEnvironmentStringsA@0x4020fc) guessMethodReward(__ioinit@0x402193)
+%       guessMethodReward(__RTC_Initialize@0x4023d8) guessMethodReward(__RTC_Terminate@0x4023fe)
+%       guessMethodReward(__encoded_null@0x402424) guessMethodReward(__stdcall __crtTlsAlloc(x)@0x40242d)
+%       guessMethodReward(___set_flsgetvalue@0x402436) guessMethodReward(__mtterm@0x40246a)
+%       guessMethodReward(__initptd@0x4024a7) guessMethodReward($LN9@0x402549)
+%       guessMethodReward($LN11@0x402552) guessMethodReward(__getptd_noexit@0x40255b)
+%       guessMethodReward(__getptd@0x4025d4) guessMethodReward(__stdcall _freefls(x)@0x4025ee)
+%       guessMethodReward($LN20_0@0x402708) guessMethodReward($LN24@0x402714)
+%       guessMethodReward(__mtinit@0x40271d) guessMethodReward(__heap_init@0x402898)
+%       guessMethodReward(__except_handler4@0x402920) guessMethodReward(___security_init_cookie@0x402aaf)
+%       guessMethodReward(_strcpy_s@0x402b4a) guessMethodReward(_strlen@0x402bb0)
+%       guessMethodReward(_free@0x402c3b) guessMethodReward(static __cdecl type_info::_Type_info_dtor(class type_info *)@0x402c75)
+%       guessMethodReward($LN10_0@0x402cdc) guessMethodReward(_strcmp@0x402cf0)
+%       guessMethodReward(__malloc_crt@0x402d78) guessMethodReward(__calloc_crt@0x402dbd)
+%       guessMethodReward(__realloc_crt@0x402e09) guessMethodReward(__msize@0x402e57)
+%       guessMethodReward(__get_errno_from_oserr@0x402e8a) guessMethodReward(__errno@0x402ecc)
+%       guessMethodReward(__mtinitlocks@0x402edf) guessMethodReward(__unlock@0x402f80)
+%       guessMethodReward(__mtinitlocknum@0x402f97) guessMethodReward($LN12_0@0x403050)
+%       guessMethodReward(__lock@0x403059) guessMethodReward(__cdecl terminate(void)@0x40308c)
+%       guessMethodReward(__initp_eh_hooks@0x4030c5) guessMethodReward(__initp_misc_winsig@0x4030d6)
+%       guessMethodReward(siglookup@0x4030f4) guessMethodReward(___get_sigabrt@0x40312b)
+%       guessMethodReward(_raise@0x403138) guessMethodReward($LN37@0x40329f)
+%       guessMethodReward(__initp_misc_rand_s@0x4032db) guessMethodReward(__initp_misc_purevirt@0x4032ea)
+%       guessMethodReward(__initp_misc_invarg@0x4032f9) guessMethodReward(__call_reportfault@0x403308)
+%       guessMethodReward(__invoke_watson@0x403431) guessMethodReward(__invalid_parameter@0x403456)
+%       guessMethodReward(__invalid_parameter_noinfo@0x403483) guessMethodReward(__initp_misc_cfltcvt_tab@0x403493)
+%       guessMethodReward(__ValidateImageBase@0x4034c0) guessMethodReward(__FindPESection@0x403500)
+%       guessMethodReward(__IsNonwritableInCurrentImage@0x403550) guessMethodReward(___crtMessageBoxW@0x40360c)
+%       guessMethodReward(_wcscat_s@0x403778) guessMethodReward(_wcsncpy_s@0x4037ed)
+%       guessMethodReward(_wcslen@0x4038ba) guessMethodReward(_wcscpy_s@0x4038d5)
+%       guessMethodReward(__set_error_mode@0x403938) guessMethodReward(__fastcall __security_check_cookie(x)@0x403977)
+%       guessMethodReward(setSBCS@0x4039b5) guessMethodReward(setSBUpLow@0x403a19)
+%       guessMethodReward(___updatetmbcinfo@0x403ba9) guessMethodReward($LN13_1@0x403c44)
+%       guessMethodReward(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d) guessMethodReward(getSystemCP@0x403cd4)
+%       guessMethodReward(__setmbcp_nolock@0x403d50) guessMethodReward(__setmbcp@0x403f3c)
+%       guessMethodReward($LN25_1@0x40409d) guessMethodReward(4210854)
+%       guessMethodReward($LN28@0x4040cd) guessMethodReward(___initmbctable@0x4040d6)
+%       guessMethodReward(x_ismbbtype_l@0x4040f4) guessMethodReward(__ismbblead@0x404147)
+%       guessMethodReward(___addlocaleref@0x40415f) guessMethodReward(___removelocaleref@0x4041ee)
+%       guessMethodReward(___freetlocinfo@0x404287) guessMethodReward(__updatetlocinfoEx_nolock@0x4043d2)
+%       guessMethodReward(___updatetlocinfo@0x40441f) guessMethodReward($LN9_0@0x40448c)
+%       guessMethodReward(__local_unwind4@0x4044a0) guessMethodReward(_unwind_handler4@0x404530)
+%       guessMethodReward(__stdcall _seh_longjmp_unwind4(x)@0x404576) guessMethodReward(__fastcall _EH4_CallFilterFunc(x, x)@0x404592)
+%       guessMethodReward(__fastcall _EH4_TransferToHandler(x, x)@0x4045a9) guessMethodReward(__fastcall _EH4_GlobalUnwind2(x, x)@0x4045c2)
+%       guessMethodReward(__fastcall _EH4_LocalUnwind(x, x, x, x)@0x4045db) guessMethodReward(__calloc_impl@0x4045f2)
+%       guessMethodReward(_realloc@0x404674) guessMethodReward(_abort@0x404721)
+%       guessMethodReward(__freea@0x404ac1) guessMethodReward(__crt_debugger_hook@0x404ae1)
+%       guessMethodReward(_memset@0x404af0) guessMethodReward(__fptrap@0x404b6a)
+%       guessMethodReward(___report_gsfailure@0x404b73) guessMethodReward(__crtLCMapStringA_stat@0x404c79)
+%       guessMethodReward(___crtLCMapStringA@0x404e60) guessMethodReward(__crtGetStringTypeA_stat@0x404ea6)
+%       guessMethodReward(___crtGetStringTypeA@0x404f8d) guessMethodReward(___free_lc_time@0x404fcd)
+%       guessMethodReward(___free_lconv_num@0x405344) guessMethodReward(___free_lconv_mon@0x4053ad)
+%       guessMethodReward(__global_unwind2@0x4054b0) guessMethodReward(__unwind_handler@0x4054d0)
+%       guessMethodReward(__local_unwind2@0x405515) guessMethodReward(__abnormal_termination@0x405599)
+%       guessMethodReward(__NLG_Notify1@0x4055bc) guessMethodReward(__aulldvrm@0x4055f0)
+%       guessMethodReward(___sse2_available_init@0x405788) guessMethodReward(__alloca_probe_16@0x4057a0)
+%       guessMethodReward(__alloca_probe_8@0x4057b6) guessMethodReward(__allmul@0x4058c0)
+%       guessMethodReward(_strcspn@0x405900) guessMethodReward(_strpbrk@0x405950)
+%       guessMethodReward(___ascii_strnicmp@0x405990) guessMethodReward(__stdcall RtlUnwind(x, x, x, x)@0x4059f2)
+%       guessMethodReward(_operator_new_::_6_::_dynamic_atexit_destructor_for__nomem__@0x4059f8)
+%     ~guessMethodReward: 0/173
+%   [constructor]
+%     guessConstructor1Reward: 3/3
+%       guessConstructor1Reward(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) guessConstructor1Reward(std::exception::exception(char const * const &, int)@0x401397)
+%       guessConstructor1Reward(std::exception::exception(class std::exception const &)@0x401486)
+%     ~guessConstructor1Reward: 0/3
+%     guessConstructor2Reward: 0/0
+%     ~guessConstructor2Reward: 0/0
+%     guessConstructor3Reward: 5/6
+%       guessConstructor3Reward(A::A(void)@0x401000) guessConstructor3Reward(B::B(void)@0x401020)
+%       guessConstructor3Reward(C::C(void)@0x401050) guessConstructor3Reward(D::D(void)@0x401080)
+%       guessConstructor3Reward(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403c4d)
+%     ~guessConstructor3Reward: 1/6
+%       guessConstructor3Domain(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f)
+%     guessConstructor4Reward: 0/0
+%     ~guessConstructor4Reward: 0/0
+%   [merge]
+%     strongMergeReward: 14/17
+%       strongMergeReward(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f) strongMergeReward(virtual std::bad_alloc::~bad_alloc(void)@0x401134,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166)
+%       strongMergeReward(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166) strongMergeReward(std::exception::exception(char const * const &, int)@0x401397,virtual char const * std::exception::what(void)const@0x4013b4)
+%       strongMergeReward(std::exception::exception(char const * const &, int)@0x401397,virtual std::exception::~exception(void)@0x401454) strongMergeReward(std::exception::exception(char const * const &, int)@0x401397,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f)
+%       strongMergeReward(std::exception::exception(char const * const &, int)@0x401397,std::exception::exception(class std::exception const &)@0x401486) strongMergeReward(virtual char const * std::exception::what(void)const@0x4013b4,virtual std::exception::~exception(void)@0x401454)
+%       strongMergeReward(virtual char const * std::exception::what(void)const@0x4013b4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) strongMergeReward(virtual char const * std::exception::what(void)const@0x4013b4,std::exception::exception(class std::exception const &)@0x401486)
+%       strongMergeReward(virtual std::exception::~exception(void)@0x401454,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) strongMergeReward(virtual std::exception::~exception(void)@0x401454,std::exception::exception(class std::exception const &)@0x401486)
+%       strongMergeReward(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,std::exception::exception(class std::exception const &)@0x401486) strongMergeReward(virtual type_info::~type_info(void)@0x4014ab,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb)
+%     ~strongMergeReward: 3/17
+%       strongMergeCandidate(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual char const * std::exception::what(void)const@0x4013b4)
+%       strongMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual char const * std::exception::what(void)const@0x4013b4)
+%       strongMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,virtual char const * std::exception::what(void)const@0x4013b4)
+%     weakMergeReward: 10/13
+%       weakMergeReward(B::B(void)@0x401020,D::D(void)@0x401080) weakMergeReward(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,const std::bad_alloc::`vftable'@0x406158)
+%       weakMergeReward(virtual char const * std::exception::what(void)const@0x4013b4,const std::exception::`vftable'@0x406174) weakMergeReward(std::exception::_Copy_str(char const *)@0x4013c1,std::exception::_Tidy(void)@0x401401)
+%       weakMergeReward(std::exception::_Copy_str(char const *)@0x4013c1,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) weakMergeReward(std::exception::_Tidy(void)@0x401401,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f)
+%       weakMergeReward(std::exception::_Tidy(void)@0x401401,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) weakMergeReward(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::exception(class std::exception const &)@0x401486)
+%       weakMergeReward(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,const std::exception::`vftable'@0x406174) weakMergeReward(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb,const type_info::`vftable'@0x406194)
+%     ~weakMergeReward: 3/13
+%       weakMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual std::exception::~exception(void)@0x401454) weakMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,std::exception::exception(class std::exception const &)@0x401486)
+%       weakMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,const std::bad_alloc::`vftable'@0x406158)
+%     weakG1Bonus: 9/13
+%       weakG1Bonus(B::B(void)@0x401020,D::D(void)@0x401080) weakG1Bonus(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,const std::bad_alloc::`vftable'@0x406158)
+%       weakG1Bonus(virtual char const * std::exception::what(void)const@0x4013b4,const std::exception::`vftable'@0x406174) weakG1Bonus(std::exception::_Copy_str(char const *)@0x4013c1,std::exception::_Tidy(void)@0x401401)
+%       weakG1Bonus(std::exception::_Copy_str(char const *)@0x4013c1,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f) weakG1Bonus(std::exception::_Tidy(void)@0x401401,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f)
+%       weakG1Bonus(std::exception::_Tidy(void)@0x401401,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f) weakG1Bonus(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::exception(class std::exception const &)@0x401486)
+%       weakG1Bonus(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f,const std::exception::`vftable'@0x406174)
+%     ~weakG1Bonus: 4/13
+%       weakMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f,virtual std::exception::~exception(void)@0x401454) weakMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166,std::exception::exception(class std::exception const &)@0x401486)
+%       weakMergeCandidate(virtual char const * std::exception::what(void)const@0x4013b4,const std::bad_alloc::`vftable'@0x406158) weakMergeCandidate(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x4014bb,const type_info::`vftable'@0x406194)
+%   [composition]
+%     guessDerivedClassReward: 1/1
+%       guessDerivedClassReward(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174,0)
+%     ~guessDerivedClassReward: 0/1
+%     purecallNotMostDerivedReward: 0/1
+%     ~purecallNotMostDerivedReward: 1/1
+%       objectInObject(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174,0)
+%     embeddedObject: 0/1
+%     ~embeddedObject: 1/1
+%       objectInObject(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174,0)
+08:02:01 Writing results to examples/ooa/ooex_vs2010/Lite/ooex8.results
 
 % Stats:
-%   atoms: 8279.0
-%   bodies: 2570.0
-%   rules: 9403.0
-%   variables: 2479.0
-%   constraints: 123.0
-%   choices: 8249.0
-%   conflicts: 257.0
-%   models: 33.0
+%   atoms: 8280.0
+%   bodies: 2566.0
+%   rules: 9379.0
+%   variables: 2440.0
+%   constraints: 124.0
+%   choices: 13951.0
+%   conflicts: 262.0
+%   models: 38.0
 %   optimal_models: 1.0
-%   final_cost: [-20.0, -2119.0]
-%   lower_bound: [-20.0, -2119.0]
-%   total_time: 0.3843259811401367
-%   ground_time: 0.046429145615547895
-%   time_to_first_model: 0.08979999274015427
+%   final_cost: [-20.0, -2111.0]
+%   lower_bound: [-20.0, -2111.0]
+%   total_time: 0.30203795433044434
+%   ground_time: 0.04583774999991874
+%   time_to_first_model: 0.08338225200168381
 %   max_rss_bytes: 33030144
-%   solve_time: 0.2826509475708008
+%   solve_time: 0.20624804496765137
 classCallsMethod(D::D(void)@0x401080,B::B(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::_Copy_str(char const *)@0x4013c1)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::_Tidy(void)@0x401401)
@@ -381,12 +493,8 @@ mergeClasses(B::B(void)@0x401020,D::D(void)@0x401080)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,const std::exception::`vftable'@0x406174)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::exception(class std::exception const &)@0x401486)
 mergeClasses(const std::bad_alloc::`vftable'@0x406158,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166)
-mergeClasses(const std::bad_alloc::`vftable'@0x406158,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f)
-mergeClasses(const std::bad_alloc::`vftable'@0x406158,virtual std::bad_alloc::~bad_alloc(void)@0x401134)
 mergeClasses(const std::exception::`vftable'@0x406174,std::exception::exception(char const * const &, int)@0x401397)
 mergeClasses(const std::exception::`vftable'@0x406174,std::exception::exception(class std::exception const &)@0x401486)
-mergeClasses(const std::exception::`vftable'@0x406174,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f)
-mergeClasses(const type_info::`vftable'@0x406194,virtual type_info::~type_info(void)@0x4014ab)
 mergeClasses(std::exception::_Copy_str(char const *)@0x4013c1,class std::exception & std::exception::operator=(class std::exception const &)@0x40141f)
 mergeClasses(std::exception::_Copy_str(char const *)@0x4013c1,const std::exception::`vftable'@0x406174)
 mergeClasses(std::exception::_Copy_str(char const *)@0x4013c1,std::exception::_Tidy(void)@0x401401)
@@ -610,12 +718,8 @@ vfTableWrite(4199598,virtual type_info::~type_info(void)@0x4014ab,0,const type_i
 vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@0x401134,virtual std::bad_alloc::~bad_alloc(void)@0x401134,0,const std::bad_alloc::`vftable'@0x406158)
 vfTableWrite(virtual std::exception::~exception(void)@0x401454,virtual std::exception::~exception(void)@0x401454,0,const std::exception::`vftable'@0x406174)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406158,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401166)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406158,0,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40113f)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406158,0,virtual std::bad_alloc::~bad_alloc(void)@0x401134)
 vftableBelongsToClass(const std::exception::`vftable'@0x406174,0,std::exception::exception(char const * const &, int)@0x401397)
 vftableBelongsToClass(const std::exception::`vftable'@0x406174,0,std::exception::exception(class std::exception const &)@0x401486)
-vftableBelongsToClass(const std::exception::`vftable'@0x406174,0,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x40145f)
-vftableBelongsToClass(const type_info::`vftable'@0x406194,0,virtual type_info::~type_info(void)@0x4014ab)
 vftableSizeTotal(20)
 %   {$LN10_0@0x402cdc}
 %   {$LN11@0x402552}
