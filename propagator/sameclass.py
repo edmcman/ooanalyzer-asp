@@ -827,6 +827,134 @@ class SameClassPropagator:
         return uf.groups(self._entities)
 
 
+class LazySameClassConsistencyPropagator:
+    """Simple diagnostic checker for &sameClass/2 and &allWritersInClass/2.
+
+    This mode deliberately avoids the eager propagation and potential-UF logic in
+    SameClassPropagator.  At check points it rebuilds a union-find from the
+    currently true mergeClasses/2 atoms, compares assigned theory atoms against
+    that graph, and blocks the inconsistent current merge assignment.
+
+    The clauses are intentionally broad and weak.  This is for debugging theory
+    consistency and search behavior, not for normal performance.
+    """
+
+    def init(self, init):
+        init.check_mode = clingo.PropagatorCheckMode.Total
+        self._merge_lit_to_pairs = {}
+        self._merge_lits = set()
+        self._entities = set()
+
+        for sym_atom in init.symbolic_atoms.by_signature("mergeEntity", 1):
+            self._entities.add(_sym_key(sym_atom.symbol.arguments[0]))
+
+        for sym_atom in init.symbolic_atoms.by_signature("mergeClasses", 2):
+            args = sym_atom.symbol.arguments
+            a, b = _sym_key(args[0]), _sym_key(args[1])
+            slit = init.solver_literal(sym_atom.literal)
+            self._merge_lit_to_pairs.setdefault(slit, []).append((a, b))
+            self._merge_lits.add(slit)
+            self._entities.update((a, b))
+
+        self._sameclass_atoms = []
+        self._awc_atoms = []
+        for tatom in init.theory_atoms:
+            if tatom.term.name == "sameClass" and len(tatom.term.arguments) == 2:
+                x = _theory_key(tatom.term.arguments[0])
+                y = _theory_key(tatom.term.arguments[1])
+                slit = init.solver_literal(tatom.literal)
+                self._sameclass_atoms.append((x, y, slit))
+                self._entities.update((x, y))
+                init.add_watch(slit)
+                init.add_watch(-slit)
+            elif tatom.term.name == "allWritersInClass" and len(tatom.term.arguments) == 2:
+                vftable = _theory_key(tatom.term.arguments[0])
+                class_ = _theory_key(tatom.term.arguments[1])
+                slit = init.solver_literal(tatom.literal)
+                self._awc_atoms.append((vftable, class_, slit))
+                self._entities.add(class_)
+                init.add_watch(slit)
+                init.add_watch(-slit)
+
+        self._writers_by_vft = {}
+        for sym_atom in init.symbolic_atoms.by_signature("nonOverwritingWrite", 3):
+            args = sym_atom.symbol.arguments
+            method = _sym_key(args[0])
+            vftable = _sym_key(args[2])
+            slit = init.solver_literal(sym_atom.literal)
+            self._writers_by_vft.setdefault(vftable, []).append((method, slit))
+            self._entities.add(method)
+            init.add_watch(slit)
+            init.add_watch(-slit)
+
+    def propagate(self, ctl, changes):
+        pass
+
+    def _current_uf(self, assignment):
+        uf = _UF()
+        for slit, pairs in self._merge_lit_to_pairs.items():
+            if assignment.is_true(slit):
+                for a, b in pairs:
+                    uf.union(a, b, slit)
+        return uf
+
+    def _merge_assignment_clause(self, assignment):
+        clause = []
+        for slit in self._merge_lits:
+            if assignment.is_true(slit):
+                clause.append(-slit)
+            elif assignment.is_false(slit):
+                clause.append(slit)
+        return clause
+
+    def check(self, ctl):
+        assignment = ctl.assignment
+        uf = self._current_uf(assignment)
+        merge_clause = None
+        merges_total = all(
+            assignment.is_true(slit) or assignment.is_false(slit)
+            for slit in self._merge_lits
+        )
+
+        def get_merge_clause():
+            nonlocal merge_clause
+            if merge_clause is None:
+                merge_clause = self._merge_assignment_clause(assignment)
+            return list(merge_clause)
+
+        for x, y, slit in self._sameclass_atoms:
+            is_same = uf.same(x, y)
+            if is_same and not assignment.is_true(slit):
+                same, reason = uf.same_with_reason(x, y)
+                assert same
+                clause = [-r for r in reason] + [slit]
+                if not ctl.add_clause(clause):
+                    return
+            elif merges_total and not is_same and assignment.is_true(slit):
+                clause = get_merge_clause() + [-slit]
+                if not ctl.add_clause(clause):
+                    return
+
+        for vftable, class_, awc_slit in self._awc_atoms:
+            if not merges_total or not assignment.is_true(awc_slit):
+                continue
+            for method, now_slit in self._writers_by_vft.get(vftable, ()):
+                if assignment.is_true(now_slit) and not uf.same(method, class_):
+                    clause = get_merge_clause() + [-now_slit, -awc_slit]
+                    if not ctl.add_clause(clause):
+                        return
+                    break
+
+    def partition(self, merge_pairs=None):
+        if merge_pairs is None:
+            return {}
+
+        uf = _UF()
+        for a, b in merge_pairs:
+            uf.union(_sym_key(a), _sym_key(b), 0)
+        return uf.groups(self._entities)
+
+
 def sc_pairs_from_merges(merge_pairs):
     """Given [(Symbol, Symbol)] mergeClasses pairs, yield all (a, b) same-class pairs."""
     uf = _UF()

@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 log = logging.getLogger("ooanalyzer")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
-from propagator.sameclass import SameClassPropagator
+from propagator.sameclass import LazySameClassConsistencyPropagator, SameClassPropagator
 from propagator.conflict_profiler import ConflictProfiler
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -165,6 +165,9 @@ def parse_args():
                    help=("at each total assignment, verify that every true mergeClasses "
                          "atom has a non-circular justification; rejects circularly-founded "
                          "models that survive the potential-UF seeding fix"))
+    p.add_argument("--sameclass-mode", choices=("propagate", "lazy-check"), default="propagate",
+                   help=("sameClass theory handling mode: normal eager propagator, or a "
+                         "simple check-time consistency mode for diagnostics"))
     p.add_argument("--diagnose-vftable-objective", action="store_true",
                    help=("print selected vftable sizes/gaps and largest unselected "
                          "vftable candidates for each model"))
@@ -323,7 +326,12 @@ def main():
         ctl_args.append(f"--const={c}")
     ctl_args.extend(args.clingo_extra)
 
-    prop = SameClassPropagator(foundedness_check=args.foundedness_check)
+    if args.sameclass_mode == "lazy-check":
+        if args.foundedness_check:
+            log.info("--foundedness-check is ignored by --sameclass-mode=lazy-check")
+        prop = LazySameClassConsistencyPropagator()
+    else:
+        prop = SameClassPropagator(foundedness_check=args.foundedness_check)
     profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
     if "*" in profile_preds:
         profile_preds = None
@@ -344,7 +352,8 @@ def main():
     ctl = clingo.Control(ctl_args)
     if args.models is not None and args.models != -1:
         ctl.configuration.solve.models = args.models
-    ctl.register_observer(prop)
+    if args.sameclass_mode == "propagate":
+        ctl.register_observer(prop)
     ctl.register_propagator(prop)
     if profiler:
         ctl.register_propagator(profiler)
