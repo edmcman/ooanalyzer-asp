@@ -24,14 +24,14 @@ original module set.
 | `propagator/conflict_profiler.py` | Propagator that counts per-predicate backtrack rates; use `--profile-conflicts` when solver performance is poor to identify which predicates drive the most search |
 | `tests/test_propagator.py` | Focused regression harness for the propagator |
 | `scripts/facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
-| `examples/example.lp` | Valid 3-class example (expected: 3 separate classes) |
-| `examples/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
-| `examples/inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |
-| `examples/rtti_example.lp` | Same as inherit but with RTTI facts driving the derivation |
-| `examples/multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
-| `examples/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
-| `examples/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
-| `examples/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
+| `examples/manual/example.lp` | Valid 3-class example (expected: 3 separate classes) |
+| `examples/manual/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
+| `examples/manual/inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |
+| `examples/manual/rtti_example.lp` | Same as inherit but with RTTI facts driving the derivation |
+| `examples/manual/multi_inherit_example.lp` | Multiple inheritance: C : A(0), B(8) |
+| `examples/manual/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
+| `examples/manual/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
+| `examples/manual/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
 | `examples/ooa/` | Real OOAnalyzer test files (`.facts`, `.symbols`, `.json`, `.results`) organized by build: `ooex_vs2008/Debug`, `ooex_vs2010/Lite`, etc. |
 | `src/old/` | v1 Clingo modules (rules.lp, guess.lp, insanity.lp, optimize.lp, output.lp) — reference only |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
@@ -45,14 +45,14 @@ must be run through `uv run`. Bare `python`/`python3` will fail with
 `ModuleNotFoundError: No module named 'clingo'`.
 
 ```sh
-uv run python ooanalyzer.py examples/example.lp              # find optimal model
-uv run python ooanalyzer.py examples/example.lp -n 0         # enumerate all models
-uv run python ooanalyzer.py examples/invalid_example.lp      # should print UNSATISFIABLE
-uv run python ooanalyzer.py examples/inherit_example.lp      # derivedClass(2300, 2100, 0)
-uv run python ooanalyzer.py examples/rtti_example.lp         # same but RTTI-driven, fewer models
-uv run python ooanalyzer.py examples/multi_inherit_example.lp  # C : A(0), B(8)
-uv run python ooanalyzer.py examples/inherited_entry_example.lp  # derived inherits an un-overridden entry
-uv run python ooanalyzer.py examples/virtual_base_example.lp     # Derived : virtual Base via VBTable
+uv run python ooanalyzer.py examples/manual/example.lp              # find optimal model
+uv run python ooanalyzer.py examples/manual/example.lp -n 0         # enumerate all models
+uv run python ooanalyzer.py examples/manual/invalid_example.lp      # should print UNSATISFIABLE
+uv run python ooanalyzer.py examples/manual/inherit_example.lp      # derivedClass(2300, 2100, 0)
+uv run python ooanalyzer.py examples/manual/rtti_example.lp         # same but RTTI-driven, fewer models
+uv run python ooanalyzer.py examples/manual/multi_inherit_example.lp  # C : A(0), B(8)
+uv run python ooanalyzer.py examples/manual/inherited_entry_example.lp  # derived inherits an un-overridden entry
+uv run python ooanalyzer.py examples/manual/virtual_base_example.lp     # Derived : virtual Base via VBTable
 uv run python tests/test_propagator.py                # focused &sameClass regression test
 ```
 

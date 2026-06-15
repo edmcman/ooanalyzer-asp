@@ -2,7 +2,7 @@
 
 Two kinds of test inputs live here; treat them differently.
 
-## Hand-written examples (`examples/*.lp`)
+## Hand-written examples (`examples/manual/*.lp`)
 
 - Use **simplified predicates** (vocabulary A from root AGENTS.md).
 - Method IDs are small decimal integers for readability.
@@ -12,8 +12,8 @@ Two kinds of test inputs live here; treat them differently.
 
 Run one:
 ```sh
-clingo ooanalyzer.lp examples/example.lp        # optimal model
-clingo ooanalyzer.lp examples/example.lp 0      # all models
+clingo ooanalyzer.lp examples/manual/example.lp        # optimal model
+clingo ooanalyzer.lp examples/manual/example.lp 0      # all models
 ```
 
 ## Real OOAnalyzer fixtures (`examples/ooa/`)
@@ -41,6 +41,6 @@ There is no automated diff target in this repo. Manual comparison:
 
 ## Adding a new example
 
-1. Create `examples/<name>.lp` with simplified predicates.
+1. Create `examples/manual/<name>.lp` with simplified predicates.
 2. Add expected output in a comment at the top.
-3. Verify: `clingo ooanalyzer.lp examples/<name>.lp`.
+3. Verify: `clingo ooanalyzer.lp examples/manual/<name>.lp`.

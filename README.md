@@ -12,9 +12,9 @@ thin entry point that includes them in order.
 ## Quick Start
 
 ```sh
-python ooanalyzer.py examples/example.lp              # find optimal model
-python ooanalyzer.py examples/example.lp -n 0         # enumerate all models
-python ooanalyzer.py examples/invalid_example.lp      # UNSATISFIABLE
+python ooanalyzer.py examples/manual/example.lp              # find optimal model
+python ooanalyzer.py examples/manual/example.lp -n 0         # enumerate all models
+python ooanalyzer.py examples/manual/invalid_example.lp      # UNSATISFIABLE
 python tests/test_propagator.py                       # propagator regression test
 ```
 
@@ -93,13 +93,13 @@ Scoring and heuristic gates:
 | [`tests/test_propagator.py`](tests/test_propagator.py) | Focused propagator regression harness |
 | [`src/old/`](src/old/) | v1 Clingo modules (reference only) |
 | [`scripts/facts2clingo.py`](scripts/facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
-| [`examples/example.lp`](examples/example.lp) | Valid 3-class example |
-| [`examples/inherit_example.lp`](examples/inherit_example.lp) | Single inheritance: Base + Derived |
-| [`examples/multi_inherit_example.lp`](examples/multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |
-| [`examples/rtti_example.lp`](examples/rtti_example.lp) | RTTI facts drive the derivation |
-| [`examples/virtual_base_example.lp`](examples/virtual_base_example.lp) | Virtual inheritance via VBTable |
-| [`examples/inherited_entry_example.lp`](examples/inherited_entry_example.lp) | Derived inherits an un-overridden virtual method |
-| [`examples/invalid_example.lp`](examples/invalid_example.lp) | UNSAT demo: contradictory facts |
+| [`examples/manual/example.lp`](examples/manual/example.lp) | Valid 3-class example |
+| [`examples/manual/inherit_example.lp`](examples/manual/inherit_example.lp) | Single inheritance: Base + Derived |
+| [`examples/manual/multi_inherit_example.lp`](examples/manual/multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |
+| [`examples/manual/rtti_example.lp`](examples/manual/rtti_example.lp) | RTTI facts drive the derivation |
+| [`examples/manual/virtual_base_example.lp`](examples/manual/virtual_base_example.lp) | Virtual inheritance via VBTable |
+| [`examples/manual/inherited_entry_example.lp`](examples/manual/inherited_entry_example.lp) | Derived inherits an un-overridden virtual method |
+| [`examples/manual/invalid_example.lp`](examples/manual/invalid_example.lp) | UNSAT demo: contradictory facts |
 | [`examples/ooa/`](examples/ooa/) | Real OOAnalyzer `.facts` files (from `pharos/tools/ooanalyzer/tests`) |
 | [`AGENTS.md`](AGENTS.md) | Detailed architecture and correspondence to OOAnalyzer |
 

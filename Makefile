@@ -3,7 +3,8 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses
+#PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses
+PROP_FLAGS   := -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
@@ -95,18 +96,18 @@ verify-core:
 		if [ -n "$$forbidden" ] && grep -Eq -- "$$forbidden" "$$out"; then cat "$$out"; rm -f "$$out"; exit 1; fi; \
 		rm -f "$$out"; \
 	}; \
-	echo "=== Verifying examples/example.lp ==="; \
-	run_case 'OPTIMUM FOUND' '' '' '' $(PROPAGATOR) examples/example.lp $(PROP_FLAGS); \
-	echo "=== Verifying examples/invalid_example.lp ==="; \
-	run_case 'UNSATISFIABLE' '' '' '' $(PROPAGATOR) examples/invalid_example.lp $(PROP_FLAGS); \
-	echo "=== Verifying examples/strong_negation_contradiction.lp ==="; \
-	run_case 'UNSATISFIABLE' '' '' '' $(PROPAGATOR) examples/strong_negation_contradiction.lp $(PROP_FLAGS); \
-	echo "=== Verifying examples/constructor_vftable_entry_example.lp ==="; \
-	run_case 'SATISFIABLE' '-vfTableEntry(2000,0,1000)' '' '' $(PROPAGATOR) examples/constructor_vftable_entry_example.lp $(PROP_FLAGS); \
-	echo "=== Verifying examples/symbol_conflict_example.lp ==="; \
-	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '' $(PROPAGATOR) examples/symbol_conflict_example.lp $(PROP_FLAGS); \
-	echo "=== Verifying examples/symbol_missing_conflict_example.lp ==="; \
-	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(PROPAGATOR) examples/symbol_missing_conflict_example.lp $(PROP_FLAGS)
+	echo "=== Verifying examples/manual/example.lp ==="; \
+	run_case 'OPTIMUM FOUND' '' '' '' $(PROPAGATOR) examples/manual/example.lp $(PROP_FLAGS); \
+	echo "=== Verifying examples/manual/invalid_example.lp ==="; \
+	run_case 'UNSATISFIABLE' '' '' '' $(PROPAGATOR) examples/manual/invalid_example.lp $(PROP_FLAGS); \
+	echo "=== Verifying examples/manual/strong_negation_contradiction.lp ==="; \
+	run_case 'UNSATISFIABLE' '' '' '' $(PROPAGATOR) examples/manual/strong_negation_contradiction.lp $(PROP_FLAGS); \
+	echo "=== Verifying examples/manual/constructor_vftable_entry_example.lp ==="; \
+	run_case 'SATISFIABLE' '-vfTableEntry(2000,0,1000)' '' '' $(PROPAGATOR) examples/manual/constructor_vftable_entry_example.lp $(PROP_FLAGS); \
+	echo "=== Verifying examples/manual/symbol_conflict_example.lp ==="; \
+	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '' $(PROPAGATOR) examples/manual/symbol_conflict_example.lp $(PROP_FLAGS); \
+	echo "=== Verifying examples/manual/symbol_missing_conflict_example.lp ==="; \
+	run_case 'SATISFIABLE' '-mergeClasses(1000,2000)' '' '-mergeClasses\\(3000,4000\\)' $(PROPAGATOR) examples/manual/symbol_missing_conflict_example.lp $(PROP_FLAGS)
 
 propagator-run: run
 

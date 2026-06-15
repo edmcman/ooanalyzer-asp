@@ -3,7 +3,7 @@
 ooanalyzer.py — OOAnalyzer ASP solver with &sameClass propagator.
 
 Usage:
-    python ooanalyzer.py examples/example.lp [clingo-flags]
+    python ooanalyzer.py examples/manual/example.lp [clingo-flags]
     python ooanalyzer.py examples/ooa/ooex_vs2010/Lite/oo.lp --stats
 """
 
