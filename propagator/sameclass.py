@@ -263,8 +263,12 @@ class SameClassPropagator:
     # ── PropagateInit ────────────────────────────────────────────────────────
 
     def init(self, init):
-        if self._consistency_backstop or self._foundedness_check:
-            init.check_mode = clingo.PropagatorCheckMode.Both
+        # check() is part of eager propagation: it asserts sameClass atoms that
+        # become true through multi-edge paths once watched merge propagation has
+        # reached a fixpoint.  Without Fixpoint checks, search can run for a long
+        # time before a total assignment ever gives the propagator a chance to
+        # add these path clauses.
+        init.check_mode = clingo.PropagatorCheckMode.Both
 
         # solver_lit → [(a_key, b_key)]
         #
