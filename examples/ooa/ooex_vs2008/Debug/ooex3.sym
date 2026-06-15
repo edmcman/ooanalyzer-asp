@@ -1,11 +1,11 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.03s)
-08:02:01 Solving...
-08:02:01 Model found (0.04s): [-2124]
-08:02:01 Model found (0.04s, +0.00s): [-2141]
-08:02:01 Model found (0.04s, +0.00s): [-2175]
-08:02:01 Model found (0.05s, +0.00s): [-2192]
-08:02:01 Solving done: OPTIMUM FOUND (0.02s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.03s)
+14:34:43 Solving...
+14:34:43 Model found (0.05s): [-2124]
+14:34:43 Model found (0.05s, +0.01s): [-2141]
+14:34:43 Model found (0.06s, +0.00s): [-2175]
+14:34:43 Model found (0.15s, +0.10s): [-2192]
+14:34:43 Solving done: OPTIMUM FOUND (0.13s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex3.results
 OPTIMUM FOUND
 
@@ -152,7 +152,7 @@ Optimization: -2192
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:01 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
+14:34:43 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
 
 % Stats:
 %   atoms: 5367.0
@@ -160,17 +160,17 @@ Optimization: -2192
 %   rules: 5825.0
 %   variables: 717.0
 %   constraints: 17.0
-%   choices: 2027.0
-%   conflicts: 15.0
+%   choices: 2392.0
+%   conflicts: 17.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-2192.0]
 %   lower_bound: [-2192.0]
-%   total_time: 0.10130190849304199
-%   ground_time: 0.02855980099957378
-%   time_to_first_model: 0.03982824200102186
-%   max_rss_bytes: 28311552
-%   solve_time: 0.00757598876953125
+%   total_time: 0.1633288860321045
+%   ground_time: 0.028328018001047894
+%   time_to_first_model: 0.04577018799318466
+%   max_rss_bytes: 29884416
+%   solve_time: 0.11577296257019043
 classCallsMethod(Derived::Derived(void)@0x411560,Base::Base(void)@0x411610)
 classCallsMethod(Derived::Derived(void)@0x411560,int Base::func3(void)@0x411510)
 classRelatedMethod(Base2::Base2(void)@0x411670,int Base2::func3(void)@0x4116d0)

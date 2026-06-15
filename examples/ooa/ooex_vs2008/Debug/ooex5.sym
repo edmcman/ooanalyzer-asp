@@ -1,33 +1,31 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.10s)
-08:02:01 Solving...
-08:02:01 Model found (0.16s): [-52, -2608]
-08:02:01 Model found (0.17s, +0.00s): [-52, -2676]
-08:02:01 Model found (0.17s, +0.00s): [-52, -2693]
-08:02:01 Model found (0.18s, +0.01s): [-52, -2699]
-08:02:01 Model found (0.19s, +0.00s): [-52, -2709]
-08:02:01 Model found (0.19s, +0.00s): [-52, -2713]
-08:02:01 Model found (0.19s, +0.00s): [-52, -2719]
-08:02:01 Model found (0.20s, +0.00s): [-52, -2723]
-08:02:01 Model found (0.20s, +0.00s): [-52, -2733]
-08:02:01 Model found (0.20s, +0.00s): [-52, -2740]
-08:02:01 Model found (0.21s, +0.01s): [-52, -2750]
-08:02:01 Model found (0.21s, +0.00s): [-52, -2757]
-08:02:01 Model found (0.22s, +0.00s): [-52, -2767]
-08:02:01 Model found (0.22s, +0.01s): [-52, -2777]
-08:02:01 Model found (0.23s, +0.01s): [-52, -2784]
-08:02:01 Model found (0.24s, +0.01s): [-52, -2794]
-08:02:01 Model found (0.24s, +0.01s): [-52, -2804]
-08:02:01 Model found (0.25s, +0.01s): [-52, -2814]
-08:02:01 Model found (0.26s, +0.01s): [-52, -2821]
-08:02:01 Model found (0.26s, +0.01s): [-52, -2831]
-08:02:01 Model found (0.27s, +0.01s): [-52, -2838]
-08:02:01 Model found (0.28s, +0.01s): [-52, -2848]
-08:02:01 Solving done: OPTIMUM FOUND (0.18s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.06s)
+14:34:43 Solving...
+14:34:43 Model found (0.56s): [-52, -2676]
+14:34:44 Model found (1.27s, +0.71s): [-52, -2693]
+14:34:45 Model found (1.94s, +0.67s): [-52, -2699]
+14:34:45 Model found (2.05s, +0.11s): [-52, -2709]
+14:34:45 Model found (2.15s, +0.09s): [-52, -2719]
+14:34:45 Model found (2.24s, +0.09s): [-52, -2723]
+14:34:45 Model found (2.36s, +0.12s): [-52, -2733]
+14:34:45 Model found (2.50s, +0.13s): [-52, -2743]
+14:34:45 Model found (2.59s, +0.09s): [-52, -2750]
+14:34:45 Model found (2.68s, +0.10s): [-52, -2760]
+14:34:45 Model found (2.79s, +0.11s): [-52, -2767]
+14:34:46 Model found (2.89s, +0.10s): [-52, -2777]
+14:34:46 Model found (2.99s, +0.10s): [-52, -2787]
+14:34:46 Model found (3.09s, +0.10s): [-52, -2794]
+14:34:46 Model found (3.21s, +0.12s): [-52, -2804]
+14:34:46 Model found (3.34s, +0.13s): [-52, -2811]
+14:34:46 Model found (3.44s, +0.10s): [-52, -2821]
+14:34:46 Model found (3.62s, +0.17s): [-52, -2831]
+14:34:46 Model found (3.74s, +0.12s): [-52, -2838]
+14:34:47 Model found (3.85s, +0.12s): [-52, -2848]
+14:34:50 Solving done: OPTIMUM FOUND (7.21s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex5.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex5.results
 OPTIMUM FOUND
 
-Answer: 22
+Answer: 20
 Optimization: -52 -2848
 
 % Equivalence classes (222 classes, 242 entities):
@@ -214,7 +212,7 @@ Optimization: -52 -2848
 %     ~embeddedObject: 4/4
 %       objectInObject(const Derived::`vftable'{for `Base2'}@0x416740,const Base::`vftable'@0x416768,0) objectInObject(const Derived::`vftable'{for `Base2'}@0x416740,const Base2::`vftable'@0x41677c,16)
 %       objectInObject(const Derived::`vftable'{for `Base'}@0x416754,const Base::`vftable'@0x416768,0) objectInObject(const Derived::`vftable'{for `Base'}@0x416754,const Base2::`vftable'@0x41677c,16)
-08:02:01 Writing results to examples/ooa/ooex_vs2008/Debug/ooex5.results
+14:34:50 Writing results to examples/ooa/ooex_vs2008/Debug/ooex5.results
 
 % Stats:
 %   atoms: 8966.0
@@ -222,17 +220,17 @@ Optimization: -52 -2848
 %   rules: 11394.0
 %   variables: 3938.0
 %   constraints: 154.0
-%   choices: 12830.0
-%   conflicts: 263.0
-%   models: 22.0
+%   choices: 10044.0
+%   conflicts: 258.0
+%   models: 20.0
 %   optimal_models: 1.0
 %   final_cost: [-52.0, -2848.0]
 %   lower_bound: [-52.0, -2848.0]
-%   total_time: 0.3403739929199219
-%   ground_time: 0.10290143599922885
-%   time_to_first_model: 0.16190965799978585
-%   max_rss_bytes: 33816576
-%   solve_time: 0.12534618377685547
+%   total_time: 7.27388596534729
+%   ground_time: 0.05808264001097996
+%   time_to_first_model: 0.5625480520102428
+%   max_rss_bytes: 34603008
+%   solve_time: 7.150307893753052
 classCallsMethod(Derived::Derived(void)@0x4115d0,Base::Base(void)@0x4116a0)
 classCallsMethod(Derived::Derived(void)@0x4115d0,virtual int Base::func2(void)@0x411770)
 classCallsMethod(const Base2::`vftable'@0x41677c,virtual int Base2::func1(void)@0x411840)

@@ -1,11 +1,11 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.03s)
-08:02:01 Solving...
-08:02:01 Model found (0.04s): [-2035]
-08:02:01 Model found (0.04s, +0.00s): [-2052]
-08:02:01 Model found (0.04s, +0.00s): [-2086]
-08:02:01 Model found (0.05s, +0.00s): [-2103]
-08:02:01 Solving done: OPTIMUM FOUND (0.02s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.03s)
+14:34:43 Solving...
+14:34:43 Model found (0.05s): [-2035]
+14:34:43 Model found (0.07s, +0.02s): [-2052]
+14:34:43 Model found (0.08s, +0.00s): [-2086]
+14:34:43 Model found (0.21s, +0.14s): [-2103]
+14:34:43 Solving done: OPTIMUM FOUND (0.19s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex2.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex2.results
 OPTIMUM FOUND
 
@@ -148,7 +148,7 @@ Optimization: -2103
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:01 Writing results to examples/ooa/ooex_vs2010/Debug/ooex2.results
+14:34:43 Writing results to examples/ooa/ooex_vs2010/Debug/ooex2.results
 
 % Stats:
 %   atoms: 5126.0
@@ -156,17 +156,17 @@ Optimization: -2103
 %   rules: 5556.0
 %   variables: 670.0
 %   constraints: 20.0
-%   choices: 2144.0
-%   conflicts: 15.0
+%   choices: 2345.0
+%   conflicts: 11.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-2103.0]
 %   lower_bound: [-2103.0]
-%   total_time: 0.10142898559570312
-%   ground_time: 0.02799557599973923
-%   time_to_first_model: 0.03902896099862119
+%   total_time: 0.22667503356933594
+%   ground_time: 0.028592028000275604
+%   time_to_first_model: 0.05385723800281994
 %   max_rss_bytes: 29097984
-%   solve_time: 0.008799076080322266
+%   solve_time: 0.1789851188659668
 classCallsMethod(Derived::Derived(void)@0x4114f0,Base::Base(void)@0x411590)
 classCallsMethod(Derived::Derived(void)@0x4114f0,int Base::func3(void)@0x4115f0)
 classRelatedMethod(Base::Base(void)@0x411590,Derived::Derived(void)@0x4114f0)

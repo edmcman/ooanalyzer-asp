@@ -1,11 +1,11 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.05s)
-08:02:01 Solving...
-08:02:01 Model found (0.07s): [-2095]
-08:02:01 Model found (0.07s, +0.00s): [-2112]
-08:02:01 Model found (0.07s, +0.00s): [-2146]
-08:02:01 Model found (0.08s, +0.00s): [-2163]
-08:02:01 Solving done: OPTIMUM FOUND (0.03s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.03s)
+14:34:43 Solving...
+14:34:43 Model found (0.05s): [-2095]
+14:34:43 Model found (0.07s, +0.01s): [-2112]
+14:34:43 Model found (0.07s, +0.00s): [-2146]
+14:34:43 Model found (0.23s, +0.16s): [-2163]
+14:34:43 Solving done: OPTIMUM FOUND (0.20s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex2.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex2.results
 OPTIMUM FOUND
 
@@ -151,7 +151,7 @@ Optimization: -2163
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:01 Writing results to examples/ooa/ooex_vs2008/Debug/ooex2.results
+14:34:43 Writing results to examples/ooa/ooex_vs2008/Debug/ooex2.results
 
 % Stats:
 %   atoms: 5260.0
@@ -159,17 +159,17 @@ Optimization: -2163
 %   rules: 5702.0
 %   variables: 688.0
 %   constraints: 20.0
-%   choices: 1902.0
-%   conflicts: 15.0
+%   choices: 2440.0
+%   conflicts: 16.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-2163.0]
 %   lower_bound: [-2163.0]
-%   total_time: 0.13538193702697754
-%   ground_time: 0.05032001799918362
-%   time_to_first_model: 0.07048116999976628
-%   max_rss_bytes: 29097984
-%   solve_time: 0.007551908493041992
+%   total_time: 0.23640990257263184
+%   ground_time: 0.0282153699954506
+%   time_to_first_model: 0.05154799099545926
+%   max_rss_bytes: 29884416
+%   solve_time: 0.1894979476928711
 classCallsMethod(Derived::Derived(void)@0x411510,Base::Base(void)@0x4115b0)
 classCallsMethod(Derived::Derived(void)@0x411510,int Base::func3(void)@0x411610)
 classRelatedMethod(Base::Base(void)@0x4115b0,Derived::Derived(void)@0x411510)

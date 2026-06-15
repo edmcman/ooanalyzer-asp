@@ -1,54 +1,53 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.05s)
-08:02:01 Solving...
-08:02:01 Model found (0.09s): [-20, -1830]
-08:02:01 Model found (0.09s, +0.00s): [-20, -1847]
-08:02:01 Model found (0.09s, +0.00s): [-20, -1855]
-08:02:01 Model found (0.10s, +0.00s): [-20, -1872]
-08:02:01 Model found (0.10s, +0.01s): [-20, -1873]
-08:02:01 Model found (0.10s, +0.00s): [-20, -1924]
-08:02:01 Model found (0.11s, +0.00s): [-20, -1932]
-08:02:01 Model found (0.11s, +0.00s): [-20, -1934]
-08:02:01 Model found (0.11s, +0.00s): [-20, -1936]
-08:02:01 Model found (0.12s, +0.00s): [-20, -1944]
-08:02:01 Model found (0.12s, +0.00s): [-20, -1946]
-08:02:01 Model found (0.13s, +0.01s): [-20, -1954]
-08:02:01 Model found (0.13s, +0.00s): [-20, -1966]
-08:02:01 Model found (0.13s, +0.00s): [-20, -1975]
-08:02:01 Model found (0.14s, +0.01s): [-20, -1983]
-08:02:01 Model found (0.15s, +0.00s): [-20, -1992]
-08:02:01 Model found (0.15s, +0.00s): [-20, -2000]
-08:02:01 Model found (0.15s, +0.00s): [-20, -2009]
-08:02:01 Model found (0.16s, +0.00s): [-20, -2017]
-08:02:01 Model found (0.16s, +0.00s): [-20, -2024]
-08:02:01 Model found (0.17s, +0.00s): [-20, -2027]
-08:02:01 Model found (0.17s, +0.00s): [-20, -2031]
-08:02:01 Model found (0.17s, +0.00s): [-20, -2036]
-08:02:01 Model found (0.17s, +0.00s): [-20, -2044]
-08:02:01 Model found (0.18s, +0.01s): [-20, -2051]
-08:02:01 Model found (0.18s, +0.00s): [-20, -2054]
-08:02:01 Model found (0.19s, +0.00s): [-20, -2061]
-08:02:01 Model found (0.19s, +0.00s): [-20, -2064]
-08:02:01 Model found (0.19s, +0.00s): [-20, -2071]
-08:02:01 Model found (0.20s, +0.00s): [-20, -2074]
-08:02:01 Model found (0.21s, +0.01s): [-20, -2078]
-08:02:01 Model found (0.21s, +0.00s): [-20, -2080]
-08:02:01 Model found (0.21s, +0.00s): [-20, -2088]
-08:02:01 Model found (0.22s, +0.00s): [-20, -2090]
-08:02:01 Model found (0.22s, +0.00s): [-20, -2098]
-08:02:01 Model found (0.23s, +0.00s): [-20, -2108]
-08:02:01 Model found (0.23s, +0.00s): [-20, -2128]
-08:02:01 Model found (0.24s, +0.00s): [-20, -2138]
-08:02:01 Model found (0.24s, +0.00s): [-20, -2148]
-08:02:01 Model found (0.25s, +0.01s): [-20, -2154]
-08:02:01 Model found (0.25s, +0.01s): [-20, -2156]
-08:02:01 Model found (0.26s, +0.01s): [-20, -2164]
-08:02:01 Model found (0.27s, +0.01s): [-20, -2174]
-08:02:01 Solving done: OPTIMUM FOUND (0.22s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.05s)
+14:34:43 Solving...
+14:34:43 Model found (0.32s): [-20, -1830]
+14:34:44 Model found (0.78s, +0.47s): [-20, -1838]
+14:34:44 Model found (0.87s, +0.08s): [-20, -1847]
+14:34:44 Model found (1.00s, +0.13s): [-20, -1855]
+14:34:44 Model found (1.15s, +0.15s): [-20, -1872]
+14:34:44 Model found (1.52s, +0.37s): [-20, -1874]
+14:34:44 Model found (1.62s, +0.09s): [-20, -1882]
+14:34:45 Model found (1.73s, +0.11s): [-20, -1891]
+14:34:45 Model found (2.09s, +0.37s): [-20, -1899]
+14:34:45 Model found (2.19s, +0.09s): [-20, -1916]
+14:34:45 Model found (2.26s, +0.07s): [-20, -1926]
+14:34:45 Model found (2.34s, +0.08s): [-20, -1936]
+14:34:45 Model found (2.51s, +0.17s): [-20, -1946]
+14:34:46 Model found (2.63s, +0.12s): [-20, -1956]
+14:34:46 Model found (2.74s, +0.11s): [-20, -1966]
+14:34:46 Model found (2.86s, +0.12s): [-20, -1973]
+14:34:46 Model found (3.03s, +0.17s): [-20, -1983]
+14:34:46 Model found (3.23s, +0.20s): [-20, -1986]
+14:34:46 Model found (3.26s, +0.02s): [-20, -1990]
+14:34:46 Model found (3.38s, +0.13s): [-20, -1998]
+14:34:46 Model found (3.47s, +0.08s): [-20, -2003]
+14:34:46 Model found (3.59s, +0.12s): [-20, -2007]
+14:34:46 Model found (3.62s, +0.03s): [-20, -2010]
+14:34:47 Model found (3.84s, +0.21s): [-20, -2017]
+14:34:47 Model found (3.97s, +0.14s): [-20, -2018]
+14:34:47 Model found (4.05s, +0.07s): [-20, -2020]
+14:34:47 Model found (4.19s, +0.15s): [-20, -2040]
+14:34:47 Model found (4.35s, +0.16s): [-20, -2057]
+14:34:47 Model found (4.48s, +0.13s): [-20, -2065]
+14:34:48 Model found (4.86s, +0.38s): [-20, -2074]
+14:34:48 Model found (4.96s, +0.10s): [-20, -2077]
+14:34:48 Model found (4.98s, +0.02s): [-20, -2091]
+14:34:48 Model found (5.09s, +0.11s): [-20, -2095]
+14:34:48 Model found (5.23s, +0.14s): [-20, -2108]
+14:34:48 Model found (5.38s, +0.15s): [-20, -2114]
+14:34:48 Model found (5.40s, +0.03s): [-20, -2131]
+14:34:48 Model found (5.56s, +0.16s): [-20, -2138]
+14:34:49 Model found (5.75s, +0.19s): [-20, -2148]
+14:34:49 Model found (6.39s, +0.64s): [-20, -2154]
+14:34:49 Model found (6.52s, +0.13s): [-20, -2157]
+14:34:49 Model found (6.62s, +0.10s): [-20, -2164]
+14:34:50 Model found (6.70s, +0.08s): [-20, -2174]
+14:34:50 Solving done: OPTIMUM FOUND (6.65s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex3.results
 OPTIMUM FOUND
 
-Answer: 43
+Answer: 42
 Optimization: -20 -2174
 
 % Equivalence classes (162 classes, 178 entities):
@@ -203,7 +202,7 @@ Optimization: -20 -2174
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
-08:02:01 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
+14:34:50 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
 
 % Stats:
 %   atoms: 8445.0
@@ -211,17 +210,17 @@ Optimization: -20 -2174
 %   rules: 9592.0
 %   variables: 2598.0
 %   constraints: 135.0
-%   choices: 14750.0
-%   conflicts: 382.0
-%   models: 43.0
+%   choices: 8253.0
+%   conflicts: 330.0
+%   models: 42.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -2174.0]
 %   lower_bound: [-20.0, -2174.0]
-%   total_time: 0.33106112480163574
-%   ground_time: 0.0469202160002169
-%   time_to_first_model: 0.08566386100028467
+%   total_time: 6.717138051986694
+%   ground_time: 0.04637793300207704
+%   time_to_first_model: 0.31916395800362807
 %   max_rss_bytes: 33816576
-%   solve_time: 0.18660616874694824
+%   solve_time: 6.617375135421753
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,int Base::func3(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Copy_str(char const *)@0x40184b)

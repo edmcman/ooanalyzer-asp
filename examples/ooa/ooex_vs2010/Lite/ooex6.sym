@@ -1,66 +1,68 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.06s)
-08:02:01 Solving...
-08:02:01 Model found (0.12s): [-48, -1916]
-08:02:01 Model found (0.12s, +0.01s): [-48, -1933]
-08:02:01 Model found (0.13s, +0.01s): [-48, -1941]
-08:02:01 Model found (0.14s, +0.01s): [-48, -1958]
-08:02:01 Model found (0.15s, +0.01s): [-48, -1975]
-08:02:01 Model found (0.16s, +0.01s): [-48, -1992]
-08:02:01 Model found (0.18s, +0.03s): [-48, -1999]
-08:02:01 Model found (0.19s, +0.01s): [-48, -2010]
-08:02:01 Model found (0.20s, +0.01s): [-48, -2018]
-08:02:01 Model found (0.20s, +0.01s): [-48, -2026]
-08:02:01 Model found (0.21s, +0.01s): [-48, -2028]
-08:02:01 Model found (0.21s, +0.00s): [-48, -2037]
-08:02:01 Model found (0.22s, +0.00s): [-48, -2045]
-08:02:01 Model found (0.22s, +0.01s): [-48, -2053]
-08:02:01 Model found (0.24s, +0.02s): [-48, -2062]
-08:02:01 Model found (0.25s, +0.01s): [-48, -2063]
-08:02:01 Model found (0.26s, +0.01s): [-48, -2072]
-08:02:01 Model found (0.27s, +0.01s): [-48, -2073]
-08:02:01 Model found (0.27s, +0.01s): [-48, -2075]
-08:02:01 Model found (0.28s, +0.01s): [-48, -2082]
-08:02:01 Model found (0.29s, +0.01s): [-48, -2084]
-08:02:01 Model found (0.29s, +0.00s): [-48, -2092]
-08:02:01 Model found (0.30s, +0.01s): [-48, -2102]
-08:02:01 Model found (0.31s, +0.02s): [-48, -2103]
-08:02:01 Model found (0.32s, +0.01s): [-48, -2110]
-08:02:01 Model found (0.33s, +0.01s): [-48, -2112]
-08:02:01 Model found (0.34s, +0.01s): [-48, -2120]
-08:02:01 Model found (0.34s, +0.01s): [-48, -2121]
-08:02:01 Model found (0.35s, +0.01s): [-48, -2129]
-08:02:01 Model found (0.35s, +0.01s): [-48, -2130]
-08:02:01 Model found (0.36s, +0.01s): [-48, -2136]
-08:02:01 Model found (0.37s, +0.01s): [-48, -2150]
-08:02:01 Model found (0.38s, +0.01s): [-48, -2153]
-08:02:01 Model found (0.39s, +0.01s): [-48, -2155]
-08:02:01 Model found (0.39s, +0.01s): [-48, -2160]
-08:02:01 Model found (0.40s, +0.01s): [-48, -2163]
-08:02:01 Model found (0.41s, +0.01s): [-48, -2170]
-08:02:01 Model found (0.42s, +0.01s): [-48, -2173]
-08:02:01 Model found (0.42s, +0.01s): [-48, -2177]
-08:02:01 Model found (0.43s, +0.01s): [-48, -2187]
-08:02:01 Model found (0.44s, +0.01s): [-48, -2197]
-08:02:02 Model found (0.45s, +0.01s): [-48, -2217]
-08:02:02 Model found (0.46s, +0.01s): [-48, -2224]
-08:02:02 Model found (0.48s, +0.02s): [-48, -2234]
-08:02:02 Model found (0.49s, +0.01s): [-48, -2251]
-08:02:02 Model found (0.49s, +0.01s): [-48, -2261]
-08:02:02 Model found (0.51s, +0.01s): [-48, -2270]
-08:02:02 Model found (0.51s, +0.01s): [-48, -2274]
-08:02:02 Model found (0.53s, +0.01s): [-48, -2277]
-08:02:02 Model found (0.54s, +0.01s): [-48, -2294]
-08:02:02 Model found (0.55s, +0.01s): [-48, -2304]
-08:02:02 Model found (0.57s, +0.02s): [-48, -2305]
-08:02:02 Model found (0.57s, +0.00s): [-48, -2320]
-08:02:02 Model found (0.58s, +0.01s): [-48, -2323]
-08:02:02 Model found (0.59s, +0.01s): [-48, -2330]
-08:02:02 Solving done: OPTIMUM FOUND (0.55s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.06s)
+14:34:43 Solving...
+14:34:44 Model found (0.80s): [-48, -1916]
+14:34:44 Model found (1.36s, +0.56s): [-48, -1924]
+14:34:44 Model found (1.51s, +0.15s): [-48, -1933]
+14:34:45 Model found (1.68s, +0.17s): [-48, -1941]
+14:34:45 Model found (1.93s, +0.25s): [-48, -1958]
+14:34:45 Model found (2.16s, +0.23s): [-48, -1967]
+14:34:45 Model found (2.48s, +0.32s): [-48, -1975]
+14:34:46 Model found (3.20s, +0.72s): [-48, -1992]
+14:34:47 Model found (4.52s, +1.32s): [-48, -1993]
+14:34:48 Model found (4.63s, +0.10s): [-48, -1999]
+14:34:48 Model found (4.67s, +0.04s): [-48, -2001]
+14:34:48 Model found (4.89s, +0.22s): [-48, -2003]
+14:34:48 Model found (4.96s, +0.07s): [-48, -2009]
+14:34:48 Model found (5.03s, +0.07s): [-48, -2011]
+14:34:49 Model found (5.62s, +0.59s): [-48, -2019]
+14:34:49 Model found (5.96s, +0.33s): [-48, -2026]
+14:34:49 Model found (6.12s, +0.16s): [-48, -2036]
+14:34:49 Model found (6.33s, +0.21s): [-48, -2038]
+14:34:49 Model found (6.48s, +0.14s): [-48, -2053]
+14:34:50 Model found (6.66s, +0.18s): [-48, -2063]
+14:34:50 Model found (6.82s, +0.16s): [-48, -2073]
+14:34:50 Model found (7.04s, +0.22s): [-48, -2075]
+14:34:50 Model found (7.21s, +0.17s): [-48, -2083]
+14:34:50 Model found (7.40s, +0.18s): [-48, -2090]
+14:34:50 Model found (7.53s, +0.14s): [-48, -2092]
+14:34:51 Model found (7.92s, +0.39s): [-48, -2100]
+14:34:51 Model found (8.17s, +0.25s): [-48, -2102]
+14:34:51 Model found (8.42s, +0.25s): [-48, -2110]
+14:34:52 Model found (8.74s, +0.32s): [-48, -2116]
+14:34:52 Model found (9.29s, +0.55s): [-48, -2120]
+14:34:52 Model found (9.31s, +0.02s): [-48, -2123]
+14:34:52 Model found (9.55s, +0.23s): [-48, -2133]
+14:34:53 Model found (9.72s, +0.17s): [-48, -2143]
+14:34:53 Model found (9.92s, +0.20s): [-48, -2153]
+14:34:53 Model found (10.10s, +0.18s): [-48, -2163]
+14:34:53 Model found (10.53s, +0.43s): [-48, -2166]
+14:34:54 Model found (11.01s, +0.48s): [-48, -2173]
+14:34:54 Model found (11.15s, +0.14s): [-48, -2180]
+14:34:54 Model found (11.34s, +0.19s): [-48, -2182]
+14:34:54 Model found (11.52s, +0.19s): [-48, -2190]
+14:34:55 Model found (11.70s, +0.18s): [-48, -2192]
+14:34:55 Model found (11.83s, +0.13s): [-48, -2200]
+14:34:55 Model found (12.16s, +0.33s): [-48, -2213]
+14:34:55 Model found (12.43s, +0.27s): [-48, -2230]
+14:34:56 Model found (12.75s, +0.31s): [-48, -2234]
+14:34:56 Model found (12.97s, +0.22s): [-48, -2237]
+14:34:57 Model found (13.85s, +0.88s): [-48, -2239]
+14:34:57 Model found (14.03s, +0.17s): [-48, -2250]
+14:34:57 Model found (14.24s, +0.21s): [-48, -2257]
+14:34:57 Model found (14.41s, +0.17s): [-48, -2264]
+14:34:58 Model found (14.64s, +0.23s): [-48, -2266]
+14:34:58 Model found (14.69s, +0.06s): [-48, -2290]
+14:34:58 Model found (14.93s, +0.24s): [-48, -2297]
+14:34:58 Model found (15.22s, +0.28s): [-48, -2304]
+14:35:00 Model found (17.31s, +2.10s): [-48, -2315]
+14:35:00 Model found (17.52s, +0.21s): [-48, -2323]
+14:35:01 Model found (18.18s, +0.65s): [-48, -2330]
+14:35:06 Solving done: OPTIMUM FOUND (23.28s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex6.results
 OPTIMUM FOUND
 
-Answer: 55
+Answer: 57
 Optimization: -48 -2330
 
 % Equivalence classes (167 classes, 187 entities):
@@ -230,7 +232,7 @@ Optimization: -48 -2330
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(const Derived::`vftable'@0x406150,const Base::`vftable'@0x406140,0) objectInObject(const std::bad_alloc::`vftable'@0x40616c,const std::exception::`vftable'@0x406bc4,0)
-08:02:02 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
+14:35:06 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
 
 % Stats:
 %   atoms: 10068.0
@@ -238,17 +240,17 @@ Optimization: -48 -2330
 %   rules: 12276.0
 %   variables: 3789.0
 %   constraints: 183.0
-%   choices: 32684.0
-%   conflicts: 1086.0
-%   models: 55.0
+%   choices: 23758.0
+%   conflicts: 1047.0
+%   models: 57.0
 %   optimal_models: 1.0
 %   final_cost: [-48.0, -2330.0]
 %   lower_bound: [-48.0, -2330.0]
-%   total_time: 0.623176097869873
-%   ground_time: 0.05901725000148872
-%   time_to_first_model: 0.11871602700011863
+%   total_time: 23.3575279712677
+%   ground_time: 0.060243767002248205
+%   time_to_first_model: 0.8014866029989207
 %   max_rss_bytes: 36175872
-%   solve_time: 0.49045300483703613
+%   solve_time: 23.221853017807007
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func1(void)@0x401020)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func2(void)@0x401040)
@@ -583,8 +585,10 @@ mergeClasses(class std::exception & std::exception::operator=(class std::excepti
 mergeClasses(const Base::`vftable'@0x406140,Base::Base(void)@0x401000)
 mergeClasses(const Derived::`vftable'@0x406150,Derived::Derived(void)@0x401060)
 mergeClasses(const std::bad_alloc::`vftable'@0x40616c,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011df)
+mergeClasses(const std::bad_alloc::`vftable'@0x40616c,virtual std::bad_alloc::~bad_alloc(void)@0x4011ad)
 mergeClasses(const std::exception::`vftable'@0x406bc4,std::exception::exception(char const * const &, int)@0x401c27)
 mergeClasses(const std::exception::`vftable'@0x406bc4,std::exception::exception(class std::exception const &)@0x401d16)
+mergeClasses(const type_info::`vftable'@0x406164,virtual type_info::~type_info(void)@0x401126)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401c51,class std::exception & std::exception::operator=(class std::exception const &)@0x401caf)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401c51,const std::exception::`vftable'@0x406bc4)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401c51,std::exception::_Tidy(void)@0x401c91)
@@ -838,8 +842,10 @@ vfTableWrite(virtual std::exception::~exception(void)@0x401ce4,virtual std::exce
 vftableBelongsToClass(const Base::`vftable'@0x406140,0,Base::Base(void)@0x401000)
 vftableBelongsToClass(const Derived::`vftable'@0x406150,0,Derived::Derived(void)@0x401060)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x40616c,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011df)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x40616c,0,virtual std::bad_alloc::~bad_alloc(void)@0x4011ad)
 vftableBelongsToClass(const std::exception::`vftable'@0x406bc4,0,std::exception::exception(char const * const &, int)@0x401c27)
 vftableBelongsToClass(const std::exception::`vftable'@0x406bc4,0,std::exception::exception(class std::exception const &)@0x401d16)
+vftableBelongsToClass(const type_info::`vftable'@0x406164,0,virtual type_info::~type_info(void)@0x401126)
 vftableSizeTotal(48)
 %   {$LN10@0x401477}
 %   {$LN11_0@0x4018a7}

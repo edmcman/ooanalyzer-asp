@@ -1,14 +1,13 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.05s)
-08:02:01 Solving...
-08:02:01 Model found (0.08s): [-4, -2876]
-08:02:01 Model found (0.09s, +0.00s): [-4, -2893]
-08:02:01 Model found (0.09s, +0.01s): [-4, -3447]
-08:02:01 Solving done: OPTIMUM FOUND (0.04s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.05s)
+14:34:43 Solving...
+14:34:43 Model found (0.27s): [-4, -2893]
+14:34:43 Model found (0.48s, +0.21s): [-4, -3447]
+14:34:43 Solving done: OPTIMUM FOUND (0.44s)
 % Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/x3c/SimpleApp.exe.results
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 2
 Optimization: -4 -3447
 
 % Equivalence classes (261 classes, 282 entities):
@@ -223,7 +222,7 @@ Optimization: -4 -3447
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:01 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+14:34:43 Writing results to examples/ooa/x3c/SimpleApp.exe.results
 
 % Stats:
 %   atoms: 9160.0
@@ -231,17 +230,17 @@ Optimization: -4 -3447
 %   rules: 10390.0
 %   variables: 2756.0
 %   constraints: 148.0
-%   choices: 1697.0
+%   choices: 1364.0
 %   conflicts: 10.0
-%   models: 3.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-4.0, -3447.0]
 %   lower_bound: [-4.0, -3447.0]
-%   total_time: 0.10600018501281738
-%   ground_time: 0.04922721399998409
-%   time_to_first_model: 0.08425343099952443
+%   total_time: 0.49955296516418457
+%   ground_time: 0.048431732997414656
+%   time_to_first_model: 0.2738075709930854
 %   max_rss_bytes: 33816576
-%   solve_time: 0.011356115341186523
+%   solve_time: 0.40630292892456055
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)

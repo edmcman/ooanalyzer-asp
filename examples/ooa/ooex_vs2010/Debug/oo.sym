@@ -1,41 +1,40 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.12s)
-08:02:01 Solving...
-08:02:01 Model found (0.31s): [-28, -3163]
-08:02:01 Model found (0.32s, +0.01s): [-28, -3180]
-08:02:01 Model found (0.33s, +0.01s): [-28, -3188]
-08:02:01 Model found (0.33s, +0.01s): [-28, -3190]
-08:02:01 Model found (0.34s, +0.01s): [-28, -3198]
-08:02:01 Model found (0.34s, +0.01s): [-28, -3206]
-08:02:01 Model found (0.36s, +0.01s): [-28, -3207]
-08:02:01 Model found (0.36s, +0.01s): [-28, -3215]
-08:02:01 Model found (0.37s, +0.01s): [-28, -3223]
-08:02:01 Model found (0.38s, +0.01s): [-28, -3224]
-08:02:01 Model found (0.39s, +0.01s): [-28, -3231]
-08:02:01 Model found (0.40s, +0.01s): [-28, -3241]
-08:02:01 Model found (0.42s, +0.01s): [-28, -3248]
-08:02:01 Model found (0.43s, +0.02s): [-28, -3258]
-08:02:01 Model found (0.44s, +0.01s): [-28, -3265]
-08:02:01 Model found (0.45s, +0.01s): [-28, -3275]
-08:02:01 Model found (0.46s, +0.01s): [-28, -3285]
-08:02:01 Model found (0.47s, +0.01s): [-28, -3295]
-08:02:02 Model found (0.48s, +0.01s): [-28, -3305]
-08:02:02 Model found (0.49s, +0.01s): [-28, -3315]
-08:02:02 Model found (0.50s, +0.01s): [-28, -3322]
-08:02:02 Model found (0.51s, +0.01s): [-28, -3332]
-08:02:02 Model found (0.52s, +0.01s): [-28, -3339]
-08:02:02 Model found (0.53s, +0.01s): [-28, -3349]
-08:02:02 Model found (0.54s, +0.01s): [-28, -3356]
-08:02:02 Model found (0.55s, +0.01s): [-28, -3366]
-08:02:02 Model found (0.56s, +0.02s): [-28, -3373]
-08:02:02 Model found (0.57s, +0.01s): [-28, -3376]
-08:02:02 Model found (0.58s, +0.01s): [-28, -3383]
-08:02:02 Model found (0.59s, +0.01s): [-28, -3393]
-08:02:02 Solving done: OPTIMUM FOUND (0.47s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.12s)
+14:34:43 Solving...
+14:34:44 Model found (0.93s): [-28, -3163]
+14:34:45 Model found (2.64s, +1.71s): [-28, -3180]
+14:34:46 Model found (3.22s, +0.58s): [-28, -3197]
+14:34:46 Model found (3.38s, +0.16s): [-28, -3205]
+14:34:46 Model found (3.56s, +0.18s): [-28, -3207]
+14:34:46 Model found (3.71s, +0.15s): [-28, -3215]
+14:34:47 Model found (3.85s, +0.14s): [-28, -3223]
+14:34:47 Model found (4.09s, +0.24s): [-28, -3224]
+14:34:47 Model found (4.24s, +0.14s): [-28, -3232]
+14:34:47 Model found (4.39s, +0.16s): [-28, -3240]
+14:34:47 Model found (4.57s, +0.18s): [-28, -3241]
+14:34:47 Model found (4.73s, +0.17s): [-28, -3248]
+14:34:47 Model found (4.75s, +0.02s): [-28, -3249]
+14:34:48 Model found (4.97s, +0.21s): [-28, -3258]
+14:34:48 Model found (5.12s, +0.15s): [-28, -3265]
+14:34:48 Model found (5.22s, +0.10s): [-28, -3275]
+14:34:48 Model found (5.36s, +0.14s): [-28, -3282]
+14:34:48 Model found (5.57s, +0.21s): [-28, -3292]
+14:34:48 Model found (5.74s, +0.17s): [-28, -3302]
+14:34:49 Model found (5.96s, +0.22s): [-28, -3312]
+14:34:49 Model found (6.19s, +0.23s): [-28, -3322]
+14:34:49 Model found (6.41s, +0.22s): [-28, -3332]
+14:34:49 Model found (6.57s, +0.16s): [-28, -3339]
+14:34:49 Model found (6.74s, +0.17s): [-28, -3349]
+14:34:50 Model found (6.89s, +0.15s): [-28, -3356]
+14:34:50 Model found (7.12s, +0.23s): [-28, -3366]
+14:34:50 Model found (7.33s, +0.21s): [-28, -3373]
+14:34:50 Model found (7.55s, +0.23s): [-28, -3383]
+14:34:51 Model found (8.22s, +0.66s): [-28, -3393]
+14:34:51 Solving done: OPTIMUM FOUND (8.10s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/oo.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/oo.results
 OPTIMUM FOUND
 
-Answer: 30
+Answer: 29
 Optimization: -28 -3393
 
 % Equivalence classes (269 classes, 301 entities):
@@ -263,7 +262,7 @@ Optimization: -28 -3393
 %     ~embeddedObject: 4/4
 %       objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417844,const Cls1::`vftable'@0x417890,0) objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417844,const Cls2::`vftable'@0x4178ac,12)
 %       objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417854,const Cls1::`vftable'@0x417890,0) objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417854,const Cls2::`vftable'@0x4178ac,12)
-08:02:02 Writing results to examples/ooa/ooex_vs2010/Debug/oo.results
+14:34:51 Writing results to examples/ooa/ooex_vs2010/Debug/oo.results
 
 % Stats:
 %   atoms: 22593.0
@@ -271,17 +270,17 @@ Optimization: -28 -3393
 %   rules: 25896.0
 %   variables: 8873.0
 %   constraints: 124.0
-%   choices: 11089.0
-%   conflicts: 202.0
-%   models: 30.0
+%   choices: 7210.0
+%   conflicts: 165.0
+%   models: 29.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -3393.0]
 %   lower_bound: [-28.0, -3393.0]
-%   total_time: 0.6553630828857422
-%   ground_time: 0.12391457100056869
-%   time_to_first_model: 0.31382513499920606
+%   total_time: 8.234352111816406
+%   ground_time: 0.12080660900392104
+%   time_to_first_model: 0.9318409429979511
 %   max_rss_bytes: 51904512
-%   solve_time: 0.28914594650268555
+%   solve_time: 7.916926145553589
 classCallsMethod(Cls3::Cls3(void)@0x411830,Cls1::Cls1(void)@0x411a40)
 classCallsMethod(const Cls1::`vftable'@0x417890,virtual Cls1::func1(void)@0x411a90)
 classCallsMethod(const Cls2::`vftable'@0x4178ac,virtual Cls2::func3(void)@0x411b60)

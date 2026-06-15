@@ -1,23 +1,18 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.11s)
-08:02:01 Solving...
-08:02:01 Model found (0.25s): [-40, -2492]
-08:02:01 Model found (0.26s, +0.01s): [-40, -2502]
-08:02:01 Model found (0.26s, +0.01s): [-40, -2512]
-08:02:01 Model found (0.27s, +0.01s): [-40, -2522]
-08:02:01 Model found (0.28s, +0.01s): [-40, -2532]
-08:02:01 Model found (0.29s, +0.01s): [-40, -2542]
-08:02:01 Model found (0.29s, +0.01s): [-40, -2549]
-08:02:01 Model found (0.30s, +0.00s): [-40, -2559]
-08:02:01 Model found (0.30s, +0.01s): [-40, -2576]
-08:02:01 Model found (0.31s, +0.01s): [-40, -2593]
-08:02:01 Model found (0.31s, +0.01s): [-40, -2610]
-08:02:02 Model found (0.91s, +0.60s): [-40, -2624]
-08:02:02 Solving done: OPTIMUM FOUND (0.80s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.16s)
+14:34:43 Solving...
+14:34:44 Model found (1.72s): [-40, -2492]
+14:34:45 Model found (2.21s, +0.49s): [-40, -2493]
+14:34:45 Model found (2.42s, +0.21s): [-40, -2502]
+14:34:45 Model found (2.44s, +0.02s): [-40, -2584]
+14:34:46 Model found (2.75s, +0.31s): [-40, -2610]
+14:35:00 Model found (16.97s, +14.21s): [-40, -2616]
+14:35:00 Model found (17.56s, +0.59s): [-40, -2624]
+14:35:00 Solving done: OPTIMUM FOUND (17.40s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
 OPTIMUM FOUND
 
-Answer: 12
+Answer: 7
 Optimization: -40 -2624
 
 % Equivalence classes (212 classes, 233 entities):
@@ -222,7 +217,7 @@ Optimization: -40 -2624
 %       objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 %       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 %       objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
-08:02:02 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+14:35:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
 
 % Stats:
 %   atoms: 10384.0
@@ -230,17 +225,17 @@ Optimization: -40 -2624
 %   rules: 22147.0
 %   variables: 8578.0
 %   constraints: 395.0
-%   choices: 54845.0
-%   conflicts: 1091.0
-%   models: 12.0
+%   choices: 16985.0
+%   conflicts: 673.0
+%   models: 7.0
 %   optimal_models: 1.0
 %   final_cost: [-40.0, -2624.0]
 %   lower_bound: [-40.0, -2624.0]
-%   total_time: 0.9698870182037354
-%   ground_time: 0.1143747660007648
-%   time_to_first_model: 0.2510343810008635
-%   max_rss_bytes: 44826624
-%   solve_time: 0.6699860095977783
+%   total_time: 17.568197011947632
+%   ground_time: 0.16289270100241993
+%   time_to_first_model: 1.7190499400021508
+%   max_rss_bytes: 43253760
+%   solve_time: 17.154335975646973
 classCallsMethod(D::D(void)@0x4115f0,B::B(void)@0x411760)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411720)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411720)

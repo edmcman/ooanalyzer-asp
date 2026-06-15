@@ -1,12 +1,12 @@
-08:02:01 Grounding...
-08:02:01 Grounding done (0.03s)
-08:02:01 Solving...
-08:02:01 Model found (0.04s): [-2064]
-08:02:01 Model found (0.04s, +0.00s): [-2081]
-08:02:01 Model found (0.04s, +0.00s): [-2098]
-08:02:01 Model found (0.04s, +0.00s): [-2115]
-08:02:01 Model found (0.05s, +0.00s): [-2132]
-08:02:01 Solving done: OPTIMUM FOUND (0.02s)
+14:34:43 Grounding...
+14:34:43 Grounding done (0.03s)
+14:34:43 Solving...
+14:34:43 Model found (0.05s): [-2064]
+14:34:43 Model found (0.06s, +0.01s): [-2081]
+14:34:43 Model found (0.07s, +0.00s): [-2098]
+14:34:43 Model found (0.11s, +0.04s): [-2115]
+14:34:43 Model found (0.15s, +0.04s): [-2132]
+14:34:43 Solving done: OPTIMUM FOUND (0.12s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex3.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex3.results
 OPTIMUM FOUND
 
@@ -150,7 +150,7 @@ Optimization: -2132
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:01 Writing results to examples/ooa/ooex_vs2010/Debug/ooex3.results
+14:34:43 Writing results to examples/ooa/ooex_vs2010/Debug/ooex3.results
 
 % Stats:
 %   atoms: 5233.0
@@ -158,17 +158,17 @@ Optimization: -2132
 %   rules: 5679.0
 %   variables: 699.0
 %   constraints: 17.0
-%   choices: 1908.0
-%   conflicts: 18.0
+%   choices: 2045.0
+%   conflicts: 21.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-2132.0]
 %   lower_bound: [-2132.0]
-%   total_time: 0.10112500190734863
-%   ground_time: 0.028001465998386266
-%   time_to_first_model: 0.03878355899905728
-%   max_rss_bytes: 29097984
-%   solve_time: 0.008327960968017578
+%   total_time: 0.1600170135498047
+%   ground_time: 0.027835929999127984
+%   time_to_first_model: 0.05029117199592292
+%   max_rss_bytes: 29884416
+%   solve_time: 0.11314702033996582
 classCallsMethod(Derived::Derived(void)@0x411540,Base::Base(void)@0x4115f0)
 classCallsMethod(Derived::Derived(void)@0x411540,int Base::func3(void)@0x4114f0)
 classRelatedMethod(Base2::Base2(void)@0x411650,int Base2::func3(void)@0x4116b0)
