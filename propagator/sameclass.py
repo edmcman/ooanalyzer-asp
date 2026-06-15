@@ -214,8 +214,9 @@ class _ThreadState:
 
 
 class SameClassPropagator:
-    def __init__(self, foundedness_check=False):
+    def __init__(self, foundedness_check=False, consistency_backstop=False):
         self._foundedness_check = foundedness_check
+        self._consistency_backstop = consistency_backstop
         # Collected by observer callbacks during grounding (before init()).
         # _obs_rules: (choice, heads_tuple, pos_body_tuple) — positive body lits only.
         # _obs_unconditional: prog_lits derivable with no positive-body conditions.
@@ -262,11 +263,15 @@ class SameClassPropagator:
     # ── PropagateInit ────────────────────────────────────────────────────────
 
     def init(self, init):
+        if self._consistency_backstop or self._foundedness_check:
+            init.check_mode = clingo.PropagatorCheckMode.Both
+
         # solver_lit → [(a_key, b_key)]
         #
         # Multiple ground atoms can share one solver literal. In particular,
         # facts are mapped to solver literal 1. Do not collapse these pairs.
         self._merge_lit_to_pairs = {}
+        self._merge_lits = set()
         # (x_key, y_key) → solver_lit
         self._sc_to_lit = {}
         # solver_lit → (x_key, y_key) — for watching positive theory atoms
@@ -292,6 +297,7 @@ class SameClassPropagator:
             prog_lit = sym_atom.literal
             slit = init.solver_literal(prog_lit)
             self._merge_lit_to_pairs.setdefault(slit, []).append((a, b))
+            self._merge_lits.add(slit)
             self._merge_proglit_to_pair[prog_lit] = (a, b)
             self._merge_proglit_to_slit[prog_lit] = slit
             self._merge_by_entity.setdefault(a, []).append((b, slit))
@@ -521,6 +527,28 @@ class SameClassPropagator:
             state.merge_trail = []
             state.initialized = True
 
+    def _current_assignment_uf(self, assignment):
+        uf = _UF()
+        for slit, pairs in self._merge_lit_to_pairs.items():
+            if assignment.is_true(slit):
+                for a, b in pairs:
+                    uf.union(a, b, slit)
+        return uf
+
+    def _merge_assignment_clause(self, assignment):
+        clause = []
+        for slit in self._merge_lits:
+            if assignment.is_true(slit):
+                clause.append(-slit)
+            elif assignment.is_false(slit):
+                clause.append(slit)
+        return clause
+
+    @staticmethod
+    def _assignment_is_total(assignment):
+        is_total = getattr(assignment, "is_total", None)
+        return is_total() if callable(is_total) else bool(is_total)
+
     def _assert_same(self, state, ctl, x, y, slit):
         """Add permanent reason clause: reason_lits → sameClass(x,y)."""
         _, reason = state.uf.same_with_reason(x, y)
@@ -572,6 +600,63 @@ class SameClassPropagator:
         _dprint(f"[awc-false] now_alit={now_alit} class={class_} awc={awc_slit} "
                 f"reason={sorted(reason_class)} cut={sorted(cut_class)}")
         return ctl.add_clause(clause, tag=False)
+
+    def _check_consistency_backstop(self, ctl):
+        """Rebuild the merge graph and block completed inconsistent assignments.
+
+        The eager propagator keeps precise path/cut clauses for normal pruning.
+        This backstop is deliberately coarser: once every mergeClasses literal is
+        assigned, any theory atom contradicted by the rebuilt graph blocks the
+        current merge assignment.  This catches missed eager conflicts without
+        replacing the smaller eager explanations.
+        """
+        assignment = ctl.assignment
+        merges_total = all(
+            assignment.is_true(slit) or assignment.is_false(slit)
+            for slit in self._merge_lits
+        )
+        if not merges_total:
+            return False
+
+        uf = self._current_assignment_uf(assignment)
+        merge_clause = None
+
+        def get_merge_clause():
+            nonlocal merge_clause
+            if merge_clause is None:
+                merge_clause = self._merge_assignment_clause(assignment)
+            return list(merge_clause)
+
+        for (x, y), slit in self._sc_to_lit.items():
+            is_same = uf.same(x, y)
+            if is_same and not assignment.is_true(slit):
+                same, reason = uf.same_with_reason(x, y)
+                assert same
+                clause = [-r for r in reason] + [slit]
+                _dprint(f"[backstop] &sameClass({x},{y}) → true via {reason}")
+                if not ctl.add_clause(clause, tag=False):
+                    return True
+            elif not is_same and assignment.is_true(slit):
+                clause = get_merge_clause() + [-slit]
+                _dprint(f"[backstop] &sameClass({x},{y}) → false")
+                if not ctl.add_clause(clause, tag=False):
+                    return True
+
+        for (vftable, class_), awc_slit in self._awc_to_slit.items():
+            if not assignment.is_true(awc_slit):
+                continue
+            for method, now_alit in self._now_writers_by_vft.get(vftable, ()):
+                if assignment.is_true(now_alit) and not uf.same(method, class_):
+                    clause = get_merge_clause() + [-now_alit, -awc_slit]
+                    _dprint(
+                        f"[backstop] &allWritersInClass({vftable},{class_}) → false "
+                        f"(writer {method})"
+                    )
+                    if not ctl.add_clause(clause, tag=False):
+                        return True
+                    break
+
+        return False
 
     def propagate(self, ctl, changes):
         asgn = ctl.assignment
@@ -679,7 +764,10 @@ class SameClassPropagator:
                                                     class_, awc_slit, cache):
                     return
 
-        if self._foundedness_check:
+        if self._consistency_backstop and self._check_consistency_backstop(ctl):
+            return
+
+        if self._foundedness_check and self._assignment_is_total(asgn):
             self._check_foundedness(ctl)
 
     def _check_foundedness(self, ctl):

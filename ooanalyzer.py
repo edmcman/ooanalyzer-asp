@@ -168,6 +168,9 @@ def parse_args():
     p.add_argument("--sameclass-mode", choices=("propagate", "lazy-check"), default="propagate",
                    help=("sameClass theory handling mode: normal eager propagator, or a "
                          "simple check-time consistency mode for diagnostics"))
+    p.add_argument("--sameclass-backstop", action="store_true",
+                   help=("enable the total-assignment consistency backstop in normal "
+                         "sameClass propagation"))
     p.add_argument("--diagnose-vftable-objective", action="store_true",
                    help=("print selected vftable sizes/gaps and largest unselected "
                          "vftable candidates for each model"))
@@ -331,7 +334,10 @@ def main():
             log.info("--foundedness-check is ignored by --sameclass-mode=lazy-check")
         prop = LazySameClassConsistencyPropagator()
     else:
-        prop = SameClassPropagator(foundedness_check=args.foundedness_check)
+        prop = SameClassPropagator(
+            foundedness_check=args.foundedness_check,
+            consistency_backstop=args.sameclass_backstop,
+        )
     profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
     if "*" in profile_preds:
         profile_preds = None
