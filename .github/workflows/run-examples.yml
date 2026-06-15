@@ -18,7 +18,7 @@ jobs:
       - name: Run hand-written examples
         run: |
           mkdir -p outputs
-          for f in examples/*.lp; do
+          for f in examples/manual/*.lp; do
             name=$(basename "$f" .lp)
             echo "=== Running $f ===" > "outputs/${name}.txt"
             rc=0
