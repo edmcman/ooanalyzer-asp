@@ -1,10 +1,10 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.03s)
-14:34:43 Solving...
-14:34:43 Model found (0.04s): [-2032]
-14:34:43 Model found (0.05s, +0.01s): [-2049]
-14:34:43 Solving done: OPTIMUM FOUND (0.02s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
+09:29:36 Grounding...
+09:29:37 Grounding done (0.03s)
+09:29:37 Solving...
+09:29:37 Model found (0.04s): [-2032]
+09:29:37 Model found (0.04s, +0.00s): [-2049]
+09:29:37 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
 OPTIMUM FOUND
 
 Answer: 2
@@ -143,7 +143,7 @@ Optimization: -2049
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-14:34:43 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
+09:29:37 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
 
 % Stats:
 %   atoms: 5172.0
@@ -151,17 +151,17 @@ Optimization: -2049
 %   rules: 5596.0
 %   variables: 644.0
 %   constraints: 6.0
-%   choices: 803.0
+%   choices: 10.0
 %   conflicts: 2.0
 %   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2049.0]
 %   lower_bound: [-2049.0]
-%   total_time: 0.06126284599304199
-%   ground_time: 0.027484509992063977
-%   time_to_first_model: 0.04152964799141046
+%   total_time: 0.05090188980102539
+%   ground_time: 0.027396568999392912
+%   time_to_first_model: 0.03833042300539091
 %   max_rss_bytes: 29097984
-%   solve_time: 0.015167951583862305
+%   solve_time: 0.005221843719482422
 classCallsMethod(D::D(void)@0x411590,B::B(void)@0x4116a0)
 classRelatedMethod(B::B(void)@0x4116a0,D::D(void)@0x411590)
 classRelatedMethod(D::D(void)@0x411590,B::B(void)@0x4116a0)

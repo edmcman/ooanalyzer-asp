@@ -1,10 +1,10 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.04s)
-14:34:43 Solving...
-14:34:43 Model found (0.08s): [-2216]
-14:34:43 Model found (0.09s, +0.01s): [-2233]
-14:34:43 Solving done: OPTIMUM FOUND (0.05s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
+09:29:36 Grounding...
+09:29:36 Grounding done (0.04s)
+09:29:36 Solving...
+09:29:36 Model found (0.07s): [-2216]
+09:29:36 Model found (0.08s, +0.00s): [-2233]
+09:29:36 Solving done: OPTIMUM FOUND (0.04s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
 OPTIMUM FOUND
 
 Answer: 2
@@ -152,7 +152,7 @@ Optimization: -2233
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-14:34:43 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
+09:29:36 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
 
 % Stats:
 %   atoms: 7921.0
@@ -160,17 +160,17 @@ Optimization: -2233
 %   rules: 8371.0
 %   variables: 1531.0
 %   constraints: 2.0
-%   choices: 869.0
+%   choices: 4.0
 %   conflicts: 2.0
 %   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2233.0]
 %   lower_bound: [-2233.0]
-%   total_time: 0.10494685173034668
-%   ground_time: 0.041329629995743744
-%   time_to_first_model: 0.08297268499154598
-%   max_rss_bytes: 31457280
-%   solve_time: 0.018553972244262695
+%   total_time: 0.0884389877319336
+%   ground_time: 0.039345558994682506
+%   time_to_first_model: 0.07481444400036708
+%   max_rss_bytes: 32243712
+%   solve_time: 0.006184101104736328
 classRelatedMethod(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
 classRelatedMethod(int ObjectTest::add(void)@0x411740,ObjectTest::ObjectTest(int, int)@0x4116f0)
 classSizeGTE($LN6_1@0x412df5,0)

@@ -1,8 +1,8 @@
-14:34:50 Grounding...
-14:35:18 Grounding done (27.99s)
-14:35:18 Solving...
-14:40:32 Solving done: TIME LIMIT REACHED (314.01s)
-% Command: ooanalyzer.py examples/ooa/mysql/mysql_config_editor.exe.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/mysql/mysql_config_editor.exe.results
+09:29:38 Grounding...
+09:30:04 Grounding done (26.44s)
+09:30:04 Solving...
+10:30:20 Solving done: TIME LIMIT REACHED (3615.51s)
+% Command: ooanalyzer.py examples/ooa/mysql/mysql_config_editor.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/mysql/mysql_config_editor.exe.results
 % TIME LIMIT REACHED
 
 % Stats:
@@ -11,13 +11,13 @@
 %   rules: 3337325.0
 %   variables: 2883083.0
 %   constraints: 91062.0
-%   choices: 1391.0
-%   conflicts: 0.0
+%   choices: 42130.0
+%   conflicts: 6.0
 %   models: 0.0
 %   optimal_models: 0.0
 %   final_cost: [inf, inf]
 %   lower_bound: [-1920.0, -101845.0]
-%   total_time: 342.2324230670929
-%   ground_time: 27.98896516500099
-%   max_rss_bytes: 4141928448
-%   solve_time: 272.10867190361023
+%   total_time: 3642.1860790252686
+%   ground_time: 26.441803114983486
+%   max_rss_bytes: 4052271104
+%   solve_time: 3573.6121900081635

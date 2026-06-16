@@ -1,31 +1,22 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.06s)
-14:34:43 Solving...
-14:34:43 Model found (0.49s): [-52, -2616]
-14:34:44 Model found (1.22s, +0.73s): [-52, -2633]
-14:34:45 Model found (1.76s, +0.54s): [-52, -2643]
-14:34:45 Model found (1.94s, +0.18s): [-52, -2653]
-14:34:45 Model found (2.04s, +0.10s): [-52, -2663]
-14:34:45 Model found (2.15s, +0.11s): [-52, -2673]
-14:34:45 Model found (2.27s, +0.12s): [-52, -2683]
-14:34:45 Model found (2.40s, +0.13s): [-52, -2693]
-14:34:45 Model found (2.58s, +0.19s): [-52, -2697]
-14:34:45 Model found (2.65s, +0.07s): [-52, -2700]
-14:34:46 Model found (2.77s, +0.11s): [-52, -2707]
-14:34:46 Model found (2.86s, +0.09s): [-52, -2717]
-14:34:46 Model found (2.96s, +0.10s): [-52, -2727]
-14:34:46 Model found (3.07s, +0.11s): [-52, -2734]
-14:34:46 Model found (3.16s, +0.09s): [-52, -2744]
-14:34:46 Model found (3.26s, +0.10s): [-52, -2751]
-14:34:46 Model found (3.35s, +0.09s): [-52, -2761]
-14:34:46 Model found (3.45s, +0.09s): [-52, -2771]
-14:34:46 Model found (3.53s, +0.08s): [-52, -2778]
-14:34:46 Model found (3.65s, +0.12s): [-52, -2788]
-14:34:49 Solving done: OPTIMUM FOUND (6.05s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex5.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex5.results
+09:29:36 Grounding...
+09:29:37 Grounding done (0.06s)
+09:29:37 Solving...
+09:29:37 Model found (0.18s): [-52, -2548]
+09:29:37 Lower bound: [-52, -2852]  upper: [-52, -2548]  gap: [0, 304] (0.35s)
+09:29:37 Lower bound: [-52, -2842]  upper: [-52, -2548]  gap: [0, 294] (0.40s)
+09:29:37 Model found (0.57s, +0.40s): [-52, -2638]
+09:29:37 Lower bound: [-52, -2824]  upper: [-52, -2638]  gap: [0, 186] (0.71s)
+09:29:37 Lower bound: [-52, -2815]  upper: [-52, -2638]  gap: [0, 177] (0.71s)
+09:29:37 Lower bound: [-52, -2806]  upper: [-52, -2638]  gap: [0, 168] (0.72s)
+09:29:37 Model found (0.89s, +0.31s): [-52, -2737]
+09:29:37 Model found (0.97s, +0.08s): [-52, -2788]
+09:29:37 Lower bound: [-52, -2790]  upper: [-52, -2788]  gap: [0, 2] (1.02s)
+09:29:38 Lower bound: [-52, -2789]  upper: [-52, -2788]  gap: [0, 1] (1.08s)
+09:29:38 Solving done: OPTIMUM FOUND (1.02s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex5.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex5.results
 OPTIMUM FOUND
 
-Answer: 20
+Answer: 4
 Optimization: -52 -2788
 
 % Equivalence classes (216 classes, 236 entities):
@@ -166,12 +157,12 @@ Optimization: -52 -2788
 %       strongMergeReward(thunk:virtual int Derived::func4(void)@0x41100a,Derived::Derived(void)@0x4115b0) strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411c00)
 %       strongMergeReward(thunk:virtual int Base::func2(void)@0x411104,Derived::Derived(void)@0x4115b0) strongMergeReward(thunk:virtual int Derived::func3(void)@0x41113b,Derived::Derived(void)@0x4115b0)
 %       strongMergeReward(thunk:virtual int Base2::func2(void)@0x411154,Derived::Derived(void)@0x4115b0) strongMergeReward(thunk:virtual int Base2::func1(void)@0x411190,Derived::Derived(void)@0x4115b0)
-%       strongMergeReward(thunk:virtual int Base::func1(void)@0x4111fe,Derived::Derived(void)@0x4115b0)
+%       strongMergeReward(thunk:virtual int Base::func1(void)@0x4111fe,Base::Base(void)@0x411680)
 %     ~strongMergeReward: 4/11
 %       strongMergeCandidate(thunk:virtual int Base::func2(void)@0x411104,Base::Base(void)@0x411680)
 %       strongMergeCandidate(thunk:virtual int Base2::func2(void)@0x411154,Base2::Base2(void)@0x4117b0)
 %       strongMergeCandidate(thunk:virtual int Base2::func1(void)@0x411190,Base2::Base2(void)@0x4117b0)
-%       strongMergeCandidate(thunk:virtual int Base::func1(void)@0x4111fe,Base::Base(void)@0x411680)
+%       strongMergeCandidate(thunk:virtual int Base::func1(void)@0x4111fe,Derived::Derived(void)@0x4115b0)
 %     weakMergeReward: 10/16
 %       weakMergeReward(Base::Base(void)@0x411680,virtual int Base::func2(void)@0x411750) weakMergeReward(virtual int Base::func1(void)@0x4116f0,const Base::`vftable'@0x416768)
 %       weakMergeReward(virtual int Base::func2(void)@0x411750,const Base::`vftable'@0x416768) weakMergeReward(Base2::Base2(void)@0x4117b0,virtual int Base2::func1(void)@0x411820)
@@ -209,7 +200,7 @@ Optimization: -52 -2788
 %     ~embeddedObject: 4/4
 %       objectInObject(const Derived::`vftable'{for `Base2'}@0x416740,const Base::`vftable'@0x416768,0) objectInObject(const Derived::`vftable'{for `Base2'}@0x416740,const Base2::`vftable'@0x41677c,16)
 %       objectInObject(const Derived::`vftable'{for `Base'}@0x416754,const Base::`vftable'@0x416768,0) objectInObject(const Derived::`vftable'{for `Base'}@0x416754,const Base2::`vftable'@0x41677c,16)
-14:34:49 Writing results to examples/ooa/ooex_vs2010/Debug/ooex5.results
+09:29:38 Writing results to examples/ooa/ooex_vs2010/Debug/ooex5.results
 
 % Stats:
 %   atoms: 8796.0
@@ -217,17 +208,17 @@ Optimization: -52 -2788
 %   rules: 11176.0
 %   variables: 3854.0
 %   constraints: 154.0
-%   choices: 8927.0
-%   conflicts: 282.0
-%   models: 20.0
+%   choices: 1937.0
+%   conflicts: 73.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-52.0, -2788.0]
 %   lower_bound: [-52.0, -2788.0]
-%   total_time: 6.11759614944458
-%   ground_time: 0.05704207099915948
-%   time_to_first_model: 0.4868209330015816
-%   max_rss_bytes: 33816576
-%   solve_time: 5.9964540004730225
+%   total_time: 1.085585117340088
+%   ground_time: 0.057219415000872687
+%   time_to_first_model: 0.17716335400473326
+%   max_rss_bytes: 34603008
+%   solve_time: 0.9635310173034668
 classCallsMethod(Derived::Derived(void)@0x4115b0,Base::Base(void)@0x411680)
 classCallsMethod(Derived::Derived(void)@0x4115b0,virtual int Base::func2(void)@0x411750)
 classCallsMethod(const Base2::`vftable'@0x41677c,virtual int Base2::func1(void)@0x411820)
@@ -585,7 +576,7 @@ mergeClasses(const type_info::`vftable'@0x416790,type_info::type_info(class type
 mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411c00)
 mergeClasses(thunk:virtual int Base2::func1(void)@0x411190,Derived::Derived(void)@0x4115b0)
 mergeClasses(thunk:virtual int Base2::func2(void)@0x411154,Derived::Derived(void)@0x4115b0)
-mergeClasses(thunk:virtual int Base::func1(void)@0x4111fe,Derived::Derived(void)@0x4115b0)
+mergeClasses(thunk:virtual int Base::func1(void)@0x4111fe,Base::Base(void)@0x411680)
 mergeClasses(thunk:virtual int Base::func2(void)@0x411104,Derived::Derived(void)@0x4115b0)
 mergeClasses(thunk:virtual int Derived::func3(void)@0x41113b,Derived::Derived(void)@0x4115b0)
 mergeClasses(thunk:virtual int Derived::func4(void)@0x41100a,Derived::Derived(void)@0x4115b0)
@@ -870,7 +861,6 @@ vftableSizeTotal(52)
 %   {* __cdecl operator new(unsigned int)@0x41196c}
 %   {ArrayUnwindFilter@0x412ea0}
 %   {Base2::Base2(void)@0x4117b0, virtual int Base2::func1(void)@0x411820, virtual int Base2::func2(void)@0x411880, const Base2::`vftable'@0x41677c}
-%   {Base::Base(void)@0x411680, virtual int Base::func1(void)@0x4116f0, virtual int Base::func2(void)@0x411750, const Base::`vftable'@0x416768}
 %   {DebuggerProbe@0x412630}
 %   {DebuggerRuntime@0x4126e0}
 %   {GetPdbDll@0x413980}
@@ -1077,7 +1067,8 @@ vftableSizeTotal(52)
 %   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411140}
 %   {thunk:type_info::type_info(class type_info const &)@0x4111db}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8, type_info::type_info(class type_info const &)@0x411c00, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c30, const type_info::`vftable'@0x416790, type_info::_type_info_dtor_internal_method(void)@0x41a278}
-%   {thunk:virtual int Derived::func4(void)@0x41100a, thunk:virtual int Base::func2(void)@0x411104, thunk:virtual int Derived::func3(void)@0x41113b, thunk:virtual int Base2::func2(void)@0x411154, thunk:virtual int Base2::func1(void)@0x411190, thunk:virtual int Base::func1(void)@0x4111fe, Derived::Derived(void)@0x4115b0, virtual int Derived::func4(void)@0x4118e0, virtual int Derived::func3(void)@0x411920, const Derived::`vftable'{for `Base2'}@0x416740, const Derived::`vftable'{for `Base'}@0x416754}
+%   {thunk:virtual int Base::func1(void)@0x4111fe, Base::Base(void)@0x411680, virtual int Base::func1(void)@0x4116f0, virtual int Base::func2(void)@0x411750, const Base::`vftable'@0x416768}
+%   {thunk:virtual int Derived::func4(void)@0x41100a, thunk:virtual int Base::func2(void)@0x411104, thunk:virtual int Derived::func3(void)@0x41113b, thunk:virtual int Base2::func2(void)@0x411154, thunk:virtual int Base2::func1(void)@0x411190, Derived::Derived(void)@0x4115b0, virtual int Derived::func4(void)@0x4118e0, virtual int Derived::func3(void)@0x411920, const Derived::`vftable'{for `Base2'}@0x416740, const Derived::`vftable'{for `Base'}@0x416754}
 %   {thunk:virtual type_info::~type_info(void)@0x411050}
 %   {thunk:virtual type_info::~type_info(void)@0x41109b}
 %   {virtual type_info::~type_info(void)@0x413bec}

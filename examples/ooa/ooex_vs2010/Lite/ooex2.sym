@@ -1,48 +1,20 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.05s)
-14:34:43 Solving...
-14:34:43 Model found (0.63s): [-20, -1828]
-14:34:44 Model found (0.94s, +0.31s): [-20, -1836]
-14:34:44 Model found (1.29s, +0.36s): [-20, -1845]
-14:34:44 Model found (1.38s, +0.08s): [-20, -1853]
-14:34:44 Model found (1.63s, +0.25s): [-20, -1939]
-14:34:45 Model found (1.78s, +0.15s): [-20, -1947]
-14:34:45 Model found (1.99s, +0.20s): [-20, -1956]
-14:34:45 Model found (2.10s, +0.11s): [-20, -1964]
-14:34:45 Model found (2.21s, +0.11s): [-20, -1966]
-14:34:45 Model found (2.33s, +0.12s): [-20, -1974]
-14:34:45 Model found (2.46s, +0.13s): [-20, -1976]
-14:34:45 Model found (2.57s, +0.11s): [-20, -1984]
-14:34:46 Model found (2.67s, +0.10s): [-20, -1990]
-14:34:46 Model found (2.68s, +0.01s): [-20, -1991]
-14:34:46 Model found (2.73s, +0.05s): [-20, -2000]
-14:34:46 Model found (2.79s, +0.06s): [-20, -2010]
-14:34:46 Model found (2.87s, +0.08s): [-20, -2017]
-14:34:46 Model found (2.94s, +0.07s): [-20, -2025]
-14:34:46 Model found (3.38s, +0.44s): [-20, -2032]
-14:34:46 Model found (3.50s, +0.12s): [-20, -2042]
-14:34:46 Model found (3.59s, +0.09s): [-20, -2052]
-14:34:47 Model found (3.76s, +0.17s): [-20, -2055]
-14:34:47 Model found (3.77s, +0.01s): [-20, -2059]
-14:34:47 Model found (3.92s, +0.15s): [-20, -2069]
-14:34:47 Model found (4.07s, +0.15s): [-20, -2072]
-14:34:47 Model found (4.25s, +0.18s): [-20, -2079]
-14:34:47 Model found (4.40s, +0.15s): [-20, -2087]
-14:34:47 Model found (4.47s, +0.07s): [-20, -2095]
-14:34:47 Model found (4.61s, +0.14s): [-20, -2102]
-14:34:48 Model found (4.75s, +0.15s): [-20, -2104]
-14:34:48 Model found (4.89s, +0.14s): [-20, -2112]
-14:34:48 Model found (5.09s, +0.20s): [-20, -2119]
-14:34:48 Model found (5.59s, +0.51s): [-20, -2129]
-14:34:50 Model found (7.03s, +1.44s): [-20, -2135]
-14:34:50 Model found (7.19s, +0.16s): [-20, -2138]
-14:34:50 Model found (7.29s, +0.11s): [-20, -2145]
-14:34:50 Model found (7.45s, +0.16s): [-20, -2155]
-14:34:51 Solving done: OPTIMUM FOUND (7.92s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex2.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex2.results
+09:29:37 Grounding...
+09:29:37 Grounding done (0.05s)
+09:29:37 Solving...
+09:29:37 Model found (0.14s): [-20, -1811]
+09:29:37 Lower bound: [-20, -2200]  upper: [-20, -1811]  gap: [0, 389] (0.18s)
+09:29:37 Lower bound: [-20, -2190]  upper: [-20, -1811]  gap: [0, 379] (0.21s)
+09:29:37 Model found (0.29s, +0.15s): [-20, -1975]
+09:29:37 Lower bound: [-20, -2180]  upper: [-20, -1975]  gap: [0, 205] (0.33s)
+09:29:37 Model found (0.47s, +0.18s): [-20, -1985]
+09:29:37 Model found (0.62s, +0.14s): [-20, -2147]
+09:29:37 Lower bound: [-20, -2163]  upper: [-20, -2147]  gap: [0, 16] (0.66s)
+09:29:37 Model found (0.73s, +0.12s): [-20, -2155]
+09:29:37 Solving done: OPTIMUM FOUND (0.69s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex2.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex2.results
 OPTIMUM FOUND
 
-Answer: 37
+Answer: 5
 Optimization: -20 -2155
 
 % Equivalence classes (161 classes, 177 entities):
@@ -196,7 +168,7 @@ Optimization: -20 -2155
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
-14:34:51 Writing results to examples/ooa/ooex_vs2010/Lite/ooex2.results
+09:29:37 Writing results to examples/ooa/ooex_vs2010/Lite/ooex2.results
 
 % Stats:
 %   atoms: 8329.0
@@ -204,17 +176,17 @@ Optimization: -20 -2155
 %   rules: 9456.0
 %   variables: 2515.0
 %   constraints: 138.0
-%   choices: 10095.0
-%   conflicts: 332.0
-%   models: 37.0
+%   choices: 882.0
+%   conflicts: 31.0
+%   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -2155.0]
 %   lower_bound: [-20.0, -2155.0]
-%   total_time: 7.986047983169556
-%   ground_time: 0.04622232499241363
-%   time_to_first_model: 0.6292258269968443
-%   max_rss_bytes: 33030144
-%   solve_time: 7.862961053848267
+%   total_time: 0.7511570453643799
+%   ground_time: 0.04765086999395862
+%   time_to_first_model: 0.13996632699854672
+%   max_rss_bytes: 33816576
+%   solve_time: 0.6519711017608643
 classCallsMethod(Derived::Derived(void)@0x401030,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401030,int Base::func3(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x401879,std::exception::_Copy_str(char const *)@0x40181b)
@@ -496,9 +468,9 @@ mergeClasses(Derived::Derived(void)@0x401030,int Derived::func4(void)@0x401070)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x401879,const std::exception::`vftable'@0x4061a4)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x401879,std::exception::exception(class std::exception const &)@0x4018e0)
 mergeClasses(const std::bad_alloc::`vftable'@0x406140,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401112)
+mergeClasses(const std::bad_alloc::`vftable'@0x406140,virtual std::bad_alloc::~bad_alloc(void)@0x4010e0)
 mergeClasses(const std::exception::`vftable'@0x4061a4,std::exception::exception(char const * const &, int)@0x4017f1)
 mergeClasses(const std::exception::`vftable'@0x4061a4,std::exception::exception(class std::exception const &)@0x4018e0)
-mergeClasses(const type_info::`vftable'@0x4061c4,virtual type_info::~type_info(void)@0x401905)
 mergeClasses(int Base::func3(void)@0x401020,Derived::Derived(void)@0x401030)
 mergeClasses(std::exception::_Copy_str(char const *)@0x40181b,class std::exception & std::exception::operator=(class std::exception const &)@0x401879)
 mergeClasses(std::exception::_Copy_str(char const *)@0x40181b,const std::exception::`vftable'@0x4061a4)
@@ -724,9 +696,9 @@ vfTableWrite(4200712,virtual type_info::~type_info(void)@0x401905,0,const type_i
 vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@0x4010e0,virtual std::bad_alloc::~bad_alloc(void)@0x4010e0,0,const std::bad_alloc::`vftable'@0x406140)
 vfTableWrite(virtual std::exception::~exception(void)@0x4018ae,virtual std::exception::~exception(void)@0x4018ae,0,const std::exception::`vftable'@0x4061a4)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401112)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,virtual std::bad_alloc::~bad_alloc(void)@0x4010e0)
 vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,std::exception::exception(char const * const &, int)@0x4017f1)
 vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,std::exception::exception(class std::exception const &)@0x4018e0)
-vftableBelongsToClass(const type_info::`vftable'@0x4061c4,0,virtual type_info::~type_info(void)@0x401905)
 vftableSizeTotal(20)
 %   {$LN10_1@0x403a02}
 %   {$LN11@0x401471}

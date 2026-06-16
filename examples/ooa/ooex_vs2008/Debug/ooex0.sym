@@ -1,20 +1,13 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.03s)
-14:34:43 Solving...
-14:34:43 Model found (0.05s): [-2138]
-14:34:43 Model found (0.07s, +0.02s): [-2146]
-14:34:43 Model found (0.07s, +0.00s): [-2154]
-14:34:43 Model found (0.07s, +0.00s): [-2162]
-14:34:43 Model found (0.08s, +0.01s): [-2186]
-14:34:43 Model found (0.09s, +0.01s): [-2189]
-14:34:43 Model found (0.09s, +0.00s): [-2197]
-14:34:43 Model found (0.10s, +0.01s): [-2240]
-14:34:43 Model found (0.13s, +0.02s): [-2308]
-14:34:43 Solving done: OPTIMUM FOUND (0.10s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex0.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex0.results
+09:29:36 Grounding...
+09:29:36 Grounding done (0.03s)
+09:29:36 Solving...
+09:29:36 Model found (0.04s): [-2138]
+09:29:36 Model found (0.05s, +0.01s): [-2308]
+09:29:36 Solving done: OPTIMUM FOUND (0.02s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex0.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex0.results
 OPTIMUM FOUND
 
-Answer: 9
+Answer: 2
 Optimization: -2308
 
 % Equivalence classes (209 classes, 213 entities):
@@ -164,7 +157,7 @@ Optimization: -2308
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-14:34:43 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
+09:29:36 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
 
 % Stats:
 %   atoms: 5464.0
@@ -172,17 +165,17 @@ Optimization: -2308
 %   rules: 5930.0
 %   variables: 748.0
 %   constraints: 20.0
-%   choices: 1482.0
-%   conflicts: 179.0
-%   models: 9.0
+%   choices: 24.0
+%   conflicts: 5.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2308.0]
 %   lower_bound: [-2308.0]
-%   total_time: 0.13649892807006836
-%   ground_time: 0.028647262006415986
-%   time_to_first_model: 0.05275853899365757
+%   total_time: 0.06032705307006836
+%   ground_time: 0.03003885902580805
+%   time_to_first_model: 0.044880808010930195
 %   max_rss_bytes: 30670848
-%   solve_time: 0.08822894096374512
+%   solve_time: 0.010699033737182617
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::ClassA(void)@0x411610)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)

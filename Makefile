@@ -3,8 +3,8 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses
-#PROP_FLAGS   := -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses
+#PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses
+PROP_FLAGS   := -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time

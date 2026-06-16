@@ -1,8 +1,8 @@
-14:34:43 Grounding...
-14:34:55 Grounding done (12.27s)
-14:34:55 Solving...
-14:40:03 Solving done: TIME LIMIT REACHED (307.33s)
-% Command: ooanalyzer.py examples/ooa/log4cpp/testMain-NewDebug.exe.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/log4cpp/testMain-NewDebug.exe.results
+09:29:37 Grounding...
+09:29:48 Grounding done (10.79s)
+09:29:48 Solving...
+10:29:55 Solving done: TIME LIMIT REACHED (3607.61s)
+% Command: ooanalyzer.py examples/ooa/log4cpp/testMain-NewDebug.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/log4cpp/testMain-NewDebug.exe.results
 % TIME LIMIT REACHED
 
 % Stats:
@@ -11,13 +11,13 @@
 %   rules: 1703692.0
 %   variables: 1531069.0
 %   constraints: 182175.0
-%   choices: 3185.0
-%   conflicts: 2.0
+%   choices: 86124.0
+%   conflicts: 24.0
 %   models: 0.0
 %   optimal_models: 0.0
 %   final_cost: [inf, inf]
 %   lower_bound: [-588.0, -55110.0]
-%   total_time: 319.7097101211548
-%   ground_time: 12.265328897992731
-%   max_rss_bytes: 2277867520
-%   solve_time: 287.8370921611786
+%   total_time: 3618.5152559280396
+%   ground_time: 10.786916696990374
+%   max_rss_bytes: 2106695680
+%   solve_time: 3589.2598628997803

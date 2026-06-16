@@ -1,16 +1,13 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.03s)
-14:34:43 Solving...
-14:34:43 Model found (0.05s): [-2136]
-14:34:43 Model found (0.06s, +0.01s): [-2144]
-14:34:43 Model found (0.06s, +0.00s): [-2153]
-14:34:43 Model found (0.06s, +0.00s): [-2187]
-14:34:43 Model found (0.15s, +0.09s): [-2204]
-14:34:43 Solving done: OPTIMUM FOUND (0.12s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex1.results
+09:29:36 Grounding...
+09:29:36 Grounding done (0.03s)
+09:29:36 Solving...
+09:29:36 Model found (0.04s): [-2136]
+09:29:36 Model found (0.05s, +0.00s): [-2204]
+09:29:36 Solving done: OPTIMUM FOUND (0.02s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex1.results
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 2
 Optimization: -2204
 
 % Equivalence classes (209 classes, 212 entities):
@@ -153,7 +150,7 @@ Optimization: -2204
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-14:34:43 Writing results to examples/ooa/ooex_vs2008/Debug/ooex1.results
+09:29:36 Writing results to examples/ooa/ooex_vs2008/Debug/ooex1.results
 
 % Stats:
 %   atoms: 5418.0
@@ -161,17 +158,17 @@ Optimization: -2204
 %   rules: 5867.0
 %   variables: 706.0
 %   constraints: 8.0
-%   choices: 2956.0
-%   conflicts: 21.0
-%   models: 5.0
+%   choices: 17.0
+%   conflicts: 4.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2204.0]
 %   lower_bound: [-2204.0]
-%   total_time: 0.15810298919677734
-%   ground_time: 0.028989892001845874
-%   time_to_first_model: 0.048208509004325606
-%   max_rss_bytes: 29097984
-%   solve_time: 0.1092519760131836
+%   total_time: 0.05552792549133301
+%   ground_time: 0.028666586003964767
+%   time_to_first_model: 0.04160236701136455
+%   max_rss_bytes: 29884416
+%   solve_time: 0.007502079010009766
 classRelatedMethod(Composite::Composite(void)@0x411570,int Composite::func3(void)@0x4115c0)
 classRelatedMethod(Derived::Derived(void)@0x411610,int Derived::func4(void)@0x411750)
 classRelatedMethod(Derived::Derived(void)@0x411610,int Derived::func5(class Composite, int)@0x4117c0)

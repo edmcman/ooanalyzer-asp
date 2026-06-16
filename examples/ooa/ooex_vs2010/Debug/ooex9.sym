@@ -1,18 +1,29 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.16s)
-14:34:43 Solving...
-14:34:44 Model found (1.72s): [-40, -2492]
-14:34:45 Model found (2.21s, +0.49s): [-40, -2493]
-14:34:45 Model found (2.42s, +0.21s): [-40, -2502]
-14:34:45 Model found (2.44s, +0.02s): [-40, -2584]
-14:34:46 Model found (2.75s, +0.31s): [-40, -2610]
-14:35:00 Model found (16.97s, +14.21s): [-40, -2616]
-14:35:00 Model found (17.56s, +0.59s): [-40, -2624]
-14:35:00 Solving done: OPTIMUM FOUND (17.40s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
+09:29:36 Grounding...
+09:29:37 Grounding done (0.11s)
+09:29:37 Solving...
+09:29:37 Model found (0.36s): [-40, -2458]
+09:29:37 Lower bound: [-40, -2724]  upper: [-40, -2458]  gap: [0, 266] (0.58s)
+09:29:37 Lower bound: [-40, -2714]  upper: [-40, -2458]  gap: [0, 256] (0.66s)
+09:29:37 Lower bound: [-40, -2704]  upper: [-40, -2458]  gap: [0, 246] (0.74s)
+09:29:37 Model found (0.92s, +0.55s): [-40, -2548]
+09:29:37 Lower bound: [-40, -2694]  upper: [-40, -2548]  gap: [0, 146] (1.00s)
+09:29:38 Model found (1.08s, +0.16s): [-40, -2558]
+09:29:38 Lower bound: [-40, -2685]  upper: [-40, -2558]  gap: [0, 127] (1.31s)
+09:29:38 Lower bound: [-40, -2676]  upper: [-40, -2558]  gap: [0, 118] (1.32s)
+09:29:38 Lower bound: [-40, -2667]  upper: [-40, -2558]  gap: [0, 109] (1.32s)
+09:29:38 Lower bound: [-40, -2658]  upper: [-40, -2558]  gap: [0, 100] (1.32s)
+09:29:38 Lower bound: [-40, -2649]  upper: [-40, -2558]  gap: [0, 91] (1.36s)
+09:29:38 Lower bound: [-40, -2640]  upper: [-40, -2558]  gap: [0, 82] (1.90s)
+09:29:39 Model found (2.46s, +1.39s): [-40, -2592]
+09:29:39 Lower bound: [-40, -2632]  upper: [-40, -2592]  gap: [0, 40] (2.55s)
+09:29:39 Lower bound: [-40, -2624]  upper: [-40, -2592]  gap: [0, 32] (2.55s)
+09:29:39 Model found (2.68s, +0.22s): [-40, -2593]
+09:29:40 Model found (3.02s, +0.34s): [-40, -2624]
+09:29:40 Solving done: OPTIMUM FOUND (2.91s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
 OPTIMUM FOUND
 
-Answer: 7
+Answer: 6
 Optimization: -40 -2624
 
 % Equivalence classes (212 classes, 233 entities):
@@ -217,7 +228,7 @@ Optimization: -40 -2624
 %       objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 %       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 %       objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
-14:35:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+09:29:40 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
 
 % Stats:
 %   atoms: 10384.0
@@ -225,17 +236,17 @@ Optimization: -40 -2624
 %   rules: 22147.0
 %   variables: 8578.0
 %   constraints: 395.0
-%   choices: 16985.0
-%   conflicts: 673.0
-%   models: 7.0
+%   choices: 3098.0
+%   conflicts: 276.0
+%   models: 6.0
 %   optimal_models: 1.0
 %   final_cost: [-40.0, -2624.0]
 %   lower_bound: [-40.0, -2624.0]
-%   total_time: 17.568197011947632
-%   ground_time: 0.16289270100241993
-%   time_to_first_model: 1.7190499400021508
-%   max_rss_bytes: 43253760
-%   solve_time: 17.154335975646973
+%   total_time: 3.0316009521484375
+%   ground_time: 0.11251267601619475
+%   time_to_first_model: 0.36451175800175406
+%   max_rss_bytes: 44040192
+%   solve_time: 2.7820160388946533
 classCallsMethod(D::D(void)@0x4115f0,B::B(void)@0x411760)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411720)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411720)

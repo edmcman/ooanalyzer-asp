@@ -1,36 +1,21 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.04s)
-14:34:43 Solving...
-14:34:43 Model found (0.22s): [-32, -2469]
-14:34:43 Model found (0.39s, +0.17s): [-32, -2479]
-14:34:43 Model found (0.41s, +0.02s): [-32, -2489]
-14:34:43 Model found (0.43s, +0.02s): [-32, -2499]
-14:34:43 Model found (0.46s, +0.03s): [-32, -2509]
-14:34:43 Model found (0.49s, +0.03s): [-32, -2519]
-14:34:43 Model found (0.53s, +0.04s): [-32, -2527]
-14:34:43 Model found (0.57s, +0.04s): [-32, -2536]
-14:34:43 Model found (0.61s, +0.05s): [-32, -2544]
-14:34:43 Model found (0.67s, +0.06s): [-32, -2553]
-14:34:43 Model found (0.72s, +0.05s): [-32, -2560]
-14:34:43 Model found (0.77s, +0.05s): [-32, -2570]
-14:34:43 Model found (0.83s, +0.06s): [-32, -2576]
-14:34:44 Model found (0.87s, +0.04s): [-32, -2586]
-14:34:44 Model found (0.99s, +0.11s): [-32, -2593]
-14:34:44 Model found (1.04s, +0.05s): [-32, -2603]
-14:34:44 Model found (1.09s, +0.05s): [-32, -2610]
-14:34:44 Model found (1.12s, +0.03s): [-32, -2620]
-14:34:44 Model found (1.19s, +0.07s): [-32, -2627]
-14:34:44 Model found (1.22s, +0.03s): [-32, -2637]
-14:34:44 Model found (1.53s, +0.32s): [-32, -2644]
-14:34:44 Model found (1.57s, +0.04s): [-32, -2651]
-14:34:44 Model found (1.62s, +0.05s): [-32, -2654]
-14:34:44 Model found (1.64s, +0.02s): [-32, -2661]
-14:34:44 Model found (1.81s, +0.17s): [-32, -2671]
-14:34:45 Solving done: OPTIMUM FOUND (2.25s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex6.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex6.results
+09:29:36 Grounding...
+09:29:36 Grounding done (0.05s)
+09:29:36 Solving...
+09:29:37 Model found (0.12s): [-32, -2418]
+09:29:37 Lower bound: [-32, -2715]  upper: [-32, -2418]  gap: [0, 297] (0.18s)
+09:29:37 Model found (0.22s, +0.11s): [-32, -2528]
+09:29:37 Lower bound: [-32, -2706]  upper: [-32, -2528]  gap: [0, 178] (0.30s)
+09:29:37 Lower bound: [-32, -2697]  upper: [-32, -2528]  gap: [0, 169] (0.30s)
+09:29:37 Lower bound: [-32, -2688]  upper: [-32, -2528]  gap: [0, 160] (0.30s)
+09:29:37 Model found (0.34s, +0.11s): [-32, -2637]
+09:29:37 Model found (0.38s, +0.04s): [-32, -2671]
+09:29:37 Lower bound: [-32, -2680]  upper: [-32, -2671]  gap: [0, 9] (0.41s)
+09:29:37 Lower bound: [-32, -2672]  upper: [-32, -2671]  gap: [0, 1] (0.41s)
+09:29:37 Solving done: OPTIMUM FOUND (0.39s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex6.results
 OPTIMUM FOUND
 
-Answer: 25
+Answer: 4
 Optimization: -32 -2671
 
 % Equivalence classes (222 classes, 237 entities):
@@ -209,7 +194,7 @@ Optimization: -32 -2671
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const Derived::`vftable'@0x416740,const Base::`vftable'@0x416758,0)
-14:34:45 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
+09:29:37 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
 
 % Stats:
 %   atoms: 7883.0
@@ -217,17 +202,17 @@ Optimization: -32 -2671
 %   rules: 9112.0
 %   variables: 2772.0
 %   constraints: 88.0
-%   choices: 5644.0
-%   conflicts: 435.0
-%   models: 25.0
+%   choices: 961.0
+%   conflicts: 29.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-32.0, -2671.0]
 %   lower_bound: [-32.0, -2671.0]
-%   total_time: 2.3079841136932373
-%   ground_time: 0.044805495999753475
-%   time_to_first_model: 0.2184550640085945
-%   max_rss_bytes: 32243712
-%   solve_time: 2.217452049255371
+%   total_time: 0.44734811782836914
+%   ground_time: 0.045705597003689036
+%   time_to_first_model: 0.11574898299295455
+%   max_rss_bytes: 33030144
+%   solve_time: 0.3567230701446533
 classCallsMethod(Derived::Derived(void)@0x411590,Base::Base(void)@0x411640)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func1(void)@0x4116b0)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func2(void)@0x411710)

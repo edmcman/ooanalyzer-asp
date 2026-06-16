@@ -1,36 +1,13 @@
-14:34:43 Grounding...
-14:34:43 Grounding done (0.14s)
-14:34:43 Solving...
-14:34:44 Model found (0.83s): [-20, -3329]
-14:34:44 Model found (1.33s, +0.50s): [-20, -3339]
-14:34:44 Model found (1.45s, +0.12s): [-20, -3342]
-14:34:44 Model found (1.56s, +0.11s): [-20, -3350]
-14:34:44 Model found (1.66s, +0.10s): [-20, -3358]
-14:34:44 Model found (1.77s, +0.11s): [-20, -3359]
-14:34:45 Model found (1.86s, +0.09s): [-20, -3366]
-14:34:45 Model found (1.98s, +0.12s): [-20, -3376]
-14:34:45 Model found (2.10s, +0.12s): [-20, -3386]
-14:34:45 Model found (2.18s, +0.08s): [-20, -3394]
-14:34:45 Model found (2.29s, +0.11s): [-20, -3402]
-14:34:45 Model found (2.37s, +0.08s): [-20, -3403]
-14:34:45 Model found (2.38s, +0.01s): [-20, -3410]
-14:34:45 Model found (2.49s, +0.11s): [-20, -3420]
-14:34:45 Model found (2.59s, +0.10s): [-20, -3427]
-14:34:45 Model found (2.68s, +0.10s): [-20, -3437]
-14:34:45 Model found (2.79s, +0.10s): [-20, -3444]
-14:34:46 Model found (2.92s, +0.14s): [-20, -3454]
-14:34:46 Model found (3.07s, +0.15s): [-20, -3461]
-14:34:46 Model found (3.21s, +0.14s): [-20, -3471]
-14:34:46 Model found (3.37s, +0.16s): [-20, -3478]
-14:34:46 Model found (3.52s, +0.15s): [-20, -3488]
-14:34:46 Model found (3.69s, +0.17s): [-20, -3496]
-14:34:47 Model found (4.17s, +0.48s): [-20, -3505]
-14:34:48 Model found (5.13s, +0.96s): [-20, -3522]
-14:34:48 Solving done: OPTIMUM FOUND (5.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
+09:29:36 Grounding...
+09:29:37 Grounding done (0.14s)
+09:29:37 Solving...
+09:29:37 Model found (0.45s): [-20, -3352]
+09:29:37 Model found (0.58s, +0.13s): [-20, -3522]
+09:29:37 Solving done: OPTIMUM FOUND (0.44s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
 OPTIMUM FOUND
 
-Answer: 25
+Answer: 2
 Optimization: -20 -3522
 
 % Equivalence classes (279 classes, 310 entities):
@@ -259,7 +236,7 @@ Optimization: -20 -3522
 %     ~embeddedObject: 3/3
 %       objectInObject(const Rectangle::`vftable'@0x417804,const Shape::`vftable'@0x417868,0) objectInObject(const Circle::`vftable'@0x417828,const Shape::`vftable'@0x417868,0)
 %       objectInObject(const Triangle::`vftable'@0x417848,const Shape::`vftable'@0x417868,0)
-14:34:48 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
+09:29:37 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
 
 % Stats:
 %   atoms: 27252.0
@@ -267,17 +244,17 @@ Optimization: -20 -3522
 %   rules: 29665.0
 %   variables: 10079.0
 %   constraints: 90.0
-%   choices: 5930.0
-%   conflicts: 102.0
-%   models: 25.0
+%   choices: 243.0
+%   conflicts: 10.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -3522.0]
 %   lower_bound: [-20.0, -3522.0]
-%   total_time: 5.1601340770721436
-%   ground_time: 0.1421170680114301
-%   time_to_first_model: 0.8258999700046843
-%   max_rss_bytes: 56578048
-%   solve_time: 4.773951053619385
+%   total_time: 0.5929169654846191
+%   ground_time: 0.13871348899556324
+%   time_to_first_model: 0.449609617004171
+%   max_rss_bytes: 54259712
+%   solve_time: 0.21544599533081055
 classCallsMethod(Circle::Circle(void)@0x4117e0,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Rectangle::Rectangle(void)@0x411700,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Triangle::Triangle(void)@0x4118c0,Shape::Shape(void)@0x4119a0)
