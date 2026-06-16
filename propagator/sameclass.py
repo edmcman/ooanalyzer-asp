@@ -32,15 +32,22 @@ Foundedness check (optional, gated by foundedness_check=True):
 
 from dataclasses import dataclass, field
 from collections import deque
+import time
 
 import clingo
 
 DEBUG = False
+PROFILE = False
 
 
 def _dprint(*args):
     if DEBUG:
         print(*args)
+
+
+def _profile(*args):
+    if PROFILE:
+        print("sameclass-profile:", *args)
 
 
 def _sym_key(sym):
@@ -447,47 +454,182 @@ class SameClassPropagator:
 
         Falls back to union-all when no observer data is available.
         """
+        profile_start = time.perf_counter() if PROFILE else None
         merge_proglits = set(self._merge_proglit_to_pair.keys())
         sc_proglits = set(self._sc_proglit_to_pair.keys())
 
         if not self._obs_rules and not self._obs_unconditional:
             # Observer not registered: use old behavior (union all merge atoms).
+            union_count = 0
             for slit, pairs in self._merge_lit_to_pairs.items():
                 for a, b in pairs:
+                    union_count += 1
                     self._potential_uf.union(a, b, slit)
+            if PROFILE:
+                _profile(
+                    "potential-uf fallback",
+                    f"merge_unions={union_count}",
+                    f"elapsed={time.perf_counter() - profile_start:.3f}s",
+                )
             return
 
         derivable = set(self._obs_unconditional)
+        sc_derivable = set()
+        ready = deque()
+        blocked_by_lit = {}
+        rules_indexed = 0
+        ready_initial = 0
+        ready_pops = 0
+        blocked_initial = 0
+        reblocks = 0
+        wake_calls = 0
+        woke_rules = 0
+        derivable_added = 0
+        merge_added = 0
+        redundant_merge_added = 0
+        sc_added = 0
+        max_ready = 0
+
+        sc_by_entity = {}
+        for pl, (x, y) in self._sc_proglit_to_pair.items():
+            sc_by_entity.setdefault(x, []).append((y, pl))
+            if x != y:
+                sc_by_entity.setdefault(y, []).append((x, pl))
 
         # Seed UF with merge atoms that are unconditionally derivable.
         for pl in merge_proglits & derivable:
             a, b = self._merge_proglit_to_pair[pl]
             self._potential_uf.union(a, b, self._merge_proglit_to_slit[pl])
 
-        def body_ok(pos_body):
+        # Reflexive and seed-connected sameClass atoms are available before any
+        # rule indexing. Later ones are awakened incrementally as UF components
+        # are connected by newly derivable mergeClasses atoms.
+        for pl, (x, y) in self._sc_proglit_to_pair.items():
+            if self._potential_uf.same(x, y):
+                sc_derivable.add(pl)
+        sc_seed_count = len(sc_derivable)
+
+        def first_blocker(pos_body):
             for lit in pos_body:
                 if lit in sc_proglits:
-                    x, y = self._sc_proglit_to_pair[lit]
-                    if not self._potential_uf.same(x, y):
-                        return False
+                    if lit not in sc_derivable:
+                        return lit
                 elif lit not in derivable:
-                    return False
-            return True
+                    return lit
+            return None
 
-        changed = True
-        while changed:
-            changed = False
-            for _choice, heads, pos_body in self._obs_rules:
-                if not body_ok(pos_body):
-                    continue
-                for pl in heads:
-                    if pl in derivable:
-                        continue
-                    derivable.add(pl)
-                    changed = True
-                    if pl in merge_proglits:
-                        a, b = self._merge_proglit_to_pair[pl]
-                        self._potential_uf.union(a, b, self._merge_proglit_to_slit[pl])
+        def block_or_ready(rule_idx):
+            nonlocal reblocks, max_ready
+            _choice, _heads, pos_body = self._obs_rules[rule_idx]
+            blocker = first_blocker(pos_body)
+            if blocker is None:
+                ready.append(rule_idx)
+                max_ready = max(max_ready, len(ready))
+            else:
+                reblocks += 1
+                blocked_by_lit.setdefault(blocker, []).append(rule_idx)
+
+        def wake(lit):
+            nonlocal wake_calls, woke_rules
+            waiting = blocked_by_lit.pop(lit, ())
+            if not waiting:
+                return
+            wake_calls += 1
+            woke_rules += len(waiting)
+            for rule_idx in waiting:
+                block_or_ready(rule_idx)
+
+        def mark_sc_derivable(pl):
+            nonlocal sc_added
+            if pl in sc_derivable:
+                return
+            sc_derivable.add(pl)
+            sc_added += 1
+            wake(pl)
+
+        def add_potential_merge(pl):
+            nonlocal merge_added, redundant_merge_added
+            a, b = self._merge_proglit_to_pair[pl]
+            slit = self._merge_proglit_to_slit[pl]
+            already_connected = self._potential_uf.same(a, b)
+            if not already_connected:
+                comp_a = self._potential_uf.component(a)
+                comp_b = self._potential_uf.component(b)
+            else:
+                comp_a = comp_b = ()
+                redundant_merge_added += 1
+            merge_added += 1
+
+            # Always record the edge, even if it is redundant; later bridge-edge
+            # tests need the full potential merge graph, not just the UF forest.
+            self._potential_uf.union(a, b, slit)
+
+            if already_connected:
+                return
+            if len(comp_a) > len(comp_b):
+                comp_a, comp_b = comp_b, comp_a
+            comp_b = set(comp_b)
+            for x in comp_a:
+                for y, sc_pl in sc_by_entity.get(x, ()):
+                    if y in comp_b:
+                        mark_sc_derivable(sc_pl)
+
+        def mark_derivable(pl):
+            nonlocal derivable_added
+            if pl in derivable:
+                return
+            derivable.add(pl)
+            derivable_added += 1
+            wake(pl)
+            if pl in merge_proglits:
+                add_potential_merge(pl)
+
+        for idx, (_choice, _heads, pos_body) in enumerate(self._obs_rules):
+            rules_indexed += 1
+            if pos_body:
+                before_ready = len(ready)
+                before_reblocks = reblocks
+                block_or_ready(idx)
+                if len(ready) > before_ready:
+                    ready_initial += 1
+                elif reblocks > before_reblocks:
+                    blocked_initial += 1
+            else:
+                ready.append(idx)
+                ready_initial += 1
+                max_ready = max(max_ready, len(ready))
+
+        while ready:
+            rule_idx = ready.popleft()
+            ready_pops += 1
+            _choice, heads, _pos_body = self._obs_rules[rule_idx]
+            for pl in heads:
+                mark_derivable(pl)
+
+        if PROFILE:
+            _profile(
+                "potential-uf worklist",
+                f"obs_rules={len(self._obs_rules)}",
+                f"unconditional={len(self._obs_unconditional)}",
+                f"merge_proglits={len(merge_proglits)}",
+                f"sc_proglits={len(sc_proglits)}",
+                f"seeded_sc={sc_seed_count}",
+                f"rules_indexed={rules_indexed}",
+                f"ready_initial={ready_initial}",
+                f"blocked_initial={blocked_initial}",
+                f"reblocks={reblocks}",
+                f"wake_calls={wake_calls}",
+                f"woke_rules={woke_rules}",
+                f"ready_pops={ready_pops}",
+                f"max_ready={max_ready}",
+                f"derivable_added={derivable_added}",
+                f"merge_added={merge_added}",
+                f"redundant_merge_added={redundant_merge_added}",
+                f"sc_added={sc_added}",
+                f"derivable_total={len(derivable)}",
+                f"sc_total={len(sc_derivable)}",
+                f"elapsed={time.perf_counter() - profile_start:.3f}s",
+            )
 
     def _potential_connected_without_lit(self, a, b, excluded_slit):
         """Whether a and b have a potential path without `excluded_slit` edges."""

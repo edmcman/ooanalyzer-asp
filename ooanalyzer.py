@@ -140,6 +140,8 @@ def parse_args():
     p.add_argument("--benchmark", action="store_true",
                    help="log model timing/costs and stats without collecting or printing model atoms")
     p.add_argument("--debug-propagator", action="store_true")
+    p.add_argument("--profile-propagator", action="store_true",
+                   help="print sameClass propagator setup/worklist timing counters")
     p.add_argument("-t", "--threads", type=str, default=None,
                    help="parallel search: N[,compete|split] (default: 1)")
     p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
@@ -309,6 +311,9 @@ def main():
     if args.debug_propagator:
         import propagator.sameclass as _sc
         _sc.DEBUG = True
+    if args.profile_propagator:
+        import propagator.sameclass as _sc
+        _sc.PROFILE = True
 
     ctl_args = ["--warn=none"]
     if args.configuration:
