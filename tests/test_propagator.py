@@ -18,6 +18,7 @@ Tests:
  16. fixed merge facts: solver literal 1 can represent many mergeClasses atoms
  17. fixed merge facts seed UF: transitive sameClass works without watched changes
  18. direct merge false does not block transitive sameClass
+ 19. transitive sameClass conflicts even when the theory atom is fixed false
 """
 
 import sys
@@ -156,6 +157,16 @@ def main():
          """,
          4,                         # 2×2 = 4 merge combinations
          frozenset(["mergeClasses(a,b)", "mergeClasses(b,c)", "transitive"])),
+
+        ("transitive conflict: fixed-false sameClass rejects a-b-c path",
+         """
+         mergeEntity(a). mergeEntity(b). mergeEntity(c).
+         1 { mergeClasses(a,b) ; -mergeClasses(a,b) } 1.
+         1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
+         :- &sameClass(a, c).
+         #show mergeClasses/2. #show -mergeClasses/2.
+         """,
+         3),                         # all combinations except both merges true
 
         # ── 4. Cross-component always false ───────────────────────────────────
         ("cross: no path → &sameClass(a,d) never true",
@@ -524,7 +535,7 @@ def main():
     reward_tests = [
         (
             "example.lp optimal reward is stable across finishing heuristics",
-            [ROOT / "examples" / "example.lp"],
+            [ROOT / "examples" / "manual" / "example.lp"],
             finishing_heuristic_configs,
         ),
         (

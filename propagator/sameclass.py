@@ -227,6 +227,7 @@ class SameClassPropagator:
         # _obs_rules: (choice, heads_tuple, pos_body_tuple) — positive body lits only.
         # _obs_unconditional: prog_lits derivable with no positive-body conditions.
         self._obs_rules = []
+        self._obs_head_to_rules = {}
         self._obs_unconditional = set()
 
     # ── Observer callbacks ───────────────────────────────────────────────────
@@ -238,7 +239,11 @@ class SameClassPropagator:
         if not pos_body:
             self._obs_unconditional.update(head)
         else:
-            self._obs_rules.append((choice, tuple(head), pos_body))
+            heads = tuple(head)
+            rule_idx = len(self._obs_rules)
+            self._obs_rules.append((choice, heads, pos_body))
+            for h in heads:
+                self._obs_head_to_rules.setdefault(h, []).append(rule_idx)
 
     def weight_rule(self, choice, head, lower_bound, body):
         # Weight-rule semantics are complex; conservatively treat all heads as
@@ -269,6 +274,7 @@ class SameClassPropagator:
     # ── PropagateInit ────────────────────────────────────────────────────────
 
     def init(self, init):
+        init_profile_start = time.perf_counter() if PROFILE else None
         # check() is part of eager propagation: it asserts sameClass atoms that
         # become true through multi-edge paths once watched merge propagation has
         # reached a fixpoint.  Without Fixpoint checks, search can run for a long
@@ -299,6 +305,8 @@ class SameClassPropagator:
 
         for sym_atom in init.symbolic_atoms.by_signature("mergeEntity", 1):
             self._entities.add(_sym_key(sym_atom.symbol.arguments[0]))
+        if PROFILE:
+            _profile("init mergeEntity", f"entities={len(self._entities)}")
 
         for sym_atom in init.symbolic_atoms.by_signature("mergeClasses", 2):
             args = sym_atom.symbol.arguments
@@ -313,6 +321,13 @@ class SameClassPropagator:
             self._entities.update((a, b))
             if abs(slit) != 1:
                 init.add_watch(slit)
+        if PROFILE:
+            merge_count = sum(len(pairs) for pairs in self._merge_lit_to_pairs.values())
+            _profile(
+                "init mergeClasses",
+                f"merge_atoms={merge_count}",
+                f"merge_solver_lits={len(self._merge_lit_to_pairs)}",
+            )
 
         for tatom in init.theory_atoms:
             if tatom.term.name == "sameClass" and len(tatom.term.arguments) == 2:
@@ -330,6 +345,12 @@ class SameClassPropagator:
                 # Watch positive polarity: catch solver guessing sameClass=true
                 # eagerly so we can add permanent-false for cross-component pairs.
                 init.add_watch(slit)
+        if PROFILE:
+            _profile(
+                "init sameClass atoms",
+                f"sameclass_atoms={len(self._sc_to_lit)}",
+                f"entities={len(self._entities)}",
+            )
 
         # Potential connectivity: which pairs could EVER be same class?
         # Uses a least fixpoint over the observed ground rules so that K-rule
@@ -337,6 +358,11 @@ class SameClassPropagator:
         # Falls back to union-all if no observer data was registered.
         self._potential_uf = _UF()
         self._build_potential_uf()
+        if PROFILE:
+            _profile(
+                "init potential-uf done",
+                f"elapsed={time.perf_counter() - init_profile_start:.3f}s",
+            )
 
         self._check_atoms = [
             (x, y, slit)
@@ -352,6 +378,8 @@ class SameClassPropagator:
                 init.add_clause([slit])
             elif not self._potential_uf.same(x, y):
                 init.add_clause([-slit])
+        if PROFILE:
+            _profile("init level0 sameClass clauses")
 
         # Direct wiring: mergeClasses(A,B) → sameClass(A,B).
         #
@@ -407,6 +435,12 @@ class SameClassPropagator:
             self._awc_slit_to_pair[abs(slit)] = (vftable, class_)
             self._awc_by_vft.setdefault(vftable, set()).add((class_, slit))
             init.add_watch(slit)
+        if PROFILE:
+            _profile(
+                "init vftable writer theory",
+                f"nonOverwritingWrite={len(self._now_slit_to_key)}",
+                f"allWritersInClass={len(self._awc_to_slit)}",
+            )
 
         self._observed_proglits = set(self._obs_unconditional)
         self._unconditional_proglits = set(self._obs_unconditional)
@@ -420,6 +454,12 @@ class SameClassPropagator:
                 self._proglit_to_slit[prog_lit] = init.solver_literal(prog_lit)
             except RuntimeError:
                 pass
+        if PROFILE:
+            _profile(
+                "init observed proglits",
+                f"observed={len(self._observed_proglits)}",
+                f"mapped={len(self._proglit_to_slit)}",
+            )
 
         # Pre-compute rule index for foundedness check.
         if self._foundedness_check:
@@ -430,6 +470,7 @@ class SameClassPropagator:
 
         # Release raw observer data — no longer needed.
         self._obs_rules = []
+        self._obs_head_to_rules = {}
         self._obs_unconditional = set()
 
         self._states = [_ThreadState() for _ in range(init.number_of_threads)]
@@ -438,6 +479,8 @@ class SameClassPropagator:
                 f"{len(self._sc_to_lit)} &sameClass atoms, "
                 f"{len(self._now_slit_to_key)} nonOverwritingWrite atoms, "
                 f"{len(self._awc_to_slit)} &allWritersInClass atoms")
+        if PROFILE:
+            _profile("init total", f"elapsed={time.perf_counter() - init_profile_start:.3f}s")
 
     def _build_potential_uf(self):
         """Least fixpoint over observed ground rules to populate _potential_uf.
@@ -477,6 +520,23 @@ class SameClassPropagator:
         sc_derivable = set()
         ready = deque()
         blocked_by_lit = {}
+        slice_start = time.perf_counter() if PROFILE else None
+        relevant_rules = set()
+        pending_targets = deque(pl for pl in merge_proglits if pl not in derivable)
+        seen_targets = set(pending_targets)
+        while pending_targets:
+            target = pending_targets.popleft()
+            for rule_idx in self._obs_head_to_rules.get(target, ()):
+                if rule_idx in relevant_rules:
+                    continue
+                relevant_rules.add(rule_idx)
+                _choice, _heads, pos_body = self._obs_rules[rule_idx]
+                for lit in pos_body:
+                    if lit in sc_proglits or lit in derivable or lit in seen_targets:
+                        continue
+                    seen_targets.add(lit)
+                    pending_targets.append(lit)
+
         rules_indexed = 0
         ready_initial = 0
         ready_pops = 0
@@ -584,7 +644,8 @@ class SameClassPropagator:
             if pl in merge_proglits:
                 add_potential_merge(pl)
 
-        for idx, (_choice, _heads, pos_body) in enumerate(self._obs_rules):
+        for idx in relevant_rules:
+            _choice, _heads, pos_body = self._obs_rules[idx]
             rules_indexed += 1
             if pos_body:
                 before_ready = len(ready)
@@ -610,6 +671,9 @@ class SameClassPropagator:
             _profile(
                 "potential-uf worklist",
                 f"obs_rules={len(self._obs_rules)}",
+                f"sliced_rules={len(relevant_rules)}",
+                f"slice_targets={len(seen_targets)}",
+                f"slice_elapsed={time.perf_counter() - slice_start:.3f}s",
                 f"unconditional={len(self._obs_unconditional)}",
                 f"merge_proglits={len(merge_proglits)}",
                 f"sc_proglits={len(sc_proglits)}",
@@ -746,7 +810,7 @@ class SameClassPropagator:
                             comp_a, comp_b = comp_b, comp_a
                         for x in comp_a:
                             for y, sc_lit in self._sc_by_entity.get(x, ()):
-                                if y in comp_b and not asgn.is_fixed(sc_lit):
+                                if y in comp_b and not asgn.is_true(sc_lit):
                                     if not self._assert_same(state, ctl, x, y, sc_lit):
                                         return
             elif lit in self._sc_lit_to_pair:
@@ -808,7 +872,7 @@ class SameClassPropagator:
         for x, y, slit in self._check_atoms:
             is_same = state.uf.same(x, y)  # root-only; reason built lazily on assert
             if is_same:
-                if not asgn.is_fixed(slit):
+                if not asgn.is_true(slit):
                     if not self._assert_same(state, ctl, x, y, slit):
                         return
                 continue

@@ -507,7 +507,11 @@ def main():
     if not args.benchmark:
         merge_pairs = []
         for atom in last_shown:
-            if atom.name == "mergeClasses" and len(atom.arguments) == 2:
+            if (
+                atom.name == "mergeClasses"
+                and len(atom.arguments) == 2
+                and getattr(atom, "positive", True)
+            ):
                 merge_pairs.append(tuple(atom.arguments))
         parts = prop.partition(merge_pairs) if last_shown else {}
         if parts:
