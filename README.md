@@ -74,6 +74,7 @@ Scoring and heuristic gates:
 | Constant | Default | Meaning |
 |---|---:|---|
 | `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
+| `enable_merge_rewards` | `1` | Enable strong/weak/G1 merge rewards in optimization while leaving merge choices active |
 
 ## Files
 

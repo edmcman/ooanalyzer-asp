@@ -32,10 +32,12 @@ original module set.
 | `examples/manual/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
 | `examples/manual/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
 | `examples/manual/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
+| `examples/manual/merge_theory_stress.lp` | TinyXml-like merge reward stress toy: one rewarding hub with many mutually-exclusive leaves hidden behind `&sameClass` |
 | `examples/ooa/` | Real OOAnalyzer test files (`.facts`, `.symbols`, `.json`, `.results`) organized by build: `ooex_vs2008/Debug`, `ooex_vs2010/Lite`, etc. |
 | `src/old/` | v1 Clingo modules (rules.lp, guess.lp, insanity.lp, optimize.lp, output.lp) — reference only |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 | `TODO.md` | Rule coverage tracker: all `reason*`/`guess*`/`insanity*` rules, sorted by entity, with port status |
+| `NOTE.md` | Working notes on the current `sameClass`/merge optimization blocker and stress-toy measurements |
 | `.state/NOTEBOOK.md` | Current porting session notes and next-rule queue |
 
 ## Running
@@ -91,6 +93,7 @@ with repeated `--const NAME=VALUE` arguments to `ooanalyzer.py`.
 | `enable_guess_merge` | `1` | Enable `mergeClasses/2` vs `-mergeClasses/2` choices |
 | `enable_guess_derived_class` | `1` | Enable embedded-object vs derived-class choices |
 | `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
+| `enable_merge_rewards` | `1` | Enable strong/weak/G1 merge rewards in optimization while leaving merge choices active |
 | `min_vftable_size_total` | `0` | Optional staged-optimization floor on total selected `vfTableSize/2`; 0 disables |
 | `max_vftable_size_total` | `0` | Optional staged-optimization ceiling on total selected `vfTableSize/2`; 0 disables |
 
@@ -231,6 +234,60 @@ derivedClass(DerivedCtor, BaseCtor, Off) :- ... .
 When adding theory atoms, remember that `not &sameClass(A, B)` is a solver-time
 condition. It can reduce search but does not prune grounding the way a positive
 ordinary predicate might.
+
+### Performance blocker: merge optimization under `&sameClass`
+
+This is currently a major project blocker. On TinyXml-like inputs, the solver
+can find a conservative first model, but optimizing merge rewards becomes very
+slow because the crucial mutual exclusions are hidden behind the `&sameClass`
+theory propagator instead of appearing as ordinary Boolean clauses.
+
+We built `examples/manual/merge_theory_stress.lp` to isolate this shape:
+
+- each group has one rewarding hub `H` and many rewarding leaves `L1..Ln`
+- every pair of leaves in the same group is hard `-mergeClasses`
+- selecting both `mergeClasses(H, Li)` and `mergeClasses(H, Lj)` only becomes a
+  conflict *after* transitive `&sameClass(Li, Lj)` is derived
+
+So the real conflict is a simple at-most-one relation per hub, but the normal
+solver path only sees it through theory reasons.
+
+Representative measurements:
+
+- current propagator path, `8x16`: optimum `-80` eventually found, but USC
+  lower bound advances in tiny steps; after local pruning it still takes about
+  4s
+- current propagator path, `16x32`: still timing out at 60s with poor lower
+  bound progress (`[0]` or `[-10]` incumbent depending on flags)
+- grounded `sameClass` closure on the same toy: `8x16` solves in about `0.03s`,
+  `16x32` in about `0.23s`, and even `32x64` in about `3.4s`
+
+Interpretation: CDCL/USC itself is not the main failure. The problem is that
+the theory propagator hides the compact Boolean structure that the optimizer
+needs to prove away impossible rewards.
+
+What has and has not helped so far:
+
+- `--opt-heuristic=sign` slightly reduces choices on the propagator path, but
+  does not fix the proof bottleneck
+- `--opt-usc-shrink={lin,bin,min}` does **not** help this pattern; it often
+  finds one better model but makes lower-bound progress worse
+- boundary-edge pruning inside `propagator/sameclass.py` helps local search by
+  forcing open merge edges false when they would connect components already
+  separated by a false `&sameClass`, but it still does not expose a compact
+  global exclusion to USC
+
+The most promising directions are:
+
+- derive explicit Boolean pairwise exclusions or cardinality constraints for
+  mutually-exclusive rewarded merges
+- generate such exclusions lazily from ordinary ASP witnesses when possible
+- use partial/targeted grounding of `sameClass`-style consequences in the hot
+  merge-reward regions, instead of fully materializing the whole closure
+
+Avoid assuming that more propagator-local pruning alone will solve TinyXml or
+malware-scale optimization. The stress toy strongly suggests that exposing the
+right Boolean structure matters more than shaving a few thousand bad guesses.
 
 ## Transitive closures with accumulated offsets
 
