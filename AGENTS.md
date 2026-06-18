@@ -32,7 +32,7 @@ original module set.
 | `examples/manual/inherited_entry_example.lp` | Derived inherits an un-overridden virtual method |
 | `examples/manual/virtual_base_example.lp` | Virtual inheritance: Derived : virtual Base via VBTable |
 | `examples/manual/selfdefeating.lp` | SAT demo: hard merge using `sameClass` avoids self-defeating loop |
-| `examples/manual/merge_theory_stress.lp` | TinyXml-like merge reward stress toy: one rewarding hub with many mutually-exclusive leaves hidden behind `&sameClass` |
+| `examples/manual/merge_conditional_stress.lp` | TinyXml-like merge reward stress toy with mixed static, gated, and theory-shaped leaf mutexes hidden behind `&sameClass` |
 | `examples/ooa/` | Real OOAnalyzer test files (`.facts`, `.symbols`, `.json`, `.results`) organized by build: `ooex_vs2008/Debug`, `ooex_vs2010/Lite`, etc. |
 | `src/old/` | v1 Clingo modules (rules.lp, guess.lp, insanity.lp, optimize.lp, output.lp) — reference only |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
@@ -55,6 +55,7 @@ uv run python ooanalyzer.py examples/manual/rtti_example.lp         # same but R
 uv run python ooanalyzer.py examples/manual/multi_inherit_example.lp  # C : A(0), B(8)
 uv run python ooanalyzer.py examples/manual/inherited_entry_example.lp  # derived inherits an un-overridden entry
 uv run python ooanalyzer.py examples/manual/virtual_base_example.lp     # Derived : virtual Base via VBTable
+uv run python ooanalyzer.py examples/manual/merge_conditional_stress.lp # mixed static/conditional merge stress toy
 uv run python tests/test_propagator.py                # focused &sameClass regression test
 ```
 
@@ -242,25 +243,29 @@ can find a conservative first model, but optimizing merge rewards becomes very
 slow because the crucial mutual exclusions are hidden behind the `&sameClass`
 theory propagator instead of appearing as ordinary Boolean clauses.
 
-We built `examples/manual/merge_theory_stress.lp` to isolate this shape:
+`examples/manual/merge_conditional_stress.lp` isolates this shape:
 
 - each group has one rewarding hub `H` and many rewarding leaves `L1..Ln`
-- every pair of leaves in the same group is hard `-mergeClasses`
+- leaf pairs are split between static `-mergeClasses` facts, ordinary gated
+  `-mergeClasses` rules, and theory-shaped mutexes derived through `&sameClass`
 - selecting both `mergeClasses(H, Li)` and `mergeClasses(H, Lj)` only becomes a
-  conflict *after* transitive `&sameClass(Li, Lj)` is derived
+  conflict *after* the corresponding leaf-leaf mutex is active and transitive
+  `&sameClass(Li, Lj)` is derived
 
-So the real conflict is a simple at-most-one relation per hub, but the normal
-solver path only sees it through theory reasons.
+So the real conflict is a conditional at-most-one relation per hub, but the
+normal solver path only sees much of it through ordinary gates and theory
+reasons.
 
 Representative measurements:
 
-- current propagator path, `8x16`: optimum `-80` eventually found, but USC
+- default mixed `8x16`: optimum `-80` eventually found, but USC
   lower bound advances in tiny steps; after local pruning it still takes about
-  4s
-- current propagator path, `16x32`: still timing out at 60s with poor lower
-  bound progress (`[0]` or `[-10]` incumbent depending on flags)
-- grounded `sameClass` closure on the same toy: `8x16` solves in about `0.03s`,
-  `16x32` in about `0.23s`, and even `32x64` in about `3.4s`
+  4.4s
+- mostly static `8x16`: optimum `-80`, about 4.2s; this approximates the
+  removed all-static stress toy
+- conditional disabled `8x16`: optimum `-620`, about 4.0s; this is the
+  soundness check that reward compression must not suppress raw edge rewards
+  merely because a conditional `-mergeClasses/2` atom exists
 
 Interpretation: CDCL/USC itself is not the main failure. The problem is that
 the theory propagator hides the compact Boolean structure that the optimizer
@@ -288,6 +293,9 @@ The most promising directions are:
 Avoid assuming that more propagator-local pruning alone will solve TinyXml or
 malware-scale optimization. The stress toy strongly suggests that exposing the
 right Boolean structure matters more than shaving a few thousand bad guesses.
+Because real inputs have many partial or conditional mutex neighborhoods rather
+than complete static cliques, reward compression can only replace raw edge
+rewards when the corresponding static or guarded mutex condition is active.
 
 ## Transitive closures with accumulated offsets
 

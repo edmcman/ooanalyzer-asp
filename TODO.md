@@ -15,12 +15,12 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 - [ ] Put `sortPair` in theory
 - [ ] Put `nextRegularMethod` in theory
-- [ ] Treat `sameClass`/merge optimization as a first-class blocker; keep `examples/manual/merge_theory_stress.lp` and TinyXml as required performance regressions for solver changes
+- [ ] Treat `sameClass`/merge optimization as a first-class blocker; keep `examples/manual/merge_conditional_stress.lp` and TinyXml as required performance regressions for solver changes
 - [ ] Benchmark a targeted grounded-Boolean encoding for merge conflicts: derive pairwise `:- mergeClasses(H,A), mergeClasses(H,B), incompatible(A,B).` exclusions where the incompatibility witness is ordinary ASP
 - [ ] Evaluate propagator-added static weight/cardinality constraints in `init()` for precomputable mutually-exclusive merge families
 - [ ] Investigate a hybrid lazy-grounding path for `sameClass`: materialize only hot Boolean consequences near rewarded merge candidates instead of relying solely on theory conflicts
 - [ ] Separate "search pruning" from "optimizer proof structure" in experiments; boundary-edge pruning helped local search, but not USC lower-bound progress
-- [ ] Document and preserve the grounded-closure comparison harness/results: on the stress toy, ordinary grounded `sameClass` solved `16x32` in about `0.23s`, showing the main issue is hidden Boolean structure rather than raw CDCL weakness
+- [ ] Document and preserve grounded-closure or compressed-objective comparison harness/results on the conditional stress toy, showing the main issue is hidden Boolean/objective structure rather than raw CDCL weakness
 
 ---
 
