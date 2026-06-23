@@ -43,16 +43,23 @@ mergeClasses(VFTable, Method) :- vftableBelongsToClass(VFTable, _, Method). % ru
 
 % reasonMergeClasses_K: if two methods are present on the same object, and
 % neither class has a base, the methods must be on the same class.
-% Asymmetric: Class1 comes from classRelatedMethod; Class2 is Method's class.
+% Asymmetric: Class1 comes from classRelatedMethod; Method is the related method.
 % No-base facts are witness-based, so both sides join through &sameClass.
+% Witness-only head: Prolog binds Class2 = find(Method) (functional), so the
+% conclusion merges Class1's class with Method's class. Recording the witness
+% Method instead of a free classHasNoBase(Class2) head avoids grounding the
+% cross product classRelatedMethod x classHasNoBase, which otherwise makes every
+% no-base witness (e.g. base vftables) a merge candidate with every related
+% method. mergeClasses(Class1, Method) induces the same partition as
+% mergeClasses(Class1, find(Method)) since Method is in find(Method)'s class.
 % Counterpart: reasonMergeClasses_K (rules.pl:2939)
-%!trace_rule {"% and % are the same class because % is related to % and neither class has a base", Class1, Class2, Class1, Method}
-reasonMergeClassesKUnsorted(Class1, Class2) :-
+%!trace_rule {"% and % are the same class because % is related to % and neither class has a base", Class1, Method, Class1, Method}
+reasonMergeClassesKUnsorted(Class1, Method) :-
     classRelatedMethod(Class1, Method),
     classHasNoBase(NoBase1),
     &sameClass(Class1, NoBase1),
-    classHasNoBase(Class2),
-    &sameClass(Method, Class2).                                              % rules.pl:2939
+    classHasNoBase(NoBase2),
+    &sameClass(Method, NoBase2).                                             % rules.pl:2939
 
 mergeClasses(A, B) :- reasonMergeClassesKUnsorted(A, B), A < B.
 mergeClasses(A, B) :- reasonMergeClassesKUnsorted(B, A), A < B.
