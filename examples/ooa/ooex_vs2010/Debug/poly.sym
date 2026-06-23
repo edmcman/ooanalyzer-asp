@@ -1,10 +1,10 @@
-09:29:36 Grounding...
-09:29:37 Grounding done (0.12s)
-09:29:37 Solving...
-09:29:37 Model found (0.37s): [-20, -3222]
-09:29:37 Model found (0.50s, +0.13s): [-20, -3392]
-09:29:37 Solving done: OPTIMUM FOUND (0.39s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/poly.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/poly.results
+17:04:28 Grounding...
+17:04:28 Grounding done (0.09s)
+17:04:28 Solving...
+17:04:28 Model found (0.20s): [-20, -3222]
+17:04:28 Model found (0.21s, +0.01s): [-20, -3392]
+17:04:28 Solving done: OPTIMUM FOUND (0.13s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/poly.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/poly.results
 OPTIMUM FOUND
 
 Answer: 2
@@ -230,7 +230,7 @@ Optimization: -20 -3392
 %     ~embeddedObject: 3/3
 %       objectInObject(const Rectangle::`vftable'@0x417834,const Shape::`vftable'@0x417898,0) objectInObject(const Circle::`vftable'@0x417858,const Shape::`vftable'@0x417898,0)
 %       objectInObject(const Triangle::`vftable'@0x417878,const Shape::`vftable'@0x417898,0)
-09:29:37 Writing results to examples/ooa/ooex_vs2010/Debug/poly.results
+17:04:28 Writing results to examples/ooa/ooex_vs2010/Debug/poly.results
 
 % Stats:
 %   atoms: 22009.0
@@ -244,11 +244,11 @@ Optimization: -20 -3392
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -3392.0]
 %   lower_bound: [-20.0, -3392.0]
-%   total_time: 0.5152649879455566
-%   ground_time: 0.11609002997283824
-%   time_to_first_model: 0.3742663959856145
-%   max_rss_bytes: 50241536
-%   solve_time: 0.21236801147460938
+%   total_time: 0.22124195098876953
+%   ground_time: 0.08663969700000962
+%   time_to_first_model: 0.2000077190000411
+%   max_rss_bytes: 59432960
+%   solve_time: 0.013792037963867188
 classCallsMethod(Circle::Circle(void)@0x4117c0,Shape::Shape(void)@0x411980)
 classCallsMethod(Rectangle::Rectangle(void)@0x4116e0,Shape::Shape(void)@0x411980)
 classCallsMethod(Triangle::Triangle(void)@0x4118a0,Shape::Shape(void)@0x411980)

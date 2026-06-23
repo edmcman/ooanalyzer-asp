@@ -1,0 +1,23 @@
+17:07:22 Grounding...
+17:08:47 Grounding done (84.59s)
+17:08:47 Solving...
+17:14:06 Solving done: TIME LIMIT REACHED (319.11s)
+% Command: ooanalyzer.py examples/ooa/mysql/mysql_upgrade.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/mysql/mysql_upgrade.exe.results
+% TIME LIMIT REACHED
+
+% Stats:
+%   atoms: 4583046.0
+%   bodies: 10590558.0
+%   rules: 12092698.0
+%   variables: 12487048.0
+%   constraints: 560657.0
+%   choices: 147144151.0
+%   conflicts: 1711.0
+%   models: 0.0
+%   optimal_models: 0.0
+%   final_cost: [inf, inf]
+%   lower_bound: [-3808.0, -168698.0]
+%   total_time: 404.0064380168915
+%   ground_time: 84.58962800799986
+%   max_rss_bytes: 16341639168
+%   solve_time: 215.49376893043518

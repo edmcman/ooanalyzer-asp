@@ -1,15 +1,16 @@
-09:29:36 Grounding...
-09:29:37 Grounding done (0.12s)
-09:29:37 Solving...
-09:29:37 Model found (0.41s): [-28, -3112]
-09:29:37 Lower bound: [-28, -3410]  upper: [-28, -3112]  gap: [0, 298] (0.48s)
-09:29:37 Model found (0.58s, +0.17s): [-28, -3189]
-09:29:37 Model found (0.88s, +0.30s): [-28, -3393]
-09:29:37 Solving done: OPTIMUM FOUND (0.76s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/oo.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/oo.results
+17:04:27 Grounding...
+17:04:28 Grounding done (0.09s)
+17:04:28 Solving...
+17:04:28 Model found (0.21s): [-28, -3112]
+17:04:28 Lower bound: [-28, -3410]  upper: [-28, -3112]  gap: [0, 298] (0.21s)
+17:04:28 Model found (0.21s, +0.00s): [-28, -3162]
+17:04:28 Model found (0.22s, +0.00s): [-28, -3172]
+17:04:28 Model found (0.22s, +0.00s): [-28, -3393]
+17:04:28 Solving done: OPTIMUM FOUND (0.13s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/oo.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/oo.results
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 4
 Optimization: -28 -3393
 
 % Equivalence classes (269 classes, 301 entities):
@@ -182,10 +183,10 @@ Optimization: -28 -3393
 %   [merge]
 %     strongMergeReward: 6/7
 %       strongMergeReward(thunk:virtual Cls2::func3(void)@0x41102d,Cls2::Cls2(void)@0x411b10) strongMergeReward(thunk:virtual Cls1::func1(void)@0x41109b,Cls1::Cls1(void)@0x411a40)
-%       strongMergeReward(thunk:virtual Cls3::func1(void)@0x4110a0,Cls3::Cls3(void)@0x411830) strongMergeReward(thunk:virtual Cls2::func4(void)@0x411104,Cls3::Cls3(void)@0x411830)
+%       strongMergeReward(thunk:virtual Cls3::func1(void)@0x4110a0,Cls3::Cls3(void)@0x411830) strongMergeReward(thunk:virtual Cls2::func4(void)@0x411104,Cls2::Cls2(void)@0x411b10)
 %       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113,type_info::type_info(class type_info const &)@0x4129c0) strongMergeReward(thunk:virtual Cls3::func3(void)@0x4111fe,Cls3::Cls3(void)@0x411830)
 %     ~strongMergeReward: 1/7
-%       strongMergeCandidate(thunk:virtual Cls2::func4(void)@0x411104,Cls2::Cls2(void)@0x411b10)
+%       strongMergeCandidate(thunk:virtual Cls2::func4(void)@0x411104,Cls3::Cls3(void)@0x411830)
 %     weakMergeReward: 19/31
 %       weakMergeReward(Cls1::func2(void)@0x4117b0,Cls1::Cls1(void)@0x411a40) weakMergeReward(virtual Cls2::func4(void)@0x4118c0,const Cls2::`vftable'@0x4178ac)
 %       weakMergeReward(virtual Cls3::func1(void)@0x411940,const Cls3::`vftable'{for `Cls1'}@0x417854) weakMergeReward(virtual Cls3::func3(void)@0x4119c0,const Cls3::`vftable'{for `Cls2'}@0x417844)
@@ -237,7 +238,7 @@ Optimization: -28 -3393
 %     ~embeddedObject: 4/4
 %       objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417844,const Cls1::`vftable'@0x417890,0) objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417844,const Cls2::`vftable'@0x4178ac,12)
 %       objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417854,const Cls1::`vftable'@0x417890,0) objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417854,const Cls2::`vftable'@0x4178ac,12)
-09:29:37 Writing results to examples/ooa/ooex_vs2010/Debug/oo.results
+17:04:28 Writing results to examples/ooa/ooex_vs2010/Debug/oo.results
 
 % Stats:
 %   atoms: 22593.0
@@ -245,17 +246,17 @@ Optimization: -28 -3393
 %   rules: 25896.0
 %   variables: 8873.0
 %   constraints: 124.0
-%   choices: 905.0
-%   conflicts: 18.0
-%   models: 3.0
+%   choices: 1626.0
+%   conflicts: 25.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -3393.0]
 %   lower_bound: [-28.0, -3393.0]
-%   total_time: 0.8970770835876465
-%   ground_time: 0.12366419698810205
-%   time_to_first_model: 0.4125759669987019
-%   max_rss_bytes: 51118080
-%   solve_time: 0.572674036026001
+%   total_time: 0.23508977890014648
+%   ground_time: 0.09293983499992464
+%   time_to_first_model: 0.2091448850001143
+%   max_rss_bytes: 61075456
+%   solve_time: 0.018010854721069336
 classCallsMethod(Cls3::Cls3(void)@0x411830,Cls1::Cls1(void)@0x411a40)
 classCallsMethod(const Cls1::`vftable'@0x417890,virtual Cls1::func1(void)@0x411a90)
 classCallsMethod(const Cls2::`vftable'@0x4178ac,virtual Cls2::func3(void)@0x411b60)
@@ -704,7 +705,7 @@ mergeClasses(std::basic_ostream<char, CHAR_TRAITS>::sentry::~sentry(void)@0x4124
 mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113,type_info::type_info(class type_info const &)@0x4129c0)
 mergeClasses(thunk:virtual Cls1::func1(void)@0x41109b,Cls1::Cls1(void)@0x411a40)
 mergeClasses(thunk:virtual Cls2::func3(void)@0x41102d,Cls2::Cls2(void)@0x411b10)
-mergeClasses(thunk:virtual Cls2::func4(void)@0x411104,Cls3::Cls3(void)@0x411830)
+mergeClasses(thunk:virtual Cls2::func4(void)@0x411104,Cls2::Cls2(void)@0x411b10)
 mergeClasses(thunk:virtual Cls3::func1(void)@0x4110a0,Cls3::Cls3(void)@0x411830)
 mergeClasses(thunk:virtual Cls3::func3(void)@0x4111fe,Cls3::Cls3(void)@0x411830)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x4129f0,const type_info::`vftable'@0x4178cc)
@@ -1305,8 +1306,8 @@ vftableSizeTotal(28)
 %   {thunk:type_info::type_info(class type_info const &)@0x41123f}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411113, type_info::type_info(class type_info const &)@0x4129c0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x4129f0, const type_info::`vftable'@0x4178cc, type_info::_type_info_dtor_internal_method(void)@0x41b37c}
 %   {thunk:virtual Cls1::func1(void)@0x41109b, Cls1::func2(void)@0x4117b0, Cls1::Cls1(void)@0x411a40, virtual Cls1::func1(void)@0x411a90, const Cls1::`vftable'@0x417890}
-%   {thunk:virtual Cls2::func3(void)@0x41102d, virtual Cls2::func4(void)@0x4118c0, Cls2::Cls2(void)@0x411b10, virtual Cls2::func3(void)@0x411b60, const Cls2::`vftable'@0x4178ac}
-%   {thunk:virtual Cls3::func1(void)@0x4110a0, thunk:virtual Cls2::func4(void)@0x411104, thunk:virtual Cls3::func3(void)@0x4111fe, Cls3::Cls3(void)@0x411830, virtual Cls3::func1(void)@0x411940, virtual Cls3::func3(void)@0x4119c0, const Cls3::`vftable'{for `Cls2'}@0x417844, const Cls3::`vftable'{for `Cls1'}@0x417854}
+%   {thunk:virtual Cls2::func3(void)@0x41102d, thunk:virtual Cls2::func4(void)@0x411104, virtual Cls2::func4(void)@0x4118c0, Cls2::Cls2(void)@0x411b10, virtual Cls2::func3(void)@0x411b60, const Cls2::`vftable'@0x4178ac}
+%   {thunk:virtual Cls3::func1(void)@0x4110a0, thunk:virtual Cls3::func3(void)@0x4111fe, Cls3::Cls3(void)@0x411830, virtual Cls3::func1(void)@0x411940, virtual Cls3::func3(void)@0x4119c0, const Cls3::`vftable'{for `Cls2'}@0x417844, const Cls3::`vftable'{for `Cls1'}@0x417854}
 %   {thunk:virtual type_info::~type_info(void)@0x411055}
 %   {thunk:virtual type_info::~type_info(void)@0x4110c3}
 %   {virtual type_info::~type_info(void)@0x4149ac}

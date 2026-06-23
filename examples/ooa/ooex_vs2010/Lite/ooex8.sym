@@ -1,20 +1,19 @@
-09:29:37 Grounding...
-09:29:37 Grounding done (0.05s)
-09:29:37 Solving...
-09:29:37 Model found (0.13s): [-20, -1818]
-09:29:37 Lower bound: [-20, -2156]  upper: [-20, -1818]  gap: [0, 338] (0.17s)
-09:29:37 Lower bound: [-20, -2146]  upper: [-20, -1818]  gap: [0, 328] (0.20s)
-09:29:37 Model found (0.29s, +0.16s): [-20, -1982]
-09:29:37 Lower bound: [-20, -2136]  upper: [-20, -1982]  gap: [0, 154] (0.33s)
-09:29:37 Model found (0.45s, +0.16s): [-20, -2009]
-09:29:37 Model found (0.55s, +0.09s): [-20, -2103]
-09:29:37 Lower bound: [-20, -2119]  upper: [-20, -2103]  gap: [0, 16] (0.58s)
-09:29:37 Model found (0.62s, +0.07s): [-20, -2111]
-09:29:37 Solving done: OPTIMUM FOUND (0.57s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex8.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex8.results
+17:02:08 Grounding...
+17:02:08 Grounding done (0.02s)
+17:02:08 Solving...
+17:02:08 Model found (0.04s): [-20, -1818]
+17:02:08 Lower bound: [-20, -2156]  upper: [-20, -1818]  gap: [0, 338] (0.04s)
+17:02:08 Lower bound: [-20, -2146]  upper: [-20, -1818]  gap: [0, 328] (0.04s)
+17:02:08 Lower bound: [-20, -2136]  upper: [-20, -1818]  gap: [0, 318] (0.04s)
+17:02:08 Model found (0.05s, +0.00s): [-20, -2009]
+17:02:08 Model found (0.05s, +0.00s): [-20, -2103]
+17:02:08 Lower bound: [-20, -2119]  upper: [-20, -2103]  gap: [0, 16] (0.05s)
+17:02:08 Model found (0.05s, +0.00s): [-20, -2111]
+17:02:08 Solving done: OPTIMUM FOUND (0.03s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex8.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex8.results
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 4
 Optimization: -20 -2111
 
 % Equivalence classes (162 classes, 176 entities):
@@ -166,7 +165,7 @@ Optimization: -20 -2111
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const std::bad_alloc::`vftable'@0x406158,const std::exception::`vftable'@0x406174,0)
-09:29:37 Writing results to examples/ooa/ooex_vs2010/Lite/ooex8.results
+17:02:09 Writing results to examples/ooa/ooex_vs2010/Lite/ooex8.results
 
 % Stats:
 %   atoms: 8280.0
@@ -174,17 +173,17 @@ Optimization: -20 -2111
 %   rules: 9379.0
 %   variables: 2440.0
 %   constraints: 124.0
-%   choices: 761.0
-%   conflicts: 25.0
-%   models: 5.0
+%   choices: 855.0
+%   conflicts: 21.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -2111.0]
 %   lower_bound: [-20.0, -2111.0]
-%   total_time: 0.635235071182251
-%   ground_time: 0.045807833987055346
-%   time_to_first_model: 0.13495135700213723
-%   max_rss_bytes: 33030144
-%   solve_time: 0.5391590595245361
+%   total_time: 0.05814504623413086
+%   ground_time: 0.024089139000125215
+%   time_to_first_model: 0.04235048300006383
+%   max_rss_bytes: 42164224
+%   solve_time: 0.00799703598022461
 classCallsMethod(D::D(void)@0x401080,B::B(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::_Copy_str(char const *)@0x4013c1)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x40141f,std::exception::_Tidy(void)@0x401401)

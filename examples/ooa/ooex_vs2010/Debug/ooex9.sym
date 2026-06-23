@@ -1,32 +1,31 @@
-09:29:36 Grounding...
-09:29:37 Grounding done (0.11s)
-09:29:37 Solving...
-09:29:37 Model found (0.36s): [-40, -2458]
-09:29:37 Lower bound: [-40, -2724]  upper: [-40, -2458]  gap: [0, 266] (0.58s)
-09:29:37 Lower bound: [-40, -2714]  upper: [-40, -2458]  gap: [0, 256] (0.66s)
-09:29:37 Lower bound: [-40, -2704]  upper: [-40, -2458]  gap: [0, 246] (0.74s)
-09:29:37 Model found (0.92s, +0.55s): [-40, -2548]
-09:29:37 Lower bound: [-40, -2694]  upper: [-40, -2548]  gap: [0, 146] (1.00s)
-09:29:38 Model found (1.08s, +0.16s): [-40, -2558]
-09:29:38 Lower bound: [-40, -2685]  upper: [-40, -2558]  gap: [0, 127] (1.31s)
-09:29:38 Lower bound: [-40, -2676]  upper: [-40, -2558]  gap: [0, 118] (1.32s)
-09:29:38 Lower bound: [-40, -2667]  upper: [-40, -2558]  gap: [0, 109] (1.32s)
-09:29:38 Lower bound: [-40, -2658]  upper: [-40, -2558]  gap: [0, 100] (1.32s)
-09:29:38 Lower bound: [-40, -2649]  upper: [-40, -2558]  gap: [0, 91] (1.36s)
-09:29:38 Lower bound: [-40, -2640]  upper: [-40, -2558]  gap: [0, 82] (1.90s)
-09:29:39 Model found (2.46s, +1.39s): [-40, -2592]
-09:29:39 Lower bound: [-40, -2632]  upper: [-40, -2592]  gap: [0, 40] (2.55s)
-09:29:39 Lower bound: [-40, -2624]  upper: [-40, -2592]  gap: [0, 32] (2.55s)
-09:29:39 Model found (2.68s, +0.22s): [-40, -2593]
-09:29:40 Model found (3.02s, +0.34s): [-40, -2624]
-09:29:40 Solving done: OPTIMUM FOUND (2.91s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
+17:04:28 Grounding...
+17:04:28 Grounding done (0.09s)
+17:04:28 Solving...
+17:04:28 Model found (0.15s): [-40, -2458]
+17:04:28 Lower bound: [-40, -2724]  upper: [-40, -2458]  gap: [0, 266] (0.15s)
+17:04:28 Lower bound: [-40, -2714]  upper: [-40, -2458]  gap: [0, 256] (0.15s)
+17:04:28 Lower bound: [-40, -2704]  upper: [-40, -2458]  gap: [0, 246] (0.15s)
+17:04:28 Lower bound: [-40, -2694]  upper: [-40, -2458]  gap: [0, 236] (0.15s)
+17:04:28 Lower bound: [-40, -2684]  upper: [-40, -2458]  gap: [0, 226] (0.15s)
+17:04:28 Lower bound: [-40, -2674]  upper: [-40, -2458]  gap: [0, 216] (0.15s)
+17:04:28 Lower bound: [-40, -2664]  upper: [-40, -2458]  gap: [0, 206] (0.15s)
+17:04:28 Lower bound: [-40, -2654]  upper: [-40, -2458]  gap: [0, 196] (0.16s)
+17:04:28 Model found (0.16s, +0.01s): [-40, -2488]
+17:04:28 Lower bound: [-40, -2644]  upper: [-40, -2488]  gap: [0, 156] (0.16s)
+17:04:28 Model found (0.16s, +0.00s): [-40, -2498]
+17:04:28 Model found (0.17s, +0.00s): [-40, -2508]
+17:04:28 Lower bound: [-40, -2635]  upper: [-40, -2508]  gap: [0, 127] (0.17s)
+17:04:28 Lower bound: [-40, -2626]  upper: [-40, -2508]  gap: [0, 118] (0.17s)
+17:04:28 Model found (0.17s, +0.00s): [-40, -2610]
+17:04:28 Lower bound: [-40, -2618]  upper: [-40, -2610]  gap: [0, 8] (0.17s)
+17:04:28 Solving done: OPTIMUM FOUND (0.08s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
 OPTIMUM FOUND
 
-Answer: 6
-Optimization: -40 -2624
+Answer: 5
+Optimization: -40 -2610
 
-% Equivalence classes (212 classes, 233 entities):
+% Equivalence classes (213 classes, 233 entities):
 
 % Selected guesses:
 %   [method]
@@ -145,11 +144,11 @@ Optimization: -40 -2624
 %       guessMethodReward(__ehhandler$_main@0x414c0e) guessMethodReward(type_info::_type_info_dtor_internal_method(void)@0x41a270)
 %     ~guessMethodReward: 0/224
 %   [constructor]
-%     guessConstructor1Reward: 1/5
+%     guessConstructor1Reward: 5/5
+%       guessConstructor1Reward(D::D(void)@0x4115f0) guessConstructor1Reward(A::A(void)@0x4116d0)
+%       guessConstructor1Reward(B::B(void)@0x411760) guessConstructor1Reward(C::C(void)@0x411840)
 %       guessConstructor1Reward(type_info::type_info(class type_info const &)@0x411bf0)
-%     ~guessConstructor1Reward: 4/5
-%       guessConstructor1Domain(D::D(void)@0x4115f0) guessConstructor1Domain(A::A(void)@0x4116d0)
-%       guessConstructor1Domain(B::B(void)@0x411760) guessConstructor1Domain(C::C(void)@0x411840)
+%     ~guessConstructor1Reward: 0/5
 %     guessConstructor2Reward: 0/0
 %     ~guessConstructor2Reward: 0/0
 %     guessConstructor3Reward: 1/1
@@ -158,13 +157,16 @@ Optimization: -40 -2624
 %     guessConstructor4Reward: 0/0
 %     ~guessConstructor4Reward: 0/0
 %   [merge]
-%     strongMergeReward: 10/10
-%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0) strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0)
-%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760) strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840)
-%       strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0) strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
-%       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
-%       strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760) strongMergeReward(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)
-%     ~strongMergeReward: 0/10
+%     strongMergeReward: 5/10
+%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840) strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
+%       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760)
+%       strongMergeReward(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)
+%     ~strongMergeReward: 5/10
+%       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0)
+%       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0)
+%       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760)
+%       strongMergeCandidate(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0)
+%       strongMergeCandidate(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
 %     weakMergeReward: 6/12
 %       weakMergeReward(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakMergeReward(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798)
 %       weakMergeReward(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakMergeReward(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758)
@@ -173,16 +175,16 @@ Optimization: -40 -2624
 %       weakMergeCandidate(D::D(void)@0x4115f0,B::B(void)@0x411760) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const D::`vftable'{for `A'}@0x416740)
 %       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0)
 %       weakMergeCandidate(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c)
-%     weakG1Bonus: 2/12
+%     weakG1Bonus: 6/12
+%       weakG1Bonus(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakG1Bonus(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798)
+%       weakG1Bonus(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakG1Bonus(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758)
 %       weakG1Bonus(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4) weakG1Bonus(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270)
-%     ~weakG1Bonus: 10/12
+%     ~weakG1Bonus: 6/12
 %       weakMergeCandidate(D::D(void)@0x4115f0,B::B(void)@0x411760) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const D::`vftable'{for `A'}@0x416740)
-%       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c)
-%       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0) weakMergeCandidate(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758)
-%       weakMergeCandidate(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c)
-%       weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakMergeCandidate(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758)
+%       weakMergeCandidate(virtual int A::get_a(void)@0x411720,const B::`vftable'{for `A'}@0x41678c) weakMergeCandidate(virtual int A::get_a(void)@0x411720,const C::`vftable'{for `A'}@0x4167b0)
+%       weakMergeCandidate(virtual int B::get_b(void)@0x411800,const D::`vftable'{for `B'}@0x416758) weakMergeCandidate(virtual int C::get_c(void)@0x4118e0,const D::`vftable'{for `C'}@0x41674c)
 %   [composition]
-%     guessDerivedClassReward: 20/20
+%     guessDerivedClassReward: 16/16
 %       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0)
 %       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 %       guessDerivedClassReward(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12)
@@ -196,39 +198,31 @@ Optimization: -40 -2624
 %       guessDerivedClassReward(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12)
 %       guessDerivedClassReward(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
 %       guessDerivedClassReward(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12)
-%       guessDerivedClassReward(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
 %       guessDerivedClassReward(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
-%       guessDerivedClassReward(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 %       guessDerivedClassReward(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12)
-%       guessDerivedClassReward(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 %       guessDerivedClassReward(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
-%       guessDerivedClassReward(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
-%     ~guessDerivedClassReward: 0/20
-%     purecallNotMostDerivedReward: 0/20
-%     ~purecallNotMostDerivedReward: 20/20
+%     ~guessDerivedClassReward: 0/16
+%     purecallNotMostDerivedReward: 0/16
+%     ~purecallNotMostDerivedReward: 16/16
 %       objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 %       objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12)
 %       objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0)
 %       objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12)
 %       objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0)
 %       objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
-%       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
-%       objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
-%       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
-%       objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
-%     embeddedObject: 0/20
-%     ~embeddedObject: 20/20
+%       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
+%       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
+%     embeddedObject: 0/16
+%     ~embeddedObject: 16/16
 %       objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 %       objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `C'}@0x4167bc,12)
 %       objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0)
 %       objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12)
 %       objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `A'}@0x41678c,0) objectInObject(const D::`vftable'{for `B'}@0x416758,const B::`vftable'{for `B'}@0x416798,0)
 %       objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
-%       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
-%       objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
-%       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
-%       objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
-09:29:40 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+%       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
+%       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
+17:04:28 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
 
 % Stats:
 %   atoms: 10384.0
@@ -236,17 +230,17 @@ Optimization: -40 -2624
 %   rules: 22147.0
 %   variables: 8578.0
 %   constraints: 395.0
-%   choices: 3098.0
-%   conflicts: 276.0
-%   models: 6.0
+%   choices: 10231.0
+%   conflicts: 105.0
+%   models: 5.0
 %   optimal_models: 1.0
-%   final_cost: [-40.0, -2624.0]
-%   lower_bound: [-40.0, -2624.0]
-%   total_time: 3.0316009521484375
-%   ground_time: 0.11251267601619475
-%   time_to_first_model: 0.36451175800175406
-%   max_rss_bytes: 44040192
-%   solve_time: 2.7820160388946533
+%   final_cost: [-40.0, -2610.0]
+%   lower_bound: [-40.0, -2610.0]
+%   total_time: 0.1794130802154541
+%   ground_time: 0.08744979499988403
+%   time_to_first_model: 0.14592088499989586
+%   max_rss_bytes: 53444608
+%   solve_time: 0.026751995086669922
 classCallsMethod(D::D(void)@0x4115f0,B::B(void)@0x411760)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411720)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411720)
@@ -302,6 +296,7 @@ classSizeGTE(D::D(void)@0x4115f0,0)
 classSizeGTE(D::D(void)@0x4115f0,16)
 classSizeGTE(D::D(void)@0x4115f0,20)
 classSizeGTE(D::D(void)@0x4115f0,28)
+classSizeGTE(D::D(void)@0x4115f0,36)
 classSizeGTE(D::D(void)@0x4115f0,4)
 classSizeGTE(D::D(void)@0x4115f0,8)
 classSizeGTE(DebuggerProbe@0x412620,0)
@@ -354,24 +349,20 @@ classSizeGTE(class type_info & type_info::operator=(class type_info const &)@0x4
 classSizeGTE(const A::`vftable'@0x416780,0)
 classSizeGTE(const B::`vftable'{for `A'}@0x41678c,0)
 classSizeGTE(const B::`vftable'{for `A'}@0x41678c,12)
+classSizeGTE(const B::`vftable'{for `A'}@0x41678c,16)
 classSizeGTE(const B::`vftable'{for `A'}@0x41678c,20)
-classSizeGTE(const B::`vftable'{for `A'}@0x41678c,28)
-classSizeGTE(const B::`vftable'{for `A'}@0x41678c,36)
 classSizeGTE(const B::`vftable'{for `B'}@0x416798,0)
 classSizeGTE(const B::`vftable'{for `B'}@0x416798,12)
+classSizeGTE(const B::`vftable'{for `B'}@0x416798,16)
 classSizeGTE(const B::`vftable'{for `B'}@0x416798,20)
-classSizeGTE(const B::`vftable'{for `B'}@0x416798,28)
-classSizeGTE(const B::`vftable'{for `B'}@0x416798,36)
 classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,0)
 classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,12)
+classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,16)
 classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,20)
-classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,28)
-classSizeGTE(const C::`vftable'{for `A'}@0x4167b0,36)
 classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,0)
 classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,12)
+classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,16)
 classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,20)
-classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,28)
-classSizeGTE(const C::`vftable'{for `C'}@0x4167bc,36)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,0)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,12)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,16)
@@ -379,10 +370,7 @@ classSizeGTE(const D::`vftable'{for `A'}@0x416740,20)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,24)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,28)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,32)
-classSizeGTE(const D::`vftable'{for `A'}@0x416740,36)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,4)
-classSizeGTE(const D::`vftable'{for `A'}@0x416740,40)
-classSizeGTE(const D::`vftable'{for `A'}@0x416740,48)
 classSizeGTE(const D::`vftable'{for `A'}@0x416740,8)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,0)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,12)
@@ -391,10 +379,7 @@ classSizeGTE(const D::`vftable'{for `B'}@0x416758,20)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,24)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,28)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,32)
-classSizeGTE(const D::`vftable'{for `B'}@0x416758,36)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,4)
-classSizeGTE(const D::`vftable'{for `B'}@0x416758,40)
-classSizeGTE(const D::`vftable'{for `B'}@0x416758,48)
 classSizeGTE(const D::`vftable'{for `B'}@0x416758,8)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,0)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,12)
@@ -403,10 +388,7 @@ classSizeGTE(const D::`vftable'{for `C'}@0x41674c,20)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,24)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,28)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,32)
-classSizeGTE(const D::`vftable'{for `C'}@0x41674c,36)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,4)
-classSizeGTE(const D::`vftable'{for `C'}@0x41674c,40)
-classSizeGTE(const D::`vftable'{for `C'}@0x41674c,48)
 classSizeGTE(const D::`vftable'{for `C'}@0x41674c,8)
 classSizeGTE(const type_info::`vftable'@0x4167d4,0)
 classSizeGTE(failwithmessage@0x412380,0)
@@ -583,17 +565,23 @@ classSizeGTE(virtual int C::get_c(void)@0x4118e0,12)
 classSizeGTE(virtual int D::get_d(void)@0x411920,0)
 classSizeGTE(virtual int D::get_d(void)@0x411920,28)
 classSizeGTE(virtual type_info::~type_info(void)@0x413bdc,0)
+classSizeLTE(D::D(void)@0x4115f0,36)
+classSizeLTE(const A::`vftable'@0x416780,36)
+classSizeLTE(const B::`vftable'{for `A'}@0x41678c,36)
+classSizeLTE(const B::`vftable'{for `B'}@0x416798,36)
+classSizeLTE(const C::`vftable'{for `A'}@0x4167b0,36)
+classSizeLTE(const C::`vftable'{for `C'}@0x4167bc,36)
+constructor(A::A(void)@0x4116d0)
+constructor(B::B(void)@0x411760)
+constructor(C::C(void)@0x411840)
+constructor(D::D(void)@0x4115f0)
 constructor(class type_info & type_info::operator=(class type_info const &)@0x411cb0)
 constructor(type_info::type_info(class type_info const &)@0x411bf0)
 deletingDestructor(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20)
 derivedClass(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12)
-derivedClass(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
 derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
-derivedClass(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 derivedClass(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12)
-derivedClass(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 derivedClass(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
-derivedClass(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
 derivedClass(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0)
 derivedClass(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 derivedClass(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12)
@@ -613,24 +601,21 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
+mergeClasses(const A::`vftable'@0x416780,A::A(void)@0x4116d0)
 mergeClasses(const B::`vftable'{for `A'}@0x41678c,const B::`vftable'{for `B'}@0x416798)
 mergeClasses(const B::`vftable'{for `B'}@0x416798,B::B(void)@0x411760)
 mergeClasses(const C::`vftable'{for `A'}@0x4167b0,const C::`vftable'{for `C'}@0x4167bc)
 mergeClasses(const C::`vftable'{for `C'}@0x4167bc,C::C(void)@0x411840)
 mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `B'}@0x416758)
 mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `C'}@0x41674c)
+mergeClasses(const D::`vftable'{for `B'}@0x416758,D::D(void)@0x4115f0)
 mergeClasses(const D::`vftable'{for `C'}@0x41674c,const D::`vftable'{for `B'}@0x416758)
 mergeClasses(const type_info::`vftable'@0x4167d4,type_info::_type_info_dtor_internal_method(void)@0x41a270)
 mergeClasses(const type_info::`vftable'@0x4167d4,type_info::type_info(class type_info const &)@0x411bf0)
 mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0)
-mergeClasses(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0)
-mergeClasses(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760)
 mergeClasses(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840)
-mergeClasses(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0)
 mergeClasses(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760)
-mergeClasses(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
 mergeClasses(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
-mergeClasses(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0)
 mergeClasses(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270)
@@ -863,13 +848,9 @@ method(virtual int C::get_c(void)@0x4118e0)
 method(virtual int D::get_d(void)@0x411920)
 method(virtual type_info::~type_info(void)@0x413bdc)
 objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12)
-objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,28)
 objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
-objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,28)
 objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12)
-objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,28)
 objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
-objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,28)
 objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `A'}@0x41678c,0)
 objectInObject(const D::`vftable'{for `A'}@0x416740,const B::`vftable'{for `B'}@0x416798,0)
 objectInObject(const D::`vftable'{for `A'}@0x416740,const C::`vftable'{for `A'}@0x4167b0,12)
@@ -882,10 +863,6 @@ objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `A'}@
 objectInObject(const D::`vftable'{for `C'}@0x41674c,const B::`vftable'{for `B'}@0x416798,0)
 objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `A'}@0x4167b0,12)
 objectInObject(const D::`vftable'{for `C'}@0x41674c,const C::`vftable'{for `C'}@0x4167bc,12)
-realDestructor(A::A(void)@0x4116d0)
-realDestructor(B::B(void)@0x411760)
-realDestructor(C::C(void)@0x411840)
-realDestructor(D::D(void)@0x4115f0)
 vfTable(const A::`vftable'@0x416780)
 vfTable(const B::`vftable'{for `A'}@0x41678c)
 vfTable(const B::`vftable'{for `B'}@0x416798)
@@ -923,13 +900,16 @@ vfTableWrite(4265907,B::B(void)@0x411760,4,const B::`vftable'{for `A'}@0x41678c)
 vfTableWrite(4266113,C::C(void)@0x411840,0,const C::`vftable'{for `C'}@0x4167bc)
 vfTableWrite(4266131,C::C(void)@0x411840,4,const C::`vftable'{for `A'}@0x4167b0)
 vfTableWrite(4267004,type_info::type_info(class type_info const &)@0x411bf0,0,const type_info::`vftable'@0x4167d4)
+vftableBelongsToClass(const A::`vftable'@0x416780,0,A::A(void)@0x4116d0)
 vftableBelongsToClass(const B::`vftable'{for `B'}@0x416798,0,B::B(void)@0x411760)
 vftableBelongsToClass(const C::`vftable'{for `C'}@0x4167bc,0,C::C(void)@0x411840)
+vftableBelongsToClass(const D::`vftable'{for `B'}@0x416758,0,D::D(void)@0x4115f0)
 vftableBelongsToClass(const type_info::`vftable'@0x4167d4,0,type_info::type_info(class type_info const &)@0x411bf0)
 vftableSizeTotal(40)
 %   {$LN11@0x412d82}
 %   {$LN6_1@0x413153}
 %   {* __cdecl operator new(unsigned int)@0x411962}
+%   {A::A(void)@0x4116d0, virtual int A::get_a(void)@0x411720, const A::`vftable'@0x416780}
 %   {ArrayUnwindFilter@0x412e90}
 %   {DebuggerProbe@0x412620}
 %   {DebuggerRuntime@0x4126d0}
@@ -1133,9 +1113,9 @@ vftableSizeTotal(40)
 %   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145}
 %   {thunk:type_info::type_info(class type_info const &)@0x4111d1}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8, type_info::type_info(class type_info const &)@0x411bf0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20, const type_info::`vftable'@0x4167d4, type_info::_type_info_dtor_internal_method(void)@0x41a270}
-%   {thunk:virtual int A::get_a(void)@0x411014, thunk:virtual int C::get_c(void)@0x4110af, thunk:virtual int B::get_b(void)@0x411131, thunk:virtual int D::get_d(void)@0x4111cc, D::D(void)@0x4115f0, A::A(void)@0x4116d0, B::B(void)@0x411760, virtual int B::get_b(void)@0x411800, C::C(void)@0x411840, virtual int C::get_c(void)@0x4118e0, const B::`vftable'{for `A'}@0x41678c, const B::`vftable'{for `B'}@0x416798, const C::`vftable'{for `A'}@0x4167b0, const C::`vftable'{for `C'}@0x4167bc}
+%   {thunk:virtual int A::get_a(void)@0x411014, thunk:virtual int C::get_c(void)@0x4110af, C::C(void)@0x411840, virtual int C::get_c(void)@0x4118e0, const C::`vftable'{for `A'}@0x4167b0, const C::`vftable'{for `C'}@0x4167bc}
+%   {thunk:virtual int B::get_b(void)@0x411131, B::B(void)@0x411760, virtual int B::get_b(void)@0x411800, const B::`vftable'{for `A'}@0x41678c, const B::`vftable'{for `B'}@0x416798}
+%   {thunk:virtual int D::get_d(void)@0x4111cc, D::D(void)@0x4115f0, virtual int D::get_d(void)@0x411920, const D::`vftable'{for `A'}@0x416740, const D::`vftable'{for `C'}@0x41674c, const D::`vftable'{for `B'}@0x416758}
 %   {thunk:virtual type_info::~type_info(void)@0x41104b}
 %   {thunk:virtual type_info::~type_info(void)@0x411096}
-%   {virtual int A::get_a(void)@0x411720, const A::`vftable'@0x416780}
-%   {virtual int D::get_d(void)@0x411920, const D::`vftable'{for `A'}@0x416740, const D::`vftable'{for `C'}@0x41674c, const D::`vftable'{for `B'}@0x416758}
 %   {virtual type_info::~type_info(void)@0x413bdc}

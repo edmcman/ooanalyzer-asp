@@ -1,33 +1,33 @@
-09:29:37 Grounding...
-09:29:39 Grounding done (2.64s)
-09:29:39 Solving...
-09:29:59 Model found (22.60s): [-132, -28204]
-09:30:08 Lower bound: [-132, -37441]  upper: [-132, -28204]  gap: [0, 9237] (31.69s)
-09:30:18 Lower bound: [-132, -37431]  upper: [-132, -28204]  gap: [0, 9227] (40.81s)
-09:30:26 Lower bound: [-132, -37421]  upper: [-132, -28204]  gap: [0, 9217] (49.62s)
-09:30:35 Lower bound: [-132, -37411]  upper: [-132, -28204]  gap: [0, 9207] (58.34s)
-09:30:44 Lower bound: [-132, -37401]  upper: [-132, -28204]  gap: [0, 9197] (66.93s)
-09:30:52 Lower bound: [-132, -37391]  upper: [-132, -28204]  gap: [0, 9187] (75.41s)
-09:30:52 Lower bound: [-132, -37381]  upper: [-132, -28204]  gap: [0, 9177] (75.50s)
-09:31:01 Lower bound: [-132, -37371]  upper: [-132, -28204]  gap: [0, 9167] (83.97s)
-09:31:01 Lower bound: [-132, -37361]  upper: [-132, -28204]  gap: [0, 9157] (84.05s)
-09:31:22 Model found (104.80s, +82.20s): [-132, -28884]
-09:31:31 Lower bound: [-132, -37351]  upper: [-132, -28884]  gap: [0, 8467] (113.97s)
-09:31:39 Lower bound: [-132, -37341]  upper: [-132, -28884]  gap: [0, 8457] (122.66s)
-09:31:40 Lower bound: [-132, -37331]  upper: [-132, -28884]  gap: [0, 8447] (123.22s)
-09:31:43 Lower bound: [-132, -37321]  upper: [-132, -28884]  gap: [0, 8437] (126.43s)
-09:32:04 Lower bound: [-132, -37311]  upper: [-132, -28884]  gap: [0, 8427] (147.01s)
-09:32:26 Lower bound: [-132, -37301]  upper: [-132, -28884]  gap: [0, 8417] (169.69s)
-09:32:57 Model found (200.00s, +95.20s): [-132, -28904]
-09:38:48 Model found (550.77s, +350.77s): [-132, -37039]
-09:39:03 Lower bound: [-132, -37203]  upper: [-132, -37039]  gap: [0, 164] (565.83s)
-09:39:07 Lower bound: [-132, -37155]  upper: [-132, -37039]  gap: [0, 116] (570.51s)
-09:39:39 Model found (601.79s, +51.01s): [-132, -37087]
-09:40:26 Lower bound: [-132, -37108]  upper: [-132, -37087]  gap: [0, 21] (649.26s)
-09:40:42 Lower bound: [-132, -37101]  upper: [-132, -37087]  gap: [0, 14] (665.26s)
-09:40:58 Lower bound: [-132, -37094]  upper: [-132, -37087]  gap: [0, 7] (681.02s)
-09:40:58 Solving done: OPTIMUM FOUND (678.76s)
-% Command: ooanalyzer.py examples/ooa/CImg/tetris.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/CImg/tetris.exe.results
+17:09:45 Grounding...
+17:09:48 Grounding done (2.18s)
+17:09:48 Solving...
+17:09:49 Model found (3.57s): [-132, -28204]
+17:09:49 Lower bound: [-132, -37441]  upper: [-132, -28204]  gap: [0, 9237] (3.63s)
+17:09:49 Lower bound: [-132, -37431]  upper: [-132, -28204]  gap: [0, 9227] (3.63s)
+17:09:49 Lower bound: [-132, -37421]  upper: [-132, -28204]  gap: [0, 9217] (3.63s)
+17:09:49 Lower bound: [-132, -37411]  upper: [-132, -28204]  gap: [0, 9207] (3.63s)
+17:09:49 Lower bound: [-132, -37401]  upper: [-132, -28204]  gap: [0, 9197] (3.64s)
+17:09:49 Lower bound: [-132, -37391]  upper: [-132, -28204]  gap: [0, 9187] (3.64s)
+17:09:49 Lower bound: [-132, -37381]  upper: [-132, -28204]  gap: [0, 9177] (3.64s)
+17:09:49 Lower bound: [-132, -37371]  upper: [-132, -28204]  gap: [0, 9167] (3.64s)
+17:09:49 Lower bound: [-132, -37361]  upper: [-132, -28204]  gap: [0, 9157] (3.64s)
+17:09:49 Model found (3.67s, +0.10s): [-132, -28884]
+17:09:49 Lower bound: [-132, -37351]  upper: [-132, -28884]  gap: [0, 8467] (3.71s)
+17:09:49 Lower bound: [-132, -37341]  upper: [-132, -28884]  gap: [0, 8457] (3.71s)
+17:09:49 Lower bound: [-132, -37331]  upper: [-132, -28884]  gap: [0, 8447] (3.71s)
+17:09:49 Lower bound: [-132, -37321]  upper: [-132, -28884]  gap: [0, 8437] (3.72s)
+17:09:49 Lower bound: [-132, -37311]  upper: [-132, -28884]  gap: [0, 8427] (3.74s)
+17:09:49 Lower bound: [-132, -37301]  upper: [-132, -28884]  gap: [0, 8417] (3.75s)
+17:09:49 Model found (3.78s, +0.11s): [-132, -28904]
+17:09:50 Model found (4.28s, +0.50s): [-132, -37039]
+17:09:50 Lower bound: [-132, -37203]  upper: [-132, -37039]  gap: [0, 164] (4.31s)
+17:09:50 Lower bound: [-132, -37155]  upper: [-132, -37039]  gap: [0, 116] (4.32s)
+17:09:50 Model found (4.34s, +0.07s): [-132, -37087]
+17:09:50 Lower bound: [-132, -37108]  upper: [-132, -37087]  gap: [0, 21] (4.39s)
+17:09:50 Lower bound: [-132, -37101]  upper: [-132, -37087]  gap: [0, 14] (4.40s)
+17:09:50 Lower bound: [-132, -37094]  upper: [-132, -37087]  gap: [0, 7] (4.41s)
+17:09:50 Solving done: OPTIMUM FOUND (2.23s)
+% Command: ooanalyzer.py examples/ooa/CImg/tetris.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/CImg/tetris.exe.results
 OPTIMUM FOUND
 
 Answer: 5
@@ -2052,7 +2052,7 @@ Optimization: -132 -37087
 %       objectInObject(std::bad_alloc::vftable@0x4b38bc,std::exception::vftable@0x4b7348,0) objectInObject(std::bad_exception::vftable@0x4b46b0,std::exception::vftable@0x4b7348,0)
 %       objectInObject(std::bad_cast::vftable@0x4b7370,std::exception::vftable@0x4b7348,0) objectInObject(std::bad_typeid::vftable@0x4b7380,std::exception::vftable@0x4b7348,0)
 %       objectInObject(std::__non_rtti_object::vftable@0x4b7390,std::bad_typeid::vftable@0x4b7380,0)
-09:40:59 Writing results to examples/ooa/CImg/tetris.exe.results
+17:09:50 Writing results to examples/ooa/CImg/tetris.exe.results
 
 % Stats:
 %   atoms: 182700.0
@@ -2060,17 +2060,17 @@ Optimization: -132 -37087
 %   rules: 307425.0
 %   variables: 197802.0
 %   constraints: 10810.0
-%   choices: 49908.0
-%   conflicts: 378.0
+%   choices: 75333.0
+%   conflicts: 316.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-132.0, -37087.0]
 %   lower_bound: [-132.0, -37087.0]
-%   total_time: 681.5761060714722
-%   ground_time: 2.640386874001706
-%   time_to_first_model: 22.5996005370107
-%   max_rss_bytes: 371474432
-%   solve_time: 676.5394060611725
+%   total_time: 4.56443977355957
+%   ground_time: 2.1824880019999
+%   time_to_first_model: 3.573525676999907
+%   max_rss_bytes: 393355264
+%   solve_time: 0.8516659736633301
 classCallsMethod(CImg<float>::CImg@0x44a260,CImg<float>::size@0x44a480)
 classCallsMethod(CImg<float>::CImg@0x44a370,CImg<float>::size@0x44a480)
 classCallsMethod(CImg<float>::operator()@0x44a4e0,CImg<float>::offset@0x44c3a0)
