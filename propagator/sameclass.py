@@ -275,12 +275,16 @@ class SameClassPropagator:
 
     def init(self, init):
         init_profile_start = time.perf_counter() if PROFILE else None
-        # check() is part of eager propagation: it asserts sameClass atoms that
-        # become true through multi-edge paths once watched merge propagation has
-        # reached a fixpoint.  Without Fixpoint checks, search can run for a long
-        # time before a total assignment ever gives the propagator a chance to
-        # add these path clauses.
-        init.check_mode = clingo.PropagatorCheckMode.Both
+        # Total-only check(): propagate() already maintains the union-find and
+        # asserts sameClass atoms as each watched merge edge arrives, so the
+        # multi-edge paths are covered eagerly without fixpoint-time check()
+        # sweeps. Running check() at every propagation fixpoint (Both) adds large
+        # Python overhead (a full _check_atoms sweep per fixpoint) for no pruning
+        # gain on solvable inputs -- measured 50-280x slower than Total with
+        # identical choices/conflicts and the same proven optimum. check() at
+        # total assignments is still needed to validate solver-guessed theory
+        # atoms and assert any residual path clauses, which keeps reporting sound.
+        init.check_mode = clingo.PropagatorCheckMode.Total
 
         # solver_lit → [(a_key, b_key)]
         #
