@@ -218,6 +218,11 @@ class _ThreadState:
     uf: _UF = field(default_factory=_UF)
     merge_trail: list = field(default_factory=list)
     initialized: bool = False
+    # Incremental check(): solver-assigned-true sameClass solver literals, so check()
+    # need only re-examine those instead of sweeping every sameClass atom. Maintained
+    # by propagate (add on assign-true) and undo (drop on unassign).
+    true_sc: set = field(default_factory=set)
+    did_initial_sc_sweep: bool = False
 
 
 class SameClassPropagator:
@@ -732,6 +737,8 @@ class SameClassPropagator:
         if not state.initialized:
             self._rebuild(state, assignment)
             state.merge_trail = []
+            state.true_sc = set()
+            state.did_initial_sc_sweep = False
             state.initialized = True
 
     @staticmethod
@@ -823,6 +830,10 @@ class SameClassPropagator:
                     _dprint(f"[propagate] solver guessed &sameClass({x},{y})=true but cross-component")
                     if not ctl.add_clause([-lit], tag=False):
                         return
+                else:
+                    # Potentially same: defer the contracted-cut check to check(),
+                    # but record it so check() need not rescan every sameClass atom.
+                    state.true_sc.add(lit)
 
         # &allWritersInClass: handle nonOverwritingWrite and awc literal changes.
         # We only watch the positive literal for each, so lit in changes always means
@@ -850,6 +861,8 @@ class SameClassPropagator:
     def undo(self, thread_id, assignment, changes):
         _dprint(f"[undo] restore at level {assignment.decision_level}")
         state = self._state(thread_id)
+        if state.true_sc:
+            state.true_sc.difference_update(changes)
         if not state.merge_trail:
             return
         # The merge edges added at the level(s) being undone form a contiguous
@@ -869,18 +882,33 @@ class SameClassPropagator:
         asgn = ctl.assignment
         state = self._state(ctl.thread_id)
         self._ensure_initialized(state, asgn)
-        for x, y, slit in self._check_atoms:
-            is_same = state.uf.same(x, y)  # root-only; reason built lazily on assert
-            if is_same:
-                if not asgn.is_true(slit):
-                    if not self._assert_same(state, ctl, x, y, slit):
+        if not state.did_initial_sc_sweep:
+            # One-time full sweep: assert the sameClass consequences of the
+            # level-0 (fixed) merge graph, which propagate() never sees because
+            # those merges are seeded in _rebuild rather than arriving as changes.
+            for x, y, slit in self._check_atoms:
+                is_same = state.uf.same(x, y)  # root-only; reason built lazily on assert
+                if is_same:
+                    if not asgn.is_true(slit):
+                        if not self._assert_same(state, ctl, x, y, slit):
+                            return
+                elif asgn.is_true(slit):
+                    if not self._assert_not_same(state, ctl, x, y, slit):
                         return
-                continue
-
-            if asgn.is_true(slit):
-                _dprint(f"[check] &sameClass({x},{y}) → false")
-                if not self._assert_not_same(state, ctl, x, y, slit):
-                    return
+            state.did_initial_sc_sweep = True
+        else:
+            # Incremental: assert_same for newly-merged pairs is handled eagerly in
+            # propagate(); here we only need to refute the currently-true sameClass
+            # atoms whose endpoints are not (yet) in the same component.
+            for slit in list(state.true_sc):
+                if not asgn.is_true(slit):
+                    state.true_sc.discard(slit)
+                    continue
+                x, y = self._sc_lit_to_pair[slit]
+                if not state.uf.same(x, y):
+                    _dprint(f"[check] &sameClass({x},{y}) → false")
+                    if not self._assert_not_same(state, ctl, x, y, slit):
+                        return
 
         # Verify &allWritersInClass atoms at stable search states.
         cache = {}
