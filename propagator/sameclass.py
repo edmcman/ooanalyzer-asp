@@ -73,36 +73,52 @@ class _UF:
     """
     def __init__(self):
         self._parent = {}
-        self._rank = {}
+        self._size = {}          # root → component size
+        self._members = {}       # root → set of member nodes
         self._trail = []         # UF tree edits, for restore
         self._adj = {}           # node → list of (other, slit)  (true mc edges)
         self._adj_trail = []     # list of (a, b, slit), for restore
 
     def _root(self, x):
-        self._parent.setdefault(x, x)
-        curr = x
-        while self._parent[curr] != curr:
-            curr = self._parent[curr]
-        return curr
+        parent = self._parent
+        if x not in parent:
+            parent[x] = x
+            self._size[x] = 1
+            self._members[x] = {x}
+            return x
+        while parent[x] != x:
+            x = parent[x]
+        return x
 
-    def union(self, a, b, slit):
+    def union(self, a, b, slit, ra=None, rb=None):
         # Always record the actual mc edge, even if a and b are already
         # in the same UF component (redundant edge in the mc graph).
         self._adj.setdefault(a, []).append((b, slit))
         self._adj.setdefault(b, []).append((a, slit))
         self._adj_trail.append((a, b, slit))
 
-        ra, rb = self._root(a), self._root(b)
+        # Callers in the hot path pass precomputed roots to avoid recomputing
+        # them here (they already needed the roots for the redundancy check).
+        if ra is None:
+            ra = self._root(a)
+        if rb is None:
+            rb = self._root(b)
         if ra == rb:
-            return False
-        if self._rank.get(ra, 0) < self._rank.get(rb, 0):
+            return None
+        # Union by size: ra absorbs rb. rb is then the smaller side, and its
+        # member set is left untouched — only the absorbing root's set grows.
+        # The returned `absorbed` set object is therefore stable across this
+        # mutation, which propagate() relies on. `merged` is the live absorbing
+        # set, returned so callers need not re-walk to the new root.
+        if self._size[ra] < self._size[rb]:
             ra, rb = rb, ra
-        old_rank = self._rank.get(ra)
-        self._trail.append((rb, self._parent[rb], ra, ra in self._rank, old_rank))
+        absorbed = self._members[rb]
+        self._trail.append((rb, ra, self._size[ra]))
         self._parent[rb] = ra
-        if self._rank.get(ra, 0) == self._rank.get(rb, 0):
-            self._rank[ra] = self._rank.get(ra, 0) + 1
-        return True
+        self._size[ra] += self._size[rb]
+        merged = self._members[ra]
+        merged |= absorbed
+        return absorbed, merged
 
     def snapshot(self):
         return (len(self._trail), len(self._adj_trail))
@@ -110,12 +126,13 @@ class _UF:
     def restore(self, snapshot):
         trail_size, adj_size = snapshot
         while len(self._trail) > trail_size:
-            rb, old_parent, ra, had_rank, old_rank = self._trail.pop()
-            self._parent[rb] = old_parent
-            if had_rank:
-                self._rank[ra] = old_rank
-            else:
-                self._rank.pop(ra, None)
+            rb, ra, old_size_ra = self._trail.pop()
+            # rb was a root before the union (so its parent was itself) and its
+            # member set was never mutated, so it is the exact set absorbed into
+            # ra; subtract it back out and restore rb as its own root.
+            self._members[ra] -= self._members[rb]
+            self._size[ra] = old_size_ra
+            self._parent[rb] = rb
         while len(self._adj_trail) > adj_size:
             a, b, slit = self._adj_trail.pop()
             # Pop the LAST matching entry (LIFO order matches addition).
@@ -180,20 +197,11 @@ class _UF:
         return self._root(a) == self._root(b)
 
     def component(self, x, universe=None):
-        # The mc-adjacency graph already captures every non-singleton component,
-        # so BFS over it touches only the connected members instead of scanning
-        # the whole universe. A node with no adjacency is its own singleton.
-        if x not in self._adj:
+        # O(1) lookup of the maintained per-root member set, returned as a fresh
+        # copy so callers may iterate or mutate it without disturbing UF state.
+        if x not in self._parent:
             return {x}
-        members = {x}
-        queue = deque([x])
-        while queue:
-            node = queue.popleft()
-            for other, _slit in self._adj.get(node, ()):
-                if other not in members:
-                    members.add(other)
-                    queue.append(other)
-        return members
+        return set(self._members[self._root(x)])
 
     def component_reasons(self, members):
         """All true mc edges with both endpoints inside `members`."""
@@ -808,22 +816,26 @@ class SameClassPropagator:
         self._ensure_initialized(state, asgn)
         for lit in changes:
             if lit in self._merge_lit_to_pairs:
+                uf = state.uf
                 for a, b in self._merge_lit_to_pairs[lit]:
-                    if state.uf.same(a, b):
+                    ra, rb = uf._root(a), uf._root(b)
+                    if ra == rb:
                         continue
-                    comp_a = state.uf.component(a)
-                    comp_b = state.uf.component(b)
-                    snapshot = state.uf.snapshot()
-                    if state.uf.union(a, b, lit):
-                        state.merge_trail.append((lit, snapshot))
-                        _dprint(f"[propagate] union({a},{b})")
-                        if len(comp_a) > len(comp_b):
-                            comp_a, comp_b = comp_b, comp_a
-                        for x in comp_a:
-                            for y, sc_lit in self._sc_by_entity.get(x, ()):
-                                if y in comp_b and not asgn.is_true(sc_lit):
-                                    if not self._assert_same(state, ctl, x, y, sc_lit):
-                                        return
+                    snapshot = uf.snapshot()
+                    # union by size returns the (smaller) absorbed member set,
+                    # whose object is stable across the merge; the larger side's
+                    # live set becomes the merged component. The newly-connected
+                    # sameClass pairs are exactly (x in absorbed, y in merged but
+                    # not absorbed) — i.e. x and y were in different components.
+                    absorbed, merged = uf.union(a, b, lit, ra, rb)
+                    state.merge_trail.append((lit, snapshot))
+                    _dprint(f"[propagate] union({a},{b})")
+                    for x in absorbed:
+                        for y, sc_lit in self._sc_by_entity.get(x, ()):
+                            if (y in merged and y not in absorbed
+                                    and not asgn.is_true(sc_lit)):
+                                if not self._assert_same(state, ctl, x, y, sc_lit):
+                                    return
             elif lit in self._sc_lit_to_pair:
                 # Solver guessed this theory atom true — validate immediately.
                 x, y = self._sc_lit_to_pair[lit]
