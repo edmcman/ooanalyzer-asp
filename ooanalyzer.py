@@ -21,7 +21,15 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 log = logging.getLogger("ooanalyzer")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
-from propagator.sameclass import LazySameClassConsistencyPropagator, SameClassPropagator
+# Prefer the native Rust propagator (built via `make rust`); fall back to the
+# pure-Python implementation if the extension is not installed.
+try:
+    from ooanalyzer_sameclass import SameClassPropagator
+    _RUST_PROPAGATOR = True
+except ImportError:
+    from propagator.sameclass import SameClassPropagator
+    _RUST_PROPAGATOR = False
+from propagator.sameclass import LazySameClassConsistencyPropagator
 from propagator.conflict_profiler import ConflictProfiler
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -343,6 +351,8 @@ def main():
         prop = SameClassPropagator(
             foundedness_check=args.foundedness_check,
         )
+        if _RUST_PROPAGATOR:
+            log.info("using native Rust &sameClass propagator")
     profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
     if "*" in profile_preds:
         profile_preds = None
@@ -363,9 +373,14 @@ def main():
     ctl = clingo.Control(ctl_args)
     if args.models is not None and args.models != -1:
         ctl.configuration.solve.models = args.models
-    if args.sameclass_mode == "propagate":
+    if args.sameclass_mode == "lazy-check":
+        ctl.register_propagator(prop)
+    elif _RUST_PROPAGATOR:
+        # The Rust class registers both its observer and propagator in one call.
+        prop.register(ctl, foundedness_check=args.foundedness_check)
+    else:
         ctl.register_observer(prop)
-    ctl.register_propagator(prop)
+        ctl.register_propagator(prop)
     if profiler:
         ctl.register_propagator(profiler)
 

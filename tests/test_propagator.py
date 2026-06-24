@@ -27,7 +27,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import clingo
-from propagator.sameclass import SameClassPropagator
+from ooanalyzer_sameclass import SameClassPropagator
 
 ROOT = Path(__file__).resolve().parents[1]
 MAIN_LP = ROOT / "ooanalyzer.lp"
@@ -50,8 +50,7 @@ def run(name, asp, expected_models, expected_atoms=None, ctl_args=None, foundedn
     prog = THEORY + asp
     prop = SameClassPropagator(foundedness_check=foundedness)
     ctl = clingo.Control(ctl_args or ["--warn=none", "0"])
-    ctl.register_observer(prop)
-    ctl.register_propagator(prop)
+    prop.register(ctl, foundedness_check=foundedness)
     ctl.add("base", [], prog)
     ctl.ground([("base", [])])
 
@@ -77,8 +76,7 @@ def run(name, asp, expected_models, expected_atoms=None, ctl_args=None, foundedn
 def optimal_cost_for_files(files, ctl_args, timeout=10):
     prop = SameClassPropagator()
     ctl = clingo.Control(ctl_args)
-    ctl.register_observer(prop)
-    ctl.register_propagator(prop)
+    prop.register(ctl)
     ctl.load(str(MAIN_LP))
     for path in files:
         ctl.load(str(path))
@@ -488,8 +486,7 @@ def main():
         prog = THEORY + asp
         prop = SameClassPropagator(foundedness_check=True)
         ctl = clingo.Control(["--warn=none", "0"])
-        ctl.register_observer(prop)
-        ctl.register_propagator(prop)
+        prop.register(ctl, foundedness_check=True)
         ctl.add("base", [], prog)
         ctl.ground([("base", [])])
         all_atoms = []

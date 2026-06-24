@@ -35,7 +35,7 @@ RESULTS_ORIG_SYM_FILES := $(foreach r,$(RESULTS_ORIG),\
 # Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
 .PHONY: all convert run verify verify-core verify-real propagator-run \
-        explain-all symbolize diff clean help single
+        explain-all symbolize diff clean help single rust rust-check
 
 all: symbolize
 
@@ -44,6 +44,12 @@ all: symbolize
 ifneq ($(filter clean,$(MAKECMDGOALS)),)
 convert run symbolize: clean
 endif
+
+rust:
+	uvx maturin develop --release --manifest-path rust/Cargo.toml
+
+rust-check:
+	cd rust && cargo test
 
 help:
 	@echo "Targets:"
