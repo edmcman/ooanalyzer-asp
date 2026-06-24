@@ -63,6 +63,15 @@ def _theory_key(theory_term):
         return str(theory_term)
 
 
+def _okey(k):
+    # Total, interpreter-independent ordering for entity keys (int or str).
+    # Python set/dict iteration order is hash-based and differs between CPython
+    # and PyPy; sorting hot-path set iterations by this key makes the propagator's
+    # clause-emission order — and therefore the solver's search trajectory —
+    # deterministic and reproducible across interpreters and refactors.
+    return (0, k) if isinstance(k, int) else (1, str(k))
+
+
 class _UF:
     """Union-find augmented with a true-mc adjacency graph.
 
@@ -434,6 +443,11 @@ class SameClassPropagator:
             self._now_slit_to_key[alit] = (method, vftable)
             self._now_writers_by_vft.setdefault(vftable, set()).add((method, alit))
             init.add_watch(lit)
+        # Freeze to a deterministic, interpreter-independent iteration order.
+        self._now_writers_by_vft = {
+            v: tuple(sorted(s, key=lambda mt: (_okey(mt[0]), mt[1])))
+            for v, s in self._now_writers_by_vft.items()
+        }
 
         # &allWritersInClass(VFTable, Class) theory atoms.
         # (vftable_key, class_key) → slit; abs(slit) → (vftable_key, class_key)
@@ -452,6 +466,11 @@ class SameClassPropagator:
             self._awc_slit_to_pair[abs(slit)] = (vftable, class_)
             self._awc_by_vft.setdefault(vftable, set()).add((class_, slit))
             init.add_watch(slit)
+        # Freeze to a deterministic, interpreter-independent iteration order.
+        self._awc_by_vft = {
+            v: tuple(sorted(s, key=lambda ct: (_okey(ct[0]), ct[1])))
+            for v, s in self._awc_by_vft.items()
+        }
         if PROFILE:
             _profile(
                 "init vftable writer theory",
@@ -788,7 +807,7 @@ class SameClassPropagator:
         if cache is None:
             cache = {}
         reason, cut = self._component_cut_and_reasons(state, x, cache)
-        clause = [-r for r in reason] + list(cut) + [-slit]
+        clause = [-r for r in sorted(reason)] + sorted(cut) + [-slit]
         _dprint(
             f"[assert-false/cut] &sameClass({x},{y}) "
             f"via reason={sorted(reason)} cut={sorted(cut)}"
@@ -805,7 +824,7 @@ class SameClassPropagator:
         if cache is None:
             cache = {}
         reason_class, cut_class = self._component_cut_and_reasons(state, class_, cache)
-        clause = [-now_alit] + [-r for r in reason_class] + list(cut_class) + [-awc_slit]
+        clause = [-now_alit] + [-r for r in sorted(reason_class)] + sorted(cut_class) + [-awc_slit]
         _dprint(f"[awc-false] now_alit={now_alit} class={class_} awc={awc_slit} "
                 f"reason={sorted(reason_class)} cut={sorted(cut_class)}")
         return ctl.add_clause(clause, tag=False)
@@ -830,7 +849,7 @@ class SameClassPropagator:
                     absorbed, merged = uf.union(a, b, lit, ra, rb)
                     state.merge_trail.append((lit, snapshot))
                     _dprint(f"[propagate] union({a},{b})")
-                    for x in absorbed:
+                    for x in sorted(absorbed, key=_okey):
                         for y, sc_lit in self._sc_by_entity.get(x, ()):
                             if (y in merged and y not in absorbed
                                     and not asgn.is_true(sc_lit)):
@@ -916,7 +935,7 @@ class SameClassPropagator:
             # Incremental: assert_same for newly-merged pairs is handled eagerly in
             # propagate(); here we only need to refute the currently-true sameClass
             # atoms whose endpoints are not (yet) in the same component.
-            for slit in list(state.true_sc):
+            for slit in sorted(state.true_sc):
                 if not asgn.is_true(slit):
                     state.true_sc.discard(slit)
                     continue
