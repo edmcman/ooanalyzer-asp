@@ -64,6 +64,30 @@ uv run python tests/test_propagator.py                # focused &sameClass regre
 `&sameClass/2` propagator. Calling `clingo ooanalyzer.lp ...` directly leaves
 the theory atoms uninterpreted.
 
+### Interpreter: PyPy by default (CPython fallback)
+
+The project is pinned to PyPy (`.python-version` → `pypy@3.11`), so `uv sync` /
+`uv run` build and use a PyPy `.venv`, and all the `uv run python ooanalyzer.py
+...` commands above run on PyPy automatically. The `&sameClass` propagator is
+pure Python and ~half of solve time, and PyPy's JIT gives ~1.7x throughput on
+long solves (e.g. `PicoHttp/ep_srv` 50s → 30s to the same proven optimum). clingo
+is cffi-based and builds from source on PyPy on the first `uv sync` (~20s).
+
+The speedup relies on the propagator's deterministic clause-emission order
+(`_okey` in `propagator/sameclass.py`); without it PyPy's set/dict iteration
+order would diverge into a worse search. PyPy keeps a GIL, so this is
+single-thread throughput only (no parallelism), and it does not close the
+intrinsic merge-reward optimization gap (see `NOTE.md`).
+
+PyPy is *slower* on startup-dominated work (tiny solves, the test suite — JIT
+warm-up never pays off). For the fast dev loop, run on CPython in a separate
+environment without disturbing the default PyPy `.venv`:
+
+```sh
+UV_PROJECT_ENVIRONMENT=.venv-cpython uv run --python cpython-3.11 \
+    python tests/test_propagator.py
+```
+
 Tune solver constants on the command line (see `src/util/config.lp` for the list):
 
 ```sh
