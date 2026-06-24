@@ -1,173 +1,150 @@
-09:29:37 Grounding...
-09:29:38 Grounding done (0.57s)
-09:29:38 Solving...
-09:29:55 Model found (18.09s): [-136, -7127]
-09:29:56 Lower bound: [-136, -11943]  upper: [-136, -7127]  gap: [0, 4816] (19.29s)
-09:29:58 Lower bound: [-136, -11933]  upper: [-136, -7127]  gap: [0, 4806] (20.36s)
-09:29:58 Lower bound: [-136, -11923]  upper: [-136, -7127]  gap: [0, 4796] (20.40s)
-09:29:59 Lower bound: [-136, -11913]  upper: [-136, -7127]  gap: [0, 4786] (21.51s)
-09:30:00 Lower bound: [-136, -11903]  upper: [-136, -7127]  gap: [0, 4776] (22.62s)
-09:30:01 Lower bound: [-136, -11893]  upper: [-136, -7127]  gap: [0, 4766] (23.77s)
-09:30:01 Lower bound: [-136, -11883]  upper: [-136, -7127]  gap: [0, 4756] (23.83s)
-09:30:01 Lower bound: [-136, -11873]  upper: [-136, -7127]  gap: [0, 4746] (23.86s)
-09:30:01 Lower bound: [-136, -11863]  upper: [-136, -7127]  gap: [0, 4736] (23.90s)
-09:30:01 Lower bound: [-136, -11853]  upper: [-136, -7127]  gap: [0, 4726] (23.95s)
-09:30:01 Lower bound: [-136, -11843]  upper: [-136, -7127]  gap: [0, 4716] (23.98s)
-09:30:01 Lower bound: [-136, -11833]  upper: [-136, -7127]  gap: [0, 4706] (24.03s)
-09:30:16 Model found (38.95s, +20.86s): [-136, -8073]
-09:30:17 Lower bound: [-136, -11823]  upper: [-136, -8073]  gap: [0, 3750] (40.24s)
-09:30:32 Model found (54.35s, +15.39s): [-136, -8087]
-09:30:38 Lower bound: [-136, -11814]  upper: [-136, -8087]  gap: [0, 3727] (61.31s)
-09:30:40 Lower bound: [-136, -11805]  upper: [-136, -8087]  gap: [0, 3718] (62.53s)
-09:30:41 Lower bound: [-136, -11796]  upper: [-136, -8087]  gap: [0, 3709] (63.80s)
-09:30:42 Lower bound: [-136, -11787]  upper: [-136, -8087]  gap: [0, 3700] (65.07s)
-09:30:43 Lower bound: [-136, -11778]  upper: [-136, -8087]  gap: [0, 3691] (66.30s)
-09:30:44 Lower bound: [-136, -11769]  upper: [-136, -8087]  gap: [0, 3682] (66.92s)
-09:30:45 Lower bound: [-136, -11760]  upper: [-136, -8087]  gap: [0, 3673] (67.59s)
-09:30:45 Lower bound: [-136, -11751]  upper: [-136, -8087]  gap: [0, 3664] (68.30s)
-09:30:47 Lower bound: [-136, -11742]  upper: [-136, -8087]  gap: [0, 3655] (69.55s)
-09:30:48 Lower bound: [-136, -11733]  upper: [-136, -8087]  gap: [0, 3646] (70.82s)
-09:30:49 Lower bound: [-136, -11724]  upper: [-136, -8087]  gap: [0, 3637] (72.10s)
-09:30:50 Lower bound: [-136, -11715]  upper: [-136, -8087]  gap: [0, 3628] (73.32s)
-09:30:52 Lower bound: [-136, -11706]  upper: [-136, -8087]  gap: [0, 3619] (74.61s)
-09:30:53 Lower bound: [-136, -11697]  upper: [-136, -8087]  gap: [0, 3610] (75.88s)
-09:30:54 Lower bound: [-136, -11688]  upper: [-136, -8087]  gap: [0, 3601] (77.13s)
-09:30:56 Lower bound: [-136, -11679]  upper: [-136, -8087]  gap: [0, 3592] (78.38s)
-09:30:57 Lower bound: [-136, -11670]  upper: [-136, -8087]  gap: [0, 3583] (79.63s)
-09:30:58 Lower bound: [-136, -11652]  upper: [-136, -8087]  gap: [0, 3565] (81.05s)
-09:31:00 Lower bound: [-136, -11643]  upper: [-136, -8087]  gap: [0, 3556] (82.44s)
-09:31:01 Lower bound: [-136, -11634]  upper: [-136, -8087]  gap: [0, 3547] (83.83s)
-09:31:03 Lower bound: [-136, -11625]  upper: [-136, -8087]  gap: [0, 3538] (85.43s)
-09:31:03 Lower bound: [-136, -11616]  upper: [-136, -8087]  gap: [0, 3529] (85.98s)
-09:31:04 Lower bound: [-136, -11607]  upper: [-136, -8087]  gap: [0, 3520] (86.54s)
-09:31:04 Lower bound: [-136, -11598]  upper: [-136, -8087]  gap: [0, 3511] (86.94s)
-09:31:05 Lower bound: [-136, -11589]  upper: [-136, -8087]  gap: [0, 3502] (87.37s)
-09:31:05 Lower bound: [-136, -11580]  upper: [-136, -8087]  gap: [0, 3493] (87.66s)
-09:31:05 Lower bound: [-136, -11571]  upper: [-136, -8087]  gap: [0, 3484] (88.12s)
-09:31:06 Lower bound: [-136, -11562]  upper: [-136, -8087]  gap: [0, 3475] (88.43s)
-09:31:06 Lower bound: [-136, -11553]  upper: [-136, -8087]  gap: [0, 3466] (88.91s)
-09:31:06 Lower bound: [-136, -11544]  upper: [-136, -8087]  gap: [0, 3457] (89.26s)
-09:31:07 Lower bound: [-136, -11535]  upper: [-136, -8087]  gap: [0, 3448] (89.71s)
-09:31:07 Lower bound: [-136, -11526]  upper: [-136, -8087]  gap: [0, 3439] (90.10s)
-09:31:08 Lower bound: [-136, -11517]  upper: [-136, -8087]  gap: [0, 3430] (90.50s)
-09:31:08 Lower bound: [-136, -11508]  upper: [-136, -8087]  gap: [0, 3421] (91.07s)
-09:31:11 Lower bound: [-136, -11499]  upper: [-136, -8087]  gap: [0, 3412] (94.02s)
-09:31:13 Lower bound: [-136, -11490]  upper: [-136, -8087]  gap: [0, 3403] (95.63s)
-09:31:14 Lower bound: [-136, -11481]  upper: [-136, -8087]  gap: [0, 3394] (96.93s)
-09:31:21 Lower bound: [-136, -11472]  upper: [-136, -8087]  gap: [0, 3385] (104.13s)
-09:31:34 Lower bound: [-136, -11463]  upper: [-136, -8087]  gap: [0, 3376] (117.33s)
-09:32:05 Lower bound: [-136, -11454]  upper: [-136, -8087]  gap: [0, 3367] (147.76s)
-09:32:28 Model found (170.45s, +116.10s): [-136, -10480]
-09:32:30 Lower bound: [-136, -11445]  upper: [-136, -10480]  gap: [0, 965] (172.35s)
-09:32:30 Lower bound: [-136, -11436]  upper: [-136, -10480]  gap: [0, 956] (173.02s)
-09:32:31 Lower bound: [-136, -11427]  upper: [-136, -10480]  gap: [0, 947] (173.73s)
-09:32:32 Lower bound: [-136, -11418]  upper: [-136, -10480]  gap: [0, 938] (174.58s)
-09:32:34 Lower bound: [-136, -11409]  upper: [-136, -10480]  gap: [0, 929] (177.03s)
-09:32:40 Lower bound: [-136, -11400]  upper: [-136, -10480]  gap: [0, 920] (182.94s)
-09:32:46 Lower bound: [-136, -11391]  upper: [-136, -10480]  gap: [0, 911] (189.10s)
-09:32:56 Lower bound: [-136, -11382]  upper: [-136, -10480]  gap: [0, 902] (199.25s)
-09:33:02 Lower bound: [-136, -11373]  upper: [-136, -10480]  gap: [0, 893] (205.25s)
-09:33:08 Lower bound: [-136, -11364]  upper: [-136, -10480]  gap: [0, 884] (211.02s)
-09:33:15 Model found (217.52s, +47.07s): [-136, -10481]
-09:33:20 Lower bound: [-136, -11355]  upper: [-136, -10481]  gap: [0, 874] (222.56s)
-09:33:26 Lower bound: [-136, -11346]  upper: [-136, -10481]  gap: [0, 865] (229.03s)
-09:33:28 Lower bound: [-136, -11337]  upper: [-136, -10481]  gap: [0, 856] (231.05s)
-09:33:33 Lower bound: [-136, -11328]  upper: [-136, -10481]  gap: [0, 847] (236.21s)
-09:33:37 Lower bound: [-136, -11319]  upper: [-136, -10481]  gap: [0, 838] (240.17s)
-09:34:18 Model found (280.92s, +63.39s): [-136, -10503]
-09:34:24 Lower bound: [-136, -11310]  upper: [-136, -10503]  gap: [0, 807] (286.51s)
-09:35:06 Lower bound: [-136, -11301]  upper: [-136, -10503]  gap: [0, 798] (328.95s)
-09:35:23 Lower bound: [-136, -11292]  upper: [-136, -10503]  gap: [0, 789] (346.28s)
-09:36:15 Lower bound: [-136, -11283]  upper: [-136, -10503]  gap: [0, 780] (398.13s)
-09:36:48 Model found (430.66s, +149.74s): [-136, -10589]
-09:36:51 Lower bound: [-136, -11274]  upper: [-136, -10589]  gap: [0, 685] (434.20s)
-09:37:03 Lower bound: [-136, -11265]  upper: [-136, -10589]  gap: [0, 676] (445.71s)
-09:37:14 Lower bound: [-136, -11256]  upper: [-136, -10589]  gap: [0, 667] (456.87s)
-09:37:30 Lower bound: [-136, -11248]  upper: [-136, -10589]  gap: [0, 659] (472.69s)
-09:37:30 Lower bound: [-136, -11240]  upper: [-136, -10589]  gap: [0, 651] (473.15s)
-09:37:31 Lower bound: [-136, -11232]  upper: [-136, -10589]  gap: [0, 643] (473.56s)
-09:37:31 Lower bound: [-136, -11224]  upper: [-136, -10589]  gap: [0, 635] (474.06s)
-09:37:32 Lower bound: [-136, -11216]  upper: [-136, -10589]  gap: [0, 627] (474.52s)
-09:37:33 Lower bound: [-136, -11208]  upper: [-136, -10589]  gap: [0, 619] (475.73s)
-09:37:33 Lower bound: [-136, -11200]  upper: [-136, -10589]  gap: [0, 611] (475.81s)
-09:37:33 Lower bound: [-136, -11192]  upper: [-136, -10589]  gap: [0, 603] (475.88s)
-09:37:33 Lower bound: [-136, -11184]  upper: [-136, -10589]  gap: [0, 595] (475.97s)
-09:37:33 Lower bound: [-136, -11176]  upper: [-136, -10589]  gap: [0, 587] (476.05s)
-09:37:33 Lower bound: [-136, -11168]  upper: [-136, -10589]  gap: [0, 579] (476.13s)
-09:37:33 Lower bound: [-136, -11160]  upper: [-136, -10589]  gap: [0, 571] (476.24s)
-09:37:34 Lower bound: [-136, -11152]  upper: [-136, -10589]  gap: [0, 563] (476.34s)
-09:37:34 Lower bound: [-136, -11144]  upper: [-136, -10589]  gap: [0, 555] (476.43s)
-09:37:34 Lower bound: [-136, -11136]  upper: [-136, -10589]  gap: [0, 547] (476.52s)
-09:37:34 Lower bound: [-136, -11120]  upper: [-136, -10589]  gap: [0, 531] (476.67s)
-09:37:34 Lower bound: [-136, -11112]  upper: [-136, -10589]  gap: [0, 523] (476.68s)
-09:37:34 Lower bound: [-136, -11104]  upper: [-136, -10589]  gap: [0, 515] (476.71s)
-09:37:34 Lower bound: [-136, -11096]  upper: [-136, -10589]  gap: [0, 507] (476.71s)
-09:37:34 Lower bound: [-136, -11088]  upper: [-136, -10589]  gap: [0, 499] (476.72s)
-09:37:34 Lower bound: [-136, -11080]  upper: [-136, -10589]  gap: [0, 491] (476.72s)
-09:37:34 Lower bound: [-136, -11072]  upper: [-136, -10589]  gap: [0, 483] (476.72s)
-09:37:34 Lower bound: [-136, -11056]  upper: [-136, -10589]  gap: [0, 467] (476.73s)
-09:37:34 Lower bound: [-136, -11048]  upper: [-136, -10589]  gap: [0, 459] (476.73s)
-09:37:34 Lower bound: [-136, -11032]  upper: [-136, -10589]  gap: [0, 443] (476.79s)
-09:37:34 Lower bound: [-136, -11024]  upper: [-136, -10589]  gap: [0, 435] (477.17s)
-09:37:36 Lower bound: [-136, -11016]  upper: [-136, -10589]  gap: [0, 427] (478.42s)
-09:38:30 Model found (532.35s, +101.69s): [-136, -10729]
-09:38:32 Lower bound: [-136, -11008]  upper: [-136, -10729]  gap: [0, 279] (534.57s)
-09:38:32 Lower bound: [-136, -11000]  upper: [-136, -10729]  gap: [0, 271] (535.03s)
-09:38:38 Model found (540.35s, +8.00s): [-136, -10777]
-09:38:40 Lower bound: [-136, -10992]  upper: [-136, -10777]  gap: [0, 215] (542.92s)
-09:38:49 Lower bound: [-136, -10984]  upper: [-136, -10777]  gap: [0, 207] (551.74s)
-09:39:03 Model found (565.91s, +25.57s): [-136, -10816]
-09:39:05 Lower bound: [-136, -10914]  upper: [-136, -10816]  gap: [0, 98] (567.94s)
-09:39:07 Lower bound: [-136, -10907]  upper: [-136, -10816]  gap: [0, 91] (569.95s)
-09:39:40 Lower bound: [-136, -10906]  upper: [-136, -10816]  gap: [0, 90] (602.82s)
-09:39:40 Lower bound: [-136, -10905]  upper: [-136, -10816]  gap: [0, 89] (603.09s)
-09:39:41 Lower bound: [-136, -10904]  upper: [-136, -10816]  gap: [0, 88] (603.35s)
-09:39:41 Lower bound: [-136, -10903]  upper: [-136, -10816]  gap: [0, 87] (603.61s)
-09:39:41 Lower bound: [-136, -10902]  upper: [-136, -10816]  gap: [0, 86] (603.95s)
-09:39:42 Lower bound: [-136, -10901]  upper: [-136, -10816]  gap: [0, 85] (604.72s)
-09:39:43 Lower bound: [-136, -10900]  upper: [-136, -10816]  gap: [0, 84] (605.67s)
-09:39:44 Lower bound: [-136, -10899]  upper: [-136, -10816]  gap: [0, 83] (606.66s)
-09:39:45 Lower bound: [-136, -10898]  upper: [-136, -10816]  gap: [0, 82] (607.67s)
-09:40:56 Model found (678.76s, +112.85s): [-136, -10824]
-09:40:58 Lower bound: [-136, -10897]  upper: [-136, -10824]  gap: [0, 73] (681.25s)
-09:41:01 Lower bound: [-136, -10896]  upper: [-136, -10824]  gap: [0, 72] (683.71s)
-09:41:03 Lower bound: [-136, -10895]  upper: [-136, -10824]  gap: [0, 71] (686.17s)
-09:41:06 Lower bound: [-136, -10891]  upper: [-136, -10824]  gap: [0, 67] (688.65s)
-09:41:08 Lower bound: [-136, -10890]  upper: [-136, -10824]  gap: [0, 66] (691.19s)
-09:41:11 Lower bound: [-136, -10889]  upper: [-136, -10824]  gap: [0, 65] (693.81s)
-09:41:14 Lower bound: [-136, -10888]  upper: [-136, -10824]  gap: [0, 64] (696.60s)
-09:41:16 Lower bound: [-136, -10887]  upper: [-136, -10824]  gap: [0, 63] (699.19s)
-09:41:19 Lower bound: [-136, -10886]  upper: [-136, -10824]  gap: [0, 62] (701.96s)
-09:41:22 Lower bound: [-136, -10885]  upper: [-136, -10824]  gap: [0, 61] (704.63s)
-09:41:25 Lower bound: [-136, -10884]  upper: [-136, -10824]  gap: [0, 60] (707.43s)
-09:41:28 Lower bound: [-136, -10883]  upper: [-136, -10824]  gap: [0, 59] (710.49s)
-09:41:31 Lower bound: [-136, -10882]  upper: [-136, -10824]  gap: [0, 58] (713.58s)
-09:41:34 Lower bound: [-136, -10881]  upper: [-136, -10824]  gap: [0, 57] (717.17s)
-09:41:37 Lower bound: [-136, -10880]  upper: [-136, -10824]  gap: [0, 56] (720.26s)
-09:41:41 Lower bound: [-136, -10879]  upper: [-136, -10824]  gap: [0, 55] (723.36s)
-09:41:44 Lower bound: [-136, -10878]  upper: [-136, -10824]  gap: [0, 54] (727.04s)
-09:41:48 Lower bound: [-136, -10877]  upper: [-136, -10824]  gap: [0, 53] (730.56s)
-09:41:52 Lower bound: [-136, -10876]  upper: [-136, -10824]  gap: [0, 52] (734.36s)
-09:41:56 Lower bound: [-136, -10875]  upper: [-136, -10824]  gap: [0, 51] (739.20s)
-09:42:01 Lower bound: [-136, -10874]  upper: [-136, -10824]  gap: [0, 50] (743.41s)
-09:42:05 Lower bound: [-136, -10873]  upper: [-136, -10824]  gap: [0, 49] (747.66s)
-09:42:10 Lower bound: [-136, -10872]  upper: [-136, -10824]  gap: [0, 48] (752.44s)
-09:42:14 Lower bound: [-136, -10871]  upper: [-136, -10824]  gap: [0, 47] (756.64s)
-09:42:19 Lower bound: [-136, -10870]  upper: [-136, -10824]  gap: [0, 46] (761.50s)
-09:42:24 Lower bound: [-136, -10869]  upper: [-136, -10824]  gap: [0, 45] (766.62s)
-09:42:29 Lower bound: [-136, -10868]  upper: [-136, -10824]  gap: [0, 44] (771.47s)
-09:42:34 Lower bound: [-136, -10867]  upper: [-136, -10824]  gap: [0, 43] (776.92s)
-09:42:39 Lower bound: [-136, -10866]  upper: [-136, -10824]  gap: [0, 42] (782.08s)
-09:42:44 Lower bound: [-136, -10865]  upper: [-136, -10824]  gap: [0, 41] (787.18s)
-09:43:18 Model found (820.70s, +141.93s): [-136, -10865]
-09:43:18 Solving done: OPTIMUM FOUND (820.14s)
-% Command: ooanalyzer.py examples/ooa/mysql/connection_control.dll.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/mysql/connection_control.dll.results
+17:09:40 Grounding...
+17:09:41 Grounding done (0.42s)
+17:09:41 Solving...
+17:09:41 Model found (0.96s): [-136, -7127]
+17:09:41 Lower bound: [-136, -11943]  upper: [-136, -7127]  gap: [0, 4816] (0.98s)
+17:09:41 Lower bound: [-136, -11933]  upper: [-136, -7127]  gap: [0, 4806] (0.98s)
+17:09:41 Lower bound: [-136, -11923]  upper: [-136, -7127]  gap: [0, 4796] (0.98s)
+17:09:41 Lower bound: [-136, -11913]  upper: [-136, -7127]  gap: [0, 4786] (0.98s)
+17:09:41 Lower bound: [-136, -11903]  upper: [-136, -7127]  gap: [0, 4776] (0.98s)
+17:09:41 Lower bound: [-136, -11893]  upper: [-136, -7127]  gap: [0, 4766] (0.98s)
+17:09:41 Lower bound: [-136, -11883]  upper: [-136, -7127]  gap: [0, 4756] (0.98s)
+17:09:41 Lower bound: [-136, -11873]  upper: [-136, -7127]  gap: [0, 4746] (0.98s)
+17:09:41 Lower bound: [-136, -11863]  upper: [-136, -7127]  gap: [0, 4736] (0.98s)
+17:09:41 Lower bound: [-136, -11853]  upper: [-136, -7127]  gap: [0, 4726] (0.98s)
+17:09:41 Lower bound: [-136, -11843]  upper: [-136, -7127]  gap: [0, 4716] (0.98s)
+17:09:41 Lower bound: [-136, -11833]  upper: [-136, -7127]  gap: [0, 4706] (0.98s)
+17:09:41 Lower bound: [-136, -11823]  upper: [-136, -7127]  gap: [0, 4696] (0.98s)
+17:09:41 Lower bound: [-136, -11813]  upper: [-136, -7127]  gap: [0, 4686] (0.98s)
+17:09:41 Lower bound: [-136, -11803]  upper: [-136, -7127]  gap: [0, 4676] (0.98s)
+17:09:41 Lower bound: [-136, -11793]  upper: [-136, -7127]  gap: [0, 4666] (0.98s)
+17:09:41 Lower bound: [-136, -11783]  upper: [-136, -7127]  gap: [0, 4656] (0.98s)
+17:09:41 Lower bound: [-136, -11773]  upper: [-136, -7127]  gap: [0, 4646] (0.98s)
+17:09:41 Lower bound: [-136, -11763]  upper: [-136, -7127]  gap: [0, 4636] (0.98s)
+17:09:41 Model found (1.01s, +0.05s): [-136, -7841]
+17:09:41 Model found (1.04s, +0.03s): [-136, -7968]
+17:09:41 Lower bound: [-136, -11754]  upper: [-136, -7968]  gap: [0, 3786] (1.05s)
+17:09:41 Lower bound: [-136, -11745]  upper: [-136, -7968]  gap: [0, 3777] (1.05s)
+17:09:41 Lower bound: [-136, -11736]  upper: [-136, -7968]  gap: [0, 3768] (1.05s)
+17:09:41 Lower bound: [-136, -11727]  upper: [-136, -7968]  gap: [0, 3759] (1.05s)
+17:09:41 Lower bound: [-136, -11718]  upper: [-136, -7968]  gap: [0, 3750] (1.05s)
+17:09:41 Lower bound: [-136, -11709]  upper: [-136, -7968]  gap: [0, 3741] (1.05s)
+17:09:41 Lower bound: [-136, -11700]  upper: [-136, -7968]  gap: [0, 3732] (1.05s)
+17:09:41 Lower bound: [-136, -11691]  upper: [-136, -7968]  gap: [0, 3723] (1.05s)
+17:09:41 Lower bound: [-136, -11682]  upper: [-136, -7968]  gap: [0, 3714] (1.05s)
+17:09:41 Lower bound: [-136, -11673]  upper: [-136, -7968]  gap: [0, 3705] (1.05s)
+17:09:41 Lower bound: [-136, -11664]  upper: [-136, -7968]  gap: [0, 3696] (1.05s)
+17:09:41 Lower bound: [-136, -11655]  upper: [-136, -7968]  gap: [0, 3687] (1.05s)
+17:09:41 Lower bound: [-136, -11646]  upper: [-136, -7968]  gap: [0, 3678] (1.05s)
+17:09:41 Lower bound: [-136, -11637]  upper: [-136, -7968]  gap: [0, 3669] (1.05s)
+17:09:41 Lower bound: [-136, -11628]  upper: [-136, -7968]  gap: [0, 3660] (1.05s)
+17:09:41 Lower bound: [-136, -11619]  upper: [-136, -7968]  gap: [0, 3651] (1.05s)
+17:09:41 Lower bound: [-136, -11610]  upper: [-136, -7968]  gap: [0, 3642] (1.05s)
+17:09:41 Lower bound: [-136, -11601]  upper: [-136, -7968]  gap: [0, 3633] (1.05s)
+17:09:41 Lower bound: [-136, -11592]  upper: [-136, -7968]  gap: [0, 3624] (1.05s)
+17:09:41 Lower bound: [-136, -11583]  upper: [-136, -7968]  gap: [0, 3615] (1.06s)
+17:09:41 Lower bound: [-136, -11574]  upper: [-136, -7968]  gap: [0, 3606] (1.06s)
+17:09:41 Lower bound: [-136, -11565]  upper: [-136, -7968]  gap: [0, 3597] (1.06s)
+17:09:41 Lower bound: [-136, -11556]  upper: [-136, -7968]  gap: [0, 3588] (1.06s)
+17:09:41 Lower bound: [-136, -11547]  upper: [-136, -7968]  gap: [0, 3579] (1.06s)
+17:09:41 Lower bound: [-136, -11538]  upper: [-136, -7968]  gap: [0, 3570] (1.06s)
+17:09:41 Lower bound: [-136, -11529]  upper: [-136, -7968]  gap: [0, 3561] (1.06s)
+17:09:41 Lower bound: [-136, -11520]  upper: [-136, -7968]  gap: [0, 3552] (1.06s)
+17:09:41 Lower bound: [-136, -11511]  upper: [-136, -7968]  gap: [0, 3543] (1.06s)
+17:09:41 Lower bound: [-136, -11502]  upper: [-136, -7968]  gap: [0, 3534] (1.06s)
+17:09:41 Lower bound: [-136, -11493]  upper: [-136, -7968]  gap: [0, 3525] (1.06s)
+17:09:41 Lower bound: [-136, -11484]  upper: [-136, -7968]  gap: [0, 3516] (1.06s)
+17:09:41 Lower bound: [-136, -11475]  upper: [-136, -7968]  gap: [0, 3507] (1.07s)
+17:09:41 Lower bound: [-136, -11466]  upper: [-136, -7968]  gap: [0, 3498] (1.07s)
+17:09:41 Lower bound: [-136, -11457]  upper: [-136, -7968]  gap: [0, 3489] (1.07s)
+17:09:41 Lower bound: [-136, -11448]  upper: [-136, -7968]  gap: [0, 3480] (1.08s)
+17:09:41 Lower bound: [-136, -11439]  upper: [-136, -7968]  gap: [0, 3471] (1.13s)
+17:09:42 Lower bound: [-136, -11430]  upper: [-136, -7968]  gap: [0, 3462] (1.15s)
+17:09:42 Lower bound: [-136, -11421]  upper: [-136, -7968]  gap: [0, 3453] (1.46s)
+17:09:42 Lower bound: [-136, -11412]  upper: [-136, -7968]  gap: [0, 3444] (1.55s)
+17:09:42 Lower bound: [-136, -11403]  upper: [-136, -7968]  gap: [0, 3435] (1.60s)
+17:09:42 Model found (1.91s, +0.87s): [-136, -10529]
+17:09:42 Lower bound: [-136, -11394]  upper: [-136, -10529]  gap: [0, 865] (1.92s)
+17:09:42 Lower bound: [-136, -11385]  upper: [-136, -10529]  gap: [0, 856] (1.92s)
+17:09:42 Lower bound: [-136, -11376]  upper: [-136, -10529]  gap: [0, 847] (1.93s)
+17:09:42 Lower bound: [-136, -11367]  upper: [-136, -10529]  gap: [0, 838] (1.98s)
+17:09:42 Lower bound: [-136, -11358]  upper: [-136, -10529]  gap: [0, 829] (2.07s)
+17:09:43 Lower bound: [-136, -11349]  upper: [-136, -10529]  gap: [0, 820] (2.48s)
+17:09:43 Model found (2.57s, +0.66s): [-136, -10662]
+17:09:43 Lower bound: [-136, -11340]  upper: [-136, -10662]  gap: [0, 678] (2.58s)
+17:09:43 Lower bound: [-136, -11331]  upper: [-136, -10662]  gap: [0, 669] (2.78s)
+17:09:43 Lower bound: [-136, -11322]  upper: [-136, -10662]  gap: [0, 660] (2.90s)
+17:09:44 Lower bound: [-136, -11313]  upper: [-136, -10662]  gap: [0, 651] (3.27s)
+17:09:44 Model found (3.40s, +0.84s): [-136, -10674]
+17:09:44 Lower bound: [-136, -11304]  upper: [-136, -10674]  gap: [0, 630] (3.41s)
+17:09:44 Lower bound: [-136, -11295]  upper: [-136, -10674]  gap: [0, 621] (3.67s)
+17:09:44 Model found (3.76s, +0.36s): [-136, -10707]
+17:09:44 Lower bound: [-136, -11286]  upper: [-136, -10707]  gap: [0, 579] (3.77s)
+17:09:44 Lower bound: [-136, -11277]  upper: [-136, -10707]  gap: [0, 570] (3.89s)
+17:09:44 Lower bound: [-136, -11268]  upper: [-136, -10707]  gap: [0, 561] (3.91s)
+17:09:44 Lower bound: [-136, -11259]  upper: [-136, -10707]  gap: [0, 552] (3.98s)
+17:09:44 Lower bound: [-136, -11250]  upper: [-136, -10707]  gap: [0, 543] (4.01s)
+17:09:44 Lower bound: [-136, -11241]  upper: [-136, -10707]  gap: [0, 534] (4.03s)
+17:09:44 Lower bound: [-136, -11232]  upper: [-136, -10707]  gap: [0, 525] (4.06s)
+17:09:44 Lower bound: [-136, -11224]  upper: [-136, -10707]  gap: [0, 517] (4.07s)
+17:09:44 Lower bound: [-136, -11216]  upper: [-136, -10707]  gap: [0, 509] (4.08s)
+17:09:44 Lower bound: [-136, -11208]  upper: [-136, -10707]  gap: [0, 501] (4.08s)
+17:09:44 Lower bound: [-136, -11200]  upper: [-136, -10707]  gap: [0, 493] (4.08s)
+17:09:44 Lower bound: [-136, -11192]  upper: [-136, -10707]  gap: [0, 485] (4.08s)
+17:09:44 Lower bound: [-136, -11184]  upper: [-136, -10707]  gap: [0, 477] (4.08s)
+17:09:44 Lower bound: [-136, -11176]  upper: [-136, -10707]  gap: [0, 469] (4.09s)
+17:09:44 Lower bound: [-136, -11168]  upper: [-136, -10707]  gap: [0, 461] (4.09s)
+17:09:44 Lower bound: [-136, -11160]  upper: [-136, -10707]  gap: [0, 453] (4.09s)
+17:09:44 Lower bound: [-136, -11152]  upper: [-136, -10707]  gap: [0, 445] (4.09s)
+17:09:44 Lower bound: [-136, -11144]  upper: [-136, -10707]  gap: [0, 437] (4.09s)
+17:09:44 Lower bound: [-136, -11136]  upper: [-136, -10707]  gap: [0, 429] (4.09s)
+17:09:44 Lower bound: [-136, -11128]  upper: [-136, -10707]  gap: [0, 421] (4.09s)
+17:09:44 Lower bound: [-136, -11120]  upper: [-136, -10707]  gap: [0, 413] (4.09s)
+17:09:44 Lower bound: [-136, -11112]  upper: [-136, -10707]  gap: [0, 405] (4.09s)
+17:09:44 Lower bound: [-136, -11096]  upper: [-136, -10707]  gap: [0, 389] (4.09s)
+17:09:44 Lower bound: [-136, -11088]  upper: [-136, -10707]  gap: [0, 381] (4.09s)
+17:09:44 Lower bound: [-136, -11080]  upper: [-136, -10707]  gap: [0, 373] (4.09s)
+17:09:44 Lower bound: [-136, -11072]  upper: [-136, -10707]  gap: [0, 365] (4.09s)
+17:09:44 Lower bound: [-136, -11064]  upper: [-136, -10707]  gap: [0, 357] (4.09s)
+17:09:44 Lower bound: [-136, -11056]  upper: [-136, -10707]  gap: [0, 349] (4.09s)
+17:09:44 Lower bound: [-136, -11048]  upper: [-136, -10707]  gap: [0, 341] (4.09s)
+17:09:44 Lower bound: [-136, -11032]  upper: [-136, -10707]  gap: [0, 325] (4.09s)
+17:09:44 Lower bound: [-136, -11024]  upper: [-136, -10707]  gap: [0, 317] (4.09s)
+17:09:44 Lower bound: [-136, -11008]  upper: [-136, -10707]  gap: [0, 301] (4.09s)
+17:09:44 Lower bound: [-136, -11000]  upper: [-136, -10707]  gap: [0, 293] (4.09s)
+17:09:44 Lower bound: [-136, -10992]  upper: [-136, -10707]  gap: [0, 285] (4.10s)
+17:09:45 Lower bound: [-136, -10984]  upper: [-136, -10707]  gap: [0, 277] (4.18s)
+17:09:45 Model found (4.33s, +0.57s): [-136, -10801]
+17:09:45 Lower bound: [-136, -10976]  upper: [-136, -10801]  gap: [0, 175] (4.34s)
+17:09:45 Lower bound: [-136, -10968]  upper: [-136, -10801]  gap: [0, 167] (4.34s)
+17:09:45 Lower bound: [-136, -10960]  upper: [-136, -10801]  gap: [0, 159] (4.34s)
+17:09:45 Lower bound: [-136, -10952]  upper: [-136, -10801]  gap: [0, 151] (4.35s)
+17:09:45 Model found (4.38s, +0.05s): [-136, -10812]
+17:09:45 Lower bound: [-136, -10944]  upper: [-136, -10812]  gap: [0, 132] (4.39s)
+17:09:45 Model found (4.39s, +0.02s): [-136, -10851]
+17:09:45 Lower bound: [-136, -10874]  upper: [-136, -10851]  gap: [0, 23] (4.41s)
+17:09:45 Lower bound: [-136, -10867]  upper: [-136, -10851]  gap: [0, 16] (4.42s)
+17:09:45 Lower bound: [-136, -10866]  upper: [-136, -10851]  gap: [0, 15] (4.45s)
+17:09:45 Lower bound: [-136, -10865]  upper: [-136, -10851]  gap: [0, 14] (4.45s)
+17:09:45 Lower bound: [-136, -10864]  upper: [-136, -10851]  gap: [0, 13] (4.45s)
+17:09:45 Lower bound: [-136, -10863]  upper: [-136, -10851]  gap: [0, 12] (4.45s)
+17:09:45 Lower bound: [-136, -10862]  upper: [-136, -10851]  gap: [0, 11] (4.45s)
+17:09:45 Lower bound: [-136, -10861]  upper: [-136, -10851]  gap: [0, 10] (4.45s)
+17:09:45 Lower bound: [-136, -10860]  upper: [-136, -10851]  gap: [0, 9] (4.47s)
+17:09:45 Lower bound: [-136, -10859]  upper: [-136, -10851]  gap: [0, 8] (4.48s)
+17:09:45 Lower bound: [-136, -10858]  upper: [-136, -10851]  gap: [0, 7] (4.48s)
+17:09:45 Lower bound: [-136, -10857]  upper: [-136, -10851]  gap: [0, 6] (4.48s)
+17:09:45 Lower bound: [-136, -10856]  upper: [-136, -10851]  gap: [0, 5] (4.49s)
+17:09:45 Lower bound: [-136, -10854]  upper: [-136, -10851]  gap: [0, 3] (4.49s)
+17:09:45 Model found (4.50s, +0.11s): [-136, -10854]
+17:09:45 Solving done: OPTIMUM FOUND (4.10s)
+% Command: ooanalyzer.py examples/ooa/mysql/connection_control.dll.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/mysql/connection_control.dll.results
 OPTIMUM FOUND
 
-Answer: 12
-Optimization: -136 -10865
+Answer: 11
+Optimization: -136 -10854
 
-% Equivalence classes (540 classes, 679 entities):
+% Equivalence classes (541 classes, 679 entities):
 
 % Selected guesses:
 %   [method]
@@ -508,14 +485,14 @@ Optimization: -136 -10865
 %       guessMethodDomain(std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::~_Vector_val@0x10008530) guessMethodDomain(std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> >::~_Vector_val@0x1000d4f0)
 %       guessMethodDomain(std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> >::~_Vector_val@0x1000d530)
 %   [constructor]
-%     guessConstructor1Reward: 7/11
+%     guessConstructor1Reward: 8/11
 %       guessConstructor1Reward(connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430) guessConstructor1Reward(connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0)
 %       guessConstructor1Reward(connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0) guessConstructor1Reward(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       guessConstructor1Reward(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590) guessConstructor1Reward(connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
-%       guessConstructor1Reward(type_info::type_info@0x1000fd90)
-%     ~guessConstructor1Reward: 4/11
+%       guessConstructor1Reward(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590) guessConstructor1Reward(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
+%       guessConstructor1Reward(connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0) guessConstructor1Reward(type_info::type_info@0x1000fd90)
+%     ~guessConstructor1Reward: 3/11
 %       guessConstructor1Domain(std::_Generic_error_category::scalar_deleting_destructor@0x10005260) guessConstructor1Domain(std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0)
-%       guessConstructor1Domain(std::_System_error_category::scalar_deleting_destructor@0x10005300) guessConstructor1Domain(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
+%       guessConstructor1Domain(std::_System_error_category::scalar_deleting_destructor@0x10005300)
 %     guessConstructor2Reward: 0/0
 %     ~guessConstructor2Reward: 0/0
 %     guessConstructor3Reward: 13/13
@@ -540,12 +517,11 @@ Optimization: -136 -10865
 %       guessConstructor4Domain(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Reallocate@0x1000e4d0) guessConstructor4Domain(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Reserve@0x1000e8a0)
 %       guessConstructor4Domain(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Tidy@0x1000e9d0) guessConstructor4Domain(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Tidy@0x1000eae0)
 %   [merge]
-%     strongMergeReward: 82/98
+%     strongMergeReward: 79/98
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073,connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073,connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073,connection_control::Connection_event_coordinator_services::scalar_deleting_destructor@0x10008800)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       strongMergeReward(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20)
@@ -553,13 +529,12 @@ Optimization: -136 -10865
 %       strongMergeReward(tramp:virtual bool std::error_category::equivalent(int, class std::error_condition const &) const@0x100010fa,std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0)
 %       strongMergeReward(tramp:virtual bool std::error_category::equivalent(int, class std::error_condition const &) const@0x100010fa,std::_System_error_category::scalar_deleting_destructor@0x10005300)
 %       strongMergeReward(tramp:virtual bool std::error_category::equivalent(int, class std::error_condition const &) const@0x100010fa,std::error_category::scalar_deleting_destructor@0x10005350)
+%       strongMergeReward(tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       strongMergeReward(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(tramp:virtual bool std::error_category::equivalent(class std::error_code const &, int) const@0x10001140,std::_Generic_error_category::scalar_deleting_destructor@0x10005260)
@@ -567,17 +542,16 @@ Optimization: -136 -10865
 %       strongMergeReward(tramp:virtual bool std::error_category::equivalent(class std::error_code const &, int) const@0x10001140,std::_System_error_category::scalar_deleting_destructor@0x10005300)
 %       strongMergeReward(tramp:virtual bool std::error_category::equivalent(class std::error_code const &, int) const@0x10001140,std::error_category::scalar_deleting_destructor@0x10005350)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       strongMergeReward(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::_Generic_error_category::scalar_deleting_destructor@0x10005260)
 %       strongMergeReward(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0)
 %       strongMergeReward(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::_System_error_category::scalar_deleting_destructor@0x10005300)
 %       strongMergeReward(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::error_category::scalar_deleting_destructor@0x10005350)
+%       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_coordinator::`scalar deleting destructor'(unsigned int)@0x10001253,connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_coordinator::`scalar deleting destructor'(unsigned int)@0x10001253,connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
@@ -586,17 +560,17 @@ Optimization: -136 -10865
 %       strongMergeReward(tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b,std::_System_error_category::scalar_deleting_destructor@0x10005300)
 %       strongMergeReward(tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b,std::error_category::scalar_deleting_destructor@0x10005350)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
-%       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(tramp:virtual * connection_control::Error_handler::`scalar deleting destructor'(unsigned int)@0x10001311,connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0)
 %       strongMergeReward(tramp:virtual * connection_control::Error_handler::`scalar deleting destructor'(unsigned int)@0x10001311,connection_control::Connection_control_error_handler::scalar_deleting_destructor@0x10008740)
 %       strongMergeReward(tramp:virtual * connection_control::Error_handler::`scalar deleting destructor'(unsigned int)@0x10001311,connection_control::Error_handler::scalar_deleting_destructor@0x10008850)
+%       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_event_coordinator::register_event_subscriber(class connection_control::Connection_event_observer * *, class std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> > *, class std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> > *)@0x10001325,connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_event_coordinator::register_event_subscriber(class connection_control::Connection_event_observer * *, class std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> > *, class std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> > *)@0x10001325,connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
-%       strongMergeReward(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
+%       strongMergeReward(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_event_coordinator::notify_status_var(class connection_control::Connection_event_observer * *, enum stats_connection_control, enum connection_control::status_var_action)@0x10001352,connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430)
 %       strongMergeReward(tramp:virtual bool connection_control::Connection_event_coordinator::notify_status_var(class connection_control::Connection_event_observer * *, enum stats_connection_control, enum connection_control::status_var_action)@0x10001352,connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
@@ -616,28 +590,31 @@ Optimization: -136 -10865
 %       strongMergeReward(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 %       strongMergeReward(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20)
-%       strongMergeReward(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
+%       strongMergeReward(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeReward(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
+%       strongMergeReward(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
 %       strongMergeReward(connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeReward(connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0,connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20)
-%       strongMergeReward(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
 %       strongMergeReward(connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10,connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20)
 %       strongMergeReward(type_info::type_info@0x1000fd90,type_info::vector_deleting_destructor@0x1000fdc0)
-%     ~strongMergeReward: 16/98
+%     ~strongMergeReward: 19/98
 %       strongMergeCandidate(tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073,connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0)
+%       strongMergeCandidate(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 %       strongMergeCandidate(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
-%       strongMergeCandidate(tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
-%       strongMergeCandidate(tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
-%       strongMergeCandidate(tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
-%       strongMergeCandidate(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 %       strongMergeCandidate(connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430,connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0)
 %       strongMergeCandidate(connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0,connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0)
 %       strongMergeCandidate(connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0,connection_control::Connection_event_coordinator_services::scalar_deleting_destructor@0x10008800)
 %       strongMergeCandidate(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
-%       strongMergeCandidate(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+%       strongMergeCandidate(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 %       strongMergeCandidate(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
-%       strongMergeCandidate(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
 %       strongMergeCandidate(connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0,connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
+%       strongMergeCandidate(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
 %       strongMergeCandidate(connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 %       strongMergeCandidate(connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0,connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20)
 %     weakMergeReward: 192/234
@@ -710,7 +687,6 @@ Optimization: -136 -10865
 %       weakMergeReward(std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::operator++@0x10004e40,std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<class connection_control::Connection_event_coordinator::Connection_event_subscriber> > >::_Compat@0x10005690)
 %       weakMergeReward(std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::operator++@0x10004fa0,std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::_Compat@0x100057f0)
 %       weakMergeReward(std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::operator++@0x10005100,std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> > >::_Compat@0x10005950)
-%       weakMergeReward(std::error_category::scalar_deleting_destructor@0x10005350,std::error_category::vftable@0x100183cc)
 %       weakMergeReward(std::_Iterator_base12::_Adopt@0x100053a0,std::_Iterator_base12::_Orphan_me@0x10006120)
 %       weakMergeReward(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_Alloc_proxy@0x10005550,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Tidy@0x10006750)
 %       weakMergeReward(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_Alloc_proxy@0x10005550,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign@0x100069e0)
@@ -811,6 +787,7 @@ Optimization: -136 -10865
 %       weakMergeReward(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::~vector@0x1000d5c0,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Tidy@0x1000e9d0)
 %       weakMergeReward(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >::_Free_proxy@0x1000dea0)
 %       weakMergeReward(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Tidy@0x1000eae0)
+%       weakMergeReward(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0)
 %       weakMergeReward(String::~String@0x1000d930,String::mem_free@0x1000f1d0)
 %       weakMergeReward(connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0,connection_control::Connection_delay_action::vftable@0x1001d35c)
 %       weakMergeReward(connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10,connection_control::Connection_delay_event::vftable@0x1001d340)
@@ -837,6 +814,7 @@ Optimization: -136 -10865
 %       weakMergeCandidate(std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::basic_string@0x100042b0,std::_Container_base12::_Container_base12@0x100210b0)
 %       weakMergeCandidate(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::~_String_alloc@0x100043a0,std::_Container_base12::~_Container_base12@0x100210d8)
 %       weakMergeCandidate(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::~_String_alloc@0x100043a0,std::_Container_base12::_Orphan_all@0x100210e0)
+%       weakMergeCandidate(std::error_category::scalar_deleting_destructor@0x10005350,std::error_category::vftable@0x100183cc)
 %       weakMergeCandidate(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_Alloc_proxy@0x10005550,std::_Container_base12::_Container_base12@0x100210b0)
 %       weakMergeCandidate(std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Orphan_range@0x100061e0,std::_Container_base12::_Getpfirst@0x100210dc)
 %       weakMergeCandidate(std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reallocate@0x10006350,std::_Container_base12::_Orphan_all@0x100210e0)
@@ -856,7 +834,6 @@ Optimization: -136 -10865
 %       weakMergeCandidate(std::_String_val<struct std::_Simple_types<char> >::_String_val@0x1000d390,std::_Container_base12::_Container_base12@0x100210b0)
 %       weakMergeCandidate(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::~vector@0x1000d5c0,std::_Container_base12::~_Container_base12@0x100210d8)
 %       weakMergeCandidate(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::_Container_base12::~_Container_base12@0x100210d8)
-%       weakMergeCandidate(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0)
 %       weakMergeCandidate(connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0,connection_control::Connection_event_observer::vftable@0x1001d32c)
 %       weakMergeCandidate(connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20,connection_control::Connection_event_records::vftable@0x1001d310)
 %       weakMergeCandidate(std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >::_Alloc_proxy@0x1000db70,std::_Container_base12::_Container_base12@0x100210b0)
@@ -876,7 +853,7 @@ Optimization: -136 -10865
 %       weakMergeCandidate(String::c_ptr_safe@0x1000f010,String::mem_realloc@0x1002122c)
 %       weakMergeCandidate(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260,std::_Container_base12::_Container_base12@0x100210b0)
 %       weakMergeCandidate(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::push_back@0x1000f410,std::_Container_base12::_Container_base12@0x100210b0)
-%     weakG1Bonus: 164/234
+%     weakG1Bonus: 165/234
 %       weakG1Bonus(connection_control::Connection_event_coordinator::register_event_subscriber@0x10003160,connection_control::Connection_event_coordinator::vftable@0x10019eac) weakG1Bonus(connection_control::Connection_event_coordinator::notify_status_var@0x10003a00,connection_control::Connection_event_coordinator::vftable@0x10019eac)
 %       weakG1Bonus(connection_control::Connection_event_coordinator::reset@0x10003ba0,connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430) weakG1Bonus(connection_control::Connection_event_coordinator::reset@0x10003ba0,connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
 %       weakG1Bonus(std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::_Vector_const_iterator@0x10004230,std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::~_Vector_iterator@0x10004560) weakG1Bonus(std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> > >::_Vector_const_iterator@0x10004230,std::_Iterator012<struct std::random_access_iterator_tag, enum opt_connection_control, int, near enum opt_connection_control const *, near enum opt_connection_control const &, struct std::_Iterator_base12>::operator=@0x100046c0)
@@ -952,14 +929,15 @@ Optimization: -136 -10865
 %       weakG1Bonus(connection_control::Connection_delay_action::make_hash_key@0x1000b750,connection_control::Connection_delay_action::conditional_wait@0x1000b950) weakG1Bonus(connection_control::Connection_delay_action::make_hash_key@0x1000b750,connection_control::Connection_delay_action::get_wait_time@0x1000f080)
 %       weakG1Bonus(connection_control::Connection_delay_action::conditional_wait@0x1000b950,connection_control::Connection_delay_action::get_wait_time@0x1000f080) weakG1Bonus(std::_String_val<struct std::_Simple_types<char> >::_String_val@0x1000d390,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::~basic_string@0x1000d570)
 %       weakG1Bonus(std::_Vector_val<struct std::_Simple_types<enum opt_connection_control> >::~_Vector_val@0x1000d4f0,std::_Container_base12::~_Container_base12@0x100210d8) weakG1Bonus(std::_Vector_val<struct std::_Simple_types<enum stats_connection_control> >::~_Vector_val@0x1000d530,std::_Container_base12::~_Container_base12@0x100210d8)
-%       weakG1Bonus(String::~String@0x1000d930,String::mem_free@0x1000f1d0) weakG1Bonus(connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0,connection_control::Connection_delay_action::vftable@0x1001d35c)
-%       weakG1Bonus(connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10,connection_control::Connection_delay_event::vftable@0x1001d340) weakG1Bonus(std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >::_Alloc_proxy@0x1000db70,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260)
-%       weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Orphan_range@0x1000df50,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve@0x1000e770) weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Orphan_range@0x1000df50,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260)
-%       weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reallocate@0x1000e230,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve@0x1000e770) weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve@0x1000e770,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260)
-%       weakG1Bonus(std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ebf0,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ee50) weakG1Bonus(std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000eda0,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ee50)
-%       weakG1Bonus(connection_control::Connection_delay_action::set_delay@0x1000f5c0,connection_control::Connection_delay_action::set_threshold@0x1000f790) weakG1Bonus(type_info::vector_deleting_destructor@0x1000fdc0,type_info::vftable@0x1001d548)
-%       weakG1Bonus(std::_Lockit::_Lockit@0x100210cc,std::_Lockit::~_Lockit@0x100210d0) weakG1Bonus(std::_Container_base12::~_Container_base12@0x100210d8,std::_Container_base12::_Orphan_all@0x100210e0)
-%     ~weakG1Bonus: 70/234
+%       weakG1Bonus(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0) weakG1Bonus(String::~String@0x1000d930,String::mem_free@0x1000f1d0)
+%       weakG1Bonus(connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0,connection_control::Connection_delay_action::vftable@0x1001d35c) weakG1Bonus(connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10,connection_control::Connection_delay_event::vftable@0x1001d340)
+%       weakG1Bonus(std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >::_Alloc_proxy@0x1000db70,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260) weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Orphan_range@0x1000df50,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve@0x1000e770)
+%       weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Orphan_range@0x1000df50,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260) weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reallocate@0x1000e230,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve@0x1000e770)
+%       weakG1Bonus(std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::_Reserve@0x1000e770,std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> >::push_back@0x1000f260) weakG1Bonus(std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ebf0,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ee50)
+%       weakG1Bonus(std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000eda0,std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ee50) weakG1Bonus(connection_control::Connection_delay_action::set_delay@0x1000f5c0,connection_control::Connection_delay_action::set_threshold@0x1000f790)
+%       weakG1Bonus(type_info::vector_deleting_destructor@0x1000fdc0,type_info::vftable@0x1001d548) weakG1Bonus(std::_Lockit::_Lockit@0x100210cc,std::_Lockit::~_Lockit@0x100210d0)
+%       weakG1Bonus(std::_Container_base12::~_Container_base12@0x100210d8,std::_Container_base12::_Orphan_all@0x100210e0)
+%     ~weakG1Bonus: 69/234
 %       weakMergeCandidate(std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::basic_string@0x100042b0,std::_Container_base12::_Container_base12@0x100210b0)
 %       weakMergeCandidate(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::~_String_alloc@0x100043a0,std::_Container_base12::~_Container_base12@0x100210d8)
 %       weakMergeCandidate(std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::~_String_alloc@0x100043a0,std::_Container_base12::_Orphan_all@0x100210e0)
@@ -1002,7 +980,6 @@ Optimization: -136 -10865
 %       weakMergeCandidate(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >::_Free_proxy@0x1000dea0)
 %       weakMergeCandidate(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Tidy@0x1000eae0)
 %       weakMergeCandidate(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::_Container_base12::~_Container_base12@0x100210d8)
-%       weakMergeCandidate(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0)
 %       weakMergeCandidate(connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0,connection_control::Connection_event_observer::vftable@0x1001d32c)
 %       weakMergeCandidate(connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20,connection_control::Connection_event_records::vftable@0x1001d310)
 %       weakMergeCandidate(std::_Vector_alloc<0, struct std::_Vec_base_types<enum opt_connection_control, class std::allocator<enum opt_connection_control> > >::_Alloc_proxy@0x1000db70,std::_Container_base12::_Container_base12@0x100210b0)
@@ -1049,7 +1026,7 @@ Optimization: -136 -10865
 %       objectInObject(connection_control::Connection_control_error_handler::vftable@0x10019ec0,connection_control::Error_handler::vftable@0x10019e88,0)
 %       objectInObject(connection_control::Connection_delay_event::vftable@0x1001d340,connection_control::Connection_event_records::vftable@0x1001d310,0)
 %       objectInObject(connection_control::Connection_delay_action::vftable@0x1001d35c,connection_control::Connection_event_observer::vftable@0x1001d32c,0)
-09:43:18 Writing results to examples/ooa/mysql/connection_control.dll.results
+17:09:45 Writing results to examples/ooa/mysql/connection_control.dll.results
 
 % Stats:
 %   atoms: 65620.0
@@ -1057,17 +1034,17 @@ Optimization: -136 -10865
 %   rules: 110351.0
 %   variables: 68781.0
 %   constraints: 4138.0
-%   choices: 137406.0
-%   conflicts: 7569.0
-%   models: 12.0
+%   choices: 1301952.0
+%   conflicts: 3197.0
+%   models: 11.0
 %   optimal_models: 1.0
-%   final_cost: [-136.0, -10865.0]
-%   lower_bound: [-136.0, -10865.0]
-%   total_time: 820.745717048645
-%   ground_time: 0.5734844890248496
-%   time_to_first_model: 18.089635423006257
-%   max_rss_bytes: 144465920
-%   solve_time: 819.246346950531
+%   final_cost: [-136.0, -10854.0]
+%   lower_bound: [-136.0, -10854.0]
+%   total_time: 4.544550180435181
+%   ground_time: 0.421461704000194
+%   time_to_first_model: 0.9648986090001017
+%   max_rss_bytes: 159457280
+%   solve_time: 3.5686771869659424
 classCallsMethod(268567056,268545740)
 classCallsMethod(String::c_ptr_safe@0x1000f010,String::mem_realloc@0x1002122c)
 classCallsMethod(String::~String@0x1000d930,String::mem_free@0x1000f1d0)
@@ -1924,6 +1901,13 @@ classSizeGTE(connection_control::Connection_delay_action::set_threshold@0x1000f7
 classSizeGTE(connection_control::Connection_delay_action::set_threshold@0x1000f790,16)
 classSizeGTE(connection_control::Connection_delay_action::set_threshold@0x1000f790,68)
 classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,0)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,12)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,16)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,192)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,24)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,32)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,4)
+classSizeGTE(connection_control::Connection_delay_action::vftable@0x1001d35c,68)
 classSizeGTE(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,0)
 classSizeGTE(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,192)
 classSizeGTE(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,4)
@@ -1938,13 +1922,7 @@ classSizeGTE(connection_control::Connection_delay_event::reset_all@0x1000a3d0,0)
 classSizeGTE(connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10,0)
 classSizeGTE(connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10,4)
 classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,0)
-classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,12)
-classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,16)
-classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,192)
-classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,24)
-classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,32)
 classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,4)
-classSizeGTE(connection_control::Connection_delay_event::vftable@0x1001d340,68)
 classSizeGTE(connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0,0)
 classSizeGTE(connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0,4)
 classSizeGTE(connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430,0)
@@ -2530,6 +2508,7 @@ constructor(connection_control::Connection_delay_action::Connection_delay_action
 constructor(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 constructor(connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430)
 constructor(connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0)
+constructor(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 constructor(connection_control::Connection_event_record::Connection_event_record@0x1000d3f0)
 constructor(connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
 constructor(connection_control::RD_lock::~RD_lock@0x1000d8d0)
@@ -2578,27 +2557,29 @@ mergeClasses(connection_control::Connection_control_error_handler::handle_error@
 mergeClasses(connection_control::Connection_control_error_handler::scalar_deleting_destructor@0x10008740,connection_control::Error_handler::scalar_deleting_destructor@0x10008850)
 mergeClasses(connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0,connection_control::Connection_control_error_handler::scalar_deleting_destructor@0x10008740)
 mergeClasses(connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0,connection_control::Error_handler::scalar_deleting_destructor@0x10008850)
+mergeClasses(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
-mergeClasses(connection_control::Connection_delay_action::Connection_delay_action@0x1000a590,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 mergeClasses(connection_control::Connection_delay_action::conditional_wait@0x1000b950,connection_control::Connection_delay_action::get_wait_time@0x1000f080)
-mergeClasses(connection_control::Connection_delay_action::conditional_wait@0x1000b950,connection_control::Connection_event_records::vftable@0x1001d310)
+mergeClasses(connection_control::Connection_delay_action::conditional_wait@0x1000b950,connection_control::Connection_event_observer::vftable@0x1001d32c)
 mergeClasses(connection_control::Connection_delay_action::deinit@0x1000b600,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
-mergeClasses(connection_control::Connection_delay_action::get_wait_time@0x1000f080,connection_control::Connection_event_records::vftable@0x1001d310)
+mergeClasses(connection_control::Connection_delay_action::get_wait_time@0x1000f080,connection_control::Connection_event_observer::vftable@0x1001d32c)
 mergeClasses(connection_control::Connection_delay_action::make_hash_key@0x1000b750,connection_control::Connection_delay_action::conditional_wait@0x1000b950)
 mergeClasses(connection_control::Connection_delay_action::make_hash_key@0x1000b750,connection_control::Connection_delay_action::get_wait_time@0x1000f080)
-mergeClasses(connection_control::Connection_delay_action::make_hash_key@0x1000b750,connection_control::Connection_event_records::vftable@0x1001d310)
+mergeClasses(connection_control::Connection_delay_action::make_hash_key@0x1000b750,connection_control::Connection_event_observer::vftable@0x1001d32c)
 mergeClasses(connection_control::Connection_delay_action::notify_event@0x1000acd0,connection_control::Connection_delay_action::conditional_wait@0x1000b950)
 mergeClasses(connection_control::Connection_delay_action::notify_event@0x1000acd0,connection_control::Connection_delay_action::get_wait_time@0x1000f080)
 mergeClasses(connection_control::Connection_delay_action::notify_event@0x1000acd0,connection_control::Connection_delay_action::make_hash_key@0x1000b750)
-mergeClasses(connection_control::Connection_delay_action::notify_event@0x1000acd0,connection_control::Connection_event_records::vftable@0x1001d310)
+mergeClasses(connection_control::Connection_delay_action::notify_event@0x1000acd0,connection_control::Connection_event_observer::vftable@0x1001d32c)
 mergeClasses(connection_control::Connection_delay_action::notify_sys_var@0x1000b2a0,connection_control::Connection_delay_action::set_delay@0x1000f5c0)
 mergeClasses(connection_control::Connection_delay_action::notify_sys_var@0x1000b2a0,connection_control::Connection_delay_action::set_threshold@0x1000f790)
-mergeClasses(connection_control::Connection_delay_action::notify_sys_var@0x1000b2a0,connection_control::Connection_event_records::vftable@0x1001d310)
+mergeClasses(connection_control::Connection_delay_action::notify_sys_var@0x1000b2a0,connection_control::Connection_event_observer::vftable@0x1001d32c)
 mergeClasses(connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0,connection_control::Connection_delay_action::vftable@0x1001d35c)
 mergeClasses(connection_control::Connection_delay_action::set_delay@0x1000f5c0,connection_control::Connection_delay_action::set_threshold@0x1000f790)
-mergeClasses(connection_control::Connection_delay_action::set_delay@0x1000f5c0,connection_control::Connection_event_records::vftable@0x1001d310)
-mergeClasses(connection_control::Connection_delay_action::set_threshold@0x1000f790,connection_control::Connection_event_records::vftable@0x1001d310)
+mergeClasses(connection_control::Connection_delay_action::set_delay@0x1000f5c0,connection_control::Connection_event_observer::vftable@0x1001d32c)
+mergeClasses(connection_control::Connection_delay_action::set_threshold@0x1000f790,connection_control::Connection_event_observer::vftable@0x1001d32c)
 mergeClasses(connection_control::Connection_delay_action::vftable@0x1001d35c,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
+mergeClasses(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0)
+mergeClasses(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
 mergeClasses(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 mergeClasses(connection_control::Connection_delay_event::Connection_delay_event@0x10009af0,connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20)
@@ -2623,7 +2604,7 @@ mergeClasses(connection_control::Connection_event_coordinator::vftable@0x10019ea
 mergeClasses(connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0,connection_control::Connection_event_coordinator::scalar_deleting_destructor@0x10008790)
 mergeClasses(connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0,connection_control::Connection_event_coordinator_services::scalar_deleting_destructor@0x10008800)
 mergeClasses(connection_control::Connection_event_coordinator_services::vftable@0x10019e98,connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0)
-mergeClasses(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
+mergeClasses(connection_control::Connection_event_observer::vftable@0x1001d32c,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 mergeClasses(connection_control::Connection_event_records::vftable@0x1001d310,connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
 mergeClasses(connection_control::Error_handler::scalar_deleting_destructor@0x10008850,connection_control::Error_handler::vftable@0x10019e88)
 mergeClasses(connection_control::Error_handler::vftable@0x10019e88,connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0)
@@ -2780,7 +2761,6 @@ mergeClasses(std::basic_string<char, struct std::char_traits<char>, class std::a
 mergeClasses(std::error_category::default_error_condition@0x10006ef0,std::error_category::vftable@0x100183cc)
 mergeClasses(std::error_category::equivalent@0x100070b0,std::error_category::vftable@0x100183cc)
 mergeClasses(std::error_category::equivalent@0x10007140,std::error_category::vftable@0x100183cc)
-mergeClasses(std::error_category::scalar_deleting_destructor@0x10005350,std::error_category::vftable@0x100183cc)
 mergeClasses(std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Orphan_range@0x100061e0,std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reserve@0x10006620)
 mergeClasses(std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Orphan_range@0x100061e0,std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::push_back@0x10007530)
 mergeClasses(std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reallocate@0x10006350,std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reserve@0x10006620)
@@ -2803,8 +2783,8 @@ mergeClasses(std::vector<enum stats_connection_control, class std::allocator<enu
 mergeClasses(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::begin@0x10006cf0,std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::end@0x10007030)
 mergeClasses(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::_Vector_alloc<0, struct std::_Vec_base_types<enum stats_connection_control, class std::allocator<enum stats_connection_control> > >::_Free_proxy@0x1000dea0)
 mergeClasses(std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::~vector@0x1000d610,std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> >::_Tidy@0x1000eae0)
+mergeClasses(tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
 mergeClasses(tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
-mergeClasses(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 mergeClasses(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
@@ -2814,9 +2794,8 @@ mergeClasses(tramp:virtual * connection_control::Connection_event_coordinator_se
 mergeClasses(tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073,connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
 mergeClasses(tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073,connection_control::Connection_event_coordinator_services::scalar_deleting_destructor@0x10008800)
 mergeClasses(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
+mergeClasses(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0)
-mergeClasses(tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
-mergeClasses(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 mergeClasses(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
@@ -2828,17 +2807,16 @@ mergeClasses(tramp:virtual * std::error_category::`scalar deleting destructor'(u
 mergeClasses(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0)
 mergeClasses(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::_System_error_category::scalar_deleting_destructor@0x10005300)
 mergeClasses(tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d,std::error_category::scalar_deleting_destructor@0x10005350)
+mergeClasses(tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
+mergeClasses(tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316,connection_control::Connection_delay_action::Connection_delay_action@0x1000a590)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
-mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
-mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
-mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
@@ -2858,7 +2836,6 @@ mergeClasses(tramp:virtual class std::error_condition std::error_category::defau
 mergeClasses(tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b,std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0)
 mergeClasses(tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b,std::_System_error_category::scalar_deleting_destructor@0x10005300)
 mergeClasses(tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b,std::error_category::scalar_deleting_destructor@0x10005350)
-mergeClasses(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 mergeClasses(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 mergeClasses(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10)
 mergeClasses(tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db,connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
@@ -3535,7 +3512,6 @@ objectInObject(connection_control::Connection_event_coordinator::vftable@0x10019
 realDestructor(connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660)
 realDestructor(connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0)
 realDestructor(connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0)
-realDestructor(connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 realDestructor(std::_Container_base12::~_Container_base12@0x100210d8)
 realDestructor(std::_Lockit::~_Lockit@0x100210d0)
 realDestructor(type_info::~type_info@0x10021180)
@@ -3638,6 +3614,7 @@ vftableBelongsToClass(connection_control::Connection_delay_action::vftable@0x100
 vftableBelongsToClass(connection_control::Connection_delay_event::vftable@0x1001d340,0,connection_control::Connection_delay_event::Connection_delay_event@0x10009af0)
 vftableBelongsToClass(connection_control::Connection_event_coordinator::vftable@0x10019eac,0,connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430)
 vftableBelongsToClass(connection_control::Connection_event_coordinator_services::vftable@0x10019e98,0,connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0)
+vftableBelongsToClass(connection_control::Connection_event_observer::vftable@0x1001d32c,0,connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870)
 vftableBelongsToClass(connection_control::Connection_event_records::vftable@0x1001d310,0,connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0)
 vftableBelongsToClass(connection_control::Error_handler::vftable@0x10019e88,0,connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0)
 vftableBelongsToClass(type_info::vftable@0x1001d548,0,type_info::type_info@0x1000fd90)
@@ -3848,13 +3825,13 @@ vftableSizeTotal(136)
 %   {connection_control::Connection_control_error_handler::handle_error@0x10008bc0, connection_control::Connection_control_error_handler::vftable@0x10019ec0}
 %   {connection_control::Connection_delay_action::fill_IS_table@0x1000a940}
 %   {connection_control::Connection_delay_action::init@0x1000a770}
-%   {connection_control::Connection_delay_action::notify_event@0x1000acd0, connection_control::Connection_delay_action::notify_sys_var@0x1000b2a0, connection_control::Connection_delay_action::make_hash_key@0x1000b750, connection_control::Connection_delay_action::conditional_wait@0x1000b950, connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0, connection_control::Connection_delay_action::get_wait_time@0x1000f080, connection_control::Connection_delay_action::set_delay@0x1000f5c0, connection_control::Connection_delay_action::set_threshold@0x1000f790, connection_control::Connection_event_records::vftable@0x1001d310}
+%   {connection_control::Connection_delay_action::notify_event@0x1000acd0, connection_control::Connection_delay_action::notify_sys_var@0x1000b2a0, connection_control::Connection_delay_action::make_hash_key@0x1000b750, connection_control::Connection_delay_action::conditional_wait@0x1000b950, connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870, connection_control::Connection_delay_action::get_wait_time@0x1000f080, connection_control::Connection_delay_action::set_delay@0x1000f5c0, connection_control::Connection_delay_action::set_threshold@0x1000f790, connection_control::Connection_event_observer::vftable@0x1001d32c}
 %   {connection_control::Connection_delay_event::fill_IS_table@0x10009b50}
 %   {connection_control::Connection_event_coordinator::notify_event@0x10002cf0}
 %   {connection_control::Connection_event_coordinator::notify_sys_var@0x10002f20}
 %   {connection_control::Connection_event_coordinator_services::~Connection_event_coordinator_services@0x100086d0, connection_control::Connection_event_coordinator_services::vftable@0x10019e98}
-%   {connection_control::Connection_event_observer::vftable@0x1001d32c}
 %   {connection_control::Connection_event_record::Connection_event_record@0x1000d3f0}
+%   {connection_control::Connection_event_records::~Connection_event_records@0x1000d8a0, connection_control::Connection_event_records::vftable@0x1001d310}
 %   {connection_control::RD_lock::~RD_lock@0x1000d8d0}
 %   {connection_control::Security_context_wrapper::Security_context_wrapper@0x10008c20, connection_control::Security_context_wrapper::get_proxy_user@0x10008c90, connection_control::Security_context_wrapper::get_priv_user@0x10008d10, connection_control::Security_context_wrapper::get_priv_host@0x10008d90, connection_control::Security_context_wrapper::get_user@0x10008e10, connection_control::Security_context_wrapper::get_host@0x10008e90, connection_control::Security_context_wrapper::get_ip@0x10008f10, connection_control::Security_context_wrapper::is_super_user@0x10008fb0, connection_control::Security_context_wrapper::get_property@0x10009060}
 %   {connection_control::Security_context_wrapper::security_context_exists@0x10008f90}
@@ -3910,6 +3887,7 @@ vftableSizeTotal(136)
 %   {std::`dynamic initializer for 'piecewise_construct''@0x10001ce0}
 %   {std::`dynamic initializer for 'piecewise_construct''@0x10001ef0}
 %   {std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::basic_string@0x100042b0, std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::~_String_alloc@0x100043a0, std::_String_alloc<0, struct std::_String_base_types<char, class std::allocator<char> > >::_Alloc_proxy@0x10005550, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Copy@0x10005ab0, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Eos@0x10005eb0, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Grow@0x10005f30, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Inside@0x10006070, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::_Tidy@0x10006750, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign@0x10006830, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign@0x100069e0, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::assign@0x10006a90, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::erase@0x100071c0, std::_String_val<struct std::_Simple_types<char> >::_String_val@0x1000d390, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::~basic_string@0x1000d570, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ebf0, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000eda0, std::basic_string<char, struct std::char_traits<char>, class std::allocator<char> >::append@0x1000ee50}
+%   {std::error_category::default_error_condition@0x10006ef0, std::error_category::equivalent@0x100070b0, std::error_category::equivalent@0x10007140, std::error_category::vftable@0x100183cc}
 %   {std::error_condition::operator==@0x10004910}
 %   {std::locale::id::id@0x100210bc}
 %   {std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Orphan_range@0x100061e0, std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reallocate@0x10006350, std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::_Reserve@0x10006620, std::vector<class connection_control::Connection_event_coordinator::Connection_event_subscriber, class std::allocator<class connection_control::Connection_event_coordinator::Connection_event_subscriber> >::push_back@0x10007530}
@@ -4142,14 +4120,14 @@ vftableSizeTotal(136)
 %   {tramp:virtual * connection_control::Connection_control_error_handler::`vector deleting destructor'(unsigned int)@0x1000113b}
 %   {tramp:virtual * connection_control::Connection_control_error_handler::`vector deleting destructor'(unsigned int)@0x10001320}
 %   {tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001005}
+%   {tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127, tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217, tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316, tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a, connection_control::Connection_delay_action::Connection_delay_action@0x1000a590, connection_control::Connection_delay_action::deinit@0x1000b600, connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660, connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0, connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0, connection_control::Connection_delay_action::vftable@0x1001d35c}
 %   {tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x10001154}
 %   {tramp:virtual * connection_control::Connection_event_coordinator::`scalar deleting destructor'(unsigned int)@0x1000122b}
 %   {tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001073, tramp:virtual * connection_control::Connection_event_coordinator::`scalar deleting destructor'(unsigned int)@0x10001253, tramp:virtual bool connection_control::Connection_event_coordinator::register_event_subscriber(class connection_control::Connection_event_observer * *, class std::vector<enum opt_connection_control, class std::allocator<enum opt_connection_control> > *, class std::vector<enum stats_connection_control, class std::allocator<enum stats_connection_control> > *)@0x10001325, tramp:virtual bool connection_control::Connection_event_coordinator::notify_status_var(class connection_control::Connection_event_observer * *, enum stats_connection_control, enum connection_control::status_var_action)@0x10001352, connection_control::Connection_event_coordinator::register_event_subscriber@0x10003160, connection_control::Connection_event_coordinator::notify_status_var@0x10003a00, connection_control::Connection_event_coordinator::reset@0x10003ba0, connection_control::Connection_event_coordinator::Connection_event_coordinator@0x10008430, connection_control::Connection_event_coordinator::~Connection_event_coordinator@0x100085f0, connection_control::Connection_event_coordinator::scalar_deleting_destructor@0x10008790, connection_control::Connection_event_coordinator_services::scalar_deleting_destructor@0x10008800, connection_control::Connection_event_coordinator::vftable@0x10019eac}
 %   {tramp:virtual * connection_control::Connection_event_coordinator_services::`scalar deleting destructor'(unsigned int)@0x10001343}
-%   {tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x1000132a, connection_control::Connection_delay_action::Connection_delay_action@0x1000a590, connection_control::Connection_event_observer::~Connection_event_observer@0x1000d870, connection_control::Connection_delay_action::scalar_deleting_destructor@0x1000d9a0, connection_control::Connection_event_observer::scalar_deleting_destructor@0x1000dad0, connection_control::Connection_delay_action::vftable@0x1001d35c}
 %   {tramp:virtual * connection_control::Connection_event_observer::`scalar deleting destructor'(unsigned int)@0x10001334}
 %   {tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x1000105f}
-%   {tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091, tramp:virtual * connection_control::Connection_delay_action::`vector deleting destructor'(unsigned int)@0x10001127, tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c, tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136, tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae, tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db, tramp:virtual bool connection_control::Connection_delay_action::notify_event(class THD *, class connection_control::Connection_event_coordinator_services *, struct mysql_event_connection const *, class connection_control::Error_handler *)@0x10001217, tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4, tramp:virtual bool connection_control::Connection_delay_action::notify_sys_var(class connection_control::Connection_event_coordinator_services *, enum opt_connection_control, *, class connection_control::Error_handler *)@0x10001316, connection_control::Connection_delay_event::Connection_delay_event@0x10009af0, connection_control::Connection_delay_event::create_or_update_entry@0x10009c60, connection_control::Connection_delay_event::remove_entry@0x10009fe0, connection_control::Connection_delay_event::match_entry@0x1000a240, connection_control::Connection_delay_event::reset_all@0x1000a3d0, connection_control::Connection_delay_action::deinit@0x1000b600, connection_control::Connection_delay_action::~Connection_delay_action@0x1000d660, connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0, connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10, connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20, connection_control::Connection_delay_event::vftable@0x1001d340}
+%   {tramp:virtual * connection_control::Connection_event_records::`scalar deleting destructor'(unsigned int)@0x10001091, tramp:virtual * connection_control::Connection_delay_event::`scalar deleting destructor'(unsigned int)@0x1000112c, tramp:virtual bool connection_control::Connection_delay_event::match_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &, *)@0x10001136, tramp:virtual bool connection_control::Connection_delay_event::create_or_update_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100011ae, tramp:virtual connection_control::Connection_delay_event::reset_all(void)@0x100011db, tramp:virtual bool connection_control::Connection_delay_event::remove_entry(class std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC > const &)@0x100012e4, connection_control::Connection_delay_event::Connection_delay_event@0x10009af0, connection_control::Connection_delay_event::create_or_update_entry@0x10009c60, connection_control::Connection_delay_event::remove_entry@0x10009fe0, connection_control::Connection_delay_event::match_entry@0x1000a240, connection_control::Connection_delay_event::reset_all@0x1000a3d0, connection_control::Connection_delay_event::~Connection_delay_event@0x1000d7d0, connection_control::Connection_delay_event::scalar_deleting_destructor@0x1000da10, connection_control::Connection_event_records::scalar_deleting_destructor@0x1000db20, connection_control::Connection_delay_event::vftable@0x1001d340}
 %   {tramp:virtual * connection_control::Error_handler::`scalar deleting destructor'(unsigned int)@0x100010e6}
 %   {tramp:virtual * connection_control::Error_handler::`scalar deleting destructor'(unsigned int)@0x10001311, connection_control::Connection_control_error_handler::~Connection_control_error_handler@0x100085c0, connection_control::Connection_control_error_handler::scalar_deleting_destructor@0x10008740, connection_control::Error_handler::scalar_deleting_destructor@0x10008850, connection_control::Error_handler::vftable@0x10019e88}
 %   {tramp:virtual * std::_Generic_error_category::`scalar deleting destructor'(unsigned int)@0x10001037}
@@ -4159,7 +4137,7 @@ vftableSizeTotal(136)
 %   {tramp:virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@0x1000123a}
 %   {tramp:virtual * std::_System_error_category::`scalar deleting destructor'(unsigned int)@0x100012c6}
 %   {tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x100011d1}
-%   {tramp:virtual bool std::error_category::equivalent(int, class std::error_condition const &) const@0x100010fa, tramp:virtual bool std::error_category::equivalent(class std::error_code const &, int) const@0x10001140, tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d, tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b, std::_Generic_error_category::scalar_deleting_destructor@0x10005260, std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0, std::_System_error_category::scalar_deleting_destructor@0x10005300, std::error_category::scalar_deleting_destructor@0x10005350, std::error_category::default_error_condition@0x10006ef0, std::error_category::equivalent@0x100070b0, std::error_category::equivalent@0x10007140, std::error_category::vftable@0x100183cc}
+%   {tramp:virtual bool std::error_category::equivalent(int, class std::error_condition const &) const@0x100010fa, tramp:virtual bool std::error_category::equivalent(class std::error_code const &, int) const@0x10001140, tramp:virtual * std::error_category::`scalar deleting destructor'(unsigned int)@0x1000120d, tramp:virtual class std::error_condition std::error_category::default_error_condition(int) const@0x1000127b, std::_Generic_error_category::scalar_deleting_destructor@0x10005260, std::_Iostream_error_category::scalar_deleting_destructor@0x100052b0, std::_System_error_category::scalar_deleting_destructor@0x10005300, std::error_category::scalar_deleting_destructor@0x10005350}
 %   {tramp:virtual char const * std::_Generic_error_category::name(void) const@0x1000106e}
 %   {tramp:virtual char const * std::_Iostream_error_category::name(void) const@0x1000125d}
 %   {tramp:virtual char const * std::_System_error_category::name(void) const@0x10001113}

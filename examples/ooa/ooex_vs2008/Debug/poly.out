@@ -1,10 +1,10 @@
-09:29:36 Grounding...
-09:29:37 Grounding done (0.14s)
-09:29:37 Solving...
-09:29:37 Model found (0.45s): [-20, -3352]
-09:29:37 Model found (0.58s, +0.13s): [-20, -3522]
-09:29:37 Solving done: OPTIMUM FOUND (0.44s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
+17:02:08 Grounding...
+17:02:08 Grounding done (0.08s)
+17:02:08 Solving...
+17:02:08 Model found (0.18s): [-20, -3352]
+17:02:08 Model found (0.19s, +0.00s): [-20, -3522]
+17:02:08 Solving done: OPTIMUM FOUND (0.11s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
 OPTIMUM FOUND
 
 Answer: 2
@@ -516,7 +516,7 @@ Optimization: -20 -3522
 %     ~embeddedObject: 3/3
 %       objectInObject(4290564,4290664,0) objectInObject(4290600,4290664,0)
 %       objectInObject(4290632,4290664,0)
-09:29:37 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
+17:02:08 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
 
 % Stats:
 %   atoms: 27252.0
@@ -530,8 +530,8 @@ Optimization: -20 -3522
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -3522.0]
 %   lower_bound: [-20.0, -3522.0]
-%   total_time: 0.5929169654846191
-%   ground_time: 0.13871348899556324
-%   time_to_first_model: 0.449609617004171
-%   max_rss_bytes: 54259712
-%   solve_time: 0.21544599533081055
+%   total_time: 0.19489288330078125
+%   ground_time: 0.07543065700019724
+%   time_to_first_model: 0.18211257400002978
+%   max_rss_bytes: 64569344
+%   solve_time: 0.007423877716064453

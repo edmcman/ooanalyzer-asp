@@ -1,24 +1,22 @@
-09:29:37 Grounding...
-09:29:37 Grounding done (0.06s)
-09:29:37 Solving...
-09:29:37 Model found (0.25s): [-28, -2262]
-09:29:37 Lower bound: [-28, -2761]  upper: [-28, -2262]  gap: [0, 499] (0.33s)
-09:29:37 Lower bound: [-28, -2751]  upper: [-28, -2262]  gap: [0, 489] (0.42s)
-09:29:37 Lower bound: [-28, -2741]  upper: [-28, -2262]  gap: [0, 479] (0.49s)
-09:29:37 Lower bound: [-28, -2731]  upper: [-28, -2262]  gap: [0, 469] (0.56s)
-09:29:37 Model found (0.96s, +0.70s): [-28, -2496]
-09:29:38 Lower bound: [-28, -2721]  upper: [-28, -2496]  gap: [0, 225] (1.04s)
-09:29:38 Model found (1.17s, +0.21s): [-28, -2506]
-09:29:38 Lower bound: [-28, -2711]  upper: [-28, -2506]  gap: [0, 205] (1.26s)
-09:29:38 Model found (1.41s, +0.24s): [-28, -2516]
-09:29:39 Model found (2.32s, +0.91s): [-28, -2661]
-09:29:39 Lower bound: [-28, -2685]  upper: [-28, -2661]  gap: [0, 24] (2.39s)
-09:29:39 Model found (2.49s, +0.17s): [-28, -2669]
-09:29:39 Solving done: OPTIMUM FOUND (2.43s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex1.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex1.results
+17:02:09 Grounding...
+17:02:09 Grounding done (0.03s)
+17:02:09 Solving...
+17:02:09 Model found (0.06s): [-28, -2262]
+17:02:09 Lower bound: [-28, -2761]  upper: [-28, -2262]  gap: [0, 499] (0.06s)
+17:02:09 Lower bound: [-28, -2751]  upper: [-28, -2262]  gap: [0, 489] (0.06s)
+17:02:09 Lower bound: [-28, -2741]  upper: [-28, -2262]  gap: [0, 479] (0.06s)
+17:02:09 Lower bound: [-28, -2731]  upper: [-28, -2262]  gap: [0, 469] (0.06s)
+17:02:09 Lower bound: [-28, -2721]  upper: [-28, -2262]  gap: [0, 459] (0.06s)
+17:02:09 Lower bound: [-28, -2711]  upper: [-28, -2262]  gap: [0, 449] (0.06s)
+17:02:09 Model found (0.06s, +0.00s): [-28, -2550]
+17:02:09 Model found (0.07s, +0.00s): [-28, -2661]
+17:02:09 Lower bound: [-28, -2685]  upper: [-28, -2661]  gap: [0, 24] (0.07s)
+17:02:09 Model found (0.07s, +0.00s): [-28, -2669]
+17:02:09 Solving done: OPTIMUM FOUND (0.04s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex1.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex1.results
 OPTIMUM FOUND
 
-Answer: 6
+Answer: 4
 Optimization: -28 -2669
 
 % Equivalence classes (202 classes, 220 entities):
@@ -204,7 +202,7 @@ Optimization: -28 -2669
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(const std::bad_alloc::`vftable'@0x407140,const std::exception::`vftable'@0x40715c,0) objectInObject(const std::bad_exception::`vftable'@0x4071f0,const std::exception::`vftable'@0x40715c,0)
-09:29:39 Writing results to examples/ooa/ooex_vs2010/Lite/ooex1.results
+17:02:09 Writing results to examples/ooa/ooex_vs2010/Lite/ooex1.results
 
 % Stats:
 %   atoms: 10996.0
@@ -212,17 +210,17 @@ Optimization: -28 -2669
 %   rules: 12800.0
 %   variables: 3665.0
 %   constraints: 232.0
-%   choices: 2253.0
-%   conflicts: 75.0
-%   models: 6.0
+%   choices: 1430.0
+%   conflicts: 24.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -2669.0]
 %   lower_bound: [-28.0, -2669.0]
-%   total_time: 2.505995988845825
-%   ground_time: 0.06037569398176856
-%   time_to_first_model: 0.2545883840066381
-%   max_rss_bytes: 36962304
-%   solve_time: 2.3734140396118164
+%   total_time: 0.07965898513793945
+%   ground_time: 0.031111237999994046
+%   time_to_first_model: 0.05833986900006494
+%   max_rss_bytes: 45785088
+%   solve_time: 0.0115509033203125
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x401818,std::exception::_Copy_str(char const *)@0x401793)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x401818,std::exception::_Tidy(void)@0x4017d3)
 classCallsMethod(const std::bad_alloc::`vftable'@0x407140,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4010f2)
@@ -547,6 +545,7 @@ constructor(std::bad_exception::bad_exception(class std::bad_exception const &)@
 constructor(std::exception::exception(char const * const &)@0x4017f1)
 constructor(std::exception::exception(char const * const &, int)@0x401769)
 constructor(std::exception::exception(class std::exception const &)@0x40187f)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@0x4010e7)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4010f2)
 deletingDestructor(virtual * std::bad_exception::`vector deleting destructor'(unsigned int)@0x401fff)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401858)
@@ -564,6 +563,7 @@ mergeClasses(Composite::Composite(void)@0x401000,int Composite::func3(void)@0x40
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x401818,const std::exception::`vftable'@0x40715c)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x401818,std::exception::exception(class std::exception const &)@0x40187f)
 mergeClasses(const std::bad_alloc::`vftable'@0x407140,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401119)
+mergeClasses(const std::bad_alloc::`vftable'@0x407140,virtual std::bad_alloc::~bad_alloc(void)@0x4010e7)
 mergeClasses(const std::bad_exception::`vftable'@0x4071f0,std::bad_exception::bad_exception(class std::bad_exception const &)@0x402bc9)
 mergeClasses(const std::exception::`vftable'@0x40715c,std::exception::exception(char const * const &)@0x4017f1)
 mergeClasses(const std::exception::`vftable'@0x40715c,std::exception::exception(char const * const &, int)@0x401769)
@@ -823,7 +823,6 @@ method(virtual type_info::~type_info(void)@0x4018a4)
 method(x_ismbbtype_l@0x405bc7)
 objectInObject(const std::bad_alloc::`vftable'@0x407140,const std::exception::`vftable'@0x40715c,0)
 objectInObject(const std::bad_exception::`vftable'@0x4071f0,const std::exception::`vftable'@0x40715c,0)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x4010e7)
 realDestructor(virtual std::bad_exception::~bad_exception(void)@0x401ff4)
 realDestructor(virtual std::exception::~exception(void)@0x40184d)
 realDestructor(virtual type_info::~type_info(void)@0x4018a4)
@@ -855,6 +854,7 @@ vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@0x4010e7,virtual std::bad_
 vfTableWrite(virtual std::bad_exception::~bad_exception(void)@0x401ff4,virtual std::bad_exception::~bad_exception(void)@0x401ff4,0,const std::bad_exception::`vftable'@0x4071f0)
 vfTableWrite(virtual std::exception::~exception(void)@0x40184d,virtual std::exception::~exception(void)@0x40184d,0,const std::exception::`vftable'@0x40715c)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x407140,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401119)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x407140,0,virtual std::bad_alloc::~bad_alloc(void)@0x4010e7)
 vftableBelongsToClass(const std::bad_exception::`vftable'@0x4071f0,0,std::bad_exception::bad_exception(class std::bad_exception const &)@0x402bc9)
 vftableBelongsToClass(const std::exception::`vftable'@0x40715c,0,std::exception::exception(char const * const &)@0x4017f1)
 vftableBelongsToClass(const std::exception::`vftable'@0x40715c,0,std::exception::exception(char const * const &, int)@0x401769)

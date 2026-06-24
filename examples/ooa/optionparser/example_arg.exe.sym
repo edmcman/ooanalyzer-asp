@@ -1,13 +1,13 @@
-09:29:38 Grounding...
-09:29:38 Grounding done (0.12s)
-09:29:38 Solving...
-09:29:38 Model found (0.54s): [-36, -3776]
-09:29:38 Lower bound: [-36, -5547]  upper: [-36, -3776]  gap: [0, 1771] (0.66s)
-09:29:38 Model found (0.85s, +0.31s): [-36, -3856]
-09:29:39 Model found (1.71s, +0.86s): [-36, -5522]
-09:29:39 Lower bound: [-36, -5530]  upper: [-36, -5522]  gap: [0, 8] (1.95s)
-09:29:39 Solving done: OPTIMUM FOUND (1.83s)
-% Command: ooanalyzer.py examples/ooa/optionparser/example_arg.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/optionparser/example_arg.exe.results
+17:02:08 Grounding...
+17:02:08 Grounding done (0.09s)
+17:02:08 Solving...
+17:02:08 Model found (0.16s): [-36, -3776]
+17:02:08 Lower bound: [-36, -5547]  upper: [-36, -3776]  gap: [0, 1771] (0.16s)
+17:02:08 Model found (0.16s, +0.00s): [-36, -3856]
+17:02:08 Model found (0.17s, +0.01s): [-36, -5522]
+17:02:08 Lower bound: [-36, -5530]  upper: [-36, -5522]  gap: [0, 8] (0.17s)
+17:02:08 Solving done: OPTIMUM FOUND (0.08s)
+% Command: ooanalyzer.py examples/ooa/optionparser/example_arg.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/optionparser/example_arg.exe.results
 OPTIMUM FOUND
 
 Answer: 3
@@ -346,7 +346,7 @@ Optimization: -36 -5522
 %     ~embeddedObject: 3/3
 %       objectInObject(option::Parser::StoreOptionAction::vftable@0x41b964,option::Parser::Action::vftable@0x41b974,0) objectInObject(option::Stats::CountOptionsAction::vftable@0x41b984,option::Parser::Action::vftable@0x41b974,0)
 %       objectInObject(option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::vftable@0x41b998,option::PrintUsageImplementation::IStringWriter::vftable@0x41b9a4,0)
-09:29:40 Writing results to examples/ooa/optionparser/example_arg.exe.results
+17:02:08 Writing results to examples/ooa/optionparser/example_arg.exe.results
 
 % Stats:
 %   atoms: 18043.0
@@ -354,17 +354,17 @@ Optimization: -36 -5522
 %   rules: 26000.0
 %   variables: 12427.0
 %   constraints: 325.0
-%   choices: 1711.0
-%   conflicts: 47.0
+%   choices: 1923.0
+%   conflicts: 48.0
 %   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-36.0, -5522.0]
 %   lower_bound: [-36.0, -5522.0]
-%   total_time: 1.9675488471984863
-%   ground_time: 0.12257516401587054
-%   time_to_first_model: 0.5399148990109097
-%   max_rss_bytes: 47972352
-%   solve_time: 1.6911098957061768
+%   total_time: 0.190446138381958
+%   ground_time: 0.0943248890000632
+%   time_to_first_model: 0.16039275700018152
+%   max_rss_bytes: 57028608
+%   solve_time: 0.014032125473022461
 classCallsMethod(option::Option::Option@0x4134c0,option::Option::init@0x4125f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::first@0x4123f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::last@0x4124c0)

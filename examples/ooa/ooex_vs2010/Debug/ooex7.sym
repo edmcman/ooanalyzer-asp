@@ -1,17 +1,17 @@
-09:29:36 Grounding...
-09:29:37 Grounding done (0.22s)
-09:29:37 Solving...
-09:29:37 Model found (0.73s): [-12, -4589]
-09:29:37 Lower bound: [-12, -5726]  upper: [-12, -4589]  gap: [0, 1137] (0.87s)
-09:29:37 Lower bound: [-12, -5717]  upper: [-12, -4589]  gap: [0, 1128] (0.99s)
-09:29:38 Lower bound: [-12, -5708]  upper: [-12, -4589]  gap: [0, 1119] (1.13s)
-09:29:38 Model found (1.60s, +0.87s): [-12, -5660]
-09:29:39 Lower bound: [-12, -5700]  upper: [-12, -5660]  gap: [0, 40] (2.04s)
-09:29:39 Lower bound: [-12, -5692]  upper: [-12, -5660]  gap: [0, 32] (2.06s)
-09:29:39 Lower bound: [-12, -5684]  upper: [-12, -5660]  gap: [0, 24] (2.08s)
-09:29:39 Model found (2.24s, +0.64s): [-12, -5684]
-09:29:39 Solving done: OPTIMUM FOUND (2.03s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex7.results
+17:04:25 Grounding...
+17:04:25 Grounding done (0.16s)
+17:04:25 Solving...
+17:04:25 Model found (0.38s): [-12, -4589]
+17:04:25 Lower bound: [-12, -5726]  upper: [-12, -4589]  gap: [0, 1137] (0.39s)
+17:04:25 Lower bound: [-12, -5717]  upper: [-12, -4589]  gap: [0, 1128] (0.39s)
+17:04:25 Lower bound: [-12, -5708]  upper: [-12, -4589]  gap: [0, 1119] (0.39s)
+17:04:25 Model found (0.39s, +0.01s): [-12, -5660]
+17:04:25 Lower bound: [-12, -5700]  upper: [-12, -5660]  gap: [0, 40] (0.41s)
+17:04:25 Lower bound: [-12, -5692]  upper: [-12, -5660]  gap: [0, 32] (0.41s)
+17:04:25 Lower bound: [-12, -5684]  upper: [-12, -5660]  gap: [0, 24] (0.41s)
+17:04:25 Model found (0.41s, +0.02s): [-12, -5684]
+17:04:25 Solving done: OPTIMUM FOUND (0.25s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex7.results
 OPTIMUM FOUND
 
 Answer: 3
@@ -367,7 +367,7 @@ Optimization: -12 -5684
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-09:29:39 Writing results to examples/ooa/ooex_vs2010/Debug/ooex7.results
+17:04:26 Writing results to examples/ooa/ooex_vs2010/Debug/ooex7.results
 
 % Stats:
 %   atoms: 42513.0
@@ -375,17 +375,17 @@ Optimization: -12 -5684
 %   rules: 46657.0
 %   variables: 15889.0
 %   constraints: 102.0
-%   choices: 692.0
-%   conflicts: 37.0
+%   choices: 812.0
+%   conflicts: 46.0
 %   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-12.0, -5684.0]
 %   lower_bound: [-12.0, -5684.0]
-%   total_time: 2.2620561122894287
-%   ground_time: 0.2166527800145559
-%   time_to_first_model: 0.7308893690060358
-%   max_rss_bytes: 70635520
-%   solve_time: 1.695755958557129
+%   total_time: 0.42775893211364746
+%   ground_time: 0.16178925799999888
+%   time_to_first_model: 0.3761295350000182
+%   max_rss_bytes: 82497536
+%   solve_time: 0.0407869815826416
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)

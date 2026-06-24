@@ -1,91 +1,109 @@
-09:29:37 Grounding...
-09:29:41 Grounding done (4.15s)
-09:29:41 Solving...
-09:30:10 Model found (33.15s): [-776, -12903]
-09:30:14 Lower bound: [-776, -29149]  upper: [-776, -12903]  gap: [0, 16246] (36.98s)
-09:30:16 Lower bound: [-776, -29139]  upper: [-776, -12903]  gap: [0, 16236] (39.47s)
-09:30:19 Lower bound: [-776, -29129]  upper: [-776, -12903]  gap: [0, 16226] (41.98s)
-09:30:21 Lower bound: [-776, -29119]  upper: [-776, -12903]  gap: [0, 16216] (44.53s)
-09:30:24 Lower bound: [-776, -29099]  upper: [-776, -12903]  gap: [0, 16196] (47.06s)
-09:30:24 Lower bound: [-776, -29089]  upper: [-776, -12903]  gap: [0, 16186] (47.07s)
-09:30:24 Lower bound: [-776, -29079]  upper: [-776, -12903]  gap: [0, 16176] (47.08s)
-09:30:24 Lower bound: [-776, -29069]  upper: [-776, -12903]  gap: [0, 16166] (47.09s)
-09:30:24 Lower bound: [-776, -29059]  upper: [-776, -12903]  gap: [0, 16156] (47.10s)
-09:30:24 Lower bound: [-776, -29049]  upper: [-776, -12903]  gap: [0, 16146] (47.11s)
-09:30:24 Lower bound: [-776, -29039]  upper: [-776, -12903]  gap: [0, 16136] (47.12s)
-09:30:24 Lower bound: [-776, -29029]  upper: [-776, -12903]  gap: [0, 16126] (47.13s)
-09:30:24 Lower bound: [-776, -29019]  upper: [-776, -12903]  gap: [0, 16116] (47.14s)
-09:30:24 Lower bound: [-776, -28999]  upper: [-776, -12903]  gap: [0, 16096] (47.15s)
-09:30:24 Lower bound: [-776, -28989]  upper: [-776, -12903]  gap: [0, 16086] (47.16s)
-09:30:24 Lower bound: [-776, -28979]  upper: [-776, -12903]  gap: [0, 16076] (47.17s)
-09:30:24 Lower bound: [-776, -28969]  upper: [-776, -12903]  gap: [0, 16066] (47.18s)
-09:30:24 Lower bound: [-776, -28959]  upper: [-776, -12903]  gap: [0, 16056] (47.20s)
-09:30:24 Lower bound: [-776, -28949]  upper: [-776, -12903]  gap: [0, 16046] (47.21s)
-09:30:24 Lower bound: [-776, -28939]  upper: [-776, -12903]  gap: [0, 16036] (47.22s)
-09:30:24 Lower bound: [-776, -28929]  upper: [-776, -12903]  gap: [0, 16026] (47.23s)
-09:30:24 Lower bound: [-776, -28919]  upper: [-776, -12903]  gap: [0, 16016] (47.24s)
-09:30:24 Lower bound: [-776, -28909]  upper: [-776, -12903]  gap: [0, 16006] (47.26s)
-09:30:24 Lower bound: [-776, -28899]  upper: [-776, -12903]  gap: [0, 15996] (47.27s)
-09:30:24 Lower bound: [-776, -28889]  upper: [-776, -12903]  gap: [0, 15986] (47.28s)
-09:30:24 Lower bound: [-776, -28879]  upper: [-776, -12903]  gap: [0, 15976] (47.30s)
-09:30:24 Lower bound: [-776, -28869]  upper: [-776, -12903]  gap: [0, 15966] (47.31s)
-09:30:24 Lower bound: [-776, -28859]  upper: [-776, -12903]  gap: [0, 15956] (47.32s)
-09:30:24 Lower bound: [-776, -28849]  upper: [-776, -12903]  gap: [0, 15946] (47.33s)
-09:30:24 Lower bound: [-776, -28839]  upper: [-776, -12903]  gap: [0, 15936] (47.34s)
-09:30:24 Lower bound: [-776, -28829]  upper: [-776, -12903]  gap: [0, 15926] (47.35s)
-09:30:24 Lower bound: [-776, -28819]  upper: [-776, -12903]  gap: [0, 15916] (47.36s)
-09:30:24 Lower bound: [-776, -28779]  upper: [-776, -12903]  gap: [0, 15876] (47.42s)
-09:30:24 Lower bound: [-776, -28769]  upper: [-776, -12903]  gap: [0, 15866] (47.43s)
-09:30:24 Lower bound: [-776, -28759]  upper: [-776, -12903]  gap: [0, 15856] (47.44s)
-09:30:24 Lower bound: [-776, -28749]  upper: [-776, -12903]  gap: [0, 15846] (47.46s)
-09:30:24 Lower bound: [-776, -28729]  upper: [-776, -12903]  gap: [0, 15826] (47.47s)
-09:30:24 Lower bound: [-776, -28709]  upper: [-776, -12903]  gap: [0, 15806] (47.70s)
-09:30:25 Lower bound: [-776, -28689]  upper: [-776, -12903]  gap: [0, 15786] (48.07s)
-09:30:25 Lower bound: [-776, -28679]  upper: [-776, -12903]  gap: [0, 15776] (48.42s)
-09:30:26 Lower bound: [-776, -28659]  upper: [-776, -12903]  gap: [0, 15756] (48.81s)
-09:30:26 Lower bound: [-776, -28649]  upper: [-776, -12903]  gap: [0, 15746] (48.99s)
-09:30:26 Lower bound: [-776, -28639]  upper: [-776, -12903]  gap: [0, 15736] (49.16s)
-09:30:26 Lower bound: [-776, -28629]  upper: [-776, -12903]  gap: [0, 15726] (49.32s)
-09:30:26 Lower bound: [-776, -28619]  upper: [-776, -12903]  gap: [0, 15716] (49.47s)
-09:30:26 Lower bound: [-776, -28609]  upper: [-776, -12903]  gap: [0, 15706] (49.49s)
-09:30:26 Lower bound: [-776, -28599]  upper: [-776, -12903]  gap: [0, 15696] (49.63s)
-09:30:27 Lower bound: [-776, -28589]  upper: [-776, -12903]  gap: [0, 15686] (49.78s)
-09:30:47 Model found (69.95s, +36.80s): [-776, -15079]
-09:30:52 Lower bound: [-776, -28579]  upper: [-776, -15079]  gap: [0, 13500] (75.47s)
-09:30:59 Lower bound: [-776, -28569]  upper: [-776, -15079]  gap: [0, 13490] (82.54s)
-09:31:20 Model found (102.94s, +32.99s): [-776, -15557]
-09:31:45 Model found (127.97s, +25.03s): [-776, -15567]
-09:31:49 Lower bound: [-776, -28551]  upper: [-776, -15567]  gap: [0, 12984] (132.63s)
-09:31:52 Lower bound: [-776, -28218]  upper: [-776, -15567]  gap: [0, 12651] (134.78s)
-09:31:55 Lower bound: [-776, -27732]  upper: [-776, -15567]  gap: [0, 12165] (138.54s)
-09:32:00 Lower bound: [-776, -27705]  upper: [-776, -15567]  gap: [0, 12138] (143.72s)
-09:32:03 Lower bound: [-776, -27696]  upper: [-776, -15567]  gap: [0, 12129] (146.19s)
-09:32:05 Lower bound: [-776, -27570]  upper: [-776, -15567]  gap: [0, 12003] (148.06s)
-09:32:10 Lower bound: [-776, -27543]  upper: [-776, -15567]  gap: [0, 11976] (153.15s)
-09:32:15 Lower bound: [-776, -27534]  upper: [-776, -15567]  gap: [0, 11967] (158.26s)
-09:32:20 Lower bound: [-776, -27525]  upper: [-776, -15567]  gap: [0, 11958] (162.95s)
-09:32:24 Lower bound: [-776, -27516]  upper: [-776, -15567]  gap: [0, 11949] (167.55s)
-09:32:29 Lower bound: [-776, -27507]  upper: [-776, -15567]  gap: [0, 11940] (172.11s)
-09:32:33 Lower bound: [-776, -27498]  upper: [-776, -15567]  gap: [0, 11931] (176.60s)
-09:32:38 Lower bound: [-776, -27489]  upper: [-776, -15567]  gap: [0, 11922] (181.04s)
-09:32:43 Lower bound: [-776, -27480]  upper: [-776, -15567]  gap: [0, 11913] (185.83s)
-09:32:47 Lower bound: [-776, -27471]  upper: [-776, -15567]  gap: [0, 11904] (190.58s)
-09:32:52 Lower bound: [-776, -27462]  upper: [-776, -15567]  gap: [0, 11895] (195.28s)
-09:32:57 Lower bound: [-776, -27453]  upper: [-776, -15567]  gap: [0, 11886] (200.33s)
-09:33:02 Lower bound: [-776, -27444]  upper: [-776, -15567]  gap: [0, 11877] (205.01s)
-09:33:06 Lower bound: [-776, -27435]  upper: [-776, -15567]  gap: [0, 11868] (208.99s)
-09:33:07 Lower bound: [-776, -27426]  upper: [-776, -15567]  gap: [0, 11859] (210.64s)
-09:33:08 Lower bound: [-776, -27417]  upper: [-776, -15567]  gap: [0, 11850] (211.70s)
-09:33:23 Lower bound: [-776, -27408]  upper: [-776, -15567]  gap: [0, 11841] (226.76s)
-09:36:37 Lower bound: [-776, -27399]  upper: [-776, -15567]  gap: [0, 11832] (420.54s)
-09:36:43 Lower bound: [-776, -27390]  upper: [-776, -15567]  gap: [0, 11823] (426.48s)
-10:29:43 Solving done: TIME LIMIT REACHED (3602.41s)
-% Command: ooanalyzer.py examples/ooa/firefox/firefox.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/firefox/firefox.exe.results
+17:04:34 Grounding...
+17:04:38 Grounding done (3.38s)
+17:04:38 Solving...
+17:04:42 Model found (7.42s): [-776, -12903]
+17:04:42 Lower bound: [-776, -29149]  upper: [-776, -12903]  gap: [0, 16246] (7.59s)
+17:04:42 Lower bound: [-776, -29139]  upper: [-776, -12903]  gap: [0, 16236] (7.59s)
+17:04:42 Lower bound: [-776, -29129]  upper: [-776, -12903]  gap: [0, 16226] (7.59s)
+17:04:42 Lower bound: [-776, -29119]  upper: [-776, -12903]  gap: [0, 16216] (7.59s)
+17:04:42 Lower bound: [-776, -29099]  upper: [-776, -12903]  gap: [0, 16196] (7.59s)
+17:04:42 Lower bound: [-776, -29089]  upper: [-776, -12903]  gap: [0, 16186] (7.59s)
+17:04:42 Lower bound: [-776, -29079]  upper: [-776, -12903]  gap: [0, 16176] (7.59s)
+17:04:42 Lower bound: [-776, -29069]  upper: [-776, -12903]  gap: [0, 16166] (7.59s)
+17:04:42 Lower bound: [-776, -29059]  upper: [-776, -12903]  gap: [0, 16156] (7.59s)
+17:04:42 Lower bound: [-776, -29049]  upper: [-776, -12903]  gap: [0, 16146] (7.59s)
+17:04:42 Lower bound: [-776, -29039]  upper: [-776, -12903]  gap: [0, 16136] (7.59s)
+17:04:42 Lower bound: [-776, -29029]  upper: [-776, -12903]  gap: [0, 16126] (7.59s)
+17:04:42 Lower bound: [-776, -29019]  upper: [-776, -12903]  gap: [0, 16116] (7.59s)
+17:04:42 Lower bound: [-776, -28999]  upper: [-776, -12903]  gap: [0, 16096] (7.59s)
+17:04:42 Lower bound: [-776, -28989]  upper: [-776, -12903]  gap: [0, 16086] (7.59s)
+17:04:42 Lower bound: [-776, -28979]  upper: [-776, -12903]  gap: [0, 16076] (7.59s)
+17:04:42 Lower bound: [-776, -28969]  upper: [-776, -12903]  gap: [0, 16066] (7.59s)
+17:04:42 Lower bound: [-776, -28959]  upper: [-776, -12903]  gap: [0, 16056] (7.59s)
+17:04:42 Lower bound: [-776, -28949]  upper: [-776, -12903]  gap: [0, 16046] (7.59s)
+17:04:42 Lower bound: [-776, -28939]  upper: [-776, -12903]  gap: [0, 16036] (7.59s)
+17:04:42 Lower bound: [-776, -28929]  upper: [-776, -12903]  gap: [0, 16026] (7.59s)
+17:04:42 Lower bound: [-776, -28919]  upper: [-776, -12903]  gap: [0, 16016] (7.59s)
+17:04:42 Lower bound: [-776, -28909]  upper: [-776, -12903]  gap: [0, 16006] (7.59s)
+17:04:42 Lower bound: [-776, -28899]  upper: [-776, -12903]  gap: [0, 15996] (7.59s)
+17:04:42 Lower bound: [-776, -28889]  upper: [-776, -12903]  gap: [0, 15986] (7.59s)
+17:04:42 Lower bound: [-776, -28879]  upper: [-776, -12903]  gap: [0, 15976] (7.59s)
+17:04:42 Lower bound: [-776, -28869]  upper: [-776, -12903]  gap: [0, 15966] (7.59s)
+17:04:42 Lower bound: [-776, -28859]  upper: [-776, -12903]  gap: [0, 15956] (7.60s)
+17:04:42 Lower bound: [-776, -28849]  upper: [-776, -12903]  gap: [0, 15946] (7.60s)
+17:04:42 Lower bound: [-776, -28839]  upper: [-776, -12903]  gap: [0, 15936] (7.60s)
+17:04:42 Lower bound: [-776, -28829]  upper: [-776, -12903]  gap: [0, 15926] (7.60s)
+17:04:42 Lower bound: [-776, -28819]  upper: [-776, -12903]  gap: [0, 15916] (7.60s)
+17:04:42 Lower bound: [-776, -28779]  upper: [-776, -12903]  gap: [0, 15876] (7.60s)
+17:04:42 Lower bound: [-776, -28769]  upper: [-776, -12903]  gap: [0, 15866] (7.60s)
+17:04:42 Lower bound: [-776, -28759]  upper: [-776, -12903]  gap: [0, 15856] (7.60s)
+17:04:42 Lower bound: [-776, -28749]  upper: [-776, -12903]  gap: [0, 15846] (7.60s)
+17:04:42 Lower bound: [-776, -28729]  upper: [-776, -12903]  gap: [0, 15826] (7.60s)
+17:04:42 Lower bound: [-776, -28709]  upper: [-776, -12903]  gap: [0, 15806] (7.60s)
+17:04:42 Lower bound: [-776, -28689]  upper: [-776, -12903]  gap: [0, 15786] (7.60s)
+17:04:42 Lower bound: [-776, -28679]  upper: [-776, -12903]  gap: [0, 15776] (7.60s)
+17:04:42 Lower bound: [-776, -28659]  upper: [-776, -12903]  gap: [0, 15756] (7.60s)
+17:04:42 Lower bound: [-776, -28649]  upper: [-776, -12903]  gap: [0, 15746] (7.61s)
+17:04:42 Lower bound: [-776, -28639]  upper: [-776, -12903]  gap: [0, 15736] (7.61s)
+17:04:42 Lower bound: [-776, -28629]  upper: [-776, -12903]  gap: [0, 15726] (7.61s)
+17:04:42 Lower bound: [-776, -28619]  upper: [-776, -12903]  gap: [0, 15716] (7.61s)
+17:04:42 Lower bound: [-776, -28609]  upper: [-776, -12903]  gap: [0, 15706] (7.61s)
+17:04:42 Lower bound: [-776, -28599]  upper: [-776, -12903]  gap: [0, 15696] (7.61s)
+17:04:42 Lower bound: [-776, -28589]  upper: [-776, -12903]  gap: [0, 15686] (7.61s)
+17:04:42 Model found (7.62s, +0.19s): [-776, -15079]
+17:04:42 Lower bound: [-776, -28579]  upper: [-776, -15079]  gap: [0, 13500] (7.72s)
+17:04:42 Lower bound: [-776, -28569]  upper: [-776, -15079]  gap: [0, 13490] (7.73s)
+17:04:42 Model found (7.74s, +0.12s): [-776, -15557]
+17:04:42 Model found (7.84s, +0.11s): [-776, -15567]
+17:04:42 Lower bound: [-776, -28551]  upper: [-776, -15567]  gap: [0, 12984] (7.94s)
+17:04:42 Lower bound: [-776, -28218]  upper: [-776, -15567]  gap: [0, 12651] (7.94s)
+17:04:42 Lower bound: [-776, -27732]  upper: [-776, -15567]  gap: [0, 12165] (7.94s)
+17:04:42 Lower bound: [-776, -27705]  upper: [-776, -15567]  gap: [0, 12138] (7.95s)
+17:04:42 Lower bound: [-776, -27579]  upper: [-776, -15567]  gap: [0, 12012] (7.95s)
+17:04:42 Lower bound: [-776, -27552]  upper: [-776, -15567]  gap: [0, 11985] (7.95s)
+17:04:42 Lower bound: [-776, -27543]  upper: [-776, -15567]  gap: [0, 11976] (7.96s)
+17:04:42 Lower bound: [-776, -27534]  upper: [-776, -15567]  gap: [0, 11967] (7.96s)
+17:04:42 Lower bound: [-776, -27525]  upper: [-776, -15567]  gap: [0, 11958] (7.96s)
+17:04:42 Lower bound: [-776, -27516]  upper: [-776, -15567]  gap: [0, 11949] (7.96s)
+17:04:42 Lower bound: [-776, -27507]  upper: [-776, -15567]  gap: [0, 11940] (7.96s)
+17:04:42 Lower bound: [-776, -27498]  upper: [-776, -15567]  gap: [0, 11931] (7.96s)
+17:04:42 Lower bound: [-776, -27489]  upper: [-776, -15567]  gap: [0, 11922] (7.97s)
+17:04:42 Lower bound: [-776, -27480]  upper: [-776, -15567]  gap: [0, 11913] (7.97s)
+17:04:42 Lower bound: [-776, -27471]  upper: [-776, -15567]  gap: [0, 11904] (7.98s)
+17:04:42 Lower bound: [-776, -27462]  upper: [-776, -15567]  gap: [0, 11895] (7.98s)
+17:04:42 Lower bound: [-776, -27453]  upper: [-776, -15567]  gap: [0, 11886] (7.98s)
+17:04:42 Lower bound: [-776, -27444]  upper: [-776, -15567]  gap: [0, 11877] (7.98s)
+17:04:42 Lower bound: [-776, -27435]  upper: [-776, -15567]  gap: [0, 11868] (7.99s)
+17:04:42 Lower bound: [-776, -27426]  upper: [-776, -15567]  gap: [0, 11859] (7.99s)
+17:04:42 Lower bound: [-776, -27417]  upper: [-776, -15567]  gap: [0, 11850] (8.00s)
+17:04:42 Lower bound: [-776, -27408]  upper: [-776, -15567]  gap: [0, 11841] (8.00s)
+17:04:42 Lower bound: [-776, -27399]  upper: [-776, -15567]  gap: [0, 11832] (8.01s)
+17:04:42 Lower bound: [-776, -27390]  upper: [-776, -15567]  gap: [0, 11823] (8.22s)
+17:04:42 Lower bound: [-776, -27381]  upper: [-776, -15567]  gap: [0, 11814] (8.23s)
+17:04:42 Lower bound: [-776, -27372]  upper: [-776, -15567]  gap: [0, 11805] (8.24s)
+17:04:42 Lower bound: [-776, -27363]  upper: [-776, -15567]  gap: [0, 11796] (8.25s)
+17:04:42 Lower bound: [-776, -27354]  upper: [-776, -15567]  gap: [0, 11787] (8.26s)
+17:04:42 Lower bound: [-776, -27345]  upper: [-776, -15567]  gap: [0, 11778] (8.27s)
+17:04:42 Lower bound: [-776, -27336]  upper: [-776, -15567]  gap: [0, 11769] (8.28s)
+17:04:43 Lower bound: [-776, -27327]  upper: [-776, -15567]  gap: [0, 11760] (8.29s)
+17:04:43 Lower bound: [-776, -27318]  upper: [-776, -15567]  gap: [0, 11751] (8.30s)
+17:04:43 Lower bound: [-776, -27309]  upper: [-776, -15567]  gap: [0, 11742] (8.31s)
+17:04:43 Lower bound: [-776, -27300]  upper: [-776, -15567]  gap: [0, 11733] (8.32s)
+17:04:43 Lower bound: [-776, -27291]  upper: [-776, -15567]  gap: [0, 11724] (8.33s)
+17:04:43 Lower bound: [-776, -27282]  upper: [-776, -15567]  gap: [0, 11715] (8.36s)
+17:04:43 Lower bound: [-776, -27273]  upper: [-776, -15567]  gap: [0, 11706] (8.40s)
+17:04:43 Lower bound: [-776, -27264]  upper: [-776, -15567]  gap: [0, 11697] (8.41s)
+17:04:43 Lower bound: [-776, -27255]  upper: [-776, -15567]  gap: [0, 11688] (8.81s)
+17:04:43 Lower bound: [-776, -27246]  upper: [-776, -15567]  gap: [0, 11679] (8.82s)
+17:04:43 Lower bound: [-776, -27237]  upper: [-776, -15567]  gap: [0, 11670] (8.85s)
+17:04:55 Lower bound: [-776, -27228]  upper: [-776, -15567]  gap: [0, 11661] (20.69s)
+17:09:38 Solving done: TIME LIMIT REACHED (300.62s)
+% Command: ooanalyzer.py examples/ooa/firefox/firefox.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/firefox/firefox.exe.results
 % TIME LIMIT REACHED
 
 Answer: 4
 Optimization: -776 -15567
-Lower bound: -776 -27390
+Lower bound: -776 -27228
 
 % Equivalence classes (852 classes, 1057 entities):
 
@@ -1869,7 +1887,7 @@ Lower bound: -776 -27390
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(std::bad_alloc::vftable@0x422aa8,std::exception::vftable@0x422a88,0) objectInObject(std::bad_array_new_length::vftable@0x422ac4,std::bad_alloc::vftable@0x422aa8,0)
-10:29:44 Writing results to examples/ooa/firefox/firefox.exe.results
+17:09:39 Writing results to examples/ooa/firefox/firefox.exe.results
 
 % Stats:
 %   atoms: 430769.0
@@ -1877,17 +1895,17 @@ Lower bound: -776 -27390
 %   rules: 638400.0
 %   variables: 397278.0
 %   constraints: 10969.0
-%   choices: 379178.0
-%   conflicts: 256146.0
+%   choices: 51898667.0
+%   conflicts: 50390.0
 %   models: 4.0
 %   optimal_models: 0.0
 %   final_cost: [-776.0, -15567.0]
-%   lower_bound: [-776.0, -27390.0]
-%   total_time: 3606.6527950763702
-%   ground_time: 4.1520566859981045
-%   time_to_first_model: 33.151892805006355
-%   max_rss_bytes: 807583744
-%   solve_time: 3595.8545401096344
+%   lower_bound: [-776.0, -27228.0]
+%   total_time: 304.0828092098236
+%   ground_time: 3.3841072109999004
+%   time_to_first_model: 7.423694865000016
+%   max_rss_bytes: 866508800
+%   solve_time: 296.61794209480286
 classCallsMethod('anonymous namespace 0x820ee722'::JobTracker::scalar_deleting_destructor@0x40f64a,`anonymous namespace'::JobTracker::FreeResources@0x40f7eb)
 classCallsMethod('anonymous namespace 0x820ee722'::JobTracker::scalar_deleting_destructor@0x40f64a,base::win::GenericScopedHandle<class base::win::HandleTraits, class base::win::VerifierTraits>::Close@0x405565)
 classCallsMethod('anonymous namespace 0xdf588627'::ActiveVerifier::vftable@0x4224e0,`anonymous namespace'::ActiveVerifier::CloseHandle@0x401dc0)

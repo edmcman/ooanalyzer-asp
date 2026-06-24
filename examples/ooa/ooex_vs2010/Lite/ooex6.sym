@@ -1,31 +1,26 @@
-09:29:37 Grounding...
-09:29:37 Grounding done (0.06s)
-09:29:37 Solving...
-09:29:37 Model found (0.20s): [-48, -1916]
-09:29:37 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.29s)
-09:29:37 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.29s)
-09:29:37 Lower bound: [-48, -2415]  upper: [-48, -1916]  gap: [0, 499] (0.34s)
-09:29:37 Lower bound: [-48, -2405]  upper: [-48, -1916]  gap: [0, 489] (0.38s)
-09:29:37 Lower bound: [-48, -2395]  upper: [-48, -1916]  gap: [0, 479] (0.44s)
-09:29:37 Model found (0.60s, +0.40s): [-48, -2214]
-09:29:37 Lower bound: [-48, -2385]  upper: [-48, -2214]  gap: [0, 171] (0.65s)
-09:29:37 Model found (0.89s, +0.29s): [-48, -2224]
-09:29:38 Lower bound: [-48, -2376]  upper: [-48, -2224]  gap: [0, 152] (0.94s)
-09:29:38 Model found (1.17s, +0.28s): [-48, -2315]
-09:29:38 Lower bound: [-48, -2358]  upper: [-48, -2315]  gap: [0, 43] (1.23s)
-09:29:38 Model found (1.43s, +0.26s): [-48, -2318]
-09:29:38 Lower bound: [-48, -2350]  upper: [-48, -2318]  gap: [0, 32] (1.48s)
-09:29:38 Lower bound: [-48, -2334]  upper: [-48, -2318]  gap: [0, 16] (1.49s)
-09:29:38 Model found (1.56s, +0.13s): [-48, -2323]
-09:29:38 Model found (1.67s, +0.11s): [-48, -2330]
-09:29:38 Lower bound: [-48, -2333]  upper: [-48, -2330]  gap: [0, 3] (1.72s)
-09:29:38 Lower bound: [-48, -2332]  upper: [-48, -2330]  gap: [0, 2] (1.72s)
-09:29:38 Lower bound: [-48, -2331]  upper: [-48, -2330]  gap: [0, 1] (1.72s)
-09:29:38 Solving done: OPTIMUM FOUND (1.71s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex6.results
+17:02:08 Grounding...
+17:02:08 Grounding done (0.03s)
+17:02:08 Solving...
+17:02:09 Model found (0.06s): [-48, -1916]
+17:02:09 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.06s)
+17:02:09 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.06s)
+17:02:09 Lower bound: [-48, -2415]  upper: [-48, -1916]  gap: [0, 499] (0.06s)
+17:02:09 Lower bound: [-48, -2405]  upper: [-48, -1916]  gap: [0, 489] (0.06s)
+17:02:09 Lower bound: [-48, -2395]  upper: [-48, -1916]  gap: [0, 479] (0.06s)
+17:02:09 Lower bound: [-48, -2385]  upper: [-48, -1916]  gap: [0, 469] (0.06s)
+17:02:09 Lower bound: [-48, -2375]  upper: [-48, -1916]  gap: [0, 459] (0.06s)
+17:02:09 Lower bound: [-48, -2365]  upper: [-48, -1916]  gap: [0, 449] (0.06s)
+17:02:09 Lower bound: [-48, -2355]  upper: [-48, -1916]  gap: [0, 439] (0.06s)
+17:02:09 Model found (0.06s, +0.00s): [-48, -2181]
+17:02:09 Model found (0.07s, +0.00s): [-48, -2245]
+17:02:09 Model found (0.07s, +0.00s): [-48, -2322]
+17:02:09 Lower bound: [-48, -2338]  upper: [-48, -2322]  gap: [0, 16] (0.07s)
+17:02:09 Model found (0.07s, +0.00s): [-48, -2330]
+17:02:09 Solving done: OPTIMUM FOUND (0.04s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex6.results
 OPTIMUM FOUND
 
-Answer: 7
+Answer: 5
 Optimization: -48 -2330
 
 % Equivalence classes (167 classes, 187 entities):
@@ -195,7 +190,7 @@ Optimization: -48 -2330
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(const Derived::`vftable'@0x406150,const Base::`vftable'@0x406140,0) objectInObject(const std::bad_alloc::`vftable'@0x40616c,const std::exception::`vftable'@0x406bc4,0)
-09:29:38 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
+17:02:09 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
 
 % Stats:
 %   atoms: 10068.0
@@ -203,17 +198,17 @@ Optimization: -48 -2330
 %   rules: 12276.0
 %   variables: 3789.0
 %   constraints: 183.0
-%   choices: 1758.0
-%   conflicts: 73.0
-%   models: 7.0
+%   choices: 1531.0
+%   conflicts: 27.0
+%   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-48.0, -2330.0]
 %   lower_bound: [-48.0, -2330.0]
-%   total_time: 1.7845120429992676
-%   ground_time: 0.05942011598381214
-%   time_to_first_model: 0.2048777829913888
-%   max_rss_bytes: 35389440
-%   solve_time: 1.65055513381958
+%   total_time: 0.0800020694732666
+%   ground_time: 0.032248814000013226
+%   time_to_first_model: 0.05989816300007078
+%   max_rss_bytes: 45137920
+%   solve_time: 0.011780023574829102
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func1(void)@0x401020)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func2(void)@0x401040)

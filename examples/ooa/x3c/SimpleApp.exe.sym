@@ -1,12 +1,12 @@
-09:29:37 Grounding...
-09:29:37 Grounding done (0.05s)
-09:29:37 Solving...
-09:29:37 Model found (0.11s): [-4, -2886]
-09:29:37 Model found (0.18s, +0.07s): [-4, -3447]
-09:29:37 Lower bound: [-4, -3461]  upper: [-4, -3447]  gap: [0, 14] (0.25s)
-09:29:37 Lower bound: [-4, -3454]  upper: [-4, -3447]  gap: [0, 7] (0.29s)
-09:29:37 Solving done: OPTIMUM FOUND (0.24s)
-% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=3600 --stats --show-guesses --results examples/ooa/x3c/SimpleApp.exe.results
+17:02:08 Grounding...
+17:02:08 Grounding done (0.03s)
+17:02:08 Solving...
+17:02:08 Model found (0.04s): [-4, -2886]
+17:02:08 Model found (0.05s, +0.00s): [-4, -3447]
+17:02:08 Lower bound: [-4, -3461]  upper: [-4, -3447]  gap: [0, 14] (0.05s)
+17:02:08 Lower bound: [-4, -3454]  upper: [-4, -3447]  gap: [0, 7] (0.05s)
+17:02:08 Solving done: OPTIMUM FOUND (0.03s)
+% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/x3c/SimpleApp.exe.results
 OPTIMUM FOUND
 
 Answer: 2
@@ -224,7 +224,7 @@ Optimization: -4 -3447
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-09:29:37 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+17:02:08 Writing results to examples/ooa/x3c/SimpleApp.exe.results
 
 % Stats:
 %   atoms: 9160.0
@@ -232,17 +232,17 @@ Optimization: -4 -3447
 %   rules: 10390.0
 %   variables: 2756.0
 %   constraints: 148.0
-%   choices: 272.0
-%   conflicts: 18.0
+%   choices: 248.0
+%   conflicts: 23.0
 %   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-4.0, -3447.0]
 %   lower_bound: [-4.0, -3447.0]
-%   total_time: 0.3045380115509033
-%   ground_time: 0.049264116008998826
-%   time_to_first_model: 0.10772163901128806
-%   max_rss_bytes: 33816576
-%   solve_time: 0.21137785911560059
+%   total_time: 0.05945706367492676
+%   ground_time: 0.02709135800000695
+%   time_to_first_model: 0.04483386900005826
+%   max_rss_bytes: 41971712
+%   solve_time: 0.008315086364746094
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)

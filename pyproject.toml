@@ -7,7 +7,6 @@ requires-python = ">=3.11"
 dependencies = [
     "clingexplaid>=1.4.0",
     "clingo>=5.8.0",
-    "pdbparse>=1.5",
     "xclingo",
 ]
 
