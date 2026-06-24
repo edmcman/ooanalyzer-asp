@@ -317,12 +317,16 @@ def main():
 
     ctl_args = ["--warn=none"]
     if args.configuration:
+        # A portfolio/configuration controls per-thread search settings; the
+        # command line would otherwise override them (clasp prefers CLI options
+        # over config-file options), collapsing the portfolio to one config.
         ctl_args.append(f"--configuration={args.configuration}")
-    ctl_args.extend([
-        f"--opt-strategy={args.opt_strategy}",
-        f"--heuristic={args.heuristic}",
-        f"--sign-def={args.sign_def}",
-    ])
+    else:
+        ctl_args.extend([
+            f"--opt-strategy={args.opt_strategy}",
+            f"--heuristic={args.heuristic}",
+            f"--sign-def={args.sign_def}",
+        ])
     if args.stats:
         ctl_args.append(f"--stats={args.stats}")
     if args.threads is not None:
