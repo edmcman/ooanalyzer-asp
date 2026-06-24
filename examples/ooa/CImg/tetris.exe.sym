@@ -1,32 +1,32 @@
-17:09:45 Grounding...
-17:09:48 Grounding done (2.18s)
-17:09:48 Solving...
-17:09:49 Model found (3.57s): [-132, -28204]
-17:09:49 Lower bound: [-132, -37441]  upper: [-132, -28204]  gap: [0, 9237] (3.63s)
-17:09:49 Lower bound: [-132, -37431]  upper: [-132, -28204]  gap: [0, 9227] (3.63s)
-17:09:49 Lower bound: [-132, -37421]  upper: [-132, -28204]  gap: [0, 9217] (3.63s)
-17:09:49 Lower bound: [-132, -37411]  upper: [-132, -28204]  gap: [0, 9207] (3.63s)
-17:09:49 Lower bound: [-132, -37401]  upper: [-132, -28204]  gap: [0, 9197] (3.64s)
-17:09:49 Lower bound: [-132, -37391]  upper: [-132, -28204]  gap: [0, 9187] (3.64s)
-17:09:49 Lower bound: [-132, -37381]  upper: [-132, -28204]  gap: [0, 9177] (3.64s)
-17:09:49 Lower bound: [-132, -37371]  upper: [-132, -28204]  gap: [0, 9167] (3.64s)
-17:09:49 Lower bound: [-132, -37361]  upper: [-132, -28204]  gap: [0, 9157] (3.64s)
-17:09:49 Model found (3.67s, +0.10s): [-132, -28884]
-17:09:49 Lower bound: [-132, -37351]  upper: [-132, -28884]  gap: [0, 8467] (3.71s)
-17:09:49 Lower bound: [-132, -37341]  upper: [-132, -28884]  gap: [0, 8457] (3.71s)
-17:09:49 Lower bound: [-132, -37331]  upper: [-132, -28884]  gap: [0, 8447] (3.71s)
-17:09:49 Lower bound: [-132, -37321]  upper: [-132, -28884]  gap: [0, 8437] (3.72s)
-17:09:49 Lower bound: [-132, -37311]  upper: [-132, -28884]  gap: [0, 8427] (3.74s)
-17:09:49 Lower bound: [-132, -37301]  upper: [-132, -28884]  gap: [0, 8417] (3.75s)
-17:09:49 Model found (3.78s, +0.11s): [-132, -28904]
-17:09:50 Model found (4.28s, +0.50s): [-132, -37039]
-17:09:50 Lower bound: [-132, -37203]  upper: [-132, -37039]  gap: [0, 164] (4.31s)
-17:09:50 Lower bound: [-132, -37155]  upper: [-132, -37039]  gap: [0, 116] (4.32s)
-17:09:50 Model found (4.34s, +0.07s): [-132, -37087]
-17:09:50 Lower bound: [-132, -37108]  upper: [-132, -37087]  gap: [0, 21] (4.39s)
-17:09:50 Lower bound: [-132, -37101]  upper: [-132, -37087]  gap: [0, 14] (4.40s)
-17:09:50 Lower bound: [-132, -37094]  upper: [-132, -37087]  gap: [0, 7] (4.41s)
-17:09:50 Solving done: OPTIMUM FOUND (2.23s)
+07:53:54 Grounding...
+07:53:56 Grounding done (2.67s)
+07:53:56 Solving...
+07:53:58 Model found (4.59s): [-132, -28204]
+07:53:58 Lower bound: [-132, -37441]  upper: [-132, -28204]  gap: [0, 9237] (4.64s)
+07:53:58 Lower bound: [-132, -37431]  upper: [-132, -28204]  gap: [0, 9227] (4.64s)
+07:53:58 Lower bound: [-132, -37421]  upper: [-132, -28204]  gap: [0, 9217] (4.65s)
+07:53:58 Lower bound: [-132, -37411]  upper: [-132, -28204]  gap: [0, 9207] (4.65s)
+07:53:58 Lower bound: [-132, -37401]  upper: [-132, -28204]  gap: [0, 9197] (4.65s)
+07:53:58 Lower bound: [-132, -37391]  upper: [-132, -28204]  gap: [0, 9187] (4.66s)
+07:53:58 Lower bound: [-132, -37381]  upper: [-132, -28204]  gap: [0, 9177] (4.66s)
+07:53:58 Lower bound: [-132, -37371]  upper: [-132, -28204]  gap: [0, 9167] (4.66s)
+07:53:58 Lower bound: [-132, -37361]  upper: [-132, -28204]  gap: [0, 9157] (4.66s)
+07:53:59 Model found (4.73s, +0.15s): [-132, -28884]
+07:53:59 Lower bound: [-132, -37351]  upper: [-132, -28884]  gap: [0, 8467] (4.78s)
+07:53:59 Lower bound: [-132, -37341]  upper: [-132, -28884]  gap: [0, 8457] (4.79s)
+07:53:59 Lower bound: [-132, -37331]  upper: [-132, -28884]  gap: [0, 8447] (4.79s)
+07:53:59 Lower bound: [-132, -37321]  upper: [-132, -28884]  gap: [0, 8437] (4.79s)
+07:53:59 Lower bound: [-132, -37311]  upper: [-132, -28884]  gap: [0, 8427] (4.81s)
+07:53:59 Lower bound: [-132, -37301]  upper: [-132, -28884]  gap: [0, 8417] (4.83s)
+07:53:59 Model found (4.85s, +0.12s): [-132, -28904]
+07:53:59 Model found (5.57s, +0.72s): [-132, -37039]
+07:53:59 Lower bound: [-132, -37203]  upper: [-132, -37039]  gap: [0, 164] (5.65s)
+07:53:59 Lower bound: [-132, -37155]  upper: [-132, -37039]  gap: [0, 116] (5.66s)
+07:53:59 Model found (5.68s, +0.11s): [-132, -37087]
+07:54:00 Lower bound: [-132, -37108]  upper: [-132, -37087]  gap: [0, 21] (5.76s)
+07:54:00 Lower bound: [-132, -37101]  upper: [-132, -37087]  gap: [0, 14] (5.78s)
+07:54:00 Lower bound: [-132, -37094]  upper: [-132, -37087]  gap: [0, 7] (5.79s)
+07:54:00 Solving done: OPTIMUM FOUND (3.14s)
 % Command: ooanalyzer.py examples/ooa/CImg/tetris.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/CImg/tetris.exe.results
 OPTIMUM FOUND
 
@@ -2052,25 +2052,25 @@ Optimization: -132 -37087
 %       objectInObject(std::bad_alloc::vftable@0x4b38bc,std::exception::vftable@0x4b7348,0) objectInObject(std::bad_exception::vftable@0x4b46b0,std::exception::vftable@0x4b7348,0)
 %       objectInObject(std::bad_cast::vftable@0x4b7370,std::exception::vftable@0x4b7348,0) objectInObject(std::bad_typeid::vftable@0x4b7380,std::exception::vftable@0x4b7348,0)
 %       objectInObject(std::__non_rtti_object::vftable@0x4b7390,std::bad_typeid::vftable@0x4b7380,0)
-17:09:50 Writing results to examples/ooa/CImg/tetris.exe.results
+07:54:00 Writing results to examples/ooa/CImg/tetris.exe.results
 
 % Stats:
-%   atoms: 182700.0
-%   bodies: 159446.0
-%   rules: 307425.0
-%   variables: 197802.0
-%   constraints: 10810.0
-%   choices: 75333.0
-%   conflicts: 316.0
+%   atoms: 182891.0
+%   bodies: 160037.0
+%   rules: 308006.0
+%   variables: 198358.0
+%   constraints: 10828.0
+%   choices: 139950.0
+%   conflicts: 358.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-132.0, -37087.0]
 %   lower_bound: [-132.0, -37087.0]
-%   total_time: 4.56443977355957
-%   ground_time: 2.1824880019999
-%   time_to_first_model: 3.573525676999907
-%   max_rss_bytes: 393355264
-%   solve_time: 0.8516659736633301
+%   total_time: 5.971742868423462
+%   ground_time: 2.6676501139299944
+%   time_to_first_model: 4.585160532966256
+%   max_rss_bytes: 387018752
+%   solve_time: 1.2296888828277588
 classCallsMethod(CImg<float>::CImg@0x44a260,CImg<float>::size@0x44a480)
 classCallsMethod(CImg<float>::CImg@0x44a370,CImg<float>::size@0x44a480)
 classCallsMethod(CImg<float>::operator()@0x44a4e0,CImg<float>::offset@0x44c3a0)
@@ -7058,8 +7058,6 @@ mergeClasses(std::bad_typeid::scalar_deleting_destructor@0x4696d0,std::bad_typei
 mergeClasses(std::bad_typeid::vftable@0x4b7380,std::bad_typeid::bad_typeid@0x4696a0)
 mergeClasses(std::bad_typeid::vftable@0x4b7380,std::bad_typeid::bad_typeid@0x469710)
 mergeClasses(std::exception::_Copy_str@0x469500,std::exception::_Tidy@0x469580)
-mergeClasses(std::exception::_Copy_str@0x469500,std::exception::vftable@0x4b7348)
-mergeClasses(std::exception::_Tidy@0x469580,std::exception::vftable@0x4b7348)
 mergeClasses(std::exception::exception@0x4692d0,std::exception::exception@0x469350)
 mergeClasses(std::exception::exception@0x4692d0,std::exception::exception@0x4693a0)
 mergeClasses(std::exception::exception@0x4692d0,std::exception::exception@0x4693e0)
@@ -7067,16 +7065,13 @@ mergeClasses(std::exception::exception@0x4692d0,std::exception::~exception@0x469
 mergeClasses(std::exception::exception@0x469350,std::exception::_Copy_str@0x469500)
 mergeClasses(std::exception::exception@0x469350,std::exception::exception@0x4693a0)
 mergeClasses(std::exception::exception@0x469350,std::exception::exception@0x4693e0)
-mergeClasses(std::exception::exception@0x469350,std::exception::vftable@0x4b7348)
 mergeClasses(std::exception::exception@0x469350,std::exception::~exception@0x469490)
 mergeClasses(std::exception::exception@0x4693a0,std::exception::exception@0x4693e0)
 mergeClasses(std::exception::exception@0x4693a0,std::exception::~exception@0x469490)
 mergeClasses(std::exception::exception@0x4693e0,std::exception::operator=@0x469430)
-mergeClasses(std::exception::exception@0x4693e0,std::exception::vftable@0x4b7348)
 mergeClasses(std::exception::exception@0x4693e0,std::exception::~exception@0x469490)
 mergeClasses(std::exception::operator=@0x469430,std::exception::_Copy_str@0x469500)
 mergeClasses(std::exception::operator=@0x469430,std::exception::_Tidy@0x469580)
-mergeClasses(std::exception::operator=@0x469430,std::exception::vftable@0x4b7348)
 mergeClasses(std::exception::scalar_deleting_destructor@0x469310,std::exception::vftable@0x4b7348)
 mergeClasses(std::exception::scalar_deleting_destructor@0x469310,std::exception::~exception@0x469490)
 mergeClasses(std::exception::vftable@0x4b7348,std::exception::exception@0x4692d0)
@@ -7085,7 +7080,6 @@ mergeClasses(std::exception::vftable@0x4b7348,std::exception::exception@0x4693a0
 mergeClasses(std::exception::vftable@0x4b7348,std::exception::exception@0x4693e0)
 mergeClasses(std::exception::what@0x4694c0,std::exception::vftable@0x4b7348)
 mergeClasses(std::exception::~exception@0x469490,std::exception::_Tidy@0x469580)
-mergeClasses(std::exception::~exception@0x469490,std::exception::vftable@0x4b7348)
 mergeClasses(tramp:virtual * std::__non_rtti_object::`vector deleting destructor'(unsigned int)@0x43938e,std::__non_rtti_object::__non_rtti_object@0x469770)
 mergeClasses(tramp:virtual * std::__non_rtti_object::`vector deleting destructor'(unsigned int)@0x43938e,std::__non_rtti_object::__non_rtti_object@0x4697e0)
 mergeClasses(tramp:virtual * std::__non_rtti_object::`vector deleting destructor'(unsigned int)@0x43938e,std::__non_rtti_object::~__non_rtti_object@0x469810)
@@ -7132,7 +7126,6 @@ mergeClasses(type_info::scalar_deleting_destructor@0x452250,type_info::vftable@0
 mergeClasses(type_info::vftable@0x4b3908,type_info::type_info@0x4523c0)
 mergeClasses(type_info::~type_info@0x452220,type_info::scalar_deleting_destructor@0x452250)
 mergeClasses(type_info::~type_info@0x452220,type_info::type_info@0x4523c0)
-mergeClasses(type_info::~type_info@0x452220,type_info::vftable@0x4b3908)
 method(* __cdecl _CallCatchBlock2(struct EHRegistrationNode *, struct _s_FuncInfo const *, *, int, unsigned long)@0x4503f0)
 method(* __cdecl operator new(unsigned int)@0x451b20)
 method(* __cdecl operator new(unsigned int, class _HeapManager &, int)@0x48c0a0)

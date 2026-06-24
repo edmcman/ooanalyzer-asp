@@ -1,9 +1,9 @@
-17:02:08 Grounding...
-17:02:08 Grounding done (0.08s)
-17:02:08 Solving...
-17:02:08 Model found (0.18s): [-20, -3352]
-17:02:08 Model found (0.19s, +0.00s): [-20, -3522]
-17:02:08 Solving done: OPTIMUM FOUND (0.11s)
+07:53:53 Grounding...
+07:53:53 Grounding done (0.14s)
+07:53:53 Solving...
+07:53:54 Model found (0.35s): [-20, -3352]
+07:53:54 Model found (0.35s, +0.01s): [-20, -3522]
+07:53:54 Solving done: OPTIMUM FOUND (0.21s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
 OPTIMUM FOUND
 
@@ -236,25 +236,25 @@ Optimization: -20 -3522
 %     ~embeddedObject: 3/3
 %       objectInObject(const Rectangle::`vftable'@0x417804,const Shape::`vftable'@0x417868,0) objectInObject(const Circle::`vftable'@0x417828,const Shape::`vftable'@0x417868,0)
 %       objectInObject(const Triangle::`vftable'@0x417848,const Shape::`vftable'@0x417868,0)
-17:02:08 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
+07:53:54 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
 
 % Stats:
-%   atoms: 27252.0
-%   bodies: 14426.0
-%   rules: 29665.0
-%   variables: 10079.0
-%   constraints: 90.0
-%   choices: 243.0
+%   atoms: 27208.0
+%   bodies: 14420.0
+%   rules: 29652.0
+%   variables: 9976.0
+%   constraints: 91.0
+%   choices: 233.0
 %   conflicts: 10.0
 %   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -3522.0]
 %   lower_bound: [-20.0, -3522.0]
-%   total_time: 0.19489288330078125
-%   ground_time: 0.07543065700019724
-%   time_to_first_model: 0.18211257400002978
-%   max_rss_bytes: 64569344
-%   solve_time: 0.007423877716064453
+%   total_time: 0.36841416358947754
+%   ground_time: 0.14419703104067594
+%   time_to_first_model: 0.34637257899157703
+%   max_rss_bytes: 57294848
+%   solve_time: 0.012200117111206055
 classCallsMethod(Circle::Circle(void)@0x4117e0,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Rectangle::Rectangle(void)@0x411700,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Triangle::Triangle(void)@0x4118c0,Shape::Shape(void)@0x4119a0)
@@ -681,7 +681,6 @@ mergeClasses(const Circle::`vftable'@0x417828,Circle::Circle(void)@0x4117e0)
 mergeClasses(const Rectangle::`vftable'@0x417804,Rectangle::Rectangle(void)@0x411700)
 mergeClasses(const Shape::`vftable'@0x417868,Shape::Shape(void)@0x4119a0)
 mergeClasses(const Triangle::`vftable'@0x417848,Triangle::Triangle(void)@0x4118c0)
-mergeClasses(const type_info::`vftable'@0x417874,type_info::_type_info_dtor_internal_method(void)@0x41b3b0)
 mergeClasses(const type_info::`vftable'@0x417874,type_info::type_info(class type_info const &)@0x4125b0)
 mergeClasses(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b32c,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b338)
 mergeClasses(int std::ios_base::flags(void)const@0x41b344,int std::ios_base::width(void)const@0x41b348)

@@ -1,109 +1,113 @@
-17:04:34 Grounding...
-17:04:38 Grounding done (3.38s)
-17:04:38 Solving...
-17:04:42 Model found (7.42s): [-776, -12903]
-17:04:42 Lower bound: [-776, -29149]  upper: [-776, -12903]  gap: [0, 16246] (7.59s)
-17:04:42 Lower bound: [-776, -29139]  upper: [-776, -12903]  gap: [0, 16236] (7.59s)
-17:04:42 Lower bound: [-776, -29129]  upper: [-776, -12903]  gap: [0, 16226] (7.59s)
-17:04:42 Lower bound: [-776, -29119]  upper: [-776, -12903]  gap: [0, 16216] (7.59s)
-17:04:42 Lower bound: [-776, -29099]  upper: [-776, -12903]  gap: [0, 16196] (7.59s)
-17:04:42 Lower bound: [-776, -29089]  upper: [-776, -12903]  gap: [0, 16186] (7.59s)
-17:04:42 Lower bound: [-776, -29079]  upper: [-776, -12903]  gap: [0, 16176] (7.59s)
-17:04:42 Lower bound: [-776, -29069]  upper: [-776, -12903]  gap: [0, 16166] (7.59s)
-17:04:42 Lower bound: [-776, -29059]  upper: [-776, -12903]  gap: [0, 16156] (7.59s)
-17:04:42 Lower bound: [-776, -29049]  upper: [-776, -12903]  gap: [0, 16146] (7.59s)
-17:04:42 Lower bound: [-776, -29039]  upper: [-776, -12903]  gap: [0, 16136] (7.59s)
-17:04:42 Lower bound: [-776, -29029]  upper: [-776, -12903]  gap: [0, 16126] (7.59s)
-17:04:42 Lower bound: [-776, -29019]  upper: [-776, -12903]  gap: [0, 16116] (7.59s)
-17:04:42 Lower bound: [-776, -28999]  upper: [-776, -12903]  gap: [0, 16096] (7.59s)
-17:04:42 Lower bound: [-776, -28989]  upper: [-776, -12903]  gap: [0, 16086] (7.59s)
-17:04:42 Lower bound: [-776, -28979]  upper: [-776, -12903]  gap: [0, 16076] (7.59s)
-17:04:42 Lower bound: [-776, -28969]  upper: [-776, -12903]  gap: [0, 16066] (7.59s)
-17:04:42 Lower bound: [-776, -28959]  upper: [-776, -12903]  gap: [0, 16056] (7.59s)
-17:04:42 Lower bound: [-776, -28949]  upper: [-776, -12903]  gap: [0, 16046] (7.59s)
-17:04:42 Lower bound: [-776, -28939]  upper: [-776, -12903]  gap: [0, 16036] (7.59s)
-17:04:42 Lower bound: [-776, -28929]  upper: [-776, -12903]  gap: [0, 16026] (7.59s)
-17:04:42 Lower bound: [-776, -28919]  upper: [-776, -12903]  gap: [0, 16016] (7.59s)
-17:04:42 Lower bound: [-776, -28909]  upper: [-776, -12903]  gap: [0, 16006] (7.59s)
-17:04:42 Lower bound: [-776, -28899]  upper: [-776, -12903]  gap: [0, 15996] (7.59s)
-17:04:42 Lower bound: [-776, -28889]  upper: [-776, -12903]  gap: [0, 15986] (7.59s)
-17:04:42 Lower bound: [-776, -28879]  upper: [-776, -12903]  gap: [0, 15976] (7.59s)
-17:04:42 Lower bound: [-776, -28869]  upper: [-776, -12903]  gap: [0, 15966] (7.59s)
-17:04:42 Lower bound: [-776, -28859]  upper: [-776, -12903]  gap: [0, 15956] (7.60s)
-17:04:42 Lower bound: [-776, -28849]  upper: [-776, -12903]  gap: [0, 15946] (7.60s)
-17:04:42 Lower bound: [-776, -28839]  upper: [-776, -12903]  gap: [0, 15936] (7.60s)
-17:04:42 Lower bound: [-776, -28829]  upper: [-776, -12903]  gap: [0, 15926] (7.60s)
-17:04:42 Lower bound: [-776, -28819]  upper: [-776, -12903]  gap: [0, 15916] (7.60s)
-17:04:42 Lower bound: [-776, -28779]  upper: [-776, -12903]  gap: [0, 15876] (7.60s)
-17:04:42 Lower bound: [-776, -28769]  upper: [-776, -12903]  gap: [0, 15866] (7.60s)
-17:04:42 Lower bound: [-776, -28759]  upper: [-776, -12903]  gap: [0, 15856] (7.60s)
-17:04:42 Lower bound: [-776, -28749]  upper: [-776, -12903]  gap: [0, 15846] (7.60s)
-17:04:42 Lower bound: [-776, -28729]  upper: [-776, -12903]  gap: [0, 15826] (7.60s)
-17:04:42 Lower bound: [-776, -28709]  upper: [-776, -12903]  gap: [0, 15806] (7.60s)
-17:04:42 Lower bound: [-776, -28689]  upper: [-776, -12903]  gap: [0, 15786] (7.60s)
-17:04:42 Lower bound: [-776, -28679]  upper: [-776, -12903]  gap: [0, 15776] (7.60s)
-17:04:42 Lower bound: [-776, -28659]  upper: [-776, -12903]  gap: [0, 15756] (7.60s)
-17:04:42 Lower bound: [-776, -28649]  upper: [-776, -12903]  gap: [0, 15746] (7.61s)
-17:04:42 Lower bound: [-776, -28639]  upper: [-776, -12903]  gap: [0, 15736] (7.61s)
-17:04:42 Lower bound: [-776, -28629]  upper: [-776, -12903]  gap: [0, 15726] (7.61s)
-17:04:42 Lower bound: [-776, -28619]  upper: [-776, -12903]  gap: [0, 15716] (7.61s)
-17:04:42 Lower bound: [-776, -28609]  upper: [-776, -12903]  gap: [0, 15706] (7.61s)
-17:04:42 Lower bound: [-776, -28599]  upper: [-776, -12903]  gap: [0, 15696] (7.61s)
-17:04:42 Lower bound: [-776, -28589]  upper: [-776, -12903]  gap: [0, 15686] (7.61s)
-17:04:42 Model found (7.62s, +0.19s): [-776, -15079]
-17:04:42 Lower bound: [-776, -28579]  upper: [-776, -15079]  gap: [0, 13500] (7.72s)
-17:04:42 Lower bound: [-776, -28569]  upper: [-776, -15079]  gap: [0, 13490] (7.73s)
-17:04:42 Model found (7.74s, +0.12s): [-776, -15557]
-17:04:42 Model found (7.84s, +0.11s): [-776, -15567]
-17:04:42 Lower bound: [-776, -28551]  upper: [-776, -15567]  gap: [0, 12984] (7.94s)
-17:04:42 Lower bound: [-776, -28218]  upper: [-776, -15567]  gap: [0, 12651] (7.94s)
-17:04:42 Lower bound: [-776, -27732]  upper: [-776, -15567]  gap: [0, 12165] (7.94s)
-17:04:42 Lower bound: [-776, -27705]  upper: [-776, -15567]  gap: [0, 12138] (7.95s)
-17:04:42 Lower bound: [-776, -27579]  upper: [-776, -15567]  gap: [0, 12012] (7.95s)
-17:04:42 Lower bound: [-776, -27552]  upper: [-776, -15567]  gap: [0, 11985] (7.95s)
-17:04:42 Lower bound: [-776, -27543]  upper: [-776, -15567]  gap: [0, 11976] (7.96s)
-17:04:42 Lower bound: [-776, -27534]  upper: [-776, -15567]  gap: [0, 11967] (7.96s)
-17:04:42 Lower bound: [-776, -27525]  upper: [-776, -15567]  gap: [0, 11958] (7.96s)
-17:04:42 Lower bound: [-776, -27516]  upper: [-776, -15567]  gap: [0, 11949] (7.96s)
-17:04:42 Lower bound: [-776, -27507]  upper: [-776, -15567]  gap: [0, 11940] (7.96s)
-17:04:42 Lower bound: [-776, -27498]  upper: [-776, -15567]  gap: [0, 11931] (7.96s)
-17:04:42 Lower bound: [-776, -27489]  upper: [-776, -15567]  gap: [0, 11922] (7.97s)
-17:04:42 Lower bound: [-776, -27480]  upper: [-776, -15567]  gap: [0, 11913] (7.97s)
-17:04:42 Lower bound: [-776, -27471]  upper: [-776, -15567]  gap: [0, 11904] (7.98s)
-17:04:42 Lower bound: [-776, -27462]  upper: [-776, -15567]  gap: [0, 11895] (7.98s)
-17:04:42 Lower bound: [-776, -27453]  upper: [-776, -15567]  gap: [0, 11886] (7.98s)
-17:04:42 Lower bound: [-776, -27444]  upper: [-776, -15567]  gap: [0, 11877] (7.98s)
-17:04:42 Lower bound: [-776, -27435]  upper: [-776, -15567]  gap: [0, 11868] (7.99s)
-17:04:42 Lower bound: [-776, -27426]  upper: [-776, -15567]  gap: [0, 11859] (7.99s)
-17:04:42 Lower bound: [-776, -27417]  upper: [-776, -15567]  gap: [0, 11850] (8.00s)
-17:04:42 Lower bound: [-776, -27408]  upper: [-776, -15567]  gap: [0, 11841] (8.00s)
-17:04:42 Lower bound: [-776, -27399]  upper: [-776, -15567]  gap: [0, 11832] (8.01s)
-17:04:42 Lower bound: [-776, -27390]  upper: [-776, -15567]  gap: [0, 11823] (8.22s)
-17:04:42 Lower bound: [-776, -27381]  upper: [-776, -15567]  gap: [0, 11814] (8.23s)
-17:04:42 Lower bound: [-776, -27372]  upper: [-776, -15567]  gap: [0, 11805] (8.24s)
-17:04:42 Lower bound: [-776, -27363]  upper: [-776, -15567]  gap: [0, 11796] (8.25s)
-17:04:42 Lower bound: [-776, -27354]  upper: [-776, -15567]  gap: [0, 11787] (8.26s)
-17:04:42 Lower bound: [-776, -27345]  upper: [-776, -15567]  gap: [0, 11778] (8.27s)
-17:04:42 Lower bound: [-776, -27336]  upper: [-776, -15567]  gap: [0, 11769] (8.28s)
-17:04:43 Lower bound: [-776, -27327]  upper: [-776, -15567]  gap: [0, 11760] (8.29s)
-17:04:43 Lower bound: [-776, -27318]  upper: [-776, -15567]  gap: [0, 11751] (8.30s)
-17:04:43 Lower bound: [-776, -27309]  upper: [-776, -15567]  gap: [0, 11742] (8.31s)
-17:04:43 Lower bound: [-776, -27300]  upper: [-776, -15567]  gap: [0, 11733] (8.32s)
-17:04:43 Lower bound: [-776, -27291]  upper: [-776, -15567]  gap: [0, 11724] (8.33s)
-17:04:43 Lower bound: [-776, -27282]  upper: [-776, -15567]  gap: [0, 11715] (8.36s)
-17:04:43 Lower bound: [-776, -27273]  upper: [-776, -15567]  gap: [0, 11706] (8.40s)
-17:04:43 Lower bound: [-776, -27264]  upper: [-776, -15567]  gap: [0, 11697] (8.41s)
-17:04:43 Lower bound: [-776, -27255]  upper: [-776, -15567]  gap: [0, 11688] (8.81s)
-17:04:43 Lower bound: [-776, -27246]  upper: [-776, -15567]  gap: [0, 11679] (8.82s)
-17:04:43 Lower bound: [-776, -27237]  upper: [-776, -15567]  gap: [0, 11670] (8.85s)
-17:04:55 Lower bound: [-776, -27228]  upper: [-776, -15567]  gap: [0, 11661] (20.69s)
-17:09:38 Solving done: TIME LIMIT REACHED (300.62s)
+07:53:54 Grounding...
+07:53:58 Grounding done (4.37s)
+07:53:58 Solving...
+07:54:04 Model found (9.89s): [-776, -12903]
+07:54:04 Lower bound: [-776, -29149]  upper: [-776, -12903]  gap: [0, 16246] (10.03s)
+07:54:04 Lower bound: [-776, -29139]  upper: [-776, -12903]  gap: [0, 16236] (10.03s)
+07:54:04 Lower bound: [-776, -29129]  upper: [-776, -12903]  gap: [0, 16226] (10.03s)
+07:54:04 Lower bound: [-776, -29119]  upper: [-776, -12903]  gap: [0, 16216] (10.03s)
+07:54:04 Lower bound: [-776, -29099]  upper: [-776, -12903]  gap: [0, 16196] (10.03s)
+07:54:04 Lower bound: [-776, -29089]  upper: [-776, -12903]  gap: [0, 16186] (10.03s)
+07:54:04 Lower bound: [-776, -29079]  upper: [-776, -12903]  gap: [0, 16176] (10.03s)
+07:54:04 Lower bound: [-776, -29069]  upper: [-776, -12903]  gap: [0, 16166] (10.03s)
+07:54:04 Lower bound: [-776, -29059]  upper: [-776, -12903]  gap: [0, 16156] (10.04s)
+07:54:04 Lower bound: [-776, -29049]  upper: [-776, -12903]  gap: [0, 16146] (10.04s)
+07:54:04 Lower bound: [-776, -29039]  upper: [-776, -12903]  gap: [0, 16136] (10.04s)
+07:54:04 Lower bound: [-776, -29029]  upper: [-776, -12903]  gap: [0, 16126] (10.04s)
+07:54:04 Lower bound: [-776, -29019]  upper: [-776, -12903]  gap: [0, 16116] (10.04s)
+07:54:04 Lower bound: [-776, -28999]  upper: [-776, -12903]  gap: [0, 16096] (10.04s)
+07:54:04 Lower bound: [-776, -28989]  upper: [-776, -12903]  gap: [0, 16086] (10.04s)
+07:54:04 Lower bound: [-776, -28979]  upper: [-776, -12903]  gap: [0, 16076] (10.04s)
+07:54:04 Lower bound: [-776, -28969]  upper: [-776, -12903]  gap: [0, 16066] (10.04s)
+07:54:04 Lower bound: [-776, -28959]  upper: [-776, -12903]  gap: [0, 16056] (10.04s)
+07:54:04 Lower bound: [-776, -28949]  upper: [-776, -12903]  gap: [0, 16046] (10.04s)
+07:54:04 Lower bound: [-776, -28939]  upper: [-776, -12903]  gap: [0, 16036] (10.04s)
+07:54:04 Lower bound: [-776, -28929]  upper: [-776, -12903]  gap: [0, 16026] (10.04s)
+07:54:04 Lower bound: [-776, -28919]  upper: [-776, -12903]  gap: [0, 16016] (10.04s)
+07:54:04 Lower bound: [-776, -28909]  upper: [-776, -12903]  gap: [0, 16006] (10.04s)
+07:54:04 Lower bound: [-776, -28899]  upper: [-776, -12903]  gap: [0, 15996] (10.04s)
+07:54:04 Lower bound: [-776, -28889]  upper: [-776, -12903]  gap: [0, 15986] (10.04s)
+07:54:04 Lower bound: [-776, -28879]  upper: [-776, -12903]  gap: [0, 15976] (10.04s)
+07:54:04 Lower bound: [-776, -28869]  upper: [-776, -12903]  gap: [0, 15966] (10.04s)
+07:54:04 Lower bound: [-776, -28859]  upper: [-776, -12903]  gap: [0, 15956] (10.04s)
+07:54:04 Lower bound: [-776, -28849]  upper: [-776, -12903]  gap: [0, 15946] (10.04s)
+07:54:04 Lower bound: [-776, -28839]  upper: [-776, -12903]  gap: [0, 15936] (10.04s)
+07:54:04 Lower bound: [-776, -28829]  upper: [-776, -12903]  gap: [0, 15926] (10.04s)
+07:54:04 Lower bound: [-776, -28819]  upper: [-776, -12903]  gap: [0, 15916] (10.04s)
+07:54:04 Lower bound: [-776, -28779]  upper: [-776, -12903]  gap: [0, 15876] (10.04s)
+07:54:04 Lower bound: [-776, -28769]  upper: [-776, -12903]  gap: [0, 15866] (10.04s)
+07:54:04 Lower bound: [-776, -28759]  upper: [-776, -12903]  gap: [0, 15856] (10.04s)
+07:54:04 Lower bound: [-776, -28749]  upper: [-776, -12903]  gap: [0, 15846] (10.04s)
+07:54:04 Lower bound: [-776, -28729]  upper: [-776, -12903]  gap: [0, 15826] (10.04s)
+07:54:04 Lower bound: [-776, -28709]  upper: [-776, -12903]  gap: [0, 15806] (10.04s)
+07:54:04 Lower bound: [-776, -28689]  upper: [-776, -12903]  gap: [0, 15786] (10.05s)
+07:54:04 Lower bound: [-776, -28679]  upper: [-776, -12903]  gap: [0, 15776] (10.05s)
+07:54:04 Lower bound: [-776, -28659]  upper: [-776, -12903]  gap: [0, 15756] (10.05s)
+07:54:04 Lower bound: [-776, -28649]  upper: [-776, -12903]  gap: [0, 15746] (10.05s)
+07:54:04 Lower bound: [-776, -28639]  upper: [-776, -12903]  gap: [0, 15736] (10.05s)
+07:54:04 Lower bound: [-776, -28629]  upper: [-776, -12903]  gap: [0, 15726] (10.05s)
+07:54:04 Lower bound: [-776, -28619]  upper: [-776, -12903]  gap: [0, 15716] (10.05s)
+07:54:04 Lower bound: [-776, -28609]  upper: [-776, -12903]  gap: [0, 15706] (10.05s)
+07:54:04 Lower bound: [-776, -28599]  upper: [-776, -12903]  gap: [0, 15696] (10.06s)
+07:54:04 Lower bound: [-776, -28589]  upper: [-776, -12903]  gap: [0, 15686] (10.06s)
+07:54:04 Model found (10.06s, +0.17s): [-776, -15079]
+07:54:04 Lower bound: [-776, -28579]  upper: [-776, -15079]  gap: [0, 13500] (10.26s)
+07:54:04 Lower bound: [-776, -28569]  upper: [-776, -15079]  gap: [0, 13490] (10.27s)
+07:54:04 Model found (10.28s, +0.21s): [-776, -15557]
+07:54:04 Model found (10.44s, +0.16s): [-776, -15567]
+07:54:04 Lower bound: [-776, -28551]  upper: [-776, -15567]  gap: [0, 12984] (10.64s)
+07:54:04 Lower bound: [-776, -28191]  upper: [-776, -15567]  gap: [0, 12624] (10.64s)
+07:54:05 Lower bound: [-776, -27732]  upper: [-776, -15567]  gap: [0, 12165] (10.64s)
+07:54:05 Lower bound: [-776, -27633]  upper: [-776, -15567]  gap: [0, 12066] (10.65s)
+07:54:05 Lower bound: [-776, -27597]  upper: [-776, -15567]  gap: [0, 12030] (10.65s)
+07:54:05 Lower bound: [-776, -27552]  upper: [-776, -15567]  gap: [0, 11985] (10.65s)
+07:54:05 Lower bound: [-776, -27543]  upper: [-776, -15567]  gap: [0, 11976] (10.66s)
+07:54:05 Lower bound: [-776, -27534]  upper: [-776, -15567]  gap: [0, 11967] (10.66s)
+07:54:05 Lower bound: [-776, -27525]  upper: [-776, -15567]  gap: [0, 11958] (10.66s)
+07:54:05 Lower bound: [-776, -27516]  upper: [-776, -15567]  gap: [0, 11949] (10.66s)
+07:54:05 Lower bound: [-776, -27507]  upper: [-776, -15567]  gap: [0, 11940] (10.66s)
+07:54:05 Lower bound: [-776, -27498]  upper: [-776, -15567]  gap: [0, 11931] (10.67s)
+07:54:05 Lower bound: [-776, -27489]  upper: [-776, -15567]  gap: [0, 11922] (10.67s)
+07:54:05 Lower bound: [-776, -27480]  upper: [-776, -15567]  gap: [0, 11913] (10.68s)
+07:54:05 Lower bound: [-776, -27471]  upper: [-776, -15567]  gap: [0, 11904] (10.68s)
+07:54:05 Lower bound: [-776, -27462]  upper: [-776, -15567]  gap: [0, 11895] (10.68s)
+07:54:05 Lower bound: [-776, -27453]  upper: [-776, -15567]  gap: [0, 11886] (10.69s)
+07:54:05 Lower bound: [-776, -27444]  upper: [-776, -15567]  gap: [0, 11877] (10.69s)
+07:54:05 Lower bound: [-776, -27435]  upper: [-776, -15567]  gap: [0, 11868] (10.69s)
+07:54:05 Lower bound: [-776, -27426]  upper: [-776, -15567]  gap: [0, 11859] (10.70s)
+07:54:05 Lower bound: [-776, -27417]  upper: [-776, -15567]  gap: [0, 11850] (10.71s)
+07:54:05 Lower bound: [-776, -27408]  upper: [-776, -15567]  gap: [0, 11841] (10.71s)
+07:54:05 Lower bound: [-776, -27399]  upper: [-776, -15567]  gap: [0, 11832] (10.72s)
+07:54:05 Lower bound: [-776, -27390]  upper: [-776, -15567]  gap: [0, 11823] (11.03s)
+07:54:05 Lower bound: [-776, -27381]  upper: [-776, -15567]  gap: [0, 11814] (11.08s)
+07:54:05 Lower bound: [-776, -27372]  upper: [-776, -15567]  gap: [0, 11805] (11.10s)
+07:54:05 Lower bound: [-776, -27363]  upper: [-776, -15567]  gap: [0, 11796] (11.12s)
+07:54:05 Lower bound: [-776, -27354]  upper: [-776, -15567]  gap: [0, 11787] (11.13s)
+07:54:05 Lower bound: [-776, -27345]  upper: [-776, -15567]  gap: [0, 11778] (11.14s)
+07:54:05 Lower bound: [-776, -27336]  upper: [-776, -15567]  gap: [0, 11769] (11.15s)
+07:54:05 Lower bound: [-776, -27327]  upper: [-776, -15567]  gap: [0, 11760] (11.16s)
+07:54:05 Lower bound: [-776, -27318]  upper: [-776, -15567]  gap: [0, 11751] (11.17s)
+07:54:05 Lower bound: [-776, -27309]  upper: [-776, -15567]  gap: [0, 11742] (11.18s)
+07:54:05 Lower bound: [-776, -27300]  upper: [-776, -15567]  gap: [0, 11733] (11.20s)
+07:54:05 Lower bound: [-776, -27291]  upper: [-776, -15567]  gap: [0, 11724] (11.21s)
+07:54:05 Lower bound: [-776, -27282]  upper: [-776, -15567]  gap: [0, 11715] (11.22s)
+07:54:05 Lower bound: [-776, -27273]  upper: [-776, -15567]  gap: [0, 11706] (11.23s)
+07:54:05 Lower bound: [-776, -27264]  upper: [-776, -15567]  gap: [0, 11697] (11.25s)
+07:54:08 Lower bound: [-776, -27255]  upper: [-776, -15567]  gap: [0, 11688] (13.97s)
+07:54:08 Lower bound: [-776, -27246]  upper: [-776, -15567]  gap: [0, 11679] (14.03s)
+07:54:08 Lower bound: [-776, -27237]  upper: [-776, -15567]  gap: [0, 11670] (14.23s)
+07:54:08 Lower bound: [-776, -27228]  upper: [-776, -15567]  gap: [0, 11661] (14.38s)
+07:54:08 Lower bound: [-776, -27219]  upper: [-776, -15567]  gap: [0, 11652] (14.40s)
+07:54:08 Lower bound: [-776, -27210]  upper: [-776, -15567]  gap: [0, 11643] (14.46s)
+07:54:08 Lower bound: [-776, -27201]  upper: [-776, -15567]  gap: [0, 11634] (14.48s)
+07:54:08 Lower bound: [-776, -27192]  upper: [-776, -15567]  gap: [0, 11625] (14.51s)
+07:58:59 Solving done: TIME LIMIT REACHED (301.14s)
 % Command: ooanalyzer.py examples/ooa/firefox/firefox.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/firefox/firefox.exe.results
 % TIME LIMIT REACHED
 
 Answer: 4
 Optimization: -776 -15567
-Lower bound: -776 -27228
+Lower bound: -776 -27192
 
 % Equivalence classes (852 classes, 1057 entities):
 
@@ -722,14 +726,14 @@ Lower bound: -776 -27228
 %       strongMergeReward(sandbox::TopLevelDispatcher::TopLevelDispatcher@0x403510,sandbox::TopLevelDispatcher::SetupService@0x4204e7) strongMergeReward(sandbox::ThreadProcessDispatcher::scalar_deleting_destructor@0x40430c,sandbox::Dispatcher::OnMessageReady@0x410a3d)
 %       strongMergeReward(`anonymous namespace'::ActiveVerifier::Disable@0x40559c,`anonymous namespace'::ActiveVerifier::ActiveVerifier@0x40901a) strongMergeReward(sandbox::EatResolverThunk::GetThunkSize@0x4055e3,sandbox::InterceptionAgent::GetResolver@0x415cb4)
 %       strongMergeReward(sandbox::ServiceResolverThunk::GetThunkSize@0x4055e7,sandbox::InterceptionManager::PatchClientFunctions@0x41540e) strongMergeReward(sandbox::SmartSidestepResolverThunk::GetThunkSize@0x4055eb,sandbox::InterceptionAgent::GetResolver@0x415cb4)
-%       strongMergeReward(sandbox::SidestepResolverThunk::GetThunkSize@0x4055ef,sandbox::InterceptionAgent::GetResolver@0x415cb4) strongMergeReward(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
-%       strongMergeReward(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd) strongMergeReward(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::showmanyc(void)@0x405bfc,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
+%       strongMergeReward(sandbox::SidestepResolverThunk::GetThunkSize@0x4055ef,sandbox::InterceptionAgent::GetResolver@0x415cb4) strongMergeReward(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
+%       strongMergeReward(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b) strongMergeReward(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::showmanyc(void)@0x405bfc,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 %       strongMergeReward(thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::uflow(void)@0x405c02,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd) strongMergeReward(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsgetn(char *, __int64)@0x405c08,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 %       strongMergeReward(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsputn(char const *, __int64)@0x405c0e,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd) strongMergeReward(thunk:virtual class std::basic_streambuf<char, CHAR_TRAITS > * std::basic_streambuf<char, CHAR_TRAITS >::setbuf(char *, __int64)@0x405c14,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 %       strongMergeReward(thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::sync(void)@0x405c1a,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd) strongMergeReward(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::imbue(class std::locale const &)@0x405c20,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
-%       strongMergeReward(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4) strongMergeReward(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
-%       strongMergeReward(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::showmanyc(void)@0x405ce6,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77) strongMergeReward(thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
-%       strongMergeReward(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsgetn(wchar_t *, __int64)@0x405cf2,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77) strongMergeReward(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
+%       strongMergeReward(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77) strongMergeReward(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
+%       strongMergeReward(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::showmanyc(void)@0x405ce6,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77) strongMergeReward(thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
+%       strongMergeReward(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsgetn(wchar_t *, __int64)@0x405cf2,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77) strongMergeReward(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
 %       strongMergeReward(thunk:virtual class std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> > * std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::setbuf(wchar_t *, __int64)@0x405cfe,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4) strongMergeReward(thunk:virtual int std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::sync(void)@0x405d04,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 %       strongMergeReward(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::imbue(class std::locale const &)@0x405d0a,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4) strongMergeReward(std::bad_alloc::bad_alloc@0x4067ae,std::bad_alloc::bad_alloc@0x4067c9)
 %       strongMergeReward(std::bad_array_new_length::bad_array_new_length@0x4067e1,std::bad_array_new_length::bad_array_new_length@0x4067fc) strongMergeReward(std::exception::exception@0x406814,std::bad_array_new_length::~bad_array_new_length@0x406840)
@@ -740,12 +744,12 @@ Lower bound: -776 -27228
 %       strongMergeReward(sandbox::BrokerServicesBase::BrokerServicesBase@0x408a3c,sandbox::BrokerServicesBase::InstallAppContainer@0x40f82b) strongMergeReward(sandbox::BrokerServicesBase::BrokerServicesBase@0x408a3c,sandbox::BrokerServicesBase::SpawnTarget@0x40f9c9)
 %       strongMergeReward(sandbox::BrokerServicesBase::BrokerServicesBase@0x408a3c,sandbox::BrokerServicesBase::UninstallAppContainer@0x40ffb0) strongMergeReward(sandbox::BrokerServicesBase::BrokerServicesBase@0x408a3c,sandbox::BrokerServicesBase::WaitForAllTargets@0x41004a)
 %       strongMergeReward(sandbox::BrokerServicesBase::BrokerServicesBase@0x408a3c,5767205) strongMergeReward(sandbox::BrokerServicesBase::BrokerServicesBase@0x408a3c,7864368)
-%       strongMergeReward(`anonymous namespace'::ActiveVerifier::ActiveVerifier@0x40901a,`anonymous namespace'::ActiveVerifier::OnHandleBeingClosed@0x40ce31) strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::overflow@0x40a5e2)
-%       strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::pbackfail@0x40a7ae) strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c)
+%       strongMergeReward(`anonymous namespace'::ActiveVerifier::ActiveVerifier@0x40901a,`anonymous namespace'::ActiveVerifier::OnHandleBeingClosed@0x40ce31) strongMergeReward(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c)
+%       strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::overflow@0x40a5e2) strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::pbackfail@0x40a7ae)
 %       strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekpos@0x40aa51) strongMergeReward(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::underflow@0x40ac90)
 %       strongMergeReward(base::win::PEImage::scalar_deleting_destructor@0x40af5c,10485893) strongMergeReward(base::win::PEImage::scalar_deleting_destructor@0x40af5c,base::win::PEImage::RVAToAddr@0x40cd83)
-%       strongMergeReward(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8) strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::overflow@0x40e35f)
-%       strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547) strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekpos@0x40e81d)
+%       strongMergeReward(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547) strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::overflow@0x40e35f)
+%       strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8) strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekpos@0x40e81d)
 %       strongMergeReward(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::underflow@0x40ea7e) strongMergeReward(sandbox::EatResolverThunk::ResolveTarget@0x410a7a,sandbox::InterceptionAgent::GetResolver@0x415cb4)
 %       strongMergeReward(sandbox::EatResolverThunk::Setup@0x410ade,sandbox::InterceptionAgent::GetResolver@0x415cb4) strongMergeReward(sandbox::ServiceResolverThunk::ServiceResolverThunk@0x415005,sandbox::ServiceResolverThunk::IsFunctionAService@0x41d8ea)
 %       strongMergeReward(sandbox::InterceptionManager::PatchClientFunctions@0x41540e,sandbox::ResolverThunk::Init@0x41a9af) strongMergeReward(sandbox::InterceptionManager::PatchClientFunctions@0x41540e,sandbox::ServiceResolverThunk::AllowLocalPatches@0x41d825)
@@ -771,8 +775,8 @@ Lower bound: -776 -27228
 %       strongMergeCandidate(sandbox::TopLevelDispatcher::TopLevelDispatcher@0x403510,sandbox::ThreadProcessDispatcher::scalar_deleting_destructor@0x40430c)
 %       strongMergeCandidate(sandbox::TopLevelDispatcher::TopLevelDispatcher@0x403510,sandbox::Dispatcher::OnMessageReady@0x410a3d)
 %       strongMergeCandidate(sandbox::ServiceResolverThunk::GetThunkSize@0x4055e7,sandbox::ServiceResolverThunk::ServiceResolverThunk@0x415005)
-%       strongMergeCandidate(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
-%       strongMergeCandidate(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
+%       strongMergeCandidate(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
+%       strongMergeCandidate(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 %       strongMergeCandidate(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::showmanyc(void)@0x405bfc,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
 %       strongMergeCandidate(thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::uflow(void)@0x405c02,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
 %       strongMergeCandidate(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsgetn(char *, __int64)@0x405c08,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
@@ -780,12 +784,12 @@ Lower bound: -776 -27228
 %       strongMergeCandidate(thunk:virtual class std::basic_streambuf<char, CHAR_TRAITS > * std::basic_streambuf<char, CHAR_TRAITS >::setbuf(char *, __int64)@0x405c14,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
 %       strongMergeCandidate(thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::sync(void)@0x405c1a,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
 %       strongMergeCandidate(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::imbue(class std::locale const &)@0x405c20,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
-%       strongMergeCandidate(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
-%       strongMergeCandidate(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
+%       strongMergeCandidate(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
+%       strongMergeCandidate(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 %       strongMergeCandidate(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::showmanyc(void)@0x405ce6,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
-%       strongMergeCandidate(thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
+%       strongMergeCandidate(thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 %       strongMergeCandidate(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsgetn(wchar_t *, __int64)@0x405cf2,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
-%       strongMergeCandidate(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
+%       strongMergeCandidate(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 %       strongMergeCandidate(thunk:virtual class std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> > * std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::setbuf(wchar_t *, __int64)@0x405cfe,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 %       strongMergeCandidate(thunk:virtual int std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::sync(void)@0x405d04,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
 %       strongMergeCandidate(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::imbue(class std::locale const &)@0x405d0a,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
@@ -800,15 +804,15 @@ Lower bound: -776 -27228
 %       strongMergeCandidate(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 %       strongMergeCandidate(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::overflow@0x40a5e2)
 %       strongMergeCandidate(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::pbackfail@0x40a7ae)
-%       strongMergeCandidate(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c)
 %       strongMergeCandidate(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekpos@0x40aa51)
 %       strongMergeCandidate(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::underflow@0x40ac90)
+%       strongMergeCandidate(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c)
 %       strongMergeCandidate(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 %       strongMergeCandidate(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::overflow@0x40e35f)
-%       strongMergeCandidate(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547)
+%       strongMergeCandidate(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8)
 %       strongMergeCandidate(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekpos@0x40e81d)
 %       strongMergeCandidate(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::underflow@0x40ea7e)
-%       strongMergeCandidate(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8)
+%       strongMergeCandidate(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547)
 %       strongMergeCandidate(sandbox::ServiceResolverThunk::ServiceResolverThunk@0x415005,sandbox::Wow64W8ResolverThunk::scalar_deleting_destructor@0x415be5)
 %       strongMergeCandidate(sandbox::ServiceResolverThunk::ServiceResolverThunk@0x415005,sandbox::ResolverThunk::Init@0x41a9af)
 %       strongMergeCandidate(sandbox::ServiceResolverThunk::ServiceResolverThunk@0x415005,sandbox::ServiceResolverThunk::AllowLocalPatches@0x41d825)
@@ -1887,25 +1891,25 @@ Lower bound: -776 -27228
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(std::bad_alloc::vftable@0x422aa8,std::exception::vftable@0x422a88,0) objectInObject(std::bad_array_new_length::vftable@0x422ac4,std::bad_alloc::vftable@0x422aa8,0)
-17:09:39 Writing results to examples/ooa/firefox/firefox.exe.results
+07:59:00 Writing results to examples/ooa/firefox/firefox.exe.results
 
 % Stats:
-%   atoms: 430769.0
-%   bodies: 449631.0
-%   rules: 638400.0
-%   variables: 397278.0
-%   constraints: 10969.0
-%   choices: 51898667.0
-%   conflicts: 50390.0
+%   atoms: 430780.0
+%   bodies: 450419.0
+%   rules: 639184.0
+%   variables: 398092.0
+%   constraints: 10976.0
+%   choices: 28925010.0
+%   conflicts: 30625.0
 %   models: 4.0
 %   optimal_models: 0.0
 %   final_cost: [-776.0, -15567.0]
-%   lower_bound: [-776.0, -27228.0]
-%   total_time: 304.0828092098236
-%   ground_time: 3.3841072109999004
-%   time_to_first_model: 7.423694865000016
-%   max_rss_bytes: 866508800
-%   solve_time: 296.61794209480286
+%   lower_bound: [-776.0, -27192.0]
+%   total_time: 305.5969908237457
+%   ground_time: 4.365804061060771
+%   time_to_first_model: 9.890839974046685
+%   max_rss_bytes: 859119616
+%   solve_time: 295.6404688358307
 classCallsMethod('anonymous namespace 0x820ee722'::JobTracker::scalar_deleting_destructor@0x40f64a,`anonymous namespace'::JobTracker::FreeResources@0x40f7eb)
 classCallsMethod('anonymous namespace 0x820ee722'::JobTracker::scalar_deleting_destructor@0x40f64a,base::win::GenericScopedHandle<class base::win::HandleTraits, class base::win::VerifierTraits>::Close@0x405565)
 classCallsMethod('anonymous namespace 0xdf588627'::ActiveVerifier::vftable@0x4224e0,`anonymous namespace'::ActiveVerifier::CloseHandle@0x401dc0)
@@ -7142,6 +7146,7 @@ mergeClasses(std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::_Os
 mergeClasses(std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::flush@0x4222cc,std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::operator<<@0x422340)
 mergeClasses(std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::flush@0x4222cc,std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::operator<<@0x422344)
 mergeClasses(std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::operator<<@0x422340,std::basic_ostream<wchar_t, struct std::char_traits<wchar_t> >::operator<<@0x422344)
+mergeClasses(std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c)
 mergeClasses(std::basic_streambuf<char, struct std::char_traits<char> >::_Lock@0x422270,std::basic_streambuf<char, struct std::char_traits<char> >::_Unlock@0x422274)
 mergeClasses(std::basic_streambuf<char, struct std::char_traits<char> >::_Lock@0x422270,std::basic_streambuf<char, struct std::char_traits<char> >::imbue@0x422290)
 mergeClasses(std::basic_streambuf<char, struct std::char_traits<char> >::_Lock@0x422270,std::basic_streambuf<char, struct std::char_traits<char> >::setbuf@0x422288)
@@ -7744,14 +7749,13 @@ mergeClasses(std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::~
 mergeClasses(std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::~basic_streambuf@0x422318,std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn@0x422330)
 mergeClasses(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::overflow@0x40a5e2)
 mergeClasses(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::pbackfail@0x40a7ae)
-mergeClasses(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c)
 mergeClasses(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekpos@0x40aa51)
 mergeClasses(std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::underflow@0x40ac90)
 mergeClasses(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::overflow@0x40e35f)
-mergeClasses(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547)
+mergeClasses(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8)
 mergeClasses(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekpos@0x40e81d)
 mergeClasses(std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::underflow@0x40ea7e)
-mergeClasses(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8)
+mergeClasses(std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547)
 mergeClasses(std::exception::exception@0x406814,std::bad_array_new_length::~bad_array_new_length@0x406840)
 mergeClasses(std::exception::exception@0x406814,std::exception::scalar_deleting_destructor@0x406851)
 mergeClasses(std::exception::exception@0x406814,std::exception::what@0x4068b8)
@@ -7788,19 +7792,19 @@ mergeClasses(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsg
 mergeClasses(thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsputn(char const *, __int64)@0x405c0e,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 mergeClasses(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::showmanyc(void)@0x405ce6,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
 mergeClasses(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsgetn(wchar_t *, __int64)@0x405cf2,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
-mergeClasses(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
+mergeClasses(thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
 mergeClasses(thunk:virtual class std::basic_streambuf<char, CHAR_TRAITS > * std::basic_streambuf<char, CHAR_TRAITS >::setbuf(char *, __int64)@0x405c14,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 mergeClasses(thunk:virtual class std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> > * std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::setbuf(wchar_t *, __int64)@0x405cfe,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
 mergeClasses(thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::sync(void)@0x405c1a,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 mergeClasses(thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::uflow(void)@0x405c02,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
 mergeClasses(thunk:virtual int std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::sync(void)@0x405d04,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
-mergeClasses(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
-mergeClasses(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
+mergeClasses(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
+mergeClasses(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6,std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b)
 mergeClasses(thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::imbue(class std::locale const &)@0x405c20,std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd)
-mergeClasses(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
-mergeClasses(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
+mergeClasses(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
+mergeClasses(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
 mergeClasses(thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::imbue(class std::locale const &)@0x405d0a,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
-mergeClasses(thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec,std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77)
+mergeClasses(thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec,std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4)
 method('anonymous namespace 0x820ee722'::JobTracker::scalar_deleting_destructor@0x40f64a)
 method('anonymous namespace 0x820ee722'::PeerTracker::scalar_deleting_destructor@0x40f668)
 method(* __cdecl operator new(unsigned int)@0x405f5d)
@@ -9991,10 +9995,10 @@ vftableSizeTotal(776)
 %   {thunk:_memcpy@0x406ce4}
 %   {thunk:_memset@0x406a9a}
 %   {thunk:_terminate@0x406b48}
-%   {thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0, thunk:* std::basic_ostringstream<char, CHAR_TRAITS, CHAR_ALLOC >::`vector deleting destructor'(unsigned int)@0x406cea, std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b}
-%   {thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6, thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::showmanyc(void)@0x405bfc, thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::uflow(void)@0x405c02, thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsgetn(char *, __int64)@0x405c08, thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsputn(char const *, __int64)@0x405c0e, thunk:virtual class std::basic_streambuf<char, CHAR_TRAITS > * std::basic_streambuf<char, CHAR_TRAITS >::setbuf(char *, __int64)@0x405c14, thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::sync(void)@0x405c1a, thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::imbue(class std::locale const &)@0x405c20, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::overflow@0x40a5e2, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::pbackfail@0x40a7ae, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekpos@0x40aa51, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::underflow@0x40ac90}
-%   {thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda, thunk:virtual class std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> > * std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::setbuf(wchar_t *, __int64)@0x405cfe, thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::imbue(class std::locale const &)@0x405d0a, thunk:* std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::`vector deleting destructor'(unsigned int)@0x406cf7, std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8}
-%   {thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0, thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::showmanyc(void)@0x405ce6, thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec, thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsgetn(wchar_t *, __int64)@0x405cf2, thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8, thunk:virtual int std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::sync(void)@0x405d04, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::overflow@0x40e35f, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekpos@0x40e81d, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::underflow@0x40ea7e}
+%   {thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Lock(void)@0x405bf0, thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::showmanyc(void)@0x405bfc, thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::uflow(void)@0x405c02, thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsgetn(char *, __int64)@0x405c08, thunk:virtual __int64 std::basic_streambuf<char, CHAR_TRAITS >::xsputn(char const *, __int64)@0x405c0e, thunk:virtual class std::basic_streambuf<char, CHAR_TRAITS > * std::basic_streambuf<char, CHAR_TRAITS >::setbuf(char *, __int64)@0x405c14, thunk:virtual int std::basic_streambuf<char, CHAR_TRAITS >::sync(void)@0x405c1a, thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::imbue(class std::locale const &)@0x405c20, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::scalar_deleting_destructor@0x40a1fd, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::overflow@0x40a5e2, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::pbackfail@0x40a7ae, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekpos@0x40aa51, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::underflow@0x40ac90}
+%   {thunk:virtual std::basic_streambuf<char, CHAR_TRAITS >::_Unlock(void)@0x405bf6, thunk:* std::basic_ostringstream<char, CHAR_TRAITS, CHAR_ALLOC >::`vector deleting destructor'(unsigned int)@0x406cea, std::basic_ostringstream<char, struct std::char_traits<char>, class std::allocator<char> >::basic_ostringstream@0x409f1b, std::basic_stringbuf<char, struct std::char_traits<char>, class std::allocator<char> >::seekoff@0x40a81c}
+%   {thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Lock(void)@0x405cda, thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::showmanyc(void)@0x405ce6, thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsgetn(wchar_t *, __int64)@0x405cf2, thunk:virtual int std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::sync(void)@0x405d04, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::scalar_deleting_destructor@0x40dd77, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::overflow@0x40e35f, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekoff@0x40e5d8, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::seekpos@0x40e81d, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::underflow@0x40ea7e}
+%   {thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::_Unlock(void)@0x405ce0, thunk:virtual unsigned short std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::uflow(void)@0x405cec, thunk:virtual __int64 std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::xsputn(wchar_t const *, __int64)@0x405cf8, thunk:virtual class std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> > * std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::setbuf(wchar_t *, __int64)@0x405cfe, thunk:virtual std::basic_streambuf<wchar_t, struct std::char_traits<wchar_t> >::imbue(class std::locale const &)@0x405d0a, thunk:* std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::`vector deleting destructor'(unsigned int)@0x406cf7, std::basic_stringstream<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_stringstream@0x40dbf4, std::basic_stringbuf<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t> >::pbackfail@0x40e547}
 %   {type_info::scalar_deleting_destructor@0x406a6b}
 %   {type_info::vftable@0x422ae8}
 %   {unsigned __int64 __cdecl sandbox::FilterPostStartupProcessMitigations(unsigned __int64)@0x4184c9}

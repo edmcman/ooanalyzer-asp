@@ -1,12 +1,12 @@
-17:02:08 Grounding...
-17:02:08 Grounding done (0.09s)
-17:02:08 Solving...
-17:02:08 Model found (0.16s): [-36, -3776]
-17:02:08 Lower bound: [-36, -5547]  upper: [-36, -3776]  gap: [0, 1771] (0.16s)
-17:02:08 Model found (0.16s, +0.00s): [-36, -3856]
-17:02:08 Model found (0.17s, +0.01s): [-36, -5522]
-17:02:08 Lower bound: [-36, -5530]  upper: [-36, -5522]  gap: [0, 8] (0.17s)
-17:02:08 Solving done: OPTIMUM FOUND (0.08s)
+07:53:54 Grounding...
+07:53:55 Grounding done (0.12s)
+07:53:55 Solving...
+07:53:55 Model found (0.25s): [-36, -3776]
+07:53:55 Lower bound: [-36, -5547]  upper: [-36, -3776]  gap: [0, 1771] (0.25s)
+07:53:55 Model found (0.25s, +0.01s): [-36, -3856]
+07:53:55 Model found (0.26s, +0.01s): [-36, -5522]
+07:53:55 Lower bound: [-36, -5530]  upper: [-36, -5522]  gap: [0, 8] (0.27s)
+07:53:55 Solving done: OPTIMUM FOUND (0.14s)
 % Command: ooanalyzer.py examples/ooa/optionparser/example_arg.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/optionparser/example_arg.exe.results
 OPTIMUM FOUND
 
@@ -346,25 +346,25 @@ Optimization: -36 -5522
 %     ~embeddedObject: 3/3
 %       objectInObject(option::Parser::StoreOptionAction::vftable@0x41b964,option::Parser::Action::vftable@0x41b974,0) objectInObject(option::Stats::CountOptionsAction::vftable@0x41b984,option::Parser::Action::vftable@0x41b974,0)
 %       objectInObject(option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::vftable@0x41b998,option::PrintUsageImplementation::IStringWriter::vftable@0x41b9a4,0)
-17:02:08 Writing results to examples/ooa/optionparser/example_arg.exe.results
+07:53:55 Writing results to examples/ooa/optionparser/example_arg.exe.results
 
 % Stats:
-%   atoms: 18043.0
-%   bodies: 11469.0
-%   rules: 26000.0
-%   variables: 12427.0
-%   constraints: 325.0
-%   choices: 1923.0
-%   conflicts: 48.0
+%   atoms: 17922.0
+%   bodies: 11504.0
+%   rules: 26024.0
+%   variables: 12485.0
+%   constraints: 333.0
+%   choices: 1921.0
+%   conflicts: 53.0
 %   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-36.0, -5522.0]
 %   lower_bound: [-36.0, -5522.0]
-%   total_time: 0.190446138381958
-%   ground_time: 0.0943248890000632
-%   time_to_first_model: 0.16039275700018152
-%   max_rss_bytes: 57028608
-%   solve_time: 0.014032125473022461
+%   total_time: 0.2841789722442627
+%   ground_time: 0.12319545890204608
+%   time_to_first_model: 0.24660502199549228
+%   max_rss_bytes: 49545216
+%   solve_time: 0.022413015365600586
 classCallsMethod(option::Option::Option@0x4134c0,option::Option::init@0x4125f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::first@0x4123f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::last@0x4124c0)
@@ -1211,7 +1211,6 @@ mergeClasses(tramp:virtual option::PrintUsageImplementation::IStringWriter::oper
 mergeClasses(tramp:virtual option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(const *, unsigned int, unsigned int, struct _iobuf *) , struct _iobuf>::operator()(char const *, int)@0x411262,option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::StreamWriter@0x415650)
 mergeClasses(type_info::vector_deleting_destructor@0x415ec0,type_info::_type_info_dtor_internal_method@0x41f28c)
 mergeClasses(type_info::vector_deleting_destructor@0x415ec0,type_info::vftable@0x41bf30)
-mergeClasses(type_info::vftable@0x41bf30,type_info::_type_info_dtor_internal_method@0x41f28c)
 mergeClasses(type_info::vftable@0x41bf30,type_info::type_info@0x415e90)
 method(4288242)
 method(4291139)

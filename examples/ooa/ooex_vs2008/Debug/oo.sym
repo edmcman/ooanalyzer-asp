@@ -1,12 +1,12 @@
-17:02:08 Grounding...
-17:02:08 Grounding done (0.08s)
-17:02:08 Solving...
-17:02:08 Model found (0.19s): [-28, -3242]
-17:02:08 Lower bound: [-28, -3540]  upper: [-28, -3242]  gap: [0, 298] (0.20s)
-17:02:08 Model found (0.20s, +0.00s): [-28, -3292]
-17:02:08 Model found (0.20s, +0.00s): [-28, -3302]
-17:02:08 Model found (0.20s, +0.00s): [-28, -3523]
-17:02:08 Solving done: OPTIMUM FOUND (0.12s)
+07:53:53 Grounding...
+07:53:53 Grounding done (0.15s)
+07:53:53 Solving...
+07:53:54 Model found (0.36s): [-28, -3242]
+07:53:54 Lower bound: [-28, -3540]  upper: [-28, -3242]  gap: [0, 298] (0.37s)
+07:53:54 Model found (0.37s, +0.01s): [-28, -3292]
+07:53:54 Model found (0.38s, +0.01s): [-28, -3302]
+07:53:54 Model found (0.39s, +0.01s): [-28, -3523]
+07:53:54 Solving done: OPTIMUM FOUND (0.24s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/oo.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/oo.results
 OPTIMUM FOUND
 
@@ -245,25 +245,25 @@ Optimization: -28 -3523
 %     ~embeddedObject: 4/4
 %       objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls1::`vftable'@0x417860,0) objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls2::`vftable'@0x41787c,12)
 %       objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417824,const Cls1::`vftable'@0x417860,0) objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417824,const Cls2::`vftable'@0x41787c,12)
-17:02:08 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
+07:53:54 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
 
 % Stats:
-%   atoms: 27896.0
-%   bodies: 15428.0
-%   rules: 31281.0
-%   variables: 10525.0
-%   constraints: 124.0
-%   choices: 1634.0
-%   conflicts: 25.0
+%   atoms: 27800.0
+%   bodies: 15396.0
+%   rules: 31240.0
+%   variables: 10330.0
+%   constraints: 133.0
+%   choices: 1160.0
+%   conflicts: 19.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -3523.0]
 %   lower_bound: [-28.0, -3523.0]
-%   total_time: 0.21321320533752441
-%   ground_time: 0.08140720300002613
-%   time_to_first_model: 0.192271030000029
-%   max_rss_bytes: 66252800
-%   solve_time: 0.01609206199645996
+%   total_time: 0.40592193603515625
+%   ground_time: 0.1528604889754206
+%   time_to_first_model: 0.36394627403933555
+%   max_rss_bytes: 58068992
+%   solve_time: 0.030347108840942383
 classCallsMethod(Cls3::Cls3(void)@0x411860,Cls1::Cls1(void)@0x411a70)
 classCallsMethod(const Cls1::`vftable'@0x417860,virtual Cls1::func1(void)@0x411ac0)
 classCallsMethod(const Cls2::`vftable'@0x41787c,virtual Cls2::func3(void)@0x411b90)
@@ -692,9 +692,7 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(Cls1::Cls1(void)@0x411a70,const Cls1::`vftable'@0x417860)
 mergeClasses(Cls1::func2(void)@0x4117e0,Cls1::Cls1(void)@0x411a70)
-mergeClasses(Cls1::func2(void)@0x4117e0,const Cls1::`vftable'@0x417860)
 mergeClasses(bool std::ios_base::good(void)const@0x41b308,int std::ios_base::flags(void)const@0x41b33c)
 mergeClasses(bool std::ios_base::good(void)const@0x41b308,int std::ios_base::width(int)@0x41b320)
 mergeClasses(bool std::ios_base::good(void)const@0x41b308,int std::ios_base::width(void)const@0x41b340)
@@ -707,7 +705,6 @@ mergeClasses(const Cls1::`vftable'@0x417860,Cls1::Cls1(void)@0x411a70)
 mergeClasses(const Cls2::`vftable'@0x41787c,Cls2::Cls2(void)@0x411b40)
 mergeClasses(const Cls3::`vftable'{for `Cls1'}@0x417824,Cls3::Cls3(void)@0x411860)
 mergeClasses(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls3::`vftable'{for `Cls1'}@0x417824)
-mergeClasses(const type_info::`vftable'@0x41789c,type_info::_type_info_dtor_internal_method(void)@0x41b3a8)
 mergeClasses(const type_info::`vftable'@0x41789c,type_info::type_info(class type_info const &)@0x412800)
 mergeClasses(int std::basic_streambuf<char, CHAR_TRAITS>::sputn(char const *, int)@0x41b324,int std::basic_streambuf<char, CHAR_TRAITS>::sputc(char)@0x41b330)
 mergeClasses(int std::ios_base::flags(void)const@0x41b33c,int std::ios_base::width(void)const@0x41b340)

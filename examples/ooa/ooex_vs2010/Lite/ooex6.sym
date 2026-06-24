@@ -1,26 +1,25 @@
-17:02:08 Grounding...
-17:02:08 Grounding done (0.03s)
-17:02:08 Solving...
-17:02:09 Model found (0.06s): [-48, -1916]
-17:02:09 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.06s)
-17:02:09 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.06s)
-17:02:09 Lower bound: [-48, -2415]  upper: [-48, -1916]  gap: [0, 499] (0.06s)
-17:02:09 Lower bound: [-48, -2405]  upper: [-48, -1916]  gap: [0, 489] (0.06s)
-17:02:09 Lower bound: [-48, -2395]  upper: [-48, -1916]  gap: [0, 479] (0.06s)
-17:02:09 Lower bound: [-48, -2385]  upper: [-48, -1916]  gap: [0, 469] (0.06s)
-17:02:09 Lower bound: [-48, -2375]  upper: [-48, -1916]  gap: [0, 459] (0.06s)
-17:02:09 Lower bound: [-48, -2365]  upper: [-48, -1916]  gap: [0, 449] (0.06s)
-17:02:09 Lower bound: [-48, -2355]  upper: [-48, -1916]  gap: [0, 439] (0.06s)
-17:02:09 Model found (0.06s, +0.00s): [-48, -2181]
-17:02:09 Model found (0.07s, +0.00s): [-48, -2245]
-17:02:09 Model found (0.07s, +0.00s): [-48, -2322]
-17:02:09 Lower bound: [-48, -2338]  upper: [-48, -2322]  gap: [0, 16] (0.07s)
-17:02:09 Model found (0.07s, +0.00s): [-48, -2330]
-17:02:09 Solving done: OPTIMUM FOUND (0.04s)
+07:53:54 Grounding...
+07:53:54 Grounding done (0.06s)
+07:53:54 Solving...
+07:53:54 Model found (0.11s): [-48, -1916]
+07:53:54 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.11s)
+07:53:54 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.11s)
+07:53:54 Lower bound: [-48, -2415]  upper: [-48, -1916]  gap: [0, 499] (0.12s)
+07:53:54 Lower bound: [-48, -2405]  upper: [-48, -1916]  gap: [0, 489] (0.12s)
+07:53:54 Lower bound: [-48, -2395]  upper: [-48, -1916]  gap: [0, 479] (0.12s)
+07:53:54 Lower bound: [-48, -2385]  upper: [-48, -1916]  gap: [0, 469] (0.12s)
+07:53:54 Lower bound: [-48, -2375]  upper: [-48, -1916]  gap: [0, 459] (0.12s)
+07:53:54 Lower bound: [-48, -2365]  upper: [-48, -1916]  gap: [0, 449] (0.12s)
+07:53:54 Lower bound: [-48, -2355]  upper: [-48, -1916]  gap: [0, 439] (0.12s)
+07:53:54 Model found (0.12s, +0.01s): [-48, -2245]
+07:53:54 Model found (0.12s, +0.00s): [-48, -2322]
+07:53:54 Lower bound: [-48, -2338]  upper: [-48, -2322]  gap: [0, 16] (0.12s)
+07:53:54 Model found (0.13s, +0.00s): [-48, -2330]
+07:53:54 Solving done: OPTIMUM FOUND (0.07s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex6.results
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 4
 Optimization: -48 -2330
 
 % Equivalence classes (167 classes, 187 entities):
@@ -190,25 +189,25 @@ Optimization: -48 -2330
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(const Derived::`vftable'@0x406150,const Base::`vftable'@0x406140,0) objectInObject(const std::bad_alloc::`vftable'@0x40616c,const std::exception::`vftable'@0x406bc4,0)
-17:02:09 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
+07:53:54 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
 
 % Stats:
-%   atoms: 10068.0
-%   bodies: 4371.0
-%   rules: 12276.0
-%   variables: 3789.0
-%   constraints: 183.0
-%   choices: 1531.0
-%   conflicts: 27.0
-%   models: 5.0
+%   atoms: 9984.0
+%   bodies: 4341.0
+%   rules: 12238.0
+%   variables: 3802.0
+%   constraints: 197.0
+%   choices: 1375.0
+%   conflicts: 22.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-48.0, -2330.0]
 %   lower_bound: [-48.0, -2330.0]
-%   total_time: 0.0800020694732666
-%   ground_time: 0.032248814000013226
-%   time_to_first_model: 0.05989816300007078
-%   max_rss_bytes: 45137920
-%   solve_time: 0.011780023574829102
+%   total_time: 0.14486098289489746
+%   ground_time: 0.060607605963014066
+%   time_to_first_model: 0.112012924044393
+%   max_rss_bytes: 36175872
+%   solve_time: 0.0164949893951416
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func1(void)@0x401020)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func2(void)@0x401040)
@@ -532,13 +531,11 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(Base::Base(void)@0x401000,const Base::`vftable'@0x406140)
 mergeClasses(Base::Base(void)@0x401000,virtual int Base::func1(void)@0x401020)
 mergeClasses(Base::Base(void)@0x401000,virtual int Base::func2(void)@0x401040)
 mergeClasses(Derived::Derived(void)@0x401060,virtual * Derived::`vector deleting destructor'(unsigned int)@0x4010c0)
 mergeClasses(Derived::Derived(void)@0x401060,virtual Derived::~Derived(void)@0x4010a0)
 mergeClasses(Derived::Derived(void)@0x401060,virtual int Derived::func3(void)@0x4010b0)
-mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x401caf,const std::exception::`vftable'@0x406bc4)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x401caf,std::exception::exception(class std::exception const &)@0x401d16)
 mergeClasses(const Base::`vftable'@0x406140,Base::Base(void)@0x401000)
 mergeClasses(const Derived::`vftable'@0x406150,Derived::Derived(void)@0x401060)
@@ -546,16 +543,13 @@ mergeClasses(const std::bad_alloc::`vftable'@0x40616c,std::bad_alloc::bad_alloc(
 mergeClasses(const std::exception::`vftable'@0x406bc4,std::exception::exception(char const * const &, int)@0x401c27)
 mergeClasses(const std::exception::`vftable'@0x406bc4,std::exception::exception(class std::exception const &)@0x401d16)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401c51,class std::exception & std::exception::operator=(class std::exception const &)@0x401caf)
-mergeClasses(std::exception::_Copy_str(char const *)@0x401c51,const std::exception::`vftable'@0x406bc4)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401c51,std::exception::_Tidy(void)@0x401c91)
 mergeClasses(std::exception::_Tidy(void)@0x401c91,class std::exception & std::exception::operator=(class std::exception const &)@0x401caf)
-mergeClasses(std::exception::_Tidy(void)@0x401c91,const std::exception::`vftable'@0x406bc4)
 mergeClasses(std::exception::_Tidy(void)@0x401c91,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401cef)
 mergeClasses(std::exception::exception(char const * const &, int)@0x401c27,std::exception::exception(class std::exception const &)@0x401d16)
 mergeClasses(std::exception::exception(char const * const &, int)@0x401c27,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401cef)
 mergeClasses(std::exception::exception(char const * const &, int)@0x401c27,virtual char const * std::exception::what(void)const@0x401c44)
 mergeClasses(std::exception::exception(char const * const &, int)@0x401c27,virtual std::exception::~exception(void)@0x401ce4)
-mergeClasses(std::exception::exception(class std::exception const &)@0x401d16,const std::exception::`vftable'@0x406bc4)
 mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@0x4010c0,const Derived::`vftable'@0x406150)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011b8,const std::bad_alloc::`vftable'@0x40616c)
 mergeClasses(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011b8,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011df)
@@ -569,13 +563,13 @@ mergeClasses(virtual char const * std::exception::what(void)const@0x401c44,std::
 mergeClasses(virtual char const * std::exception::what(void)const@0x401c44,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401cef)
 mergeClasses(virtual char const * std::exception::what(void)const@0x401c44,virtual std::exception::~exception(void)@0x401ce4)
 mergeClasses(virtual int Base::func1(void)@0x401020,const Base::`vftable'@0x406140)
+mergeClasses(virtual int Base::func1(void)@0x401020,virtual int Base::func2(void)@0x401040)
 mergeClasses(virtual int Base::func2(void)@0x401040,const Base::`vftable'@0x406140)
 mergeClasses(virtual int Derived::func3(void)@0x4010b0,const Derived::`vftable'@0x406150)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x4011ad,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011df)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x4011ad,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011b8)
 mergeClasses(virtual std::exception::~exception(void)@0x401ce4,std::exception::exception(class std::exception const &)@0x401d16)
 mergeClasses(virtual std::exception::~exception(void)@0x401ce4,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401cef)
-mergeClasses(virtual type_info::~type_info(void)@0x401126,const type_info::`vftable'@0x406164)
 mergeClasses(virtual type_info::~type_info(void)@0x401126,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401136)
 method($LN10@0x401477)
 method($LN11_0@0x4018a7)

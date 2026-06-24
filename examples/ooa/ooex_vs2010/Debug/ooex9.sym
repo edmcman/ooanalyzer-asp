@@ -1,24 +1,24 @@
-17:04:28 Grounding...
-17:04:28 Grounding done (0.09s)
-17:04:28 Solving...
-17:04:28 Model found (0.15s): [-40, -2458]
-17:04:28 Lower bound: [-40, -2724]  upper: [-40, -2458]  gap: [0, 266] (0.15s)
-17:04:28 Lower bound: [-40, -2714]  upper: [-40, -2458]  gap: [0, 256] (0.15s)
-17:04:28 Lower bound: [-40, -2704]  upper: [-40, -2458]  gap: [0, 246] (0.15s)
-17:04:28 Lower bound: [-40, -2694]  upper: [-40, -2458]  gap: [0, 236] (0.15s)
-17:04:28 Lower bound: [-40, -2684]  upper: [-40, -2458]  gap: [0, 226] (0.15s)
-17:04:28 Lower bound: [-40, -2674]  upper: [-40, -2458]  gap: [0, 216] (0.15s)
-17:04:28 Lower bound: [-40, -2664]  upper: [-40, -2458]  gap: [0, 206] (0.15s)
-17:04:28 Lower bound: [-40, -2654]  upper: [-40, -2458]  gap: [0, 196] (0.16s)
-17:04:28 Model found (0.16s, +0.01s): [-40, -2488]
-17:04:28 Lower bound: [-40, -2644]  upper: [-40, -2488]  gap: [0, 156] (0.16s)
-17:04:28 Model found (0.16s, +0.00s): [-40, -2498]
-17:04:28 Model found (0.17s, +0.00s): [-40, -2508]
-17:04:28 Lower bound: [-40, -2635]  upper: [-40, -2508]  gap: [0, 127] (0.17s)
-17:04:28 Lower bound: [-40, -2626]  upper: [-40, -2508]  gap: [0, 118] (0.17s)
-17:04:28 Model found (0.17s, +0.00s): [-40, -2610]
-17:04:28 Lower bound: [-40, -2618]  upper: [-40, -2610]  gap: [0, 8] (0.17s)
-17:04:28 Solving done: OPTIMUM FOUND (0.08s)
+07:53:53 Grounding...
+07:53:54 Grounding done (0.12s)
+07:53:54 Solving...
+07:53:54 Model found (0.20s): [-40, -2458]
+07:53:54 Lower bound: [-40, -2724]  upper: [-40, -2458]  gap: [0, 266] (0.20s)
+07:53:54 Lower bound: [-40, -2714]  upper: [-40, -2458]  gap: [0, 256] (0.20s)
+07:53:54 Lower bound: [-40, -2704]  upper: [-40, -2458]  gap: [0, 246] (0.20s)
+07:53:54 Lower bound: [-40, -2694]  upper: [-40, -2458]  gap: [0, 236] (0.20s)
+07:53:54 Lower bound: [-40, -2684]  upper: [-40, -2458]  gap: [0, 226] (0.20s)
+07:53:54 Lower bound: [-40, -2674]  upper: [-40, -2458]  gap: [0, 216] (0.20s)
+07:53:54 Lower bound: [-40, -2664]  upper: [-40, -2458]  gap: [0, 206] (0.21s)
+07:53:54 Lower bound: [-40, -2654]  upper: [-40, -2458]  gap: [0, 196] (0.22s)
+07:53:54 Model found (0.22s, +0.02s): [-40, -2488]
+07:53:54 Lower bound: [-40, -2644]  upper: [-40, -2488]  gap: [0, 156] (0.22s)
+07:53:54 Model found (0.22s, +0.00s): [-40, -2498]
+07:53:54 Model found (0.22s, +0.00s): [-40, -2508]
+07:53:54 Lower bound: [-40, -2635]  upper: [-40, -2508]  gap: [0, 127] (0.22s)
+07:53:54 Lower bound: [-40, -2626]  upper: [-40, -2508]  gap: [0, 118] (0.22s)
+07:53:54 Model found (0.23s, +0.00s): [-40, -2610]
+07:53:54 Lower bound: [-40, -2618]  upper: [-40, -2610]  gap: [0, 8] (0.23s)
+07:53:54 Solving done: OPTIMUM FOUND (0.11s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
 OPTIMUM FOUND
 
@@ -222,25 +222,25 @@ Optimization: -40 -2610
 %       objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
 %       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
 %       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
-17:04:28 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+07:53:54 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
 
 % Stats:
-%   atoms: 10384.0
-%   bodies: 9836.0
-%   rules: 22147.0
-%   variables: 8578.0
-%   constraints: 395.0
-%   choices: 10231.0
-%   conflicts: 105.0
+%   atoms: 10347.0
+%   bodies: 9828.0
+%   rules: 22126.0
+%   variables: 8590.0
+%   constraints: 402.0
+%   choices: 10265.0
+%   conflicts: 103.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-40.0, -2610.0]
 %   lower_bound: [-40.0, -2610.0]
-%   total_time: 0.1794130802154541
-%   ground_time: 0.08744979499988403
-%   time_to_first_model: 0.14592088499989586
-%   max_rss_bytes: 53444608
-%   solve_time: 0.026751995086669922
+%   total_time: 0.23801112174987793
+%   ground_time: 0.11712831992190331
+%   time_to_first_model: 0.19978181400801986
+%   max_rss_bytes: 45613056
+%   solve_time: 0.030285120010375977
 classCallsMethod(D::D(void)@0x4115f0,B::B(void)@0x411760)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411720)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411720)
@@ -610,7 +610,6 @@ mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `B'}@0x
 mergeClasses(const D::`vftable'{for `A'}@0x416740,const D::`vftable'{for `C'}@0x41674c)
 mergeClasses(const D::`vftable'{for `B'}@0x416758,D::D(void)@0x4115f0)
 mergeClasses(const D::`vftable'{for `C'}@0x41674c,const D::`vftable'{for `B'}@0x416758)
-mergeClasses(const type_info::`vftable'@0x4167d4,type_info::_type_info_dtor_internal_method(void)@0x41a270)
 mergeClasses(const type_info::`vftable'@0x4167d4,type_info::type_info(class type_info const &)@0x411bf0)
 mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0)
 mergeClasses(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840)

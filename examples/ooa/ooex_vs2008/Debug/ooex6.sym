@@ -1,15 +1,15 @@
-17:02:08 Grounding...
-17:02:08 Grounding done (0.04s)
-17:02:08 Solving...
-17:02:08 Model found (0.06s): [-32, -2418]
-17:02:08 Lower bound: [-32, -2715]  upper: [-32, -2418]  gap: [0, 297] (0.06s)
-17:02:08 Lower bound: [-32, -2705]  upper: [-32, -2418]  gap: [0, 287] (0.06s)
-17:02:08 Model found (0.07s, +0.00s): [-32, -2518]
-17:02:08 Lower bound: [-32, -2696]  upper: [-32, -2518]  gap: [0, 178] (0.07s)
-17:02:08 Lower bound: [-32, -2687]  upper: [-32, -2518]  gap: [0, 169] (0.07s)
-17:02:08 Model found (0.07s, +0.00s): [-32, -2671]
-17:02:08 Lower bound: [-32, -2679]  upper: [-32, -2671]  gap: [0, 8] (0.07s)
-17:02:08 Solving done: OPTIMUM FOUND (0.03s)
+07:53:53 Grounding...
+07:53:53 Grounding done (0.05s)
+07:53:53 Solving...
+07:53:53 Model found (0.08s): [-32, -2418]
+07:53:53 Lower bound: [-32, -2715]  upper: [-32, -2418]  gap: [0, 297] (0.08s)
+07:53:53 Lower bound: [-32, -2705]  upper: [-32, -2418]  gap: [0, 287] (0.08s)
+07:53:53 Model found (0.08s, +0.00s): [-32, -2518]
+07:53:53 Lower bound: [-32, -2696]  upper: [-32, -2518]  gap: [0, 178] (0.08s)
+07:53:53 Lower bound: [-32, -2687]  upper: [-32, -2518]  gap: [0, 169] (0.08s)
+07:53:53 Model found (0.08s, +0.00s): [-32, -2671]
+07:53:53 Lower bound: [-32, -2679]  upper: [-32, -2671]  gap: [0, 8] (0.09s)
+07:53:53 Solving done: OPTIMUM FOUND (0.04s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex6.results
 OPTIMUM FOUND
 
@@ -192,25 +192,25 @@ Optimization: -32 -2671
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const Derived::`vftable'@0x416740,const Base::`vftable'@0x416758,0)
-17:02:08 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
+07:53:53 Writing results to examples/ooa/ooex_vs2008/Debug/ooex6.results
 
 % Stats:
-%   atoms: 7883.0
-%   bodies: 2697.0
-%   rules: 9112.0
-%   variables: 2772.0
-%   constraints: 88.0
-%   choices: 1005.0
-%   conflicts: 27.0
+%   atoms: 7871.0
+%   bodies: 2703.0
+%   rules: 9115.0
+%   variables: 2775.0
+%   constraints: 93.0
+%   choices: 998.0
+%   conflicts: 23.0
 %   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-32.0, -2671.0]
 %   lower_bound: [-32.0, -2671.0]
-%   total_time: 0.07547998428344727
-%   ground_time: 0.042223699000032866
-%   time_to_first_model: 0.06079146399997626
-%   max_rss_bytes: 40411136
-%   solve_time: 0.009619951248168945
+%   total_time: 0.09576892852783203
+%   ground_time: 0.04501354496460408
+%   time_to_first_model: 0.07784989604260772
+%   max_rss_bytes: 33030144
+%   solve_time: 0.009423971176147461
 classCallsMethod(Derived::Derived(void)@0x411590,Base::Base(void)@0x411640)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func1(void)@0x4116b0)
 classCallsMethod(Derived::Derived(void)@0x411590,virtual int Base::func2(void)@0x411710)
@@ -526,13 +526,11 @@ guessEnabled(method)
 guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
-mergeClasses(Base::Base(void)@0x411640,const Base::`vftable'@0x416758)
 mergeClasses(Base::Base(void)@0x411640,virtual int Base::func1(void)@0x4116b0)
 mergeClasses(Base::Base(void)@0x411640,virtual int Base::func2(void)@0x411710)
 mergeClasses(Derived::Derived(void)@0x411590,virtual Derived::~Derived(void)@0x411820)
 mergeClasses(const Base::`vftable'@0x416758,Base::Base(void)@0x411640)
 mergeClasses(const Derived::`vftable'@0x416740,Derived::Derived(void)@0x411590)
-mergeClasses(const type_info::`vftable'@0x41676c,type_info::_type_info_dtor_internal_method(void)@0x419260)
 mergeClasses(const type_info::`vftable'@0x41676c,type_info::type_info(class type_info const &)@0x411b00)
 mergeClasses(thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110cd,Derived::Derived(void)@0x411590)
 mergeClasses(thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110cd,virtual Derived::~Derived(void)@0x411820)
@@ -548,6 +546,7 @@ mergeClasses(virtual * Derived::`vector deleting destructor'(unsigned int)@0x411
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,const type_info::`vftable'@0x41676c)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411b30,type_info::_type_info_dtor_internal_method(void)@0x419260)
 mergeClasses(virtual int Base::func1(void)@0x4116b0,const Base::`vftable'@0x416758)
+mergeClasses(virtual int Base::func1(void)@0x4116b0,virtual int Base::func2(void)@0x411710)
 mergeClasses(virtual int Base::func2(void)@0x411710,const Base::`vftable'@0x416758)
 mergeClasses(virtual int Derived::func3(void)@0x411770,const Derived::`vftable'@0x416740)
 method($LN6_1@0x4130f5)

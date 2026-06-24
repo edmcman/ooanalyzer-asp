@@ -1,9 +1,9 @@
-17:04:27 Grounding...
-17:04:27 Grounding done (0.05s)
-17:04:27 Solving...
-17:04:27 Model found (0.07s): [-2035]
-17:04:27 Model found (0.07s, +0.00s): [-2103]
-17:04:27 Solving done: OPTIMUM FOUND (0.02s)
+07:53:53 Grounding...
+07:53:53 Grounding done (0.03s)
+07:53:53 Solving...
+07:53:53 Model found (0.04s): [-2035]
+07:53:53 Model found (0.04s, +0.00s): [-2103]
+07:53:53 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex2.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex2.results
 OPTIMUM FOUND
 
@@ -146,7 +146,7 @@ Optimization: -2103
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-17:04:27 Writing results to examples/ooa/ooex_vs2010/Debug/ooex2.results
+07:53:53 Writing results to examples/ooa/ooex_vs2010/Debug/ooex2.results
 
 % Stats:
 %   atoms: 5126.0
@@ -160,11 +160,11 @@ Optimization: -2103
 %   optimal_models: 1.0
 %   final_cost: [-2103.0]
 %   lower_bound: [-2103.0]
-%   total_time: 0.0824439525604248
-%   ground_time: 0.049031260999981896
-%   time_to_first_model: 0.06682840500002385
-%   max_rss_bytes: 37871616
-%   solve_time: 0.0036668777465820312
+%   total_time: 0.047801971435546875
+%   ground_time: 0.027492549968883395
+%   time_to_first_model: 0.036573527031578124
+%   max_rss_bytes: 29097984
+%   solve_time: 0.0031070709228515625
 classCallsMethod(Derived::Derived(void)@0x4114f0,Base::Base(void)@0x411590)
 classCallsMethod(Derived::Derived(void)@0x4114f0,int Base::func3(void)@0x4115f0)
 classRelatedMethod(Base::Base(void)@0x411590,Derived::Derived(void)@0x4114f0)

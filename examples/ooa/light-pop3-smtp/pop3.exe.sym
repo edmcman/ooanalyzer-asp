@@ -1,107 +1,108 @@
-17:04:29 Grounding...
-17:04:30 Grounding done (1.39s)
-17:04:30 Solving...
-17:04:32 Model found (2.87s): [-36, -13828]
-17:04:32 Model found (2.94s, +0.07s): [-36, -14038]
-17:04:32 Lower bound: [-36, -24929]  upper: [-36, -14038]  gap: [0, 10891] (2.97s)
-17:04:32 Lower bound: [-36, -24920]  upper: [-36, -14038]  gap: [0, 10882] (2.97s)
-17:04:32 Lower bound: [-36, -24911]  upper: [-36, -14038]  gap: [0, 10873] (2.97s)
-17:04:32 Lower bound: [-36, -24902]  upper: [-36, -14038]  gap: [0, 10864] (2.97s)
-17:04:32 Lower bound: [-36, -24893]  upper: [-36, -14038]  gap: [0, 10855] (2.98s)
-17:04:32 Lower bound: [-36, -24884]  upper: [-36, -14038]  gap: [0, 10846] (2.98s)
-17:04:32 Lower bound: [-36, -24875]  upper: [-36, -14038]  gap: [0, 10837] (2.98s)
-17:04:32 Lower bound: [-36, -24866]  upper: [-36, -14038]  gap: [0, 10828] (2.98s)
-17:04:32 Lower bound: [-36, -24857]  upper: [-36, -14038]  gap: [0, 10819] (2.98s)
-17:04:32 Lower bound: [-36, -24848]  upper: [-36, -14038]  gap: [0, 10810] (2.98s)
-17:04:32 Lower bound: [-36, -24839]  upper: [-36, -14038]  gap: [0, 10801] (2.98s)
-17:04:32 Lower bound: [-36, -24830]  upper: [-36, -14038]  gap: [0, 10792] (2.98s)
-17:04:32 Lower bound: [-36, -24821]  upper: [-36, -14038]  gap: [0, 10783] (2.98s)
-17:04:32 Lower bound: [-36, -24812]  upper: [-36, -14038]  gap: [0, 10774] (2.98s)
-17:04:32 Lower bound: [-36, -24803]  upper: [-36, -14038]  gap: [0, 10765] (2.98s)
-17:04:32 Lower bound: [-36, -24794]  upper: [-36, -14038]  gap: [0, 10756] (2.98s)
-17:04:32 Lower bound: [-36, -24785]  upper: [-36, -14038]  gap: [0, 10747] (2.98s)
-17:04:32 Lower bound: [-36, -24776]  upper: [-36, -14038]  gap: [0, 10738] (2.98s)
-17:04:32 Lower bound: [-36, -24767]  upper: [-36, -14038]  gap: [0, 10729] (2.98s)
-17:04:32 Lower bound: [-36, -24758]  upper: [-36, -14038]  gap: [0, 10720] (2.98s)
-17:04:32 Lower bound: [-36, -24749]  upper: [-36, -14038]  gap: [0, 10711] (2.98s)
-17:04:32 Lower bound: [-36, -24740]  upper: [-36, -14038]  gap: [0, 10702] (2.99s)
-17:04:32 Lower bound: [-36, -24731]  upper: [-36, -14038]  gap: [0, 10693] (2.99s)
-17:04:32 Lower bound: [-36, -24722]  upper: [-36, -14038]  gap: [0, 10684] (2.99s)
-17:04:32 Lower bound: [-36, -24713]  upper: [-36, -14038]  gap: [0, 10675] (2.99s)
-17:04:32 Lower bound: [-36, -24704]  upper: [-36, -14038]  gap: [0, 10666] (2.99s)
-17:04:32 Lower bound: [-36, -24695]  upper: [-36, -14038]  gap: [0, 10657] (2.99s)
-17:04:32 Lower bound: [-36, -24686]  upper: [-36, -14038]  gap: [0, 10648] (2.99s)
-17:04:32 Lower bound: [-36, -24677]  upper: [-36, -14038]  gap: [0, 10639] (2.99s)
-17:04:32 Lower bound: [-36, -24668]  upper: [-36, -14038]  gap: [0, 10630] (2.99s)
-17:04:32 Lower bound: [-36, -24659]  upper: [-36, -14038]  gap: [0, 10621] (2.99s)
-17:04:32 Lower bound: [-36, -24650]  upper: [-36, -14038]  gap: [0, 10612] (2.99s)
-17:04:32 Lower bound: [-36, -24641]  upper: [-36, -14038]  gap: [0, 10603] (2.99s)
-17:04:32 Lower bound: [-36, -24632]  upper: [-36, -14038]  gap: [0, 10594] (2.99s)
-17:04:32 Lower bound: [-36, -24623]  upper: [-36, -14038]  gap: [0, 10585] (3.00s)
-17:04:32 Lower bound: [-36, -24614]  upper: [-36, -14038]  gap: [0, 10576] (3.00s)
-17:04:32 Lower bound: [-36, -24605]  upper: [-36, -14038]  gap: [0, 10567] (3.00s)
-17:04:32 Lower bound: [-36, -24596]  upper: [-36, -14038]  gap: [0, 10558] (3.00s)
-17:04:32 Lower bound: [-36, -24587]  upper: [-36, -14038]  gap: [0, 10549] (3.00s)
-17:04:32 Lower bound: [-36, -24578]  upper: [-36, -14038]  gap: [0, 10540] (3.00s)
-17:04:32 Lower bound: [-36, -24569]  upper: [-36, -14038]  gap: [0, 10531] (3.38s)
-17:04:32 Lower bound: [-36, -24560]  upper: [-36, -14038]  gap: [0, 10522] (3.39s)
-17:04:32 Lower bound: [-36, -24551]  upper: [-36, -14038]  gap: [0, 10513] (3.42s)
-17:04:32 Lower bound: [-36, -24542]  upper: [-36, -14038]  gap: [0, 10504] (3.47s)
-17:04:33 Model found (4.02s, +1.08s): [-36, -24068]
-17:04:33 Model found (4.09s, +0.07s): [-36, -24085]
-17:04:33 Lower bound: [-36, -24534]  upper: [-36, -24085]  gap: [0, 449] (4.12s)
-17:04:33 Lower bound: [-36, -24526]  upper: [-36, -24085]  gap: [0, 441] (4.12s)
-17:04:33 Lower bound: [-36, -24518]  upper: [-36, -24085]  gap: [0, 433] (4.12s)
-17:04:33 Lower bound: [-36, -24510]  upper: [-36, -24085]  gap: [0, 425] (4.13s)
-17:04:33 Lower bound: [-36, -24502]  upper: [-36, -24085]  gap: [0, 417] (4.13s)
-17:04:33 Lower bound: [-36, -24494]  upper: [-36, -24085]  gap: [0, 409] (4.13s)
-17:04:33 Lower bound: [-36, -24486]  upper: [-36, -24085]  gap: [0, 401] (4.13s)
-17:04:33 Lower bound: [-36, -24478]  upper: [-36, -24085]  gap: [0, 393] (4.13s)
-17:04:33 Lower bound: [-36, -24470]  upper: [-36, -24085]  gap: [0, 385] (4.13s)
-17:04:33 Lower bound: [-36, -24462]  upper: [-36, -24085]  gap: [0, 377] (4.14s)
-17:04:33 Lower bound: [-36, -24454]  upper: [-36, -24085]  gap: [0, 369] (4.14s)
-17:04:33 Lower bound: [-36, -24446]  upper: [-36, -24085]  gap: [0, 361] (4.14s)
-17:04:33 Lower bound: [-36, -24438]  upper: [-36, -24085]  gap: [0, 353] (4.14s)
-17:04:33 Lower bound: [-36, -24430]  upper: [-36, -24085]  gap: [0, 345] (4.14s)
-17:04:33 Lower bound: [-36, -24422]  upper: [-36, -24085]  gap: [0, 337] (4.14s)
-17:04:33 Lower bound: [-36, -24414]  upper: [-36, -24085]  gap: [0, 329] (4.14s)
-17:04:33 Lower bound: [-36, -24406]  upper: [-36, -24085]  gap: [0, 321] (4.14s)
-17:04:33 Lower bound: [-36, -24398]  upper: [-36, -24085]  gap: [0, 313] (4.15s)
-17:04:33 Lower bound: [-36, -24390]  upper: [-36, -24085]  gap: [0, 305] (4.15s)
-17:04:33 Lower bound: [-36, -24382]  upper: [-36, -24085]  gap: [0, 297] (4.15s)
-17:04:33 Lower bound: [-36, -24374]  upper: [-36, -24085]  gap: [0, 289] (4.15s)
-17:04:33 Lower bound: [-36, -24358]  upper: [-36, -24085]  gap: [0, 273] (4.16s)
-17:04:33 Lower bound: [-36, -24350]  upper: [-36, -24085]  gap: [0, 265] (4.17s)
-17:04:33 Lower bound: [-36, -24342]  upper: [-36, -24085]  gap: [0, 257] (4.18s)
-17:04:33 Lower bound: [-36, -24334]  upper: [-36, -24085]  gap: [0, 249] (4.19s)
-17:04:33 Lower bound: [-36, -24326]  upper: [-36, -24085]  gap: [0, 241] (4.20s)
-17:04:33 Lower bound: [-36, -24310]  upper: [-36, -24085]  gap: [0, 225] (4.21s)
-17:04:33 Lower bound: [-36, -24302]  upper: [-36, -24085]  gap: [0, 217] (4.22s)
-17:04:33 Lower bound: [-36, -24294]  upper: [-36, -24085]  gap: [0, 209] (4.23s)
-17:04:33 Lower bound: [-36, -24286]  upper: [-36, -24085]  gap: [0, 201] (4.24s)
-17:04:33 Lower bound: [-36, -24278]  upper: [-36, -24085]  gap: [0, 193] (4.24s)
-17:04:33 Lower bound: [-36, -24270]  upper: [-36, -24085]  gap: [0, 185] (4.24s)
-17:04:33 Lower bound: [-36, -24262]  upper: [-36, -24085]  gap: [0, 177] (4.25s)
-17:04:33 Lower bound: [-36, -24254]  upper: [-36, -24085]  gap: [0, 169] (4.26s)
-17:04:33 Lower bound: [-36, -24246]  upper: [-36, -24085]  gap: [0, 161] (4.26s)
-17:04:33 Lower bound: [-36, -24238]  upper: [-36, -24085]  gap: [0, 153] (4.27s)
-17:04:33 Lower bound: [-36, -24230]  upper: [-36, -24085]  gap: [0, 145] (4.27s)
-17:04:33 Lower bound: [-36, -24222]  upper: [-36, -24085]  gap: [0, 137] (4.27s)
-17:04:33 Lower bound: [-36, -24214]  upper: [-36, -24085]  gap: [0, 129] (4.27s)
-17:04:33 Lower bound: [-36, -24206]  upper: [-36, -24085]  gap: [0, 121] (4.28s)
-17:04:33 Lower bound: [-36, -24198]  upper: [-36, -24085]  gap: [0, 113] (4.29s)
-17:04:33 Lower bound: [-36, -24190]  upper: [-36, -24085]  gap: [0, 105] (4.29s)
-17:04:33 Lower bound: [-36, -24182]  upper: [-36, -24085]  gap: [0, 97] (4.29s)
-17:04:33 Lower bound: [-36, -24174]  upper: [-36, -24085]  gap: [0, 89] (4.29s)
-17:04:33 Lower bound: [-36, -24166]  upper: [-36, -24085]  gap: [0, 81] (4.30s)
-17:04:33 Model found (4.34s, +0.25s): [-36, -24117]
-17:04:33 Lower bound: [-36, -24159]  upper: [-36, -24117]  gap: [0, 42] (4.40s)
-17:04:33 Lower bound: [-36, -24152]  upper: [-36, -24117]  gap: [0, 35] (4.41s)
-17:04:33 Lower bound: [-36, -24145]  upper: [-36, -24117]  gap: [0, 28] (4.42s)
-17:04:33 Lower bound: [-36, -24138]  upper: [-36, -24117]  gap: [0, 21] (4.43s)
-17:04:33 Lower bound: [-36, -24131]  upper: [-36, -24117]  gap: [0, 14] (4.44s)
-17:04:33 Lower bound: [-36, -24124]  upper: [-36, -24117]  gap: [0, 7] (4.44s)
-17:04:33 Solving done: OPTIMUM FOUND (3.07s)
+07:53:54 Grounding...
+07:53:56 Grounding done (1.80s)
+07:53:56 Solving...
+07:53:58 Model found (3.93s): [-36, -13828]
+07:53:58 Model found (4.01s, +0.08s): [-36, -14038]
+07:53:58 Lower bound: [-36, -24929]  upper: [-36, -14038]  gap: [0, 10891] (4.07s)
+07:53:58 Lower bound: [-36, -24920]  upper: [-36, -14038]  gap: [0, 10882] (4.07s)
+07:53:58 Lower bound: [-36, -24911]  upper: [-36, -14038]  gap: [0, 10873] (4.08s)
+07:53:58 Lower bound: [-36, -24902]  upper: [-36, -14038]  gap: [0, 10864] (4.08s)
+07:53:58 Lower bound: [-36, -24893]  upper: [-36, -14038]  gap: [0, 10855] (4.08s)
+07:53:58 Lower bound: [-36, -24884]  upper: [-36, -14038]  gap: [0, 10846] (4.08s)
+07:53:58 Lower bound: [-36, -24875]  upper: [-36, -14038]  gap: [0, 10837] (4.08s)
+07:53:58 Lower bound: [-36, -24866]  upper: [-36, -14038]  gap: [0, 10828] (4.08s)
+07:53:58 Lower bound: [-36, -24857]  upper: [-36, -14038]  gap: [0, 10819] (4.08s)
+07:53:58 Lower bound: [-36, -24848]  upper: [-36, -14038]  gap: [0, 10810] (4.08s)
+07:53:58 Lower bound: [-36, -24839]  upper: [-36, -14038]  gap: [0, 10801] (4.08s)
+07:53:58 Lower bound: [-36, -24830]  upper: [-36, -14038]  gap: [0, 10792] (4.08s)
+07:53:58 Lower bound: [-36, -24821]  upper: [-36, -14038]  gap: [0, 10783] (4.08s)
+07:53:58 Lower bound: [-36, -24812]  upper: [-36, -14038]  gap: [0, 10774] (4.08s)
+07:53:58 Lower bound: [-36, -24803]  upper: [-36, -14038]  gap: [0, 10765] (4.09s)
+07:53:58 Lower bound: [-36, -24794]  upper: [-36, -14038]  gap: [0, 10756] (4.09s)
+07:53:58 Lower bound: [-36, -24785]  upper: [-36, -14038]  gap: [0, 10747] (4.09s)
+07:53:58 Lower bound: [-36, -24776]  upper: [-36, -14038]  gap: [0, 10738] (4.09s)
+07:53:58 Lower bound: [-36, -24767]  upper: [-36, -14038]  gap: [0, 10729] (4.09s)
+07:53:58 Lower bound: [-36, -24758]  upper: [-36, -14038]  gap: [0, 10720] (4.09s)
+07:53:58 Lower bound: [-36, -24749]  upper: [-36, -14038]  gap: [0, 10711] (4.09s)
+07:53:58 Lower bound: [-36, -24740]  upper: [-36, -14038]  gap: [0, 10702] (4.09s)
+07:53:58 Lower bound: [-36, -24731]  upper: [-36, -14038]  gap: [0, 10693] (4.09s)
+07:53:58 Lower bound: [-36, -24722]  upper: [-36, -14038]  gap: [0, 10684] (4.09s)
+07:53:58 Lower bound: [-36, -24713]  upper: [-36, -14038]  gap: [0, 10675] (4.09s)
+07:53:58 Lower bound: [-36, -24704]  upper: [-36, -14038]  gap: [0, 10666] (4.09s)
+07:53:58 Lower bound: [-36, -24695]  upper: [-36, -14038]  gap: [0, 10657] (4.09s)
+07:53:58 Lower bound: [-36, -24686]  upper: [-36, -14038]  gap: [0, 10648] (4.10s)
+07:53:58 Lower bound: [-36, -24677]  upper: [-36, -14038]  gap: [0, 10639] (4.10s)
+07:53:58 Lower bound: [-36, -24668]  upper: [-36, -14038]  gap: [0, 10630] (4.10s)
+07:53:58 Lower bound: [-36, -24659]  upper: [-36, -14038]  gap: [0, 10621] (4.10s)
+07:53:58 Lower bound: [-36, -24650]  upper: [-36, -14038]  gap: [0, 10612] (4.10s)
+07:53:58 Lower bound: [-36, -24641]  upper: [-36, -14038]  gap: [0, 10603] (4.10s)
+07:53:58 Lower bound: [-36, -24632]  upper: [-36, -14038]  gap: [0, 10594] (4.10s)
+07:53:58 Lower bound: [-36, -24623]  upper: [-36, -14038]  gap: [0, 10585] (4.10s)
+07:53:58 Lower bound: [-36, -24614]  upper: [-36, -14038]  gap: [0, 10576] (4.10s)
+07:53:58 Lower bound: [-36, -24605]  upper: [-36, -14038]  gap: [0, 10567] (4.10s)
+07:53:58 Lower bound: [-36, -24596]  upper: [-36, -14038]  gap: [0, 10558] (4.10s)
+07:53:58 Lower bound: [-36, -24587]  upper: [-36, -14038]  gap: [0, 10549] (4.10s)
+07:53:58 Lower bound: [-36, -24578]  upper: [-36, -14038]  gap: [0, 10540] (4.11s)
+07:53:59 Lower bound: [-36, -24569]  upper: [-36, -14038]  gap: [0, 10531] (4.70s)
+07:53:59 Lower bound: [-36, -24560]  upper: [-36, -14038]  gap: [0, 10522] (4.72s)
+07:53:59 Lower bound: [-36, -24551]  upper: [-36, -14038]  gap: [0, 10513] (4.73s)
+07:53:59 Lower bound: [-36, -24542]  upper: [-36, -14038]  gap: [0, 10504] (4.80s)
+07:53:59 Model found (5.64s, +1.63s): [-36, -24068]
+07:54:00 Model found (5.75s, +0.12s): [-36, -24085]
+07:54:00 Lower bound: [-36, -24534]  upper: [-36, -24085]  gap: [0, 449] (5.81s)
+07:54:00 Lower bound: [-36, -24526]  upper: [-36, -24085]  gap: [0, 441] (5.82s)
+07:54:00 Lower bound: [-36, -24518]  upper: [-36, -24085]  gap: [0, 433] (5.82s)
+07:54:00 Lower bound: [-36, -24510]  upper: [-36, -24085]  gap: [0, 425] (5.82s)
+07:54:00 Lower bound: [-36, -24502]  upper: [-36, -24085]  gap: [0, 417] (5.82s)
+07:54:00 Lower bound: [-36, -24494]  upper: [-36, -24085]  gap: [0, 409] (5.83s)
+07:54:00 Lower bound: [-36, -24486]  upper: [-36, -24085]  gap: [0, 401] (5.83s)
+07:54:00 Lower bound: [-36, -24478]  upper: [-36, -24085]  gap: [0, 393] (5.83s)
+07:54:00 Lower bound: [-36, -24470]  upper: [-36, -24085]  gap: [0, 385] (5.84s)
+07:54:00 Lower bound: [-36, -24462]  upper: [-36, -24085]  gap: [0, 377] (5.84s)
+07:54:00 Lower bound: [-36, -24454]  upper: [-36, -24085]  gap: [0, 369] (5.84s)
+07:54:00 Lower bound: [-36, -24446]  upper: [-36, -24085]  gap: [0, 361] (5.84s)
+07:54:00 Lower bound: [-36, -24438]  upper: [-36, -24085]  gap: [0, 353] (5.84s)
+07:54:00 Lower bound: [-36, -24430]  upper: [-36, -24085]  gap: [0, 345] (5.85s)
+07:54:00 Lower bound: [-36, -24422]  upper: [-36, -24085]  gap: [0, 337] (5.85s)
+07:54:00 Lower bound: [-36, -24414]  upper: [-36, -24085]  gap: [0, 329] (5.85s)
+07:54:00 Lower bound: [-36, -24406]  upper: [-36, -24085]  gap: [0, 321] (5.85s)
+07:54:00 Lower bound: [-36, -24398]  upper: [-36, -24085]  gap: [0, 313] (5.86s)
+07:54:00 Lower bound: [-36, -24390]  upper: [-36, -24085]  gap: [0, 305] (5.86s)
+07:54:00 Lower bound: [-36, -24382]  upper: [-36, -24085]  gap: [0, 297] (5.86s)
+07:54:00 Lower bound: [-36, -24374]  upper: [-36, -24085]  gap: [0, 289] (5.86s)
+07:54:00 Lower bound: [-36, -24358]  upper: [-36, -24085]  gap: [0, 273] (5.88s)
+07:54:00 Lower bound: [-36, -24350]  upper: [-36, -24085]  gap: [0, 265] (5.90s)
+07:54:00 Lower bound: [-36, -24342]  upper: [-36, -24085]  gap: [0, 257] (5.91s)
+07:54:00 Lower bound: [-36, -24334]  upper: [-36, -24085]  gap: [0, 249] (5.92s)
+07:54:00 Lower bound: [-36, -24326]  upper: [-36, -24085]  gap: [0, 241] (5.94s)
+07:54:00 Lower bound: [-36, -24318]  upper: [-36, -24085]  gap: [0, 233] (5.94s)
+07:54:00 Lower bound: [-36, -24310]  upper: [-36, -24085]  gap: [0, 225] (5.96s)
+07:54:00 Lower bound: [-36, -24302]  upper: [-36, -24085]  gap: [0, 217] (5.98s)
+07:54:00 Lower bound: [-36, -24294]  upper: [-36, -24085]  gap: [0, 209] (5.98s)
+07:54:00 Lower bound: [-36, -24286]  upper: [-36, -24085]  gap: [0, 201] (5.99s)
+07:54:00 Lower bound: [-36, -24278]  upper: [-36, -24085]  gap: [0, 193] (6.00s)
+07:54:00 Lower bound: [-36, -24270]  upper: [-36, -24085]  gap: [0, 185] (6.01s)
+07:54:00 Lower bound: [-36, -24262]  upper: [-36, -24085]  gap: [0, 177] (6.02s)
+07:54:00 Lower bound: [-36, -24254]  upper: [-36, -24085]  gap: [0, 169] (6.03s)
+07:54:00 Lower bound: [-36, -24246]  upper: [-36, -24085]  gap: [0, 161] (6.04s)
+07:54:00 Lower bound: [-36, -24238]  upper: [-36, -24085]  gap: [0, 153] (6.04s)
+07:54:00 Lower bound: [-36, -24230]  upper: [-36, -24085]  gap: [0, 145] (6.05s)
+07:54:00 Lower bound: [-36, -24222]  upper: [-36, -24085]  gap: [0, 137] (6.05s)
+07:54:00 Lower bound: [-36, -24214]  upper: [-36, -24085]  gap: [0, 129] (6.06s)
+07:54:00 Lower bound: [-36, -24206]  upper: [-36, -24085]  gap: [0, 121] (6.07s)
+07:54:00 Lower bound: [-36, -24198]  upper: [-36, -24085]  gap: [0, 113] (6.07s)
+07:54:00 Lower bound: [-36, -24190]  upper: [-36, -24085]  gap: [0, 105] (6.08s)
+07:54:00 Lower bound: [-36, -24182]  upper: [-36, -24085]  gap: [0, 97] (6.08s)
+07:54:00 Lower bound: [-36, -24174]  upper: [-36, -24085]  gap: [0, 89] (6.09s)
+07:54:00 Lower bound: [-36, -24166]  upper: [-36, -24085]  gap: [0, 81] (6.09s)
+07:54:00 Model found (6.12s, +0.37s): [-36, -24117]
+07:54:00 Lower bound: [-36, -24159]  upper: [-36, -24117]  gap: [0, 42] (6.23s)
+07:54:00 Lower bound: [-36, -24152]  upper: [-36, -24117]  gap: [0, 35] (6.24s)
+07:54:00 Lower bound: [-36, -24145]  upper: [-36, -24117]  gap: [0, 28] (6.26s)
+07:54:00 Lower bound: [-36, -24138]  upper: [-36, -24117]  gap: [0, 21] (6.27s)
+07:54:00 Lower bound: [-36, -24131]  upper: [-36, -24117]  gap: [0, 14] (6.29s)
+07:54:00 Lower bound: [-36, -24124]  upper: [-36, -24117]  gap: [0, 7] (6.30s)
+07:54:00 Solving done: OPTIMUM FOUND (4.52s)
 % Command: ooanalyzer.py examples/ooa/light-pop3-smtp/pop3.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/light-pop3-smtp/pop3.exe.results
 OPTIMUM FOUND
 
@@ -1525,25 +1526,25 @@ Optimization: -36 -24117
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(LSockByteStream::vftable@0x42b7e8,LByteStream::vftable@0x42b7f8,0) objectInObject(LSSLByteStream::vftable@0x42c1ac,LByteStream::vftable@0x42b7f8,0)
-17:04:33 Writing results to examples/ooa/light-pop3-smtp/pop3.exe.results
+07:54:00 Writing results to examples/ooa/light-pop3-smtp/pop3.exe.results
 
 % Stats:
-%   atoms: 184793.0
-%   bodies: 202718.0
-%   rules: 286869.0
-%   variables: 185503.0
-%   constraints: 19421.0
-%   choices: 325294.0
-%   conflicts: 482.0
+%   atoms: 185087.0
+%   bodies: 203525.0
+%   rules: 287669.0
+%   variables: 186214.0
+%   constraints: 19430.0
+%   choices: 325721.0
+%   conflicts: 533.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-36.0, -24117.0]
 %   lower_bound: [-36.0, -24117.0]
-%   total_time: 4.497248888015747
-%   ground_time: 1.3879020550000405
-%   time_to_first_model: 2.8677914740001142
-%   max_rss_bytes: 391168000
-%   solve_time: 1.625135898590088
+%   total_time: 6.367769002914429
+%   ground_time: 1.797485088929534
+%   time_to_first_model: 3.930591858923435
+%   max_rss_bytes: 390242304
+%   solve_time: 2.4427239894866943
 classCallsMethod(LPop3::DELE@0x41b520,LPop3::ReadStatusLine@0x419750)
 classCallsMethod(LPop3::Greeting@0x41aae0,LPop3::ReadStatusLine@0x419750)
 classCallsMethod(LPop3::LIST@0x41b110,LPop3::ReadLISTResponse@0x4199b0)
@@ -5523,7 +5524,6 @@ mergeClasses(tramp:virtual unsigned int LSSLByteStream::RawRecv(*, unsigned int)
 mergeClasses(tramp:virtual unsigned int LSockByteStream::RawRecv(*, unsigned int)@0x411956,LSockByteStream::LSockByteStream@0x4136f0)
 mergeClasses(type_info::vector_deleting_destructor@0x425b40,type_info::_type_info_dtor_internal_method@0x43155c)
 mergeClasses(type_info::vector_deleting_destructor@0x425b40,type_info::vftable@0x42c578)
-mergeClasses(type_info::vftable@0x42c578,type_info::_type_info_dtor_internal_method@0x43155c)
 mergeClasses(type_info::vftable@0x42c578,type_info::type_info@0x425b10)
 method(* __cdecl operator new(unsigned int, *)@0x415b60)
 method(4353346)
