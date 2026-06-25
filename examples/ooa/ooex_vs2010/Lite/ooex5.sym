@@ -1,24 +1,25 @@
-07:53:54 Grounding...
-07:53:54 Grounding done (0.08s)
-07:53:54 Solving...
-07:53:54 Model found (0.15s): [-68, -2096]
-07:53:54 Lower bound: [-80]  upper: [-68, -2096]  gap: [12] (0.15s)
-07:53:54 Lower bound: [-76]  upper: [-68, -2096]  gap: [8] (0.15s)
-07:53:54 Lower bound: [-72]  upper: [-68, -2096]  gap: [4] (0.15s)
-07:53:54 Lower bound: [-72]  upper: [-68, -2096]  gap: [4] (0.15s)
-07:53:54 Lower bound: [-68, -2602]  upper: [-68, -2096]  gap: [0, 506] (0.15s)
-07:53:54 Lower bound: [-68, -2592]  upper: [-68, -2096]  gap: [0, 496] (0.15s)
-07:53:54 Lower bound: [-68, -2582]  upper: [-68, -2096]  gap: [0, 486] (0.15s)
-07:53:54 Lower bound: [-68, -2572]  upper: [-68, -2096]  gap: [0, 476] (0.15s)
-07:53:54 Lower bound: [-68, -2562]  upper: [-68, -2096]  gap: [0, 466] (0.15s)
-07:53:54 Lower bound: [-68, -2552]  upper: [-68, -2096]  gap: [0, 456] (0.16s)
-07:53:54 Lower bound: [-68, -2542]  upper: [-68, -2096]  gap: [0, 446] (0.16s)
-07:53:54 Model found (0.16s, +0.01s): [-68, -2422]
-07:53:54 Model found (0.16s, +0.00s): [-68, -2449]
-07:53:54 Model found (0.16s, +0.00s): [-68, -2526]
-07:53:54 Lower bound: [-68, -2534]  upper: [-68, -2526]  gap: [0, 8] (0.17s)
-07:53:54 Model found (0.17s, +0.01s): [-68, -2534]
-07:53:54 Solving done: OPTIMUM FOUND (0.09s)
+08:02:12 using native Rust &sameClass propagator
+08:02:12 Grounding...
+08:02:12 Grounding done (0.02s)
+08:02:12 Solving...
+08:02:12 Model found (0.03s): [-68, -2096]
+08:02:12 Lower bound: [-80]  upper: [-68, -2096]  gap: [12] (0.03s)
+08:02:12 Lower bound: [-76]  upper: [-68, -2096]  gap: [8] (0.03s)
+08:02:12 Lower bound: [-72]  upper: [-68, -2096]  gap: [4] (0.03s)
+08:02:12 Lower bound: [-72]  upper: [-68, -2096]  gap: [4] (0.03s)
+08:02:12 Lower bound: [-68, -2602]  upper: [-68, -2096]  gap: [0, 506] (0.03s)
+08:02:12 Lower bound: [-68, -2592]  upper: [-68, -2096]  gap: [0, 496] (0.03s)
+08:02:12 Lower bound: [-68, -2582]  upper: [-68, -2096]  gap: [0, 486] (0.03s)
+08:02:12 Lower bound: [-68, -2572]  upper: [-68, -2096]  gap: [0, 476] (0.03s)
+08:02:12 Lower bound: [-68, -2562]  upper: [-68, -2096]  gap: [0, 466] (0.03s)
+08:02:12 Lower bound: [-68, -2552]  upper: [-68, -2096]  gap: [0, 456] (0.03s)
+08:02:12 Lower bound: [-68, -2542]  upper: [-68, -2096]  gap: [0, 446] (0.03s)
+08:02:12 Model found (0.03s, +0.00s): [-68, -2395]
+08:02:12 Model found (0.03s, +0.00s): [-68, -2449]
+08:02:12 Model found (0.03s, +0.00s): [-68, -2526]
+08:02:12 Lower bound: [-68, -2534]  upper: [-68, -2526]  gap: [0, 8] (0.04s)
+08:02:12 Model found (0.04s, +0.00s): [-68, -2534]
+08:02:12 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex5.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex5.results
 OPTIMUM FOUND
 
@@ -204,7 +205,7 @@ Optimization: -68 -2534
 %       objectInObject(const Derived::`vftable'{for `Base2'}@0x406160,const Base::`vftable'@0x406140,0) objectInObject(const Derived::`vftable'{for `Base2'}@0x406160,const Base2::`vftable'@0x406150,16)
 %       objectInObject(const Derived::`vftable'{for `Base'}@0x406170,const Base::`vftable'@0x406140,0) objectInObject(const Derived::`vftable'{for `Base'}@0x406170,const Base2::`vftable'@0x406150,16)
 %       objectInObject(const std::bad_alloc::`vftable'@0x406188,const std::exception::`vftable'@0x406bdc,0)
-07:53:54 Writing results to examples/ooa/ooex_vs2010/Lite/ooex5.results
+08:02:12 Writing results to examples/ooa/ooex_vs2010/Lite/ooex5.results
 
 % Stats:
 %   atoms: 11374.0
@@ -212,17 +213,17 @@ Optimization: -68 -2534
 %   rules: 15627.0
 %   variables: 5044.0
 %   constraints: 292.0
-%   choices: 1998.0
-%   conflicts: 26.0
+%   choices: 1986.0
+%   conflicts: 27.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-68.0, -2534.0]
 %   lower_bound: [-68.0, -2534.0]
-%   total_time: 0.18753814697265625
-%   ground_time: 0.0805330480216071
-%   time_to_first_model: 0.14920186600647867
-%   max_rss_bytes: 40894464
-%   solve_time: 0.02421402931213379
+%   total_time: 0.04489612579345703
+%   ground_time: 0.02157459402224049
+%   time_to_first_model: 0.028822050022426993
+%   max_rss_bytes: 45760512
+%   solve_time: 0.007877111434936523
 classCallsMethod(Derived::Derived(void)@0x4010c0,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x4010c0,virtual int Base::func2(void)@0x401040)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x401cff,std::exception::_Copy_str(char const *)@0x401ca1)

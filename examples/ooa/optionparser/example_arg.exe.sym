@@ -1,12 +1,13 @@
-07:53:54 Grounding...
-07:53:55 Grounding done (0.12s)
-07:53:55 Solving...
-07:53:55 Model found (0.25s): [-36, -3776]
-07:53:55 Lower bound: [-36, -5547]  upper: [-36, -3776]  gap: [0, 1771] (0.25s)
-07:53:55 Model found (0.25s, +0.01s): [-36, -3856]
-07:53:55 Model found (0.26s, +0.01s): [-36, -5522]
-07:53:55 Lower bound: [-36, -5530]  upper: [-36, -5522]  gap: [0, 8] (0.27s)
-07:53:55 Solving done: OPTIMUM FOUND (0.14s)
+08:02:11 using native Rust &sameClass propagator
+08:02:11 Grounding...
+08:02:11 Grounding done (0.04s)
+08:02:11 Solving...
+08:02:11 Model found (0.07s): [-36, -3776]
+08:02:11 Lower bound: [-36, -5547]  upper: [-36, -3776]  gap: [0, 1771] (0.07s)
+08:02:11 Model found (0.07s, +0.00s): [-36, -3856]
+08:02:11 Model found (0.08s, +0.00s): [-36, -5522]
+08:02:11 Lower bound: [-36, -5530]  upper: [-36, -5522]  gap: [0, 8] (0.08s)
+08:02:11 Solving done: OPTIMUM FOUND (0.04s)
 % Command: ooanalyzer.py examples/ooa/optionparser/example_arg.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/optionparser/example_arg.exe.results
 OPTIMUM FOUND
 
@@ -346,7 +347,7 @@ Optimization: -36 -5522
 %     ~embeddedObject: 3/3
 %       objectInObject(option::Parser::StoreOptionAction::vftable@0x41b964,option::Parser::Action::vftable@0x41b974,0) objectInObject(option::Stats::CountOptionsAction::vftable@0x41b984,option::Parser::Action::vftable@0x41b974,0)
 %       objectInObject(option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::vftable@0x41b998,option::PrintUsageImplementation::IStringWriter::vftable@0x41b9a4,0)
-07:53:55 Writing results to examples/ooa/optionparser/example_arg.exe.results
+08:02:11 Writing results to examples/ooa/optionparser/example_arg.exe.results
 
 % Stats:
 %   atoms: 17922.0
@@ -354,17 +355,17 @@ Optimization: -36 -5522
 %   rules: 26024.0
 %   variables: 12485.0
 %   constraints: 333.0
-%   choices: 1921.0
-%   conflicts: 53.0
+%   choices: 2012.0
+%   conflicts: 51.0
 %   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-36.0, -5522.0]
 %   lower_bound: [-36.0, -5522.0]
-%   total_time: 0.2841789722442627
-%   ground_time: 0.12319545890204608
-%   time_to_first_model: 0.24660502199549228
-%   max_rss_bytes: 49545216
-%   solve_time: 0.022413015365600586
+%   total_time: 0.08980894088745117
+%   ground_time: 0.042705329979071394
+%   time_to_first_model: 0.06810911200591363
+%   max_rss_bytes: 52887552
+%   solve_time: 0.011716842651367188
 classCallsMethod(option::Option::Option@0x4134c0,option::Option::init@0x4125f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::first@0x4123f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::last@0x4124c0)

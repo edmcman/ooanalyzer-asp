@@ -1,11 +1,12 @@
-07:53:54 Grounding...
-07:53:54 Grounding done (0.05s)
-07:53:54 Solving...
-07:53:54 Model found (0.08s): [-4, -2886]
-07:53:54 Model found (0.08s, +0.00s): [-4, -3447]
-07:53:54 Lower bound: [-4, -3461]  upper: [-4, -3447]  gap: [0, 14] (0.09s)
-07:53:54 Lower bound: [-4, -3454]  upper: [-4, -3447]  gap: [0, 7] (0.09s)
-07:53:54 Solving done: OPTIMUM FOUND (0.04s)
+08:02:11 using native Rust &sameClass propagator
+08:02:11 Grounding...
+08:02:11 Grounding done (0.02s)
+08:02:11 Solving...
+08:02:11 Model found (0.02s): [-4, -2886]
+08:02:11 Model found (0.02s, +0.00s): [-4, -3447]
+08:02:11 Lower bound: [-4, -3461]  upper: [-4, -3447]  gap: [0, 14] (0.03s)
+08:02:11 Lower bound: [-4, -3454]  upper: [-4, -3447]  gap: [0, 7] (0.03s)
+08:02:11 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/x3c/SimpleApp.exe.results
 OPTIMUM FOUND
 
@@ -224,7 +225,7 @@ Optimization: -4 -3447
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:53:54 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+08:02:11 Writing results to examples/ooa/x3c/SimpleApp.exe.results
 
 % Stats:
 %   atoms: 9180.0
@@ -238,11 +239,11 @@ Optimization: -4 -3447
 %   optimal_models: 1.0
 %   final_cost: [-4.0, -3447.0]
 %   lower_bound: [-4.0, -3447.0]
-%   total_time: 0.09689593315124512
-%   ground_time: 0.048247045022435486
-%   time_to_first_model: 0.07877116405870765
-%   max_rss_bytes: 33030144
-%   solve_time: 0.007801055908203125
+%   total_time: 0.03280210494995117
+%   ground_time: 0.0162056100089103
+%   time_to_first_model: 0.020557851006742567
+%   max_rss_bytes: 41832448
+%   solve_time: 0.005244016647338867
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)

@@ -1,19 +1,20 @@
-07:53:53 Grounding...
-07:53:54 Grounding done (0.06s)
-07:53:54 Solving...
-07:53:54 Model found (0.11s): [-44, -1896]
-07:53:54 Lower bound: [-48]  upper: [-44, -1896]  gap: [4] (0.11s)
-07:53:54 Lower bound: [-48]  upper: [-44, -1896]  gap: [4] (0.11s)
-07:53:54 Lower bound: [-44, -2301]  upper: [-44, -1896]  gap: [0, 405] (0.11s)
-07:53:54 Lower bound: [-44, -2291]  upper: [-44, -1896]  gap: [0, 395] (0.11s)
-07:53:54 Lower bound: [-44, -2281]  upper: [-44, -1896]  gap: [0, 385] (0.11s)
-07:53:54 Lower bound: [-44, -2271]  upper: [-44, -1896]  gap: [0, 375] (0.11s)
-07:53:54 Lower bound: [-44, -2261]  upper: [-44, -1896]  gap: [0, 365] (0.11s)
-07:53:54 Model found (0.11s, +0.01s): [-44, -2168]
-07:53:54 Model found (0.11s, +0.00s): [-44, -2245]
-07:53:54 Lower bound: [-44, -2253]  upper: [-44, -2245]  gap: [0, 8] (0.12s)
-07:53:54 Model found (0.12s, +0.00s): [-44, -2253]
-07:53:54 Solving done: OPTIMUM FOUND (0.06s)
+08:02:12 using native Rust &sameClass propagator
+08:02:13 Grounding...
+08:02:13 Grounding done (0.02s)
+08:02:13 Solving...
+08:02:13 Model found (0.02s): [-44, -1896]
+08:02:13 Lower bound: [-48]  upper: [-44, -1896]  gap: [4] (0.02s)
+08:02:13 Lower bound: [-48]  upper: [-44, -1896]  gap: [4] (0.02s)
+08:02:13 Lower bound: [-44, -2301]  upper: [-44, -1896]  gap: [0, 405] (0.03s)
+08:02:13 Lower bound: [-44, -2291]  upper: [-44, -1896]  gap: [0, 395] (0.03s)
+08:02:13 Lower bound: [-44, -2281]  upper: [-44, -1896]  gap: [0, 385] (0.03s)
+08:02:13 Lower bound: [-44, -2271]  upper: [-44, -1896]  gap: [0, 375] (0.03s)
+08:02:13 Lower bound: [-44, -2261]  upper: [-44, -1896]  gap: [0, 365] (0.03s)
+08:02:13 Model found (0.03s, +0.00s): [-44, -2168]
+08:02:13 Model found (0.03s, +0.00s): [-44, -2245]
+08:02:13 Lower bound: [-44, -2253]  upper: [-44, -2245]  gap: [0, 8] (0.03s)
+08:02:13 Model found (0.03s, +0.00s): [-44, -2253]
+08:02:13 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex4.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex4.results
 OPTIMUM FOUND
 
@@ -349,7 +350,7 @@ Optimization: -44 -2253
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(4219216,4219200,0) objectInObject(4219240,4221884,0)
-07:53:54 Writing results to examples/ooa/ooex_vs2010/Lite/ooex4.results
+08:02:13 Writing results to examples/ooa/ooex_vs2010/Lite/ooex4.results
 
 % Stats:
 %   atoms: 9645.0
@@ -357,14 +358,14 @@ Optimization: -44 -2253
 %   rules: 11758.0
 %   variables: 3596.0
 %   constraints: 172.0
-%   choices: 972.0
+%   choices: 937.0
 %   conflicts: 20.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-44.0, -2253.0]
 %   lower_bound: [-44.0, -2253.0]
-%   total_time: 0.13439702987670898
-%   ground_time: 0.05753940891008824
-%   time_to_first_model: 0.10557732090819627
-%   max_rss_bytes: 35389440
-%   solve_time: 0.014748096466064453
+%   total_time: 0.03956103324890137
+%   ground_time: 0.017361164995236322
+%   time_to_first_model: 0.022740740998415276
+%   max_rss_bytes: 43114496
+%   solve_time: 0.008698225021362305

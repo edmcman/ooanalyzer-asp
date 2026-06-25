@@ -1,12 +1,13 @@
-07:53:53 Grounding...
-07:53:53 Grounding done (0.15s)
-07:53:53 Solving...
-07:53:54 Model found (0.36s): [-28, -3242]
-07:53:54 Lower bound: [-28, -3540]  upper: [-28, -3242]  gap: [0, 298] (0.37s)
-07:53:54 Model found (0.37s, +0.01s): [-28, -3292]
-07:53:54 Model found (0.38s, +0.01s): [-28, -3302]
-07:53:54 Model found (0.39s, +0.01s): [-28, -3523]
-07:53:54 Solving done: OPTIMUM FOUND (0.24s)
+08:02:12 using native Rust &sameClass propagator
+08:02:12 Grounding...
+08:02:12 Grounding done (0.04s)
+08:02:12 Solving...
+08:02:12 Model found (0.06s): [-28, -3242]
+08:02:12 Lower bound: [-28, -3540]  upper: [-28, -3242]  gap: [0, 298] (0.06s)
+08:02:12 Model found (0.06s, +0.01s): [-28, -3292]
+08:02:12 Model found (0.07s, +0.01s): [-28, -3302]
+08:02:12 Model found (0.08s, +0.00s): [-28, -3523]
+08:02:12 Solving done: OPTIMUM FOUND (0.04s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/oo.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/oo.results
 OPTIMUM FOUND
 
@@ -524,7 +525,7 @@ Optimization: -28 -3523
 %     ~embeddedObject: 4/4
 %       objectInObject(4290580,4290656,0) objectInObject(4290580,4290684,12)
 %       objectInObject(4290596,4290656,0) objectInObject(4290596,4290684,12)
-07:53:54 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
+08:02:12 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
 
 % Stats:
 %   atoms: 27800.0
@@ -532,14 +533,14 @@ Optimization: -28 -3523
 %   rules: 31240.0
 %   variables: 10330.0
 %   constraints: 133.0
-%   choices: 1160.0
+%   choices: 1172.0
 %   conflicts: 19.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -3523.0]
 %   lower_bound: [-28.0, -3523.0]
-%   total_time: 0.40592193603515625
-%   ground_time: 0.1528604889754206
-%   time_to_first_model: 0.36394627403933555
-%   max_rss_bytes: 58068992
-%   solve_time: 0.030347108840942383
+%   total_time: 0.08550000190734863
+%   ground_time: 0.04077442397829145
+%   time_to_first_model: 0.05941828899085522
+%   max_rss_bytes: 60444672
+%   solve_time: 0.019145965576171875

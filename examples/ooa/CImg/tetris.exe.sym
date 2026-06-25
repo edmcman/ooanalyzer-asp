@@ -1,32 +1,33 @@
-07:53:54 Grounding...
-07:53:56 Grounding done (2.67s)
-07:53:56 Solving...
-07:53:58 Model found (4.59s): [-132, -28204]
-07:53:58 Lower bound: [-132, -37441]  upper: [-132, -28204]  gap: [0, 9237] (4.64s)
-07:53:58 Lower bound: [-132, -37431]  upper: [-132, -28204]  gap: [0, 9227] (4.64s)
-07:53:58 Lower bound: [-132, -37421]  upper: [-132, -28204]  gap: [0, 9217] (4.65s)
-07:53:58 Lower bound: [-132, -37411]  upper: [-132, -28204]  gap: [0, 9207] (4.65s)
-07:53:58 Lower bound: [-132, -37401]  upper: [-132, -28204]  gap: [0, 9197] (4.65s)
-07:53:58 Lower bound: [-132, -37391]  upper: [-132, -28204]  gap: [0, 9187] (4.66s)
-07:53:58 Lower bound: [-132, -37381]  upper: [-132, -28204]  gap: [0, 9177] (4.66s)
-07:53:58 Lower bound: [-132, -37371]  upper: [-132, -28204]  gap: [0, 9167] (4.66s)
-07:53:58 Lower bound: [-132, -37361]  upper: [-132, -28204]  gap: [0, 9157] (4.66s)
-07:53:59 Model found (4.73s, +0.15s): [-132, -28884]
-07:53:59 Lower bound: [-132, -37351]  upper: [-132, -28884]  gap: [0, 8467] (4.78s)
-07:53:59 Lower bound: [-132, -37341]  upper: [-132, -28884]  gap: [0, 8457] (4.79s)
-07:53:59 Lower bound: [-132, -37331]  upper: [-132, -28884]  gap: [0, 8447] (4.79s)
-07:53:59 Lower bound: [-132, -37321]  upper: [-132, -28884]  gap: [0, 8437] (4.79s)
-07:53:59 Lower bound: [-132, -37311]  upper: [-132, -28884]  gap: [0, 8427] (4.81s)
-07:53:59 Lower bound: [-132, -37301]  upper: [-132, -28884]  gap: [0, 8417] (4.83s)
-07:53:59 Model found (4.85s, +0.12s): [-132, -28904]
-07:53:59 Model found (5.57s, +0.72s): [-132, -37039]
-07:53:59 Lower bound: [-132, -37203]  upper: [-132, -37039]  gap: [0, 164] (5.65s)
-07:53:59 Lower bound: [-132, -37155]  upper: [-132, -37039]  gap: [0, 116] (5.66s)
-07:53:59 Model found (5.68s, +0.11s): [-132, -37087]
-07:54:00 Lower bound: [-132, -37108]  upper: [-132, -37087]  gap: [0, 21] (5.76s)
-07:54:00 Lower bound: [-132, -37101]  upper: [-132, -37087]  gap: [0, 14] (5.78s)
-07:54:00 Lower bound: [-132, -37094]  upper: [-132, -37087]  gap: [0, 7] (5.79s)
-07:54:00 Solving done: OPTIMUM FOUND (3.14s)
+08:07:40 using native Rust &sameClass propagator
+08:07:40 Grounding...
+08:07:42 Grounding done (1.69s)
+08:07:42 Solving...
+08:07:42 Model found (2.13s): [-132, -28204]
+08:07:42 Lower bound: [-132, -37441]  upper: [-132, -28204]  gap: [0, 9237] (2.15s)
+08:07:42 Lower bound: [-132, -37431]  upper: [-132, -28204]  gap: [0, 9227] (2.15s)
+08:07:42 Lower bound: [-132, -37421]  upper: [-132, -28204]  gap: [0, 9217] (2.15s)
+08:07:42 Lower bound: [-132, -37411]  upper: [-132, -28204]  gap: [0, 9207] (2.15s)
+08:07:42 Lower bound: [-132, -37401]  upper: [-132, -28204]  gap: [0, 9197] (2.15s)
+08:07:42 Lower bound: [-132, -37391]  upper: [-132, -28204]  gap: [0, 9187] (2.15s)
+08:07:42 Lower bound: [-132, -37381]  upper: [-132, -28204]  gap: [0, 9177] (2.15s)
+08:07:42 Lower bound: [-132, -37371]  upper: [-132, -28204]  gap: [0, 9167] (2.15s)
+08:07:42 Lower bound: [-132, -37361]  upper: [-132, -28204]  gap: [0, 9157] (2.15s)
+08:07:42 Model found (2.27s, +0.14s): [-132, -28884]
+08:07:42 Lower bound: [-132, -37351]  upper: [-132, -28884]  gap: [0, 8467] (2.30s)
+08:07:42 Lower bound: [-132, -37341]  upper: [-132, -28884]  gap: [0, 8457] (2.30s)
+08:07:42 Lower bound: [-132, -37331]  upper: [-132, -28884]  gap: [0, 8447] (2.30s)
+08:07:42 Lower bound: [-132, -37321]  upper: [-132, -28884]  gap: [0, 8437] (2.30s)
+08:07:42 Lower bound: [-132, -37311]  upper: [-132, -28884]  gap: [0, 8427] (2.30s)
+08:07:42 Lower bound: [-132, -37301]  upper: [-132, -28884]  gap: [0, 8417] (2.31s)
+08:07:42 Model found (2.33s, +0.06s): [-132, -28904]
+08:07:42 Model found (2.47s, +0.14s): [-132, -37039]
+08:07:42 Lower bound: [-132, -37203]  upper: [-132, -37039]  gap: [0, 164] (2.49s)
+08:07:42 Lower bound: [-132, -37155]  upper: [-132, -37039]  gap: [0, 116] (2.50s)
+08:07:42 Model found (2.50s, +0.03s): [-132, -37087]
+08:07:42 Lower bound: [-132, -37108]  upper: [-132, -37087]  gap: [0, 21] (2.53s)
+08:07:42 Lower bound: [-132, -37101]  upper: [-132, -37087]  gap: [0, 14] (2.53s)
+08:07:42 Lower bound: [-132, -37094]  upper: [-132, -37087]  gap: [0, 7] (2.54s)
+08:07:42 Solving done: OPTIMUM FOUND (0.85s)
 % Command: ooanalyzer.py examples/ooa/CImg/tetris.exe.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/CImg/tetris.exe.results
 OPTIMUM FOUND
 
@@ -2052,7 +2053,7 @@ Optimization: -132 -37087
 %       objectInObject(std::bad_alloc::vftable@0x4b38bc,std::exception::vftable@0x4b7348,0) objectInObject(std::bad_exception::vftable@0x4b46b0,std::exception::vftable@0x4b7348,0)
 %       objectInObject(std::bad_cast::vftable@0x4b7370,std::exception::vftable@0x4b7348,0) objectInObject(std::bad_typeid::vftable@0x4b7380,std::exception::vftable@0x4b7348,0)
 %       objectInObject(std::__non_rtti_object::vftable@0x4b7390,std::bad_typeid::vftable@0x4b7380,0)
-07:54:00 Writing results to examples/ooa/CImg/tetris.exe.results
+08:07:43 Writing results to examples/ooa/CImg/tetris.exe.results
 
 % Stats:
 %   atoms: 182891.0
@@ -2060,17 +2061,17 @@ Optimization: -132 -37087
 %   rules: 308006.0
 %   variables: 198358.0
 %   constraints: 10828.0
-%   choices: 139950.0
-%   conflicts: 358.0
+%   choices: 211661.0
+%   conflicts: 406.0
 %   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-132.0, -37087.0]
 %   lower_bound: [-132.0, -37087.0]
-%   total_time: 5.971742868423462
-%   ground_time: 2.6676501139299944
-%   time_to_first_model: 4.585160532966256
-%   max_rss_bytes: 387018752
-%   solve_time: 1.2296888828277588
+%   total_time: 2.677206039428711
+%   ground_time: 1.6893160820181947
+%   time_to_first_model: 2.126467877009418
+%   max_rss_bytes: 324608000
+%   solve_time: 0.419158935546875
 classCallsMethod(CImg<float>::CImg@0x44a260,CImg<float>::size@0x44a480)
 classCallsMethod(CImg<float>::CImg@0x44a370,CImg<float>::size@0x44a480)
 classCallsMethod(CImg<float>::operator()@0x44a4e0,CImg<float>::offset@0x44c3a0)

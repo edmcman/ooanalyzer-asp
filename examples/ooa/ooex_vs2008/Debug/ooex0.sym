@@ -1,9 +1,10 @@
-07:53:53 Grounding...
-07:53:53 Grounding done (0.03s)
-07:53:53 Solving...
-07:53:53 Model found (0.04s): [-2138]
-07:53:53 Model found (0.04s, +0.00s): [-2308]
-07:53:53 Solving done: OPTIMUM FOUND (0.01s)
+08:02:12 using native Rust &sameClass propagator
+08:02:12 Grounding...
+08:02:12 Grounding done (0.01s)
+08:02:12 Solving...
+08:02:12 Model found (0.01s): [-2138]
+08:02:12 Model found (0.01s, +0.00s): [-2308]
+08:02:12 Solving done: OPTIMUM FOUND (0.00s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex0.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex0.results
 OPTIMUM FOUND
 
@@ -157,7 +158,7 @@ Optimization: -2308
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:53:53 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
+08:02:12 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
 
 % Stats:
 %   atoms: 5464.0
@@ -171,11 +172,11 @@ Optimization: -2308
 %   optimal_models: 1.0
 %   final_cost: [-2308.0]
 %   lower_bound: [-2308.0]
-%   total_time: 0.050746917724609375
-%   ground_time: 0.028804130968637764
-%   time_to_first_model: 0.03890631801914424
-%   max_rss_bytes: 29884416
-%   solve_time: 0.0036067962646484375
+%   total_time: 0.018788814544677734
+%   ground_time: 0.010129842994501814
+%   time_to_first_model: 0.01208594799390994
+%   max_rss_bytes: 37830656
+%   solve_time: 0.0017788410186767578
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::ClassA(void)@0x411610)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)

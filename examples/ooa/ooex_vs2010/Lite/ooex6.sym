@@ -1,25 +1,27 @@
-07:53:54 Grounding...
-07:53:54 Grounding done (0.06s)
-07:53:54 Solving...
-07:53:54 Model found (0.11s): [-48, -1916]
-07:53:54 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.11s)
-07:53:54 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.11s)
-07:53:54 Lower bound: [-48, -2415]  upper: [-48, -1916]  gap: [0, 499] (0.12s)
-07:53:54 Lower bound: [-48, -2405]  upper: [-48, -1916]  gap: [0, 489] (0.12s)
-07:53:54 Lower bound: [-48, -2395]  upper: [-48, -1916]  gap: [0, 479] (0.12s)
-07:53:54 Lower bound: [-48, -2385]  upper: [-48, -1916]  gap: [0, 469] (0.12s)
-07:53:54 Lower bound: [-48, -2375]  upper: [-48, -1916]  gap: [0, 459] (0.12s)
-07:53:54 Lower bound: [-48, -2365]  upper: [-48, -1916]  gap: [0, 449] (0.12s)
-07:53:54 Lower bound: [-48, -2355]  upper: [-48, -1916]  gap: [0, 439] (0.12s)
-07:53:54 Model found (0.12s, +0.01s): [-48, -2245]
-07:53:54 Model found (0.12s, +0.00s): [-48, -2322]
-07:53:54 Lower bound: [-48, -2338]  upper: [-48, -2322]  gap: [0, 16] (0.12s)
-07:53:54 Model found (0.13s, +0.00s): [-48, -2330]
-07:53:54 Solving done: OPTIMUM FOUND (0.07s)
+08:02:12 using native Rust &sameClass propagator
+08:02:12 Grounding...
+08:02:12 Grounding done (0.02s)
+08:02:12 Solving...
+08:02:12 Model found (0.02s): [-48, -1916]
+08:02:12 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.02s)
+08:02:12 Lower bound: [-52]  upper: [-48, -1916]  gap: [4] (0.02s)
+08:02:12 Lower bound: [-48, -2415]  upper: [-48, -1916]  gap: [0, 499] (0.02s)
+08:02:12 Lower bound: [-48, -2405]  upper: [-48, -1916]  gap: [0, 489] (0.02s)
+08:02:12 Lower bound: [-48, -2395]  upper: [-48, -1916]  gap: [0, 479] (0.02s)
+08:02:12 Lower bound: [-48, -2385]  upper: [-48, -1916]  gap: [0, 469] (0.02s)
+08:02:12 Lower bound: [-48, -2375]  upper: [-48, -1916]  gap: [0, 459] (0.02s)
+08:02:12 Lower bound: [-48, -2365]  upper: [-48, -1916]  gap: [0, 449] (0.02s)
+08:02:12 Lower bound: [-48, -2355]  upper: [-48, -1916]  gap: [0, 439] (0.02s)
+08:02:12 Model found (0.02s, +0.00s): [-48, -2208]
+08:02:12 Model found (0.03s, +0.00s): [-48, -2245]
+08:02:12 Model found (0.03s, +0.00s): [-48, -2322]
+08:02:12 Lower bound: [-48, -2338]  upper: [-48, -2322]  gap: [0, 16] (0.03s)
+08:02:12 Model found (0.03s, +0.00s): [-48, -2330]
+08:02:12 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex6.results
 OPTIMUM FOUND
 
-Answer: 4
+Answer: 5
 Optimization: -48 -2330
 
 % Equivalence classes (167 classes, 187 entities):
@@ -189,7 +191,7 @@ Optimization: -48 -2330
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(const Derived::`vftable'@0x406150,const Base::`vftable'@0x406140,0) objectInObject(const std::bad_alloc::`vftable'@0x40616c,const std::exception::`vftable'@0x406bc4,0)
-07:53:54 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
+08:02:12 Writing results to examples/ooa/ooex_vs2010/Lite/ooex6.results
 
 % Stats:
 %   atoms: 9984.0
@@ -197,17 +199,17 @@ Optimization: -48 -2330
 %   rules: 12238.0
 %   variables: 3802.0
 %   constraints: 197.0
-%   choices: 1375.0
-%   conflicts: 22.0
-%   models: 4.0
+%   choices: 1450.0
+%   conflicts: 26.0
+%   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-48.0, -2330.0]
 %   lower_bound: [-48.0, -2330.0]
-%   total_time: 0.14486098289489746
-%   ground_time: 0.060607605963014066
-%   time_to_first_model: 0.112012924044393
-%   max_rss_bytes: 36175872
-%   solve_time: 0.0164949893951416
+%   total_time: 0.039155006408691406
+%   ground_time: 0.017278626008192077
+%   time_to_first_model: 0.022698500019032508
+%   max_rss_bytes: 43139072
+%   solve_time: 0.007570981979370117
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func1(void)@0x401020)
 classCallsMethod(Derived::Derived(void)@0x401060,virtual int Base::func2(void)@0x401040)

@@ -1,15 +1,16 @@
-07:53:53 Grounding...
-07:53:54 Grounding done (0.05s)
-07:53:54 Solving...
-07:53:54 Model found (0.08s): [-20, -1830]
-07:53:54 Lower bound: [-20, -2219]  upper: [-20, -1830]  gap: [0, 389] (0.08s)
-07:53:54 Lower bound: [-20, -2209]  upper: [-20, -1830]  gap: [0, 379] (0.08s)
-07:53:54 Lower bound: [-20, -2199]  upper: [-20, -1830]  gap: [0, 369] (0.08s)
-07:53:54 Model found (0.09s, +0.00s): [-20, -2021]
-07:53:54 Model found (0.09s, +0.00s): [-20, -2166]
-07:53:54 Lower bound: [-20, -2182]  upper: [-20, -2166]  gap: [0, 16] (0.09s)
-07:53:54 Model found (0.09s, +0.00s): [-20, -2174]
-07:53:54 Solving done: OPTIMUM FOUND (0.05s)
+08:02:12 using native Rust &sameClass propagator
+08:02:12 Grounding...
+08:02:12 Grounding done (0.02s)
+08:02:12 Solving...
+08:02:12 Model found (0.03s): [-20, -1830]
+08:02:12 Lower bound: [-20, -2219]  upper: [-20, -1830]  gap: [0, 389] (0.03s)
+08:02:12 Lower bound: [-20, -2209]  upper: [-20, -1830]  gap: [0, 379] (0.03s)
+08:02:12 Lower bound: [-20, -2199]  upper: [-20, -1830]  gap: [0, 369] (0.03s)
+08:02:12 Model found (0.03s, +0.00s): [-20, -2021]
+08:02:12 Model found (0.03s, +0.00s): [-20, -2166]
+08:02:12 Lower bound: [-20, -2182]  upper: [-20, -2166]  gap: [0, 16] (0.03s)
+08:02:12 Model found (0.04s, +0.00s): [-20, -2174]
+08:02:12 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex3.results
 OPTIMUM FOUND
 
@@ -168,7 +169,7 @@ Optimization: -20 -2174
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
-07:53:54 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
+08:02:12 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
 
 % Stats:
 %   atoms: 8409.0
@@ -176,17 +177,17 @@ Optimization: -20 -2174
 %   rules: 9583.0
 %   variables: 2588.0
 %   constraints: 142.0
-%   choices: 900.0
-%   conflicts: 20.0
+%   choices: 917.0
+%   conflicts: 21.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -2174.0]
 %   lower_bound: [-20.0, -2174.0]
-%   total_time: 0.11176300048828125
-%   ground_time: 0.04741990496404469
-%   time_to_first_model: 0.0812594109447673
-%   max_rss_bytes: 33816576
-%   solve_time: 0.013267993927001953
+%   total_time: 0.05551600456237793
+%   ground_time: 0.023735929979011416
+%   time_to_first_model: 0.029254727996885777
+%   max_rss_bytes: 41541632
+%   solve_time: 0.00741887092590332
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,int Base::func3(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Copy_str(char const *)@0x40184b)
@@ -457,7 +458,6 @@ constructor(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403307)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
 constructor(std::exception::exception(char const * const &, int)@0x401821)
 constructor(std::exception::exception(class std::exception const &)@0x401910)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@0x401110)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x40111b)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4018e9)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401945)
@@ -474,7 +474,6 @@ mergeClasses(Base::Base(void)@0x401000,Derived::Derived(void)@0x401060)
 mergeClasses(Base::Base(void)@0x401000,int Base::func3(void)@0x401020)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::exception(class std::exception const &)@0x401910)
 mergeClasses(const std::bad_alloc::`vftable'@0x406140,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
-mergeClasses(const std::bad_alloc::`vftable'@0x406140,virtual std::bad_alloc::~bad_alloc(void)@0x401110)
 mergeClasses(const std::exception::`vftable'@0x4061a4,std::exception::exception(char const * const &, int)@0x401821)
 mergeClasses(const std::exception::`vftable'@0x4061a4,std::exception::exception(class std::exception const &)@0x401910)
 mergeClasses(int Base::func3(void)@0x401020,Derived::Derived(void)@0x401060)
@@ -676,6 +675,7 @@ method(virtual std::exception::~exception(void)@0x4018de)
 method(virtual type_info::~type_info(void)@0x401935)
 method(x_ismbbtype_l@0x404406)
 objectInObject(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x401110)
 realDestructor(virtual std::exception::~exception(void)@0x4018de)
 realDestructor(virtual type_info::~type_info(void)@0x401935)
 vfTable(const std::bad_alloc::`vftable'@0x406140)
@@ -698,7 +698,6 @@ vfTableWrite(4200760,virtual type_info::~type_info(void)@0x401935,0,const type_i
 vfTableWrite(virtual std::bad_alloc::~bad_alloc(void)@0x401110,virtual std::bad_alloc::~bad_alloc(void)@0x401110,0,const std::bad_alloc::`vftable'@0x406140)
 vfTableWrite(virtual std::exception::~exception(void)@0x4018de,virtual std::exception::~exception(void)@0x4018de,0,const std::exception::`vftable'@0x4061a4)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x401142)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406140,0,virtual std::bad_alloc::~bad_alloc(void)@0x401110)
 vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,std::exception::exception(char const * const &, int)@0x401821)
 vftableBelongsToClass(const std::exception::`vftable'@0x4061a4,0,std::exception::exception(class std::exception const &)@0x401910)
 vftableSizeTotal(20)

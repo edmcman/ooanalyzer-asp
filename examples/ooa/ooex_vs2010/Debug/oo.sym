@@ -1,12 +1,13 @@
-07:53:53 Grounding...
-07:53:53 Grounding done (0.13s)
-07:53:53 Solving...
-07:53:54 Model found (0.29s): [-28, -3112]
-07:53:54 Lower bound: [-28, -3410]  upper: [-28, -3112]  gap: [0, 298] (0.30s)
-07:53:54 Model found (0.30s, +0.01s): [-28, -3162]
-07:53:54 Model found (0.30s, +0.00s): [-28, -3172]
-07:53:54 Model found (0.31s, +0.01s): [-28, -3393]
-07:53:54 Solving done: OPTIMUM FOUND (0.18s)
+08:02:27 using native Rust &sameClass propagator
+08:02:27 Grounding...
+08:02:27 Grounding done (0.03s)
+08:02:27 Solving...
+08:02:27 Model found (0.05s): [-28, -3112]
+08:02:27 Lower bound: [-28, -3410]  upper: [-28, -3112]  gap: [0, 298] (0.05s)
+08:02:27 Model found (0.05s, +0.00s): [-28, -3162]
+08:02:27 Model found (0.05s, +0.00s): [-28, -3172]
+08:02:27 Model found (0.06s, +0.00s): [-28, -3393]
+08:02:27 Solving done: OPTIMUM FOUND (0.03s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/oo.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/oo.results
 OPTIMUM FOUND
 
@@ -238,7 +239,7 @@ Optimization: -28 -3393
 %     ~embeddedObject: 4/4
 %       objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417844,const Cls1::`vftable'@0x417890,0) objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417844,const Cls2::`vftable'@0x4178ac,12)
 %       objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417854,const Cls1::`vftable'@0x417890,0) objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417854,const Cls2::`vftable'@0x4178ac,12)
-07:53:54 Writing results to examples/ooa/ooex_vs2010/Debug/oo.results
+08:02:27 Writing results to examples/ooa/ooex_vs2010/Debug/oo.results
 
 % Stats:
 %   atoms: 22497.0
@@ -246,17 +247,17 @@ Optimization: -28 -3393
 %   rules: 25855.0
 %   variables: 8678.0
 %   constraints: 133.0
-%   choices: 1151.0
-%   conflicts: 20.0
+%   choices: 1164.0
+%   conflicts: 19.0
 %   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -3393.0]
 %   lower_bound: [-28.0, -3393.0]
-%   total_time: 0.32154202461242676
-%   ground_time: 0.12568153999745846
-%   time_to_first_model: 0.29127586307004094
-%   max_rss_bytes: 52690944
-%   solve_time: 0.020467042922973633
+%   total_time: 0.06725907325744629
+%   ground_time: 0.03436065901769325
+%   time_to_first_model: 0.04895024700090289
+%   max_rss_bytes: 56598528
+%   solve_time: 0.01182103157043457
 classCallsMethod(Cls3::Cls3(void)@0x411830,Cls1::Cls1(void)@0x411a40)
 classCallsMethod(const Cls1::`vftable'@0x417890,virtual Cls1::func1(void)@0x411a90)
 classCallsMethod(const Cls2::`vftable'@0x4178ac,virtual Cls2::func3(void)@0x411b60)

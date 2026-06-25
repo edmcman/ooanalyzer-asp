@@ -1,15 +1,16 @@
-07:53:53 Grounding...
-07:53:53 Grounding done (0.04s)
-07:53:53 Solving...
-07:53:53 Model found (0.07s): [-28, -2308]
-07:53:53 Lower bound: [-28, -2511]  upper: [-28, -2308]  gap: [0, 203] (0.08s)
-07:53:53 Lower bound: [-28, -2501]  upper: [-28, -2308]  gap: [0, 193] (0.08s)
-07:53:53 Model found (0.08s, +0.00s): [-28, -2348]
-07:53:53 Lower bound: [-28, -2492]  upper: [-28, -2348]  gap: [0, 144] (0.08s)
-07:53:53 Lower bound: [-28, -2483]  upper: [-28, -2348]  gap: [0, 135] (0.08s)
-07:53:53 Model found (0.08s, +0.00s): [-28, -2467]
-07:53:53 Lower bound: [-28, -2475]  upper: [-28, -2467]  gap: [0, 8] (0.08s)
-07:53:53 Solving done: OPTIMUM FOUND (0.04s)
+08:02:26 using native Rust &sameClass propagator
+08:02:26 Grounding...
+08:02:26 Grounding done (0.01s)
+08:02:26 Solving...
+08:02:26 Model found (0.02s): [-28, -2308]
+08:02:26 Lower bound: [-28, -2511]  upper: [-28, -2308]  gap: [0, 203] (0.02s)
+08:02:26 Lower bound: [-28, -2501]  upper: [-28, -2308]  gap: [0, 193] (0.02s)
+08:02:26 Model found (0.02s, +0.00s): [-28, -2348]
+08:02:26 Lower bound: [-28, -2492]  upper: [-28, -2348]  gap: [0, 144] (0.02s)
+08:02:26 Lower bound: [-28, -2483]  upper: [-28, -2348]  gap: [0, 135] (0.02s)
+08:02:26 Model found (0.02s, +0.00s): [-28, -2467]
+08:02:26 Lower bound: [-28, -2475]  upper: [-28, -2467]  gap: [0, 8] (0.02s)
+08:02:26 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex4.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex4.results
 OPTIMUM FOUND
 
@@ -395,7 +396,7 @@ Optimization: -28 -2467
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(4286272,4286292,0)
-07:53:53 Writing results to examples/ooa/ooex_vs2010/Debug/ooex4.results
+08:02:27 Writing results to examples/ooa/ooex_vs2010/Debug/ooex4.results
 
 % Stats:
 %   atoms: 7316.0
@@ -403,14 +404,14 @@ Optimization: -28 -2467
 %   rules: 8437.0
 %   variables: 2551.0
 %   constraints: 70.0
-%   choices: 708.0
-%   conflicts: 21.0
+%   choices: 763.0
+%   conflicts: 23.0
 %   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -2467.0]
 %   lower_bound: [-28.0, -2467.0]
-%   total_time: 0.09086489677429199
-%   ground_time: 0.043073685956187546
-%   time_to_first_model: 0.07379453990142792
-%   max_rss_bytes: 32243712
-%   solve_time: 0.008774995803833008
+%   total_time: 0.027452945709228516
+%   ground_time: 0.013714114000322297
+%   time_to_first_model: 0.017461237002862617
+%   max_rss_bytes: 40906752
+%   solve_time: 0.004869937896728516

@@ -1,9 +1,10 @@
-07:53:53 Grounding...
-07:53:53 Grounding done (0.04s)
-07:53:53 Solving...
-07:53:53 Model found (0.07s): [-2216]
-07:53:53 Model found (0.07s, +0.00s): [-2233]
-07:53:53 Solving done: OPTIMUM FOUND (0.04s)
+08:02:11 using native Rust &sameClass propagator
+08:02:11 Grounding...
+08:02:11 Grounding done (0.02s)
+08:02:11 Solving...
+08:02:11 Model found (0.02s): [-2216]
+08:02:11 Model found (0.02s, +0.00s): [-2233]
+08:02:11 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
 OPTIMUM FOUND
 
@@ -152,7 +153,7 @@ Optimization: -2233
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:53:53 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
+08:02:11 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
 
 % Stats:
 %   atoms: 7921.0
@@ -166,11 +167,11 @@ Optimization: -2233
 %   optimal_models: 1.0
 %   final_cost: [-2233.0]
 %   lower_bound: [-2233.0]
-%   total_time: 0.0850820541381836
-%   ground_time: 0.03977237001527101
-%   time_to_first_model: 0.07246296398807317
-%   max_rss_bytes: 32243712
-%   solve_time: 0.004086017608642578
+%   total_time: 0.027377843856811523
+%   ground_time: 0.015697372000431642
+%   time_to_first_model: 0.01879958898643963
+%   max_rss_bytes: 39993344
+%   solve_time: 0.0032629966735839844
 classRelatedMethod(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
 classRelatedMethod(int ObjectTest::add(void)@0x411740,ObjectTest::ObjectTest(int, int)@0x4116f0)
 classSizeGTE($LN6_1@0x412df5,0)

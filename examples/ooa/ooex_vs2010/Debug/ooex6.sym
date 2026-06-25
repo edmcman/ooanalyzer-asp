@@ -1,19 +1,21 @@
-07:53:53 Grounding...
-07:53:53 Grounding done (0.04s)
-07:53:53 Solving...
-07:53:53 Model found (0.08s): [-32, -2358]
-07:53:53 Lower bound: [-32, -2655]  upper: [-32, -2358]  gap: [0, 297] (0.08s)
-07:53:53 Lower bound: [-32, -2645]  upper: [-32, -2358]  gap: [0, 287] (0.08s)
-07:53:53 Model found (0.08s, +0.00s): [-32, -2458]
-07:53:53 Lower bound: [-32, -2636]  upper: [-32, -2458]  gap: [0, 178] (0.08s)
-07:53:53 Lower bound: [-32, -2627]  upper: [-32, -2458]  gap: [0, 169] (0.08s)
-07:53:53 Model found (0.08s, +0.00s): [-32, -2611]
-07:53:53 Lower bound: [-32, -2619]  upper: [-32, -2611]  gap: [0, 8] (0.09s)
-07:53:53 Solving done: OPTIMUM FOUND (0.04s)
+08:02:26 using native Rust &sameClass propagator
+08:02:26 Grounding...
+08:02:26 Grounding done (0.01s)
+08:02:26 Solving...
+08:02:26 Model found (0.02s): [-32, -2358]
+08:02:26 Lower bound: [-32, -2655]  upper: [-32, -2358]  gap: [0, 297] (0.02s)
+08:02:26 Lower bound: [-32, -2645]  upper: [-32, -2358]  gap: [0, 287] (0.02s)
+08:02:26 Model found (0.02s, +0.00s): [-32, -2458]
+08:02:26 Lower bound: [-32, -2636]  upper: [-32, -2458]  gap: [0, 178] (0.02s)
+08:02:26 Lower bound: [-32, -2627]  upper: [-32, -2458]  gap: [0, 169] (0.02s)
+08:02:26 Model found (0.02s, +0.00s): [-32, -2577]
+08:02:26 Model found (0.02s, +0.00s): [-32, -2611]
+08:02:26 Lower bound: [-32, -2619]  upper: [-32, -2611]  gap: [0, 8] (0.02s)
+08:02:26 Solving done: OPTIMUM FOUND (0.01s)
 % Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex6.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex6.results
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 4
 Optimization: -32 -2611
 
 % Equivalence classes (216 classes, 231 entities):
@@ -189,7 +191,7 @@ Optimization: -32 -2611
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const Derived::`vftable'@0x416740,const Base::`vftable'@0x416758,0)
-07:53:53 Writing results to examples/ooa/ooex_vs2010/Debug/ooex6.results
+08:02:26 Writing results to examples/ooa/ooex_vs2010/Debug/ooex6.results
 
 % Stats:
 %   atoms: 7713.0
@@ -197,17 +199,17 @@ Optimization: -32 -2611
 %   rules: 8933.0
 %   variables: 2715.0
 %   constraints: 93.0
-%   choices: 984.0
-%   conflicts: 23.0
-%   models: 3.0
+%   choices: 1053.0
+%   conflicts: 31.0
+%   models: 4.0
 %   optimal_models: 1.0
 %   final_cost: [-32.0, -2611.0]
 %   lower_bound: [-32.0, -2611.0]
-%   total_time: 0.0960090160369873
-%   ground_time: 0.04478086193557829
-%   time_to_first_model: 0.07737956289201975
-%   max_rss_bytes: 33030144
-%   solve_time: 0.010267019271850586
+%   total_time: 0.028776168823242188
+%   ground_time: 0.01452246299595572
+%   time_to_first_model: 0.01868988201022148
+%   max_rss_bytes: 41099264
+%   solve_time: 0.004988193511962891
 classCallsMethod(Derived::Derived(void)@0x411570,Base::Base(void)@0x411620)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func1(void)@0x411690)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func2(void)@0x4116f0)
