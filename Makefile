@@ -35,7 +35,7 @@ RESULTS_ORIG_SYM_FILES := $(foreach r,$(RESULTS_ORIG),\
 # Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
 .PHONY: all convert run verify verify-core verify-real propagator-run \
-        explain-all symbolize diff clean help single rust rust-check
+        explain-all symbolize diff clean help single rust rust-check bindings
 
 all: symbolize
 
@@ -47,6 +47,11 @@ endif
 
 rust:
 	uvx maturin develop --release --manifest-path rust/Cargo.toml
+
+# Regenerate rust/src/ffi/clingo_sys.rs from rust/vendor/clingo.h (bindgen,
+# types/constants only). Bump rust/vendor/clingo.h when targeting a new clingo.
+bindings:
+	cd rust && cargo run --example gen_bindings
 
 rust-check:
 	cd rust && cargo test
@@ -61,6 +66,8 @@ help:
 	@echo "  make propagator-run — alias for run"
 	@echo "  make diff          — diff .results.sym vs .results.orig.sym for all available pairs"
 	@echo "  make clean         — remove generated .lp/.out/.sym files"
+	@echo "  make rust          — build the Rust &sameClass propagator (maturin develop)"
+	@echo "  make bindings      — regenerate rust/src/ffi/clingo_sys.rs from rust/vendor/clingo.h"
 	@echo ""
 	@echo "Single-file pipeline:"
 	@echo "  make single STEM=ooex_vs2010/Debug/ooex0"

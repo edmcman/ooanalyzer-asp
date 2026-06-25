@@ -20,8 +20,13 @@ original module set.
 | `src/util/theory.lp` | Clingo theory declaration for `&sameClass/2` |
 | `src/util/facts.lp` | Input vocabulary and `#defined` directives |
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
-| `propagator/sameclass.py` | Python union-find propagator implementing `&sameClass/2` |
+| `propagator/sameclass.py` | Python union-find propagator implementing `&sameClass/2` (reference; the live propagator is the Rust port below) |
 | `propagator/conflict_profiler.py` | Propagator that counts per-predicate backtrack rates; use `--profile-conflicts` when solver performance is poor to identify which predicates drive the most search |
+| `rust/` | PyO3/maturin cdylib `ooanalyzer_sameclass` — the live `&sameClass` propagator, ported to Rust. Registers its own `extern "C"` clingo trampolines against the Python-loaded libclingo via `dlsym`, so the hot solve path is pure Rust (no GIL crossing) |
+| `rust/src/ffi.rs` | Runtime FFI to libclingo: dlsym-loads every C function once at import; safe wrappers + panic-catching trampolines. Types/constants come from `clingo_sys.rs` |
+| `rust/src/ffi/clingo_sys.rs` | bindgen-generated `#[repr(C)]` types + enum constants from `vendor/clingo.h` (types only; functions are dlsym-loaded, not linked). Regenerate with `make bindings` |
+| `rust/vendor/clingo.h` | Vendored clingo 5.8.0 header — source of truth for `clingo_sys.rs`. Bump when targeting a new clingo, then `make bindings` and rebuild |
+| `rust/examples/gen_bindings.rs` | Dev-only bindgen generator (`cargo run --example gen_bindings`); behind `make bindings` |
 | `tests/test_propagator.py` | Focused regression harness for the propagator |
 | `scripts/facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
 | `examples/manual/example.lp` | Valid 3-class example (expected: 3 separate classes) |
@@ -135,7 +140,34 @@ make convert                                 # convert all examples/ooa/*/*/*.fa
 make run                                     # convert and run ooanalyzer.py on all of them
 make propagator-run                          # alias for make run
 make clean                                   # remove generated .lp/.out files
+make rust                                    # build the Rust &sameClass propagator (maturin develop)
+make bindings                                # regenerate rust/src/ffi/clingo_sys.rs from rust/vendor/clingo.h
 ```
+
+### Rust propagator FFI (`rust/`)
+
+The live `&sameClass` propagator is the Rust cdylib `ooanalyzer_sameclass`
+(built with `make rust`). It does **not** link libclingo at build time: libclingo
+is statically embedded in the Python `clingo` wheel and loaded `RTLD_GLOBAL`, so
+`ffi.rs` resolves every needed C symbol at runtime via `dlsym(RTLD_DEFAULT, …)`
+and stores the function pointers in a `static`. The hot `init`/`propagate`/
+`undo`/`check` path runs entirely in Rust (no GIL/Python crossing).
+
+The `#[repr(C)]` types, enum constants, and propagator/observer callback structs
+are **bindgen-generated** from `rust/vendor/clingo.h` into
+`rust/src/ffi/clingo_sys.rs` (types/constants only — no `extern "C"` function
+block, since the functions are dlsym-loaded). Regenerate after bumping the
+vendored header:
+
+```sh
+make bindings        # = cd rust && cargo run --example gen_bindings
+```
+
+`Ffi::load()` best-effort checks the loaded libclingo's major.minor against the
+vendored header (`HEADER_CLINGO_MAJOR`/`MINOR` in `ffi.rs`) and warns on
+mismatch — a header/runtime ABI drift would be silent UB. The `Clingo*` type
+aliases in `ffi.rs` re-export the generated names so `propagator.rs` and
+`trampoline.rs` consume a single source of truth without churn.
 
 ### From OOAnalyzer .facts files
 

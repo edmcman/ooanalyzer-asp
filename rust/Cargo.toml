@@ -12,6 +12,11 @@ pyo3 = { version = "0.23", features = ["extension-module"] }
 libc = "0.2"
 rustc-hash = "2"
 
+# Dev-only: drives `cargo run --example gen_bindings` to regenerate
+# `src/clingo_sys.rs` from `vendor/clingo.h`. Not linked into the cdylib.
+[dev-dependencies]
+bindgen = "0.71"
+
 [profile.release]
 opt-level = 3
 lto = "thin"
