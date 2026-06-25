@@ -42,7 +42,7 @@ original module set.
 | `src/old/` | v1 Clingo modules (rules.lp, guess.lp, insanity.lp, optimize.lp, output.lp) — reference only |
 | `pharos/` | Original Pharos/OOAnalyzer source (reference) |
 | `TODO.md` | Rule coverage tracker: all `reason*`/`guess*`/`insanity*` rules, sorted by entity, with port status |
-| `NOTE.md` | Working notes on the current `sameClass`/merge optimization blocker and stress-toy measurements |
+| `.state/merge-optimization-blocker.md` | Working notes on the current `sameClass`/merge optimization blocker and stress-toy measurements |
 | `.state/NOTEBOOK.md` | Current porting session notes and next-rule queue |
 
 ## Running
@@ -69,27 +69,31 @@ uv run python tests/test_propagator.py                # focused &sameClass regre
 `&sameClass/2` propagator. Calling `clingo ooanalyzer.lp ...` directly leaves
 the theory atoms uninterpreted.
 
-### Interpreter: PyPy by default (CPython fallback)
+### Interpreter: CPython 3.13
 
-The project is pinned to PyPy (`.python-version` → `pypy@3.11`), so `uv sync` /
-`uv run` build and use a PyPy `.venv`, and all the `uv run python ooanalyzer.py
-...` commands above run on PyPy automatically. The `&sameClass` propagator is
-pure Python and ~half of solve time, and PyPy's JIT gives ~1.7x throughput on
-long solves (e.g. `PicoHttp/ep_srv` 50s → 30s to the same proven optimum). clingo
-is cffi-based and builds from source on PyPy on the first `uv sync` (~20s).
+The project runs on CPython 3.13 (`.python-version` → `3.13`). The `&sameClass`
+propagator is now the Rust cdylib `ooanalyzer_sameclass` (built via `make rust`),
+so the hot solve path is pure Rust with **no GIL** — the solver-side parallelism
+limitation of the old pure-Python propagator no longer applies (see
+`rust/` below and the threads analysis in `.state/merge-optimization-blocker.md`). Only the Python driver
+glue and the (optional) pure-Python fallback propagator run under the GIL.
 
-The speedup relies on the propagator's deterministic clause-emission order
-(`_okey` in `propagator/sameclass.py`); without it PyPy's set/dict iteration
-order would diverge into a worse search. PyPy keeps a GIL, so this is
-single-thread throughput only (no parallelism), and it does not close the
-intrinsic merge-reward optimization gap (see `NOTE.md`).
+The earlier PyPy spike (`.python-version` → `pypy@3.11`) predated the Rust port:
+it traded on the propagator being pure Python and ~half of solve time. With the
+propagator in Rust, that rationale is moot, and the default reverted to CPython.
+(Rebuilding the cdylib for PyPy's ABI is possible but currently unconfigured.)
 
-PyPy is *slower* on startup-dominated work (tiny solves, the test suite — JIT
-warm-up never pays off). For the fast dev loop, run on CPython in a separate
-environment without disturbing the default PyPy `.venv`:
+The propagator's **deterministic clause-emission order** remains load-bearing:
+`propagator/sameclass.py`'s `_okey` sorting (and the corresponding `sorted`
+calls in `rust/src/propagator.rs`) keep the search trajectory stable across
+interpreter/refactor changes. Without it, set/dict iteration order diverges into
+a worse search. Note that determinism does not close the intrinsic merge-reward
+optimization gap (see `.state/merge-optimization-blocker.md`).
+
+For a fast dev loop on the test suite without rebuilding the release cdylib:
 
 ```sh
-UV_PROJECT_ENVIRONMENT=.venv-cpython uv run --python cpython-3.11 \
+UV_PROJECT_ENVIRONMENT=.venv-cpython uv run --python cpython-3.13 \
     python tests/test_propagator.py
 ```
 
