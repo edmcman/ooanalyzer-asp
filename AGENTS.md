@@ -328,8 +328,12 @@ Representative measurements:
   merely because a conditional `-mergeClasses/2` atom exists
 
 Interpretation: CDCL/USC itself is not the main failure. The problem is that
-the theory propagator hides the compact Boolean structure that the optimizer
-needs to prove away impossible rewards.
+the crucial mutual exclusions are **conditional** — a merge is forbidden only
+when some *other* merge holds — so the reward-maximizing Boolean relaxation
+collects a merge's reward while leaving its conditioning merge false, never
+hitting a conflict. This was confirmed by directly materializing the
+`&sameClass` closure as ordinary Boolean (see "tested and ruled out" below): the
+LB still did not move.
 
 What has and has not helped so far:
 
@@ -342,13 +346,39 @@ What has and has not helped so far:
   separated by a false `&sameClass`, but it still does not expose a compact
   global exclusion to USC
 
-The most promising directions are:
+Tested and ruled out (2026-06-25/26, on TinyXml champion
+`--configuration=crafty --restarts=F,736` → `[-704,-42666]`, LB `-50230`,
+gap 7564; all sound, all reverted — details in
+`.state/merge-optimization-blocker.md` and `autoresearch/classic-260625-0952/`):
 
-- derive explicit Boolean pairwise exclusions or cardinality constraints for
-  mutually-exclusive rewarded merges
-- generate such exclusions lazily from ordinary ASP witnesses when possible
-- use partial/targeted grounding of `sameClass`-style consequences in the hot
-  merge-reward regions, instead of fully materializing the whole closure
+- **Materializing the `sameClass` closure as ordinary Boolean** (the "missing
+  booleans"): added `sameClass/2` = refl+sym+trans closure of `mergeClasses` and
+  substituted `&sameClass → sameClass` in the theory-gated `-mergeClasses` rules
+  F/C/R. Grounding is affordable (24.6s, 3.4GB, 101,756 atoms — sparse, not the
+  cubic blowup). **LB unchanged (-50230); `usc,1` extracts zero cores even with
+  the full ordinary closure visible.** This is the definitive test: the booleans
+  were never "missing," they were *conditional* (representation-independent), so
+  the relaxation evades them regardless of ordinary vs. theory-gated form.
+- **Entailed static transitivity constraint** `:- mergeClasses(A,B),
+  mergeClasses(B,C), -mergeClasses(A,C).`: sound (prunes nothing new), but LB
+  moved by zero — the static-mutex part being exposed didn't help because the
+  relaxation merges theory-mutex leaves whose `-mergeClasses` isn't active
+  without the propagator.
+- **Spanning-tree propagator reason** (Rust `component_spanning_reasons`):
+  lemma size unchanged (the CUT dominates, not the reason); conflicts +14.5%.
+- **Merge-rewards-removed diagnostic**: with the three merge `#maximize`
+  commented, comp2 is provably optimal in 28s (LB==incumbent, gap 0). Arithmetic
+  (trivial sum 17525 − collected 9961 = 7564) shows merge rewards are the
+  *entire* gap. (`enable_merge_rewards` is documented below but NOT implemented —
+  `--const enable_merge_rewards=0` is a silent no-op.)
+
+The only remaining sound direction is to break the condition/reward separation
+directly — e.g. per-hub explicit at-most-one `:- mergeClasses(H,Li),
+mergeClasses(H,Lj)` keyed **only** on statically-known (unconditional) mutex leaf
+pairs (`reasonNOTMergeClasses_E/I/K`-shaped, no `&sameClass` in the body — not
+the F/C/R/J-shaped conditional ones), or a propagator-side reformulation that
+emits a per-hub cardinality instead of a transitive-chain reason. Both are
+harder than "materialize the closure."
 
 Avoid assuming that more propagator-local pruning alone will solve TinyXml or
 malware-scale optimization. The stress toy strongly suggests that exposing the

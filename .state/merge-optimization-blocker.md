@@ -1,8 +1,11 @@
 # Working notes: the merge-reward optimization blocker
 
 Working notes on the `&sameClass`/merge optimization blocker. Reference input:
-`examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp`. Standard config:
-`-n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model`.
+`examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp`. Champion config (now the
+Makefile default, see "Champion config" below):
+`--configuration=crafty --restarts=F,736` (single-threaded). The earlier
+`-n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model`
+config is the pre-champion experiment baseline.
 
 ## The blocker, characterized
 
@@ -238,3 +241,114 @@ clause-sharing pollution, not progress. t32's choices drop below t16's
 (4843M < 5206M): 32 threads on 32 cores hit memory-bandwidth / propagator
 contention. The GIL was never the limiter; removing it let the machine do more
 redundant decisions, which is the wrong thing for a serial-proof bottleneck.
+
+## Champion config (2026-06-25) — now the Makefile default
+
+Exhaustive option sweep under the correct **lexicographic** metric
+`[comp1, comp2]` (comp1 = vftable MaxSize+gap `@3`, optimized first; comp2 =
+merge/ctor/method rewards `@0`; lower = better). The earlier numbers in this file
+were measured under the wrong metric (comp2-in-isolation while comp1 was
+unproven) and are superseded here.
+
+**Champion: `--configuration=crafty --restarts=F,736` → `[-704, -42666]`**
+@ 120/300/600s (comp1 settled to its proven optimum -704; comp2 = -42666, proven
+LB -50230, **gap 7564**). Single-threaded — threads break comp1.
+
+Key facts (all single-trial, deterministic, lexicographic metric):
+- Only `--configuration=crafty` settles comp1=-704; handy/jumpy/trendy/frumpy
+  abandon comp1 (wreck lexicographically). `--restarts=F,<N>` is required; the
+  default restart schedule never settles comp1 in 300s.
+- comp1 settling is **sharp/quasi-periodic** in the F value: near F736 it
+  alternates F720✓ F728✗ F736✓ F744✗ F752✓ (~16 apart); F744 collapses comp1 to
+  -72. F736 is the comp2 peak among settlers.
+- comp2=-42666 is a **strategy-invariant plateau**, not search luck: five
+  opt-cores (bb,lin / bb,inc / bb,dec / usc / usc,1) AND four heuristics
+  (vsids/berkmin/vmtf/eq3) all reproduce the identical incumbent at F736, and it
+  is frozen across 120/300/600s. Every option that perturbs the restart trajectory
+  (opt-heuristic=sign, save-progress, deletion=0, opt-mode=optN, threads) breaks
+  comp1 and loses lexicographically.
+- So the solver-option knob is **genuinely tapped**. The 7564 gap to the LB is
+  encoding-level (conditional merge mutexes hidden behind `&sameClass`).
+
+Lineage: default `bb,lin,vsids,neg` `[-636,-34521]` → `--restarts=F,256`
+`[-704,-35832]` → `crafty+F512` `[-704,-42257]` → `crafty+F768` `[-704,-42450]`
+→ **`crafty+F736` `[-704,-42666]`**. Logs: `autoresearch/classic-260625-0952/`.
+
+## ASP-side experiments (2026-06-25/26, user lifted the "don't edit ASP" ban,
+kept "must not change the results") — all NEGATIVE, all reverted
+
+Four experiments attacked the AGENTS.md "expose the Boolean structure" direction.
+All were sound (prune only already-forbidden assignments) and all reverted; the
+champion `[-704,-42666]` source is the committed tree (no stash/branch).
+
+1. **Spanning-tree reason** (iter17, Rust-only): replaced
+   `component_reasons` (all internal merge edges, O(n²)) with a spanning-tree
+   reason (n−1 edges) in `rust/src/uf.rs` → `component_cut_and_reasons`. NEGATIVE:
+   lemma size unchanged (691 vs 693 lits/lemma); conflicts +14.5%. clingo
+   re-minimizes the propagator nogood, and the **CUT** (all-false boundary merge
+   edges of the dense ~14-method component) dominates the kept literal set, not
+   the reason. Reason-set shaping is a dead end. Reverted to `component_reasons`.
+
+2. **Entailed transitivity constraint** (iter18, ASP): added the ordinary entailed
+   clause `:- mergeClasses(A,B), mergeClasses(B,C), -mergeClasses(A,C).` to
+   `src/modules/merges.lp` (sound: &sameClass is the closure of mergeClasses, so
+   mc(A,B)&mc(B,C) ⇒ &sameClass(A,C), already forbidden by line 163). NEGATIVE:
+   LB stayed **exactly -50230** in every run (default + `bb,hier`); best comp2
+   regressed to -42353 (the constraint perturbed the F736 trajectory, F736 now
+   breaks comp1). The static-mutex part being exposed didn't move the LB because
+   the reward-maximizing relaxation evades static mutexes by choosing
+   theory-mutex leaves whose `-mergeClasses` isn't active without the propagator.
+
+3. **LB-proof profiling** (iter19, diagnostic): three independent diagnostics
+   confirm theory-shaped merge mutexes are the **SOLE** limiter. (a) `usc,1` →
+   `lower.unsat=0` (zero tightening cores). (b) iter18's static constraint moved
+   the LB by zero. (c) Merge-rewards-REMOVED (temporarily commented the three
+   `#maximize`) → `[-704,-32705]` with LB==incumbent, gap=0, **OPTIMUM FOUND in
+   27.79s**. Arithmetic: merge trivial sum=17525, optimum collects=9961,
+   uncollectible=7564 = exactly the gap. So merge rewards are the *entire* 7564
+   gap; without them comp2 is provably optimal in 28s.
+   **Side finding:** `enable_merge_rewards` is documented in AGENTS.md but NOT
+   implemented (absent from `config.lp`/`merges.lp`; the `#maximize` are ungated)
+   — `--const enable_merge_rewards=0` is a silent no-op.
+
+4. **sameClass materialization** (iter20, ASP — the "missing booleans" test the
+   user asked for): added an ordinary `sameClass/2` closure
+   (refl+sym+trans over `mergeEntity`) to `src/modules/merges.lp` and substituted
+   `&sameClass → sameClass` in the theory-gated `-mergeClasses` rules F (line 87),
+   C (98-99), R (142,144); kept `&sameClass`+propagator for line 163 and the
+   merge/reward rules. Grounding **feasible** (the cubic-blowup fear did not hit
+   on TinyXml): 24.6s, 3.4GB, 101,756 sameClass atoms (sparse — 3190 entities
+   would be ~10M as a full clique; not the `_closed×_closed` anti-pattern;
+   `derivedClass/3` only 14 so F's domain is tiny). NEGATIVE and **definitive**:
+   LB stayed **exactly -50230**, `usc,1` `lower.unsat=0` (zero cores even with the
+   full ordinary Boolean closure visible to the relaxation); comp1 broke
+   -704→-80 (trajectory perturbed). **This falsifies the "missing booleans"
+   hypothesis.** The merge mutexes are **CONDITIONAL**, not static:
+   `-mc(W1,W2) :- derivedClass(DC1,W1,_), derivedClass(DC2,W2,_),
+   sameClass(DC1,DC2), …` forbids merging W1,W2 only when DC1,DC2 are same-class.
+   In the reward-maximizing LB relaxation the merges are free, so it collects the
+   W1-W2 reward while leaving the conditioning `mergeClasses(DC1,DC2)` (and its
+   path) **false** to avoid firing the `-mc`. The condition and the reward sit on
+   different free merge choices, so the relaxation never hits a Boolean conflict
+   — whether the condition is ordinary `sameClass` or theory-gated `&sameClass`.
+   **Theory-gating was a red herring: the booleans were never missing, they were
+   conditional, and conditionality is representation-independent.** Strictly
+   stronger than iter18/19: full ordinary closure exposed, LB still cannot see the
+   at-most-one.
+
+### Refined root cause and the only remaining direction
+
+The blocker is the **conditional** structure of the merge mutexes (condition and
+reward on different free merge choices), not their representation as theory
+atoms. Exposing the closure, entailed static transitivity, or spanning-tree
+reasons all fail for the same reason: none breaks the condition/reward
+separation. The only untried sound direction is to break that separation
+directly — per-hub explicit at-most-one `:- mergeClasses(H,Li), mergeClasses(H,Lj)`
+keyed **only** on *statically-known* (unconditional) mutex leaf pairs (where the
+leaf-leaf mutex is `reasonNOTMergeClasses_E/I/K`-shaped — ordinary, no
+`&sameClass` in the body — not F/C/R/J-shaped conditional ones), or a
+propagator-side reformulation that emits the per-hub at-most-one as a learned
+cardinality rather than a transitive-chain reason. Both are strictly harder than
+"materialize the closure" and out of scope of the "don't change results"
+constraint. Until then the champion `[-704,-42666]` stands and the 7564 gap is
+intrinsic.

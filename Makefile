@@ -3,8 +3,17 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
+# Champion solver config for TinyXml-class merge-reward optimization (see
+# .state/merge-optimization-blocker.md and autoresearch/classic-260625-0952/).
+# --configuration=crafty + a --restarts=F,<N> settling point is the only combination
+# that settles comp1 (vftable MaxSize+gap); F736 is the comp2 peak among settlers
+# [-704,-42666], strategy-invariant across opt-cores/heuristics. Single-threaded
+# (threads break comp1). opt-strategy/heuristic left at ooanalyzer.py defaults
+# (bb,lin / vsids) — strategy-invariant at F736.
+# Previous (pre-champion) experiment config kept commented for reference:
 #PROP_FLAGS   := -n -1 --opt-strategy bb,lin --heuristic=domain --sign-def=neg --time-limit=300 -t2 --stats --show-guesses
-PROP_FLAGS   := -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses
+#PROP_FLAGS   := -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
