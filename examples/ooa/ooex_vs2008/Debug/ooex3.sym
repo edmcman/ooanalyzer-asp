@@ -1,14 +1,53 @@
-08:02:11 using native Rust &sameClass propagator
-08:02:11 Grounding...
-08:02:12 Grounding done (0.01s)
-08:02:12 Solving...
-08:02:12 Model found (0.01s): [-2124]
-08:02:12 Model found (0.01s, +0.00s): [-2192]
-08:02:12 Solving done: OPTIMUM FOUND (0.00s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex3.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex3.results
+07:32:59 using native Rust &sameClass propagator
+07:32:59 Grounding...
+07:32:59 Grounding done (0.01s)
+07:32:59 Solving...
+07:32:59 Model found (0.01s): [-1800]
+07:32:59 Model found (0.01s, +0.00s): [-1810]
+07:32:59 Model found (0.01s, +0.00s): [-1820]
+07:32:59 Model found (0.02s, +0.00s): [-1830]
+07:32:59 Model found (0.02s, +0.00s): [-1840]
+07:32:59 Model found (0.02s, +0.00s): [-1850]
+07:32:59 Model found (0.02s, +0.00s): [-1860]
+07:32:59 Model found (0.02s, +0.00s): [-1870]
+07:32:59 Model found (0.02s, +0.00s): [-1880]
+07:32:59 Model found (0.02s, +0.00s): [-1890]
+07:32:59 Model found (0.02s, +0.00s): [-1900]
+07:32:59 Model found (0.02s, +0.00s): [-1910]
+07:32:59 Model found (0.02s, +0.00s): [-1920]
+07:32:59 Model found (0.02s, +0.00s): [-1930]
+07:32:59 Model found (0.02s, +0.00s): [-1940]
+07:32:59 Model found (0.02s, +0.00s): [-1950]
+07:32:59 Model found (0.02s, +0.00s): [-1960]
+07:32:59 Model found (0.02s, +0.00s): [-1970]
+07:32:59 Model found (0.02s, +0.00s): [-1980]
+07:32:59 Model found (0.03s, +0.00s): [-1990]
+07:32:59 Model found (0.03s, +0.00s): [-2000]
+07:32:59 Model found (0.03s, +0.00s): [-2010]
+07:32:59 Model found (0.03s, +0.00s): [-2020]
+07:32:59 Model found (0.03s, +0.00s): [-2030]
+07:32:59 Model found (0.03s, +0.00s): [-2040]
+07:32:59 Model found (0.03s, +0.00s): [-2050]
+07:32:59 Model found (0.03s, +0.00s): [-2060]
+07:32:59 Model found (0.03s, +0.00s): [-2070]
+07:32:59 Model found (0.03s, +0.00s): [-2078]
+07:32:59 Model found (0.03s, +0.00s): [-2088]
+07:32:59 Model found (0.03s, +0.00s): [-2094]
+07:32:59 Model found (0.03s, +0.00s): [-2104]
+07:32:59 Model found (0.03s, +0.00s): [-2114]
+07:32:59 Model found (0.03s, +0.00s): [-2122]
+07:32:59 Model found (0.03s, +0.00s): [-2132]
+07:32:59 Model found (0.03s, +0.00s): [-2142]
+07:32:59 Model found (0.04s, +0.00s): [-2152]
+07:32:59 Model found (0.04s, +0.00s): [-2162]
+07:32:59 Model found (0.04s, +0.00s): [-2172]
+07:32:59 Model found (0.04s, +0.00s): [-2182]
+07:32:59 Model found (0.04s, +0.00s): [-2192]
+07:32:59 Solving done: OPTIMUM FOUND (0.03s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex3.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex3.results
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 41
 Optimization: -2192
 
 % Equivalence classes (207 classes, 210 entities):
@@ -151,25 +190,25 @@ Optimization: -2192
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:12 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
+07:32:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex3.results
 
 % Stats:
 %   atoms: 5367.0
 %   bodies: 1192.0
 %   rules: 5825.0
 %   variables: 717.0
-%   constraints: 17.0
-%   choices: 20.0
-%   conflicts: 4.0
-%   models: 2.0
+%   constraints: 10.0
+%   choices: 473.0
+%   conflicts: 5.0
+%   models: 41.0
 %   optimal_models: 1.0
 %   final_cost: [-2192.0]
 %   lower_bound: [-2192.0]
-%   total_time: 0.019662141799926758
-%   ground_time: 0.010060166008770466
-%   time_to_first_model: 0.011785078007960692
-%   max_rss_bytes: 37597184
-%   solve_time: 0.002743959426879883
+%   total_time: 0.043170928955078125
+%   ground_time: 0.010989684000378475
+%   time_to_first_model: 0.01295764499809593
+%   max_rss_bytes: 37634048
+%   solve_time: 0.025249004364013672
 classCallsMethod(Derived::Derived(void)@0x411560,Base::Base(void)@0x411610)
 classCallsMethod(Derived::Derived(void)@0x411560,int Base::func3(void)@0x411510)
 classRelatedMethod(Base2::Base2(void)@0x411670,int Base2::func3(void)@0x4116d0)

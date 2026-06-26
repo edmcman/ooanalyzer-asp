@@ -1,17 +1,251 @@
-08:02:12 using native Rust &sameClass propagator
-08:02:12 Grounding...
-08:02:12 Grounding done (0.04s)
-08:02:12 Solving...
-08:02:12 Model found (0.06s): [-28, -3242]
-08:02:12 Lower bound: [-28, -3540]  upper: [-28, -3242]  gap: [0, 298] (0.06s)
-08:02:12 Model found (0.06s, +0.01s): [-28, -3292]
-08:02:12 Model found (0.07s, +0.01s): [-28, -3302]
-08:02:12 Model found (0.08s, +0.00s): [-28, -3523]
-08:02:12 Solving done: OPTIMUM FOUND (0.04s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/oo.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/oo.results
+07:32:59 using native Rust &sameClass propagator
+07:32:59 Grounding...
+07:32:59 Grounding done (0.04s)
+07:32:59 Solving...
+07:32:59 Model found (0.09s): [-20, -2128]
+07:32:59 Model found (0.09s, +0.00s): [-20, -2138]
+07:32:59 Model found (0.10s, +0.01s): [-20, -2148]
+07:32:59 Model found (0.10s, +0.00s): [-20, -2158]
+07:32:59 Model found (0.11s, +0.00s): [-20, -2168]
+07:32:59 Model found (0.11s, +0.00s): [-20, -2178]
+07:32:59 Model found (0.12s, +0.00s): [-20, -2188]
+07:32:59 Model found (0.12s, +0.00s): [-20, -2198]
+07:32:59 Model found (0.12s, +0.00s): [-20, -2208]
+07:32:59 Model found (0.13s, +0.00s): [-20, -2218]
+07:32:59 Model found (0.13s, +0.00s): [-20, -2228]
+07:32:59 Model found (0.14s, +0.00s): [-20, -2238]
+07:32:59 Model found (0.14s, +0.00s): [-20, -2248]
+07:32:59 Model found (0.15s, +0.00s): [-20, -2258]
+07:32:59 Model found (0.15s, +0.00s): [-20, -2268]
+07:32:59 Model found (0.15s, +0.00s): [-20, -2278]
+07:32:59 Model found (0.16s, +0.00s): [-20, -2288]
+07:32:59 Model found (0.16s, +0.00s): [-20, -2298]
+07:32:59 Model found (0.17s, +0.01s): [-20, -2308]
+07:32:59 Model found (0.17s, +0.00s): [-20, -2318]
+07:32:59 Model found (0.19s, +0.01s): [-20, -2328]
+07:32:59 Model found (0.19s, +0.00s): [-20, -2338]
+07:32:59 Model found (0.19s, +0.00s): [-20, -2348]
+07:32:59 Model found (0.20s, +0.00s): [-20, -2358]
+07:32:59 Model found (0.20s, +0.01s): [-20, -2368]
+07:32:59 Model found (0.21s, +0.00s): [-20, -2378]
+07:32:59 Model found (0.21s, +0.01s): [-20, -2388]
+07:32:59 Model found (0.22s, +0.00s): [-20, -2398]
+07:32:59 Model found (0.22s, +0.01s): [-20, -2408]
+07:32:59 Model found (0.23s, +0.00s): [-20, -2418]
+07:32:59 Model found (0.23s, +0.01s): [-20, -2428]
+07:32:59 Model found (0.24s, +0.00s): [-20, -2438]
+07:32:59 Model found (0.24s, +0.00s): [-20, -2448]
+07:32:59 Model found (0.25s, +0.00s): [-20, -2458]
+07:32:59 Model found (0.25s, +0.00s): [-20, -2468]
+07:32:59 Model found (0.26s, +0.01s): [-20, -2478]
+07:32:59 Model found (0.26s, +0.00s): [-20, -2488]
+07:32:59 Model found (0.27s, +0.00s): [-20, -2498]
+07:32:59 Model found (0.27s, +0.00s): [-20, -2508]
+07:32:59 Model found (0.27s, +0.00s): [-20, -2518]
+07:32:59 Model found (0.28s, +0.00s): [-20, -2528]
+07:32:59 Model found (0.28s, +0.01s): [-20, -2538]
+07:32:59 Model found (0.29s, +0.00s): [-20, -2548]
+07:32:59 Model found (0.29s, +0.00s): [-20, -2558]
+07:32:59 Model found (0.30s, +0.00s): [-20, -2568]
+07:32:59 Model found (0.30s, +0.00s): [-20, -2578]
+07:32:59 Model found (0.31s, +0.00s): [-20, -2588]
+07:32:59 Model found (0.31s, +0.00s): [-20, -2598]
+07:32:59 Model found (0.31s, +0.00s): [-20, -2608]
+07:32:59 Model found (0.32s, +0.00s): [-20, -2618]
+07:32:59 Model found (0.32s, +0.00s): [-20, -2628]
+07:32:59 Model found (0.33s, +0.01s): [-20, -2638]
+07:32:59 Model found (0.33s, +0.00s): [-20, -2648]
+07:32:59 Model found (0.34s, +0.00s): [-20, -2658]
+07:32:59 Model found (0.34s, +0.01s): [-20, -2668]
+07:32:59 Model found (0.35s, +0.00s): [-20, -2678]
+07:32:59 Model found (0.35s, +0.00s): [-20, -2688]
+07:32:59 Model found (0.36s, +0.00s): [-20, -2698]
+07:32:59 Model found (0.36s, +0.00s): [-20, -2708]
+07:32:59 Model found (0.37s, +0.00s): [-20, -2718]
+07:32:59 Model found (0.37s, +0.01s): [-20, -2728]
+07:32:59 Model found (0.38s, +0.01s): [-20, -2738]
+07:32:59 Model found (0.38s, +0.00s): [-20, -2748]
+07:32:59 Model found (0.39s, +0.01s): [-20, -2758]
+07:32:59 Model found (0.39s, +0.00s): [-20, -2768]
+07:32:59 Model found (0.40s, +0.01s): [-20, -2778]
+07:32:59 Model found (0.40s, +0.00s): [-20, -2788]
+07:32:59 Model found (0.41s, +0.01s): [-20, -2798]
+07:32:59 Model found (0.42s, +0.01s): [-20, -2808]
+07:32:59 Model found (0.42s, +0.00s): [-20, -2818]
+07:32:59 Model found (0.42s, +0.01s): [-20, -2828]
+07:32:59 Model found (0.43s, +0.00s): [-20, -2838]
+07:32:59 Model found (0.43s, +0.01s): [-20, -2848]
+07:32:59 Model found (0.44s, +0.01s): [-20, -2858]
+07:32:59 Model found (0.44s, +0.00s): [-20, -2868]
+07:32:59 Model found (0.45s, +0.00s): [-20, -2878]
+07:32:59 Model found (0.45s, +0.00s): [-20, -2888]
+07:32:59 Model found (0.46s, +0.00s): [-20, -2898]
+07:32:59 Model found (0.46s, +0.00s): [-20, -2908]
+07:32:59 Model found (0.47s, +0.01s): [-20, -2918]
+07:32:59 Model found (0.47s, +0.00s): [-20, -2928]
+07:32:59 Model found (0.48s, +0.00s): [-20, -2938]
+07:32:59 Model found (0.48s, +0.00s): [-20, -2948]
+07:32:59 Model found (0.49s, +0.00s): [-20, -2958]
+07:32:59 Model found (0.49s, +0.00s): [-20, -2968]
+07:32:59 Model found (0.50s, +0.01s): [-20, -2978]
+07:32:59 Model found (0.50s, +0.01s): [-20, -2988]
+07:32:59 Model found (0.51s, +0.00s): [-20, -2998]
+07:32:59 Model found (0.51s, +0.01s): [-20, -3008]
+07:32:59 Model found (0.52s, +0.01s): [-20, -3018]
+07:32:59 Model found (0.52s, +0.00s): [-20, -3028]
+07:32:59 Model found (0.53s, +0.01s): [-20, -3038]
+07:32:59 Model found (0.53s, +0.01s): [-20, -3048]
+07:32:59 Model found (0.54s, +0.00s): [-20, -3058]
+07:32:59 Model found (0.55s, +0.01s): [-20, -3068]
+07:32:59 Model found (0.55s, +0.01s): [-20, -3078]
+07:33:00 Model found (0.56s, +0.01s): [-20, -3088]
+07:33:00 Model found (0.56s, +0.01s): [-20, -3098]
+07:33:00 Model found (0.57s, +0.00s): [-20, -3108]
+07:33:00 Model found (0.57s, +0.01s): [-20, -3118]
+07:33:00 Model found (0.58s, +0.01s): [-20, -3126]
+07:33:00 Model found (0.58s, +0.00s): [-20, -3136]
+07:33:00 Model found (0.59s, +0.00s): [-20, -3146]
+07:33:00 Model found (0.59s, +0.01s): [-20, -3156]
+07:33:00 Model found (0.60s, +0.00s): [-20, -3166]
+07:33:00 Model found (0.60s, +0.01s): [-20, -3176]
+07:33:00 Model found (0.61s, +0.01s): [-20, -3184]
+07:33:00 Model found (0.61s, +0.00s): [-20, -3193]
+07:33:00 Model found (0.62s, +0.01s): [-20, -3200]
+07:33:00 Model found (0.62s, +0.01s): [-20, -3210]
+07:33:00 Model found (0.63s, +0.00s): [-20, -3218]
+07:33:00 Model found (0.63s, +0.00s): [-20, -3219]
+07:33:00 Model found (0.64s, +0.01s): [-20, -3226]
+07:33:00 Model found (0.65s, +0.00s): [-20, -3236]
+07:33:00 Model found (0.65s, +0.00s): [-20, -3244]
+07:33:00 Model found (0.66s, +0.00s): [-20, -3252]
+07:33:00 Model found (0.66s, +0.00s): [-20, -3260]
+07:33:00 Model found (0.67s, +0.01s): [-20, -3261]
+07:33:00 Model found (0.67s, +0.00s): [-20, -3271]
+07:33:00 Model found (0.68s, +0.00s): [-20, -3281]
+07:33:00 Model found (0.68s, +0.01s): [-20, -3290]
+07:33:00 Model found (0.69s, +0.01s): [-20, -3300]
+07:33:00 Model found (0.69s, +0.01s): [-20, -3307]
+07:33:00 Model found (0.70s, +0.01s): [-20, -3317]
+07:33:00 Model found (0.70s, +0.01s): [-28, -2427]
+07:33:00 Model found (0.71s, +0.00s): [-28, -2437]
+07:33:00 Model found (0.71s, +0.01s): [-28, -2447]
+07:33:00 Model found (0.72s, +0.00s): [-28, -2457]
+07:33:00 Model found (0.72s, +0.01s): [-28, -2467]
+07:33:00 Model found (0.73s, +0.00s): [-28, -2477]
+07:33:00 Model found (0.74s, +0.01s): [-28, -2487]
+07:33:00 Model found (0.74s, +0.00s): [-28, -2497]
+07:33:00 Model found (0.75s, +0.01s): [-28, -2507]
+07:33:00 Model found (0.75s, +0.00s): [-28, -2517]
+07:33:00 Model found (0.76s, +0.00s): [-28, -2527]
+07:33:00 Model found (0.76s, +0.00s): [-28, -2537]
+07:33:00 Model found (0.76s, +0.00s): [-28, -2547]
+07:33:00 Model found (0.77s, +0.00s): [-28, -2557]
+07:33:00 Model found (0.77s, +0.00s): [-28, -2567]
+07:33:00 Model found (0.77s, +0.00s): [-28, -2577]
+07:33:00 Model found (0.78s, +0.00s): [-28, -2587]
+07:33:00 Model found (0.78s, +0.00s): [-28, -2597]
+07:33:00 Model found (0.79s, +0.00s): [-28, -2607]
+07:33:00 Model found (0.79s, +0.00s): [-28, -2617]
+07:33:00 Model found (0.80s, +0.00s): [-28, -2627]
+07:33:00 Model found (0.80s, +0.00s): [-28, -2637]
+07:33:00 Model found (0.80s, +0.00s): [-28, -2647]
+07:33:00 Model found (0.81s, +0.00s): [-28, -2657]
+07:33:00 Model found (0.81s, +0.00s): [-28, -2667]
+07:33:00 Model found (0.82s, +0.00s): [-28, -2677]
+07:33:00 Model found (0.82s, +0.01s): [-28, -2687]
+07:33:00 Model found (0.83s, +0.00s): [-28, -2697]
+07:33:00 Model found (0.83s, +0.00s): [-28, -2707]
+07:33:00 Model found (0.84s, +0.00s): [-28, -2717]
+07:33:00 Model found (0.84s, +0.00s): [-28, -2727]
+07:33:00 Model found (0.84s, +0.00s): [-28, -2737]
+07:33:00 Model found (0.85s, +0.00s): [-28, -2747]
+07:33:00 Model found (0.85s, +0.00s): [-28, -2757]
+07:33:00 Model found (0.86s, +0.00s): [-28, -2767]
+07:33:00 Model found (0.86s, +0.00s): [-28, -2777]
+07:33:00 Model found (0.87s, +0.00s): [-28, -2787]
+07:33:00 Model found (0.87s, +0.00s): [-28, -2797]
+07:33:00 Model found (0.87s, +0.00s): [-28, -2807]
+07:33:00 Model found (0.88s, +0.00s): [-28, -2817]
+07:33:00 Model found (0.88s, +0.00s): [-28, -2827]
+07:33:00 Model found (0.89s, +0.00s): [-28, -2837]
+07:33:00 Model found (0.89s, +0.00s): [-28, -2847]
+07:33:00 Model found (0.90s, +0.00s): [-28, -2857]
+07:33:00 Model found (0.90s, +0.00s): [-28, -2867]
+07:33:00 Model found (0.91s, +0.01s): [-28, -2877]
+07:33:00 Model found (0.91s, +0.00s): [-28, -2887]
+07:33:00 Model found (0.92s, +0.00s): [-28, -2897]
+07:33:00 Model found (0.92s, +0.00s): [-28, -2907]
+07:33:00 Model found (0.93s, +0.00s): [-28, -2917]
+07:33:00 Model found (0.93s, +0.00s): [-28, -2927]
+07:33:00 Model found (0.93s, +0.00s): [-28, -2937]
+07:33:00 Model found (0.94s, +0.00s): [-28, -2947]
+07:33:00 Model found (0.94s, +0.00s): [-28, -2957]
+07:33:00 Model found (0.95s, +0.00s): [-28, -2967]
+07:33:00 Model found (0.95s, +0.00s): [-28, -2977]
+07:33:00 Model found (0.96s, +0.00s): [-28, -2987]
+07:33:00 Model found (0.96s, +0.00s): [-28, -2997]
+07:33:00 Model found (0.97s, +0.00s): [-28, -3007]
+07:33:00 Model found (0.97s, +0.00s): [-28, -3017]
+07:33:00 Model found (0.98s, +0.01s): [-28, -3027]
+07:33:00 Model found (0.98s, +0.00s): [-28, -3037]
+07:33:00 Model found (0.98s, +0.00s): [-28, -3047]
+07:33:00 Model found (0.99s, +0.00s): [-28, -3057]
+07:33:00 Model found (1.00s, +0.01s): [-28, -3067]
+07:33:00 Model found (1.00s, +0.01s): [-28, -3077]
+07:33:00 Model found (1.01s, +0.00s): [-28, -3087]
+07:33:00 Model found (1.01s, +0.01s): [-28, -3097]
+07:33:00 Model found (1.02s, +0.01s): [-28, -3107]
+07:33:00 Model found (1.02s, +0.00s): [-28, -3117]
+07:33:00 Model found (1.03s, +0.01s): [-28, -3127]
+07:33:00 Model found (1.03s, +0.01s): [-28, -3137]
+07:33:00 Model found (1.04s, +0.00s): [-28, -3147]
+07:33:00 Model found (1.04s, +0.01s): [-28, -3157]
+07:33:00 Model found (1.05s, +0.01s): [-28, -3167]
+07:33:00 Model found (1.05s, +0.00s): [-28, -3177]
+07:33:00 Model found (1.06s, +0.01s): [-28, -3187]
+07:33:00 Model found (1.07s, +0.01s): [-28, -3197]
+07:33:00 Model found (1.07s, +0.00s): [-28, -3207]
+07:33:00 Model found (1.08s, +0.01s): [-28, -3217]
+07:33:00 Model found (1.08s, +0.01s): [-28, -3227]
+07:33:00 Model found (1.09s, +0.00s): [-28, -3237]
+07:33:00 Model found (1.09s, +0.01s): [-28, -3247]
+07:33:00 Model found (1.10s, +0.01s): [-28, -3257]
+07:33:00 Model found (1.10s, +0.00s): [-28, -3267]
+07:33:00 Model found (1.11s, +0.01s): [-28, -3277]
+07:33:00 Model found (1.11s, +0.01s): [-28, -3287]
+07:33:00 Model found (1.12s, +0.00s): [-28, -3297]
+07:33:00 Model found (1.12s, +0.01s): [-28, -3307]
+07:33:00 Model found (1.13s, +0.01s): [-28, -3317]
+07:33:00 Model found (1.13s, +0.00s): [-28, -3327]
+07:33:00 Model found (1.14s, +0.01s): [-28, -3337]
+07:33:00 Model found (1.15s, +0.01s): [-28, -3347]
+07:33:00 Model found (1.15s, +0.01s): [-28, -3354]
+07:33:00 Model found (1.16s, +0.01s): [-28, -3364]
+07:33:00 Model found (1.16s, +0.01s): [-28, -3371]
+07:33:00 Model found (1.17s, +0.00s): [-28, -3381]
+07:33:00 Model found (1.18s, +0.01s): [-28, -3391]
+07:33:00 Model found (1.19s, +0.01s): [-28, -3399]
+07:33:00 Model found (1.19s, +0.01s): [-28, -3408]
+07:33:00 Model found (1.20s, +0.01s): [-28, -3416]
+07:33:00 Model found (1.20s, +0.00s): [-28, -3424]
+07:33:00 Model found (1.21s, +0.01s): [-28, -3425]
+07:33:00 Model found (1.22s, +0.01s): [-28, -3433]
+07:33:00 Model found (1.22s, +0.01s): [-28, -3435]
+07:33:00 Model found (1.23s, +0.01s): [-28, -3443]
+07:33:00 Model found (1.23s, +0.01s): [-28, -3452]
+07:33:00 Model found (1.24s, +0.00s): [-28, -3459]
+07:33:00 Model found (1.24s, +0.01s): [-28, -3469]
+07:33:00 Model found (1.25s, +0.01s): [-28, -3476]
+07:33:00 Model found (1.25s, +0.00s): [-28, -3486]
+07:33:00 Model found (1.26s, +0.01s): [-28, -3493]
+07:33:00 Model found (1.27s, +0.01s): [-28, -3503]
+07:33:00 Model found (1.27s, +0.00s): [-28, -3513]
+07:33:00 Model found (1.28s, +0.01s): [-28, -3523]
+07:33:00 Solving done: OPTIMUM FOUND (1.24s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/oo.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/oo.results
 OPTIMUM FOUND
 
-Answer: 4
+Answer: 239
 Optimization: -28 -3523
 
 % Equivalence classes (278 classes, 314 entities):
@@ -191,10 +425,10 @@ Optimization: -28 -3523
 %   [merge]
 %     strongMergeReward: 6/7
 %       strongMergeReward(thunk:virtual Cls2::func3(void)@0x41103c,Cls2::Cls2(void)@0x411b40) strongMergeReward(thunk:virtual Cls1::func1(void)@0x4110a5,Cls1::Cls1(void)@0x411a70)
-%       strongMergeReward(thunk:virtual Cls3::func1(void)@0x4110aa,Cls3::Cls3(void)@0x411860) strongMergeReward(thunk:virtual Cls2::func4(void)@0x411113,Cls2::Cls2(void)@0x411b40)
+%       strongMergeReward(thunk:virtual Cls3::func1(void)@0x4110aa,Cls3::Cls3(void)@0x411860) strongMergeReward(thunk:virtual Cls2::func4(void)@0x411113,Cls3::Cls3(void)@0x411860)
 %       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122,type_info::type_info(class type_info const &)@0x412800) strongMergeReward(thunk:virtual Cls3::func3(void)@0x411208,Cls3::Cls3(void)@0x411860)
 %     ~strongMergeReward: 1/7
-%       strongMergeCandidate(thunk:virtual Cls2::func4(void)@0x411113,Cls3::Cls3(void)@0x411860)
+%       strongMergeCandidate(thunk:virtual Cls2::func4(void)@0x411113,Cls2::Cls2(void)@0x411b40)
 %     weakMergeReward: 19/31
 %       weakMergeReward(Cls1::func2(void)@0x4117e0,Cls1::Cls1(void)@0x411a70) weakMergeReward(virtual Cls2::func4(void)@0x4118f0,const Cls2::`vftable'@0x41787c)
 %       weakMergeReward(virtual Cls3::func1(void)@0x411970,const Cls3::`vftable'{for `Cls1'}@0x417824) weakMergeReward(virtual Cls3::func3(void)@0x4119f0,const Cls3::`vftable'{for `Cls2'}@0x417814)
@@ -246,25 +480,25 @@ Optimization: -28 -3523
 %     ~embeddedObject: 4/4
 %       objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls1::`vftable'@0x417860,0) objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls2::`vftable'@0x41787c,12)
 %       objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417824,const Cls1::`vftable'@0x417860,0) objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417824,const Cls2::`vftable'@0x41787c,12)
-08:02:12 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
+07:33:00 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
 
 % Stats:
 %   atoms: 27800.0
 %   bodies: 15396.0
 %   rules: 31240.0
 %   variables: 10330.0
-%   constraints: 133.0
-%   choices: 1172.0
-%   conflicts: 19.0
-%   models: 4.0
+%   constraints: 129.0
+%   choices: 23584.0
+%   conflicts: 127.0
+%   models: 239.0
 %   optimal_models: 1.0
 %   final_cost: [-28.0, -3523.0]
 %   lower_bound: [-28.0, -3523.0]
-%   total_time: 0.08550000190734863
-%   ground_time: 0.04077442397829145
-%   time_to_first_model: 0.05941828899085522
-%   max_rss_bytes: 60444672
-%   solve_time: 0.019145965576171875
+%   total_time: 1.2922871112823486
+%   ground_time: 0.04328515499946661
+%   time_to_first_model: 0.08925350199569948
+%   max_rss_bytes: 60579840
+%   solve_time: 1.1956839561462402
 classCallsMethod(Cls3::Cls3(void)@0x411860,Cls1::Cls1(void)@0x411a70)
 classCallsMethod(const Cls1::`vftable'@0x417860,virtual Cls1::func1(void)@0x411ac0)
 classCallsMethod(const Cls2::`vftable'@0x41787c,virtual Cls2::func3(void)@0x411b90)
@@ -731,7 +965,7 @@ mergeClasses(std::basic_streambuf<char, CHAR_TRAITS>::_Unlock(void)@0x41b2f8,std
 mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122,type_info::type_info(class type_info const &)@0x412800)
 mergeClasses(thunk:virtual Cls1::func1(void)@0x4110a5,Cls1::Cls1(void)@0x411a70)
 mergeClasses(thunk:virtual Cls2::func3(void)@0x41103c,Cls2::Cls2(void)@0x411b40)
-mergeClasses(thunk:virtual Cls2::func4(void)@0x411113,Cls2::Cls2(void)@0x411b40)
+mergeClasses(thunk:virtual Cls2::func4(void)@0x411113,Cls3::Cls3(void)@0x411860)
 mergeClasses(thunk:virtual Cls3::func1(void)@0x4110aa,Cls3::Cls3(void)@0x411860)
 mergeClasses(thunk:virtual Cls3::func3(void)@0x411208,Cls3::Cls3(void)@0x411860)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x412830,const type_info::`vftable'@0x41789c)
@@ -1354,8 +1588,8 @@ vftableSizeTotal(28)
 %   {thunk:type_info::type_info(class type_info const &)@0x41124e}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x411122, type_info::type_info(class type_info const &)@0x412800, virtual * type_info::`vector deleting destructor'(unsigned int)@0x412830, const type_info::`vftable'@0x41789c, type_info::_type_info_dtor_internal_method(void)@0x41b3a8}
 %   {thunk:virtual Cls1::func1(void)@0x4110a5, Cls1::func2(void)@0x4117e0, Cls1::Cls1(void)@0x411a70, virtual Cls1::func1(void)@0x411ac0, const Cls1::`vftable'@0x417860}
-%   {thunk:virtual Cls2::func3(void)@0x41103c, thunk:virtual Cls2::func4(void)@0x411113, virtual Cls2::func4(void)@0x4118f0, Cls2::Cls2(void)@0x411b40, virtual Cls2::func3(void)@0x411b90, const Cls2::`vftable'@0x41787c}
-%   {thunk:virtual Cls3::func1(void)@0x4110aa, thunk:virtual Cls3::func3(void)@0x411208, Cls3::Cls3(void)@0x411860, virtual Cls3::func1(void)@0x411970, virtual Cls3::func3(void)@0x4119f0, const Cls3::`vftable'{for `Cls2'}@0x417814, const Cls3::`vftable'{for `Cls1'}@0x417824}
+%   {thunk:virtual Cls2::func3(void)@0x41103c, virtual Cls2::func4(void)@0x4118f0, Cls2::Cls2(void)@0x411b40, virtual Cls2::func3(void)@0x411b90, const Cls2::`vftable'@0x41787c}
+%   {thunk:virtual Cls3::func1(void)@0x4110aa, thunk:virtual Cls2::func4(void)@0x411113, thunk:virtual Cls3::func3(void)@0x411208, Cls3::Cls3(void)@0x411860, virtual Cls3::func1(void)@0x411970, virtual Cls3::func3(void)@0x4119f0, const Cls3::`vftable'{for `Cls2'}@0x417814, const Cls3::`vftable'{for `Cls1'}@0x417824}
 %   {thunk:virtual type_info::~type_info(void)@0x411064}
 %   {thunk:virtual type_info::~type_info(void)@0x4110d2}
 %   {virtual type_info::~type_info(void)@0x414862}

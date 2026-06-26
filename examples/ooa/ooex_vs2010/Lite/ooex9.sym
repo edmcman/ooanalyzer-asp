@@ -1,35 +1,46 @@
-08:02:25 using native Rust &sameClass propagator
-08:02:25 Grounding...
-08:02:25 Grounding done (0.04s)
-08:02:25 Solving...
-08:02:25 Model found (0.07s): [-56, -1996]
-08:02:25 Lower bound: [-56, -2539]  upper: [-56, -1996]  gap: [0, 543] (0.07s)
-08:02:25 Lower bound: [-56, -2529]  upper: [-56, -1996]  gap: [0, 533] (0.07s)
-08:02:25 Lower bound: [-56, -2519]  upper: [-56, -1996]  gap: [0, 523] (0.07s)
-08:02:25 Lower bound: [-56, -2509]  upper: [-56, -1996]  gap: [0, 513] (0.07s)
-08:02:25 Lower bound: [-56, -2499]  upper: [-56, -1996]  gap: [0, 503] (0.07s)
-08:02:25 Lower bound: [-56, -2489]  upper: [-56, -1996]  gap: [0, 493] (0.07s)
-08:02:25 Lower bound: [-56, -2479]  upper: [-56, -1996]  gap: [0, 483] (0.07s)
-08:02:25 Lower bound: [-56, -2469]  upper: [-56, -1996]  gap: [0, 473] (0.07s)
-08:02:25 Lower bound: [-56, -2459]  upper: [-56, -1996]  gap: [0, 463] (0.08s)
-08:02:25 Lower bound: [-56, -2449]  upper: [-56, -1996]  gap: [0, 453] (0.08s)
-08:02:25 Model found (0.08s, +0.02s): [-56, -2183]
-08:02:25 Lower bound: [-56, -2439]  upper: [-56, -2183]  gap: [0, 256] (0.09s)
-08:02:25 Lower bound: [-56, -2429]  upper: [-56, -2183]  gap: [0, 246] (0.09s)
-08:02:25 Model found (0.09s, +0.00s): [-56, -2268]
-08:02:25 Lower bound: [-56, -2411]  upper: [-56, -2268]  gap: [0, 143] (0.09s)
-08:02:25 Lower bound: [-56, -2402]  upper: [-56, -2268]  gap: [0, 134] (0.09s)
-08:02:25 Model found (0.09s, +0.00s): [-56, -2345]
-08:02:25 Lower bound: [-56, -2393]  upper: [-56, -2345]  gap: [0, 48] (0.09s)
-08:02:25 Lower bound: [-56, -2385]  upper: [-56, -2345]  gap: [0, 40] (0.09s)
-08:02:25 Lower bound: [-56, -2377]  upper: [-56, -2345]  gap: [0, 32] (0.09s)
-08:02:25 Lower bound: [-56, -2369]  upper: [-56, -2345]  gap: [0, 24] (0.09s)
-08:02:25 Model found (0.09s, +0.00s): [-56, -2353]
-08:02:25 Solving done: OPTIMUM FOUND (0.05s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex9.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex9.results
+07:33:00 using native Rust &sameClass propagator
+07:33:00 Grounding...
+07:33:00 Grounding done (0.04s)
+07:33:00 Solving...
+07:33:00 Model found (0.06s): [-44, -1840]
+07:33:00 Model found (0.06s, +0.00s): [-44, -1850]
+07:33:00 Model found (0.06s, +0.00s): [-44, -1860]
+07:33:00 Model found (0.07s, +0.00s): [-44, -1870]
+07:33:00 Model found (0.07s, +0.00s): [-44, -1878]
+07:33:00 Model found (0.07s, +0.00s): [-44, -1886]
+07:33:00 Model found (0.07s, +0.00s): [-44, -1896]
+07:33:00 Model found (0.07s, +0.00s): [-44, -1904]
+07:33:00 Model found (0.08s, +0.00s): [-52, -1942]
+07:33:00 Model found (0.08s, +0.00s): [-56, -1952]
+07:33:00 Model found (0.08s, +0.00s): [-56, -2051]
+07:33:00 Model found (0.09s, +0.00s): [-56, -2061]
+07:33:00 Model found (0.09s, +0.01s): [-56, -2068]
+07:33:00 Model found (0.09s, +0.00s): [-56, -2076]
+07:33:00 Model found (0.10s, +0.00s): [-56, -2086]
+07:33:00 Model found (0.10s, +0.00s): [-56, -2094]
+07:33:00 Model found (0.10s, +0.00s): [-56, -2103]
+07:33:00 Model found (0.10s, +0.00s): [-56, -2133]
+07:33:00 Model found (0.10s, +0.00s): [-56, -2141]
+07:33:00 Model found (0.11s, +0.00s): [-56, -2142]
+07:33:00 Model found (0.11s, +0.00s): [-56, -2150]
+07:33:00 Model found (0.11s, +0.00s): [-56, -2176]
+07:33:00 Model found (0.11s, +0.00s): [-56, -2184]
+07:33:00 Model found (0.12s, +0.00s): [-56, -2186]
+07:33:00 Model found (0.12s, +0.00s): [-56, -2194]
+07:33:00 Model found (0.12s, +0.00s): [-56, -2198]
+07:33:00 Model found (0.12s, +0.00s): [-56, -2204]
+07:33:00 Model found (0.12s, +0.00s): [-56, -2212]
+07:33:00 Model found (0.13s, +0.00s): [-56, -2218]
+07:33:00 Model found (0.13s, +0.00s): [-56, -2238]
+07:33:00 Model found (0.13s, +0.00s): [-56, -2250]
+07:33:00 Model found (0.13s, +0.00s): [-56, -2258]
+07:33:00 Model found (0.13s, +0.00s): [-56, -2278]
+07:33:00 Model found (0.14s, +0.01s): [-56, -2353]
+07:33:00 Solving done: OPTIMUM FOUND (0.10s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex9.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex9.results
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 34
 Optimization: -56 -2353
 
 % Equivalence classes (168 classes, 192 entities):
@@ -142,7 +153,7 @@ Optimization: -56 -2353
 %     ~guessConstructor4Reward: 0/0
 %   [merge]
 %     strongMergeReward: 17/25
-%       strongMergeReward(A::A(void)@0x401000,virtual int A::get_a(void)@0x401010) strongMergeReward(C::C(void)@0x401060,virtual int C::get_c(void)@0x4010a0)
+%       strongMergeReward(A::A(void)@0x401000,virtual int A::get_a(void)@0x401010) strongMergeReward(B::B(void)@0x401020,virtual int C::get_c(void)@0x4010a0)
 %       strongMergeReward(D::D(void)@0x4010b0,virtual int D::get_d(void)@0x401110) strongMergeReward(virtual type_info::~type_info(void)@0x40118b,virtual * type_info::`scalar deleting destructor'(unsigned int)@0x40119b)
 %       strongMergeReward(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7) strongMergeReward(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee)
 %       strongMergeReward(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee) strongMergeReward(std::exception::exception(char const * const &, int)@0x401528,virtual char const * std::exception::what(void)const@0x401545)
@@ -155,13 +166,13 @@ Optimization: -56 -2353
 %       strongMergeCandidate(virtual int A::get_a(void)@0x401010,B::B(void)@0x401020)
 %       strongMergeCandidate(virtual int A::get_a(void)@0x401010,C::C(void)@0x401060)
 %       strongMergeCandidate(virtual int A::get_a(void)@0x401010,D::D(void)@0x4010b0)
-%       strongMergeCandidate(B::B(void)@0x401020,virtual int C::get_c(void)@0x4010a0)
+%       strongMergeCandidate(C::C(void)@0x401060,virtual int C::get_c(void)@0x4010a0)
 %       strongMergeCandidate(virtual int C::get_c(void)@0x4010a0,D::D(void)@0x4010b0)
 %       strongMergeCandidate(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc,virtual char const * std::exception::what(void)const@0x401545)
 %       strongMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7,virtual char const * std::exception::what(void)const@0x401545)
 %       strongMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee,virtual char const * std::exception::what(void)const@0x401545)
 %     weakMergeReward: 12/22
-%       weakMergeReward(virtual int A::get_a(void)@0x401010,const A::`vftable'@0x406140) weakMergeReward(virtual int C::get_c(void)@0x4010a0,const C::`vftable'{for `C'}@0x406160)
+%       weakMergeReward(virtual int A::get_a(void)@0x401010,const A::`vftable'@0x406140) weakMergeReward(virtual int C::get_c(void)@0x4010a0,const B::`vftable'{for `B'}@0x406150)
 %       weakMergeReward(virtual int D::get_d(void)@0x401110,const D::`vftable'{for `B'}@0x406180) weakMergeReward(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x40119b,const type_info::`vftable'@0x40619c)
 %       weakMergeReward(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7,const std::bad_alloc::`vftable'@0x4061a4) weakMergeReward(virtual char const * std::exception::what(void)const@0x401545,const std::exception::`vftable'@0x4061c0)
 %       weakMergeReward(std::exception::_Copy_str(char const *)@0x401552,std::exception::_Tidy(void)@0x401592) weakMergeReward(std::exception::_Copy_str(char const *)@0x401552,class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0)
@@ -170,11 +181,11 @@ Optimization: -56 -2353
 %     ~weakMergeReward: 10/22
 %       weakMergeCandidate(virtual int A::get_a(void)@0x401010,const B::`vftable'{for `A'}@0x406148) weakMergeCandidate(virtual int A::get_a(void)@0x401010,const C::`vftable'{for `A'}@0x406158)
 %       weakMergeCandidate(virtual int A::get_a(void)@0x401010,const D::`vftable'{for `A'}@0x406170) weakMergeCandidate(B::B(void)@0x401020,D::D(void)@0x4010b0)
-%       weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const B::`vftable'{for `B'}@0x406150) weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const D::`vftable'{for `C'}@0x406178)
+%       weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const C::`vftable'{for `C'}@0x406160) weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const D::`vftable'{for `C'}@0x406178)
 %       weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const D::`vftable'{for `B'}@0x406180) weakMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7,virtual std::exception::~exception(void)@0x4015e5)
 %       weakMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee,std::exception::exception(class std::exception const &)@0x401617) weakMergeCandidate(virtual char const * std::exception::what(void)const@0x401545,const std::bad_alloc::`vftable'@0x4061a4)
 %     weakG1Bonus: 11/22
-%       weakG1Bonus(virtual int A::get_a(void)@0x401010,const A::`vftable'@0x406140) weakG1Bonus(virtual int C::get_c(void)@0x4010a0,const C::`vftable'{for `C'}@0x406160)
+%       weakG1Bonus(virtual int A::get_a(void)@0x401010,const A::`vftable'@0x406140) weakG1Bonus(virtual int C::get_c(void)@0x4010a0,const B::`vftable'{for `B'}@0x406150)
 %       weakG1Bonus(virtual int D::get_d(void)@0x401110,const D::`vftable'{for `B'}@0x406180) weakG1Bonus(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7,const std::bad_alloc::`vftable'@0x4061a4)
 %       weakG1Bonus(virtual char const * std::exception::what(void)const@0x401545,const std::exception::`vftable'@0x4061c0) weakG1Bonus(std::exception::_Copy_str(char const *)@0x401552,std::exception::_Tidy(void)@0x401592)
 %       weakG1Bonus(std::exception::_Copy_str(char const *)@0x401552,class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0) weakG1Bonus(std::exception::_Tidy(void)@0x401592,class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0)
@@ -183,7 +194,7 @@ Optimization: -56 -2353
 %     ~weakG1Bonus: 11/22
 %       weakMergeCandidate(virtual int A::get_a(void)@0x401010,const B::`vftable'{for `A'}@0x406148) weakMergeCandidate(virtual int A::get_a(void)@0x401010,const C::`vftable'{for `A'}@0x406158)
 %       weakMergeCandidate(virtual int A::get_a(void)@0x401010,const D::`vftable'{for `A'}@0x406170) weakMergeCandidate(B::B(void)@0x401020,D::D(void)@0x4010b0)
-%       weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const B::`vftable'{for `B'}@0x406150) weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const D::`vftable'{for `C'}@0x406178)
+%       weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const C::`vftable'{for `C'}@0x406160) weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const D::`vftable'{for `C'}@0x406178)
 %       weakMergeCandidate(virtual int C::get_c(void)@0x4010a0,const D::`vftable'{for `B'}@0x406180) weakMergeCandidate(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x40119b,const type_info::`vftable'@0x40619c)
 %       weakMergeCandidate(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7,virtual std::exception::~exception(void)@0x4015e5) weakMergeCandidate(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee,std::exception::exception(class std::exception const &)@0x401617)
 %       weakMergeCandidate(virtual char const * std::exception::what(void)const@0x401545,const std::bad_alloc::`vftable'@0x4061a4)
@@ -229,25 +240,25 @@ Optimization: -56 -2353
 %       objectInObject(const D::`vftable'{for `B'}@0x406180,const B::`vftable'{for `A'}@0x406148,0) objectInObject(const D::`vftable'{for `B'}@0x406180,const B::`vftable'{for `B'}@0x406150,0)
 %       objectInObject(const D::`vftable'{for `B'}@0x406180,const C::`vftable'{for `A'}@0x406158,12) objectInObject(const D::`vftable'{for `B'}@0x406180,const C::`vftable'{for `C'}@0x406160,12)
 %       objectInObject(const std::bad_alloc::`vftable'@0x4061a4,const std::exception::`vftable'@0x4061c0,0)
-08:02:25 Writing results to examples/ooa/ooex_vs2010/Lite/ooex9.results
+07:33:00 Writing results to examples/ooa/ooex_vs2010/Lite/ooex9.results
 
 % Stats:
 %   atoms: 13470.0
 %   bodies: 16247.0
 %   rules: 30351.0
-%   variables: 8492.0
-%   constraints: 398.0
-%   choices: 19454.0
-%   conflicts: 155.0
-%   models: 5.0
+%   variables: 8395.0
+%   constraints: 423.0
+%   choices: 71047.0
+%   conflicts: 1121.0
+%   models: 34.0
 %   optimal_models: 1.0
 %   final_cost: [-56.0, -2353.0]
 %   lower_bound: [-56.0, -2353.0]
-%   total_time: 0.10529494285583496
-%   ground_time: 0.044027480005752295
-%   time_to_first_model: 0.0677313799969852
-%   max_rss_bytes: 53731328
-%   solve_time: 0.02771902084350586
+%   total_time: 0.15876007080078125
+%   ground_time: 0.042414463008753955
+%   time_to_first_model: 0.059714572998927906
+%   max_rss_bytes: 53252096
+%   solve_time: 0.08568215370178223
 classCallsMethod(D::D(void)@0x4010b0,B::B(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0,std::exception::_Copy_str(char const *)@0x401552)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0,std::exception::_Tidy(void)@0x401592)
@@ -596,6 +607,7 @@ constructor(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403ded)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee)
 constructor(std::exception::exception(char const * const &, int)@0x401528)
 constructor(std::exception::exception(class std::exception const &)@0x401617)
+constructor(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4015f0)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x40119b)
@@ -624,7 +636,7 @@ guessEnabled(vftable)
 guessEnabled(vftable_size)
 guessEnabled(weak_g1_bonus)
 mergeClasses(A::A(void)@0x401000,virtual int A::get_a(void)@0x401010)
-mergeClasses(C::C(void)@0x401060,virtual int C::get_c(void)@0x4010a0)
+mergeClasses(B::B(void)@0x401020,virtual int C::get_c(void)@0x4010a0)
 mergeClasses(D::D(void)@0x4010b0,virtual int D::get_d(void)@0x401110)
 mergeClasses(class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0,std::exception::exception(class std::exception const &)@0x401617)
 mergeClasses(const A::`vftable'@0x406140,A::A(void)@0x401000)
@@ -637,6 +649,7 @@ mergeClasses(const D::`vftable'{for `A'}@0x406170,const D::`vftable'{for `C'}@0x
 mergeClasses(const D::`vftable'{for `B'}@0x406180,D::D(void)@0x4010b0)
 mergeClasses(const D::`vftable'{for `C'}@0x406178,const D::`vftable'{for `B'}@0x406180)
 mergeClasses(const std::bad_alloc::`vftable'@0x4061a4,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee)
+mergeClasses(const std::bad_alloc::`vftable'@0x4061a4,virtual std::bad_alloc::~bad_alloc(void)@0x4011bc)
 mergeClasses(const std::exception::`vftable'@0x4061c0,std::exception::exception(char const * const &, int)@0x401528)
 mergeClasses(const std::exception::`vftable'@0x4061c0,std::exception::exception(class std::exception const &)@0x401617)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401552,class std::exception & std::exception::operator=(class std::exception const &)@0x4015b0)
@@ -657,7 +670,7 @@ mergeClasses(virtual char const * std::exception::what(void)const@0x401545,std::
 mergeClasses(virtual char const * std::exception::what(void)const@0x401545,virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x4015f0)
 mergeClasses(virtual char const * std::exception::what(void)const@0x401545,virtual std::exception::~exception(void)@0x4015e5)
 mergeClasses(virtual int A::get_a(void)@0x401010,const A::`vftable'@0x406140)
-mergeClasses(virtual int C::get_c(void)@0x4010a0,const C::`vftable'{for `C'}@0x406160)
+mergeClasses(virtual int C::get_c(void)@0x4010a0,const B::`vftable'{for `B'}@0x406150)
 mergeClasses(virtual int D::get_d(void)@0x401110,const D::`vftable'{for `B'}@0x406180)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee)
 mergeClasses(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc,virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x4011c7)
@@ -855,7 +868,6 @@ objectInObject(const D::`vftable'{for `C'}@0x406178,const B::`vftable'{for `B'}@
 objectInObject(const D::`vftable'{for `C'}@0x406178,const C::`vftable'{for `A'}@0x406158,12)
 objectInObject(const D::`vftable'{for `C'}@0x406178,const C::`vftable'{for `C'}@0x406160,12)
 objectInObject(const std::bad_alloc::`vftable'@0x4061a4,const std::exception::`vftable'@0x4061c0,0)
-realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x4011bc)
 realDestructor(virtual std::exception::~exception(void)@0x4015e5)
 realDestructor(virtual type_info::~type_info(void)@0x40118b)
 vfTable(const A::`vftable'@0x406140)
@@ -915,6 +927,7 @@ vftableBelongsToClass(const B::`vftable'{for `B'}@0x406150,0,B::B(void)@0x401020
 vftableBelongsToClass(const C::`vftable'{for `C'}@0x406160,0,C::C(void)@0x401060)
 vftableBelongsToClass(const D::`vftable'{for `B'}@0x406180,0,D::D(void)@0x4010b0)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x4061a4,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x4011ee)
+vftableBelongsToClass(const std::bad_alloc::`vftable'@0x4061a4,0,virtual std::bad_alloc::~bad_alloc(void)@0x4011bc)
 vftableBelongsToClass(const std::exception::`vftable'@0x4061c0,0,std::exception::exception(char const * const &, int)@0x401528)
 vftableBelongsToClass(const std::exception::`vftable'@0x4061c0,0,std::exception::exception(class std::exception const &)@0x401617)
 vftableSizeTotal(56)
@@ -934,8 +947,8 @@ vftableSizeTotal(56)
 %   {* __cdecl operator new(unsigned int)@0x40120b}
 %   {0x404243}
 %   {A::A(void)@0x401000, virtual int A::get_a(void)@0x401010, const A::`vftable'@0x406140}
-%   {B::B(void)@0x401020, const B::`vftable'{for `A'}@0x406148, const B::`vftable'{for `B'}@0x406150}
-%   {C::C(void)@0x401060, virtual int C::get_c(void)@0x4010a0, const C::`vftable'{for `A'}@0x406158, const C::`vftable'{for `C'}@0x406160}
+%   {B::B(void)@0x401020, virtual int C::get_c(void)@0x4010a0, const B::`vftable'{for `A'}@0x406148, const B::`vftable'{for `B'}@0x406150}
+%   {C::C(void)@0x401060, const C::`vftable'{for `A'}@0x406158, const C::`vftable'{for `C'}@0x406160}
 %   {D::D(void)@0x4010b0, virtual int D::get_d(void)@0x401110, const D::`vftable'{for `A'}@0x406170, const D::`vftable'{for `C'}@0x406178, const D::`vftable'{for `B'}@0x406180}
 %   {_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403ded}
 %   {__FF_MSGBANNER@0x401d9d}

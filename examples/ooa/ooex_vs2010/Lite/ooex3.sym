@@ -1,20 +1,210 @@
-08:02:12 using native Rust &sameClass propagator
-08:02:12 Grounding...
-08:02:12 Grounding done (0.02s)
-08:02:12 Solving...
-08:02:12 Model found (0.03s): [-20, -1830]
-08:02:12 Lower bound: [-20, -2219]  upper: [-20, -1830]  gap: [0, 389] (0.03s)
-08:02:12 Lower bound: [-20, -2209]  upper: [-20, -1830]  gap: [0, 379] (0.03s)
-08:02:12 Lower bound: [-20, -2199]  upper: [-20, -1830]  gap: [0, 369] (0.03s)
-08:02:12 Model found (0.03s, +0.00s): [-20, -2021]
-08:02:12 Model found (0.03s, +0.00s): [-20, -2166]
-08:02:12 Lower bound: [-20, -2182]  upper: [-20, -2166]  gap: [0, 16] (0.03s)
-08:02:12 Model found (0.04s, +0.00s): [-20, -2174]
-08:02:12 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex3.results
+07:32:59 using native Rust &sameClass propagator
+07:32:59 Grounding...
+07:32:59 Grounding done (0.03s)
+07:32:59 Solving...
+07:32:59 Model found (0.03s): [-12, -890]
+07:32:59 Model found (0.03s, +0.00s): [-12, -900]
+07:32:59 Model found (0.04s, +0.00s): [-12, -910]
+07:32:59 Model found (0.04s, +0.00s): [-12, -920]
+07:32:59 Model found (0.04s, +0.00s): [-12, -930]
+07:32:59 Model found (0.04s, +0.00s): [-12, -940]
+07:32:59 Model found (0.04s, +0.00s): [-12, -950]
+07:32:59 Model found (0.04s, +0.00s): [-12, -960]
+07:32:59 Model found (0.04s, +0.00s): [-12, -970]
+07:32:59 Model found (0.05s, +0.00s): [-12, -980]
+07:32:59 Model found (0.05s, +0.00s): [-12, -990]
+07:32:59 Model found (0.05s, +0.00s): [-12, -1000]
+07:32:59 Model found (0.05s, +0.00s): [-12, -1010]
+07:32:59 Model found (0.05s, +0.00s): [-12, -1020]
+07:32:59 Model found (0.05s, +0.00s): [-12, -1030]
+07:32:59 Model found (0.05s, +0.00s): [-12, -1040]
+07:32:59 Model found (0.05s, +0.00s): [-12, -1050]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1060]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1070]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1080]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1090]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1100]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1110]
+07:32:59 Model found (0.06s, +0.00s): [-12, -1120]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1130]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1140]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1150]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1160]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1170]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1180]
+07:32:59 Model found (0.07s, +0.00s): [-12, -1190]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1200]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1210]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1220]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1230]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1240]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1250]
+07:32:59 Model found (0.08s, +0.00s): [-12, -1260]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1270]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1280]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1290]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1300]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1310]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1320]
+07:32:59 Model found (0.09s, +0.00s): [-12, -1330]
+07:32:59 Model found (0.10s, +0.00s): [-12, -1340]
+07:33:00 Model found (0.10s, +0.00s): [-12, -1350]
+07:33:00 Model found (0.10s, +0.00s): [-12, -1360]
+07:33:00 Model found (0.10s, +0.00s): [-12, -1370]
+07:33:00 Model found (0.10s, +0.00s): [-12, -1380]
+07:33:00 Model found (0.10s, +0.00s): [-12, -1390]
+07:33:00 Model found (0.10s, +0.00s): [-12, -1400]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1410]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1420]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1430]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1440]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1450]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1460]
+07:33:00 Model found (0.11s, +0.00s): [-12, -1470]
+07:33:00 Model found (0.12s, +0.00s): [-12, -1480]
+07:33:00 Model found (0.12s, +0.00s): [-12, -1490]
+07:33:00 Model found (0.12s, +0.00s): [-12, -1500]
+07:33:00 Model found (0.12s, +0.00s): [-12, -1510]
+07:33:00 Model found (0.12s, +0.00s): [-12, -1520]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1530]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1540]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1550]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1560]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1570]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1580]
+07:33:00 Model found (0.13s, +0.00s): [-12, -1590]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1600]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1610]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1620]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1630]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1640]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1650]
+07:33:00 Model found (0.14s, +0.00s): [-12, -1660]
+07:33:00 Model found (0.15s, +0.00s): [-12, -1670]
+07:33:00 Model found (0.15s, +0.00s): [-12, -1680]
+07:33:00 Model found (0.15s, +0.00s): [-12, -1690]
+07:33:00 Model found (0.15s, +0.00s): [-12, -1700]
+07:33:00 Model found (0.15s, +0.00s): [-12, -1708]
+07:33:00 Model found (0.15s, +0.00s): [-12, -1718]
+07:33:00 Model found (0.16s, +0.00s): [-12, -1726]
+07:33:00 Model found (0.16s, +0.00s): [-12, -1736]
+07:33:00 Model found (0.16s, +0.00s): [-12, -1746]
+07:33:00 Model found (0.16s, +0.00s): [-12, -1756]
+07:33:00 Model found (0.16s, +0.00s): [-12, -1758]
+07:33:00 Model found (0.16s, +0.00s): [-12, -1766]
+07:33:00 Model found (0.17s, +0.00s): [-12, -1774]
+07:33:00 Model found (0.17s, +0.00s): [-12, -1782]
+07:33:00 Model found (0.17s, +0.00s): [-12, -1784]
+07:33:00 Model found (0.17s, +0.00s): [-12, -1792]
+07:33:00 Model found (0.17s, +0.00s): [-12, -1800]
+07:33:00 Model found (0.17s, +0.00s): [-12, -1808]
+07:33:00 Model found (0.18s, +0.00s): [-20, -1240]
+07:33:00 Model found (0.18s, +0.00s): [-20, -1250]
+07:33:00 Model found (0.18s, +0.00s): [-20, -1260]
+07:33:00 Model found (0.18s, +0.00s): [-20, -1270]
+07:33:00 Model found (0.18s, +0.00s): [-20, -1280]
+07:33:00 Model found (0.18s, +0.00s): [-20, -1290]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1300]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1310]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1320]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1330]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1340]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1350]
+07:33:00 Model found (0.19s, +0.00s): [-20, -1360]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1370]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1380]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1390]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1400]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1410]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1420]
+07:33:00 Model found (0.20s, +0.00s): [-20, -1430]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1440]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1450]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1460]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1470]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1480]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1490]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1500]
+07:33:00 Model found (0.21s, +0.00s): [-20, -1510]
+07:33:00 Model found (0.22s, +0.00s): [-20, -1520]
+07:33:00 Model found (0.22s, +0.00s): [-20, -1530]
+07:33:00 Model found (0.22s, +0.00s): [-20, -1540]
+07:33:00 Model found (0.22s, +0.00s): [-20, -1550]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1560]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1570]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1580]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1590]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1600]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1610]
+07:33:00 Model found (0.23s, +0.00s): [-20, -1620]
+07:33:00 Model found (0.24s, +0.00s): [-20, -1630]
+07:33:00 Model found (0.24s, +0.00s): [-20, -1640]
+07:33:00 Model found (0.24s, +0.00s): [-20, -1650]
+07:33:00 Model found (0.24s, +0.00s): [-20, -1660]
+07:33:00 Model found (0.24s, +0.00s): [-20, -1670]
+07:33:00 Model found (0.24s, +0.00s): [-20, -1680]
+07:33:00 Model found (0.25s, +0.00s): [-20, -1690]
+07:33:00 Model found (0.25s, +0.00s): [-20, -1700]
+07:33:00 Model found (0.25s, +0.00s): [-20, -1710]
+07:33:00 Model found (0.25s, +0.00s): [-20, -1720]
+07:33:00 Model found (0.25s, +0.00s): [-20, -1730]
+07:33:00 Model found (0.25s, +0.00s): [-20, -1740]
+07:33:00 Model found (0.26s, +0.00s): [-20, -1750]
+07:33:00 Model found (0.26s, +0.00s): [-20, -1760]
+07:33:00 Model found (0.26s, +0.00s): [-20, -1770]
+07:33:00 Model found (0.26s, +0.00s): [-20, -1780]
+07:33:00 Model found (0.26s, +0.00s): [-20, -1790]
+07:33:00 Model found (0.26s, +0.00s): [-20, -1800]
+07:33:00 Model found (0.27s, +0.00s): [-20, -1810]
+07:33:00 Model found (0.27s, +0.00s): [-20, -1820]
+07:33:00 Model found (0.27s, +0.00s): [-20, -1830]
+07:33:00 Model found (0.27s, +0.00s): [-20, -1840]
+07:33:00 Model found (0.27s, +0.00s): [-20, -1850]
+07:33:00 Model found (0.27s, +0.00s): [-20, -1860]
+07:33:00 Model found (0.28s, +0.00s): [-20, -1870]
+07:33:00 Model found (0.28s, +0.00s): [-20, -1880]
+07:33:00 Model found (0.28s, +0.00s): [-20, -1890]
+07:33:00 Model found (0.28s, +0.00s): [-20, -1900]
+07:33:00 Model found (0.28s, +0.00s): [-20, -1910]
+07:33:00 Model found (0.28s, +0.00s): [-20, -1920]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1930]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1940]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1950]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1960]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1970]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1980]
+07:33:00 Model found (0.29s, +0.00s): [-20, -1990]
+07:33:00 Model found (0.30s, +0.00s): [-20, -2000]
+07:33:00 Model found (0.30s, +0.00s): [-20, -2010]
+07:33:00 Model found (0.30s, +0.00s): [-20, -2020]
+07:33:00 Model found (0.30s, +0.00s): [-20, -2028]
+07:33:00 Model found (0.30s, +0.00s): [-20, -2036]
+07:33:00 Model found (0.30s, +0.00s): [-20, -2037]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2045]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2053]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2057]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2065]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2073]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2081]
+07:33:00 Model found (0.31s, +0.00s): [-20, -2086]
+07:33:00 Model found (0.32s, +0.00s): [-20, -2094]
+07:33:00 Model found (0.32s, +0.00s): [-20, -2097]
+07:33:00 Model found (0.32s, +0.00s): [-20, -2107]
+07:33:00 Model found (0.32s, +0.00s): [-20, -2115]
+07:33:00 Model found (0.32s, +0.00s): [-20, -2123]
+07:33:00 Model found (0.32s, +0.00s): [-20, -2131]
+07:33:00 Model found (0.33s, +0.00s): [-20, -2132]
+07:33:00 Model found (0.33s, +0.00s): [-20, -2140]
+07:33:00 Model found (0.33s, +0.00s): [-20, -2146]
+07:33:00 Model found (0.33s, +0.00s): [-20, -2154]
+07:33:00 Model found (0.33s, +0.00s): [-20, -2158]
+07:33:00 Model found (0.34s, +0.00s): [-20, -2166]
+07:33:00 Model found (0.34s, +0.00s): [-20, -2174]
+07:33:00 Solving done: OPTIMUM FOUND (0.31s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex3.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex3.results
 OPTIMUM FOUND
 
-Answer: 4
+Answer: 198
 Optimization: -20 -2174
 
 % Equivalence classes (162 classes, 178 entities):
@@ -169,25 +359,25 @@ Optimization: -20 -2174
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const std::bad_alloc::`vftable'@0x406140,const std::exception::`vftable'@0x4061a4,0)
-08:02:12 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
+07:33:00 Writing results to examples/ooa/ooex_vs2010/Lite/ooex3.results
 
 % Stats:
 %   atoms: 8409.0
 %   bodies: 2688.0
 %   rules: 9583.0
-%   variables: 2588.0
-%   constraints: 142.0
-%   choices: 917.0
-%   conflicts: 21.0
-%   models: 4.0
+%   variables: 2530.0
+%   constraints: 144.0
+%   choices: 21995.0
+%   conflicts: 194.0
+%   models: 198.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -2174.0]
 %   lower_bound: [-20.0, -2174.0]
-%   total_time: 0.05551600456237793
-%   ground_time: 0.023735929979011416
-%   time_to_first_model: 0.029254727996885777
-%   max_rss_bytes: 41541632
-%   solve_time: 0.00741887092590332
+%   total_time: 0.3596460819244385
+%   ground_time: 0.025491834996500984
+%   time_to_first_model: 0.032596015982562676
+%   max_rss_bytes: 41795584
+%   solve_time: 0.3072679042816162
 classCallsMethod(Derived::Derived(void)@0x401060,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x401060,int Base::func3(void)@0x401020)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x4018a9,std::exception::_Copy_str(char const *)@0x40184b)

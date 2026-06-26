@@ -1,14 +1,31 @@
-08:02:11 using native Rust &sameClass propagator
-08:02:11 Grounding...
-08:02:11 Grounding done (0.01s)
-08:02:11 Solving...
-08:02:11 Model found (0.01s): [-2092]
-08:02:11 Model found (0.01s, +0.00s): [-2109]
-08:02:11 Solving done: OPTIMUM FOUND (0.00s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex8.lp -n -1 --heuristic=domain --opt-strategy=usc,oll,disjoint,succinct,stratify --restart-on-model --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex8.results
+07:32:59 using native Rust &sameClass propagator
+07:32:59 Grounding...
+07:32:59 Grounding done (0.02s)
+07:32:59 Solving...
+07:32:59 Model found (0.02s): [-1940]
+07:32:59 Model found (0.02s, +0.00s): [-1950]
+07:32:59 Model found (0.02s, +0.00s): [-1960]
+07:32:59 Model found (0.02s, +0.00s): [-1970]
+07:32:59 Model found (0.02s, +0.00s): [-1980]
+07:32:59 Model found (0.02s, +0.00s): [-1990]
+07:32:59 Model found (0.03s, +0.00s): [-2000]
+07:32:59 Model found (0.03s, +0.00s): [-2010]
+07:32:59 Model found (0.03s, +0.00s): [-2020]
+07:32:59 Model found (0.03s, +0.00s): [-2030]
+07:32:59 Model found (0.03s, +0.00s): [-2040]
+07:32:59 Model found (0.03s, +0.00s): [-2042]
+07:32:59 Model found (0.03s, +0.00s): [-2052]
+07:32:59 Model found (0.03s, +0.00s): [-2062]
+07:32:59 Model found (0.03s, +0.00s): [-2072]
+07:32:59 Model found (0.04s, +0.00s): [-2082]
+07:32:59 Model found (0.04s, +0.00s): [-2092]
+07:32:59 Model found (0.04s, +0.00s): [-2099]
+07:32:59 Model found (0.04s, +0.00s): [-2109]
+07:32:59 Solving done: OPTIMUM FOUND (0.02s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex8.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex8.results
 OPTIMUM FOUND
 
-Answer: 2
+Answer: 19
 Optimization: -2109
 
 % Equivalence classes (205 classes, 206 entities):
@@ -147,25 +164,25 @@ Optimization: -2109
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-08:02:11 Writing results to examples/ooa/ooex_vs2008/Debug/ooex8.results
+07:32:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex8.results
 
 % Stats:
 %   atoms: 5306.0
 %   bodies: 1126.0
 %   rules: 5742.0
 %   variables: 662.0
-%   constraints: 6.0
-%   choices: 10.0
-%   conflicts: 2.0
-%   models: 2.0
+%   constraints: 1.0
+%   choices: 239.0
+%   conflicts: 3.0
+%   models: 19.0
 %   optimal_models: 1.0
 %   final_cost: [-2109.0]
 %   lower_bound: [-2109.0]
-%   total_time: 0.018949031829833984
-%   ground_time: 0.010405267006717622
-%   time_to_first_model: 0.011986386001808569
-%   max_rss_bytes: 37928960
-%   solve_time: 0.0018360614776611328
+%   total_time: 0.04897880554199219
+%   ground_time: 0.016602011979557574
+%   time_to_first_model: 0.019132843997795135
+%   max_rss_bytes: 38125568
+%   solve_time: 0.019951820373535156
 classCallsMethod(D::D(void)@0x4115b0,B::B(void)@0x4116c0)
 classRelatedMethod(B::B(void)@0x4116c0,D::D(void)@0x4115b0)
 classRelatedMethod(D::D(void)@0x4115b0,B::B(void)@0x4116c0)
