@@ -19,6 +19,7 @@ XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
 
 OOA_DIR      := examples/ooa
+OOANALYZER_TESTS ?= $(HOME)/ooanalyzer-tests
 
 # Source discovery — all derived from FACTS so the full DAG is known at parse time
 FACTS        := $(shell find $(OOA_DIR) -name '*.facts')
@@ -44,7 +45,7 @@ RESULTS_ORIG_SYM_FILES := $(foreach r,$(RESULTS_ORIG),\
 # Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
 .PHONY: all convert run verify verify-core verify-real propagator-run \
-        explain-all symbolize diff clean help single rust rust-check bindings
+        explain-all symbolize diff edit-distance clean help single rust rust-check bindings
 
 all: symbolize
 
@@ -74,6 +75,7 @@ help:
 	@echo "  make verify        — run marker checks for core fixtures"
 	@echo "  make propagator-run — alias for run"
 	@echo "  make diff          — diff .results.sym vs .results.orig.sym for all available pairs"
+	@echo "  make edit-distance — compare local .results with OOANALYZER_TESTS ($(OOANALYZER_TESTS))"
 	@echo "  make clean         — remove generated .lp/.out/.sym files"
 	@echo "  make rust          — build the Rust &sameClass propagator (maturin develop)"
 	@echo "  make bindings      — regenerate rust/src/ffi/clingo_sys.rs from rust/vendor/clingo.h"
@@ -187,6 +189,14 @@ diff: $(DIFF_FILES)
 
 $(OOA_DIR)/%.results.sym.diff: $(OOA_DIR)/%.results.orig.sym $(OOA_DIR)/%.results.sym
 	diff $^ > $@ || true
+
+# ----------------------------------------------------------------
+# Edit distance: local .results against ground truth in ooanalyzer-tests
+# ----------------------------------------------------------------
+edit-distance:
+	@$(PYTHON) scripts/edit_distance.py \
+		--tests-root "$(OOANALYZER_TESTS)" \
+		--results-root "$(OOA_DIR)"
 
 # ----------------------------------------------------------------
 # Convenience: single-file pipeline
