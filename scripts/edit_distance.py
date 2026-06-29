@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Score local OOAnalyzer results against a separate ooanalyzer-tests checkout."""
+"""Aggregate precomputed .editdist scores into an ASP-vs-OOAnalyzer comparison CSV.
+
+The metrics themselves are produced by analysis/edit-distance.py and cached as
+`.editdist` files (whose final line is the metrics CSV):
+
+* ASP side — local ``<results-root>/<name>.editdist`` written by ``make editdist``
+* OOAnalyzer side — ``<tests-root>/code/testcases/<name>.editdist`` shipped in the
+  ooanalyzer-tests checkout
+
+This script no longer runs the legacy tool; it only parses those files. Run
+``make editdist`` (or ``make edit-distance``, which depends on it) first.
+"""
 
 from __future__ import annotations
 
@@ -34,16 +45,14 @@ OUTPUT_FIELDS = (
 
 
 class EditDistanceError(RuntimeError):
-    """Raised when the legacy edit-distance tool cannot score a specimen."""
+    """Raised when an .editdist file cannot be parsed."""
 
 
 @dataclass(frozen=True)
 class Specimen:
     name: str
-    results: Path
-    ooanalyzer_results: Path
-    ground: Path
-    xrefs: Path
+    asp_editdist: Path
+    ooanalyzer_editdist: Path
 
 
 @dataclass(frozen=True)
@@ -55,7 +64,11 @@ class SkippedSpecimen:
 def discover_specimens(
     results_root: Path, tests_root: Path
 ) -> tuple[list[Specimen], list[SkippedSpecimen]]:
-    """Return scoreable and skipped result files in deterministic name order."""
+    """Return scoreable and skipped specimens in deterministic name order.
+
+    A specimen is scoreable when ground truth exists in the tests checkout AND
+    both the ASP and OOAnalyzer ``.editdist`` files are present.
+    """
     testcases_root = tests_root / "code" / "testcases"
     specimens: list[Specimen] = []
     skipped: list[SkippedSpecimen] = []
@@ -64,31 +77,44 @@ def discover_specimens(
         relative = results.relative_to(results_root)
         name = relative.as_posix()[: -len(".results")]
         testcase = testcases_root / name
-        ground = Path(f"{testcase}.ground")
-        xrefs = Path(f"{testcase}.idaxrefs")
-        ooanalyzer_results = Path(f"{testcase}.results")
-        missing = tuple(
+        asp_editdist = results.with_suffix(".editdist")
+        ooanalyzer_editdist = Path(f"{testcase}.editdist")
+
+        # Ground truth gates scoreability at all; report it before the derived
+        # .editdist outputs so synthetic specimens read as "missing ground".
+        ungrounded = tuple(
             label
-            for label, path in (("ground", ground), ("idaxrefs", xrefs))
+            for label, path in (
+                ("ground", Path(f"{testcase}.ground")),
+                ("idaxrefs", Path(f"{testcase}.idaxrefs")),
+            )
             if not path.is_file()
         )
-        if missing:
-            skipped.append(SkippedSpecimen(name, missing))
-        elif not ooanalyzer_results.is_file():
-            skipped.append(SkippedSpecimen(name, ("ooanalyzer results",)))
-        else:
-            specimens.append(
-                Specimen(name, results, ooanalyzer_results, ground, xrefs)
+        if ungrounded:
+            skipped.append(SkippedSpecimen(name, ungrounded))
+            continue
+
+        unscored = tuple(
+            label
+            for label, path in (
+                ("ooanalyzer editdist", ooanalyzer_editdist),
+                ("asp editdist (run make editdist)", asp_editdist),
             )
+            if not path.is_file()
+        )
+        if unscored:
+            skipped.append(SkippedSpecimen(name, unscored))
+        else:
+            specimens.append(Specimen(name, asp_editdist, ooanalyzer_editdist))
 
     return specimens, skipped
 
 
 def parse_metrics(output: str) -> tuple[str, ...]:
-    """Parse the legacy tool's final CSV line and retain class metrics only."""
+    """Parse an .editdist file's final CSV line and retain class metrics only."""
     lines = [line for line in output.splitlines() if line.strip()]
     if not lines:
-        raise EditDistanceError("edit-distance tool produced no output")
+        raise EditDistanceError("editdist file is empty")
 
     row = next(csv.reader([lines[-1]]))
     if len(row) != 12:
@@ -108,36 +134,16 @@ def parse_metrics(output: str) -> tuple[str, ...]:
     return tuple(row[:10])
 
 
-def run_specimen(
-    specimen: Specimen,
-    analysis_script: Path,
-    *,
-    results: Path | None = None,
-    python: str = sys.executable,
-) -> tuple[str, ...]:
-    results = specimen.results if results is None else results
-    command = [
-        python,
-        str(analysis_script),
-        "--ignore-exceptions-pl",
-        "--ignore-cdecl-exceptions",
-        "--xrefs",
-        str(specimen.xrefs),
-        str(specimen.ground),
-        str(results),
-    ]
-    completed = subprocess.run(
-        command,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if completed.returncode != 0:
-        detail = completed.stderr.strip() or completed.stdout.strip() or "no details"
-        raise EditDistanceError(
-            f"edit-distance tool exited {completed.returncode}: {detail}"
-        )
-    return parse_metrics(completed.stdout)
+def read_metrics(editdist: Path) -> tuple[str, ...]:
+    """Parse the cached metrics from a single .editdist file."""
+    try:
+        text = editdist.read_text()
+    except OSError as exc:
+        raise EditDistanceError(f"cannot read {editdist}: {exc}") from exc
+    try:
+        return parse_metrics(text)
+    except EditDistanceError as exc:
+        raise EditDistanceError(f"{editdist}: {exc}") from exc
 
 
 def git_state(tests_root: Path) -> tuple[str, bool] | None:
@@ -170,8 +176,8 @@ def git_state(tests_root: Path) -> tuple[str, bool] | None:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Score local .results files with analysis/edit-distance.py from an "
-            "ooanalyzer-tests checkout."
+            "Aggregate cached .editdist scores (from make editdist and the "
+            "ooanalyzer-tests checkout) into an ASP-vs-OOAnalyzer comparison CSV."
         )
     )
     parser.add_argument(
@@ -184,7 +190,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--results-root",
         type=Path,
         default=DEFAULT_RESULTS_ROOT,
-        help="root containing local .results files (default: %(default)s)",
+        help="root containing local .results/.editdist files (default: %(default)s)",
     )
     return parser
 
@@ -193,16 +199,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     tests_root = args.tests_root.expanduser().resolve()
     results_root = args.results_root.expanduser().resolve()
-    analysis_script = tests_root / "analysis" / "edit-distance.py"
 
     if not results_root.is_dir():
         print(f"ERROR: results root does not exist: {results_root}", file=sys.stderr)
-        return 2
-    if not analysis_script.is_file():
-        print(
-            f"ERROR: edit-distance tool does not exist: {analysis_script}",
-            file=sys.stderr,
-        )
         return 2
 
     state = git_state(tests_root)
@@ -246,12 +245,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     failures = 0
     for specimen in specimens:
         try:
-            asp_metrics = run_specimen(specimen, analysis_script)
-            ooanalyzer_metrics = run_specimen(
-                specimen,
-                analysis_script,
-                results=specimen.ooanalyzer_results,
-            )
+            asp_metrics = read_metrics(specimen.asp_editdist)
+            ooanalyzer_metrics = read_metrics(specimen.ooanalyzer_editdist)
         except EditDistanceError as exc:
             failures += 1
             print(f"ERROR: {specimen.name}: {exc}", file=sys.stderr)

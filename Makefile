@@ -20,6 +20,8 @@ TIME_CMD     := /usr/bin/time
 
 OOA_DIR      := examples/ooa
 OOANALYZER_TESTS ?= $(HOME)/ooanalyzer-tests
+TESTCASES    := $(OOANALYZER_TESTS)/code/testcases
+EDIT_DISTANCE_TOOL := $(OOANALYZER_TESTS)/analysis/edit-distance.py
 
 # Source discovery — all derived from FACTS so the full DAG is known at parse time
 FACTS        := $(shell find $(OOA_DIR) -name '*.facts')
@@ -41,11 +43,18 @@ RESULTS_ORIG          := $(shell find $(OOA_DIR) -name '*.results.orig')
 RESULTS_ORIG_SYM_FILES := $(foreach r,$(RESULTS_ORIG),\
   $(if $(or $(wildcard $(r:.results.orig=.symbols)),$(wildcard $(r:.results.orig=.ground))),$(r:.results.orig=.results.orig.sym)))
 
+# Edit distance: score local .results against ground truth in OOANALYZER_TESTS.
+# Only scoreable for stems whose .ground AND .idaxrefs exist under TESTCASES.
+EDITDIST_LP   := $(foreach lp,$(LP_FILES),\
+  $(if $(and $(wildcard $(TESTCASES)/$(lp:$(OOA_DIR)/%.lp=%).ground),\
+             $(wildcard $(TESTCASES)/$(lp:$(OOA_DIR)/%.lp=%).idaxrefs)),$(lp)))
+EDITDIST_FILES := $(EDITDIST_LP:%.lp=%.editdist)
+
 # ----------------------------------------------------------------
 # Default: convert all .facts and run ooanalyzer.py
 # ----------------------------------------------------------------
 .PHONY: all convert run verify verify-core verify-real propagator-run \
-        explain-all symbolize diff edit-distance clean help single rust rust-check bindings
+        explain-all symbolize diff edit-distance editdist clean help single rust rust-check bindings
 
 all: symbolize
 
@@ -75,7 +84,8 @@ help:
 	@echo "  make verify        — run marker checks for core fixtures"
 	@echo "  make propagator-run — alias for run"
 	@echo "  make diff          — diff .results.sym vs .results.orig.sym for all available pairs"
-	@echo "  make edit-distance — compare local .results with OOANALYZER_TESTS ($(OOANALYZER_TESTS))"
+	@echo "  make edit-distance — CSV summary of local .results vs OOANALYZER_TESTS ($(OOANALYZER_TESTS))"
+	@echo "  make editdist      — write per-specimen .editdist action logs to examine for errors"
 	@echo "  make clean         — remove generated .lp/.out/.sym files"
 	@echo "  make rust          — build the Rust &sameClass propagator (maturin develop)"
 	@echo "  make bindings      — regenerate rust/src/ffi/clingo_sys.rs from rust/vendor/clingo.h"
@@ -193,10 +203,25 @@ $(OOA_DIR)/%.results.sym.diff: $(OOA_DIR)/%.results.orig.sym $(OOA_DIR)/%.result
 # ----------------------------------------------------------------
 # Edit distance: local .results against ground truth in ooanalyzer-tests
 # ----------------------------------------------------------------
-edit-distance:
+# Aggregate CSV summary (ASP vs OOAnalyzer deltas) by parsing the cached
+# per-specimen .editdist files (built below) against the baseline .editdist
+# shipped in OOANALYZER_TESTS — no re-invocation of the scoring tool.
+edit-distance: $(EDITDIST_FILES)
 	@$(PYTHON) scripts/edit_distance.py \
 		--tests-root "$(OOANALYZER_TESTS)" \
 		--results-root "$(OOA_DIR)"
+
+# Per-specimen .editdist files (full Move/Split/Join/Add/Remove action log ending
+# in the metrics CSV line) for examining individual errors. Mirrors the %.editdist
+# rule in $(OOANALYZER_TESTS)/analysis/Makefile. The .out prereq produces the
+# .results that the tool scores; stderr is captured in the .editdist.errors sidecar.
+editdist: $(EDITDIST_FILES)
+
+$(OOA_DIR)/%.editdist: $(OOA_DIR)/%.out
+	@echo "=== Computing edit distance: $@ ==="
+	@$(PYTHON) $(EDIT_DISTANCE_TOOL) --ignore-exceptions-pl --ignore-cdecl-exceptions \
+		--xrefs $(TESTCASES)/$*.idaxrefs $(TESTCASES)/$*.ground $(@:.editdist=.results) \
+		>$@ 2>$@.errors
 
 # ----------------------------------------------------------------
 # Convenience: single-file pipeline
@@ -214,6 +239,8 @@ clean:
 	find $(OOA_DIR) -name '*.results.sym' -delete
 	find $(OOA_DIR) -name '*.results.orig.sym' -delete
 	find $(OOA_DIR) -name '*.results.sym.diff' -delete
+	find $(OOA_DIR) -name '*.editdist' -delete
+	find $(OOA_DIR) -name '*.editdist.errors' -delete
 	find $(OOA_DIR) -name '*.time' -delete
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
