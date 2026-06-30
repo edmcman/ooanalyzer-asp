@@ -203,9 +203,17 @@ candidateVFTableSize(VFTable, Size) :-
 % Prefer larger extents at the highest priority.  Encode the selected size as
 % MaxCandidateSize - Gap instead of a raw candidate-size reward so branch-and-
 % bound has an explicit per-vftable gap to close.
-maxCandidateVFTableSize(VFTable, MaxSize) :-
-    vfTable(VFTable),
-    MaxSize = #max { Size : candidateVFTableSize(VFTable, Size) }.
+% A candidate size is dominated if a strictly larger one exists for the same vftable.
+notMaxCandidateVFTableSize(VFTable, Size) :-
+    candidateVFTableSize(VFTable, Size),
+    candidateVFTableSize(VFTable, Larger),
+    Larger > Size.
+
+% The maximum is the undominated candidate — avoids #max{} over a choice-dependent set,
+% which would produce #inf during grounding when vfTable hasn't been decided yet.
+maxCandidateVFTableSize(VFTable, Size) :-
+    candidateVFTableSize(VFTable, Size),
+    not notMaxCandidateVFTableSize(VFTable, Size).
 
 vfTableSizeGap(VFTable, Gap) :-
     vfTableSize(VFTable, Size),

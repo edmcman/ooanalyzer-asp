@@ -231,9 +231,8 @@ possibleVFTable(VFTable) :-
 
 possibleVFTableMaxSize(VFTable, MaxSize) :-
     possibleVFTable(VFTable),
-    pointerSize(PtrSize),
     MaxSize = #max {
-        Offset + PtrSize : possibleVFTableEntry(VFTable, Offset, _Entry)
+        Offset + PtrSize : possibleVFTableEntry(VFTable, Offset, _Entry), pointerSize(PtrSize)
     }.
 
 % guessVFTable: choose vfTable or -vfTable for each candidate.
