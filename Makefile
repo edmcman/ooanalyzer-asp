@@ -3,19 +3,7 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-# Champion solver config for TinyXml-class merge-reward optimization (see
-# .state/merge-optimization-blocker.md and autoresearch/classic-260625-0952/).
-# --configuration=crafty + --restarts=F,736 is the proven restart settling point.
-# --opt-heuristic=sign biases merge choices toward true (reward-positive) on each
-# restart, giving a large comp1 improvement: 30s [-632,-35388] vs [-140,-31852]
-# without sign. Combining with explicit heuristics (Vsids,92/Berkmin/Vmtf),
-# save-progress, or score-other breaks things (they conflict with crafty's bundled
-# settings even if crafty already includes them). bb,hier + sign also finds no model
-# (forces comp1 to proof before starting comp2, conflicts with sign's comp2 bias).
-# Single-threaded (threads break comp1 on this input).
-# Pre-reasonMergeClasses_B champion (pre-2026-06-28): [-704,-42666] at ~304s with
-# just crafty+F,736. After adding the B rule, best at 300s is ~[-636,-34825] with sign.
-PROP_FLAGS   := -n -1 --configuration=crafty --restarts=F,736 --opt-heuristic=sign --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --heuristic=domain --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
