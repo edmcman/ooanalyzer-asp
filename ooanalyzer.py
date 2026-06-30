@@ -318,6 +318,12 @@ class OOAnalyzerApp(clingo.Application):
         return True
 
     def main(self, ctl, files):
+        # clingo's argument parser treats -1 as a flag, so normalize -n -1 to -n 0
+        # (both mean "enumerate all models")
+        models_val = ctl.configuration.solve.models
+        if models_val == -1:
+            ctl.configuration.solve.models = 0
+
         print(f"% Command: {' '.join(sys.argv)}")
 
         if not files:
