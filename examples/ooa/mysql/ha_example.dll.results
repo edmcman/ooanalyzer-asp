@@ -1,51 +1,76 @@
+finalClass(0x1000118b, 0, 0x4, 0x4, 0, [0x10002ed0]).
 finalClass(0x10002820, 0, 0x18, 0x18, 0, [0x10002820]).
 finalClass(0x10002840, 0, 0x18, 0x18, 0, [0x10002840]).
 finalClass(0x10002860, 0, 0, 0, 0, [0x10002860]).
 finalClass(0x10002870, 0, 0, 0, 0, [0x10002870]).
-finalClass(0x10002880, 0, 0x18, 0x18, 0, [0x10002880, 0x10002fb0, 0x100031a0, 0x10003410, 0x100035c0, 0x10003ba0]).
+finalClass(0x10002880, 0, 0x18, 0x18, 0, [0x10002880]).
 finalClass(0x100028f0, 0, 0x1c, 0x1c, 0, [0x100028f0]).
-finalClass(0x10002950, 0, 0x8, 0x8, 0x10002950, [0x10002950, 0x10002e50, 0x10002ea0]).
 finalClass(0x10002960, 0, 0, 0, 0, [0x10002960]).
-finalClass(0x10002970, 0, 0x4, 0x4, 0x10002970, [0x10002970]).
 finalClass(0x10002980, 0, 0, 0, 0, [0x10002980]).
-finalClass(0x10002990, 0, 0x4, 0x4, 0x10002990, [0x10002990]).
-finalClass(0x100029a0, 0, 0x4, 0x4, 0x100029a0, [0x100029a0]).
 finalClass(0x100029c0, 0, 0x8, 0x8, 0, [0x100029c0]).
-finalClass(0x100029e0, 0, 0x4, 0x4, 0x100029e0, [0x100029e0]).
 finalClass(0x10002a10, 0, 0x68, 0x68, 0, [0x10002a10]).
-finalClass(0x10002ae0, 0, 0x1b9, 0x1b9, 0x10002ae0, [0x10002ae0]).
 finalClass(0x10002cc0, 0, 0x18, 0x18, 0, [0x10002cc0]).
-finalClass(0x10002d20, 0, 0x4, 0x4, 0x10002d20, [0x10002d20]).
+finalClass(0x10002cf0, 0, 0x8, 0x8, 0x10002cf0, [0x10002cf0]).
+finalClass(0x10002d20, 0, 0x8, 0x8, 0x10002d20, [0x10002d20, 0x10002e50]).
+finalClass(0x10002d40, 0, 0x4, 0x4, 0x10002d40, [0x10002d40]).
+finalClass(0x10002d50, 0, 0x4, 0x4, 0x10002d50, [0x10002d50, 0x10002f00]).
+finalClass(0x10002d60, 0, 0x4, 0x4, 0x10002d60, [0x10002d60]).
+finalClass(0x10002d70, 0, 0x4, 0x4, 0x10002d70, [0x10002d70, 0x10002f30]).
 finalClass(0x10002d80, 0, 0x4, 0x4, 0x10002d80, [0x10002d80]).
+finalClass(0x10002d90, 0, 0x4, 0x4, 0x10002d90, [0x10002d90]).
 finalClass(0x10002e20, 0, 0x8, 0x8, 0, [0x10002e20]).
+finalClass(0x10002f90, 0, 0x4, 0x4, 0x10002f90, [0x10002f90]).
+finalClass(0x10002fa0, 0, 0x4, 0x4, 0x10002fa0, [0x10002fa0]).
+finalClass(0x10002fb0, 0, 0x18, 0x18, 0, [0x10002fb0, 0x100031a0]).
 finalClass(0x10003160, 0, 0x18, 0x18, 0, [0x10003160]).
 finalClass(0x10003280, 0, 0x18, 0x18, 0, [0x10003280]).
 finalClass(0x100032d0, 0, 0x18, 0x18, 0, [0x100032d0]).
 finalClass(0x100032e0, 0, 0x18, 0x18, 0, [0x100032e0]).
 finalClass(0x100032f0, 0, 0x18, 0x18, 0, [0x100032f0]).
+finalClass(0x10003410, 0, 0x18, 0x18, 0, [0x10003410]).
+finalClass(0x100035c0, 0, 0x18, 0x18, 0, [0x100035c0]).
+finalClass(0x10003780, 0, 0x12c, 0x12c, 0, [0x10003780]).
 finalClass(0x100037b0, 0, 0x8, 0x8, 0, [0x100037b0]).
 finalClass(0x100037c0, 0, 0x8, 0x8, 0, [0x100037c0]).
-finalClass(0x100039a0, 0, 0x8, 0x8, 0, [0x100039a0, 0x1000a8fc]).
+finalClass(0x100037d0, 0, 0x10, 0x10, 0, [0x100037d0]).
+finalClass(0x10003850, 0, 0x114, 0x114, 0, [0x10003850]).
 finalClass(0x10003b50, 0, 0x18, 0x18, 0, [0x10003b50]).
+finalClass(0x10003ba0, 0, 0x18, 0x18, 0, [0x10003ba0]).
+finalClass(0x10003c70, 0, 0x68, 0x68, 0, [0x10003c70]).
+finalClass(0x10003db0, 0, 0x4, 0x4, 0, [0x10003db0]).
+finalClass(0x10003e10, 0, 0x4, 0x4, 0, [0x10003e10]).
 finalClass(0x10003e60, 0, 0x4, 0x4, 0, [0x10003e60]).
+finalClass(0x10003ee0, 0, 0x1e8, 0x1e8, 0, [0x10003ee0, 0x100044f0]).
+finalClass(0x10003f50, 0, 0x110, 0x110, 0, [0x10003f50]).
+finalClass(0x10003f90, 0, 0x110, 0x110, 0, [0x10003f90]).
+finalClass(0x10004050, 0, 0x110, 0x110, 0, [0x10004050]).
+finalClass(0x100040a0, 0, 0x110, 0x110, 0, [0x100040a0]).
+finalClass(0x10004630, 0, 0x68, 0x68, 0, [0x10004630]).
 finalClass(0x100046d0, 0, 0x18, 0x18, 0, [0x100046d0]).
+finalClass(0x100047a0, 0, 0x28, 0x28, 0, [0x100047a0]).
+finalClass(0x100047e0, 0, 0x70, 0x70, 0, [0x100047e0]).
+finalClass(0x10004830, 0, 0x38, 0x38, 0, [0x10004830]).
 finalClass(0x10004890, 0, 0x1b8, 0x1b8, 0, [0x10004890]).
 finalClass(0x100048c0, 0, 0x14, 0x14, 0, [0x100048c0]).
+finalClass(0x10004920, 0, 0x1d8, 0x1d8, 0, [0x10004920]).
 finalClass(0x10004a10, 0, 0x4, 0x4, 0, [0x10004a10]).
 finalClass(0x10004a20, 0, 0x4, 0x4, 0, [0x10004a20]).
 finalClass(0x100050ef, 0, 0, 0, 0, [0x100050ef]).
-finalClass(0x1000a8d8, 0x1000a8d8, 0x4, 0x4, 0, [0x100029b0, 0x10002d40, 0x10002d50, 0x10002d60, 0x10002d70, 0x10002ed0, 0x10002f00, 0x10002f30, 0x10002f60, 0x100039e0, 0x10003ae0, 0x10003b10]).
-finalClass(0x1000a93c, 0, 0x8, 0x8, 0, [0x1000a93c]).
-finalClass(0x1000a988, 0, 0x8, 0x8, 0, [0x1000a988]).
-finalClass(0x1000a9b4, 0, 0, 0, 0, []).
-finalClass(0x1000a9c0, 0x1000a9c0, 0x12c, 0x12c, 0x10002fa0, [0x10002d90, 0x10002fa0, 0x100033f0, 0x10003400, 0x10003720, 0x10003730, 0x10003750, 0x10003760, 0x10003770, 0x10003780, 0x100037d0, 0x100037f0, 0x10003800, 0x10003810, 0x10003820, 0x10003830, 0x10003850, 0x100038e0, 0x10003900, 0x10003910, 0x10003a10, 0x10003a40, 0x10003a60, 0x10003a70, 0x10003a90, 0x10003aa0, 0x10003ab0, 0x10003ac0, 0x10003ad0, 0x10003c70, 0x10003d60, 0x10003d80, 0x10003da0, 0x10003db0, 0x10003dd0, 0x10003de0, 0x10003df0, 0x10003e00, 0x10003e10, 0x10003e30, 0x10003e50, 0x10003e70, 0x10003e80, 0x10003e90, 0x10003ea0, 0x10003eb0, 0x10003ed0, 0x10003f40, 0x10003f50, 0x10003f70, 0x10003f90, 0x10003fc0, 0x10003fe0, 0x10003ff0, 0x10004010, 0x10004020, 0x10004030, 0x10004050, 0x100040a0, 0x100040e0, 0x10004100, 0x10004110, 0x10004130, 0x10004140, 0x10004150, 0x10004160, 0x10004170, 0x100041b0, 0x100041c0, 0x10004220, 0x10004230, 0x10004250, 0x10004270, 0x10004290, 0x10004430, 0x100044e0, 0x10004540, 0x10004550, 0x10004570, 0x10004580, 0x10004590, 0x100045e0, 0x10004630, 0x10004660, 0x10004670, 0x10004680, 0x100046a0, 0x100046c0, 0x10004740, 0x10004760, 0x100047a0, 0x100047d0, 0x10004830, 0x100048d0, 0x100048e0, 0x100048f0, 0x10004900, 0x10004910, 0x10004970, 0x100049b0, 0x100049c0, 0x100049d0, 0x100049e0, 0x10004a00, 0x10004a30, 0x10004a50]).
-finalClass(0x1000ac90, 0x1000ac90, 0x8, 0x8, 0x10002cf0, [0x10002930, 0x10002cf0]).
-finalClass(0x1000ac9c, 0, 0x1e8, 0x1e8, 0x10002f90, [0x10002f90, 0x10003740, 0x10003840, 0x10003940, 0x10003a00, 0x10003a30, 0x10003a50, 0x10003d70, 0x10003d90, 0x10003ee0, 0x10003f60, 0x10003f80, 0x10003fb0, 0x10003fd0, 0x10004000, 0x10004090, 0x100040f0, 0x10004120, 0x10004210, 0x10004240, 0x10004260, 0x10004280, 0x100044f0, 0x10004560, 0x100045a0, 0x10004650, 0x100046b0, 0x10004750, 0x10004770, 0x10004780, 0x10004790, 0x100047e0, 0x10004920, 0x10004980, 0x10004990, 0x100049a0, 0x100049f0, 0x10004a40]).
+finalClass(0x1000a8d8, 0x1000a8d8, 0x4, 0x4, 0, [0x100029b0, 0x10002f60, 0x100039e0, 0x10003ae0, 0x10003b10]).
+finalClass(0x1000a8fc, 0x1000a8fc, 0x8, 0x8, 0, [0x10002970, 0x100039a0, 0x1000a8fc]).
+finalClass(0x1000a93c, 0x1000a93c, 0x8, 0x8, 0, [0x10002990, 0x1000a93c]).
+finalClass(0x1000a988, 0x1000a988, 0x8, 0x8, 0, [0x100029a0, 0x1000a988]).
+finalClass(0x1000a9b4, 0x1000a9b4, 0x4, 0x4, 0, [0x10002950, 0x10002ea0]).
+finalClass(0x1000a9c0, 0x1000a9c0, 0x1b9, 0x1b9, 0, [0x10002ae0]).
+finalClass(0x1000ac90, 0x1000ac90, 0x8, 0x8, 0, [0x10002930]).
+finalClass(0x1000ac9c, 0x1000ac9c, 0xfe, 0xfe, 0, [0x100029e0, 0x10003a00]).
 finalClass(0x1000b0e8, 0x1000b0e8, 0x4, 0x4, 0, [0x100050e4, 0x100050f4]).
+finalClass(0x1000d300, 0, 0, 0, 0, []).
+finalClass(0x1000d308, 0, 0, 0, 0, []).
 finalClass(0x1000e0c8, 0, 0, 0, 0x1000e0c8, [0x1000e0c8]).
 finalClass(0x1000e144, 0, 0, 0, 0, [0x1000e144, 0x1000e148, 0x1000e14c, 0x1000e150, 0x1000e154, 0x1000e158, 0x1000e160, 0x1000e164, 0x1000e168, 0x1000e16c, 0x1000e170, 0x1000e174, 0x1000e178, 0x1000e17c, 0x1000e180, 0x1000e184, 0x1000e188, 0x1000e18c, 0x1000e190, 0x1000e194, 0x1000e198, 0x1000e19c, 0x1000e1a0, 0x1000e1a4, 0x1000e1a8, 0x1000e1ac, 0x1000e1b0, 0x1000e1b4, 0x1000e1b8, 0x1000e1bc, 0x1000e1c0, 0x1000e1c4, 0x1000e1c8]).
-finalDemangledName(0x100039a0, '.?AV_Generic_error_category@std@@', 'std::_Generic_error_category', '').
 finalDemangledName(0x1000a8d8, '.?AVerror_category@std@@', 'std::error_category', '').
+finalDemangledName(0x1000a8fc, '.?AV_Generic_error_category@std@@', 'std::_Generic_error_category', '').
 finalDemangledName(0x1000a93c, '.?AV_Iostream_error_category@std@@', 'std::_Iostream_error_category', '').
 finalDemangledName(0x1000a988, '.?AV_System_error_category@std@@', 'std::_System_error_category', '').
 finalDemangledName(0x1000a9b4, '.?AVHandler_share@@', 'Handler_share', '').
@@ -88,11 +113,11 @@ finalDemangledName(0x1000e1c0, '?clone@handler@@UAEPAV1@PBDPAUst_mem_root@@@Z', 
 finalDemangledName(0x1000e1c4, '?rebind_psi@handler@@UAEXXZ', handler, rebind_psi).
 finalDemangledName(0x1000e1c8, '?unbind_psi@handler@@UAEXXZ', handler, unbind_psi).
 finalFileInfo('4E7DC9F14C996D08818CD46B1DF9BCEC', 'ha_example.dll').
-finalInheritance(0x100039a0, 0x1000a8d8, 0, 0, false).
-finalInheritance(0x1000a93c, 0x100039a0, 0, 0, false).
-finalInheritance(0x1000a988, 0x100039a0, 0, 0, false).
+finalInheritance(0x1000a8fc, 0x1000a8d8, 0, 0x1000a8fc, false).
+finalInheritance(0x1000a93c, 0x1000a8fc, 0, 0x1000a93c, false).
+finalInheritance(0x1000a988, 0x1000a8fc, 0, 0x1000a988, false).
 finalInheritance(0x1000ac90, 0x1000a9b4, 0, 0x1000ac90, false).
-finalInheritance(0x1000ac9c, 0x1000a9c0, 0, 0, false).
+finalInheritance(0x1000ac9c, 0x1000a9c0, 0, 0x1000ac9c, false).
 finalMethodProperty(0x10002820, constructor, certain).
 finalMethodProperty(0x10002840, constructor, certain).
 finalMethodProperty(0x10002860, constructor, certain).
@@ -100,24 +125,25 @@ finalMethodProperty(0x10002870, constructor, certain).
 finalMethodProperty(0x10002880, constructor, certain).
 finalMethodProperty(0x100028f0, constructor, certain).
 finalMethodProperty(0x10002930, constructor, certain).
-finalMethodProperty(0x10002950, realDestructor, certain).
+finalMethodProperty(0x10002950, constructor, certain).
 finalMethodProperty(0x10002960, constructor, certain).
-finalMethodProperty(0x10002970, realDestructor, certain).
+finalMethodProperty(0x10002970, constructor, certain).
 finalMethodProperty(0x10002980, constructor, certain).
-finalMethodProperty(0x10002990, realDestructor, certain).
-finalMethodProperty(0x100029a0, realDestructor, certain).
+finalMethodProperty(0x10002990, constructor, certain).
+finalMethodProperty(0x100029a0, constructor, certain).
 finalMethodProperty(0x100029b0, constructor, certain).
 finalMethodProperty(0x100029c0, constructor, certain).
-finalMethodProperty(0x100029e0, realDestructor, certain).
-finalMethodProperty(0x10002ae0, realDestructor, certain).
+finalMethodProperty(0x100029e0, constructor, certain).
+finalMethodProperty(0x10002a10, constructor, certain).
+finalMethodProperty(0x10002ae0, constructor, certain).
 finalMethodProperty(0x10002cf0, realDestructor, certain).
 finalMethodProperty(0x10002d20, realDestructor, certain).
-finalMethodProperty(0x10002d40, constructor, certain).
-finalMethodProperty(0x10002d50, constructor, certain).
-finalMethodProperty(0x10002d60, constructor, certain).
-finalMethodProperty(0x10002d70, constructor, certain).
+finalMethodProperty(0x10002d40, realDestructor, certain).
+finalMethodProperty(0x10002d50, realDestructor, certain).
+finalMethodProperty(0x10002d60, realDestructor, certain).
+finalMethodProperty(0x10002d70, realDestructor, certain).
 finalMethodProperty(0x10002d80, realDestructor, certain).
-finalMethodProperty(0x10002d90, constructor, certain).
+finalMethodProperty(0x10002d90, realDestructor, certain).
 finalMethodProperty(0x10002e50, deletingDestructor, certain).
 finalMethodProperty(0x10002e50, virtual, certain).
 finalMethodProperty(0x10002ea0, deletingDestructor, certain).
@@ -136,155 +162,32 @@ finalMethodProperty(0x10002fa0, realDestructor, certain).
 finalMethodProperty(0x10002fa0, virtual, certain).
 finalMethodProperty(0x100032d0, constructor, certain).
 finalMethodProperty(0x100032e0, constructor, certain).
-finalMethodProperty(0x100033f0, virtual, certain).
-finalMethodProperty(0x10003400, virtual, certain).
 finalMethodProperty(0x10003410, constructor, certain).
 finalMethodProperty(0x100035c0, constructor, certain).
-finalMethodProperty(0x10003720, virtual, certain).
-finalMethodProperty(0x10003730, virtual, certain).
-finalMethodProperty(0x10003740, virtual, certain).
-finalMethodProperty(0x10003750, virtual, certain).
-finalMethodProperty(0x10003760, virtual, certain).
-finalMethodProperty(0x10003770, virtual, certain).
 finalMethodProperty(0x10003780, virtual, certain).
 finalMethodProperty(0x100037d0, virtual, certain).
-finalMethodProperty(0x100037f0, virtual, certain).
-finalMethodProperty(0x10003800, virtual, certain).
-finalMethodProperty(0x10003810, virtual, certain).
-finalMethodProperty(0x10003820, virtual, certain).
-finalMethodProperty(0x10003830, virtual, certain).
-finalMethodProperty(0x10003840, virtual, certain).
 finalMethodProperty(0x10003850, virtual, certain).
-finalMethodProperty(0x100038e0, virtual, certain).
-finalMethodProperty(0x10003900, virtual, certain).
-finalMethodProperty(0x10003910, virtual, certain).
-finalMethodProperty(0x10003940, virtual, certain).
 finalMethodProperty(0x100039a0, virtual, certain).
 finalMethodProperty(0x100039e0, virtual, certain).
 finalMethodProperty(0x10003a00, virtual, certain).
-finalMethodProperty(0x10003a10, virtual, certain).
-finalMethodProperty(0x10003a30, virtual, certain).
-finalMethodProperty(0x10003a40, virtual, certain).
-finalMethodProperty(0x10003a50, virtual, certain).
-finalMethodProperty(0x10003a60, virtual, certain).
-finalMethodProperty(0x10003a70, virtual, certain).
-finalMethodProperty(0x10003a90, virtual, certain).
-finalMethodProperty(0x10003aa0, virtual, certain).
-finalMethodProperty(0x10003ab0, virtual, certain).
-finalMethodProperty(0x10003ac0, virtual, certain).
-finalMethodProperty(0x10003ad0, virtual, certain).
 finalMethodProperty(0x10003ae0, virtual, certain).
 finalMethodProperty(0x10003b10, virtual, certain).
 finalMethodProperty(0x10003b50, constructor, certain).
 finalMethodProperty(0x10003ba0, constructor, certain).
 finalMethodProperty(0x10003c70, virtual, certain).
-finalMethodProperty(0x10003d60, virtual, certain).
-finalMethodProperty(0x10003d70, virtual, certain).
-finalMethodProperty(0x10003d80, virtual, certain).
-finalMethodProperty(0x10003d90, virtual, certain).
-finalMethodProperty(0x10003da0, virtual, certain).
 finalMethodProperty(0x10003db0, virtual, certain).
-finalMethodProperty(0x10003dd0, virtual, certain).
-finalMethodProperty(0x10003de0, virtual, certain).
-finalMethodProperty(0x10003df0, virtual, certain).
-finalMethodProperty(0x10003e00, virtual, certain).
 finalMethodProperty(0x10003e10, virtual, certain).
-finalMethodProperty(0x10003e30, virtual, certain).
-finalMethodProperty(0x10003e50, virtual, certain).
-finalMethodProperty(0x10003e70, virtual, certain).
-finalMethodProperty(0x10003e80, virtual, certain).
-finalMethodProperty(0x10003e90, virtual, certain).
-finalMethodProperty(0x10003ea0, virtual, certain).
-finalMethodProperty(0x10003eb0, virtual, certain).
-finalMethodProperty(0x10003ed0, virtual, certain).
-finalMethodProperty(0x10003f40, virtual, certain).
 finalMethodProperty(0x10003f50, virtual, certain).
-finalMethodProperty(0x10003f60, virtual, certain).
-finalMethodProperty(0x10003f70, virtual, certain).
-finalMethodProperty(0x10003f80, virtual, certain).
 finalMethodProperty(0x10003f90, virtual, certain).
-finalMethodProperty(0x10003fb0, virtual, certain).
-finalMethodProperty(0x10003fc0, virtual, certain).
-finalMethodProperty(0x10003fd0, virtual, certain).
-finalMethodProperty(0x10003fe0, virtual, certain).
-finalMethodProperty(0x10003ff0, virtual, certain).
-finalMethodProperty(0x10004000, virtual, certain).
-finalMethodProperty(0x10004010, virtual, certain).
-finalMethodProperty(0x10004020, virtual, certain).
-finalMethodProperty(0x10004030, virtual, certain).
 finalMethodProperty(0x10004050, virtual, certain).
-finalMethodProperty(0x10004090, virtual, certain).
 finalMethodProperty(0x100040a0, virtual, certain).
-finalMethodProperty(0x100040e0, virtual, certain).
-finalMethodProperty(0x100040f0, virtual, certain).
-finalMethodProperty(0x10004100, virtual, certain).
-finalMethodProperty(0x10004110, virtual, certain).
-finalMethodProperty(0x10004120, virtual, certain).
-finalMethodProperty(0x10004130, virtual, certain).
-finalMethodProperty(0x10004140, virtual, certain).
-finalMethodProperty(0x10004150, virtual, certain).
-finalMethodProperty(0x10004160, virtual, certain).
-finalMethodProperty(0x10004170, virtual, certain).
-finalMethodProperty(0x100041b0, virtual, certain).
-finalMethodProperty(0x100041c0, virtual, certain).
-finalMethodProperty(0x10004210, virtual, certain).
-finalMethodProperty(0x10004220, virtual, certain).
-finalMethodProperty(0x10004230, virtual, certain).
-finalMethodProperty(0x10004240, virtual, certain).
-finalMethodProperty(0x10004250, virtual, certain).
-finalMethodProperty(0x10004260, virtual, certain).
-finalMethodProperty(0x10004270, virtual, certain).
-finalMethodProperty(0x10004280, virtual, certain).
-finalMethodProperty(0x10004290, virtual, certain).
-finalMethodProperty(0x10004430, virtual, certain).
-finalMethodProperty(0x100044e0, virtual, certain).
 finalMethodProperty(0x100044f0, virtual, certain).
-finalMethodProperty(0x10004540, virtual, certain).
-finalMethodProperty(0x10004550, virtual, certain).
-finalMethodProperty(0x10004560, virtual, certain).
-finalMethodProperty(0x10004570, virtual, certain).
-finalMethodProperty(0x10004580, virtual, certain).
-finalMethodProperty(0x10004590, virtual, certain).
-finalMethodProperty(0x100045a0, virtual, certain).
-finalMethodProperty(0x100045e0, virtual, certain).
 finalMethodProperty(0x10004630, virtual, certain).
-finalMethodProperty(0x10004650, virtual, certain).
-finalMethodProperty(0x10004660, virtual, certain).
-finalMethodProperty(0x10004670, virtual, certain).
-finalMethodProperty(0x10004680, virtual, certain).
-finalMethodProperty(0x100046a0, virtual, certain).
-finalMethodProperty(0x100046b0, virtual, certain).
-finalMethodProperty(0x100046c0, virtual, certain).
-finalMethodProperty(0x10004740, virtual, certain).
-finalMethodProperty(0x10004750, virtual, certain).
-finalMethodProperty(0x10004760, virtual, certain).
-finalMethodProperty(0x10004770, virtual, certain).
-finalMethodProperty(0x10004780, virtual, certain).
-finalMethodProperty(0x10004790, virtual, certain).
 finalMethodProperty(0x100047a0, virtual, certain).
-finalMethodProperty(0x100047d0, virtual, certain).
 finalMethodProperty(0x100047e0, virtual, certain).
 finalMethodProperty(0x10004830, virtual, certain).
 finalMethodProperty(0x10004890, virtual, certain).
-finalMethodProperty(0x100048d0, virtual, certain).
-finalMethodProperty(0x100048e0, virtual, certain).
-finalMethodProperty(0x100048f0, virtual, certain).
-finalMethodProperty(0x10004900, virtual, certain).
-finalMethodProperty(0x10004910, virtual, certain).
 finalMethodProperty(0x10004920, virtual, certain).
-finalMethodProperty(0x10004970, virtual, certain).
-finalMethodProperty(0x10004980, virtual, certain).
-finalMethodProperty(0x10004990, virtual, certain).
-finalMethodProperty(0x100049a0, virtual, certain).
-finalMethodProperty(0x100049b0, virtual, certain).
-finalMethodProperty(0x100049c0, virtual, certain).
-finalMethodProperty(0x100049d0, virtual, certain).
-finalMethodProperty(0x100049e0, virtual, certain).
-finalMethodProperty(0x100049f0, virtual, certain).
-finalMethodProperty(0x10004a00, virtual, certain).
-finalMethodProperty(0x10004a30, virtual, certain).
-finalMethodProperty(0x10004a40, virtual, certain).
-finalMethodProperty(0x10004a50, virtual, certain).
 finalMethodProperty(0x100050e4, constructor, certain).
 finalMethodProperty(0x100050ef, constructor, certain).
 finalMethodProperty(0x100050f4, deletingDestructor, certain).
@@ -322,159 +225,36 @@ finalMethodProperty(0x1000e1b8, virtual, certain).
 finalMethodProperty(0x1000e1c0, virtual, certain).
 finalMethodProperty(0x1000e1c4, virtual, certain).
 finalMethodProperty(0x1000e1c8, virtual, certain).
-finalThunk(0x1000100a, 0x10003900).
-finalThunk(0x1000100f, 0x100045e0).
-finalThunk(0x10001023, 0x10004090).
-finalThunk(0x10001028, 0x10004580).
-finalThunk(0x1000102d, 0x100049d0).
-finalThunk(0x10001032, 0x10003ad0).
-finalThunk(0x10001037, 0x10003f80).
-finalThunk(0x1000103c, 0x10003760).
-finalThunk(0x10001046, 0x10004130).
-finalThunk(0x1000104b, 0x10004990).
 finalThunk(0x1000105f, 0x100037d0).
-finalThunk(0x10001069, 0x10003ac0).
-finalThunk(0x1000106e, 0x10003840).
-finalThunk(0x10001078, 0x10004150).
 finalThunk(0x1000107d, 0x10004050).
-finalThunk(0x10001082, 0x100045a0).
-finalThunk(0x10001087, 0x10004140).
-finalThunk(0x1000108c, 0x10004570).
-finalThunk(0x10001096, 0x10003d90).
-finalThunk(0x1000109b, 0x10003e90).
-finalThunk(0x100010a0, 0x10003f60).
-finalThunk(0x100010a5, 0x10003e70).
-finalThunk(0x100010aa, 0x10004120).
-finalThunk(0x100010b4, 0x10004430).
-finalThunk(0x100010cd, 0x10003e30).
 finalThunk(0x100010d2, 0x10003c70).
-finalThunk(0x100010d7, 0x10004750).
-finalThunk(0x100010e1, 0x10004770).
-finalThunk(0x100010e6, 0x10004680).
 finalThunk(0x100010eb, 0x10003db0).
-finalThunk(0x100010f5, 0x100048e0).
-finalThunk(0x100010fa, 0x10003ab0).
-finalThunk(0x100010ff, 0x10003aa0).
-finalThunk(0x10001109, 0x100049e0).
-finalThunk(0x1000110e, 0x100049a0).
 finalThunk(0x10001113, 0x10004630).
-finalThunk(0x10001118, 0x10003740).
-finalThunk(0x10001122, 0x10004000).
-finalThunk(0x1000112c, 0x10003da0).
 finalThunk(0x10001131, 0x10002fa0).
-finalThunk(0x1000113b, 0x10004a50).
-finalThunk(0x10001145, 0x100046a0).
-finalThunk(0x1000114a, 0x10004270).
-finalThunk(0x1000114f, 0x10003d60).
-finalThunk(0x10001159, 0x10004970).
-finalThunk(0x10001163, 0x10003df0).
-finalThunk(0x10001168, 0x10003a50).
-finalThunk(0x1000116d, 0x10003400).
 finalThunk(0x10001172, 0x100047a0).
 finalThunk(0x1000118b, 0x10003b10).
 finalThunk(0x10001190, 0x100044f0).
-finalThunk(0x10001195, 0x10004540).
-finalThunk(0x1000119a, 0x10003a10).
-finalThunk(0x100011a4, 0x10003a90).
 finalThunk(0x100011b3, 0x10004920).
-finalThunk(0x100011b8, 0x10003f40).
-finalThunk(0x100011cc, 0x10003e50).
-finalThunk(0x100011db, 0x10004a30).
-finalThunk(0x100011e5, 0x10003910).
 finalThunk(0x100011ea, 0x10002f00).
-finalThunk(0x100011ef, 0x100048d0).
 finalThunk(0x100011f9, 0x10003ae0).
 finalThunk(0x10001203, 0x10003a00).
-finalThunk(0x1000120d, 0x10004210).
-finalThunk(0x10001212, 0x10004170).
-finalThunk(0x10001226, 0x10003f70).
-finalThunk(0x1000122b, 0x10003a40).
-finalThunk(0x10001230, 0x100047d0).
-finalThunk(0x1000123a, 0x100040f0).
 finalThunk(0x1000123f, 0x10002ea0).
-finalThunk(0x10001258, 0x10003800).
-finalThunk(0x1000125d, 0x10003e00).
 finalThunk(0x10001262, 0x10002f90).
-finalThunk(0x10001267, 0x10004110).
-finalThunk(0x10001271, 0x10004290).
-finalThunk(0x10001276, 0x10004740).
-finalThunk(0x1000127b, 0x100038e0).
-finalThunk(0x10001280, 0x100044e0).
-finalThunk(0x10001285, 0x100046c0).
-finalThunk(0x1000128f, 0x10004560).
-finalThunk(0x10001294, 0x10003d70).
-finalThunk(0x10001299, 0x10003fd0).
-finalThunk(0x100012a8, 0x10003ed0).
-finalThunk(0x100012ad, 0x10003720).
 finalThunk(0x100012b2, 0x100047e0).
-finalThunk(0x100012bc, 0x10003750).
 finalThunk(0x100012c6, 0x10003780).
-finalThunk(0x100012cb, 0x10003ea0).
-finalThunk(0x100012d5, 0x10004230).
 finalThunk(0x100012da, 0x100039a0).
-finalThunk(0x100012df, 0x100049c0).
-finalThunk(0x100012e4, 0x10003de0).
-finalThunk(0x100012e9, 0x10004250).
-finalThunk(0x100012f3, 0x10003a60).
-finalThunk(0x10001311, 0x10004100).
-finalThunk(0x1000131b, 0x10004160).
-finalThunk(0x10001320, 0x10003eb0).
 finalThunk(0x1000132a, 0x10002f60).
-finalThunk(0x1000132f, 0x10003fb0).
-finalThunk(0x10001334, 0x100049b0).
-finalThunk(0x1000133e, 0x10004780).
-finalThunk(0x10001343, 0x10004260).
 finalThunk(0x10001348, 0x10002f30).
-finalThunk(0x1000134d, 0x10004900).
-finalThunk(0x10001357, 0x10004760).
-finalThunk(0x10001361, 0x100033f0).
 finalThunk(0x10001370, 0x10004890).
-finalThunk(0x10001375, 0x10004240).
 finalThunk(0x10001384, 0x100039e0).
-finalThunk(0x10001389, 0x10004670).
-finalThunk(0x10001393, 0x10004550).
 finalThunk(0x1000139d, 0x10003f90).
-finalThunk(0x100013a2, 0x100048f0).
-finalThunk(0x100013b1, 0x10004590).
-finalThunk(0x100013b6, 0x10003a70).
-finalThunk(0x100013c0, 0x10003770).
-finalThunk(0x100013c5, 0x100037f0).
 finalThunk(0x100013ca, 0x10004830).
 finalThunk(0x100013cf, 0x10003f50).
-finalThunk(0x100013e3, 0x10004a00).
-finalThunk(0x100013ed, 0x10003fc0).
-finalThunk(0x100013fc, 0x10003dd0).
-finalThunk(0x10001401, 0x10003ff0).
-finalThunk(0x10001410, 0x10003830).
-finalThunk(0x10001415, 0x10004790).
-finalThunk(0x1000141f, 0x100049f0).
-finalThunk(0x10001429, 0x10003d80).
-finalThunk(0x10001433, 0x10004a40).
 finalThunk(0x1000143d, 0x10003e10).
-finalThunk(0x10001442, 0x10003940).
-finalThunk(0x10001447, 0x10003a30).
-finalThunk(0x10001456, 0x10003730).
-finalThunk(0x10001460, 0x10003fe0).
-finalThunk(0x10001465, 0x100040e0).
-finalThunk(0x1000146a, 0x10004660).
 finalThunk(0x10001474, 0x10002ed0).
-finalThunk(0x10001479, 0x10004010).
-finalThunk(0x1000147e, 0x10004030).
-finalThunk(0x10001483, 0x10004280).
-finalThunk(0x1000148d, 0x10003810).
-finalThunk(0x10001492, 0x100041b0).
 finalThunk(0x10001497, 0x10002e50).
-finalThunk(0x1000149c, 0x10003e80).
-finalThunk(0x100014a1, 0x10004910).
 finalThunk(0x100014a6, 0x10003850).
-finalThunk(0x100014ab, 0x10004980).
-finalThunk(0x100014b5, 0x10004220).
-finalThunk(0x100014ba, 0x10004650).
-finalThunk(0x100014bf, 0x100041c0).
-finalThunk(0x100014d3, 0x100046b0).
 finalThunk(0x100014d8, 0x100040a0).
-finalThunk(0x100014e2, 0x10003820).
-finalThunk(0x100014e7, 0x10004020).
 finalThunk(0x10004ab4, 0x1000e1c8).
 finalThunk(0x10004aba, 0x1000e1c4).
 finalThunk(0x10004ac0, 0x1000e1c0).

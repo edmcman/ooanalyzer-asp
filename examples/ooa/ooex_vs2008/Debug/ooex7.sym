@@ -1,28 +1,13 @@
-07:32:59 using native Rust &sameClass propagator
-07:32:59 Grounding...
-07:32:59 Grounding done (0.01s)
-07:32:59 Solving...
-07:32:59 Model found (0.02s): [-2088]
-07:32:59 Model found (0.02s, +0.00s): [-2098]
-07:32:59 Model found (0.02s, +0.00s): [-2108]
-07:32:59 Model found (0.02s, +0.00s): [-2118]
-07:32:59 Model found (0.02s, +0.00s): [-2128]
-07:32:59 Model found (0.02s, +0.00s): [-2138]
-07:32:59 Model found (0.02s, +0.00s): [-2148]
-07:32:59 Model found (0.02s, +0.00s): [-2158]
-07:32:59 Model found (0.02s, +0.00s): [-2168]
-07:32:59 Model found (0.03s, +0.00s): [-2178]
-07:32:59 Model found (0.03s, +0.00s): [-2188]
-07:32:59 Model found (0.03s, +0.00s): [-2198]
-07:32:59 Model found (0.03s, +0.00s): [-2206]
-07:32:59 Model found (0.03s, +0.00s): [-2216]
-07:32:59 Model found (0.03s, +0.00s): [-2223]
-07:32:59 Model found (0.03s, +0.00s): [-2233]
-07:32:59 Solving done: OPTIMUM FOUND (0.02s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
+07:36:59 Grounding...
+07:36:59 Grounding done (0.02s)
+07:36:59 Solving...
+07:36:59 Model found (0.03s): [-2216]
+07:36:59 Model found (0.03s, +0.00s): [-2233]
+07:36:59 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
 OPTIMUM FOUND
 
-Answer: 16
+Answer: 2
 Optimization: -2233
 
 % Equivalence classes (217 classes, 220 entities):
@@ -167,25 +152,25 @@ Optimization: -2233
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:32:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
+07:36:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
 
 % Stats:
 %   atoms: 7921.0
 %   bodies: 2858.0
 %   rules: 8371.0
 %   variables: 1531.0
-%   constraints: 1.0
-%   choices: 470.0
-%   conflicts: 1.0
-%   models: 16.0
+%   constraints: 2.0
+%   choices: 1520.0
+%   conflicts: 2.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2233.0]
 %   lower_bound: [-2233.0]
-%   total_time: 0.03844618797302246
-%   ground_time: 0.013615628995466977
-%   time_to_first_model: 0.017065521999029443
-%   max_rss_bytes: 39714816
-%   solve_time: 0.015899181365966797
+%   total_time: 0.04490995407104492
+%   ground_time: 0.022346703997754958
+%   time_to_first_model: 0.027726455002266448
+%   max_rss_bytes: 39444480
+%   solve_time: 0.007294893264770508
 classRelatedMethod(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
 classRelatedMethod(int ObjectTest::add(void)@0x411740,ObjectTest::ObjectTest(int, int)@0x4116f0)
 classSizeGTE($LN6_1@0x412df5,0)

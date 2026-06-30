@@ -1,126 +1,16 @@
-07:33:00 using native Rust &sameClass propagator
-07:33:00 Grounding...
-07:33:01 Grounding done (0.04s)
-07:33:01 Solving...
-07:33:01 Model found (0.05s): [-20, -2298]
-07:33:01 Model found (0.06s, +0.00s): [-20, -2308]
-07:33:01 Model found (0.06s, +0.00s): [-20, -2318]
-07:33:01 Model found (0.07s, +0.00s): [-20, -2328]
-07:33:01 Model found (0.07s, +0.00s): [-20, -2338]
-07:33:01 Model found (0.07s, +0.00s): [-20, -2348]
-07:33:01 Model found (0.08s, +0.00s): [-20, -2358]
-07:33:01 Model found (0.08s, +0.00s): [-20, -2368]
-07:33:01 Model found (0.09s, +0.00s): [-20, -2378]
-07:33:01 Model found (0.09s, +0.00s): [-20, -2388]
-07:33:01 Model found (0.09s, +0.00s): [-20, -2398]
-07:33:01 Model found (0.10s, +0.00s): [-20, -2408]
-07:33:01 Model found (0.10s, +0.00s): [-20, -2418]
-07:33:01 Model found (0.10s, +0.00s): [-20, -2428]
-07:33:01 Model found (0.11s, +0.00s): [-20, -2438]
-07:33:01 Model found (0.11s, +0.00s): [-20, -2448]
-07:33:01 Model found (0.11s, +0.00s): [-20, -2458]
-07:33:01 Model found (0.12s, +0.00s): [-20, -2468]
-07:33:01 Model found (0.12s, +0.00s): [-20, -2478]
-07:33:01 Model found (0.13s, +0.00s): [-20, -2488]
-07:33:01 Model found (0.13s, +0.00s): [-20, -2498]
-07:33:01 Model found (0.13s, +0.00s): [-20, -2508]
-07:33:01 Model found (0.14s, +0.00s): [-20, -2518]
-07:33:01 Model found (0.14s, +0.00s): [-20, -2528]
-07:33:01 Model found (0.15s, +0.01s): [-20, -2538]
-07:33:01 Model found (0.15s, +0.00s): [-20, -2548]
-07:33:01 Model found (0.15s, +0.00s): [-20, -2558]
-07:33:01 Model found (0.16s, +0.00s): [-20, -2568]
-07:33:01 Model found (0.16s, +0.00s): [-20, -2578]
-07:33:01 Model found (0.17s, +0.00s): [-20, -2588]
-07:33:01 Model found (0.17s, +0.00s): [-20, -2598]
-07:33:01 Model found (0.17s, +0.00s): [-20, -2608]
-07:33:01 Model found (0.18s, +0.00s): [-20, -2618]
-07:33:01 Model found (0.18s, +0.00s): [-20, -2628]
-07:33:01 Model found (0.18s, +0.00s): [-20, -2638]
-07:33:01 Model found (0.19s, +0.00s): [-20, -2648]
-07:33:01 Model found (0.19s, +0.00s): [-20, -2658]
-07:33:01 Model found (0.19s, +0.00s): [-20, -2668]
-07:33:01 Model found (0.20s, +0.00s): [-20, -2678]
-07:33:01 Model found (0.20s, +0.00s): [-20, -2688]
-07:33:01 Model found (0.21s, +0.00s): [-20, -2698]
-07:33:01 Model found (0.21s, +0.00s): [-20, -2708]
-07:33:01 Model found (0.21s, +0.00s): [-20, -2718]
-07:33:01 Model found (0.22s, +0.00s): [-20, -2728]
-07:33:01 Model found (0.22s, +0.00s): [-20, -2738]
-07:33:01 Model found (0.22s, +0.00s): [-20, -2748]
-07:33:01 Model found (0.23s, +0.00s): [-20, -2758]
-07:33:01 Model found (0.23s, +0.00s): [-20, -2768]
-07:33:01 Model found (0.24s, +0.00s): [-20, -2778]
-07:33:01 Model found (0.24s, +0.01s): [-20, -2788]
-07:33:01 Model found (0.25s, +0.00s): [-20, -2798]
-07:33:01 Model found (0.25s, +0.01s): [-20, -2808]
-07:33:01 Model found (0.26s, +0.00s): [-20, -2818]
-07:33:01 Model found (0.26s, +0.00s): [-20, -2828]
-07:33:01 Model found (0.26s, +0.00s): [-20, -2838]
-07:33:01 Model found (0.27s, +0.00s): [-20, -2848]
-07:33:01 Model found (0.27s, +0.00s): [-20, -2858]
-07:33:01 Model found (0.28s, +0.00s): [-20, -2868]
-07:33:01 Model found (0.28s, +0.00s): [-20, -2878]
-07:33:01 Model found (0.29s, +0.00s): [-20, -2888]
-07:33:01 Model found (0.29s, +0.00s): [-20, -2898]
-07:33:01 Model found (0.29s, +0.00s): [-20, -2908]
-07:33:01 Model found (0.30s, +0.00s): [-20, -2918]
-07:33:01 Model found (0.30s, +0.00s): [-20, -2928]
-07:33:01 Model found (0.31s, +0.00s): [-20, -2938]
-07:33:01 Model found (0.31s, +0.00s): [-20, -2948]
-07:33:01 Model found (0.31s, +0.00s): [-20, -2958]
-07:33:01 Model found (0.32s, +0.00s): [-20, -2968]
-07:33:01 Model found (0.32s, +0.00s): [-20, -2978]
-07:33:01 Model found (0.33s, +0.00s): [-20, -2988]
-07:33:01 Model found (0.33s, +0.00s): [-20, -2998]
-07:33:01 Model found (0.34s, +0.01s): [-20, -3008]
-07:33:01 Model found (0.34s, +0.00s): [-20, -3018]
-07:33:01 Model found (0.35s, +0.00s): [-20, -3028]
-07:33:01 Model found (0.35s, +0.00s): [-20, -3038]
-07:33:01 Model found (0.36s, +0.00s): [-20, -3048]
-07:33:01 Model found (0.36s, +0.00s): [-20, -3058]
-07:33:01 Model found (0.36s, +0.00s): [-20, -3066]
-07:33:01 Model found (0.37s, +0.00s): [-20, -3076]
-07:33:01 Model found (0.37s, +0.00s): [-20, -3086]
-07:33:01 Model found (0.38s, +0.00s): [-20, -3096]
-07:33:01 Model found (0.38s, +0.00s): [-20, -3106]
-07:33:01 Model found (0.38s, +0.00s): [-20, -3116]
-07:33:01 Model found (0.39s, +0.01s): [-20, -3122]
-07:33:01 Model found (0.39s, +0.00s): [-20, -3130]
-07:33:01 Model found (0.40s, +0.01s): [-20, -3140]
-07:33:01 Model found (0.40s, +0.00s): [-20, -3150]
-07:33:01 Model found (0.41s, +0.01s): [-20, -3160]
-07:33:01 Model found (0.41s, +0.00s): [-20, -3166]
-07:33:01 Model found (0.42s, +0.00s): [-20, -3176]
-07:33:01 Model found (0.42s, +0.00s): [-20, -3186]
-07:33:01 Model found (0.42s, +0.00s): [-20, -3196]
-07:33:01 Model found (0.43s, +0.00s): [-20, -3199]
-07:33:01 Model found (0.44s, +0.01s): [-20, -3206]
-07:33:01 Model found (0.44s, +0.00s): [-20, -3216]
-07:33:01 Model found (0.45s, +0.01s): [-20, -3218]
-07:33:01 Model found (0.45s, +0.00s): [-20, -3228]
-07:33:01 Model found (0.46s, +0.00s): [-20, -3238]
-07:33:01 Model found (0.46s, +0.00s): [-20, -3248]
-07:33:01 Model found (0.46s, +0.00s): [-20, -3258]
-07:33:01 Model found (0.47s, +0.00s): [-20, -3268]
-07:33:01 Model found (0.47s, +0.00s): [-20, -3278]
-07:33:01 Model found (0.48s, +0.00s): [-20, -3288]
-07:33:01 Model found (0.48s, +0.00s): [-20, -3298]
-07:33:01 Model found (0.48s, +0.00s): [-20, -3308]
-07:33:01 Model found (0.49s, +0.00s): [-20, -3318]
-07:33:01 Model found (0.49s, +0.00s): [-20, -3328]
-07:33:01 Model found (0.50s, +0.00s): [-20, -3338]
-07:33:01 Model found (0.50s, +0.00s): [-20, -3348]
-07:33:01 Model found (0.51s, +0.00s): [-20, -3358]
-07:33:01 Model found (0.51s, +0.00s): [-20, -3366]
-07:33:01 Model found (0.51s, +0.00s): [-20, -3372]
-07:33:01 Model found (0.52s, +0.00s): [-20, -3382]
-07:33:01 Model found (0.52s, +0.00s): [-20, -3392]
-07:33:01 Solving done: OPTIMUM FOUND (0.49s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/poly.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/poly.results
+07:37:00 Grounding...
+07:37:00 Grounding done (0.04s)
+07:37:00 Solving...
+07:37:00 Model found (0.05s): [-20, -3216]
+07:37:00 Model found (0.06s, +0.01s): [-20, -3226]
+07:37:00 Model found (0.07s, +0.01s): [-20, -3229]
+07:37:00 Model found (0.07s, +0.01s): [-20, -3307]
+07:37:00 Model found (0.08s, +0.01s): [-20, -3392]
+07:37:00 Solving done: OPTIMUM FOUND (0.05s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/poly.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/poly.results
 OPTIMUM FOUND
 
-Answer: 114
+Answer: 5
 Optimization: -20 -3392
 
 % Equivalence classes (270 classes, 297 entities):
@@ -343,25 +233,25 @@ Optimization: -20 -3392
 %     ~embeddedObject: 3/3
 %       objectInObject(const Rectangle::`vftable'@0x417834,const Shape::`vftable'@0x417898,0) objectInObject(const Circle::`vftable'@0x417858,const Shape::`vftable'@0x417898,0)
 %       objectInObject(const Triangle::`vftable'@0x417878,const Shape::`vftable'@0x417898,0)
-07:33:01 Writing results to examples/ooa/ooex_vs2010/Debug/poly.results
+07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/poly.results
 
 % Stats:
-%   atoms: 21965.0
-%   bodies: 11336.0
-%   rules: 24353.0
-%   variables: 8347.0
-%   constraints: 95.0
-%   choices: 9682.0
-%   conflicts: 25.0
-%   models: 114.0
+%   atoms: 21973.0
+%   bodies: 11348.0
+%   rules: 24369.0
+%   variables: 8348.0
+%   constraints: 88.0
+%   choices: 4147.0
+%   conflicts: 18.0
+%   models: 5.0
 %   optimal_models: 1.0
 %   final_cost: [-20.0, -3392.0]
 %   lower_bound: [-20.0, -3392.0]
-%   total_time: 0.5335249900817871
-%   ground_time: 0.0380731740151532
-%   time_to_first_model: 0.05466691602487117
-%   max_rss_bytes: 54419456
-%   solve_time: 0.47254514694213867
+%   total_time: 0.08892011642456055
+%   ground_time: 0.03558255000098143
+%   time_to_first_model: 0.053792216000147164
+%   max_rss_bytes: 58658816
+%   solve_time: 0.030570030212402344
 classCallsMethod(Circle::Circle(void)@0x4117c0,Shape::Shape(void)@0x411980)
 classCallsMethod(Rectangle::Rectangle(void)@0x4116e0,Shape::Shape(void)@0x411980)
 classCallsMethod(Triangle::Triangle(void)@0x4118a0,Shape::Shape(void)@0x411980)

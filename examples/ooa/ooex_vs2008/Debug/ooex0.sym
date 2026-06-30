@@ -1,65 +1,14 @@
-07:32:59 using native Rust &sameClass propagator
-07:32:59 Grounding...
-07:32:59 Grounding done (0.01s)
-07:32:59 Solving...
-07:32:59 Model found (0.01s): [-1810]
-07:32:59 Model found (0.02s, +0.00s): [-1820]
-07:32:59 Model found (0.02s, +0.00s): [-1830]
-07:32:59 Model found (0.02s, +0.00s): [-1840]
-07:32:59 Model found (0.02s, +0.00s): [-1850]
-07:32:59 Model found (0.02s, +0.00s): [-1860]
-07:32:59 Model found (0.02s, +0.00s): [-1870]
-07:32:59 Model found (0.02s, +0.00s): [-1880]
-07:32:59 Model found (0.02s, +0.00s): [-1890]
-07:32:59 Model found (0.02s, +0.00s): [-1900]
-07:32:59 Model found (0.02s, +0.00s): [-1910]
-07:32:59 Model found (0.02s, +0.00s): [-1920]
-07:32:59 Model found (0.03s, +0.00s): [-1930]
-07:32:59 Model found (0.03s, +0.00s): [-1940]
-07:32:59 Model found (0.03s, +0.00s): [-1950]
-07:32:59 Model found (0.03s, +0.00s): [-1960]
-07:32:59 Model found (0.03s, +0.00s): [-1970]
-07:32:59 Model found (0.03s, +0.00s): [-1980]
-07:32:59 Model found (0.03s, +0.00s): [-1990]
-07:32:59 Model found (0.03s, +0.00s): [-2000]
-07:32:59 Model found (0.03s, +0.00s): [-2010]
-07:32:59 Model found (0.03s, +0.00s): [-2020]
-07:32:59 Model found (0.03s, +0.00s): [-2030]
-07:32:59 Model found (0.03s, +0.00s): [-2040]
-07:32:59 Model found (0.03s, +0.00s): [-2050]
-07:32:59 Model found (0.03s, +0.00s): [-2060]
-07:32:59 Model found (0.03s, +0.00s): [-2070]
-07:32:59 Model found (0.03s, +0.00s): [-2080]
-07:32:59 Model found (0.04s, +0.00s): [-2090]
-07:32:59 Model found (0.04s, +0.00s): [-2100]
-07:32:59 Model found (0.04s, +0.00s): [-2108]
-07:32:59 Model found (0.04s, +0.00s): [-2112]
-07:32:59 Model found (0.04s, +0.00s): [-2122]
-07:32:59 Model found (0.04s, +0.00s): [-2132]
-07:32:59 Model found (0.04s, +0.00s): [-2142]
-07:32:59 Model found (0.04s, +0.00s): [-2148]
-07:32:59 Model found (0.04s, +0.00s): [-2158]
-07:32:59 Model found (0.04s, +0.00s): [-2168]
-07:32:59 Model found (0.04s, +0.00s): [-2170]
-07:32:59 Model found (0.04s, +0.00s): [-2180]
-07:32:59 Model found (0.04s, +0.00s): [-2190]
-07:32:59 Model found (0.04s, +0.00s): [-2200]
-07:32:59 Model found (0.04s, +0.00s): [-2210]
-07:32:59 Model found (0.04s, +0.00s): [-2218]
-07:32:59 Model found (0.05s, +0.00s): [-2228]
-07:32:59 Model found (0.05s, +0.00s): [-2238]
-07:32:59 Model found (0.05s, +0.00s): [-2248]
-07:32:59 Model found (0.05s, +0.00s): [-2258]
-07:32:59 Model found (0.05s, +0.00s): [-2268]
-07:32:59 Model found (0.05s, +0.00s): [-2278]
-07:32:59 Model found (0.05s, +0.00s): [-2288]
-07:32:59 Model found (0.05s, +0.00s): [-2298]
-07:32:59 Model found (0.05s, +0.00s): [-2308]
-07:32:59 Solving done: OPTIMUM FOUND (0.04s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex0.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex0.results
+07:36:59 Grounding...
+07:36:59 Grounding done (0.01s)
+07:36:59 Solving...
+07:36:59 Model found (0.02s): [-2138]
+07:36:59 Model found (0.02s, +0.00s): [-2146]
+07:36:59 Model found (0.02s, +0.00s): [-2308]
+07:36:59 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex0.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex0.results
 OPTIMUM FOUND
 
-Answer: 53
+Answer: 3
 Optimization: -2308
 
 % Equivalence classes (209 classes, 213 entities):
@@ -209,25 +158,25 @@ Optimization: -2308
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:32:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
+07:36:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex0.results
 
 % Stats:
 %   atoms: 5464.0
 %   bodies: 1247.0
 %   rules: 5930.0
 %   variables: 748.0
-%   constraints: 16.0
-%   choices: 920.0
-%   conflicts: 2.0
-%   models: 53.0
+%   constraints: 20.0
+%   choices: 2145.0
+%   conflicts: 40.0
+%   models: 3.0
 %   optimal_models: 1.0
 %   final_cost: [-2308.0]
 %   lower_bound: [-2308.0]
-%   total_time: 0.05607199668884277
-%   ground_time: 0.011830422998173162
-%   time_to_first_model: 0.013868423004169017
-%   max_rss_bytes: 38129664
-%   solve_time: 0.037113189697265625
+%   total_time: 0.02640700340270996
+%   ground_time: 0.014507608997519128
+%   time_to_first_model: 0.016631099999358412
+%   max_rss_bytes: 37347328
+%   solve_time: 0.0046389102935791016
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::ClassA(void)@0x411610)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411790,ClassA::~ClassA(void)@0x411670)

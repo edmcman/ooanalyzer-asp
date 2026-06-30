@@ -1,94 +1,19 @@
-07:32:59 using native Rust &sameClass propagator
-07:32:59 Grounding...
-07:32:59 Grounding done (0.04s)
-07:32:59 Solving...
-07:32:59 Model found (0.06s): [-36, -1390]
-07:32:59 Model found (0.06s, +0.00s): [-36, -1400]
-07:32:59 Model found (0.06s, +0.00s): [-36, -1410]
-07:32:59 Model found (0.06s, +0.00s): [-36, -1420]
-07:32:59 Model found (0.06s, +0.00s): [-36, -1430]
-07:32:59 Model found (0.06s, +0.00s): [-36, -1440]
-07:32:59 Model found (0.07s, +0.00s): [-36, -1450]
-07:32:59 Model found (0.07s, +0.00s): [-36, -1460]
-07:32:59 Model found (0.07s, +0.00s): [-36, -1470]
-07:32:59 Model found (0.07s, +0.00s): [-36, -1480]
-07:32:59 Model found (0.07s, +0.00s): [-36, -1490]
-07:32:59 Model found (0.07s, +0.00s): [-36, -1500]
-07:32:59 Model found (0.08s, +0.00s): [-36, -1510]
-07:32:59 Model found (0.08s, +0.00s): [-36, -1520]
-07:32:59 Model found (0.08s, +0.00s): [-36, -1530]
-07:32:59 Model found (0.08s, +0.00s): [-36, -1540]
-07:32:59 Model found (0.08s, +0.00s): [-36, -1550]
-07:32:59 Model found (0.08s, +0.00s): [-36, -1560]
-07:32:59 Model found (0.09s, +0.00s): [-36, -1570]
-07:32:59 Model found (0.09s, +0.00s): [-36, -1580]
-07:32:59 Model found (0.09s, +0.00s): [-36, -1590]
-07:32:59 Model found (0.09s, +0.00s): [-36, -1600]
-07:32:59 Model found (0.09s, +0.00s): [-36, -1610]
-07:32:59 Model found (0.09s, +0.00s): [-36, -1620]
-07:32:59 Model found (0.10s, +0.00s): [-36, -1630]
-07:32:59 Model found (0.10s, +0.00s): [-36, -1640]
-07:32:59 Model found (0.10s, +0.00s): [-36, -1650]
-07:32:59 Model found (0.10s, +0.00s): [-36, -1660]
-07:32:59 Model found (0.11s, +0.00s): [-36, -1670]
-07:32:59 Model found (0.11s, +0.00s): [-36, -1680]
-07:32:59 Model found (0.11s, +0.00s): [-36, -1690]
-07:32:59 Model found (0.11s, +0.00s): [-36, -1700]
-07:32:59 Model found (0.11s, +0.00s): [-36, -1710]
-07:32:59 Model found (0.11s, +0.00s): [-36, -1720]
-07:32:59 Model found (0.12s, +0.00s): [-36, -1730]
-07:32:59 Model found (0.12s, +0.00s): [-36, -1740]
-07:32:59 Model found (0.12s, +0.00s): [-36, -1750]
-07:32:59 Model found (0.12s, +0.00s): [-36, -1760]
-07:32:59 Model found (0.13s, +0.00s): [-36, -1770]
-07:32:59 Model found (0.13s, +0.00s): [-36, -1780]
-07:32:59 Model found (0.13s, +0.00s): [-36, -1790]
-07:32:59 Model found (0.13s, +0.00s): [-36, -1800]
-07:32:59 Model found (0.13s, +0.00s): [-36, -1810]
-07:32:59 Model found (0.14s, +0.00s): [-36, -1818]
-07:32:59 Model found (0.14s, +0.00s): [-36, -1826]
-07:32:59 Model found (0.14s, +0.00s): [-36, -1836]
-07:32:59 Model found (0.14s, +0.00s): [-36, -1880]
-07:32:59 Model found (0.15s, +0.00s): [-36, -1890]
-07:32:59 Model found (0.15s, +0.00s): [-36, -1906]
-07:32:59 Model found (0.15s, +0.00s): [-36, -1914]
-07:32:59 Model found (0.15s, +0.00s): [-36, -1922]
-07:32:59 Model found (0.16s, +0.00s): [-36, -1930]
-07:32:59 Model found (0.16s, +0.00s): [-36, -1938]
-07:32:59 Model found (0.16s, +0.00s): [-36, -1985]
-07:32:59 Model found (0.16s, +0.00s): [-36, -2002]
-07:32:59 Model found (0.17s, +0.01s): [-48, -2053]
-07:32:59 Model found (0.18s, +0.00s): [-48, -2063]
-07:32:59 Model found (0.18s, +0.00s): [-48, -2072]
-07:32:59 Model found (0.18s, +0.00s): [-48, -2079]
-07:32:59 Model found (0.18s, +0.00s): [-48, -2096]
-07:32:59 Model found (0.19s, +0.00s): [-48, -2106]
-07:32:59 Model found (0.19s, +0.00s): [-64, -2182]
-07:32:59 Model found (0.19s, +0.00s): [-64, -2199]
-07:32:59 Model found (0.19s, +0.00s): [-64, -2209]
-07:32:59 Model found (0.20s, +0.00s): [-64, -2216]
-07:32:59 Model found (0.20s, +0.00s): [-64, -2226]
-07:32:59 Model found (0.20s, +0.00s): [-64, -2233]
-07:32:59 Model found (0.20s, +0.00s): [-64, -2250]
-07:32:59 Model found (0.20s, +0.00s): [-64, -2260]
-07:32:59 Model found (0.21s, +0.00s): [-64, -2276]
-07:32:59 Model found (0.21s, +0.00s): [-64, -2303]
-07:32:59 Model found (0.21s, +0.01s): [-68, -2175]
-07:32:59 Model found (0.21s, +0.00s): [-68, -2202]
-07:32:59 Model found (0.22s, +0.00s): [-68, -2219]
-07:32:59 Model found (0.22s, +0.00s): [-68, -2236]
-07:32:59 Model found (0.22s, +0.00s): [-68, -2253]
-07:32:59 Model found (0.22s, +0.00s): [-68, -2270]
-07:32:59 Model found (0.22s, +0.00s): [-68, -2279]
-07:32:59 Model found (0.23s, +0.00s): [-68, -2286]
-07:32:59 Model found (0.23s, +0.00s): [-68, -2313]
-07:32:59 Model found (0.23s, +0.00s): [-68, -2483]
-07:32:59 Model found (0.23s, +0.00s): [-68, -2534]
-07:32:59 Solving done: OPTIMUM FOUND (0.19s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex5.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex5.results
+07:37:00 Grounding...
+07:37:00 Grounding done (0.04s)
+07:37:00 Solving...
+07:37:00 Model found (0.06s): [-68, -2243]
+07:37:00 Model found (0.06s, +0.00s): [-68, -2253]
+07:37:00 Model found (0.06s, +0.00s): [-68, -2270]
+07:37:00 Model found (0.07s, +0.00s): [-68, -2303]
+07:37:00 Model found (0.07s, +0.00s): [-68, -2313]
+07:37:00 Model found (0.07s, +0.00s): [-68, -2481]
+07:37:00 Model found (0.08s, +0.00s): [-68, -2508]
+07:37:00 Model found (0.08s, +0.00s): [-68, -2534]
+07:37:00 Solving done: OPTIMUM FOUND (0.04s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Lite/ooex5.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Lite/ooex5.results
 OPTIMUM FOUND
 
-Answer: 82
+Answer: 8
 Optimization: -68 -2534
 
 % Equivalence classes (170 classes, 193 entities):
@@ -270,25 +195,25 @@ Optimization: -68 -2534
 %       objectInObject(const Derived::`vftable'{for `Base2'}@0x406160,const Base::`vftable'@0x406140,0) objectInObject(const Derived::`vftable'{for `Base2'}@0x406160,const Base2::`vftable'@0x406150,16)
 %       objectInObject(const Derived::`vftable'{for `Base'}@0x406170,const Base::`vftable'@0x406140,0) objectInObject(const Derived::`vftable'{for `Base'}@0x406170,const Base2::`vftable'@0x406150,16)
 %       objectInObject(const std::bad_alloc::`vftable'@0x406188,const std::exception::`vftable'@0x406bdc,0)
-07:32:59 Writing results to examples/ooa/ooex_vs2010/Lite/ooex5.results
+07:37:00 Writing results to examples/ooa/ooex_vs2010/Lite/ooex5.results
 
 % Stats:
-%   atoms: 11374.0
-%   bodies: 6623.0
-%   rules: 15627.0
-%   variables: 4949.0
-%   constraints: 305.0
-%   choices: 70632.0
-%   conflicts: 398.0
-%   models: 82.0
+%   atoms: 11414.0
+%   bodies: 6721.0
+%   rules: 15747.0
+%   variables: 5072.0
+%   constraints: 219.0
+%   choices: 29832.0
+%   conflicts: 170.0
+%   models: 8.0
 %   optimal_models: 1.0
 %   final_cost: [-68.0, -2534.0]
 %   lower_bound: [-68.0, -2534.0]
-%   total_time: 0.2530198097229004
-%   ground_time: 0.040545911993831396
-%   time_to_first_model: 0.05529526399914175
-%   max_rss_bytes: 46313472
-%   solve_time: 0.1800978183746338
+%   total_time: 0.09864306449890137
+%   ground_time: 0.04147539599944139
+%   time_to_first_model: 0.05613070099934703
+%   max_rss_bytes: 46780416
+%   solve_time: 0.025924205780029297
 classCallsMethod(Derived::Derived(void)@0x4010c0,Base::Base(void)@0x401000)
 classCallsMethod(Derived::Derived(void)@0x4010c0,virtual int Base::func2(void)@0x401040)
 classCallsMethod(class std::exception & std::exception::operator=(class std::exception const &)@0x401cff,std::exception::_Copy_str(char const *)@0x401ca1)
@@ -631,7 +556,6 @@ constructor(_LocaleUpdate::_LocaleUpdate(struct localeinfo_struct *)@0x403970)
 constructor(std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40122f)
 constructor(std::exception::exception(char const * const &, int)@0x401c77)
 constructor(std::exception::exception(class std::exception const &)@0x401d66)
-constructor(virtual std::bad_alloc::~bad_alloc(void)@0x4011fd)
 deletingDestructor(virtual * std::bad_alloc::`vector deleting destructor'(unsigned int)@0x401208)
 deletingDestructor(virtual * std::exception::`scalar deleting destructor'(unsigned int)@0x401d3f)
 deletingDestructor(virtual * type_info::`scalar deleting destructor'(unsigned int)@0x401186)
@@ -659,7 +583,6 @@ mergeClasses(const Base::`vftable'@0x406140,Base::Base(void)@0x401000)
 mergeClasses(const Derived::`vftable'{for `Base'}@0x406170,Derived::Derived(void)@0x4010c0)
 mergeClasses(const Derived::`vftable'{for `Base2'}@0x406160,const Derived::`vftable'{for `Base'}@0x406170)
 mergeClasses(const std::bad_alloc::`vftable'@0x406188,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40122f)
-mergeClasses(const std::bad_alloc::`vftable'@0x406188,virtual std::bad_alloc::~bad_alloc(void)@0x4011fd)
 mergeClasses(const std::exception::`vftable'@0x406bdc,std::exception::exception(char const * const &, int)@0x401c77)
 mergeClasses(const std::exception::`vftable'@0x406bdc,std::exception::exception(class std::exception const &)@0x401d66)
 mergeClasses(std::exception::_Copy_str(char const *)@0x401ca1,class std::exception & std::exception::operator=(class std::exception const &)@0x401cff)
@@ -876,6 +799,7 @@ objectInObject(const Derived::`vftable'{for `Base'}@0x406170,const Base::`vftabl
 objectInObject(const Derived::`vftable'{for `Base2'}@0x406160,const Base2::`vftable'@0x406150,16)
 objectInObject(const Derived::`vftable'{for `Base2'}@0x406160,const Base::`vftable'@0x406140,0)
 objectInObject(const std::bad_alloc::`vftable'@0x406188,const std::exception::`vftable'@0x406bdc,0)
+realDestructor(virtual std::bad_alloc::~bad_alloc(void)@0x4011fd)
 realDestructor(virtual std::exception::~exception(void)@0x401d34)
 realDestructor(virtual type_info::~type_info(void)@0x401176)
 vfTable(const Base2::`vftable'@0x406150)
@@ -925,7 +849,6 @@ vftableBelongsToClass(const Base2::`vftable'@0x406150,0,Base2::Base2(void)@0x401
 vftableBelongsToClass(const Base::`vftable'@0x406140,0,Base::Base(void)@0x401000)
 vftableBelongsToClass(const Derived::`vftable'{for `Base'}@0x406170,0,Derived::Derived(void)@0x4010c0)
 vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406188,0,std::bad_alloc::bad_alloc(class std::bad_alloc const &)@0x40122f)
-vftableBelongsToClass(const std::bad_alloc::`vftable'@0x406188,0,virtual std::bad_alloc::~bad_alloc(void)@0x4011fd)
 vftableBelongsToClass(const std::exception::`vftable'@0x406bdc,0,std::exception::exception(char const * const &, int)@0x401c77)
 vftableBelongsToClass(const std::exception::`vftable'@0x406bdc,0,std::exception::exception(class std::exception const &)@0x401d66)
 vftableSizeTotal(68)

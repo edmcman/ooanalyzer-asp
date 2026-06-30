@@ -1,45 +1,13 @@
-07:32:59 using native Rust &sameClass propagator
-07:32:59 Grounding...
-07:32:59 Grounding done (0.02s)
-07:32:59 Solving...
-07:32:59 Model found (0.02s): [-1910]
-07:32:59 Model found (0.02s, +0.00s): [-1920]
-07:32:59 Model found (0.02s, +0.00s): [-1930]
-07:32:59 Model found (0.02s, +0.00s): [-1940]
-07:32:59 Model found (0.02s, +0.00s): [-1950]
-07:32:59 Model found (0.02s, +0.00s): [-1960]
-07:32:59 Model found (0.03s, +0.00s): [-1970]
-07:32:59 Model found (0.03s, +0.00s): [-1980]
-07:32:59 Model found (0.03s, +0.00s): [-1990]
-07:32:59 Model found (0.03s, +0.00s): [-2000]
-07:32:59 Model found (0.03s, +0.00s): [-2010]
-07:32:59 Model found (0.03s, +0.00s): [-2020]
-07:32:59 Model found (0.03s, +0.00s): [-2030]
-07:32:59 Model found (0.03s, +0.00s): [-2040]
-07:32:59 Model found (0.03s, +0.00s): [-2050]
-07:32:59 Model found (0.03s, +0.00s): [-2060]
-07:32:59 Model found (0.04s, +0.00s): [-2070]
-07:32:59 Model found (0.04s, +0.00s): [-2080]
-07:32:59 Model found (0.04s, +0.00s): [-2090]
-07:32:59 Model found (0.04s, +0.00s): [-2100]
-07:32:59 Model found (0.04s, +0.00s): [-2108]
-07:32:59 Model found (0.04s, +0.00s): [-2110]
-07:32:59 Model found (0.04s, +0.00s): [-2118]
-07:32:59 Model found (0.04s, +0.00s): [-2124]
-07:32:59 Model found (0.04s, +0.00s): [-2134]
-07:32:59 Model found (0.04s, +0.00s): [-2144]
-07:32:59 Model found (0.05s, +0.00s): [-2147]
-07:32:59 Model found (0.05s, +0.00s): [-2157]
-07:32:59 Model found (0.05s, +0.00s): [-2167]
-07:32:59 Model found (0.05s, +0.00s): [-2177]
-07:32:59 Model found (0.05s, +0.00s): [-2187]
-07:32:59 Model found (0.05s, +0.00s): [-2194]
-07:32:59 Model found (0.05s, +0.00s): [-2204]
-07:32:59 Solving done: OPTIMUM FOUND (0.04s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex1.results
+07:36:59 Grounding...
+07:36:59 Grounding done (0.01s)
+07:36:59 Solving...
+07:36:59 Model found (0.01s): [-2136]
+07:36:59 Model found (0.02s, +0.00s): [-2204]
+07:36:59 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex1.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex1.results
 OPTIMUM FOUND
 
-Answer: 33
+Answer: 2
 Optimization: -2204
 
 % Equivalence classes (209 classes, 212 entities):
@@ -182,25 +150,25 @@ Optimization: -2204
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:32:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex1.results
+07:36:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex1.results
 
 % Stats:
 %   atoms: 5418.0
 %   bodies: 1175.0
 %   rules: 5867.0
 %   variables: 706.0
-%   constraints: 5.0
-%   choices: 451.0
-%   conflicts: 2.0
-%   models: 33.0
+%   constraints: 8.0
+%   choices: 1979.0
+%   conflicts: 4.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2204.0]
 %   lower_bound: [-2204.0]
-%   total_time: 0.06235003471374512
-%   ground_time: 0.01679378398694098
-%   time_to_first_model: 0.01949888898525387
-%   max_rss_bytes: 38129664
-%   solve_time: 0.033393144607543945
+%   total_time: 0.02236199378967285
+%   ground_time: 0.011250955998548307
+%   time_to_first_model: 0.013279289996717125
+%   max_rss_bytes: 37146624
+%   solve_time: 0.003763914108276367
 classRelatedMethod(Composite::Composite(void)@0x411570,int Composite::func3(void)@0x4115c0)
 classRelatedMethod(Derived::Derived(void)@0x411610,int Derived::func4(void)@0x411750)
 classRelatedMethod(Derived::Derived(void)@0x411610,int Derived::func5(class Composite, int)@0x4117c0)

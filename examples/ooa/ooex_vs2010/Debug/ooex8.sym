@@ -1,38 +1,13 @@
-07:33:00 using native Rust &sameClass propagator
-07:33:00 Grounding...
-07:33:00 Grounding done (0.02s)
-07:33:00 Solving...
-07:33:00 Model found (0.02s): [-1810]
-07:33:00 Model found (0.02s, +0.00s): [-1820]
-07:33:00 Model found (0.02s, +0.00s): [-1830]
-07:33:00 Model found (0.02s, +0.00s): [-1840]
-07:33:00 Model found (0.02s, +0.00s): [-1850]
-07:33:00 Model found (0.03s, +0.00s): [-1860]
-07:33:00 Model found (0.03s, +0.00s): [-1870]
-07:33:00 Model found (0.03s, +0.00s): [-1880]
-07:33:00 Model found (0.03s, +0.00s): [-1890]
-07:33:00 Model found (0.03s, +0.00s): [-1900]
-07:33:00 Model found (0.03s, +0.00s): [-1910]
-07:33:00 Model found (0.03s, +0.00s): [-1920]
-07:33:00 Model found (0.03s, +0.00s): [-1930]
-07:33:00 Model found (0.03s, +0.00s): [-1940]
-07:33:00 Model found (0.03s, +0.00s): [-1950]
-07:33:00 Model found (0.03s, +0.00s): [-1960]
-07:33:00 Model found (0.03s, +0.00s): [-1970]
-07:33:00 Model found (0.03s, +0.00s): [-1980]
-07:33:00 Model found (0.03s, +0.00s): [-1982]
-07:33:00 Model found (0.03s, +0.00s): [-1992]
-07:33:00 Model found (0.03s, +0.00s): [-2002]
-07:33:00 Model found (0.03s, +0.00s): [-2012]
-07:33:00 Model found (0.04s, +0.00s): [-2022]
-07:33:00 Model found (0.04s, +0.00s): [-2032]
-07:33:00 Model found (0.04s, +0.00s): [-2039]
-07:33:00 Model found (0.04s, +0.00s): [-2049]
-07:33:00 Solving done: OPTIMUM FOUND (0.02s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
+07:37:00 Grounding...
+07:37:00 Grounding done (0.02s)
+07:37:00 Solving...
+07:37:00 Model found (0.02s): [-2032]
+07:37:00 Model found (0.03s, +0.00s): [-2049]
+07:37:00 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
 OPTIMUM FOUND
 
-Answer: 26
+Answer: 2
 Optimization: -2049
 
 % Equivalence classes (199 classes, 200 entities):
@@ -168,25 +143,25 @@ Optimization: -2049
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:33:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
+07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
 
 % Stats:
 %   atoms: 5172.0
 %   bodies: 1096.0
 %   rules: 5596.0
 %   variables: 644.0
-%   constraints: 1.0
-%   choices: 240.0
-%   conflicts: 3.0
-%   models: 26.0
+%   constraints: 6.0
+%   choices: 1603.0
+%   conflicts: 2.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2049.0]
 %   lower_bound: [-2049.0]
-%   total_time: 0.04778099060058594
-%   ground_time: 0.01781975998892449
-%   time_to_first_model: 0.020431273005669937
-%   max_rss_bytes: 37875712
-%   solve_time: 0.01777195930480957
+%   total_time: 0.03327012062072754
+%   ground_time: 0.018613366002682596
+%   time_to_first_model: 0.02175061900197761
+%   max_rss_bytes: 36032512
+%   solve_time: 0.005886077880859375
 classCallsMethod(D::D(void)@0x411590,B::B(void)@0x4116a0)
 classRelatedMethod(B::B(void)@0x4116a0,D::D(void)@0x411590)
 classRelatedMethod(D::D(void)@0x411590,B::B(void)@0x4116a0)

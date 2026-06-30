@@ -1,38 +1,13 @@
-07:33:00 using native Rust &sameClass propagator
-07:33:00 Grounding...
-07:33:00 Grounding done (0.02s)
-07:33:00 Solving...
-07:33:00 Model found (0.02s): [-1810]
-07:33:00 Model found (0.02s, +0.00s): [-1820]
-07:33:00 Model found (0.02s, +0.00s): [-1830]
-07:33:00 Model found (0.02s, +0.00s): [-1840]
-07:33:00 Model found (0.02s, +0.00s): [-1850]
-07:33:00 Model found (0.03s, +0.00s): [-1860]
-07:33:00 Model found (0.03s, +0.00s): [-1870]
-07:33:00 Model found (0.03s, +0.00s): [-1880]
-07:33:00 Model found (0.03s, +0.00s): [-1890]
-07:33:00 Model found (0.03s, +0.00s): [-1900]
-07:33:00 Model found (0.03s, +0.00s): [-1910]
-07:33:00 Model found (0.03s, +0.00s): [-1920]
-07:33:00 Model found (0.03s, +0.00s): [-1930]
-07:33:00 Model found (0.03s, +0.00s): [-1940]
-07:33:00 Model found (0.03s, +0.00s): [-1950]
-07:33:00 Model found (0.03s, +0.00s): [-1960]
-07:33:00 Model found (0.03s, +0.00s): [-1970]
-07:33:00 Model found (0.03s, +0.00s): [-1980]
-07:33:00 Model found (0.03s, +0.00s): [-1982]
-07:33:00 Model found (0.03s, +0.00s): [-1992]
-07:33:00 Model found (0.03s, +0.00s): [-2002]
-07:33:00 Model found (0.03s, +0.00s): [-2012]
-07:33:00 Model found (0.04s, +0.00s): [-2022]
-07:33:00 Model found (0.04s, +0.00s): [-2032]
-07:33:00 Model found (0.04s, +0.00s): [-2039]
-07:33:00 Model found (0.04s, +0.00s): [-2049]
-07:33:00 Solving done: OPTIMUM FOUND (0.02s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --configuration=crafty --restarts=F,736 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
+07:37:00 Grounding...
+07:37:00 Grounding done (0.02s)
+07:37:00 Solving...
+07:37:00 Model found (0.02s): [-2032]
+07:37:00 Model found (0.03s, +0.00s): [-2049]
+07:37:00 Solving done: OPTIMUM FOUND (0.01s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
 OPTIMUM FOUND
 
-Answer: 26
+Answer: 2
 guessEnabled(method) guessEnabled(constructor) guessEnabled(vftable) guessEnabled(vftable_size) guessEnabled(derived_class) guessEnabled(weak_g1_bonus) guessEnabled(merge) method(4263941) method(4263946) method(4263951) method(4263956) method(4263961) method(4263966) method(4263971) method(4263976) method(4263981) method(4263986) method(4263991) method(4263996) method(4264001) method(4264006) method(4264011) method(4264016) method(4264021) method(4264026) method(4264031) method(4264036) method(4264041) method(4264046) method(4264051) method(4264056) method(4264061) method(4264066) method(4264076) method(4264081) method(4264086) method(4264091) method(4264096) method(4264101) method(4264106) method(4264111) method(4264116) method(4264121) method(4264126) method(4264131) method(4264136) method(4264141) method(4264146) method(4264151) method(4264156) method(4264161) method(4264166) method(4264171) method(4264176) method(4264181) method(4264186) method(4264191) method(4264196) method(4264201) method(4264206) method(4264211) method(4264216) method(4264221) method(4264226) method(4264231) method(4264236) method(4264241) method(4264246) method(4264251) method(4264256) method(4264261) method(4264266) method(4264271) method(4264276) method(4264281) method(4264286) method(4264291) method(4264296) method(4264301) method(4264306) method(4264311) method(4264316) method(4264321) method(4264326) method(4264331) method(4264336) method(4264341) method(4264346) method(4264351) method(4264356) method(4264361) method(4264366) method(4264371) method(4264376) method(4264381) method(4264386) method(4264391) method(4264396) method(4264401) method(4264406) method(4264411) method(4264896) method(4265360) method(4265536) method(4265632) method(4265760) method(4265880) method(4265886) method(4265892) method(4265904) method(4265984) method(4266112) method(4266176) method(4266448) method(4266560) method(4267232) method(4267408) method(4267616) method(4267936) method(4268320) method(4268464) method(4268768) method(4268832) method(4268864) method(4269040) method(4269152) method(4269184) method(4269952) method(4269968) method(4270464) method(4271344) method(4271968) method(4271984) method(4272064) method(4272112) method(4272160) method(4272176) method(4272192) method(4272244) method(4272256) method(4272384) method(4272410) method(4272416) method(4272496) method(4272546) method(4272560) method(4272576) method(4272592) method(4272640) method(4272688) method(4272899) method(4272992) method(4273028) method(4273034) method(4273040) method(4273056) method(4273336) method(4273342) method(4273348) method(4273354) method(4273360) method(4273376) method(4273504) method(4273664) method(4274006) method(4274012) method(4274018) method(4274024) method(4274030) method(4274036) method(4274042) method(4274048) method(4274054) method(4274060) method(4274066) method(4274072) method(4274078) method(4274084) method(4274090) method(4274096) method(4274102) method(4274108) method(4274114) method(4274120) method(4274126) method(4274132) method(4274138) method(4274144) method(4274150) method(4274156) method(4274162) method(4274168) method(4274174) method(4274180) method(4274186) method(4274192) method(4274198) method(4274204) method(4274210) method(4274216) method(4274222) method(4274228) method(4274234) method(4278190) method(4265936) method(4270112) method(4278176) constructor(4265360) constructor(4265536) constructor(4265632) constructor(4265760) classCallsMethod(4265360,4265632) classSizeGTE(4263941,0) classSizeGTE(4263946,0) classSizeGTE(4263951,0) classSizeGTE(4263956,0) classSizeGTE(4263961,0) classSizeGTE(4263966,0) classSizeGTE(4263971,0) classSizeGTE(4263976,0) classSizeGTE(4263981,0) classSizeGTE(4263986,0) classSizeGTE(4263991,0) classSizeGTE(4263996,0) classSizeGTE(4264001,0) classSizeGTE(4264006,0) classSizeGTE(4264011,0) classSizeGTE(4264016,0) classSizeGTE(4264021,0) classSizeGTE(4264026,0) classSizeGTE(4264031,0) classSizeGTE(4264036,0) classSizeGTE(4264041,0) classSizeGTE(4264046,0) classSizeGTE(4264051,0) classSizeGTE(4264056,0) classSizeGTE(4264061,0) classSizeGTE(4264066,0) classSizeGTE(4264076,0) classSizeGTE(4264081,0) classSizeGTE(4264086,0) classSizeGTE(4264091,0) classSizeGTE(4264096,0) classSizeGTE(4264101,0) classSizeGTE(4264106,0) classSizeGTE(4264111,0) classSizeGTE(4264116,0) classSizeGTE(4264121,0) classSizeGTE(4264126,0) classSizeGTE(4264131,0) classSizeGTE(4264136,0) classSizeGTE(4264141,0) classSizeGTE(4264146,0) classSizeGTE(4264151,0) classSizeGTE(4264156,0) classSizeGTE(4264161,0) classSizeGTE(4264166,0) classSizeGTE(4264171,0) classSizeGTE(4264176,0) classSizeGTE(4264181,0) classSizeGTE(4264186,0) classSizeGTE(4264191,0) classSizeGTE(4264196,0) classSizeGTE(4264201,0) classSizeGTE(4264206,0) classSizeGTE(4264211,0) classSizeGTE(4264216,0) classSizeGTE(4264221,0) classSizeGTE(4264226,0) classSizeGTE(4264231,0) classSizeGTE(4264236,0) classSizeGTE(4264241,0) classSizeGTE(4264246,0) classSizeGTE(4264251,0) classSizeGTE(4264256,0) classSizeGTE(4264261,0) classSizeGTE(4264266,0) classSizeGTE(4264271,0) classSizeGTE(4264276,0) classSizeGTE(4264281,0) classSizeGTE(4264286,0) classSizeGTE(4264291,0) classSizeGTE(4264296,0) classSizeGTE(4264301,0) classSizeGTE(4264306,0) classSizeGTE(4264311,0) classSizeGTE(4264316,0) classSizeGTE(4264321,0) classSizeGTE(4264326,0) classSizeGTE(4264331,0) classSizeGTE(4264336,0) classSizeGTE(4264341,0) classSizeGTE(4264346,0) classSizeGTE(4264351,0) classSizeGTE(4264356,0) classSizeGTE(4264361,0) classSizeGTE(4264366,0) classSizeGTE(4264371,0) classSizeGTE(4264376,0) classSizeGTE(4264381,0) classSizeGTE(4264386,0) classSizeGTE(4264391,0) classSizeGTE(4264396,0) classSizeGTE(4264401,0) classSizeGTE(4264406,0) classSizeGTE(4264411,0) classSizeGTE(4264896,0) classSizeGTE(4265360,0) classSizeGTE(4265536,0) classSizeGTE(4265632,0) classSizeGTE(4265760,0) classSizeGTE(4265880,0) classSizeGTE(4265886,0) classSizeGTE(4265892,0) classSizeGTE(4265904,0) classSizeGTE(4265984,0) classSizeGTE(4266112,0) classSizeGTE(4266176,0) classSizeGTE(4266448,0) classSizeGTE(4266560,0) classSizeGTE(4267232,0) classSizeGTE(4267408,0) classSizeGTE(4267616,0) classSizeGTE(4267936,0) classSizeGTE(4268320,0) classSizeGTE(4268464,0) classSizeGTE(4268768,0) classSizeGTE(4268832,0) classSizeGTE(4268864,0) classSizeGTE(4269040,0) classSizeGTE(4269152,0) classSizeGTE(4269184,0) classSizeGTE(4269952,0) classSizeGTE(4269968,0) classSizeGTE(4270464,0) classSizeGTE(4271344,0) classSizeGTE(4271968,0) classSizeGTE(4271984,0) classSizeGTE(4272064,0) classSizeGTE(4272112,0) classSizeGTE(4272160,0) classSizeGTE(4272176,0) classSizeGTE(4272192,0) classSizeGTE(4272244,0) classSizeGTE(4272256,0) classSizeGTE(4272384,0) classSizeGTE(4272410,0) classSizeGTE(4272416,0) classSizeGTE(4272496,0) classSizeGTE(4272546,0) classSizeGTE(4272560,0) classSizeGTE(4272576,0) classSizeGTE(4272592,0) classSizeGTE(4272640,0) classSizeGTE(4272688,0) classSizeGTE(4272899,0) classSizeGTE(4272992,0) classSizeGTE(4273028,0) classSizeGTE(4273034,0) classSizeGTE(4273040,0) classSizeGTE(4273056,0) classSizeGTE(4273336,0) classSizeGTE(4273342,0) classSizeGTE(4273348,0) classSizeGTE(4273354,0) classSizeGTE(4273360,0) classSizeGTE(4273376,0) classSizeGTE(4273504,0) classSizeGTE(4273664,0) classSizeGTE(4274006,0) classSizeGTE(4274012,0) classSizeGTE(4274018,0) classSizeGTE(4274024,0) classSizeGTE(4274030,0) classSizeGTE(4274036,0) classSizeGTE(4274042,0) classSizeGTE(4274048,0) classSizeGTE(4274054,0) classSizeGTE(4274060,0) classSizeGTE(4274066,0) classSizeGTE(4274072,0) classSizeGTE(4274078,0) classSizeGTE(4274084,0) classSizeGTE(4274090,0) classSizeGTE(4274096,0) classSizeGTE(4274102,0) classSizeGTE(4274108,0) classSizeGTE(4274114,0) classSizeGTE(4274120,0) classSizeGTE(4274126,0) classSizeGTE(4274132,0) classSizeGTE(4274138,0) classSizeGTE(4274144,0) classSizeGTE(4274150,0) classSizeGTE(4274156,0) classSizeGTE(4274162,0) classSizeGTE(4274168,0) classSizeGTE(4274174,0) classSizeGTE(4274180,0) classSizeGTE(4274186,0) classSizeGTE(4274192,0) classSizeGTE(4274198,0) classSizeGTE(4274204,0) classSizeGTE(4274210,0) classSizeGTE(4274216,0) classSizeGTE(4274222,0) classSizeGTE(4274228,0) classSizeGTE(4274234,0) classSizeGTE(4278190,0) classSizeGTE(4265936,0) classSizeGTE(4270112,0) classSizeGTE(4278176,0) classSizeGTE(4265360,4) classSizeGTE(4265360,12) classSizeGTE(4265360,20) classSizeGTE(4265536,4) classSizeGTE(4265536,6) classSizeGTE(4265536,7) classSizeGTE(4265632,4) classSizeGTE(4265632,8) classSizeGTE(4265760,4) classSizeGTE(4265760,8) vftableSizeTotal(0) mergeClasses(4265360,4265632) classRelatedMethod(4265632,4265360) classRelatedMethod(4265360,4265632)
 Optimization: -2049
 
@@ -368,22 +343,22 @@ Optimization: -2049
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:33:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
+07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
 
 % Stats:
 %   atoms: 5172.0
 %   bodies: 1096.0
 %   rules: 5596.0
 %   variables: 644.0
-%   constraints: 1.0
-%   choices: 240.0
-%   conflicts: 3.0
-%   models: 26.0
+%   constraints: 6.0
+%   choices: 1603.0
+%   conflicts: 2.0
+%   models: 2.0
 %   optimal_models: 1.0
 %   final_cost: [-2049.0]
 %   lower_bound: [-2049.0]
-%   total_time: 0.04778099060058594
-%   ground_time: 0.01781975998892449
-%   time_to_first_model: 0.020431273005669937
-%   max_rss_bytes: 37875712
-%   solve_time: 0.01777195930480957
+%   total_time: 0.03327012062072754
+%   ground_time: 0.018613366002682596
+%   time_to_first_model: 0.02175061900197761
+%   max_rss_bytes: 36032512
+%   solve_time: 0.005886077880859375
