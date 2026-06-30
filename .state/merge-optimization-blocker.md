@@ -242,7 +242,7 @@ clause-sharing pollution, not progress. t32's choices drop below t16's
 contention. The GIL was never the limiter; removing it let the machine do more
 redundant decisions, which is the wrong thing for a serial-proof bottleneck.
 
-## Champion config (2026-06-25) — now the Makefile default
+## Champion config (2026-06-25) — SUPERSEDED by 2026-06-30 entry below
 
 Exhaustive option sweep under the correct **lexicographic** metric
 `[comp1, comp2]` (comp1 = vftable MaxSize+gap `@3`, optimized first; comp2 =
@@ -352,3 +352,67 @@ cardinality rather than a transitive-chain reason. Both are strictly harder than
 "materialize the closure" and out of scope of the "don't change results"
 constraint. Until then the champion `[-704,-42666]` stands and the 7564 gap is
 intrinsic.
+
+## Champion config (2026-06-30) — current Makefile default
+
+After adding `reasonMergeClasses_B` + `reasonReusedImplementation_B`, the old
+champion `crafty+F,736` no longer settles `comp1=-704` (gets -656 instead). The
+problem structure shifted: the `reusedImplementation` rule creates new evidence
+that changes the vftable objective's achievable optimum under the crafty
+restart trajectory. `--heuristic=domain` with default `bb,lin` recovers
+`comp1=-704` trivially on the first model (~5-6s) but produces a weaker `comp2`
+than the old champion.
+
+Key discovery from 31-iteration sweep (see `autoresearch/improve-260629-2245/`):
+`-t4,compete --restarts=F,512` with `--heuristic=domain` is the new champion.
+
+**Why threads + F-restarts**: 4 threads each explore different regions and
+periodically sync via shared-clause learning. The geometric F-restart schedule
+(F,512 → 1024 → 2048...) produces burst-pattern improvement: a fast initial
+burst (5-20s) and a second burst around 200-225s when the schedule reaches its
+5th-6th cycle. The diversity from 4 thread seeds is what enables the second
+burst — single-thread F,512 only gains +221 over baseline.
+
+**Thread count sensitivity** (domain heuristic, 300s, F,512):
+- t2: 1-2 models only, terrible (-32977); thread diversity too low
+- t4: 4 threads, excellent (-39253 to -39582)
+- t8: mediocre (-36213 without F, terrible -32943 with F,512); overhead+interference
+- t16+: FAILS — domain heuristic requires lookback; clasp auto-assigns a
+  no-lookback thread at position ≥14 → `RuntimeError: Heuristic requires lookback`
+
+**F-value sweep** (t4,compete, 300s):
+
+| F value | comp2 | notes |
+|--:|--:|---|
+| F,128 | -38999 | good but leaves money on table |
+| F,192 | -37777 | mediocre |
+| F,256 | -39582 / -38266 | best peak, high variance (±656) |
+| F,320 | -35482 | poor |
+| F,448 | -37494 | mediocre |
+| **F,512** | **-39253 / -38971** | **best avg, tight variance (±141)** |
+| F,736 | -35771 | too long; restarts rarely fire |
+| F,1024 | -33198 | effectively no restarts |
+
+Recommendation: **F,512** for production (avg -39112, tighter variance). F,256
+achieves the best single run (-39582) but variance is 4.6× wider.
+
+**Things that hurt with t4**:
+- `--save-progress=20`: −35482 (retaining assignments disrupts thread diversity)
+- Luby restarts: −35798 (geometric F beats Luby with threads)
+- USC strategies: `usc,oll` consistently hurts both UB and LB; threads don't change this
+
+**New gap analysis**: LB for domain+bb,lin on this problem is -49774.
+Champion finds -39582 (best single) or avg -39112 (F,512). Gap: 10192 (best) to
+10662 (avg). The gap is *larger* than old (-7564) because the new rules raised the
+optimal and the conditional-mutex LB-proof bottleneck is unchanged. The
+`notMergeUnsorted` predicate (29.4% backtracks, avg level 4540) is still the dominant
+backtracking site; method 4948404 appears in 8207 backtracking pairs as a hub.
+
+**What was NOT tried** (viable next ideas):
+- Per-solver-thread template config to allow t16 with domain (set heuristic
+  per-thread via JSON template rather than CLI `--heuristic=domain`)
+- `--no-inter-learn` disable clause sharing (option not available in this clingo)
+- Staged optimization: find best UB with domain/t4, re-solve with tight bound +
+  Boolean AMO exclusions to close the LB gap
+
+Logs: `autoresearch/improve-260629-2245/` (31 iterations, iter0-iter31).

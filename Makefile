@@ -3,7 +3,15 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-PROP_FLAGS   := -n -1 --heuristic=domain --time-limit=300 --stats --show-guesses
+# Champion solver config for 5m lexicographic optimization (see autoresearch/improve-260629-2245/).
+# After reasonMergeClasses_B + reasonReusedImplementation_B, crafty+F736 lost comp1=-704
+# (now gets -656). domain heuristic recovers -704 trivially as first model.
+# -t4,compete --restarts=F,512: 4 threads + geometric F,512 restarts = [-704,-39253]
+# avg over 2 runs vs domain baseline [-704,-33011]. F,256 has higher peak (-39582) but
+# wider variance (±656 vs ±141 for F,512). t16+ fails (domain requires lookback).
+# t2 consistently finds only 1 model; t8 mediocre; t4 is the sweet spot.
+# save-progress and usc,oll both harm the UB search with threads.
+PROP_FLAGS   := -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time

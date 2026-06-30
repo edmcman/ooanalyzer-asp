@@ -1,0 +1,47 @@
+# autoresearch/improve-260629-2245 — 5m lexicographic improvement on TinyXml-NewDebug
+# Date: 2026-06-29 / 2026-06-30
+# Metric: lexicographic [comp1, comp2], lower is better; comp1=-704 required
+# Guard: tests/test_propagator.py 45/45 (no ASP edits)
+# Baseline: domain heuristic, single-thread, default bb,lin = [-704, -33011]
+# Previous champion (crafty+F736+sign): broken by new rules, comp1 only -656
+
+iter	config	comp2	vs_baseline	verdict	notes
+0	domain (1t, baseline)	-33011	0	baseline	6 models, LB -49774; user's current PROP_FLAGS
+1	crafty+F736 (1t)	-34443	-1432	BROKEN	comp1=-656 not -704; new rules broke crafty
+2	domain+save-progress=20	-33011	0	neutral	same as baseline
+3	domain+usc,oll+restart-on-model	-32926	+85	discard	usc hurts both UB and LB; LB -46796 worse
+4	domain+F,736 (1t)	-33181	-170	+170	F-restarts help slightly
+5	domain+usc,oll (1t)	-32926	+85	discard	usc terrible for UB
+7	domain+F,512 (1t)	-33232	-221	+221	F,512 better than F,736 single-thread
+8	domain+F,1024 (1t)	-33198	-187	+187
+9	domain+F,736+save-progress=20	-33011	0	neutral	save-progress doesn't combine with F
+10	domain+F,256 (1t)	-33011	0	neutral	too-short restarts, no improvement single-thread
+11	domain+bb,hier	-33011	0	neutral	bb,hier same as bb,lin
+12	domain+t2,compete	-33113	-102	minor	only 1 model found; t2 consistently bad
+13	domain+t4,compete	-35977	-2966	+2966	4 threads big win without restarts
+14	domain+F,400 (1t)	-33181	-170	+170	same as F,736
+15	domain+t2+F,512	-32977	+34	discard	t2+F worse than t1
+16	domain+t8,compete	-36213	-3202	+3202	decent but worse than t4
+17	domain+t16,compete	FAILED	-	failed	domain requires lookback; t16 assigns no-lookback thread
+18	domain+t4+F,512 (run1)	-39253	-6242	+6242	★ champion candidate; burst restarts work
+19	domain+t4+restart-on-model	-35658	-2647	+2647
+20	domain+t8+F,512	-32943	+68	discard	t8+F terrible (only 2 models)
+21	domain+t4+F,256 (run1)	-39582	-6571	+6571	★ BEST SINGLE RUN
+22	domain+t4+F,736	-35771	-2760	+2760	F,736 with t4 much worse than F,256/512
+23	domain+t4+F,128	-38999	-5988	+5988	good but less than F,256
+24	domain+t4+F,256+save-progress=20	-35482	-2471	+2471	save-progress hurts t4 search
+25	domain+t4+F,448	-37494	-4483	+4483	F,448 mediocre
+26	domain+t4+Luby,512	-35798	-2787	+2787	Luby worse than geometric
+27	domain+t4+F,512 (run2/verify)	-38971	-5960	+5960	confirms F,512 consistent
+28	domain+t4+F,192	-37777	-4766	+4766	F,192 worse than 256/512
+29	domain+t4+F,320	-35482	-2471	+2471	F,320 poor (variance? bad run?)
+30	domain+t4+F,256 (run2/verify)	-38266	-5255	+5255	F,256 variance: -39582 vs -38266 (1316 spread)
+31	domain+t4+F,256+no-inter-learn	FAILED	-	failed	unknown option in this clingo version
+
+# SUMMARY
+# Champion by single best run: t4+F,256 → -39582
+# Champion by avg of 2 runs: t4+F,512 → avg(-39253,-38971) = -39112 (tighter variance)
+# t4+F,256 avg of 2 runs: avg(-39582,-38266) = -38924 (wider variance ±656)
+# RECOMMENDATION: t4+F,512 for reliable production use; F,256 for aggressive runs
+# Gap from new LB -49774: 49774 - 39582 = 10192 remaining (vs old -42666 gap: 50230 - 42666 = 7564)
+# Note: The gap is now larger (10192 vs 7564) because new rules reduced the achievable optimum

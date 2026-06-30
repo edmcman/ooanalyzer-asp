@@ -1,0 +1,24 @@
+=== iter17: domain -t16,compete (16 threads) ===
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --heuristic=domain -t16,compete --time-limit=300 --stats
+Traceback (most recent call last):
+  File "/home/ed/Projects/ooanalyzer-asp/ooanalyzer.py", line 590, in <module>
+    main()
+    ~~~~^^
+  File "/home/ed/Projects/ooanalyzer-asp/ooanalyzer.py", line 356, in main
+    ctl = clingo.Control(ctl_args)
+  File "/home/ed/Projects/ooanalyzer-asp/.venv/lib/python3.13/site-packages/clingo/control.py", line 233, in __init__
+    self._rep = _c_call(
+                ~~~~~~~^
+        "clingo_control_t *",
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        message_limit,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ed/Projects/ooanalyzer-asp/.venv/lib/python3.13/site-packages/clingo/_internal.py", line 50, in _c_call
+    _handle_error(c_fun(*args, p_ret), handler)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ed/Projects/ooanalyzer-asp/.venv/lib/python3.13/site-packages/clingo/_internal.py", line 81, in _handle_error
+    raise RuntimeError(msg)
+RuntimeError: <config>.[solver.14] : Heuristic requires lookback strategy!
