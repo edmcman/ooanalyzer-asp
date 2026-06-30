@@ -62,8 +62,6 @@
 % Not yet implemented (forward-declared for future rules)
 % ----------------------------------------------------------------
 #defined virtualFunctionCall/5.
-% reasonReusedImplementation_A/B not yet ported; guards merge rules until it lands.
-#defined reusedImplementation/1.
 
 % ----------------------------------------------------------------
 % Full-arity OOAnalyzer initial facts (from .facts files)

@@ -387,6 +387,6 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonClassAtOffset` (2534) — outer class has inner at byte offset
 
 ### Reused / Shared Implementation (rules.pl:2643–2704, 3398)
-- [ ] `reasonReusedImplementation_A` (2652) — method appears in multiple VFTables of distinct classes
-- [ ] `reasonReusedImplementation_B` (2704) — method shared via thunk chain
+- [~] `reasonReusedImplementation_A` (2652) — commented out in Prolog, skip
+- [x] `reasonReusedImplementation_B` (2704) — same raw entry at two offsets in one vftable
 - [ ] `reasonSharedImplementation` (3398) — shared base implementation

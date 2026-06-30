@@ -47,8 +47,7 @@ mergeClasses(VFTable, Method) :- vftableBelongsToClass(VFTable, _, Method). % ru
 % class), Method ~ MethodClass, so mergeClasses(BaseVFTable, Method) induces the
 % same partition as merging BaseClass with MethodClass.
 % not reusedImplementation(Method) guards against a shared method pulled into the
-% wrong class; reusedImplementation/1 is #defined (not yet ported) so the guard
-% activates automatically once reasonReusedImplementation_A/B land.
+% wrong class (see reasonReusedImplementation_B in vftables.lp).
 % Counterpart: reasonMergeClasses_B (rules.pl:2792)
 %!trace_rule {"% and % are the same class because method % is in vftable % of a no-base class", BaseVFTable, Method, Method, BaseVFTable}
 reasonMergeClassesBUnsorted(BaseVFTable, Method) :-

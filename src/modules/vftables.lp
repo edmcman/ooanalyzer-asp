@@ -120,6 +120,17 @@ methodInVFTable(VFTable, Offset, Method) :-
     dethunk(Entry, Method),
     not purecall(Method).
 
+% reusedImplementation(Method): same raw entry at two different offsets in the
+% same confirmed vftable. Uses vfTableEntry (not dethunked methodInVFTable) so
+% that two thunks pointing to the same target are NOT treated as reuse — each
+% thunk is a distinct function with its own this-adjustment.
+% reasonReusedImplementation_A is commented out in Prolog (only _B is active).
+% Counterpart: reasonReusedImplementation_B (rules.pl:2704)
+reusedImplementation(Method) :-
+    vfTableEntry(VFTable, Offset1, Method),
+    vfTableEntry(VFTable, Offset2, Method),
+    Offset1 < Offset2.
+
 % ============================================================
 % VFTABLE BELONGS TO CLASS
 % ============================================================
