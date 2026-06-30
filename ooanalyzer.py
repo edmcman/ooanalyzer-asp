@@ -7,10 +7,8 @@ Usage:
     python ooanalyzer.py examples/ooa/ooex_vs2010/Lite/oo.lp --stats
 """
 
-import argparse
 import logging
 import os
-import resource
 import sys
 import textwrap
 import time
@@ -54,8 +52,6 @@ _DEFAULT_PROFILE_PREDS = (
     "knownVirtualMethod",
 )
 
-# Each family: (label, [candidate_preds], [(selected_pred, denominator_pred)])
-# denominator_pred=None falls back to sum of candidate_preds for the family.
 _GUESS_FAMILIES = [
     ("method",
      ["guessMethodDomain"],
@@ -109,7 +105,6 @@ def print_guess_summary(atoms):
             g = group(pred)
             n_denom = len(group(denom_pred)) if denom_pred else n_family
             emit(f"%     {pred}: {len(g)}/{n_denom}", g)
-            # Not-selected: denom items whose args don't appear in selected set.
             if denom_pred:
                 sel_args = {args_of(a) for a in by_pred.get(pred, [])}
                 not_sel = sorted(
@@ -118,68 +113,6 @@ def print_guess_summary(atoms):
                 )
                 emit(f"%     ~{pred}: {len(not_sel)}/{n_denom}", not_sel)
     sys.stdout.flush()
-
-
-def parse_args():
-    p = argparse.ArgumentParser(description="OOAnalyzer with &sameClass propagator")
-    p.add_argument("files", nargs="+", help=".lp fact/example files to load")
-    p.add_argument("-n", "--models", type=int,
-                   help="number of models (0 = all, default: clingo default)")
-    p.add_argument("-d", "--diff-models", action="store_true",
-                   help="print delta between consecutive answer sets (requires -n 0)")
-    p.add_argument("--stats", nargs="?", const=1, default=0, type=int,
-                   help="print clingo stats (optionally pass a clingo stats level)")
-    p.add_argument("--results", nargs="?", const="", default=None, metavar="FILE",
-                   help="write .results file; omit FILE to auto-derive from first input")
-    p.add_argument("--quiet", type=str, default="1,2",
-                   help="clingo --quiet level (default 1,2)")
-    p.add_argument("--configuration", default=None,
-                   help="clingo solver configuration preset")
-    p.add_argument("--opt-strategy", default="bb,lin")
-    p.add_argument("--heuristic", default="vsids")
-    p.add_argument("--sign-def", default="neg",
-                   help="clingo default sign heuristic (default: neg for conservative guesses)")
-    p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
-    p.add_argument("--benchmark", action="store_true",
-                   help="log model timing/costs and stats without collecting or printing model atoms")
-    p.add_argument("-t", "--threads", type=str, default=None,
-                   help="parallel search: N[,compete|split] (default: 1)")
-    p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
-                   help="pass --const to clingo (repeatable)")
-    p.add_argument("--profile-conflicts", action="store_true",
-                   help="register ConflictProfiler and print backtrack histogram after solving")
-    p.add_argument("--profile-after-first-model", action="store_true",
-                   help=("with conflict profiling, reset counters at the first model and "
-                         "report per-model search windows"))
-    p.add_argument("--profile-predicate", action="append", default=[],
-                   help=("predicate to watch with --profile-conflicts; repeatable. "
-                         "Defaults to core search predicates; use '*' to watch all atoms"))
-    p.add_argument("--profile-max-atoms", type=int, default=10000,
-                   help=("maximum number of symbolic atoms to watch with --profile-conflicts "
-                         "(0 = no cap; default: 10000)"))
-    p.add_argument("--profile-max-atoms-per-predicate", type=int, default=500,
-                   help=("maximum watched atoms per predicate with --profile-conflicts "
-                         "(0 = no per-predicate cap; default: 500)"))
-    p.add_argument("--profile-interval", type=float, default=0,
-                   help=("seconds between periodic conflict profile reports during solving "
-                         "(0 = no periodic output; default: 0)"))
-    p.add_argument("--foundedness-check", action="store_true",
-                   help=("at each total assignment, verify that every true mergeClasses "
-                         "atom has a non-circular justification; rejects circularly-founded "
-                         "models that survive the potential-UF seeding fix"))
-    p.add_argument("--sameclass-mode", choices=("propagate", "lazy-check"), default="propagate",
-                   help=("sameClass theory handling mode: normal eager propagator, or a "
-                         "simple check-time consistency mode for diagnostics"))
-    p.add_argument("--diagnose-vftable-objective", action="store_true",
-                   help=("print selected vftable sizes/gaps and largest unselected "
-                         "vftable candidates for each model"))
-    p.add_argument("--diagnose-vftable-limit", type=int, default=25,
-                   help="maximum rows per vftable objective diagnostic section (default: 25)")
-    p.add_argument("--show-guesses", action="store_true",
-                   help="print guess candidates (by tier) and selected guesses from the final model")
-    args, extra = p.parse_known_args()
-    args.clingo_extra = extra
-    return args
 
 
 def format_model_diff(prev_shown, cur_shown, prev_cost, cur_cost):
@@ -304,287 +237,269 @@ def report_vftable_objective(model, limit):
     sys.stdout.flush()
 
 
-def main():
-    args = parse_args()
-    print(f"% Command: {' '.join(sys.argv)}")
+class OOAnalyzerApp(clingo.Application):
+    program_name = "ooanalyzer"
+    version = "2.0"
 
-    ctl_args = ["--warn=none"]
-    if args.configuration:
-        # A portfolio/configuration controls per-thread search settings; the
-        # command line would otherwise override them (clasp prefers CLI options
-        # over config-file options), collapsing the portfolio to one config.
-        ctl_args.append(f"--configuration={args.configuration}")
-    else:
-        ctl_args.extend([
-            f"--opt-strategy={args.opt_strategy}",
-            f"--heuristic={args.heuristic}",
-            f"--sign-def={args.sign_def}",
-        ])
-    if args.stats:
-        ctl_args.append(f"--stats={args.stats}")
-    if args.threads is not None:
-        ctl_args.extend(["-t", args.threads])
-    for c in args.const:
-        ctl_args.append(f"--const={c}")
-    ctl_args.extend(args.clingo_extra)
+    def __init__(self):
+        self.diff_models = clingo.Flag(False)
+        self.results = None
+        self.benchmark = clingo.Flag(False)
+        self.profile_conflicts = clingo.Flag(False)
+        self.profile_after_first_model = clingo.Flag(False)
+        self.profile_predicate = []
+        self.profile_max_atoms = 10000
+        self.profile_max_atoms_per_predicate = 500
+        self.profile_interval = 0.0
+        self.foundedness_check = clingo.Flag(False)
+        self.sameclass_mode = "propagate"
+        self.diagnose_vftable_objective = clingo.Flag(False)
+        self.diagnose_vftable_limit = 25
+        self.show_guesses = clingo.Flag(False)
 
-    if args.sameclass_mode == "lazy-check":
-        if args.foundedness_check:
-            log.info("--foundedness-check is ignored by --sameclass-mode=lazy-check")
-        prop = LazySameClassConsistencyPropagator()
-    else:
-        prop = SameClassPropagator(
-            foundedness_check=args.foundedness_check,
-        )
-    profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
-    if "*" in profile_preds:
-        profile_preds = None
-    profile_max_atoms = None if args.profile_max_atoms == 0 else args.profile_max_atoms
-    profile_max_atoms_per_predicate = (
-        None if args.profile_max_atoms_per_predicate == 0
-        else args.profile_max_atoms_per_predicate
-    )
-    profiler = (
-        ConflictProfiler(
-            profile_preds,
-            max_atoms=profile_max_atoms,
-            max_atoms_per_predicate=profile_max_atoms_per_predicate,
-            interval=args.profile_interval,
-        )
-        if (args.profile_conflicts or args.profile_after_first_model) else None
-    )
-    ctl = clingo.Control(ctl_args)
-    if args.models is not None and args.models != -1:
-        ctl.configuration.solve.models = args.models
-    if args.sameclass_mode == "lazy-check":
-        ctl.register_propagator(prop)
-    else:
-        # The Rust class registers both its observer and propagator in one call.
-        prop.register(ctl, foundedness_check=args.foundedness_check)
-    if profiler:
-        ctl.register_propagator(profiler)
+    def register_options(self, options):
+        def str_parser(setter):
+            def f(x):
+                setter(x)
+                return True
+            return f
 
-    ctl.load(_MAIN_LP)
-    for f in args.files:
-        ctl.load(f)
+        def int_parser(setter):
+            def f(x):
+                try:
+                    setter(int(x) if x else 0)
+                    return True
+                except ValueError:
+                    return False
+            return f
 
-    run_start = time.perf_counter()
-    ground_start = run_start
-    log.info("Grounding...")
-    ctl.ground([("base", [])])
-    ground_time = time.perf_counter() - ground_start
-    log.info("Grounding done (%.2fs)", ground_time)
+        def float_parser(setter):
+            def f(x):
+                try:
+                    setter(float(x) if x else 0.0)
+                    return True
+                except ValueError:
+                    return False
+            return f
 
-    defer_print = args.models == -1 or args.benchmark
-    last_shown = []
-    last_all_atoms = []
-    last_cost = []
-    model_num = 0
-    had_cost = False
-    first_model_time = None
-    last_model_time = None
+        options.add_flag("OOAnalyzer", "diff-models", "print delta between consecutive answer sets (requires -n 0)",
+                         self.diff_models)
+        options.add("OOAnalyzer", "results", "write .results file; omit VALUE to auto-derive from first input",
+                    str_parser(lambda x: setattr(self, 'results', x if x else "")), argument="VALUE")
+        options.add_flag("OOAnalyzer", "benchmark", "log model timing/costs without collecting atoms",
+                         self.benchmark)
+        options.add_flag("OOAnalyzer", "profile-conflicts", "register ConflictProfiler and print backtrack histogram",
+                         self.profile_conflicts)
+        options.add_flag("OOAnalyzer", "profile-after-first-model", "reset conflict counters at first model",
+                         self.profile_after_first_model)
+        options.add("OOAnalyzer", "profile-predicate", "predicate to watch with --profile-conflicts (repeatable)",
+                    str_parser(lambda x: self.profile_predicate.append(x)), multi=True, argument="NAME")
+        options.add("OOAnalyzer", "profile-max-atoms", "max symbolic atoms to watch (0 = no cap)",
+                    int_parser(lambda x: setattr(self, 'profile_max_atoms', x)), argument="N")
+        options.add("OOAnalyzer", "profile-max-atoms-per-predicate", "max watched atoms per predicate (0 = no cap)",
+                    int_parser(lambda x: setattr(self, 'profile_max_atoms_per_predicate', x)), argument="N")
+        options.add("OOAnalyzer", "profile-interval", "seconds between periodic conflict profile reports",
+                    float_parser(lambda x: setattr(self, 'profile_interval', x)), argument="SEC")
+        options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
+                         self.foundedness_check)
+        options.add("OOAnalyzer", "sameclass-mode", "sameClass theory handling: propagate or lazy-check",
+                    str_parser(lambda x: setattr(self, 'sameclass_mode', x)), argument="MODE")
+        options.add_flag("OOAnalyzer", "diagnose-vftable-objective", "print vftable size/gap diagnostics per model",
+                         self.diagnose_vftable_objective)
+        options.add("OOAnalyzer", "diagnose-vftable-limit", "max rows per vftable diagnostic section",
+                    int_parser(lambda x: setattr(self, 'diagnose_vftable_limit', x)), argument="N")
+        options.add_flag("OOAnalyzer", "show-guesses", "print guess candidates and selected guesses from final model",
+                         self.show_guesses)
 
-    if args.diff_models and args.models != 0:
-        log.info("--diff-models requires -n 0 to take effect; ignoring")
+    def validate_options(self):
+        if self.sameclass_mode not in ("propagate", "lazy-check"):
+            self.logger(clingo.MessageCode.Error, f"invalid --sameclass-mode: {self.sameclass_mode}")
+            return False
+        return True
 
-    def on_model(model):
-        nonlocal first_model_time, last_model_time, model_num, last_shown, last_all_atoms, last_cost, had_cost
-        now = time.perf_counter() - run_start
-        shown = [] if args.benchmark else list(model.symbols(shown=True))
-        cost = list(model.cost)
-        cost_str = cost if cost else "0"
-        if first_model_time is None:
-            first_model_time = now
-            log.info("Model found (%.2fs): %s", now, cost_str)
+    def main(self, ctl, files):
+        print(f"% Command: {' '.join(sys.argv)}")
+
+        if not files:
+            self.logger(clingo.MessageCode.Error, "no files provided")
+            return
+
+        diff_models = bool(self.diff_models)
+        benchmark = bool(self.benchmark)
+        profile_conflicts = bool(self.profile_conflicts)
+        profile_after_first_model = bool(self.profile_after_first_model)
+        foundedness_check = bool(self.foundedness_check)
+        diagnose_vftable_objective = bool(self.diagnose_vftable_objective)
+        show_guesses = bool(self.show_guesses)
+
+        if self.sameclass_mode == "lazy-check":
+            if foundedness_check:
+                log.info("--foundedness-check is ignored by --sameclass-mode=lazy-check")
+            prop = LazySameClassConsistencyPropagator()
         else:
-            log.info("Model found (%.2fs, +%.2fs): %s", now, now - last_model_time, cost_str)
-        last_model_time = now
-        model_num += 1
-        if cost:
-            had_cost = True
-        if not defer_print:
-            diff = format_model_diff(last_shown, shown, last_cost, cost) if args.diff_models and model_num > 1 else ""
-            if diff:
-                print(f"\nΔ Answer: {model_num}")
-                print(diff)
-            else:
-                print(f"\nAnswer: {model_num}")
-                print(" ".join(str(a) for a in shown))
-                if cost:
-                    print("Optimization:", format_cost_values(cost))
-            sys.stdout.flush()
-        if not args.benchmark:
-            last_shown = shown
-            if args.results is not None or args.show_guesses:
-                last_all_atoms = list(model.symbols(atoms=True))
-        last_cost = cost
-        if args.diagnose_vftable_objective:
-            report_vftable_objective(model, args.diagnose_vftable_limit)
-        if profiler and args.profile_after_first_model:
-            if model_num == 1:
-                profiler.reset_counts("since model 1")
-            else:
-                profiler.report(title=f"Conflict Profile since model {model_num - 1}")
-                profiler.reset_counts(f"since model {model_num}")
+            prop = SameClassPropagator(
+                foundedness_check=foundedness_check,
+            )
 
-    def on_unsat(lower):
-        now = time.perf_counter() - run_start
-        if last_cost:
-            gap = [u - l for u, l in zip(last_cost, lower)]
-            log.info("Lower bound: %s  upper: %s  gap: %s (%.2fs)", list(lower), last_cost, gap, now)
+        profile_preds = self.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
+        if "*" in profile_preds:
+            profile_preds = None
+        profile_max_atoms = None if self.profile_max_atoms == 0 else self.profile_max_atoms
+        profile_max_atoms_per_predicate = (
+            None if self.profile_max_atoms_per_predicate == 0
+            else self.profile_max_atoms_per_predicate
+        )
+        profiler = (
+            ConflictProfiler(
+                profile_preds,
+                max_atoms=profile_max_atoms,
+                max_atoms_per_predicate=profile_max_atoms_per_predicate,
+                interval=self.profile_interval,
+            )
+            if (profile_conflicts or profile_after_first_model) else None
+        )
+
+        if self.sameclass_mode == "lazy-check":
+            ctl.register_propagator(prop)
         else:
-            log.info("Lower bound: %s (%.2fs)", list(lower), now)
+            prop.register(ctl, foundedness_check=foundedness_check)
 
-    timed_out = False
-    solve_start = time.perf_counter()
-    log.info("Solving...")
-    if args.time_limit:
-        remaining = args.time_limit - ground_time
-        handle = ctl.solve(on_model=on_model, on_unsat=on_unsat, async_=True)
-        if not handle.wait(max(remaining, 0)):
-            timed_out = True
-            handle.cancel()
-        result = handle.get()
-    else:
+        if profiler:
+            ctl.register_propagator(profiler)
+
+        ctl.load(_MAIN_LP)
+        for f in files:
+            ctl.load(f)
+
+        run_start = time.perf_counter()
+        ground_start = run_start
+        log.info("Grounding...")
+        ctl.ground([("base", [])])
+        ground_time = time.perf_counter() - ground_start
+        log.info("Grounding done (%.2fs)", ground_time)
+
+        defer_print = ctl.configuration.solve.models == -1 or benchmark
+        last_shown = []
+        last_all_atoms = []
+        last_cost = []
+        model_num = 0
+        had_cost = False
+        first_model_time = None
+        last_model_time = None
+
+        if diff_models and ctl.configuration.solve.models != 0:
+            log.info("--diff-models requires -n 0 to take effect; ignoring")
+
+        def on_model(model):
+            nonlocal first_model_time, last_model_time, model_num, last_shown, last_all_atoms, last_cost, had_cost
+            now = time.perf_counter() - run_start
+            shown = [] if benchmark else list(model.symbols(shown=True))
+            cost = list(model.cost)
+            cost_str = cost if cost else "0"
+            if first_model_time is None:
+                first_model_time = now
+                log.info("Model found (%.2fs): %s", now, cost_str)
+            else:
+                log.info("Model found (%.2fs, +%.2fs): %s", now, now - last_model_time, cost_str)
+            last_model_time = now
+            model_num += 1
+            if cost:
+                had_cost = True
+            if not defer_print:
+                diff = format_model_diff(last_shown, shown, last_cost, cost) if diff_models and model_num > 1 else ""
+                if diff:
+                    print(f"\nΔ Answer: {model_num}")
+                    print(diff)
+                else:
+                    print(f"\nAnswer: {model_num}")
+                    print(" ".join(str(a) for a in shown))
+                    if cost:
+                        print("Optimization:", format_cost_values(cost))
+                sys.stdout.flush()
+            if not benchmark:
+                last_shown = shown
+                if self.results is not None or show_guesses:
+                    last_all_atoms = list(model.symbols(atoms=True))
+            last_cost = cost
+            if diagnose_vftable_objective:
+                report_vftable_objective(model, self.diagnose_vftable_limit)
+            if profiler and profile_after_first_model:
+                if model_num == 1:
+                    profiler.reset_counts("since model 1")
+                else:
+                    profiler.report(title=f"Conflict Profile since model {model_num - 1}")
+                    profiler.reset_counts(f"since model {model_num}")
+
+        def on_unsat(lower):
+            now = time.perf_counter() - run_start
+            if last_cost:
+                gap = [u - l for u, l in zip(last_cost, lower)]
+                log.info("Lower bound: %s  upper: %s  gap: %s (%.2fs)", list(lower), last_cost, gap, now)
+            else:
+                log.info("Lower bound: %s (%.2fs)", list(lower), now)
+
+        solve_start = time.perf_counter()
+        log.info("Solving...")
         result = ctl.solve(on_model=on_model, on_unsat=on_unsat)
-    solve_time = time.perf_counter() - solve_start
+        solve_time = time.perf_counter() - solve_start
 
-    def stat(path):
-        cur = ctl.statistics
-        for key in path.split("."):
-            if not isinstance(cur, dict) or key not in cur:
-                return None
-            cur = cur[key]
-        return cur
+        if result.unsatisfiable:
+            print("UNSATISFIABLE")
+            log.info("Solving done: UNSATISFIABLE (%.2fs)", solve_time)
+        elif model_num == 0:
+            print("UNKNOWN")
+        elif result.exhausted:
+            print("OPTIMUM FOUND" if had_cost else "SATISFIABLE")
+            log.info("Solving done: %s (%.2fs)",
+                     "OPTIMUM FOUND" if had_cost else "SATISFIABLE",
+                     solve_time)
+        elif result.satisfiable:
+            print("SATISFIABLE")
+            log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
 
-    final_lower_bound = stat("summary.lower")
-
-    if timed_out:
-        print("% TIME LIMIT REACHED")
-        log.info("Solving done: TIME LIMIT REACHED (%.2fs)", solve_time)
-    elif result.unsatisfiable:
-        print("UNSATISFIABLE")
-        log.info("Solving done: UNSATISFIABLE (%.2fs)", solve_time)
-    elif model_num == 0:
-        print("UNKNOWN")
-    elif result.exhausted:
-        print("OPTIMUM FOUND" if had_cost else "SATISFIABLE")
-        log.info("Solving done: %s (%.2fs)",
-                 "OPTIMUM FOUND" if had_cost else "SATISFIABLE",
-                 solve_time)
-    elif result.satisfiable:
-        print("SATISFIABLE")
-        log.info("Solving done: SATISFIABLE (%.2fs)", solve_time)
-
-    if defer_print and model_num > 0 and not args.benchmark:
-        print(f"\nAnswer: {model_num}")
-        print(" ".join(str(a) for a in last_shown))
-        if last_cost:
-            print("Optimization:", format_cost_values(last_cost))
-            if final_lower_bound and not result.exhausted:
-                print("Lower bound:", format_cost_values(final_lower_bound))
-        sys.stdout.flush()
-
-    if (
-        not defer_print
-        and model_num > 0
-        and last_cost
-        and final_lower_bound
-        and not result.exhausted
-        and not args.benchmark
-    ):
-        print("Lower bound:", format_cost_values(final_lower_bound))
-
-    if profiler:
-        if args.profile_after_first_model and model_num > 0:
-            profiler.report(title=f"Conflict Profile since model {model_num}")
-        else:
-            profiler.report()
-
-    # Print partition for the last model printed above. The propagator's live
-    # union-find may have been undone by solver backtracking after on_model.
-    if not args.benchmark:
-        merge_pairs = []
-        for atom in last_shown:
-            if (
-                atom.name == "mergeClasses"
-                and len(atom.arguments) == 2
-                and getattr(atom, "positive", True)
-            ):
-                merge_pairs.append(tuple(atom.arguments))
-        parts = prop.partition(merge_pairs) if last_shown else {}
-        if parts:
-            print(f"\n% Equivalence classes ({len(parts)} classes, "
-                  f"{sum(len(g) for g in parts.values())} entities):")
-            for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
-                print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
-
-        if args.show_guesses and last_all_atoms:
-            print_guess_summary(last_all_atoms)
-
-        if args.results is not None and last_all_atoms:
-            from results import write_results
-            if args.results == "":
-                base = os.path.splitext(args.files[0])[0]
-                results_path = base + ".results"
-            else:
-                results_path = args.results
+        if defer_print and model_num > 0 and not benchmark:
+            print(f"\nAnswer: {model_num}")
+            print(" ".join(str(a) for a in last_shown))
+            if last_cost:
+                print("Optimization:", format_cost_values(last_cost))
             sys.stdout.flush()
-            log.info("Writing results to %s", results_path)
-            write_results(ctl, last_all_atoms, merge_pairs, results_path)
 
-    if args.stats:
-        print("\n% Stats:")
-        fields = (
-            ("atoms", "problem.lp.atoms"),
-            ("bodies", "problem.lp.bodies"),
-            ("rules", "problem.lp.rules"),
-            ("variables", "problem.generator.vars"),
-            ("constraints", "problem.generator.constraints"),
-            ("choices", "solving.solvers.choices"),
-            ("conflicts", "solving.solvers.conflicts"),
-            ("models", "summary.models.enumerated"),
-            ("optimal_models", "summary.models.optimal"),
-            ("final_cost", "summary.costs"),
-            ("lower_bound", "summary.lower"),
-            ("total_time", "summary.times.total"),
-            ("ground_time", None),
-            ("time_to_first_model", None),
-            ("max_rss_bytes", None),
-            ("solve_time", "summary.times.solve"),
-        )
-        for name, path in fields:
-            if name == "ground_time":
-                val = ground_time
-            elif name == "time_to_first_model":
-                val = first_model_time
-            elif name == "max_rss_bytes":
-                max_rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-                val = max_rss if sys.platform == "darwin" else max_rss * 1024
+        if profiler:
+            if profile_after_first_model and model_num > 0:
+                profiler.report(title=f"Conflict Profile since model {model_num}")
             else:
-                val = stat(path)
-            if val is not None:
-                print(f"%   {name}: {val}")
+                profiler.report()
 
-        if args.stats >= 2:
-            print("\n% Full clingo statistics:")
-            def dump(node, indent=2):
-                if isinstance(node, dict):
-                    for k, v in node.items():
-                        if isinstance(v, (dict, list)):
-                            print(f"%{' ' * indent}{k}:")
-                            dump(v, indent + 2)
-                        else:
-                            print(f"%{' ' * indent}{k}: {v}")
-                elif isinstance(node, list):
-                    for i, v in enumerate(node):
-                        if isinstance(v, (dict, list)):
-                            print(f"%{' ' * indent}[{i}]:")
-                            dump(v, indent + 2)
-                        else:
-                            print(f"%{' ' * indent}[{i}]: {v}")
-            dump(ctl.statistics)
+        if not bool(self.benchmark):
+            merge_pairs = []
+            for atom in last_shown:
+                if (
+                    atom.name == "mergeClasses"
+                    and len(atom.arguments) == 2
+                    and getattr(atom, "positive", True)
+                ):
+                    merge_pairs.append(tuple(atom.arguments))
+            parts = prop.partition(merge_pairs) if last_shown else {}
+            if parts:
+                print(f"\n% Equivalence classes ({len(parts)} classes, "
+                      f"{sum(len(g) for g in parts.values())} entities):")
+                for rep, members in sorted(parts.items(), key=lambda kv: min(kv[1])):
+                    print(f"%   {{{', '.join(str(m) for m in sorted(members))}}}")
+
+            if show_guesses and last_all_atoms:
+                print_guess_summary(last_all_atoms)
+
+            if self.results is not None and last_all_atoms:
+                from results import write_results
+                if self.results == "":
+                    base = os.path.splitext(files[0])[0]
+                    results_path = base + ".results"
+                else:
+                    results_path = self.results
+                sys.stdout.flush()
+                log.info("Writing results to %s", results_path)
+                write_results(ctl, last_all_atoms, merge_pairs, results_path)
 
 
 if __name__ == "__main__":
-    main()
+    clingo.clingo_main(OOAnalyzerApp(), sys.argv[1:])
