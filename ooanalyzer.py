@@ -21,14 +21,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 log = logging.getLogger("ooanalyzer")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 
-# Prefer the native Rust propagator (built via `make rust`); fall back to the
-# pure-Python implementation if the extension is not installed.
-try:
-    from ooanalyzer_sameclass import SameClassPropagator
-    _RUST_PROPAGATOR = True
-except ImportError:
-    from propagator.sameclass import SameClassPropagator
-    _RUST_PROPAGATOR = False
+# The native Rust propagator (built via `make rust`) is the live &sameClass
+# implementation; there is no pure-Python fallback.
+from ooanalyzer_sameclass import SameClassPropagator
 from propagator.sameclass import LazySameClassConsistencyPropagator
 from propagator.conflict_profiler import ConflictProfiler
 
@@ -147,9 +142,6 @@ def parse_args():
     p.add_argument("--time-limit", type=int, default=0, dest="time_limit")
     p.add_argument("--benchmark", action="store_true",
                    help="log model timing/costs and stats without collecting or printing model atoms")
-    p.add_argument("--debug-propagator", action="store_true")
-    p.add_argument("--profile-propagator", action="store_true",
-                   help="print sameClass propagator setup/worklist timing counters")
     p.add_argument("-t", "--threads", type=str, default=None,
                    help="parallel search: N[,compete|split] (default: 1)")
     p.add_argument("--const", action="append", default=[], metavar="NAME=VAL",
@@ -316,13 +308,6 @@ def main():
     args = parse_args()
     print(f"% Command: {' '.join(sys.argv)}")
 
-    if args.debug_propagator:
-        import propagator.sameclass as _sc
-        _sc.DEBUG = True
-    if args.profile_propagator:
-        import propagator.sameclass as _sc
-        _sc.PROFILE = True
-
     ctl_args = ["--warn=none"]
     if args.configuration:
         # A portfolio/configuration controls per-thread search settings; the
@@ -351,8 +336,6 @@ def main():
         prop = SameClassPropagator(
             foundedness_check=args.foundedness_check,
         )
-        if _RUST_PROPAGATOR:
-            log.info("using native Rust &sameClass propagator")
     profile_preds = args.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
     if "*" in profile_preds:
         profile_preds = None
@@ -375,12 +358,9 @@ def main():
         ctl.configuration.solve.models = args.models
     if args.sameclass_mode == "lazy-check":
         ctl.register_propagator(prop)
-    elif _RUST_PROPAGATOR:
+    else:
         # The Rust class registers both its observer and propagator in one call.
         prop.register(ctl, foundedness_check=args.foundedness_check)
-    else:
-        ctl.register_observer(prop)
-        ctl.register_propagator(prop)
     if profiler:
         ctl.register_propagator(profiler)
 

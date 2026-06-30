@@ -90,7 +90,7 @@ Scoring and heuristic gates:
 | [`src/modules/ctorsdtors.lp`](src/modules/ctorsdtors.lp) | Constructor/destructor identification and guessing |
 | [`src/modules/vftables.lp`](src/modules/vftables.lp) | VFTable identification, entries, and guessing |
 | [`src/modules/merges.lp`](src/modules/merges.lp) | Class merge and non-merge evidence |
-| [`propagator/sameclass.py`](propagator/sameclass.py) | Union-find propagator for `&sameClass/2` |
+| [`propagator/sameclass.py`](propagator/sameclass.py) | Pure-Python `&sameClass/2` utilities (union-find, lazy-check diagnostic); live propagator is the Rust port |
 | [`tests/test_propagator.py`](tests/test_propagator.py) | Focused propagator regression harness |
 | [`src/old/`](src/old/) | v1 Clingo modules (reference only) |
 | [`scripts/facts2clingo.py`](scripts/facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |

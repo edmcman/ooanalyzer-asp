@@ -20,7 +20,7 @@ original module set.
 | `src/util/theory.lp` | Clingo theory declaration for `&sameClass/2` |
 | `src/util/facts.lp` | Input vocabulary and `#defined` directives |
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
-| `propagator/sameclass.py` | Python union-find propagator implementing `&sameClass/2` (reference; the live propagator is the Rust port below) |
+| `propagator/sameclass.py` | Pure-Python `&sameClass/2` utilities: the `_UF` union-find, the `LazySameClassConsistencyPropagator` diagnostic (`--sameclass-mode=lazy-check`), and `sc_pairs_from_merges`. The live eager propagator is the Rust port below; there is no pure-Python fallback |
 | `propagator/conflict_profiler.py` | Propagator that counts per-predicate backtrack rates; use `--profile-conflicts` when solver performance is poor to identify which predicates drive the most search |
 | `rust/` | PyO3/maturin cdylib `ooanalyzer_sameclass` — the live `&sameClass` propagator, ported to Rust. Registers its own `extern "C"` clingo trampolines against the Python-loaded libclingo via `dlsym`, so the hot solve path is pure Rust (no GIL crossing) |
 | `rust/src/ffi.rs` | Runtime FFI to libclingo: dlsym-loads every C function once at import; safe wrappers + panic-catching trampolines. Types/constants come from `clingo_sys.rs` |
@@ -76,7 +76,7 @@ propagator is now the Rust cdylib `ooanalyzer_sameclass` (built via `make rust`)
 so the hot solve path is pure Rust with **no GIL** — the solver-side parallelism
 limitation of the old pure-Python propagator no longer applies (see
 `rust/` below and the threads analysis in `.state/merge-optimization-blocker.md`). Only the Python driver
-glue and the (optional) pure-Python fallback propagator run under the GIL.
+glue and the `--sameclass-mode=lazy-check` diagnostic propagator run under the GIL.
 
 The earlier PyPy spike (`.python-version` → `pypy@3.11`) predated the Rust port:
 it traded on the propagator being pure Python and ~half of solve time. With the
@@ -84,11 +84,10 @@ propagator in Rust, that rationale is moot, and the default reverted to CPython.
 (Rebuilding the cdylib for PyPy's ABI is possible but currently unconfigured.)
 
 The propagator's **deterministic clause-emission order** remains load-bearing:
-`propagator/sameclass.py`'s `_okey` sorting (and the corresponding `sorted`
-calls in `rust/src/propagator.rs`) keep the search trajectory stable across
-interpreter/refactor changes. Without it, set/dict iteration order diverges into
-a worse search. Note that determinism does not close the intrinsic merge-reward
-optimization gap (see `.state/merge-optimization-blocker.md`).
+the entity-key sorting in `rust/src/propagator.rs` keeps the search trajectory
+stable across interpreter/refactor changes. Without it, set/dict iteration order
+diverges into a worse search. Note that determinism does not close the intrinsic
+merge-reward optimization gap (see `.state/merge-optimization-blocker.md`).
 
 For a fast dev loop on the test suite without rebuilding the release cdylib:
 
@@ -262,9 +261,9 @@ See [TODO.md](TODO.md) for the full rule coverage tracker (217 rules across 12 e
 
 Prolog uses explicit class IDs. This ASP port represents class membership with
 `mergeClasses/2` evidence and queries the induced equivalence relation through
-the `&sameClass/2` theory atom. `propagator/sameclass.py` maintains a union-find
-over true `mergeClasses/2` atoms, handles reflexive and disconnected cases, and
-adds reason clauses for true/false theory decisions.
+the `&sameClass/2` theory atom. The Rust propagator (`rust/src/propagator.rs`)
+maintains a union-find over true `mergeClasses/2` atoms, handles reflexive and
+disconnected cases, and adds reason clauses for true/false theory decisions.
 
 For class-level conclusions like `derivedClass(A, B, Off)`:
 
@@ -341,7 +340,7 @@ What has and has not helped so far:
   does not fix the proof bottleneck
 - `--opt-usc-shrink={lin,bin,min}` does **not** help this pattern; it often
   finds one better model but makes lower-bound progress worse
-- boundary-edge pruning inside `propagator/sameclass.py` helps local search by
+- boundary-edge pruning inside the `&sameClass` propagator helps local search by
   forcing open merge edges false when they would connect components already
   separated by a false `&sameClass`, but it still does not expose a compact
   global exclusion to USC

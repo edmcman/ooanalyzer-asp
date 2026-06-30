@@ -21,7 +21,7 @@ from clingo import Control
 from clingexplaid.preprocessors import AssumptionPreprocessor
 from clingexplaid.mus import CoreComputer
 from clingexplaid.unsat_constraints import UnsatConstraintComputer
-from propagator.sameclass import SameClassPropagator
+from ooanalyzer_sameclass import SameClassPropagator
 
 
 DEFAULT_OPT_STRATEGY = "bb,lin"
@@ -92,8 +92,8 @@ def explain_unsat(program, max_mus=1, clingo_args=None, foundedness_check=False)
 
     ctl2 = Control(clingo_args)
     prop = SameClassPropagator(foundedness_check=foundedness_check)
-    ctl2.register_observer(prop)
-    ctl2.register_propagator(prop)
+    # The Rust class registers both its observer and propagator in one call.
+    prop.register(ctl2, foundedness_check=foundedness_check)
     ctl2.add("base", [], transformed)
     ctl2.ground([("base", [])])
 
