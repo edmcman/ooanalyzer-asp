@@ -11,7 +11,7 @@ PROPAGATOR   := $(PYTHON) ooanalyzer.py
 # wider variance (±656 vs ±141 for F,512). t16+ fails (domain requires lookback).
 # t2 consistently finds only 1 model; t8 mediocre; t4 is the sweet spot.
 # save-progress and usc,oll both harm the UB search with threads.
-PROP_FLAGS   := -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --heuristic=domain -t4,compete --restarts=L,128 --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
