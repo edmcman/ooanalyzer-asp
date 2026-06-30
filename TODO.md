@@ -307,7 +307,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ## 10. Class Merging (`mergeClasses` / `sameClass`)
 
 ### Merge (rules.pl:2748–2939)
-- [ ] `reasonMergeClasses_B` (2792) — method class merges with base class
+- [x] `reasonMergeClasses_B` (2792) — method class merges with base class
 - [ ] `reasonMergeClasses_C` (2822) — existing class association
 - [x] `reasonMergeClasses_E` (2847) — two classes both direct bases of same derived at same offset must merge
 - [x] `reasonMergeClasses_G` (2881) — symbols with same class name

@@ -110,6 +110,16 @@ vfTableEntry(VFTable, Offset, Entry) :-
     dethunk(Entry, Method),
     constructor(Method).                                                  % rules.pl:1313
 
+% methodInVFTable(VFTable, Offset, Method): non-purecall Method appears at Offset
+% in confirmed VFTable, dethunking any thunk entry. Shared helper for merge and
+% reused-implementation reasoning.
+% Counterpart: factMethodInVFTable / reasonMethodInVFTable (guess.pl:1044)
+methodInVFTable(VFTable, Offset, Method) :-
+    vfTableEntry(VFTable, Offset, Entry),
+    not purecall(Entry),
+    dethunk(Entry, Method),
+    not purecall(Method).
+
 % ============================================================
 % VFTABLE BELONGS TO CLASS
 % ============================================================
