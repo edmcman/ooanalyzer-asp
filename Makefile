@@ -56,7 +56,7 @@ EDITDIST_FILES := $(EDITDIST_LP:%.lp=%.editdist)
 .PHONY: all convert run verify verify-core verify-real propagator-run \
         explain-all symbolize diff edit-distance editdist clean help single rust rust-check bindings
 
-all: symbolize
+all: symbolize edit-distance
 
 # When 'clean' is explicitly requested alongside a build target, force
 # sequencing so clean finishes before any build work starts.
@@ -84,7 +84,7 @@ help:
 	@echo "  make verify        — run marker checks for core fixtures"
 	@echo "  make propagator-run — alias for run"
 	@echo "  make diff          — diff .results.sym vs .results.orig.sym for all available pairs"
-	@echo "  make edit-distance — CSV summary of local .results vs OOANALYZER_TESTS ($(OOANALYZER_TESTS))"
+	@echo "  make edit-distance — write CSV summary of local .results vs OOANALYZER_TESTS to $(EDITDIST_CSV)"
 	@echo "  make editdist      — write per-specimen .editdist action logs to examine for errors"
 	@echo "  make clean         — remove generated .lp/.out/.sym files"
 	@echo "  make rust          — build the Rust &sameClass propagator (maturin develop)"
@@ -205,11 +205,17 @@ $(OOA_DIR)/%.results.sym.diff: $(OOA_DIR)/%.results.orig.sym $(OOA_DIR)/%.result
 # ----------------------------------------------------------------
 # Aggregate CSV summary (ASP vs OOAnalyzer deltas) by parsing the cached
 # per-specimen .editdist files (built below) against the baseline .editdist
-# shipped in OOANALYZER_TESTS — no re-invocation of the scoring tool.
-edit-distance: $(EDITDIST_FILES)
+# shipped in OOANALYZER_TESTS — no re-invocation of the scoring tool. The CSV is
+# written to $(EDITDIST_CSV); INFO/SKIP diagnostics still go to stderr.
+EDITDIST_CSV ?= edit-distance.csv
+
+edit-distance: $(EDITDIST_CSV)
+
+$(EDITDIST_CSV): $(EDITDIST_FILES) scripts/edit_distance.py
+	@echo "=== Writing edit-distance CSV: $@ ==="
 	@$(PYTHON) scripts/edit_distance.py \
 		--tests-root "$(OOANALYZER_TESTS)" \
-		--results-root "$(OOA_DIR)"
+		--results-root "$(OOA_DIR)" > $@
 
 # Per-specimen .editdist files (full Move/Split/Join/Add/Remove action log ending
 # in the metrics CSV line) for examining individual errors. Mirrors the %.editdist
@@ -245,3 +251,4 @@ clean:
 	find $(OOA_DIR) -name '*.err' -delete
 	find $(OOA_DIR) -name '*.explain.out' -delete
 	find $(OOA_DIR) -name '*.sym' -delete
+	rm -f $(EDITDIST_CSV)
