@@ -56,7 +56,7 @@ EDITDIST_FILES := $(EDITDIST_LP:%.lp=%.editdist)
 .PHONY: all convert run verify verify-core verify-real propagator-run \
         explain-all symbolize diff edit-distance editdist clean help single rust rust-check bindings
 
-all: symbolize edit-distance
+all: symbolize
 
 # When 'clean' is explicitly requested alongside a build target, force
 # sequencing so clean finishes before any build work starts.
