@@ -324,6 +324,19 @@ class OOAnalyzerApp(clingo.Application):
             self.logger(clingo.MessageCode.Error, "no files provided")
             return
 
+        # Detect -n -1 (defer output) since clingo won't accept -1 for -n
+        # If -n -1 was in argv, clingo parsed it incorrectly; we use defer_models=-1
+        # as the marker for this special mode
+        defer_models = None
+        for i, arg in enumerate(sys.argv[1:], 1):
+            if arg == '-n' and i < len(sys.argv) - 1:
+                next_arg = sys.argv[i + 1]
+                if next_arg == '-1':
+                    defer_models = -1
+                    # Set clingo to enumerate all models instead
+                    ctl.configuration.solve.models = 0
+                    break
+
         diff_models = bool(self.diff_models)
         benchmark = bool(self.benchmark)
         profile_conflicts = bool(self.profile_conflicts)
@@ -378,7 +391,7 @@ class OOAnalyzerApp(clingo.Application):
         ground_time = time.perf_counter() - ground_start
         log.info("Grounding done (%.2fs)", ground_time)
 
-        defer_print = ctl.configuration.solve.models == -1 or benchmark
+        defer_print = (defer_models == -1 or ctl.configuration.solve.models == -1) or benchmark
         last_shown = []
         last_all_atoms = []
         last_cost = []
@@ -416,6 +429,11 @@ class OOAnalyzerApp(clingo.Application):
                     if cost:
                         print("Optimization:", format_cost_values(cost))
                 sys.stdout.flush()
+            else:
+                # In defer mode, still print the cost for each model as it's found
+                if cost:
+                    print(f"Answer: {model_num} Cost: {format_cost_values(cost)}")
+                    sys.stdout.flush()
             if not benchmark:
                 last_shown = shown
                 if self.results is not None or show_guesses:
