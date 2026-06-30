@@ -317,12 +317,31 @@ class OOAnalyzerApp(clingo.Application):
             return False
         return True
 
+    def print_model(self, model, printer):
+        # In defer mode (-n -1), suppress ALL clingo's native model printing
+        # since we handle output via on_model callback
+        if hasattr(self, '_defer_output_mode') and self._defer_output_mode:
+            pass  # Suppress output entirely in defer mode
+        else:
+            # Otherwise use clingo's default printing
+            printer()
+
     def main(self, ctl, files):
         print(f"% Command: {' '.join(sys.argv)}")
 
         if not files:
             self.logger(clingo.MessageCode.Error, "no files provided")
             return
+
+        # Detect -n -1 in command line (clingo won't accept -1 natively)
+        defer_output_mode = False
+        for i in range(len(sys.argv) - 1):
+            if sys.argv[i] == '-n' and sys.argv[i + 1] == '-1':
+                defer_output_mode = True
+                self._defer_output_mode = True
+                # Set clingo to enumerate all models
+                ctl.configuration.solve.models = 0
+                break
 
         diff_models = bool(self.diff_models)
         benchmark = bool(self.benchmark)
@@ -378,7 +397,7 @@ class OOAnalyzerApp(clingo.Application):
         ground_time = time.perf_counter() - ground_start
         log.info("Grounding done (%.2fs)", ground_time)
 
-        defer_print = ctl.configuration.solve.models == -1 or benchmark
+        defer_print = defer_output_mode or ctl.configuration.solve.models == -1 or benchmark
         last_shown = []
         last_all_atoms = []
         last_cost = []
