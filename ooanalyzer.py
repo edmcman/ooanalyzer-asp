@@ -252,6 +252,9 @@ class OOAnalyzerApp(clingo.Application):
         self.profile_max_atoms_per_predicate = 500
         self.profile_interval = 0.0
         self.foundedness_check = clingo.Flag(False)
+        self.dump_lemmas = clingo.Flag(False)
+        self.decide_outputs = clingo.Flag(False)
+        self.decide_inputs = clingo.Flag(False)
         self.sameclass_mode = "propagate"
         self.diagnose_vftable_objective = clingo.Flag(False)
         self.diagnose_vftable_limit = 25
@@ -302,6 +305,12 @@ class OOAnalyzerApp(clingo.Application):
                     float_parser(lambda x: setattr(self, 'profile_interval', x)), argument="SEC")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
+        options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
+                         self.dump_lemmas)
+        options.add_flag("OOAnalyzer", "decide-outputs", "branch on &sameClass outputs instead of mergeClasses inputs (propagate mode only)",
+                         self.decide_outputs)
+        options.add_flag("OOAnalyzer", "decide-inputs", "branch on mergeClasses inputs instead of &sameClass outputs (propagate mode only)",
+                         self.decide_inputs)
         options.add("OOAnalyzer", "sameclass-mode", "sameClass theory handling: propagate or lazy-check",
                     str_parser(lambda x: setattr(self, 'sameclass_mode', x)), argument="MODE")
         options.add_flag("OOAnalyzer", "diagnose-vftable-objective", "print vftable size/gap diagnostics per model",
@@ -313,7 +322,10 @@ class OOAnalyzerApp(clingo.Application):
 
     def validate_options(self):
         if self.sameclass_mode not in ("propagate", "lazy-check"):
-            self.logger(clingo.MessageCode.Error, f"invalid --sameclass-mode: {self.sameclass_mode}")
+            print(f"error: invalid --sameclass-mode: {self.sameclass_mode}", file=sys.stderr)
+            return False
+        if bool(self.decide_outputs) and bool(self.decide_inputs):
+            print("error: --decide-outputs and --decide-inputs are mutually exclusive", file=sys.stderr)
             return False
         return True
 
@@ -330,7 +342,7 @@ class OOAnalyzerApp(clingo.Application):
         print(f"% Command: {' '.join(sys.argv)}")
 
         if not files:
-            self.logger(clingo.MessageCode.Error, "no files provided")
+            self.logger(clingo.MessageCode.RuntimeError, "no files provided")
             return
 
         # Detect -n -1 in command line (clingo won't accept -1 natively)
@@ -348,16 +360,28 @@ class OOAnalyzerApp(clingo.Application):
         profile_conflicts = bool(self.profile_conflicts)
         profile_after_first_model = bool(self.profile_after_first_model)
         foundedness_check = bool(self.foundedness_check)
+        dump_lemmas = bool(self.dump_lemmas)
+        decide_outputs = bool(self.decide_outputs)
+        decide_inputs = bool(self.decide_inputs)
         diagnose_vftable_objective = bool(self.diagnose_vftable_objective)
         show_guesses = bool(self.show_guesses)
 
         if self.sameclass_mode == "lazy-check":
             if foundedness_check:
                 log.info("--foundedness-check is ignored by --sameclass-mode=lazy-check")
+            if dump_lemmas:
+                log.info("--dump-lemmas is ignored by --sameclass-mode=lazy-check")
+            if decide_outputs:
+                log.info("--decide-outputs is ignored by --sameclass-mode=lazy-check")
+            if decide_inputs:
+                log.info("--decide-inputs is ignored by --sameclass-mode=lazy-check")
             prop = LazySameClassConsistencyPropagator()
         else:
             prop = SameClassPropagator(
                 foundedness_check=foundedness_check,
+                dump_lemmas=dump_lemmas,
+                decide_outputs=decide_outputs,
+                decide_inputs=decide_inputs,
             )
 
         profile_preds = self.profile_predicate or list(_DEFAULT_PROFILE_PREDS)
@@ -381,7 +405,8 @@ class OOAnalyzerApp(clingo.Application):
         if self.sameclass_mode == "lazy-check":
             ctl.register_propagator(prop)
         else:
-            prop.register(ctl, foundedness_check=foundedness_check)
+            prop.register(ctl, foundedness_check=foundedness_check, dump_lemmas=dump_lemmas,
+                          decide_outputs=decide_outputs, decide_inputs=decide_inputs)
 
         if profiler:
             ctl.register_propagator(profiler)

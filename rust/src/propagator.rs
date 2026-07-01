@@ -7,7 +7,7 @@
 
 use crate::entkey::EntKey;
 use crate::ffi::{
-    ClingoAtom, ClingoAssignment, ClingoExternalType, ClingoLiteral, ClingoPropagateControl,
+    ClingoAtom, ClingoAssignment, ClingoExternalType, ClingoId, ClingoLiteral, ClingoPropagateControl,
     ClingoPropagateInit, ClingoSymbol, ClingoSymbolicAtoms, EXTERNAL_TYPE_FALSE,
     Ffi, CHECK_MODE_TOTAL,
 };
@@ -293,6 +293,9 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
         proglit_to_slit,
         head_to_bodies,
         foundedness_check: pd.foundedness_check,
+        dump_lemmas: pd.dump_lemmas,
+        decide_outputs: pd.decide_outputs,
+        decide_inputs: pd.decide_inputs,
         states,
     })
 }
@@ -405,7 +408,7 @@ pub fn propagate(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl, ch
                         .filter(|(_, _, sc_lit)| !ffi.is_true(asgn, *sc_lit))
                         .collect();
                     for (x, y, sc_lit) in to_assert {
-                        if !assert_same(ffi, state, ctrl, &x, &y, sc_lit)? {
+                        if !assert_same(ffi, &shared, state, ctrl, &x, &y, sc_lit)? {
                             return Ok(());
                         }
                     }
@@ -502,7 +505,7 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
         let mut cache = FxHashMap::default();
         for (x, y, slit) in &atoms {
             if state.uf.same(x, y) {
-                if !ffi.is_true(asgn, *slit) && !assert_same(ffi, state, ctrl, x, y, *slit)? {
+                if !ffi.is_true(asgn, *slit) && !assert_same(ffi, &shared, state, ctrl, x, y, *slit)? {
                     return Ok(());
                 }
             } else if ffi.is_true(asgn, *slit) && !assert_not_same(ffi, &shared, state, ctrl, x, y, *slit, &mut cache)? {
@@ -562,13 +565,143 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
     Ok(())
 }
 
+// ── decision heuristic (--decide-outputs / --decide-inputs) ──────────────────
+
+/// Combined decision heuristic. When `--decide-outputs` is set and the fallback
+/// is a `mergeClasses` literal, redirects to a free `&sameClass` atom incident to
+/// either entity. When `--decide-inputs` is set and the fallback is a `&sameClass`
+/// literal, redirects to a free `mergeClasses` literal incident to either entity.
+/// Returns `fallback` unchanged when neither condition fires.
+pub fn decide(
+    ffi: &Ffi,
+    pd: &PropData,
+    _thread_id: ClingoId,
+    asgn: *const ClingoAssignment,
+    fallback: ClingoLiteral,
+) -> ClingoLiteral {
+    let shared = match shared(pd) {
+        Ok(s) => &**s,
+        Err(_) => return fallback,
+    };
+    let fa = fallback.abs();
+
+    if shared.decide_outputs {
+        let pairs = shared
+            .facts
+            .merge_lit_to_pairs
+            .get(&fa)
+            .or_else(|| shared.facts.merge_lit_to_pairs.get(&-fa));
+        if let Some(pairs) = pairs {
+            if let Some(lit) = pairs.iter().find_map(|(a, b)| {
+                free_incident_sameclass(ffi, shared, asgn, a)
+                    .or_else(|| free_incident_sameclass(ffi, shared, asgn, b))
+            }) {
+                return lit;
+            }
+        }
+    }
+
+    if shared.decide_inputs {
+        let pair = shared
+            .sc_lit_to_pair
+            .get(&fa)
+            .or_else(|| shared.sc_lit_to_pair.get(&-fa));
+        if let Some((x, y)) = pair {
+            if let Some(lit) = free_incident_merge(ffi, shared, asgn, x)
+                .or_else(|| free_incident_merge(ffi, shared, asgn, y))
+            {
+                return lit;
+            }
+        }
+    }
+
+    fallback
+}
+
+/// Smallest (deterministic) free `&sameClass` solver literal incident to `e`,
+/// returned in its atom-true phase so the chosen decision asserts same-class.
+fn free_incident_sameclass(
+    ffi: &Ffi,
+    shared: &Shared,
+    asgn: *const ClingoAssignment,
+    e: &EntKey,
+) -> Option<ClingoLiteral> {
+    shared
+        .sc_by_entity
+        .get(e)?
+        .iter()
+        .map(|(_, slit)| *slit)
+        .filter(|&slit| !ffi.is_true(asgn, slit) && !ffi.is_false(asgn, slit))
+        .min()
+}
+
+/// Smallest (deterministic) free `mergeClasses` solver literal incident to `e`.
+fn free_incident_merge(
+    ffi: &Ffi,
+    shared: &Shared,
+    asgn: *const ClingoAssignment,
+    e: &EntKey,
+) -> Option<ClingoLiteral> {
+    shared
+        .merge_by_entity
+        .get(e)?
+        .iter()
+        .map(|(_, mlit)| *mlit)
+        .filter(|&mlit| !ffi.is_true(asgn, mlit) && !ffi.is_false(asgn, mlit))
+        .min()
+}
+
 // ── assert_* reason-clause builders ──────────────────────────────────────────
 
-fn assert_same(ffi: &Ffi, state: &mut ThreadState, ctrl: *mut ClingoPropagateControl, x: &EntKey, y: &EntKey, slit: i32) -> Result<bool, String> {
+fn ek_str(e: &EntKey) -> String {
+    match e {
+        EntKey::Num(n) => n.to_string(),
+        EntKey::Str(s) => s.clone(),
+    }
+}
+
+/// Best-effort human-readable rendering of one clause literal (debug only).
+fn fmt_lit(shared: &Shared, c: i32) -> String {
+    for (&s, pairs) in &shared.facts.merge_lit_to_pairs {
+        if c == s || c == -s {
+            let body = pairs
+                .iter()
+                .map(|(a, b)| format!("mergeClasses({},{})", ek_str(a), ek_str(b)))
+                .collect::<Vec<_>>()
+                .join("|");
+            return if c == s { body } else { format!("-{}", body) };
+        }
+    }
+    for (&s, (x, y)) in &shared.sc_lit_to_pair {
+        if c == s || c == -s {
+            let body = format!("sameClass({},{})", ek_str(x), ek_str(y));
+            return if c == s { body } else { format!("not {}", body) };
+        }
+    }
+    format!("lit({})", c)
+}
+
+/// Print a reason clause to stderr when `--dump-lemmas` is on. `label` names the
+/// builder; `conflict` is true when this reason was the one that made the
+/// assignment inconsistent (`add_clause` returned false), i.e. the nogood clasp
+/// hands to 1-UIP. The leading `len=` lets post-processing compare the
+/// propagator's reason size against clasp's final learned-clause length.
+fn dump_lemma(shared: &Shared, label: &str, clause: &[i32], conflict: bool) {
+    if !shared.dump_lemmas {
+        return;
+    }
+    let tag = if conflict { " CONFLICT" } else { "" };
+    let body = clause.iter().map(|&c| fmt_lit(shared, c)).collect::<Vec<_>>().join(" | ");
+    eprintln!("[lemma {label}{tag} len={}] {{ {body} }}", clause.len());
+}
+
+fn assert_same(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, ctrl: *mut ClingoPropagateControl, x: &EntKey, y: &EntKey, slit: i32) -> Result<bool, String> {
     let (_, reason) = state.uf.same_with_reason(x, y);
     let mut clause: Vec<i32> = reason.iter().map(|&r| -r).collect();
     clause.push(slit);
-    Ok(clause!(ffi, ctrl, &clause))
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "same", &clause, !ok);
+    Ok(ok)
 }
 
 fn component_cut_and_reasons(
@@ -608,7 +741,10 @@ fn assert_not_same(
     cache: &mut FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)>,
 ) -> Result<bool, String> {
     if !shared.potential_uf.same(x, y) {
-        return Ok(clause!(ffi, ctrl, &[-slit]));
+        let clause = [-slit];
+        let ok = clause!(ffi, ctrl, &clause);
+        dump_lemma(shared, "not_same/static", &clause, !ok);
+        return Ok(ok);
     }
     let (reason, cut) = component_cut_and_reasons(shared, state, x, cache);
     let mut clause: Vec<i32> = Vec::with_capacity(reason.len() + cut.len() + 1);
@@ -623,7 +759,9 @@ fn assert_not_same(
         clause.push(*c);
     }
     clause.push(-slit);
-    Ok(clause!(ffi, ctrl, &clause))
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "not_same/cut", &clause, !ok);
+    Ok(ok)
 }
 
 fn assert_not_all_writers(
@@ -649,7 +787,9 @@ fn assert_not_all_writers(
         clause.push(*c);
     }
     clause.push(-awc_slit);
-    Ok(clause!(ffi, ctrl, &clause))
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "not_all_writers", &clause, !ok);
+    Ok(ok)
 }
 
 // ── foundedness ──────────────────────────────────────────────────────────────

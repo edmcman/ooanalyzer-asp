@@ -49,23 +49,26 @@ impl SameClassPropagator {
 
 #[pymethods]
 impl SameClassPropagator {
-    /// `foundedness_check` is re-passed to `register()`; kept in the
-    /// constructor purely for API parity with the Python class.
+    /// `foundedness_check`/`dump_lemmas`/`decide_outputs`/`decide_inputs` are
+    /// re-passed to `register()`; kept in the constructor purely for API parity.
     #[new]
-    #[pyo3(signature = (foundedness_check=false))]
-    fn new(foundedness_check: bool) -> Self {
-        let _ = foundedness_check;
+    #[pyo3(signature = (foundedness_check=false, dump_lemmas=false, decide_outputs=false, decide_inputs=false))]
+    fn new(foundedness_check: bool, dump_lemmas: bool, decide_outputs: bool, decide_inputs: bool) -> Self {
+        let _ = (foundedness_check, dump_lemmas, decide_outputs, decide_inputs);
         SameClassPropagator { data: 0 }
     }
 
     /// Extract the `clingo_control_t*` from the cffi `Control._rep` cdata and
     /// register the Rust propagator + observer against libclingo. Replaces
     /// `ctl.register_observer(prop); ctl.register_propagator(prop)`.
-    #[pyo3(name = "register", signature = (ctl, foundedness_check=false))]
+    #[pyo3(name = "register", signature = (ctl, foundedness_check=false, dump_lemmas=false, decide_outputs=false, decide_inputs=false))]
     fn register(
         &mut self,
         ctl: &Bound<'_, PyAny>,
         foundedness_check: bool,
+        dump_lemmas: bool,
+        decide_outputs: bool,
+        decide_inputs: bool,
     ) -> PyResult<()> {
         let ffi = ffi::Ffi::load().map_err(pyo3_err)?;
         let py = ctl.py();
@@ -80,10 +83,10 @@ impl SameClassPropagator {
             .extract::<i64>()?;
         let control = addr as usize as *mut ClingoControl;
 
-        let raw = Box::into_raw(PropData::new(foundedness_check)) as *mut c_void;
+        let raw = Box::into_raw(PropData::new(foundedness_check, dump_lemmas, decide_outputs, decide_inputs)) as *mut c_void;
         self.data = raw as usize;
 
-        let prop = trampoline::propagator_struct();
+        let prop = trampoline::propagator_struct(decide_outputs, decide_inputs);
         let obs = trampoline::observer_struct();
         ffi.register_propagator(control, &prop, raw)
             .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.message))?;

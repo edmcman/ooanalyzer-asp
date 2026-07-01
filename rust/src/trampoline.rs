@@ -115,6 +115,30 @@ pub extern "C" fn check(ctrl: *mut ClingoPropagateControl, data: *mut std::ffi::
     }
 }
 
+pub extern "C" fn decide(
+    thread_id: ffi::ClingoId,
+    assignment: *const ffi::ClingoAssignment,
+    fallback: ClingoLiteral,
+    data: *mut std::ffi::c_void,
+    decision: *mut ClingoLiteral,
+) -> bool {
+    let pd = pd(data);
+    let ffi_ = ffi::Ffi::get();
+    let res = catch_unwind(AssertUnwindSafe(|| {
+        propagator::decide(ffi_, pd, thread_id, assignment, fallback)
+    }));
+    match res {
+        Ok(lit) => {
+            unsafe { *decision = lit };
+            true
+        }
+        Err(_) => {
+            ffi::set_runtime_error(ffi_, "rust propagator decide panicked");
+            false
+        }
+    }
+}
+
 // ── observer ────────────────────────────────────────────────────────────────
 
 pub extern "C" fn rule(
@@ -170,14 +194,15 @@ pub extern "C" fn external(
     flatten(res)
 }
 
-/// Build the clingo propagator struct wired to the Rust trampolines.
-pub fn propagator_struct() -> ClingoPropagator {
+/// Build the clingo propagator struct wired to the Rust trampolines. `decide` is
+/// registered only when `--decide-outputs` or `--decide-inputs` is on.
+pub fn propagator_struct(decide_outputs: bool, decide_inputs: bool) -> ClingoPropagator {
     ClingoPropagator {
         init: Some(init),
         propagate: Some(propagate),
         undo: Some(undo),
         check: Some(check),
-        decide: None,
+        decide: if decide_outputs || decide_inputs { Some(decide) } else { None },
     }
 }
 

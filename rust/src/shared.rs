@@ -96,6 +96,12 @@ pub struct Shared {
     /// head program-literal → positive bodies (foundedness; empty if disabled).
     pub head_to_bodies: FxHashMap<i32, Vec<Vec<i32>>>,
     pub foundedness_check: bool,
+    /// Print every learnt reason clause to stderr (debug; `--dump-lemmas`).
+    pub dump_lemmas: bool,
+    /// Redirect from `mergeClasses` decisions to `&sameClass` outputs (`--decide-outputs`).
+    pub decide_outputs: bool,
+    /// Redirect from `&sameClass` decisions to `mergeClasses` inputs (`--decide-inputs`).
+    pub decide_inputs: bool,
     /// Per-thread mutable state, indexed by clingo `thread_id`.
     pub states: Vec<Mutex<ThreadState>>,
 }
@@ -110,15 +116,21 @@ pub struct PropData {
     /// Serializes the first-thread `Shared` build so later threads reuse it.
     pub init_lock: Mutex<()>,
     pub foundedness_check: bool,
+    pub dump_lemmas: bool,
+    pub decide_outputs: bool,
+    pub decide_inputs: bool,
 }
 
 impl PropData {
-    pub fn new(foundedness_check: bool) -> Box<PropData> {
+    pub fn new(foundedness_check: bool, dump_lemmas: bool, decide_outputs: bool, decide_inputs: bool) -> Box<PropData> {
         Box::new(PropData {
             obs: Mutex::new(ObsData::default()),
             shared: OnceLock::new(),
             init_lock: Mutex::new(()),
             foundedness_check,
+            dump_lemmas,
+            decide_outputs,
+            decide_inputs,
         })
     }
 }
