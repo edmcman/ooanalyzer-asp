@@ -30,9 +30,6 @@ pub type ClingoWeight = csys::clingo_weight_t;
 pub type ClingoSymbol = csys::clingo_symbol_t;
 pub type ClingoSignature = csys::clingo_signature_t;
 pub type ClingoSymAtomIterator = csys::clingo_symbolic_atom_iterator_t;
-/// `(Σ w·l >= bound) -> lit` direction for init_add_weight_constraint.
-pub const WEIGHT_CONSTRAINT_IMPLICATION_LEFT: i32 =
-    csys::clingo_weight_constraint_type_e_clingo_weight_constraint_type_implication_left;
 pub type ClingoSymbolType = csys::clingo_symbol_type_t;
 pub type ClingoTheoryTermType = csys::clingo_theory_term_type_t;
 pub type ClingoExternalType = csys::clingo_external_type_t;
@@ -94,8 +91,12 @@ const HEADER_CLINGO_MINOR: i32 = 8;
 // ── typed function pointers for the API ─────────────────────────────────────
 type FnControlRegisterPropagator =
     unsafe extern "C" fn(*mut ClingoControl, *const ClingoPropagator, *mut c_void, bool) -> bool;
-type FnControlRegisterObserver =
-    unsafe extern "C" fn(*mut ClingoControl, *const ClingoGroundProgramObserver, bool, *mut c_void) -> bool;
+type FnControlRegisterObserver = unsafe extern "C" fn(
+    *mut ClingoControl,
+    *const ClingoGroundProgramObserver,
+    bool,
+    *mut c_void,
+) -> bool;
 
 type FnErrorCode = unsafe extern "C" fn() -> i32;
 type FnErrorMessage = unsafe extern "C" fn() -> *const c_char;
@@ -113,8 +114,7 @@ type FnSymbolArguments =
     unsafe extern "C" fn(ClingoSymbol, *mut *const ClingoSymbol, *mut usize) -> bool;
 type FnSymbolType = unsafe extern "C" fn(ClingoSymbol) -> ClingoSymbolType;
 type FnSymbolToStringSize = unsafe extern "C" fn(ClingoSymbol, *mut usize) -> bool;
-type FnSymbolToString =
-    unsafe extern "C" fn(ClingoSymbol, *mut c_char, usize) -> bool;
+type FnSymbolToString = unsafe extern "C" fn(ClingoSymbol, *mut c_char, usize) -> bool;
 
 type FnSymAtomsBegin = unsafe extern "C" fn(
     *const ClingoSymbolicAtoms,
@@ -167,35 +167,18 @@ type FnTheoryAtomsTermToStringSize =
 type FnTheoryAtomsTermToString =
     unsafe extern "C" fn(*const ClingoTheoryAtoms, ClingoId, *mut c_char, usize) -> bool;
 
-type FnSymAtomsIsFact = unsafe extern "C" fn(
-    *const ClingoSymbolicAtoms,
-    ClingoSymAtomIterator,
-    *mut bool,
-) -> bool;
-
 type FnInitSolverLiteral =
     unsafe extern "C" fn(*const ClingoPropagateInit, ClingoLiteral, *mut ClingoLiteral) -> bool;
 type FnInitAddWatch = unsafe extern "C" fn(*mut ClingoPropagateInit, ClingoLiteral) -> bool;
 type FnInitAddClause =
     unsafe extern "C" fn(*mut ClingoPropagateInit, *const ClingoLiteral, usize, *mut bool) -> bool;
-type FnInitAddWeightConstraint = unsafe extern "C" fn(
-    *mut ClingoPropagateInit,
-    ClingoLiteral,
-    *const csys::clingo_weighted_literal_t,
-    usize,
-    i32,  // clingo_weight_t
-    i32,  // clingo_weight_constraint_type_t
-    bool, // compare_equal
-    *mut bool,
-) -> bool;
 type FnInitSymbolicAtoms =
     unsafe extern "C" fn(*const ClingoPropagateInit, *mut *const ClingoSymbolicAtoms) -> bool;
 type FnInitTheoryAtoms =
     unsafe extern "C" fn(*const ClingoPropagateInit, *mut *const ClingoTheoryAtoms) -> bool;
 type FnInitNumberOfThreads = unsafe extern "C" fn(*const ClingoPropagateInit) -> i32;
 type FnInitSetCheckMode = unsafe extern "C" fn(*mut ClingoPropagateInit, ClingoCheckMode);
-type FnInitAssignment =
-    unsafe extern "C" fn(*const ClingoPropagateInit) -> *const ClingoAssignment;
+type FnInitAssignment = unsafe extern "C" fn(*const ClingoPropagateInit) -> *const ClingoAssignment;
 
 type FnControlThreadId = unsafe extern "C" fn(*const ClingoPropagateControl) -> ClingoId;
 type FnControlAssignment =
@@ -241,7 +224,6 @@ pub struct Ffi {
     pub sym_atoms_iter_equal: FnSymAtomsIterEqual,
     pub sym_atoms_symbol: FnSymAtomsSymbol,
     pub sym_atoms_literal: FnSymAtomsLiteral,
-    pub sym_atoms_is_fact: FnSymAtomsIsFact,
     pub theory_atoms_size: FnTheoryAtomsSize,
     pub theory_atoms_atom_term: FnTheoryAtomsAtomTerm,
     pub theory_atoms_atom_literal: FnTheoryAtomsAtomLiteral,
@@ -254,7 +236,6 @@ pub struct Ffi {
     pub init_solver_literal: FnInitSolverLiteral,
     pub init_add_watch: FnInitAddWatch,
     pub init_add_clause: FnInitAddClause,
-    pub init_add_weight_constraint: FnInitAddWeightConstraint,
     pub init_symbolic_atoms: FnInitSymbolicAtoms,
     pub init_theory_atoms: FnInitTheoryAtoms,
     pub init_number_of_threads: FnInitNumberOfThreads,
@@ -354,7 +335,6 @@ impl Ffi {
             sym_atoms_iter_equal: "clingo_symbolic_atoms_iterator_is_equal_to",
             sym_atoms_symbol: "clingo_symbolic_atoms_symbol",
             sym_atoms_literal: "clingo_symbolic_atoms_literal",
-            sym_atoms_is_fact: "clingo_symbolic_atoms_is_fact",
             theory_atoms_size: "clingo_theory_atoms_size",
             theory_atoms_atom_term: "clingo_theory_atoms_atom_term",
             theory_atoms_atom_literal: "clingo_theory_atoms_atom_literal",
@@ -367,7 +347,6 @@ impl Ffi {
             init_solver_literal: "clingo_propagate_init_solver_literal",
             init_add_watch: "clingo_propagate_init_add_watch",
             init_add_clause: "clingo_propagate_init_add_clause",
-            init_add_weight_constraint: "clingo_propagate_init_add_weight_constraint",
             init_symbolic_atoms: "clingo_propagate_init_symbolic_atoms",
             init_theory_atoms: "clingo_propagate_init_theory_atoms",
             init_number_of_threads: "clingo_propagate_init_number_of_threads",
@@ -439,44 +418,13 @@ impl Ffi {
         clause: &[ClingoLiteral],
     ) -> Result<bool, ClingoError> {
         let mut result = false;
-        let ok = unsafe {
-            (self.init_add_clause)(init, clause.as_ptr(), clause.len(), &mut result)
-        };
+        let ok =
+            unsafe { (self.init_add_clause)(init, clause.as_ptr(), clause.len(), &mut result) };
         if ok {
             Ok(result)
         } else {
             Err(self.err())
         }
-    }
-
-    /// Add `constraint_type`-directed weight constraint `lit <op> (Σ w·l >= bound)`.
-    pub fn init_add_weight_constraint(
-        &self,
-        init: *mut ClingoPropagateInit,
-        lit: ClingoLiteral,
-        lits: &[ClingoWeightedLiteral],
-        bound: i32,
-        constraint_type: i32,
-        compare_equal: bool,
-    ) -> Result<bool, ClingoError> {
-        let mut result = false;
-        let ok = unsafe {
-            (self.init_add_weight_constraint)(
-                init, lit, lits.as_ptr(), lits.len(), bound, constraint_type, compare_equal,
-                &mut result,
-            )
-        };
-        if ok {
-            Ok(result)
-        } else {
-            Err(self.err())
-        }
-    }
-
-    pub fn sym_atoms_fact(&self, atoms: *const ClingoSymbolicAtoms, it: ClingoSymAtomIterator) -> bool {
-        let mut out = false;
-        let ok = unsafe { (self.sym_atoms_is_fact)(atoms, it, &mut out) };
-        ok && out
     }
 
     pub fn init_symbolic_atoms(
@@ -509,7 +457,10 @@ impl Ffi {
         unsafe { (self.control_thread_id)(ctrl) }
     }
 
-    pub fn control_assignment(&self, ctrl: *const ClingoPropagateControl) -> *const ClingoAssignment {
+    pub fn control_assignment(
+        &self,
+        ctrl: *const ClingoPropagateControl,
+    ) -> *const ClingoAssignment {
         unsafe { (self.control_assignment)(ctrl) }
     }
 
@@ -520,7 +471,13 @@ impl Ffi {
     ) -> Result<bool, ClingoError> {
         let mut result = false;
         let ok = unsafe {
-            (self.control_add_clause)(ctrl, clause.as_ptr(), clause.len(), CLAUSE_TYPE_LEARNT, &mut result)
+            (self.control_add_clause)(
+                ctrl,
+                clause.as_ptr(),
+                clause.len(),
+                CLAUSE_TYPE_LEARNT,
+                &mut result,
+            )
         };
         if ok {
             Ok(result)
@@ -675,7 +632,13 @@ impl Ffi {
         self.symbol_matches_signed(sym, name, arity, true)
     }
 
-    pub fn symbol_matches_signed(&self, sym: ClingoSymbol, name: &str, arity: u32, want_positive: bool) -> bool {
+    pub fn symbol_matches_signed(
+        &self,
+        sym: ClingoSymbol,
+        name: &str,
+        arity: u32,
+        want_positive: bool,
+    ) -> bool {
         let sym_type = self.symbol_type(sym);
         if sym_type != SYMBOL_TYPE_FUNCTION {
             return false;
@@ -727,12 +690,14 @@ impl Ffi {
         if !ok {
             return Err(self.err());
         }
-        let mut buf = vec![0u8; size];
+        let mut buf = vec![0 as c_char; size];
         let ok = unsafe { (self.symbol_to_string)(sym, buf.as_mut_ptr(), size) };
         if !ok {
-            return Err(self.err())
+            return Err(self.err());
         }
-        Ok(unsafe { CStr::from_ptr(buf.as_ptr()) }.to_string_lossy().into_owned())
+        Ok(unsafe { CStr::from_ptr(buf.as_ptr()) }
+            .to_string_lossy()
+            .into_owned())
     }
 
     // ── theory atoms inspection ─────────────────────────────────────────────
@@ -776,7 +741,11 @@ impl Ffi {
         }
     }
 
-    pub fn theory_term_number(&self, atoms: *const ClingoTheoryAtoms, term: ClingoId) -> Result<i32, ClingoError> {
+    pub fn theory_term_number(
+        &self,
+        atoms: *const ClingoTheoryAtoms,
+        term: ClingoId,
+    ) -> Result<i32, ClingoError> {
         let mut out: i32 = 0;
         let ok = unsafe { (self.theory_atoms_term_number)(atoms, term, &mut out) };
         if ok {
@@ -796,7 +765,9 @@ impl Ffi {
         if !ok {
             return Err(self.err());
         }
-        Ok(unsafe { CStr::from_ptr(ptr_out) }.to_string_lossy().into_owned())
+        Ok(unsafe { CStr::from_ptr(ptr_out) }
+            .to_string_lossy()
+            .into_owned())
     }
 
     pub fn theory_term_arguments(
@@ -806,7 +777,8 @@ impl Ffi {
     ) -> Result<Vec<ClingoId>, ClingoError> {
         let mut args_ptr: *const ClingoId = ptr::null();
         let mut size: usize = 0;
-        let ok = unsafe { (self.theory_atoms_term_arguments)(atoms, term, &mut args_ptr, &mut size) };
+        let ok =
+            unsafe { (self.theory_atoms_term_arguments)(atoms, term, &mut args_ptr, &mut size) };
         if !ok {
             return Err(self.err());
         }
@@ -824,12 +796,14 @@ impl Ffi {
         if !ok {
             return Err(self.err());
         }
-        let mut buf = vec![0u8; size];
+        let mut buf = vec![0 as c_char; size];
         let ok = unsafe { (self.theory_atoms_term_to_string)(atoms, term, buf.as_mut_ptr(), size) };
         if !ok {
-            return Err(self.err())
+            return Err(self.err());
         }
-        Ok(unsafe { CStr::from_ptr(buf.as_ptr()) }.to_string_lossy().into_owned())
+        Ok(unsafe { CStr::from_ptr(buf.as_ptr()) }
+            .to_string_lossy()
+            .into_owned())
     }
 }
 

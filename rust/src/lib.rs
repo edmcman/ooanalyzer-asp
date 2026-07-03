@@ -53,8 +53,18 @@ impl SameClassPropagator {
     /// re-passed to `register()`; kept in the constructor purely for API parity.
     #[new]
     #[pyo3(signature = (foundedness_check=false, dump_lemmas=false, decide_outputs=false, decide_inputs=false))]
-    fn new(foundedness_check: bool, dump_lemmas: bool, decide_outputs: bool, decide_inputs: bool) -> Self {
-        let _ = (foundedness_check, dump_lemmas, decide_outputs, decide_inputs);
+    fn new(
+        foundedness_check: bool,
+        dump_lemmas: bool,
+        decide_outputs: bool,
+        decide_inputs: bool,
+    ) -> Self {
+        let _ = (
+            foundedness_check,
+            dump_lemmas,
+            decide_outputs,
+            decide_inputs,
+        );
         SameClassPropagator { data: 0 }
     }
 
@@ -83,7 +93,12 @@ impl SameClassPropagator {
             .extract::<i64>()?;
         let control = addr as usize as *mut ClingoControl;
 
-        let raw = Box::into_raw(PropData::new(foundedness_check, dump_lemmas, decide_outputs, decide_inputs)) as *mut c_void;
+        let raw = Box::into_raw(PropData::new(
+            foundedness_check,
+            dump_lemmas,
+            decide_outputs,
+            decide_inputs,
+        )) as *mut c_void;
         self.data = raw as usize;
 
         let prop = trampoline::propagator_struct(decide_outputs, decide_inputs);
