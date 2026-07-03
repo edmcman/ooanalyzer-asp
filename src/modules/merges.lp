@@ -60,6 +60,26 @@ reasonMergeClassesBUnsorted(BaseVFTable, Method) :-
 mergeClasses(A, B) :- reasonMergeClassesBUnsorted(A, B), A < B.
 mergeClasses(A, B) :- reasonMergeClassesBUnsorted(B, A), A < B.
 
+% reasonMergeClasses_C: when a class with no base and no object at offset zero
+% calls a method whose class has the same properties, the method belongs to the
+% caller class. Both Class and Method are concrete witnesses; classHasNoBase
+% and classHasInnerAtZero are joined to their induced classes through
+% &sameClass (the latter join is defined in classes.lp).
+% Counterpart: reasonMergeClasses_C (rules.pl:2822)
+%!trace_rule {"% and % are the same class because % calls % and both classes have no base or object at offset zero", Class, Method, Class, Method}
+reasonMergeClassesCUnsorted(Class, Method) :-
+    classCallsMethod(Class, Method),
+    not purecall(Method),
+    classHasNoBase(NoBase1),
+    &sameClass(Class, NoBase1),
+    not classHasInnerAtZero(Class),
+    classHasNoBase(NoBase2),
+    &sameClass(Method, NoBase2),
+    not classHasInnerAtZero(Method).                                      % rules.pl:2822
+
+mergeClasses(A, B) :- reasonMergeClassesCUnsorted(A, B), A < B.
+mergeClasses(A, B) :- reasonMergeClassesCUnsorted(B, A), A < B.
+
 % reasonMergeClasses_K: if two methods are present on the same object, and
 % neither class has a base, the methods must be on the same class.
 % Asymmetric: Class1 comes from classRelatedMethod; Method is the related method.
