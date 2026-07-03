@@ -670,7 +670,7 @@ impl Ffi {
         if !ok {
             return Err(self.err());
         }
-        let mut buf = vec![0i8; size];
+        let mut buf = vec![0u8; size];
         let ok = unsafe { (self.symbol_to_string)(sym, buf.as_mut_ptr(), size) };
         if !ok {
             return Err(self.err())
@@ -767,7 +767,7 @@ impl Ffi {
         if !ok {
             return Err(self.err());
         }
-        let mut buf = vec![0i8; size];
+        let mut buf = vec![0u8; size];
         let ok = unsafe { (self.theory_atoms_term_to_string)(atoms, term, buf.as_mut_ptr(), size) };
         if !ok {
             return Err(self.err())
