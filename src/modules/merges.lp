@@ -92,19 +92,31 @@ derivedClassHasOtherBase(Derived, Base) :-
     &sameClass(Derived, Derived2),
     not &sameClass(Base, OtherBase).                                      % rules.pl:2905
 
-%!trace_rule {"% and % are the same class because derived vftable % has entry % beyond sole base vftable % size %", Derived, Method, DerivedVFTable, VOffset, BaseVFTable, BaseSize}
+% vfTableEntryBeyondSize factors the chosen-size comparison out of the main
+% rule: joining vfTableSize with vfTableEntry there grounds size-candidates x
+% entries per vftable pair (168k ground rules on TinyXml). Every vfTableEntry
+% offset comes from possibleVFTableEntry, so that static projection is a safe
+% offset domain.
+vfTableEntryBeyondSize(VFTable, VOffset) :-
+    vfTableSize(VFTable, Size),
+    possibleVFTableEntry(_, VOffset, _),
+    VOffset > Size.
+
+%!trace_rule {"% and % are the same class because derived vftable % has entry % beyond sole base vftable %", Derived, Method, DerivedVFTable, VOffset, BaseVFTable}
 reasonMergeClassesHUnsorted(Derived, Method) :-
     derivedClass(Derived, Base, _ObjectOffset),
     not derivedClassHasOtherBase(Derived, Base),
     findVFTable(DerivedVFTable, 0),
     &sameClass(DerivedVFTable, Derived),
     findVFTable(BaseVFTable, 0),
+    % Implied (a table's entries cannot lie beyond its own chosen size);
+    % stated only to prune grounding.
+    BaseVFTable != DerivedVFTable,
     &sameClass(BaseVFTable, Base),
-    vfTableSize(BaseVFTable, BaseSize),
+    vfTableEntryBeyondSize(BaseVFTable, VOffset),
     vfTableEntry(DerivedVFTable, VOffset, Method),
     not purecall(Method),
-    not reusedImplementation(Method),
-    VOffset > BaseSize.                                                    % rules.pl:2895
+    not reusedImplementation(Method).                                      % rules.pl:2895
 
 mergeClasses(A, B) :- reasonMergeClassesHUnsorted(A, B), A < B.
 mergeClasses(A, B) :- reasonMergeClassesHUnsorted(B, A), A < B.
