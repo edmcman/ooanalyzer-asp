@@ -607,7 +607,8 @@ pub fn decide(
             .get(&fa)
             .or_else(|| shared.sc_lit_to_pair.get(&-fa));
         if let Some((x, y)) = pair {
-            if let Some(lit) = free_incident_merge(ffi, shared, asgn, x)
+            if let Some(lit) = free_direct_merge(ffi, shared, asgn, x, y)
+                .or_else(|| free_incident_merge(ffi, shared, asgn, x))
                 .or_else(|| free_incident_merge(ffi, shared, asgn, y))
             {
                 return lit;
@@ -632,6 +633,25 @@ fn free_incident_sameclass(
         .iter()
         .map(|(_, slit)| *slit)
         .filter(|&slit| !ffi.is_true(asgn, slit) && !ffi.is_false(asgn, slit))
+        .min()
+}
+
+/// Smallest free `mergeClasses` solver literal on the edge `(x, y)` itself —
+/// the merge decision most aligned with the `&sameClass(x, y)` fallback.
+fn free_direct_merge(
+    ffi: &Ffi,
+    shared: &Shared,
+    asgn: *const ClingoAssignment,
+    x: &EntKey,
+    y: &EntKey,
+) -> Option<ClingoLiteral> {
+    shared
+        .merge_by_entity
+        .get(x)?
+        .iter()
+        .filter(|(other, _)| other == y)
+        .map(|(_, mlit)| *mlit)
+        .filter(|&mlit| !ffi.is_true(asgn, mlit) && !ffi.is_false(asgn, mlit))
         .min()
 }
 

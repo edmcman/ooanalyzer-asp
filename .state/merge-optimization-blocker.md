@@ -517,6 +517,26 @@ New Makefile PROP_FLAGS (single-threaded!):
 `--opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain
 --restart-on-model --decide-inputs`. `make verify-core` passes with them.
 
+### Knob sweep under the decide-inputs base (2026-07-02, later)
+
+TinyXml 300s, champion base reference [-704, -44708] / LB -46982:
+`--opt-usc-shrink=min` bit-identical; dropping `stratify` catastrophic
+(-32943, one model); `--restarts=F,512` worse on both bounds (-43174 /
+LB -48034); `--save-progress=20` +45 (-44753); seeds 1/2 identical to
+default — the trajectory is fully seed-invariant, no variance to exploit.
+
+### decide-inputs direct-edge refinement (2026-07-02) — KEPT
+
+`decide()` now tries the free `mergeClasses` literal on the fallback pair's
+own edge `(x, y)` first (`free_direct_merge`), before the smallest-incident
+fallback. A/B on the same flags: TinyXml **-44816** vs -44708 (+108, plateau
+reached earlier: 160s vs 184s, gap to the stalled LB now 2166); ep_srv same
+OPTIMUM [-644, -50669] slightly faster (61.5s vs 72s); muparser -58416 by
+192s vs -58288 at 300s. 45/45 propagator tests pass. NOTE: with the new
+binary `--save-progress=20` flips to harmful (-44726 @600s and slower LB) —
+keep it out of PROP_FLAGS; knob interactions are trajectory-specific and
+must be re-swept after any decide/propagator change.
+
 Also fixed 2026-07-02: `--time-limit` interrupts raised RuntimeError out of
 `main()` (clingo.Application refactor regression), so time-limited runs never
 printed equivalence classes nor wrote `--results`. ooanalyzer.py now catches
