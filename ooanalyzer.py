@@ -484,10 +484,20 @@ class OOAnalyzerApp(clingo.Application):
 
         solve_start = time.perf_counter()
         log.info("Solving...")
-        result = ctl.solve(on_model=on_model, on_unsat=on_unsat)
+        # --time-limit interrupts surface as RuntimeError; keep going so the
+        # incumbent model still gets printed and written to --results.
+        try:
+            result = ctl.solve(on_model=on_model, on_unsat=on_unsat)
+        except RuntimeError as e:
+            if "stopped by signal" not in str(e):
+                raise
+            result = None
+            log.info("Solving interrupted by signal/time limit; reporting incumbent")
         solve_time = time.perf_counter() - solve_start
 
-        if result.unsatisfiable:
+        if result is None:
+            print("INTERRUPTED")
+        elif result.unsatisfiable:
             print("UNSATISFIABLE")
             log.info("Solving done: UNSATISFIABLE (%.2fs)", solve_time)
         elif model_num == 0:
