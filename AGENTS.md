@@ -386,6 +386,10 @@ binary that needs more headroom; both constants live in `src/util/config.lp`.
 ## Porting guidelines
 
 - **Update `TODO.md` immediately after porting each rule** — mark it `[x]` as soon as it lands in a file.
+- **Before proposing any Prolog-to-ASP rule translation, show the exact source
+  Prolog and all relevant helper predicates first.** Do this before presenting
+  analysis, design options, or proposed ASP, even if the source was shown
+  earlier in the conversation.
 - **Never simplify a Prolog rule without asking first.** If a faithful translation
   is not straightforward (arity mismatch, missing predicate, etc.), surface the
   problem and the options — do not silently drop conditions.
