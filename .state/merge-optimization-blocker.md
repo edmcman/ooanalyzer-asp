@@ -416,3 +416,108 @@ backtracking site; method 4948404 appears in 8207 backtracking pairs as a hub.
   Boolean AMO exclusions to close the LB gap
 
 Logs: `autoresearch/improve-260629-2245/` (31 iterations, iter0-iter31).
+
+## Per-hub AMO experiment (2026-07-02, 4-core Raspberry Pi) — NEGATIVE, reverted
+
+Tested the "only remaining sound direction" from the 2026-06-26 entry: the
+entailed per-hub at-most-one as ordinary Boolean clauses, gated behind
+`#const enable_merge_amo` (default off):
+
+```
+mergedWithHub(L, H) :- mergeAmoEnabled, mergeClasses(H, L).
+mergedWithHub(L, H) :- mergeAmoEnabled, mergeClasses(L, H).
+:- mergedWithHub(L1, H), mergedWithHub(L2, H), -mergeClasses(L1, L2).
+```
+
+Structure on TinyXml (grounding census): 1325 static + 4499 conditional
+`-mergeClasses`; 1264 `mergeCandidate` edges over 475 entities; the AMO grounds
+to 2387 static-pair + 4453 conditional-pair instances — cheap to ground, and
+432/1325 static mutex pairs share a candidate hub (much better coverage than
+the 39/1264 rewarded-pair census, since the leaf pair itself need not be a
+candidate). Coverage was therefore NOT the problem.
+
+Results (all 300s, single-trial; note this host is a 4-core Pi, so absolute
+numbers are NOT comparable to the 32-core sweeps above):
+
+- **Baseline, Makefile flags** (`domain -t4,compete --restarts=L,128`):
+  `[-704, -34650]`, all 4 models in the first 27s, then 273s of zero progress
+  (355M choices, 156k conflicts). The recorded 32-core champion does not
+  transfer to this host.
+- **USC control** (`usc,oll,disjoint,succinct,stratify + domain +
+  restart-on-model`, t1): `[-704, -36999]` — beats the t4 Makefile flags by
+  2349 on this host. Zero lower-bound events in 300s (usc extracted no cores,
+  consistent with iter19/20).
+- **USC + AMO**: `[-704, -36685]` — slightly worse UB, still zero LB events.
+  Conflicts drop 12× (262k→21k): propagation now avoids the mutex conflicts
+  instead of learning from them, which starves search without buying bound
+  progress.
+- **Phase-2 bounded refutation** (`bb,lin + domain --opt-mode=opt,-704,-36999`),
+  AMO vs control: both 0 models, no UNSAT, ~equal conflicts (704k vs 683k).
+  The AMO does not make the refutation tractable either.
+- Soundness verified on `merge_conditional_stress.lp`: identical optimum (-80),
+  3.9× fewer choices under usc (5637→1463), but the toy is now trivial (0.07s)
+  under usc either way, so it no longer discriminates.
+
+Verdict: even with per-hub AMO instances exposed as binary/ternary ordinary
+clauses, usc extracts zero cores and bb cannot refute. This closes the
+"expose the entailed AMO as an encoding change" branch of the remaining-
+directions list — the static instances don't bind enough reward mass (the
+conditional ones still dominate, and iter20 showed conditionality is
+representation-independent). What remains untried is the *propagator-side*
+reformulation: emit a per-hub cardinality (or aggregate the mutex neighborhood)
+as the reason/lemma instead of transitive-chain reasons, so the learned
+constraint itself is an at-most-one over the hub's merge literals rather than
+a per-pair cut.
+
+## BREAKTHROUGH: `--decide-inputs` + single-thread USC (2026-07-02, Pi)
+
+The `--decide-inputs` propagator decision heuristic (commit 20b3b3a, 2026-07-01:
+when the solver's fallback decision would be a `&sameClass` output literal,
+redirect the decision to the smallest free `mergeClasses` input literal incident
+to either entity of the pair) combined with the single-threaded USC config is a
+step change on TinyXml (300s, 4-core Pi):
+
+| config (all t1 unless noted) | best model | notes |
+|---|--:|---|
+| Makefile flags (`domain -t4,compete --restarts=L,128`, bb,lin) | [-704, -34650] | stalls after 27s |
+| usc,oll,disjoint,succinct,stratify + domain + restart-on-model | [-704, -36999] | seed-invariant (seed=1 identical) |
+| same + `-t4,compete` | [-704, -37302] | +303, not worth 4 cores |
+| same + `--decide-outputs` | 0 models | harmful |
+| **same + `--decide-inputs`** | **[-704, -44708]** | plateau at 184s; same at 600s |
+| same + `--decide-inputs` + `-t4,compete` | [-704, -32943] | threads destroy it (1 model) |
+| Makefile flags + `--decide-inputs` | 0 models | bb,lin+threads+decide-inputs = broken |
+
+**The win is entirely UB-side.** Clasp `Progression` lines (visible with
+`--stats`; NOTE the driver's `on_unsat` callback never fires for usc bound
+updates, so don't diagnose LB behavior from it) show every t1 usc run on this
+host extracting cores and pushing the LB to the same stall point ≈**−46970**
+(−46964 plain/seed1/amo0, −46946 amo1, −46982 decide-inputs) within 40–210s.
+`--decide-inputs` leaves that LB unchanged — what it changes is the *model
+search*, lifting the UB from −36999 to **−44708**, i.e. the residual gap is
+**2274 (4.9% error)** vs 9965 without it. Both bounds then freeze (600s run:
+nothing after 211s). If the LB stall is again the intrinsic uncollectible-
+reward structure, the remaining 2274 may still close from above with more
+UB-search luck/tuning; usc-shrink/stratification variations under
+decide-inputs are untested.
+
+**Model quality reaches Prolog parity on TinyXml.** Partition shape of the
+-44708 model vs `.results.orig` (Prolog) vs the old-flags -34650 model:
+Prolog 69 classes / 27 singletons / top sizes 46-35-25; old flags 181 / 143 /
+11-7-4 (useless fragmentation); champion **77 / 33 / 46-36-20**, including the
+46-method DName class the old result shattered into singletons.
+
+**Other programs (300s, Pi):**
+- ep_srv (PicoHttp): champion `[-644, -50669]` **OPTIMUM FOUND in 72s**; old
+  Makefile flags time out at 300s on a worse model `[-644, -50145]`.
+- muparser NewDebug: champion `[-252, -58288]` (2 models, 1st at 91s); the
+  old `-t4,compete` flags get **OOM-killed** on this 8GB host (5.1GB RSS,
+  4.15M variables × 4 solver threads) — they don't complete at all.
+
+New Makefile PROP_FLAGS (single-threaded!):
+`--opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain
+--restart-on-model --decide-inputs`. `make verify-core` passes with them.
+
+Also fixed 2026-07-02: `--time-limit` interrupts raised RuntimeError out of
+`main()` (clingo.Application refactor regression), so time-limited runs never
+printed equivalence classes nor wrote `--results`. ooanalyzer.py now catches
+the interrupt and reports/writes the incumbent.
