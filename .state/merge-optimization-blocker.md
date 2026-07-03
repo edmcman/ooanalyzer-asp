@@ -65,6 +65,28 @@ Negative / no-effect, with date and one-line verdict:
   2387 static + 4453 conditional ground instances, sound, cheap — but no LB
   movement, no bounded-refutation help, slightly worse UB. Reverted. The
   static mutex structure is already exhausted by the lazy propagator clauses.
+- **Dynamic hub collection + periodic ASP rewrite** (feasibility measured
+  2026-07-03, not built): the idea was to harvest mutexes whose conditions
+  become root-fixed during USC hardening and periodically rewrite the program
+  with them as facts + native cardinality constraints. Instrumented `check()`
+  to count root-fixed-false `&sameClass` literals during a 300s champion run:
+  109,723/120,169 fixed at the first check (~12s, init + preprocessing) and
+  **zero growth** for the remaining 288s. Hardening entails no new mutexes on
+  TinyXml, so the rewrite loop has nothing to promote beyond init-visible
+  structure — which the hub-amo test below already proved inert.
+- **Per-element-guarded conditional counting** (`enable_vft0_count`, 2026-07-03,
+  Pi): the E-family mutexes as an entailed per-hub aggregate — `soloWriter(M,V)`
+  (M writes exactly one vftable at offset 0, making the cross-write exception
+  impossible) and `:- 2 <= #count { V : mergedWithHub(L,H), soloWriter(L,V) }`.
+  Sound (verify-core + manual suite pass), grounds in 5.7s. NEGATIVE: UB −44373
+  (vs −44816), LB −47884@254s (behind control), still creeping 10/step.
+  Reverted. **This run identified the algorithm-level reason ALL
+  representation experiments fail: USC/OLL core width is set by conflict
+  discovery, not constraint form. A violated at-most-one conflicts as soon as
+  the SECOND element propagates true, so the minimal core has size 2 no matter
+  whether the AMO is pairwise clauses, theory chains, or a native cardinality/
+  aggregate. The n−1 accounting for an n-clique always takes ~n−1 core
+  iterations; no re-encoding shortcuts it.** Stop testing representations.
 - **Propagator-side per-hub cardinality** (`--hub-amo`, 2026-07-03, Pi):
   native `Σ mergeClasses(H,Li) ≤ 1` weight constraints at propagator init over
   greedy cliques of `-mergeClasses`-fact mutex leaves, via
