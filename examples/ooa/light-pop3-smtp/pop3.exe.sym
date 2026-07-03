@@ -1,20 +1,121 @@
-07:37:00 Grounding...
-07:37:01 Grounding done (1.07s)
-07:37:01 Solving...
-07:37:02 Model found (1.92s): [-36, -13845]
-07:37:02 Model found (1.96s, +0.04s): [-36, -13862]
-07:37:02 Model found (1.99s, +0.03s): [-36, -13879]
-07:37:02 Model found (2.08s, +0.10s): [-36, -13899]
-07:37:02 Model found (2.13s, +0.04s): [-36, -13933]
-07:37:02 Model found (2.16s, +0.04s): [-36, -13953]
-07:37:02 Model found (2.19s, +0.03s): [-36, -24100]
-07:37:02 Model found (2.27s, +0.08s): [-36, -24107]
-07:37:02 Model found (2.33s, +0.06s): [-36, -24117]
-07:37:02 Solving done: OPTIMUM FOUND (1.38s)
-% Command: ooanalyzer.py examples/ooa/light-pop3-smtp/pop3.exe.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/light-pop3-smtp/pop3.exe.results
+ooanalyzer version 2.0
+Reading from ...amples/ooa/light-pop3-smtp/pop3.exe.lp
+13:48:12 Grounding...
+13:48:12 Grounding done (0.77s)
+13:48:12 Solving...
+Solving...
+13:48:13 Model found (1.27s): [-36, -13845]
+Answer: 1 (Time: 1.339s)
+% Command: ooanalyzer.py examples/ooa/light-pop3-smtp/pop3.exe.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/light-pop3-smtp/pop3.exe.results
+Optimization: -36 -13845
+13:48:13 Model found (1.30s, +0.03s): [-36, -14106]
+Answer: 2 (Time: 1.369s)
+Optimization: -36 -14106
+Progression : -36 [-24929;-14106] (Error: 0.434153 Time: 1.371s)
+Progression : -36 [-24920;-14106] (Error: 0.433949 Time: 1.372s)
+Progression : -36 [-24911;-14106] (Error: 0.433744 Time: 1.372s)
+Progression : -36 [-24902;-14106] (Error: 0.433539 Time: 1.372s)
+Progression : -36 [-24893;-14106] (Error: 0.433335 Time: 1.373s)
+Progression : -36 [-24884;-14106] (Error: 0.43313 Time: 1.373s)
+Progression : -36 [-24875;-14106] (Error: 0.432925 Time: 1.373s)
+Progression : -36 [-24866;-14106] (Error: 0.432719 Time: 1.373s)
+Progression : -36 [-24857;-14106] (Error: 0.432514 Time: 1.374s)
+Progression : -36 [-24848;-14106] (Error: 0.432308 Time: 1.374s)
+Progression : -36 [-24839;-14106] (Error: 0.432103 Time: 1.374s)
+Progression : -36 [-24830;-14106] (Error: 0.431897 Time: 1.374s)
+Progression : -36 [-24821;-14106] (Error: 0.431691 Time: 1.374s)
+Progression : -36 [-24812;-14106] (Error: 0.431485 Time: 1.375s)
+Progression : -36 [-24803;-14106] (Error: 0.431278 Time: 1.375s)
+Progression : -36 [-24794;-14106] (Error: 0.431072 Time: 1.375s)
+Progression : -36 [-24785;-14106] (Error: 0.430865 Time: 1.375s)
+Progression : -36 [-24776;-14106] (Error: 0.430659 Time: 1.375s)
+Progression : -36 [-24767;-14106] (Error: 0.430452 Time: 1.376s)
+Progression : -36 [-24758;-14106] (Error: 0.430245 Time: 1.376s)
+Progression : -36 [-24749;-14106] (Error: 0.430038 Time: 1.376s)
+Progression : -36 [-24740;-14106] (Error: 0.42983 Time: 1.376s)
+Progression : -36 [-24731;-14106] (Error: 0.429623 Time: 1.377s)
+Progression : -36 [-24722;-14106] (Error: 0.429415 Time: 1.377s)
+Progression : -36 [-24713;-14106] (Error: 0.429207 Time: 1.377s)
+Progression : -36 [-24704;-14106] (Error: 0.428999 Time: 1.377s)
+Progression : -36 [-24695;-14106] (Error: 0.428791 Time: 1.378s)
+Progression : -36 [-24686;-14106] (Error: 0.428583 Time: 1.378s)
+Progression : -36 [-24677;-14106] (Error: 0.428375 Time: 1.378s)
+Progression : -36 [-24668;-14106] (Error: 0.428166 Time: 1.378s)
+Progression : -36 [-24659;-14106] (Error: 0.427957 Time: 1.378s)
+Progression : -36 [-24650;-14106] (Error: 0.427748 Time: 1.379s)
+Progression : -36 [-24641;-14106] (Error: 0.427539 Time: 1.379s)
+Progression : -36 [-24632;-14106] (Error: 0.42733 Time: 1.379s)
+Progression : -36 [-24623;-14106] (Error: 0.427121 Time: 1.379s)
+Progression : -36 [-24614;-14106] (Error: 0.426912 Time: 1.380s)
+Progression : -36 [-24605;-14106] (Error: 0.426702 Time: 1.380s)
+Progression : -36 [-24596;-14106] (Error: 0.426492 Time: 1.380s)
+Progression : -36 [-24587;-14106] (Error: 0.426282 Time: 1.380s)
+Progression : -36 [-24578;-14106] (Error: 0.426072 Time: 1.381s)
+Progression : -36 [-24569;-14106] (Error: 0.425862 Time: 1.382s)
+Progression : -36 [-24560;-14106] (Error: 0.425651 Time: 1.383s)
+Progression : -36 [-24551;-14106] (Error: 0.425441 Time: 1.384s)
+Progression : -36 [-24542;-14106] (Error: 0.42523 Time: 1.387s)
+13:48:13 Model found (1.78s, +0.47s): [-36, -24085]
+Answer: 3 (Time: 1.851s)
+Optimization: -36 -24085
+Progression : -36 [-24526;-24085] (Error: 0.0179809 Time: 1.868s)
+Progression : -36 [-24518;-24085] (Error: 0.0176605 Time: 1.869s)
+Progression : -36 [-24510;-24085] (Error: 0.0173399 Time: 1.869s)
+Progression : -36 [-24502;-24085] (Error: 0.017019 Time: 1.869s)
+Progression : -36 [-24494;-24085] (Error: 0.016698 Time: 1.869s)
+Progression : -36 [-24486;-24085] (Error: 0.0163767 Time: 1.870s)
+Progression : -36 [-24478;-24085] (Error: 0.0160552 Time: 1.871s)
+Progression : -36 [-24470;-24085] (Error: 0.0157336 Time: 1.871s)
+Progression : -36 [-24462;-24085] (Error: 0.0154117 Time: 1.871s)
+Progression : -36 [-24454;-24085] (Error: 0.0150896 Time: 1.872s)
+Progression : -36 [-24446;-24085] (Error: 0.0147672 Time: 1.872s)
+Progression : -36 [-24438;-24085] (Error: 0.0144447 Time: 1.873s)
+Progression : -36 [-24430;-24085] (Error: 0.014122 Time: 1.873s)
+Progression : -36 [-24422;-24085] (Error: 0.013799 Time: 1.873s)
+Progression : -36 [-24414;-24085] (Error: 0.0134759 Time: 1.874s)
+Progression : -36 [-24406;-24085] (Error: 0.0131525 Time: 1.874s)
+Progression : -36 [-24398;-24085] (Error: 0.0128289 Time: 1.874s)
+Progression : -36 [-24390;-24085] (Error: 0.0125051 Time: 1.875s)
+Progression : -36 [-24382;-24085] (Error: 0.0121811 Time: 1.875s)
+Progression : -36 [-24374;-24085] (Error: 0.0118569 Time: 1.875s)
+Progression : -36 [-24358;-24085] (Error: 0.0112078 Time: 1.878s)
+Progression : -36 [-24350;-24085] (Error: 0.010883 Time: 1.881s)
+Progression : -36 [-24342;-24085] (Error: 0.0105579 Time: 1.884s)
+Progression : -36 [-24334;-24085] (Error: 0.0102326 Time: 1.887s)
+Progression : -36 [-24326;-24085] (Error: 0.0099071 Time: 1.888s)
+Progression : -36 [-24318;-24085] (Error: 0.00958138 Time: 1.891s)
+Progression : -36 [-24310;-24085] (Error: 0.00925545 Time: 1.894s)
+Progression : -36 [-24302;-24085] (Error: 0.00892931 Time: 1.894s)
+Progression : -36 [-24294;-24085] (Error: 0.00860295 Time: 1.897s)
+Progression : -36 [-24286;-24085] (Error: 0.00827637 Time: 1.898s)
+Progression : -36 [-24278;-24085] (Error: 0.00794958 Time: 1.900s)
+Progression : -36 [-24270;-24085] (Error: 0.00762258 Time: 1.901s)
+Progression : -36 [-24262;-24085] (Error: 0.00729536 Time: 1.902s)
+Progression : -36 [-24254;-24085] (Error: 0.00696792 Time: 1.905s)
+Progression : -36 [-24246;-24085] (Error: 0.00664027 Time: 1.906s)
+Progression : -36 [-24238;-24085] (Error: 0.0063124 Time: 1.906s)
+Progression : -36 [-24230;-24085] (Error: 0.00598432 Time: 1.906s)
+Progression : -36 [-24222;-24085] (Error: 0.00565602 Time: 1.907s)
+Progression : -36 [-24214;-24085] (Error: 0.0053275 Time: 1.910s)
+Progression : -36 [-24206;-24085] (Error: 0.00499876 Time: 1.911s)
+Progression : -36 [-24198;-24085] (Error: 0.00466981 Time: 1.911s)
+Progression : -36 [-24190;-24085] (Error: 0.00434064 Time: 1.912s)
+Progression : -36 [-24182;-24085] (Error: 0.00401125 Time: 1.912s)
+Progression : -36 [-24174;-24085] (Error: 0.00368164 Time: 1.914s)
+13:48:14 Model found (1.90s, +0.12s): [-36, -24117]
+Answer: 4 (Time: 1.971s)
+Optimization: -36 -24117
+Progression : -36 [-24166;-24117] (Error: 0.00202764 Time: 1.977s)
+Progression : -36 [-24159;-24117] (Error: 0.00173848 Time: 2.003s)
+Progression : -36 [-24152;-24117] (Error: 0.00144916 Time: 2.006s)
+Progression : -36 [-24145;-24117] (Error: 0.00115966 Time: 2.008s)
+Progression : -36 [-24138;-24117] (Error: 0.000869998 Time: 2.010s)
+Progression : -36 [-24131;-24117] (Error: 0.000580167 Time: 2.014s)
+Progression : -36 [-24124;-24117] (Error: 0.000290167 Time: 2.015s)
+13:48:14 Solving done: OPTIMUM FOUND (1.21s)
 OPTIMUM FOUND
 
-Answer: 9
+Answer: 4
 Optimization: -36 -24117
 
 % Equivalence classes (1068 classes, 1320 entities):
@@ -1436,25 +1537,44 @@ Optimization: -36 -24117
 %     embeddedObject: 0/2
 %     ~embeddedObject: 2/2
 %       objectInObject(LSockByteStream::vftable@0x42b7e8,LByteStream::vftable@0x42b7f8,0) objectInObject(LSSLByteStream::vftable@0x42c1ac,LByteStream::vftable@0x42b7f8,0)
-07:37:03 Writing results to examples/ooa/light-pop3-smtp/pop3.exe.results
+13:48:14 Writing results to examples/ooa/light-pop3-smtp/pop3.exe.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 185102.0
-%   bodies: 203544.0
-%   rules: 287698.0
-%   variables: 186216.0
-%   constraints: 19427.0
-%   choices: 574720.0
-%   conflicts: 2411.0
-%   models: 9.0
-%   optimal_models: 1.0
-%   final_cost: [-36.0, -24117.0]
-%   lower_bound: [-36.0, -24117.0]
-%   total_time: 2.515105962753296
-%   ground_time: 1.0710726700053783
-%   time_to_first_model: 1.9159476870045182
-%   max_rss_bytes: 412889088
-%   solve_time: 0.6733760833740234
+Models       : 4
+  Optimum    : yes
+Optimization : -36 -24117
+Calls        : 1
+Time         : 2.019s (Solving: 0.78s 1st Model: 0.07s Unsat: 0.08s)
+CPU Time     : 2.018s
+
+Choices      : 419480   (Domain: 15577)
+Conflicts    : 538      (Analyzed: 442)
+Restarts     : 3        (Average: 147.33 Last: 0 Blocked: 0)
+Model-Level  : 5578.5  
+Problems     : 99       (Average Length: 0.01 Splits: 0)
+Lemmas       : 3242     (Deleted: 0)
+  Binary     : 78       (Ratio:   2.41%)
+  Ternary    : 532      (Ratio:  16.41%)
+  Conflict   : 442      (Average Length:   18.9 Ratio:  13.63%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 2800     (Average Length:    6.5 Ratio:  86.37%) 
+Backjumps    : 442      (Average: 710.90 Max: 5657 Sum: 314217)
+  Executed   : 358      (Average: 643.81 Max: 5657 Sum: 284564 Ratio:  90.56%)
+  Bounded    : 84       (Average: 353.01 Max: 1756 Sum:  29653 Ratio:   9.44%)
+
+Rules        : 289611   (Original: 287702)
+  Choice     : 2080    
+  Minimize   : 2       
+  Heuristic  : 1332     (Original: 1488)
+Atoms        : 185106  
+Bodies       : 204176   (Original: 203544)
+  Sum        : 22      
+  Count      : 0        (Original: 2042)
+Equivalences : 222375   (Atom=Atom: 75431 Body=Body: 38270 Other: 108674)
+Tight        : Yes
+Variables    : 186216   (Eliminated:    0 Frozen: 71724)
+Constraints  : 143310   (Binary:  80.2% Ternary:   6.2% Other:  13.6%)
+
 classCallsMethod(LPop3::DELE@0x41b520,LPop3::ReadStatusLine@0x419750)
 classCallsMethod(LPop3::Greeting@0x41aae0,LPop3::ReadStatusLine@0x419750)
 classCallsMethod(LPop3::LIST@0x41b110,LPop3::ReadLISTResponse@0x4199b0)
@@ -4908,6 +5028,7 @@ mergeClasses(LSSLByteStream::RawRecv@0x420f70,LSSLByteStream::vftable@0x42c1ac)
 mergeClasses(LSSLByteStream::RawSend@0x421430,LSSLByteStream::vftable@0x42c1ac)
 mergeClasses(LSSLByteStream::vftable@0x42c1ac,LSSLByteStream::LSSLByteStream@0x4208e0)
 mergeClasses(LSSLByteStream::vftable@0x42c1ac,LSSLByteStream::LSSLByteStream@0x4209c0)
+mergeClasses(LSSLByteStream::vftable@0x42c1ac,LSSLByteStream::~LSSLByteStream@0x420ac0)
 mergeClasses(LSSLContext::AcquireCredentials@0x423fa0,LSSLContext::Handshake@0x424080)
 mergeClasses(LSSLContext::GetContextHandle@0x420ef0,LSSLContext::GetHandshakeExtra@0x420f30)
 mergeClasses(LSSLContext::GetContextHandle@0x420ef0,LSSLContext::Shutdown@0x424590)
@@ -5002,6 +5123,7 @@ mergeClasses(std::bad_alloc::bad_alloc@0x418ee0,std::bad_alloc::~bad_alloc@0x418
 mergeClasses(std::bad_alloc::scalar_deleting_destructor@0x418fd0,std::bad_alloc::vftable@0x42bc44)
 mergeClasses(std::bad_alloc::vftable@0x42bc44,std::bad_alloc::bad_alloc@0x418ee0)
 mergeClasses(std::bad_alloc::vftable@0x42bc44,std::bad_alloc::bad_alloc@0x4191a0)
+mergeClasses(std::bad_alloc::vftable@0x42bc44,std::bad_alloc::~bad_alloc@0x418f60)
 mergeClasses(std::bad_alloc::~bad_alloc@0x418f60,std::bad_alloc::bad_alloc@0x4191a0)
 mergeClasses(std::bad_alloc::~bad_alloc@0x418f60,std::bad_alloc::scalar_deleting_destructor@0x418fd0)
 mergeClasses(std::basic_ios<char, struct std::char_traits<char> >::fill@0x43146c,std::basic_ios<char, struct std::char_traits<char> >::tie@0x43147c)
@@ -6859,9 +6981,11 @@ vfTableWrite(4348700,type_info::type_info@0x425b10,0,type_info::vftable@0x42c578
 vftableBelongsToClass(LByteStream::vftable@0x42b7f8,0,LByteStream::LByteStream@0x413760)
 vftableBelongsToClass(LSSLByteStream::vftable@0x42c1ac,0,LSSLByteStream::LSSLByteStream@0x4208e0)
 vftableBelongsToClass(LSSLByteStream::vftable@0x42c1ac,0,LSSLByteStream::LSSLByteStream@0x4209c0)
+vftableBelongsToClass(LSSLByteStream::vftable@0x42c1ac,0,LSSLByteStream::~LSSLByteStream@0x420ac0)
 vftableBelongsToClass(LSockByteStream::vftable@0x42b7e8,0,LSockByteStream::LSockByteStream@0x4136f0)
 vftableBelongsToClass(std::bad_alloc::vftable@0x42bc44,0,std::bad_alloc::bad_alloc@0x418ee0)
 vftableBelongsToClass(std::bad_alloc::vftable@0x42bc44,0,std::bad_alloc::bad_alloc@0x4191a0)
+vftableBelongsToClass(std::bad_alloc::vftable@0x42bc44,0,std::bad_alloc::~bad_alloc@0x418f60)
 vftableBelongsToClass(type_info::vftable@0x42c578,0,type_info::type_info@0x425b10)
 vftableSizeTotal(36)
 %   {* __cdecl operator new(unsigned int, *)@0x415b60}

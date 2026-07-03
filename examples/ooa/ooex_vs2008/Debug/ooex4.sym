@@ -1,15 +1,28 @@
-07:36:59 Grounding...
-07:36:59 Grounding done (0.03s)
-07:36:59 Solving...
-07:36:59 Model found (0.03s): [-28, -2453]
-07:36:59 Model found (0.04s, +0.00s): [-28, -2470]
-07:36:59 Model found (0.04s, +0.00s): [-28, -2473]
-07:36:59 Model found (0.04s, +0.00s): [-28, -2527]
-07:36:59 Solving done: OPTIMUM FOUND (0.02s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex4.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex4.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2008/Debug/ooex4.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.03s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.04s): [-28, -2453]
+Answer: 1 (Time: 0.049s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex4.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex4.results
+Optimization: -28 -2453
+Progression : -28 [-2571;-2453] (Error: 0.0458965 Time: 0.049s)
+Progression : -28 [-2561;-2453] (Error: 0.042171 Time: 0.049s)
+13:48:11 Model found (0.04s, +0.00s): [-28, -2493]
+Answer: 2 (Time: 0.053s)
+Optimization: -28 -2493
+Progression : -28 [-2552;-2493] (Error: 0.0231191 Time: 0.053s)
+Progression : -28 [-2543;-2493] (Error: 0.0196618 Time: 0.054s)
+13:48:11 Model found (0.04s, +0.00s): [-28, -2527]
+Answer: 3 (Time: 0.055s)
+Optimization: -28 -2527
+Progression : -28 [-2535;-2527] (Error: 0.00315582 Time: 0.055s)
+13:48:11 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
-Answer: 4
+Answer: 3
 Optimization: -28 -2527
 
 % Equivalence classes (220 classes, 232 entities):
@@ -179,25 +192,44 @@ Optimization: -28 -2527
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const Derived::`vftable'@0x416740,const Base::`vftable'@0x416754,0)
-07:37:00 Writing results to examples/ooa/ooex_vs2008/Debug/ooex4.results
+13:48:11 Writing results to examples/ooa/ooex_vs2008/Debug/ooex4.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 7486.0
-%   bodies: 2476.0
-%   rules: 8643.0
-%   variables: 2612.0
-%   constraints: 52.0
-%   choices: 6161.0
-%   conflicts: 34.0
-%   models: 4.0
-%   optimal_models: 1.0
-%   final_cost: [-28.0, -2527.0]
-%   lower_bound: [-28.0, -2527.0]
-%   total_time: 0.052683115005493164
-%   ground_time: 0.025325085000076797
-%   time_to_first_model: 0.03229315800126642
-%   max_rss_bytes: 39997440
-%   solve_time: 0.010684967041015625
+Models       : 3
+  Optimum    : yes
+Optimization : -28 -2527
+Calls        : 1
+Time         : 0.055s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.055s
+
+Choices      : 2619     (Domain: 2245)
+Conflicts    : 20       (Analyzed: 13)
+Restarts     : 0       
+Model-Level  : 251.7   
+Problems     : 9        (Average Length: 0.11 Splits: 0)
+Lemmas       : 33       (Deleted: 0)
+  Binary     : 14       (Ratio:  42.42%)
+  Ternary    : 10       (Ratio:  30.30%)
+  Conflict   : 13       (Average Length:    5.2 Ratio:  39.39%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 20       (Average Length:    2.5 Ratio:  60.61%) 
+Backjumps    : 13       (Average: 147.23 Max: 235 Sum:   1914)
+  Executed   : 10       (Average: 145.92 Max: 235 Sum:   1897 Ratio:  99.11%)
+  Bounded    : 3        (Average:  5.67 Max:   7 Sum:     17 Ratio:   0.89%)
+
+Rules        : 8894     (Original: 8647)
+  Choice     : 256     
+  Minimize   : 2       
+  Heuristic  : 231      (Original: 257)
+Atoms        : 7490    
+Bodies       : 2490     (Original: 2476)
+  Sum        : 22      
+  Count      : 0        (Original: 256)
+Equivalences : 4725     (Atom=Atom: 1129 Body=Body: 381 Other: 3215)
+Tight        : Yes
+Variables    : 2612     (Eliminated:    0 Frozen: 1811)
+Constraints  : 988      (Binary:  87.6% Ternary:   7.2% Other:   5.3%)
+
 classCallsMethod(Derived::Derived(void)@0x411570,Base::Base(void)@0x411620)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func1(void)@0x411690)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func2(void)@0x4116f0)

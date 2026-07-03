@@ -1,16 +1,20 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.02s)
-07:37:00 Solving...
-07:37:00 Model found (0.02s): [-2078]
-07:37:00 Model found (0.03s, +0.00s): [-2086]
-07:37:00 Model found (0.03s, +0.00s): [-2094]
-07:37:00 Model found (0.03s, +0.00s): [-2102]
-07:37:00 Model found (0.03s, +0.00s): [-2248]
-07:37:00 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex0.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex0.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex0.lp
+13:48:12 Grounding...
+13:48:12 Grounding done (0.01s)
+13:48:12 Solving...
+Solving...
+13:48:12 Model found (0.01s): [-2078]
+Answer: 1 (Time: 0.021s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex0.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex0.results
+Optimization: -2078
+13:48:12 Model found (0.02s, +0.00s): [-2248]
+Answer: 2 (Time: 0.024s)
+Optimization: -2248
+13:48:12 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 2
 Optimization: -2248
 
 % Equivalence classes (203 classes, 207 entities):
@@ -157,25 +161,43 @@ Optimization: -2248
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex0.results
+13:48:12 Writing results to examples/ooa/ooex_vs2010/Debug/ooex0.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 5332.0
-%   bodies: 1217.0
-%   rules: 5786.0
-%   variables: 730.0
-%   constraints: 20.0
-%   choices: 2278.0
-%   conflicts: 146.0
-%   models: 5.0
-%   optimal_models: 1.0
-%   final_cost: [-2248.0]
-%   lower_bound: [-2248.0]
-%   total_time: 0.0422971248626709
-%   ground_time: 0.019007058996066917
-%   time_to_first_model: 0.022151302997372113
-%   max_rss_bytes: 36560896
-%   solve_time: 0.009834051132202148
+Models       : 2
+  Optimum    : yes
+Optimization : -2248
+Calls        : 1
+Time         : 0.024s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.024s
+
+Choices      : 24       (Domain: 7)
+Conflicts    : 5        (Analyzed: 4)
+Restarts     : 0       
+Model-Level  : 221.5   
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 10       (Deleted: 0)
+  Binary     : 4        (Ratio:  40.00%)
+  Ternary    : 6        (Ratio:  60.00%)
+  Conflict   : 4        (Average Length:    2.0 Ratio:  40.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 6        (Average Length:    3.0 Ratio:  60.00%) 
+Backjumps    : 4        (Average:  7.75 Max:  10 Sum:     31)
+  Executed   : 0        (Average:  1.75 Max:   2 Sum:      7 Ratio:  22.58%)
+  Bounded    : 4        (Average:  6.00 Max:   8 Sum:     24 Ratio:  77.42%)
+
+Rules        : 6003     (Original: 5786)
+  Choice     : 219     
+  Minimize   : 1       
+  Heuristic  : 210      (Original: 211)
+Atoms        : 5332    
+Bodies       : 1227     (Original: 1217)
+  Count      : 0        (Original: 218)
+Equivalences : 3778     (Atom=Atom: 917 Body=Body: 252 Other: 2609)
+Tight        : Yes
+Variables    : 730      (Eliminated:    0 Frozen:  710)
+Constraints  : 733      (Binary:  90.3% Ternary:   7.0% Other:   2.7%)
+
 classCallsMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411770,ClassA::~ClassA(void)@0x411650)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411770,ClassA::ClassA(void)@0x4115f0)
 classRelatedMethod(* ClassA::`scalar deleting destructor'(unsigned int)@0x411770,ClassA::~ClassA(void)@0x411650)

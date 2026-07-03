@@ -1,13 +1,38 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.04s)
-07:37:00 Solving...
-07:37:00 Model found (0.06s): [-40, -2509]
-07:37:00 Model found (0.07s, +0.01s): [-40, -2526]
-07:37:00 Model found (0.07s, +0.00s): [-40, -2543]
-07:37:00 Model found (0.07s, +0.00s): [-40, -2600]
-07:37:00 Model found (0.08s, +0.00s): [-40, -2610]
-07:37:00 Solving done: OPTIMUM FOUND (0.03s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex9.lp
+13:48:12 Grounding...
+13:48:12 Grounding done (0.07s)
+13:48:12 Solving...
+Solving...
+13:48:12 Model found (0.09s): [-40, -2492]
+Answer: 1 (Time: 0.099s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex9.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex9.results
+Optimization: -40 -2492
+Progression : -40 [-2724;-2492] (Error: 0.0851689 Time: 0.099s)
+Progression : -40 [-2714;-2492] (Error: 0.0817981 Time: 0.100s)
+Progression : -40 [-2704;-2492] (Error: 0.0784024 Time: 0.100s)
+Progression : -40 [-2694;-2492] (Error: 0.0749814 Time: 0.100s)
+Progression : -40 [-2684;-2492] (Error: 0.071535 Time: 0.100s)
+Progression : -40 [-2674;-2492] (Error: 0.0680628 Time: 0.103s)
+Progression : -40 [-2664;-2492] (Error: 0.0645646 Time: 0.108s)
+Progression : -40 [-2654;-2492] (Error: 0.0610399 Time: 0.114s)
+Progression : -40 [-2644;-2492] (Error: 0.0574887 Time: 0.116s)
+13:48:12 Model found (0.11s, +0.02s): [-40, -2532]
+Answer: 2 (Time: 0.122s)
+Optimization: -40 -2532
+13:48:12 Model found (0.11s, +0.01s): [-40, -2542]
+Answer: 3 (Time: 0.124s)
+Optimization: -40 -2542
+Progression : -40 [-2635;-2542] (Error: 0.0352941 Time: 0.124s)
+Progression : -40 [-2626;-2542] (Error: 0.0319878 Time: 0.124s)
+13:48:12 Model found (0.11s, +0.00s): [-40, -2600]
+Answer: 4 (Time: 0.127s)
+Optimization: -40 -2600
+13:48:12 Model found (0.12s, +0.00s): [-40, -2610]
+Answer: 5 (Time: 0.129s)
+Optimization: -40 -2610
+Progression : -40 [-2618;-2610] (Error: 0.00305577 Time: 0.129s)
+13:48:12 Solving done: OPTIMUM FOUND (0.05s)
 OPTIMUM FOUND
 
 Answer: 5
@@ -146,15 +171,15 @@ Optimization: -40 -2610
 %     ~guessConstructor4Reward: 0/0
 %   [merge]
 %     strongMergeReward: 5/10
-%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0) strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0)
-%       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
+%       strongMergeReward(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0) strongMergeReward(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
+%       strongMergeReward(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0) strongMergeReward(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760)
 %       strongMergeReward(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)
 %     ~strongMergeReward: 5/10
-%       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0)
+%       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0)
 %       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,B::B(void)@0x411760)
 %       strongMergeCandidate(thunk:virtual int A::get_a(void)@0x411014,C::C(void)@0x411840)
-%       strongMergeCandidate(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
-%       strongMergeCandidate(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760)
+%       strongMergeCandidate(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0)
+%       strongMergeCandidate(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
 %     weakMergeReward: 6/12
 %       weakMergeReward(virtual int A::get_a(void)@0x411720,const A::`vftable'@0x416780) weakMergeReward(virtual int B::get_b(void)@0x411800,const B::`vftable'{for `B'}@0x416798)
 %       weakMergeReward(virtual int C::get_c(void)@0x4118e0,const C::`vftable'{for `C'}@0x4167bc) weakMergeReward(virtual int D::get_d(void)@0x411920,const D::`vftable'{for `B'}@0x416758)
@@ -210,25 +235,44 @@ Optimization: -40 -2610
 %       objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `A'}@0x4167b0,12) objectInObject(const D::`vftable'{for `B'}@0x416758,const C::`vftable'{for `C'}@0x4167bc,12)
 %       objectInObject(const B::`vftable'{for `A'}@0x41678c,const A::`vftable'@0x416780,12) objectInObject(const B::`vftable'{for `B'}@0x416798,const A::`vftable'@0x416780,12)
 %       objectInObject(const C::`vftable'{for `A'}@0x4167b0,const A::`vftable'@0x416780,12) objectInObject(const C::`vftable'{for `C'}@0x4167bc,const A::`vftable'@0x416780,12)
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+13:48:12 Writing results to examples/ooa/ooex_vs2010/Debug/ooex9.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 10367.0
-%   bodies: 9854.0
-%   rules: 22166.0
-%   variables: 8591.0
-%   constraints: 390.0
-%   choices: 40770.0
-%   conflicts: 424.0
-%   models: 5.0
-%   optimal_models: 1.0
-%   final_cost: [-40.0, -2610.0]
-%   lower_bound: [-40.0, -2610.0]
-%   total_time: 0.08557391166687012
-%   ground_time: 0.04186813300475478
-%   time_to_first_model: 0.0628534130009939
-%   max_rss_bytes: 51003392
-%   solve_time: 0.019864797592163086
+Models       : 5
+  Optimum    : yes
+Optimization : -40 -2610
+Calls        : 1
+Time         : 0.129s (Solving: 0.03s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.129s
+
+Choices      : 21733    (Domain: 1171)
+Conflicts    : 197      (Analyzed: 183)
+Restarts     : 0       
+Model-Level  : 341.8   
+Problems     : 15       (Average Length: 0.07 Splits: 0)
+Lemmas       : 307      (Deleted: 0)
+  Binary     : 49       (Ratio:  15.96%)
+  Ternary    : 53       (Ratio:  17.26%)
+  Conflict   : 183      (Average Length:    4.7 Ratio:  59.61%) 
+  Loop       : 50       (Average Length:    6.6 Ratio:  16.29%) 
+  Other      : 74       (Average Length:    3.1 Ratio:  24.10%) 
+Backjumps    : 183      (Average: 10.08 Max: 261 Sum:   1844)
+  Executed   : 162      (Average:  9.60 Max: 261 Sum:   1757 Ratio:  95.28%)
+  Bounded    : 21       (Average:  4.14 Max:   7 Sum:     87 Ratio:   4.72%)
+
+Rules        : 22398    (Original: 22167)
+  Choice     : 286     
+  Minimize   : 2       
+  Heuristic  : 224      (Original: 276)
+Atoms        : 10368   
+Bodies       : 9850     (Original: 9854)
+  Sum        : 18      
+  Count      : 0        (Original: 262)
+Equivalences : 5659     (Atom=Atom: 1180 Body=Body: 847 Other: 3632)
+Tight        : No       (SCCs: 72 Non-Hcfs: 0 Nodes: 1632 Gammas: 0)
+Variables    : 8591     (Eliminated:    0 Frozen: 4918)
+Constraints  : 8334     (Binary:  79.6% Ternary:  15.8% Other:   4.7%)
+
 classCallsMethod(D::D(void)@0x4115f0,B::B(void)@0x411760)
 classCallsMethod(const A::`vftable'@0x416780,virtual int A::get_a(void)@0x411720)
 classCallsMethod(const B::`vftable'{for `A'}@0x41678c,virtual int A::get_a(void)@0x411720)
@@ -600,9 +644,9 @@ mergeClasses(const D::`vftable'{for `B'}@0x416758,D::D(void)@0x4115f0)
 mergeClasses(const D::`vftable'{for `C'}@0x41674c,const D::`vftable'{for `B'}@0x416758)
 mergeClasses(const type_info::`vftable'@0x4167d4,type_info::type_info(class type_info const &)@0x411bf0)
 mergeClasses(thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8,type_info::type_info(class type_info const &)@0x411bf0)
-mergeClasses(thunk:virtual int A::get_a(void)@0x411014,D::D(void)@0x4115f0)
-mergeClasses(thunk:virtual int B::get_b(void)@0x411131,D::D(void)@0x4115f0)
-mergeClasses(thunk:virtual int C::get_c(void)@0x4110af,D::D(void)@0x4115f0)
+mergeClasses(thunk:virtual int A::get_a(void)@0x411014,A::A(void)@0x4116d0)
+mergeClasses(thunk:virtual int B::get_b(void)@0x411131,B::B(void)@0x411760)
+mergeClasses(thunk:virtual int C::get_c(void)@0x4110af,C::C(void)@0x411840)
 mergeClasses(thunk:virtual int D::get_d(void)@0x4111cc,D::D(void)@0x4115f0)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,const type_info::`vftable'@0x4167d4)
 mergeClasses(virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20,type_info::_type_info_dtor_internal_method(void)@0x41a270)
@@ -896,10 +940,7 @@ vftableSizeTotal(40)
 %   {$LN11@0x412d82}
 %   {$LN6_1@0x413153}
 %   {* __cdecl operator new(unsigned int)@0x411962}
-%   {A::A(void)@0x4116d0, virtual int A::get_a(void)@0x411720, const A::`vftable'@0x416780}
 %   {ArrayUnwindFilter@0x412e90}
-%   {B::B(void)@0x411760, virtual int B::get_b(void)@0x411800, const B::`vftable'{for `A'}@0x41678c, const B::`vftable'{for `B'}@0x416798}
-%   {C::C(void)@0x411840, virtual int C::get_c(void)@0x4118e0, const C::`vftable'{for `A'}@0x4167b0, const C::`vftable'{for `C'}@0x4167bc}
 %   {DebuggerProbe@0x412620}
 %   {DebuggerRuntime@0x4126d0}
 %   {GetPdbDll@0x413970}
@@ -1102,7 +1143,10 @@ vftableSizeTotal(40)
 %   {thunk:long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)@0x411145}
 %   {thunk:type_info::type_info(class type_info const &)@0x4111d1}
 %   {thunk:virtual * type_info::`vector deleting destructor'(unsigned int)@0x4110c8, type_info::type_info(class type_info const &)@0x411bf0, virtual * type_info::`vector deleting destructor'(unsigned int)@0x411c20, const type_info::`vftable'@0x4167d4, type_info::_type_info_dtor_internal_method(void)@0x41a270}
-%   {thunk:virtual int A::get_a(void)@0x411014, thunk:virtual int C::get_c(void)@0x4110af, thunk:virtual int B::get_b(void)@0x411131, thunk:virtual int D::get_d(void)@0x4111cc, D::D(void)@0x4115f0, virtual int D::get_d(void)@0x411920, const D::`vftable'{for `A'}@0x416740, const D::`vftable'{for `C'}@0x41674c, const D::`vftable'{for `B'}@0x416758}
+%   {thunk:virtual int A::get_a(void)@0x411014, A::A(void)@0x4116d0, virtual int A::get_a(void)@0x411720, const A::`vftable'@0x416780}
+%   {thunk:virtual int B::get_b(void)@0x411131, B::B(void)@0x411760, virtual int B::get_b(void)@0x411800, const B::`vftable'{for `A'}@0x41678c, const B::`vftable'{for `B'}@0x416798}
+%   {thunk:virtual int C::get_c(void)@0x4110af, C::C(void)@0x411840, virtual int C::get_c(void)@0x4118e0, const C::`vftable'{for `A'}@0x4167b0, const C::`vftable'{for `C'}@0x4167bc}
+%   {thunk:virtual int D::get_d(void)@0x4111cc, D::D(void)@0x4115f0, virtual int D::get_d(void)@0x411920, const D::`vftable'{for `A'}@0x416740, const D::`vftable'{for `C'}@0x41674c, const D::`vftable'{for `B'}@0x416758}
 %   {thunk:virtual type_info::~type_info(void)@0x41104b}
 %   {thunk:virtual type_info::~type_info(void)@0x411096}
 %   {virtual type_info::~type_info(void)@0x413bdc}

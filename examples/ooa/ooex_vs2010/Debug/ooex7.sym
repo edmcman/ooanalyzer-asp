@@ -1,16 +1,29 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.12s)
-07:37:00 Solving...
-07:37:00 Model found (0.19s): [-12, -4506]
-07:37:00 Model found (0.21s, +0.01s): [-12, -4523]
-07:37:00 Model found (0.22s, +0.01s): [-12, -4546]
-07:37:00 Model found (0.23s, +0.01s): [-12, -4674]
-07:37:00 Model found (0.24s, +0.01s): [-12, -5684]
-07:37:00 Solving done: OPTIMUM FOUND (0.12s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex7.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex7.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.10s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.14s): [-12, -4606]
+Answer: 1 (Time: 0.164s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex7.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex7.results
+Optimization: -12 -4606
+Progression : -12 [-5726;-4606] (Error: 0.195599 Time: 0.164s)
+Progression : -12 [-5717;-4606] (Error: 0.194333 Time: 0.164s)
+Progression : -12 [-5708;-4606] (Error: 0.193062 Time: 0.164s)
+13:48:11 Model found (0.15s, +0.01s): [-12, -5660]
+Answer: 2 (Time: 0.172s)
+Optimization: -12 -5660
+Progression : -12 [-5700;-5660] (Error: 0.00701754 Time: 0.173s)
+Progression : -12 [-5692;-5660] (Error: 0.00562193 Time: 0.173s)
+Progression : -12 [-5684;-5660] (Error: 0.00422238 Time: 0.173s)
+13:48:11 Model found (0.16s, +0.01s): [-12, -5684]
+Answer: 3 (Time: 0.179s)
+Optimization: -12 -5684
+13:48:11 Solving done: OPTIMUM FOUND (0.06s)
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 3
 Optimization: -12 -5684
 
 % Equivalence classes (381 classes, 431 entities):
@@ -363,25 +376,44 @@ Optimization: -12 -5684
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex7.results
+13:48:12 Writing results to examples/ooa/ooex_vs2010/Debug/ooex7.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 42595.0
-%   bodies: 24647.0
-%   rules: 46779.0
-%   variables: 15842.0
-%   constraints: 100.0
-%   choices: 24078.0
-%   conflicts: 350.0
-%   models: 5.0
-%   optimal_models: 1.0
-%   final_cost: [-12.0, -5684.0]
-%   lower_bound: [-12.0, -5684.0]
-%   total_time: 0.2549779415130615
-%   ground_time: 0.12261468700307887
-%   time_to_first_model: 0.19467692200123565
-%   max_rss_bytes: 80535552
-%   solve_time: 0.05296492576599121
+Models       : 3
+  Optimum    : yes
+Optimization : -12 -5684
+Calls        : 1
+Time         : 0.179s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.179s
+
+Choices      : 1036     (Domain: 294)
+Conflicts    : 39       (Analyzed: 32)
+Restarts     : 0       
+Model-Level  : 508.0   
+Problems     : 8        (Average Length: 0.12 Splits: 0)
+Lemmas       : 142      (Deleted: 0)
+  Binary     : 38       (Ratio:  26.76%)
+  Ternary    : 45       (Ratio:  31.69%)
+  Conflict   : 32       (Average Length:    2.4 Ratio:  22.54%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 110      (Average Length:    3.8 Ratio:  77.46%) 
+Backjumps    : 32       (Average: 48.16 Max:  88 Sum:   1541)
+  Executed   : 8        (Average: 20.69 Max:  88 Sum:    662 Ratio:  42.96%)
+  Bounded    : 24       (Average: 36.62 Max:  62 Sum:    879 Ratio:  57.04%)
+
+Rules        : 47229    (Original: 46780)
+  Choice     : 536     
+  Minimize   : 2       
+  Heuristic  : 412      (Original: 478)
+Atoms        : 42596   
+Bodies       : 24711    (Original: 24647)
+  Sum        : 0        (Original: 4)
+  Count      : 0        (Original: 505)
+Equivalences : 53379    (Atom=Atom: 19378 Body=Body: 9447 Other: 24554)
+Tight        : Yes
+Variables    : 15842    (Eliminated:    0 Frozen: 12421)
+Constraints  : 3126     (Binary:  85.4% Ternary:  11.4% Other:   3.2%)
+
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Copy(unsigned int, unsigned int)@0x412bb0)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Eos(unsigned int)@0x412360)
 classCallsMethod(bool std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Grow(unsigned int, bool)@0x4127e0,std::basic_string<char, CHAR_TRAITS, CHAR_ALLOC>::_Tidy(bool, unsigned int)@0x411dd0)

@@ -1,11 +1,25 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.02s)
-07:37:00 Solving...
-07:37:00 Model found (0.02s): [-28, -2410]
-07:37:00 Model found (0.02s, +0.00s): [-28, -2423]
-07:37:00 Model found (0.03s, +0.00s): [-28, -2467]
-07:37:00 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex4.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex4.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex4.lp
+13:48:12 Grounding...
+13:48:12 Grounding done (0.03s)
+13:48:12 Solving...
+Solving...
+13:48:12 Model found (0.04s): [-28, -2393]
+Answer: 1 (Time: 0.045s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex4.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex4.results
+Optimization: -28 -2393
+Progression : -28 [-2511;-2393] (Error: 0.0469932 Time: 0.045s)
+Progression : -28 [-2501;-2393] (Error: 0.0431827 Time: 0.045s)
+13:48:12 Model found (0.04s, +0.00s): [-28, -2433]
+Answer: 2 (Time: 0.049s)
+Optimization: -28 -2433
+Progression : -28 [-2492;-2433] (Error: 0.0236758 Time: 0.050s)
+Progression : -28 [-2483;-2433] (Error: 0.0201369 Time: 0.050s)
+13:48:12 Model found (0.04s, +0.00s): [-28, -2467]
+Answer: 3 (Time: 0.051s)
+Optimization: -28 -2467
+Progression : -28 [-2475;-2467] (Error: 0.00323232 Time: 0.052s)
+13:48:12 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 3
@@ -175,25 +189,44 @@ Optimization: -28 -2467
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const Derived::`vftable'@0x416740,const Base::`vftable'@0x416754,0)
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex4.results
+13:48:12 Writing results to examples/ooa/ooex_vs2010/Debug/ooex4.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 7328.0
-%   bodies: 2428.0
-%   rules: 8461.0
-%   variables: 2552.0
-%   constraints: 52.0
-%   choices: 5712.0
-%   conflicts: 37.0
-%   models: 3.0
-%   optimal_models: 1.0
-%   final_cost: [-28.0, -2467.0]
-%   lower_bound: [-28.0, -2467.0]
-%   total_time: 0.0326387882232666
-%   ground_time: 0.016157655001734383
-%   time_to_first_model: 0.02044128900161013
-%   max_rss_bytes: 40505344
-%   solve_time: 0.006691932678222656
+Models       : 3
+  Optimum    : yes
+Optimization : -28 -2467
+Calls        : 1
+Time         : 0.052s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.052s
+
+Choices      : 3261     (Domain: 2833)
+Conflicts    : 23       (Analyzed: 16)
+Restarts     : 0       
+Model-Level  : 244.7   
+Problems     : 9        (Average Length: 0.11 Splits: 0)
+Lemmas       : 36       (Deleted: 0)
+  Binary     : 14       (Ratio:  38.89%)
+  Ternary    : 10       (Ratio:  27.78%)
+  Conflict   : 16       (Average Length:    5.3 Ratio:  44.44%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 20       (Average Length:    2.5 Ratio:  55.56%) 
+Backjumps    : 16       (Average: 159.38 Max: 231 Sum:   2550)
+  Executed   : 13       (Average: 158.31 Max: 231 Sum:   2533 Ratio:  99.33%)
+  Bounded    : 3        (Average:  5.67 Max:   7 Sum:     17 Ratio:   0.67%)
+
+Rules        : 8706     (Original: 8465)
+  Choice     : 250     
+  Minimize   : 2       
+  Heuristic  : 225      (Original: 251)
+Atoms        : 7332    
+Bodies       : 2442     (Original: 2428)
+  Sum        : 22      
+  Count      : 0        (Original: 250)
+Equivalences : 4629     (Atom=Atom: 1105 Body=Body: 375 Other: 3149)
+Tight        : Yes
+Variables    : 2552     (Eliminated:    0 Frozen: 1769)
+Constraints  : 976      (Binary:  87.4% Ternary:   7.3% Other:   5.3%)
+
 classCallsMethod(Derived::Derived(void)@0x411550,Base::Base(void)@0x411600)
 classCallsMethod(Derived::Derived(void)@0x411550,virtual int Base::func1(void)@0x411670)
 classCallsMethod(Derived::Derived(void)@0x411550,virtual int Base::func2(void)@0x4116d0)
