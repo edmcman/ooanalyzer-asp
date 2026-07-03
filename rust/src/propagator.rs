@@ -7,9 +7,9 @@
 
 use crate::entkey::EntKey;
 use crate::ffi::{
-    ClingoAtom, ClingoAssignment, ClingoExternalType, ClingoId, ClingoLiteral, ClingoPropagateControl,
-    ClingoPropagateInit, ClingoSymbol, ClingoSymbolicAtoms, EXTERNAL_TYPE_FALSE,
-    Ffi, CHECK_MODE_TOTAL,
+    ClingoAssignment, ClingoAtom, ClingoExternalType, ClingoId, ClingoLiteral,
+    ClingoPropagateControl, ClingoPropagateInit, ClingoSymbol, ClingoSymbolicAtoms, Ffi,
+    CHECK_MODE_TOTAL, EXTERNAL_TYPE_FALSE,
 };
 use crate::potential_uf;
 use crate::shared::{MergeScFacts, ObsRule, PropData, Shared};
@@ -32,7 +32,12 @@ type Result_ = std::result::Result<(), String>;
 
 // ── observer callbacks (run during ctl.ground(), single-threaded) ────────────
 
-pub fn obs_rule(pd: &PropData, choice: bool, head: &[ClingoAtom], body: &[ClingoLiteral]) -> Result_ {
+pub fn obs_rule(
+    pd: &PropData,
+    choice: bool,
+    head: &[ClingoAtom],
+    body: &[ClingoLiteral],
+) -> Result_ {
     let pos_body: Vec<i32> = body.iter().filter(|&&l| l > 0).copied().collect();
     let mut obs = pd.obs.lock().unwrap();
     if pos_body.is_empty() {
@@ -42,7 +47,11 @@ pub fn obs_rule(pd: &PropData, choice: bool, head: &[ClingoAtom], body: &[Clingo
     } else {
         let heads: Vec<i32> = head.iter().map(|&a| a as i32).collect();
         let rule_idx = obs.rules.len();
-        obs.rules.push(ObsRule { choice, heads: heads.clone(), pos_body });
+        obs.rules.push(ObsRule {
+            choice,
+            heads: heads.clone(),
+            pos_body,
+        });
         for h in heads {
             obs.head_to_rules.entry(h).or_default().push(rule_idx);
         }
@@ -78,7 +87,11 @@ pub fn init(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) -> Res
     Ok(())
 }
 
-fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) -> Result<Shared, String> {
+fn build_shared(
+    ffi: &Ffi,
+    pd: &PropData,
+    init_ptr: *mut ClingoPropagateInit,
+) -> Result<Shared, String> {
     let sym_atoms = ffi.init_symbolic_atoms(init_ptr).map_err(|e| e.message)?;
     let theory_atoms = ffi.init_theory_atoms(init_ptr).map_err(|e| e.message)?;
 
@@ -113,11 +126,23 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
             Some(s) => s,
             None => return,
         };
-        facts.merge_lit_to_pairs.entry(slit).or_default().push((a.clone(), b.clone()));
-        facts.merge_proglit_to_pair.insert(prog_lit, (a.clone(), b.clone()));
+        facts
+            .merge_lit_to_pairs
+            .entry(slit)
+            .or_default()
+            .push((a.clone(), b.clone()));
+        facts
+            .merge_proglit_to_pair
+            .insert(prog_lit, (a.clone(), b.clone()));
         facts.merge_proglit_to_slit.insert(prog_lit, slit);
-        merge_by_entity.entry(a.clone()).or_default().push((b.clone(), slit));
-        merge_by_entity.entry(b.clone()).or_default().push((a.clone(), slit));
+        merge_by_entity
+            .entry(a.clone())
+            .or_default()
+            .push((b.clone(), slit));
+        merge_by_entity
+            .entry(b.clone())
+            .or_default()
+            .push((a.clone(), slit));
         entities.insert(a);
         entities.insert(b);
         if slit.abs() != 1 {
@@ -139,7 +164,9 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
             None => continue,
         };
         let name = ffi.theory_term_name(theory_atoms, term).unwrap_or_default();
-        let args = ffi.theory_term_arguments(theory_atoms, term).unwrap_or_default();
+        let args = ffi
+            .theory_term_arguments(theory_atoms, term)
+            .unwrap_or_default();
         let slit = match ffi.solver_literal(init_ptr, prog_lit).ok() {
             Some(s) => s,
             None => continue,
@@ -148,12 +175,20 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
             "sameClass" if args.len() == 2 => {
                 let x = EntKey::from_theory_term(ffi, theory_atoms, args[0]);
                 let y = EntKey::from_theory_term(ffi, theory_atoms, args[1]);
-                facts.sc_proglit_to_pair.insert(prog_lit, (x.clone(), y.clone()));
+                facts
+                    .sc_proglit_to_pair
+                    .insert(prog_lit, (x.clone(), y.clone()));
                 sc_to_lit.insert((x.clone(), y.clone()), slit);
                 sc_lit_to_pair.insert(slit, (x.clone(), y.clone()));
-                sc_by_entity.entry(x.clone()).or_default().push((y.clone(), slit));
+                sc_by_entity
+                    .entry(x.clone())
+                    .or_default()
+                    .push((y.clone(), slit));
                 if x != y {
-                    sc_by_entity.entry(y.clone()).or_default().push((x.clone(), slit));
+                    sc_by_entity
+                        .entry(y.clone())
+                        .or_default()
+                        .push((x.clone(), slit));
                 }
                 entities.insert(x);
                 entities.insert(y);
@@ -164,7 +199,10 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
                 let class_ = EntKey::from_theory_term(ffi, theory_atoms, args[1]);
                 awc_to_slit.insert((vft.clone(), class_.clone()), slit);
                 awc_slit_to_pair.insert(slit.abs(), (vft.clone(), class_.clone()));
-                awc_by_vft.entry(vft.clone()).or_default().insert((class_, slit));
+                awc_by_vft
+                    .entry(vft.clone())
+                    .or_default()
+                    .insert((class_, slit));
                 ffi.add_watch(init_ptr, slit);
             }
             _ => {}
@@ -188,7 +226,10 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
         };
         let alit = lit.abs();
         now_slit_to_key.insert(alit, (method.clone(), vftable.clone()));
-        now_writers_by_vft.entry(vftable).or_default().insert((method, alit));
+        now_writers_by_vft
+            .entry(vftable)
+            .or_default()
+            .insert((method, alit));
         ffi.add_watch(init_ptr, lit);
     });
 
@@ -213,7 +254,10 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
     if pd.foundedness_check {
         for r in &obs.rules {
             for &h in &r.heads {
-                head_to_bodies.entry(h).or_default().push(r.pos_body.clone());
+                head_to_bodies
+                    .entry(h)
+                    .or_default()
+                    .push(r.pos_body.clone());
             }
         }
     }
@@ -272,7 +316,9 @@ fn build_shared(ffi: &Ffi, pd: &PropData, init_ptr: *mut ClingoPropagateInit) ->
     let awc_by_vft = freeze_sorted(awc_by_vft);
 
     let num_threads = ffi.number_of_threads(init_ptr) as usize;
-    let states = (0..num_threads).map(|_| std::sync::Mutex::new(ThreadState::new())).collect();
+    let states = (0..num_threads)
+        .map(|_| std::sync::Mutex::new(ThreadState::new()))
+        .collect();
 
     Ok(Shared {
         facts,
@@ -349,10 +395,17 @@ fn freeze_sorted(
 // ── propagate / undo / check ────────────────────────────────────────────────
 
 fn shared(pd: &PropData) -> Result<&std::sync::Arc<Shared>, String> {
-    pd.shared.get().ok_or_else(|| "shared not built before solve".to_string())
+    pd.shared
+        .get()
+        .ok_or_else(|| "shared not built before solve".to_string())
 }
 
-fn ensure_initialized(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, asgn: *const ClingoAssignment) {
+fn ensure_initialized(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    asgn: *const ClingoAssignment,
+) {
     if !state.initialized {
         rebuild(ffi, shared, state, asgn);
         state.merge_trail.clear();
@@ -373,7 +426,12 @@ fn rebuild(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, asgn: *const Cli
     }
 }
 
-pub fn propagate(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl, changes: &[i32]) -> Result_ {
+pub fn propagate(
+    ffi: &Ffi,
+    pd: &PropData,
+    ctrl: *mut ClingoPropagateControl,
+    changes: &[i32],
+) -> Result_ {
     let shared = shared(pd)?.clone();
     let tid = ffi.thread_id(ctrl) as usize;
     let mut guard = shared.states[tid].lock().unwrap();
@@ -390,7 +448,8 @@ pub fn propagate(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl, ch
                     continue;
                 }
                 let snap = state.uf.snapshot();
-                if let Some((absorbed, merged_root)) = state.uf.union(a, b, lit, Some(ra), Some(rb)) {
+                if let Some((absorbed, merged_root)) = state.uf.union(a, b, lit, Some(ra), Some(rb))
+                {
                     state.merge_trail.push((lit, snap));
                     let absorbed_set: FxHashSet<EntKey> = absorbed.iter().cloned().collect();
                     let merged = state.uf.members_of(&merged_root).clone();
@@ -402,7 +461,12 @@ pub fn propagate(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl, ch
                         .iter()
                         .flat_map(|x| {
                             let x = x.clone();
-                            shared.sc_by_entity.get(&x).into_iter().flatten().map(move |(y, sc_lit)| (x.clone(), y.clone(), *sc_lit))
+                            shared
+                                .sc_by_entity
+                                .get(&x)
+                                .into_iter()
+                                .flatten()
+                                .map(move |(y, sc_lit)| (x.clone(), y.clone(), *sc_lit))
                         })
                         .filter(|(_, y, _)| merged.contains(y) && !absorbed_set.contains(y))
                         .filter(|(_, _, sc_lit)| !ffi.is_true(asgn, *sc_lit))
@@ -441,7 +505,9 @@ pub fn propagate(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl, ch
                     .map(|(class_, awc_slit)| (*awc_slit, class_))
                     .collect();
                 for (awc_slit, class_) in offenders {
-                    if !assert_not_all_writers(ffi, &shared, state, ctrl, alit, class_, awc_slit, &mut cache)? {
+                    if !assert_not_all_writers(
+                        ffi, &shared, state, ctrl, alit, class_, awc_slit, &mut cache,
+                    )? {
                         return Ok(());
                     }
                 }
@@ -456,7 +522,9 @@ pub fn propagate(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl, ch
                     .collect();
                 let mut cache = FxHashMap::default();
                 for now_alit in offenders {
-                    if !assert_not_all_writers(ffi, &shared, state, ctrl, now_alit, &class_, lit, &mut cache)? {
+                    if !assert_not_all_writers(
+                        ffi, &shared, state, ctrl, now_alit, &class_, lit, &mut cache,
+                    )? {
                         return Ok(());
                     }
                 }
@@ -505,10 +573,14 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
         let mut cache = FxHashMap::default();
         for (x, y, slit) in &atoms {
             if state.uf.same(x, y) {
-                if !ffi.is_true(asgn, *slit) && !assert_same(ffi, &shared, state, ctrl, x, y, *slit)? {
+                if !ffi.is_true(asgn, *slit)
+                    && !assert_same(ffi, &shared, state, ctrl, x, y, *slit)?
+                {
                     return Ok(());
                 }
-            } else if ffi.is_true(asgn, *slit) && !assert_not_same(ffi, &shared, state, ctrl, x, y, *slit, &mut cache)? {
+            } else if ffi.is_true(asgn, *slit)
+                && !assert_not_same(ffi, &shared, state, ctrl, x, y, *slit, &mut cache)?
+            {
                 return Ok(());
             }
         }
@@ -529,7 +601,9 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
                 Some(p) => p.clone(),
                 None => continue,
             };
-            if !state.uf.same(&x, &y) && !assert_not_same(ffi, &shared, state, ctrl, &x, &y, slit, &mut cache)? {
+            if !state.uf.same(&x, &y)
+                && !assert_not_same(ffi, &shared, state, ctrl, &x, &y, slit, &mut cache)?
+            {
                 return Ok(());
             }
         }
@@ -548,11 +622,15 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
             .get(vftable)
             .into_iter()
             .flatten()
-            .find(|(method, now_alit)| ffi.is_true(asgn, *now_alit) && !state.uf.same(method, class_))
+            .find(|(method, now_alit)| {
+                ffi.is_true(asgn, *now_alit) && !state.uf.same(method, class_)
+            })
             .map(|(_, now_alit)| *now_alit);
         if let Some(now_alit) = out_of_class {
             if ffi.is_true(asgn, *awc_slit)
-                && !assert_not_all_writers(ffi, &shared, state, ctrl, now_alit, class_, *awc_slit, &mut cache)?
+                && !assert_not_all_writers(
+                    ffi, &shared, state, ctrl, now_alit, class_, *awc_slit, &mut cache,
+                )?
             {
                 return Ok(());
             }
@@ -695,7 +773,11 @@ fn fmt_lit(shared: &Shared, c: i32) -> String {
     for (&s, (x, y)) in &shared.sc_lit_to_pair {
         if c == s || c == -s {
             let body = format!("sameClass({},{})", ek_str(x), ek_str(y));
-            return if c == s { body } else { format!("not {}", body) };
+            return if c == s {
+                body
+            } else {
+                format!("not {}", body)
+            };
         }
     }
     format!("lit({})", c)
@@ -711,11 +793,23 @@ fn dump_lemma(shared: &Shared, label: &str, clause: &[i32], conflict: bool) {
         return;
     }
     let tag = if conflict { " CONFLICT" } else { "" };
-    let body = clause.iter().map(|&c| fmt_lit(shared, c)).collect::<Vec<_>>().join(" | ");
+    let body = clause
+        .iter()
+        .map(|&c| fmt_lit(shared, c))
+        .collect::<Vec<_>>()
+        .join(" | ");
     eprintln!("[lemma {label}{tag} len={}] {{ {body} }}", clause.len());
 }
 
-fn assert_same(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, ctrl: *mut ClingoPropagateControl, x: &EntKey, y: &EntKey, slit: i32) -> Result<bool, String> {
+fn assert_same(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    x: &EntKey,
+    y: &EntKey,
+    slit: i32,
+) -> Result<bool, String> {
     let (_, reason) = state.uf.same_with_reason(x, y);
     let mut clause: Vec<i32> = reason.iter().map(|&r| -r).collect();
     clause.push(slit);
@@ -828,7 +922,8 @@ fn check_foundedness(
         .iter()
         .filter_map(|(pl, (a, b))| {
             let slit = *shared.facts.merge_proglit_to_slit.get(pl)?;
-            ffi.is_true(asgn, slit).then(|| (*pl, (a.clone(), b.clone(), slit)))
+            ffi.is_true(asgn, slit)
+                .then(|| (*pl, (a.clone(), b.clone(), slit)))
         })
         .collect();
     if true_merges.is_empty() {
@@ -886,7 +981,13 @@ fn check_foundedness(
 /// `lit_true`: truth of a program literal at the current assignment.
 /// `&sameClass` lits resolve through `sc_to_lit`; unmappable lits are
 /// conservatively treated as true (mirrors the Python `RuntimeError` fallback).
-fn lit_true(ffi: &Ffi, shared: &Shared, asgn: *const ClingoAssignment, sc_proglits: &FxHashSet<i32>, pl: &i32) -> bool {
+fn lit_true(
+    ffi: &Ffi,
+    shared: &Shared,
+    asgn: *const ClingoAssignment,
+    sc_proglits: &FxHashSet<i32>,
+    pl: &i32,
+) -> bool {
     if sc_proglits.contains(pl) {
         let (x, y) = &shared.facts.sc_proglit_to_pair[pl];
         match shared.sc_to_lit.get(&(x.clone(), y.clone())) {
@@ -901,8 +1002,15 @@ fn lit_true(ffi: &Ffi, shared: &Shared, asgn: *const ClingoAssignment, sc_progli
     }
 }
 
-fn body_active(ffi: &Ffi, shared: &Shared, asgn: *const ClingoAssignment, sc_proglits: &FxHashSet<i32>, body: &[i32]) -> bool {
-    body.iter().all(|lit| lit_true(ffi, shared, asgn, sc_proglits, lit))
+fn body_active(
+    ffi: &Ffi,
+    shared: &Shared,
+    asgn: *const ClingoAssignment,
+    sc_proglits: &FxHashSet<i32>,
+    body: &[i32],
+) -> bool {
+    body.iter()
+        .all(|lit| lit_true(ffi, shared, asgn, sc_proglits, lit))
 }
 
 fn body_founded(
@@ -922,7 +1030,11 @@ fn body_founded(
     })
 }
 
-fn foundedness_assignment_blocker(ffi: &Ffi, shared: &Shared, asgn: *const ClingoAssignment) -> Vec<i32> {
+fn foundedness_assignment_blocker(
+    ffi: &Ffi,
+    shared: &Shared,
+    asgn: *const ClingoAssignment,
+) -> Vec<i32> {
     let mut clause: Vec<i32> = Vec::new();
     let mut seen: FxHashSet<i32> = FxHashSet::default();
     let mut add = |slit: Option<i32>| {

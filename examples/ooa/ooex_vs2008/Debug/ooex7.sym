@@ -1,10 +1,17 @@
-07:36:59 Grounding...
-07:36:59 Grounding done (0.02s)
-07:36:59 Solving...
-07:36:59 Model found (0.03s): [-2216]
-07:36:59 Model found (0.03s, +0.00s): [-2233]
-07:36:59 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2008/Debug/ooex7.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.02s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.02s): [-2216]
+Answer: 1 (Time: 0.029s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/ooex7.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/ooex7.results
+Optimization: -2216
+13:48:11 Model found (0.02s, +0.00s): [-2233]
+Answer: 2 (Time: 0.030s)
+Optimization: -2233
+13:48:11 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -152,25 +159,43 @@ Optimization: -2233
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:36:59 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
+13:48:11 Writing results to examples/ooa/ooex_vs2008/Debug/ooex7.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 7921.0
-%   bodies: 2858.0
-%   rules: 8371.0
-%   variables: 1531.0
-%   constraints: 2.0
-%   choices: 1520.0
-%   conflicts: 2.0
-%   models: 2.0
-%   optimal_models: 1.0
-%   final_cost: [-2233.0]
-%   lower_bound: [-2233.0]
-%   total_time: 0.04490995407104492
-%   ground_time: 0.022346703997754958
-%   time_to_first_model: 0.027726455002266448
-%   max_rss_bytes: 39444480
-%   solve_time: 0.007294893264770508
+Models       : 2
+  Optimum    : yes
+Optimization : -2233
+Calls        : 1
+Time         : 0.031s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.030s
+
+Choices      : 4        (Domain: 4)
+Conflicts    : 2        (Analyzed: 1)
+Restarts     : 0       
+Model-Level  : 219.0   
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 1        (Deleted: 0)
+  Binary     : 1        (Ratio: 100.00%)
+  Ternary    : 0        (Ratio:   0.00%)
+  Conflict   : 1        (Average Length:    2.0 Ratio: 100.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 1        (Average:  1.00 Max:   1 Sum:      1)
+  Executed   : 1        (Average:  1.00 Max:   1 Sum:      1 Ratio: 100.00%)
+  Bounded    : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+
+Rules        : 8582     (Original: 8371)
+  Choice     : 224     
+  Minimize   : 1       
+  Heuristic  : 219      (Original: 226)
+Atoms        : 7921    
+Bodies       : 2859     (Original: 2858)
+  Count      : 0        (Original: 218)
+Equivalences : 7924     (Atom=Atom: 2630 Body=Body: 1102 Other: 4192)
+Tight        : Yes
+Variables    : 1531     (Eliminated:    0 Frozen: 1527)
+Constraints  : 476      (Binary:  98.1% Ternary:   1.5% Other:   0.4%)
+
 classRelatedMethod(ObjectTest::ObjectTest(int, int)@0x4116f0,int ObjectTest::add(void)@0x411740)
 classRelatedMethod(int ObjectTest::add(void)@0x411740,ObjectTest::ObjectTest(int, int)@0x4116f0)
 classSizeGTE($LN6_1@0x412df5,0)

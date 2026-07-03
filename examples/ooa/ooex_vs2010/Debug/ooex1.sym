@@ -1,14 +1,20 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.01s)
-07:37:00 Solving...
-07:37:00 Model found (0.01s): [-2076]
-07:37:00 Model found (0.02s, +0.00s): [-2084]
-07:37:00 Model found (0.02s, +0.00s): [-2144]
-07:37:00 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex1.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex1.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex1.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.02s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.02s): [-2076]
+Answer: 1 (Time: 0.026s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex1.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex1.results
+Optimization: -2076
+13:48:11 Model found (0.02s, +0.00s): [-2144]
+Answer: 2 (Time: 0.028s)
+Optimization: -2144
+13:48:11 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
-Answer: 3
+Answer: 2
 Optimization: -2144
 
 % Equivalence classes (203 classes, 206 entities):
@@ -148,25 +154,43 @@ Optimization: -2144
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex1.results
+13:48:11 Writing results to examples/ooa/ooex_vs2010/Debug/ooex1.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 5284.0
-%   bodies: 1145.0
-%   rules: 5721.0
-%   variables: 688.0
-%   constraints: 8.0
-%   choices: 1929.0
-%   conflicts: 6.0
-%   models: 3.0
-%   optimal_models: 1.0
-%   final_cost: [-2144.0]
-%   lower_bound: [-2144.0]
-%   total_time: 0.024899005889892578
-%   ground_time: 0.011505590999149717
-%   time_to_first_model: 0.013536536003812216
-%   max_rss_bytes: 36823040
-%   solve_time: 0.004449129104614258
+Models       : 2
+  Optimum    : yes
+Optimization : -2144
+Calls        : 1
+Time         : 0.028s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.028s
+
+Choices      : 17       (Domain: 10)
+Conflicts    : 4        (Analyzed: 3)
+Restarts     : 0       
+Model-Level  : 214.0   
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 4        (Deleted: 0)
+  Binary     : 3        (Ratio:  75.00%)
+  Ternary    : 1        (Ratio:  25.00%)
+  Conflict   : 3        (Average Length:    2.0 Ratio:  75.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 1        (Average Length:    3.0 Ratio:  25.00%) 
+Backjumps    : 3        (Average:  4.33 Max:   6 Sum:     13)
+  Executed   : 0        (Average:  2.33 Max:   3 Sum:      7 Ratio:  53.85%)
+  Bounded    : 3        (Average:  2.00 Max:   3 Sum:      6 Ratio:  46.15%)
+
+Rules        : 5931     (Original: 5721)
+  Choice     : 213     
+  Minimize   : 1       
+  Heuristic  : 210      (Original: 212)
+Atoms        : 5284    
+Bodies       : 1149     (Original: 1145)
+  Count      : 0        (Original: 212)
+Equivalences : 3598     (Atom=Atom: 893 Body=Body: 242 Other: 2463)
+Tight        : Yes
+Variables    : 688      (Eliminated:    0 Frozen:  670)
+Constraints  : 570      (Binary:  93.7% Ternary:   4.9% Other:   1.4%)
+
 classRelatedMethod(Composite::Composite(void)@0x411550,int Composite::func3(void)@0x4115a0)
 classRelatedMethod(Derived::Derived(void)@0x4115f0,int Derived::func4(void)@0x411730)
 classRelatedMethod(Derived::Derived(void)@0x4115f0,int Derived::func5(class Composite, int)@0x4117a0)

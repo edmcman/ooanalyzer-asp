@@ -1,22 +1,24 @@
-07:36:59 Grounding...
-07:37:00 Grounding done (0.08s)
-07:37:00 Solving...
-07:37:00 Model found (0.12s): [-28, -3327]
-07:37:00 Model found (0.13s, +0.01s): [-28, -3344]
-07:37:00 Model found (0.14s, +0.00s): [-28, -3354]
-07:37:00 Model found (0.14s, +0.00s): [-28, -3364]
-07:37:00 Model found (0.14s, +0.00s): [-28, -3438]
-07:37:00 Model found (0.15s, +0.01s): [-28, -3439]
-07:37:00 Model found (0.16s, +0.01s): [-28, -3446]
-07:37:00 Model found (0.16s, +0.01s): [-28, -3449]
-07:37:00 Model found (0.17s, +0.01s): [-28, -3489]
-07:37:00 Model found (0.18s, +0.01s): [-28, -3496]
-07:37:00 Model found (0.18s, +0.01s): [-28, -3523]
-07:37:00 Solving done: OPTIMUM FOUND (0.10s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/oo.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/oo.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2008/Debug/oo.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.05s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.07s): [-28, -3310]
+Answer: 1 (Time: 0.085s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/oo.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/oo.results
+Optimization: -28 -3310
+Progression : -28 [-3540;-3310] (Error: 0.0649718 Time: 0.085s)
+13:48:11 Model found (0.08s, +0.01s): [-28, -3370]
+Answer: 2 (Time: 0.089s)
+Optimization: -28 -3370
+13:48:11 Model found (0.08s, +0.00s): [-28, -3523]
+Answer: 3 (Time: 0.093s)
+Optimization: -28 -3523
+13:48:11 Solving done: OPTIMUM FOUND (0.03s)
 OPTIMUM FOUND
 
-Answer: 11
+Answer: 3
 Optimization: -28 -3523
 
 % Equivalence classes (278 classes, 314 entities):
@@ -251,25 +253,44 @@ Optimization: -28 -3523
 %     ~embeddedObject: 4/4
 %       objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls1::`vftable'@0x417860,0) objectInObject(const Cls3::`vftable'{for `Cls2'}@0x417814,const Cls2::`vftable'@0x41787c,12)
 %       objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417824,const Cls1::`vftable'@0x417860,0) objectInObject(const Cls3::`vftable'{for `Cls1'}@0x417824,const Cls2::`vftable'@0x41787c,12)
-07:37:00 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
+13:48:11 Writing results to examples/ooa/ooex_vs2008/Debug/oo.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 27814.0
-%   bodies: 15422.0
-%   rules: 31275.0
-%   variables: 10335.0
-%   constraints: 114.0
-%   choices: 11195.0
-%   conflicts: 80.0
-%   models: 11.0
-%   optimal_models: 1.0
-%   final_cost: [-28.0, -3523.0]
-%   lower_bound: [-28.0, -3523.0]
-%   total_time: 0.2016599178314209
-%   ground_time: 0.08489855300285853
-%   time_to_first_model: 0.12443866900139255
-%   max_rss_bytes: 65454080
-%   solve_time: 0.06699395179748535
+Models       : 3
+  Optimum    : yes
+Optimization : -28 -3523
+Calls        : 1
+Time         : 0.093s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.093s
+
+Choices      : 3491     (Domain: 2306)
+Conflicts    : 23       (Analyzed: 21)
+Restarts     : 0       
+Model-Level  : 361.7   
+Problems     : 3        (Average Length: 0.33 Splits: 0)
+Lemmas       : 54       (Deleted: 0)
+  Binary     : 17       (Ratio:  31.48%)
+  Ternary    : 19       (Ratio:  35.19%)
+  Conflict   : 21       (Average Length:    4.3 Ratio:  38.89%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 33       (Average Length:    2.8 Ratio:  61.11%) 
+Backjumps    : 21       (Average: 115.48 Max: 308 Sum:   2425)
+  Executed   : 15       (Average: 114.05 Max: 308 Sum:   2395 Ratio:  98.76%)
+  Bounded    : 6        (Average:  5.00 Max:   8 Sum:     30 Ratio:   1.24%)
+
+Rules        : 31556    (Original: 31277)
+  Choice     : 353     
+  Minimize   : 2       
+  Heuristic  : 294      (Original: 350)
+Atoms        : 27816   
+Bodies       : 15432    (Original: 15422)
+  Sum        : 14      
+  Count      : 0        (Original: 321)
+Equivalences : 32213    (Atom=Atom: 11615 Body=Body: 5905 Other: 14693)
+Tight        : Yes
+Variables    : 10335    (Eliminated:    0 Frozen: 8371)
+Constraints  : 1824     (Binary:  84.2% Ternary:   9.5% Other:   6.2%)
+
 classCallsMethod(Cls3::Cls3(void)@0x411860,Cls1::Cls1(void)@0x411a70)
 classCallsMethod(const Cls1::`vftable'@0x417860,virtual Cls1::func1(void)@0x411ac0)
 classCallsMethod(const Cls2::`vftable'@0x41787c,virtual Cls2::func3(void)@0x411b90)

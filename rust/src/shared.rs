@@ -122,7 +122,12 @@ pub struct PropData {
 }
 
 impl PropData {
-    pub fn new(foundedness_check: bool, dump_lemmas: bool, decide_outputs: bool, decide_inputs: bool) -> Box<PropData> {
+    pub fn new(
+        foundedness_check: bool,
+        dump_lemmas: bool,
+        decide_outputs: bool,
+        decide_inputs: bool,
+    ) -> Box<PropData> {
         Box::new(PropData {
             obs: Mutex::new(ObsData::default()),
             shared: OnceLock::new(),

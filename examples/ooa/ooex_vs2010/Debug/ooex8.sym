@@ -1,10 +1,17 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.02s)
-07:37:00 Solving...
-07:37:00 Model found (0.02s): [-2032]
-07:37:00 Model found (0.03s, +0.00s): [-2049]
-07:37:00 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex8.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.02s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.02s): [-2032]
+Answer: 1 (Time: 0.033s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex8.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex8.results
+Optimization: -2032
+13:48:11 Model found (0.02s, +0.00s): [-2049]
+Answer: 2 (Time: 0.037s)
+Optimization: -2049
+13:48:11 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -143,25 +150,43 @@ Optimization: -2049
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
+13:48:11 Writing results to examples/ooa/ooex_vs2010/Debug/ooex8.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 5172.0
-%   bodies: 1096.0
-%   rules: 5596.0
-%   variables: 644.0
-%   constraints: 6.0
-%   choices: 1603.0
-%   conflicts: 2.0
-%   models: 2.0
-%   optimal_models: 1.0
-%   final_cost: [-2049.0]
-%   lower_bound: [-2049.0]
-%   total_time: 0.03327012062072754
-%   ground_time: 0.018613366002682596
-%   time_to_first_model: 0.02175061900197761
-%   max_rss_bytes: 36032512
-%   solve_time: 0.005886077880859375
+Models       : 2
+  Optimum    : yes
+Optimization : -2049
+Calls        : 1
+Time         : 0.037s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.037s
+
+Choices      : 10       (Domain: 10)
+Conflicts    : 2        (Analyzed: 1)
+Restarts     : 0       
+Model-Level  : 206.0   
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 1        (Deleted: 0)
+  Binary     : 1        (Ratio: 100.00%)
+  Ternary    : 0        (Ratio:   0.00%)
+  Conflict   : 1        (Average Length:    2.0 Ratio: 100.00%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 0        (Average Length:    0.0 Ratio:   0.00%) 
+Backjumps    : 1        (Average:  1.00 Max:   1 Sum:      1)
+  Executed   : 1        (Average:  1.00 Max:   1 Sum:      1 Ratio: 100.00%)
+  Bounded    : 0        (Average:  0.00 Max:   0 Sum:      0 Ratio:   0.00%)
+
+Rules        : 5797     (Original: 5596)
+  Choice     : 206     
+  Minimize   : 1       
+  Heuristic  : 206      (Original: 210)
+Atoms        : 5172    
+Bodies       : 1097     (Original: 1096)
+  Count      : 0        (Original: 205)
+Equivalences : 3471     (Atom=Atom: 870 Body=Body: 241 Other: 2360)
+Tight        : Yes
+Variables    : 644      (Eliminated:    0 Frozen:  631)
+Constraints  : 506      (Binary:  95.3% Ternary:   3.6% Other:   1.2%)
+
 classCallsMethod(D::D(void)@0x411590,B::B(void)@0x4116a0)
 classRelatedMethod(B::B(void)@0x4116a0,D::D(void)@0x411590)
 classRelatedMethod(D::D(void)@0x411590,B::B(void)@0x4116a0)

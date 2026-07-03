@@ -68,7 +68,9 @@ pub extern "C" fn propagate(
     } else {
         unsafe { std::slice::from_raw_parts(changes, size) }
     };
-    let res = catch_unwind(AssertUnwindSafe(|| propagator::propagate(ffi, pd, ctrl, changes)));
+    let res = catch_unwind(AssertUnwindSafe(|| {
+        propagator::propagate(ffi, pd, ctrl, changes)
+    }));
     match res {
         Ok(Ok(())) => true,
         Ok(Err(msg)) => {
@@ -95,7 +97,9 @@ pub extern "C" fn undo(
     } else {
         unsafe { std::slice::from_raw_parts(changes, size) }
     };
-    let _ = catch_unwind(AssertUnwindSafe(|| propagator::undo(ffi, pd, ctrl, changes)));
+    let _ = catch_unwind(AssertUnwindSafe(|| {
+        propagator::undo(ffi, pd, ctrl, changes)
+    }));
 }
 
 pub extern "C" fn check(ctrl: *mut ClingoPropagateControl, data: *mut std::ffi::c_void) -> bool {
@@ -160,7 +164,9 @@ pub extern "C" fn rule(
     } else {
         unsafe { std::slice::from_raw_parts(body, body_size) }
     };
-    let res = catch_unwind(AssertUnwindSafe(|| propagator::obs_rule(pd, choice, head, body)));
+    let res = catch_unwind(AssertUnwindSafe(|| {
+        propagator::obs_rule(pd, choice, head, body)
+    }));
     flatten(res)
 }
 
@@ -178,9 +184,14 @@ pub extern "C" fn weight_rule(
     let head: Vec<i32> = if head.is_null() || head_size == 0 {
         Vec::new()
     } else {
-        unsafe { std::slice::from_raw_parts(head, head_size) }.iter().map(|&a| a as i32).collect()
+        unsafe { std::slice::from_raw_parts(head, head_size) }
+            .iter()
+            .map(|&a| a as i32)
+            .collect()
     };
-    let res = catch_unwind(AssertUnwindSafe(|| propagator::obs_unconditional(pd, &head)));
+    let res = catch_unwind(AssertUnwindSafe(|| {
+        propagator::obs_unconditional(pd, &head)
+    }));
     flatten(res)
 }
 
@@ -190,7 +201,9 @@ pub extern "C" fn external(
     data: *mut std::ffi::c_void,
 ) -> bool {
     let pd = pd(data);
-    let res = catch_unwind(AssertUnwindSafe(|| propagator::obs_external(pd, atom as i32, value)));
+    let res = catch_unwind(AssertUnwindSafe(|| {
+        propagator::obs_external(pd, atom as i32, value)
+    }));
     flatten(res)
 }
 
@@ -202,7 +215,11 @@ pub fn propagator_struct(decide_outputs: bool, decide_inputs: bool) -> ClingoPro
         propagate: Some(propagate),
         undo: Some(undo),
         check: Some(check),
-        decide: if decide_outputs || decide_inputs { Some(decide) } else { None },
+        decide: if decide_outputs || decide_inputs {
+            Some(decide)
+        } else {
+            None
+        },
     }
 }
 

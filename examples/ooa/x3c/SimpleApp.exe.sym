@@ -1,10 +1,19 @@
-07:36:59 Grounding...
-07:36:59 Grounding done (0.03s)
-07:36:59 Solving...
-07:36:59 Model found (0.03s): [-4, -2910]
-07:36:59 Model found (0.04s, +0.01s): [-4, -3447]
-07:36:59 Solving done: OPTIMUM FOUND (0.01s)
-% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/x3c/SimpleApp.exe.results
+ooanalyzer version 2.0
+Reading from examples/ooa/x3c/SimpleApp.exe.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.03s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.04s): [-4, -2903]
+Answer: 1 (Time: 0.060s)
+% Command: ooanalyzer.py examples/ooa/x3c/SimpleApp.exe.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/x3c/SimpleApp.exe.results
+Optimization: -4 -2903
+13:48:11 Model found (0.04s, +0.00s): [-4, -3447]
+Answer: 2 (Time: 0.063s)
+Optimization: -4 -3447
+Progression : -4 [-3461;-3447] (Error: 0.00404507 Time: 0.063s)
+Progression : -4 [-3454;-3447] (Error: 0.00202664 Time: 0.063s)
+13:48:11 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
 Answer: 2
@@ -222,25 +231,43 @@ Optimization: -4 -3447
 %     ~purecallNotMostDerivedReward: 0/0
 %     embeddedObject: 0/0
 %     ~embeddedObject: 0/0
-07:36:59 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+13:48:11 Writing results to examples/ooa/x3c/SimpleApp.exe.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 9182.0
-%   bodies: 3201.0
-%   rules: 10436.0
-%   variables: 2740.0
-%   constraints: 146.0
-%   choices: 3638.0
-%   conflicts: 46.0
-%   models: 2.0
-%   optimal_models: 1.0
-%   final_cost: [-4.0, -3447.0]
-%   lower_bound: [-4.0, -3447.0]
-%   total_time: 0.054969072341918945
-%   ground_time: 0.02663532800215762
-%   time_to_first_model: 0.033679437001410406
-%   max_rss_bytes: 41308160
-%   solve_time: 0.008767127990722656
+Models       : 2
+  Optimum    : yes
+Optimization : -4 -3447
+Calls        : 1
+Time         : 0.063s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.063s
+
+Choices      : 229      (Domain: 140)
+Conflicts    : 21       (Analyzed: 18)
+Restarts     : 0       
+Model-Level  : 336.0   
+Problems     : 4        (Average Length: 0.25 Splits: 0)
+Lemmas       : 57       (Deleted: 0)
+  Binary     : 9        (Ratio:  15.79%)
+  Ternary    : 24       (Ratio:  42.11%)
+  Conflict   : 18       (Average Length:    3.3 Ratio:  31.58%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 39       (Average Length:    3.3 Ratio:  68.42%) 
+Backjumps    : 18       (Average: 26.61 Max:  39 Sum:    479)
+  Executed   : 1        (Average:  8.33 Max:  36 Sum:    150 Ratio:  31.32%)
+  Bounded    : 17       (Average: 19.35 Max:  31 Sum:    329 Ratio:  68.68%)
+
+Rules        : 10746    (Original: 10436)
+  Choice     : 328     
+  Minimize   : 2       
+  Heuristic  : 291      (Original: 307)
+Atoms        : 9182    
+Bodies       : 3233     (Original: 3201)
+  Count      : 0        (Original: 325)
+Equivalences : 7472     (Atom=Atom: 1526 Body=Body: 561 Other: 5385)
+Tight        : Yes
+Variables    : 2740     (Eliminated:    0 Frozen: 1999)
+Constraints  : 2076     (Binary:  85.0% Ternary:   8.0% Other:   7.0%)
+
 classCallsMethod(CPluginManager::GetPluginLoader@0x4119c0,CPluginManager::GetObjectFactory@0x411a30)
 classCallsMethod(CPluginManager::Unload@0x4117d0,CPluginManager::GetPluginLoader@0x4119c0)
 classCallsMethod(CPluginManager::~CPluginManager@0x411770,CPluginManager::Unload@0x4117d0)

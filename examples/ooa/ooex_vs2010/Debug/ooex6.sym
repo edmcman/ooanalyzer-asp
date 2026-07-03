@@ -1,16 +1,28 @@
-07:37:00 Grounding...
-07:37:00 Grounding done (0.03s)
-07:37:00 Solving...
-07:37:00 Model found (0.03s): [-32, -2443]
-07:37:00 Model found (0.04s, +0.00s): [-32, -2460]
-07:37:00 Model found (0.04s, +0.00s): [-32, -2470]
-07:37:00 Model found (0.04s, +0.00s): [-32, -2594]
-07:37:00 Model found (0.04s, +0.00s): [-32, -2611]
-07:37:00 Solving done: OPTIMUM FOUND (0.02s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex6.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex6.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2010/Debug/ooex6.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.02s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.02s): [-32, -2443]
+Answer: 1 (Time: 0.029s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2010/Debug/ooex6.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2010/Debug/ooex6.results
+Optimization: -32 -2443
+Progression : -32 [-2655;-2443] (Error: 0.0798493 Time: 0.030s)
+Progression : -32 [-2645;-2443] (Error: 0.0763705 Time: 0.030s)
+13:48:11 Model found (0.02s, +0.00s): [-32, -2543]
+Answer: 2 (Time: 0.032s)
+Optimization: -32 -2543
+Progression : -32 [-2636;-2543] (Error: 0.0352807 Time: 0.033s)
+Progression : -32 [-2627;-2543] (Error: 0.0319756 Time: 0.033s)
+13:48:11 Model found (0.03s, +0.00s): [-32, -2611]
+Answer: 3 (Time: 0.034s)
+Optimization: -32 -2611
+Progression : -32 [-2619;-2611] (Error: 0.0030546 Time: 0.034s)
+13:48:11 Solving done: OPTIMUM FOUND (0.01s)
 OPTIMUM FOUND
 
-Answer: 5
+Answer: 3
 Optimization: -32 -2611
 
 % Equivalence classes (216 classes, 231 entities):
@@ -186,25 +198,44 @@ Optimization: -32 -2611
 %     embeddedObject: 0/1
 %     ~embeddedObject: 1/1
 %       objectInObject(const Derived::`vftable'@0x416740,const Base::`vftable'@0x416758,0)
-07:37:00 Writing results to examples/ooa/ooex_vs2010/Debug/ooex6.results
+13:48:11 Writing results to examples/ooa/ooex_vs2010/Debug/ooex6.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 7727.0
-%   bodies: 2676.0
-%   rules: 8961.0
-%   variables: 2716.0
-%   constraints: 75.0
-%   choices: 10537.0
-%   conflicts: 74.0
-%   models: 5.0
-%   optimal_models: 1.0
-%   final_cost: [-32.0, -2611.0]
-%   lower_bound: [-32.0, -2611.0]
-%   total_time: 0.05298113822937012
-%   ground_time: 0.02544022199435858
-%   time_to_first_model: 0.032335495998268016
-%   max_rss_bytes: 40493056
-%   solve_time: 0.011249065399169922
+Models       : 3
+  Optimum    : yes
+Optimization : -32 -2611
+Calls        : 1
+Time         : 0.034s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.034s
+
+Choices      : 3760     (Domain: 2873)
+Conflicts    : 30       (Analyzed: 23)
+Restarts     : 0       
+Model-Level  : 256.3   
+Problems     : 9        (Average Length: 0.11 Splits: 0)
+Lemmas       : 61       (Deleted: 0)
+  Binary     : 6        (Ratio:   9.84%)
+  Ternary    : 26       (Ratio:  42.62%)
+  Conflict   : 23       (Average Length:    6.6 Ratio:  37.70%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 38       (Average Length:    3.4 Ratio:  62.30%) 
+Backjumps    : 23       (Average: 122.04 Max: 247 Sum:   2807)
+  Executed   : 18       (Average: 120.96 Max: 247 Sum:   2782 Ratio:  99.11%)
+  Bounded    : 5        (Average:  5.00 Max:   9 Sum:     25 Ratio:   0.89%)
+
+Rules        : 9224     (Original: 8966)
+  Choice     : 264     
+  Minimize   : 2       
+  Heuristic  : 230      (Original: 261)
+Atoms        : 7732    
+Bodies       : 2700     (Original: 2676)
+  Sum        : 30      
+  Count      : 0        (Original: 265)
+Equivalences : 5071     (Atom=Atom: 1198 Body=Body: 429 Other: 3444)
+Tight        : Yes
+Variables    : 2716     (Eliminated:    0 Frozen: 1878)
+Constraints  : 1195     (Binary:  85.8% Ternary:   7.9% Other:   6.3%)
+
 classCallsMethod(Derived::Derived(void)@0x411570,Base::Base(void)@0x411620)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func1(void)@0x411690)
 classCallsMethod(Derived::Derived(void)@0x411570,virtual int Base::func2(void)@0x4116f0)
@@ -519,6 +550,7 @@ mergeClasses(Base::Base(void)@0x411620,virtual int Base::func2(void)@0x4116f0)
 mergeClasses(Derived::Derived(void)@0x411570,virtual Derived::~Derived(void)@0x411800)
 mergeClasses(const Base::`vftable'@0x416758,Base::Base(void)@0x411620)
 mergeClasses(const Derived::`vftable'@0x416740,Derived::Derived(void)@0x411570)
+mergeClasses(const Derived::`vftable'@0x416740,virtual Derived::~Derived(void)@0x411800)
 mergeClasses(const type_info::`vftable'@0x41676c,type_info::type_info(class type_info const &)@0x411ae0)
 mergeClasses(thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110be,Derived::Derived(void)@0x411570)
 mergeClasses(thunk:virtual * Derived::`vector deleting destructor'(unsigned int)@0x4110be,virtual Derived::~Derived(void)@0x411800)
@@ -787,6 +819,7 @@ vfTableWrite(4266022,virtual Derived::~Derived(void)@0x411800,0,const Derived::`
 vfTableWrite(4266732,type_info::type_info(class type_info const &)@0x411ae0,0,const type_info::`vftable'@0x41676c)
 vftableBelongsToClass(const Base::`vftable'@0x416758,0,Base::Base(void)@0x411620)
 vftableBelongsToClass(const Derived::`vftable'@0x416740,0,Derived::Derived(void)@0x411570)
+vftableBelongsToClass(const Derived::`vftable'@0x416740,0,virtual Derived::~Derived(void)@0x411800)
 vftableBelongsToClass(const type_info::`vftable'@0x41676c,0,type_info::type_info(class type_info const &)@0x411ae0)
 vftableSizeTotal(32)
 %   {$LN11@0x412c72}

@@ -10,7 +10,9 @@
 //! total order is load-bearing — it makes clause-emission order, and thus the
 //! solver's search trajectory, deterministic (see `sameclass.py:66-72`).
 
-use crate::ffi::{ClingoId, ClingoSymbol, ClingoTheoryAtoms, Ffi, SYMBOL_TYPE_NUMBER, THEORY_TERM_TYPE_NUMBER};
+use crate::ffi::{
+    ClingoId, ClingoSymbol, ClingoTheoryAtoms, Ffi, SYMBOL_TYPE_NUMBER, THEORY_TERM_TYPE_NUMBER,
+};
 use std::hash::{Hash, Hasher};
 
 #[derive(Clone, Debug)]

@@ -1,18 +1,20 @@
-07:36:59 Grounding...
-07:36:59 Grounding done (0.04s)
-07:36:59 Solving...
-07:36:59 Model found (0.06s): [-20, -3346]
-07:37:00 Model found (0.07s, +0.01s): [-20, -3437]
-07:37:00 Model found (0.08s, +0.00s): [-20, -3445]
-07:37:00 Model found (0.08s, +0.00s): [-20, -3454]
-07:37:00 Model found (0.08s, +0.01s): [-20, -3461]
-07:37:00 Model found (0.09s, +0.01s): [-20, -3471]
-07:37:00 Model found (0.10s, +0.01s): [-20, -3522]
-07:37:00 Solving done: OPTIMUM FOUND (0.06s)
-% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
+ooanalyzer version 2.0
+Reading from examples/ooa/ooex_vs2008/Debug/poly.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.05s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.07s): [-20, -3369]
+Answer: 1 (Time: 0.082s)
+% Command: ooanalyzer.py examples/ooa/ooex_vs2008/Debug/poly.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/ooex_vs2008/Debug/poly.results
+Optimization: -20 -3369
+13:48:11 Model found (0.07s, +0.01s): [-20, -3522]
+Answer: 2 (Time: 0.086s)
+Optimization: -20 -3522
+13:48:11 Solving done: OPTIMUM FOUND (0.03s)
 OPTIMUM FOUND
 
-Answer: 7
+Answer: 2
 Optimization: -20 -3522
 
 % Equivalence classes (279 classes, 310 entities):
@@ -241,25 +243,43 @@ Optimization: -20 -3522
 %     ~embeddedObject: 3/3
 %       objectInObject(const Rectangle::`vftable'@0x417804,const Shape::`vftable'@0x417868,0) objectInObject(const Circle::`vftable'@0x417828,const Shape::`vftable'@0x417868,0)
 %       objectInObject(const Triangle::`vftable'@0x417848,const Shape::`vftable'@0x417868,0)
-07:37:00 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
+13:48:11 Writing results to examples/ooa/ooex_vs2008/Debug/poly.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 27216.0
-%   bodies: 14432.0
-%   rules: 29668.0
-%   variables: 9977.0
-%   constraints: 88.0
-%   choices: 5131.0
-%   conflicts: 57.0
-%   models: 7.0
-%   optimal_models: 1.0
-%   final_cost: [-20.0, -3522.0]
-%   lower_bound: [-20.0, -3522.0]
-%   total_time: 0.11011600494384766
-%   ground_time: 0.04116679699654924
-%   time_to_first_model: 0.06331694500113372
-%   max_rss_bytes: 63893504
-%   solve_time: 0.04217386245727539
+Models       : 2
+  Optimum    : yes
+Optimization : -20 -3522
+Calls        : 1
+Time         : 0.086s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.086s
+
+Choices      : 1488     (Domain: 48)
+Conflicts    : 30       (Analyzed: 29)
+Restarts     : 0       
+Model-Level  : 344.0   
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 45       (Deleted: 0)
+  Binary     : 14       (Ratio:  31.11%)
+  Ternary    : 12       (Ratio:  26.67%)
+  Conflict   : 29       (Average Length:    3.3 Ratio:  64.44%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 16       (Average Length:    2.9 Ratio:  35.56%) 
+Backjumps    : 29       (Average: 45.24 Max: 309 Sum:   1312)
+  Executed   : 18       (Average: 15.45 Max: 309 Sum:    448 Ratio:  34.15%)
+  Bounded    : 11       (Average: 78.55 Max: 276 Sum:    864 Ratio:  65.85%)
+
+Rules        : 29972    (Original: 29668)
+  Choice     : 342     
+  Minimize   : 2       
+  Heuristic  : 286      (Original: 347)
+Atoms        : 27216   
+Bodies       : 14459    (Original: 14432)
+  Count      : 0        (Original: 316)
+Equivalences : 31158    (Atom=Atom: 11399 Body=Body: 5501 Other: 14258)
+Tight        : Yes
+Variables    : 9977     (Eliminated:    0 Frozen: 8171)
+Constraints  : 1570     (Binary:  86.6% Ternary:   7.8% Other:   5.6%)
+
 classCallsMethod(Circle::Circle(void)@0x4117e0,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Rectangle::Rectangle(void)@0x411700,Shape::Shape(void)@0x4119a0)
 classCallsMethod(Triangle::Triangle(void)@0x4118c0,Shape::Shape(void)@0x4119a0)

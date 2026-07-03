@@ -86,8 +86,14 @@ impl Uf {
         rb: Option<EntKey>,
     ) -> Option<(Vec<EntKey>, EntKey)> {
         // Always record the actual mc edge, even if redundant.
-        self.adj.entry(a.clone()).or_default().push((b.clone(), slit));
-        self.adj.entry(b.clone()).or_default().push((a.clone(), slit));
+        self.adj
+            .entry(a.clone())
+            .or_default()
+            .push((b.clone(), slit));
+        self.adj
+            .entry(b.clone())
+            .or_default()
+            .push((a.clone(), slit));
         self.adj_trail.push((a.clone(), b.clone(), slit));
 
         let ra = match ra {

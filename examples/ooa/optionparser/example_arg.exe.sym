@@ -1,20 +1,25 @@
-07:36:59 Grounding...
-07:36:59 Grounding done (0.07s)
-07:36:59 Solving...
-07:37:00 Model found (0.10s): [-36, -3861]
-07:37:00 Model found (0.11s, +0.01s): [-36, -3972]
-07:37:00 Model found (0.11s, +0.00s): [-36, -3982]
-07:37:00 Model found (0.11s, +0.00s): [-36, -3992]
-07:37:00 Model found (0.12s, +0.00s): [-36, -3994]
-07:37:00 Model found (0.12s, +0.00s): [-36, -4000]
-07:37:00 Model found (0.12s, +0.00s): [-36, -4004]
-07:37:00 Model found (0.12s, +0.00s): [-36, -4008]
-07:37:00 Model found (0.13s, +0.00s): [-36, -5522]
-07:37:00 Solving done: OPTIMUM FOUND (0.06s)
-% Command: ooanalyzer.py examples/ooa/optionparser/example_arg.exe.lp -n -1 --heuristic=domain -t4,compete --restarts=F,512 --time-limit=300 --stats --show-guesses --results examples/ooa/optionparser/example_arg.exe.results
+ooanalyzer version 2.0
+Reading from ...es/ooa/optionparser/example_arg.exe.lp
+13:48:11 Grounding...
+13:48:11 Grounding done (0.06s)
+13:48:11 Solving...
+Solving...
+13:48:11 Model found (0.09s): [-36, -3844]
+Answer: 1 (Time: 0.118s)
+% Command: ooanalyzer.py examples/ooa/optionparser/example_arg.exe.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses --results examples/ooa/optionparser/example_arg.exe.results
+Optimization: -36 -3844
+Progression : -36 [-5547;-3844] (Error: 0.307013 Time: 0.118s)
+13:48:11 Model found (0.09s, +0.01s): [-36, -3924]
+Answer: 2 (Time: 0.122s)
+Optimization: -36 -3924
+13:48:11 Model found (0.10s, +0.01s): [-36, -5522]
+Answer: 3 (Time: 0.132s)
+Optimization: -36 -5522
+Progression : -36 [-5530;-5522] (Error: 0.00144665 Time: 0.132s)
+13:48:11 Solving done: OPTIMUM FOUND (0.05s)
 OPTIMUM FOUND
 
-Answer: 9
+Answer: 3
 Optimization: -36 -5522
 
 % Equivalence classes (315 classes, 369 entities):
@@ -350,25 +355,44 @@ Optimization: -36 -5522
 %     ~embeddedObject: 3/3
 %       objectInObject(option::Parser::StoreOptionAction::vftable@0x41b964,option::Parser::Action::vftable@0x41b974,0) objectInObject(option::Stats::CountOptionsAction::vftable@0x41b984,option::Parser::Action::vftable@0x41b974,0)
 %       objectInObject(option::PrintUsageImplementation::StreamWriter<unsigned int __cdecl(near void const *, unsigned int, unsigned int, near struct _iobuf *) , struct _iobuf>::vftable@0x41b998,option::PrintUsageImplementation::IStringWriter::vftable@0x41b9a4,0)
-07:37:00 Writing results to examples/ooa/optionparser/example_arg.exe.results
+13:48:11 Writing results to examples/ooa/optionparser/example_arg.exe.results
+OPTIMUM FOUND
 
-% Stats:
-%   atoms: 17940.0
-%   bodies: 11540.0
-%   rules: 26069.0
-%   variables: 12489.0
-%   constraints: 318.0
-%   choices: 42229.0
-%   conflicts: 832.0
-%   models: 9.0
-%   optimal_models: 1.0
-%   final_cost: [-36.0, -5522.0]
-%   lower_bound: [-36.0, -5522.0]
-%   total_time: 0.15219593048095703
-%   ground_time: 0.06772906900005182
-%   time_to_first_model: 0.10061972500261618
-%   max_rss_bytes: 57274368
-%   solve_time: 0.03145313262939453
+Models       : 3
+  Optimum    : yes
+Optimization : -36 -5522
+Calls        : 1
+Time         : 0.132s (Solving: 0.03s 1st Model: 0.01s Unsat: 0.01s)
+CPU Time     : 0.128s
+
+Choices      : 16897    (Domain: 10138)
+Conflicts    : 76       (Analyzed: 73)
+Restarts     : 0       
+Model-Level  : 535.3   
+Problems     : 4        (Average Length: 0.25 Splits: 0)
+Lemmas       : 170      (Deleted: 0)
+  Binary     : 31       (Ratio:  18.24%)
+  Ternary    : 85       (Ratio:  50.00%)
+  Conflict   : 73       (Average Length:    3.8 Ratio:  42.94%) 
+  Loop       : 0        (Average Length:    0.0 Ratio:   0.00%) 
+  Other      : 97       (Average Length:    3.2 Ratio:  57.06%) 
+Backjumps    : 73       (Average: 222.68 Max: 492 Sum:  16256)
+  Executed   : 40       (Average: 193.84 Max: 492 Sum:  14150 Ratio:  87.04%)
+  Bounded    : 33       (Average: 63.82 Max:  96 Sum:   2106 Ratio:  12.96%)
+
+Rules        : 26527    (Original: 26072)
+  Choice     : 495     
+  Minimize   : 2       
+  Heuristic  : 372      (Original: 426)
+Atoms        : 17943   
+Bodies       : 11636    (Original: 11540)
+  Sum        : 20      
+  Count      : 0        (Original: 489)
+Equivalences : 13356    (Atom=Atom: 2579 Body=Body: 1286 Other: 9491)
+Tight        : Yes
+Variables    : 12489    (Eliminated:    0 Frozen: 6007)
+Constraints  : 5226     (Binary:  80.1% Ternary:  13.8% Other:   6.1%)
+
 classCallsMethod(option::Option::Option@0x4134c0,option::Option::init@0x4125f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::first@0x4123f0)
 classCallsMethod(option::Option::append@0x412340,option::Option::last@0x4124c0)
