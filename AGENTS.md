@@ -29,6 +29,7 @@ original module set.
 | `rust/examples/gen_bindings.rs` | Dev-only bindgen generator (`cargo run --example gen_bindings`); behind `make bindings` |
 | `tests/test_propagator.py` | Focused regression harness for the propagator |
 | `scripts/facts2clingo.py` | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
+| `scripts/ihs_prove.py` | MaxHS-style implicit-hitting-set optimality prover for cost[1]: clingo oracle (comp1 pinned) + exact hitting set over reward cores; certifies small inputs in seconds, see the ledger for TinyXml status |
 | `examples/manual/example.lp` | Valid 3-class example (expected: 3 separate classes) |
 | `examples/manual/invalid_example.lp` | UNSAT demo: two real destructors forced into the same class |
 | `examples/manual/inherit_example.lp` | Single inheritance: Base + Derived, one vftable overwrite |

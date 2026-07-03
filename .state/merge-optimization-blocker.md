@@ -139,13 +139,48 @@ Positive, retained:
   the propagator's decide/reason behavior (measured: save-progress flipped
   sign after the direct-edge change).
 
+## Implicit hitting set prover (`scripts/ihs_prove.py`, 2026-07-03) — the
+## first proof system that makes LB progress past the representation wall
+
+MaxHS-style CEGAR: one multi-shot clingo oracle (full program + propagator,
+comp1 pinned via a `#sum` mirror constraint, `opt_mode=ignore`) refutes
+reward-assumption proposals; a fresh clingo instance per round solves the
+exact min-weight hitting set over the accumulated cores; the proposal is
+"all softs minus the hitting set"; SAT proposal + exact hitting set =
+optimality certificate. Soundness anchor: certifies oo.lp at exactly the
+usc optimum `[-28, -3523]` in ~1.4s (60–67 cores).
+
+Why it evades the closed barriers: the pigeonhole counting happens in the
+hitting-set *optimization* (not clause learning), and assuming the merges
+resolves the mutex conditions by propagation (no 4200-level case splits) —
+cores over conditional structure come out *wider* (the reward-vs-conditioning-
+reward trade appears as a 3+-literal core; observed sizes 1–13).
+
+TinyXml (Pi, 30-min budgets): 5381 softs, trivial=51691. Size-1 cores
+(139×w9 + 125×w8 + 67×w7 …) discharge structurally-dead rewards first. Sound
+exact-hitting-set LB trajectory: −50843@50s → −48041@211s → **−47300@456s
+(1045 cores)** — still moving where USC freezes at −46982 forever, but not
+past it yet: at ~1000 overlapping cores the clasp hitting-set solve exceeds
+60–120s and exactness (hence LB updates) stops. Oracle-side per-call
+timeouts (30s, escalating) and 150-core disjoint extraction per round are
+required (first attempt hung 25 CPU-min in one near-feasible oracle call).
+Incremental multi-shot hitting set tested and NEGATIVE (exactness dies at
+900 cores vs 1045 fresh-per-round; usc re-derives more than it reuses).
+
+Next steps if pursued: delegate the hitting set to a MIP solver (HiGHS /
+python-mip — the standard MaxHS design; clasp is the wrong tool for weighted
+set cover at this size), and/or run on a faster host. LB-per-minute was
+~150–700 and decelerating; certification of −44816 plausibly needs the MIP
+hitting set plus an hour-class budget.
+
 ## Open directions
 
-1. Close the remaining 2166 TinyXml gap from above (UB search), or accept the
-   anytime result — accuracy is already at Prolog parity. The LB side is
-   thoroughly closed empirically (see ledger); treat further LB attempts as
-   requiring a genuinely new idea about the *conditional* mutex mass, not a
-   new representation of the static part.
-2. Validate the champion on more/bigger inputs (mysql-scale) and run the
+1. IHS + MIP hitting set (above) is now the only live path to the TinyXml
+   optimality certificate.
+2. Close the remaining gap from above (UB search), or accept the anytime
+   result — accuracy is already at Prolog parity. The clause-learning LB side
+   is thoroughly closed empirically (see ledger); do not re-attempt
+   representation changes.
+3. Validate the champion on more/bigger inputs (mysql-scale) and run the
    proper edit-distance metric (needs `~/ooanalyzer-tests`, NOT on this host —
    don't search the filesystem for it).
