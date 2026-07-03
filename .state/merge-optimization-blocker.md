@@ -65,6 +65,21 @@ Negative / no-effect, with date and one-line verdict:
   2387 static + 4453 conditional ground instances, sound, cheap — but no LB
   movement, no bounded-refutation help, slightly worse UB. Reverted. The
   static mutex structure is already exhausted by the lazy propagator clauses.
+- **Propagator-side per-hub cardinality** (`--hub-amo`, 2026-07-03, Pi):
+  native `Σ mergeClasses(H,Li) ≤ 1` weight constraints at propagator init over
+  greedy cliques of `-mergeClasses`-fact mutex leaves, via
+  `clingo_propagate_init_add_weight_constraint` (TinyXml: 52 cardinality
+  constraints + 13 binary clauses from 1325 static pairs, max clique 6).
+  Hypothesis was that OLL would account an n-clique as one wide (n−1)-unit
+  core instead of ~n/2 thin pairwise cores. NEGATIVE: LB frozen at exactly
+  −46982 again; UB collapsed to −38563 (trajectory perturbation); ep_srv
+  unchanged (same optimum, same time). Reverted (the ffi.rs weight-constraint
+  and is_fact wrappers were kept as infrastructure). Combined with the AMO
+  encoding verdict, this closes the whole "static mutex structure" family:
+  pairwise clauses, native counting, eager or lazy — the LB does not move
+  because the binding mass is in the *conditional* mutexes, and static cliques
+  were already available to the relaxation from t=0. The "promote root-fixed
+  mutexes during USC hardening" variant is de-prioritized accordingly.
 - **Phase-2 bounded refutation** (`--opt-mode=opt,<incumbent>` + bb, 2026-07-02):
   0 models, no UNSAT in 300s, with or without AMO.
 - **Threads** (32-core sweeps t2..t32, and Pi t4): choices scale, bounds don't;
@@ -104,15 +119,11 @@ Positive, retained:
 
 ## Open directions
 
-1. **Propagator-side per-hub cardinality** (in progress 2026-07-03): give
-   USC/OLL native counting constraints `Σ mergeClasses(H,Li) ≤ 1` over hub
-   neighborhoods whose pairwise mutexes are root-fixed, via
-   `clingo_propagate_init_add_weight_constraint`. Rationale: pairwise binary
-   mutex clauses only yield thin disjoint cores (~n/2 penalty units from an
-   n-clique); one cardinality core accounts n−1 at once. Risk: the static part
-   may already be exhausted (see AMO verdict) — the interesting variant is
-   promoting mutexes that become root-fixed during USC hardening.
-2. Close the remaining 2166 TinyXml gap from above (UB search), or accept the
-   anytime result — accuracy is already at Prolog parity.
-3. Validate the champion on more/bigger inputs (mysql-scale) and run the
-   proper edit-distance metric (needs `~/ooanalyzer-tests`, not on this host).
+1. Close the remaining 2166 TinyXml gap from above (UB search), or accept the
+   anytime result — accuracy is already at Prolog parity. The LB side is
+   thoroughly closed empirically (see ledger); treat further LB attempts as
+   requiring a genuinely new idea about the *conditional* mutex mass, not a
+   new representation of the static part.
+2. Validate the champion on more/bigger inputs (mysql-scale) and run the
+   proper edit-distance metric (needs `~/ooanalyzer-tests`, NOT on this host —
+   don't search the filesystem for it).
