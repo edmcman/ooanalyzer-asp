@@ -328,7 +328,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `reasonNOTMergeClasses_L` (3240) — overlapping object layouts
 - [ ] `reasonNOTMergeClasses_M` (3256) — size contradiction (GTE > LTE)
 - [ ] `reasonNOTMergeClasses_O` (3296) — called method member access exceeds caller class size
-- [ ] `reasonNOTMergeClasses_P` (3318) — different constructors at same offset
+- [x] `reasonNOTMergeClasses_P` (3318) — constructor/destructor called at a positive subobject offset
 - [x] `reasonNOTMergeClasses_Q` (3352) — symbol class name missing/mismatch within class
 - [x] `reasonNOTMergeClasses_R` (3366) — derived vftable installed by called method
 

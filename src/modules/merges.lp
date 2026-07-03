@@ -223,6 +223,26 @@ notMergeUnsorted(BC, CalledMethod) :-
     vfTableWrite(_Insn, CalledMethod, Offset, V),
     &sameClass(V, DC1).                                                             % rules.pl:3366
 
+% reasonNOTMergeClasses_P: a constructor or destructor called with a positive
+% this-pointer offset operates on a subobject, so its class cannot be the
+% callers class.  The cardinality body is the Prolog property disjunction;
+% deleting destructors retain the real-destructor caller exception.
+% Counterpart: reasonNOTMergeClasses_P (rules.pl:3318)
+%!trace_rule {"% and % must NOT be merged because % calls constructor/destructor % at positive offset %", Caller, Method, Caller, Method, Offset}
+reasonNOTMergeClassesPUnsorted(Caller, Method) :-
+    validMethodCallAtOffset(_Insn, Caller, Method, Offset),
+    Offset > 0,
+    method(Caller),
+    method(Method),
+    Caller != Method,
+    1 {
+        constructor(Method);
+        deletingDestructor(Method) : not realDestructor(Caller);
+        realDestructor(Method)
+    }.                                                                            % rules.pl:3318
+
+notMergeUnsorted(Caller, Method) :- reasonNOTMergeClassesPUnsorted(Caller, Method).
+
 % reasonNOTMergeClasses_Q: methods without a symbol for a known class name
 % cannot merge with methods whose symbol identifies that class.
 % Counterpart: reasonNOTMergeClasses_Q (rules.pl:3352)
