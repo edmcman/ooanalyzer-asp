@@ -80,6 +80,35 @@ reasonMergeClassesCUnsorted(Class, Method) :-
 mergeClasses(A, B) :- reasonMergeClassesCUnsorted(A, B), A < B.
 mergeClasses(A, B) :- reasonMergeClassesCUnsorted(B, A), A < B.
 
+% reasonMergeClasses_H: an entry beyond the sole base class primary vftable
+% belongs to the derived class.  Preserve the Prolog VOffset > BaseSize test;
+% vfTableSize is the ASP exact-size replacement for the Prolog LTE fact.
+% findVFTable/2 preserves Prolog findVFTable(VFTable, Offset, Class), with the
+% vftable itself serving as the concrete class witness.
+% Counterpart: reasonMergeClasses_H (rules.pl:2895)
+derivedClassHasOtherBase(Derived, Base) :-
+    derivedClass(Derived, Base, _ObjectOffset),
+    derivedClass(Derived2, OtherBase, _OtherOffset),
+    &sameClass(Derived, Derived2),
+    not &sameClass(Base, OtherBase).                                      % rules.pl:2905
+
+%!trace_rule {"% and % are the same class because derived vftable % has entry % beyond sole base vftable % size %", Derived, Method, DerivedVFTable, VOffset, BaseVFTable, BaseSize}
+reasonMergeClassesHUnsorted(Derived, Method) :-
+    derivedClass(Derived, Base, _ObjectOffset),
+    not derivedClassHasOtherBase(Derived, Base),
+    findVFTable(DerivedVFTable, 0),
+    &sameClass(DerivedVFTable, Derived),
+    findVFTable(BaseVFTable, 0),
+    &sameClass(BaseVFTable, Base),
+    vfTableSize(BaseVFTable, BaseSize),
+    vfTableEntry(DerivedVFTable, VOffset, Method),
+    not purecall(Method),
+    not reusedImplementation(Method),
+    VOffset > BaseSize.                                                    % rules.pl:2895
+
+mergeClasses(A, B) :- reasonMergeClassesHUnsorted(A, B), A < B.
+mergeClasses(A, B) :- reasonMergeClassesHUnsorted(B, A), A < B.
+
 % reasonMergeClasses_K: if two methods are present on the same object, and
 % neither class has a base, the methods must be on the same class.
 % Asymmetric: Class1 comes from classRelatedMethod; Method is the related method.

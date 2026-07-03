@@ -131,6 +131,15 @@ reusedImplementation(Method) :-
     vfTableEntry(VFTable, Offset2, Method),
     Offset1 < Offset2.
 
+% Witness-based replacement for Prolog findVFTable/3 (class.pl:40).
+% The vftable itself is the class witness, so do not materialize the union-find
+% representative returned by Prolog.  Preserve the offset-aware requirement
+% that a writer of VFTable is in the same class as VFTable.
+findVFTable(VFTable, Offset) :-
+    vfTable(VFTable),
+    vfTableWrite(_Insn, Writer, Offset, VFTable),
+    &sameClass(VFTable, Writer).
+
 % ============================================================
 % VFTABLE BELONGS TO CLASS
 % ============================================================

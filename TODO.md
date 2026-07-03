@@ -311,7 +311,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonMergeClasses_C` (2822) — existing class association
 - [x] `reasonMergeClasses_E` (2847) — two classes both direct bases of same derived at same offset must merge
 - [x] `reasonMergeClasses_G` (2881) — symbols with same class name
-- [ ] `reasonMergeClasses_H` (2895) — derived constructor calls base
+- [x] `reasonMergeClasses_H` (2895) — derived vftable entries beyond the sole base vftable belong to the derived class
 - [x] `reasonMergeClasses_J` (2925) — RTTI says two VFTables belong to same class
 - [x] `reasonMergeClasses_K` (2939) — class-related method and both classes have no base
 
