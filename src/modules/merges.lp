@@ -99,7 +99,7 @@ derivedClassHasOtherBase(Derived, Base) :-
 % offset domain.
 vfTableEntryBeyondSize(VFTable, VOffset) :-
     vfTableSize(VFTable, Size),
-    possibleVFTableEntry(_, VOffset, _),
+    possibleVFTableEntry(VFTable, VOffset, _),
     VOffset > Size.
 
 %!trace_rule {"% and % are the same class because derived vftable % has entry % beyond sole base vftable %", Derived, Method, DerivedVFTable, VOffset, BaseVFTable}
