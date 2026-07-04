@@ -163,6 +163,39 @@ classRelationshipVia(A, B) :-
     classRelationship(M2, B),
     &sameClass(M, M2).
 
+% occupiedByOther: some object of a class OTHER than Inner already sits at Offset
+% in Outer.  This is the odd-loop-safe form of _E's Prolog guard
+% not(factObjectInObject(OuterClass, _, Offset)): a literal port would let _E's
+% own head (inner = Inner) satisfy the negated objectInObject(Outer, _, Offset)
+% and unfound the rule.  Excluding Inner's own class means the head can never
+% trip its own guard, while two distinct-class candidates at one offset form a
+% benign even loop (the physical "an offset holds one class" exclusivity).
+% Slightly weaker than Prolog (which blocks on ANY object at the offset); a
+% same-class object already there is harmless redundancy.  Inner is bound by
+% validMethodCallAtOffset so the &sameClass check does not ground unbounded.
+occupiedByOther(Outer, Offset, Inner) :-
+    validMethodCallAtOffset(_Insn, Outer, Inner, Offset),
+    objectInObject(Outer, X, Offset),
+    not &sameClass(X, Inner).
+
+% reasonObjectInObject_E (rules.pl:1625): outer ctor calls inner ctor at Offset,
+% the two are not the same class, and no object of another class already sits at
+% Offset — so inner is an object within outer.  Unlike _D this fires at Offset=0
+% too.  Prolog's dynFactNOTMergeClasses(InnerClass,OuterClass) has no ASP
+% equivalent — there is no "proven not mergeable" fact distinct from the model's
+% class partition — so it maps to the solve-time literal not &sameClass, matching
+% _D.  hasPendingVFTableMerge guards omitted (no ASP forward-chaining phase);
+% iso_dif(InnerCtor,OuterCtor) -> OuterCtor != InnerCtor.
+%!trace_rule {"% contains % at offset % because the outer ctor calls the distinct inner ctor there", OuterCtor, InnerCtor, Offset}
+objectInObject(OuterCtor, InnerCtor, Offset) :-
+    validMethodCallAtOffset(_CallInsn, OuterCtor, InnerCtor, Offset),
+    Offset >= 0,
+    constructor(OuterCtor),
+    constructor(InnerCtor),
+    OuterCtor != InnerCtor,
+    not &sameClass(OuterCtor, InnerCtor),
+    not occupiedByOther(OuterCtor, Offset, InnerCtor).                    % rules.pl:1625
+
 % reasonClassRelationship_internal: direct object composition/inheritance.
 %!trace_rule {"% has a class relationship with % because of direct composition/inheritance", D, B}
 classRelationship(D, B) :-
