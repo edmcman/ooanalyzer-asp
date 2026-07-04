@@ -301,6 +301,26 @@ weakMergeCandidate(A, B) :- weakMergeCandidateUnsorted(B, A), A < B, not strongM
 
 mergeCandidate(A, B) :- weakMergeCandidate(A, B).
 
+% guessLateMergeClasses_F2: a method that appears in a vftable already
+% associated with a class is a late merge candidate for that class.  Prolog
+% restricts this guess to methods that are singleton classes at the point the
+% late-guess phase runs.  A literal single-shot ASP encoding is self-defeating:
+% selecting the merge would make the method non-singleton and remove its own
+% support.  Instead, reward the intended final same-class relationship once per
+% method below; this declarative replacement was explicitly approved.
+% methodInVFTable preserves the Prolog dethunking and purecall exclusions, and
+% the vftable itself is the concrete class witness returned by findVFTable.
+% Counterpart: guessLateMergeClassesF2 (guess.pl:842)
+%!trace_rule {"% and % are late merge candidates because method % appears in owned vftable %", A, B, Method, VFTable}
+lateF2CandidateUnsorted(VFTable, Method) :-
+    methodInVFTable(VFTable, _Offset, Method),
+    findVFTable(VFTable, _ObjectOffset).
+
+lateF2Candidate(A, B) :- lateF2CandidateUnsorted(A, B), A < B.
+lateF2Candidate(A, B) :- lateF2CandidateUnsorted(B, A), A < B.
+
+mergeCandidate(A, B) :- lateF2Candidate(A, B).
+
 % guessMergeClasses: choose merge or not-merge for each candidate pair.
 %!trace_rule {"guess whether % and % are the same class or not", A, B}
 1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :-
@@ -321,6 +341,19 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 % Base G2 reward: prefer weak merges when chosen.
 weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).
 #maximize { 8@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
+
+% F2 is satisfied by final equivalence-class membership, whether direct or
+% transitive.  Keying the objective by Method awards it at most once even when
+% the same implementation appears in multiple owned vftables.
+lateF2Reward(Method) :-
+    lateF2CandidateUnsorted(VFTable, Method),
+    &sameClass(VFTable, Method).
+
+#maximize { 8@0, late_f2, Method : lateF2Reward(Method) }.
+
+% guessLateMergeClasses_F1 intentionally has no separate reward.  Its Prolog
+% role is to order the F2 candidates whose owning class has no known base; the
+% declarative F2 objective does not reproduce that procedural ordering.
 
 % G1 constructor bonus: extra reward when either side's class has a constructor.
 % Uses &sameClass to check class membership at solver time.

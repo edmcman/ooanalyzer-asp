@@ -337,7 +337,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [ ] `guessMergeClasses_C1`–`guessMergeClasses_C4`
 - [x] `guessMergeClasses_D`
 - [ ] `guessMergeClasses_G`
-- [ ] `guessLateMergeClasses_F1`, `_F2`
+- [x] `guessLateMergeClasses_F1` — intentionally no separate reward; its Prolog role is F2 candidate ordering
+- [x] `guessLateMergeClasses_F2` — once-per-method reward for joining a vftable method to its owned vftable class
 - [x] `guessLateMergeClasses_G1` — constructor bonus on weak merge candidates
 - [x] `guessLateMergeClasses_G2` — classRelatedMethod weak merge candidates
 - [ ] `guessNOTMergeClasses`
