@@ -129,6 +129,40 @@ objectInObject(Outer, Inner, Off) :- derivedClass(Outer, Inner, Off).     % rule
 %!trace_rule {"% contains % at offset % because of embedding", Outer, Inner, Off}
 objectInObject(Outer, Inner, Off) :- embeddedObject(Outer, Inner, Off).   % rules.pl:1577
 
+% reasonObjectInObject_D (rules.pl:1589): the outer constructor calls the inner
+% constructor passing this+Offset at a NON-ZERO offset, the two are not the same
+% class, and are not already class-related — so inner is an object within outer.
+% Witness-only head (records the constructors, not class reps), per convention.
+% Offset>0 folds iso_dif(Offset,0) into Offset>=0.  The hasPendingVFTableMerge
+% guards are omitted: they only defend Prolog's forward-chaining ordering, which
+% ASP does not have (&sameClass always gives final class identity).
+%!trace_rule {"% contains % at offset % because the outer constructor calls the inner constructor there", OuterCtor, InnerCtor, Offset}
+objectInObject(OuterCtor, InnerCtor, Offset) :-
+    validMethodCallAtOffset(_CallInsn, OuterCtor, InnerCtor, Offset),
+    Offset > 0,
+    constructor(OuterCtor),
+    constructor(InnerCtor),
+    OuterCtor != InnerCtor,
+    not &sameClass(OuterCtor, InnerCtor),
+    not classRelationshipVia(OuterCtor, InnerCtor).                       % rules.pl:1589
+
+% Prolog's guard is not(reasonClassRelationship(OuterClass, InnerClass)) — "don't
+% add this edge if the two are already related".  A literal port, not
+% classRelationship(A,B), is an ODD LOOP: classRelationship(A,B) :-
+% objectInObject(A,B,_) (below), so deriving _D's own head satisfies the guard's
+% negation and unfounds the rule — the edge can never be true.  Prolog is immune
+% because its forward-chaining fixpoint checks the relationship *before* the new
+% edge is asserted.  We reproduce that "before" by guarding on a relationship
+% that goes through an intermediate class (length >= 2): the first hop
+% objectInObject(A, M, _) with M a distinct class from B cannot be the A->B edge
+% itself, so the guard no longer depends on _D's head for acyclic layouts (an
+% object transitively containing itself is geometrically impossible).
+classRelationshipVia(A, B) :-
+    objectInObject(A, M, _),
+    not &sameClass(M, B),
+    classRelationship(M2, B),
+    &sameClass(M, M2).
+
 % reasonClassRelationship_internal: direct object composition/inheritance.
 %!trace_rule {"% has a class relationship with % because of direct composition/inheritance", D, B}
 classRelationship(D, B) :-

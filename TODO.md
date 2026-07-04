@@ -233,7 +233,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonObjectInObject_A` (1564) — from `derivedClass`
 - [x] `reasonObjectInObject_B` (1568) — from `embeddedObject`
 - [ ] `reasonObjectInObject_C` (1577) — from VFTable write at non-zero offset
-- [ ] `reasonObjectInObject_D` (1589) — from VBTable write pattern
+- [x] `reasonObjectInObject_D` (1589) — outer ctor calls inner ctor at non-zero offset (`composition.lp`; guard uses `classRelationshipVia` to avoid an odd loop — see memory)
 - [ ] `reasonObjectInObject_E` (1625) — from `callAtOffset` pattern
 - [ ] `reasonObjectInObject_F` (1672) — from class size constraints
 
