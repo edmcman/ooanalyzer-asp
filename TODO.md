@@ -377,7 +377,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Related Methods (rules.pl:2354–2496)
 - [x] `reasonClassRelatedMethod_A` (2361) — `classCallsMethod` implies class-related method (undirected)
 - [x] `reasonClassRelatedMethod_B` (2372) — method called by class method
-- [ ] `reasonClassRelatedMethod_C` (2414) — method of embedded inner class
+- [x] `reasonClassRelatedMethod_C` (2414) — method of embedded inner class (`classes.lp`; needs `classAtOffset`/`offsetPrecise` in `composition.lp`)
 
 ### Class Calls Method (rules.pl:2449–2496)
 - [ ] `reasonClassCallsMethod` (2449) — direct call within class
@@ -385,7 +385,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonClassCallsMethod_C` (2481) — inherited call
 
 ### Class at Offset (rules.pl:2505–2538)
-- [ ] `reasonClassAtOffset` (2534) — outer class has inner at byte offset
+- [x] `reasonClassAtOffset` (2534) — outer class has inner at byte offset (`composition.lp` `classAtOffset/3` + `offsetPrecise` for `isOffsetPrecise`)
 
 ### Reused / Shared Implementation (rules.pl:2643–2704, 3398)
 - [~] `reasonReusedImplementation_A` (2652) — commented out in Prolog, skip

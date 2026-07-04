@@ -144,6 +144,52 @@ classRelationship(D, B) :-
     objectInObject(M2, B, _),
     &sameClass(M1, M2).                                                    % rules.pl:2119
 
+% ============================================================
+% classAtOffset — the class that sits at a byte offset within an outer class.
+%
+% Faithful port of reasonClassAtOffset/3 (rules.pl:2495-2539): transitive
+% closure over objectInObject (embedding OR inheritance) edges with accumulated
+% offset.  Structured exactly like derivedClassRelationship/3 above — linear
+% recursion (one objectInObject witness edge chained on the *same* middle
+% witness to the recursive closure), head bounded by relevantOffset, cycles
+% pruned with not &sameClass.  No relevantOffset change is needed: every
+% objectInObject offset is grounded by a base derivedClass edge, so the
+% existing primitiveOffset(Off) :- derivedClass(_,_,Off) already covers them.
+% ============================================================
+%!trace_rule {"% has % at offset % (direct composition/inheritance)", Outer, Inner, Off}
+classAtOffset(Outer, Inner, Off) :- objectInObject(Outer, Inner, Off).
+
+%!trace_rule {"% has % at offset % (transitive through %)", Outer, Inner, Off, M}
+cAO_step(Outer, Inner, Off) :-
+    objectInObject(Outer, M, Off1),
+    classAtOffset(M, Inner, Off2),
+    Off = Off1 + Off2,
+    relevantOffset(Off),
+    Outer != M, not &sameClass(Outer, M),
+    M != Inner, not &sameClass(M, Inner).
+
+classAtOffset(Outer, Inner, Off) :- cAO_step(Outer, Inner, Off).
+
+% ------------------------------------------------------------
+% isOffsetPrecise (rules.pl:2551) as a property of (Outer, Off).
+%
+% reasonClassRelatedMethod_C guards on
+%   forall(reasonClassAtOffset(Outer, Off, _AnyInner, Seq), isOffsetPrecise(Seq))
+% i.e. EVERY path from Outer to that offset must have its maximal leading
+% zero-offset run consist entirely of derivedClass (inheritance) hops — no
+% embeddedObject hop may appear before the first non-zero hop.  We compute the
+% negation constructively: a path is imprecise iff, walking zero-offset hops
+% out of Outer, one of them is an embedding.  A leading embedded zero-hop taints
+% any continuation reaching the total Off; a leading derived zero-hop is clean
+% and the taint must come from deeper (same Off, since +0).  offsetPrecise then
+% negates existence of any such path.  offsetImprecise is positive-recursive and
+% stratified below the negation, mirroring the not classHasInnerAtZero pattern.
+offsetImprecise(Outer, Off) :- embeddedObject(Outer, M, 0), classAtOffset(M, _, Off).
+offsetImprecise(Outer, 0)   :- embeddedObject(Outer, _, 0).
+offsetImprecise(Outer, Off) :- derivedClass(Outer, M, 0), offsetImprecise(M, Off).
+
+offsetPrecise(Outer, Off) :- classAtOffset(Outer, _, Off), not offsetImprecise(Outer, Off).
+
 % reasonClassHasNoBase (2136): RTTI says this class has no base class.
 %!trace_rule {"% has no base class because RTTI says so", Class}
 classHasNoBase(Class) :-

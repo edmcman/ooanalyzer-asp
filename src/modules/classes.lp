@@ -47,6 +47,26 @@ classRelatedMethod(Method1, Method2) :-
     % not classHasInnerAtZero(Function),
     not classHasInnerAtZero(Method2).                                       % rules.pl:2372
 
+% reasonClassRelatedMethod_C: an outer method calls an inner method on a
+% this-pointer that is Offset bytes into the outer this-pointer, and the outer
+% class has an object (embedded or base) at that offset.  The inner class at
+% that offset is then related to the inner method.  Requires the offset to be
+% "precise" (every path to it is inheritance in its leading zero-offset run) so
+% we do not relate a method that actually belongs to an embedded member.
+% classAtOffset / offsetPrecise are defined in composition.lp.
+% find(OuterMethod, OuterClass) becomes the &sameClass(OuterMethod, OC) join;
+% both iso_dif checks compare class reps, so they map to not &sameClass.
+% Counterpart: reasonClassRelatedMethod_C (rules.pl:2414)
+%!trace_rule {"% is related to % because an outer method % calls it on a this-pointer % bytes into an object at that offset", InnerClass, InnerMethod, OuterMethod, Offset}
+classRelatedMethod(InnerClass, InnerMethod) :-
+    thisPtrUsage(_Insn, OuterMethod, InnerThisPtr, InnerMethod),
+    thisPtrOffset(_OuterThisPtr, Offset, InnerThisPtr),
+    classAtOffset(OC, InnerClass, Offset),
+    &sameClass(OuterMethod, OC),
+    not &sameClass(OC, InnerClass),
+    not &sameClass(InnerClass, InnerMethod),
+    offsetPrecise(OC, Offset).                                              % rules.pl:2414
+
 % knownVirtualMethod: method is known to be virtual.
 % Prolog (rules.pl:780): symbolProperty(Method, virtual) or factMethodInVFTable.
 % Uses vfTableEntry (confirmed entries) not possibleVFTableEntry (candidates).
