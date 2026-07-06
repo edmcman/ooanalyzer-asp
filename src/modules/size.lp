@@ -123,13 +123,15 @@ classSizeLTE(Constructor, Size) :-
 
 % reasonClassSizeLTE_D (3716) / CSize-1:
 % A base class is no larger than any of its derived classes, so a derived
-% class's upper bound propagates up to its base. classRelationship(D, B) carries
-% derived witness D and base witness B; the size-bearing witness WD need not be
-% D itself, so join them across the derived class with &sameClass. The head
-% records B as the base class's witness.
+% class's upper bound propagates up to its base. classRelationshipCand generates
+% the derived witness D and base witness B; &classRelationship decides the
+% containment. The size-bearing witness WD need not be D itself, so join them
+% across the derived class with &sameClass. The head records B as the base
+% class's witness.
 %!trace_rule {"base class of % is <= % bytes (derived class of % is)", B, Size, D}
 classSizeLTE(B, Size) :-
-    classRelationship(D, B),
+    classRelationshipCand(D, B),
+    &classRelationship(D, B),
     classSizeLTE(WD, Size),
     &sameClass(D, WD).
 

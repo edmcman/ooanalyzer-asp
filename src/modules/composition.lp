@@ -115,12 +115,12 @@ dCR_step3(D, B, Off) :-
 derivedClassRelationship(D, B, Off) :- dCR_step3(D, B, Off).
 
 % ============================================================
-% objectInObject and classRelationship
+% objectInObject
 %
 % objectInObject is witness-only (no sameClass closure).  Use sites join
-% across equivalence classes via &sameClass.
-% classRelationship is the transitive closure over objectInObject, using
-% &sameClass to join the middle-class witnesses at each step.
+% across equivalence classes via &sameClass.  Its transitive closure lives in
+% the propagator as the &classRelationship/&classRelationshipVia theory atoms
+% (see the classRelationship section below).
 % ============================================================
 
 % objectInObject_B / objectInObject_C
@@ -136,6 +136,14 @@ objectInObject(Outer, Inner, Off) :- embeddedObject(Outer, Inner, Off).   % rule
 % Offset>0 folds iso_dif(Offset,0) into Offset>=0.  The hasPendingVFTableMerge
 % guards are omitted: they only defend Prolog's forward-chaining ordering, which
 % ASP does not have (&sameClass always gives final class identity).
+%
+% Prolog's grand-ancestor guard not(reasonClassRelationship(OuterClass,
+% InnerClass)) maps to the &classRelationshipVia theory atom: a containment
+% path whose first intermediate class differs from class(InnerCtor).  The Via
+% form excludes the direct OuterCtor->InnerCtor edge, so the guard never
+% depends on this rule's own head (Prolog is immune to that odd loop because
+% its forward-chaining fixpoint checks the relationship *before* asserting the
+% new edge); being a theory atom, it also adds no founding recursion.
 %!trace_rule {"% contains % at offset % because the outer constructor calls the inner constructor there", OuterCtor, InnerCtor, Offset}
 objectInObject(OuterCtor, InnerCtor, Offset) :-
     validMethodCallAtOffset(_CallInsn, OuterCtor, InnerCtor, Offset),
@@ -144,24 +152,7 @@ objectInObject(OuterCtor, InnerCtor, Offset) :-
     constructor(InnerCtor),
     OuterCtor != InnerCtor,
     not &sameClass(OuterCtor, InnerCtor),
-    not classRelationshipVia(OuterCtor, InnerCtor).                       % rules.pl:1589
-
-% Prolog's guard is not(reasonClassRelationship(OuterClass, InnerClass)) — "don't
-% add this edge if the two are already related".  A literal port, not
-% classRelationship(A,B), is an ODD LOOP: classRelationship(A,B) :-
-% objectInObject(A,B,_) (below), so deriving _D's own head satisfies the guard's
-% negation and unfounds the rule — the edge can never be true.  Prolog is immune
-% because its forward-chaining fixpoint checks the relationship *before* the new
-% edge is asserted.  We reproduce that "before" by guarding on a relationship
-% that goes through an intermediate class (length >= 2): the first hop
-% objectInObject(A, M, _) with M a distinct class from B cannot be the A->B edge
-% itself, so the guard no longer depends on _D's head for acyclic layouts (an
-% object transitively containing itself is geometrically impossible).
-classRelationshipVia(A, B) :-
-    objectInObject(A, M, _),
-    not &sameClass(M, B),
-    classRelationship(M2, B),
-    &sameClass(M, M2).
+    not &classRelationshipVia(OuterCtor, InnerCtor).                      % rules.pl:1589
 
 % occupiedByOther: some object of a class OTHER than Inner already sits at Offset
 % in Outer.  This is the odd-loop-safe form of _E's Prolog guard
@@ -196,20 +187,47 @@ objectInObject(OuterCtor, InnerCtor, Offset) :-
     not &sameClass(OuterCtor, InnerCtor),
     not occupiedByOther(OuterCtor, Offset, InnerCtor).                    % rules.pl:1625
 
-% reasonClassRelationship_internal: direct object composition/inheritance.
-%!trace_rule {"% has a class relationship with % because of direct composition/inheritance", D, B}
-classRelationship(D, B) :-
-    objectInObject(D, B, _).                                               % rules.pl:2114
+% ============================================================
+% reasonClassRelationship (rules.pl:2114/2119) — computed by the
+% &classRelationship/2 and &classRelationshipVia/2 theory atoms in the Rust
+% propagator: reachability over true objectInObject edges with vertices
+% quotiented by the &sameClass classes.  &classRelationship(A, B) holds iff a
+% >=1-edge containment path leads from class(A) to class(B);
+% &classRelationshipVia(A, B) additionally requires the path's first
+% intermediate class to differ from class(B) (reasonObjectInObject_D's guard).
+%
+% This replaces the former recursive ASP closure: its &sameClass joins, pulled
+% into a loop through reasonObjectInObject_D/_E's negative guards, exploded the
+% solve-time SCC from 1.4k to 1.35M nodes on TinyXml and stopped the solver
+% completing any model.
+%
+% classRelationshipCand/2 is the grounding domain for positive consumers
+% (reasonNOTMergeClasses_J, reasonClassSizeLTE_D): a positive transitive
+% closure over candidate containment edges built from the same sources as the
+% derivedClass/_D/_E rules but with static predicates only (no &sameClass, no
+% negation).  Over-approximation is safe: extra instances are just theory
+% atoms the propagator refutes.
+% ============================================================
 
-% reasonClassRelationship_internal: transitive composition/inheritance.
-% Join across equivalence classes: M1 is the middle-class witness from the
-% left side; M2 is the outer witness from objectInObject on the right side.
-% &sameClass(M1, M2) checks they're the same middle class.
-%!trace_rule {"% has a class relationship with % because of transitive composition/inheritance through %", D, B, M1}
-classRelationship(D, B) :-
-    classRelationship(D, M1),
-    objectInObject(M2, B, _),
-    &sameClass(M1, M2).                                                    % rules.pl:2119
+% Candidate containment edges: ctor-calls-ctor sources (reasonDerivedClass_B,
+% reasonObjectInObject_D/_E; constructor/1 is contained in possibleConstructor/1) ...
+oioCandEdge(Outer, Inner) :-
+    validMethodCallAtOffset(_Insn, Outer, Inner, Offset),
+    Offset >= 0,
+    possibleConstructor(Outer),
+    possibleConstructor(Inner),
+    Outer != Inner.
+% ... and RTTI-declared inheritance (reasonDerivedClass_D/_E sources; both
+% rTTIInheritsFrom and rTTITDA2Class are static, from initial.lp).
+oioCandEdge(DerivedClass, BaseClass) :-
+    rTTIInheritsFrom(DerivedTDA, BaseTDA, _Attributes, _M, _P, _V),
+    rTTITDA2Class(DerivedTDA, DerivedClass),
+    rTTITDA2Class(BaseTDA, BaseClass).
+
+classRelationshipCand(X, Y) :- oioCandEdge(X, Y).
+classRelationshipCand(X, Y) :-
+    classRelationshipCand(X, M),
+    oioCandEdge(M, Y).
 
 % ============================================================
 % classAtOffset — the class that sits at a byte offset within an outer class.
@@ -332,7 +350,6 @@ purecallNotMostDerivedReward(Derived, Base, Off) :-
 %!trace {"% derives from % at offset %", Outer, Inner, Off} derivedClass(Outer, Inner, Off).
 %!trace {"% embeds % at offset %", Outer, Inner, Off} embeddedObject(Outer, Inner, Off).
 %!trace {"% contains % at offset %", Outer, Inner, Off} objectInObject(Outer, Inner, Off).
-%!trace {"% has a class relationship with %", A, B} classRelationship(A, B).
 %!trace {"% has no base class", V} classHasNoBase(V).
 %!trace {"% has no derived class", V} classHasNoDerived(V).
 

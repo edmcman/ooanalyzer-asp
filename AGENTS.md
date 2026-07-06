@@ -17,7 +17,7 @@ original module set.
 | `ooanalyzer.lp` | Entry point: `#include`s the modules below |
 | `ooanalyzer.py` | Clingo driver that registers the `&sameClass/2` propagator |
 | `src/util/config.lp` | Tunable `#const`s (e.g. `max_class_size`, `max_offset_depth`) — override on the command line |
-| `src/util/theory.lp` | Clingo theory declaration for `&sameClass/2` |
+| `src/util/theory.lp` | Clingo theory declarations: `&sameClass/2`, `&allWritersInClass/2`, `&classRelationship/2`, `&classRelationshipVia/2` |
 | `src/util/facts.lp` | Input vocabulary and `#defined` directives |
 | `src/util/initial.lp` | Derives simplified predicates from full-arity OOAnalyzer `.facts` |
 | `propagator/sameclass.py` | Pure-Python `&sameClass/2` utilities: the `_UF` union-find, the `LazySameClassConsistencyPropagator` diagnostic (`--sameclass-mode=lazy-check`), and `sc_pairs_from_merges`. The live eager propagator is the Rust port below; there is no pure-Python fallback |
@@ -294,6 +294,37 @@ derivedClass(DerivedCtor, BaseCtor, Off) :- ... .
 When adding theory atoms, remember that `not &sameClass(A, B)` is a solver-time
 condition. It can reduce search but does not prune grounding the way a positive
 ordinary predicate might.
+
+### Containment reachability: `&classRelationship/2` and `&classRelationshipVia/2`
+
+`reasonClassRelationship` (transitive containment over `objectInObject`) is NOT
+an ASP predicate: the propagator computes it as reachability over true
+`objectInObject/3` edges with vertices quotiented by the `&sameClass` classes.
+`&classRelationship(A, B)` holds iff a >=1-edge path leads from class(A) to
+class(B); `&classRelationshipVia(A, B)` additionally requires the first
+intermediate class to differ from class(B) (reasonObjectInObject_D's
+grand-ancestor guard — the Via form never depends on the direct A->B edge, so
+the guard is odd-loop-free).
+
+**Do not reintroduce a recursive ASP `classRelationship` closure.** The
+2026-07-04 port of reasonObjectInObject_D/_E did exactly that (guards
+`not classRelationshipVia` / `not occupiedByOther` around a recursive
+`&sameClass`-joined closure) and exploded the solve-time SCC from 1.4k to 1.35M
+nodes on TinyXml — the solver stopped completing models entirely.
+
+Positive consumers need a grounding domain: `classRelationshipCand/2`
+(composition.lp) is a positive transitive closure over static candidate
+containment edges (`oioCandEdge/2`: ctor-calls-ctor via `possibleConstructor`,
+plus RTTI-declared inheritance) — supersets of every `objectInObject` source,
+built with no `&sameClass` and no negation. One witness pair per class pair is
+enough for class-level consumers; the propagator fixes statically-unreachable
+theory atoms false at level 0. Pattern:
+
+```prolog
+notMergeUnsorted(X, Y) :-
+    classRelationshipCand(X, Y),
+    &classRelationship(X, Y).
+```
 
 ### Merge optimization performance (see `.state/merge-optimization-blocker.md`)
 

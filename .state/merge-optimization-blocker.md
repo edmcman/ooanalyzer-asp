@@ -131,6 +131,13 @@ Positive, retained:
 
 ## Diagnostic gotchas
 
+- 2026-07-06: the propagator gained `&classRelationship/2`/`&classRelationshipVia/2`
+  reachability (new watches on `objectInObject`, new reason clauses). Per the
+  rule below, solver-knob rankings need a re-sweep before trusting old numbers.
+- clingo resolves relative `#include` paths against the **CWD**, not the
+  including file. Benchmarks of archived/other trees must run with the CWD
+  inside that tree or they silently ground the current working tree's modules.
+
 - The driver's `on_unsat` callback never fires for usc bound updates. Diagnose
   LB progress from clasp's `Progression : ...` lines (needs `--stats`).
 - `usc,1`-style "zero cores" diagnostics disagree with `Progression` on the

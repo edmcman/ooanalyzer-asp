@@ -12,10 +12,11 @@ use crate::ffi::{
     CHECK_MODE_TOTAL, EXTERNAL_TYPE_FALSE,
 };
 use crate::potential_uf;
-use crate::shared::{MergeScFacts, ObsRule, PropData, Shared};
+use crate::shared::{CrAtom, MergeScFacts, ObsRule, PropData, Shared};
 use crate::threadstate::ThreadState;
 use crate::uf::Uf;
 use rustc_hash::{FxHashMap, FxHashSet};
+use std::collections::VecDeque;
 
 /// Add a learnt clause via the control; yields its consistency bool, or returns
 /// the clingo error message up the stack on API failure.
@@ -150,12 +151,13 @@ fn build_shared(
         }
     });
 
-    // &sameClass/2 and &allWritersInClass/2 theory atoms.
+    // &sameClass/2, &allWritersInClass/2, &classRelationship{,Via}/2 theory atoms.
     let mut now_slit_to_key: FxHashMap<i32, (EntKey, EntKey)> = FxHashMap::default();
     let mut now_writers_by_vft: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
     let mut awc_to_slit: FxHashMap<(EntKey, EntKey), i32> = FxHashMap::default();
     let mut awc_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)> = FxHashMap::default();
     let mut awc_by_vft: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
+    let mut cr_atoms: Vec<CrAtom> = Vec::new();
 
     for atom in 0..ffi.theory_atoms_size(theory_atoms) as u32 {
         let term = ffi.theory_atom_term(theory_atoms, atom);
@@ -205,9 +207,42 @@ fn build_shared(
                     .insert((class_, slit));
                 ffi.add_watch(init_ptr, slit);
             }
+            "classRelationship" | "classRelationshipVia" if args.len() == 2 => {
+                let a = EntKey::from_theory_term(ffi, theory_atoms, args[0]);
+                let b = EntKey::from_theory_term(ffi, theory_atoms, args[1]);
+                cr_atoms.push(CrAtom {
+                    a,
+                    b,
+                    slit,
+                    via: name == "classRelationshipVia",
+                });
+            }
             _ => {}
         }
     }
+
+    // objectInObject/3 — containment edges for &classRelationship* reachability.
+    let mut oio_lit_to_edges: FxHashMap<i32, Vec<(EntKey, EntKey)>> = FxHashMap::default();
+    each_sym_atom(ffi, sym_atoms, "objectInObject", 3, |sym, prog_lit| {
+        let args = match ffi.symbol_arguments(sym).ok() {
+            Some(a) => a,
+            None => return,
+        };
+        if args.len() < 3 {
+            return;
+        }
+        let outer = EntKey::from_symbol(ffi, args[0]);
+        let inner = EntKey::from_symbol(ffi, args[1]);
+        let lit = match ffi.solver_literal(init_ptr, prog_lit).ok() {
+            Some(s) => s,
+            None => return,
+        };
+        let is_new = !oio_lit_to_edges.contains_key(&lit);
+        oio_lit_to_edges.entry(lit).or_default().push((outer, inner));
+        if is_new && lit.abs() != 1 {
+            ffi.add_watch(init_ptr, lit);
+        }
+    });
 
     // nonOverwritingWrite/3
     each_sym_atom(ffi, sym_atoms, "nonOverwritingWrite", 3, |sym, prog_lit| {
@@ -311,9 +346,61 @@ fn build_shared(
         }
     }
 
+    // Level-0 pruning for &classRelationship*: a target unreachable from the
+    // source even with ALL candidate edges present and potential merge
+    // connectivity is false forever. (Applied to the Via variant too — its
+    // semantics are strictly stronger, so plain-unreachable implies Via-false.)
+    {
+        let mut padj: FxHashMap<EntKey, FxHashSet<EntKey>> = FxHashMap::default();
+        for edges in oio_lit_to_edges.values() {
+            for (o, i) in edges {
+                let ro = potential_uf.root(o);
+                let ri = potential_uf.root(i);
+                padj.entry(ro).or_default().insert(ri);
+            }
+        }
+        let mut reach_cache: FxHashMap<EntKey, FxHashSet<EntKey>> = FxHashMap::default();
+        let mut live: Vec<CrAtom> = Vec::with_capacity(cr_atoms.len());
+        for cr in cr_atoms.drain(..) {
+            let ra = potential_uf.root(&cr.a);
+            let rb = potential_uf.root(&cr.b);
+            if !reach_cache.contains_key(&ra) {
+                reach_cache.insert(ra.clone(), potential_reach(&padj, &ra));
+            }
+            if reach_cache[&ra].contains(&rb) {
+                live.push(cr);
+            } else {
+                // Statically unreachable: fixed false forever, drop from the
+                // runtime sweep entirely.
+                init_add(ffi, init_ptr, &[-cr.slit]);
+            }
+        }
+        cr_atoms = live;
+    }
+    cr_atoms.sort_by(|x, y| {
+        x.a.cmp(&y.a)
+            .then(x.b.cmp(&y.b))
+            .then(x.slit.cmp(&y.slit))
+    });
+
     // Freeze deterministic, interpreter-independent iteration order.
     let now_writers_by_vft = freeze_sorted(now_writers_by_vft);
     let awc_by_vft = freeze_sorted(awc_by_vft);
+    let oio_by_src: FxHashMap<EntKey, Vec<(EntKey, i32)>> = freeze_sorted({
+        let mut m: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
+        for (&lit, edges) in &oio_lit_to_edges {
+            for (o, i) in edges {
+                m.entry(o.clone()).or_default().insert((i.clone(), lit));
+            }
+        }
+        m
+    });
+    let reach_entities: FxHashSet<EntKey> = oio_lit_to_edges
+        .values()
+        .flatten()
+        .flat_map(|(o, i)| [o.clone(), i.clone()])
+        .chain(cr_atoms.iter().flat_map(|c| [c.a.clone(), c.b.clone()]))
+        .collect();
 
     let num_threads = ffi.number_of_threads(init_ptr) as usize;
     let states = (0..num_threads)
@@ -334,6 +421,10 @@ fn build_shared(
         awc_to_slit,
         awc_slit_to_pair,
         awc_by_vft,
+        oio_lit_to_edges,
+        oio_by_src,
+        reach_entities,
+        cr_atoms,
         observed_proglits,
         unconditional_proglits,
         proglit_to_slit,
@@ -424,6 +515,21 @@ fn rebuild(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, asgn: *const Cli
             }
         }
     }
+    // Seed level-0 containment edges in sorted-lit order (deterministic).
+    state.oio_true.clear();
+    state.oio_trail.clear();
+    let mut fixed_lits: Vec<i32> = shared
+        .oio_lit_to_edges
+        .keys()
+        .copied()
+        .filter(|&lit| ffi.is_true(asgn, lit) && ffi.is_fixed(asgn, lit))
+        .collect();
+    fixed_lits.sort_unstable();
+    for lit in fixed_lits {
+        for (o, i) in &shared.oio_lit_to_edges[&lit] {
+            state.oio_true.push((o.clone(), i.clone(), lit));
+        }
+    }
 }
 
 pub fn propagate(
@@ -439,6 +545,7 @@ pub fn propagate(
     let asgn = ffi.control_assignment(ctrl);
     ensure_initialized(ffi, &shared, state, asgn);
 
+    let mut graph_touched = false;
     for &lit in changes {
         if let Some(pairs) = shared.facts.merge_lit_to_pairs.get(&lit).cloned() {
             for (a, b) in &pairs {
@@ -451,6 +558,9 @@ pub fn propagate(
                 if let Some((absorbed, merged_root)) = state.uf.union(a, b, lit, Some(ra), Some(rb))
                 {
                     state.merge_trail.push((lit, snap));
+                    graph_touched |= absorbed
+                        .iter()
+                        .any(|e| shared.reach_entities.contains(e));
                     let absorbed_set: FxHashSet<EntKey> = absorbed.iter().cloned().collect();
                     let merged = state.uf.members_of(&merged_root).clone();
                     let mut sorted = absorbed;
@@ -489,6 +599,12 @@ pub fn propagate(
             } else {
                 state.true_sc.insert(lit);
             }
+        } else if let Some(edges) = shared.oio_lit_to_edges.get(&lit) {
+            state.oio_trail.push((lit, state.oio_true.len()));
+            for (o, i) in edges {
+                state.oio_true.push((o.clone(), i.clone(), lit));
+            }
+            graph_touched = true;
         }
     }
 
@@ -531,6 +647,12 @@ pub fn propagate(
             }
         }
     }
+
+    if graph_touched && !state.oio_true.is_empty() {
+        if !reconcile_reach(ffi, &shared, state, ctrl, asgn, false)? {
+            return Ok(());
+        }
+    }
     Ok(())
 }
 
@@ -547,7 +669,7 @@ pub fn undo(ffi: &Ffi, pd: &PropData, ctrl: *const ClingoPropagateControl, chang
             state.true_sc.remove(&lit);
         }
     }
-    if state.merge_trail.is_empty() {
+    if state.merge_trail.is_empty() && state.oio_trail.is_empty() {
         return;
     }
     let changes_set: FxHashSet<i32> = changes.iter().copied().collect();
@@ -557,6 +679,13 @@ pub fn undo(ffi: &Ffi, pd: &PropData, ctrl: *const ClingoPropagateControl, chang
         }
         let (_, snap) = state.merge_trail.pop().unwrap();
         state.uf.restore(snap);
+    }
+    while let Some(&(lit, len)) = state.oio_trail.last() {
+        if !changes_set.contains(&lit) {
+            break;
+        }
+        state.oio_trail.pop();
+        state.oio_true.truncate(len);
     }
 }
 
@@ -635,6 +764,12 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
                 return Ok(());
             }
         }
+    }
+
+    // Reconcile &classRelationship* against the containment graph: force
+    // supported atoms true and refute unsupported true-assigned ones.
+    if !reconcile_reach(ffi, &shared, state, ctrl, asgn, true)? {
+        return Ok(());
     }
 
     if shared.foundedness_check && ffi.is_total(asgn) {
@@ -904,6 +1039,306 @@ fn assert_not_all_writers(
     let ok = clause!(ffi, ctrl, &clause);
     dump_lemma(shared, "not_all_writers", &clause, !ok);
     Ok(ok)
+}
+
+// ── &classRelationship / &classRelationshipVia reachability ─────────────────
+//
+// Semantics: vertices are the &sameClass union-find classes; edges are true
+// `objectInObject(Outer, Inner, _)` atoms. `&classRelationship(A, B)` holds iff
+// a ≥1-edge path leads from class(A) to class(B); the `Via` variant restricts
+// the first hop to land outside class(B) (reasonObjectInObject_D's
+// grand-ancestor guard, odd-loop-free because theory atoms have no
+// foundedness).
+
+/// Init-time reachability (≥1 edge) over the potential quotient graph.
+fn potential_reach(
+    padj: &FxHashMap<EntKey, FxHashSet<EntKey>>,
+    source: &EntKey,
+) -> FxHashSet<EntKey> {
+    let mut reached: FxHashSet<EntKey> = FxHashSet::default();
+    let mut queue: VecDeque<EntKey> = VecDeque::new();
+    if let Some(nbs) = padj.get(source) {
+        for nb in nbs {
+            if reached.insert(nb.clone()) {
+                queue.push_back(nb.clone());
+            }
+        }
+    }
+    while let Some(node) = queue.pop_front() {
+        if let Some(nbs) = padj.get(&node) {
+            for nb in nbs {
+                if reached.insert(nb.clone()) {
+                    queue.push_back(nb.clone());
+                }
+            }
+        }
+    }
+    reached
+}
+
+/// Reached class root → (previous root, edge outer entity, edge inner entity,
+/// edge lit): the BFS tree used for path reconstruction. The source root is a
+/// key only when a cycle reaches it back (self-containment).
+type ReachParent = FxHashMap<EntKey, (EntKey, EntKey, EntKey, i32)>;
+
+/// Quotient adjacency of the true containment edges, in assignment order:
+/// class root of the outer entity → [(outer, inner, lit)].
+fn build_reach_adj(state: &mut ThreadState) -> FxHashMap<EntKey, Vec<(EntKey, EntKey, i32)>> {
+    let edges = state.oio_true.clone();
+    let mut adj: FxHashMap<EntKey, Vec<(EntKey, EntKey, i32)>> = FxHashMap::default();
+    for (o, i, lit) in edges {
+        let r = state.uf.root(&o);
+        adj.entry(r).or_default().push((o, i, lit));
+    }
+    adj
+}
+
+fn reach_bfs(
+    state: &mut ThreadState,
+    adj: &FxHashMap<EntKey, Vec<(EntKey, EntKey, i32)>>,
+    source: &EntKey,
+    forbid_first_dst: Option<&EntKey>,
+) -> ReachParent {
+    let mut parent: ReachParent = FxHashMap::default();
+    let mut queue: VecDeque<EntKey> = VecDeque::new();
+    if let Some(edges) = adj.get(source) {
+        for (o, i, lit) in edges.clone() {
+            let ri = state.uf.root(&i);
+            if forbid_first_dst == Some(&ri) {
+                continue;
+            }
+            if !parent.contains_key(&ri) {
+                parent.insert(ri.clone(), (source.clone(), o, i, lit));
+                queue.push_back(ri);
+            }
+        }
+    }
+    while let Some(node) = queue.pop_front() {
+        if let Some(edges) = adj.get(&node) {
+            for (o, i, lit) in edges.clone() {
+                let ri = state.uf.root(&i);
+                if !parent.contains_key(&ri) {
+                    parent.insert(ri.clone(), (node.clone(), o, i, lit));
+                    queue.push_back(ri);
+                }
+            }
+        }
+    }
+    parent
+}
+
+/// Reason lits (merge slits + edge lits, to be negated) witnessing a path from
+/// entity `a` to entity `b`, plus the first intermediate entity (for the Via
+/// certificate). None if the BFS tree has no path (defensive).
+fn cr_path_reason(
+    state: &mut ThreadState,
+    parent: &ReachParent,
+    a: &EntKey,
+    b: &EntKey,
+    source: &EntKey,
+    target: &EntKey,
+) -> Option<(Vec<i32>, EntKey)> {
+    parent.get(target)?;
+    let mut hops: Vec<(EntKey, EntKey, i32)> = Vec::new();
+    let mut cur = target.clone();
+    loop {
+        let (prev, o, i, lit) = parent.get(&cur)?.clone();
+        hops.push((o, i, lit));
+        if prev == *source {
+            break;
+        }
+        cur = prev;
+    }
+    hops.reverse();
+    let first_mid = hops[0].1.clone();
+    let mut reason: Vec<i32> = Vec::new();
+    let mut at = a.clone();
+    for (o, i, lit) in hops {
+        let (same, merges) = state.uf.same_with_reason(&at, &o);
+        if !same {
+            return None;
+        }
+        reason.extend(merges);
+        reason.push(lit);
+        at = i;
+    }
+    let (same, merges) = state.uf.same_with_reason(&at, b);
+    if !same {
+        return None;
+    }
+    reason.extend(merges);
+    Some((reason, first_mid))
+}
+
+fn assert_cr_reachable(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    path_reason: &[i32],
+    via_mid: Option<&EntKey>,
+    slit: i32,
+    cut_cache: &mut FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)>,
+) -> Result<bool, String> {
+    let mut neg: FxHashSet<i32> = path_reason.iter().copied().collect();
+    let mut pos: FxHashSet<i32> = FxHashSet::default();
+    // Via: certify the first intermediate is currently outside class(b) — its
+    // component is exactly its internal merges, closed off by its cut merges.
+    if let Some(mid) = via_mid {
+        let (reason, cut) = component_cut_and_reasons(shared, state, mid, cut_cache);
+        neg.extend(reason);
+        pos.extend(cut);
+    }
+    let mut clause: Vec<i32> = Vec::with_capacity(neg.len() + pos.len() + 1);
+    let mut ns: Vec<i32> = neg.into_iter().collect();
+    ns.sort_unstable();
+    let mut ps: Vec<i32> = pos.into_iter().collect();
+    ps.sort_unstable();
+    for n in &ns {
+        clause.push(-n);
+    }
+    for p in &ps {
+        clause.push(*p);
+    }
+    clause.push(slit);
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "cr_reach", &clause, !ok);
+    Ok(ok)
+}
+
+fn assert_cr_unreachable(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+    b: &EntKey,
+    source: &EntKey,
+    parent: &ReachParent,
+    slit: i32,
+) -> Result<bool, String> {
+    let r_roots: FxHashSet<EntKey> = parent.keys().cloned().collect();
+    let mut s_roots = r_roots.clone();
+    s_roots.insert(source.clone());
+    let mut neg: FxHashSet<i32> = FxHashSet::default();
+    let mut pos: FxHashSet<i32> = FxHashSet::default();
+
+    // Candidate containment edges out of S = {source} ∪ R.
+    for (src_ent, edges) in &shared.oio_by_src {
+        let rs = state.uf.root(src_ent);
+        if !s_roots.contains(&rs) {
+            continue;
+        }
+        for (dst_ent, lit) in edges {
+            let rd = state.uf.root(dst_ent);
+            if r_roots.contains(&rd) {
+                if ffi.is_true(asgn, *lit) {
+                    neg.insert(*lit);
+                }
+                // A false internal edge cannot extend R — skip.
+            } else if ffi.is_true(asgn, *lit) {
+                // Only reachable-but-excluded Via first hops land here: the
+                // edge is true yet its target class was not entered, which
+                // means class(dst) == class(b). Bind that equality.
+                let (same, merges) = state.uf.same_with_reason(dst_ent, b);
+                if same {
+                    neg.extend(merges);
+                } else {
+                    // Defensive: unexpectedly unexplored true edge — include
+                    // it so the clause stays sound (weaker, never wrong).
+                    neg.insert(*lit);
+                }
+            } else {
+                pos.insert(*lit);
+            }
+        }
+    }
+
+    // Merges: freeze each S component (internal reasons) and enumerate its
+    // frontier (crossing merge candidates into classes outside R).
+    for r in &s_roots {
+        let members = state.uf.component(r);
+        neg.extend(state.uf.component_reasons(&members));
+        for member in &members {
+            if let Some(mes) = shared.merge_by_entity.get(member) {
+                for (other, mslit) in mes {
+                    let ro = state.uf.root(other);
+                    if !r_roots.contains(&ro) && ro != *r {
+                        pos.insert(*mslit);
+                    }
+                }
+            }
+        }
+    }
+
+    let mut clause: Vec<i32> = Vec::with_capacity(neg.len() + pos.len() + 1);
+    let mut ns: Vec<i32> = neg.into_iter().collect();
+    ns.sort_unstable();
+    let mut ps: Vec<i32> = pos.into_iter().collect();
+    ps.sort_unstable();
+    for n in &ns {
+        clause.push(-n);
+    }
+    for p in &ps {
+        clause.push(*p);
+    }
+    clause.push(-slit);
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "cr_unreach", &clause, !ok);
+    Ok(ok)
+}
+
+/// Sweep all `&classRelationship*` atoms against the current containment graph.
+/// Path-supported atoms not yet true are forced true (conflicting if assigned
+/// false); with `refute`, true-assigned atoms without support are refuted via
+/// an unreachability cut. Returns Ok(false) when a clause made the assignment
+/// inconsistent (caller must return to clingo immediately).
+fn reconcile_reach(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+    refute: bool,
+) -> Result<bool, String> {
+    if shared.cr_atoms.is_empty() {
+        return Ok(true);
+    }
+    let adj = build_reach_adj(state);
+    let mut bfs_cache: FxHashMap<(EntKey, Option<EntKey>), ReachParent> = FxHashMap::default();
+    let mut cut_cache: FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)> = FxHashMap::default();
+    for cr in &shared.cr_atoms {
+        let source = state.uf.root(&cr.a);
+        let target = state.uf.root(&cr.b);
+        let forbid = if cr.via { Some(target.clone()) } else { None };
+        let key = (source.clone(), forbid.clone());
+        if !bfs_cache.contains_key(&key) {
+            let p = reach_bfs(state, &adj, &source, forbid.as_ref());
+            bfs_cache.insert(key.clone(), p);
+        }
+        let parent = bfs_cache[&key].clone();
+        let reached = parent.contains_key(&target);
+        let is_true = ffi.is_true(asgn, cr.slit);
+        if reached && !is_true {
+            if let Some((reason, first_mid)) =
+                cr_path_reason(state, &parent, &cr.a, &cr.b, &source, &target)
+            {
+                let via_mid = cr.via.then_some(&first_mid);
+                if !assert_cr_reachable(
+                    ffi, shared, state, ctrl, &reason, via_mid, cr.slit, &mut cut_cache,
+                )? {
+                    return Ok(false);
+                }
+            }
+        } else if refute && !reached && is_true {
+            if !assert_cr_unreachable(
+                ffi, shared, state, ctrl, asgn, &cr.b, &source, &parent, cr.slit,
+            )? {
+                return Ok(false);
+            }
+        }
+    }
+    Ok(true)
 }
 
 // ── foundedness ──────────────────────────────────────────────────────────────

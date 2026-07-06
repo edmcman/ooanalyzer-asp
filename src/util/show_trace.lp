@@ -19,11 +19,10 @@
 % methods module (1 line)
 %!show_trace method(M).
 
-% composition module (6 lines)
+% composition module (5 lines)
 %!show_trace derivedClass(Outer, Inner, Off).
 %!show_trace embeddedObject(Outer, Inner, Off).
 %!show_trace objectInObject(Outer, Inner, Off).
-%!show_trace classRelationship(A, B).
 %!show_trace classHasNoBase(V).
 %!show_trace classHasNoDerived(V).
 

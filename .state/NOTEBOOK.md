@@ -20,6 +20,21 @@ then commit the completed change.
 ## Where we are now
 
 No in-progress work. Recent sessions completed (in order):
+- **TinyXml solving regression fixed via `&classRelationship` theory atoms**
+  (2026-07-06). The reasonObjectInObject_D port (5433893) broke TinyXml-NewDebug
+  solving (0 models in 120s vs first model ~10s at 7d6a6a6): its
+  `not classRelationshipVia` guard (+ _E's `occupiedByOther`) pulled
+  objectInObject into the recursive `classRelationship` closure — solve-time SCC
+  1.4k → 1.35M nodes, classRelationship ground rules 704 → 177k. Fix: deleted
+  the ASP closure; the Rust propagator now computes containment reachability as
+  `&classRelationship/2` + `&classRelationshipVia/2` (Via = first intermediate
+  class ≠ class(B), replacing the odd-loop workaround). Positive consumers
+  (NOTMergeClasses_J, ClassSizeLTE_D) generate witnesses from the new stratified
+  `classRelationshipCand/2` (positive transitive closure over static candidate
+  containment edges; one witness pair per class pair suffices). 63/63 propagator
+  tests (9 new reachability cases), verify-core, and the manual sweep pass.
+  Diagnosis gotcha: clingo resolves relative `#include` against the CWD — cd
+  into archived trees when benchmarking old commits.
 - `insanityMemberPastEndOfObject` (insanity.pl:177) — size.lp constraint. Added
   `certainMemberOnClass/3` to initial.lp (Method as its own class witness, since
   validMethodMemberAccess already implies method/1). Constraint joins the member

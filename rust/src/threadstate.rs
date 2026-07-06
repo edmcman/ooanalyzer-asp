@@ -5,6 +5,7 @@
 //! for the duration of one callback) so the raw-pointer trampolines stay sound
 //! without reasoning about clingo's thread-affinity guarantees.
 
+use crate::entkey::EntKey;
 use crate::uf::Uf;
 use rustc_hash::FxHashSet;
 
@@ -21,6 +22,11 @@ pub struct ThreadState {
     /// re-examines those. Maintained by propagate (add) and undo (drop).
     pub true_sc: FxHashSet<i32>,
     pub did_initial_sc_sweep: bool,
+    /// True `objectInObject` edges `(outer, inner, watched_lit)` in assignment
+    /// order — the containment graph for `&classRelationship*` reachability.
+    pub oio_true: Vec<(EntKey, EntKey, i32)>,
+    /// `(watched_lit, oio_true.len() before)` — suffix popped in `undo`.
+    pub oio_trail: Vec<(i32, usize)>,
 }
 
 impl ThreadState {
@@ -31,6 +37,8 @@ impl ThreadState {
             initialized: false,
             true_sc: FxHashSet::default(),
             did_initial_sc_sweep: false,
+            oio_true: Vec::new(),
+            oio_trail: Vec::new(),
         }
     }
 }

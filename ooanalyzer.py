@@ -50,7 +50,6 @@ _DEFAULT_PROFILE_PREDS = (
     "derivedClass",
     "embeddedObject",
     "objectInObject",
-    "classRelationship",
     "knownVirtualMethod",
 )
 

@@ -63,6 +63,17 @@ impl MergeScFacts {
     }
 }
 
+/// One `&classRelationship`/`&classRelationshipVia` theory atom. `via` selects
+/// the "first intermediate class differs from class(b)" path semantics used by
+/// reasonObjectInObject_D's grand-ancestor guard.
+#[derive(Clone)]
+pub struct CrAtom {
+    pub a: EntKey,
+    pub b: EntKey,
+    pub slit: i32,
+    pub via: bool,
+}
+
 /// Frozen, read-only-for-solving state built once in the first `init`.
 pub struct Shared {
     pub facts: MergeScFacts,
@@ -89,6 +100,17 @@ pub struct Shared {
     pub awc_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)>,
     /// `vftable` → sorted `[(class, slit)]` (frozen order).
     pub awc_by_vft: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
+    /// watched `objectInObject` solver literal → `[(outer, inner)]` edges
+    /// (object offsets dropped — reachability only).
+    pub oio_lit_to_edges: FxHashMap<i32, Vec<(EntKey, EntKey)>>,
+    /// `outer` → sorted `[(inner, watched_lit)]` — every candidate containment
+    /// edge, for unreachability-cut enumeration.
+    pub oio_by_src: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
+    /// Entities incident to any containment edge or `&classRelationship*` atom;
+    /// merges touching none of these cannot change reachability.
+    pub reach_entities: FxHashSet<EntKey>,
+    /// `&classRelationship`/`&classRelationshipVia` atoms, sorted `(a, b, slit)`.
+    pub cr_atoms: Vec<CrAtom>,
     pub observed_proglits: FxHashSet<i32>,
     pub unconditional_proglits: FxHashSet<i32>,
     /// observed program-literal → solver literal (best-effort).

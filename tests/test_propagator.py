@@ -35,8 +35,10 @@ MAIN_LP = ROOT / "ooanalyzer.lp"
 THEORY = """
 #theory sc {
     t {};
-    &sameClass/2         : t, body;
-    &allWritersInClass/2 : t, body
+    &sameClass/2            : t, body;
+    &allWritersInClass/2    : t, body;
+    &classRelationship/2    : t, body;
+    &classRelationshipVia/2 : t, body
 }.
 """
 
@@ -467,6 +469,112 @@ def main():
          """,
          1),   # only the model with both deterministic circular merges absent
     ]
+
+    reach_tests = [
+        # ── R1. Direct containment edge → &classRelationship true ────────────
+        ("reach direct: one objectInObject edge makes classRelationship true",
+         """
+         objectInObject(a, b, 0).
+         rel :- &classRelationship(a, b).
+         :- not rel.
+         """,
+         1),
+
+        # ── R2. No edge → &classRelationship false ───────────────────────────
+        ("reach absent: no containment path keeps classRelationship false",
+         """
+         mergeEntity(a). mergeEntity(b).
+         objectInObject(x, y, 0).
+         rel :- &classRelationship(a, b).
+         :- rel.
+         """,
+         1),
+
+        # ── R3. Edge choice drives the atom both ways ────────────────────────
+        ("reach choice: classRelationship tracks a guessed edge",
+         """
+         1 { hasEdge ; -hasEdge } 1.
+         objectInObject(a, b, 0) :- hasEdge.
+         rel :- &classRelationship(a, b).
+         :- hasEdge, not rel.
+         :- not hasEdge, rel.
+         #show hasEdge/0. #show rel/0.
+         """,
+         2,
+         frozenset(["hasEdge", "rel"])),
+
+        # ── R4. Transitive through a merge bridging two edges ────────────────
+        ("reach bridge: a→b, c→d edges connect iff b~c merged",
+         """
+         objectInObject(a, b, 0).
+         objectInObject(c, d, 0).
+         1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
+         rel :- &classRelationship(a, d).
+         :- mergeClasses(b,c), not rel.
+         :- not mergeClasses(b,c), rel.
+         #show mergeClasses/2. #show rel/0.
+         """,
+         2,
+         frozenset(["mergeClasses(b,c)", "rel"])),
+
+        # ── R5. Via excludes the direct edge (the _D odd-loop case) ──────────
+        ("reach via direct-only: classRelationshipVia stays false on a lone direct edge",
+         """
+         objectInObject(a, b, 0).
+         viaRel :- &classRelationshipVia(a, b).
+         :- viaRel.
+         """,
+         1),
+
+        # ── R6. Via holds through a distinct intermediate ─────────────────────
+        ("reach via chain: a→m→b makes classRelationshipVia(a,b) true",
+         """
+         objectInObject(a, m, 0).
+         objectInObject(m, b, 4).
+         viaRel :- &classRelationshipVia(a, b).
+         :- not viaRel.
+         """,
+         1),
+
+        # ── R7. Via collapses when the intermediate merges into class(b) ─────
+        ("reach via merged mid: intermediate joining class(b) kills the via path",
+         """
+         objectInObject(a, m, 0).
+         objectInObject(m, b, 4).
+         1 { mergeClasses(m,b) ; -mergeClasses(m,b) } 1.
+         viaRel :- &classRelationshipVia(a, b).
+         :- mergeClasses(m,b), viaRel.
+         :- not mergeClasses(m,b), not viaRel.
+         #show mergeClasses/2. #show viaRel/0.
+         """,
+         2,
+         frozenset(["mergeClasses(m,b)"])),
+
+        # ── R8. The reasonObjectInObject_D shape: guarded edge stays derivable ─
+        ("reach _D guard: edge guarded by not Via is SAT and derives the edge",
+         """
+         cand(a, b).
+         objectInObject(X, Y, 8) :- cand(X, Y), not &classRelationshipVia(X, Y).
+         derived :- objectInObject(a, b, 8).
+         :- not derived.
+         """,
+         1),
+
+        # ── R9. Self-containment cycle ────────────────────────────────────────
+        ("reach cycle: a→b plus b→a2~a closes classRelationship(a,a)",
+         """
+         objectInObject(a, b, 0).
+         objectInObject(b, a2, 0).
+         1 { mergeClasses(a,a2) ; -mergeClasses(a,a2) } 1.
+         cyc :- &classRelationship(a, a).
+         :- mergeClasses(a,a2), not cyc.
+         :- not mergeClasses(a,a2), cyc.
+         #show mergeClasses/2. #show cyc/0.
+         """,
+         2,
+         frozenset(["mergeClasses(a,a2)", "cyc"])),
+    ]
+    tests = tests + reach_tests
 
     for mode, ctl_args in CONTROL_MODES:
         print(f"\nMode: {mode}")
