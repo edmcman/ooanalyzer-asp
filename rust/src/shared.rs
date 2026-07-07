@@ -111,9 +111,8 @@ pub struct Shared {
     pub reach_entities: FxHashSet<EntKey>,
     /// `&classRelationship`/`&classRelationshipVia` atoms, sorted `(a, b, slit)`.
     pub cr_atoms: Vec<CrAtom>,
-    /// `abs(slit)` → `(a, b)` for `&classRelationship*` atoms (`--decide-inputs`
-    /// redirect lookup).
-    pub cr_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)>,
+    /// `abs(slit)` → full relationship atom for watched-literal lookup.
+    pub cr_slit_to_atom: FxHashMap<i32, CrAtom>,
     /// `abs(slit)` → `group` for `witnessGroup/2` atoms (existential witness
     /// membership, decided by `&classHasWitness/2`).
     pub witness_slit_to_group: FxHashMap<i32, EntKey>,

@@ -217,6 +217,7 @@ fn build_shared(
                     slit,
                     via: name == "classRelationshipVia",
                 });
+                ffi.add_watch(init_ptr, slit);
             }
             "classHasWitness" if args.len() == 2 => {
                 let group = EntKey::from_theory_term(ffi, theory_atoms, args[0]);
@@ -417,10 +418,8 @@ fn build_shared(
         cr_atoms = live;
     }
     cr_atoms.sort_by(|x, y| x.a.cmp(&y.a).then(x.b.cmp(&y.b)).then(x.slit.cmp(&y.slit)));
-    let cr_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)> = cr_atoms
-        .iter()
-        .map(|c| (c.slit.abs(), (c.a.clone(), c.b.clone())))
-        .collect();
+    let cr_slit_to_atom: FxHashMap<i32, CrAtom> =
+        cr_atoms.iter().map(|c| (c.slit.abs(), c.clone())).collect();
 
     // Level-0 pruning for &classHasWitness: a (group, class) pair can only ever
     // be true if some witness of the group is potentially same-class as class.
@@ -515,7 +514,7 @@ fn build_shared(
         oio_by_src,
         reach_entities,
         cr_atoms,
-        cr_slit_to_pair,
+        cr_slit_to_atom,
         witness_slit_to_group,
         witness_by_group,
         witness_entity_to_groups,
@@ -656,6 +655,11 @@ pub fn propagate(
     let mut graph_touched = false;
     for &lit in changes {
         let alit = lit.abs();
+        if let Some(cr) = shared.cr_slit_to_atom.get(&alit) {
+            if ffi.is_true(asgn, cr.slit) {
+                graph_touched = true;
+            }
+        }
         if let Some(group) = shared.witness_slit_to_group.get(&alit).cloned() {
             if !check_group_atoms(ffi, &shared, state, ctrl, asgn, &group)? {
                 return Ok(());
@@ -801,8 +805,8 @@ pub fn propagate(
         }
     }
 
-    if graph_touched && !state.oio_true.is_empty() {
-        if !reconcile_reach(ffi, &shared, state, ctrl, asgn, false)? {
+    if graph_touched {
+        if !reconcile_reach(ffi, &shared, state, ctrl, asgn, true)? {
             return Ok(());
         }
     }
@@ -984,11 +988,11 @@ fn decide_skip_neg() -> bool {
 
 /// Combined decision heuristic. When `--decide-outputs` is set and the fallback
 /// is a `mergeClasses` literal, redirects to a free `&sameClass` atom incident to
-/// either entity. When `--decide-inputs` is set and the fallback is a `&sameClass`,
-/// `&classRelationship*`, or `&classHasWitness` literal, redirects to a free
-/// `mergeClasses` literal incident to an involved entity, chosen by a per-entity
-/// rotating cursor (cheap: no full rescan; varied: re-dives after a backjump
-/// take different merge prefixes). Returns `fallback` when nothing fires.
+/// either entity. When `--decide-inputs` is set and the fallback is a
+/// `&sameClass` literal, redirects to a free `mergeClasses` literal incident to
+/// either entity, chosen by a per-entity rotating cursor. Relationship and
+/// witness theory atoms pass through because merges alone do not define their
+/// truth. Returns `fallback` when nothing fires.
 pub fn decide(
     ffi: &Ffi,
     pd: &PropData,
@@ -1019,11 +1023,9 @@ pub fn decide(
     }
 
     if shared.decide_inputs {
-        let is_theory_fallback = shared.sc_lit_to_pair.contains_key(&fa)
-            || shared.sc_lit_to_pair.contains_key(&-fa)
-            || shared.cr_slit_to_pair.contains_key(&fa)
-            || shared.chw_slit_to_pair.contains_key(&fa);
-        if !is_theory_fallback || (decide_skip_neg() && fallback < 0) {
+        let is_sc_fallback =
+            shared.sc_lit_to_pair.contains_key(&fa) || shared.sc_lit_to_pair.contains_key(&-fa);
+        if !is_sc_fallback || (decide_skip_neg() && fallback < 0) {
             return fallback;
         }
         let mut state = match shared.states.get(thread_id as usize).map(|m| m.lock()) {
@@ -1041,31 +1043,6 @@ pub fn decide(
             if let Some(lit) = free_direct_merge(ffi, shared, asgn, &x, &y)
                 .or_else(|| cursor_incident_merge(ffi, shared, state, asgn, &x))
                 .or_else(|| cursor_incident_merge(ffi, shared, state, asgn, &y))
-            {
-                return lit;
-            }
-        }
-        // &classRelationship*(a, b): the atom's truth is a function of merge +
-        // objectInObject choices — redirect to a free merge on either endpoint.
-        if let Some((a, b)) = shared.cr_slit_to_pair.get(&fa) {
-            let (a, b) = (a.clone(), b.clone());
-            if let Some(lit) = cursor_incident_merge(ffi, shared, state, asgn, &a)
-                .or_else(|| cursor_incident_merge(ffi, shared, state, asgn, &b))
-            {
-                return lit;
-            }
-        }
-        // &classHasWitness(group, class): redirect to a free merge on the
-        // class, else on one of the group's witness entities.
-        if let Some((group, class_, _)) = shared.chw_slit_to_pair.get(&fa) {
-            let (group, class_) = (group.clone(), class_.clone());
-            if let Some(lit) =
-                cursor_incident_merge(ffi, shared, state, asgn, &class_).or_else(|| {
-                    shared.witness_by_group.get(&group).and_then(|ws| {
-                        ws.iter()
-                            .find_map(|(w, _)| cursor_incident_merge(ffi, shared, state, asgn, w))
-                    })
-                })
             {
                 return lit;
             }
