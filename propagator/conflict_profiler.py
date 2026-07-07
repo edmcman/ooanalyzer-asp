@@ -22,7 +22,8 @@ from collections import Counter, defaultdict
 
 class ConflictProfiler:
     def __init__(self, watch_preds=None, max_atoms=10000, max_atoms_per_predicate=500,
-                 interval=0, trace_backjumps=0, trace_backjump_limit=10):
+                 interval=0, trace_backjumps=0, trace_backjump_limit=10,
+                 trace_backjump_after=0):
         # watch_preds: set of predicate names to restrict to, or None for all
         self._watch_preds = set(watch_preds) if watch_preds else None
         self._max_atoms = max_atoms
@@ -42,14 +43,19 @@ class ConflictProfiler:
         self._window_label = "solve start"
         self._trace_backjumps = trace_backjumps
         self._trace_backjump_limit = trace_backjump_limit
+        self._trace_backjump_after = trace_backjump_after
+        self._trace_start_time = None
         self._trace_count = 0
+        self._large_jump_count = 0
         self._decision_info = defaultdict(list)  # abs(solver_lit) -> aliases
         self._decisions = defaultdict(dict)  # thread -> level -> signed literal
         self._last_abandoned = defaultdict(set)  # thread -> signed decision literals
         self._abandoned_counts = defaultdict(Counter)  # thread -> signed literal -> jumps
+        self._pending_backjump = {}
 
     # ------------------------------------------------------------------
     def init(self, init):
+        self._trace_start_time = time.monotonic()
         for sym_atom in init.symbolic_atoms:
             pred = sym_atom.symbol.name
             lit = init.solver_literal(sym_atom.literal)
@@ -84,15 +90,17 @@ class ConflictProfiler:
 
     def propagate(self, control, changes):
         if self._trace_backjumps:
+            self._report_post_backjump(control.thread_id, control.assignment)
             self._capture_decisions(control.thread_id, control.assignment)
 
     def decide(self, thread_id, assignment, fallback):
-        # This propagator is registered after the live Rust propagator, so the
-        # fallback received here is the literal that will actually be chosen.
-        # Returning it unchanged makes this callback observational only.
-        if self._trace_backjumps and fallback:
-            self._decisions[thread_id][assignment.decision_level + 1] = fallback
-        return fallback
+        # Registered before the live Rust propagator so this callback provides
+        # an observation boundary after propagation. Return zero to delegate
+        # the actual choice to Rust's --decide-inputs policy (or ultimately to
+        # clasp's fallback); capture the chosen literal from the assignment.
+        if self._trace_backjumps:
+            self._report_post_backjump(thread_id, assignment, final=True)
+        return 0
 
     def _capture_decisions(self, thread_id, assignment):
         history = self._decisions[thread_id]
@@ -105,6 +113,7 @@ class ConflictProfiler:
 
     def undo(self, thread_id, assignment, changes):
         if self._trace_backjumps:
+            self._report_post_backjump(thread_id, assignment, final=True)
             self._capture_decisions(thread_id, assignment)
         level = assignment.decision_level
         # Depending on clingo's callback timing, assignment can still expose
@@ -178,23 +187,49 @@ class ConflictProfiler:
         canonical = text.split("  aliases=[", 1)[0]
         return pred, phase, canonical
 
+    def _report_post_backjump(self, thread_id, assignment, final=False):
+        pending = self._pending_backjump.get(thread_id)
+        if pending is None:
+            return
+        target, abandoned = pending
+        assigned_same = []
+        assigned_opposite = []
+        for level, lit in abandoned:
+            if assignment.is_true(lit):
+                assigned_same.append((level, lit))
+            elif assignment.is_false(lit):
+                assigned_opposite.append((level, lit))
+        if not assigned_opposite and not final:
+            return
+        self._pending_backjump.pop(thread_id, None)
+        print("  Post-backjump state after propagation:")
+        print(f"    abandoned decisions still assigned same phase: {len(assigned_same):,}")
+        print(f"    abandoned decisions assigned opposite phase:   {len(assigned_opposite):,}")
+        for _, old_lit in assigned_opposite[:10]:
+            new_lit = -old_lit
+            pred, phase, text = self._describe_decision(new_lit)
+            try:
+                level = assignment.level(new_lit)
+                decision = assignment.decision(level) if level > 0 else None
+                origin = "decision" if decision is not None and abs(decision) == abs(new_lit) else "propagated"
+                detail = f"at L{level} ({origin})"
+            except RuntimeError:
+                detail = "(assignment level unavailable)"
+            print(f"    {phase:<5} {pred:<28} {text} {detail}")
+        if not assigned_opposite:
+            print(f"    no abandoned decision had yet been forced opposite at target L{target}")
+        sys.stdout.flush()
+
     def _trace_backjump(self, thread_id, target):
         history = self._decisions[thread_id]
         if not history:
             return
         source = max(history)
         span = source - target
-        if span >= self._trace_backjumps and self._trace_count < self._trace_backjump_limit:
-            self._trace_count += 1
+        if span >= self._trace_backjumps:
+            self._large_jump_count += 1
             abandoned = [(level, history[level]) for level in sorted(history)
                          if target < level <= source]
-            kinds = Counter()
-            for _, lit in abandoned:
-                pred, phase, _ = self._describe_decision(lit)
-                kinds[(pred, phase)] += 1
-
-            print(f"\n=== BACKJUMP {self._trace_count}: L{source} -> L{target} "
-                  f"({span:,} levels; {len(abandoned):,} recorded decisions) ===")
             current = {self._decision_identity(lit) for _, lit in abandoned}
             previous = self._last_abandoned[thread_id]
             counts = self._abandoned_counts[thread_id]
@@ -204,6 +239,30 @@ class ConflictProfiler:
                 counts[(pred, "false" if phase == "true" else "true", text)] > 0
                 for pred, phase, text in current
             )
+            for key in current:
+                counts[key] += 1
+            self._last_abandoned[thread_id] = current
+
+            elapsed = time.monotonic() - (self._trace_start_time or self._start_time)
+            should_print = (
+                elapsed >= self._trace_backjump_after
+                and self._trace_count < self._trace_backjump_limit
+            )
+            if not should_print:
+                for old_level in [level for level in history if level > target]:
+                    del history[old_level]
+                return
+
+            self._trace_count += 1
+            kinds = Counter()
+            for _, lit in abandoned:
+                pred, phase, _ = self._describe_decision(lit)
+                kinds[(pred, phase)] += 1
+
+            print(f"\n=== BACKJUMP TRACE {self._trace_count} "
+                  f"(large jump #{self._large_jump_count}, {elapsed:.1f}s): "
+                  f"L{source} -> L{target} "
+                  f"({span:,} levels; {len(abandoned):,} recorded decisions) ===")
             if previous or counts:
                 total = max(1, len(current))
                 print("  Repeated abandoned decisions:")
@@ -212,10 +271,6 @@ class ConflictProfiler:
                 print(f"    from any earlier jump:    {repeated_ever:>7,}/{len(current):,} "
                       f"({100.0 * repeated_ever / total:5.1f}%)")
                 print(f"    seen earlier opposite phase: {flipped_ever:>5,}")
-            for key in current:
-                counts[key] += 1
-            self._last_abandoned[thread_id] = current
-
             print("  Abandoned decision kinds:")
             for (pred, phase), count in kinds.most_common(15):
                 print(f"    {pred:<32} {phase:<5} {count:>7,}")
@@ -238,6 +293,7 @@ class ConflictProfiler:
                 print("  Most repeated abandoned decisions:")
                 for count, (pred, phase, text) in sorted(repeated, reverse=True)[:10]:
                     print(f"    {count:>3} jumps  {phase:<5} {pred:<28} {text}")
+            self._pending_backjump[thread_id] = (target, abandoned)
             sys.stdout.flush()
 
         for old_level in [level for level in history if level > target]:
@@ -245,6 +301,7 @@ class ConflictProfiler:
 
     def check(self, control):
         if self._trace_backjumps:
+            self._report_post_backjump(control.thread_id, control.assignment, final=True)
             self._capture_decisions(control.thread_id, control.assignment)
 
     # ------------------------------------------------------------------

@@ -255,6 +255,7 @@ class OOAnalyzerApp(clingo.Application):
         self.profile_interval = 0.0
         self.trace_backjumps = 0
         self.trace_backjump_limit = 10
+        self.trace_backjump_after = 0.0
         self.foundedness_check = clingo.Flag(False)
         self.dump_lemmas = clingo.Flag(False)
         self.decide_outputs = clingo.Flag(False)
@@ -311,6 +312,8 @@ class OOAnalyzerApp(clingo.Application):
                     int_parser(lambda x: setattr(self, 'trace_backjumps', x)), argument="N")
         options.add("OOAnalyzer", "trace-backjump-limit", "maximum number of large backjumps to print",
                     int_parser(lambda x: setattr(self, 'trace_backjump_limit', x)), argument="N")
+        options.add("OOAnalyzer", "trace-backjump-after", "only print large backjumps after SEC of solving",
+                    float_parser(lambda x: setattr(self, 'trace_backjump_after', x)), argument="SEC")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
         options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
@@ -408,18 +411,19 @@ class OOAnalyzerApp(clingo.Application):
                 interval=self.profile_interval,
                 trace_backjumps=self.trace_backjumps,
                 trace_backjump_limit=self.trace_backjump_limit,
+                trace_backjump_after=self.trace_backjump_after,
             )
             if (profile_conflicts or profile_after_first_model or self.trace_backjumps) else None
         )
+
+        if profiler:
+            ctl.register_propagator(profiler)
 
         if self.sameclass_mode == "lazy-check":
             ctl.register_propagator(prop)
         else:
             prop.register(ctl, foundedness_check=foundedness_check, dump_lemmas=dump_lemmas,
                           decide_outputs=decide_outputs, decide_inputs=decide_inputs)
-
-        if profiler:
-            ctl.register_propagator(profiler)
 
         ctl.load(_MAIN_LP)
         for f in files:
