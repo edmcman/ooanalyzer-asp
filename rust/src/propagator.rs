@@ -417,6 +417,10 @@ fn build_shared(
             .then(x.b.cmp(&y.b))
             .then(x.slit.cmp(&y.slit))
     });
+    let cr_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)> = cr_atoms
+        .iter()
+        .map(|c| (c.slit.abs(), (c.a.clone(), c.b.clone())))
+        .collect();
 
     // Level-0 pruning for &classHasWitness: a (group, class) pair can only ever
     // be true if some witness of the group is potentially same-class as class.
@@ -511,6 +515,7 @@ fn build_shared(
         oio_by_src,
         reach_entities,
         cr_atoms,
+        cr_slit_to_pair,
         witness_slit_to_group,
         witness_by_group,
         witness_entity_to_groups,
@@ -984,6 +989,27 @@ pub fn decide(
                 .or_else(|| free_incident_merge(ffi, shared, asgn, x))
                 .or_else(|| free_incident_merge(ffi, shared, asgn, y))
             {
+                return lit;
+            }
+        }
+        // &classRelationship*(a, b): the atom's truth is a function of merge +
+        // objectInObject choices — redirect to a free merge on either endpoint.
+        if let Some((a, b)) = shared.cr_slit_to_pair.get(&fa) {
+            if let Some(lit) = free_incident_merge(ffi, shared, asgn, a)
+                .or_else(|| free_incident_merge(ffi, shared, asgn, b))
+            {
+                return lit;
+            }
+        }
+        // &classHasWitness(group, class): redirect to a free merge on the
+        // class, else on one of the group's witness entities.
+        if let Some((group, class_, _)) = shared.chw_slit_to_pair.get(&fa) {
+            if let Some(lit) = free_incident_merge(ffi, shared, asgn, class_).or_else(|| {
+                shared.witness_by_group.get(group).and_then(|ws| {
+                    ws.iter()
+                        .find_map(|(w, _)| free_incident_merge(ffi, shared, asgn, w))
+                })
+            }) {
                 return lit;
             }
         }
