@@ -7,7 +7,7 @@
 
 use crate::entkey::EntKey;
 use crate::uf::Uf;
-use rustc_hash::FxHashSet;
+use rustc_hash::{FxHashMap, FxHashSet};
 
 /// A UF snapshot, restored on undo.
 pub type Snap = (usize, usize);
@@ -32,6 +32,11 @@ pub struct ThreadState {
     /// propagate (add) and undo (drop) — mirrors `true_sc`.
     pub true_chw: FxHashSet<i32>,
     pub did_initial_chw_sweep: bool,
+    /// `--decide-inputs` rotating scan position per entity into
+    /// `merge_by_entity`. Pure decision-heuristic state: never undone, so
+    /// re-dives after a backjump explore different merge prefixes instead of
+    /// deterministically rebuilding the same one.
+    pub decide_cursor: FxHashMap<EntKey, usize>,
 }
 
 impl ThreadState {
@@ -46,6 +51,7 @@ impl ThreadState {
             oio_trail: Vec::new(),
             true_chw: FxHashSet::default(),
             did_initial_chw_sweep: false,
+            decide_cursor: FxHashMap::default(),
         }
     }
 }

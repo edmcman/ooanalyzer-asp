@@ -245,7 +245,10 @@ fn build_shared(
             None => return,
         };
         let is_new = !oio_lit_to_edges.contains_key(&lit);
-        oio_lit_to_edges.entry(lit).or_default().push((outer, inner));
+        oio_lit_to_edges
+            .entry(lit)
+            .or_default()
+            .push((outer, inner));
         if is_new && lit.abs() != 1 {
             ffi.add_watch(init_ptr, lit);
         }
@@ -255,7 +258,8 @@ fn build_shared(
     // ASP-side sites tag the group term so unrelated witness pools never
     // collide (e.g. sizeGroup(S), methodGroup(M), zeroGroup).
     let mut witness_slit_to_group: FxHashMap<i32, EntKey> = FxHashMap::default();
-    let mut witness_by_group_set: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
+    let mut witness_by_group_set: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> =
+        FxHashMap::default();
     each_sym_atom(ffi, sym_atoms, "witnessGroup", 2, |sym, prog_lit| {
         let args = match ffi.symbol_arguments(sym).ok() {
             Some(a) => a,
@@ -412,11 +416,7 @@ fn build_shared(
         }
         cr_atoms = live;
     }
-    cr_atoms.sort_by(|x, y| {
-        x.a.cmp(&y.a)
-            .then(x.b.cmp(&y.b))
-            .then(x.slit.cmp(&y.slit))
-    });
+    cr_atoms.sort_by(|x, y| x.a.cmp(&y.a).then(x.b.cmp(&y.b)).then(x.slit.cmp(&y.slit)));
     let cr_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)> = cr_atoms
         .iter()
         .map(|c| (c.slit.abs(), (c.a.clone(), c.b.clone())))
@@ -632,6 +632,14 @@ fn rebuild(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, asgn: *const Cli
     }
 }
 
+/// Eager mid-descent refutation of true-but-unsupported `&sameClass` /
+/// `&classHasWitness` atoms (kill switch: `OOA_NO_EAGER=1` reverts to
+/// check()-only refutation).
+fn eager_refute() -> bool {
+    static V: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
+    *V.get_or_init(|| std::env::var_os("OOA_NO_EAGER").is_none())
+}
+
 pub fn propagate(
     ffi: &Ffi,
     pd: &PropData,
@@ -653,9 +661,25 @@ pub fn propagate(
                 return Ok(());
             }
         }
-        if let Some((_, _, chw_slit)) = shared.chw_slit_to_pair.get(&alit).cloned() {
+        if let Some((group, class_, chw_slit)) = shared.chw_slit_to_pair.get(&alit).cloned() {
             if ffi.is_true(asgn, chw_slit) {
                 state.true_chw.insert(alit);
+                // Eager refutation: teach clasp the support structure now
+                // ("chw → grow the class's component or make an in-class
+                // witness true") instead of waiting for check(). The clause is
+                // sound at any time — free cut merges and free witnesses are
+                // positive literals — so mid-descent it unit-propagates merge
+                // obligations and conflicts as cuts die, restoring the
+                // conflict-driven-learning pressure the grounded witness-join
+                // rules used to provide.
+                if eager_refute() && !witness_supports(ffi, asgn, state, &shared, &group, &class_) {
+                    let mut cache = FxHashMap::default();
+                    if !assert_witness_false(
+                        ffi, &shared, state, ctrl, asgn, &group, &class_, chw_slit, &mut cache,
+                    )? {
+                        return Ok(());
+                    }
+                }
             }
         }
         if let Some(pairs) = shared.facts.merge_lit_to_pairs.get(&lit).cloned() {
@@ -669,9 +693,7 @@ pub fn propagate(
                 if let Some((absorbed, merged_root)) = state.uf.union(a, b, lit, Some(ra), Some(rb))
                 {
                     state.merge_trail.push((lit, snap));
-                    graph_touched |= absorbed
-                        .iter()
-                        .any(|e| shared.reach_entities.contains(e));
+                    graph_touched |= absorbed.iter().any(|e| shared.reach_entities.contains(e));
                     for e in &absorbed {
                         if !check_class_atoms(ffi, &shared, state, ctrl, asgn, e)? {
                             return Ok(());
@@ -721,6 +743,14 @@ pub fn propagate(
                 }
             } else {
                 state.true_sc.insert(lit);
+                // Eager refutation (see the &classHasWitness case above):
+                // "sc(x,y) → some cut merge of x's component must be true".
+                if eager_refute() && !state.uf.same(&x, &y) {
+                    let mut cache = FxHashMap::default();
+                    if !assert_not_same(ffi, &shared, state, ctrl, &x, &y, lit, &mut cache)? {
+                        return Ok(());
+                    }
+                }
             }
         } else if let Some(edges) = shared.oio_lit_to_edges.get(&lit) {
             state.oio_trail.push((lit, state.oio_true.len()));
@@ -945,15 +975,24 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
 
 // ── decision heuristic (--decide-outputs / --decide-inputs) ──────────────────
 
+/// `OOA_DECIDE_SKIP_NEG=1`: don't redirect when the solver's fallback phase is
+/// negative — let it assign the theory atom false itself (A/B experiment knob).
+fn decide_skip_neg() -> bool {
+    static V: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
+    *V.get_or_init(|| std::env::var_os("OOA_DECIDE_SKIP_NEG").is_some())
+}
+
 /// Combined decision heuristic. When `--decide-outputs` is set and the fallback
 /// is a `mergeClasses` literal, redirects to a free `&sameClass` atom incident to
-/// either entity. When `--decide-inputs` is set and the fallback is a `&sameClass`
-/// literal, redirects to a free `mergeClasses` literal incident to either entity.
-/// Returns `fallback` unchanged when neither condition fires.
+/// either entity. When `--decide-inputs` is set and the fallback is a `&sameClass`,
+/// `&classRelationship*`, or `&classHasWitness` literal, redirects to a free
+/// `mergeClasses` literal incident to an involved entity, chosen by a per-entity
+/// rotating cursor (cheap: no full rescan; varied: re-dives after a backjump
+/// take different merge prefixes). Returns `fallback` when nothing fires.
 pub fn decide(
     ffi: &Ffi,
     pd: &PropData,
-    _thread_id: ClingoId,
+    thread_id: ClingoId,
     asgn: *const ClingoAssignment,
     fallback: ClingoLiteral,
 ) -> ClingoLiteral {
@@ -980,14 +1019,28 @@ pub fn decide(
     }
 
     if shared.decide_inputs {
+        let is_theory_fallback = shared.sc_lit_to_pair.contains_key(&fa)
+            || shared.sc_lit_to_pair.contains_key(&-fa)
+            || shared.cr_slit_to_pair.contains_key(&fa)
+            || shared.chw_slit_to_pair.contains_key(&fa);
+        if !is_theory_fallback || (decide_skip_neg() && fallback < 0) {
+            return fallback;
+        }
+        let mut state = match shared.states.get(thread_id as usize).map(|m| m.lock()) {
+            Some(Ok(s)) => s,
+            _ => return fallback,
+        };
+        let state = &mut *state;
+
         let pair = shared
             .sc_lit_to_pair
             .get(&fa)
             .or_else(|| shared.sc_lit_to_pair.get(&-fa));
         if let Some((x, y)) = pair {
-            if let Some(lit) = free_direct_merge(ffi, shared, asgn, x, y)
-                .or_else(|| free_incident_merge(ffi, shared, asgn, x))
-                .or_else(|| free_incident_merge(ffi, shared, asgn, y))
+            let (x, y) = (x.clone(), y.clone());
+            if let Some(lit) = free_direct_merge(ffi, shared, asgn, &x, &y)
+                .or_else(|| cursor_incident_merge(ffi, shared, state, asgn, &x))
+                .or_else(|| cursor_incident_merge(ffi, shared, state, asgn, &y))
             {
                 return lit;
             }
@@ -995,8 +1048,9 @@ pub fn decide(
         // &classRelationship*(a, b): the atom's truth is a function of merge +
         // objectInObject choices — redirect to a free merge on either endpoint.
         if let Some((a, b)) = shared.cr_slit_to_pair.get(&fa) {
-            if let Some(lit) = free_incident_merge(ffi, shared, asgn, a)
-                .or_else(|| free_incident_merge(ffi, shared, asgn, b))
+            let (a, b) = (a.clone(), b.clone());
+            if let Some(lit) = cursor_incident_merge(ffi, shared, state, asgn, &a)
+                .or_else(|| cursor_incident_merge(ffi, shared, state, asgn, &b))
             {
                 return lit;
             }
@@ -1004,12 +1058,15 @@ pub fn decide(
         // &classHasWitness(group, class): redirect to a free merge on the
         // class, else on one of the group's witness entities.
         if let Some((group, class_, _)) = shared.chw_slit_to_pair.get(&fa) {
-            if let Some(lit) = free_incident_merge(ffi, shared, asgn, class_).or_else(|| {
-                shared.witness_by_group.get(group).and_then(|ws| {
-                    ws.iter()
-                        .find_map(|(w, _)| free_incident_merge(ffi, shared, asgn, w))
+            let (group, class_) = (group.clone(), class_.clone());
+            if let Some(lit) =
+                cursor_incident_merge(ffi, shared, state, asgn, &class_).or_else(|| {
+                    shared.witness_by_group.get(&group).and_then(|ws| {
+                        ws.iter()
+                            .find_map(|(w, _)| cursor_incident_merge(ffi, shared, state, asgn, w))
+                    })
                 })
-            }) {
+            {
                 return lit;
             }
         }
@@ -1054,20 +1111,31 @@ fn free_direct_merge(
         .min()
 }
 
-/// Smallest (deterministic) free `mergeClasses` solver literal incident to `e`.
-fn free_incident_merge(
+/// Free `mergeClasses` solver literal incident to `e`, scanned from a
+/// per-entity rotating cursor. During a dive the cursor skips the
+/// already-assigned prefix (amortized O(1) instead of a full rescan with an
+/// FFI truth query per candidate), and because it is never undone, re-dives
+/// after a backjump start from a different merge instead of deterministically
+/// rebuilding the same prefix.
+fn cursor_incident_merge(
     ffi: &Ffi,
     shared: &Shared,
+    state: &mut ThreadState,
     asgn: *const ClingoAssignment,
     e: &EntKey,
 ) -> Option<ClingoLiteral> {
-    shared
-        .merge_by_entity
-        .get(e)?
-        .iter()
-        .map(|(_, mlit)| *mlit)
-        .filter(|&mlit| !ffi.is_true(asgn, mlit) && !ffi.is_false(asgn, mlit))
-        .min()
+    let lst = shared.merge_by_entity.get(e)?;
+    let len = lst.len();
+    let cur = state.decide_cursor.get(e).copied().unwrap_or(0) % len;
+    for i in 0..len {
+        let idx = (cur + i) % len;
+        let mlit = lst[idx].1;
+        if !ffi.is_true(asgn, mlit) && !ffi.is_false(asgn, mlit) {
+            state.decide_cursor.insert(e.clone(), (idx + 1) % len);
+            return Some(mlit);
+        }
+    }
+    None
 }
 
 // ── assert_* reason-clause builders ──────────────────────────────────────────
@@ -1511,7 +1579,14 @@ fn reconcile_reach(
             {
                 let via_mid = cr.via.then_some(&first_mid);
                 if !assert_cr_reachable(
-                    ffi, shared, state, ctrl, &reason, via_mid, cr.slit, &mut cut_cache,
+                    ffi,
+                    shared,
+                    state,
+                    ctrl,
+                    &reason,
+                    via_mid,
+                    cr.slit,
+                    &mut cut_cache,
                 )? {
                     return Ok(false);
                 }
@@ -1568,7 +1643,15 @@ fn initial_chw_sweep(
         if ffi.is_true(asgn, *slit)
             && !witness_supports(ffi, asgn, state, shared, group, class_)
             && !assert_witness_false(
-                ffi, shared, state, ctrl, asgn, group, class_, *slit, &mut cut_cache,
+                ffi,
+                shared,
+                state,
+                ctrl,
+                asgn,
+                group,
+                class_,
+                *slit,
+                &mut cut_cache,
             )?
         {
             return Ok(false);
