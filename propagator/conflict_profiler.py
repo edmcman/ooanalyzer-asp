@@ -21,7 +21,8 @@ from collections import Counter, defaultdict
 
 
 class ConflictProfiler:
-    def __init__(self, watch_preds=None, max_atoms=10000, max_atoms_per_predicate=500, interval=0):
+    def __init__(self, watch_preds=None, max_atoms=10000, max_atoms_per_predicate=500,
+                 interval=0, trace_backjumps=0, trace_backjump_limit=10):
         # watch_preds: set of predicate names to restrict to, or None for all
         self._watch_preds = set(watch_preds) if watch_preds else None
         self._max_atoms = max_atoms
@@ -39,11 +40,18 @@ class ConflictProfiler:
         self._watched_atoms  = 0
         self._skipped_atoms  = 0
         self._window_label = "solve start"
+        self._trace_backjumps = trace_backjumps
+        self._trace_backjump_limit = trace_backjump_limit
+        self._trace_count = 0
+        self._decision_info = defaultdict(list)  # abs(solver_lit) -> aliases
+        self._decisions = defaultdict(dict)  # thread -> level -> signed literal
 
     # ------------------------------------------------------------------
     def init(self, init):
         for sym_atom in init.symbolic_atoms:
             pred = sym_atom.symbol.name
+            lit = init.solver_literal(sym_atom.literal)
+            self._decision_info[abs(lit)].append((lit, pred, str(sym_atom.symbol)))
             if self._watch_preds and pred not in self._watch_preds:
                 continue
             if self._max_atoms is not None and self._watched_atoms >= self._max_atoms:
@@ -55,7 +63,6 @@ class ConflictProfiler:
             ):
                 self._skipped_atoms += 1
                 continue
-            lit = init.solver_literal(sym_atom.literal)
             alit = abs(lit)
             self._lit_to_pred[alit] = pred
             self._lit_to_sym[alit]  = str(sym_atom.symbol)
@@ -64,11 +71,53 @@ class ConflictProfiler:
             self._watched_atoms += 1
             self._watched_by_pred[pred] += 1
 
+        if self._trace_backjumps:
+            for atom in init.theory_atoms:
+                lit = init.solver_literal(atom.literal)
+                term = atom.term
+                pred = f"&{term.name}"
+                args = ",".join(str(arg) for arg in term.arguments)
+                text = f"&{term.name}({args})"
+                self._decision_info[abs(lit)].append((lit, pred, text))
+
     def propagate(self, control, changes):
-        pass
+        if self._trace_backjumps:
+            self._capture_decisions(control.thread_id, control.assignment)
+
+    def decide(self, thread_id, assignment, fallback):
+        # This propagator is registered after the live Rust propagator, so the
+        # fallback received here is the literal that will actually be chosen.
+        # Returning it unchanged makes this callback observational only.
+        if self._trace_backjumps and fallback:
+            self._decisions[thread_id][assignment.decision_level + 1] = fallback
+        return fallback
+
+    def _capture_decisions(self, thread_id, assignment):
+        history = self._decisions[thread_id]
+        for level in range(1, assignment.decision_level + 1):
+            if level not in history:
+                try:
+                    history[level] = assignment.decision(level)
+                except RuntimeError:
+                    break
 
     def undo(self, thread_id, assignment, changes):
+        if self._trace_backjumps:
+            self._capture_decisions(thread_id, assignment)
         level = assignment.decision_level
+        # Depending on clingo's callback timing, assignment can still expose
+        # the pre-undo levels of `changes`. Their minimum level is target+1.
+        change_levels = []
+        if self._trace_backjumps:
+            for lit in changes:
+                try:
+                    change_levels.append(assignment.level(lit))
+                except RuntimeError:
+                    pass
+        if change_levels:
+            level = min(level, min(change_levels) - 1)
+        if self._trace_backjumps:
+            self._trace_backjump(thread_id, level)
         for lit in changes:
             alit = abs(lit)
             pred = self._lit_to_pred.get(alit)
@@ -82,8 +131,79 @@ class ConflictProfiler:
             self._periodic_report()
             self._last_report_time = time.monotonic()
 
+    def _describe_decision(self, lit):
+        infos = self._decision_info.get(abs(lit))
+        if not infos:
+            return "?", "true" if lit > 0 else "false", f"lit({lit})"
+        choice_priority = {
+            "mergeClasses": 0,
+            "method": 1,
+            "constructor": 2,
+            "vfTable": 3,
+            "vfTableSize": 4,
+            "embeddedObject": 5,
+            "derivedClass": 6,
+            "guessEnabled": 7,
+        }
+        positive_lit, pred, text = min(
+            infos,
+            key=lambda info: (
+                choice_priority.get(info[1], 100),
+                info[2].startswith("-"),
+                info[2],
+            ),
+        )
+        phase = "true" if lit == positive_lit else "false"
+        aliases = []
+        for _, _, alias in infos:
+            if alias != text and alias not in aliases:
+                aliases.append(alias)
+        if aliases:
+            text += "  aliases=[" + ", ".join(aliases[:4]) + (", ..." if len(aliases) > 4 else "") + "]"
+        return pred, phase, text
+
+    def _trace_backjump(self, thread_id, target):
+        history = self._decisions[thread_id]
+        if not history:
+            return
+        source = max(history)
+        span = source - target
+        if span >= self._trace_backjumps and self._trace_count < self._trace_backjump_limit:
+            self._trace_count += 1
+            abandoned = [(level, history[level]) for level in sorted(history)
+                         if target < level <= source]
+            kinds = Counter()
+            for _, lit in abandoned:
+                pred, phase, _ = self._describe_decision(lit)
+                kinds[(pred, phase)] += 1
+
+            print(f"\n=== BACKJUMP {self._trace_count}: L{source} -> L{target} "
+                  f"({span:,} levels; {len(abandoned):,} recorded decisions) ===")
+            print("  Abandoned decision kinds:")
+            for (pred, phase), count in kinds.most_common(15):
+                print(f"    {pred:<32} {phase:<5} {count:>7,}")
+
+            print("  Decisions around jump target:")
+            for level in range(max(1, target - 2), min(source, target + 12) + 1):
+                lit = history.get(level)
+                if lit is None:
+                    continue
+                pred, phase, text = self._describe_decision(lit)
+                marker = " <target" if level == target else ""
+                print(f"    L{level:<6} {phase:<5} {pred:<28} {text}{marker}")
+
+            print("  Last decisions before conflict:")
+            for level, lit in abandoned[-12:]:
+                pred, phase, text = self._describe_decision(lit)
+                print(f"    L{level:<6} {phase:<5} {pred:<28} {text}")
+            sys.stdout.flush()
+
+        for old_level in [level for level in history if level > target]:
+            del history[old_level]
+
     def check(self, control):
-        pass
+        if self._trace_backjumps:
+            self._capture_decisions(control.thread_id, control.assignment)
 
     # ------------------------------------------------------------------
     def reset_counts(self, label=None):

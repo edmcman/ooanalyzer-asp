@@ -253,6 +253,8 @@ class OOAnalyzerApp(clingo.Application):
         self.profile_max_atoms = 10000
         self.profile_max_atoms_per_predicate = 500
         self.profile_interval = 0.0
+        self.trace_backjumps = 0
+        self.trace_backjump_limit = 10
         self.foundedness_check = clingo.Flag(False)
         self.dump_lemmas = clingo.Flag(False)
         self.decide_outputs = clingo.Flag(False)
@@ -305,6 +307,10 @@ class OOAnalyzerApp(clingo.Application):
                     int_parser(lambda x: setattr(self, 'profile_max_atoms_per_predicate', x)), argument="N")
         options.add("OOAnalyzer", "profile-interval", "seconds between periodic conflict profile reports",
                     float_parser(lambda x: setattr(self, 'profile_interval', x)), argument="SEC")
+        options.add("OOAnalyzer", "trace-backjumps", "trace decisions for backjumps of at least N levels (0 disables)",
+                    int_parser(lambda x: setattr(self, 'trace_backjumps', x)), argument="N")
+        options.add("OOAnalyzer", "trace-backjump-limit", "maximum number of large backjumps to print",
+                    int_parser(lambda x: setattr(self, 'trace_backjump_limit', x)), argument="N")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
         options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
@@ -400,8 +406,10 @@ class OOAnalyzerApp(clingo.Application):
                 max_atoms=profile_max_atoms,
                 max_atoms_per_predicate=profile_max_atoms_per_predicate,
                 interval=self.profile_interval,
+                trace_backjumps=self.trace_backjumps,
+                trace_backjump_limit=self.trace_backjump_limit,
             )
-            if (profile_conflicts or profile_after_first_model) else None
+            if (profile_conflicts or profile_after_first_model or self.trace_backjumps) else None
         )
 
         if self.sameclass_mode == "lazy-check":
