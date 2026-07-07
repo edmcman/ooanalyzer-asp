@@ -45,6 +45,8 @@ class ConflictProfiler:
         self._trace_count = 0
         self._decision_info = defaultdict(list)  # abs(solver_lit) -> aliases
         self._decisions = defaultdict(dict)  # thread -> level -> signed literal
+        self._last_abandoned = defaultdict(set)  # thread -> signed decision literals
+        self._abandoned_counts = defaultdict(Counter)  # thread -> signed literal -> jumps
 
     # ------------------------------------------------------------------
     def init(self, init):
@@ -153,7 +155,15 @@ class ConflictProfiler:
                 info[2],
             ),
         )
-        phase = "true" if lit == positive_lit else "false"
+        atom_is_true = lit == positive_lit
+        # Classical negation is a separate symbolic atom in clingo. Report
+        # `-method(M)=true` as the semantic decision `method(M)=false`, so
+        # repetitions and phase flips compare the underlying choice.
+        classically_negative = text.startswith("-")
+        semantic_true = atom_is_true != classically_negative
+        if classically_negative:
+            text = text[1:]
+        phase = "true" if semantic_true else "false"
         aliases = []
         for _, _, alias in infos:
             if alias != text and alias not in aliases:
@@ -161,6 +171,12 @@ class ConflictProfiler:
         if aliases:
             text += "  aliases=[" + ", ".join(aliases[:4]) + (", ..." if len(aliases) > 4 else "") + "]"
         return pred, phase, text
+
+    def _decision_identity(self, lit):
+        pred, phase, text = self._describe_decision(lit)
+        # Aliases are diagnostic decoration, not part of decision identity.
+        canonical = text.split("  aliases=[", 1)[0]
+        return pred, phase, canonical
 
     def _trace_backjump(self, thread_id, target):
         history = self._decisions[thread_id]
@@ -179,6 +195,27 @@ class ConflictProfiler:
 
             print(f"\n=== BACKJUMP {self._trace_count}: L{source} -> L{target} "
                   f"({span:,} levels; {len(abandoned):,} recorded decisions) ===")
+            current = {self._decision_identity(lit) for _, lit in abandoned}
+            previous = self._last_abandoned[thread_id]
+            counts = self._abandoned_counts[thread_id]
+            repeated_previous = sum(key in previous for key in current)
+            repeated_ever = sum(counts[key] > 0 for key in current)
+            flipped_ever = sum(
+                counts[(pred, "false" if phase == "true" else "true", text)] > 0
+                for pred, phase, text in current
+            )
+            if previous or counts:
+                total = max(1, len(current))
+                print("  Repeated abandoned decisions:")
+                print(f"    from previous large jump: {repeated_previous:>7,}/{len(current):,} "
+                      f"({100.0 * repeated_previous / total:5.1f}%)")
+                print(f"    from any earlier jump:    {repeated_ever:>7,}/{len(current):,} "
+                      f"({100.0 * repeated_ever / total:5.1f}%)")
+                print(f"    seen earlier opposite phase: {flipped_ever:>5,}")
+            for key in current:
+                counts[key] += 1
+            self._last_abandoned[thread_id] = current
+
             print("  Abandoned decision kinds:")
             for (pred, phase), count in kinds.most_common(15):
                 print(f"    {pred:<32} {phase:<5} {count:>7,}")
@@ -196,6 +233,11 @@ class ConflictProfiler:
             for level, lit in abandoned[-12:]:
                 pred, phase, text = self._describe_decision(lit)
                 print(f"    L{level:<6} {phase:<5} {pred:<28} {text}")
+            repeated = [(count, key) for key, count in counts.items() if count > 1]
+            if repeated:
+                print("  Most repeated abandoned decisions:")
+                for count, (pred, phase, text) in sorted(repeated, reverse=True)[:10]:
+                    print(f"    {count:>3} jumps  {phase:<5} {pred:<28} {text}")
             sys.stdout.flush()
 
         for old_level in [level for level in history if level > target]:
