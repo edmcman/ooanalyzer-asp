@@ -38,7 +38,8 @@ THEORY = """
     &sameClass/2            : t, body;
     &allWritersInClass/2    : t, body;
     &classRelationship/2    : t, body;
-    &classRelationshipVia/2 : t, body
+    &classRelationshipVia/2 : t, body;
+    &classHasWitness/2      : t, body
 }.
 """
 
@@ -574,7 +575,84 @@ def main():
          2,
          frozenset(["mergeClasses(a,a2)", "cyc"])),
     ]
-    tests = tests + reach_tests
+    witness_tests = [
+        # ── W1. Reflexive support: a witnesses its own group/class ──────────
+        ("witness direct: a witnessGroup fact supports its own reflexive class",
+         """
+         witnessGroup(g, a).
+         chw :- &classHasWitness(g, a).
+         :- not chw.
+         """,
+         1),
+
+        # ── W2. No witness in the group → classHasWitness stays false ───────
+        ("witness absent: unrelated witness entity keeps classHasWitness false",
+         """
+         mergeEntity(a). mergeEntity(c).
+         witnessGroup(g, a).
+         chw :- &classHasWitness(g, c).
+         :- chw.
+         """,
+         1),
+
+        # ── W3. Choice-driven witness literal drives the atom both ways ─────
+        ("witness choice: classHasWitness tracks a guessed witnessGroup fact",
+         """
+         1 { haveW ; -haveW } 1.
+         witnessGroup(g, a) :- haveW.
+         chw :- &classHasWitness(g, a).
+         :- haveW, not chw.
+         :- not haveW, chw.
+         #show haveW/0. #show chw/0.
+         """,
+         2,
+         frozenset(["haveW", "chw"])),
+
+        # ── W4. Bridge via merge: witness w merges into the queried class c ──
+        ("witness bridge: witnessGroup(g,w) supports class c iff w~c merged",
+         """
+         witnessGroup(g, w).
+         1 { mergeClasses(w,c) ; -mergeClasses(w,c) } 1.
+         chw :- &classHasWitness(g, c).
+         :- mergeClasses(w,c), not chw.
+         :- not mergeClasses(w,c), chw.
+         #show mergeClasses/2. #show chw/0.
+         """,
+         2,
+         frozenset(["mergeClasses(w,c)", "chw"])),
+
+        # ── W5. Multiple witnesses in one group: any one suffices ────────────
+        ("witness multi: a second, unrelated witness in the group doesn't interfere",
+         """
+         witnessGroup(g, a).
+         witnessGroup(g, b).
+         1 { mergeClasses(a,c) ; -mergeClasses(a,c) } 1.
+         chw :- &classHasWitness(g, c).
+         :- mergeClasses(a,c), not chw.
+         :- not mergeClasses(a,c), chw.
+         #show mergeClasses/2. #show chw/0.
+         """,
+         2,
+         frozenset(["mergeClasses(a,c)", "chw"])),
+
+        # ── W6. Compound group terms don't collide across payload values ────
+        ("witness group discrimination: sizeGroup(4) and methodGroup(4) stay independent",
+         """
+         witnessGroup(sizeGroup(4), a).
+         witnessGroup(methodGroup(4), b).
+         1 { mergeClasses(a,c) ; -mergeClasses(a,c) } 1.
+         1 { mergeClasses(b,d) ; -mergeClasses(b,d) } 1.
+         chwSize :- &classHasWitness(sizeGroup(4), c).
+         chwMethod :- &classHasWitness(methodGroup(4), d).
+         :- mergeClasses(a,c), not chwSize.
+         :- not mergeClasses(a,c), chwSize.
+         :- mergeClasses(b,d), not chwMethod.
+         :- not mergeClasses(b,d), chwMethod.
+         #show mergeClasses/2. #show chwSize/0. #show chwMethod/0.
+         """,
+         4),
+    ]
+    tests = tests + reach_tests + witness_tests
 
     for mode, ctl_args in CONTROL_MODES:
         print(f"\nMode: {mode}")

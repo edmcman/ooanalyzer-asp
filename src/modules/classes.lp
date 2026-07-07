@@ -28,8 +28,13 @@ classRelatedMethod(A, B) :- classCallsMethod(B, A).
 
 % Class-wide form of "Class contains some object at offset 0": some member of
 % C's class is the outer of an objectInObject at 0. Domain restricted to the
-% entities reasonClassRelatedMethod_B queries.
-classHasInnerAtZero(C) :- thisPtrUsageEntity(C), objectInObject(W, _, 0), &sameClass(C, W).
+% entities reasonClassRelatedMethod_B queries. The outer-witness W is discarded
+% once the &sameClass check is made, so — like classSizeGTE_F in size.lp — this
+% is an existential over W's unbounded domain; moved into the propagator via
+% &classHasWitness(zeroGroup, C) (measured 33,390 ground instances on TinyXml
+% before this fix).
+witnessGroup(zeroGroup, W) :- objectInObject(W, _, 0).
+classHasInnerAtZero(C) :- thisPtrUsageEntity(C), &classHasWitness(zeroGroup, C).
 thisPtrUsageEntity(F) :- thisPtrUsage(_, F, _, _).
 thisPtrUsageEntity(M) :- thisPtrUsage(_, _, _, M).
 

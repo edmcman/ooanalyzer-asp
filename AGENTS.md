@@ -326,6 +326,55 @@ notMergeUnsorted(X, Y) :-
     &classRelationship(X, Y).
 ```
 
+### Existential witness membership: `&classHasWitness/2`
+
+A different free-join shape shows up when a rule needs "does class(A)'s live
+&sameClass class contain ANY entity satisfying some other predicate P", and
+the specific witness isn't needed afterward (it's only used to make the
+`&sameClass` check, then discarded) — e.g. `objectInObject(Class, InnerClass,
+Off), classSizeGTE(Wi, InnerSize), &sameClass(InnerClass, Wi)` with `Wi` free.
+Since theory atoms can't bind a free variable at grounding time, `Wi` ranges
+over every ground fact of the joined predicate, crossed with every instance of
+the rule's other bound variables — this exploded to 960,516 ground instances
+of `classSizeGTE` (reasonClassSizeGTE_F) on TinyXml once `objectInObject` grew
+from 14 to 286 facts (the same `_D`/`_E` port that motivated
+`&classRelationship`), with two more sites at 159,840
+(`reasonNOTMergeClassesCAsymmetric`) and 33,390 (`classHasInnerAtZero`).
+
+Fixed the same way as `&classRelationship`: move the existential check into
+the propagator as `&classHasWitness(Group, Class)`, true iff some
+`witnessGroup(Group, W)` atom is true with `W` in `class(Class)`'s current
+component. `Group` is an opaque ASP-side tag (`sizeGroup(S)`, `methodGroup(M)`,
+`zeroGroup`) so unrelated witness pools never collide — the propagator hashes
+each tag by its full rendered term, not its payload, so `sizeGroup(4)` and
+`methodGroup(4)` are distinct groups despite sharing the value `4`. Pattern:
+
+```prolog
+witnessGroup(sizeGroup(S), W) :- classSizeGTE(W, S).
+classSizeValue(S) :- classSizeGTE(_, S).
+
+classSizeGTE(Class, Off + InnerSize) :-
+    objectInObject(Class, InnerClass, Off),
+    classSizeValue(InnerSize),
+    &classHasWitness(sizeGroup(InnerSize), InnerClass),
+    Off + InnerSize <= max_class_size.
+```
+
+`classSizeValue/1` (or the equivalent per-site domain predicate, e.g.
+`methodCalledByAnyClass/1`) bounds the OTHER free variable — the one that
+still needs to reach the rule head — to the small set of distinct *values*
+that occur, not the large set of witness *entities* that produce them; this is
+the same trick as `relevantOffset` in "Transitive closures with accumulated
+offsets" above, applied to an existential join instead of an offset sum.
+
+**Only use `&classHasWitness` when the witness entity itself is discarded
+after the `&sameClass` check.** If a rule needs the witness's concrete
+identity for something else downstream (e.g. `reasonMergeClasses_H` pulls
+`VOffset`/`Method` out of the vftable it joins via `&sameClass`), this pattern
+doesn't apply — the theory atom can only return a boolean, not a value — and
+the free join needs a different fix (a static candidate-link predicate, like
+`classRelationshipCand`, or restructuring the rule).
+
 ### Merge optimization performance (see `.state/merge-optimization-blocker.md`)
 
 Largely resolved 2026-07-02 by the `--decide-inputs` propagator heuristic plus

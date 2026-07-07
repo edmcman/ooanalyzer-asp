@@ -111,6 +111,32 @@ pub struct Shared {
     pub reach_entities: FxHashSet<EntKey>,
     /// `&classRelationship`/`&classRelationshipVia` atoms, sorted `(a, b, slit)`.
     pub cr_atoms: Vec<CrAtom>,
+    /// `abs(slit)` → `group` for `witnessGroup/2` atoms (existential witness
+    /// membership, decided by `&classHasWitness/2`).
+    pub witness_slit_to_group: FxHashMap<i32, EntKey>,
+    /// `group` → sorted `[(witness_entity, abs_slit)]` (frozen order).
+    pub witness_by_group: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
+    /// witness entity → sorted `[group]` it belongs to (frozen order) — the
+    /// reverse of `witness_by_group`, for merge-triggered lookups.
+    pub witness_entity_to_groups: FxHashMap<EntKey, Vec<EntKey>>,
+    /// `&classHasWitness` atoms, sorted `(group, class, slit)`. Only ever
+    /// swept in full once (the initial `check()` sweep); routine updates use
+    /// `chw_by_group`/`chw_by_class` to touch just the affected atoms — this
+    /// list can be tens of thousands of entries once the value/method domains
+    /// that generate it are large, so an unconditional per-`check()` sweep
+    /// over all of it (like `&classRelationship`'s much smaller `cr_atoms`)
+    /// does not scale.
+    pub chw_atoms: Vec<(EntKey, EntKey, i32)>,
+    /// `group` → sorted `[(class, slit)]` (frozen order) — atoms to recheck
+    /// when a witness of this group changes truth.
+    pub chw_by_group: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
+    /// `class` → sorted `[(group, slit)]` (frozen order) — atoms to recheck
+    /// when `class` (or an entity merging into its component) changes.
+    pub chw_by_class: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
+    /// `abs(slit)` → `(group, class, slit)`, for watching a `&classHasWitness`
+    /// atom's own literal (mirrors `awc_slit_to_pair`; keeps the signed `slit`
+    /// alongside so truth is re-queried against it, not the raw abs literal).
+    pub chw_slit_to_pair: FxHashMap<i32, (EntKey, EntKey, i32)>,
     pub observed_proglits: FxHashSet<i32>,
     pub unconditional_proglits: FxHashSet<i32>,
     /// observed program-literal → solver literal (best-effort).

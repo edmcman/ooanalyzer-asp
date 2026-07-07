@@ -158,6 +158,7 @@ fn build_shared(
     let mut awc_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)> = FxHashMap::default();
     let mut awc_by_vft: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
     let mut cr_atoms: Vec<CrAtom> = Vec::new();
+    let mut chw_atoms: Vec<(EntKey, EntKey, i32)> = Vec::new();
 
     for atom in 0..ffi.theory_atoms_size(theory_atoms) as u32 {
         let term = ffi.theory_atom_term(theory_atoms, atom);
@@ -217,6 +218,12 @@ fn build_shared(
                     via: name == "classRelationshipVia",
                 });
             }
+            "classHasWitness" if args.len() == 2 => {
+                let group = EntKey::from_theory_term(ffi, theory_atoms, args[0]);
+                let class_ = EntKey::from_theory_term(ffi, theory_atoms, args[1]);
+                chw_atoms.push((group, class_, slit));
+                ffi.add_watch(init_ptr, slit);
+            }
             _ => {}
         }
     }
@@ -242,6 +249,34 @@ fn build_shared(
         if is_new && lit.abs() != 1 {
             ffi.add_watch(init_ptr, lit);
         }
+    });
+
+    // witnessGroup/2 — existential witness membership for &classHasWitness.
+    // ASP-side sites tag the group term so unrelated witness pools never
+    // collide (e.g. sizeGroup(S), methodGroup(M), zeroGroup).
+    let mut witness_slit_to_group: FxHashMap<i32, EntKey> = FxHashMap::default();
+    let mut witness_by_group_set: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
+    each_sym_atom(ffi, sym_atoms, "witnessGroup", 2, |sym, prog_lit| {
+        let args = match ffi.symbol_arguments(sym).ok() {
+            Some(a) => a,
+            None => return,
+        };
+        if args.len() < 2 {
+            return;
+        }
+        let group = EntKey::from_symbol(ffi, args[0]);
+        let witness = EntKey::from_symbol(ffi, args[1]);
+        let lit = match ffi.solver_literal(init_ptr, prog_lit).ok() {
+            Some(s) => s,
+            None => return,
+        };
+        let alit = lit.abs();
+        witness_slit_to_group.insert(alit, group.clone());
+        witness_by_group_set
+            .entry(group)
+            .or_default()
+            .insert((witness, alit));
+        ffi.add_watch(init_ptr, lit);
     });
 
     // nonOverwritingWrite/3
@@ -383,9 +418,60 @@ fn build_shared(
             .then(x.slit.cmp(&y.slit))
     });
 
+    // Level-0 pruning for &classHasWitness: a (group, class) pair can only ever
+    // be true if some witness of the group is potentially same-class as class.
+    {
+        let mut live: Vec<(EntKey, EntKey, i32)> = Vec::with_capacity(chw_atoms.len());
+        for (group, class_, slit) in chw_atoms.drain(..) {
+            let possible = witness_by_group_set
+                .get(&group)
+                .map(|ws| ws.iter().any(|(w, _)| potential_uf.same(w, &class_)))
+                .unwrap_or(false);
+            if possible {
+                live.push((group, class_, slit));
+            } else {
+                init_add(ffi, init_ptr, &[-slit]);
+            }
+        }
+        chw_atoms = live;
+    }
+    chw_atoms.sort_by(|x, y| x.0.cmp(&y.0).then(x.1.cmp(&y.1)).then(x.2.cmp(&y.2)));
+
     // Freeze deterministic, interpreter-independent iteration order.
     let now_writers_by_vft = freeze_sorted(now_writers_by_vft);
     let awc_by_vft = freeze_sorted(awc_by_vft);
+    let witness_by_group = freeze_sorted(witness_by_group_set);
+
+    // Reverse indices for &classHasWitness so propagate()/check() only ever
+    // touch the atoms a given change could actually affect, instead of
+    // sweeping the (potentially tens-of-thousands-large) full chw_atoms list.
+    let mut witness_entity_to_groups: FxHashMap<EntKey, Vec<EntKey>> = FxHashMap::default();
+    {
+        let mut groups_sorted: Vec<&EntKey> = witness_by_group.keys().collect();
+        groups_sorted.sort();
+        for g in groups_sorted {
+            for (w, _) in &witness_by_group[g] {
+                witness_entity_to_groups
+                    .entry(w.clone())
+                    .or_default()
+                    .push(g.clone());
+            }
+        }
+    }
+    let mut chw_by_group: FxHashMap<EntKey, Vec<(EntKey, i32)>> = FxHashMap::default();
+    let mut chw_by_class: FxHashMap<EntKey, Vec<(EntKey, i32)>> = FxHashMap::default();
+    let mut chw_slit_to_pair: FxHashMap<i32, (EntKey, EntKey, i32)> = FxHashMap::default();
+    for (group, class_, slit) in &chw_atoms {
+        chw_by_group
+            .entry(group.clone())
+            .or_default()
+            .push((class_.clone(), *slit));
+        chw_by_class
+            .entry(class_.clone())
+            .or_default()
+            .push((group.clone(), *slit));
+        chw_slit_to_pair.insert(slit.abs(), (group.clone(), class_.clone(), *slit));
+    }
     let oio_by_src: FxHashMap<EntKey, Vec<(EntKey, i32)>> = freeze_sorted({
         let mut m: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
         for (&lit, edges) in &oio_lit_to_edges {
@@ -425,6 +511,13 @@ fn build_shared(
         oio_by_src,
         reach_entities,
         cr_atoms,
+        witness_slit_to_group,
+        witness_by_group,
+        witness_entity_to_groups,
+        chw_atoms,
+        chw_by_group,
+        chw_by_class,
+        chw_slit_to_pair,
         observed_proglits,
         unconditional_proglits,
         proglit_to_slit,
@@ -502,6 +595,8 @@ fn ensure_initialized(
         state.merge_trail.clear();
         state.true_sc.clear();
         state.did_initial_sc_sweep = false;
+        state.true_chw.clear();
+        state.did_initial_chw_sweep = false;
         state.initialized = true;
     }
 }
@@ -547,6 +642,17 @@ pub fn propagate(
 
     let mut graph_touched = false;
     for &lit in changes {
+        let alit = lit.abs();
+        if let Some(group) = shared.witness_slit_to_group.get(&alit).cloned() {
+            if !check_group_atoms(ffi, &shared, state, ctrl, asgn, &group)? {
+                return Ok(());
+            }
+        }
+        if let Some((_, _, chw_slit)) = shared.chw_slit_to_pair.get(&alit).cloned() {
+            if ffi.is_true(asgn, chw_slit) {
+                state.true_chw.insert(alit);
+            }
+        }
         if let Some(pairs) = shared.facts.merge_lit_to_pairs.get(&lit).cloned() {
             for (a, b) in &pairs {
                 let ra = state.uf.root(a);
@@ -561,6 +667,18 @@ pub fn propagate(
                     graph_touched |= absorbed
                         .iter()
                         .any(|e| shared.reach_entities.contains(e));
+                    for e in &absorbed {
+                        if !check_class_atoms(ffi, &shared, state, ctrl, asgn, e)? {
+                            return Ok(());
+                        }
+                        if let Some(groups) = shared.witness_entity_to_groups.get(e).cloned() {
+                            for g in &groups {
+                                if !check_group_atoms(ffi, &shared, state, ctrl, asgn, g)? {
+                                    return Ok(());
+                                }
+                            }
+                        }
+                    }
                     let absorbed_set: FxHashSet<EntKey> = absorbed.iter().cloned().collect();
                     let merged = state.uf.members_of(&merged_root).clone();
                     let mut sorted = absorbed;
@@ -669,6 +787,11 @@ pub fn undo(ffi: &Ffi, pd: &PropData, ctrl: *const ClingoPropagateControl, chang
             state.true_sc.remove(&lit);
         }
     }
+    if !state.true_chw.is_empty() {
+        for &lit in changes {
+            state.true_chw.remove(&lit.abs());
+        }
+    }
     if state.merge_trail.is_empty() && state.oio_trail.is_empty() {
         return;
     }
@@ -770,6 +893,43 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
     // supported atoms true and refute unsupported true-assigned ones.
     if !reconcile_reach(ffi, &shared, state, ctrl, asgn, true)? {
         return Ok(());
+    }
+
+    // Reconcile &classHasWitness against the live &sameClass classes. First
+    // call: one full sweep (mirrors the &sameClass check_atoms sweep above).
+    // After that: only true_chw (atoms the solver has actually assigned true)
+    // need re-verifying — propagate()'s check_group_atoms/check_class_atoms
+    // already force-true anything newly supported, so only refutation of a
+    // solver-decided guess with no propagate()-visible trigger remains here.
+    if !state.did_initial_chw_sweep {
+        if !initial_chw_sweep(ffi, &shared, state, ctrl, asgn)? {
+            return Ok(());
+        }
+        state.did_initial_chw_sweep = true;
+    } else {
+        let sorted: Vec<i32> = {
+            let mut v: Vec<i32> = state.true_chw.iter().copied().collect();
+            v.sort_unstable();
+            v
+        };
+        let mut cache = FxHashMap::default();
+        for alit in sorted {
+            let (group, class_, slit) = match shared.chw_slit_to_pair.get(&alit) {
+                Some(p) => p.clone(),
+                None => continue,
+            };
+            if !ffi.is_true(asgn, slit) {
+                state.true_chw.remove(&alit);
+                continue;
+            }
+            if !witness_supports(ffi, asgn, state, &shared, &group, &class_)
+                && !assert_witness_false(
+                    ffi, &shared, state, ctrl, asgn, &group, &class_, slit, &mut cache,
+                )?
+            {
+                return Ok(());
+            }
+        }
     }
 
     if shared.foundedness_check && ffi.is_total(asgn) {
@@ -1339,6 +1499,198 @@ fn reconcile_reach(
         }
     }
     Ok(true)
+}
+
+// ── &classHasWitness: existential witness-in-class membership ───────────────
+//
+// Semantics: `&classHasWitness(Group, Class)` holds iff some `witnessGroup(Group,
+// W)` atom is true with `W` in `class(Class)`'s current &sameClass component.
+// `Group` is an opaque tag chosen on the ASP side (e.g. `sizeGroup(S)`,
+// `methodGroup(M)`, `zeroGroup`) so unrelated witness pools never collide.
+// Generalizes the free-witness-join pattern (`&sameClass(A, W), P(W, ...)`
+// with `W` unbound) that exploded classSizeGTE_F/classHasInnerAtZero/
+// reasonNOTMergeClasses_C's grounding once objectInObject grew from 14 to 286
+// facts: instead of grounding one instance per (A, W) pair, the ASP side
+// grounds one instance per (A, Group) pair (Group ranges over a small static
+// value domain) and the propagator answers the existence query directly
+// against the live union-find, using a plain linear scan (no path search
+// needed, unlike &classRelationship) since group membership is unordered.
+
+/// One-time full sweep of all `&classHasWitness` atoms against the live
+/// &sameClass classes — used only for the very first `check()` call (mirrors
+/// the `check_atoms` initial sweep for `&sameClass`). Every subsequent update
+/// goes through the targeted `check_group_atoms`/`check_class_atoms` (called
+/// from `propagate()`) plus the `true_chw`-scoped incremental sweep in
+/// `check()`; a full unconditional sweep does not scale once `chw_atoms` is
+/// tens of thousands of entries (as it is once the value/method domains that
+/// generate `&classHasWitness` instances are large).
+fn initial_chw_sweep(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+) -> Result<bool, String> {
+    if shared.chw_atoms.is_empty() {
+        return Ok(true);
+    }
+    let mut cut_cache: FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)> = FxHashMap::default();
+    for (group, class_, slit) in &shared.chw_atoms {
+        if !try_force_witness_true(ffi, shared, state, ctrl, asgn, group, class_, *slit)? {
+            return Ok(false);
+        }
+        if ffi.is_true(asgn, *slit)
+            && !witness_supports(ffi, asgn, state, shared, group, class_)
+            && !assert_witness_false(
+                ffi, shared, state, ctrl, asgn, group, class_, *slit, &mut cut_cache,
+            )?
+        {
+            return Ok(false);
+        }
+    }
+    Ok(true)
+}
+
+/// Whether some witness of `group` is currently true and same-class as `class_`.
+fn witness_supports(
+    ffi: &Ffi,
+    asgn: *const ClingoAssignment,
+    state: &mut ThreadState,
+    shared: &Shared,
+    group: &EntKey,
+    class_: &EntKey,
+) -> bool {
+    shared
+        .witness_by_group
+        .get(group)
+        .map(|ws| {
+            ws.iter()
+                .any(|(w, wlit)| ffi.is_true(asgn, *wlit) && state.uf.same(w, class_))
+        })
+        .unwrap_or(false)
+}
+
+/// If `(group, class_)`'s `&classHasWitness` atom (solver literal `slit`)
+/// isn't already true and a live witness now supports it, force it true.
+/// No-op if already true or still unsupported.
+fn try_force_witness_true(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+    group: &EntKey,
+    class_: &EntKey,
+    slit: i32,
+) -> Result<bool, String> {
+    if ffi.is_true(asgn, slit) {
+        return Ok(true);
+    }
+    let support = shared.witness_by_group.get(group).and_then(|ws| {
+        ws.iter()
+            .find(|(w, wlit)| ffi.is_true(asgn, *wlit) && state.uf.same(w, class_))
+    });
+    match support {
+        Some((w, wlit)) => assert_witness_true(ffi, shared, state, ctrl, w, class_, *wlit, slit),
+        None => Ok(true),
+    }
+}
+
+/// Recheck every `&classHasWitness(group, _)` atom — called when a witness of
+/// this group just changed truth.
+fn check_group_atoms(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+    group: &EntKey,
+) -> Result<bool, String> {
+    if let Some(atoms) = shared.chw_by_group.get(group) {
+        for (class_, slit) in atoms {
+            if !try_force_witness_true(ffi, shared, state, ctrl, asgn, group, class_, *slit)? {
+                return Ok(false);
+            }
+        }
+    }
+    Ok(true)
+}
+
+/// Recheck every `&classHasWitness(_, class_)` atom — called when `class_`
+/// itself was just absorbed into a merge (its component gained new members).
+fn check_class_atoms(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+    class_: &EntKey,
+) -> Result<bool, String> {
+    if let Some(atoms) = shared.chw_by_class.get(class_) {
+        for (group, slit) in atoms {
+            if !try_force_witness_true(ffi, shared, state, ctrl, asgn, group, class_, *slit)? {
+                return Ok(false);
+            }
+        }
+    }
+    Ok(true)
+}
+
+fn assert_witness_true(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    w: &EntKey,
+    class_: &EntKey,
+    wlit: i32,
+    slit: i32,
+) -> Result<bool, String> {
+    let (_, reason) = state.uf.same_with_reason(w, class_);
+    let mut clause: Vec<i32> = reason.iter().map(|&r| -r).collect();
+    clause.push(-wlit);
+    clause.push(slit);
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "witness_true", &clause, !ok);
+    Ok(ok)
+}
+
+fn assert_witness_false(
+    ffi: &Ffi,
+    shared: &Shared,
+    state: &mut ThreadState,
+    ctrl: *mut ClingoPropagateControl,
+    asgn: *const ClingoAssignment,
+    group: &EntKey,
+    class_: &EntKey,
+    slit: i32,
+    cache: &mut FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)>,
+) -> Result<bool, String> {
+    let (reason, cut) = component_cut_and_reasons(shared, state, class_, cache);
+    let mut neg = reason;
+    let mut pos = cut;
+    if let Some(witnesses) = shared.witness_by_group.get(group) {
+        for (w, wlit) in witnesses {
+            if state.uf.same(w, class_) && !ffi.is_true(asgn, *wlit) {
+                pos.insert(*wlit);
+            }
+        }
+    }
+    let mut clause: Vec<i32> = Vec::with_capacity(neg.len() + pos.len() + 1);
+    let mut ns: Vec<i32> = neg.drain().collect();
+    ns.sort_unstable();
+    let mut ps: Vec<i32> = pos.drain().collect();
+    ps.sort_unstable();
+    for n in &ns {
+        clause.push(-n);
+    }
+    for p in &ps {
+        clause.push(*p);
+    }
+    clause.push(-slit);
+    let ok = clause!(ffi, ctrl, &clause);
+    dump_lemma(shared, "witness_false", &clause, !ok);
+    Ok(ok)
 }
 
 // ── foundedness ──────────────────────────────────────────────────────────────

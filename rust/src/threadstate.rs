@@ -27,6 +27,11 @@ pub struct ThreadState {
     pub oio_true: Vec<(EntKey, EntKey, i32)>,
     /// `(watched_lit, oio_true.len() before)` — suffix popped in `undo`.
     pub oio_trail: Vec<(i32, usize)>,
+    /// Solver-assigned-true `&classHasWitness` solver literals, so `check()`
+    /// only re-examines those after the initial full sweep. Maintained by
+    /// propagate (add) and undo (drop) — mirrors `true_sc`.
+    pub true_chw: FxHashSet<i32>,
+    pub did_initial_chw_sweep: bool,
 }
 
 impl ThreadState {
@@ -39,6 +44,8 @@ impl ThreadState {
             did_initial_sc_sweep: false,
             oio_true: Vec::new(),
             oio_trail: Vec::new(),
+            true_chw: FxHashSet::default(),
+            did_initial_chw_sweep: false,
         }
     }
 }

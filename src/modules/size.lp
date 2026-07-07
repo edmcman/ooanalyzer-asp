@@ -18,12 +18,24 @@ classSizeGTE(Element, 0) :- mergeEntity(Element).
 % An embedded or inherited inner object at Offset forces the enclosing class to
 % be large enough to contain it: at least Offset + the inner class's min size.
 % The inner witness from objectInObject and the witness carrying the size need
-% not be the same member, so join them across the class with &sameClass.
+% not be the same member — that's an existential ("does InnerClass's class
+% contain ANY entity with this size floor") over an unbounded witness set, so
+% grounding a free Wi joined only by &sameClass explodes once objectInObject
+% grows (measured 960,516 ground instances on TinyXml after the _D/_E port).
+% Moved into the propagator: &classHasWitness(sizeGroup(S), InnerClass) decides
+% the existence query against the live &sameClass classes; classSizeValue
+% bounds S to the small set of distinct sizes actually in play (cf. the
+% relevantOffset pattern in AGENTS.md's "Transitive closures with accumulated
+% offsets" — bounding a recursive predicate's OWN value domain, not its witness
+% entities).
+witnessGroup(sizeGroup(S), W) :- classSizeGTE(W, S).
+classSizeValue(S) :- classSizeGTE(_, S).
+
 %!trace_rule {"class of % is >= % bytes (contains class of % at offset %)", Class, Off + InnerSize, InnerClass, Off}
 classSizeGTE(Class, Off + InnerSize) :-
     objectInObject(Class, InnerClass, Off),
-    classSizeGTE(Wi, InnerSize),
-    &sameClass(InnerClass, Wi),
+    classSizeValue(InnerSize),
+    &classHasWitness(sizeGroup(InnerSize), InnerClass),
     Off + InnerSize <= max_class_size.
 
 % reasonClassSizeGTE_E (3624) / CSize-3:
@@ -125,15 +137,21 @@ classSizeLTE(Constructor, Size) :-
 % A base class is no larger than any of its derived classes, so a derived
 % class's upper bound propagates up to its base. classRelationshipCand generates
 % the derived witness D and base witness B; &classRelationship decides the
-% containment. The size-bearing witness WD need not be D itself, so join them
-% across the derived class with &sameClass. The head records B as the base
-% class's witness.
+% containment. The size-bearing witness WD need not be D itself — the same
+% existential-witness shape as classSizeGTE_F above (measured 48,327 ground
+% instances on TinyXml from the free WD x Size join) — so it moves into the
+% propagator via &classHasWitness(lteSizeGroup(Size), D); classSizeLTEValue
+% bounds Size to the small set of distinct values actually in play. The head
+% records B as the base class's witness.
+witnessGroup(lteSizeGroup(Size), WD) :- classSizeLTE(WD, Size).
+classSizeLTEValue(Size) :- classSizeLTE(_, Size).
+
 %!trace_rule {"base class of % is <= % bytes (derived class of % is)", B, Size, D}
 classSizeLTE(B, Size) :-
     classRelationshipCand(D, B),
     &classRelationship(D, B),
-    classSizeLTE(WD, Size),
-    &sameClass(D, WD).
+    classSizeLTEValue(Size),
+    &classHasWitness(lteSizeGroup(Size), D).
 
 % ============================================================
 % VFTABLE SIZE RULES
