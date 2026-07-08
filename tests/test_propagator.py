@@ -651,6 +651,39 @@ def main():
          #show mergeClasses/2. #show chwSize/0. #show chwMethod/0.
          """,
          4),
+
+        # ── W7. Witness, merge, and theory atom may share a propagation batch ─
+        ("witness same-batch: support requires both a guessed witness and merge",
+         """
+         1 { haveW ; -haveW } 1.
+         1 { mergeClasses(w,c) ; -mergeClasses(w,c) } 1.
+         witnessGroup(g, w) :- haveW.
+         chw :- &classHasWitness(g, c).
+         :- haveW, mergeClasses(w,c), not chw.
+         :- chw, not haveW.
+         :- chw, not mergeClasses(w,c).
+         #show haveW/0. #show mergeClasses/2. #show chw/0.
+         """,
+         4,
+         frozenset(["haveW", "mergeClasses(w,c)", "chw"])),
+
+        # ── W8. Backtracking must restore per-component support exactly ─────
+        ("witness undo: two independently changing supports survive remerge search",
+         """
+         1 { haveA ; -haveA } 1.
+         1 { haveB ; -haveB } 1.
+         1 { mergeClasses(a,c) ; -mergeClasses(a,c) } 1.
+         1 { mergeClasses(b,c) ; -mergeClasses(b,c) } 1.
+         witnessGroup(g, a) :- haveA.
+         witnessGroup(g, b) :- haveB.
+         chw :- &classHasWitness(g, c).
+         expected :- haveA, mergeClasses(a,c).
+         expected :- haveB, mergeClasses(b,c).
+         :- expected, not chw.
+         :- chw, not expected.
+         #show haveA/0. #show haveB/0. #show mergeClasses/2. #show chw/0.
+         """,
+         16),
     ]
     tests = tests + reach_tests + witness_tests
 
