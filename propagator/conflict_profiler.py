@@ -42,7 +42,7 @@ class ConflictProfiler:
     def __init__(self, watch_preds=None, max_atoms=10000, max_atoms_per_predicate=500,
                  interval=0, trace_backjumps=0, trace_backjump_limit=10,
                  profile_after=0, after_first_model=False,
-                 count_conflicts=True):
+                 count_conflicts=True, profile_window=0, profile_period=0):
         # watch_preds: set of predicate names to restrict to, or None for all
         self._watch_preds = set(watch_preds) if watch_preds else None
         self._max_atoms = max_atoms
@@ -65,9 +65,16 @@ class ConflictProfiler:
         self._profile_after = profile_after
         self._after_first_model = after_first_model
         self._count_conflicts = count_conflicts
+        # Duty cycle: after profile_after, watch for profile_window seconds out of
+        # every profile_period, removing watches in between to coast at near-normal
+        # speed. Heartbeat is check() under Fixpoint mode (fires with no watches).
+        self._profile_window = profile_window
+        self._profile_period = profile_period
+        self._duty_cycle = profile_window > 0 and profile_period > profile_window
+        self._burst_index = 0
         self._model_gate_open = not after_first_model
         self._active = False
-        self._defer_watches = after_first_model
+        self._defer_watches = self._duty_cycle
         self._watch_lits = set()
         self._watched_threads = set()
         self._trace_start_time = None
@@ -86,10 +93,13 @@ class ConflictProfiler:
     # ------------------------------------------------------------------
     def init(self, init):
         self._start_time = time.monotonic()
+        self._solve_start = self._start_time
         self._last_report_time = self._start_time
         self._trace_start_time = self._start_time
-        if self._after_first_model:
-            init.check_mode = clingo.PropagatorCheckMode.Total
+        if self._duty_cycle and self._after_first_model:
+            init.check_mode = clingo.PropagatorCheckMode.Both
+        elif self._duty_cycle:
+            init.check_mode = clingo.PropagatorCheckMode.Fixpoint
         for sym_atom in init.symbolic_atoms:
             pred = sym_atom.symbol.name
             lit = init.solver_literal(sym_atom.literal)
@@ -129,7 +139,36 @@ class ConflictProfiler:
                 text = f"&{term.name}({args})"
                 self._decision_info[abs(lit)].append((lit, pred, text))
 
-        self._maybe_activate()
+        self._active_now()
+
+    def _active_now(self, control=None):
+        """Return whether counting is currently active, driving activation.
+
+        Duty-cycle mode delegates to the windowed clock in `_tick`; otherwise the
+        original one-shot latch in `_maybe_activate` applies."""
+        if self._duty_cycle:
+            return self._tick(control)
+        return self._maybe_activate(control)
+
+    def _tick(self, control):
+        if not self._model_gate_open:
+            return False
+        if control is None:
+            return self._active
+        elapsed = time.monotonic() - self._solve_start - self._profile_after
+        desired_on = elapsed >= 0 and (elapsed % self._profile_period) < self._profile_window
+        installed = control.thread_id in self._watched_threads
+        if desired_on and not installed:
+            self._add_watches(control)
+            self._burst_index += 1
+            self.reset_counts(f"burst {self._burst_index} @ {elapsed:.0f}s")
+            self._active = True
+        elif not desired_on and installed:
+            if self._total_undos:
+                self._periodic_report()
+            self._remove_watches(control)
+            self._active = False
+        return self._active
 
     def _maybe_activate(self, control=None):
         if self._active:
@@ -164,8 +203,20 @@ class ConflictProfiler:
                 control.add_watch(lit)
             self._watched_threads.add(thread_id)
 
+    def _remove_watches(self, control):
+        thread_id = control.thread_id
+        if thread_id in self._watched_threads:
+            for lit in self._watch_lits:
+                control.remove_watch(lit)
+            self._watched_threads.discard(thread_id)
+
+    def model_found(self):
+        """Open the model gate from the driver's actual on-model callback."""
+        self._model_gate_open = True
+        self._active_now()
+
     def propagate(self, control, changes):
-        if self._maybe_activate(control) and self._trace_backjumps:
+        if self._active_now(control) and self._trace_backjumps:
             self._report_post_backjump(control.thread_id, control.assignment)
             self._capture_decisions(control.thread_id, control.assignment)
 
@@ -187,7 +238,7 @@ class ConflictProfiler:
                     break
 
     def undo(self, thread_id, assignment, changes):
-        if not self._maybe_activate():
+        if not self._active_now():
             return
         if self._trace_backjumps:
             self._report_post_backjump(thread_id, assignment, final=True)
@@ -374,9 +425,7 @@ class ConflictProfiler:
             del history[old_level]
 
     def check(self, control):
-        if self._after_first_model and not self._model_gate_open:
-            self._model_gate_open = True
-        if not self._maybe_activate(control):
+        if not self._active_now(control):
             return
         if self._trace_backjumps:
             self._report_post_backjump(control.thread_id, control.assignment, final=True)
@@ -404,7 +453,9 @@ class ConflictProfiler:
         sys.stdout.flush()
 
     def report(self, top_preds=25, top_atoms=15, title=None):
-        if not self._active:
+        # In duty-cycle mode the solve may end during an OFF window; the last
+        # burst's counts are still held, so print them rather than "not started".
+        if not self._active and not (self._duty_cycle and self._total_undos):
             waits = []
             if self._after_first_model and not self._model_gate_open:
                 waits.append("first model")

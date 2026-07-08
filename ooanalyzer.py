@@ -254,6 +254,8 @@ class OOAnalyzerApp(clingo.Application):
         self.profile_max_atoms_per_predicate = 500
         self.profile_interval = 0.0
         self.profile_after = 0.0
+        self.profile_window = 0.0
+        self.profile_period = 0.0
         self.trace_backjumps = 0
         self.trace_backjump_limit = 10
         self.foundedness_check = clingo.Flag(False)
@@ -310,6 +312,10 @@ class OOAnalyzerApp(clingo.Application):
                     int_parser(lambda x: setattr(self, 'profile_max_atoms_per_predicate', x)), argument="N")
         options.add("OOAnalyzer", "profile-interval", "seconds between periodic conflict profile reports",
                     float_parser(lambda x: setattr(self, 'profile_interval', x)), argument="SEC")
+        options.add("OOAnalyzer", "profile-window", "duty-cycle: profile for SEC out of each --profile-period, removing watches in between",
+                    float_parser(lambda x: setattr(self, 'profile_window', x)), argument="SEC")
+        options.add("OOAnalyzer", "profile-period", "duty-cycle: full cycle length in seconds (must exceed --profile-window)",
+                    float_parser(lambda x: setattr(self, 'profile_period', x)), argument="SEC")
         options.add("OOAnalyzer", "trace-backjumps", "trace decisions for backjumps of at least N levels (0 disables)",
                     int_parser(lambda x: setattr(self, 'trace_backjumps', x)), argument="N")
         options.add("OOAnalyzer", "trace-backjump-limit", "maximum number of large backjumps to print",
@@ -414,6 +420,8 @@ class OOAnalyzerApp(clingo.Application):
                 profile_after=self.profile_after,
                 after_first_model=profile_after_first_model,
                 count_conflicts=profile_conflicts,
+                profile_window=self.profile_window,
+                profile_period=self.profile_period,
             )
             if (profile_conflicts or self.trace_backjumps) else None
         )
@@ -461,6 +469,8 @@ class OOAnalyzerApp(clingo.Application):
             if first_model_time is None:
                 first_model_time = now
                 log.info("Model found (%.2fs): %s", now, cost_str)
+                if profiler:
+                    profiler.model_found()
             else:
                 log.info("Model found (%.2fs, +%.2fs): %s", now, now - last_model_time, cost_str)
             last_model_time = now
