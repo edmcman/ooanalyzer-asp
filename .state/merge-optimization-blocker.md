@@ -178,6 +178,62 @@ Profiling interpretation:
   sampling with `--profile-after-first-model --profile-after=150` plus short
   `--profile-window`/`--profile-period` bursts.
 
+## Search is the bottleneck, not the encoding — forced-partition proof (2026-07-08, i9-13900HX)
+
+Host note: measured on a **32-thread i9-13900HX / 96 GB**, NOT the Raspberry Pi named
+in the HOST WARNING at the top of this file — reconcile which host that warning refers
+to before trusting cross-dated comparisons. TinyXml, current encoding (HEAD `7c2a1d6`),
+single-threaded champion flags unless noted, 300 s anytime.
+
+Same-host heuristic sweep (all fall short of the 2026-07-02 Pi champion `[-704,-44816]`):
+
+- **domain** (Makefile PROP_FLAGS): `[-704,-36655]`. First model ~40 s; incumbent **and**
+  LB both frozen by t≈51 s — the USC LB took only 7 core bumps (−54222→−53982) then did
+  nothing for 249 s. 155M choices / 137k conflicts (~1130 choices/conflict: descends huge
+  conflict-free trees).
+- **bb,lin** (+domain, decide-inputs): `[-704,-37442]`. 8 improving models to t≈226 s then
+  flat; prints **no** lower bound (bb gives no certificate). *Better* incumbent than USC.
+  Plateau conflict profile shifts to `lateF2Candidate` (~46%) — bb explores the full
+  structure for a better model instead of grinding one core.
+- **vsids** (+usc, decide-inputs): `[-704,-33471]`. First model 141 s, 5 rapid models to
+  142.8 s, then frozen 157 s — worst of the three. 35M choices / 136k conflicts. Plateau
+  ~85–90% merge-reward family, incl. `strongMergeReward` ~19% (domain-USC had strong <1%).
+
+All three plateau on the same conditional weak/strong-merge + `notMergeUnsorted` cluster
+(duty-cycled `ConflictProfiler`, commit `a87bde1` — it collects counts now; the clean
+no-profiler baseline also gives −36655, so profiling does not distort the score).
+
+**Apparent regression is real, by a determinism argument.** The champion is single-threaded
+and seed-invariant, hence deterministic: a faster host can only reach an equal-or-better
+point on the *same* trajectory. This i9 is ~10× the Pi yet reaches a *worse* logical state
+(−36655, LB −53982 vs the Pi champion −44816 / LB −46982) — only possible if the *program*
+changed. ~15 encoding/propagator commits landed 2026-07-03→08 (`reasonObjectInObject_D/E`
+grew `objectInObject` 14→286; `reasonMergeClasses_C/H`; `classRelationship`+`classHasWitness`
+moved into the propagator; eager theory refutation; "Restore conservative merge phases").
+Per the standing "re-sweep knobs after any propagator change" rule, the domain champion is
+now stale.
+
+**FORCED-PARTITION PROOF (decisive).** Overlay pinning the previous-good partition
+(`.results.orig`, Jun-23 `finalClass`; 69 classes / 370 methods) — forbid cross-class
+merges, require every within-class `mergeCandidate` merge — solved under the *current*
+encoding + champion flags (`scratchpad/force_goodpartition.lp`):
+
+- **SAT, comp2 −42590** (still improving at the 120 s cutoff; LB −51113, 16.7% error,
+  *actively closing*) vs the free search's frozen −36655 (32% error).
+- SAT (not UNSAT) ⇒ the current encoding does **not** forbid the good structure;
+  ~−42.6K (not ~−36K) ⇒ the reward layer is still present. The free search simply fails
+  to reach it, and pinning it also un-freezes the USC lower bound.
+- Conclusion: the ~−46K deficit is a **search failure** (branching/heuristic not reaching
+  the good partition), *not* encoding infeasibility or a lost reward layer — reproducing
+  the earlier ground-truth-forcing finding on the current encoding. Caveat: the overlay
+  pins only the 370 classified methods, so −42590 is a conservative floor.
+
+Actionable: re-tune solver config against the current encoding (the domain `#heuristic`
+false-biases in `merges.lp` are prime suspects — but vsids, which *ignores* them, scored
+*worse*, so it is not simply "domain over-biases"); try warm-starting/seeding toward
+candidate-dense partitions; note the LB moves once structure is pinned, so a better
+incumbent may itself unblock the certificate.
+
 ## Diagnostic gotchas
 
 - 2026-07-06: the propagator gained `&classRelationship/2`/`&classRelationshipVia/2`
