@@ -58,6 +58,25 @@ Negative / no-effect, with date and one-line verdict:
 
 - **Materialized `sameClass/2` closure** (2026-06-26, iter20): LB unchanged
   (−50230), zero usc cores. Definitive "missing booleans" refutation.
+- **Current-encoding grounded `sameClass/2` replay** (2026-07-08): mechanically
+  replaced every `&sameClass(A,B)` use with the ordinary closure
+  `merged(A,B) :- mergeClasses(A,B)` / symmetric `merged` /
+  `sameClass(A,A) :- mergeEntity(A)` /
+  `sameClass(A,C) :- sameClass(A,B), merged(B,C)`.  The manual suite passed.
+  `&classRelationship` and `&classHasWitness` remained in the Rust propagator,
+  so this isolates the main same-class union-find/reason path rather than the
+  newer propagator services.  With the standard single-threaded USC/domain/
+  decide-inputs flags, TinyXml at 300 s reached `[-704,-36826]`, LB −53262,
+  versus the deterministic current propagator plateau `[-704,-36655]`,
+  LB −53982.  The small objective/LB gain did **not** improve the recovered
+  partition: pairwise co-membership against `.results.orig` on its 370 methods
+  was F1 0.0780 (P .9919/R .0406), worse than the matched propagator model's
+  F1 0.1175 (P .7328/R .0639), and far below the saved −44816 champion's
+  F1 0.7435.  Grounding/preprocessing also turned the closure into a 1.14M-node
+  non-tight SCC, 4.74M constraints, ~1.53M loop lemmas, and 2.05 GB peak RSS
+  (propagator: 26.9k SCC nodes, 1.14M constraints, 1.19 GB).  Verdict: ordinary
+  ASP changes the trajectory and slightly tightens the bound, but provides no
+  evidence that the propagator causes the `.results.orig` quality deficit.
 - **Entailed static transitivity constraint** (iter18): LB moved zero.
 - **Spanning-tree propagator reasons** (iter17): lemma size unchanged — the
   CUT dominates learned clauses, not the reason chain; conflicts +14.5%.
