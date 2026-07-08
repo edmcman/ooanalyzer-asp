@@ -19,11 +19,30 @@ import sys
 import time
 from collections import Counter, defaultdict
 
+import clingo
+
+
+class _ConflictCounterCallbacks:
+    """Profiler callbacks without a per-decision Python crossing."""
+
+    def __init__(self, profiler):
+        self._profiler = profiler
+
+    def init(self, init):
+        self._profiler.init(init)
+
+    def undo(self, thread_id, assignment, changes):
+        self._profiler.undo(thread_id, assignment, changes)
+
+    def check(self, control):
+        self._profiler.check(control)
+
 
 class ConflictProfiler:
     def __init__(self, watch_preds=None, max_atoms=10000, max_atoms_per_predicate=500,
                  interval=0, trace_backjumps=0, trace_backjump_limit=10,
-                 trace_backjump_after=0):
+                 profile_after=0, after_first_model=False,
+                 count_conflicts=True):
         # watch_preds: set of predicate names to restrict to, or None for all
         self._watch_preds = set(watch_preds) if watch_preds else None
         self._max_atoms = max_atoms
@@ -43,7 +62,14 @@ class ConflictProfiler:
         self._window_label = "solve start"
         self._trace_backjumps = trace_backjumps
         self._trace_backjump_limit = trace_backjump_limit
-        self._trace_backjump_after = trace_backjump_after
+        self._profile_after = profile_after
+        self._after_first_model = after_first_model
+        self._count_conflicts = count_conflicts
+        self._model_gate_open = not after_first_model
+        self._active = False
+        self._defer_watches = after_first_model
+        self._watch_lits = set()
+        self._watched_threads = set()
         self._trace_start_time = None
         self._trace_count = 0
         self._large_jump_count = 0
@@ -53,13 +79,24 @@ class ConflictProfiler:
         self._abandoned_counts = defaultdict(Counter)  # thread -> signed literal -> jumps
         self._pending_backjump = {}
 
+    def callbacks(self):
+        """Return callbacks omitting `decide` when tracing is disabled."""
+        return self if self._trace_backjumps else _ConflictCounterCallbacks(self)
+
     # ------------------------------------------------------------------
     def init(self, init):
-        self._trace_start_time = time.monotonic()
+        self._start_time = time.monotonic()
+        self._last_report_time = self._start_time
+        self._trace_start_time = self._start_time
+        if self._after_first_model:
+            init.check_mode = clingo.PropagatorCheckMode.Total
         for sym_atom in init.symbolic_atoms:
             pred = sym_atom.symbol.name
             lit = init.solver_literal(sym_atom.literal)
-            self._decision_info[abs(lit)].append((lit, pred, str(sym_atom.symbol)))
+            if self._trace_backjumps:
+                self._decision_info[abs(lit)].append((lit, pred, str(sym_atom.symbol)))
+            if not self._count_conflicts and not self._trace_backjumps:
+                continue
             if self._watch_preds and pred not in self._watch_preds:
                 continue
             if self._max_atoms is not None and self._watched_atoms >= self._max_atoms:
@@ -72,10 +109,14 @@ class ConflictProfiler:
                 self._skipped_atoms += 1
                 continue
             alit = abs(lit)
-            self._lit_to_pred[alit] = pred
-            self._lit_to_sym[alit]  = str(sym_atom.symbol)
-            init.add_watch( lit)
-            init.add_watch(-lit)
+            if self._count_conflicts:
+                self._lit_to_pred[alit] = pred
+                self._lit_to_sym[alit] = str(sym_atom.symbol)
+            self._watch_lits.add(lit)
+            self._watch_lits.add(-lit)
+            if not self._defer_watches:
+                init.add_watch(lit)
+                init.add_watch(-lit)
             self._watched_atoms += 1
             self._watched_by_pred[pred] += 1
 
@@ -88,17 +129,51 @@ class ConflictProfiler:
                 text = f"&{term.name}({args})"
                 self._decision_info[abs(lit)].append((lit, pred, text))
 
+        self._maybe_activate()
+
+    def _maybe_activate(self, control=None):
+        if self._active:
+            self._add_watches(control)
+            return True
+        if not self._model_gate_open:
+            return False
+        now = time.monotonic()
+        if now - self._start_time < self._profile_after:
+            return False
+        if self._defer_watches:
+            if control is None:
+                return False
+            self._add_watches(control)
+        self._active = True
+        if self._after_first_model:
+            label = "since model 1"
+        elif self._profile_after:
+            label = f"after {self._profile_after:g}s"
+        else:
+            label = "solve start"
+        self.reset_counts(label)
+        self._trace_start_time = now
+        return True
+
+    def _add_watches(self, control):
+        if not self._defer_watches or control is None:
+            return
+        thread_id = control.thread_id
+        if thread_id not in self._watched_threads:
+            for lit in self._watch_lits:
+                control.add_watch(lit)
+            self._watched_threads.add(thread_id)
+
     def propagate(self, control, changes):
-        if self._trace_backjumps:
+        if self._maybe_activate(control) and self._trace_backjumps:
             self._report_post_backjump(control.thread_id, control.assignment)
             self._capture_decisions(control.thread_id, control.assignment)
 
     def decide(self, thread_id, assignment, fallback):
-        # Registered before the live Rust propagator so this callback provides
-        # an observation boundary after propagation. Return zero to delegate
-        # the actual choice to Rust's --decide-inputs policy (or ultimately to
-        # clasp's fallback); capture the chosen literal from the assignment.
-        if self._trace_backjumps:
+        # Return zero so profiling never chooses a literal. Depending on an
+        # earlier propagator's decision this callback may be skipped; the next
+        # propagate/undo/check callback still captures the resulting state.
+        if self._active and self._trace_backjumps:
             self._report_post_backjump(thread_id, assignment, final=True)
         return 0
 
@@ -112,6 +187,8 @@ class ConflictProfiler:
                     break
 
     def undo(self, thread_id, assignment, changes):
+        if not self._maybe_activate():
+            return
         if self._trace_backjumps:
             self._report_post_backjump(thread_id, assignment, final=True)
             self._capture_decisions(thread_id, assignment)
@@ -244,10 +321,7 @@ class ConflictProfiler:
             self._last_abandoned[thread_id] = current
 
             elapsed = time.monotonic() - (self._trace_start_time or self._start_time)
-            should_print = (
-                elapsed >= self._trace_backjump_after
-                and self._trace_count < self._trace_backjump_limit
-            )
+            should_print = self._trace_count < self._trace_backjump_limit
             if not should_print:
                 for old_level in [level for level in history if level > target]:
                     del history[old_level]
@@ -300,6 +374,10 @@ class ConflictProfiler:
             del history[old_level]
 
     def check(self, control):
+        if self._after_first_model and not self._model_gate_open:
+            self._model_gate_open = True
+        if not self._maybe_activate(control):
+            return
         if self._trace_backjumps:
             self._report_post_backjump(control.thread_id, control.assignment, final=True)
             self._capture_decisions(control.thread_id, control.assignment)
@@ -326,6 +404,16 @@ class ConflictProfiler:
         sys.stdout.flush()
 
     def report(self, top_preds=25, top_atoms=15, title=None):
+        if not self._active:
+            waits = []
+            if self._after_first_model and not self._model_gate_open:
+                waits.append("first model")
+            elapsed = time.monotonic() - self._start_time
+            if elapsed < self._profile_after:
+                waits.append(f"{self._profile_after:g}s delay")
+            waiting_for = " and ".join(waits) or "activation callback"
+            print(f"\n=== Conflict Profile not started (waiting for {waiting_for}) ===")
+            return
         T = max(self._total_undos, 1)
         elapsed = time.monotonic() - self._start_time
         heading = title or f"Conflict Profile [{self._window_label}]"

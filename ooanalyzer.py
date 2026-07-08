@@ -253,9 +253,9 @@ class OOAnalyzerApp(clingo.Application):
         self.profile_max_atoms = 10000
         self.profile_max_atoms_per_predicate = 500
         self.profile_interval = 0.0
+        self.profile_after = 0.0
         self.trace_backjumps = 0
         self.trace_backjump_limit = 10
-        self.trace_backjump_after = 0.0
         self.foundedness_check = clingo.Flag(False)
         self.dump_lemmas = clingo.Flag(False)
         self.decide_outputs = clingo.Flag(False)
@@ -298,8 +298,10 @@ class OOAnalyzerApp(clingo.Application):
                          self.benchmark)
         options.add_flag("OOAnalyzer", "profile-conflicts", "register ConflictProfiler and print backtrack histogram",
                          self.profile_conflicts)
-        options.add_flag("OOAnalyzer", "profile-after-first-model", "reset conflict counters at first model",
+        options.add_flag("OOAnalyzer", "profile-after-first-model", "start profiling and tracing after the first model",
                          self.profile_after_first_model)
+        options.add("OOAnalyzer", "profile-after", "start profiling and tracing after SEC of solving",
+                    float_parser(lambda x: setattr(self, 'profile_after', x)), argument="SEC")
         options.add("OOAnalyzer", "profile-predicate", "predicate to watch with --profile-conflicts (repeatable)",
                     str_parser(lambda x: self.profile_predicate.append(x)), multi=True, argument="NAME")
         options.add("OOAnalyzer", "profile-max-atoms", "max symbolic atoms to watch (0 = no cap)",
@@ -312,8 +314,6 @@ class OOAnalyzerApp(clingo.Application):
                     int_parser(lambda x: setattr(self, 'trace_backjumps', x)), argument="N")
         options.add("OOAnalyzer", "trace-backjump-limit", "maximum number of large backjumps to print",
                     int_parser(lambda x: setattr(self, 'trace_backjump_limit', x)), argument="N")
-        options.add("OOAnalyzer", "trace-backjump-after", "only print large backjumps after SEC of solving",
-                    float_parser(lambda x: setattr(self, 'trace_backjump_after', x)), argument="SEC")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
         options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
@@ -411,19 +411,23 @@ class OOAnalyzerApp(clingo.Application):
                 interval=self.profile_interval,
                 trace_backjumps=self.trace_backjumps,
                 trace_backjump_limit=self.trace_backjump_limit,
-                trace_backjump_after=self.trace_backjump_after,
+                profile_after=self.profile_after,
+                after_first_model=profile_after_first_model,
+                count_conflicts=profile_conflicts,
             )
-            if (profile_conflicts or profile_after_first_model or self.trace_backjumps) else None
+            if (profile_conflicts or self.trace_backjumps) else None
         )
-
-        if profiler:
-            ctl.register_propagator(profiler)
 
         if self.sameclass_mode == "lazy-check":
             ctl.register_propagator(prop)
         else:
             prop.register(ctl, foundedness_check=foundedness_check, dump_lemmas=dump_lemmas,
                           decide_outputs=decide_outputs, decide_inputs=decide_inputs)
+
+        # Profiling goes after semantic propagators so its first-total-assignment
+        # check cannot activate before Rust accepts the first model.
+        if profiler:
+            ctl.register_propagator(profiler.callbacks())
 
         ctl.load(_MAIN_LP)
         for f in files:
@@ -481,12 +485,6 @@ class OOAnalyzerApp(clingo.Application):
             last_cost = cost
             if diagnose_vftable_objective:
                 report_vftable_objective(model, self.diagnose_vftable_limit)
-            if profiler and profile_after_first_model:
-                if model_num == 1:
-                    profiler.reset_counts("since model 1")
-                else:
-                    profiler.report(title=f"Conflict Profile since model {model_num - 1}")
-                    profiler.reset_counts(f"since model {model_num}")
 
         def on_unsat(lower):
             now = time.perf_counter() - run_start
@@ -532,11 +530,8 @@ class OOAnalyzerApp(clingo.Application):
                 print("Optimization:", format_cost_values(last_cost))
             sys.stdout.flush()
 
-        if profiler:
-            if profile_after_first_model and model_num > 0:
-                profiler.report(title=f"Conflict Profile since model {model_num}")
-            else:
-                profiler.report()
+        if profiler and profile_conflicts:
+            profiler.report()
 
         if not bool(self.benchmark):
             merge_pairs = []
