@@ -234,6 +234,33 @@ false-biases in `merges.lp` are prime suspects — but vsids, which *ignores* th
 candidate-dense partitions; note the LB moves once structure is pinned, so a better
 incumbent may itself unblock the certificate.
 
+### Why vsids underperforms domain (2026-07-08, i9) — it's `method`, not merges
+
+Decomposing the comp2 gap by `--show-guesses` selection counts × objective weights
+(domain −36655 vs vsids −33471, Δ=3184 in domain's favour):
+
+| component | weight | domain sel | vsids sel | Δ reward (dom−vsids) |
+|---|---|---:|---:|---:|
+| **`guessMethodReward`** | 10 | **3164/3164** | **2562/3164** | **+6020** |
+| constructors 1/3/4 | 10/8/7 | 40/16/11 | 34/1/0 | +257 |
+| composition (derived/purecall) | 10/40 | 22/10 | 20/9 | +60 |
+| strong/weak/g1/lateF2 merges | 10/8/9/8 | 298/82/50/13 | 239/376/66/153 | **−3113** |
+| **net** | | | | **≈ +3224 ≈ Δ** |
+
+The dominant term is `method`: domain takes **all 3164** method rewards (weight 10) via
+`#heuristic method(M) [true]` (methods.lp:66); vsids, ignoring the directive, discovers
+only 2562 through activity-based search and leaves **602 × 10 = 6020** reward on the floor.
+vsids actually collects *more* merge reward (+3113, by over-merging: 2651 co-member pairs
+vs domain's 1046, incl. 1411 spurious vs 242) but cannot offset the method loss, and also
+loses on constructors/composition. So vsids is worse not because it under-merges but
+because it squanders its search budget on the hard merge cluster and neglects the large,
+cheap, near-unconditional structural reward pools that domain's `[true]` directives capture
+wholesale. Corollary: the domain heuristic's value is the `[true]` captures (method /
+strongMerge / embeddedObject), *not* the weak-merge `[false]` suppression — dropping domain
+for vsids trades ~6K method reward to (over-)fix merges. The separable lever for the missing
+large weak classes is the weak-merge sign bias alone (merges.lp:346 `[10@1, false]`), while
+keeping every `[true]` capture.
+
 ## Diagnostic gotchas
 
 - 2026-07-06: the propagator gained `&classRelationship/2`/`&classRelationshipVia/2`
