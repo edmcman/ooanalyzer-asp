@@ -280,6 +280,37 @@ for vsids trades ~6K method reward to (over-)fix merges. The separable lever for
 large weak classes is the weak-merge sign bias alone (merges.lp:346 `[10@1, false]`), while
 keeping every `[true]` capture.
 
+**Causal summary:** merge decisions generate most of the conflicts, so VSIDS repeatedly
+raises their activity and returns to them. Most `method` choices are comparatively quiet:
+selecting them is profitable but produces little conflict evidence, so they become nearly
+invisible to an activity-based heuristic. VSIDS therefore spends the time budget improving
+the variables that explain conflicts, not necessarily the variables with the highest or
+cheapest objective gain. This is an objective/heuristic mismatch, not evidence that the
+missing method rewards are infeasible.
+
+Two matched 300 s diagnostics confirm the distinction:
+
+- Adding `#heuristic method(M) ... [100@0, init]` did not fix the mismatch. It finished at
+  `[-704,-31405]`, worse than plain VSIDS `[-704,-33471]`; one-shot initial activity decays
+  once the merge conflict cluster takes over.
+- Adding a diagnostic method-only objective tier at `@2` (below vftable size `@3`, above
+  the mixed structural/merge pool at `@0`) selected all **3164/3164** methods at 137.4 s
+  and reached `[-704,-3164,-40459]` by 300 s. This is strong evidence for staging, but it
+  changes the optimization semantics from a weighted mixture to lexicographic method-first.
+  A persistent method-first decision callback is the semantics-preserving alternative to
+  test if retaining the current objective is required.
+
+Built-in objective-aware phase heuristics are a useful semantics-preserving middle ground
+(matched 300 s, VSIDS + USC + `--decide-inputs`):
+
+- `--opt-heuristic=sign`: `[-704,-37135]`, 6 models, first at 180.5 s, 45.99M choices /
+  139,956 conflicts. This beats plain VSIDS `[-704,-33471]` without changing priorities.
+- `--opt-heuristic=sign,model`: `[-704,-38129]`, 2 models, best at 181.1 s,
+  **3157/3164 methods**, 67.67M choices / 40,484 conflicts. Reusing the incumbent's
+  objective-improving phases recovers all but seven method rewards and is the strongest
+  semantics-preserving built-in tested so far, though still behind lexicographic staging's
+  `[-704,-3164,-40459]` and 3164/3164 methods.
+
 ## Diagnostic gotchas
 
 - 2026-07-06: the propagator gained `&classRelationship/2`/`&classRelationshipVia/2`
