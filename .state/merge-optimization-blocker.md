@@ -1,7 +1,7 @@
 # Merge-reward optimization: status and experiment ledger
 
 Reference input: `examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp`.
-Last updated 2026-07-03. Full history of this file (including superseded
+Last updated 2026-07-08. Full history of this file (including superseded
 measurement tables) is in git; per-experiment logs are in `autoresearch/` and
 `.state/perf/`.
 
@@ -128,6 +128,55 @@ Positive, retained:
   the step change described above.
 - **`--time-limit` interrupt fix** in ooanalyzer.py (2026-07-02): time-limited
   runs previously never wrote `--results`.
+
+## VSIDS secondary-objective plateau (2026-07-08, not Pi)
+
+Matched 600s run with the standard single-threaded USC/decide-inputs flags,
+`--heuristic=vsids`, and the restored conservative merge phase directives:
+
+- First model `[-616,-33248]` at 139.8s. Four rapid improvements reached
+  `[-704,-33471]` at 141.2s; there was **no further incumbent improvement or
+  printed lower-bound progress through 600s**.
+- Final search: 69.51M choices, 360,120 conflicts, average backjump 97.70,
+  average conflict-clause length 240.3. The solver remains active but its
+  learned clauses have very weak leverage on sibling merge configurations.
+- Cost `-704` is the sole high-priority vftable-size objective (`size.lp`);
+  `-33471` is the broad priority-0 reward layer (methods/ctors/composition and
+  strong/weak/late/G1 merges). The plateau begins exactly when search switches
+  from the vftable objective to this conditional reward layer.
+
+Strong-only VSIDS initialization was tested by adding, in parallel with the
+existing positive phase directive:
+
+```prolog
+#heuristic mergeClasses(A, B) : strongMergeCandidate(A, B). [100@2, init]
+```
+
+NEGATIVE and reverted. It reproduced the exact five-cost sequence and final
+incumbent, reaching `[-704,-33471]` at 141.8s. Final statistics were effectively
+identical: 70.08M choices, 360,322 conflicts, average backjump 97.65, average
+conflict clause 240.2. Initial VSIDS activity is not the missing lever (and in
+any case decays before the priority-0 plateau).
+
+Profiling interpretation:
+
+- Existing long-window conflict profiles drift toward the weak merge family
+  (`weakMergeCandidate`/`weakMergeReward`/`weakG1Bonus`), late-F2 rewards, and
+  conditional `notMergeUnsorted` consequences. Aggregate aliases by family:
+  multiple symbolic predicates can share a solver literal, so their individual
+  undo percentages are not independent. `&classHasWitness`/class-size support
+  is no longer the hot region after the incremental-support fix.
+- ConflictProfiler counts watched-literal undo events, not direct conflict
+  causes. Use targeted predicates with caps disabled, and run conflict counting
+  separately from backjump tracing because tracing adds a Python `decide`
+  callback and materially perturbs VSIDS.
+- The first targeted delayed-profile attempt reproduced the same five costs
+  (`[-704,-33471]` by 152.3s) but collected **no counts** because the delayed
+  watch gate never activated across USC's lifecycle. Do not interpret that run
+  as an empty profile. Commit `a87bde1` subsequently moved activation to the
+  actual model callback and added duty-cycled watch windows; re-run plateau
+  sampling with `--profile-after-first-model --profile-after=150` plus short
+  `--profile-window`/`--profile-period` bursts.
 
 ## Diagnostic gotchas
 
