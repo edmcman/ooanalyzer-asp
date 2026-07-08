@@ -310,6 +310,11 @@ Built-in objective-aware phase heuristics are a useful semantics-preserving midd
   objective-improving phases recovers all but seven method rewards and is the strongest
   semantics-preserving built-in tested so far, though still behind lexicographic staging's
   `[-704,-3164,-40459]` and 3164/3164 methods.
+- Domain + `--opt-heuristic=sign,model`: `[-704,-36693]`, one model at 55.4 s,
+  **3164/3164 methods**, 39.95M choices / 1,114,043 conflicts. Domain's explicit true
+  phases do recover every method, but adding objective phase guidance drives roughly 10x
+  more conflicts than Domain alone and never improves the first incumbent. It is also
+  materially worse overall than VSIDS `sign,model`, so it is not the new default.
 
 ## Diagnostic gotchas
 
