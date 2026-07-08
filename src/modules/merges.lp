@@ -338,8 +338,16 @@ mergeCandidate(A, B) :- lateF2Candidate(A, B).
 1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :-
     guessEnabled(merge),
     mergeCandidate(A, B).                                                   % guess.pl:1084
-% Heuristic disabled so we get an initial model faster
-%#heuristic mergeClasses(A, B) : mergeCandidate(A, B). [1@1, true]
+% Establish a conservative initial partition before optimization: accept the
+% strongest vftable-derived evidence first, but initially keep weaker and late
+% candidates separate. Objective rewards and learned clauses can still flip
+% either phase after the first model.
+#heuristic mergeClasses(A, B) : strongMergeCandidate(A, B). [100@2, true]
+#heuristic mergeClasses(A, B) : weakMergeCandidate(A, B). [10@1, false]
+#heuristic mergeClasses(A, B) :
+    lateF2Candidate(A, B),
+    not strongMergeCandidate(A, B),
+    not weakMergeCandidate(A, B). [5@1, false]
 
 % ============================================================
 % REWARDS
