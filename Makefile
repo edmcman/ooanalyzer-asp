@@ -3,16 +3,15 @@
 
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
-# Champion solver config for 5m lexicographic optimization (2026-07-02, 4-core Pi;
-# see .state/merge-optimization-blocker.md "BREAKTHROUGH: --decide-inputs").
-# Single-threaded usc + domain + restart-on-model + --decide-inputs:
-#   TinyXml  [-704,-44708] vs [-704,-34650] for the old t4 bb,lin flags; partition
-#            shape reaches Prolog parity (77 classes / top 46-35-20 vs 181 / 11-7-4)
-#   ep_srv   OPTIMUM FOUND in 72s (old flags: 300s timeout, worse model)
+# Default 5m optimization config; see .state/merge-optimization-blocker.md.
+# Objective-aware VSIDS (`sign,model`) preserves the weighted objective while
+# carrying incumbent-improving phases across USC searches. On current TinyXml it
+# reaches [-704,-38129] with 3157/3164 methods, versus [-704,-33471] and
+# 2562/3164 for plain VSIDS.
 # Threads actively hurt this config (t4: one model only); --decide-outputs finds
 # no models; bb,lin + decide-inputs finds no models. Keep it single-threaded.
 # Old 32-core sweep results (autoresearch/improve-260629-2245/) do not transfer.
-PROP_FLAGS   := -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=vsids --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
