@@ -39,8 +39,6 @@ FAMILY_COLOR = {
     "vftable": "#eda100",      # yellow
     "other": "#9a9a94",        # muted gray (all non-choice literals)
 }
-REWARD_FAMILIES = ["method", "ctor", "strong_merge", "weak_merge",
-                   "weak_g1", "late_f2", "composition"]
 # Categorical hues assigned by backtrack rank (stable within a trace); the tail
 # beyond the top-N folds into a muted-gray "other".
 PALETTE = ["#2a78d6", "#1baf7a", "#eda100", "#008300", "#4a3aa7", "#e34948",
@@ -126,6 +124,7 @@ def build(recs, title):
 
     agg = aggregate(samples, gap)
     at = [a["t"] for a in agg]
+    families = sorted({family for point in agg for family in point["true_now"]})
 
     fig = make_subplots(
         rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.055,
@@ -171,13 +170,13 @@ def build(recs, title):
                 line=dict(color=color, width=1.5, dash="dash")), row=1, col=1)
 
     # -- Panel 2: reward-family selection (burst-mean true_now) -------
-    for fam in REWARD_FAMILIES:
+    for index, fam in enumerate(families):
         ys = [a["true_now"].get(fam, 0) for a in agg]
         if any(ys):
             fig.add_trace(go.Scatter(
                 x=at, y=ys, name=fam, legendgroup="reward",
                 mode="lines+markers", marker=dict(size=4),
-                line=dict(color=FAMILY_COLOR[fam], width=2)), row=2, col=1)
+                line=dict(color=FAMILY_COLOR.get(fam, PALETTE[index % len(PALETTE)]), width=2)), row=2, col=1)
 
     # -- Panel 3: backtracks broken down by predicate name -----------
     # Rank predicates by total backtracks; top-N get their own colored line,
