@@ -14,21 +14,34 @@ Two capture channels write one JSONL trace:
 
     NOTE: clingo exposes `ctl.statistics` only *after* `solve()` returns -- it
     is unavailable inside `on_model` and during an in-progress (even async)
-    solve. So coarse counters (choices/conflicts/restarts) and the lower bound
-    are single end-of-run scalars, not trajectories. Restarts in particular
-    have no per-time series: a propagator cannot see them either, since under
-    USC the search never returns to decision level 0.
+    solve. So the EXACT counters (choices/conflicts/restarts) and the lower
+    bound are single end-of-run scalars, not trajectories.
+
+    Restarts CAN, however, be observed over time from here as a proxy: a restart
+    unwinds the trail back to the root level, firing `undo()`. Detecting an undo
+    that returns to the running-minimum decision level catches ~88% of restarts
+    (measured). The root level is NOT 0 under USC -- the search runs beneath an
+    assumption frame, so it returns to a nonzero base. This proxy is not wired in
+    (undo only fires for watched literals, so it would need a small permanent
+    watch sentinel to cover the idle-between-windows gaps); the final exact
+    restart count from statistics is reported instead.
 
   * Sample channel (`IntrospectPropagator`, here): a duty-cycled sampler that
     is near-zero cost when idle -- it holds NO persistent watches, so clingo
     never calls its propagate/undo between windows; only `check()` fires (in
     Fixpoint mode) and merely decrements a heartbeat countdown. Every `period`
-    seconds it opens a `window`-second burst: it installs watches on the choice
-    atoms and, every `sample_interval` seconds within the burst, emits a fine
-    `sample` record of the assignments / flips / backtracks / restarts by family
-    that occurred *in that slice* -- so backtracks are plotted at the times they
-    happen, not aggregated over the whole burst -- plus decision depth and
-    currently-true reward atoms. It removes the watches at burst end.
+    seconds it opens a `window`-second burst: it installs watches on ALL atoms
+    (so backtracks break down by predicate NAME) and, every `sample_interval`
+    seconds within the burst, emits a fine `sample` record of the backtracks per
+    predicate that occurred *in that slice* -- so backtracks are plotted at the
+    times they happen, not aggregated over the whole burst -- plus decision depth,
+    currently-true reward atoms, and a `root_returns` count (trail unwound to the
+    assumption base). It removes the watches at burst end.
+
+    root_returns is restart-ADJACENT, not restarts: it also catches every
+    conflict backjump to base (measured ~100x more frequent than restarts on
+    TinyXml), and the propagator API cannot distinguish the two. clingo's exact
+    restart count is post-solve only (in the `final` record's stats).
 
 The duty-cycled deferred-watch machinery mirrors ConflictProfiler, which is the
 battle-tested reference for mid-solve add_watch/remove_watch in this codebase.
@@ -113,7 +126,7 @@ class IntrospectPropagator:
         self._sample_interval = sample_interval
 
         # Classified solver literals, filled in init().
-        self._choice_fam = {}          # abs(lit) -> family (watched during windows)
+        self._lit_pred = {}            # abs(lit) -> predicate name (all atoms)
         self._choice_lits = []         # signed lits to add/remove as watches
         self._reward_lits = []         # (lit, family) queried for true_now
 
@@ -122,8 +135,11 @@ class IntrospectPropagator:
         self._active = False
         self._watched_threads = set()
         self._hb = self._HB
-        self._phase = {}               # abs(lit) -> last phase, carried across burst
         self._last_sample_t = 0.0
+        # Restart detection (undo-to-root): under USC the base is a nonzero
+        # assumption level; a restart unwinds the trail back to it.
+        self._root = None              # running-min decision level seen in undo()
+        self._undo_prev = 0
         self._reset_sample()
 
     # ------------------------------------------------------------------
@@ -131,24 +147,25 @@ class IntrospectPropagator:
         self._solve_start = time.monotonic()
         # Fixpoint mode: check() is our heartbeat and fires with no watches.
         init.check_mode = clingo.PropagatorCheckMode.Fixpoint
+        watched = set()
         for sym_atom in init.symbolic_atoms:
             name = sym_atom.symbol.name
             lit = init.solver_literal(sym_atom.literal)
-            fam = CHOICE_FAMILY.get(name)
-            if fam is not None:
-                self._choice_fam[abs(lit)] = fam
-                self._choice_lits.append(lit)
-                self._choice_lits.append(-lit)
+            # Watch every atom so backtracks break down by predicate NAME (the
+            # big "other" family split into its constituent predicates).
+            self._lit_pred[abs(lit)] = name
+            watched.add(lit)
+            watched.add(-lit)
             rw = REWARD_FAMILY.get(name)
             if rw is not None:
                 self._reward_lits.append((lit, rw[0]))
+        self._choice_lits = list(watched)
 
     # ------------------------------------------------------------------
     def _reset_sample(self):
         # Per-slice delta accumulators (reset after every emitted sample).
-        self._assigned = Counter()
-        self._backtracks = Counter()
-        self._flips = Counter()
+        self._backtracks = Counter()   # predicate name -> unassign count
+        self._root_returns = 0         # trail-to-base events (restart-adjacent)
         self._depth_n = 0
         self._depth_sum = 0
         self._depth_min = None
@@ -175,10 +192,6 @@ class IntrospectPropagator:
 
     # ------------------------------------------------------------------
     def check(self, control):
-        # Restarts are captured by the driver's non-perturbing statistics poller
-        # (poll records), not here: under USC the solver never returns to
-        # decision level 0 (it works beneath an assumption frame), so a
-        # propagator-side level-0 test never fires.
         if self._active:
             self._sample_depth_lvl(control.assignment.decision_level)
             now = self._now()
@@ -217,9 +230,8 @@ class IntrospectPropagator:
                 "mean": round(self._depth_sum / self._depth_n, 1) if self._depth_n else 0,
                 "max": self._depth_max or 0,
             },
-            "assigned": dict(self._assigned),
             "backtracks": dict(self._backtracks),
-            "flips": dict(self._flips),
+            "root_returns": self._root_returns,
             "true_now": self._sample_true_now(control.assignment),
         })
         self._reset_sample()
@@ -242,22 +254,26 @@ class IntrospectPropagator:
 
     # -- watched-literal callbacks: only fire while a window is open ----
     def propagate(self, control, changes):
-        for lit in changes:
-            fam = self._choice_fam.get(abs(lit))
-            if fam is None:
-                continue
-            self._assigned[fam] += 1
-            phase = lit > 0
-            prev = self._phase.get(abs(lit))
-            if prev is not None and prev != phase:
-                self._flips[fam] += 1
-            self._phase[abs(lit)] = phase
+        pass  # assignments are not sampled; watches exist for undo() below
 
     def undo(self, thread_id, assignment, changes):
+        pred = self._lit_pred
+        bt = self._backtracks
         for lit in changes:
-            fam = self._choice_fam.get(abs(lit))
-            if fam is not None:
-                self._backtracks[fam] += 1
+            name = pred.get(abs(lit))
+            if name is not None:
+                bt[name] += 1
+        # A "root return" (trail unwound to the assumption base) is emitted so it
+        # can be drawn as a vertical line. NOTE: this over-counts restarts by
+        # ~100x on deep search -- it also catches every conflict backjump to base,
+        # which cannot be told apart from a restart via the propagator API. It is
+        # a search-collapse-to-base signal, NOT clingo's restart counter.
+        lvl = assignment.decision_level
+        if self._root is None or lvl < self._root:
+            self._root = lvl
+        if lvl <= self._root and self._undo_prev > self._root and self._active:
+            self._root_returns += 1
+        self._undo_prev = lvl
 
     def finalize(self, control=None):
         """Flush an in-progress burst at solve end (best effort)."""

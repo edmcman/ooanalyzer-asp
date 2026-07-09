@@ -37,10 +37,16 @@ FAMILY_COLOR = {
     "composition": "#e34948",  # red
     "merge": "#e34948",        # red (decision family)
     "vftable": "#eda100",      # yellow
+    "other": "#9a9a94",        # muted gray (all non-choice literals)
 }
 REWARD_FAMILIES = ["method", "ctor", "strong_merge", "weak_merge",
                    "weak_g1", "late_f2", "composition"]
-DECISION_FAMILIES = ["merge", "method", "ctor", "vftable"]
+# Categorical hues assigned by backtrack rank (stable within a trace); the tail
+# beyond the top-N folds into a muted-gray "other".
+PALETTE = ["#2a78d6", "#1baf7a", "#eda100", "#008300", "#4a3aa7", "#e34948",
+           "#e87ba4", "#eb6834", "#6da7ec", "#0d366b", "#199e70", "#c98500"]
+OTHER_GRAY = "#9a9a94"
+TOP_N_PREDS = 12
 SURFACE = "#fcfcfb"
 GRID = "#e7e7e3"
 INK = "#0b0b0b"
@@ -93,7 +99,6 @@ def aggregate(samples, gap):
         t0, t1 = b[0]["t"], b[-1]["t"]
         dur = sum(s["dt"] for s in b) or 1e-6
         bt = sum_fam(b, "backtracks")
-        asg = sum_fam(b, "assigned")
         tn = {}
         for s in b:
             for k, v in s["true_now"].items():
@@ -101,7 +106,7 @@ def aggregate(samples, gap):
         out.append({
             "t": round((t0 + t1) / 2, 3),
             "bt_rate": {k: round(v / dur) for k, v in bt.items()},
-            "asg_rate": {k: round(v / dur) for k, v in asg.items()},
+            "root_returns_rate": round(sum(s.get("root_returns", 0) for s in b) / dur),
             "true_now": {k: round(sum(vs) / len(vs)) for k, vs in tn.items()},
             "depth_min": min(s["depth"]["min"] for s in b),
             "depth_mean": round(sum(s["depth"]["mean"] for s in b) / len(b)),
@@ -174,14 +179,26 @@ def build(recs, title):
                 mode="lines+markers", marker=dict(size=4),
                 line=dict(color=FAMILY_COLOR[fam], width=2)), row=2, col=1)
 
-    # -- Panel 3: backtracks by family (per-burst rate) --------------
-    for fam in DECISION_FAMILIES:
-        ys = [a["bt_rate"].get(fam, 0) for a in agg]
-        if any(ys):
-            fig.add_trace(go.Scatter(
-                x=at, y=ys, name=f"{fam} bt/s", legendgroup="bt",
-                mode="lines+markers", marker=dict(size=4),
-                line=dict(color=FAMILY_COLOR[fam], width=2)), row=3, col=1)
+    # -- Panel 3: backtracks broken down by predicate name -----------
+    # Rank predicates by total backtracks; top-N get their own colored line,
+    # the long tail folds into a single gray "other".
+    totals = {}
+    for a in agg:
+        for k, v in a["bt_rate"].items():
+            totals[k] = totals.get(k, 0) + v
+    top = [k for k, _ in sorted(totals.items(), key=lambda kv: -kv[1])[:TOP_N_PREDS]]
+    topset = set(top)
+    for i, pred in enumerate(top):
+        fig.add_trace(go.Scatter(
+            x=at, y=[a["bt_rate"].get(pred, 0) for a in agg],
+            name=pred, legendgroup="bt", mode="lines+markers", marker=dict(size=4),
+            line=dict(color=PALETTE[i % len(PALETTE)], width=2)), row=3, col=1)
+    other = [sum(v for k, v in a["bt_rate"].items() if k not in topset) for a in agg]
+    if any(other):
+        fig.add_trace(go.Scatter(
+            x=at, y=other, name=f"other ({len(totals) - len(top)} preds)",
+            legendgroup="bt", mode="lines+markers", marker=dict(size=4),
+            line=dict(color=OTHER_GRAY, width=2, dash="dot")), row=3, col=1)
 
     # -- Panel 4: decision depth band + restarts ---------------------
     fig.add_trace(go.Scatter(x=at, y=[a["depth_max"] for a in agg],
