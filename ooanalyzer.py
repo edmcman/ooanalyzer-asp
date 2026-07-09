@@ -24,6 +24,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefm
 from ooanalyzer_sameclass import SameClassPropagator
 from propagator.sameclass import LazySameClassConsistencyPropagator
 from propagator.conflict_profiler import ConflictProfiler
+from propagator.introspect import IntrospectPropagator, TraceWriter, decompose_reward
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _MAIN_LP = os.path.join(_SCRIPT_DIR, "ooanalyzer.lp")
@@ -136,6 +137,31 @@ def format_model_diff(prev_shown, cur_shown, prev_cost, cur_cost):
         d_str = "[" + ",".join(f"{'+' if d >= 0 else ''}{d}" for d in delta) + "]"
         lines.append(f"cost: {prev_str} -> {cur_str}  (Δ {d_str})")
     return "\n".join(lines)
+
+
+def _solver_stats_snapshot(ctl):
+    """Coarse cumulative solver counters, read mid-solve (best effort).
+
+    Used by the --introspect incumbent channel to timestamp choices/conflicts/
+    restarts against each improving model. clingo statistics are officially
+    valid after solve; reading them in a model callback is a best-effort
+    snapshot, so failures are swallowed."""
+    snap = {}
+    try:
+        s = ctl.statistics["solving"]["solvers"]
+        snap.update({k: round(s[k]) for k in ("choices", "conflicts", "restarts")
+                     if k in s})
+    except (KeyError, RuntimeError):
+        pass
+    try:
+        # summary.lower is the USC lower bound (valid post-solve); on_unsat never
+        # fires for usc, so this is the only in-driver route to the LB.
+        lower = ctl.statistics["summary"]["lower"]
+        if lower:
+            snap["lower"] = [round(v) for v in lower]
+    except (KeyError, RuntimeError):
+        pass
+    return snap
 
 
 def format_cost_values(values):
@@ -258,6 +284,12 @@ class OOAnalyzerApp(clingo.Application):
         self.profile_period = 0.0
         self.trace_backjumps = 0
         self.trace_backjump_limit = 10
+        self.trace_decisions = 0
+        self.introspect = None
+        self.introspect_period = 10.0
+        self.introspect_window = 0.5
+        self.introspect_after = 0.0
+        self.introspect_sample = 0.05
         self.foundedness_check = clingo.Flag(False)
         self.dump_lemmas = clingo.Flag(False)
         self.decide_outputs = clingo.Flag(False)
@@ -320,6 +352,18 @@ class OOAnalyzerApp(clingo.Application):
                     int_parser(lambda x: setattr(self, 'trace_backjumps', x)), argument="N")
         options.add("OOAnalyzer", "trace-backjump-limit", "maximum number of large backjumps to print",
                     int_parser(lambda x: setattr(self, 'trace_backjump_limit', x)), argument="N")
+        options.add("OOAnalyzer", "trace-decisions", "print the first N solver decisions after they are assigned",
+                    int_parser(lambda x: setattr(self, 'trace_decisions', x)), argument="N")
+        options.add("OOAnalyzer", "introspect", "write a JSONL time-series trace of search internals (reward/decision/depth/backtracks) to FILE",
+                    str_parser(lambda x: setattr(self, 'introspect', x)), argument="FILE")
+        options.add("OOAnalyzer", "introspect-period", "duty-cycle: full introspection sampling period in seconds",
+                    float_parser(lambda x: setattr(self, 'introspect_period', x)), argument="SEC")
+        options.add("OOAnalyzer", "introspect-window", "duty-cycle: sample for SEC out of each --introspect-period",
+                    float_parser(lambda x: setattr(self, 'introspect_window', x)), argument="SEC")
+        options.add("OOAnalyzer", "introspect-after", "start introspection sampling after SEC of solving",
+                    float_parser(lambda x: setattr(self, 'introspect_after', x)), argument="SEC")
+        options.add("OOAnalyzer", "introspect-sample", "fine sub-sample interval within a burst, in seconds (backtrack time resolution)",
+                    float_parser(lambda x: setattr(self, 'introspect_sample', x)), argument="SEC")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
         options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
@@ -417,13 +461,14 @@ class OOAnalyzerApp(clingo.Application):
                 interval=self.profile_interval,
                 trace_backjumps=self.trace_backjumps,
                 trace_backjump_limit=self.trace_backjump_limit,
+                trace_decisions=self.trace_decisions,
                 profile_after=self.profile_after,
                 after_first_model=profile_after_first_model,
                 count_conflicts=profile_conflicts,
                 profile_window=self.profile_window,
                 profile_period=self.profile_period,
             )
-            if (profile_conflicts or self.trace_backjumps) else None
+            if (profile_conflicts or self.trace_backjumps or self.trace_decisions) else None
         )
 
         if self.sameclass_mode == "lazy-check":
@@ -437,6 +482,19 @@ class OOAnalyzerApp(clingo.Application):
         if profiler:
             ctl.register_propagator(profiler.callbacks())
 
+        introspect_writer = None
+        introspector = None
+        if self.introspect:
+            introspect_writer = TraceWriter(self.introspect)
+            introspector = IntrospectPropagator(
+                introspect_writer.write,
+                period=self.introspect_period,
+                window=self.introspect_window,
+                after=self.introspect_after,
+                sample_interval=self.introspect_sample,
+            )
+            ctl.register_propagator(introspector)
+
         ctl.load(_MAIN_LP)
         for f in files:
             ctl.load(f)
@@ -447,6 +505,13 @@ class OOAnalyzerApp(clingo.Application):
         ctl.ground([("base", [])])
         ground_time = time.perf_counter() - ground_start
         log.info("Grounding done (%.2fs)", ground_time)
+
+        if introspector:
+            introspect_writer.write({
+                "kind": "meta", "t": round(ground_time, 3),
+                "ground_time": round(ground_time, 3),
+                "command": " ".join(sys.argv),
+            })
 
         defer_print = defer_output_mode or ctl.configuration.solve.models == -1 or benchmark
         last_shown = []
@@ -493,6 +558,17 @@ class OOAnalyzerApp(clingo.Application):
                 if self.results is not None or show_guesses:
                     last_all_atoms = list(model.symbols(atoms=True))
             last_cost = cost
+            if introspector:
+                reward, counts = decompose_reward(model.symbols(atoms=True))
+                introspect_writer.write({
+                    "kind": "model",
+                    "t": round(now, 3),
+                    "model": model_num,
+                    "cost": cost,
+                    "reward": reward,
+                    "counts": counts,
+                    "stats": _solver_stats_snapshot(ctl),
+                })
             if diagnose_vftable_objective:
                 report_vftable_objective(model, self.diagnose_vftable_limit)
 
@@ -503,6 +579,11 @@ class OOAnalyzerApp(clingo.Application):
                 log.info("Lower bound: %s  upper: %s  gap: %s (%.2fs)", list(lower), last_cost, gap, now)
             else:
                 log.info("Lower bound: %s (%.2fs)", list(lower), now)
+            if introspector:
+                introspect_writer.write({
+                    "kind": "lb", "t": round(now, 3),
+                    "lower": list(lower), "upper": list(last_cost),
+                })
 
         solve_start = time.perf_counter()
         log.info("Solving...")
@@ -539,6 +620,14 @@ class OOAnalyzerApp(clingo.Application):
             if last_cost:
                 print("Optimization:", format_cost_values(last_cost))
             sys.stdout.flush()
+
+        if introspect_writer:
+            introspect_writer.write({
+                "kind": "final", "t": round(solve_time, 3),
+                "cost": last_cost, "stats": _solver_stats_snapshot(ctl),
+            })
+            introspect_writer.close()
+            log.info("Introspection trace written to %s", self.introspect)
 
         if profiler and profile_conflicts:
             profiler.report()
