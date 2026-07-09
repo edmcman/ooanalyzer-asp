@@ -203,6 +203,10 @@ type FnAssignmentIsFixed =
     unsafe extern "C" fn(*const ClingoAssignment, ClingoLiteral, *mut bool) -> bool;
 type FnAssignmentIsTotal = unsafe extern "C" fn(*const ClingoAssignment) -> bool;
 type FnAssignmentDecisionLevel = unsafe extern "C" fn(*const ClingoAssignment) -> u32;
+type FnAssignmentDecision =
+    unsafe extern "C" fn(*const ClingoAssignment, u32, *mut ClingoLiteral) -> bool;
+type FnAssignmentLevel =
+    unsafe extern "C" fn(*const ClingoAssignment, ClingoLiteral, *mut u32) -> bool;
 
 /// Resolved libclingo function pointers.
 #[allow(non_snake_case, dead_code)]
@@ -255,6 +259,8 @@ pub struct Ffi {
     pub assignment_is_fixed: FnAssignmentIsFixed,
     pub assignment_is_total: FnAssignmentIsTotal,
     pub assignment_decision_level: FnAssignmentDecisionLevel,
+    pub assignment_decision: FnAssignmentDecision,
+    pub assignment_level: FnAssignmentLevel,
 }
 
 static FFI: OnceLock<Ffi> = OnceLock::new();
@@ -368,6 +374,8 @@ impl Ffi {
             assignment_is_fixed: "clingo_assignment_is_fixed",
             assignment_is_total: "clingo_assignment_is_total",
             assignment_decision_level: "clingo_assignment_decision_level",
+            assignment_decision: "clingo_assignment_decision",
+            assignment_level: "clingo_assignment_level",
         };
         // Race-safe: if another thread loaded first, drop ours and use theirs.
         let _ = FFI.set(ffi);
@@ -527,6 +535,26 @@ impl Ffi {
     #[allow(dead_code)]
     pub fn decision_level(&self, asgn: *const ClingoAssignment) -> u32 {
         unsafe { (self.assignment_decision_level)(asgn) }
+    }
+
+    /// Return the literal chosen at a non-root decision level, if available.
+    pub fn decision(&self, asgn: *const ClingoAssignment, level: u32) -> Option<ClingoLiteral> {
+        let mut lit = 0;
+        if unsafe { (self.assignment_decision)(asgn, level, &mut lit) } {
+            Some(lit)
+        } else {
+            None
+        }
+    }
+
+    /// Return the decision level at which a literal was assigned.
+    pub fn level(&self, asgn: *const ClingoAssignment, lit: ClingoLiteral) -> Option<u32> {
+        let mut level = 0;
+        if unsafe { (self.assignment_level)(asgn, lit, &mut level) } {
+            Some(level)
+        } else {
+            None
+        }
     }
 
     pub fn register_propagator(

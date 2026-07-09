@@ -1,7 +1,9 @@
 //! Native port of `propagator/introspect.py`.
 //!
-//! The inspector owns the JSONL sink. The driver forwards its low-frequency
-//! model/lower-bound/final records through `write_json`.
+//! The inspector owns the JSONL sink. It samples every watched symbolic
+//! assignment, classifying each as a direct branch decision or a
+//! propagation-implied assignment; the driver forwards model/lower-bound/final
+//! records through `write_json`.
 
 use crate::ffi::{
     ClingoLiteral, ClingoPropagateControl, ClingoPropagateInit, Ffi, CHECK_MODE_FIXPOINT,
@@ -17,6 +19,10 @@ const HB: u32 = 512;
 
 #[derive(Default)]
 struct Slice {
+    /// Direct symbolic literals selected by the solver during this sample.
+    decided: BTreeMap<String, u64>,
+    /// Symbolic literals forced by propagation during this sample.
+    implied: BTreeMap<String, u64>,
     backtracks: BTreeMap<String, u64>,
     root_returns: u64,
     depth_n: u64,
@@ -56,18 +62,15 @@ pub struct InspectorData {
     pub start: Instant,
     pub init_lock: Mutex<()>,
     pub lit_pred: Mutex<HashMap<i32, String>>,
-    pub choice_lits: Mutex<Vec<i32>>,
+    /// Every signed symbolic solver literal. These are watched only during a
+    /// duty-cycle window so each sample covers every program predicate.
+    pub watched_lits: Mutex<Vec<i32>>,
     pub reward_lits: Mutex<Vec<(i32, String)>>,
     threads: Mutex<HashMap<usize, ThreadSample>>,
     pub file: Mutex<BufWriter<File>>,
 }
 
-pub fn new(
-    path: &str,
-    period: f64,
-    window: f64,
-    after: f64,
-) -> Result<Box<InspectorData>, String> {
+pub fn new(path: &str, period: f64, window: f64, after: f64) -> Result<Box<InspectorData>, String> {
     OpenOptions::new()
         .create(true)
         .write(true)
@@ -86,31 +89,27 @@ pub fn new(
         start: Instant::now(),
         init_lock: Mutex::new(()),
         lit_pred: Mutex::new(HashMap::new()),
-        choice_lits: Mutex::new(Vec::new()),
+        watched_lits: Mutex::new(Vec::new()),
         reward_lits: Mutex::new(Vec::new()),
         threads: Mutex::new(HashMap::new()),
         file: Mutex::new(BufWriter::new(file)),
     }))
 }
 
-fn pred_and_reward(name: &str) -> Option<(&'static str, &'static str)> {
+fn reward_family(name: &str) -> Option<&'static str> {
     match name {
-        "mergeClasses" => Some(("merge", "")),
-        "method" => Some(("method", "")),
-        "constructor" => Some(("ctor", "")),
-        "vfTable" => Some(("vftable", "vftable")),
-        "vfTableSize" => Some(("vftable", "vftable")),
-        "guessMethodReward" => Some(("", "method")),
+        "vfTable" | "vfTableSize" => Some("vftable"),
+        "guessMethodReward" => Some("method"),
         "guessConstructor1Reward"
         | "guessConstructor2Reward"
         | "guessConstructor3Reward"
-        | "guessConstructor4Reward" => Some(("", "ctor")),
-        "strongMergeReward" => Some(("", "strong_merge")),
-        "weakMergeReward" => Some(("", "weak_merge")),
-        "weakG1Bonus" => Some(("", "weak_g1")),
-        "lateF2Reward" => Some(("", "late_f2")),
+        | "guessConstructor4Reward" => Some("ctor"),
+        "strongMergeReward" => Some("strong_merge"),
+        "weakMergeReward" => Some("weak_merge"),
+        "weakG1Bonus" => Some("weak_g1"),
+        "lateF2Reward" => Some("late_f2"),
         "guessDerivedClassReward" | "purecallNotMostDerivedReward" | "embedsKnownBasePenalty" => {
-            Some(("", "composition"))
+            Some("composition")
         }
         _ => None,
     }
@@ -128,7 +127,7 @@ fn init_impl(
     }
     let atoms = ffi.init_symbolic_atoms(init).map_err(|e| e.message)?;
     let mut preds = data.lit_pred.lock().unwrap();
-    let mut choices = data.choice_lits.lock().unwrap();
+    let mut watched = data.watched_lits.lock().unwrap();
     let mut rewards = data.reward_lits.lock().unwrap();
     let mut it = ffi.sym_atoms_begin(atoms, None).map_err(|e| e.message)?;
     let end = ffi.sym_atoms_end(atoms);
@@ -136,17 +135,13 @@ fn init_impl(
         let sym = ffi.sym_atoms_symbol(atoms, it);
         let plit = ffi.sym_atoms_literal(atoms, it);
         let lit = ffi.solver_literal(init, plit).map_err(|e| e.message)?;
-        let name = ffi.symbol_to_string(sym).unwrap_or_default();
-        let name = name.split('(').next().unwrap_or(&name).to_string();
+        let atom = ffi.symbol_to_string(sym).unwrap_or_default();
+        let name = atom.split('(').next().unwrap_or(&atom).to_string();
         preds.insert(lit.abs(), name.clone());
-        if let Some((choice, reward)) = pred_and_reward(&name) {
-            if !choice.is_empty() {
-                choices.push(lit);
-                choices.push(-lit);
-            }
-            if !reward.is_empty() {
-                rewards.push((lit, reward.to_string()));
-            }
+        watched.push(lit);
+        watched.push(-lit);
+        if let Some(reward) = reward_family(&name) {
+            rewards.push((lit, reward.to_string()));
         }
         it = ffi.sym_atoms_next(atoms, it);
     }
@@ -206,8 +201,20 @@ fn flush(
         .map(|(k, v)| format!("{}:{}", json_str(k), v))
         .collect::<Vec<_>>()
         .join(",");
-    let mut line = format!("{{\"kind\":\"sample\",\"t\":{},\"dt\":{},\"depth\":{{\"min\":{},\"mean\":{:.1},\"max\":{}}},\"backtracks\":{},\"root_returns\":{},\"true_now\":{{{}}}}}",
-                       r3(t), r4(dt), depth_min, mean, depth_max, back, s.root_returns, truth);
+    let decided = s
+        .decided
+        .iter()
+        .map(|(k, v)| format!("{}:{}", json_str(k), v))
+        .collect::<Vec<_>>()
+        .join(",");
+    let implied = s
+        .implied
+        .iter()
+        .map(|(k, v)| format!("{}:{}", json_str(k), v))
+        .collect::<Vec<_>>()
+        .join(",");
+    let mut line = format!("{{\"kind\":\"sample\",\"t\":{},\"dt\":{},\"depth\":{{\"min\":{},\"mean\":{:.1},\"max\":{}}},\"backtracks\":{},\"root_returns\":{},\"true_now\":{{{}}},\"decided\":{{{}}},\"implied\":{{{}}}}}",
+                       r3(t), r4(dt), depth_min, mean, depth_max, back, s.root_returns, truth, decided, implied);
     line.push('\n');
     let mut file = data.file.lock().unwrap();
     let _ = file.write_all(line.as_bytes());
@@ -221,11 +228,35 @@ pub fn init(ffi: &Ffi, data: &InspectorData, init: *mut ClingoPropagateInit) -> 
 }
 
 pub fn propagate(
-    _ffi: &Ffi,
-    _data: &InspectorData,
-    _ctrl: *mut ClingoPropagateControl,
-    _changes: &[ClingoLiteral],
+    ffi: &Ffi,
+    data: &InspectorData,
+    ctrl: *mut ClingoPropagateControl,
+    changes: &[ClingoLiteral],
 ) -> Result<(), String> {
+    let tid = ffi.thread_id(ctrl) as usize;
+    let asgn = ffi.control_assignment(ctrl);
+    let mut threads = data.threads.lock().unwrap();
+    let state = threads.entry(tid).or_default();
+    if !state.active {
+        return Ok(());
+    }
+    let predicates = data.lit_pred.lock().unwrap();
+    for &lit in changes {
+        let Some(predicate) = predicates.get(&lit.abs()) else {
+            continue;
+        };
+        let direct = ffi
+            .level(asgn, lit)
+            .and_then(|level| (level > 0).then(|| ffi.decision(asgn, level)))
+            .flatten()
+            == Some(lit);
+        let target = if direct {
+            &mut state.slice.decided
+        } else {
+            &mut state.slice.implied
+        };
+        *target.entry(predicate.clone()).or_default() += 1;
+    }
     Ok(())
 }
 
@@ -246,7 +277,7 @@ pub fn check(
         state.slice.depth_max = Some(state.slice.depth_max.map_or(level, |x| x.max(level)));
         if !in_window(data, t) {
             flush(ffi, data, ctrl, state, t);
-            for &lit in data.choice_lits.lock().unwrap().iter() {
+            for &lit in data.watched_lits.lock().unwrap().iter() {
                 ffi.control_remove_watch(ctrl, lit);
             }
             state.active = false;
@@ -258,7 +289,7 @@ pub fn check(
         if state.hb == 0 {
             state.hb = HB;
             if in_window(data, t) {
-                for &lit in data.choice_lits.lock().unwrap().iter() {
+                for &lit in data.watched_lits.lock().unwrap().iter() {
                     if !ffi.control_add_watch(ctrl, lit) {
                         return Err("failed to add inspector watch".into());
                     }
