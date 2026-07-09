@@ -342,12 +342,42 @@ mergeCandidate(A, B) :- lateF2Candidate(A, B).
 % strongest vftable-derived evidence first, but initially keep weaker and late
 % candidates separate. Objective rewards and learned clauses can still flip
 % either phase after the first model.
-#heuristic mergeClasses(A, B) : strongMergeCandidate(A, B). [100@2, true]
-#heuristic mergeClasses(A, B) : weakMergeCandidate(A, B). [10@1, false]
 #heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    strongMergeCandidate(A, B). [100@2, true]
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    weak_merge_input_phase = 0,
+    weakMergeCandidate(A, B). [10@1, false]
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    weak_merge_input_phase = 1,
+    weak_merge_after_vftable_complete = 0,
+    weakMergeCandidate(A, B). [10@1, true]
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    weak_merge_input_phase = 1,
+    weak_merge_after_vftable_complete != 0,
+    weakMergeCandidate(A, B),
+    not vftableLayerComplete. [10@1, false]
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    weak_merge_input_phase = 1,
+    weak_merge_after_vftable_complete != 0,
+    weakMergeCandidate(A, B),
+    vftableLayerComplete. [10@1, true]
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    late_merge_input_phase = 0,
     lateF2Candidate(A, B),
     not strongMergeCandidate(A, B),
     not weakMergeCandidate(A, B). [5@1, false]
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    late_merge_input_phase = 1,
+    lateF2Candidate(A, B),
+    not strongMergeCandidate(A, B),
+    not weakMergeCandidate(A, B). [5@1, true]
 
 % ============================================================
 % REWARDS
@@ -358,9 +388,17 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
 
 #maximize { 10@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
+#heuristic strongMergeReward(M1, M2) :
+    enable_reward_heuristics != 0,
+    strongMergeCandidate(M1, M2). [10@reward_heuristic_priority, true]
+
 % Base G2 reward: prefer weak merges when chosen.
 weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).
 #maximize { 8@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
+
+#heuristic weakMergeReward(M1, M2) :
+    enable_reward_heuristics != 0,
+    weakMergeCandidate(M1, M2). [8@reward_heuristic_priority, true]
 
 % F2 is satisfied by final equivalence-class membership, whether direct or
 % transitive.  Keying the objective by Method awards it at most once even when
@@ -370,6 +408,10 @@ lateF2Reward(Method) :-
     &sameClass(VFTable, Method).
 
 #maximize { 8@0, late_f2, Method : lateF2Reward(Method) }.
+
+#heuristic lateF2Reward(Method) :
+    enable_reward_heuristics != 0,
+    lateF2CandidateUnsorted(_VFTable, Method). [8@reward_heuristic_priority, true]
 
 % guessLateMergeClasses_F1 intentionally has no separate reward.  Its Prolog
 % role is to order the F2 candidates whose owning class has no known base; the
@@ -387,6 +429,10 @@ weakG1Bonus(M1, M2) :-
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
     constructor(Ctor), &sameClass(M2, Ctor).
 #maximize { 9@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
+
+#heuristic weakG1Bonus(M1, M2) :
+    enable_reward_heuristics != 0,
+    weakMergeCandidate(M1, M2). [9@reward_heuristic_priority, true]
 
 % Disabled for now: this non-Prolog adjacency reward grounds a quadratic
 % aggregate over large method domains (for example mysql.exe.lp).

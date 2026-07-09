@@ -369,6 +369,47 @@ hitting set plus an hour-class budget.
 
 ## Open directions
 
+## BB/domain weak-merge phase diagnostic (2026-07-09)
+
+Branch-and-bound with weak merge inputs true-first found a much better
+priority-0 reward basin. The initially recorded `[-704,-46520]` run used
+`min_vftable_size_total=704`, which pins known target information and should be
+treated as diagnostic only. A later heuristic-only ordering fixed this on
+TinyXml, but is not a safe global default:
+
+```sh
+--opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model
+--restart-on-model --decide-inputs
+--const weak_merge_input_phase=1
+--const weak_merge_after_vftable_complete=1
+```
+
+The TinyXml-specific heuristic-only 300s run in
+`autoresearch/classic-260709-0958/` reached `[-704,-46828]` at 276.86s.
+The important lever is still input branching, not
+reward-output branching: direct reward/output #heuristics produced no incumbent
+in the 60s USC and 180s BB probes. Ungated weak-true quickly reaches
+`[-644,-45683]`, showing that it finds the large reward basin but can trade away
+the high-priority vftable objective. The ordering that works is vftable layer
+first, then weak merge inputs true-first. However, the implemented completion
+test requires all possible vftables to be selected at max size, which can stay
+false forever on inputs where possible vftables are legitimately rejected. Do
+not use it as the general default without a more robust notion of comp1 being
+settled.
+
+Final selected reward counts for the verified heuristic-only run: method
+`3164/3164`, strong merge `316/513`, weak merge `553/714`, late F2 `89/164`,
+weak G1 `519/714`, derived-class reward `60/66`.
+
+A follow-up broad method-priority probe set `method_heuristic_priority=3` with
+the safe BB/domain/sign-model baseline. It reached first `-704` at about 73s and
+`[-704,-38257]` at 180s, modestly ahead of the safe baseline but far behind the
+vftable-complete weak-merge phase. This supports the hypothesis that method
+truth exposes vftable candidates earlier on TinyXml, but the broad
+`possibleMethod/1` domain is too large to treat as a general top-priority rule
+without more evidence. Prefer testing a targeted high-priority heuristic for
+vftable writers and entries before promoting all methods.
+
 1. IHS + MIP hitting set (above) is now the only live path to the TinyXml
    optimality certificate.
 2. Close the remaining gap from above (UB search), or accept the anytime

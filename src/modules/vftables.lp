@@ -251,11 +251,13 @@ possibleVFTableMaxSize(VFTable, MaxSize) :-
     guessEnabled(vftable),
     possibleVFTable(VFTable).
 #heuristic vfTable(VFTable) :
+    enable_input_heuristics != 0,
     guessEnabled(vftable),
-    possibleVFTable(VFTable). [1@2, true]
+    possibleVFTable(VFTable). [1@vftable_base_heuristic_priority, true]
 #heuristic vfTable(VFTable) :
+    enable_input_heuristics != 0,
     guessEnabled(vftable),
-    possibleVFTableMaxSize(VFTable, MaxSize). [MaxSize@3, true]
+    possibleVFTableMaxSize(VFTable, MaxSize). [MaxSize@vftable_heuristic_priority, true]
 
 % ============================================================
 % REWARDS

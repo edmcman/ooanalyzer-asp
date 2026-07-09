@@ -4,14 +4,15 @@
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
 # Default 5m optimization config; see .state/merge-optimization-blocker.md.
-# Objective-aware VSIDS (`sign,model`) preserves the weighted objective while
-# carrying incumbent-improving phases across USC searches. On current TinyXml it
-# reaches [-704,-38129] with 3157/3164 methods, versus [-704,-33471] and
-# 2562/3164 for plain VSIDS.
-# Threads actively hurt this config (t4: one model only); --decide-outputs finds
-# no models; bb,lin + decide-inputs finds no models. Keep it single-threaded.
+# Objective-aware BB with domain phases is the current non-USC search baseline.
+# The stronger weak-merge-after-vftable-complete experiment reaches TinyXml
+# [-704,-46828], but is not a safe default because some programs intentionally
+# reject possible vftables, so that condition may never become true.
+# Reward/output #heuristics are available for experiments but delayed or
+# prevented first incumbents in the measured 180s/300s BB/USC probes.
+# Threads actively hurt prior configs; keep this single-threaded.
 # Old 32-core sweep results (autoresearch/improve-260629-2245/) do not transfer.
-PROP_FLAGS   := -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=vsids --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time

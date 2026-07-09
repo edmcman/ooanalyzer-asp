@@ -185,8 +185,9 @@ candidateVFTableSize(VFTable, Size) :-
 % Domain heuristic: the highest-priority objective already prefers larger
 % extents, so try the largest candidate before branch-and-bound has to climb.
 #heuristic vfTableSize(VFTable, Size) :
+    enable_input_heuristics != 0,
     guessEnabled(vftable_size),
-    candidateVFTableSize(VFTable, Size). [Size@3, true]
+    candidateVFTableSize(VFTable, Size). [Size@vftable_size_heuristic_priority, true]
 
 % ============================================================
 % CONSTRAINTS
@@ -243,6 +244,13 @@ vfTableSizeGap(VFTable, Gap) :-
 vftableSizeTotal(Total) :-
     Total = #sum { Size, VFTable : vfTableSize(VFTable, Size) }.
 
+possibleVFTableSizeTotal(Total) :-
+    Total = #sum { MaxSize, VFTable : possibleVFTableMaxSize(VFTable, MaxSize) }.
+
+vftableLayerComplete :-
+    possibleVFTableSizeTotal(Total),
+    vftableSizeTotal(Total).
+
 :- min_vftable_size_total > 0,
    vftableSizeTotal(Total),
    Total < min_vftable_size_total.
@@ -253,6 +261,10 @@ vftableSizeTotal(Total) :-
 
 #maximize { MaxSize@3, vfTableMaxSize, VFTable : maxCandidateVFTableSize(VFTable, MaxSize) }.
 #minimize { Gap@3, vfTableSizeGap, VFTable : vfTableSizeGap(VFTable, Gap) }.
+
+#heuristic vfTableSizeGap(VFTable, 0) :
+    enable_reward_heuristics != 0,
+    maxCandidateVFTableSize(VFTable, _). [1@reward_heuristic_priority, true]
 
 % ============================================================
 % OUTPUT

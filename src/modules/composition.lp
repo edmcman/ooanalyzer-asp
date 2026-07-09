@@ -313,6 +313,10 @@ guessDerivedClassReward(Outer, Inner, Off) :-
 
 #maximize { 10@0, guessDerivedClass, Outer, Inner, Off : guessDerivedClassReward(Outer, Inner, Off) }.
 
+#heuristic guessDerivedClassReward(Outer, Inner, Off) :
+    enable_reward_heuristics != 0,
+    objectInObject(Outer, Inner, Off). [10@reward_heuristic_priority, true]
+
 % NEW RULE: penalize embedding a class that is already known to be a base.
 embedsKnownBasePenalty(Outer, Inner, Off) :-
     embeddedObject(Outer, Inner, Off),

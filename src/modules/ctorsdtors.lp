@@ -198,15 +198,19 @@ guessConstructorDomain(Method) :- guessConstructor4Domain(Method).
 
 % Stronger heuristic for higher-priority tiers (1 > 2 > 3 > 4).
 #heuristic constructor(Method) :
+    enable_input_heuristics != 0,
     guessEnabled(constructor),
     guessConstructor1Domain(Method). [4@0, true]
 #heuristic constructor(Method) :
+    enable_input_heuristics != 0,
     guessEnabled(constructor),
     guessConstructor2Domain(Method). [3@0, true]
 #heuristic constructor(Method) :
+    enable_input_heuristics != 0,
     guessEnabled(constructor),
     guessConstructor3Domain(Method). [2@0, true]
 #heuristic constructor(Method) :
+    enable_input_heuristics != 0,
     guessEnabled(constructor),
     guessConstructor4Domain(Method). [1@0, true]
 
@@ -224,6 +228,19 @@ guessConstructor4Reward(Method) :- constructor(Method), guessConstructor4Domain(
 #maximize { 9@0, ctor2, M : guessConstructor2Reward(M) }.
 #maximize { 8@0, ctor3, M : guessConstructor3Reward(M) }.
 #maximize { 7@0, ctor4, M : guessConstructor4Reward(M) }.
+
+#heuristic guessConstructor1Reward(Method) :
+    enable_reward_heuristics != 0,
+    guessConstructor1Domain(Method). [10@reward_heuristic_priority, true]
+#heuristic guessConstructor2Reward(Method) :
+    enable_reward_heuristics != 0,
+    guessConstructor2Domain(Method). [9@reward_heuristic_priority, true]
+#heuristic guessConstructor3Reward(Method) :
+    enable_reward_heuristics != 0,
+    guessConstructor3Domain(Method). [8@reward_heuristic_priority, true]
+#heuristic guessConstructor4Reward(Method) :
+    enable_reward_heuristics != 0,
+    guessConstructor4Domain(Method). [7@reward_heuristic_priority, true]
 
 % ============================================================
 % CONSTRAINTS
