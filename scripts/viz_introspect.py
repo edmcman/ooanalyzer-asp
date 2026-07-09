@@ -16,7 +16,9 @@ Six stacked, time-aligned panels tell the plateau story
   6. The corresponding distribution of propagation-implied assignments.
 
 Records consumed: meta, model, lb, sample, final (emitted by the native Rust
-inspector in `rust/src/inspector.rs`).
+inspector in `rust/src/inspector.rs`). `load()` also collects `stack` records
+(one real decision-stack snapshot per duty-cycle window per thread) for
+`scripts/introspect2speedscope.py`; this dashboard does not plot them.
 """
 
 import argparse
@@ -61,7 +63,7 @@ INK = "#0b0b0b"
 
 
 def load(path):
-    recs = {"meta": None, "final": None, "model": [], "lb": [], "sample": []}
+    recs = {"meta": None, "final": None, "model": [], "lb": [], "sample": [], "stack": []}
     with open(path) as fh:
         for line in fh:
             line = line.strip()
