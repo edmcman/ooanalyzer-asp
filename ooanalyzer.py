@@ -290,6 +290,7 @@ class OOAnalyzerApp(clingo.Application):
         self.introspect_period = 1.0
         self.introspect_window = 0.1
         self.introspect_after = 0.0
+        self.introspect_atom_sample = 0.01
         self.foundedness_check = clingo.Flag(False)
         self.dump_lemmas = clingo.Flag(False)
         self.decide_outputs = clingo.Flag(False)
@@ -362,6 +363,8 @@ class OOAnalyzerApp(clingo.Application):
                     float_parser(lambda x: setattr(self, 'introspect_window', x)), argument="SEC")
         options.add("OOAnalyzer", "introspect-after", "start introspection sampling after SEC of solving",
                     float_parser(lambda x: setattr(self, 'introspect_after', x)), argument="SEC")
+        options.add("OOAnalyzer", "introspect-atom-sample", "watch this deterministic pseudorandom fraction of symbolic atoms (0 < RATE <= 1; default 0.01)",
+                    float_parser(lambda x: setattr(self, 'introspect_atom_sample', x)), argument="RATE")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
         options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
@@ -487,6 +490,7 @@ class OOAnalyzerApp(clingo.Application):
                 period=self.introspect_period,
                 window=self.introspect_window,
                 after=self.introspect_after,
+                atom_sample_rate=self.introspect_atom_sample,
             )
             introspector.register(ctl)
 
@@ -505,6 +509,7 @@ class OOAnalyzerApp(clingo.Application):
             introspector.write_json(json.dumps({
                 "kind": "meta", "t": round(ground_time, 3),
                 "ground_time": round(ground_time, 3),
+                "atom_sample_rate": self.introspect_atom_sample,
                 "command": " ".join(sys.argv),
             }))
 

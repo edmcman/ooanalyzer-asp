@@ -6,7 +6,8 @@
 //! records through `write_json`.
 
 use crate::ffi::{
-    ClingoLiteral, ClingoPropagateControl, ClingoPropagateInit, Ffi, CHECK_MODE_FIXPOINT,
+    ClingoAssignment, ClingoLiteral, ClingoPropagateControl, ClingoPropagateInit, Ffi,
+    CHECK_MODE_FIXPOINT,
 };
 use std::collections::{BTreeMap, HashMap};
 use std::ffi::c_void;
@@ -59,6 +60,7 @@ pub struct InspectorData {
     pub period: f64,
     pub window: f64,
     pub after: f64,
+    pub atom_sample_rate: f64,
     pub start: Instant,
     pub init_lock: Mutex<()>,
     pub lit_pred: Mutex<HashMap<i32, String>>,
@@ -70,7 +72,13 @@ pub struct InspectorData {
     pub file: Mutex<BufWriter<File>>,
 }
 
-pub fn new(path: &str, period: f64, window: f64, after: f64) -> Result<Box<InspectorData>, String> {
+pub fn new(
+    path: &str,
+    period: f64,
+    window: f64,
+    after: f64,
+    atom_sample_rate: f64,
+) -> Result<Box<InspectorData>, String> {
     OpenOptions::new()
         .create(true)
         .write(true)
@@ -86,6 +94,7 @@ pub fn new(path: &str, period: f64, window: f64, after: f64) -> Result<Box<Inspe
         period,
         window,
         after,
+        atom_sample_rate,
         start: Instant::now(),
         init_lock: Mutex::new(()),
         lit_pred: Mutex::new(HashMap::new()),
@@ -94,6 +103,21 @@ pub fn new(path: &str, period: f64, window: f64, after: f64) -> Result<Box<Inspe
         threads: Mutex::new(HashMap::new()),
         file: Mutex::new(BufWriter::new(file)),
     }))
+}
+
+/// Select a stable pseudorandom subset of symbolic atoms. Stability is useful
+/// for comparing traces: a given input and rate observes the same atoms on
+/// every run, without perturbing the solver's search trajectory with an RNG.
+fn sampled_atom(lit: ClingoLiteral, rate: f64) -> bool {
+    if rate >= 1.0 {
+        return true;
+    }
+    let mut x = lit.unsigned_abs() as u64 + 0x9e37_79b9_7f4a_7c15;
+    x = (x ^ (x >> 30)).wrapping_mul(0xbf58_476d_1ce4_e5b9);
+    x = (x ^ (x >> 27)).wrapping_mul(0x94d0_49bb_1331_11eb);
+    x ^= x >> 31;
+    // The high 53 bits form a uniform IEEE-754 fraction in [0, 1).
+    ((x >> 11) as f64 / (1_u64 << 53) as f64) < rate
 }
 
 fn reward_family(name: &str) -> Option<&'static str> {
@@ -138,8 +162,10 @@ fn init_impl(
         let atom = ffi.symbol_to_string(sym).unwrap_or_default();
         let name = atom.split('(').next().unwrap_or(&atom).to_string();
         preds.insert(lit.abs(), name.clone());
-        watched.push(lit);
-        watched.push(-lit);
+        if sampled_atom(lit, data.atom_sample_rate) {
+            watched.push(lit);
+            watched.push(-lit);
+        }
         if let Some(reward) = reward_family(&name) {
             rewards.push((lit, reward.to_string()));
         }
@@ -163,6 +189,31 @@ fn r4(v: f64) -> String {
 }
 fn json_str(s: &str) -> String {
     format!("\"{}\"", s.replace('\\', "\\\\").replace('"', "\\\""))
+}
+
+/// Snapshot the real decision stack (level 1..=current, one predicate per
+/// level) directly from clingo's assignment via `ffi.decision()` — no
+/// watches or deltas needed, so this is independent of which literals are
+/// currently watched. Written as its own JSONL line since it's already a
+/// complete point-in-time snapshot, unlike the batched `Slice` counters.
+fn write_stack(ffi: &Ffi, data: &InspectorData, asgn: *const ClingoAssignment, tid: usize, t: f64) {
+    let level = ffi.decision_level(asgn);
+    let preds = data.lit_pred.lock().unwrap();
+    let stack: Vec<String> = (1..=level)
+        .filter_map(|l| ffi.decision(asgn, l))
+        .filter_map(|lit| preds.get(&lit.abs()).cloned())
+        .map(|p| json_str(&p))
+        .collect();
+    drop(preds);
+    let mut line = format!(
+        "{{\"kind\":\"stack\",\"t\":{},\"tid\":{},\"stack\":[{}]}}",
+        r3(t),
+        tid,
+        stack.join(",")
+    );
+    line.push('\n');
+    let mut file = data.file.lock().unwrap();
+    let _ = file.write_all(line.as_bytes());
 }
 
 fn flush(
@@ -270,12 +321,14 @@ pub fn check(
     let mut threads = data.threads.lock().unwrap();
     let state = threads.entry(tid).or_default();
     if state.active {
-        let level = ffi.decision_level(ffi.control_assignment(ctrl));
+        let asgn = ffi.control_assignment(ctrl);
+        let level = ffi.decision_level(asgn);
         state.slice.depth_n += 1;
         state.slice.depth_sum += level as u64;
         state.slice.depth_min = Some(state.slice.depth_min.map_or(level, |x| x.min(level)));
         state.slice.depth_max = Some(state.slice.depth_max.map_or(level, |x| x.max(level)));
         if !in_window(data, t) {
+            write_stack(ffi, data, asgn, tid, t);
             flush(ffi, data, ctrl, state, t);
             for &lit in data.watched_lits.lock().unwrap().iter() {
                 ffi.control_remove_watch(ctrl, lit);

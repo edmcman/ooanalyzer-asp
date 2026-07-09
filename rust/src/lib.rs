@@ -47,19 +47,21 @@ pub struct IntrospectPropagator {
 #[pymethods]
 impl IntrospectPropagator {
     #[new]
-    #[pyo3(signature = (path, period=1.0, window=0.1, after=0.0))]
+    #[pyo3(signature = (path, period=1.0, window=0.1, after=0.0, atom_sample_rate=0.01))]
     fn new(
         path: String,
         period: f64,
         window: f64,
         after: f64,
+        atom_sample_rate: f64,
     ) -> PyResult<Self> {
-        if period <= 0.0 || window < 0.0 {
+        if period <= 0.0 || window < 0.0 || !(0.0 < atom_sample_rate && atom_sample_rate <= 1.0) {
             return Err(pyo3::exceptions::PyValueError::new_err(
-                "invalid introspection timing",
+                "invalid introspection timing or atom sample rate",
             ));
         }
-        let data = inspector::new(&path, period, window, after).map_err(pyo3_err)?;
+        let data =
+            inspector::new(&path, period, window, after, atom_sample_rate).map_err(pyo3_err)?;
         Ok(Self {
             data: Box::into_raw(data) as usize,
         })
