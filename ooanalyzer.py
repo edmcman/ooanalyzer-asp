@@ -8,6 +8,7 @@ Usage:
 """
 
 import logging
+import json
 import os
 import sys
 import textwrap
@@ -21,10 +22,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefm
 
 # The native Rust propagator (built via `make rust`) is the live &sameClass
 # implementation; there is no pure-Python fallback.
-from ooanalyzer_sameclass import SameClassPropagator
+from ooanalyzer_sameclass import SameClassPropagator, IntrospectPropagator as RustIntrospectPropagator
 from propagator.sameclass import LazySameClassConsistencyPropagator
 from propagator.conflict_profiler import ConflictProfiler
-from propagator.introspect import IntrospectPropagator, TraceWriter, decompose_reward
+from propagator.introspect import decompose_reward
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _MAIN_LP = os.path.join(_SCRIPT_DIR, "ooanalyzer.lp")
@@ -286,10 +287,9 @@ class OOAnalyzerApp(clingo.Application):
         self.trace_backjump_limit = 10
         self.trace_decisions = 0
         self.introspect = None
-        self.introspect_period = 10.0
-        self.introspect_window = 0.5
+        self.introspect_period = 1.0
+        self.introspect_window = 0.1
         self.introspect_after = 0.0
-        self.introspect_sample = 0.05
         self.foundedness_check = clingo.Flag(False)
         self.dump_lemmas = clingo.Flag(False)
         self.decide_outputs = clingo.Flag(False)
@@ -362,8 +362,6 @@ class OOAnalyzerApp(clingo.Application):
                     float_parser(lambda x: setattr(self, 'introspect_window', x)), argument="SEC")
         options.add("OOAnalyzer", "introspect-after", "start introspection sampling after SEC of solving",
                     float_parser(lambda x: setattr(self, 'introspect_after', x)), argument="SEC")
-        options.add("OOAnalyzer", "introspect-sample", "fine sub-sample interval within a burst, in seconds (backtrack time resolution)",
-                    float_parser(lambda x: setattr(self, 'introspect_sample', x)), argument="SEC")
         options.add_flag("OOAnalyzer", "foundedness-check", "verify mergeClasses atoms have non-circular justification",
                          self.foundedness_check)
         options.add_flag("OOAnalyzer", "dump-lemmas", "print each &sameClass reason clause to stderr (propagate mode only)",
@@ -482,18 +480,15 @@ class OOAnalyzerApp(clingo.Application):
         if profiler:
             ctl.register_propagator(profiler.callbacks())
 
-        introspect_writer = None
         introspector = None
         if self.introspect:
-            introspect_writer = TraceWriter(self.introspect)
-            introspector = IntrospectPropagator(
-                introspect_writer.write,
+            introspector = RustIntrospectPropagator(
+                self.introspect,
                 period=self.introspect_period,
                 window=self.introspect_window,
                 after=self.introspect_after,
-                sample_interval=self.introspect_sample,
             )
-            ctl.register_propagator(introspector)
+            introspector.register(ctl)
 
         ctl.load(_MAIN_LP)
         for f in files:
@@ -507,11 +502,11 @@ class OOAnalyzerApp(clingo.Application):
         log.info("Grounding done (%.2fs)", ground_time)
 
         if introspector:
-            introspect_writer.write({
+            introspector.write_json(json.dumps({
                 "kind": "meta", "t": round(ground_time, 3),
                 "ground_time": round(ground_time, 3),
                 "command": " ".join(sys.argv),
-            })
+            }))
 
         defer_print = defer_output_mode or ctl.configuration.solve.models == -1 or benchmark
         last_shown = []
@@ -560,7 +555,7 @@ class OOAnalyzerApp(clingo.Application):
             last_cost = cost
             if introspector:
                 reward, counts = decompose_reward(model.symbols(atoms=True))
-                introspect_writer.write({
+                introspector.write_json(json.dumps({
                     "kind": "model",
                     "t": round(now, 3),
                     "model": model_num,
@@ -568,7 +563,7 @@ class OOAnalyzerApp(clingo.Application):
                     "reward": reward,
                     "counts": counts,
                     "stats": _solver_stats_snapshot(ctl),
-                })
+                }))
             if diagnose_vftable_objective:
                 report_vftable_objective(model, self.diagnose_vftable_limit)
 
@@ -580,10 +575,10 @@ class OOAnalyzerApp(clingo.Application):
             else:
                 log.info("Lower bound: %s (%.2fs)", list(lower), now)
             if introspector:
-                introspect_writer.write({
+                introspector.write_json(json.dumps({
                     "kind": "lb", "t": round(now, 3),
                     "lower": list(lower), "upper": list(last_cost),
-                })
+                }))
 
         solve_start = time.perf_counter()
         log.info("Solving...")
@@ -621,12 +616,12 @@ class OOAnalyzerApp(clingo.Application):
                 print("Optimization:", format_cost_values(last_cost))
             sys.stdout.flush()
 
-        if introspect_writer:
-            introspect_writer.write({
+        if introspector:
+            introspector.write_json(json.dumps({
                 "kind": "final", "t": round(solve_time, 3),
                 "cost": last_cost, "stats": _solver_stats_snapshot(ctl),
-            })
-            introspect_writer.close()
+            }))
+            introspector.close()
             log.info("Introspection trace written to %s", self.introspect)
 
         if profiler and profile_conflicts:

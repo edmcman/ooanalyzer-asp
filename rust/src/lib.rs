@@ -11,6 +11,7 @@
 use pyo3::prelude::*;
 use pyo3::types::{PyDict, PySet};
 use std::ffi::c_void;
+use std::io::Write;
 
 use crate::entkey::EntKey;
 use crate::ffi::ClingoControl;
@@ -19,6 +20,7 @@ use crate::uf::Uf;
 
 mod entkey;
 mod ffi;
+mod inspector;
 mod potential_uf;
 mod propagator;
 mod shared;
@@ -33,6 +35,87 @@ mod uf;
 #[pyclass(name = "SameClassPropagator")]
 pub struct SameClassPropagator {
     data: usize,
+}
+
+/// Native duty-cycled solver inspector.  It shares the trace file with the
+/// Python driver, which appends model/lower-bound/final records.
+#[pyclass(name = "IntrospectPropagator")]
+pub struct IntrospectPropagator {
+    data: usize,
+}
+
+#[pymethods]
+impl IntrospectPropagator {
+    #[new]
+    #[pyo3(signature = (path, period=1.0, window=0.1, after=0.0))]
+    fn new(
+        path: String,
+        period: f64,
+        window: f64,
+        after: f64,
+    ) -> PyResult<Self> {
+        if period <= 0.0 || window < 0.0 {
+            return Err(pyo3::exceptions::PyValueError::new_err(
+                "invalid introspection timing",
+            ));
+        }
+        let data = inspector::new(&path, period, window, after).map_err(pyo3_err)?;
+        Ok(Self {
+            data: Box::into_raw(data) as usize,
+        })
+    }
+
+    fn register(&mut self, ctl: &Bound<'_, PyAny>) -> PyResult<()> {
+        let ffi = ffi::Ffi::load().map_err(pyo3_err)?;
+        let py = ctl.py();
+        let internal = py.import("clingo._internal")?;
+        let cffi = internal.getattr("_ffi")?;
+        let rep = ctl.getattr("_rep")?;
+        let cdata = cffi.getattr("cast")?.call1(("uintptr_t", rep.unbind()))?;
+        let addr = py
+            .import("builtins")?
+            .getattr("int")?
+            .call1((cdata.unbind(),))?
+            .extract::<i64>()?;
+        let control = addr as usize as *mut ClingoControl;
+        let data = self.data as *mut c_void;
+        let prop = trampoline::inspector_struct();
+        ffi.register_propagator(control, &prop, data)
+            .map_err(|e| pyo3::exceptions::PyRuntimeError::new_err(e.message))?;
+        Ok(())
+    }
+
+    fn close(&self) -> PyResult<()> {
+        if self.data != 0 {
+            inspector::close(inspector::data_ptr(self.data as *mut c_void));
+        }
+        Ok(())
+    }
+
+    /// Append one already-serialized JSON object as a JSONL record.
+    fn write_json(&self, record: String) -> PyResult<()> {
+        let data = inspector::data_ptr(self.data as *mut c_void);
+        let mut file = data.file.lock().map_err(|_| {
+            pyo3::exceptions::PyRuntimeError::new_err("introspection trace lock poisoned")
+        })?;
+        file.write_all(record.as_bytes())
+            .map_err(|e| pyo3::exceptions::PyIOError::new_err(e.to_string()))?;
+        file.write_all(b"\n")
+            .map_err(|e| pyo3::exceptions::PyIOError::new_err(e.to_string()))?;
+        file.flush()
+            .map_err(|e| pyo3::exceptions::PyIOError::new_err(e.to_string()))?;
+        Ok(())
+    }
+}
+
+impl Drop for IntrospectPropagator {
+    fn drop(&mut self) {
+        if self.data != 0 {
+            unsafe {
+                drop(Box::from_raw(self.data as *mut inspector::InspectorData));
+            }
+        }
+    }
 }
 
 impl SameClassPropagator {
@@ -197,6 +280,7 @@ fn ent_to_py(py: Python<'_>, e: &EntKey) -> PyResult<PyObject> {
 #[pymodule]
 fn ooanalyzer_sameclass(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<SameClassPropagator>()?;
+    m.add_class::<IntrospectPropagator>()?;
     // clingo is imported before this module in the driver, so the dlsym probes
     // usually succeed here. If not (clingo not yet loaded), register() retries.
     let _ = ffi::Ffi::load();

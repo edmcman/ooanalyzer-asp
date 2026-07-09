@@ -120,7 +120,7 @@ def build(recs, title):
     models = recs["model"]
     final = recs["final"]
     ground_t = recs["meta"]["ground_time"] if recs["meta"] else None
-    # burst-gap threshold: a couple of sample intervals
+    # burst-gap threshold: a couple of active-window intervals
     dts = [s["dt"] for s in samples if s.get("dt")]
     gap = 4 * (sorted(dts)[len(dts) // 2] if dts else 0.05)
 

@@ -51,6 +51,8 @@ pub type ClingoGroundProgramObserver = csys::clingo_ground_program_observer_t;
 // types clingo's functions take, matching the old hand-written definitions.
 pub const CHECK_MODE_TOTAL: ClingoCheckMode =
     csys::clingo_propagator_check_mode_e_clingo_propagator_check_mode_total as ClingoCheckMode;
+pub const CHECK_MODE_FIXPOINT: ClingoCheckMode =
+    csys::clingo_propagator_check_mode_e_clingo_propagator_check_mode_fixpoint as ClingoCheckMode;
 pub const CLAUSE_TYPE_LEARNT: ClingoClauseType =
     csys::clingo_clause_type_e_clingo_clause_type_learnt as ClingoClauseType;
 #[allow(dead_code)]
@@ -183,6 +185,8 @@ type FnInitAssignment = unsafe extern "C" fn(*const ClingoPropagateInit) -> *con
 type FnControlThreadId = unsafe extern "C" fn(*const ClingoPropagateControl) -> ClingoId;
 type FnControlAssignment =
     unsafe extern "C" fn(*const ClingoPropagateControl) -> *const ClingoAssignment;
+type FnControlAddWatch = unsafe extern "C" fn(*mut ClingoPropagateControl, ClingoLiteral) -> bool;
+type FnControlRemoveWatch = unsafe extern "C" fn(*mut ClingoPropagateControl, ClingoLiteral);
 type FnControlAddClause = unsafe extern "C" fn(
     *mut ClingoPropagateControl,
     *const ClingoLiteral,
@@ -243,6 +247,8 @@ pub struct Ffi {
     pub init_assignment: FnInitAssignment,
     pub control_thread_id: FnControlThreadId,
     pub control_assignment: FnControlAssignment,
+    pub control_add_watch: FnControlAddWatch,
+    pub control_remove_watch: FnControlRemoveWatch,
     pub control_add_clause: FnControlAddClause,
     pub assignment_is_true: FnAssignmentIsTrue,
     pub assignment_is_false: FnAssignmentIsFalse,
@@ -354,6 +360,8 @@ impl Ffi {
             init_assignment: "clingo_propagate_init_assignment",
             control_thread_id: "clingo_propagate_control_thread_id",
             control_assignment: "clingo_propagate_control_assignment",
+            control_add_watch: "clingo_propagate_control_add_watch",
+            control_remove_watch: "clingo_propagate_control_remove_watch",
             control_add_clause: "clingo_propagate_control_add_clause",
             assignment_is_true: "clingo_assignment_is_true",
             assignment_is_false: "clingo_assignment_is_false",
@@ -462,6 +470,14 @@ impl Ffi {
         ctrl: *const ClingoPropagateControl,
     ) -> *const ClingoAssignment {
         unsafe { (self.control_assignment)(ctrl) }
+    }
+
+    pub fn control_add_watch(&self, ctrl: *mut ClingoPropagateControl, lit: ClingoLiteral) -> bool {
+        unsafe { (self.control_add_watch)(ctrl, lit) }
+    }
+
+    pub fn control_remove_watch(&self, ctrl: *mut ClingoPropagateControl, lit: ClingoLiteral) {
+        unsafe { (self.control_remove_watch)(ctrl, lit) }
     }
 
     pub fn add_clause(

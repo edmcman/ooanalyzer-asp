@@ -10,6 +10,7 @@ use crate::ffi::{
     ClingoPropagateControl, ClingoPropagateInit, ClingoPropagator, ClingoWeight,
     ClingoWeightedLiteral,
 };
+use crate::inspector;
 use crate::propagator;
 use crate::shared::PropData;
 use std::panic::{catch_unwind, AssertUnwindSafe};
@@ -246,6 +247,100 @@ pub fn observer_struct() -> ClingoGroundProgramObserver {
         theory_element: None,
         theory_atom: None,
         theory_atom_with_guard: None,
+    }
+}
+
+// ── inspector propagator ───────────────────────────────────────────────────
+
+pub extern "C" fn inspector_init(
+    init: *mut ClingoPropagateInit,
+    data: *mut std::ffi::c_void,
+) -> bool {
+    let pd = inspector::data_ptr(data);
+    let ffi = ffi::Ffi::get();
+    match catch_unwind(AssertUnwindSafe(|| inspector::init(ffi, pd, init))) {
+        Ok(Ok(())) => true,
+        Ok(Err(msg)) => {
+            ffi::set_runtime_error(ffi, &msg);
+            false
+        }
+        Err(_) => {
+            ffi::set_runtime_error(ffi, "rust inspector init panicked");
+            false
+        }
+    }
+}
+
+pub extern "C" fn inspector_propagate(
+    ctrl: *mut ClingoPropagateControl,
+    changes: *const ClingoLiteral,
+    size: usize,
+    data: *mut std::ffi::c_void,
+) -> bool {
+    let pd = inspector::data_ptr(data);
+    let ffi = ffi::Ffi::get();
+    let changes = if changes.is_null() || size == 0 {
+        &[]
+    } else {
+        unsafe { std::slice::from_raw_parts(changes, size) }
+    };
+    match catch_unwind(AssertUnwindSafe(|| {
+        inspector::propagate(ffi, pd, ctrl, changes)
+    })) {
+        Ok(Ok(())) => true,
+        Ok(Err(msg)) => {
+            ffi::set_runtime_error(ffi, &msg);
+            false
+        }
+        Err(_) => {
+            ffi::set_runtime_error(ffi, "rust inspector propagate panicked");
+            false
+        }
+    }
+}
+
+pub extern "C" fn inspector_undo(
+    ctrl: *const ClingoPropagateControl,
+    changes: *const ClingoLiteral,
+    size: usize,
+    data: *mut std::ffi::c_void,
+) {
+    let pd = inspector::data_ptr(data);
+    let ffi = ffi::Ffi::get();
+    let changes = if changes.is_null() || size == 0 {
+        &[]
+    } else {
+        unsafe { std::slice::from_raw_parts(changes, size) }
+    };
+    let _ = catch_unwind(AssertUnwindSafe(|| inspector::undo(ffi, pd, ctrl, changes)));
+}
+
+pub extern "C" fn inspector_check(
+    ctrl: *mut ClingoPropagateControl,
+    data: *mut std::ffi::c_void,
+) -> bool {
+    let pd = inspector::data_ptr(data);
+    let ffi = ffi::Ffi::get();
+    match catch_unwind(AssertUnwindSafe(|| inspector::check(ffi, pd, ctrl))) {
+        Ok(Ok(())) => true,
+        Ok(Err(msg)) => {
+            ffi::set_runtime_error(ffi, &msg);
+            false
+        }
+        Err(_) => {
+            ffi::set_runtime_error(ffi, "rust inspector check panicked");
+            false
+        }
+    }
+}
+
+pub fn inspector_struct() -> ClingoPropagator {
+    ClingoPropagator {
+        init: Some(inspector_init),
+        propagate: Some(inspector_propagate),
+        undo: Some(inspector_undo),
+        check: Some(inspector_check),
+        decide: None,
     }
 }
 
