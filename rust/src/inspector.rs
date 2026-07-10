@@ -16,8 +16,6 @@ use std::io::{BufWriter, Write};
 use std::sync::Mutex;
 use std::time::Instant;
 
-const HB: u32 = 512;
-
 #[derive(Default)]
 struct Slice {
     /// Direct symbolic literals selected by the solver during this sample.
@@ -34,11 +32,9 @@ struct Slice {
 
 struct ThreadSample {
     active: bool,
-    hb: u32,
     last_sample: f64,
     root: Option<u32>,
     undo_prev: u32,
-    watched: bool,
     slice: Slice,
 }
 
@@ -46,11 +42,9 @@ impl Default for ThreadSample {
     fn default() -> Self {
         ThreadSample {
             active: false,
-            hb: HB,
             last_sample: 0.0,
             root: None,
             undo_prev: 0,
-            watched: false,
             slice: Slice::default(),
         }
     }
@@ -334,25 +328,16 @@ pub fn check(
                 ffi.control_remove_watch(ctrl, lit);
             }
             state.active = false;
-            state.watched = false;
-            state.hb = HB;
         }
-    } else {
-        state.hb -= 1;
-        if state.hb == 0 {
-            state.hb = HB;
-            if in_window(data, t) {
-                for &lit in data.watched_lits.lock().unwrap().iter() {
-                    if !ffi.control_add_watch(ctrl, lit) {
-                        return Err("failed to add inspector watch".into());
-                    }
-                }
-                state.slice = Slice::default();
-                state.last_sample = t;
-                state.active = true;
-                state.watched = true;
+    } else if in_window(data, t) {
+        for &lit in data.watched_lits.lock().unwrap().iter() {
+            if !ffi.control_add_watch(ctrl, lit) {
+                return Err("failed to add inspector watch".into());
             }
         }
+        state.slice = Slice::default();
+        state.last_sample = t;
+        state.active = true;
     }
     Ok(())
 }
