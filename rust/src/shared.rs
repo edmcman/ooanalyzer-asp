@@ -113,22 +113,6 @@ pub struct Shared {
     pub cr_atoms: Vec<CrAtom>,
     /// `abs(slit)` → full relationship atom for watched-literal lookup.
     pub cr_slit_to_atom: FxHashMap<i32, CrAtom>,
-    /// `abs(slit)` → sorted `[(group, witness_entity)]` for `witnessGroup/2`
-    /// atoms sharing that solver literal (existential witness membership,
-    /// decided by `&classHasWitness/2`).
-    pub witness_lit_entries: FxHashMap<i32, Vec<(EntKey, EntKey)>>,
-    /// `group` → sorted `[(witness_entity, abs_slit)]` (frozen order).
-    pub witness_by_group: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
-    /// `&classHasWitness` atoms, sorted `(group, class, slit)`. Only swept in
-    /// full once (the initial `check()` sweep); routine updates use each
-    /// thread's component-local `chw_in` index. This list can be tens of
-    /// thousands of entries once the value/method domains are large, so an
-    /// unconditional per-`check()` sweep does not scale.
-    pub chw_atoms: Vec<(EntKey, EntKey, i32)>,
-    /// `abs(slit)` → `(group, class, slit)`, for watching a `&classHasWitness`
-    /// atom's own literal (mirrors `awc_slit_to_pair`; keeps the signed `slit`
-    /// alongside so truth is re-queried against it, not the raw abs literal).
-    pub chw_slit_to_pair: FxHashMap<i32, (EntKey, EntKey, i32)>,
     pub observed_proglits: FxHashSet<i32>,
     pub unconditional_proglits: FxHashSet<i32>,
     /// observed program-literal → solver literal (best-effort).

@@ -329,54 +329,46 @@ notMergeUnsorted(X, Y) :-
     &classRelationship(X, Y).
 ```
 
-### Existential witness membership: `&classHasWitness/2`
+### Existential witness membership (historical: `&classHasWitness/2`, removed 2026-07-10)
 
-A different free-join shape shows up when a rule needs "does class(A)'s live
-&sameClass class contain ANY entity satisfying some other predicate P", and
-the specific witness isn't needed afterward (it's only used to make the
-`&sameClass` check, then discarded) — e.g. `objectInObject(Class, InnerClass,
-Off), classSizeGTE(Wi, InnerSize), &sameClass(InnerClass, Wi)` with `Wi` free.
-Since theory atoms can't bind a free variable at grounding time, `Wi` ranges
-over every ground fact of the joined predicate, crossed with every instance of
-the rule's other bound variables — this exploded to 960,516 ground instances
-of `classSizeGTE` (reasonClassSizeGTE_F) on TinyXml once `objectInObject` grew
+A free-join shape shows up when a rule needs "does class(A)'s live &sameClass
+class contain ANY entity satisfying some other predicate P", and the specific
+witness isn't needed afterward (it's only used to make the `&sameClass` check,
+then discarded) — e.g. `objectInObject(Class, InnerClass, Off),
+classSizeGTE(Wi, InnerSize), &sameClass(InnerClass, Wi)` with `Wi` free. Since
+theory atoms can't bind a free variable at grounding time, `Wi` ranges over
+every ground fact of the joined predicate, crossed with every instance of the
+rule's other bound variables — this explodes to 960,516 ground instances of
+`classSizeGTE` (reasonClassSizeGTE_F) on TinyXml once `objectInObject` grows
 from 14 to 286 facts (the same `_D`/`_E` port that motivated
 `&classRelationship`), with two more sites at 159,840
-(`reasonNOTMergeClassesCAsymmetric`) and 33,390 (`classHasInnerAtZero`).
+(`reasonNOTMergeClassesCAsymmetric`) and 33,390 (`classHasInnerAtZero`), plus
+48,327 at a fourth site (`reasonClassSizeLTE_D`). These four naive-join sites
+in `size.lp`/`classes.lp`/`merges.lp` are the current, checked-in state.
 
-Fixed the same way as `&classRelationship`: move the existential check into
-the propagator as `&classHasWitness(Group, Class)`, true iff some
-`witnessGroup(Group, W)` atom is true with `W` in `class(Class)`'s current
-component. `Group` is an opaque ASP-side tag (`sizeGroup(S)`, `methodGroup(M)`,
-`zeroGroup`) so unrelated witness pools never collide — the propagator hashes
-each tag by its full rendered term, not its payload, so `sizeGroup(4)` and
-`methodGroup(4)` are distinct groups despite sharing the value `4`. Pattern:
+A `&classHasWitness(Group, Class)` theory atom (true iff some `witnessGroup(Group,
+W)` atom is true with `W` in `class(Class)`'s current component) previously
+replaced these four joins, moving the existential check into the propagator's
+union-find as an O(1) incremental support-count lookup instead of a grounded
+cross product. It worked and was sound, but on 2026-07-10 an A/B measurement
+on TinyXml (`ooanalyzer.py`, 180s wall-clock, unbuffered) found the naive
+free-join encoding reached its first model faster (0.24s vs 21.6s) and a
+better anytime objective (`-564 -35970` vs `-564 -7141`) than the
+`&classHasWitness` encoding, despite grounding ~37-49% larger. The propagator
+machinery (~250 lines: incremental per-component support maps, `chw_in`
+force-forward, undo bookkeeping) added real maintenance cost for a grounding-size
+win that did not translate into a solving-time win on this input, so it was
+removed rather than kept as unused-but-correct complexity.
 
-```prolog
-witnessGroup(sizeGroup(S), W) :- classSizeGTE(W, S).
-classSizeValue(S) :- classSizeGTE(_, S).
-
-classSizeGTE(Class, Off + InnerSize) :-
-    objectInObject(Class, InnerClass, Off),
-    classSizeValue(InnerSize),
-    &classHasWitness(sizeGroup(InnerSize), InnerClass),
-    Off + InnerSize <= max_class_size.
-```
-
-`classSizeValue/1` (or the equivalent per-site domain predicate, e.g.
-`methodCalledByAnyClass/1`) bounds the OTHER free variable — the one that
-still needs to reach the rule head — to the small set of distinct *values*
-that occur, not the large set of witness *entities* that produce them; this is
-the same trick as `relevantOffset` in "Transitive closures with accumulated
-offsets" above, applied to an existential join instead of an offset sum.
-
-**Only use `&classHasWitness` when the witness entity itself is discarded
-after the `&sameClass` check.** If a rule needs the witness's concrete
-identity for something else downstream (e.g. `reasonMergeClasses_H` pulls
-`VOffset`/`Method` out of the vftable it joins via `&sameClass`), this pattern
-doesn't apply — the theory atom can only return a boolean, not a value — and
-the free join needs a different fix (a static candidate-link predicate, like
-`classRelationshipCand`, or restructuring the rule).
+**If you hit this shape again** (a free witness joined only by `&sameClass`),
+first check whether the naive join is actually a problem for solve time, not
+just grounding size — the two are not the same axis here. Re-measure before
+reintroducing propagator-side machinery; the historical instance counts above
+are for triage, not a foregone conclusion that the naive join is unsolvable at
+scale. If a rule needs the witness's concrete identity for something else
+downstream (e.g. `reasonMergeClasses_H` pulls `VOffset`/`Method` out of the
+vftable it joins via `&sameClass`), the existential-atom pattern never applied
+anyway — a theory atom can only return a boolean, not a value.
 
 ### Merge optimization performance (see `.state/merge-optimization-blocker.md`)
 

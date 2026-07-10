@@ -171,21 +171,16 @@ mergeClasses(A, B) :- reasonMergeClassesKUnsorted(B, A), A < B.
 % reasonNOTMergeClasses_C: any method called by both derived and base belongs to base,
 % not derived — so derived class and that method's class cannot merge.
 % Witness: DC (derived), BC (base from derivedClass). DC2/BC2 are discarded
-% once the &sameClass check is made, so — like classSizeGTE_F in size.lp —
-% each is an existential over classCallsMethod's unbounded caller domain;
-% moved into the propagator via &classHasWitness(methodGroup(Method), Class)
-% (measured 159,840 ground instances on TinyXml before this fix, from the
-% DC2 x BC2 cross join).
-witnessGroup(methodGroup(M), W) :- classCallsMethod(W, M).
-methodCalledByAnyClass(M) :- classCallsMethod(_, M).
-
+% once the &sameClass check is made, so each ranges freely over
+% classCallsMethod's caller domain, joined only by &sameClass.
 % Counterpart: reasonNOTMergeClasses_C / _C_asymmetric (rules.pl:3090, 3111)
 %!trace_rule {"% and % cannot merge because method % is called by both derived % and base %", DC, Method, Method, DC, BC}
 reasonNOTMergeClassesCAsymmetric(DC, Method) :-
     derivedClass(DC, BC, _ObjectOffset),
-    methodCalledByAnyClass(Method),
-    &classHasWitness(methodGroup(Method), DC),
-    &classHasWitness(methodGroup(Method), BC).
+    classCallsMethod(DC2, Method),
+    classCallsMethod(BC2, Method),
+    &sameClass(DC, DC2),
+    &sameClass(BC, BC2).
 
 % reasonNOTMergeClasses_I: RTTI says two TDAs map to different classes.
 % Symmetric: both witnesses from rTTITDA2Class for different TDAs.
