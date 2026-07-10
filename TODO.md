@@ -105,6 +105,14 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Guess (guess.pl)
 - [ ] `guessRealDestructor`
 - [ ] `guessFinalRealDestructor` (4 variants)
+- [ ] evidence-gated realDestructor kind-tier phase — Prolog only guesses a real
+      destructor when a *confirmed* deleting destructor calls it
+      (`likelyDeletingDestructor(DD, RD)` + `factDeletingDestructor(DD)`,
+      guess.pl:1395); expressible as a dynamic `#heuristic` body
+      `likelyDeletingDestructor(DD, RD), deletingDestructor(DD)` replacing the
+      blanket `[420, true]` phase in ctorsdtors.lp. Needs the
+      `likelyDeletingDestructor/2` port tracked in §4. Motivation + design:
+      .state/merge-optimization-blocker.md (2026-07-10 entry).
 
 ### Constraints (insanity.pl)
 - [x] `insanityTwoRealDestructorsOnClass` — at most one real destructor per class
@@ -134,6 +142,16 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 ### Guess (guess.pl)
 - [ ] `guessDeletingDestructor`
 - [ ] `guessFinalDeletingDestructor`
+- [ ] `likelyDeletingDestructor/2` helper (guess.pl:1622) — possibleDestructor
+      that calls delete on its own this-pointer (with the invalid-convention
+      ECX fallback and `insnCallsDelete(_, DD, invalid)` fact-generation-failure
+      allowance) and calls a possible real destructor at an offset. All
+      ingredients already in initial.lp (`validMethodCallAtOffset/4`,
+      `insnCallsDelete/3`, `thisParamFuncParameter/2`, `callingConvention`/
+      `funcParameter`). Keep the Prolog `doNotGuessHelper` negations out of the
+      ground helper — they belong in `#heuristic` bodies (dynamic). Unblocks the
+      evidence-gated deletingDestructor kind-tier phase (replace the blanket
+      `[410, true]` in ctorsdtors.lp) and the §3 realDestructor gate.
 
 ---
 
