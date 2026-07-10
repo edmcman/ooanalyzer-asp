@@ -591,3 +591,89 @@ Promoted to the default on user request after the measured run. Pass
 `--const prolog_order_priority=0` to restore the previous Domain ordering. A
 60 s verification with the constant omitted reproduced `[-704,-41358]` at
 48.64 s and `[-704,-41374]` at 50.50 s; 63/63 propagator tests passed.
+
+## Prolog-order plateau root cause: the destructor-first kind tier (2026-07-10, i9-13900HX)
+
+Introspect-trace analysis of the champion prolog-order run (`[-704,-41382]`,
+plateau 97→300 s) showed the plateau is NOT conflict entrapment: ~3 restarts/s,
+consecutive decision-stack snapshots often share a ~0-length common prefix.
+Instead, five reward families were **pinned at identical values in all 233
+sampled instants, starting at t=13 s (before the first model)**: vftable 50,
+method 3164, ctor exactly 22, strong_merge 102, composition 22–24. Only
+weak/G1/lateF2 ever varied (weak 13–554). The Domain ladder's fixed signs
+rebuild the same upper layers after every restart; average backjump 256 of
+~3300 levels never reaches them; only 22% of all choices were Domain decisions
+at all (rest VSIDS fallback + decide-inputs).
+
+Comparison target: pinning the `.results.orig` partition (force_goodpartition
+overlay) under identical champion flags gives `[-704,-45415]` (LB −52357,
+still improving at 300 s) — compatible with the full −704 vftable layer, and
+better in nearly every family at once (ctor 58 with **0 deleting destructors**,
+strong 308, composition 84). So the free search was ≥4k short purely by basin.
+
+A/B ladder of overlay experiments (300 s, champion flags, single-threaded):
+
+| intervention (overlay only, no .lp edits)          | best comp2 | key counts |
+|---|---:|---|
+| merge phases neutralized (`[0@11,sign]`, levels kept) | −33929 | strong 41, plateau from 34 s |
+| default (prolog-order @10 trues)                      | −41382 | ctor 22 / strong 102 / comp 24 |
+| merge signs seeded to .results.orig partition (@11)   | −41087 | identical upper layers — no escape |
+| upstream seeds (ctor+derived/embedded+vfsz from forced model) | −41404 | inert, see below |
+| kind-layer seeds only (58 ctor / 22 rdtor / 0 ddtor from forced model) | −46266 | ctor 58, strong 316, comp 84 |
+| **ctor-first kind tier, no ground truth**             | **−46542** | ctor 67, strong 298, comp 101, weak 536, g1 503 |
+
+Mechanism findings:
+- Nothing done at the merge tier can escape (3 experiments): by merge levels
+  (≤250) the upper layers are fixed and the good partition's merges are
+  inconsistent → learned false regardless of preferred polarity. The merge
+  positive phases themselves are load-bearing (removing them → −33929).
+- Whole-upstream seeding failed for two reasons: (a) `#heuristic` bodies are
+  dynamic and the derived/embedded choice domain (`objectInObject`) never
+  materializes along the bad trajectory — you cannot sign-bias a choice that
+  doesn't exist in that basin (Prolog escapes this chicken-and-egg by
+  re-scanning its guess ladder after saturation); (b) the kind tier decides
+  `deletingDestructor(M)` first (430, true), and the exactly-one kind choice
+  then implies `constructor(M)` false before its seeded sign is consulted.
+- The **kind tier is the root cause**: it is non-circular (static domain given
+  methods), decided early, and its default deleting>real>ctor order with
+  blanket true phases misclassifies all 56 certain methods as destructors.
+  Measured detail (55 s probe with kind #shows): the deleting tier (430) is a
+  **no-op on TinyXml** — reasonNOTDeletingDestructor_F fixes
+  `-deletingDestructor` for 3,145/3,164 methods at level 0 — so the culprit is
+  the **realDestructor tier (420, true)**, the first available positive
+  decision, whose exactly-one implies `constructor=false` before the ctor tier
+  is consulted (free-basin certain split: 0 ctor / 56 real / 0 deleting).
+  Prolog's guessRealDestructor only guesses methods paired with an
+  already-confirmed deleting destructor (guess.pl:1395), i.e. zero guesses on
+  this input — the blanket 420-true phase corresponds to nothing in the
+  reference. Each manufactured destructor kills a constructor and its entire
+  downstream tree (objectInObject candidates → composition rewards →
+  strong-merge consistency). Fixing this one layer lets everything else follow
+  by ordinary propagation and beats even the hard-pinned reference partition
+  (which sacrifices 12 method rewards to exactness).
+
+Champion overlay (candidate to become the ctorsdtors.lp default, pending
+review — note Prolog's dtor-first *guess order* is evidence-gated there,
+unlike the ASP tier's blanket positive phase, so ctor-first here is not
+unfaithful; on TinyXml the deleting-sign line is inert (see above), so the
+effective change is just constructor above realDestructor — the minimal
+principled edit is ctor on top plus dropping/evidence-gating the destructor
+heads' blanket true phases):
+
+```prolog
+#heuristic constructor(M) : certainConstructorOrDestructor(M). [430@11, level]
+#heuristic constructor(M) : certainConstructorOrDestructor(M). [1@11, sign]
+#heuristic realDestructor(M) : certainConstructorOrDestructor(M). [420@11, level]
+#heuristic deletingDestructor(M) : certainConstructorOrDestructor(M). [410@11, level]
+#heuristic deletingDestructor(M) : certainConstructorOrDestructor(M). [-1@11, sign]
+```
+
+Caveats/next: first model arrives later (148 s vs 45 s) — worse anytime below
+~150 s; validate on ooex vs2008/vs2010, ep_srv, Release builds before making it
+the default; single-input tuning risk (TinyXml may genuinely lack deleting
+destructors — consider an evidence-gated variant, e.g. positive deleting phase
+only with `insnCallsDelete` evidence, mirroring Prolog's guards). The LB
+certificate gap (−54902 vs −46542) remains a separate encoding-level issue
+(IHS/MIP path). Traces/overlays from this session are in the 2026-07-10 job
+scratchpad (`prolog_order_300.jsonl`, `forced_300.jsonl`, `seed_*`,
+`kind_ctor_first_300.jsonl`).

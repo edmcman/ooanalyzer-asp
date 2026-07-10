@@ -161,28 +161,32 @@ deletingDestructor(Method) :-
     all_input_priority > 0,
     certainConstructorOrDestructor(Method). [4@all_input_priority, level]
 
-% The Prolog driver tries deleting-destructor, real-destructor, and then
-% constructor guesses in that order.  Different levels select the preferred
-% head of the ASP exactly-one kind choice while keeping the whole family below
-% vftable extents and above ordinary constructor guesses.
-#heuristic deletingDestructor(Method) :
-    prolog_order_priority > 0,
-    certainConstructorOrDestructor(Method). [430@prolog_order_priority, level]
-#heuristic deletingDestructor(Method) :
-    prolog_order_priority > 0,
-    certainConstructorOrDestructor(Method). [1@prolog_order_priority, true]
-#heuristic realDestructor(Method) :
-    prolog_order_priority > 0,
-    certainConstructorOrDestructor(Method). [420@prolog_order_priority, level]
-#heuristic realDestructor(Method) :
-    prolog_order_priority > 0,
-    certainConstructorOrDestructor(Method). [1@prolog_order_priority, true]
+% Constructor-first kind tier. The Prolog driver's deleting/real destructor
+% guesses are evidence-gated (guess.pl:1395 requires a confirmed deleting
+% destructor; guess.pl:1504 requires likelyDeletingDestructor/virtual-dtor
+% evidence), so a certain method without destructor evidence falls through to
+% the constructor guesses there. The previous blanket deleting>real>ctor true
+% phases had no Prolog counterpart and manufactured destructors: the
+% exactly-one kind choice implied constructor=false before the ctor tier was
+% ever consulted, collapsing the downstream ctor-driven structure
+% (objectInObject candidates, composition rewards, strong-merge consistency).
+% Measured on TinyXml-NewDebug (300 s champion flags): [-704,-41382] →
+% [-704,-46542]. See the 2026-07-10 entry in
+% .state/merge-optimization-blocker.md; the faithful evidence-gated variant is
+% tracked in TODO.md.
+% Both destructor heads keep positive phases: for a known destructor of
+% unknown kind, Prolog blind-guesses deleting=true (guess.pl:1526, citing
+% reasonNOTRealDestructor_H/F), and reasonNOTDeletingDestructor_F already
+% pre-empts the deleting tier at level 0 on delete-bearing inputs.
 #heuristic constructor(Method) :
     prolog_order_priority > 0,
-    certainConstructorOrDestructor(Method). [410@prolog_order_priority, level]
-#heuristic constructor(Method) :
+    certainConstructorOrDestructor(Method). [430@prolog_order_priority, true]
+#heuristic realDestructor(Method) :
     prolog_order_priority > 0,
-    certainConstructorOrDestructor(Method). [1@prolog_order_priority, true]
+    certainConstructorOrDestructor(Method). [420@prolog_order_priority, true]
+#heuristic deletingDestructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [410@prolog_order_priority, true]
 
 % ============================================================
 % GUESS
