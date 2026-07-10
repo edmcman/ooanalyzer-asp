@@ -1,0 +1,52 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+10:23:10 Grounding...
+10:23:14 Grounding done (4.01s)
+10:23:14 Solving...
+Solving...
+10:26:01 Model found (171.55s): [-704, -45378]
+Answer: 1 (Time: 171.655s)
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=180 --stats --benchmark --const weak_merge_input_phase=1 --const min_vftable_size_total=704
+Optimization: -704 -45378
+*** Info : (ooanalyzer): Sending shutdown signal...
+10:26:10 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.134 seconds
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 1+
+  Optimum    : unknown
+Optimization : -704 -45378
+Calls        : 1
+Time         : 180.006s (Solving: 171.37s 1st Model: 163.01s Unsat: 0.00s)
+CPU Time     : 179.992s
+
+Choices      : 66309425 (Domain: 40029906)
+Conflicts    : 21536    (Analyzed: 21536)
+Restarts     : 96       (Average: 224.33 Last: 11 Blocked: 0)
+Model-Level  : 23124.0 
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 168633   (Deleted: 130384)
+  Binary     : 832      (Ratio:   0.49%)
+  Ternary    : 3073     (Ratio:   1.82%)
+  Conflict   : 21536    (Average Length:  257.3 Ratio:  12.77%) 
+  Loop       : 540      (Average Length:   31.4 Ratio:   0.32%) 
+  Other      : 146557   (Average Length:  247.0 Ratio:  86.91%) 
+Backjumps    : 21536    (Average: 3076.39 Max: 22325 Sum: 66253216)
+  Executed   : 21517    (Average: 3076.39 Max: 22325 Sum: 66253197 Ratio: 100.00%)
+  Bounded    : 19       (Average:  1.00 Max:   1 Sum:     19 Ratio:   0.00%)
+
+Rules        : 2759589  (Original: 2754624)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 4817     (Original: 5143)
+Atoms        : 383323  
+Bodies       : 2533820  (Original: 2532654)
+  Sum        : 2490    
+  Count      : 9        (Original: 4760)
+Equivalences : 376992   (Atom=Atom: 73058 Body=Body: 51965 Other: 251969)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 563551   (Eliminated:    0 Frozen: 207758)
+Constraints  : 1140839  (Binary:  47.3% Ternary:  45.3% Other:   7.4%)
+
+INTERRUPTED

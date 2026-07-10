@@ -1,0 +1,7 @@
+run	budget_s	best_cost	models	max_stall_s	choices	conflicts	restarts	avg_conflict_len	avg_backjump	verdict
+baseline_clean	300	-704,-37521	8	151.25	26994964	345954	858	1347.2	68.26	better quality, worse cadence
+all_input_common_probe	120	-704,-36944	12	42.80	22735131	119281	374	1319.2	178.12	cadence probe
+all_input_common_clean	300	-704,-37129	19	69.83	42568839	551489	1326	1369.8	67.89	keep opt-in for cadence
+all_input_tiered_probe	120	-704,-36944	12	29.89	22099992	100181	286	1283.5	209.06	same logical cost sequence
+all_input_common_long	1800	-704,-37267	27	723.85	103113670	4530721	8190	1374.1	15.98	front-loaded cadence; long plateaus remain
+prolog_order_decide_inputs	300	-704,-41382	3	191.01	46280435	173765	507	536.1	256.65	better basin immediately; later plateau remains

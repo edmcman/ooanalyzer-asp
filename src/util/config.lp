@@ -41,6 +41,23 @@
 #const vftable_heuristic_priority = 3.
 #const vftable_size_heuristic_priority = 3.
 
+% Optional global input-first overlay.  A value > 0 puts every genuine
+% search-input/choice atom in that Domain-heuristic priority tier above ordinary
+% derived atoms while retaining each family's existing relative level and phase
+% directives.  This front-loads TinyXml incumbents but a 30-minute run still
+% contained a 724-second plateau and found a worse secondary objective; use it
+% for diagnostics, not as an anti-stall setting. 0 disables it by default.
+#const all_input_priority = 0.
+
+% Default approximation of the procedural guess ladder in the reference
+% Prolog solver (setup.pl:506-582).  A value > 0 enables family-specific
+% Domain levels at this directive priority: vftables, derived-vs-embedded,
+% methods, vftable extents, destructor/constructor classification, normal
+% merges, then late merges.  Positive phases mirror Prolog's first branch.
+% Keep this separate from all_input_priority so the two experiments can be
+% measured independently. Set to 0 to restore the previous Domain ordering.
+#const prolog_order_priority = 10.
+
 % Merge input phase knobs for domain-heuristic experiments:
 %   0 = conservative false phase (current default)
 %   1 = optimistic true phase
@@ -108,5 +125,24 @@ guessEnabled(Gate) :-
     enable_dynamic_guess_gates != 0,
     guessGate(Gate),
     dynamicallyGated(Gate). [1, false]
+#heuristic guessEnabled(Gate) :
+    all_input_priority > 0,
+    enable_dynamic_guess_gates != 0,
+    guessGate(Gate),
+    dynamicallyGated(Gate). [4@all_input_priority, level]
+
+% Prolog reaches the merge family late, but tries its positive branch once it
+% gets there.  The gate itself must therefore open just before normal merge
+% inputs become eligible.
+#heuristic guessEnabled(merge) :
+    prolog_order_priority > 0,
+    enable_dynamic_guess_gates != 0,
+    guessGate(merge),
+    dynamicallyGated(merge). [250@prolog_order_priority, level]
+#heuristic guessEnabled(merge) :
+    prolog_order_priority > 0,
+    enable_dynamic_guess_gates != 0,
+    guessGate(merge),
+    dynamicallyGated(merge). [1@prolog_order_priority, true]
 
 #show guessEnabled/1.

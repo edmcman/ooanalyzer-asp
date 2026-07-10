@@ -1,0 +1,61 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+10:41:03 Grounding...
+10:41:07 Grounding done (3.57s)
+10:41:07 Solving...
+Solving...
+10:43:37 Model found (153.67s): [-704, -45407]
+Answer: 1 (Time: 153.778s)
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=180 --stats --benchmark --const weak_merge_input_phase=1 --const weak_merge_after_vftable_complete=1
+Optimization: -704 -45407
+10:43:51 Model found (167.64s, +13.96s): [-704, -45544]
+Answer: 2 (Time: 167.743s)
+Optimization: -704 -45544
+10:43:53 Model found (169.35s, +1.72s): [-704, -45614]
+Answer: 3 (Time: 169.459s)
+Optimization: -704 -45614
+10:44:01 Model found (178.00s, +8.65s): [-704, -45740]
+Answer: 4 (Time: 178.104s)
+Optimization: -704 -45740
+*** Info : (ooanalyzer): Sending shutdown signal...
+10:44:03 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.140 seconds
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 4+
+  Optimum    : unknown
+Optimization : -704 -45740
+Calls        : 1
+Time         : 180.013s (Solving: 172.07s 1st Model: 145.84s Unsat: 0.00s)
+CPU Time     : 180.003s
+
+Choices      : 69724435 (Domain: 39393281)
+Conflicts    : 37049    (Analyzed: 37049)
+Restarts     : 141      (Average: 262.76 Last: 36791 Blocked: 0)
+Model-Level  : 22781.2 
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 313156   (Deleted: 262948)
+  Binary     : 1062     (Ratio:   0.34%)
+  Ternary    : 3661     (Ratio:   1.17%)
+  Conflict   : 37049    (Average Length:  286.7 Ratio:  11.83%) 
+  Loop       : 1145     (Average Length:   31.6 Ratio:   0.37%) 
+  Other      : 274962   (Average Length:  237.4 Ratio:  87.80%) 
+Backjumps    : 37049    (Average: 1874.33 Max: 19794 Sum: 69441899)
+  Executed   : 37026    (Average: 1874.33 Max: 19794 Sum: 69441876 Ratio: 100.00%)
+  Bounded    : 23       (Average:  1.00 Max:   1 Sum:     23 Ratio:   0.00%)
+
+Rules        : 2760281  (Original: 2755361)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 5619     (Original: 5990)
+Atoms        : 383376  
+Bodies       : 2535543  (Original: 2534370)
+  Sum        : 2514    
+  Count      : 9        (Original: 4760)
+Equivalences : 378620   (Atom=Atom: 73247 Body=Body: 52380 Other: 252993)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 565193   (Eliminated:    0 Frozen: 207970)
+Constraints  : 1145575  (Binary:  47.3% Ternary:  45.3% Other:   7.4%)
+
+INTERRUPTED

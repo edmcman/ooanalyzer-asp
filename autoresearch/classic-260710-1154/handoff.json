@@ -1,0 +1,34 @@
+{
+  "mode": "classic",
+  "goal": "Test whether prioritizing all genuine choice/input atoms improves TinyXml BB anytime search",
+  "outcome": "negative_long_run",
+  "verdict": "front_loaded_cadence_does_not_prevent_plateaus",
+  "best_candidate": [-704, -37267],
+  "baseline": [-704, -37521],
+  "verification": "63/63 propagator tests passed; manual SAT/UNSAT checks passed",
+  "source_overlay_retained": true,
+  "configuration": "--const all_input_priority=10",
+  "cadence": {
+    "baseline_models": 8,
+    "candidate_models_300s": 19,
+    "candidate_models_1800s": 27,
+    "baseline_max_stall_seconds": 151.25,
+    "candidate_max_stall_300s_seconds": 69.83,
+    "candidate_max_stall_1800s_seconds": 723.85
+  },
+  "prolog_order_followup": {
+    "configuration": "--decide-inputs --const prolog_order_priority=10",
+    "best_cost_300s": [-704, -41382],
+    "first_model_seconds": 48.92,
+    "models": 3,
+    "max_stall_seconds": 191.01,
+    "verdict": "finds a much better initial basin but does not eliminate the later plateau"
+  },
+  "inspector_caveat": "one predicate label per solver literal hides input/output aliases",
+  "artifacts": [
+    "README.md",
+    "results.tsv",
+    "input_priority_probe_120.jsonl",
+    "input_priority_tiered_probe_120.jsonl"
+  ]
+}

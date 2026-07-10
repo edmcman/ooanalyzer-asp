@@ -1,0 +1,46 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+10:02:03 Grounding...
+10:02:07 Grounding done (4.05s)
+10:02:07 Solving...
+Solving...
+*** Info : (ooanalyzer): Sending shutdown signal...
+10:03:03 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.132 seconds
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 60.003s (Solving: 51.27s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 59.999s
+
+Choices      : 6096374  (Domain: 2985544)
+Conflicts    : 111023   (Analyzed: 111023)
+Restarts     : 372      (Average: 298.45 Last: 0 Blocked: 0)
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 140573   (Deleted: 132413)
+  Binary     : 584      (Ratio:   0.42%)
+  Ternary    : 2492     (Ratio:   1.77%)
+  Conflict   : 111023   (Average Length:   66.6 Ratio:  78.98%) 
+  Loop       : 197      (Average Length:   27.0 Ratio:   0.14%) 
+  Other      : 29353    (Average Length:   51.4 Ratio:  20.88%) 
+Backjumps    : 111023   (Average: 43.09 Max: 4719 Sum: 4784393)
+  Executed   : 110995   (Average: 43.09 Max: 4719 Sum: 4784337 Ratio: 100.00%)
+  Bounded    : 28       (Average:  2.00 Max:   2 Sum:     56 Ratio:   0.00%)
+
+Rules        : 2764965  (Original: 2760349)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 10369    (Original: 11044)
+Atoms        : 383323  
+Bodies       : 2533820  (Original: 2532654)
+  Sum        : 2490    
+  Count      : 9        (Original: 4760)
+Equivalences : 378217   (Atom=Atom: 73233 Body=Body: 52140 Other: 252844)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 567024   (Eliminated:    0 Frozen: 208091)
+Constraints  : 1147950  (Binary:  47.6% Ternary:  45.1% Other:   7.4%)
+
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=usc,oll,disjoint,succinct,stratify --heuristic=domain --restart-on-model --decide-inputs --time-limit=60 --stats --benchmark --const enable_reward_heuristics=1 --const reward_heuristic_priority=0
+INTERRUPTED

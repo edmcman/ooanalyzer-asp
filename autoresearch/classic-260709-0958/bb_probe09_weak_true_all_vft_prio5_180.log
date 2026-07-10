@@ -1,0 +1,46 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+11:38:15 Grounding...
+11:38:19 Grounding done (3.69s)
+11:38:19 Solving...
+Solving...
+*** Info : (ooanalyzer): Sending shutdown signal...
+11:41:15 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.143 seconds
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 180.009s (Solving: 171.85s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 179.991s
+
+Choices      : 67663526 (Domain: 40956317)
+Conflicts    : 18383    (Analyzed: 18383)
+Restarts     : 86       (Average: 213.76 Last: 23 Blocked: 0)
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 196803   (Deleted: 152955)
+  Binary     : 628      (Ratio:   0.32%)
+  Ternary    : 2427     (Ratio:   1.23%)
+  Conflict   : 18383    (Average Length:  279.8 Ratio:   9.34%) 
+  Loop       : 301      (Average Length:   32.2 Ratio:   0.15%) 
+  Other      : 178119   (Average Length:  256.2 Ratio:  90.51%) 
+Backjumps    : 18383    (Average: 3679.10 Max: 13082 Sum: 67632902)
+  Executed   : 18364    (Average: 3679.10 Max: 13082 Sum: 67632883 Ratio: 100.00%)
+  Bounded    : 19       (Average:  1.00 Max:   1 Sum:     19 Ratio:   0.00%)
+
+Rules        : 2759479  (Original: 2754514)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 4817     (Original: 5143)
+Atoms        : 383376  
+Bodies       : 2533885  (Original: 2532712)
+  Sum        : 2514    
+  Count      : 9        (Original: 4760)
+Equivalences : 378386   (Atom=Atom: 73247 Body=Body: 52152 Other: 252987)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 563777   (Eliminated:    0 Frozen: 207970)
+Constraints  : 1141501  (Binary:  47.3% Ternary:  45.3% Other:   7.4%)
+
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=180 --stats --benchmark --const weak_merge_input_phase=1 --const vftable_base_heuristic_priority=5 --const vftable_heuristic_priority=5 --const vftable_size_heuristic_priority=5
+INTERRUPTED

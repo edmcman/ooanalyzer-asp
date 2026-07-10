@@ -67,6 +67,21 @@ guessMethodDomain(M) :- possibleMethod(M).
     enable_input_heuristics != 0,
     guessEnabled(method),
     guessMethodDomain(M). [1@method_heuristic_priority, true]
+#heuristic method(M) :
+    all_input_priority > 0,
+    guessEnabled(method),
+    guessMethodDomain(M). [1@all_input_priority, level]
+
+% Prolog guesses methods after currently available vftables/inheritance, but
+% before vftable entries and constructor/destructor classification.
+#heuristic method(M) :
+    prolog_order_priority > 0,
+    guessEnabled(method),
+    guessMethodDomain(M). [600@prolog_order_priority, level]
+#heuristic method(M) :
+    prolog_order_priority > 0,
+    guessEnabled(method),
+    guessMethodDomain(M). [1@prolog_order_priority, true]
 
 % ============================================================
 % REWARDS

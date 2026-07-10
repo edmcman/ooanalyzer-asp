@@ -1,0 +1,46 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+10:03:18 Grounding...
+10:03:22 Grounding done (4.01s)
+10:03:22 Solving...
+Solving...
+*** Info : (ooanalyzer): Sending shutdown signal...
+10:04:18 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.135 seconds
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 60.009s (Solving: 51.42s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 60.004s
+
+Choices      : 35935677 (Domain: 1754309)
+Conflicts    : 6750     (Analyzed: 6750)
+Restarts     : 30       (Average: 225.00 Last: 1580 Blocked: 0)
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 22511    (Deleted: 13893)
+  Binary     : 669      (Ratio:   2.97%)
+  Ternary    : 2564     (Ratio:  11.39%)
+  Conflict   : 6750     (Average Length:   81.8 Ratio:  29.99%) 
+  Loop       : 591      (Average Length:   29.5 Ratio:   2.63%) 
+  Other      : 15170    (Average Length:   22.9 Ratio:  67.39%) 
+Backjumps    : 6750     (Average: 2304.05 Max: 12980 Sum: 15552334)
+  Executed   : 6720     (Average: 2304.05 Max: 12980 Sum: 15552304 Ratio: 100.00%)
+  Bounded    : 30       (Average:  1.00 Max:   1 Sum:     30 Ratio:   0.00%)
+
+Rules        : 2759413  (Original: 2754448)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 4817     (Original: 5143)
+Atoms        : 383323  
+Bodies       : 2533820  (Original: 2532654)
+  Sum        : 2490    
+  Count      : 9        (Original: 4760)
+Equivalences : 378217   (Atom=Atom: 73233 Body=Body: 52140 Other: 252844)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 563725   (Eliminated:    0 Frozen: 207932)
+Constraints  : 1141362  (Binary:  47.3% Ternary:  45.3% Other:   7.4%)
+
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --restart-on-model --decide-inputs --time-limit=60 --stats --benchmark
+INTERRUPTED

@@ -302,6 +302,38 @@ classHasNoDerived(Class) :-
     guessEnabled(derived_class),
     objectInObject(Outer, Inner, Off).          % guess.pl:317 / rules.pl:1740 / rules.pl:1960
 
+% Both heads are genuine inputs: the choice is lower-bounded rather than
+% exactly-one, so prioritizing just one head would leave the other available as
+% an unprioritized decision.
+#heuristic embeddedObject(Outer, Inner, Off) :
+    all_input_priority > 0,
+    guessEnabled(derived_class),
+    objectInObject(Outer, Inner, Off). [1@all_input_priority, level]
+#heuristic derivedClass(Outer, Inner, Off) :
+    all_input_priority > 0,
+    guessEnabled(derived_class),
+    objectInObject(Outer, Inner, Off). [1@all_input_priority, level]
+
+% Prolog tries inheritance before embedding and places this family before
+% method guessing.  Target the two choice heads explicitly because the ASP
+% choice is lower-bounded rather than exactly-one.
+#heuristic derivedClass(Outer, Inner, Off) :
+    prolog_order_priority > 0,
+    guessEnabled(derived_class),
+    objectInObject(Outer, Inner, Off). [700@prolog_order_priority, level]
+#heuristic derivedClass(Outer, Inner, Off) :
+    prolog_order_priority > 0,
+    guessEnabled(derived_class),
+    objectInObject(Outer, Inner, Off). [1@prolog_order_priority, true]
+#heuristic embeddedObject(Outer, Inner, Off) :
+    prolog_order_priority > 0,
+    guessEnabled(derived_class),
+    objectInObject(Outer, Inner, Off). [700@prolog_order_priority, level]
+#heuristic embeddedObject(Outer, Inner, Off) :
+    prolog_order_priority > 0,
+    guessEnabled(derived_class),
+    objectInObject(Outer, Inner, Off). [1@prolog_order_priority, false]
+
 % ============================================================
 % REWARDS
 % ============================================================

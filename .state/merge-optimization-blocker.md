@@ -419,3 +419,175 @@ vftable writers and entries before promoting all methods.
 3. Validate the champion on more/bigger inputs (mysql-scale) and run the
    proper edit-distance metric (needs `~/ooanalyzer-tests`, NOT on this host —
    don't search the filesystem for it).
+
+## BB/domain exact-command plateau analysis (2026-07-10, i9-13900HX)
+
+Current HEAD `4764b6f` (after removing `&classHasWitness`). Exact requested
+configuration, run through the required uv environment:
+
+```sh
+uv run --offline --no-sync python ooanalyzer.py \
+  examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 \
+  --opt-strategy=bb,lin --heuristic=domain \
+  --opt-heuristic=sign,model --restart-on-model \
+  --time-limit=300 --stats --show-guesses
+```
+
+The native trace `/tmp/fun.jsonl` reproduced the clean run's exact eight-cost
+sequence. Grounding finished at 5.35 s; models reached `[-704,-36097]` at
+48.69 s and `[-704,-37357]` at 50.73 s, then nothing until
+`[-704,-37419]`/`[-704,-37489]` at 188.90/189.08 s. The last two improvements
+were `[-704,-37493]` at 227.08 s and `[-704,-37521]` at 234.23 s; no further
+model arrived by 300 s. The plateau is active search, not a hang or useful
+optimality proof: the clean run made 27.0M choices, 346k conflicts, and 858
+restarts. Accepted models averaged decision level 19,666, while conflicts
+backjumped only 68 levels on average and learned conflict clauses averaged
+1,347 literals. The clauses therefore rule out narrow, deeply contextual
+partitions and have weak leverage on sibling partitions.
+
+All accepted models had the full high-priority `-704` vftable score, all
+3164 method rewards, and the same constructor reward. From the first plateau
+incumbent (`-37357`) to the final model (`-37521`), the solver traded correlated
+families rather than adding independent rewards: strong merge `+100`, weak
+merge `-8`, weak-G1 `-18`, composition `+90`, net `+164`. A typical attempt
+chooses an objective-favoured reward, reconstructs supporting merge edges,
+activates many `&sameClass`/containment consequences, and only then discovers a
+class-size or conditional `notMergeUnsorted` conflict.
+
+The trace confirms the two-layer decision stack. During the first plateau,
+62% of sampled direct decisions were symbolically aliased to `classSizeGTE`;
+44% of sampled backtracked assignments were `classSizeGTE`, 21% were
+`notMergeUnsorted`, and 10% were `relevantOffset`. Near the stack frontier,
+about 90% of the final 100 decision *labels* were weak-G1/weak-merge/late-F2/
+composition reward atoms. This is not evidence that clasp ignored input
+priorities: the inspector stores one predicate name per absolute solver literal
+and the last symbolic alias overwrites earlier names. Preprocessing can map an
+input and its derived reward to the same literal. Predicate percentages locate
+logical regions but cannot distinguish input decisions from output aliases.
+The current free-witness `classSizeGTE_F` rule (`size.lp:23`) is a
+recursive containment size lower bound: if `Class` contains `InnerClass` at
+`Off`, and any `Wi` in `InnerClass`'s live class has lower bound `InnerSize`,
+derive `Class >= Off + InnerSize`. Its free `Wi` join through solver-time
+`&sameClass` contributes to the current 785,521-node non-tight SCC and explains
+why size-support atoms dominate this BB trace. This is an additional search
+tax, not the underlying conditional-merge difficulty; the naive encoding had
+still beaten `&classHasWitness` in the matched removal A/B, so do not restore
+that machinery merely to shrink the SCC.
+
+Decision-control conclusion: ASP `#heuristic` directives can statically or
+conditionally prioritize and phase the *causal input atoms* (for example,
+`mergeClasses(A,B)` for weak/late candidates), and the July-09 vftable-then-
+weak-true experiment demonstrates that such ordering can move search to a much
+better basin. They cannot exactly implement `--decide-inputs`. The Rust
+`decide()` callback reacts to clasp's particular fallback `&sameClass(X,Y)`,
+inspects the current assignment, prefers the still-free direct merge edge, then
+uses per-entity rotating cursors to choose a still-free incident edge. A static
+ground heuristic neither observes the fallback query nor performs that
+assignment-dependent support selection. Likewise, heuristic directives on
+derived reward atoms only encourage outputs; they do not choose which of
+multiple currently available merge/path supports should justify them, and the
+direct reward-output experiment produced no incumbent. Static input heuristics
+are a useful approximation when reward-to-input support is one-to-one; dynamic
+fallback-to-support redirection needs a decision callback (or an equivalent
+custom heuristic API).
+
+Most promising incumbent-search changes remain: robust two-stage optimization
+(prove/fix the vftable objective, then switch weak/late input phases),
+class-component large-neighbourhood search that changes correlated merge
+bundles, and extending the native decision callback from `&sameClass` outputs
+to reward/derived fallbacks with a well-defined causal input mapping. For proof
+progress, continue the IHS path with a MIP hitting-set solver. Do not expect
+`--decide-inputs` alone to solve the current plateau: the matched current-HEAD
+300 s A/B was `-37327` with it versus `-37521` without it.
+
+### All-choice-input Domain priority experiment (2026-07-10) — front-loaded
+### cadence only; 30-minute run plateaus
+
+Tested the heuristic-only approximation suggested by the exact trace: add a
+default-off high-priority `level` directive to every genuine choice input
+(dynamic gate, methods, constructor/destructor kind, constructor guesses,
+vftables and sizes, embedded-vs-derived classification, and strong/weak/late
+merge inputs).  Existing true/false phases remained unchanged.  Full artifacts
+and traces are in `autoresearch/classic-260710-1154/`.
+
+The overlay changed the trace's symbolic labels. In the 120 s trace, explicit
+merge/embedded/derived labels rose from ~4% to ~15% of the final 100 decision
+stack entries, while derived reward labels fell from ~90% to ~62%. Because the
+inspector retains only one symbolic alias per solver literal, this locates a
+changed logical region but does not measure distinct input-vs-output decisions.
+It did not improve objective or conflict leverage. The clean 300 s run reached
+`[-704,-37129]` in 19
+models with 42.57M choices, 551k conflicts, average conflict clause 1369.8, and
+average backjump 67.89.  The exact clean baseline reached `[-704,-37521]` in 8
+models with 26.99M choices, 346k conflicts, average conflict clause 1347.2, and
+average backjump 68.26.  Thus blanket input priority produced 58% more choices
+and 59% more conflicts, but a 392-point worse secondary objective.
+
+Under the subsequently clarified *cadence* metric, the 300-second result looked useful:
+the candidate emitted 19 improving models instead of 8 and reduced the longest
+between-model silence from 151.25 s to 69.83 s.  Its improvement times continued
+through 233 s rather than concentrating almost entirely in the baseline's
+initial burst plus one 199 s escape.  It still had a 67 s trailing plateau at
+the cutoff, so this is "less stuck", not proof that it can never plateau.
+
+A refinement preserved the prior vftable/strong/weak/base priority hierarchy
+by adding a common priority offset instead of flattening every input at one
+`@` value.  Its 120 s run reproduced the exact same 12-cost sequence and
+`[-704,-36944]` endpoint, ruling out flattened family priorities as the cause.
+
+The requested 1,800-second continuation disproved that interpretation.  It
+finished at `[-704,-37267]` after 27 models, 103.11M choices, 4.53M conflicts,
+and 8,190 restarts.  Model 19 at 230.14 s was followed by no improvement until
+model 20 at 954.00 s: a **723.85 s** plateau for an 8-point gain.  Another
+446.01 s plateau preceded a short burst, and the final 4-point improvement
+took 197.68 s.  Learned conflict clauses still averaged 1,374 literals and
+average backjump fell to 15.98 levels.  Thus the apparent 300-second cadence
+win was front-loaded and cutoff-dependent, not an anti-stall effect.
+
+The overlay remains default-off and available with
+`--const all_input_priority=10` as a diagnostic for causal-input branching; do
+not recommend it as a performance setting.  Query-directed redirection,
+semantic family ordering, reward-to-specific-support mapping, or
+class-component bundle moves remain the better directions.
+
+### Prolog-family-order Domain experiment (2026-07-10)
+
+The reference Prolog driver is not merely "input first." Its `guess/0` ladder
+(`pharos/share/prolog/oorules/setup.pl:506-582`) repeatedly prioritizes
+vftables and inheritance classification, then methods and vftable entries,
+then destructor/constructor classification, then normal merges, and only then
+late merges. Each accepted guess is followed by forward-rule saturation and a
+fresh scan from the top. Most guess predicates try the positive branch first;
+set-valued families use a sorted, growing `tryBinarySearch` batch.
+
+Implemented a Domain approximation for the choice families present in v2:
+`prolog_order_priority=10`. Higher-level families preempt lower
+ones when newly enabled, and the dynamic merge gate plus normal/late merge
+inputs use positive phases. This is not exact because some Prolog guess
+families are absent as v2 choices and `#heuristic` cannot reproduce procedural
+cuts or sorted batches.
+
+Focused TinyXml command (requested BB flags plus causal-input redirection):
+
+```sh
+uv run --offline --no-sync python ooanalyzer.py \
+  examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 \
+  --opt-strategy=bb,lin --heuristic=domain \
+  --opt-heuristic=sign,model --restart-on-model --decide-inputs \
+  --const prolog_order_priority=10 --time-limit=300 --stats --benchmark
+```
+
+It reached `[-704,-41358]` at 48.92 s, `[-704,-41374]` at 50.74 s, and
+`[-704,-41382]` at 108.99 s, then plateaued to 300 s. Stats: 46.28M choices,
+173,765 conflicts, 507 restarts, average conflict clause 536.1, average
+backjump 256.65. Blanket input priority at the same cutoff reached only
+`[-704,-37129]`, with 551,489 conflicts, 1369.8-literal conflict clauses, and
+67.89-level backjumps. Verdict: semantic family order reaches a qualitatively
+better partition immediately and improves conflict leverage, but the later
+conditional-merge plateau remains. Use ordering to obtain a decent incumbent;
+use component-level diversification/LNS to keep moving afterward.
+
+Promoted to the default on user request after the measured run. Pass
+`--const prolog_order_priority=0` to restore the previous Domain ordering. A
+60 s verification with the constant omitted reproduced `[-704,-41358]` at
+48.64 s and `[-704,-41374]` at 50.50 s; 63/63 propagator tests passed.

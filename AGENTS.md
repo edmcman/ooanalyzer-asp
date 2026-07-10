@@ -130,6 +130,8 @@ with repeated `--const NAME=VALUE` arguments to `ooanalyzer.py`.
 | `enable_guess_merge` | `1` | Enable `mergeClasses/2` vs `-mergeClasses/2` choices |
 | `enable_guess_derived_class` | `1` | Enable embedded-object vs derived-class choices |
 | `enable_weak_g1_bonus` | `1` | Enable the `guessLateMergeClasses_G1` constructor bonus |
+| `all_input_priority` | `0` | Diagnostic Domain priority for every genuine choice/input atom; `10` front-loads TinyXml models but still produced a 724-second plateau |
+| `prolog_order_priority` | `10` | Default Domain approximation of Prolog's procedural guess-family order and positive-first phases; set to 0 for the prior ordering |
 | `min_vftable_size_total` | `0` | Optional staged-optimization floor on total selected `vfTableSize/2`; 0 disables |
 | `max_vftable_size_total` | `0` | Optional staged-optimization ceiling on total selected `vfTableSize/2`; 0 disables |
 

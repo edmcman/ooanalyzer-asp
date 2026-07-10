@@ -148,6 +148,42 @@ deletingDestructor(Method) :-
 1 { constructor(Method) ; realDestructor(Method) ; deletingDestructor(Method) } 1 :-
     certainConstructorOrDestructor(Method).
 
+% The three-way kind classification is a genuine choice input even when the
+% method is not in a constructor-guess tier.  Cover all three alternatives in
+% the input-first overlay without imposing a new phase among them.
+#heuristic constructor(Method) :
+    all_input_priority > 0,
+    certainConstructorOrDestructor(Method). [4@all_input_priority, level]
+#heuristic realDestructor(Method) :
+    all_input_priority > 0,
+    certainConstructorOrDestructor(Method). [4@all_input_priority, level]
+#heuristic deletingDestructor(Method) :
+    all_input_priority > 0,
+    certainConstructorOrDestructor(Method). [4@all_input_priority, level]
+
+% The Prolog driver tries deleting-destructor, real-destructor, and then
+% constructor guesses in that order.  Different levels select the preferred
+% head of the ASP exactly-one kind choice while keeping the whole family below
+% vftable extents and above ordinary constructor guesses.
+#heuristic deletingDestructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [430@prolog_order_priority, level]
+#heuristic deletingDestructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [1@prolog_order_priority, true]
+#heuristic realDestructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [420@prolog_order_priority, level]
+#heuristic realDestructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [1@prolog_order_priority, true]
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [410@prolog_order_priority, level]
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    certainConstructorOrDestructor(Method). [1@prolog_order_priority, true]
+
 % ============================================================
 % GUESS
 % ============================================================
@@ -213,6 +249,47 @@ guessConstructorDomain(Method) :- guessConstructor4Domain(Method).
     enable_input_heuristics != 0,
     guessEnabled(constructor),
     guessConstructor4Domain(Method). [1@0, true]
+
+#heuristic constructor(Method) :
+    all_input_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor1Domain(Method). [4@all_input_priority, level]
+#heuristic constructor(Method) :
+    all_input_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor2Domain(Method). [3@all_input_priority, level]
+#heuristic constructor(Method) :
+    all_input_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor3Domain(Method). [2@all_input_priority, level]
+#heuristic constructor(Method) :
+    all_input_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor4Domain(Method). [1@all_input_priority, level]
+
+% Prolog's likely constructor tiers all precede its unlikely tier, but all are
+% below the earlier destructor/NOT-constructor pass.  Retain the four internal
+% confidence levels within this family.
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor1Domain(Method). [304@prolog_order_priority, level]
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor2Domain(Method). [303@prolog_order_priority, level]
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor3Domain(Method). [302@prolog_order_priority, level]
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    guessEnabled(constructor),
+    guessConstructor4Domain(Method). [301@prolog_order_priority, level]
+#heuristic constructor(Method) :
+    prolog_order_priority > 0,
+    guessEnabled(constructor),
+    guessConstructorDomain(Method). [1@prolog_order_priority, true]
 
 % ============================================================
 % REWARDS

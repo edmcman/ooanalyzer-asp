@@ -1,0 +1,73 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+10:04:38 Grounding...
+10:04:42 Grounding done (4.02s)
+10:04:42 Solving...
+Solving...
+10:06:26 Model found (108.57s): [-704, -36388]
+Answer: 1 (Time: 108.675s)
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --restart-on-model --decide-inputs --time-limit=180 --stats --benchmark
+Optimization: -704 -36388
+10:06:26 Model found (108.69s, +0.12s): [-704, -36588]
+Answer: 2 (Time: 108.793s)
+Optimization: -704 -36588
+10:06:30 Model found (112.20s, +3.51s): [-704, -36592]
+Answer: 3 (Time: 112.304s)
+Optimization: -704 -36592
+10:06:31 Model found (113.31s, +1.11s): [-704, -36804]
+Answer: 4 (Time: 113.415s)
+Optimization: -704 -36804
+10:06:34 Model found (116.96s, +3.66s): [-704, -37297]
+Answer: 5 (Time: 117.072s)
+Optimization: -704 -37297
+10:06:35 Model found (117.24s, +0.27s): [-704, -37402]
+Answer: 6 (Time: 117.346s)
+Optimization: -704 -37402
+10:06:38 Model found (120.57s, +3.33s): [-704, -37408]
+Answer: 7 (Time: 120.676s)
+Optimization: -704 -37408
+10:07:32 Model found (174.82s, +54.25s): [-704, -37442]
+Answer: 8 (Time: 174.930s)
+Optimization: -704 -37442
+*** Info : (ooanalyzer): Sending shutdown signal...
+10:07:37 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.141 seconds
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 8+
+  Optimum    : unknown
+Optimization : -704 -37442
+Calls        : 1
+Time         : 180.011s (Solving: 171.37s 1st Model: 100.03s Unsat: 0.00s)
+CPU Time     : 179.997s
+
+Choices      : 86523360 (Domain: 3904910)
+Conflicts    : 113658   (Analyzed: 113658)
+Restarts     : 317      (Average: 358.54 Last: 3072 Blocked: 0)
+Model-Level  : 26034.8 
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 173220   (Deleted: 158512)
+  Binary     : 1742     (Ratio:   1.01%)
+  Ternary    : 6186     (Ratio:   3.57%)
+  Conflict   : 113658   (Average Length: 1172.9 Ratio:  65.61%) 
+  Loop       : 2445     (Average Length:   30.1 Ratio:   1.41%) 
+  Other      : 57117    (Average Length:   70.1 Ratio:  32.97%) 
+Backjumps    : 113658   (Average: 194.43 Max: 26258 Sum: 22098004)
+  Executed   : 113616   (Average: 194.43 Max: 26258 Sum: 22097962 Ratio: 100.00%)
+  Bounded    : 42       (Average:  1.00 Max:   1 Sum:     42 Ratio:   0.00%)
+
+Rules        : 2759413  (Original: 2754448)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 4817     (Original: 5143)
+Atoms        : 383323  
+Bodies       : 2533820  (Original: 2532654)
+  Sum        : 2490    
+  Count      : 9        (Original: 4760)
+Equivalences : 378217   (Atom=Atom: 73233 Body=Body: 52140 Other: 252844)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 563725   (Eliminated:    0 Frozen: 207932)
+Constraints  : 1141362  (Binary:  47.3% Ternary:  45.3% Other:   7.4%)
+
+INTERRUPTED

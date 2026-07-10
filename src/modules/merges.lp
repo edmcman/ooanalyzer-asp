@@ -374,6 +374,49 @@ mergeCandidate(A, B) :- lateF2Candidate(A, B).
     not strongMergeCandidate(A, B),
     not weakMergeCandidate(A, B). [5@1, true]
 
+% Optional all-input tier.  These level-only directives preserve the existing
+% true/false phases above while ensuring free merge inputs outrank ordinary
+% derived/reward atoms.  The weights retain strong > weak > late ordering.
+#heuristic mergeClasses(A, B) :
+    all_input_priority > 0,
+    strongMergeCandidate(A, B). [100@all_input_priority, level]
+#heuristic mergeClasses(A, B) :
+    all_input_priority > 0,
+    weakMergeCandidate(A, B). [10@all_input_priority, level]
+#heuristic mergeClasses(A, B) :
+    all_input_priority > 0,
+    lateF2Candidate(A, B),
+    not strongMergeCandidate(A, B),
+    not weakMergeCandidate(A, B). [5@all_input_priority, level]
+
+% Prolog delays positive method-to-class guesses until the structural families
+% above are exhausted, then tries normal vftable-derived merges before the
+% explicitly late F and G families.  The high directive priority also replaces
+% the conservative default false phase for weak/late inputs in this opt-in
+% mode.
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    strongMergeCandidate(A, B). [200@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    strongMergeCandidate(A, B). [1@prolog_order_priority, true]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    lateF2Candidate(A, B),
+    not strongMergeCandidate(A, B),
+    not weakMergeCandidate(A, B). [120@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    lateF2Candidate(A, B),
+    not strongMergeCandidate(A, B),
+    not weakMergeCandidate(A, B). [1@prolog_order_priority, true]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    weakMergeCandidate(A, B). [100@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    weakMergeCandidate(A, B). [1@prolog_order_priority, true]
+
 % ============================================================
 % REWARDS
 % ============================================================

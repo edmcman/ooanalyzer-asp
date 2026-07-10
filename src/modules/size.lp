@@ -170,6 +170,21 @@ candidateVFTableSize(VFTable, Size) :-
     enable_input_heuristics != 0,
     guessEnabled(vftable_size),
     candidateVFTableSize(VFTable, Size). [Size@vftable_size_heuristic_priority, true]
+#heuristic vfTableSize(VFTable, Size) :
+    all_input_priority > 0,
+    guessEnabled(vftable_size),
+    candidateVFTableSize(VFTable, Size). [Size@all_input_priority, level]
+
+% Exact extents are this encoding's decision counterpart to Prolog's
+% positive-first, largest-offset-first vftable-entry guesses.
+#heuristic vfTableSize(VFTable, Size) :
+    prolog_order_priority > 0,
+    guessEnabled(vftable_size),
+    candidateVFTableSize(VFTable, Size). [500@prolog_order_priority, level]
+#heuristic vfTableSize(VFTable, Size) :
+    prolog_order_priority > 0,
+    guessEnabled(vftable_size),
+    candidateVFTableSize(VFTable, Size). [Size@prolog_order_priority, true]
 
 % ============================================================
 % CONSTRAINTS

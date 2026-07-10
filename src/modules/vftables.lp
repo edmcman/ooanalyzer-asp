@@ -258,6 +258,22 @@ possibleVFTableMaxSize(VFTable, MaxSize) :-
     enable_input_heuristics != 0,
     guessEnabled(vftable),
     possibleVFTableMaxSize(VFTable, MaxSize). [MaxSize@vftable_heuristic_priority, true]
+#heuristic vfTable(VFTable) :
+    all_input_priority > 0,
+    guessEnabled(vftable),
+    possibleVFTableMaxSize(VFTable, MaxSize). [MaxSize@all_input_priority, level]
+
+% First available family in the Prolog ladder.  Because possibleVFTable/1 can
+% become true after a method decision, this higher level also recreates
+% Prolog's return to the top of guess/0 after each accepted guess.
+#heuristic vfTable(VFTable) :
+    prolog_order_priority > 0,
+    guessEnabled(vftable),
+    possibleVFTable(VFTable). [800@prolog_order_priority, level]
+#heuristic vfTable(VFTable) :
+    prolog_order_priority > 0,
+    guessEnabled(vftable),
+    possibleVFTable(VFTable). [1@prolog_order_priority, true]
 
 % ============================================================
 % REWARDS

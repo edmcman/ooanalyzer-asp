@@ -1,0 +1,88 @@
+ooanalyzer version 2.0
+Reading from ...oa/TinyXml/tinyXmlTest-NewDebug.exe.lp
+10:19:57 Grounding...
+10:20:01 Grounding done (3.83s)
+10:20:01 Solving...
+Solving...
+10:22:11 Model found (133.61s): [-644, -44675]
+Answer: 1 (Time: 133.714s)
+% Command: ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=180 --stats --benchmark --const weak_merge_input_phase=1
+Optimization: -644 -44675
+10:22:26 Model found (148.59s, +14.97s): [-644, -44817]
+Answer: 2 (Time: 148.688s)
+Optimization: -644 -44817
+10:22:30 Model found (152.80s, +4.21s): [-644, -44846]
+Answer: 3 (Time: 152.900s)
+Optimization: -644 -44846
+10:22:34 Model found (156.84s, +4.04s): [-644, -44930]
+Answer: 4 (Time: 156.942s)
+Optimization: -644 -44930
+10:22:35 Model found (158.23s, +1.38s): [-644, -44951]
+Answer: 5 (Time: 158.325s)
+Optimization: -644 -44951
+10:22:42 Model found (165.36s, +7.13s): [-644, -45028]
+Answer: 6 (Time: 165.457s)
+Optimization: -644 -45028
+10:22:43 Model found (166.47s, +1.11s): [-644, -45340]
+Answer: 7 (Time: 166.571s)
+Optimization: -644 -45340
+10:22:44 Model found (167.41s, +0.94s): [-644, -45382]
+Answer: 8 (Time: 167.508s)
+Optimization: -644 -45382
+10:22:46 Model found (169.00s, +1.59s): [-644, -45387]
+Answer: 9 (Time: 169.100s)
+Optimization: -644 -45387
+10:22:47 Model found (170.14s, +1.14s): [-644, -45425]
+Answer: 10 (Time: 170.239s)
+Optimization: -644 -45425
+10:22:54 Model found (177.15s, +7.01s): [-644, -45430]
+Answer: 11 (Time: 177.251s)
+Optimization: -644 -45430
+10:22:56 Model found (178.64s, +1.49s): [-644, -45440]
+Answer: 12 (Time: 178.744s)
+Optimization: -644 -45440
+10:22:56 Model found (179.26s, +0.62s): [-644, -45683]
+Answer: 13 (Time: 179.361s)
+Optimization: -644 -45683
+*** Info : (ooanalyzer): Sending shutdown signal...
+10:22:57 Solving interrupted by signal/time limit; reporting incumbent
+*** Info : (ooanalyzer): Shutdown completed in 0.150 seconds
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 13+
+  Optimum    : unknown
+Optimization : -644 -45683
+Calls        : 1
+Time         : 180.010s (Solving: 171.59s 1st Model: 125.29s Unsat: 0.00s)
+CPU Time     : 179.984s
+
+Choices      : 72651259 (Domain: 42964741)
+Conflicts    : 23299    (Analyzed: 23299)
+Restarts     : 98       (Average: 237.74 Last: 18 Blocked: 0)
+Model-Level  : 21765.7 
+Problems     : 1        (Average Length: 1.00 Splits: 0)
+Lemmas       : 210948   (Deleted: 127971)
+  Binary     : 938      (Ratio:   0.44%)
+  Ternary    : 3390     (Ratio:   1.61%)
+  Conflict   : 23299    (Average Length:  290.4 Ratio:  11.04%) 
+  Loop       : 395      (Average Length:   32.1 Ratio:   0.19%) 
+  Other      : 187254   (Average Length:  291.0 Ratio:  88.77%) 
+Backjumps    : 23299    (Average: 3104.32 Max: 20565 Sum: 72327509)
+  Executed   : 23277    (Average: 3104.32 Max: 20565 Sum: 72327487 Ratio: 100.00%)
+  Bounded    : 22       (Average:  1.00 Max:   1 Sum:     22 Ratio:   0.00%)
+
+Rules        : 2759413  (Original: 2754448)
+  Choice     : 4715    
+  Minimize   : 2       
+  Heuristic  : 4817     (Original: 5143)
+Atoms        : 383323  
+Bodies       : 2533820  (Original: 2532654)
+  Sum        : 2490    
+  Count      : 9        (Original: 4760)
+Equivalences : 378217   (Atom=Atom: 73233 Body=Body: 52140 Other: 252844)
+Tight        : No       (SCCs: 203 Non-Hcfs: 0 Nodes: 26852 Gammas: 0)
+Variables    : 563725   (Eliminated:    0 Frozen: 207932)
+Constraints  : 1141362  (Binary:  47.3% Ternary:  45.3% Other:   7.4%)
+
+INTERRUPTED
