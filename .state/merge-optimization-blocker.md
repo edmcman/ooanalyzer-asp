@@ -677,3 +677,40 @@ certificate gap (−54902 vs −46542) remains a separate encoding-level issue
 (IHS/MIP path). Traces/overlays from this session are in the 2026-07-10 job
 scratchpad (`prolog_order_300.jsonl`, `forced_300.jsonl`, `seed_*`,
 `kind_ctor_first_300.jsonl`).
+
+## Long-horizon objective/restart A/B (2026-07-11, i9-13900HX)
+
+Full results: `autoresearch/orchestrator-260711-0845/results.tsv`. Runs were
+single-threaded and pinned to distinct physical P cores. The acceptance metric
+preferred post-600-second progress, last-improvement time, and plateau duration
+over a merely better early endpoint.
+
+The matched 1,800-second Domain matrix varied optimization heuristic
+(`sign,model`, `sign`, none), restart-on-model, zero restarts, and slow geometric
+restarts (`x,10000,1.5`). Every one of the eight runs produced exactly one model:
+
+- default `sign,model`: `[-704,-46523]`;
+- no optimization heuristic: `[-704,-46547]`;
+- slow geometric restarts: `[-704,-46577]`;
+- zero-restart variants: `[-704,-46444..-46505]`.
+
+Post-600 gain was zero in every run. A repeat extended to roughly 2,800 seconds
+before user interruption had the same one-model result. Conflict-restart counts
+ranged from 0 to 9,496, yet no trajectory found model 2. At interruption,
+average conflict clauses were still 603--651 literals and average backjumps had
+fallen to 4.39--6.31 levels, directly reinforcing the existing diagnosis:
+learned clauses are deeply contextual and have weak leverage across sibling
+class partitions. Restart cadence changes which first basin is reached, but did
+not improve traversal after that.
+
+A requested non-Domain control (`--heuristic=vsids`, no `--opt-heuristic`) made
+1,061 models through mechanical priority-0 linear descent, then stopped improving
+at 361 s. It was interrupted at 2,359 s still at lexicographically inferior
+`[-656,-38696]`, with a 1,998-second trailing plateau; it never reached the full
+`-704` vftable objective. High model cadence was therefore not hard-objective
+progress.
+
+No anti-plateau setting was found. On user request, the reproducible 24-point
+endpoint win was nevertheless selected: `--opt-heuristic=sign,model` was removed
+from Makefile `PROP_FLAGS`. Keep the distinction explicit; this is a slightly
+better first basin, not evidence of sustained long-term progress.

@@ -4,7 +4,11 @@
 PYTHON       := python3
 PROPAGATOR   := $(PYTHON) ooanalyzer.py
 # Default 5m optimization config; see .state/merge-optimization-blocker.md.
-# Objective-aware BB with domain phases is the current non-USC search baseline.
+# BB with Domain phases is the current non-USC search baseline. A matched
+# 1800s/2800s TinyXml A/B on 2026-07-11 found that removing
+# --opt-heuristic=sign,model modestly improved the sole incumbent
+# ([-704,-46523] -> [-704,-46547]); both trajectories still plateaued after
+# model 1, so this is an endpoint improvement, not an anti-plateau fix.
 # The stronger weak-merge-after-vftable-complete experiment reaches TinyXml
 # [-704,-46828], but is not a safe default because some programs intentionally
 # reject possible vftables, so that condition may never become true.
@@ -12,7 +16,7 @@ PROPAGATOR   := $(PYTHON) ooanalyzer.py
 # prevented first incumbents in the measured 180s/300s BB/USC probes.
 # Threads actively hurt prior configs; keep this single-threaded.
 # Old 32-core sweep results (autoresearch/improve-260629-2245/) do not transfer.
-PROP_FLAGS   := -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --opt-strategy=bb,lin --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time

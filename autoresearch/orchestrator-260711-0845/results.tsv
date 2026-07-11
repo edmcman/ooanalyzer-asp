@@ -1,0 +1,23 @@
+# metric_direction: lower_is_better (lexicographic cost; priority 1 must equal -704)
+iteration	timestamp	commit	cutoff_s	opt_heuristic	restart_on_model	restarts	cost1	cost0	models	choices	conflicts	restarts_count	status	description
+0	2026-07-11T08:51:38-0400	4b73653	300	sign,model	yes	default_L60	-704	-46523	1	25404091	477474	1227	probe-only	baseline; first/last model 144.73s
+1	2026-07-11T08:51:38-0400	4b73653	300	none	yes	default_L60	-704	-46547	1	23299903	452024	1147	probe-only	remove objective heuristic; first/last model 141.80s
+2	2026-07-11T08:51:38-0400	4b73653	300	sign	yes	default_L60	-704	-46523	1	25257100	417817	1022	probe-only	sign only; first/last model 144.25s
+3	2026-07-11T08:51:38-0400	4b73653	300	sign,model	no	default_L60	-704	-46523	1	25682325	489700	1149	probe-only	remove restart-on-model; first/last model 145.08s
+4	2026-07-11T09:22:39-0400	4b73653	1800	sign,model	yes	default_L60	-704	-46523	1	50178032	3406184	7091	flat	baseline; first/last model 168.21s; trailing plateau 1631.79s; avg clause 607.5; avg backjump 8.06
+5	2026-07-11T09:22:39-0400	4b73653	1800	none	yes	default_L60	-704	-46547	1	44653655	3321853	6141	flat	remove objective heuristic; first/last model 163.91s; trailing plateau 1636.09s; avg clause 624.5; avg backjump 7.51
+6	2026-07-11T09:22:37-0400	4b73653	1800	sign	yes	default_L60	-704	-46523	1	52940759	3309728	6755	flat	sign only; first/last model 166.44s; trailing plateau 1633.56s; avg clause 624.9; avg backjump 9.44
+7	2026-07-11T09:22:38-0400	4b73653	1800	sign,model	no	default_L60	-704	-46523	1	53818500	3367685	7161	flat	remove restart-on-model; first/last model 167.04s; trailing plateau 1632.96s; avg clause 602.5; avg backjump 9.16
+8	2026-07-11T09:22:36-0400	4b73653	1800	none	no	none	-704	-46444	1	29092619	3826270	0	flat	no objective heuristic and no restarts; first/last model 173.66s; trailing plateau 1626.34s; avg clause 626.4; avg backjump 7.60
+9	2026-07-11T09:22:40-0400	4b73653	1800	sign	no	none	-704	-46505	1	27364656	4599245	0	flat	sign only and no restarts; first/last model 115.60s; trailing plateau 1684.40s; avg clause 631.8; avg backjump 5.95
+10	2026-07-11T09:22:39-0400	4b73653	1800	sign,model	no	none	-704	-46505	1	26259756	3651383	0	flat	no restarts; first/last model 116.23s; trailing plateau 1683.77s; avg clause 622.7; avg backjump 7.19
+11	2026-07-11T09:22:39-0400	4b73653	1800	sign,model	no	x_10000_1.5	-704	-46577	1	26965478	3810040	11	flat	slow geometric restarts; first/last model 113.09s; trailing plateau 1686.91s; avg clause 614.3; avg backjump 7.06
+12	2026-07-11T10:10:34-0400	4b73653	2796	sign,model	yes	default_L60	-704	-46523	1	62050222	5012220	9496	stopped-flat	baseline repeat; first/last model 210.32s; trailing plateau 2585.20s; avg clause 603.1; avg backjump 6.31
+13	2026-07-11T10:10:34-0400	4b73653	2796	none	yes	default_L60	-704	-46547	1	53468048	4694778	8190	selected-endpoint	remove objective heuristic; first/last model 203.25s; trailing plateau 2593.24s; avg clause 620.5; avg backjump 5.79
+14	2026-07-11T09:31:08-0400	4b73653	433	sign	yes	default_L60	-704	-46523	1	25199238	378001	1020	replaced	full 1800s result already flat; repeat stopped to free matched P core for requested VSIDS run
+15	2026-07-11T10:10:37-0400	4b73653	2800	sign,model	yes	model_only	-704	-46505	1	31812667	6040331	0	stopped-flat	periodic restarts disabled; first/last model 138.78s; trailing plateau 2661.30s; avg clause 634.5; avg backjump 5.26
+16	2026-07-11T10:10:38-0400	4b73653	2801	none	yes	model_only	-704	-46444	1	32620791	5864864	0	stopped-flat	periodic restarts disabled; first/last model 215.76s; trailing plateau 2585.55s; avg clause 650.6; avg backjump 5.56
+17	2026-07-11T10:10:42-0400	4b73653	2806	sign	yes	model_only	-704	-46505	1	35624904	8114193	0	stopped-flat	periodic restarts disabled; first/last model 138.42s; trailing plateau 2667.54s; avg clause 633.3; avg backjump 4.39
+18	2026-07-11T10:10:39-0400	4b73653	2802	sign,model	no	x_10000_1.5	-704	-46577	1	29531071	5915040	12	stopped-flat	slow geometric restarts; first/last model 134.06s; trailing plateau 2667.79s; avg clause 609.2; avg backjump 4.98
+19	2026-07-11T10:10:40-0400	4b73653	2804	sign,model	no	none	-704	-46505	1	27890074	5021075	0	stopped-flat	all restarts disabled; first/last model 138.55s; trailing plateau 2665.47s; avg clause 619.1; avg backjump 5.55
+20	2026-07-11T10:10:41-0400	4b73653	2359	none	yes	default_L60	-656	-38696	1061	stopped-inferior	VSIDS non-Domain; mechanical linear descent ended at 361.39s; trailing plateau 1998.08s; never reached priority-1 -704; avg clause 947.4; avg backjump 20.96

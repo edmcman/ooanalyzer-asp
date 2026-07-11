@@ -1,0 +1,34 @@
+{
+  "version": "2.2.1",
+  "goal": "Improve long-term TinyXml performance, testing removal of sign,model optimization heuristics and slower or disabled restarts.",
+  "archetype": "optimize-metric",
+  "mode": "loop",
+  "terminal_choice": "stop-at-verified",
+  "cycle_ceiling": 12,
+  "cycle_count": 3,
+  "predicate": {
+    "metric": "TinyXml sustained incumbent progress through 1800 seconds, independently verified at 3600 seconds",
+    "command": "uv run --offline --no-sync python ooanalyzer.py examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --opt-heuristic=sign,model --restart-on-model --decide-inputs --time-limit=3600 --stats=2 --benchmark",
+    "expected": "candidate retains priority-1 cost -704 and materially improves post-600-second gain, last-improvement time, or plateau duration versus baseline; final cost is a secondary tiebreaker; behavior reproduces in a matched 3600-second run"
+  },
+  "units_remaining": [],
+  "pending_verify": false,
+  "status": "COMPLETE_WITH_USER_SELECTED_ENDPOINT_CHANGE",
+  "current_incumbent": {
+    "kind": "approximately 2800-second matched repeat, stopped by user",
+    "baseline_cost": [-704, -46523],
+    "best_endpoint_cost": [-704, -46577],
+    "post_600_gain_all_candidates": 0,
+    "selected_default_cost": [-704, -46547],
+    "selected_change": "remove --opt-heuristic=sign,model from Makefile PROP_FLAGS",
+    "note": "All Domain runs produced exactly one model. No sustained-progress predicate was met; the user explicitly selected the reproducible 24-point endpoint improvement."
+  },
+  "pipeline": [
+    {"hop": "plan", "outcome": "progressed"},
+    {"hop": "round-0-timing-probe", "outcome": "progressed"},
+    {"hop": "1800-second-broad-comparison", "outcome": "no-op"},
+    {"hop": "extended-repeat-and-vsids", "outcome": "user-stopped"},
+    {"hop": "user-selected-default-change", "outcome": "progressed"},
+    {"hop": "verification", "outcome": "partial-pass-missing-generated-fixture"}
+  ]
+}

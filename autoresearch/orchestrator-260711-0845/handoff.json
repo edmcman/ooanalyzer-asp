@@ -1,0 +1,22 @@
+{
+  "version": "2.1.0",
+  "source": "loop",
+  "timestamp": "2026-07-11T10:12:16-0400",
+  "status": "COMPLETE",
+  "results_tsv": "autoresearch/orchestrator-260711-0845/results.tsv",
+  "findings": [
+    "All tested Domain configurations produced exactly one model through 1800 seconds and again through roughly 2800 seconds.",
+    "Removing --opt-heuristic=sign,model reproducibly changed the endpoint from [-704,-46523] to [-704,-46547] but did not shorten the plateau.",
+    "Restart counts from 0 to 9496 changed first-model basin and timing but did not produce a second model.",
+    "VSIDS without objective heuristics emitted 1061 mechanical linear-descent models but plateaued at lexicographically inferior [-656,-38696].",
+    "The user selected the 24-point endpoint improvement; Makefile PROP_FLAGS was updated accordingly.",
+    "Exact revised flags passed the manual example; the propagator suite passed 62 checks before a missing generated ooex0.lp fixture aborted it."
+  ],
+  "config": {
+    "goal": "Improve long-term TinyXml performance while testing objective heuristics and restart cadence.",
+    "scope": "Makefile PROP_FLAGS",
+    "metric": "late TinyXml incumbent progress with lexicographic cost as endpoint tiebreaker",
+    "direction": "lower_is_better",
+    "verify": "uv run --offline --no-sync python ooanalyzer.py examples/manual/example.lp -n -1 --opt-strategy=bb,lin --heuristic=domain --restart-on-model --decide-inputs --time-limit=30 --stats --show-guesses"
+  }
+}
