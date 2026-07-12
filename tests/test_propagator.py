@@ -38,7 +38,8 @@ THEORY = """
     &sameClass/2            : t, body;
     &allWritersInClass/2    : t, body;
     &classRelationship/2    : t, body;
-    &classRelationshipVia/2 : t, body
+    &classRelationshipVia/2 : t, body;
+    &occupiedByOther/3      : t, body
 }.
 """
 
@@ -574,7 +575,87 @@ def main():
          2,
          frozenset(["mergeClasses(a,a2)", "cyc"])),
     ]
-    tests = tests + reach_tests
+    occupied_tests = [
+        # ── O1. No candidate at the queried outer/offset ─────────────────────
+        ("occupied absent: no occupant keeps query false",
+         """
+         objectInObject(x, y, 0).
+         occupied :- &occupiedByOther(o, inner, 0).
+         :- occupied.
+         """,
+         1),
+
+        # ── O2. A same-class candidate is not an "other" occupant ───────────
+        ("occupied same class: merged occupant is harmless",
+         """
+         objectInObject(o, x, 0).
+         mergeClasses(x, inner).
+         occupied :- &occupiedByOther(o, inner, 0).
+         :- occupied.
+         """,
+         1),
+
+        # ── O3. A distinct-class candidate proves the query ─────────────────
+        ("occupied different class: true edge proves query",
+         """
+         objectInObject(o, x, 0).
+         occupied :- &occupiedByOther(o, inner, 0).
+         :- not occupied.
+         """,
+         1,
+         frozenset(["occupied"])),
+
+        # ── O4. Competing Rule-E candidates form the intended even loop ─────
+        ("occupied competing: exactly one distinct occupant wins an offset",
+         """
+         objectInObject(o, a, 0) :- not &occupiedByOther(o, a, 0).
+         objectInObject(o, b, 0) :- not &occupiedByOther(o, b, 0).
+         :- objectInObject(o, a, 0), objectInObject(o, b, 0).
+         :- not objectInObject(o, a, 0), not objectInObject(o, b, 0).
+         #show objectInObject/3.
+         """,
+         2),
+
+        # ── O5. Merging the witness into Inner invalidates occupied ──────────
+        ("occupied merge invalidation: query tracks class merge",
+         """
+         objectInObject(o, x, 0).
+         1 { mergeClasses(x,inner); -mergeClasses(x,inner) } 1.
+         occupied :- &occupiedByOther(o, inner, 0).
+         :- mergeClasses(x,inner), occupied.
+         :- not mergeClasses(x,inner), not occupied.
+         #show mergeClasses/2. #show occupied/0.
+         """,
+         2,
+         frozenset(["occupied"])),
+
+        # ── O6. Edge choice exercises assignment backtrack/undo ──────────────
+        ("occupied undo: query follows a backtracked edge choice",
+         """
+         1 { hasEdge; -hasEdge } 1.
+         objectInObject(o, x, 0) :- hasEdge.
+         occupied :- &occupiedByOther(o, inner, 0).
+         :- hasEdge, not occupied.
+         :- not hasEdge, occupied.
+         #show hasEdge/0. #show occupied/0.
+         """,
+         2,
+         frozenset(["hasEdge", "occupied"])),
+
+        # ── O7. Occupants at another offset do not satisfy the query ─────────
+        ("occupied offset isolation: only the exact offset counts",
+         """
+         objectInObject(o, x, 4).
+         atZero :- &occupiedByOther(o, inner, 0).
+         atFour :- &occupiedByOther(o, inner, 4).
+         :- atZero.
+         :- not atFour.
+         #show atZero/0. #show atFour/0.
+         """,
+         1,
+         frozenset(["atFour"])),
+    ]
+    tests = tests + reach_tests + occupied_tests
 
     for mode, ctl_args in CONTROL_MODES:
         print(f"\nMode: {mode}")

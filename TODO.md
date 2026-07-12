@@ -252,7 +252,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonObjectInObject_B` (1568) — from `embeddedObject`
 - [ ] `reasonObjectInObject_C` (1577) — from VFTable write at non-zero offset
 - [x] `reasonObjectInObject_D` (1589) — outer ctor calls inner ctor at non-zero offset (`composition.lp`; guard uses `classRelationshipVia` to avoid an odd loop — see memory)
-- [x] `reasonObjectInObject_E` (1625) — outer ctor calls inner ctor (incl. offset 0), classes distinct (`composition.lp`; `not factObjectInObject` odd loop broken via `occupiedByOther`; `dynFactNOTMergeClasses`→`not &sameClass`)
+- [x] `reasonObjectInObject_E` (1625) — outer ctor calls inner ctor (incl. offset 0), classes distinct (`composition.lp`; `not factObjectInObject` odd loop broken by propagator-backed `&occupiedByOther/3`, avoiding the recursive helper's measured muparser grounding blowup; `dynFactNOTMergeClasses`→`not &sameClass`)
 - [ ] `reasonObjectInObject_F` (1672) — from class size constraints
 
 ### EmbeddedObject (rules.pl:1730–1791)
