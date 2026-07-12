@@ -154,19 +154,20 @@ objectInObject(OuterCtor, InnerCtor, Offset) :-
     not &sameClass(OuterCtor, InnerCtor),
     not &classRelationshipVia(OuterCtor, InnerCtor).                      % rules.pl:1589
 
-% &occupiedByOther(Outer, Inner, Offset): some object of a class OTHER than
-% Inner already sits at Offset in Outer.  This is the odd-loop-safe form of
-% _E's Prolog guard
+% occupiedByOther: some object of a class OTHER than Inner already sits at Offset
+% in Outer.  This is the odd-loop-safe form of _E's Prolog guard
 % not(factObjectInObject(OuterClass, _, Offset)): a literal port would let _E's
 % own head (inner = Inner) satisfy the negated objectInObject(Outer, _, Offset)
 % and unfound the rule.  Excluding Inner's own class means the head can never
 % trip its own guard, while two distinct-class candidates at one offset form a
 % benign even loop (the physical "an offset holds one class" exclusivity).
 % Slightly weaker than Prolog (which blocks on ANY object at the offset); a
-% same-class object already there is harmless redundancy.  The propagator
-% performs this existential class-membership check over indexed candidate
-% objectInObject edges, avoiding the recursive ordinary helper's large
-% grounding SCC on muparser.
+% same-class object already there is harmless redundancy.  Inner is bound by
+% validMethodCallAtOffset so the &sameClass check does not ground unbounded.
+occupiedByOther(Outer, Offset, Inner) :-
+    validMethodCallAtOffset(_Insn, Outer, Inner, Offset),
+    objectInObject(Outer, X, Offset),
+    not &sameClass(X, Inner).
 
 % reasonObjectInObject_E (rules.pl:1625): outer ctor calls inner ctor at Offset,
 % the two are not the same class, and no object of another class already sits at
@@ -184,7 +185,7 @@ objectInObject(OuterCtor, InnerCtor, Offset) :-
     constructor(InnerCtor),
     OuterCtor != InnerCtor,
     not &sameClass(OuterCtor, InnerCtor),
-    not &occupiedByOther(OuterCtor, InnerCtor, Offset).                   % rules.pl:1625
+    not occupiedByOther(OuterCtor, Offset, InnerCtor).                    % rules.pl:1625
 
 % ============================================================
 % reasonClassRelationship (rules.pl:2114/2119) — computed by the

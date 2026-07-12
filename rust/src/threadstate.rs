@@ -22,10 +22,9 @@ pub struct ThreadState {
     /// re-examines those. Maintained by propagate (add) and undo (drop).
     pub true_sc: FxHashSet<i32>,
     pub did_initial_sc_sweep: bool,
-    /// True `objectInObject` edges `(outer, inner, offset, watched_lit)` in
-    /// assignment order. Reachability ignores the retained offset;
-    /// `&occupiedByOther` uses it to isolate candidate occupants.
-    pub oio_true: Vec<(EntKey, EntKey, EntKey, i32)>,
+    /// True `objectInObject` edges `(outer, inner, watched_lit)` in assignment
+    /// order — the containment graph for `&classRelationship*` reachability.
+    pub oio_true: Vec<(EntKey, EntKey, i32)>,
     /// `(watched_lit, oio_true.len() before)` — suffix popped in `undo`.
     pub oio_trail: Vec<(i32, usize)>,
     /// `--decide-inputs` rotating scan position per entity into

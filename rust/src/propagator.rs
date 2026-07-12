@@ -12,7 +12,7 @@ use crate::ffi::{
     CHECK_MODE_TOTAL, EXTERNAL_TYPE_FALSE,
 };
 use crate::potential_uf;
-use crate::shared::{CrAtom, MergeScFacts, OboAtom, ObsRule, PropData, Shared};
+use crate::shared::{CrAtom, MergeScFacts, ObsRule, PropData, Shared};
 use crate::threadstate::ThreadState;
 use crate::uf::Uf;
 use rustc_hash::{FxHashMap, FxHashSet};
@@ -151,14 +151,13 @@ fn build_shared(
         }
     });
 
-    // Supported theory atoms.
+    // &sameClass/2, &allWritersInClass/2, &classRelationship{,Via}/2 theory atoms.
     let mut now_slit_to_key: FxHashMap<i32, (EntKey, EntKey)> = FxHashMap::default();
     let mut now_writers_by_vft: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
     let mut awc_to_slit: FxHashMap<(EntKey, EntKey), i32> = FxHashMap::default();
     let mut awc_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)> = FxHashMap::default();
     let mut awc_by_vft: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
     let mut cr_atoms: Vec<CrAtom> = Vec::new();
-    let mut obo_atoms: Vec<OboAtom> = Vec::new();
 
     for atom in 0..ffi.theory_atoms_size(theory_atoms) as u32 {
         let term = ffi.theory_atom_term(theory_atoms, atom);
@@ -219,24 +218,12 @@ fn build_shared(
                 });
                 ffi.add_watch(init_ptr, slit);
             }
-            "occupiedByOther" if args.len() == 3 => {
-                let outer = EntKey::from_theory_term(ffi, theory_atoms, args[0]);
-                let inner = EntKey::from_theory_term(ffi, theory_atoms, args[1]);
-                let offset = EntKey::from_theory_term(ffi, theory_atoms, args[2]);
-                obo_atoms.push(OboAtom {
-                    outer,
-                    inner,
-                    offset,
-                    slit,
-                });
-                ffi.add_watch(init_ptr, slit);
-            }
             _ => {}
         }
     }
 
     // objectInObject/3 — containment edges for &classRelationship* reachability.
-    let mut oio_lit_to_edges: FxHashMap<i32, Vec<(EntKey, EntKey, EntKey)>> = FxHashMap::default();
+    let mut oio_lit_to_edges: FxHashMap<i32, Vec<(EntKey, EntKey)>> = FxHashMap::default();
     each_sym_atom(ffi, sym_atoms, "objectInObject", 3, |sym, prog_lit| {
         let args = match ffi.symbol_arguments(sym).ok() {
             Some(a) => a,
@@ -247,7 +234,6 @@ fn build_shared(
         }
         let outer = EntKey::from_symbol(ffi, args[0]);
         let inner = EntKey::from_symbol(ffi, args[1]);
-        let offset = EntKey::from_symbol(ffi, args[2]);
         let lit = match ffi.solver_literal(init_ptr, prog_lit).ok() {
             Some(s) => s,
             None => return,
@@ -256,7 +242,7 @@ fn build_shared(
         oio_lit_to_edges
             .entry(lit)
             .or_default()
-            .push((outer, inner, offset));
+            .push((outer, inner));
         if is_new && lit.abs() != 1 {
             ffi.add_watch(init_ptr, lit);
         }
@@ -371,7 +357,7 @@ fn build_shared(
     {
         let mut padj: FxHashMap<EntKey, FxHashSet<EntKey>> = FxHashMap::default();
         for edges in oio_lit_to_edges.values() {
-            for (o, i, _) in edges {
+            for (o, i) in edges {
                 let ro = potential_uf.root(o);
                 let ri = potential_uf.root(i);
                 padj.entry(ro).or_default().insert(ri);
@@ -405,50 +391,17 @@ fn build_shared(
     let oio_by_src: FxHashMap<EntKey, Vec<(EntKey, i32)>> = freeze_sorted({
         let mut m: FxHashMap<EntKey, FxHashSet<(EntKey, i32)>> = FxHashMap::default();
         for (&lit, edges) in &oio_lit_to_edges {
-            for (o, i, _) in edges {
+            for (o, i) in edges {
                 m.entry(o.clone()).or_default().insert((i.clone(), lit));
             }
         }
         m
     });
-    let oio_by_outer_offset: FxHashMap<(EntKey, EntKey), Vec<(EntKey, i32)>> = {
-        let mut m: FxHashMap<(EntKey, EntKey), FxHashSet<(EntKey, i32)>> = FxHashMap::default();
-        for (&lit, edges) in &oio_lit_to_edges {
-            for (o, i, off) in edges {
-                m.entry((o.clone(), off.clone()))
-                    .or_default()
-                    .insert((i.clone(), lit));
-            }
-        }
-        m.into_iter()
-            .map(|(k, set)| {
-                let mut v: Vec<(EntKey, i32)> = set.into_iter().collect();
-                v.sort_unstable_by(|a, b| a.0.cmp(&b.0).then(a.1.cmp(&b.1)));
-                (k, v)
-            })
-            .collect()
-    };
-    obo_atoms.sort_by(|x, y| {
-        x.outer
-            .cmp(&y.outer)
-            .then(x.inner.cmp(&y.inner))
-            .then(x.offset.cmp(&y.offset))
-            .then(x.slit.cmp(&y.slit))
-    });
-    let obo_slit_to_atom: FxHashMap<i32, OboAtom> = obo_atoms
-        .iter()
-        .map(|a| (a.slit.abs(), a.clone()))
-        .collect();
     let reach_entities: FxHashSet<EntKey> = oio_lit_to_edges
         .values()
         .flatten()
-        .flat_map(|(o, i, _)| [o.clone(), i.clone()])
+        .flat_map(|(o, i)| [o.clone(), i.clone()])
         .chain(cr_atoms.iter().flat_map(|c| [c.a.clone(), c.b.clone()]))
-        .chain(
-            obo_atoms
-                .iter()
-                .flat_map(|a| [a.outer.clone(), a.inner.clone()]),
-        )
         .collect();
 
     let num_threads = ffi.number_of_threads(init_ptr) as usize;
@@ -472,12 +425,9 @@ fn build_shared(
         awc_by_vft,
         oio_lit_to_edges,
         oio_by_src,
-        oio_by_outer_offset,
         reach_entities,
         cr_atoms,
         cr_slit_to_atom,
-        obo_atoms,
-        obo_slit_to_atom,
         observed_proglits,
         unconditional_proglits,
         proglit_to_slit,
@@ -579,10 +529,8 @@ fn rebuild(ffi: &Ffi, shared: &Shared, state: &mut ThreadState, asgn: *const Cli
         .collect();
     fixed_lits.sort_unstable();
     for lit in fixed_lits {
-        for (o, i, off) in &shared.oio_lit_to_edges[&lit] {
-            state
-                .oio_true
-                .push((o.clone(), i.clone(), off.clone(), lit));
+        for (o, i) in &shared.oio_lit_to_edges[&lit] {
+            state.oio_true.push((o.clone(), i.clone(), lit));
         }
     }
 }
@@ -659,18 +607,10 @@ pub fn propagate(
 
     for &lit in changes {
         let alit = lit.abs();
-        if shared.oio_lit_to_edges.contains_key(&alit) {
-            // Both true and false edge assignments can settle an occupied
-            // query; true edges are appended to oio_true below.
-            graph_touched = true;
-        }
         if let Some(cr) = shared.cr_slit_to_atom.get(&alit) {
             if ffi.is_true(asgn, cr.slit) {
                 graph_touched = true;
             }
-        }
-        if shared.obo_slit_to_atom.contains_key(&alit) {
-            graph_touched = true;
         }
         if let Some((x, y)) = shared.sc_lit_to_pair.get(&lit).cloned() {
             if x == y {
@@ -694,10 +634,8 @@ pub fn propagate(
             }
         } else if let Some(edges) = shared.oio_lit_to_edges.get(&lit) {
             state.oio_trail.push((lit, state.oio_true.len()));
-            for (o, i, off) in edges {
-                state
-                    .oio_true
-                    .push((o.clone(), i.clone(), off.clone(), lit));
+            for (o, i) in edges {
+                state.oio_true.push((o.clone(), i.clone(), lit));
             }
             graph_touched = true;
         }
@@ -745,9 +683,6 @@ pub fn propagate(
 
     if graph_touched {
         if !reconcile_reach(ffi, &shared, state, ctrl, asgn, true)? {
-            return Ok(());
-        }
-        if !reconcile_occupied(ffi, &shared, state, ctrl, asgn)? {
             return Ok(());
         }
     }
@@ -867,9 +802,6 @@ pub fn check(ffi: &Ffi, pd: &PropData, ctrl: *mut ClingoPropagateControl) -> Res
     // Reconcile &classRelationship* against the containment graph: force
     // supported atoms true and refute unsupported true-assigned ones.
     if !reconcile_reach(ffi, &shared, state, ctrl, asgn, true)? {
-        return Ok(());
-    }
-    if !reconcile_occupied(ffi, &shared, state, ctrl, asgn)? {
         return Ok(());
     }
 
@@ -1174,128 +1106,6 @@ fn assert_not_all_writers(
     Ok(ok)
 }
 
-// ── &occupiedByOther ────────────────────────────────────────────────────────
-//
-// `&occupiedByOther(Outer, Inner, Offset)` holds exactly when a true
-// `objectInObject(Outer, X, Offset)` has X outside class(Inner).  The concrete
-// outer and offset are intentionally not quotiented through sameClass: this
-// preserves the ordinary helper's Rule E semantics.
-
-fn assert_occupied(
-    ffi: &Ffi,
-    shared: &Shared,
-    state: &mut ThreadState,
-    ctrl: *mut ClingoPropagateControl,
-    edge_lit: i32,
-    inner: &EntKey,
-    slit: i32,
-    cache: &mut FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)>,
-) -> Result<bool, String> {
-    // Freeze class(Inner). Since the chosen occupant is currently outside that
-    // component, its true edge plus this component-separation cut witnesses
-    // the existential until one of the clause conditions changes.
-    let (reason, cut) = component_cut_and_reasons(shared, state, inner, cache);
-    let mut clause = vec![-edge_lit];
-    let mut rs: Vec<i32> = reason.into_iter().collect();
-    rs.sort_unstable();
-    let mut cs: Vec<i32> = cut.into_iter().collect();
-    cs.sort_unstable();
-    clause.extend(rs.into_iter().map(|r| -r));
-    clause.extend(cs);
-    clause.push(slit);
-    let ok = clause!(ffi, ctrl, &clause);
-    dump_lemma(shared, "occupied", &clause, !ok);
-    Ok(ok)
-}
-
-fn assert_not_occupied(
-    ffi: &Ffi,
-    shared: &Shared,
-    state: &mut ThreadState,
-    ctrl: *mut ClingoPropagateControl,
-    asgn: *const ClingoAssignment,
-    atom: &OboAtom,
-) -> Result<Option<bool>, String> {
-    let candidates = shared
-        .oio_by_outer_offset
-        .get(&(atom.outer.clone(), atom.offset.clone()))
-        .map(Vec::as_slice)
-        .unwrap_or(&[]);
-    let mut neg: FxHashSet<i32> = FxHashSet::default();
-    let mut pos: FxHashSet<i32> = FxHashSet::default();
-    for (candidate, edge_lit) in candidates {
-        let (same, reasons) = state.uf.same_with_reason(candidate, &atom.inner);
-        if same {
-            // This candidate is harmless regardless of its edge assignment.
-            neg.extend(reasons);
-        } else if ffi.is_false(asgn, *edge_lit) {
-            // It can become an outside occupant only if this edge becomes true.
-            pos.insert(*edge_lit);
-        } else {
-            // A free or true outside candidate prevents a false proof.
-            return Ok(None);
-        }
-    }
-    let mut clause: Vec<i32> = Vec::with_capacity(neg.len() + pos.len() + 1);
-    let mut ns: Vec<i32> = neg.into_iter().collect();
-    ns.sort_unstable();
-    let mut ps: Vec<i32> = pos.into_iter().collect();
-    ps.sort_unstable();
-    clause.extend(ns.into_iter().map(|n| -n));
-    clause.extend(ps);
-    clause.push(-atom.slit);
-    let ok = clause!(ffi, ctrl, &clause);
-    dump_lemma(shared, "not_occupied", &clause, !ok);
-    Ok(Some(ok))
-}
-
-/// Reconcile all occupied queries after containment assignments and merges.
-fn reconcile_occupied(
-    ffi: &Ffi,
-    shared: &Shared,
-    state: &mut ThreadState,
-    ctrl: *mut ClingoPropagateControl,
-    asgn: *const ClingoAssignment,
-) -> Result<bool, String> {
-    if shared.obo_atoms.is_empty() {
-        return Ok(true);
-    }
-    let mut cut_cache: FxHashMap<EntKey, (FxHashSet<i32>, FxHashSet<i32>)> = FxHashMap::default();
-    for atom in &shared.obo_atoms {
-        let candidates = shared
-            .oio_by_outer_offset
-            .get(&(atom.outer.clone(), atom.offset.clone()))
-            .map(Vec::as_slice)
-            .unwrap_or(&[]);
-        let witness = candidates.iter().find(|(candidate, edge_lit)| {
-            ffi.is_true(asgn, *edge_lit) && !state.uf.same(candidate, &atom.inner)
-        });
-        if let Some((_, edge_lit)) = witness {
-            if !ffi.is_true(asgn, atom.slit)
-                && !assert_occupied(
-                    ffi,
-                    shared,
-                    state,
-                    ctrl,
-                    *edge_lit,
-                    &atom.inner,
-                    atom.slit,
-                    &mut cut_cache,
-                )?
-            {
-                return Ok(false);
-            }
-        } else if !ffi.is_false(asgn, atom.slit) {
-            if let Some(ok) = assert_not_occupied(ffi, shared, state, ctrl, asgn, atom)? {
-                if !ok {
-                    return Ok(false);
-                }
-            }
-        }
-    }
-    Ok(true)
-}
-
 // ── &classRelationship / &classRelationshipVia reachability ─────────────────
 //
 // Semantics: vertices are the &sameClass union-find classes; edges are true
@@ -1341,7 +1151,7 @@ type ReachParent = FxHashMap<EntKey, (EntKey, EntKey, EntKey, i32)>;
 fn build_reach_adj(state: &mut ThreadState) -> FxHashMap<EntKey, Vec<(EntKey, EntKey, i32)>> {
     let edges = state.oio_true.clone();
     let mut adj: FxHashMap<EntKey, Vec<(EntKey, EntKey, i32)>> = FxHashMap::default();
-    for (o, i, _, lit) in edges {
+    for (o, i, lit) in edges {
         let r = state.uf.root(&o);
         adj.entry(r).or_default().push((o, i, lit));
     }

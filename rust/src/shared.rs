@@ -74,15 +74,6 @@ pub struct CrAtom {
     pub via: bool,
 }
 
-/// One `&occupiedByOther(outer, inner, offset)` theory atom.
-#[derive(Clone)]
-pub struct OboAtom {
-    pub outer: EntKey,
-    pub inner: EntKey,
-    pub offset: EntKey,
-    pub slit: i32,
-}
-
 /// Frozen, read-only-for-solving state built once in the first `init`.
 pub struct Shared {
     pub facts: MergeScFacts,
@@ -109,13 +100,12 @@ pub struct Shared {
     pub awc_slit_to_pair: FxHashMap<i32, (EntKey, EntKey)>,
     /// `vftable` → sorted `[(class, slit)]` (frozen order).
     pub awc_by_vft: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
-    /// watched `objectInObject` solver literal → `[(outer, inner, offset)]`.
-    pub oio_lit_to_edges: FxHashMap<i32, Vec<(EntKey, EntKey, EntKey)>>,
+    /// watched `objectInObject` solver literal → `[(outer, inner)]` edges
+    /// (object offsets dropped — reachability only).
+    pub oio_lit_to_edges: FxHashMap<i32, Vec<(EntKey, EntKey)>>,
     /// `outer` → sorted `[(inner, watched_lit)]` — every candidate containment
     /// edge, for unreachability-cut enumeration.
     pub oio_by_src: FxHashMap<EntKey, Vec<(EntKey, i32)>>,
-    /// `(outer, offset)` → sorted `[(candidate inner, watched_lit)]`.
-    pub oio_by_outer_offset: FxHashMap<(EntKey, EntKey), Vec<(EntKey, i32)>>,
     /// Entities incident to any containment edge or `&classRelationship*` atom;
     /// merges touching none of these cannot change reachability.
     pub reach_entities: FxHashSet<EntKey>,
@@ -123,10 +113,6 @@ pub struct Shared {
     pub cr_atoms: Vec<CrAtom>,
     /// `abs(slit)` → full relationship atom for watched-literal lookup.
     pub cr_slit_to_atom: FxHashMap<i32, CrAtom>,
-    /// `&occupiedByOther` atoms, sorted by arguments and solver literal.
-    pub obo_atoms: Vec<OboAtom>,
-    /// `abs(slit)` → occupied query for watched-literal lookup.
-    pub obo_slit_to_atom: FxHashMap<i32, OboAtom>,
     pub observed_proglits: FxHashSet<i32>,
     pub unconditional_proglits: FxHashSet<i32>,
     /// observed program-literal → solver literal (best-effort).
