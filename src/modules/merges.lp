@@ -273,13 +273,40 @@ notMergeUnsorted(MethodWithSymbol, OtherMethod) :-
 % GUESS
 % ============================================================
 
-% guessMergeClasses_B: vftable writer may be on the same class as vftable entries.
-% Asymmetric: Writer from vfTableWrite, Entry from vfTableEntry.
-%!trace_rule {"% and % are strong merge candidates because method % installs vftable % that contains entry %", A, B, Writer, VFTable, Entry}
-strongMergeCandidateUnsorted(Writer, Entry) :-
+% guessMergeClasses_B: the vftable's class (witnessed by its writer) may be the
+% same class as the DETHUNKED method behind each vftable entry.  Prolog
+% dethunks the entry, requires factMethod, excludes purecall on both sides,
+% skips methods carrying a virtual debug symbol (import complication), and
+% only proposes the merge when every other vftable containing the method is on
+% the same class (the forall guard, guess.pl:1078).  methodInVFTable supplies
+% the dethunk and both purecall exclusions.
+%!trace_rule {"% and % are strong merge candidates because method % installs vftable % containing method %", Writer, Method, Writer, VFTable, Method}
+strongMergeCandidateVia(Writer, Method, VFTable) :-
     vfTableWrite(_Insn, Writer, _ObjectOffset, VFTable),
-    vfTableEntry(VFTable, _VFTableOffset, Entry),
-    not purecall(Entry).                                                     % guess.pl:1050
+    methodInVFTable(VFTable, _VFTableOffset, Method),
+    method(Method),
+    not symbolProperty(Method, virtual).                                     % guess.pl:1049
+
+strongMergeCandidateUnsorted(Writer, Method) :-
+    strongMergeCandidateVia(Writer, Method, _VFTable).
+
+% Forall guard, solver-time: Method appears in another vftable that is not on
+% the same class as VFTable.  A guarded pair earns the strong reward below
+% only via some vftable whose guard holds, mirroring Prolog's refusal to
+% propose B for methods shared across unrelated vftables (inherited
+% un-overridden entries); those are placed by the late F2 objective instead.
+strongMergeViaViolated(Writer, Method, VFTable) :-
+    strongMergeCandidateVia(Writer, Method, VFTable),
+    methodInVFTable(OtherVFTable, _Offset, Method),
+    OtherVFTable != VFTable,
+    not &sameClass(OtherVFTable, VFTable).                                   % guess.pl:1078
+
+strongMergeGuardOKUnsorted(Writer, Method) :-
+    strongMergeCandidateVia(Writer, Method, VFTable),
+    not strongMergeViaViolated(Writer, Method, VFTable).
+
+strongMergeGuardOK(A, B) :- strongMergeGuardOKUnsorted(A, B), A < B.
+strongMergeGuardOK(A, B) :- strongMergeGuardOKUnsorted(B, A), A < B.
 
 strongMergeCandidate(A, B) :- strongMergeCandidateUnsorted(A, B), A < B.
 strongMergeCandidate(A, B) :- strongMergeCandidateUnsorted(B, A), A < B.
@@ -287,10 +314,12 @@ strongMergeCandidate(A, B) :- strongMergeCandidateUnsorted(B, A), A < B.
 % guessMergeClasses_D: methods writing the same vftable at the same offset may be the same class.
 % Symmetric: both methods from vfTableWrite for the same VFTable and ObjectOffset.
 %!trace_rule {"% and % are strong merge candidates because they both write vftable % at offset %", Method1, Method2, VFTable, ObjectOffset}
-strongMergeCandidate(Method1, Method2) :-
+strongMergeCandidateD(Method1, Method2) :-
     vfTableWrite(_Insn1, Method1, ObjectOffset, VFTable),
     vfTableWrite(_Insn2, Method2, ObjectOffset, VFTable),
     Method1 < Method2.                                                       % guess.pl:1215
+
+strongMergeCandidate(A, B) :- strongMergeCandidateD(A, B).
 
 mergeCandidate(A, B) :- strongMergeCandidate(A, B).
 
@@ -516,8 +545,11 @@ mergeCandidate(A, B) :- guessMergeClassesC4Candidate(A, B).
 % REWARDS
 % ============================================================
 
-% Optimization reward for confirmed strong merges (priority @2).
-strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
+% Optimization reward for confirmed strong merges (priority @2).  B pairs are
+% rewarded only through the solver-time forall guard; D (co-writer) pairs are
+% rewarded unconditionally as before.
+strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeGuardOK(M1, M2).
+strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidateD(M1, M2).
 
 #maximize { 10@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
 

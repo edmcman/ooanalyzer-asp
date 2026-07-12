@@ -351,7 +351,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonNOTMergeClasses_R` (3366) — derived vftable installed by called method
 
 ### Guess (guess.pl)
-- [x] `guessMergeClasses_B`
+- [x] `guessMergeClasses_B` — 2026-07-12: candidate now dethunks the entry (requires `method/1`, `not symbolProperty(_, virtual)`) and the guess.pl:1078 forall guard is ported as a solver-time reward gate (`strongMergeGuardOK`)
 - [x] `guessMergeClasses_C1`–`guessMergeClasses_C4`
 - [x] `guessMergeClasses_D`
 - [ ] `guessMergeClasses_G`
