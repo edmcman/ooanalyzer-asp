@@ -328,6 +328,68 @@ lateF2Candidate(A, B) :- lateF2CandidateUnsorted(B, A), A < B.
 
 mergeCandidate(A, B) :- lateF2Candidate(A, B).
 
+% guessMergeClasses_C1-C4: a derived class calls a method — does the method
+% belong on the derived class or the base class?  Tried in Prolog order: C1
+% derived (callee installs no base vftable), C2 base (callee installs the base
+% vftable), C3 derived (fallback), C4 base (fallback on the base class as
+% caller).  Counterpart: guessMergeClassesC1-C4 (guess.pl:1103-1199)
+
+% CalledMethod installs at Offset a vftable on the same class as Base.
+% (same join shape as the ported reasonNOTMergeClasses_R)
+calledMethodInstallsBaseVFTable(CalledMethod, Base, Offset) :-
+    vfTableWrite(_Insn, CalledMethod, Offset, V),
+    derivedClass(_, Base, Offset),
+    &sameClass(V, Base).
+
+% Shared C1-C3 preamble: a derived class calls a method.  Grounded once so the
+% classCallsMethod x derivedClass join is not repeated per candidate rule.
+guessMergeClassesCEdge(Caller, CalledMethod, Base, Offset) :-
+    classCallsMethod(Caller, CalledMethod),
+    not purecall(CalledMethod),
+    derivedClass(DW, Base, Offset),
+    &sameClass(Caller, DW).
+
+%!trace_rule {"% and % are a C1 merge candidate because % installs no base vftable for the base of %", Caller, CalledMethod, CalledMethod, Caller}
+guessMergeClassesC1CandidateUnsorted(Caller, CalledMethod) :-
+    guessMergeClassesCEdge(Caller, CalledMethod, Base, Offset),
+    not calledMethodInstallsBaseVFTable(CalledMethod, Base, Offset).           % guess.pl:1103
+
+guessMergeClassesC1Candidate(A, B) :- guessMergeClassesC1CandidateUnsorted(A, B), A < B.
+guessMergeClassesC1Candidate(A, B) :- guessMergeClassesC1CandidateUnsorted(B, A), A < B.
+
+mergeCandidate(A, B) :- guessMergeClassesC1Candidate(A, B).
+
+%!trace_rule {"% and % are a C2 merge candidate because % installs the base vftable of %", Base, CalledMethod, CalledMethod, Base}
+guessMergeClassesC2CandidateUnsorted(Base, CalledMethod) :-
+    guessMergeClassesCEdge(_Caller, CalledMethod, Base, Offset),
+    calledMethodInstallsBaseVFTable(CalledMethod, Base, Offset).               % guess.pl:1146
+
+guessMergeClassesC2Candidate(A, B) :- guessMergeClassesC2CandidateUnsorted(A, B), A < B.
+guessMergeClassesC2Candidate(A, B) :- guessMergeClassesC2CandidateUnsorted(B, A), A < B.
+
+mergeCandidate(A, B) :- guessMergeClassesC2Candidate(A, B).
+
+%!trace_rule {"% and % are a C3 merge candidate because % calls % and no more specific C rule applies", Caller, CalledMethod, Caller, CalledMethod}
+guessMergeClassesC3CandidateUnsorted(Caller, CalledMethod) :-
+    guessMergeClassesCEdge(Caller, CalledMethod, _Base, _Offset).              % guess.pl:1169
+
+guessMergeClassesC3Candidate(A, B) :- guessMergeClassesC3CandidateUnsorted(A, B), A < B.
+guessMergeClassesC3Candidate(A, B) :- guessMergeClassesC3CandidateUnsorted(B, A), A < B.
+
+mergeCandidate(A, B) :- guessMergeClassesC3Candidate(A, B).
+
+%!trace_rule {"% and % are a C4 merge candidate because % is itself a base class and calls %", Caller, CalledMethod, Caller, CalledMethod}
+guessMergeClassesC4CandidateUnsorted(Caller, CalledMethod) :-
+    classCallsMethod(Caller, CalledMethod),
+    not purecall(CalledMethod),
+    derivedClass(_, BW, _),
+    &sameClass(Caller, BW).                                                    % guess.pl:1187
+
+guessMergeClassesC4Candidate(A, B) :- guessMergeClassesC4CandidateUnsorted(A, B), A < B.
+guessMergeClassesC4Candidate(A, B) :- guessMergeClassesC4CandidateUnsorted(B, A), A < B.
+
+mergeCandidate(A, B) :- guessMergeClassesC4Candidate(A, B).
+
 % guessMergeClasses: choose merge or not-merge for each candidate pair.
 %!trace_rule {"guess whether % and % are the same class or not", A, B}
 1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :-
@@ -373,6 +435,11 @@ mergeCandidate(A, B) :- lateF2Candidate(A, B).
     lateF2Candidate(A, B),
     not strongMergeCandidate(A, B),
     not weakMergeCandidate(A, B). [5@1, true]
+% guessMergeClasses_C2 pairs (BaseWitness, CalledMethod) are not reachable via
+% weakMergeCandidate, so they need their own default-phase entry here.
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    guessMergeClassesC2Candidate(A, B). [10@1, false]
 
 % Optional all-input tier.  These level-only directives preserve the existing
 % true/false phases above while ensuring free merge inputs outrank ordinary
@@ -388,6 +455,9 @@ mergeCandidate(A, B) :- lateF2Candidate(A, B).
     lateF2Candidate(A, B),
     not strongMergeCandidate(A, B),
     not weakMergeCandidate(A, B). [5@all_input_priority, level]
+#heuristic mergeClasses(A, B) :
+    all_input_priority > 0,
+    guessMergeClassesC2Candidate(A, B). [10@all_input_priority, level]
 
 % Prolog delays positive method-to-class guesses until the structural families
 % above are exhausted, then tries normal vftable-derived merges before the
@@ -400,6 +470,31 @@ mergeCandidate(A, B) :- lateF2Candidate(A, B).
 #heuristic mergeClasses(A, B) :
     prolog_order_priority > 0,
     strongMergeCandidate(A, B). [1@prolog_order_priority, true]
+% C1-C4 slot between strong and late, mirroring the Prolog C1 > C2 > C3 > C4 order.
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC1Candidate(A, B). [160@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC1Candidate(A, B). [1@prolog_order_priority, true]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC2Candidate(A, B). [150@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC2Candidate(A, B). [1@prolog_order_priority, true]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC3Candidate(A, B). [140@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC3Candidate(A, B). [1@prolog_order_priority, true]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC4Candidate(A, B). [130@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesC4Candidate(A, B). [1@prolog_order_priority, true]
 #heuristic mergeClasses(A, B) :
     prolog_order_priority > 0,
     lateF2Candidate(A, B),
@@ -430,13 +525,50 @@ strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidate(M1, M2).
     enable_reward_heuristics != 0,
     strongMergeCandidate(M1, M2). [10@reward_heuristic_priority, true]
 
-% Base G2 reward: prefer weak merges when chosen.
-weakMergeReward(M1, M2) :- mergeClasses(M1, M2), weakMergeCandidate(M1, M2).
+% Base G2 reward: prefer weak merges when chosen.  Excludes C-family pairs,
+% which earn their own disjoint-precedence rewards below.
+weakMergeReward(M1, M2) :-
+    mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
+    not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
+    not guessMergeClassesC3Candidate(M1, M2), not guessMergeClassesC4Candidate(M1, M2).
 #maximize { 8@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
 
 #heuristic weakMergeReward(M1, M2) :
     enable_reward_heuristics != 0,
     weakMergeCandidate(M1, M2). [8@reward_heuristic_priority, true]
+
+% guessMergeClasses_C1-C4 rewards: disjoint precedence C1 > C2 > C3 > C4 so a
+% pair earns only its best-applicable reward, mirroring the Prolog try-order.
+guessMergeClassesC1MergeReward(M1, M2) :-
+    mergeClasses(M1, M2), guessMergeClassesC1Candidate(M1, M2).
+guessMergeClassesC2MergeReward(M1, M2) :-
+    mergeClasses(M1, M2), guessMergeClassesC2Candidate(M1, M2),
+    not guessMergeClassesC1Candidate(M1, M2).
+guessMergeClassesC3MergeReward(M1, M2) :-
+    mergeClasses(M1, M2), guessMergeClassesC3Candidate(M1, M2),
+    not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2).
+guessMergeClassesC4MergeReward(M1, M2) :-
+    mergeClasses(M1, M2), guessMergeClassesC4Candidate(M1, M2),
+    not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
+    not guessMergeClassesC3Candidate(M1, M2).
+
+#maximize { 9@0, c1_merge, M1, M2 : guessMergeClassesC1MergeReward(M1, M2) }.
+#maximize { 9@0, c2_merge, M1, M2 : guessMergeClassesC2MergeReward(M1, M2) }.
+#maximize { 8@0, c3_merge, M1, M2 : guessMergeClassesC3MergeReward(M1, M2) }.
+#maximize { 8@0, c4_merge, M1, M2 : guessMergeClassesC4MergeReward(M1, M2) }.
+
+#heuristic guessMergeClassesC1MergeReward(M1, M2) :
+    enable_reward_heuristics != 0,
+    guessMergeClassesC1Candidate(M1, M2). [9@reward_heuristic_priority, true]
+#heuristic guessMergeClassesC2MergeReward(M1, M2) :
+    enable_reward_heuristics != 0,
+    guessMergeClassesC2Candidate(M1, M2). [9@reward_heuristic_priority, true]
+#heuristic guessMergeClassesC3MergeReward(M1, M2) :
+    enable_reward_heuristics != 0,
+    guessMergeClassesC3Candidate(M1, M2). [8@reward_heuristic_priority, true]
+#heuristic guessMergeClassesC4MergeReward(M1, M2) :
+    enable_reward_heuristics != 0,
+    guessMergeClassesC4Candidate(M1, M2). [8@reward_heuristic_priority, true]
 
 % F2 is satisfied by final equivalence-class membership, whether direct or
 % transitive.  Keying the objective by Method awards it at most once even when

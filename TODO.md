@@ -352,7 +352,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Guess (guess.pl)
 - [x] `guessMergeClasses_B`
-- [ ] `guessMergeClasses_C1`–`guessMergeClasses_C4`
+- [x] `guessMergeClasses_C1`–`guessMergeClasses_C4`
 - [x] `guessMergeClasses_D`
 - [ ] `guessMergeClasses_G`
 - [x] `guessLateMergeClasses_F1` — intentionally no separate reward; its Prolog role is F2 candidate ordering
