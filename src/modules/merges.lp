@@ -693,15 +693,24 @@ lateF2Reward(Method) :-
 % declarative F2 objective does not reproduce that procedural ordering.
 
 % G1 constructor bonus: extra reward when either side's class has a constructor.
-% Uses &sameClass to check class membership at solver time.
+% Uses &sameClass to check class membership at solver time.  Excludes C-family
+% pairs like weakMergeReward does: Prolog's guessLateMergeClasses_G1 is a late
+% phase that never re-proposes a pair already merged by C1-C4, and stacking the
+% bonus on C rewards (9+9=18/pair) made the objective prefer cross-hierarchy
+% C1 merges over correct within-class weak merges (TinyXml pin-probe,
+% 2026-07-13 notebook entry).
 % Counterpart: guessLateMergeClasses_G1 constructor condition (guess.pl:879)
 weakG1Bonus(M1, M2) :-
     guessEnabled(weak_g1_bonus),
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
+    not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
+    not guessMergeClassesC3Candidate(M1, M2), not guessMergeClassesC4Candidate(M1, M2),
     constructor(Ctor), &sameClass(M1, Ctor).
 weakG1Bonus(M1, M2) :-
     guessEnabled(weak_g1_bonus),
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
+    not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
+    not guessMergeClassesC3Candidate(M1, M2), not guessMergeClassesC4Candidate(M1, M2),
     constructor(Ctor), &sameClass(M2, Ctor).
 #maximize { 9@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
 

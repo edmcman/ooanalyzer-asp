@@ -19,7 +19,48 @@ then commit the completed change.
 
 ## Where we are now
 
-No in-progress work. Recent sessions completed (in order):
+**Edit-distance error analysis on TinyXml-NewDebug (2026-07-13, after the
+guessMergeClasses_G port).** Scores at 300s champion flags: ASP-with-G 92,
+ASP-baseline 90, Prolog reference (.results.orig) 81. Config is fully
+seed-invariant (seeds 1/2 byte-identical partitions both sides) and the G
+heuristic entries have zero effect (all commented out → byte-identical
+output), so all differences are objective-shape-driven. Findings:
+- 23 of 27 "Add" actions are shared verbatim with Prolog — upstream fact gaps,
+  not fixable here. Over-merge cost is at parity (ASP 6 moves + 5 splits vs
+  Prolog 4 + 8), concentrated on the TiXmlDocument/Node/Element boundary.
+- The ASP-specific gap (~13 pts) is under-merging (+10 singleton moves, +4
+  ASP-only adds) and spurious methods (+3 removes). Every probed under-merged
+  method (Printer::CStr 0x445f50, Text::Blank 0x450d50, Attribute::SetName
+  0x44bec0, Node::Type 0x446dd0, Text::SetCDATA 0x44f2e0...) has a live
+  unclaimed weakMergeCandidate pairing it with its own class's ctor/dtor.
+- Pin-probe: forcing mergeClasses(4484560,4484624) (Node::Type into the Node
+  fragment) is SAT but lands 68 objective points WORSE (-46474 vs -46542) —
+  claiming the +8 weak (+9 G1 bonus) cascades away ~85 pts of other rewards.
+  So these misses are objective-preferred, not merely search-missed: reward
+  calibration / NOT-merge cascade issue, next step is diffing the pinned vs
+  unpinned models' reward atoms to find what the merge kills.
+- The 3 removes: guessMethodDomain = possibleMethod with flat 10@0 method
+  reward admits cdecl/stdcall-only junk (0x4584b0 + 0x4d0160 form a fake
+  finalClass). Prolog guessMethod_A-G tiers require explicitThisCallConvention
+  + methodMemberAccess(<100) / this-ptr dataflow — porting them is the fix.
+- results.py useful_reps output filter matches Prolog's emission behavior
+  (identical shared adds); not a culprit.
+- **weakG1Bonus unstacked (kept, 2026-07-13):** added the C-family exclusions
+  (mirroring weakMergeReward) so C1-C4 pairs no longer stack the +9 ctor bonus
+  on top of their C reward. Faithful: Prolog's late G1 never re-proposes a
+  pair already merged by C1-C4. Measured on TinyXml champion 300s: objective
+  -704 -44778, edit distance 94 (vs stacked 92 / pre-G 90) — within the ±2
+  trajectory-drift band; ooex partitions unchanged (objectives −45 = 5
+  removed stacked bonuses); 63/63 + manual sweep clean. Crucially the 27 adds
+  are unchanged: the under-merged methods (CStr/Blank/SetName/SetAttribute…)
+  stay unclaimed even at 17-vs-9 — **stacking was NOT the root cause of the
+  under-merges**. Root cause is the anytime stall: one improving model per
+  300s under champion flags, so the incumbent ≈ first heuristic descent and
+  reward weights barely matter. Next lever is search-side (autoresearch over
+  solver flags with edit distance as metric; opt-heuristic=sign is a past
+  champion per memory notes).
+
+No other in-progress work. Recent sessions completed (in order):
 - `guessMergeClasses_G` (guess.pl:1301) — merges.lp, **reimagined with approval**:
   Prolog's singleton-setof guess iterates to a fixpoint where the destructor's
   class accounts for every primary (non-overwrite) install of the vftable it
