@@ -354,7 +354,7 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `guessMergeClasses_B` — 2026-07-12: candidate now dethunks the entry (requires `method/1`, `not symbolProperty(_, virtual)`) and the guess.pl:1078 forall guard is ported as a solver-time reward gate (`strongMergeGuardOK`)
 - [x] `guessMergeClasses_C1`–`guessMergeClasses_C4`
 - [x] `guessMergeClasses_D`
-- [ ] `guessMergeClasses_G`
+- [x] `guessMergeClasses_G` — 2026-07-13: reimagined as coverage reward — Prolog's iterated singleton-set guess converges to "the destructor's class accounts for every primary install of the vftable", encoded as a per-(Method, VFTable) final-state reward with (dtor, writer) merge candidates
 - [x] `guessLateMergeClasses_F1` — intentionally no separate reward; its Prolog role is F2 candidate ordering
 - [x] `guessLateMergeClasses_F2` — once-per-method reward for joining a vftable method to its owned vftable class
 - [x] `guessLateMergeClasses_G1` — constructor bonus on weak merge candidates

@@ -419,6 +419,49 @@ guessMergeClassesC4Candidate(A, B) :- guessMergeClassesC4CandidateUnsorted(B, A)
 
 mergeCandidate(A, B) :- guessMergeClassesC4Candidate(A, B).
 
+% guessMergeClasses_G (reimagined): a non-constructor Method installs a
+% vftable.  Reward the final state where Method's class accounts for every
+% primary (non-overwrite) install of that vftable.  This is the fixpoint of
+% Prolog's iterated singleton-set guess: each G iteration merges the unique
+% remaining installer class, converging to full coverage.  Prolog's disabled
+% multi-candidate branch is subsumed rather than dropped: multi-class coverage
+% is reachable here via several merges, where iterated Prolog G also arrives
+% when checkMergeClasses permits.
+% Counterpart: guessMergeClassesG (guess.pl:1301)
+
+% Primary (non-overwrite) installer of VFTable.
+gPrimaryWriter(VFTable, Writer) :-
+    vfTableWrite(_Insn, Writer, Offset, VFTable),
+    not vfTableOverwrite(Writer, _, VFTable, Offset).                        % guess.pl:1313
+
+gDtorInstall(Method, VFTable) :-
+    vfTableWrite(_Insn, Method, _Offset, VFTable),                           % guess.pl:1303
+    -constructor(Method).                                                    % guess.pl:1308
+
+% Choice domain: the destructor paired with each other primary installer.
+%!trace_rule {"% and % are a G merge candidate because destructor % and % both install vftable %", Method, Writer, Method, Writer, VFTable}
+guessMergeClassesGCandidateUnsorted(Method, Writer) :-
+    gDtorInstall(Method, VFTable),
+    gPrimaryWriter(VFTable, Writer),
+    Method != Writer.
+
+guessMergeClassesGCandidate(A, B) :- guessMergeClassesGCandidateUnsorted(A, B), A < B.
+guessMergeClassesGCandidate(A, B) :- guessMergeClassesGCandidateUnsorted(B, A), A < B.
+
+mergeCandidate(A, B) :- guessMergeClassesGCandidate(A, B).
+
+% Nonempty setof (guess.pl:1310): some other method primarily installs VFTable.
+guessMergeClassesGOtherWriter(Method, VFTable) :-
+    gDtorInstall(Method, VFTable),
+    gPrimaryWriter(VFTable, Writer),
+    Method != Writer.
+
+% A primary install not accounted for by Method's class.
+guessMergeClassesGUncovered(Method, VFTable) :-
+    gDtorInstall(Method, VFTable),
+    gPrimaryWriter(VFTable, Writer),
+    not &sameClass(Method, Writer).
+
 % guessMergeClasses: choose merge or not-merge for each candidate pair.
 %!trace_rule {"guess whether % and % are the same class or not", A, B}
 1 { mergeClasses(A, B); -mergeClasses(A, B) } 1 :-
@@ -469,6 +512,11 @@ mergeCandidate(A, B) :- guessMergeClassesC4Candidate(A, B).
 #heuristic mergeClasses(A, B) :
     enable_input_heuristics != 0,
     guessMergeClassesC2Candidate(A, B). [10@1, false]
+% guessMergeClasses_G pairs (writer, writer) are likewise unreachable via
+% weak/lateF2, so they get the same conservative false phase.
+#heuristic mergeClasses(A, B) :
+    enable_input_heuristics != 0,
+    guessMergeClassesGCandidate(A, B). [10@1, false]
 
 % Optional all-input tier.  These level-only directives preserve the existing
 % true/false phases above while ensuring free merge inputs outrank ordinary
@@ -487,6 +535,9 @@ mergeCandidate(A, B) :- guessMergeClassesC4Candidate(A, B).
 #heuristic mergeClasses(A, B) :
     all_input_priority > 0,
     guessMergeClassesC2Candidate(A, B). [10@all_input_priority, level]
+#heuristic mergeClasses(A, B) :
+    all_input_priority > 0,
+    guessMergeClassesGCandidate(A, B). [10@all_input_priority, level]
 
 % Prolog delays positive method-to-class guesses until the structural families
 % above are exhausted, then tries normal vftable-derived merges before the
@@ -524,6 +575,13 @@ mergeCandidate(A, B) :- guessMergeClassesC4Candidate(A, B).
 #heuristic mergeClasses(A, B) :
     prolog_order_priority > 0,
     guessMergeClassesC4Candidate(A, B). [1@prolog_order_priority, true]
+% G is the last normal merge family, after C4/D and before the late phase.
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesGCandidate(A, B). [125@prolog_order_priority, level]
+#heuristic mergeClasses(A, B) :
+    prolog_order_priority > 0,
+    guessMergeClassesGCandidate(A, B). [1@prolog_order_priority, true]
 #heuristic mergeClasses(A, B) :
     prolog_order_priority > 0,
     lateF2Candidate(A, B),
@@ -601,6 +659,21 @@ guessMergeClassesC4MergeReward(M1, M2) :-
 #heuristic guessMergeClassesC4MergeReward(M1, M2) :
     enable_reward_heuristics != 0,
     guessMergeClassesC4Candidate(M1, M2). [8@reward_heuristic_priority, true]
+
+% guessMergeClasses_G reward: coverage is satisfied by final equivalence-class
+% membership, however realized (direct pair merges, transitive chains, or
+% reasoning from other families).  Keyed by (Method, VFTable), not by merge
+% pair, so multi-pair coverage earns one reward.
+%!trace_rule {"destructor %'s class accounts for every primary install of vftable %", Method, VFTable}
+guessMergeClassesGReward(Method, VFTable) :-
+    guessMergeClassesGOtherWriter(Method, VFTable),
+    not guessMergeClassesGUncovered(Method, VFTable).
+
+#maximize { 8@0, g_merge, Method, VFTable : guessMergeClassesGReward(Method, VFTable) }.
+
+#heuristic guessMergeClassesGReward(Method, VFTable) :
+    enable_reward_heuristics != 0,
+    guessMergeClassesGOtherWriter(Method, VFTable). [8@reward_heuristic_priority, true]
 
 % F2 is satisfied by final equivalence-class membership, whether direct or
 % transitive.  Keying the objective by Method awards it at most once even when

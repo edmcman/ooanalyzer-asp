@@ -20,6 +20,20 @@ then commit the completed change.
 ## Where we are now
 
 No in-progress work. Recent sessions completed (in order):
+- `guessMergeClasses_G` (guess.pl:1301) — merges.lp, **reimagined with approval**:
+  Prolog's singleton-setof guess iterates to a fixpoint where the destructor's
+  class accounts for every primary (non-overwrite) install of the vftable it
+  writes, so the ASP port rewards that final coverage state directly
+  (`guessMergeClassesGReward(Method, VFTable)`, 8@0, keyed per dtor+vftable
+  like lateF2, not per pair). Candidates: (dtor writer, other primary writer)
+  pairs feed mergeCandidate; heuristics mirror C2 (conservative false in the
+  default tier, level 125 in the prolog-order tier between C4 and lateF2 with
+  true phase). The literal singleton guard was dropped — final-state coverage
+  subsumes it and is monotone (not self-defeating). Rule is inert on
+  ooex_vs2008/vs2010 Debug (no vftable there has a second primary writer:
+  objectives unchanged at -28 -3592 / -28 -3462, both OPTIMUM). vs2010/Lite
+  times out at 300s on baseline HEAD too (pre-existing, not a G regression).
+  63/63 propagator tests, manual sweep clean.
 - **TinyXml solving regression fixed via `&classRelationship` theory atoms**
   (2026-07-06). The reasonObjectInObject_D port (5433893) broke TinyXml-NewDebug
   solving (0 models in 120s vs first model ~10s at 7d6a6a6): its
