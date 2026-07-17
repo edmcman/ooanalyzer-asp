@@ -56,10 +56,66 @@ method(Method) :-
 % GUESS
 % ============================================================
 
-% guessMethodA: choose method or -method for each possibleMethod candidate.
-% Counterpart: guessMethodA (guess.pl:382)
-%!trace_rule {"% could be a method", M}
+% guessMethod_A-G: evidence tiers used by Prolog to propose unresolved methods.
+% doNotGuessHelper is procedural; an ASP choice is already fixed when ordinary
+% reasoning proves either polarity.
+% Counterparts: guessMethodA-G (guess.pl:382-519)
+guessMethodA(M) :-
+    explicitThisCallConvention(M),
+    methodMemberAccess(_Insn, M, Offset, _Size),
+    Offset < 100.
+
+guessMethodB(M) :-
+    method(Caller),
+    thisParamFuncParameter(Caller, ThisPtr1),
+    thisPtrOffset(ThisPtr1, _Offset, ThisPtr2),
+    thisPtrUsage(_Insn, Caller, ThisPtr2, M).
+
+guessMethodC(M) :-
+    explicitThisCallConvention(M),
+    methodMemberAccess(_Insn1, M, Offset, _Size1),
+    Offset < 100,
+    validMethodCallAtOffset(_Insn2, Caller, M, _Size2),
+    method(Caller).
+
+guessMethodD(M) :-
+    explicitThisCallConvention(M),
+    validMethodMemberAccess(_Insn0, M, Offset, _Size0),
+    Offset < 100,
+    validMethodCallAtOffset(_Insn1, Caller1, M, _Size1),
+    validMethodCallAtOffset(_Insn2, Caller2, M, _Size2),
+    Caller1 != Caller2,
+    validMethodCallAtOffset(_Insn3, Caller3, M, _Size3),
+    Caller1 != Caller3.
+
+guessMethodE(M) :-
+    explicitThisCallConvention(M),
+    validMethodMemberAccess(_Insn0, M, Offset, _Size0),
+    Offset < 100,
+    thisPtrUsage(_Insn1, Caller, ThisPtr, M),
+    thisPtrUsage(_Insn2, Caller, ThisPtr, Method2),
+    M != Method2,
+    thisPtrUsage(_Insn3, Caller, ThisPtr, Method3),
+    M != Method3.
+
+guessMethodF(M) :-
+    explicitThisCallConvention(M),
+    validMethodMemberAccess(_Insn, M, Offset, _Size),
+    Offset < 100,
+    1 { possibleConstructor(M); possibleDestructor(M) }.
+
+guessMethodG(M) :-
+    explicitThisCallConvention(M),
+    thisPtrUsage(_Insn, Caller, _ThisPtr, M),
+    method(Caller),
+    1 { possibleConstructor(M); possibleDestructor(M) }.
+
+% Keep the prototype's existing broad choice domain for simplified inputs.
+% A-G refine decision order only, matching Prolog's procedural guess ladder
+% without removing stable models from the ASP encoding.
 guessMethodDomain(M) :- possibleMethod(M).
+
+%!trace_rule {"% could be a method", M}
 1 { method(M) ; -method(M) } 1 :-
     guessEnabled(method),
     guessMethodDomain(M).
@@ -74,10 +130,14 @@ guessMethodDomain(M) :- possibleMethod(M).
 
 % Prolog guesses methods after currently available vftables/inheritance, but
 % before vftable entries and constructor/destructor classification.
-#heuristic method(M) :
-    prolog_order_priority > 0,
-    guessEnabled(method),
-    guessMethodDomain(M). [600@prolog_order_priority, level]
+% Preserve the Prolog A-to-G source order inside the method-family slot.
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodA(M). [607@prolog_order_priority, level]
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodB(M). [606@prolog_order_priority, level]
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodC(M). [605@prolog_order_priority, level]
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodD(M). [604@prolog_order_priority, level]
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodE(M). [603@prolog_order_priority, level]
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodF(M). [602@prolog_order_priority, level]
+#heuristic method(M) : prolog_order_priority > 0, guessEnabled(method), guessMethodG(M). [601@prolog_order_priority, level]
 #heuristic method(M) :
     prolog_order_priority > 0,
     guessEnabled(method),

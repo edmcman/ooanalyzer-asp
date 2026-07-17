@@ -45,7 +45,9 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 
 ### Guess (guess.pl)
 - [x] `guessMethod_A` (guess.pl:382)
-- [ ] `guessMethod_B`–`guessMethod_G` (remaining priority variants)
+- [x] `guessMethod_B`–`guessMethod_G` (guess.pl:400-519; distinct evidence
+      predicates and A-to-G Domain priority tiers in `methods.lp`; the broad
+      `possibleMethod` domain remains for simplified-input compatibility)
 
 ---
 

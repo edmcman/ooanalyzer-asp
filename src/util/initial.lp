@@ -274,6 +274,13 @@ thisPtrParam(Function, Param) :-
     callingConvention(Function, genericthisptr),
     genericThisPtrABIParam(Param).
 
+% Explicit OO conventions trusted by the reference method-guess families.
+% genericthisptr is deliberately excluded because it is a fallback signal.
+explicitThisCallConvention(Method) :- callingConvention(Method, "__thiscall").
+explicitThisCallConvention(Method) :- callingConvention(Method, "__x64call").
+explicitThisCallConvention(Method) :- callingConvention(Method, "__sysv32call").
+explicitThisCallConvention(Method) :- callingConvention(Method, "__sysv64call").
+
 genericThisPtrABIParam(ecx) :- fileInfo(_, _, "MSVC_32", _).
 genericThisPtrABIParam(rcx) :- fileInfo(_, _, "MSVC_64", _).
 genericThisPtrABIParam(rdi) :- fileInfo(_, _, "SYSV_64", _).
