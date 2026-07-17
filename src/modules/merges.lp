@@ -718,6 +718,26 @@ weakG1Bonus(M1, M2) :-
     enable_reward_heuristics != 0,
     weakMergeCandidate(M1, M2). [weak_g1_reward_weight@reward_heuristic_priority, true]
 
+% Ambiguity-aware weak reward: a degree-one endpoint has no competing weak
+% class assignment. This uses only the existing weak-candidate graph and adds
+% no merge candidates or semantic constraints.
+weakMergeNeighbor(M1, M2) :- weakMergeCandidate(M1, M2).
+weakMergeNeighbor(M2, M1) :- weakMergeCandidate(M1, M2).
+
+degree1WeakMergeEndpoint(M) :-
+    weakMergeNeighbor(M, _),
+    1 = #count { Other : weakMergeNeighbor(M, Other) }.
+
+degree1WeakMergeReward(M1, M2) :-
+    mergeClasses(M1, M2),
+    weakMergeCandidate(M1, M2),
+    1 { degree1WeakMergeEndpoint(M1); degree1WeakMergeEndpoint(M2) }.
+
+#maximize {
+    degree1_weak_merge_reward_weight@0, degree1_weak_merge, M1, M2 :
+        degree1WeakMergeReward(M1, M2)
+}.
+
 % Disabled for now: this non-Prolog adjacency reward grounds a quadratic
 % aggregate over large method domains (for example mysql.exe.lp).
 %
