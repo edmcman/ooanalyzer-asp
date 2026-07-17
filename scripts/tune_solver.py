@@ -751,9 +751,9 @@ def ensure_manifest(output_dir: Path, input_path: Path, settings: dict[str, Any]
 
 def create_pruner() -> optuna.pruners.PercentilePruner:
     return optuna.pruners.PercentilePruner(
-        75.0,
+        50.0,
         n_startup_trials=24,
-        n_warmup_steps=0,
+        n_warmup_steps=1,
         interval_steps=1,
         n_min_trials=6,
     )

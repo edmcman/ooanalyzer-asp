@@ -155,10 +155,35 @@ class SolverTunerTests(unittest.TestCase):
             self.assertEqual(budget.available, 1)
         self.assertEqual(budget.available, 4)
 
-    def test_study_uses_percentile_pruner_directly(self) -> None:
+    def test_study_uses_median_percentile_pruner(self) -> None:
         pruner = tune.create_pruner()
         self.assertIsInstance(pruner, tune.optuna.pruners.PercentilePruner)
         self.assertNotIsInstance(pruner, tune.optuna.pruners.PatientPruner)
+
+    def test_pruner_skips_first_checkpoint_and_prunes_no_model_at_median(self) -> None:
+        study = tune.optuna.create_study(direction="minimize", pruner=tune.create_pruner())
+        for index in range(24):
+            final = tune.scalarize_cost((-704, -44000 - index))
+            at_200 = final if index < 8 else tune.NO_MODEL_SCORE
+            at_400 = final if index < 13 else tune.NO_MODEL_SCORE
+            study.add_trial(
+                tune.optuna.trial.create_trial(
+                    value=float(final),
+                    intermediate_values={
+                        0: float(tune.NO_MODEL_SCORE),
+                        1: float(at_200),
+                        2: float(at_400),
+                    },
+                )
+            )
+
+        trial = study.ask()
+        trial.report(float(tune.NO_MODEL_SCORE), 0)
+        self.assertFalse(trial.should_prune())
+        trial.report(float(tune.NO_MODEL_SCORE), 1)
+        self.assertFalse(trial.should_prune())
+        trial.report(float(tune.NO_MODEL_SCORE), 2)
+        self.assertTrue(trial.should_prune())
 
     def test_finalists_exclude_duplicate_baseline_arguments(self) -> None:
         class Trial:
