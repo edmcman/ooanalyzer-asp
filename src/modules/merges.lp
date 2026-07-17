@@ -217,20 +217,6 @@ notMergeUnsorted(X, Y) :-
     classRelationshipCand(X, Y),
     &classRelationship(X, Y).                                                       % rules.pl:3212
 
-% reasonNOTMergeClasses_O: a class with a known maximum size cannot own a
-% called method whose confirmed member access extends beyond that maximum.
-% classSizeLTE and classCallsMethod can use different witnesses for the caller
-% class, so join them explicitly through &sameClass.
-% Counterpart: reasonNOTMergeClasses_O (rules.pl:3296)
-%!trace_rule {"% and % must NOT be merged because member access ending at % exceeds class size %", Caller, Method, MemberOffset + MemberSize, ClassSize}
-notMergeUnsorted(Caller, Method) :-
-    classSizeLTE(SizeWitness, ClassSize),
-    classCallsMethod(Caller, Method),
-    &sameClass(Caller, SizeWitness),
-    not &sameClass(Caller, Method),
-    validMethodMemberAccess(_Insn, Method, MemberOffset, MemberSize),
-    MemberOffset + MemberSize > ClassSize.                                           % rules.pl:3296
-
 % reasonNOTMergeClasses_R: If a derived class calls a method that installs the
 % derived class' vftable, the called method cannot be on the base class.
 % Witness: DC (derived), BC (base from derivedClass).
