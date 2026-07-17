@@ -55,11 +55,6 @@
 #const late_f2_reward_weight = 8.
 #const weak_g1_reward_weight = 9.
 
-% Optional ambiguity-aware weak-merge bonus. A positive value rewards an
-% already-selected weak candidate when either endpoint has exactly one weak
-% neighbor. It is default-off and never expands the merge choice domain.
-#const degree1_weak_merge_reward_weight = 0.
-
 % Optional global input-first overlay.  A value > 0 puts every genuine
 % search-input/choice atom in that Domain-heuristic priority tier above ordinary
 % derived atoms while retaining each family's existing relative level and phase
