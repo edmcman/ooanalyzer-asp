@@ -41,6 +41,20 @@
 #const vftable_heuristic_priority = 3.
 #const vftable_size_heuristic_priority = 3.
 
+% Priority-0 reward weights. Defaults preserve the historical objective.
+% Expose reward weights as constants so objective tuning can be measured without
+% editing rules between runs.
+#const method_reward_weight = 10.
+#const strong_merge_reward_weight = 10.
+#const weak_merge_reward_weight = 8.
+#const c1_merge_reward_weight = 9.
+#const c2_merge_reward_weight = 9.
+#const c3_merge_reward_weight = 8.
+#const c4_merge_reward_weight = 8.
+#const g_merge_reward_weight = 8.
+#const late_f2_reward_weight = 8.
+#const weak_g1_reward_weight = 9.
+
 % Optional global input-first overlay.  A value > 0 puts every genuine
 % search-input/choice atom in that Domain-heuristic priority tier above ordinary
 % derived atoms while retaining each family's existing relative level and phase

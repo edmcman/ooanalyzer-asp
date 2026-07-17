@@ -609,11 +609,11 @@ guessMergeClassesGUncovered(Method, VFTable) :-
 strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeGuardOK(M1, M2).
 strongMergeReward(M1, M2) :- mergeClasses(M1, M2), strongMergeCandidateD(M1, M2).
 
-#maximize { 10@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
+#maximize { strong_merge_reward_weight@0, merge, M1, M2 : strongMergeReward(M1, M2) }.
 
 #heuristic strongMergeReward(M1, M2) :
     enable_reward_heuristics != 0,
-    strongMergeCandidate(M1, M2). [10@reward_heuristic_priority, true]
+    strongMergeCandidate(M1, M2). [strong_merge_reward_weight@reward_heuristic_priority, true]
 
 % Base G2 reward: prefer weak merges when chosen.  Excludes C-family pairs,
 % which earn their own disjoint-precedence rewards below.
@@ -621,11 +621,11 @@ weakMergeReward(M1, M2) :-
     mergeClasses(M1, M2), weakMergeCandidate(M1, M2),
     not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
     not guessMergeClassesC3Candidate(M1, M2), not guessMergeClassesC4Candidate(M1, M2).
-#maximize { 8@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
+#maximize { weak_merge_reward_weight@0, weak_merge, M1, M2 : weakMergeReward(M1, M2) }.
 
 #heuristic weakMergeReward(M1, M2) :
     enable_reward_heuristics != 0,
-    weakMergeCandidate(M1, M2). [8@reward_heuristic_priority, true]
+    weakMergeCandidate(M1, M2). [weak_merge_reward_weight@reward_heuristic_priority, true]
 
 % guessMergeClasses_C1-C4 rewards: disjoint precedence C1 > C2 > C3 > C4 so a
 % pair earns only its best-applicable reward, mirroring the Prolog try-order.
@@ -642,23 +642,23 @@ guessMergeClassesC4MergeReward(M1, M2) :-
     not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
     not guessMergeClassesC3Candidate(M1, M2).
 
-#maximize { 9@0, c1_merge, M1, M2 : guessMergeClassesC1MergeReward(M1, M2) }.
-#maximize { 9@0, c2_merge, M1, M2 : guessMergeClassesC2MergeReward(M1, M2) }.
-#maximize { 8@0, c3_merge, M1, M2 : guessMergeClassesC3MergeReward(M1, M2) }.
-#maximize { 8@0, c4_merge, M1, M2 : guessMergeClassesC4MergeReward(M1, M2) }.
+#maximize { c1_merge_reward_weight@0, c1_merge, M1, M2 : guessMergeClassesC1MergeReward(M1, M2) }.
+#maximize { c2_merge_reward_weight@0, c2_merge, M1, M2 : guessMergeClassesC2MergeReward(M1, M2) }.
+#maximize { c3_merge_reward_weight@0, c3_merge, M1, M2 : guessMergeClassesC3MergeReward(M1, M2) }.
+#maximize { c4_merge_reward_weight@0, c4_merge, M1, M2 : guessMergeClassesC4MergeReward(M1, M2) }.
 
 #heuristic guessMergeClassesC1MergeReward(M1, M2) :
     enable_reward_heuristics != 0,
-    guessMergeClassesC1Candidate(M1, M2). [9@reward_heuristic_priority, true]
+    guessMergeClassesC1Candidate(M1, M2). [c1_merge_reward_weight@reward_heuristic_priority, true]
 #heuristic guessMergeClassesC2MergeReward(M1, M2) :
     enable_reward_heuristics != 0,
-    guessMergeClassesC2Candidate(M1, M2). [9@reward_heuristic_priority, true]
+    guessMergeClassesC2Candidate(M1, M2). [c2_merge_reward_weight@reward_heuristic_priority, true]
 #heuristic guessMergeClassesC3MergeReward(M1, M2) :
     enable_reward_heuristics != 0,
-    guessMergeClassesC3Candidate(M1, M2). [8@reward_heuristic_priority, true]
+    guessMergeClassesC3Candidate(M1, M2). [c3_merge_reward_weight@reward_heuristic_priority, true]
 #heuristic guessMergeClassesC4MergeReward(M1, M2) :
     enable_reward_heuristics != 0,
-    guessMergeClassesC4Candidate(M1, M2). [8@reward_heuristic_priority, true]
+    guessMergeClassesC4Candidate(M1, M2). [c4_merge_reward_weight@reward_heuristic_priority, true]
 
 % guessMergeClasses_G reward: coverage is satisfied by final equivalence-class
 % membership, however realized (direct pair merges, transitive chains, or
@@ -669,11 +669,11 @@ guessMergeClassesGReward(Method, VFTable) :-
     guessMergeClassesGOtherWriter(Method, VFTable),
     not guessMergeClassesGUncovered(Method, VFTable).
 
-#maximize { 8@0, g_merge, Method, VFTable : guessMergeClassesGReward(Method, VFTable) }.
+#maximize { g_merge_reward_weight@0, g_merge, Method, VFTable : guessMergeClassesGReward(Method, VFTable) }.
 
 #heuristic guessMergeClassesGReward(Method, VFTable) :
     enable_reward_heuristics != 0,
-    guessMergeClassesGOtherWriter(Method, VFTable). [8@reward_heuristic_priority, true]
+    guessMergeClassesGOtherWriter(Method, VFTable). [g_merge_reward_weight@reward_heuristic_priority, true]
 
 % F2 is satisfied by final equivalence-class membership, whether direct or
 % transitive.  Keying the objective by Method awards it at most once even when
@@ -682,11 +682,11 @@ lateF2Reward(Method) :-
     lateF2CandidateUnsorted(VFTable, Method),
     &sameClass(VFTable, Method).
 
-#maximize { 8@0, late_f2, Method : lateF2Reward(Method) }.
+#maximize { late_f2_reward_weight@0, late_f2, Method : lateF2Reward(Method) }.
 
 #heuristic lateF2Reward(Method) :
     enable_reward_heuristics != 0,
-    lateF2CandidateUnsorted(_VFTable, Method). [8@reward_heuristic_priority, true]
+    lateF2CandidateUnsorted(_VFTable, Method). [late_f2_reward_weight@reward_heuristic_priority, true]
 
 % guessLateMergeClasses_F1 intentionally has no separate reward.  Its Prolog
 % role is to order the F2 candidates whose owning class has no known base; the
@@ -712,11 +712,11 @@ weakG1Bonus(M1, M2) :-
     not guessMergeClassesC1Candidate(M1, M2), not guessMergeClassesC2Candidate(M1, M2),
     not guessMergeClassesC3Candidate(M1, M2), not guessMergeClassesC4Candidate(M1, M2),
     constructor(Ctor), &sameClass(M2, Ctor).
-#maximize { 9@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
+#maximize { weak_g1_reward_weight@0, weak_g1, M1, M2 : weakG1Bonus(M1, M2) }.
 
 #heuristic weakG1Bonus(M1, M2) :
     enable_reward_heuristics != 0,
-    weakMergeCandidate(M1, M2). [9@reward_heuristic_priority, true]
+    weakMergeCandidate(M1, M2). [weak_g1_reward_weight@reward_heuristic_priority, true]
 
 % Disabled for now: this non-Prolog adjacency reward grounds a quadratic
 % aggregate over large method domains (for example mysql.exe.lp).

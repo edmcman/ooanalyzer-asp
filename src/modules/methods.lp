@@ -89,11 +89,11 @@ guessMethodDomain(M) :- possibleMethod(M).
 
 % Weakest reward: prefer more methods over fewer (below all other priorities).
 guessMethodReward(M) :- method(M), guessMethodDomain(M).
-#maximize { 10@0, method, M : guessMethodReward(M) }.
+#maximize { method_reward_weight@0, method, M : guessMethodReward(M) }.
 
 #heuristic guessMethodReward(M) :
     enable_reward_heuristics != 0,
-    guessMethodDomain(M). [10@reward_heuristic_priority, true]
+    guessMethodDomain(M). [method_reward_weight@reward_heuristic_priority, true]
 
 %!trace {"% is a method", M} method(M).
 
