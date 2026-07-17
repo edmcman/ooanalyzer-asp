@@ -37,7 +37,8 @@ Tracks the port of `pharos/share/prolog/oorules/rules.pl` (~3734 lines) to Cling
 - [x] `reasonMethod_H` (80) — `vfTableWrite` → method
 - [ ] `reasonMethod_I` (85) — `vbTableWrite` → method
 - [x] `reasonMethod_J` (99) — `classCallsMethod` → method
-- [ ] `reasonMethod_K` (103) — `thisPtrUsage` → method
+- [x] `reasonMethod_K` (103) — a callee sharing an object pointer with a known
+      method is also a method (`methods.lp`)
 - [x] `reasonMethod_L` (109) — `methodCallAtOffset` → method
 - [ ] `reasonMethod_M` (118) — `thisPtrAllocation` → method
 - [ ] `reasonMethod_N` (133) — thiscall calling convention

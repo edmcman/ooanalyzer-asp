@@ -42,6 +42,15 @@ method(Method) :-
 method(Method) :-
     classCallsMethod(_Class, Method).                                      % rules.pl:99
 
+% reasonMethod_K: if the same symbolic object pointer is passed to a known
+% method and another callee, that other callee is also a method.
+% Counterpart: reasonMethod_K (rules.pl:103)
+%!trace_rule {"% is a method because it receives the same object pointer as known method %", Method, Method1}
+method(Method) :-
+    thisPtrUsage(_Insn1, Func, ThisPtr, Method1),
+    method(Method1),
+    thisPtrUsage(_Insn2, Func, ThisPtr, Method).
+
 % reasonMethod_L: caller is a method and calls callee at offset 0 → callee is a method.
 % Counterpart: reasonMethod_L (rules.pl:109)
 %!trace_rule {"% is a method because % calls it at this-offset 0", Method, Caller}
