@@ -6,3 +6,4 @@ examples/ooa/**/*.out
 *.jar
 __pycache__
 .state/perf
+.state/hyperopt

@@ -50,6 +50,28 @@ python ooanalyzer.py mysql.exe.lp --const enable_dynamic_guess_gates=0 --stats=1
 python ooanalyzer.py mysql.exe.lp --const max_class_size=512 --const max_offset_depth=6
 ```
 
+### Solver hyperparameter tuning
+
+Run a resumable 24-hour Optuna study, followed by held-out validation, with:
+
+```sh
+uv run python scripts/tune_solver.py run \
+    --input examples/ooa/TinyXml/tinyXmlTest-NewDebug.exe.lp \
+    --wall-time 24h
+```
+
+The tuner keeps the ASP objective and model semantics fixed. It evaluates each
+configuration at a 1,800-second cutoff across multiple seeds, with anytime
+checkpoints at 1/6, 1/3, 2/3, and all of that limit. The checkpoints scale with
+`--trial-time-limit`, or can be set explicitly with `--checkpoints`. It tunes Clasp from
+one through eight threads per solver, and coordinates concurrent trials with a
+physical-core CPU budget. Numeric solver settings are sampled from ranges;
+categories are reserved for structural choices such as algorithm family. It
+writes its journal, logs, rankings, validation data, and reusable `best.args` under
+`.state/hyperopt/INPUT-YYMMDD-HHMM/`. Resume a run by passing its directory with
+`--output`; use the `study`, `validate`, and `report` subcommands to run stages
+separately.
+
 Core bounds:
 
 | Constant | Default | Meaning |
@@ -94,6 +116,7 @@ Scoring and heuristic gates:
 | [`tests/test_propagator.py`](tests/test_propagator.py) | Focused propagator regression harness |
 | [`src/old/`](src/old/) | v1 Clingo modules (reference only) |
 | [`scripts/facts2clingo.py`](scripts/facts2clingo.py) | Syntax adapter: converts `.facts` files to Clingo-compatible `.lp` |
+| [`scripts/tune_solver.py`](scripts/tune_solver.py) | Resumable Optuna tuner for fixed-budget solver performance on any OOAnalyzer input |
 | [`examples/manual/example.lp`](examples/manual/example.lp) | Valid 3-class example |
 | [`examples/manual/inherit_example.lp`](examples/manual/inherit_example.lp) | Single inheritance: Base + Derived |
 | [`examples/manual/multi_inherit_example.lp`](examples/manual/multi_inherit_example.lp) | Multiple inheritance: C : A(0), B(8) |
