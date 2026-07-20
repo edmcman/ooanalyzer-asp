@@ -2,7 +2,9 @@
 """Focused tests for the OOAnalyzer hyperparameter tuner."""
 
 from pathlib import Path
+import json
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -155,35 +157,28 @@ class SolverTunerTests(unittest.TestCase):
             self.assertEqual(budget.available, 1)
         self.assertEqual(budget.available, 4)
 
-    def test_study_uses_median_percentile_pruner(self) -> None:
+    def test_study_uses_successive_halving_pruner(self) -> None:
         pruner = tune.create_pruner()
-        self.assertIsInstance(pruner, tune.optuna.pruners.PercentilePruner)
-        self.assertNotIsInstance(pruner, tune.optuna.pruners.PatientPruner)
+        self.assertIsInstance(pruner, tune.optuna.pruners.SuccessiveHalvingPruner)
 
-    def test_pruner_skips_first_checkpoint_and_prunes_no_model_at_median(self) -> None:
+    def test_pruner_halves_at_second_and_third_checkpoints(self) -> None:
         study = tune.optuna.create_study(direction="minimize", pruner=tune.create_pruner())
-        for index in range(24):
-            final = tune.scalarize_cost((-704, -44000 - index))
-            at_200 = final if index < 8 else tune.NO_MODEL_SCORE
-            at_400 = final if index < 13 else tune.NO_MODEL_SCORE
-            study.add_trial(
-                tune.optuna.trial.create_trial(
-                    value=float(final),
-                    intermediate_values={
-                        0: float(tune.NO_MODEL_SCORE),
-                        1: float(at_200),
-                        2: float(at_400),
-                    },
-                )
-            )
+        first = study.ask()
+        first.report(0.0, 0)
+        self.assertFalse(first.should_prune())
+        first.report(0.0, 1)
+        self.assertFalse(first.should_prune())
+        first.report(0.0, 2)
+        self.assertFalse(first.should_prune())
+        study.tell(first, 0.0)
 
-        trial = study.ask()
-        trial.report(float(tune.NO_MODEL_SCORE), 0)
-        self.assertFalse(trial.should_prune())
-        trial.report(float(tune.NO_MODEL_SCORE), 1)
-        self.assertFalse(trial.should_prune())
-        trial.report(float(tune.NO_MODEL_SCORE), 2)
-        self.assertTrue(trial.should_prune())
+        second = study.ask()
+        second.report(-1.0, 0)
+        self.assertFalse(second.should_prune())
+        second.report(-1.0, 1)
+        self.assertFalse(second.should_prune())
+        second.report(1.0, 2)
+        self.assertTrue(second.should_prune())
 
     def test_finalists_exclude_duplicate_baseline_arguments(self) -> None:
         class Trial:
@@ -208,6 +203,74 @@ class SolverTunerTests(unittest.TestCase):
             Study(), 1, excluded_args=(tune.baseline_args(),)
         )
         self.assertEqual(finalists[0]["trial"], 1)
+
+    def test_report_includes_only_top_trial_config_and_commands(self) -> None:
+        study = tune.optuna.create_study(direction="minimize")
+        best_attrs = {
+            "solver_args": ["--heuristic=Vsids", "--restarts=no"],
+            "seeds": [1, 2],
+            "command": ["/venv/bin/python", "ooanalyzer.py", "best.lp"],
+        }
+        study.add_trial(
+            tune.optuna.trial.create_trial(
+                value=1.0,
+                user_attrs={
+                    **best_attrs,
+                    "median_cost": [-704, -44000],
+                    "anytime_score": 1.0,
+                    "worst_score": 1,
+                },
+            )
+        )
+        study.add_trial(
+            tune.optuna.trial.create_trial(
+                value=2.0,
+                user_attrs={
+                    "solver_args": ["--heuristic=Berkmin"],
+                    "seeds": [1, 2],
+                    "command": ["/venv/bin/python", "ooanalyzer.py", "worse.lp"],
+                    "anytime_score": 2.0,
+                    "worst_score": 2,
+                },
+            )
+        )
+        study.add_trial(
+            tune.optuna.trial.create_trial(
+                state=tune.optuna.trial.TrialState.PRUNED,
+                intermediate_values={1: 3.0},
+                user_attrs={
+                    "solver_args": ["--heuristic=Vmtf"],
+                    "seeds": [1, 2],
+                    "command": ["/venv/bin/python", "ooanalyzer.py", "pruned.lp"],
+                },
+            )
+        )
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            (output_dir / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "fingerprint": {"input": "/work/input.lp"},
+                        "settings": {
+                            "trial_time_limit": 600,
+                            "tuning_seeds": [1, 2],
+                            "top": 1,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            tune.write_study_report(study, output_dir)
+            report = (output_dir / "REPORT.md").read_text(encoding="utf-8")
+
+        self.assertIn("## Top 1 tuning trials", report)
+        self.assertIn("### 1. Trial 0", report)
+        self.assertIn("--heuristic=Vsids --restarts=no", report)
+        self.assertIn("/venv/bin/python ooanalyzer.py best.lp --seed=1", report)
+        self.assertIn("/venv/bin/python ooanalyzer.py best.lp --seed=2", report)
+        self.assertNotIn("worse.lp", report)
+        self.assertNotIn("pruned.lp", report)
 
     def test_default_output_uses_input_name_and_not_autoresearch(self) -> None:
         output = tune.default_output_dir(Path("some program.exe.lp"))

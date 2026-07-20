@@ -749,13 +749,10 @@ def ensure_manifest(output_dir: Path, input_path: Path, settings: dict[str, Any]
     return current
 
 
-def create_pruner() -> optuna.pruners.PercentilePruner:
-    return optuna.pruners.PercentilePruner(
-        50.0,
-        n_startup_trials=24,
-        n_warmup_steps=1,
-        interval_steps=1,
-        n_min_trials=6,
+def create_pruner() -> optuna.pruners.SuccessiveHalvingPruner:
+    return optuna.pruners.SuccessiveHalvingPruner(
+        min_resource=1,
+        reduction_factor=2,
     )
 
 
@@ -814,6 +811,7 @@ def objective_factory(
         trial.set_user_attr("cpu_units", cpu_units)
         trial_dir = output_dir / "trials" / f"trial-{trial.number:05d}"
         command = solver_command(input_path, args, time_limit)
+        trial.set_user_attr("command", command)
         try:
             console(
                 f"[trial {trial.number}] waiting for {cpu_units} CPU tokens "
@@ -876,7 +874,15 @@ def run_study(args: argparse.Namespace, output_dir: Path, study_seconds: float) 
         "jobs": args.jobs,
         "max_solver_threads": args.max_solver_threads,
         "cpu_budget": args.cpu_budget,
+        "top": args.top,
         "search_space_version": 2,
+        "pruner": {
+            "name": "SuccessiveHalvingPruner",
+            "min_resource": 1,
+            "reduction_factor": 2,
+            "min_early_stopping_rate": 0,
+            "bootstrap_count": 0,
+        },
     }
     ensure_manifest(output_dir, args.input, settings)
     study = create_study(output_dir)
@@ -980,6 +986,7 @@ def validate_study(args: argparse.Namespace, output_dir: Path) -> list[dict[str,
                 "worst_score": max(scalarize_cost(cost) for cost in costs),
                 "anytime_score": anytime_score(results, args.checkpoints),
                 "artifact": str(candidate_dir.relative_to(output_dir)),
+                "commands": [result.command for result in results],
             }
         )
     validation.sort(
@@ -994,6 +1001,45 @@ def validate_study(args: argparse.Namespace, output_dir: Path) -> list[dict[str,
 
 def _cost_text(cost: Sequence[int] | None) -> str:
     return "none" if cost is None else "[" + ", ".join(str(item) for item in cost) + "]"
+
+
+def _artifact_commands(output_dir: Path, artifact: str | None) -> list[list[str]]:
+    if not artifact:
+        return []
+    result_path = output_dir / artifact / "result.json"
+    if not result_path.is_file():
+        return []
+    payload = json.loads(result_path.read_text(encoding="utf-8"))
+    return [
+        list(seed["command"])
+        for seed in payload.get("seeds", [])
+        if isinstance(seed.get("command"), list)
+    ]
+
+
+def _trial_commands(
+    trial: optuna.trial.FrozenTrial,
+    output_dir: Path,
+    manifest: dict[str, Any],
+) -> list[list[str]]:
+    commands = _artifact_commands(output_dir, trial.user_attrs.get("artifact"))
+    if commands:
+        return commands
+
+    command = trial.user_attrs.get("command")
+    seeds = trial.user_attrs.get("seeds", [])
+    if isinstance(command, list) and seeds:
+        return [[*command, f"--seed={seed}"] for seed in seeds]
+
+    solver_args = trial.user_attrs.get("solver_args")
+    settings = manifest.get("settings", {})
+    input_name = manifest.get("fingerprint", {}).get("input")
+    time_limit = settings.get("trial_time_limit")
+    if not isinstance(solver_args, list) or not input_name or time_limit is None:
+        return []
+    fallback_seeds = seeds or settings.get("tuning_seeds", [])
+    command = solver_command(Path(input_name), solver_args, float(time_limit))
+    return [[*command, f"--seed={seed}"] for seed in fallback_seeds]
 
 
 def write_study_report(
@@ -1011,8 +1057,10 @@ def write_study_report(
         manifest.get("fingerprint", {}).get("input", "OOAnalyzer input")
     ).name
     rows = study_trials_ranked(study)
+    top_count = max(1, int(manifest.get("settings", {}).get("top", 5)))
+    top_rows = rows[:top_count]
     tsv = ["rank\ttrial\tvalue\tmedian_cost\tworst_score\tanytime_score\tlabel\targs"]
-    for rank, trial in enumerate(rows, 1):
+    for rank, trial in enumerate(top_rows, 1):
         tsv.append(
             "\t".join(
                 (
@@ -1068,6 +1116,37 @@ def write_study_report(
         f"- Completed trials: {len(rows)}",
         f"- Pruned trials: {sum(t.state == optuna.trial.TrialState.PRUNED for t in study.trials)}",
     ]
+    if top_rows:
+        lines.extend(("", f"## Top {len(top_rows)} tuning trials"))
+        for rank, trial in enumerate(top_rows, 1):
+            commands = _trial_commands(trial, output_dir, manifest)
+            lines.extend(
+                (
+                    "",
+                    f"### {rank}. Trial {trial.number}",
+                    "",
+                    f"Objective: `{trial.value}`; median cost: "
+                    f"`{_cost_text(trial.user_attrs.get('median_cost'))}`.",
+                    "",
+                    "Configuration:",
+                    "",
+                    "```json",
+                    json.dumps(trial.params, indent=2, sort_keys=True),
+                    "```",
+                    "",
+                    "Solver arguments:",
+                    "",
+                    "```sh",
+                    shlex.join(trial.user_attrs.get("solver_args", [])),
+                    "```",
+                    "",
+                    "Command lines:",
+                    "",
+                    "```sh",
+                    *(shlex.join(command) for command in commands),
+                    "```",
+                )
+            )
     if validation:
         lines.extend(("", "## Held-out validation", "", "| Rank | Candidate | Median cost | Worst cost |", "|---:|---|---:|---:|"))
         for rank, row in enumerate(validation, 1):
