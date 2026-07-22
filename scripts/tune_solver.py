@@ -428,6 +428,9 @@ def run_seed_group(
 
 
 HEURISTICS = ("Domain", "Vsids", "Berkmin", "Vmtf", "Unit", "None")
+CONTRACTION_REPLACEMENTS = ("decisionSeq", "allUIP", "dynamic")
+DELETION_ALGORITHMS = ("basic", "sort", "ipSort", "ipHeap")
+DELETION_SCORES = ("activity", "lbd", "mixed")
 
 
 BASELINE_PARAMS: dict[str, Any] = {
@@ -439,6 +442,8 @@ BASELINE_PARAMS: dict[str, Any] = {
     "opt_heuristic": "none",
     "restart_on_model": 1,
     "restart_policy": "default",
+    "contraction_override": "inherit",
+    "deletion_override": "inherit",
     "save_progress": 0,
     "sign_def": "default",
     "init_moms": "default",
@@ -520,6 +525,54 @@ def suggest_parameters(
         params["restart_margin"] = trial.suggest_float(
             "restart_margin", 0.5, 1.0
         )
+    params["contraction_override"] = trial.suggest_categorical(
+        "contraction_override", ["inherit", "disabled", "enabled"]
+    )
+    if params["contraction_override"] == "enabled":
+        params["contraction_threshold"] = trial.suggest_int(
+            "contraction_threshold", 100, 20_000, log=True
+        )
+        params["contraction_replacement"] = trial.suggest_categorical(
+            "contraction_replacement", CONTRACTION_REPLACEMENTS
+        )
+    params["deletion_override"] = trial.suggest_categorical(
+        "deletion_override", ["inherit", "disabled", "enabled"]
+    )
+    if params["deletion_override"] == "enabled":
+        params["deletion_algorithm"] = trial.suggest_categorical(
+            "deletion_algorithm", DELETION_ALGORITHMS
+        )
+        params["deletion_fraction"] = trial.suggest_int(
+            "deletion_fraction", 10, 90, step=5
+        )
+        params["deletion_score"] = trial.suggest_categorical(
+            "deletion_score", DELETION_SCORES
+        )
+        params["del_cfl_policy"] = trial.suggest_categorical(
+            "del_cfl_policy", ["inherit", "no", "F", "L", "x", "+"]
+        )
+        if params["del_cfl_policy"] in ("F", "L", "x", "+"):
+            params["del_cfl_base"] = trial.suggest_int(
+                "del_cfl_base", 100, 50_000, log=True
+            )
+        if params["del_cfl_policy"] == "x":
+            params["del_cfl_factor"] = trial.suggest_float(
+                "del_cfl_factor", 1.05, 2.0
+            )
+        elif params["del_cfl_policy"] == "+":
+            params["del_cfl_increment"] = trial.suggest_int(
+                "del_cfl_increment", 10, 10_000, log=True
+            )
+        params["del_grow_mode"] = trial.suggest_categorical(
+            "del_grow_mode", ["inherit", "no", "enabled"]
+        )
+        if params["del_grow_mode"] == "enabled":
+            params["del_grow_factor"] = trial.suggest_float(
+                "del_grow_factor", 1.01, 2.0, log=True
+            )
+            params["del_grow_limit"] = trial.suggest_float(
+                "del_grow_limit", 1.0, 50.0, log=True
+            )
     params["save_progress"] = trial.suggest_int("save_progress", 0, 256)
     params["sign_def"] = trial.suggest_categorical(
         "sign_def", ["default", "asp", "pos", "neg", "rnd"]
@@ -629,6 +682,45 @@ def parameters_to_args(params: dict[str, Any]) -> list[str]:
         args.append(
             f"--restarts=D,{params['restart_window']},{float(params['restart_margin']):.6g}"
         )
+    contraction_override = params.get("contraction_override", "inherit")
+    if contraction_override == "disabled":
+        args.append("--contraction=no")
+    elif contraction_override == "enabled":
+        args.append(
+            f"--contraction={params['contraction_threshold']},"
+            f"{params['contraction_replacement']}"
+        )
+    deletion_override = params.get("deletion_override", "inherit")
+    if deletion_override == "disabled":
+        args.append("--deletion=no")
+    elif deletion_override == "enabled":
+        args.append(
+            f"--deletion={params['deletion_algorithm']},"
+            f"{params['deletion_fraction']},{params['deletion_score']}"
+        )
+        del_cfl_policy = params.get("del_cfl_policy", "inherit")
+        if del_cfl_policy == "no":
+            args.append("--del-cfl=no")
+        elif del_cfl_policy in ("F", "L"):
+            args.append(f"--del-cfl={del_cfl_policy},{params['del_cfl_base']}")
+        elif del_cfl_policy == "x":
+            args.append(
+                f"--del-cfl=x,{params['del_cfl_base']},"
+                f"{float(params['del_cfl_factor']):.6g}"
+            )
+        elif del_cfl_policy == "+":
+            args.append(
+                f"--del-cfl=+,{params['del_cfl_base']},"
+                f"{params['del_cfl_increment']}"
+            )
+        del_grow_mode = params.get("del_grow_mode", "inherit")
+        if del_grow_mode == "no":
+            args.append("--del-grow=no")
+        elif del_grow_mode == "enabled":
+            args.append(
+                f"--del-grow={float(params['del_grow_factor']):.6g},"
+                f"{float(params['del_grow_limit']):.6g}"
+            )
     save_progress = int(params.get("save_progress", 0))
     if save_progress > 0:
         args.append(f"--save-progress={save_progress}")
@@ -788,6 +880,69 @@ def create_study(output_dir: Path) -> optuna.Study:
         weak_after["weak_merge_input_phase"] = 1
         weak_after["weak_merge_after_vftable_complete"] = 1
         study.enqueue_trial(weak_after, user_attrs={"label": "weak-after-vftable"})
+        restart_l30 = dict(BASELINE_PARAMS)
+        restart_l30["restart_policy"] = "L"
+        restart_l30["restart_base"] = 30
+        study.enqueue_trial(restart_l30, user_attrs={"label": "restart-l30"})
+        restart_l30_mixed = dict(restart_l30)
+        restart_l30_mixed.update(
+            {
+                "deletion_override": "enabled",
+                "deletion_algorithm": "basic",
+                "deletion_fraction": 50,
+                "deletion_score": "mixed",
+                "del_cfl_policy": "inherit",
+                "del_grow_mode": "inherit",
+            }
+        )
+        study.enqueue_trial(
+            restart_l30_mixed, user_attrs={"label": "restart-l30-mixed-deletion"}
+        )
+        deletion_disabled = dict(BASELINE_PARAMS)
+        deletion_disabled["deletion_override"] = "disabled"
+        study.enqueue_trial(
+            deletion_disabled, user_attrs={"label": "deletion-disabled"}
+        )
+        deletion_slower = dict(BASELINE_PARAMS)
+        deletion_slower.update(
+            {
+                "deletion_override": "enabled",
+                "deletion_algorithm": "basic",
+                "deletion_fraction": 50,
+                "deletion_score": "activity",
+                "del_cfl_policy": "+",
+                "del_cfl_base": 10_000,
+                "del_cfl_increment": 2_000,
+                "del_grow_mode": "enabled",
+                "del_grow_factor": 1.1,
+                "del_grow_limit": 20.0,
+            }
+        )
+        study.enqueue_trial(
+            deletion_slower, user_attrs={"label": "deletion-slower"}
+        )
+        contraction_250 = dict(BASELINE_PARAMS)
+        contraction_250.update(
+            {
+                "contraction_override": "enabled",
+                "contraction_threshold": 250,
+                "contraction_replacement": "dynamic",
+            }
+        )
+        study.enqueue_trial(
+            contraction_250, user_attrs={"label": "contraction-250-dynamic"}
+        )
+        contraction_10000 = dict(BASELINE_PARAMS)
+        contraction_10000.update(
+            {
+                "contraction_override": "enabled",
+                "contraction_threshold": 10_000,
+                "contraction_replacement": "dynamic",
+            }
+        )
+        study.enqueue_trial(
+            contraction_10000, user_attrs={"label": "contraction-10000-dynamic"}
+        )
     return study
 
 
@@ -875,7 +1030,7 @@ def run_study(args: argparse.Namespace, output_dir: Path, study_seconds: float) 
         "max_solver_threads": args.max_solver_threads,
         "cpu_budget": args.cpu_budget,
         "top": args.top,
-        "search_space_version": 2,
+        "search_space_version": 3,
         "pruner": {
             "name": "SuccessiveHalvingPruner",
             "min_resource": 1,

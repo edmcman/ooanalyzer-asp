@@ -135,6 +135,43 @@ class SolverTunerTests(unittest.TestCase):
         self.assertIn("--save-progress=20", args)
         self.assertNotIn("--no-save-progress", args)
 
+    def test_contraction_and_deletion_can_be_explicitly_disabled(self) -> None:
+        params = dict(tune.BASELINE_PARAMS)
+        params.update(
+            {
+                "contraction_override": "disabled",
+                "deletion_override": "disabled",
+            }
+        )
+        args = tune.parameters_to_args(params)
+        self.assertIn("--contraction=no", args)
+        self.assertIn("--deletion=no", args)
+
+    def test_raw_contraction_and_slower_deletion_knobs_are_rendered(self) -> None:
+        params = dict(tune.BASELINE_PARAMS)
+        params.update(
+            {
+                "contraction_override": "enabled",
+                "contraction_threshold": 250,
+                "contraction_replacement": "allUIP",
+                "deletion_override": "enabled",
+                "deletion_algorithm": "basic",
+                "deletion_fraction": 50,
+                "deletion_score": "mixed",
+                "del_cfl_policy": "+",
+                "del_cfl_base": 10_000,
+                "del_cfl_increment": 2_000,
+                "del_grow_mode": "enabled",
+                "del_grow_factor": 1.1,
+                "del_grow_limit": 20.0,
+            }
+        )
+        args = tune.parameters_to_args(params)
+        self.assertIn("--contraction=250,allUIP", args)
+        self.assertIn("--deletion=basic,50,mixed", args)
+        self.assertIn("--del-cfl=+,10000,2000", args)
+        self.assertIn("--del-grow=1.1,20", args)
+
     def test_numeric_restart_and_heuristic_parameters_are_rendered(self) -> None:
         params = dict(tune.BASELINE_PARAMS)
         params.update(
@@ -160,6 +197,21 @@ class SolverTunerTests(unittest.TestCase):
     def test_study_uses_successive_halving_pruner(self) -> None:
         pruner = tune.create_pruner()
         self.assertIsInstance(pruner, tune.optuna.pruners.SuccessiveHalvingPruner)
+
+    def test_new_study_queues_measured_solver_configurations(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            study = tune.create_study(Path(tmp))
+            labels = {trial.user_attrs.get("label") for trial in study.trials}
+        self.assertTrue(
+            {
+                "restart-l30",
+                "restart-l30-mixed-deletion",
+                "deletion-disabled",
+                "deletion-slower",
+                "contraction-250-dynamic",
+                "contraction-10000-dynamic",
+            }.issubset(labels)
+        )
 
     def test_pruner_halves_at_second_and_third_checkpoints(self) -> None:
         study = tune.optuna.create_study(direction="minimize", pruner=tune.create_pruner())
