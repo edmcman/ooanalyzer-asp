@@ -573,6 +573,35 @@ def suggest_parameters(
             params["del_grow_limit"] = trial.suggest_float(
                 "del_grow_limit", 1.0, 50.0, log=True
             )
+        params["del_glue_mode"] = trial.suggest_categorical(
+            "del_glue_mode", ["inherit", "enabled"]
+        )
+        if params["del_glue_mode"] == "enabled":
+            params["del_glue_lbd"] = trial.suggest_int("del_glue_lbd", 0, 15)
+            params["del_glue_count"] = trial.suggest_int("del_glue_count", 0, 1)
+        params["del_init_mode"] = trial.suggest_categorical(
+            "del_init_mode", ["inherit", "enabled"]
+        )
+        if params["del_init_mode"] == "enabled":
+            params["del_init_factor"] = trial.suggest_float(
+                "del_init_factor", 0.1, 10.0, log=True
+            )
+            params["del_init_min"] = trial.suggest_int(
+                "del_init_min", 10_000, 2_000_000, log=True
+            )
+            params["del_init_offset"] = trial.suggest_int(
+                "del_init_offset", 0, 2_000_000, step=10_000
+            )
+        params["del_max_mode"] = trial.suggest_categorical(
+            "del_max_mode", ["inherit", "no", "enabled"]
+        )
+        if params["del_max_mode"] == "enabled":
+            params["del_max_count"] = trial.suggest_int(
+                "del_max_count", 100_000, 10_000_000, log=True
+            )
+            params["del_max_mb"] = trial.suggest_int(
+                "del_max_mb", 256, 32_768, log=True
+            )
     params["save_progress"] = trial.suggest_int("save_progress", 0, 256)
     params["sign_def"] = trial.suggest_categorical(
         "sign_def", ["default", "asp", "pos", "neg", "rnd"]
@@ -720,6 +749,23 @@ def parameters_to_args(params: dict[str, Any]) -> list[str]:
             args.append(
                 f"--del-grow={float(params['del_grow_factor']):.6g},"
                 f"{float(params['del_grow_limit']):.6g}"
+            )
+        if params.get("del_glue_mode", "inherit") == "enabled":
+            args.append(
+                f"--del-glue={params['del_glue_lbd']},"
+                f"{params['del_glue_count']}"
+            )
+        if params.get("del_init_mode", "inherit") == "enabled":
+            args.append(
+                f"--del-init={float(params['del_init_factor']):.6g},"
+                f"{params['del_init_min']},{params['del_init_offset']}"
+            )
+        del_max_mode = params.get("del_max_mode", "inherit")
+        if del_max_mode == "no":
+            args.append("--del-max=no")
+        elif del_max_mode == "enabled":
+            args.append(
+                f"--del-max={params['del_max_count']},{params['del_max_mb']}"
             )
     save_progress = int(params.get("save_progress", 0))
     if save_progress > 0:
@@ -1030,7 +1076,7 @@ def run_study(args: argparse.Namespace, output_dir: Path, study_seconds: float) 
         "max_solver_threads": args.max_solver_threads,
         "cpu_budget": args.cpu_budget,
         "top": args.top,
-        "search_space_version": 3,
+        "search_space_version": 4,
         "pruner": {
             "name": "SuccessiveHalvingPruner",
             "min_resource": 1,

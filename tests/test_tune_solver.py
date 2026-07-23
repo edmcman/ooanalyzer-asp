@@ -164,6 +164,16 @@ class SolverTunerTests(unittest.TestCase):
                 "del_grow_mode": "enabled",
                 "del_grow_factor": 1.1,
                 "del_grow_limit": 20.0,
+                "del_glue_mode": "enabled",
+                "del_glue_lbd": 4,
+                "del_glue_count": 1,
+                "del_init_mode": "enabled",
+                "del_init_factor": 1.0,
+                "del_init_min": 750_000,
+                "del_init_offset": 750_000,
+                "del_max_mode": "enabled",
+                "del_max_count": 1_500_000,
+                "del_max_mb": 4096,
             }
         )
         args = tune.parameters_to_args(params)
@@ -171,6 +181,23 @@ class SolverTunerTests(unittest.TestCase):
         self.assertIn("--deletion=basic,50,mixed", args)
         self.assertIn("--del-cfl=+,10000,2000", args)
         self.assertIn("--del-grow=1.1,20", args)
+        self.assertIn("--del-glue=4,1", args)
+        self.assertIn("--del-init=1,750000,750000", args)
+        self.assertIn("--del-max=1500000,4096", args)
+
+    def test_deletion_maximum_can_be_explicitly_disabled(self) -> None:
+        params = dict(tune.BASELINE_PARAMS)
+        params.update(
+            {
+                "deletion_override": "enabled",
+                "deletion_algorithm": "sort",
+                "deletion_fraction": 10,
+                "deletion_score": "lbd",
+                "del_max_mode": "no",
+            }
+        )
+        args = tune.parameters_to_args(params)
+        self.assertIn("--del-max=no", args)
 
     def test_numeric_restart_and_heuristic_parameters_are_rendered(self) -> None:
         params = dict(tune.BASELINE_PARAMS)
