@@ -14,9 +14,12 @@ PROPAGATOR   := $(PYTHON) ooanalyzer.py
 # reject possible vftables, so that condition may never become true.
 # Reward/output #heuristics are available for experiments but delayed or
 # prevented first incumbents in the measured 180s/300s BB/USC probes.
+# A 2026-07-23 TinyXml A/B found that gentle LBD deletion with LBD<=4 glue
+# protection escaped the no-deletion plateau: [-704,-45273] versus
+# [-704,-45197] after 15 minutes. The 10% limit applies per reduction.
 # Threads actively hurt prior configs; keep this single-threaded.
 # Old 32-core sweep results (autoresearch/improve-260629-2245/) do not transfer.
-PROP_FLAGS   := -n -1 --opt-strategy=bb,lin --heuristic=domain --restart-on-model --decide-inputs --time-limit=300 --stats --show-guesses
+PROP_FLAGS   := -n -1 --opt-strategy=bb,lin --heuristic=domain --restart-on-model --decide-inputs --deletion=sort,10,lbd --del-glue=4,1 --time-limit=300 --stats --show-guesses
 XCLINGO      := xclingo
 XCLINGO_FLAGS := -n -1 0 --opt-strategy bb,lin --heuristic=domain
 TIME_CMD     := /usr/bin/time
