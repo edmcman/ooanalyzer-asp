@@ -443,7 +443,19 @@ BASELINE_PARAMS: dict[str, Any] = {
     "restart_on_model": 1,
     "restart_policy": "default",
     "contraction_override": "inherit",
-    "deletion_override": "inherit",
+    # Keep the measured Makefile default explicit so the queued
+    # "makefile-baseline" trial exercises the configuration it names.
+    "deletion_override": "enabled",
+    "deletion_algorithm": "sort",
+    "deletion_fraction": 10,
+    "deletion_score": "lbd",
+    "del_cfl_policy": "inherit",
+    "del_grow_mode": "inherit",
+    "del_glue_mode": "enabled",
+    "del_glue_lbd": 4,
+    "del_glue_count": 1,
+    "del_init_mode": "inherit",
+    "del_max_mode": "inherit",
     "save_progress": 0,
     "sign_def": "default",
     "init_moms": "default",
@@ -939,6 +951,7 @@ def create_study(output_dir: Path) -> optuna.Study:
                 "deletion_score": "mixed",
                 "del_cfl_policy": "inherit",
                 "del_grow_mode": "inherit",
+                "del_glue_mode": "inherit",
             }
         )
         study.enqueue_trial(
@@ -962,6 +975,7 @@ def create_study(output_dir: Path) -> optuna.Study:
                 "del_grow_mode": "enabled",
                 "del_grow_factor": 1.1,
                 "del_grow_limit": 20.0,
+                "del_glue_mode": "inherit",
             }
         )
         study.enqueue_trial(
@@ -1076,7 +1090,7 @@ def run_study(args: argparse.Namespace, output_dir: Path, study_seconds: float) 
         "max_solver_threads": args.max_solver_threads,
         "cpu_budget": args.cpu_budget,
         "top": args.top,
-        "search_space_version": 4,
+        "search_space_version": 5,
         "pruner": {
             "name": "SuccessiveHalvingPruner",
             "min_resource": 1,

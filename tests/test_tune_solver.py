@@ -97,6 +97,8 @@ class SolverTunerTests(unittest.TestCase):
         self.assertIn("--opt-strategy=bb,lin", args)
         self.assertIn("--parallel-mode=1", args)
         self.assertIn("--decide-inputs", args)
+        self.assertIn("--deletion=sort,10,lbd", args)
+        self.assertIn("--del-glue=4,1", args)
         self.assertNotIn("reward_weight", joined)
         self.assertEqual(tune.solver_threads_from_args(args), 1)
 
@@ -229,6 +231,11 @@ class SolverTunerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             study = tune.create_study(Path(tmp))
             labels = {trial.user_attrs.get("label") for trial in study.trials}
+            makefile_baseline = study.ask()
+            baseline_params = tune.suggest_parameters(makefile_baseline)
+            self.assertEqual(
+                makefile_baseline.user_attrs.get("label"), "makefile-baseline"
+            )
         self.assertTrue(
             {
                 "restart-l30",
@@ -239,6 +246,11 @@ class SolverTunerTests(unittest.TestCase):
                 "contraction-10000-dynamic",
             }.issubset(labels)
         )
+        self.assertEqual(baseline_params["deletion_algorithm"], "sort")
+        self.assertEqual(baseline_params["deletion_fraction"], 10)
+        self.assertEqual(baseline_params["deletion_score"], "lbd")
+        self.assertEqual(baseline_params["del_glue_lbd"], 4)
+        self.assertEqual(baseline_params["del_glue_count"], 1)
 
     def test_pruner_halves_at_second_and_third_checkpoints(self) -> None:
         study = tune.optuna.create_study(direction="minimize", pruner=tune.create_pruner())
